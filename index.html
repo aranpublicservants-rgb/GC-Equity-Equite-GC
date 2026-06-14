@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GC-Equity / Équité-GC — Public Service Equity Data Explorer</title>
+<meta name="description" content="Uses Government of Canada employment equity data to help identify systemic barriers, workforce gaps, and areas for action. | Utilise les données sur l'équité en matière d'emploi du gouvernement du Canada pour aider à cerner les obstacles systémiques, les écarts dans l'effectif et les pistes d'action.">
+<meta property="og:title" content="GC-Equity / Équité-GC — Public Service Equity Data Explorer">
+<meta property="og:description" content="Uses Government of Canada employment equity data to help identify systemic barriers, workforce gaps, and areas for action. | Utilise les données sur l'équité en matière d'emploi du gouvernement du Canada pour aider à cerner les obstacles systémiques, les écarts dans l'effectif et les pistes d'action.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<style>
+:root{
+  --ink:#1B2A41; --ink-soft:#44546A; --paper:#F7F7F4; --card:#FFFFFF; --line:#DCDFD9;
+  --teal:#0E7C7B; --teal-soft:#DCEFEE; --rust:#B3401E; --rust-soft:#F7E4DC;
+  --ok:#2E6E4E; --ok-soft:#E2EFE6; --bench:#5B6B7F; --gold:#8A6D1D; --gold-soft:#F5EDD6;
+  --mono:ui-monospace,"SF Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{font:16px/1.55 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3,.display{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;letter-spacing:.1px}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.site{background:var(--ink);color:#fff;padding:34px 0 26px;border-bottom:6px solid var(--teal)}
+header.site .eyebrow{font:600 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#9FC6C5;margin-bottom:12px}
+header.site h1{font-size:clamp(26px,4vw,40px);font-weight:700;max-width:840px}
+header.site p.sub{margin-top:12px;max-width:760px;color:#C9D2DD;font-size:15px}
+header.site p.sub strong{color:#fff}
+nav.tabs{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);z-index:50;box-shadow:0 1px 4px rgba(27,42,65,.06)}
+nav.tabs .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:6px;padding-bottom:6px}
+nav.tabs button{appearance:none;border:0;background:none;font:600 13.5px/1 inherit;color:var(--ink-soft);padding:11px 13px;border-radius:6px;cursor:pointer}
+nav.tabs button:hover{background:var(--teal-soft);color:var(--ink)}
+nav.tabs button[aria-current="true"]{background:var(--ink);color:#fff}
+main{padding:30px 0 60px}
+section.view{display:none}
+section.view.active{display:block}
+.lede{max-width:820px;font-size:17px;color:var(--ink-soft);margin-bottom:22px}
+.lede strong{color:var(--ink)}
+h2{font-size:26px;margin:6px 0 6px}
+h3{font-size:19px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:18px}
+.card h3{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.howto{font-size:13.5px;color:var(--ink-soft);background:var(--gold-soft);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0 16px;max-width:860px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:880px){.grid2,.grid3{grid-template-columns:1fr}}
+/* gap bars: the signature element */
+.gbar{margin:8px 0 16px}
+.gbar .lab{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;margin-bottom:19px}
+.gbar .lab .nm{font-weight:600}
+.gbar .lab .vals{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+.gbar .track{position:relative;height:22px;background:#ECEEE9;border-radius:4px;overflow:visible}
+.gbar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px 0 0 4px;background:var(--teal)}
+.gbar .fill.below{background:var(--rust)}
+.gbar .tick{position:absolute;top:-5px;bottom:-5px;width:3px;background:var(--bench);border-radius:2px}
+.gbar .tick::after{content:attr(data-lab);position:absolute;top:-16px;left:50%;transform:translateX(-50%);font:600 10px/1 var(--mono);color:var(--bench);white-space:nowrap}
+.verdict{font-size:12.5px;margin-top:4px}
+.verdict.ok{color:var(--ok)} .verdict.bad{color:var(--rust)} .verdict.na{color:var(--ink-soft)}
+.flag{display:inline-block;font:600 11.5px/1 var(--mono);padding:4px 8px;border-radius:20px;margin:2px 4px 2px 0}
+.flag.bad{background:var(--rust-soft);color:var(--rust)}
+.flag.ok{background:var(--ok-soft);color:var(--ok)}
+.flag.note{background:#EAECEF;color:var(--ink-soft)}
+/* tables */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--card)}
+caption{text-align:left;font:600 13px/1.4 inherit;color:var(--ink-soft);padding:10px 12px;background:#F1F2EE;border-bottom:1px solid var(--line)}
+th,td{padding:8px 11px;border-bottom:1px solid #ECEEE9;text-align:left;vertical-align:top}
+th{background:#F1F2EE;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);position:sticky;top:0;z-index:2}
+.scopebar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#EDF3F2;border:1px solid #CFE0DE;border-radius:8px;padding:9px 14px;margin:0 0 18px;font-size:13px}
+.scopebar .sl{font:700 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-right:4px}
+.scopebar .here{background:var(--ink);color:#fff;font-weight:600;padding:5px 12px;border-radius:16px}
+.scopebar a{background:#fff;border:1.5px solid var(--teal);color:var(--teal);font-weight:600;text-decoration:none;padding:4px 12px;border-radius:16px}
+.scopebar a:hover{background:var(--teal);color:#fff}
+.scopebar .why{flex-basis:100%;font-size:12px;color:var(--ink-soft)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:12.8px;white-space:nowrap}
+tr:hover td{background:#FAFBF8}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--ink)}
+th .arrow{font-size:10px}
+td .mini{display:inline-block;height:9px;background:var(--teal);border-radius:2px;vertical-align:middle;margin-left:6px}
+td .mini.below{background:var(--rust)}
+.supp{color:var(--ink-soft);font-style:italic}
+.below-mark{color:var(--rust);font-weight:700}
+.above-mark{color:var(--ok);font-weight:700}
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin:14px 0 18px}
+.ctl label{display:block;font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:5px}
+select,input[type=search]{font:14px/1.3 inherit;padding:9px 12px;border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);min-width:200px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.chips button{appearance:none;border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);font:600 13px/1 inherit;padding:8px 14px;border-radius:20px;cursor:pointer}
+.chips button:hover{border-color:var(--teal);color:var(--teal)}
+.chips button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:16px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .v{font-family:var(--mono);font-size:24px;font-weight:700}
+.kpi .l{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+/* sparkline */
+.spark{display:block}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-soft);margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.srclink{display:inline-block;font-size:12.5px;margin-top:6px}
+.src-card{border-left:5px solid var(--teal)}
+.src-card .meta{font:600 11.5px/1.5 var(--mono);color:var(--ink-soft);margin:6px 0}
+.src-card .embedded{border-left-color:var(--ok)}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-soft);font-size:13px}
+.hero-bars{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:18px 20px 8px;margin-top:20px;max-width:760px}
+.hero-bars .gbar .lab .nm,.hero-bars .gbar .lab .vals{color:#E5EAF0}
+.hero-bars .gbar .track{background:rgba(255,255,255,.14)}
+.hero-bars .gbar .tick{background:#C8B36A}
+.hero-bars .gbar .tick::after{color:#C8B36A}
+.hero-bars .verdict.ok{color:#9FD8B5}.hero-bars .verdict.bad{color:#F0A285}
+.hero-note{font-size:12px;color:#9AA8B8;margin:6px 0 10px}
+details{margin:8px 0}
+summary{cursor:pointer;font-weight:600;color:var(--teal)}
+.two-col{columns:2;column-gap:30px;max-width:980px}
+@media(max-width:760px){.two-col{columns:1}}
+dt{font-weight:700;margin-top:10px}
+dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
+.banner{background:var(--gold-soft);border:1px solid #E4D9B4;border-radius:8px;padding:12px 16px;font-size:13.5px;margin:0 0 20px;max-width:980px}
+/* export toolbar on tables */
+.tbltools{display:flex;justify-content:flex-end;gap:8px;margin:-2px 0 6px}
+.tbltools button{appearance:none;border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);font:600 11.5px/1 inherit;padding:6px 11px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.tbltools button:hover{border-color:var(--teal);color:var(--teal)}
+.tbltools .copied{border-color:var(--ok);color:var(--ok)}
+/* page-level action bar */
+.actionbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end;margin:0 0 14px}
+.actionbar button{appearance:none;border:1.5px solid var(--teal);background:#fff;color:var(--teal);font:600 12.5px/1 inherit;padding:8px 14px;border-radius:7px;cursor:pointer}
+.actionbar button:hover{background:var(--teal);color:#fff}
+.actionbar .muted{margin-right:auto;font-size:12px;color:var(--ink-soft)}
+/* tooltip for defined terms */
+.def{border-bottom:1px dotted var(--ink-soft);cursor:help;position:relative}
+.def:hover .tip,.def:focus .tip{display:block}
+.def .tip{display:none;position:absolute;bottom:130%;left:0;z-index:60;background:var(--ink);color:#fff;font:400 12.5px/1.45 -apple-system,"Segoe UI",sans-serif;padding:9px 12px;border-radius:7px;width:280px;box-shadow:0 4px 14px rgba(27,42,65,.25);text-transform:none;letter-spacing:normal}
+.def .tip::after{content:"";position:absolute;top:100%;left:18px;border:6px solid transparent;border-top-color:var(--ink)}
+@media print{
+  @page{margin:1.5cm}
+  nav.tabs,.actionbar,.tbltools,.scopebar,.skip,.chips,footer .wrap a{display:none!important}
+  header.site{background:#fff!important;color:#000!important;border-bottom:2px solid #000;padding:0 0 10px}
+  header.site .eyebrow{color:#000!important}
+  header.site h1{font-size:22px}
+  header.site .sub,.hero-note{color:#222!important}
+  .hero-bars{background:#fff!important;border:1px solid #999}
+  .hero-bars .gbar .lab .nm,.hero-bars .gbar .lab .vals{color:#000!important}
+  .hero-bars .gbar .track{background:#eee!important}
+  section.view{display:none!important}
+  section.view.printing{display:block!important}
+  .card{break-inside:avoid;border:1px solid #999;box-shadow:none}
+  body{background:#fff;font-size:11pt;color:#000}
+  a{color:#000;text-decoration:none}
+  .tblwrap{overflow:visible!important;max-height:none!important;border:1px solid #999}
+  table{font-size:9.5pt}
+  th{position:static}
+  .flag{border:1px solid #999}
+  .lede{color:#000}
+  .print-only{display:block!important}
+}
+.print-only{display:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="eyebrow">Core public administration &middot; as of March 31, 2025</div>
+    <h1>Public Service Equity Data Explorer</h1>
+    <p class="sub">Every published employment equity number for Canada's core public administration, gathered in one place from the federal sources catalogued on the <strong>GCwiki Data Equity page</strong>. Pick a department, a group, or a subgroup and see the distance to the benchmark. Where the bar stops short of the tick, there may be a barrier worth investigating.</p>
+    <div class="hero-bars" role="img" aria-label="Four bars compare each designated group's representation to its workforce availability. Women 56.8 percent against availability of 54.9, above. Indigenous Peoples 5.5 against 4.0, above. Persons with disabilities 9.0 against 12.0, below by 3 points. Racialized employees 23.9 against 22.7, above.">
+      <p class="hero-note">Representation vs. workforce availability (WFA), whole core public administration. The tick is the benchmark.</p>
+      <div id="heroBars"></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap" id="tabbar"></div>
+</nav>
+
+<main id="main" class="wrap">
+
+<!-- ================= OVERVIEW ================= -->
+<section class="view" id="view-overview">
+  <h2>Start here</h2>
+  <p class="lede">This tool is for <strong>every public servant</strong>, anyone in any department or agency who wants to see, in plain language, <strong>where equity groups stand and where they may face barriers</strong> in hiring, promotion, pay and leadership. No background in data is needed. All figures are transcribed from published Government of Canada tables, with nothing estimated. Suppressed small counts stay suppressed.</p>
+  <div class="banner"><strong>What lives here and what lives in the dashboards.</strong> This site embeds the complete published TBS tables: representation by department, subgroups, salary, hiring, promotion, separations, executives, regions, occupations and languages. Departmental promotions, acting appointments, applicant data by subgroup and PSES results are served by interactive federal dashboards that cannot be copied wholesale; every section links you straight to the right dashboard, pre-pointed at your department where the dashboard allows it. Public-service-wide 2024 PSES results for every equity question are embedded in the Employee survey section, with per-organization pages one link away.</div>
+
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <h3>Key signals across the public service</h3>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px">The most defensible barrier signals in the data, in plain language, each linked to the section where you can verify it. These are screening signals drawn from published figures, not findings of non-compliance; the value is knowing where to look.</p>
+    <ol style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6">
+      <li><strong>The executive cliff for racialized employees.</strong> 23.9% of the workforce but 17.3% of executives; for Black employees, 5.1% of the workforce but 3.2% of executives. <a href="#" data-go="ex">See Executives</a>.</li>
+      <li><strong>Pay compression for Black employees.</strong> A disproportionality index of 1.46 in the lowest salary range and 0.64 in the highest in 2024, with a median-salary gap that has widened to about $8,650. <a href="#" data-go="di">See Salary DI tracker</a>.</li>
+      <li><strong>The recruitment funnel sheds three of four groups.</strong> Persons with disabilities fall from 4.4% of applicants to 2.4% of appointments; Black candidates from 10.3% to 6.6%. Automated screening costs no representation; the human stages do. <a href="#" data-go="flows">See Hiring &amp; promotion</a>.</li>
+      <li><strong>Disability is the one group below availability, and slipping.</strong> Representation at 9.0% against a 12.0% benchmark, accommodation implementation down from 81% to 71%, disability-based discrimination the fastest-rising type. <a href="#" data-go="groups">See Groups &amp; subgroups</a>.</li>
+      <li><strong>The formal complaint system has lost people's trust.</strong> 75% of discrimination comes from those with authority, 53% take no action, and only 11% of race-discrimination victims are satisfied with how complaints are resolved. <a href="#" data-go="ombuds">See Ombuds value</a>.</li>
+      <li><strong>"Visible minority" hides opposite realities.</strong> Among those earning $100K+, Chinese employees sit at 47.4% and Filipino employees at 21.4%; the group average conceals both. <a href="#" data-go="salary">See Salary</a>.</li>
+    </ol>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">266,935</div><div class="l">employees in the core public administration</div></div>
+    <div class="kpi"><div class="v">71.3%</div><div class="l">belong to one or more employment equity groups</div></div>
+    <div class="kpi"><div class="v">72</div><div class="l">organizations with published representation data, all included here</div></div>
+    <div class="kpi"><div class="v">1 of 4</div><div class="l">designated groups remains below availability: persons with disabilities</div></div>
+  </div>
+
+  <div class="card">
+    <h3>Find barriers fast: rank every organization</h3>
+    <p class="howto">Pick a group. Organizations are ranked from lowest to highest representation, with the public service availability tick shown for context. A department far below the line is a screening signal, not a finding: departmental availability differs by occupation mix and region, so use this to decide where to look closer.</p>
+    <div class="chips" id="rankChips" role="group" aria-label="Choose a group to rank organizations by"></div>
+    <div class="tblwrap" style="max-height:480px;overflow-y:auto"><table id="rankTable"><caption id="rankCap"></caption><thead><tr><th scope="col">Organization</th><th scope="col" class="num">Employees</th><th scope="col" class="num">Representation</th><th scope="col">Distance to PS-wide availability</th></tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <div class="card">
+    <h3>The long arc, 1998 to 2025</h3>
+    <p class="howto">Representation of all four designated groups in the core public administration over 27 years. Progress is real and slow, which is exactly why barrier-level data matters.</p>
+    <div id="histChart"></div>
+    <details style="margin-top:10px"><summary>How the benchmark itself has moved: workforce availability by census era</summary>
+    <div class="tblwrap" style="margin-top:8px"><table><caption>Workforce availability estimates over time. The 2016-to-2021 jumps for persons with disabilities and racialized people reflect both real population change and definitional changes (expanded disability definition; permanent residents included from 2021).</caption>
+    <thead><tr><th scope="col">Census era</th><th scope="col" class="num">Women</th><th scope="col" class="num">Indigenous</th><th scope="col" class="num">Disabilities</th><th scope="col" class="num">Racialized</th></tr></thead><tbody>
+    <tr><td>1991 (Census + HALS)</td><td class="num">47.3%</td><td class="num">2.6%</td><td class="num">4.8%</td><td class="num">9.0%</td></tr>
+    <tr><td>1996</td><td class="num">48.7%</td><td class="num">1.7%</td><td class="num">4.8%</td><td class="num">8.7%</td></tr>
+    <tr><td>2001</td><td class="num">52.2%</td><td class="num">2.5%</td><td class="num">3.6%</td><td class="num">10.4%</td></tr>
+    <tr><td>2006 (+ PALS)</td><td class="num">52.3%</td><td class="num">3.0%</td><td class="num">4.0%</td><td class="num">12.4%</td></tr>
+    <tr><td>2011 (NHS + CSD 2012)</td><td class="num">52.5%</td><td class="num">3.4%</td><td class="num">4.4%</td><td class="num">13.0%</td></tr>
+    <tr><td>2016 (citizens only, CSD 2017)</td><td class="num">52.7%</td><td class="num">4.0%</td><td class="num">9.0%</td><td class="num">15.3%</td></tr>
+    <tr><td>2021 (citizens + permanent residents, CSD 2022)</td><td class="num">54.9%</td><td class="num">4.0%</td><td class="num">12.0%</td><td class="num">22.7%</td></tr>
+    </tbody></table></div>
+    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:6px">Why this matters for barrier arguments: meeting a benchmark that itself lags the population is a moving target, and TBS describes WFA as a starting point rather than a ceiling. The 2021 inclusion of permanent residents raised the racialized availability by 7.4 points overnight, instantly reframing which organizations look on track.</p>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>Three patterns the data already shows</h3>
+    <p style="max-width:880px;font-size:15px">First, <strong>the executive cliff for racialized employees</strong>: 23.9% of the workforce but 17.3% of executives, and for Black employees 5.1% of the workforce but 3.2% of executives. Second, <strong>salary compression for Black employees</strong>: 40.8% earn between $50,000 and $74,999 compared with 27.9% of all employees, the pattern the Disproportionality Index study first documented. Third, <strong>the disability availability gap</strong>: representation rose to 9.0% but remains 3 points below the 12.0% availability estimate; part of that distance reflects the newer, broader survey definition of disability that the self-identification form does not yet use. Each pattern has its own section in this tool.</p>
+  </div>
+</section>
+
+<!-- ================= DEPARTMENTS ================= -->
+<section class="view" id="view-depts">
+  <h2>Departments and agencies</h2>
+  <p class="lede">Representation of the four designated groups in each of the 72 core public administration organizations, with automatic barrier flags. Separate agencies (CRA, CFIA, NRC, Parks Canada and others) publish their own reports; links are in <a href="#" data-go="sources">Data sources</a>.</p>
+  <div class="controls">
+    <div class="ctl"><label for="deptSel">Choose an organization</label>
+      <select id="deptSel"></select></div>
+    <div class="ctl"><label for="deptSearch">Or search</label>
+      <input type="search" id="deptSearch" placeholder="Type a department name" aria-label="Search organizations"></div>
+  </div>
+  <div id="deptCard"></div>
+
+  <div class="card">
+    <h3>Compare two organizations side by side</h3>
+    <p class="howto">Pick any two organizations, or compare one against the whole public service, to see all four groups next to each other. Useful for benchmarking your department against a peer of similar size or mandate. Each bar's tick is the group's public-service workforce availability.</p>
+    <div class="controls">
+      <div class="ctl"><label for="cmpA">First organization</label><select id="cmpA"></select></div>
+      <div class="ctl"><label for="cmpB">Second organization</label><select id="cmpB"></select></div>
+    </div>
+    <div class="grid2" id="cmpCols"></div>
+  </div>
+
+  <div class="card">
+    <h3>All organizations, side by side</h3>
+    <p class="howto">Click any column heading to sort. Type in the box to filter by name. Red bold marks representation below the public service availability for that group; "supp." means the published count was suppressed to protect privacy (1 to 5 people).</p>
+    <div class="ctl" style="margin-bottom:10px"><label for="allDeptFilter">Filter organizations by name</label><input type="search" id="allDeptFilter" placeholder="e.g. health, agency, canada" aria-label="Filter organizations by name" style="min-width:240px"></div>
+    <div class="tblwrap" style="max-height:560px;overflow-y:auto"><table id="allDeptTable"><caption>Representation by organization, March 31, 2025. Source: TBS Employment Equity Demographic Snapshot 2024-2025, Appendix Table 1.</caption><thead></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<!-- ================= GROUPS & SUBGROUPS ================= -->
+<section class="view" id="view-groups">
+  <h2>Equity groups and subgroups</h2>
+  <p class="lede">Public-service-wide detail for every published subgroup: how many people, how representation has moved since 2018, and the share of executives, where the gaps between a subgroup's presence in the workforce and its presence in leadership show most clearly.</p>
+  <p class="howto">Departmental subgroup data (for example, Black employees in any given department) is published only through the PSC's interactive dashboard. <a href="https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html" target="_blank" rel="noopener">Open the PSC subgroup dashboard</a> to pull a department's subgroup numbers for applicants, hires, employees, promotions and acting appointments.</p>
+  <div class="chips" id="grpChips" role="group" aria-label="Choose a parent group"></div>
+  <div id="grpIntro"></div>
+  <div id="sgList"></div>
+</section>
+
+<!-- ================= SALARY ================= -->
+<section class="view" id="view-salary">
+  <h2>Salary and pay equity</h2>
+  <p class="lede">Who sits where on the pay scale. The disproportionality ratio compares each group's share in a salary band with the share of all employees in that band: above 1.0 means overrepresented in the band, below 1.0 means underrepresented. Overrepresentation in low bands plus underrepresentation in high bands is the compression pattern that signals blocked progression.</p>
+  <div class="chips" id="salChips" role="group" aria-label="Choose a group for salary detail"></div>
+  <div class="card"><h3 id="salTitle"></h3><div id="salBars"></div></div>
+  <div class="card">
+    <h3>Disproportionality ratios at a glance, all groups</h3>
+    <p class="howto">Reading example: 1.46 for Black employees in the $50,000 to $74,999 band means Black employees are 46% more concentrated in that band than the workforce as a whole.</p>
+    <div class="tblwrap"><table id="diTable"><caption>Computed from TBS published salary distributions, March 31, 2025. Method: Disproportionality Index (Albury, Vongdara, Nicholas, Kanji).</caption><thead></thead><tbody></tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Who holds each pay band</h3>
+    <p class="howto">A different cut of the same data: out of everyone in a band, what share belongs to each group. The tick is the group's share of the whole workforce, so a bar falling short of its tick in the top bands shows the pay ceiling directly. Women are 68.5% of the under $50K band but 47.5% of the $125K to $149,999 band. Middle-band values are computed from the published band counts and verified against published totals.</p>
+    <div class="chips" id="wbChips" role="group" aria-label="Choose a group for band representation"></div>
+    <div id="wbBars"></div>
+  </div>
+  <div class="card">
+    <h3>Subgroup salary distributions</h3>
+    <p class="howto">TBS publishes subgroup salary in four bands. Compare the share earning $100,000 and over: 41.5% of all employees, 47.4% of Chinese employees, 28.5% of Black employees, 21.4% of Filipino employees. Same group label, very different realities, which is exactly why subgroup data matters.</p>
+    <div class="tblwrap"><table id="sgSalTable"><caption>Salary distribution by subgroup, share of each subgroup per band. "supp." = suppressed small counts.</caption><thead><tr><th scope="col">Subgroup</th><th scope="col" class="num">Under $50K</th><th scope="col" class="num">$50K to $74,999</th><th scope="col" class="num">$75K to $99,999</th><th scope="col" class="num">$100K and over</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<!-- ================= FLOWS ================= -->
+<section class="view" id="view-flows">
+  <h2>Hiring, promotion and separation</h2>
+  <p class="lede">Who gets in, who moves up, and who leaves, public-service-wide, for nine fiscal years. A group's promotion share below its workforce share signals a promotion barrier; a rising separation share signals a retention problem worth disaggregating from retirements.</p>
+  <div class="chips" id="flowChips" role="group" aria-label="Choose hires, promotions or separations"></div>
+  <div class="card"><h3 id="flowTitle"></h3><div id="flowChart"></div>
+  <div class="legend" id="flowLegend"></div></div>
+  <div class="card">
+    <h3>Before hiring: the recruitment funnel, stage by stage</h3>
+    <p class="howto">The PSC's Audit of Employment Equity Representation in Recruitment followed 15,285 applications to 181 externally advertised processes across 30 organizations through all five hiring stages. It is the only published dataset showing exactly where each group falls out of the funnel. The survival ratio is appointment-stage representation divided by application-stage representation: 1.00 means a group ends where it started; below 1.00 means the process itself shed them.</p>
+    <div class="tblwrap"><table><caption>Representation at each recruitment stage (audit sample, processes closing 2016-17, published 2021). Source: PSC audit, Annex B.</caption>
+    <thead><tr><th scope="col">Group</th><th scope="col" class="num">Application</th><th scope="col" class="num">Automated screening</th><th scope="col" class="num">Organizational screening</th><th scope="col" class="num">Assessment</th><th scope="col" class="num">Appointment</th><th scope="col" class="num">Survival ratio</th></tr></thead>
+    <tbody>
+    <tr><td>Women</td><td class="num">52.8%</td><td class="num">53.2%</td><td class="num">59.7%</td><td class="num">59.8%</td><td class="num">58.2%</td><td class="num above-mark">1.10</td></tr>
+    <tr><td>Indigenous Peoples</td><td class="num">3.5%</td><td class="num">3.6%</td><td class="num">4.0%</td><td class="num">2.9%</td><td class="num">2.9%</td><td class="num below-mark">0.83</td></tr>
+    <tr><td>Persons with disabilities</td><td class="num">4.4%</td><td class="num">4.7%</td><td class="num">4.5%</td><td class="num">3.6%</td><td class="num">2.4%</td><td class="num below-mark">0.55</td></tr>
+    <tr><td>Members of visible minorities</td><td class="num">30.4%</td><td class="num">30.3%</td><td class="num">27.4%</td><td class="num">24.6%</td><td class="num">24.7%</td><td class="num below-mark">0.81</td></tr>
+    <tr><td>Black candidates</td><td class="num">10.3%</td><td class="num">9.7%</td><td class="num">7.7%</td><td class="num">6.3%</td><td class="num">6.6%</td><td class="num below-mark">0.64</td></tr>
+    <tr><td>Chinese candidates</td><td class="num">3.4%</td><td class="num">3.5%</td><td class="num">4.2%</td><td class="num">3.2%</td><td class="num">3.5%</td><td class="num above-mark">1.03</td></tr>
+    <tr><td>Non-white West Asian, North African or Arab</td><td class="num">4.6%</td><td class="num">4.4%</td><td class="num">3.8%</td><td class="num">4.2%</td><td class="num">3.3%</td><td class="num below-mark">0.72</td></tr>
+    <tr><td>South Asian / East Indian</td><td class="num">5.6%</td><td class="num">5.8%</td><td class="num">5.0%</td><td class="num">5.2%</td><td class="num">5.9%</td><td class="num above-mark">1.05</td></tr>
+    </tbody></table></div>
+    <p style="font-size:13.5px;max-width:940px;margin-top:10px"><strong>The audit named the mechanism at each stage.</strong> Automated screening cost no group representation; the losses are human. Organizational screening cut racialized candidates, Black candidates hardest, with citizenship status and how experience was judged identified as factors, and visible minority candidates less successful even when they had federal experience. At assessment, written tests (mostly organization-built, open-ended, subjectively scored) hurt racialized and especially Black candidates; interviews drove the entire Indigenous drop; reference checks helped only women. The appointment stage itself cut persons with disabilities, their largest single drop. The 2023 follow-up audit on pre-assessment found the same screening also reduced representation for intersectional candidates: Indigenous people with disabilities and racialized people with disabilities. And the accountability gap: only 50% of organizations had done an employment system review in the prior 3 to 5 years, and 62% of those concluded they had no systemic barriers, while this audit was finding them. Self-assessment is not detection.</p>
+  </div>
+  <div class="card">
+    <h3>Promotion vs acting workbench</h3>
+    <p class="howto">Acting appointments are the rehearsal space for promotion, and they are the one staffing flow missing from every TBS table. Pull your organization's numbers from the <a href="https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html" target="_blank" rel="noopener">PSC subgroup dashboard</a> (it reports employees, promotions AND acting appointments by group and subgroup per organization), enter them here, and the workbench computes both equity ratios and tells you what the pattern means. A healthy acting ratio with a weak promotion ratio, or the reverse, localizes the barrier.</p>
+    <div class="controls">
+      <div class="ctl"><label for="pa_name">Organization and group or subgroup</label><input type="search" id="pa_name" value="" placeholder="e.g. your department, then a group or subgroup" style="min-width:240px"></div>
+      <div class="ctl"><label for="pa_rep">Workforce representation %</label><input type="number" id="pa_rep" value="" step="0.1" min="0" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:110px"></div>
+      <div class="ctl"><label for="pa_pro">Promotion share %</label><input type="number" id="pa_pro" value="" step="0.1" min="0" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:110px"></div>
+      <div class="ctl"><label for="pa_act">Acting share %</label><input type="number" id="pa_act" value="" step="0.1" min="0" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:110px"></div>
+    </div>
+    <div id="paOut" style="font-size:14px"></div>
+  </div>
+  <div class="card">
+    <h3>2024-25 equity check: share of actions vs. share of workforce</h3>
+    <p class="howto">A ratio of 1.00 means the group received exactly its proportional share. Below 0.90 is flagged.</p>
+    <div class="tblwrap"><table id="flowRatioTable"><caption>Fiscal year 2024-25. Hires 19,720, promotions 25,449, separations 15,472. Source: TBS Demographic Snapshot 2024-2025.</caption><thead><tr><th scope="col">Group</th><th scope="col" class="num">Workforce share</th><th scope="col" class="num">Hire share</th><th scope="col" class="num">Hire ratio</th><th scope="col" class="num">Promotion share</th><th scope="col" class="num">Promotion ratio</th><th scope="col" class="num">Separation share</th></tr></thead><tbody></tbody></table></div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">Acting appointments, a key feeder to promotion, are reported by department and subgroup only in the <a href="https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html" target="_blank" rel="noopener">PSC subgroup dashboard</a>. The National Joint Council's Joint Employment Equity Committee flagged equity representation in acting appointments as a 2024-25 consultation item.</p>
+  </div>
+</section>
+
+<!-- ================= PSES ================= -->
+<section class="view" id="view-pses">
+  <h2>Employee survey (PSES 2024)</h2>
+  <p class="lede">What 186,635 public servants said about discrimination, harassment, racism, advancement and wellbeing in the 2024 Public Service Employee Survey. These are the public-service-wide results for every equity-relevant question, transcribed from the published results tables, with the 2019 to 2024 history. The experience data here is the other half of the barrier picture: representation numbers show who is present, the survey shows what happens to them.</p>
+  <p class="howto"><strong>Drilling down.</strong> The same questions exist for each of the 93 participating organizations and for demographic groups (racialized, Black, Indigenous, persons with disabilities and more). Per-organization pages: <a href="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index" target="_blank" rel="noopener">2024 results by question, organization index</a>. Demographic breakdowns: <a href="https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/PSES/Home/Index?GoCTemplateCulture=en-CA" target="_blank" rel="noopener">PSES Data Analytics tool</a> and <a href="https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f" target="_blank" rel="noopener">open datasets</a>.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">9%</div><div class="l">were a victim of discrimination in the past 12 months, the highest since 2019</div></div>
+    <div class="kpi"><div class="v">33%</div><div class="l">of those cited race as a type, up from 27% in 2022</div></div>
+    <div class="kpi"><div class="v">75%</div><div class="l">of discrimination came from individuals with authority over the person</div></div>
+    <div class="kpi"><div class="v">11%</div><div class="l">of race-discrimination victims are satisfied with how racism complaints are resolved</div></div>
+  </div>
+  <div id="psesList"></div>
+  <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px">Values are the published affirmative or yes percentages; rows marked with an asterisk are sums of published response categories, so rounding applies. Questions 44a to 44e use a new positive and negative calculation introduced in 2024 and are not comparable with earlier cycles. "Of those" rows are asked only of people who reported the experience. Source: 2024 PSES results by question for the public service, TBS and Statistics Canada, retrieved June 11, 2026.</p>
+</section>
+
+<!-- ================= EXECUTIVES ================= -->
+<section class="view" id="view-ex">
+  <h2>Executives and leadership</h2>
+  <p class="lede">Representation in the EX and Law Management groups, 7,926 people. All four designated groups now exceed executive availability, yet the comparison that matters for barriers is each group's executive share against its own workforce share.</p>
+  <div class="card"><h3>Workforce vs. executive representation</h3><div id="exBars"></div></div>
+  <div class="card">
+    <h3>By executive level</h3>
+    <p class="howto">Representation concentrated at EX-01, the entry level, with thinner shares above, suggests progress at the door but barriers on the way up.</p>
+    <div class="tblwrap"><table id="exLevelTable"><caption>Representation by executive level, March 31, 2025. "supp." = suppressed.</caption><thead><tr><th scope="col">Group</th><th scope="col" class="num">EX-01</th><th scope="col" class="num">EX-02</th><th scope="col" class="num">EX-03</th><th scope="col" class="num">EX-04</th><th scope="col" class="num">EX-05</th><th scope="col" class="num">All EX</th></tr></thead><tbody></tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Executive hires, promotions and separations, 2024-25</h3>
+    <div class="tblwrap"><table id="exFlowTable"><caption>Movements in the executive group, fiscal year 2024-25.</caption><thead><tr><th scope="col">Group</th><th scope="col" class="num">EX hires (of 77)</th><th scope="col" class="num">EX promotions (of 943)</th><th scope="col" class="num">EX separations (of 417)</th></tr></thead><tbody></tbody></table></div>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-top:10px">Of 77 external hires into the executive group in 2024-25, zero were Black employees. The Canadian Human Rights Commission's 2024 horizontal audit found racialized people, particularly in management, still face significant barriers in recruitment strategies, selection processes, hiring decisions, career development and workplace culture.</p>
+  </div>
+</section>
+
+<!-- ================= PROFILE ================= -->
+<section class="view" id="view-profile">
+  <h2>Where and how people work</h2>
+  <p class="lede">Representation by region, occupational group and official language. Occupation and region mix drive much of the difference between departments, so this is the context layer for everything else in the tool.</p>
+  <div class="card">
+    <h3>By province and territory of work</h3>
+    <div class="tblwrap"><table id="regionTable"><caption>Representation by region of work, March 31, 2025. NCR = National Capital Region. Black shares from the Demographic Snapshot; "supp." = suppressed.</caption><thead><tr><th scope="col">Region</th><th scope="col" class="num">Employees</th><th scope="col" class="num">Women</th><th scope="col" class="num">Indigenous Peoples</th><th scope="col" class="num">Persons w/ disabilities</th><th scope="col" class="num">Racialized</th><th scope="col" class="num">Black</th></tr></thead><tbody></tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>By occupational group</h3>
+    <p class="howto">Sortable. Black shares are published for ten groups only; blanks mean not published, not zero. The Ships' Officers jump reflects a Coast Guard data integration fix, not a hiring surge.</p>
+    <div class="tblwrap" style="max-height:520px;overflow-y:auto"><table id="occTable"><caption>Representation by occupational group in force, March 31, 2025 (classification includes acting assignments).</caption><thead></thead><tbody></tbody></table></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>First official language</h3>
+      <p class="howto">48.5% of Black employees report French as their first official language, far above the 30.2% average, which makes equitable access to second-language training a career equity issue, not only a language one.</p>
+      <div id="langBars"></div>
+    </div>
+    <div class="card">
+      <h3>Intersectionality</h3>
+      <p class="howto">People belong to more than one group at once. Shares within each group:</p>
+      <div class="tblwrap"><table id="interTable"><caption>Intersection of designated groups, March 31, 2025.</caption><thead><tr><th scope="col">Of employees who are...</th><th scope="col" class="num">Women</th><th scope="col" class="num">Indigenous</th><th scope="col" class="num">Disability</th><th scope="col" class="num">Racialized</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Age profile: the renewal pipeline</h3>
+      <p class="howto">A group with a younger profile is growing through hiring; an older profile signals coming retirements and a succession question. The racialized workforce is the youngest, persons with disabilities and Indigenous Peoples the oldest.</p>
+      <div class="tblwrap"><table><caption>Share of each group by age, March 31, 2025. All-employee values computed from published counts.</caption><thead><tr><th scope="col">Group</th><th scope="col" class="num">Aged 20 to 29</th><th scope="col" class="num">Aged 50 to 69</th></tr></thead><tbody id="ageBody"></tbody></table></div>
+    </div>
+    <div class="card">
+      <h3>By occupational category</h3>
+      <p class="howto">The six broad categories. Women hold 74% of administrative support roles but 30% of technical and operational ones; the category mix explains much of the salary picture.</p>
+      <div class="tblwrap"><table><caption>Representation by occupational category, March 31, 2025.</caption><thead><tr><th scope="col">Category</th><th scope="col" class="num">Employees</th><th scope="col" class="num">Women</th><th scope="col" class="num">Indigenous</th><th scope="col" class="num">Disabilities</th><th scope="col" class="num">Racialized</th></tr></thead><tbody id="catBody"></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OMBUDS VALUE ================= -->
+<section class="view" id="view-ombuds">
+  <h2>The value of an ombuds office, in data</h2>
+  <p class="lede">An ombuds office is an independent, impartial, confidential and informal channel for resolving workplace problems. The case for one is usually argued with values; this page argues it with the numbers already in this site. The 2024 survey shows, in the public service's own words, where the formal system loses people, and that loss is exactly the space an ombuds fills.</p>
+  <div class="card">
+    <h3>The formal-system gap, measured</h3>
+    <p class="howto">Every figure below is a verified 2024 PSES public-service-wide result from the Employee survey section. Read them as one sequence: people experience harm, mostly from those with power over them, then do not use the formal system because they fear it or do not believe in it.</p>
+    <div class="tblwrap"><table><caption>The escalation funnel the formal system loses. Source: 2024 PSES, public service wide.</caption>
+    <thead><tr><th scope="col">Stage</th><th scope="col">What the data says</th><th scope="col" class="num">2024</th><th scope="col">Why an ombuds matters here</th></tr></thead>
+    <tbody>
+    <tr><td>Harm occurs</td><td>Victim of harassment (12%) or discrimination (9%) in the past 12 months</td><td class="num">~1 in 9</td><td>Demand exists in every organization, every year</td></tr>
+    <tr><td>Power asymmetry</td><td>Discrimination came from individuals with authority</td><td class="num">75%</td><td>People will not raise issues through a chain of command that contains the problem; an ombuds sits outside it</td></tr>
+    <tr><td>Silence</td><td>Discrimination victims who took no action at all</td><td class="num">53%</td><td>Unraised issues do not disappear; they convert into disengagement, sick leave and exits</td></tr>
+    <tr><td>Fear</td><td>Did not file because they feared reprisal (harassment 47%, discrimination 45%)</td><td class="num">~46%</td><td>Confidentiality is the ombuds feature that directly neutralizes reprisal fear</td></tr>
+    <tr><td>Futility</td><td>Did not file because they believed it would change nothing (harassment 57%, discrimination 65%)</td><td class="num">57-65%</td><td>An informal channel with visible outcomes rebuilds the belief that raising issues works</td></tr>
+    <tr><td>Recourse distrust</td><td>Feel they could start a formal recourse process without fear of reprisal</td><td class="num">51%</td><td>Half the workforce does not trust the front door; an ombuds is the side door</td></tr>
+    <tr><td>Accountability failure</td><td>Race-discrimination victims satisfied with how racism complaints are resolved</td><td class="num">11%</td><td>The strongest single argument that the current resolution machinery is not working for racialized employees</td></tr>
+    <tr><td>Systemic blindness</td><td>Call to Action seen as having had a positive impact (36% answered don't know)</td><td class="num">43%</td><td>Ombuds annual reporting on patterns and trends is one of the few mechanisms that surfaces systemic issues upward without identifying individuals</td></tr>
+    </tbody></table></div>
+    <p style="font-size:13.5px;max-width:920px;margin-top:10px">The statutory anchor: section 207 of the Federal Public Sector Labour Relations Act requires every deputy head to establish an informal conflict management system in consultation with bargaining agents. An ombuds office is the most developed form of that obligation. The pattern data an ombuds aggregates also feeds the Employment Equity Act section 5 duty to identify and eliminate barriers, and hazard prevention obligations under Canada Labour Code Part II.</p>
+  </div>
+  <div class="card">
+    <h3>Build the financial case: an interactive calculator</h3>
+    <p class="howto">No invented costs here. Enter your own organization's figures; the starting values are illustrative placeholders only and are not data. The model uses two conservative, direct mechanisms: time recovered from unresolved conflict, and the cost differential when matters resolve informally instead of formally. Indirect effects (turnover avoided, sick leave, legal exposure) are deliberately excluded so the result survives scrutiny.</p>
+    <div class="grid2">
+      <div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_emp">Employees in the organization</label><input type="number" id="c_emp" value="5000" min="50" step="50" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_sal">Average fully loaded annual salary ($)</label><input type="number" id="c_sal" value="110000" min="40000" step="5000" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_pct">Share of employees in unresolved conflict per year (%)</label><input type="number" id="c_pct" value="10" min="0" max="100" step="1" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_hrs">Productive hours lost per affected employee per year</label><input type="number" id="c_hrs" value="40" min="0" step="5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_rec">Share of that lost time an early-resolution channel recovers (%)</label><input type="number" id="c_rec" value="25" min="0" max="100" step="5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+      </div>
+      <div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_grv">Formal grievances and complaints per year</label><input type="number" id="c_grv" value="60" min="0" step="5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_gcost">Average internal cost per formal case ($)</label><input type="number" id="c_gcost" value="15000" min="0" step="1000" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_icost">Average cost per informal resolution ($)</label><input type="number" id="c_icost" value="1500" min="0" step="250" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_div">Share of formal cases divertible to informal resolution (%)</label><input type="number" id="c_div" value="30" min="0" max="100" step="5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_off">Annual cost of the ombuds office ($)</label><input type="number" id="c_off" value="600000" min="0" step="50000" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+      </div>
+    </div>
+    <div class="kpis" id="ombKpis"></div>
+    <p id="ombFormula" style="font-size:12.5px;color:var(--ink-soft);font-family:var(--mono)"></p>
+    <p style="font-size:13px;color:var(--ink-soft)">Every assumption is visible and editable, which is the point: bring your organization's grievance counts, your ICMS intake data and your own salary mix, and the model becomes evidence rather than estimate.</p>
+  </div>
+  <div class="card">
+    <h3>Compare an organization with an ombuds to one without</h3>
+    <p class="howto">Pick any two organizations. The representation data fills in automatically from this site; for the trust and resolution measures, open each organization's <a href="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index" target="_blank" rel="noopener">2024 PSES results page</a> and type in five numbers per organization (the question numbers are given). Mark which one has an ombuds office and the tool writes the comparison. One pair proves nothing on its own, occupational mix and history differ, but a consistent pattern across several pairs is exactly the kind of evidence a business case can stand on.</p>
+    <div class="grid2">
+      <div>
+        <div class="ctl" style="margin-bottom:8px"><label for="obA">Organization A</label><select id="obA"></select></div>
+        <label style="font-size:13px"><input type="checkbox" id="obAhas" aria-label="First organization has an ombuds office"> Organization A has an ombuds office</label>
+      </div>
+      <div>
+        <div class="ctl" style="margin-bottom:8px"><label for="obB">Organization B</label><select id="obB"></select></div>
+        <label style="font-size:13px"><input type="checkbox" id="obBhas" aria-label="Second organization has an ombuds office"> Organization B has an ombuds office</label>
+      </div>
+    </div>
+    <div class="tblwrap" style="margin-top:14px"><table><caption>Side by side. Blue cells: enter each organization's 2024 PSES value from its results page.</caption>
+    <thead><tr><th scope="col">Measure</th><th scope="col" class="num" id="obAh">Organization A</th><th scope="col" class="num" id="obBh">Organization B</th><th scope="col" class="num">PS-wide 2024</th></tr></thead>
+    <tbody id="obAuto"></tbody>
+    <tbody>
+      <tr><td>Q42: could start formal recourse without fear of reprisal (positive %)</td><td class="num"><input class="obin" data-q="q42" data-o="A" type="number" min="0" max="100" style="width:70px"></td><td class="num"><input class="obin" data-q="q42" data-o="B" type="number" min="0" max="100" style="width:70px"></td><td class="num">51</td></tr>
+      <tr><td>Q58: victim of harassment, past 12 months (%)</td><td class="num"><input class="obin" data-q="q58" data-o="A" type="number" min="0" max="100" style="width:70px"></td><td class="num"><input class="obin" data-q="q58" data-o="B" type="number" min="0" max="100" style="width:70px"></td><td class="num">12</td></tr>
+      <tr><td>Q63: satisfied with how harassment matters are resolved (positive %)</td><td class="num"><input class="obin" data-q="q63" data-o="A" type="number" min="0" max="100" style="width:70px"></td><td class="num"><input class="obin" data-q="q63" data-o="B" type="number" min="0" max="100" style="width:70px"></td><td class="num">50</td></tr>
+      <tr><td>Q65: victim of discrimination, past 12 months (%)</td><td class="num"><input class="obin" data-q="q65" data-o="A" type="number" min="0" max="100" style="width:70px"></td><td class="num"><input class="obin" data-q="q65" data-o="B" type="number" min="0" max="100" style="width:70px"></td><td class="num">9</td></tr>
+      <tr><td>Q70: satisfied with how discrimination matters are resolved (positive %)</td><td class="num"><input class="obin" data-q="q70" data-o="A" type="number" min="0" max="100" style="width:70px"></td><td class="num"><input class="obin" data-q="q70" data-o="B" type="number" min="0" max="100" style="width:70px"></td><td class="num">52</td></tr>
+    </tbody></table></div>
+    <label for="obText" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block;margin-top:14px">Generated comparison</label>
+    <textarea id="obText" rows="6" style="width:100%;font:13px/1.5 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:10px;margin-top:6px" readonly></textarea>
+  </div>
+</section>
+
+<!-- ================= LINKAGES LAB ================= -->
+<section class="view" id="view-linkages">
+  <h2>Linkages lab: find barriers you did not know about</h2>
+  <p class="lede">Single datasets show gaps; barriers live in the connections between them. This page joins the datasets already in this site so patterns surface that none of them shows alone, and gives you two instruments: a relationship explorer over all 72 organizations, and a signal builder that turns thresholds into a ready-to-paste finding.</p>
+  <div class="card">
+    <h3>Six linkages hiding in plain sight</h3>
+    <div class="tblwrap"><table><caption>Each linkage joins two or more verified datasets from this site. These are hypotheses to investigate, framed in plain language, with the data trail stated.</caption>
+    <thead><tr><th scope="col">Linkage</th><th scope="col">The data trail (all verified, in this site)</th><th scope="col">The barrier hypothesis</th></tr></thead><tbody>
+    <tr><td><strong>The language ladder</strong></td><td>48.5% of Black employees have French as their first official language (vs 30.2% average). 34% say lack of access to second-language training hurt their career. Executive positions are overwhelmingly bilingual-imperative.</td><td>Access to language training functions as a hidden promotion gate, and it gates Black francophone employees hardest. Test: compare language-training allocation by EE group in your organization.</td></tr>
+    <tr><td><strong>The disability triple bind</strong></td><td>The only group below availability (9.0% vs 12.0%). Accommodation implementation fell from 81% to 71% while requests rose by half. Disability discrimination as a cited type jumped from 19% to 26%, the fastest of any ground. Separation share rose from 6.6% to 8.7%.</td><td>Recruitment, accommodation and retention are failing simultaneously; fixing only hiring will fill a leaking bucket. Test: track accommodation request-to-implementation time alongside separations.</td></tr>
+    <tr><td><strong>The untracked acting pipeline</strong></td><td>Public-service-wide promotion shares now meet or exceed workforce shares for all four groups, yet belief in promotion fell to 51% and 25% report discrimination harmed their career. Acting appointments, the main feeder to promotion, are the one staffing flow not in any TBS table; only the PSC dashboard reports them, and the National Joint Council's equity committee flagged them for consultation.</td><td>The promotion barrier has likely moved upstream into who gets acting opportunities and at what level promotions happen. Test: pull acting shares by group and subgroup from the PSC dashboard for your organization.</td></tr>
+    <tr><td><strong>Geography shapes everything</strong></td><td>Racialized representation runs from 5.1% in PEI to 31.1% in BC; Indigenous representation from 2.8% in Quebec to 53.0% in Nunavut; Black representation is 6.7% in Quebec but 1.1% in BC. Departments concentrate in different regions.</td><td>Comparing organizations without their regional and occupational mix penalizes the wrong ones and excuses the wrong ones; insist on each organization's own WFA, not the national line. The explorer below makes the mix visible.</td></tr>
+    <tr><td><strong>The occupational segregation engine</strong></td><td>Women are 74.0% of administrative support but 21.7% of operational services and 7.2% of electronics. Racialized employees are 37.8% of comptrollership but 8.2% of operational services. The salary section shows the result: pay gaps emerge with no within-band discrimination at all.</td><td>Classification and occupational streaming is the quiet machine behind the salary distribution. Test: track movement between categories, not just within them, and audit who enters feeder classifications.</td></tr>
+    <tr><td><strong>Trust collapse corrupts the data itself</strong></td><td>Self-identification is voluntary. Feeling safe to speak about racism fell 5 points; recourse trust fell to 51%; survey response was 50.5%.</td><td>When trust falls, self-ID and survey participation fall with it, so the data understates problems exactly where they are worst. Equity data quality is itself an outcome measure. Test: monitor self-ID completion rates as a trust indicator.</td></tr>
+    <tr><td><strong>The assessment machine</strong></td><td>PSC recruitment audit: automated screening cost no group representation; human stages did. Written tests (organization-built, open-ended, subjectively scored) cut racialized and especially Black candidates; interviews drove the entire Indigenous drop; reference checks helped only women; the appointment decision itself cut persons with disabilities. 88% of candidates with disabilities never requested assessment accommodation.</td><td>The barrier is not "hiring" in general, it is specific tools at specific stages, which means it is fixable tool by tool: structured scoring guides, diverse boards (only 12% of organizations required one EE member), and proactive accommodation offers. Test: inventory which assessment tools your organization used in its last 20 processes.</td></tr>
+    <tr><td><strong>The review that finds nothing</strong></td><td>50% of audited organizations had done an employment system review in the prior 3 to 5 years; 62% of those concluded they had no systemic recruitment barriers, in the same period the PSC's own audit was documenting stage-by-stage losses for three of four groups.</td><td>Self-assessment is not detection. Employment system reviews built and graded by the system being reviewed will keep returning clean results; pair every ESR with external data like this site, the PSC dashboards and disaggregated PSES results. Test: compare your last ESR's conclusions against your organization's rows here.</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Relationship explorer</h3>
+    <p class="howto">Plot any two measures across all 72 organizations. Each dot is one organization; r is the correlation. Strong patterns are leads, not verdicts: investigate the outliers especially, because an organization far off the trend line is doing something different, for better or worse.</p>
+    <div class="controls">
+      <div class="ctl"><label for="sx">Horizontal axis</label><select id="sx"></select></div>
+      <div class="ctl"><label for="sy">Vertical axis</label><select id="sy"></select></div>
+    </div>
+    <div id="scatter"></div>
+    <p id="scatterNote" style="font-size:13px;color:var(--ink-soft)"></p>
+  </div>
+  <div class="card">
+    <h3>Signal builder: turn a threshold into a finding</h3>
+    <p class="howto">Pick a group and how far below the public-service availability counts as a flag. The builder lists every organization that trips it and writes a plain-language summary you can paste into a briefing note. Remember the caveat it includes: departmental availability differs, so these are screening signals.</p>
+    <div class="controls">
+      <div class="ctl"><label for="sgGroup">Group</label><select id="sgGroup"></select></div>
+      <div class="ctl"><label for="sgThr">Flag when representation is at least this many points below PS availability</label><input type="number" id="sgThr" value="1.0" min="0" step="0.5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:120px"></div>
+    </div>
+    <div id="sgOut"></div>
+    <label for="sgText" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)">Ready-to-paste summary</label>
+    <textarea id="sgText" rows="6" style="width:100%;font:13px/1.5 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:10px;margin-top:6px" readonly></textarea>
+  </div>
+</section>
+
+<!-- ================= DATA FILES ================= -->
+<section class="view" id="view-files">
+  <h2>Data files: where every dataset actually lives</h2>
+  <p class="lede">The dashboards are windows; these are the warehouses. The PSC dashboard runs on the <strong>Treasury Board Employment Equity Data Bank (EEDB)</strong> matched against the <strong>PSC hiring and staffing activities files</strong>, and the machine-readable releases sit on the Open Government portal and canada.ca. Every file family is mapped below with direct locations, and the importer at the bottom lets this site read the official CSVs itself, in your browser, with nothing uploaded anywhere.</p>
+  <div class="card">
+    <h3>The complete file map</h3>
+    <div class="tblwrap"><table><caption>Machine-readable releases by family. Direct file links open or download the official files; portal pages list every file in the family.</caption>
+    <thead><tr><th scope="col">Family</th><th scope="col">What is in the files</th><th scope="col">Where the files live</th></tr></thead><tbody>
+    <tr><td><strong>PSES 2024 open data</strong></td><td>Four CSV subsets: by organization; by demographic group for the public service (every EE group and subgroup, every question); by organization x demographic; by organizational unit. Plus historical cycles.</td><td><a href="https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv">Subset 1 (by organization)</a> &middot; <a href="https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-2-sous-ensemble-2.csv">Subset 2 (by demographic)</a> &middot; <a href="https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-3-sous-ensemble-3.csv">Subset 3 (org x demographic)</a> &middot; <a href="https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-4-sous-ensemble-4.csv">Subset 4 (org units)</a> &middot; <a href="https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f" target="_blank" rel="noopener">portal page</a></td></tr>
+    <tr><td><strong>PSES 2024 published tables</strong></td><td>Static results-by-question pages for the public service and each of 93 organizations, plus demographic pages per self-ID question (e.g. results split by the Indigenous identity question, Q113).</td><td><a href="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index" target="_blank" rel="noopener">Results by question, organization index</a></td></tr>
+    <tr><td><strong>SNPS open data (2025, 2023, 2018)</strong></td><td>Staffing-fairness survey results as CSVs: by department, and by department crossed with each EE group, first official language, region, occupational group, age, tenure. Results suppressed under 20 respondents. The 2025 cycle (released April 2026) adds questions on AI in staffing and non-advertised appointments.</td><td><a href="https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22" target="_blank" rel="noopener">2025 portal page</a> &middot; <a href="https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039" target="_blank" rel="noopener">2023 portal page</a> &middot; example direct files: <a href="https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/15f9967d-608d-41b2-bced-8d7e61a6d53f/download/cfppsc_snps01.csv">2023 by department</a>, <a href="https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/download/cfppsc_snps02.csv">2023 by department x women</a></td></tr>
+    <tr><td><strong>PSC staffing activity files</strong></td><td>The dashboard feedstock: hiring activities (indeterminate, term, casual, student), applicant data from the Public Service Resourcing System, and PSEA population files. Combined with the TBS EEDB these generate the applicants, hires, employees, promotions and acting figures by EE group and subgroup.</td><td><a href="https://open.canada.ca/data/organization/psc-cfp" target="_blank" rel="noopener">PSC datasets on the Open Government portal</a> &middot; <a href="https://www.canada.ca/en/public-service-commission/services/publications/staffing-dashboard.html" target="_blank" rel="noopener">Staffing dashboard open-data documentation</a></td></tr>
+    <tr><td><strong>PSC analytical studies</strong></td><td>Representation in Acting Appointments (acting of 4+ months by EE group); Employment Equity Promotion Rate Study, five-year update; Non-advertised Appointments by EE Group; Citizenship of Applicants; staffing trends in EX-03 to EX-05 including EE in senior-executive feeder groups.</td><td><a href="https://open.canada.ca/data/organization/psc-cfp" target="_blank" rel="noopener">PSC open information shelf</a></td></tr>
+    <tr><td><strong>TBS employment equity tables</strong></td><td>The annual report and Demographic Snapshot statistical tables: representation by organization, subgroup, salary band, occupation, region, age, language, hires, promotions, separations. The full 2024-25 tables are already embedded across this site.</td><td><a href="https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html" target="_blank" rel="noopener">TBS diversity and inclusion statistics hub</a></td></tr>
+    <tr><td><strong>Employment Equity Data Bank (EEDB)</strong></td><td>The upstream administrative source itself: TBS's self-identification database, matched to pay and staffing files. Not directly downloadable; reaches the public through the TBS tables and PSC dashboard above, and through internal requests, which is what the Take action page's request generator is for.</td><td>Internal to TBS-OCHRO; cite it by name when requesting data</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Load the official files into this site</h3>
+    <p class="howto">Download any CSV above, then open it here. Everything runs inside your browser; no data leaves your device. The importer auto-detects the standard PSES and SNPS column layouts (organization, question, demographic code, positive, negative, respondent count) and lets you filter. Use the supporting documentation on each portal page for the demographic code book.</p>
+    <div class="controls">
+      <div class="ctl"><label for="csvFile">Open a downloaded CSV</label><input type="file" id="csvFile" accept=".csv,text/csv" style="font:13px/1.3 inherit"></div>
+      <div class="ctl"><label for="fQ">Filter: question contains</label><input type="search" id="fQ" placeholder="e.g. Q65 or 65" style="min-width:140px"></div>
+      <div class="ctl"><label for="fD">Filter: org code or name contains</label><input type="search" id="fD" placeholder="e.g. part of a department name" style="min-width:140px"></div>
+      <div class="ctl"><label for="fG">Filter: demographic code contains</label><input type="search" id="fG" placeholder="e.g. 2024" style="min-width:140px"></div>
+    </div>
+    <div id="csvStatus" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:10px">No file loaded yet.</div>
+    <div class="tblwrap" style="max-height:480px;overflow-y:auto"><table id="csvTable"><caption>Preview of the CSV you imported below. Columns are detected automatically; rows update as you filter.</caption><thead></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<!-- ================= TAKE ACTION ================= -->
+<section class="view" id="view-action">
+  <h2>Take action: calendar, legal hooks, and the request that gets the data</h2>
+  <p class="lede">Data becomes accountability when it arrives on schedule, attaches to an obligation, and gets asked for in writing. This page is the operating rhythm: what lands when, which legal instrument each dataset serves, and a generator that writes the formal internal data request for the things no portal publishes.</p>
+  <div class="card">
+    <h3>The accountability calendar</h3>
+    <div class="tblwrap"><table><caption>Release rhythm of every dataset family, and the question to ask the day each one lands.</caption>
+    <thead><tr><th scope="col">Dataset</th><th scope="col">Cadence</th><th scope="col">The question to ask on arrival</th></tr></thead><tbody>
+    <tr><td>PSES results and open data</td><td>Annual cycle (2024 fielded Oct to Dec, results the following spring)</td><td>Did discrimination, racism-safety and recourse-trust questions move, overall and for each demographic group, in my organization vs the public service?</td></tr>
+    <tr><td>TBS EE Annual Report + Demographic Snapshot</td><td>Annual (2024-25 edition published March 2026)</td><td>Did my organization's representation, hires, promotions and separations move in the right direction for each group AND subgroup, and did the EX gap narrow?</td></tr>
+    <tr><td>SNPS open data</td><td>Biennial (2023, then 2025 released April 2026)</td><td>Do EE group members in my organization perceive staffing as fair, and how does that compare with the hard promotion and acting ratios?</td></tr>
+    <tr><td>PSC dashboards (EE by organization, staffing)</td><td>Updated periodically through the year</td><td>What are this year's acting appointment shares by subgroup, the one number no annual report prints?</td></tr>
+    <tr><td>Workforce availability estimates</td><td>Census era (current: 2021 Census + 2022 CSD; next rebase after the 2026 Census)</td><td>When the benchmark jumps, which organizations that looked on track no longer are, and is anyone pretending the old benchmark still applies?</td></tr>
+    <tr><td>Executive population statistics</td><td>Annual</td><td>Is EX-level progress happening above EX-01, or only at the entry door?</td></tr>
+    <tr><td>CHRC employment equity audits</td><td>Periodic horizontal audits</td><td>Which of the audit's findings describe my organization, and what is the documented management response?</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Legal hook map: which obligation each dataset evidences</h3>
+    <div class="tblwrap"><table><caption>The instruments that turn gaps into duties.</caption>
+    <thead><tr><th scope="col">Instrument</th><th scope="col">The obligation</th><th scope="col">The evidence in this site</th></tr></thead><tbody>
+    <tr><td>Employment Equity Act, s.5</td><td>Identify and eliminate employment barriers; implement positive policies; reasonable accommodation</td><td>Representation gaps, the recruitment funnel, promotion and acting ratios, salary disproportionality</td></tr>
+    <tr><td>Employment Equity Act, s.21</td><td>Annual reporting to Parliament through Treasury Board</td><td>The embedded annual report tables; separate agencies report individually</td></tr>
+    <tr><td>Public Service Employment Act, s.36(2) (2023 amendment)</td><td>Hiring managers must evaluate assessment methods for bias and barriers and make reasonable efforts to remove or mitigate them</td><td>The recruitment audit's stage-by-stage tool findings: written tests, interviews, reference checks</td></tr>
+    <tr><td>Canadian Human Rights Act, s.7 and s.10</td><td>No discriminatory practices or policies in employment, including systemic ones</td><td>PSES discrimination results by ground; the 11% resolution-satisfaction figure for racism complaints</td></tr>
+    <tr><td>Canada Labour Code, Part II</td><td>Hazard prevention, including psychological hazards, with employer duty to investigate and prevent</td><td>Harassment and discrimination prevalence, psychological-health scores, the accommodation implementation slide</td></tr>
+    <tr><td>FPSLRA, s.207</td><td>Every deputy head must establish an informal conflict management system</td><td>The whole Ombuds value page: the recourse-fear and futility numbers are the gap an ICMS exists to close</td></tr>
+    <tr><td>Accessible Canada Act</td><td>Identify, remove and prevent accessibility barriers; published accessibility plans</td><td>Disability funnel collapse (4.4% to 2.4%), accommodation request and implementation trends</td></tr>
+    <tr><td>Clerk's Call to Action (2021)</td><td>Appoint, sponsor and recruit equity-seeking employees; measurable commitments by deputy heads</td><td>Black EX representation, subgroup trends, and the PSES question on whether the Call has had any visible impact (43%)</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Data request generator</h3>
+    <p class="howto">The most important barrier data is internal: acting by subgroup and duration, language training allocation, accommodation timelines, self-ID completion. Pick what you need and this writes the formal request, citing the right instruments and the right source systems by name, with suppression and format requirements built in.</p>
+    <div class="controls">
+      <div class="ctl"><label for="rqOrg">Organization</label><input type="search" id="rqOrg" value="" placeholder="e.g. your organization's name" style="min-width:260px"></div>
+      <div class="ctl"><label for="rqFrom">Requesting body</label><input type="search" id="rqFrom" value="" placeholder="e.g. your network, committee, or office" style="min-width:260px"></div>
+    </div>
+    <div id="rqItems" style="font-size:13.5px;columns:2;column-gap:28px;margin:8px 0 14px"></div>
+    <label for="rqText" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)">Generated request</label>
+    <textarea id="rqText" rows="14" style="width:100%;font:13px/1.5 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:10px;margin-top:6px" readonly></textarea>
+  </div>
+</section>
+
+<!-- ================= SALARY DI TRACKER ================= -->
+<section class="view" id="view-di">
+  <h2>Salary Disproportionality Index tracker (2017&ndash;2024)</h2>
+  <p class="lede">The Disproportionality Index (DI) asks a simple question: within a given salary range, is a group present at the rate you would expect? A DI of <strong>1.0</strong> means a group sits in that salary range at exactly the same rate as all employees. <strong>Above 1.0</strong> means overrepresented in that range; <strong>below 1.0</strong> means underrepresented. The telltale sign of blocked pay progression is a group stacking up above 1.0 in the lowest ranges and dropping below 1.0 in the highest. These are the published figures from the independent Employment Equity / Disproportionality Index project, which derives them from TBS Diversity and Inclusion statistics.</p>
+  <div class="howto">DI for a group in a salary range = (that group's % in the range) &divide; (all employees' % in the same range). Example from the source: in 2024, 34.78% of Black employees but 23.87% of all employees earned in the lowest range, giving a DI of 34.78 &divide; 23.87 = 1.46. Salary ranges shift year to year because they track the median; the source re-bins each year, which is why the band labels below change with the year you pick.</div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v" id="diKpiBlackLow">&mdash;</div><div class="l">Black employees' DI in the lowest salary range (selected year)</div></div>
+    <div class="kpi"><div class="v" id="diKpiBlackHigh">&mdash;</div><div class="l">Black employees' DI in the highest salary range (selected year)</div></div>
+    <div class="kpi"><div class="v" id="diKpiGap">&mdash;</div><div class="l">Black vs all-employee median salary gap (selected year)</div></div>
+  </div>
+
+  <div class="card">
+    <h3>Disproportionality by salary range</h3>
+    <div class="chips" id="diYearChips" role="group" aria-label="Choose a year"></div>
+    <div id="diBars"></div>
+    <div class="legend"><span style="--c:#1B2A41">Black employees</span><span style="--c:#B3401E">All visible minority</span><span style="--c:#8A6D1D">Indigenous</span><span style="--c:#5B6B7F">Persons with disabilities</span><span style="--c:#9aa8b8">Non-visible-minority (baseline)</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Full DI table, selected year</h3>
+    <p class="howto">Every group, every salary range, percent and DI side by side. Bold red marks DI at or below 0.85 (notably underrepresented) in the upper ranges or at or above 1.15 (notably overrepresented) in the lower ranges, the two signatures of compression.</p>
+    <div class="tblwrap"><table id="diTable2"><caption id="diTableCap"></caption><thead></thead><tbody></tbody></table></div>
+  </div>
+
+  <div class="card">
+    <h3>Median salary by group, 2017&ndash;2024</h3>
+    <p class="howto">The DI is built on these medians. The dollar gap between the all-employee line and each group line is the bottom line of pay equity. Black employees' median has trailed the overall median every year and the dollar gap has widened, not closed.</p>
+    <div id="diMedianChart"></div>
+    <div class="legend"><span style="--c:#44546A">All employees</span><span style="--c:#1B2A41">Black</span><span style="--c:#B3401E">Visible minority</span><span style="--c:#8A6D1D">Indigenous</span><span style="--c:#5B6B7F">Persons with disabilities</span></div>
+  </div>
+
+  <div class="card">
+    <h3>The widening gap, in dollars</h3>
+    <p class="howto">All-employee median minus each group's median, by year. Rising bars mean the pay gap is growing in absolute dollars even when representation counts improve, the distinction between getting in the door and getting paid equally.</p>
+    <div id="diGapChart"></div>
+  </div>
+
+  <div class="card">
+    <h3>Black vs non-racialized DI disparity over time</h3>
+    <p class="howto">This is the source project's headline measure: in each salary range, the DI of non-visible-minority employees minus the DI of Black employees. Bars above zero in low ranges and below zero in high ranges show Black employees concentrated low and absent high, persistently across eight years.</p>
+    <div id="diDisparityChart"></div>
+    <div class="legend" id="diDispLegend"></div>
+  </div>
+  <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px">Source: Employment Equity / Disproportionality Index project (employment-equity.github.io), published figures 2017&ndash;2024, last updated June 4, 2025; derived from TBS Diversity and Inclusion statistics. Median salaries estimated by the project using the standard grouped-median formula and rounded to the nearest $50. This section reproduces the project's published values; it is independent analysis, not a Government of Canada product.</p>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section class="view" id="view-sources">
+  <h2>Data sources</h2>
+  <p class="lede">The complete inventory from the <a href="https://wiki.gccollab.ca/Data_equity-equite_des_donnees" target="_blank" rel="noopener">GCwiki Data Equity page</a>. Green-edged cards are embedded in this site; teal-edged cards are interactive dashboards to open directly. Every card says what to use it for in one sentence.</p>
+  <div class="grid2" id="srcList"></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="view" id="view-about">
+  <h2>About the data, in plain language</h2>
+  <div class="card">
+    <h3>Definitions you need</h3>
+    <dl class="two-col">
+      <dt>Core public administration (CPA)</dt><dd>The 72 organizations where Treasury Board is the employer. Separate agencies such as CRA, CFIA, NRC and Parks Canada have their own reports.</dd>
+      <dt>Workforce availability (WFA)</dt><dd>The estimated share of each designated group in the Canadian workforce who could be recruited into public service jobs, based on the 2021 Census and 2022 Canadian Survey on Disability. It is the legal benchmark under the Employment Equity Act, and TBS itself calls it a starting point, not a ceiling.</dd>
+      <dt>Representation</dt><dd>The share of employees who have voluntarily self-identified with a group. Because self-identification is voluntary, true numbers may be higher than reported.</dd>
+      <dt>Designated groups</dt><dd>Women, Indigenous Peoples, persons with disabilities, and members of visible minorities (racialized employees), as set in the Employment Equity Act. Black employees are reported separately as a subgroup since 2022 in response to the Clerk's Call to Action; there is no WFA for Black employees because the Act does not designate the subgroup.</dd>
+      <dt>Suppression</dt><dd>Counts of 1 to 5 people are hidden in published tables to protect privacy, shown here as "supp." A suppressed cell is not zero.</dd>
+      <dt>Promotion equity ratio</dt><dd>A group's share of promotions divided by its share of the workforce. Below 1.0 means the group receives fewer promotions than its size predicts.</dd>
+      <dt>Disproportionality ratio</dt><dd>A group's share in a salary band divided by all employees' share in the same band. Above 1.0 in low bands and below 1.0 in high bands signals blocked pay progression.</dd>
+      <dt>Acting appointment</dt><dd>Temporarily performing a higher-level job. Acting experience is a common gateway to promotion, which makes equitable access to acting a leading indicator.</dd>
+    </dl>
+  </div>
+  <div class="card">
+    <h3>Honest limits of this tool</h3>
+    <p style="max-width:880px;font-size:14.5px">Every number here was transcribed on June 11, 2026 from tables published by the Treasury Board of Canada Secretariat in the Employment Equity Annual Report 2024-25 and its Demographic Snapshot, plus the TBS representation and WFA series. Six-band salary counts were produced by summing TBS's published detailed bands and verified against published totals; nothing is estimated, interpolated or modelled. Departmental WFA, departmental promotions and acting appointments, applicant data, subgroup-by-department figures and all PSES results exist only inside interactive federal dashboards and are linked, not copied. Departments below the public-service-wide availability line are screening signals: each department has its own WFA reflecting its occupation and region mix, available inside the PSC dashboard. The disability WFA of 12.0% uses the expanded 2017+ survey definition that the current self-identification form does not, so part of that gap reflects measurement, and TBS expects the modernized self-ID questionnaire to close much of it. Separations include retirements. Legal anchors for action: Employment Equity Act s.5 (duty to identify and eliminate barriers), Canadian Human Rights Act, the Clerk's Call to Action, and the CHRC's 2024 horizontal audit of racialized employment.</p>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">Built from public Government of Canada data. Sources: TBS Employment Equity Annual Report 2024-25 and Demographic Snapshot 2024-2025 (published March 2026); TBS representation and workforce availability series; 2024 Public Service Employee Survey results by question (TBS and Statistics Canada); PSC recruitment and staffing audits; GCwiki Data Equity inventory. Representation figures as of March 31, 2025; PSES fielded October 28 to December 31, 2024. All values retrieved June 11, 2026. This is an independent analytical tool, not a Government of Canada publication.</div></footer>
+
+<script>
+/* ===================== DATA (all transcribed from published TBS tables) ===================== */
+const WFA={w:54.9,i:4.0,d:12.0,v:22.7};
+const LMA={w:48.3,i:4.3,d:12.6,v:24.9};
+const CPA={n:266935,w:56.8,i:5.5,d:9.0,v:23.9,black:5.1};
+const EX={n:7926,w:55.9,i:5.6,d:10.9,v:17.3,black:3.2,wfa:{w:41.8,i:3.9,d:5.3,v:15.6}};
+const GROUPS=[
+ {k:"w",name:"Women",color:"#0E7C7B"},
+ {k:"i",name:"Indigenous Peoples",color:"#8A6D1D"},
+ {k:"d",name:"Persons with disabilities",color:"#5B6B7F"},
+ {k:"v",name:"Racialized (visible minority) employees",color:"#B3401E"},
+];
+const BLACK={name:"Black employees",color:"#1B2A41"};
+// Departments: [name, employees, w%, i%, d%, v%, note]  null = suppressed
+const DEPTS=[
+["Employment and Social Development Canada",38334,67.2,4.2,8.5,31.2,""],
+["National Defence",28241,43.0,3.7,7.3,13.1,"Civilian staff only; Canadian Armed Forces members are not included."],
+["Correctional Service Canada",18660,51.4,10.6,7.4,15.5,""],
+["Public Services and Procurement Canada",18381,60.8,3.9,8.6,21.6,""],
+["Canada Border Services Agency",16235,47.2,4.4,9.4,24.6,""],
+["Fisheries and Oceans Canada",13924,44.7,7.7,11.8,12.4,"Includes the Canadian Coast Guard."],
+["Immigration, Refugees and Citizenship Canada",10974,64.4,2.9,7.9,41.0,""],
+["Royal Canadian Mounted Police (public service employees)",10822,69.8,5.2,5.5,19.9,"Public service employees only; Regular and Civilian members are not included."],
+["Health Canada",9173,64.6,3.1,9.9,34.2,"Statistics affected by the creation of ISC (systems change September 2020)."],
+["Shared Services Canada",8671,34.1,4.0,8.7,24.9,""],
+["Indigenous Services Canada",8389,70.2,26.9,8.9,21.0,"Statistics affected by the creation of ISC (systems change September 2020)."],
+["Environment and Climate Change Canada",8180,54.6,3.7,8.8,22.2,""],
+["Global Affairs Canada",7210,56.9,5.8,6.2,30.2,""],
+["Statistics Canada",6845,52.9,3.4,10.8,29.7,""],
+["Transport Canada",6361,47.1,4.3,9.4,22.6,""],
+["Innovation, Science and Economic Development Canada",6091,51.6,2.8,8.4,30.7,""],
+["Natural Resources Canada",5613,50.1,4.5,11.2,25.2,""],
+["Department of Justice Canada",5556,68.5,4.8,19.5,29.1,""],
+["Agriculture and Agri-Food Canada",5041,53.7,4.7,10.0,21.7,""],
+["Veterans Affairs Canada",3657,73.0,4.6,11.4,11.9,""],
+["Public Health Agency of Canada",3164,70.2,3.4,8.4,29.2,""],
+["Immigration and Refugee Board of Canada",2278,65.1,2.2,7.6,47.6,""],
+["Treasury Board of Canada Secretariat",2271,62.2,4.0,13.2,27.2,""],
+["Canadian Heritage",1814,68.4,6.2,10.9,21.5,""],
+["Crown-Indigenous Relations and Northern Affairs Canada",1808,67.7,18.6,8.8,18.0,"Statistics affected by the creation of ISC (systems change September 2020)."],
+["Public Safety Canada",1628,61.0,5.0,13.6,24.5,""],
+["Housing, Infrastructure and Communities Canada",1552,61.5,3.5,10.8,28.5,""],
+["Elections Canada",1308,55.0,3.0,8.3,28.2,""],
+["Public Prosecution Service of Canada",1136,66.1,7.1,9.2,23.2,""],
+["Privy Council Office",1130,58.1,4.1,9.7,28.0,""],
+["Library and Archives Canada",1108,63.2,4.3,6.2,11.3,""],
+["Department of Finance Canada",946,49.5,2.9,7.9,24.8,""],
+["Canadian Space Agency",900,47.8,2.3,15.6,23.8,""],
+["Courts Administration Service",823,62.7,1.9,8.1,29.4,""],
+["Public Service Commission of Canada",771,66.0,4.0,16.9,23.1,""],
+["Canadian Radio-television and Telecommunications Commission",689,56.6,5.5,11.0,25.3,""],
+["Administrative Tribunals Support Service of Canada",571,66.9,2.6,10.7,25.4,""],
+["Canada School of Public Service",571,66.4,4.7,11.9,24.7,""],
+["Atlantic Canada Opportunities Agency",564,64.5,4.6,15.8,9.9,""],
+["Impact Assessment Agency of Canada",550,66.5,6.7,10.9,23.3,""],
+["Western Economic Diversification Canada (incl. PacifiCan and PrairiesCan)",476,60.7,4.8,9.2,30.7,"Published combined; separate PacifiCan and PrairiesCan statistics not yet available."],
+["Canadian Grain Commission",449,44.3,4.7,5.6,33.0,""],
+["Parole Board of Canada",448,76.1,3.6,10.0,19.4,""],
+["Women and Gender Equality Canada",376,83.5,5.3,13.0,24.5,""],
+["Canada Economic Development for Quebec Regions",362,56.9,null,9.9,22.7,""],
+["Canadian Transportation Agency",335,55.8,3.0,11.3,24.2,""],
+["Offices of the Information and Privacy Commissioners of Canada",333,62.8,5.4,9.6,20.1,""],
+["Canadian Human Rights Commission",264,73.5,2.7,18.9,28.8,""],
+["Federal Economic Development Agency for Southern Ontario",237,61.6,3.8,13.5,30.8,""],
+["Registrar of the Supreme Court of Canada",226,60.2,3.1,11.5,15.5,""],
+["Transportation Safety Board of Canada",216,40.3,3.2,8.3,13.0,""],
+["Office of the Commissioner of Official Languages",159,66.7,null,9.4,13.2,""],
+["Office of the Secretary to the Governor General",140,62.9,null,12.1,17.1,""],
+["Veterans Review and Appeal Board",129,64.3,null,6.2,0.0,""],
+["Canadian Northern Economic Development Agency",113,67.3,27.4,9.7,21.2,""],
+["Federal Economic Development Agency for Northern Ontario",99,60.6,11.1,18.2,12.1,""],
+["Civilian Review and Complaints Commission for the RCMP",92,70.7,null,10.9,19.6,""],
+["Canadian Dairy Commission",84,56.0,null,7.1,23.8,""],
+["Patented Medicine Prices Review Board Canada",78,55.1,null,null,24.4,""],
+["Office of the Commissioner for Federal Judicial Affairs Canada",63,68.3,0.0,null,11.1,""],
+["Accessibility Standards Canada",57,57.9,null,26.3,29.8,""],
+["Military Grievances External Review Committee",50,66.0,null,20.0,20.0,""],
+["Canadian Intergovernmental Conference Secretariat",36,44.4,null,null,33.3,""],
+["Office of the Public Sector Integrity Commissioner of Canada",33,60.6,null,null,24.2,""],
+["Office of the Commissioner of Lobbying of Canada",32,53.1,null,null,21.9,""],
+["International Joint Commission",28,50.0,null,21.4,null,""],
+["Military Police Complaints Commission of Canada",25,64.0,null,null,40.0,""],
+["RCMP External Review Committee",22,68.2,null,null,null,""],
+["Copyright Board Canada",20,60.0,0.0,null,null,""],
+["Secretariat of the National Security and Intelligence Committee of Parliamentarians",8,null,0.0,0.0,0.0,""],
+["Law Commission of Canada",5,null,0.0,0.0,null,""]
+];
+const YEARS=[2018,2019,2020,2021,2022,2023,2024,2025];
+const TREND={w:[54.8,54.8,55.0,55.6,56.0,56.6,56.9,56.8],i:[5.1,5.1,5.1,5.2,5.2,5.3,5.3,5.5],
+ d:[5.3,5.2,5.2,5.6,6.2,6.9,7.9,9.0],v:[15.7,16.7,17.8,18.9,20.2,21.7,22.9,23.9],black:[2.9,3.2,3.5,3.8,4.2,4.6,5.0,5.1]};
+const HIST={years:[1998,2000,2005,2010,2015,2020,2025],
+ w:[50.5,51.4,53.5,54.8,54.3,55.0,56.8], i:[2.7,3.3,4.2,4.6,5.1,5.1,5.5],
+ d:[3.9,4.7,5.8,5.7,5.6,5.2,9.0], v:[5.1,5.5,8.1,10.7,13.8,17.8,23.9]};
+// Subgroups
+const SUBG={
+ i:{label:"Indigenous Peoples",total:"14,738 employees, 5.5% of the workforce, above the 4.0% availability estimate. 5.6% of executives.",
+  rows:[
+  {name:"First Nations",n:6093,p:2.3,ex:2.7,trend:[2.1,2.0,2.1,2.2,2.2,2.2,2.2,2.3],sal:[1.2,32.2,31.1,35.6]},
+  {name:"Metis",n:6235,p:2.3,ex:2.2,trend:[2.2,2.2,2.1,2.2,2.2,2.3,2.3,2.3],sal:[1.1,28.4,33.5,37.0]},
+  {name:"Inuit",n:458,p:0.2,ex:0.1,trend:[0.1,0.1,0.1,0.2,0.2,0.2,0.2,0.2],sal:[null,34.5,36.0,null]},
+  {name:"Indigenous, other / not specified",n:1952,p:0.7,ex:0.6,trend:[0.7,0.7,0.8,0.7,0.7,0.7,0.6,0.7],sal:[null,28.1,27.7,null],note:"Some organizations submit only a yes/no Indigenous count."}],
+  note:"The self-identification form did not ask about Indigenous subgroups until 2002 and some organizations still submit only a yes/no count."},
+ v:{label:"Racialized (visible minority) employees",total:"63,765 employees, 23.9% of the workforce, above the 22.7% availability estimate. 17.3% of executives, which is the largest leadership shortfall of any group.",
+  rows:[
+  {name:"Black",n:13741,p:5.1,ex:3.2,trend:[2.9,3.2,3.5,3.8,4.2,4.6,5.0,5.1],sal:[0.9,40.8,29.8,28.5],note:"Hire share 6.4%, promotion share 5.8%, separation share 4.0% in 2024-25. No WFA exists because the Act does not designate the subgroup."},
+  {name:"South Asian / East Indian",n:11811,p:4.4,ex:3.2,trend:[2.7,2.9,3.0,3.3,3.7,4.0,4.3,4.4],sal:[1.0,32.8,28.4,37.8]},
+  {name:"Chinese",n:8464,p:3.2,ex:1.9,trend:[2.9,3.0,3.0,3.2,3.3,3.4,3.3,3.2],sal:[0.9,22.7,28.9,47.4]},
+  {name:"Non-white West Asian, North African or Arab",n:7706,p:2.9,ex:2.8,trend:[1.7,1.8,2.0,2.1,2.3,2.6,2.8,2.9],sal:[0.8,25.3,30.0,43.9]},
+  {name:"Other visible minority groups",n:7080,p:2.7,ex:1.9,trend:[2.3,2.3,2.3,2.1,2.1,2.1,2.2,2.7],sal:[1.0,30.2,28.3,40.5]},
+  {name:"Person of mixed origin",n:4363,p:1.6,ex:2.3,trend:[1.2,1.3,1.4,1.5,1.6,1.7,1.7,1.6],sal:[0.8,27.4,31.1,40.7]},
+  {name:"Southeast Asian",n:3892,p:1.5,ex:1.0,trend:[0.7,0.7,0.8,0.8,0.9,0.9,1.1,1.5],sal:[0.5,26.5,28.4,44.6]},
+  {name:"Non-white Latin American",n:3115,p:1.2,ex:0.5,trend:[0.6,0.7,0.7,0.8,0.9,1.0,1.1,1.2],sal:[0.6,35.8,32.5,31.1]},
+  {name:"Filipino",n:2421,p:0.9,ex:0.3,trend:[0.6,0.6,0.7,0.7,0.8,0.9,0.9,0.9],sal:[2.3,45.8,30.6,21.4]},
+  {name:"Korean",n:873,p:0.3,ex:0.2,trend:[0.2,0.2,0.2,0.3,0.3,0.3,0.3,0.3],sal:[null,null,34.0,36.5]},
+  {name:"Japanese",n:299,p:0.1,ex:0.1,trend:[0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1],sal:[null,null,30.4,38.8]}],
+  note:""},
+ d:{label:"Persons with disabilities",total:"24,128 employees, 9.0% of the workforce, below the 12.0% availability estimate (the only group below). 10.9% of executives. Subgroups can sum above the total because one person can report multiple disabilities.",
+  rows:[
+  {name:"Other disability (incl. mental health-related, cognitive, chronic conditions where published)",n:18548,p:6.9,ex:7.4,trend:[3.0,3.1,3.1,3.7,4.2,4.9,5.9,6.9],sal:[1.2,29.5,29.3,40.0]},
+  {name:"Mobility",n:3114,p:1.2,ex:1.3,trend:[0.9,0.9,0.8,1.0,1.0,1.0,1.1,1.2],sal:[1.5,31.3,25.3,41.9]},
+  {name:"Deaf or hard of hearing",n:2474,p:0.9,ex:1.6,trend:[0.8,0.8,0.7,0.8,0.8,0.8,0.9,0.9],sal:[1.0,25.6,24.7,48.7]},
+  {name:"Coordination or dexterity",n:1480,p:0.6,ex:0.7,trend:[0.5,0.5,0.4,0.5,0.5,0.5,0.5,0.6],sal:[1.4,26.9,24.8,46.9]},
+  {name:"Blind or visual impairment",n:1455,p:0.5,ex:1.0,trend:[0.4,0.4,0.4,0.4,0.4,0.5,0.5,0.5],sal:[0.8,24.2,25.9,49.1]},
+  {name:"Speech impairment",n:433,p:0.2,ex:0.3,trend:[0.1,0.1,0.1,0.1,0.1,0.1,0.2,0.2],sal:[1.4,25.2,26.6,46.9]}],
+  note:"The availability estimate uses the expanded 2017+ survey definition of disability (including pain and mental health), which the current self-ID form does not yet use; TBS expects the modernized questionnaire to narrow the gap."},
+ w:{label:"Women",total:"151,528 employees, 56.8% of the workforce, above the 54.9% availability estimate. 55.9% of executives. The Act defines no subgroups for women; intersections are shown instead.",
+  rows:[
+  {name:"Women who are Indigenous",n:null,p:6.0,ex:null,trend:null,sal:null,note:"6.0% of women self-identify as Indigenous Peoples."},
+  {name:"Women with disabilities",n:null,p:9.6,ex:null,trend:null,sal:null,note:"9.6% of women self-identify as persons with disabilities."},
+  {name:"Racialized women",n:null,p:24.1,ex:null,trend:null,sal:null,note:"24.1% of women self-identify as members of visible minorities."}],
+  note:"Women remain concentrated below $75,000: 34.2% of women vs. 29.0% of all employees earn under $75,000, and pay equity plans under the Pay Equity Act are being developed with bargaining agents."}
+};
+// Salary, 6 bands, share of group (%)
+const BANDS6=["Under $50K","$50K to $74,999","$75K to $99,999","$100K to $124,999","$125K to $149,999","$150K and over"];
+const SAL6={all:[1.1,27.9,29.5,24.2,12.5,4.8],w:[1.4,32.8,28.8,22.4,10.5,4.2],i:[1.1,30.1,31.8,23.9,9.3,3.8],
+ d:[1.2,29.1,28.3,23.7,12.0,5.7],v:[0.9,31.8,29.5,22.6,11.5,3.7],black:[0.9,40.8,29.8,17.9,8.1,2.5]};
+const SALN={all:[3030,74453,78650,64605,33372,12825]};
+// Subgroup salary 4 bands (under50, 50-75, 75-100, 100+), share of subgroup
+const SGSAL=[
+ ["All employees",1.1,27.9,29.5,41.5],
+ ["Indigenous Peoples",1.1,30.1,31.8,36.9],["First Nations",1.2,32.2,31.1,35.6],["Metis",1.1,28.4,33.5,37.0],["Inuit",null,34.5,36.0,null],
+ ["Persons with disabilities",1.2,29.1,28.3,41.4],
+ ["Racialized (visible minority)",0.9,31.8,29.5,37.8],["Black",0.9,40.8,29.8,28.5],["South Asian / East Indian",1.0,32.8,28.4,37.8],
+ ["Chinese",0.9,22.7,28.9,47.4],["Non-white West Asian, North African or Arab",0.8,25.3,30.0,43.9],
+ ["Southeast Asian",0.5,26.5,28.4,44.6],["Person of mixed origin",0.8,27.4,31.1,40.7],["Non-white Latin American",0.6,35.8,32.5,31.1],
+ ["Filipino",2.3,45.8,30.6,21.4],["Korean",null,null,34.0,36.5],["Japanese",null,null,30.4,38.8],["Other visible minority groups",1.0,30.2,28.3,40.5]
+];
+// Flows series 2016-17..2024-25 share %
+const FY=["2016-17","2017-18","2018-19","2019-20","2020-21","2021-22","2022-23","2023-24","2024-25"];
+const FLOWS={
+ hires:{title:"Hires: each group's share of all hires into the public service",totals:[16081,19249,23334,24901,24229,28929,33361,29033,19720],
+  w:[57.7,58.7,56.5,58.3,60.2,60.1,61.1,60.4,57.2], i:[4.4,4.0,4.1,4.0,3.8,4.2,4.4,4.3,4.4],
+  d:[3.7,3.6,3.7,3.9,4.3,5.5,6.9,8.2,8.6], v:[17.9,17.7,19.3,21.3,21.2,23.2,26.9,26.8,27.2],
+  black:[2.7,3.0,4.5,5.0,5.1,5.6,7.1,6.9,6.4]},
+ promos:{title:"Promotions: each group's share of all promotions",totals:[17487,20660,25489,27211,24919,29295,33194,31025,25449],
+  w:[57.9,59.3,60.4,61.1,60.6,62.3,63.2,63.1,62.6], i:[4.8,4.9,4.8,4.9,4.9,5.1,5.1,5.3,5.8],
+  d:[4.0,4.1,4.3,4.2,4.7,5.7,6.7,8.1,9.3], v:[15.9,17.2,18.7,19.9,21.0,23.3,24.2,26.2,25.4],
+  black:[2.6,2.9,3.3,3.7,4.2,4.8,5.0,5.8,5.8]},
+ seps:{title:"Separations: each group's share of all departures (includes retirements)",totals:[12491,12937,12898,13043,12446,16687,17510,15222,15472],
+  w:[58.0,56.8,57.2,57.2,56.2,56.6,56.2,56.9,57.5], i:[4.8,5.3,5.1,5.3,4.7,5.1,5.1,6.0,5.9],
+  d:[7.2,7.7,6.6,7.1,6.8,6.6,6.9,7.9,8.7], v:[11.9,10.1,9.8,10.5,10.9,12.2,14.2,15.7,16.6],
+  black:[2.8,2.0,1.8,2.1,2.4,2.8,3.4,3.8,4.0]}
+};
+const FLOW25={w:{rep:56.8,h:57.2,p:62.6,s:57.5},i:{rep:5.5,h:4.4,p:5.8,s:5.9},d:{rep:9.0,h:8.6,p:9.3,s:8.7},
+ v:{rep:23.9,h:27.2,p:25.4,s:16.6},black:{rep:5.1,h:6.4,p:5.8,s:4.0}};
+const EXLEV={w:[58.8,52.6,53.1,56.6,51.4,55.9],i:[6.1,5.1,5.2,5.2,5.6,5.6],d:[11.3,10.5,10.3,8.0,14.8,10.9],
+ v:[18.1,17.3,15.1,16.8,16.2,17.3],black:[3.3,3.2,2.9,null,null,3.2]};
+const EXFLOW={w:[48.1,62.0,47.7],i:[7.8,6.3,4.6],d:[7.8,11.2,9.8],v:[13.0,20.6,14.1],black:[0.0,5.2,2.2]};
+const REGIONS=[
+ ["Newfoundland and Labrador",4312,52.2,10.6,11.3,6.1,0.8],["Prince Edward Island",2519,63.3,3.1,11.2,5.1,0.6],
+ ["Nova Scotia",11187,49.2,6.6,10.7,8.6,2.5],["New Brunswick",11385,61.3,3.9,8.3,5.2,1.7],
+ ["Quebec (without the NCR)",28751,55.8,2.8,6.4,20.0,6.7],["National Capital Region",123178,57.3,4.4,10.0,26.2,6.2],
+ ["Ontario (without the NCR)",33224,57.9,4.9,8.2,30.7,5.7],["Manitoba",8569,58.8,16.5,9.2,20.0,4.6],
+ ["Saskatchewan",5485,60.8,17.9,7.6,15.0,3.6],["Alberta",13265,58.4,8.3,8.5,27.0,5.5],
+ ["British Columbia",21297,52.1,5.8,8.1,31.1,1.1],["Yukon",385,63.4,12.7,6.5,14.0,null],
+ ["Northwest Territories",488,58.0,16.2,7.4,17.6,3.3],["Nunavut",300,60.7,53.0,4.7,11.0,null],
+ ["Outside Canada",1552,51.9,4.6,4.4,26.9,5.3]];
+// Occupational groups [code+name, n, w, i, d, v, black(null if unpublished)]
+const OCC=[
+ ["PA: Program and Administrative Services",115828,72.3,6.3,9.9,24.5,6.6],
+ ["EC: Economics and Social Science Services",26649,60.4,4.5,11.4,29.8,5.5],
+ ["IT: Information Technology",21589,22.7,3.7,8.4,29.7,5.3],
+ ["TC: Technical Services",11345,33.8,5.2,6.7,13.9,1.5],
+ ["FB: Border Services",10696,40.6,5.0,8.2,21.7,2.7],
+ ["SP: Applied Science and Patent Examination",10532,55.7,2.5,7.1,27.2,2.7],
+ ["SV: Operational Services",10242,21.7,7.3,5.6,8.2,1.2],
+ ["AV: Commerce and Purchasing",7812,53.7,4.4,8.5,23.0,null],
+ ["EX: Executive",7539,55.3,5.6,10.6,16.9,null],
+ ["CX: Correctional Services",7206,29.1,10.9,4.9,18.7,null],
+ ["CT: Comptrollership",7048,57.3,3.4,5.7,37.8,8.4],
+ ["HM: Human Resources Management",5186,82.5,5.1,15.7,22.8,6.4],
+ ["NR: Architecture, Engineering and Land Survey",4929,26.4,2.2,5.6,28.9,3.0],
+ ["SH: Health Services",3957,82.7,6.8,4.8,16.2,null],
+ ["LP: Law Practitioner",3706,60.1,4.2,16.5,24.6,null],
+ ["RE: Research",2642,35.2,1.3,5.5,25.1,null],
+ ["FS: Foreign Service",2013,56.2,5.2,5.8,27.2,null],
+ ["SO: Ships' Officers",1411,16.6,11.0,10.9,12.5,null],
+ ["EB: Education and Library Science",1304,67.5,10.2,7.1,20.5,null],
+ ["EL: Electronics",1112,7.2,4.1,6.2,12.1,null],
+ ["TR: Translation",812,76.8,1.0,3.1,7.6,null],
+ ["SR(W): Ship Repair, West",706,5.9,3.1,2.0,2.7,null],
+ ["SR(E): Ship Repair, East",671,10.4,4.0,5.2,3.3,null],
+ ["PO: Police Operations Support",626,70.6,5.0,3.2,12.6,null],
+ ["LC: Law Management",387,68.0,6.5,16.5,24.8,null],
+ ["AO: Aircraft Operations",360,11.7,4.7,2.2,4.4,null],
+ ["RO: Radio Operations",286,31.8,9.4,6.3,3.5,null],
+ ["UT: University Teaching",200,26.5,null,null,23.0,null]];
+const LANG={fr:{all:30.2,w:31.2,i:24.8,d:25.2,v:22.8,black:48.5}};
+const INTER=[["Women",null,6.0,9.6,24.1],["Indigenous Peoples",62.1,null,16.1,10.9],
+ ["persons with disabilities",60.4,9.8,null,19.9],["racialized employees",57.3,3.1,7.5,null],["Black employees",57.3,1.5,5.8,null]];
+const SOURCES=[
+ {n:"PSC: Representation of EE groups and subgroups by department",u:"https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html",
+  d:"The deepest departmental source: applicants, hires, employees, promotions and acting appointments by EE group AND subgroup for every organization under the Public Service Employment Act.",
+  use:"Use it to pull your department's subgroup numbers and acting appointment shares.",emb:false},
+ {n:"TBS: Employment Equity Annual Report and Demographic Snapshot",u:"https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/employment-equity-annual-reports.html",
+  d:"The statutory annual report under the Employment Equity Act with full statistical tables: representation by department, subgroup, salary, occupation, region, hires, promotions and separations.",
+  use:"This site embeds the complete 2024-25 tables.",emb:true},
+ {n:"TBS: Representation by designated group with workforce availability",u:"https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/representation-public-service-canada-designated-group-fiscal-year-workforce-availability-estimates.html",
+  d:"The long-running representation and WFA series, 1998 to today.",use:"Embedded here in the long-arc chart and benchmarks.",emb:true},
+ {n:"TBS: Diversity and inclusion statistics hub",u:"https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html",
+  d:"The landing page that links every TBS equity statistics product.",use:"Bookmark it; new releases land here first.",emb:true},
+ {n:"PSES: Data Analytics tool",u:"https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/PSES/Home/Index?GoCTemplateCulture=en-CA",
+  d:"Public Service Employee Survey results by organization and demographic group, including harassment, discrimination, belonging, career development and retention questions, with subgroup breakdowns in recent cycles.",
+  use:"Use it for the experience side of barriers: who reports discrimination, who believes promotion is attainable.",emb:false},
+ {n:"PSES: survey page, results by question and open datasets",u:"https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index",
+  d:"The 2024 survey results published by question for the public service and each of the 93 participating organizations, plus open datasets. The 2024 cycle added questions on religion, ethno-religious identity and 2SLGBTQIA+ identities.",
+  use:"Public-service-wide 2024 results for every equity question are embedded in the Employee survey section here; open this index for any organization's own page.",emb:true},
+ {n:"PSC: Staffing Dashboard",u:"https://www5.psc-cfp.gc.ca/dsad-dsda/staffing-dashboard/index-en.html",
+  d:"Staffing activity and trends by organization: advertised vs. non-advertised appointments, applications, time to staff.",
+  use:"Use it for context on how your department hires.",emb:false},
+ {n:"PSC: Diversity and Inclusion Compass",u:"https://extranet.psc-cfp.gc.ca/dad-dad/di-compass/index-en.html",
+  d:"Change over time in representation and upward mobility for EE groups. Extranet address; may require the GC network.",
+  use:"Use it for mobility trends that complement the promotion shares here.",emb:false},
+ {n:"Disproportionality Index",u:"https://employment-equity.github.io/",
+  d:"Independent analysis of salary distribution across equity-seeking groups (Albury, Vongdara, Nicholas, Kanji) that documented the overconcentration of Black employees at lower income levels. Publishes DI tables and estimated median salaries for 2017 through 2024.",
+  use:"The Salary DI tracker section embeds the project's full published DI and median-salary tables for all eight years; the Salary section also replicates the method on the newest TBS data.",emb:true},
+ {n:"TBS: Workplace Mental Health Dashboard",u:"https://hranalytics-analytiquerh.tbs-sct.gc.ca/MentalHealth-Santementale/Home",
+  d:"Scores for 11 of the 13 psychosocial factors from the National Standard for Psychological Health and Safety, by organization, with demographic views, built from PSES results.",
+  use:"Use it to connect equity gaps to psychological health and safety obligations.",emb:false},
+ {n:"PSC: Staffing and Non-Partisanship Survey (SNPS)",u:"https://www5.psc-cfp.gc.ca/dsad-dsda/snps-by-org/index-en.html",
+  d:"Biennial survey of employees, managers and staffing advisors on the fairness and transparency of staffing, by organization.",
+  use:"Use it for perceived staffing fairness alongside the hard promotion ratios here.",emb:false},
+ {n:"TBS: HR Data Hub, employment trends and demographics",u:"https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/Home/Index?GoCTemplateCulture=en-CA",
+  d:"Interactive visualization of CPA workforce trends: tenure, age, region, occupational group, language.",
+  use:"Use it to slice workforce context the way this site cannot.",emb:false},
+ {n:"TBS: Population of the federal public service by executive level",u:"https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/population-federal-public-service-executive-level.html",
+  d:"Annual executive population statistics by level, department, region, age, sex and first official language, covering CPA and separate agencies.",
+  use:"Use it for departmental executive counts to pair with the EX equity shares here.",emb:false},
+ {n:"Statistics Canada: The Daily, 2024 PSES release",u:"https://www150.statcan.gc.ca/n1/daily-quotidien/250623/dq250623c-eng.htm",
+  d:"Statistics Canada's official release: 186,635 respondents, 50.5% response rate, job satisfaction down to 77%, one quarter reporting high stress, with full methodology notes.",
+  use:"Cite it when a briefing needs an official StatCan reference for 2024 survey headlines.",emb:true},
+ {n:"PSES 2024 open datasets (machine-readable CSV)",u:"https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+  d:"Four CSV subsets: results by organization, by demographic group (every equity group and subgroup, every question), by organizational unit, and historical files back through prior cycles. This is where the demographic breakdowns this site links to actually live, row by row.",
+  use:"Download subset 2 for the complete by-demographic tables; it can be loaded into the companion Excel workbook or sent back here to be embedded into this site.",emb:false},
+ {n:"PSES 2024 respondent distribution by demographic characteristics",u:"https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024-25/2024-public-service-employee-survey-respondent-distribution-demographic-characteristics.html",
+  d:"Who answered the survey, by demographic group, including the expanded disability definition (17% of 2024 respondents).",
+  use:"Use it to judge whether a demographic result rests on a robust respondent base.",emb:false},
+ {n:"PSC: Audit of Employment Equity Representation in Recruitment (2021)",u:"https://www.canada.ca/en/public-service-commission/services/publications/audit-of-employment-equity-representation-in-recruitment.html",
+  d:"15,285 applications followed through all five hiring stages. Persons with disabilities fell from 4.4% of applications to 2.4% of appointments; Black candidates from 10.3% to 6.6%. Written tests, interviews, reference checks and the appointment decision are each tied to a specific group's losses.",
+  use:"The recruitment funnel in the Hiring & promotion section embeds the full Annex B tables.",emb:true},
+ {n:"PSC: Audit on Access in the Pre-Assessment Process (2023)",u:"https://www.canada.ca/en/public-service-commission/services/publications/audit-access-pre-assessment-process.html",
+  d:"Follow-up audit: automated screening did not reduce overall EE representation, but intersectional candidates, Indigenous people with disabilities and racialized people with disabilities, lost representation at that stage.",
+  use:"Use it as the evidence base for intersectional screening review.",emb:false},
+ {n:"PSC: Employment Equity Promotion Rate Study",u:"https://www.canada.ca/en/public-service-commission/services/publications/employment-equity-promotion-rate-study.html",
+  d:"PSC statistical study of promotion rates for EE groups relative to counterparts, controlling for factors like tenure and occupational group.",
+  use:"Pair with the promotion vs acting workbench when an organization claims its promotion gaps are explained by tenure.",emb:false},
+ {n:"PSC: SNPS perceptions of EE group members",u:"https://www.canada.ca/en/public-service-commission/services/publications/snps-perceptions-federal-public-servants-who-self-identified-member-ee.html",
+  d:"Staffing survey results for employees who self-identified with an EE group, including that 88% of candidates with disabilities did not request assessment accommodation, and of those who did, only 66% were satisfied.",
+  use:"Use it to argue for proactive accommodation offers rather than request-based ones.",emb:false}
+];
+
+/* ===================== HELPERS ===================== */
+const $=s=>document.querySelector(s);
+const fmt=n=>n==null?"supp.":n.toLocaleString("en-CA");
+const pct=n=>n==null?"supp.":n.toFixed(1)+"%";
+function gapBar(name,val,bench,benchLab,max,color){
+  const m=max||Math.max(val||0,bench||0)*1.35;
+  const wv=val==null?0:Math.min(100,val/m*100);
+  const wb=bench==null?null:Math.min(100,bench/m*100);
+  const below=bench!=null&&val!=null&&val<bench;
+  let verdict="";
+  if(bench!=null&&val!=null){
+    const d=(val-bench).toFixed(1);
+    verdict=below?`<div class="verdict bad">&#9660; ${Math.abs(d)} points below ${benchLab}</div>`
+                 :`<div class="verdict ok">&#9650; ${d} points above ${benchLab}</div>`;
+  } else if(val==null){verdict=`<div class="verdict na">suppressed in the published table</div>`;}
+  return `<div class="gbar">
+    <div class="lab"><span class="nm">${name}</span><span class="vals">${val==null?"supp.":val.toFixed(1)+"%"}${bench!=null?" &middot; benchmark "+bench.toFixed(1)+"%":""}</span></div>
+    <div class="track"><div class="fill ${below?"below":""}" style="width:${wv}%;${color&&!below?"background:"+color:""}"></div>
+    ${wb!=null?`<div class="tick" style="left:${wb}%" data-lab="${benchLab}"></div>`:""}</div>${verdict}</div>`;
+}
+function lineChart(series,years,opts){
+  const w=720,h=240,pl=44,pr=120,pt=14,pb=28;
+  const allv=series.flatMap(s=>s.vals.filter(v=>v!=null));
+  const ymax=Math.ceil(Math.max(...allv)*1.12), ymin=0;
+  const X=i=>pl+(w-pl-pr)*(i/(years.length-1));
+  const Y=v=>pt+(h-pt-pb)*(1-(v-ymin)/(ymax-ymin));
+  let g="";
+  for(let t=0;t<=4;t++){const v=ymin+(ymax-ymin)*t/4,y=Y(v);
+    g+=`<line x1="${pl}" y1="${y}" x2="${w-pr}" y2="${y}" stroke="#E5E7E1"/><text x="${pl-6}" y="${y+4}" text-anchor="end" font-size="10" fill="#5B6B7F" font-family="monospace">${v.toFixed(0)}%</text>`;}
+  years.forEach((yr,i)=>{g+=`<text x="${X(i)}" y="${h-8}" text-anchor="middle" font-size="10" fill="#5B6B7F" font-family="monospace">${String(yr).replace("20","'")}</text>`;});
+  // place end labels with a minimum 15px vertical separation so they never overlap
+  const labs=series.map(s=>({s,last:s.vals[s.vals.length-1],y:Y(s.vals[s.vals.length-1])})).sort((a,b)=>a.y-b.y);
+  for(let i=1;i<labs.length;i++){if(labs[i].y-labs[i-1].y<15)labs[i].y=labs[i-1].y+15;}
+  series.forEach(s=>{
+    const pts=s.vals.map((v,i)=>v==null?null:`${X(i)},${Y(v)}`).filter(Boolean).join(" ");
+    g+=`<polyline points="${pts}" fill="none" stroke="${s.color}" stroke-width="2.5" stroke-linecap="round"/>`;
+    g+=`<circle cx="${X(s.vals.length-1)}" cy="${Y(s.vals[s.vals.length-1])}" r="3.5" fill="${s.color}"/>`;
+  });
+  labs.forEach(L=>{
+    g+=`<text x="${X(L.s.vals.length-1)+8}" y="${L.y+4}" font-size="11" font-weight="700" fill="${L.s.color}">${L.s.name} ${L.last.toFixed(1)}%</text>`;
+  });
+  const desc=series.map(s=>`${s.name} from ${s.vals[0]}% to ${s.vals[s.vals.length-1]}%`).join("; ");
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Line chart, ${opts&&opts.label?opts.label:"trend"}: ${desc}.">${g}</svg>`;
+}
+function sparkline(vals,color){
+  if(!vals)return "";
+  const w=150,h=34,max=Math.max(...vals),min=Math.min(...vals);
+  const X=i=>4+(w-8)*(i/(vals.length-1)), Y=v=>4+(h-8)*(1-(v-min)/((max-min)||1));
+  const pts=vals.map((v,i)=>`${X(i)},${Y(v)}`).join(" ");
+  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="Trend 2018 to 2025: ${vals[0]}% to ${vals[vals.length-1]}%"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2"/><circle cx="${X(vals.length-1)}" cy="${Y(vals[vals.length-1])}" r="2.6" fill="${color}"/></svg>`;
+}
+
+/* ===================== NAVIGATION ===================== */
+const TABS=[["overview","Overview"],["depts","Departments"],["groups","Groups & subgroups"],["salary","Salary"],
+ ["flows","Hiring & promotion"],["pses","Employee survey"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["ombuds","Ombuds value"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["sources","Data sources"],["about","About the data"]];
+const tabbar=$("#tabbar");
+tabbar.setAttribute("role","tablist");
+tabbar.setAttribute("aria-label","Sections of the equity data explorer");
+TABS.forEach(([id,label],i)=>{
+  const b=document.createElement("button");b.textContent=label;b.dataset.tab=id;
+  b.setAttribute("role","tab");b.id="tab-"+id;b.setAttribute("tabindex",i===0?"0":"-1");
+  b.addEventListener("click",()=>go(id));
+  tabbar.appendChild(b);
+});
+// Arrow-key / Home / End navigation across tabs (WCAG keyboard support)
+tabbar.addEventListener("keydown",e=>{
+  const btns=[...tabbar.querySelectorAll("button")];
+  let idx=btns.indexOf(document.activeElement);
+  if(idx<0)return;
+  let next=null;
+  if(e.key==="ArrowRight"||e.key==="ArrowDown")next=(idx+1)%btns.length;
+  else if(e.key==="ArrowLeft"||e.key==="ArrowUp")next=(idx-1+btns.length)%btns.length;
+  else if(e.key==="Home")next=0;
+  else if(e.key==="End")next=btns.length-1;
+  else return;
+  e.preventDefault();
+  btns.forEach(b=>b.setAttribute("tabindex","-1"));
+  btns[next].setAttribute("tabindex","0");btns[next].focus();
+});
+function go(id){
+  document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="view-"+id));
+  tabbar.querySelectorAll("button").forEach(b=>{const cur=b.dataset.tab===id;b.setAttribute("aria-current",cur?"true":"false");b.setAttribute("tabindex",cur?"0":"-1");});
+  // Note: intentionally NOT calling history.replaceState/pushState. The published artifact runs in a
+  // cross-origin iframe where any History API write throws a SecurityError. Section switching is done
+  // purely by toggling visibility, so navigation never touches the URL or the History API.
+  try{ window.scrollTo({top:0}); }catch(e){ try{window.scrollTo(0,0);}catch(e2){} }
+}
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){e.preventDefault();go(g.dataset.go);}});
+
+/* ===================== HERO ===================== */
+$("#heroBars").innerHTML=GROUPS.map(g=>gapBar(g.name,CPA[g.k],WFA[g.k],"WFA",60,"#7FBFBE")).join("");
+
+/* ===================== OVERVIEW: ranking ===================== */
+let rankKey="d";
+const rankChips=$("#rankChips");
+GROUPS.forEach(g=>{const b=document.createElement("button");b.textContent=g.name;b.dataset.k=g.k;
+ b.setAttribute("aria-pressed",g.k===rankKey);b.addEventListener("click",()=>{rankKey=g.k;renderRank();});rankChips.appendChild(b);});
+function renderRank(){
+  rankChips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===rankKey));
+  const g=GROUPS.find(x=>x.k===rankKey), idx={w:2,i:3,d:4,v:5}[rankKey];
+  $("#rankCap").textContent=`Organizations ranked by representation of ${g.name.toLowerCase()}, lowest first. Public-service-wide availability: ${WFA[rankKey].toFixed(1)}%.`;
+  const rows=DEPTS.filter(d=>d[idx]!=null).sort((a,b)=>a[idx]-b[idx]);
+  const supp=DEPTS.filter(d=>d[idx]==null);
+  const max=Math.max(WFA[rankKey],...rows.map(r=>r[idx]))*1.15;
+  let html=rows.map(r=>{
+    const below=r[idx]<WFA[rankKey];
+    return `<tr><td>${r[0]}</td><td class="num">${fmt(r[1])}</td>
+    <td class="num ${below?"below-mark":""}">${pct(r[idx])}</td>
+    <td><span class="mini ${below?"below":""}" style="width:${Math.max(2,r[idx]/max*180)}px" aria-hidden="true"></span>
+    <span style="font-size:11.5px;color:var(--ink-soft)"> ${below?"&#9660; "+(WFA[rankKey]-r[idx]).toFixed(1)+" pts below":"&#9650; above"} PS availability</span></td></tr>`;
+  }).join("");
+  if(supp.length)html+=`<tr><td colspan="4" class="supp">Suppressed (count of 1 to 5, not zero): ${supp.map(s=>s[0]).join("; ")}</td></tr>`;
+  $("#rankTable tbody").innerHTML=html;
+}
+renderRank();
+$("#histChart").innerHTML=lineChart(GROUPS.map(g=>({name:g.name.split(" ")[0]==="Racialized"?"Racialized":g.name.split(" (")[0],vals:HIST[g.k],color:g.color})),HIST.years,{label:"Representation 1998 to 2025"});
+
+/* ===================== DEPARTMENTS ===================== */
+const sel=$("#deptSel");
+const psOpt=document.createElement("option");psOpt.value=-1;psOpt.textContent="Whole public service (core public administration)";sel.appendChild(psOpt);
+DEPTS.forEach((d,i)=>{const o=document.createElement("option");o.value=i;o.textContent=d[0];sel.appendChild(o);});
+sel.addEventListener("change",()=>renderDept(+sel.value));
+$("#deptSearch").addEventListener("input",e=>{
+  const q=e.target.value.toLowerCase();if(!q)return;
+  if("public service".includes(q)||"core public administration".includes(q)){sel.value=-1;renderDept(-1);return;}
+  const i=DEPTS.findIndex(d=>d[0].toLowerCase().includes(q));
+  if(i>=0){sel.value=i;renderDept(i);}
+});
+function renderDept(i){
+  if(i<0){
+    $("#deptCard").innerHTML=`<div class="card">
+    <h3>Core public administration, all 72 organizations <span style="font:600 12px/1 var(--mono);color:var(--ink-soft)">${fmt(CPA.n)} employees</span></h3>
+    <p class="howto">This is the whole-public-service view, the benchmark every department below is compared against. Each bar's tick is the group's workforce availability (WFA).</p>
+    ${GROUPS.map(g=>gapBar(g.name,CPA[g.k],WFA[g.k],"WFA",90,g.color)).join("")}
+    ${gapBar("Black employees (subgroup, no WFA exists)",CPA.black,null,"",90,"#1B2A41")}
+    <p style="font-size:13.5px;margin-top:10px"><strong>Go deeper:</strong>
+    <a href="#" data-go="groups">subgroups</a> &middot; <a href="#" data-go="salary">salary</a> &middot; <a href="#" data-go="flows">hiring and promotion</a> &middot; <a href="#" data-go="pses">employee survey</a> &middot; <a href="#" data-go="ex">executives</a></p></div>`;
+    return;
+  }
+  const d=DEPTS[i], keys=["w","i","d","v"], idx={w:2,i:3,d:4,v:5};
+  const flags=[];
+  GROUPS.forEach(g=>{
+    const v=d[idx[g.k]];
+    if(v==null){flags.push(`<span class="flag note">${g.name}: suppressed</span>`);return;}
+    const diff=v-WFA[g.k];
+    if(diff<0)flags.push(`<span class="flag bad">&#9660; ${g.name}: ${Math.abs(diff).toFixed(1)} pts below PS availability</span>`);
+    else flags.push(`<span class="flag ok">&#9650; ${g.name}: above PS availability</span>`);
+  });
+  const share=(d[1]/CPA.n*100).toFixed(1);
+  const psc="https://www5.psc-cfp.gc.ca/dsad-dsda/staffing-dashboard/index-en.html?queryDept="+encodeURIComponent(d[0].split(" (")[0]);
+  $("#deptCard").innerHTML=`<div class="card">
+    <h3>${d[0]} <span style="font:600 12px/1 var(--mono);color:var(--ink-soft)">${fmt(d[1])} employees &middot; ${share}% of the CPA</span></h3>
+    ${d[6]?`<p class="howto">${d[6]}</p>`:""}
+    <div style="margin:6px 0 14px">${flags.join(" ")}</div>
+    ${GROUPS.map(g=>gapBar(g.name,d[idx[g.k]],WFA[g.k],"PS WFA",90,g.color)).join("")}
+    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:10px">The tick is the public-service-wide availability. Each organization also has its own availability estimate reflecting its occupation and region mix, published inside the PSC dashboard; treat distance from the tick as a reason to look closer, not a verdict.</p>
+    <p style="font-size:13.5px;margin-top:10px"><strong>Go deeper on this organization:</strong>
+    <a href="https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html" target="_blank" rel="noopener">subgroups, promotions and acting appointments (PSC)</a> &middot;
+    <a href="${psc}" target="_blank" rel="noopener">staffing activity (PSC, pre-set to this organization)</a> &middot;
+    <a href="https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/PSES/Home/Index?GoCTemplateCulture=en-CA" target="_blank" rel="noopener">employee survey results (PSES)</a> &middot;
+    <a href="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index" target="_blank" rel="noopener">this organization's 2024 PSES page (results by question index)</a> &middot;
+    <a href="https://hranalytics-analytiquerh.tbs-sct.gc.ca/MentalHealth-Santementale/Home" target="_blank" rel="noopener">psychosocial factors (Mental Health Dashboard)</a></p>
+  </div>`;
+}
+renderDept(-1); sel.value=-1; // default to whole public service; pick any organization to switch scope
+
+/* ===================== Side-by-side organization comparison ===================== */
+const cmpA=$("#cmpA"),cmpB=$("#cmpB");
+[cmpA,cmpB].forEach(s=>{
+  const o=document.createElement("option");o.value=-1;o.textContent="Whole public service";s.appendChild(o);
+  DEPTS.forEach((d,i)=>{const op=document.createElement("option");op.value=i;op.textContent=d[0];s.appendChild(op);});
+});
+cmpA.value=-1;cmpB.value=0;
+function cmpData(v){
+  if(+v<0)return {name:"Whole public service",n:CPA.n,vals:{w:CPA.w,i:CPA.i,d:CPA.d,v:CPA.v}};
+  const d=DEPTS[+v];return {name:d[0],n:d[1],vals:{w:d[2],i:d[3],d:d[4],v:d[5]}};
+}
+function renderCmp(){
+  const A=cmpData(cmpA.value),B=cmpData(cmpB.value);
+  $("#cmpCols").innerHTML=[A,B].map(o=>`<div>
+    <h3 style="font-size:16px;margin-bottom:2px">${o.name}</h3>
+    <p style="font:600 12px/1 var(--mono);color:var(--ink-soft);margin-bottom:10px">${fmt(o.n)} employees</p>
+    ${GROUPS.map(g=>gapBar(g.name,o.vals[g.k],WFA[g.k],"PS WFA",90,g.color)).join("")}
+  </div>`).join("");
+}
+[cmpA,cmpB].forEach(s=>s.addEventListener("change",renderCmp));
+renderCmp();
+// All-dept sortable table
+let sortCol=1,sortDir=-1;
+function renderAllDepts(){
+  const heads=[["Organization",0],["Employees",1],["Women",2],["Indigenous Peoples",3],["Persons w/ disabilities",4],["Racialized",5]];
+  $("#allDeptTable thead").innerHTML="<tr>"+heads.map(([h,c])=>
+   `<th scope="col" class="sortable ${c>0?"num":""}" data-c="${c}">${h} <span class="arrow">${sortCol===c?(sortDir>0?"&#9650;":"&#9660;"):""}</span></th>`).join("")+"</tr>";
+  $("#allDeptTable thead").querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{
+    const c=+th.dataset.c; if(sortCol===c)sortDir*=-1;else{sortCol=c;sortDir=c===0?1:-1;} renderAllDepts();}));
+  const wfaIdx={2:"w",3:"i",4:"d",5:"v"};
+  const q=(($("#allDeptFilter")||{}).value||"").trim().toLowerCase();
+  let rows=[...DEPTS].sort((a,b)=>{
+    const av=a[sortCol],bv=b[sortCol];
+    if(av==null&&bv==null)return 0; if(av==null)return 1; if(bv==null)return -1;
+    return (av<bv?-1:av>bv?1:0)*(sortCol===0?1:sortDir)*(sortCol===0&&sortDir<0?-1:1);
+  });
+  if(q)rows=rows.filter(d=>d[0].toLowerCase().includes(q));
+  $("#allDeptTable tbody").innerHTML=(rows.length?rows.map(d=>"<tr><td>"+d[0]+"</td><td class='num'>"+fmt(d[1])+"</td>"+
+    [2,3,4,5].map(c=>{
+      const v=d[c]; if(v==null)return "<td class='num supp'>supp.</td>";
+      const below=v<WFA[wfaIdx[c]];
+      return `<td class="num ${below?"below-mark":""}">${v.toFixed(1)}%</td>`;
+    }).join("")+"</tr>").join("") : "<tr><td colspan='6' style='color:var(--ink-soft)'>No organizations match \""+q+"\".</td></tr>");
+}
+renderAllDepts();
+(function(){const f=$("#allDeptFilter");if(f)f.addEventListener("input",renderAllDepts);})();
+
+/* ===================== GROUPS & SUBGROUPS ===================== */
+let grpKey="v";
+const grpChips=$("#grpChips");
+[["v","Racialized employees"],["i","Indigenous Peoples"],["d","Persons with disabilities"],["w","Women"]].forEach(([k,label])=>{
+  const b=document.createElement("button");b.textContent=label;b.dataset.k=k;
+  b.setAttribute("aria-pressed",k===grpKey);b.addEventListener("click",()=>{grpKey=k;renderGroups();});grpChips.appendChild(b);});
+function renderGroups(){
+  grpChips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===grpKey));
+  const G=SUBG[grpKey], gc=GROUPS.find(g=>g.k===grpKey).color;
+  $("#grpIntro").innerHTML=`<div class="card"><h3>${G.label}</h3><p style="font-size:15px;max-width:880px">${G.total}</p>
+   ${G.note?`<p class="howto">${G.note}</p>`:""}
+   <div style="margin-top:8px">${lineChart([{name:G.label.split(" (")[0],vals:TREND[grpKey],color:gc}].concat(grpKey==="v"?[{name:"Black",vals:TREND.black,color:"#1B2A41"}]:[]),YEARS,{label:"Representation trend"})}</div></div>`;
+  $("#sgList").innerHTML=G.rows.map(s=>{
+    const exGap=(s.ex!=null&&s.p!=null)?(s.ex-s.p):null;
+    return `<div class="card">
+    <h3>${s.name} ${s.n!=null?`<span style="font:600 12px/1 var(--mono);color:var(--ink-soft)">${fmt(s.n)} people &middot; ${s.p}% of workforce</span>`:""}</h3>
+    ${s.trend?`<div style="display:flex;gap:26px;flex-wrap:wrap;align-items:center">
+      <div><div style="font:600 11px/1 var(--mono);color:var(--ink-soft);margin-bottom:4px">TREND 2018 to 2025</div>${sparkline(s.trend,gc)}</div>
+      <div style="flex:1;min-width:280px">${gapBar("Share of workforce",s.p,null,"",Math.max(8,s.p*1.6),gc)}
+      ${s.ex!=null?gapBar("Share of executives",s.ex,s.p,"own workforce share",Math.max(8,s.p*1.6),gc):""}</div></div>`
+      :`<div style="max-width:560px">${gapBar("Share within the group",s.p,null,"",30,gc)}</div>`}
+    ${exGap!=null?(exGap<0?`<p class="verdict bad" style="margin-top:4px">&#9660; Leadership gap: ${Math.abs(exGap).toFixed(1)} points thinner among executives than in the workforce.</p>`:`<p class="verdict ok" style="margin-top:4px">&#9650; Executive share at or above workforce share.</p>`):""}
+    ${s.sal?`<p style="font-size:13px;color:var(--ink-soft);margin-top:6px">Salary: ${s.sal[3]!=null?s.sal[3].toFixed(1)+"% earn $100K and over (all employees: 41.5%)":"top band suppressed"}; ${s.sal[1]!=null?s.sal[1].toFixed(1)+"% sit in the $50K to $74,999 band (all employees: 27.9%)":""}.</p>`:""}
+    ${s.note?`<p style="font-size:13px;color:var(--ink-soft);margin-top:6px">${s.note}</p>`:""}
+    </div>`;}).join("");
+}
+renderGroups();
+
+/* ===================== SALARY ===================== */
+let salKey="black";
+const salChips=$("#salChips");
+[["black","Black employees"],["v","Racialized"],["i","Indigenous Peoples"],["d","Persons w/ disabilities"],["w","Women"]].forEach(([k,l])=>{
+  const b=document.createElement("button");b.textContent=l;b.dataset.k=k;
+  b.setAttribute("aria-pressed",k===salKey);b.addEventListener("click",()=>{salKey=k;renderSal();});salChips.appendChild(b);});
+function renderSal(){
+  salChips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===salKey));
+  const names={black:"Black employees",v:"Racialized (visible minority) employees",i:"Indigenous Peoples",d:"Persons with disabilities",w:"Women"};
+  $("#salTitle").textContent=names[salKey]+" vs. all employees, share of each salary band";
+  $("#salBars").innerHTML=BANDS6.map((b,bi)=>{
+    const di=SAL6[salKey][bi]/SAL6.all[bi];
+    return gapBar(b+`  (ratio ${di.toFixed(2)})`,SAL6[salKey][bi],SAL6.all[bi],"all employees",48,"#0E7C7B");
+  }).join("")+`<p style="font-size:12.5px;color:var(--ink-soft);margin-top:8px">The tick marks the all-employee share of each band. Bars stopping left of the tick in high bands and pushing past it in low bands show pay compression.</p>`;
+}
+renderSal();
+// DI table
+(function(){
+  const keys=[["w","Women"],["i","Indigenous Peoples"],["d","Persons w/ disabilities"],["v","Racialized"],["black","Black"]];
+  $("#diTable thead").innerHTML="<tr><th scope='col'>Group</th>"+BANDS6.map(b=>`<th scope="col" class="num">${b}</th>`).join("")+"</tr>";
+  $("#diTable tbody").innerHTML=keys.map(([k,l])=>"<tr><td>"+l+"</td>"+SAL6[k].map((v,bi)=>{
+    const r=v/SAL6.all[bi], cls=r>=1.15?"below-mark":(r<=0.85?"above-mark":"");
+    const cls2=bi>=3?(r<=0.85?"below-mark":(r>=1.15?"above-mark":"")):cls; // in top bands LOW is the barrier
+    return `<td class="num ${cls2}">${r.toFixed(2)}</td>`;}).join("")+"</tr>").join("");
+})();
+$("#sgSalTable tbody").innerHTML=SGSAL.map(r=>`<tr><td>${r[0]}</td>`+[1,2,3,4].map(c=>
+ `<td class="num ${c===4&&r[c]!=null&&r[c]<35?"below-mark":""}">${r[c]==null?"supp.":r[c].toFixed(1)+"%"}</td>`).join("")+"</tr>").join("");
+
+/* ===================== FLOWS ===================== */
+let flowKey="promos";
+const flowChips=$("#flowChips");
+[["promos","Promotions"],["hires","Hires"],["seps","Separations"]].forEach(([k,l])=>{
+  const b=document.createElement("button");b.textContent=l;b.dataset.k=k;
+  b.setAttribute("aria-pressed",k===flowKey);b.addEventListener("click",()=>{flowKey=k;renderFlow();});flowChips.appendChild(b);});
+function renderFlow(){
+  flowChips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===flowKey));
+  const f=FLOWS[flowKey];
+  $("#flowTitle").textContent=f.title+` (${fmt(f.totals[8])} in 2024-25)`;
+  const series=[{name:"Racialized",vals:f.v,color:"#B3401E"},{name:"Disabilities",vals:f.d,color:"#5B6B7F"},
+   {name:"Black",vals:f.black,color:"#1B2A41"},{name:"Indigenous",vals:f.i,color:"#8A6D1D"}];
+  $("#flowChart").innerHTML=lineChart(series,FY.map(y=>"20"+y.slice(2,4)),{label:f.title});
+  $("#flowLegend").innerHTML=`<span style="--c:#B3401E">Racialized</span><span style="--c:#5B6B7F">Persons with disabilities</span><span style="--c:#1B2A41">Black</span><span style="--c:#8A6D1D">Indigenous Peoples</span><span style="color:var(--ink-soft)">Women omitted from the chart for scale; women's ${flowKey==="hires"?"hire":flowKey==="promos"?"promotion":"separation"} share in 2024-25 was ${FLOWS[flowKey].w[8]}%.</span>`;
+}
+renderFlow();
+(function(){
+  const keys=[["w","Women"],["i","Indigenous Peoples"],["d","Persons w/ disabilities"],["v","Racialized"],["black","Black"]];
+  $("#flowRatioTable tbody").innerHTML=keys.map(([k,l])=>{
+    const f=FLOW25[k], hr=f.h/f.rep, pr=f.p/f.rep;
+    const mark=r=>r<0.90?"below-mark":(r>=1?"above-mark":"");
+    return `<tr><td>${l}</td><td class="num">${f.rep}%</td><td class="num">${f.h}%</td><td class="num ${mark(hr)}">${hr.toFixed(2)}</td>
+    <td class="num">${f.p}%</td><td class="num ${mark(pr)}">${pr.toFixed(2)}</td><td class="num">${f.s}%</td></tr>`;
+  }).join("");
+})();
+
+/* ===================== EXECUTIVES ===================== */
+$("#exBars").innerHTML=GROUPS.map(g=>gapBar(g.name+" among executives",EX[g.k],CPA[g.k],"own workforce share",60,g.color)).join("")
+ +gapBar("Black employees among executives",EX.black,CPA.black,"own workforce share",60,"#1B2A41")
+ +`<p style="font-size:12.5px;color:var(--ink-soft);margin-top:8px">The tick is each group's share of the whole workforce. A bar short of its tick means the group thins out at the top. Executive availability benchmarks (which all groups exceed): women 41.8%, Indigenous Peoples 3.9%, persons with disabilities 5.3%, racialized employees 15.6%.</p>`;
+(function(){
+  const rows=[["Women","w"],["Indigenous Peoples","i"],["Persons w/ disabilities","d"],["Racialized","v"],["Black","black"]];
+  $("#exLevelTable tbody").innerHTML=rows.map(([l,k])=>"<tr><td>"+l+"</td>"+EXLEV[k].map(v=>`<td class="num">${v==null?"supp.":v.toFixed(1)+"%"}</td>`).join("")+"</tr>").join("");
+  $("#exFlowTable tbody").innerHTML=rows.map(([l,k])=>"<tr><td>"+l+"</td>"+EXFLOW[k].map(v=>`<td class="num ${v===0?"below-mark":""}">${v.toFixed(1)}%</td>`).join("")+"</tr>").join("");
+})();
+
+/* ===================== PROFILE ===================== */
+$("#regionTable tbody").innerHTML=REGIONS.map(r=>`<tr><td>${r[0]}</td><td class="num">${fmt(r[1])}</td>`+
+ [2,3,4,5,6].map(c=>`<td class="num">${r[c]==null?"supp.":r[c].toFixed(1)+"%"}</td>`).join("")+"</tr>").join("");
+let occSort=1, occDir=-1;
+function renderOcc(){
+  const heads=[["Occupational group",0],["Employees",1],["Women",2],["Indigenous",3],["Disabilities",4],["Racialized",5],["Black",6]];
+  $("#occTable thead").innerHTML="<tr>"+heads.map(([h,c])=>`<th scope="col" class="sortable ${c>0?"num":""}" data-c="${c}">${h} <span class="arrow">${occSort===c?(occDir>0?"&#9650;":"&#9660;"):""}</span></th>`).join("")+"</tr>";
+  $("#occTable thead").querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{
+    const c=+th.dataset.c; if(occSort===c)occDir*=-1;else{occSort=c;occDir=-1;} renderOcc();}));
+  const rows=[...OCC].sort((a,b)=>{const av=a[occSort],bv=b[occSort];
+    if(av==null)return 1;if(bv==null)return -1;return (av<bv?-1:1)*(occSort===0?1:occDir)*(occSort===0&&occDir<0?-1:1);});
+  $("#occTable tbody").innerHTML=rows.map(r=>"<tr><td>"+r[0]+"</td><td class='num'>"+fmt(r[1])+"</td>"+
+   [2,3,4,5,6].map(c=>`<td class="num">${r[c]==null?(c===6?"":"supp."):r[c].toFixed(1)+"%"}</td>`).join("")+"</tr>").join("");
+}
+renderOcc();
+$("#langBars").innerHTML=[["All employees","all"],["Women","w"],["Indigenous Peoples","i"],["Persons w/ disabilities","d"],["Racialized","v"],["Black employees","black"]]
+ .map(([l,k])=>gapBar(l+", French first official language",LANG.fr[k],LANG.fr.all,"PS average",60,"#0E7C7B")).join("");
+$("#interTable tbody").innerHTML=INTER.map(r=>`<tr><td>${r[0]}</td>`+[1,2,3,4].map(c=>
+ `<td class="num">${r[c]==null?"&mdash;":r[c].toFixed(1)+"%"}</td>`).join("")+"</tr>").join("");
+
+/* ===================== SOURCES ===================== */
+$("#srcList").innerHTML=SOURCES.map(s=>`<div class="card src-card ${s.emb?"embedded":""}" style="border-left-color:${s.emb?"var(--ok)":"var(--teal)"}">
+ <h3 style="font-size:16px">${s.n}</h3>
+ <div class="meta">${s.emb?"EMBEDDED IN THIS SITE":"LIVE DASHBOARD, OPEN DIRECTLY"}</div>
+ <p style="font-size:13.5px">${s.d}</p>
+ <p style="font-size:13px;color:var(--ink-soft);margin-top:6px"><strong>Use it to:</strong> ${s.use}</p>
+ <a class="srclink" href="${s.u}" target="_blank" rel="noopener">Open the source</a></div>`).join("");
+
+/* ===================== PSES 2024 (public-service-wide, transcribed from published results) ===================== */
+const PSES=[
+ {h:"Speaking up, trust and inclusion",intro:"Whether people feel safe to name problems is itself a barrier measure. Every indicator in this block fell between 2022 and 2024.",rows:[
+  ["Q21","Every individual in my work unit is accepted as an equal member of the team",{2019:75,2020:78,2022:81,2024:78},"pos",""],
+  ["Q24","Would feel safe speaking about racism without fear of reprisal or career impact",{2022:77,2024:72},"pos",""],
+  ["Q50","Comfortable sharing racism concerns with a person of authority",{2020:79,2022:79,2024:75},"pos",""],
+  ["Q42","Could start a formal recourse process (grievance, complaint) without fear of reprisal",{2019:50,2020:55,2022:56,2024:51},"pos",""],
+  ["Q47","My organization respects individual differences",{2019:75,2020:77,2022:75,2024:69},"pos",""],
+  ["Q48","My organization implements activities that support a diverse workforce",{2019:79,2020:78,2022:79,2024:76},"pos",""],
+  ["Q49","My organization implements initiatives that promote anti-racism",{2020:75,2022:69,2024:65},"pos",""],
+  ["Q52","The Call to Action on Anti-Racism, Equity and Inclusion has had a positive impact",{2022:49,2024:43},"pos","36% answered don't know."],
+ ]},
+ {h:"Career and advancement",intro:"Belief in promotion fell 9 points in one cycle. One in four say discrimination held their career back to at least a small extent.",rows:[
+  ["Q45","I believe I have opportunities for promotion, given my education, skills and experience",{2019:52,2020:55,2022:60,2024:51},"pos",""],
+  ["Q43","My organization does a good job of supporting career development",{2019:57,2020:61,2022:63,2024:55},"pos",""],
+  ["Q44c","Career progress adversely affected by discrimination (to any extent)",{2024:25},"neg","New calculation in 2024; earlier cycles not comparable."],
+  ["Q44b","Career progress adversely affected by lack of access to second-language training",{2024:34},"neg","New calculation in 2024. Pair with the official-language data: 48.5% of Black employees have French as their first official language."],
+  ["Q44e","Career progress adversely affected by accommodation issues",{2024:31},"neg","New calculation in 2024."],
+  ["Q44d","Career progress adversely affected by accessibility issues",{2024:19},"neg","New calculation in 2024."],
+ ]},
+ {h:"Discrimination",intro:"Reported discrimination is at its highest level in the modern series, race has become the most cited type, and it overwhelmingly comes from people with power over the person reporting it.",rows:[
+  ["Q65","Victim of discrimination in the past 12 months",{2019:8,2020:7,2022:8,2024:9},"neg",""],
+  ["Q67a","Of those: race was a type",{2019:26,2020:28,2022:27,2024:33},"neg",""],
+  ["Q67f","Of those: sex",{2019:29,2020:27,2022:27,2024:30},"neg",""],
+  ["Q67e","Of those: age",{2019:29,2020:26,2022:24,2024:26},"neg",""],
+  ["Q67l","Of those: disability",{2019:17,2020:16,2022:19,2024:26},"neg","Up 7 points since 2022, the fastest-growing type."],
+  ["Q67b","Of those: national or ethnic origin",{2019:20,2020:20,2022:19,2024:24},"neg",""],
+  ["Q67c","Of those: colour",{2019:16,2020:17,2022:16,2024:19},"neg",""],
+  ["Q66b","Of those: the discrimination came from individuals with authority",{2019:76,2020:77,2022:75,2024:75},"neg",""],
+  ["Q68i","Of those: took no action at all",{2019:49,2020:48,2022:50,2024:53},"neg",""],
+  ["Q69n","Did not file a complaint because they believed it would make no difference",{2019:62,2020:63,2022:63,2024:65},"neg",""],
+  ["Q69l","Did not file a complaint because they feared reprisal",{2019:45,2020:46,2022:44,2024:45},"neg",""],
+  ["Q70","Satisfied with how discrimination matters are resolved",{2019:55,2020:60,2022:58,2024:52},"pos",""],
+  ["Q72","Race-discrimination victims satisfied with how racism complaints are resolved",{2020:10,2022:11,2024:11},"pos","65% are dissatisfied. This is the single starkest accountability number in the survey."],
+ ]},
+ {h:"Harassment",intro:"Most harassment comes from above, and the main reasons people stay silent are fear of reprisal and the belief that complaining changes nothing.",rows:[
+  ["Q58","Victim of harassment in the past 12 months",{2019:14,2020:11,2022:11,2024:12},"neg",""],
+  ["Q59b","Of those: harassment came from individuals with authority",{2019:60,2020:62,2022:59,2024:60},"neg",""],
+  ["Q60k","Of those: the nature included unfair treatment",{2019:49,2020:52,2022:51,2024:54},"neg",""],
+  ["Q62n","Did not file because they believed it would make no difference",{2019:56,2020:57,2022:56,2024:57},"neg",""],
+  ["Q62l","Did not file because they feared reprisal",{2019:48,2020:49,2022:45,2024:47},"neg",""],
+  ["Q63","Satisfied with how harassment matters are resolved",{2019:51,2020:56,2022:54,2024:50},"pos",""],
+ ]},
+ {h:"Accommodation (duty to accommodate)",intro:"Requests are rising fast while implementation slides, which is exactly the pattern that turns accommodation into a systemic barrier under the CHRA and a hazard issue under CLC Part II.",rows:[
+  ["Q84","Requested workplace accommodation in the last two years",{2019:16,2020:13,2022:13,2024:19},"neutral",""],
+  ["Q85","Of requests: related to a disability",{2020:50,2022:58,2024:62},"neutral",""],
+  ["Q86","Of requests: accommodation measures were implemented",{2019:81,2020:79,2022:74,2024:71},"pos","Implementation has fallen 10 points since 2019 while requests rose by half."],
+  ["Q87","Satisfied with the accommodation implemented",{2019:80,2020:82,2022:80,2024:77},"pos",""],
+  ["Q88","Comfortable requesting accommodation from my supervisor",{2020:82,2022:83,2024:79},"pos",""],
+ ]},
+ {h:"Wellbeing and retention",intro:"The psychological health and safety picture, the layer the Mental Health Dashboard scores draw from.",rows:[
+  ["Q81","Would describe my workplace as psychologically healthy",{2019:61,2020:68,2022:68,2024:59},"pos",""],
+  ["Q74*","High or very high work-related stress",{2019:16,2020:18,2022:19,2024:23},"neg",""],
+  ["Q75*","Emotionally drained after the workday, always or often",{2019:28,2020:31,2022:28,2024:35},"neg",""],
+  ["Q77*","Mental health is fair or poor",{2022:25,2024:29},"neg",""],
+  ["Q51*","Racism at work has harmed my mental health (agree)",{2022:10,2024:11},"neg",""],
+  ["Q57","Intend to leave current position within two years",{2019:27,2020:24,2022:38,2024:36},"neg",""],
+ ]}
+];
+const PSES_YEARS=[2019,2020,2022,2024];
+function renderPSES(){
+  $("#psesList").innerHTML=PSES.map(grp=>{
+    const rows=grp.rows.map(([q,t,vals,dir,note])=>{
+      const cells=PSES_YEARS.map(y=>`<td class="num">${vals[y]!=null?vals[y]+"%":""}</td>`).join("");
+      const yrs=PSES_YEARS.filter(y=>vals[y]!=null);
+      let delta="";
+      if(yrs.length>=2){
+        const d=vals[yrs[yrs.length-1]]-vals[yrs[yrs.length-2]];
+        if(d!==0){
+          const worse=(dir==="pos"&&d<0)||(dir==="neg"&&d>0);
+          const cls=dir==="neutral"?"":(worse?"below-mark":"above-mark");
+          delta=`<span class="${cls}">${d>0?"&#9650;":"&#9660;"} ${Math.abs(d)} pts</span>`;
+        } else delta="no change";
+      }
+      return `<tr><td class="num" style="white-space:nowrap">${q}</td><td>${t}${note?`<div style="font-size:11.5px;color:var(--ink-soft);margin-top:2px">${note}</div>`:""}</td>${cells}<td class="num">${delta}</td></tr>`;
+    }).join("");
+    return `<div class="card"><h3>${grp.h}</h3><p class="howto">${grp.intro}</p>
+    <div class="tblwrap"><table><caption>Public-service-wide results. Higher is ${grp.rows[0][3]==="neg"?"worse for most rows in this block":"better unless marked otherwise"}; the change column is coloured by whether the move is good or bad.</caption>
+    <thead><tr><th scope="col">Q#</th><th scope="col">What it asks (plain language)</th>${PSES_YEARS.map(y=>`<th scope="col" class="num">${y}</th>`).join("")}<th scope="col" class="num">Change since previous cycle</th></tr></thead>
+    <tbody>${rows}</tbody></table></div></div>`;
+  }).join("");
+}
+renderPSES();
+
+/* ===================== Who holds each pay band (computed from verified counts) ===================== */
+const WITHIN6={w:[68.5,66.9,55.4,52.4,47.5,49.6],i:[5.5,6.0,6.0,5.5,4.1,4.4],d:[9.3,9.4,8.7,8.9,8.7,10.7],v:[19.6,27.2,23.9,22.3,21.9,18.4]};
+let wbKey="w";
+const wbChips=$("#wbChips");
+GROUPS.forEach(g=>{const b=document.createElement("button");b.textContent=g.name;b.dataset.k=g.k;
+ b.setAttribute("aria-pressed",g.k===wbKey);b.addEventListener("click",()=>{wbKey=g.k;renderWB();});wbChips.appendChild(b);});
+function renderWB(){
+  wbChips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===wbKey));
+  const g=GROUPS.find(x=>x.k===wbKey);
+  $("#wbBars").innerHTML=BANDS6.map((b,bi)=>gapBar(b,WITHIN6[wbKey][bi],CPA[wbKey],"share of whole workforce",80,g.color)).join("");
+}
+renderWB();
+
+/* ===================== Age, occupational categories, bilingual status ===================== */
+const AGE=[["All employees",11.9,31.3,1],["Women",12.6,29.4,0],["Indigenous Peoples",10.9,34.7,0],["Persons with disabilities",12.2,34.1,0],["Racialized (visible minority)",15.5,25.2,0],["Black",12.8,25.7,0]];
+$("#ageBody").innerHTML=AGE.map(r=>`<tr><td>${r[0]}${r[3]?` <span style="font-size:11px;color:var(--ink-soft)">(computed from counts)</span>`:""}</td><td class="num">${r[1].toFixed(1)}%</td><td class="num">${r[2].toFixed(1)}%</td></tr>`).join("");
+const CAT=[["Executives",7926,55.9,5.6,10.9,17.3],["Scientific and Professional",53880,56.8,4.0,9.5,27.4],["Administrative and Foreign Service",141687,62.9,5.6,9.5,25.7],["Technical",14568,29.6,5.9,6.9,13.2],["Administrative Support",18658,74.0,6.5,10.1,24.7],["Operational",30216,30.5,7.2,6.2,15.3]];
+$("#catBody").innerHTML=CAT.map(r=>`<tr><td>${r[0]}</td><td class="num">${fmt(r[1])}</td>`+[2,3,4,5].map(c=>`<td class="num">${r[c].toFixed(1)}%</td>`).join("")+"</tr>").join("");
+const BIL=[["All employees",94.4],["Women",94.9],["Indigenous Peoples",93.2],["Persons with disabilities",93.9],["Racialized (visible minority)",93.8],["Black",95.6]];
+$("#langBars").insertAdjacentHTML("afterend",`<p style="font-size:13px;margin-top:12px"><strong>Of those in bilingual positions, share meeting the language requirements:</strong> ${BIL.map(b=>`${b[0]} ${b[1]}%`).join(" &middot; ")}. Black employees have the highest rate of meeting bilingual requirements, which makes the second-language training access gap above even harder to defend.</p>`);
+
+/* ===================== Scope bars on every data page ===================== */
+const EEORG="https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html";
+const PSESIDX="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index";
+const PSESAN="https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/PSES/Home/Index?GoCTemplateCulture=en-CA";
+const SCOPES=[
+ ["view-depts","Whole public service or one organization, via the selector below",[["Subgroups inside one organization (PSC dashboard)",EEORG]]],
+ ["view-groups","Whole public service, every group and subgroup",[["Same subgroups by department (PSC dashboard)",EEORG]]],
+ ["view-salary","Whole public service; toggle groups below",[["By department: departmental EE reports","#sources"]]],
+ ["view-flows","Whole public service, by group, nine years",[["By department and subgroup, plus acting (PSC dashboard)",EEORG]]],
+ ["view-pses","Whole public service, all equity questions",[["By organization (results index)",PSESIDX],["By demographic group (analytics tool)",PSESAN],["Demographic tables as open CSV","https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f"]]],
+ ["view-ex","Whole public service, by group and EX level",[["Departmental executive counts (TBS)","https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/population-federal-public-service-executive-level.html"]]],
+ ["view-profile","Whole public service",[["Slice further (TBS HR Data Hub)","https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/Home/Index?GoCTemplateCulture=en-CA"]]],
+];
+SCOPES.forEach(([id,here,links])=>{
+  const sec=document.getElementById(id); if(!sec)return;
+  const lede=sec.querySelector(".lede"); if(!lede)return;
+  const div=document.createElement("div"); div.className="scopebar";
+  div.innerHTML=`<span class="sl">Scope</span><span class="here">${here}</span>`+
+    links.map(l=>l[1].startsWith("#")?`<a href="#" data-go="${l[1].slice(1)}">${l[0]}</a>`:`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join("");
+  lede.after(div);
+});
+
+/* ===================== Ombuds calculator ===================== */
+const ombIds=["c_emp","c_sal","c_pct","c_hrs","c_rec","c_grv","c_gcost","c_icost","c_div","c_off"];
+function calcOmb(){
+  const v=Object.fromEntries(ombIds.map(id=>[id,+($("#"+id).value||0)]));
+  const hourly=v.c_sal/1950;
+  const conflictHours=v.c_emp*(v.c_pct/100)*v.c_hrs;
+  const timeValue=conflictHours*hourly*(v.c_rec/100);
+  const divSave=v.c_grv*(v.c_div/100)*Math.max(0,v.c_gcost-v.c_icost);
+  const total=timeValue+divSave;
+  const roi=v.c_off>0?(total/v.c_off):0;
+  const m=n=>"$"+Math.round(n).toLocaleString("en-CA");
+  $("#ombKpis").innerHTML=`
+   <div class="kpi"><div class="v">${m(timeValue)}</div><div class="l">conflict time recovered per year (${Math.round(conflictHours).toLocaleString("en-CA")} hours at risk, ${v.c_rec}% recovered)</div></div>
+   <div class="kpi"><div class="v">${m(divSave)}</div><div class="l">saved by diverting ${Math.round(v.c_grv*v.c_div/100)} formal cases to informal resolution</div></div>
+   <div class="kpi"><div class="v">${m(total)}</div><div class="l">total estimated annual value</div></div>
+   <div class="kpi"><div class="v">${roi.toFixed(1)}x</div><div class="l">return per dollar of ombuds office cost (${m(v.c_off)})</div></div>`;
+  $("#ombFormula").textContent=`Formula: value = (employees x conflict% x hours lost x hourly rate x recovered%) + (formal cases x divertible% x (formal cost - informal cost)). Hourly rate = salary / 1950 hours.`;
+}
+ombIds.forEach(id=>$("#"+id).addEventListener("input",calcOmb));
+calcOmb();
+
+/* ===================== Linkages lab: scatter + signal builder ===================== */
+const FIELDS=[["emp","Employees (log scale)"],["w","Women %"],["i","Indigenous Peoples %"],["d","Persons with disabilities %"],["v","Racialized %"]];
+const FIDX={emp:1,w:2,i:3,d:4,v:5};
+const sx=$("#sx"),sy=$("#sy");
+FIELDS.forEach(([k,l])=>{[sx,sy].forEach(s=>{const o=document.createElement("option");o.value=k;o.textContent=l;s.appendChild(o.cloneNode(true));});});
+sx.value="v";sy.value="i";
+function fval(d,k){const raw=d[FIDX[k]];if(raw==null)return null;return k==="emp"?Math.log10(raw):raw;}
+function renderScatter(){
+  const xk=sx.value,yk=sy.value;
+  const pts=DEPTS.map(d=>({n:d[0],x:fval(d,xk),y:fval(d,yk),raw:[d[FIDX[xk]],d[FIDX[yk]]]})).filter(p=>p.x!=null&&p.y!=null);
+  const xs=pts.map(p=>p.x),ys=pts.map(p=>p.y);
+  const mx=xs.reduce((a,b)=>a+b)/xs.length,my=ys.reduce((a,b)=>a+b)/ys.length;
+  let sxy=0,sxx=0,syy=0;pts.forEach(p=>{sxy+=(p.x-mx)*(p.y-my);sxx+=(p.x-mx)**2;syy+=(p.y-my)**2;});
+  const r=sxy/Math.sqrt(sxx*syy);
+  const w=720,h=320,pl=52,pr=20,pt=14,pb=40;
+  const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+  const X=v=>pl+(w-pl-pr)*((v-xmin)/((xmax-xmin)||1));
+  const Y=v=>pt+(h-pt-pb)*(1-(v-ymin)/((ymax-ymin)||1));
+  const xl=FIELDS.find(f=>f[0]===xk)[1],yl=FIELDS.find(f=>f[0]===yk)[1];
+  let g=`<rect x="${pl}" y="${pt}" width="${w-pl-pr}" height="${h-pt-pb}" fill="#FCFCFA" stroke="#E5E7E1"/>`;
+  pts.forEach(p=>{
+    g+=`<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="5" fill="#0E7C7B" fill-opacity="0.55" stroke="#0E7C7B"><title>${p.n}: ${xl.replace(" (log scale)","")} ${xk==="emp"?fmt(p.raw[0]):p.raw[0]+"%"}, ${yl} ${yk==="emp"?fmt(p.raw[1]):p.raw[1]+"%"}</title></circle>`;
+  });
+  g+=`<text x="${(pl+w-pr)/2}" y="${h-8}" text-anchor="middle" font-size="12" fill="#44546A">${xl}</text>`;
+  g+=`<text x="14" y="${(pt+h-pb)/2}" text-anchor="middle" font-size="12" fill="#44546A" transform="rotate(-90 14 ${(pt+h-pb)/2})">${yl}</text>`;
+  $("#scatter").innerHTML=`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Scatter plot of ${xl} against ${yl} for ${pts.length} organizations; correlation ${r.toFixed(2)}.">${g}</svg>`;
+  const strength=Math.abs(r)>=0.5?"a strong":Math.abs(r)>=0.3?"a moderate":Math.abs(r)>=0.15?"a weak":"essentially no";
+  $("#scatterNote").textContent=`${pts.length} organizations plotted (suppressed values excluded). Correlation r = ${r.toFixed(2)}, ${strength} ${r>0?"positive":"negative"} relationship. Hover or tap any dot to identify the organization.`;
+}
+[sx,sy].forEach(s=>s.addEventListener("change",renderScatter));
+renderScatter();
+
+const sgSel=$("#sgGroup");
+GROUPS.forEach(g=>{const o=document.createElement("option");o.value=g.k;o.textContent=g.name;sgSel.appendChild(o);});
+sgSel.value="d";
+function renderSignal(){
+  const k=sgSel.value, thr=+($("#sgThr").value||0), g=GROUPS.find(x=>x.k===k), idx={w:2,i:3,d:4,v:5}[k];
+  const flagged=DEPTS.filter(d=>d[idx]!=null&&(WFA[k]-d[idx])>=thr).sort((a,b)=>a[idx]-b[idx]);
+  const supp=DEPTS.filter(d=>d[idx]==null).length;
+  $("#sgOut").innerHTML=`<p style="font-size:14px"><strong>${flagged.length} of ${DEPTS.length} organizations flagged</strong> for ${g.name.toLowerCase()} at ${thr.toFixed(1)}+ points below the ${WFA[k].toFixed(1)}% public-service availability${supp?` (${supp} suppressed, not assessable)`:""}.</p>
+  <div style="margin:8px 0 14px">${flagged.map(d=>`<span class="flag bad">${d[0]}: ${d[idx].toFixed(1)}% (&#9660;${(WFA[k]-d[idx]).toFixed(1)})</span>`).join(" ")}</div>`;
+  $("#sgText").value=`Screening signal, ${g.name}, as of March 31, 2025 (TBS EE Demographic Snapshot 2024-2025): `+
+   `${flagged.length} of ${DEPTS.length} CPA organizations show representation at least ${thr.toFixed(1)} percentage points below the public-service workforce availability of ${WFA[k].toFixed(1)}%. `+
+   `Largest gaps: ${flagged.slice(0,5).map(d=>`${d[0]} (${d[idx].toFixed(1)}%, gap ${(WFA[k]-d[idx]).toFixed(1)} pts)`).join("; ")}. `+
+   `Caveat: each organization has its own workforce availability reflecting occupational and regional mix (PSC dashboard); this list identifies where to investigate, not findings of non-compliance. Next step: pull organization-specific WFA, promotion and acting appointment shares from the PSC EE-by-organization dashboard.`;
+}
+sgSel.addEventListener("change",renderSignal);
+$("#sgThr").addEventListener("input",renderSignal);
+renderSignal();
+
+/* ===================== Promotion vs acting workbench ===================== */
+const paIds=["pa_name","pa_rep","pa_pro","pa_act"];
+function calcPA(){
+  const name=$("#pa_name").value||"this group";
+  const rep=+($("#pa_rep").value||0), pro=+($("#pa_pro").value||0), act=+($("#pa_act").value||0);
+  if(!rep){$("#paOut").innerHTML='<p style="color:var(--ink-soft)">Enter the three values to compute the ratios.</p>';return;}
+  const pr=pro?pro/rep:null, ar=act?act/rep:null;
+  const tag=r=>r==null?"":(r<0.9?` <span class="flag bad">&#9660; ${r.toFixed(2)}</span>`:(r<1?` <span class="flag note">${r.toFixed(2)}</span>`:` <span class="flag ok">&#9650; ${r.toFixed(2)}</span>`));
+  let read="";
+  if(pr!=null&&ar!=null){
+    if(ar<0.9&&pr>=0.95)read="Acting access lags while promotions look proportionate: the promotion pipeline is being fed unevenly, and today's promotion numbers are borrowing against yesterday's acting access. Expect the promotion ratio to slip next.";
+    else if(ar>=0.95&&pr<0.9)read="Acting access looks proportionate but promotions do not convert: people are getting the rehearsal but not the role. Look at how acting experience is weighted in assessment, and at who gets which level of acting.";
+    else if(ar<0.9&&pr<0.9)read="Both ratios lag: the barrier is upstream of both, in opportunity allocation, assessment or sponsorship. Pair with the recruitment funnel above and your organization's PSES advancement questions.";
+    else read="Both ratios are at or near proportionate for this cut. Check the subgroup level and the level of the appointments before concluding the picture is healthy: group averages hide subgroup gaps.";
+  }
+  $("#paOut").innerHTML=`<p><strong>${name}:</strong> promotion equity ratio${tag(pr)} &middot; acting equity ratio${tag(ar)}</p><p style="color:var(--ink-soft);font-size:13.5px;max-width:880px">${read}</p>`;
+}
+paIds.forEach(id=>$("#"+id).addEventListener("input",calcPA));calcPA();
+
+/* ===================== Ombuds comparator ===================== */
+const PSWIDE={q42:51,q58:12,q63:50,q65:9,q70:52};
+const obA=$("#obA"),obB=$("#obB");
+DEPTS.forEach((d,i)=>{[obA,obB].forEach(s=>{const o=document.createElement("option");o.value=i;o.textContent=d[0];s.appendChild(o);});});
+obA.value=0;obB.value=1;
+const obVals={A:{},B:{}};
+function renderOb(){
+  const A=DEPTS[+obA.value],B=DEPTS[+obB.value];
+  $("#obAh").textContent=A[0];$("#obBh").textContent=B[0];
+  const rows=[["All employees",1,(v)=>fmt(v),fmt(CPA.n)],["Women rep %",2,(v)=>pct(v),pct(CPA.w)],["Indigenous rep %",3,(v)=>pct(v),pct(CPA.i)],["Disabilities rep %",4,(v)=>pct(v),pct(CPA.d)],["Racialized rep %",5,(v)=>pct(v),pct(CPA.v)]];
+  $("#obAuto").innerHTML=rows.map(([l,idx,f,ps])=>`<tr><td>${l} <span style="font-size:11px;color:var(--ink-soft)">(auto, March 31, 2025)</span></td><td class="num">${f(A[idx])}</td><td class="num">${f(B[idx])}</td><td class="num">${ps}</td></tr>`).join("");
+  const ha=$("#obAhas").checked,hb=$("#obBhas").checked;
+  const qlabels={q42:"recourse without fear (Q42, higher better)",q58:"harassment rate (Q58, lower better)",q63:"harassment resolution satisfaction (Q63, higher better)",q65:"discrimination rate (Q65, lower better)",q70:"discrimination resolution satisfaction (Q70, higher better)"};
+  const higherBetter={q42:true,q58:false,q63:true,q65:false,q70:true};
+  let lines=[],scored=0,favOmb=0;
+  const ombOrg=ha&&!hb?A[0]:(!ha&&hb?B[0]:null);
+  Object.keys(qlabels).forEach(q=>{
+    const a=obVals.A[q],b=obVals.B[q];
+    if(a==null||b==null||isNaN(a)||isNaN(b))return;
+    scored++;
+    const diff=a-b;
+    const better=(diff===0)?null:((diff>0)===higherBetter[q]?A[0]:B[0]);
+    if(better&&ombOrg&&better===ombOrg)favOmb++;
+    lines.push(`${qlabels[q]}: ${A[0]} ${a}% vs ${B[0]} ${b}%${better?`, advantage ${better}`:", tied"}`);
+  });
+  let head=`Comparison: ${A[0]}${ha?" (has an ombuds office)":""} vs ${B[0]}${hb?" (has an ombuds office)":""}. Representation as of March 31, 2025 (TBS); PSES values entered from each organization's 2024 results page.`;
+  let verdict="";
+  if(scored&&ombOrg)verdict=` On the ${scored} trust and resolution measures entered, the organization with an ombuds leads on ${favOmb} of ${scored}.`;
+  if(scored&&ha===hb)verdict=" Mark exactly one organization as having an ombuds to score the comparison.";
+  $("#obText").value=head+(lines.length?"\n- "+lines.join("\n- "):"\nEnter the PSES values to generate the measure-by-measure comparison.")+verdict+"\nCaveat: a single pair is a lead, not proof; occupational mix, size and history differ. Repeat across several matched pairs, and use multiple survey cycles, before drawing conclusions.";
+}
+document.querySelectorAll(".obin").forEach(inp=>inp.addEventListener("input",e=>{obVals[e.target.dataset.o][e.target.dataset.q]=e.target.value===""?null:+e.target.value;renderOb();}));
+[obA,obB].forEach(s=>s.addEventListener("change",renderOb));
+[$("#obAhas"),$("#obBhas")].forEach(c=>c.addEventListener("change",renderOb));
+renderOb();
+
+/* ===================== In-browser CSV importer (official PSES / SNPS files) ===================== */
+let csvRows=[],csvCols={},csvHead=[];
+function parseCSVText(text){
+  const out=[];let row=[],cur="",q=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(q){if(c==='"'){if(text[i+1]==='"'){cur+='"';i++;}else q=false;}else cur+=c;}
+    else if(c==='"')q=true;
+    else if(c===','){row.push(cur);cur="";}
+    else if(c==='\n'||c==='\r'){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cur);cur="";if(row.length>1||row[0]!=="")out.push(row);row=[];if(out.length>400000)break;}
+    else cur+=c;
+  }
+  if(cur!==""||row.length){row.push(cur);out.push(row);}
+  return out;
+}
+function detectCols(head){
+  const f=(re)=>head.findIndex(h=>re.test(h.toLowerCase()));
+  return {
+    year:f(/surveyr|year|annee/),
+    dept:f(/level1id|dept_e|department|^dept$|descrip_e|org/),
+    q:f(/question/),
+    dem:f(/demcode|bycond|dem_/),
+    pos:f(/^positive|_positive/),
+    neg:f(/^negative|_negative/),
+    score:f(/score.?100|agree/),
+    cnt:f(/anscount|count|respond/)
+  };
+}
+function renderCSV(){
+  if(!csvRows.length)return;
+  const fq=($("#fQ").value||"").toLowerCase(),fd=($("#fD").value||"").toLowerCase(),fg=($("#fG").value||"").toLowerCase();
+  const C=csvCols;
+  const shown=[["Year",C.year],["Organization",C.dept],["Question",C.q],["Demographic",C.dem],["Positive",C.pos],["Negative",C.neg],["Score/Agree",C.score],["Respondents",C.cnt]].filter(x=>x[1]>=0);
+  $("#csvTable thead").innerHTML="<tr>"+shown.map(s=>`<th scope="col">${s[0]}</th>`).join("")+"</tr>";
+  let n=0,html="";
+  for(const r of csvRows){
+    if(fq&&C.q>=0&&!String(r[C.q]).toLowerCase().includes(fq))continue;
+    if(fd&&C.dept>=0&&!String(r[C.dept]).toLowerCase().includes(fd))continue;
+    if(fg&&C.dem>=0&&!String(r[C.dem]).toLowerCase().includes(fg))continue;
+    html+="<tr>"+shown.map(s=>`<td>${r[s[1]]??""}</td>`).join("")+"</tr>";
+    if(++n>=300)break;
+  }
+  $("#csvTable tbody").innerHTML=html||"<tr><td>No rows match the filters.</td></tr>";
+  $("#csvStatus").textContent=`Loaded ${csvRows.length.toLocaleString("en-CA")} data rows. Showing ${Math.min(n,300)} ${n>=300?"(first 300 matches; tighten the filters)":"matching rows"}. Columns detected: ${csvHead.length}. 9999-style values mean suppressed.`;
+}
+$("#csvFile").addEventListener("change",e=>{
+  const file=e.target.files[0];if(!file)return;
+  $("#csvStatus").textContent="Reading "+file.name+" ("+Math.round(file.size/1048576)+" MB)...";
+  const rd=new FileReader();
+  rd.onerror=()=>{$("#csvStatus").textContent="Could not read the file.";};
+  rd.onload=()=>{
+    try{
+      const all=parseCSVText(rd.result);
+      csvHead=all.shift().map(h=>h.replace(/^\uFEFF/,""));
+      csvRows=all;csvCols=detectCols(csvHead);
+      if(csvCols.q<0&&csvCols.dept<0){$("#csvStatus").textContent="Loaded, but this does not look like a PSES or SNPS results file (no question or organization column found). Columns: "+csvHead.slice(0,12).join(", ");return;}
+      renderCSV();
+    }catch(err){$("#csvStatus").textContent="That file could not be parsed as CSV.";}
+  };
+  rd.readAsText(file);
+});
+["fQ","fD","fG"].forEach(id=>$("#"+id).addEventListener("input",()=>renderCSV()));
+
+/* ===================== Data request generator ===================== */
+const RQ=[
+ ["Acting appointments of any duration, and separately of 4 months or more, by EE group and subgroup, by classification level, for the last 5 fiscal years","acting"],
+ ["Promotions by EE group and subgroup, by classification level and by advertised vs non-advertised process, for the last 5 fiscal years","promotions"],
+ ["Second-language training: applications, approvals, completions and wait times, by EE group and subgroup and by first official language, for the last 5 fiscal years","language"],
+ ["Workplace accommodation: requests, approvals, denials, and median time from request to implementation, by disability type where available, for the last 5 fiscal years","accommodation"],
+ ["Self-identification questionnaire completion rate by branch and by year, as a data-quality and trust indicator","selfid"],
+ ["Harassment and discrimination complaints: volumes, grounds, resolution routes, outcomes and median time to resolution, disaggregated by EE group of complainant where available","complaints"],
+ ["The most recent employment system review: full methodology, findings, and management action plan, per EEA s.5 and s.9","esr"],
+ ["Talent management and sponsorship program participation by EE group and subgroup, including Call to Action commitments and results","talent"],
+ ["Departures: separations and the reasons recorded (resignation, retirement, end of term), by EE group and subgroup, for the last 5 fiscal years","departures"],
+ ["Assessment accommodation in staffing processes: requests, provisions and outcomes, per PSEA s.36(2) obligations","assess"]
+];
+$("#rqItems").innerHTML=RQ.map((r,i)=>`<label style="display:block;margin-bottom:7px;break-inside:avoid"><input type="checkbox" class="rqc" data-i="${i}" ${i<4?"checked":""}> ${r[0]}</label>`).join("");
+function renderRQ(){
+  const org=$("#rqOrg").value||"[organization]";
+  const from=$("#rqFrom").value||"[requesting body]";
+  const picked=[...document.querySelectorAll(".rqc")].filter(c=>c.checked).map(c=>RQ[+c.dataset.i][0]);
+  const items=picked.map((t,i)=>`${i+1}. ${t}.`).join("\n");
+  $("#rqText").value=
+`FORMAL DATA REQUEST: systemic barrier analysis, ${org}
+
+From: ${from}
+To: Head of Human Resources / Chief Data Officer, ${org}
+
+Pursuant to the duty under section 5 of the Employment Equity Act to identify and eliminate employment barriers, the obligation under subsection 36(2) of the Public Service Employment Act to evaluate and mitigate biases and barriers in assessment, and hazard prevention obligations under Part II of the Canada Labour Code, we request the following data holdings, drawing on the Employment Equity Data Bank self-identification records, the departmental HR management system, and PSC staffing activity files as applicable:
+
+${items}
+
+Format requirements: machine-readable (CSV or Excel), one row per category per fiscal year, with counts and percentages; suppress cells under 5 in line with TBS practice and flag suppression explicitly rather than reporting zero; include the data dictionary and any known data-quality caveats.
+
+We note that the PSC's Representation of Employment Equity Groups and Subgroups dashboard already publishes applicants, hires, employees, promotions and acting appointments for this organization at the group and subgroup level, so the disaggregation requested above is consistent with existing publication practice.
+
+Requested response date: 30 calendar days.`;
+}
+$("#rqOrg").addEventListener("input",renderRQ);
+$("#rqFrom").addEventListener("input",renderRQ);
+document.querySelectorAll(".rqc").forEach(c=>c.addEventListener("change",renderRQ));
+renderRQ();
+
+/* ===================== Export, print, and table tools ===================== */
+function tableToCSV(table){
+  const rows=[...table.querySelectorAll("tr")];
+  return rows.map(tr=>[...tr.querySelectorAll("th,td")].map(c=>{
+    const inp=c.querySelector("input");
+    let t=inp?inp.value:c.textContent;
+    t=(t||"").replace(/\s+/g," ").trim();
+    return /[",\n]/.test(t)?'"'+t.replace(/"/g,'""')+'"':t;
+  }).join(",")).join("\n");
+}
+function download(name,text,type){
+  // Sandboxed/published iframes may block Blob downloads; degrade gracefully, never throw.
+  try{
+    const blob=new Blob([text],{type:type||"text/csv;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");a.href=url;a.download=name;a.rel="noopener";
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>{try{URL.revokeObjectURL(url);}catch(e){}},1000);
+    return true;
+  }catch(e){
+    // Fallback 1: open the data in a new tab so the user can save it manually.
+    try{
+      const uri="data:"+(type||"text/csv")+";charset=utf-8,"+encodeURIComponent(text);
+      const win=window.open(uri,"_blank","noopener");
+      if(win)return true;
+    }catch(e2){}
+    // Fallback 2: copy to clipboard so the data is not lost.
+    safeCopy(text);
+    return false;
+  }
+}
+async function safeCopy(text){
+  // Never produces an uncaught rejection in any context.
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  }catch(e){/* fall through */}
+  try{
+    const ta=document.createElement("textarea");ta.value=text;
+    ta.style.cssText="position:fixed;left:-9999px;top:0";
+    document.body.appendChild(ta);ta.focus();ta.select();
+    const ok=document.execCommand("copy");ta.remove();return ok;
+  }catch(e){return false;}
+}
+function slug(s){return (s||"table").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,50);}
+// attach copy + CSV buttons above every data table
+document.querySelectorAll(".tblwrap").forEach(wrap=>{
+  const table=wrap.querySelector("table");if(!table)return;
+  const cap=table.querySelector("caption");
+  const name=slug(cap?cap.textContent:(table.id||"equity-table"));
+  const bar=document.createElement("div");bar.className="tbltools";
+  const copyBtn=document.createElement("button");copyBtn.type="button";copyBtn.innerHTML="&#128203; Copy";
+  copyBtn.title="Copy this table to the clipboard (tab-separated, pastes into Excel)";
+  copyBtn.addEventListener("click",async()=>{
+    const ok=await safeCopy(tableToCSV(table).replace(/,/g,"\t"));
+    copyBtn.classList.add("copied");copyBtn.innerHTML=ok?"&#10003; Copied":"Select &amp; copy manually";
+    setTimeout(()=>{copyBtn.classList.remove("copied");copyBtn.innerHTML="&#128203; Copy";},1800);
+  });
+  const csvBtn=document.createElement("button");csvBtn.type="button";csvBtn.innerHTML="&#11015; CSV";
+  csvBtn.title="Download this table as a CSV file";
+  csvBtn.addEventListener("click",()=>{
+    const ok=download("equity-"+name+".csv",tableToCSV(table));
+    if(!ok){csvBtn.innerHTML="Opened in new tab";setTimeout(()=>{csvBtn.innerHTML="&#11015; CSV";},1800);}
+  });
+  bar.appendChild(copyBtn);bar.appendChild(csvBtn);
+  wrap.parentNode.insertBefore(bar,wrap);
+});
+// per-section action bar (print) on every view
+const SECTION_TITLES={overview:"Overview",depts:"Departments and agencies",groups:"Groups and subgroups",salary:"Salary and pay equity",flows:"Hiring, promotion and recruitment",pses:"Employee survey (PSES 2024)",ex:"Executives and leadership",profile:"Where and how people work",ombuds:"The value of an ombuds office",linkages:"Linkages lab",sources:"Data sources",about:"About the data"};
+document.querySelectorAll("section.view").forEach(sec=>{
+  const id=sec.id.replace("view-","");
+  const h2=sec.querySelector("h2");if(!h2)return;
+  const bar=document.createElement("div");bar.className="actionbar";
+  bar.innerHTML=`<span class="muted">Tip: use Print to save this section as a PDF for a briefing note.</span>`;
+  const pBtn=document.createElement("button");pBtn.type="button";pBtn.innerHTML="&#128424; Print / Save as PDF";
+  pBtn.addEventListener("click",()=>printSection(sec));
+  bar.appendChild(pBtn);
+  h2.after(bar);
+});
+function printSection(sec){
+  document.querySelectorAll("section.view").forEach(s=>s.classList.remove("printing"));
+  sec.classList.add("printing");
+  const stamp=document.getElementById("printStamp");
+  if(stamp)stamp.textContent="Printed from the Public Service Equity Data Explorer on "+new Date().toLocaleDateString("en-CA",{year:"numeric",month:"long",day:"numeric"})+". Figures as of March 31, 2025 (TBS) and the 2024 PSES. Independent analytical tool, not a Government of Canada publication.";
+  try{ window.print(); }
+  catch(e){ /* some sandboxed iframes block printing; the on-screen section is already isolated for screenshot/save */ }
+  setTimeout(()=>sec.classList.remove("printing"),500);
+}
+// guard against any unexpected uncaught rejection surfacing in the console
+window.addEventListener("unhandledrejection",function(ev){ev.preventDefault();});
+// print stamp element appended once
+(function(){const p=document.createElement("p");p.id="printStamp";p.className="print-only";p.style.cssText="font-size:9pt;color:#444;margin-top:14px;border-top:1px solid #999;padding-top:6px";document.querySelector("main").appendChild(p);})();
+
+/* scatter methodology caveat */
+(function(){
+  const note=document.getElementById("scatterNote");
+  if(note){const c=document.createElement("p");c.style.cssText="font-size:12px;color:var(--ink-soft);margin-top:6px;border-left:3px solid var(--gold);padding-left:10px;max-width:880px";
+  c.innerHTML="<strong>Read with care.</strong> Each point is one organization, and organization-level correlation mostly reflects occupational and regional mix, not discrimination: a department full of IT jobs will show different representation than one full of administrative jobs for reasons that have nothing to do with barriers. Treat any pattern here as a question to investigate, never as a finding. Suppressed values are excluded, which can itself bias the line. Correlation is not causation, and 72 noisy points cannot establish either.";
+  note.after(c);}
+})();
+
+/* ===================== Salary Disproportionality Index (published figures, employment-equity.github.io) ===================== */
+const DI_GROUPS=[["black","Black employees","#1B2A41"],["vm","All visible minority","#B3401E"],["ind","Indigenous","#8A6D1D"],["dis","Persons with disabilities","#5B6B7F"],["nvm","Non-visible-minority","#9aa8b8"]];
+const DI_DATA={
+ 2024:{ranges:["Less than $69,999","$70,000 to $79,999","$80,000 to $94,999","$95,000 to $109,999","Over $110,000"],
+  all:[23.87,16.75,19.51,16.65,23.22],
+  black:[[34.78,1.46],[20.14,1.20],[17.46,0.89],[12.76,0.77],[14.86,0.64]],
+  vm:[[27.26,1.14],[17.68,1.06],[18.37,0.94],[15.78,0.95],[20.90,0.90]],
+  nvm:[[22.86,0.96],[16.48,0.98],[19.85,1.02],[16.90,1.02],[23.91,1.03]],
+  ind:[[24.80,1.04],[18.49,1.10],[21.08,1.08],[17.49,1.05],[18.15,0.78]],
+  dis:[[25.84,1.08],[16.98,1.01],[17.45,0.89],[16.30,0.98],[23.44,1.01]]},
+ 2023:{ranges:["Less than $65,000","$65,000 to $74,999","$75,000 to $89,999","$90,000 to $104,999","Over $150,000"],
+  all:[23.77,19.14,19.63,17.30,20.16],
+  black:[[35.35,1.49],[23.09,1.21],[16.41,0.84],[12.43,0.72],[12.72,0.63]],
+  vm:[[26.82,1.13],[20.81,1.09],[17.89,0.91],[16.16,0.93],[18.32,0.91]],
+  nvm:[[22.92,0.96],[18.68,0.98],[20.11,1.02],[17.61,1.02],[20.67,1.03]],
+  ind:[[25.64,1.08],[19.84,1.04],[21.60,1.10],[17.98,1.04],[14.94,0.74]],
+  dis:[[27.36,1.15],[19.13,1.00],[17.22,0.88],[17.26,1.00],[19.03,0.94]]},
+ 2022:{ranges:["Less than $60,000","$60,000 to $69,999","$70,000 to $84,999","$85,000 to $99,999","Over $100,000"],
+  all:[15.36,17.28,21.03,21.27,25.06],
+  black:[[21.38,1.39],[24.66,1.43],[20.52,0.98],[16.45,0.77],[16.98,0.68]],
+  vm:[[16.17,1.05],[19.58,1.13],[20.57,0.98],[20.29,0.95],[23.22,0.93]],
+  nvm:[[15.15,0.99],[16.69,0.97],[21.15,1.01],[21.51,1.01],[25.53,1.02]],
+  ind:[[17.02,1.11],[17.74,1.03],[22.67,1.08],[23.56,1.11],[19.01,0.76]],
+  dis:[[17.44,1.14],[18.69,1.08],[20.13,0.96],[20.04,0.94],[23.71,0.95]]},
+ 2021:{ranges:["Less than $60,000","$60,000 to $69,999","$70,000 to $84,999","$85,000 to $99,999","Over $100,000"],
+  all:[13.97,17.14,22.60,18.85,22.75],
+  black:[[21.04,1.51],[23.35,1.36],[20.49,0.91],[15.38,0.82],[15.41,0.68]],
+  vm:[[15.58,1.12],[19.29,1.13],[21.63,0.96],[18.32,0.97],[21.27,0.93]],
+  nvm:[[13.60,0.97],[16.65,0.97],[22.82,1.01],[18.97,1.01],[23.10,1.02]],
+  ind:[[15.03,1.08],[18.16,1.06],[23.87,1.06],[21.43,1.14],[16.63,0.73]],
+  dis:[[15.12,1.08],[18.75,1.09],[20.47,0.91],[18.64,0.99],[21.26,0.93]]},
+ 2020:{ranges:["Less than $60,000","$60,000 to $69,999","$70,000 to $84,999","$85,000 to $99,999","Over $100,000"],
+  all:[23.82,17.56,19.84,18.32,20.47],
+  black:[[34.75,1.46],[19.78,1.13],[16.32,0.82],[15.36,0.84],[13.79,0.67]],
+  vm:[[25.61,1.08],[18.66,1.06],[18.55,0.93],[17.87,0.98],[19.31,0.94]],
+  nvm:[[23.43,0.98],[17.32,0.99],[20.11,1.01],[18.42,1.01],[20.72,1.01]],
+  ind:[[26.57,1.12],[18.43,1.05],[22.93,1.16],[18.26,1.00],[13.80,0.67]],
+  dis:[[26.85,1.13],[18.64,1.06],[17.39,0.88],[19.07,1.04],[18.05,0.88]]},
+ 2019:{ranges:["Less than $60,000","$60,000 to $69,999","$70,000 to $84,999","$85,000 to $99,999","Over $100,000"],
+  all:[25.20,17.13,21.41,17.96,18.30],
+  black:[[36.60,1.45],[17.66,1.03],[17.36,0.81],[16.28,0.91],[12.11,0.66]],
+  vm:[[27.74,1.10],[17.51,1.02],[19.73,0.92],[17.72,0.99],[17.31,0.95]],
+  nvm:[[24.69,0.98],[17.06,1.00],[21.75,1.02],[18.01,1.00],[18.50,1.01]],
+  ind:[[27.87,1.11],[18.47,1.08],[24.32,1.14],[17.33,0.96],[12.02,0.66]],
+  dis:[[28.50,1.13],[17.30,1.01],[18.89,0.88],[18.56,1.03],[16.75,0.92]]},
+ 2018:{ranges:["Less than $60,000","$60,000 to $69,999","$70,000 to $84,999","$85,000 to $99,999","Over $100,000"],
+  all:[25.87,19.40,19.94,16.93,17.87],
+  black:[[34.69,1.34],[17.95,0.93],[18.56,0.93],[16.02,0.95],[12.78,0.72]],
+  vm:[[28.09,1.09],[18.71,0.96],[18.62,0.93],[17.18,1.01],[17.40,0.97]],
+  nvm:[[25.45,0.98],[19.53,1.01],[20.18,1.01],[16.88,1.00],[17.95,1.00]],
+  ind:[[28.69,1.11],[19.99,1.03],[23.68,1.19],[16.22,0.96],[11.42,0.64]],
+  dis:[[28.80,1.11],[18.83,0.97],[18.46,0.93],[17.60,1.04],[16.31,0.91]]},
+ 2017:{ranges:["Less than $55,000","$55,000 to $64,999","$65,000 to $79,999","$80,000 to $94,999","Over $95,000"],
+  all:[23.74,17.53,22.66,17.66,18.42],
+  black:[[31.81,1.34],[17.48,1.00],[20.43,0.90],[16.62,0.94],[13.66,0.74]],
+  vm:[[25.42,1.07],[17.13,0.98],[21.09,0.93],[18.17,1.03],[18.20,0.99]],
+  nvm:[[23.44,0.99],[17.60,1.00],[22.94,1.01],[17.57,0.99],[18.46,1.00]],
+  ind:[[27.36,1.15],[18.15,1.04],[25.91,1.14],[17.01,0.96],[11.58,0.63]],
+  dis:[[27.22,1.15],[17.78,1.01],[19.57,0.86],[18.49,1.05],[16.94,0.92]]}
+};
+const DI_MEDIAN={years:[2017,2018,2019,2020,2021,2022,2023,2024],
+  all:[69550,72450,75750,76900,79900,81300,80850,85650],
+  nvm:[69600,72550,76200,77500,80450,82050,82100,86500],
+  vm:[69250,71950,73650,74250,77100,78350,77000,83050],
+  black:[65450,68500,67450,67250,71150,71800,71200,77000],
+  ind:[67250,70450,72400,73350,77450,78400,78100,83350],
+  dis:[67800,71200,72700,73100,77050,78000,77800,84400]};
+let diYear=2024;
+const diYearChips=$("#diYearChips");
+[2024,2023,2022,2021,2020,2019,2018,2017].forEach(y=>{const b=document.createElement("button");b.textContent=y;b.dataset.y=y;
+  b.setAttribute("aria-pressed",y===diYear);b.addEventListener("click",()=>{diYear=y;renderDI();});diYearChips.appendChild(b);});
+function diColorFor(k){return (DI_GROUPS.find(g=>g[0]===k)||[])[2]||"#0E7C7B";}
+function renderDI(){
+  diYearChips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.y===diYear));
+  const D=DI_DATA[diYear];
+  const bl=D.black[0][1], bh=D.black[D.black.length-1][1];
+  $("#diKpiBlackLow").textContent=bl.toFixed(2);
+  $("#diKpiBlackHigh").textContent=bh.toFixed(2);
+  const mi=DI_MEDIAN.years.indexOf(diYear);
+  const gap=DI_MEDIAN.all[mi]-DI_MEDIAN.black[mi];
+  $("#diKpiGap").textContent="$"+gap.toLocaleString("en-CA");
+  $("#diBars").innerHTML=D.ranges.map((rg,ri)=>{
+    const series=[["black",D.black[ri][1]],["vm",D.vm[ri][1]],["ind",D.ind[ri][1]],["dis",D.dis[ri][1]],["nvm",D.nvm[ri][1]]];
+    const max=2.0;
+    const bars=series.map(([k,di])=>{
+      const w=Math.min(100,di/max*100), one=100/max, below=di<1;
+      return `<div style="display:flex;align-items:center;gap:8px;margin:3px 0">
+        <span style="flex:0 0 150px;font-size:11.5px;color:var(--ink-soft);text-align:right">${DI_GROUPS.find(g=>g[0]===k)[1]}</span>
+        <span style="flex:1;position:relative;height:16px;background:#ECEEE9;border-radius:3px">
+          <span style="position:absolute;left:0;top:0;bottom:0;width:${w}%;background:${diColorFor(k)};border-radius:3px;opacity:${k==='nvm'?0.55:1}"></span>
+          <span style="position:absolute;left:${one}%;top:-3px;bottom:-3px;width:2px;background:#111"></span>
+        </span>
+        <span style="flex:0 0 42px;font:600 12px/1 var(--mono);color:${di>=1.15||di<=0.85?(below?'#9C0006':'#006100'):'var(--ink-soft)'}">${di.toFixed(2)}</span>
+      </div>`;
+    }).join("");
+    return `<div style="margin:12px 0"><div style="font-weight:600;font-size:13.5px;margin-bottom:4px">${rg}</div>${bars}<div style="font-size:10.5px;color:var(--ink-soft);margin-left:158px">vertical line = DI of 1.0 (equitable)</div></div>`;
+  }).join("");
+  $("#diTableCap").textContent="Disproportionality Index, "+diYear+". Percent = share of that group in the salary range; DI = percent \u00f7 all-employees percent. Source: employment-equity.github.io.";
+  $("#diTable2 thead").innerHTML="<tr><th scope='col'>Salary range</th>"+
+    [["all","All employees"]].concat(DI_GROUPS.map(g=>[g[0],g[1]])).map(c=>`<th scope="col" class="num">${c[1]} %</th>`+(c[0]==="all"?"":`<th scope="col" class="num">DI</th>`)).join("")+"</tr>";
+  $("#diTable2 tbody").innerHTML=D.ranges.map((rg,ri)=>{
+    let row=`<tr><td>${rg}</td><td class="num">${D.all[ri].toFixed(2)}</td>`;
+    DI_GROUPS.forEach(g=>{
+      const cell=D[g[0]][ri], di=cell[1], upper=ri>=3, lower=ri<=1;
+      const flag=(lower&&di>=1.15)||(upper&&di<=0.85);
+      row+=`<td class="num">${cell[0].toFixed(2)}</td><td class="num ${flag?(di<1?'below-mark':'above-mark'):''}">${di.toFixed(2)}</td>`;
+    });
+    return row+"</tr>";
+  }).join("");
+}
+renderDI();
+$("#diMedianChart").innerHTML=lineChart(
+ [{name:"All",vals:DI_MEDIAN.all.map(v=>v/1000),color:"#44546A"},
+  {name:"Black",vals:DI_MEDIAN.black.map(v=>v/1000),color:"#1B2A41"},
+  {name:"Vis. min.",vals:DI_MEDIAN.vm.map(v=>v/1000),color:"#B3401E"},
+  {name:"Indigenous",vals:DI_MEDIAN.ind.map(v=>v/1000),color:"#8A6D1D"},
+  {name:"Disability",vals:DI_MEDIAN.dis.map(v=>v/1000),color:"#5B6B7F"}],
+ DI_MEDIAN.years,{label:"Median salary by group, thousands of dollars"});
+(function(){
+  const groups=[["black","Black","#1B2A41"],["vm","Visible minority","#B3401E"],["ind","Indigenous","#8A6D1D"],["dis","Disability","#5B6B7F"]];
+  const w=720,h=240,pl=52,pr=20,pt=14,pb=34, n=DI_MEDIAN.years.length;
+  const gaps=groups.map(([k])=>DI_MEDIAN.years.map((y,i)=>DI_MEDIAN.all[i]-DI_MEDIAN[k][i]));
+  const max=Math.max(...gaps.flat())*1.1, gw=(w-pl-pr)/n, bw=gw/(groups.length+1);
+  let g="";
+  for(let t=0;t<=4;t++){const v=max*t/4,y=pt+(h-pt-pb)*(1-t/4);g+=`<line x1="${pl}" y1="${y}" x2="${w-pr}" y2="${y}" stroke="#E5E7E1"/><text x="${pl-6}" y="${y+4}" text-anchor="end" font-size="10" fill="#5B6B7F" font-family="monospace">$${Math.round(v/1000)}k</text>`;}
+  DI_MEDIAN.years.forEach((yr,i)=>{
+    const x0=pl+i*gw;
+    g+=`<text x="${x0+gw/2}" y="${h-8}" text-anchor="middle" font-size="10" fill="#5B6B7F" font-family="monospace">${String(yr).replace('20',"'")}</text>`;
+    groups.forEach(([k,lbl,col],gi)=>{const val=gaps[gi][i], bh=(h-pt-pb)*(val/max), x=x0+bw*(gi+0.5);
+      g+=`<rect x="${x}" y="${pt+(h-pt-pb)-bh}" width="${bw*0.9}" height="${bh}" fill="${col}"><title>${yr} ${lbl}: $${val.toLocaleString('en-CA')} below all-employee median</title></rect>`;});
+  });
+  $("#diGapChart").innerHTML=`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Grouped bar chart of the dollar gap between the all-employee median salary and each group's median, by year. Black employees show the largest gap throughout, about 8,650 dollars in 2024.">${g}</svg>`;
+})();
+(function(){
+  const D=DI_DATA[2024];
+  const w=720,h=200,pl=170,pr=20,pt=10,pb=24, n=D.ranges.length;
+  const disp=D.ranges.map((rg,ri)=>D.nvm[ri][1]-D.black[ri][1]);
+  const max=Math.max(...disp.map(Math.abs))*1.15, midX=pl+(w-pl-pr)/2, rh=(h-pt-pb)/n;
+  let g=`<line x1="${midX}" y1="${pt}" x2="${midX}" y2="${h-pb}" stroke="#999"/>`;
+  D.ranges.forEach((rg,ri)=>{
+    const v=disp[ri], y=pt+ri*rh+rh*0.2, bh=rh*0.6, half=(w-pl-pr)/2, bw=Math.abs(v)/max*half;
+    const x=v>=0?midX:midX-bw, col=v>=0?"#B3401E":"#1B2A41";
+    g+=`<text x="${pl-8}" y="${y+bh/2+4}" text-anchor="end" font-size="11" fill="#44546A">${rg}</text>`;
+    g+=`<rect x="${x}" y="${y}" width="${bw}" height="${bh}" fill="${col}"><title>${rg}: ${v>=0?'+':''}${v.toFixed(2)}</title></rect>`;
+    g+=`<text x="${v>=0?x+bw+4:x-4}" y="${y+bh/2+4}" text-anchor="${v>=0?'start':'end'}" font-size="10.5" font-family="monospace" fill="#444">${v>=0?'+':''}${v.toFixed(2)}</text>`;
+  });
+  $("#diDisparityChart").innerHTML=`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Diverging bar chart, 2024: non-visible-minority DI minus Black DI by salary range, positive in low ranges and negative in high ranges.">${g}</svg>`;
+  $("#diDispLegend").innerHTML='<span style="--c:#B3401E">Non-visible-minority ahead (Black underrepresented here)</span><span style="--c:#1B2A41">Black ahead</span>';
+})();
+
+/* init route */
+(function(){
+  let start="overview";
+  try{
+    const h=(location.hash||"").slice(1);
+    if(/^(overview|depts|groups|salary|flows|pses|ex|profile|di|ombuds|linkages|files|action|sources|about)$/.test(h))start=h;
+  }catch(e){}
+  go(start);
+})();
+</script>
+</body>
+</html>
