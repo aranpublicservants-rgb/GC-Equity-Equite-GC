@@ -160,6 +160,20 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
   .print-only{display:block!important}
 }
 .print-only{display:none}
+@media(max-width:600px){
+  body{font-size:15px}
+  .wrap{padding:0 14px}
+  .card{padding:14px 15px}
+  th,td{padding:6px 8px;font-size:12.5px}
+  td.num,th.num{font-size:12px}
+  th{font-size:11px}
+  .howto{font-size:12.5px;padding:9px 11px}
+  caption{font-size:12px;padding:8px 10px}
+  h2{font-size:22px}
+  h3{font-size:17px}
+  .kpis{gap:10px}
+  .kpi .v{font-size:21px}
+}
 </style>
 </head>
 <body>
@@ -182,39 +196,101 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 
 <main id="main" class="wrap">
 
+<!-- ================= GUIDE ================= -->
+<section class="view" id="view-guide">
+  <h2>How to use this tool</h2>
+  <p class="lede">The Government of Canada's published employment equity data in one place. See how the four designated groups, women, Indigenous Peoples, persons with disabilities, and racialized (visible minority) employees, and their subgroups are doing on representation, pay, hiring, promotion and leadership, and where barriers may exist. Every figure comes from an official source; nothing is estimated. It covers the core public administration, the roughly 72 organizations where the Treasury Board is the employer, as of March 31, 2025, plus the 2024 employee survey.</p>
+
+  <div class="card" style="border-left:5px solid var(--teal)">
+    <h3>What you can find out</h3>
+    <p class="howto">Pick whichever question matches what you came for; the link takes you straight there.</p>
+    <ul style="font-size:14.5px;line-height:1.7;margin:0;padding-left:18px">
+      <li>How does my department compare to the public service, or to a similar-sized one? &rarr; <a href="#" data-go="depts">Departments</a></li>
+      <li>How is a specific group or subgroup (say, Black employees or persons with disabilities) doing? &rarr; <a href="#" data-go="groups">Groups &amp; subgroups</a></li>
+      <li>Are people being paid equitably, and does "visible minority" hide differences? &rarr; <a href="#" data-go="salary">Salary</a> and <a href="#" data-go="di">Salary DI tracker</a></li>
+      <li>Where do people fall out of hiring and promotion? &rarr; <a href="#" data-go="flows">Hiring &amp; promotion</a></li>
+      <li>What did employees say about discrimination, harassment and advancement? &rarr; <a href="#" data-go="pses">Employee survey</a></li>
+      <li>Who reaches the executive ranks? &rarr; <a href="#" data-go="ex">Executives</a></li>
+      <li>What's the case for employee support services, and how do organizations compare? &rarr; <a href="#" data-go="ombuds">Support services</a></li>
+      <li>How do I ask for data that isn't public, with the right legal backing? &rarr; <a href="#" data-go="action">Take action</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Getting around</h3>
+    <ul style="font-size:14px;line-height:1.6;margin:0;padding-left:18px">
+      <li><strong>Tabs</strong> across the top are the sections. On a phone they wrap onto more than one row; scroll up to see them all. You can also move between them with the arrow keys.</li>
+      <li><strong>Switching scope.</strong> Most pages let you choose the whole public service, a single department, or a specific group, using the dropdowns and buttons near the top of each page.</li>
+      <li><strong>Getting data out.</strong> Every table has a <strong>Copy</strong> button (pastes into Excel) and a <strong>CSV</strong> button (downloads the table). Every section has a <strong>Print / Save as PDF</strong> button for briefing notes.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>How to read what you see</h3>
+    <p class="howto">Five things explain almost every chart and table in the tool.</p>
+    <ul style="font-size:14px;line-height:1.65;margin:0;padding-left:18px">
+      <li><strong>Bars with a vertical line through them.</strong> The bar is the actual number; the short vertical line is the benchmark (usually workforce availability, the share you'd expect). If the bar stops short of the line, the group is below the benchmark; if it pushes past, it's above.</li>
+      <li><strong>Red means below, green means at or above.</strong> A red number or bar is a prompt to look closer, never a conclusion on its own.</li>
+      <li><strong>Ratios.</strong> A ratio of 1.0 means a group got exactly its proportional share (of promotions, of a pay band, and so on). Below 1.0 means less than its share; above 1.0 means more.</li>
+      <li><strong>"supp." means suppressed.</strong> When a count is 1 to 5 people it's hidden to protect privacy. It is not zero, it's just too small to publish.</li>
+      <li><strong>Percentages</strong> are a group's share, for example "23.9% racialized" means 23.9% of those employees self-identified as a member of a visible minority.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>What each tab does</h3>
+    <p class="howto">Grouped by what you're trying to do.</p>
+    <p style="font-weight:700;font-size:13.5px;margin:10px 0 2px;color:var(--teal)">See where groups stand</p>
+    <ul style="font-size:13.5px;line-height:1.5;margin:0 0 8px;padding-left:18px">
+      <li><strong>Overview</strong> — the headline numbers and the strongest barrier signals, each linked to the detail.</li>
+      <li><strong>Departments</strong> — representation for each organization; rank them, search, or compare two side by side.</li>
+      <li><strong>Groups &amp; subgroups</strong> — each published subgroup, with trends since 2018 and its leadership gap.</li>
+    </ul>
+    <p style="font-weight:700;font-size:13.5px;margin:10px 0 2px;color:var(--teal)">Find the barriers</p>
+    <ul style="font-size:13.5px;line-height:1.5;margin:0 0 8px;padding-left:18px">
+      <li><strong>Salary</strong> — who sits in which pay band, and the differences hidden inside "visible minority".</li>
+      <li><strong>Hiring &amp; promotion</strong> — hires, promotions and separations, plus the recruitment funnel stage by stage.</li>
+      <li><strong>Executives</strong> — representation in the executive ranks, by level, against each group's share of the workforce.</li>
+      <li><strong>Salary DI tracker</strong> — the Disproportionality Index over 2017 to 2024, showing pay compression year by year.</li>
+    </ul>
+    <p style="font-weight:700;font-size:13.5px;margin:10px 0 2px;color:var(--teal)">Hear from people, and see the context</p>
+    <ul style="font-size:13.5px;line-height:1.5;margin:0 0 8px;padding-left:18px">
+      <li><strong>Employee survey</strong> — 2024 PSES results on discrimination, harassment, racism and advancement.</li>
+      <li><strong>Where people work</strong> — region, occupation, language and intersectionality, the context behind the other numbers.</li>
+    </ul>
+    <p style="font-weight:700;font-size:13.5px;margin:10px 0 2px;color:var(--teal)">Act on it</p>
+    <ul style="font-size:13.5px;line-height:1.5;margin:0 0 8px;padding-left:18px">
+      <li><strong>Support services</strong> — the data case for employee networks, an ombuds office, conflict management and anti-racism teams, a cost calculator, and a comparator that groups organizations by size.</li>
+      <li><strong>Linkages lab</strong> — connects datasets to raise barriers no single table shows, with a relationship explorer and a finding builder.</li>
+      <li><strong>Take action</strong> — legal references, key release dates, and a generator that writes a formal data request for what isn't public.</li>
+    </ul>
+    <p style="font-weight:700;font-size:13.5px;margin:10px 0 2px;color:var(--teal)">Check the data itself</p>
+    <ul style="font-size:13.5px;line-height:1.5;margin:0;padding-left:18px">
+      <li><strong>Data files</strong> — where each dataset lives, for pulling figures directly.</li>
+      <li><strong>Data sources</strong> — the full source list, noting what's embedded here versus in a live dashboard.</li>
+      <li><strong>About the data</strong> — definitions (workforce availability, suppression, the ratios) and the honest limits.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <h3>Three cautions to keep in mind</h3>
+    <ol style="font-size:14.5px;line-height:1.6;margin:0;padding-left:20px">
+      <li><strong>These are screening signals, not findings.</strong> A red flag tells you where to look, not that something is wrong. Each organization has its own workforce availability reflecting its jobs and location, so a gap against the public-service average is a reason to investigate, not a verdict.</li>
+      <li><strong>The numbers can undercount.</strong> Self-identification is voluntary, so real representation may be higher than shown, and when trust is low people self-identify less, exactly where problems may be worst.</li>
+      <li><strong>Some data is linked, not embedded.</strong> Departmental promotions, acting appointments, subgroup-by-department figures and per-department survey results live in interactive federal dashboards; the tool links you straight to them.</li>
+    </ol>
+  </div>
+</section>
+
 <!-- ================= OVERVIEW ================= -->
 <section class="view" id="view-overview">
   <h2>Start here</h2>
-  <p class="lede">This tool is for <strong>every public servant</strong>, anyone in any department or agency who wants to see, in plain language, <strong>where equity groups stand and where they may face barriers</strong> in hiring, promotion, pay and leadership. No background in data is needed. All figures are transcribed from published Government of Canada tables, with nothing estimated. Suppressed small counts stay suppressed.</p>
-  <div class="banner"><strong>What lives here and what lives in the dashboards.</strong> This site embeds the complete published TBS tables: representation by department, subgroups, salary, hiring, promotion, separations, executives, regions, occupations and languages. Departmental promotions, acting appointments, applicant data by subgroup and PSES results are served by interactive federal dashboards that cannot be copied wholesale; every section links you straight to the right dashboard, pre-pointed at your department where the dashboard allows it. Public-service-wide 2024 PSES results for every equity question are embedded in the Employee survey section, with per-organization pages one link away.</div>
-
-  <details class="card" open style="border-left:5px solid var(--teal)">
-    <summary style="font-family:Georgia,serif;font-size:19px;font-weight:bold;color:var(--ink)">Guide to the tabs</summary>
-    <p style="font-size:14px;margin:10px 0"><strong>What this is:</strong> the Government of Canada's published employment equity data in one place, covering representation, pay, hiring, promotion and leadership for the four designated groups and their subgroups. All figures come from official sources. Numbers marked red are below the relevant benchmark; treat them as a prompt to look closer, not as a conclusion.</p>
-    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:6px"><strong>How it works:</strong> the tabs are the sections. Most pages switch between the whole public service, a single department, and specific groups. Tables have Copy and CSV buttons; each section has a Print/Save-as-PDF button.</p>
-    <p style="font-size:13.5px;font-weight:700;margin:12px 0 4px">The tabs:</p>
-    <ul style="font-size:13.5px;line-height:1.5;margin:0;padding-left:18px;columns:2;column-gap:28px">
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Overview</strong> — headline numbers and the main barrier signals, with links to the detail.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Departments</strong> — representation for each of the 72 organizations; rank, search, or compare two.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Groups &amp; subgroups</strong> — each published subgroup, with trends since 2018 and its leadership gap.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Salary</strong> — distribution across pay bands, and subgroup differences within "visible minority".</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Hiring &amp; promotion</strong> — hires, promotions and separations, plus the recruitment funnel by stage.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Employee survey</strong> — 2024 PSES results on discrimination, harassment, racism and advancement.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Executives</strong> — EX representation by level, against each group's share of the workforce.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Where people work</strong> — region, occupation, language and intersectionality.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Salary DI tracker</strong> — the Disproportionality Index, 2017&ndash;2024.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Ombuds value</strong> — the data relevant to an ombuds office, a cost calculator, and an org comparator.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Linkages lab</strong> — cross-dataset views, a correlation explorer, and a finding builder.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Data files</strong> — where each dataset lives, for pulling figures directly.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Take action</strong> — legal references, key dates, and request wording for non-public data.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>Data sources</strong> — the source list, noting what is embedded here versus in live dashboards.</li>
-      <li style="break-inside:avoid;margin-bottom:6px"><strong>About the data</strong> — definitions (WFA, suppression, the ratios) and the limits of the data.</li>
-    </ul>
-  </details>
+  <p class="lede">This tool is for <strong>every public servant</strong>, anyone in any department or agency who wants to see <strong>where equity groups stand and where they may face barriers</strong> in hiring, promotion, pay and leadership. All figures are transcribed from published Government of Canada tables, with nothing estimated. Suppressed small counts stay suppressed.</p>
+  <div class="banner"><strong>What lives here and what lives in the dashboards.</strong> This site embeds the complete published TBS tables: representation by department, subgroups, salary, hiring, promotion, separations, executives, regions, occupations and languages. Departmental promotions, acting appointments, applicant data by subgroup and PSES results are served by interactive federal dashboards that cannot be copied wholesale; every section links you straight to the right dashboard, pre-pointed at your department where the dashboard allows it. Public-service-wide 2024 PSES results for every equity question are embedded in the Employee survey section, with per-organization pages one link away. New here? Open the <a href="#" data-go="guide">How to use this</a> tab first.</div>
 
   <div class="card" style="border-left:5px solid var(--rust)">
     <h3>Key signals across the public service</h3>
-    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px">The most defensible barrier signals in the data, in plain language, each linked to the section where you can verify it. These are screening signals drawn from published figures, not findings of non-compliance; the value is knowing where to look.</p>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px">The most defensible barrier signals in the data, each linked to the section where you can verify it. These are screening signals drawn from published figures, not findings of non-compliance; the value is knowing where to look.</p>
     <ol style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6">
       <li><strong>The executive cliff for racialized employees.</strong> 23.9% of the workforce but 17.3% of executives; for Black employees, 5.1% of the workforce but 3.2% of executives. <a href="#" data-go="ex">See Executives</a>.</li>
       <li><strong>Pay compression for Black employees.</strong> A disproportionality index of 1.46 in the lowest salary range and 0.64 in the highest in 2024, with a median-salary gap that has widened to about $8,650. <a href="#" data-go="di">See Salary DI tracker</a>.</li>
@@ -457,22 +533,22 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <h3>The formal-system gap, measured</h3>
     <p class="howto">Every figure below is a verified 2024 PSES public-service-wide result from the Employee survey section. Read them as one sequence: people experience harm, mostly from those with power over them, then do not use the formal system because they fear it or do not believe in it.</p>
     <div class="tblwrap"><table><caption>The escalation funnel the formal system loses. Source: 2024 PSES, public service wide.</caption>
-    <thead><tr><th scope="col">Stage</th><th scope="col">What the data says</th><th scope="col" class="num">2024</th><th scope="col">Why an ombuds matters here</th></tr></thead>
+    <thead><tr><th scope="col">Stage</th><th scope="col">What the data says</th><th scope="col" class="num">2024</th><th scope="col">Why support services matter here</th></tr></thead>
     <tbody>
     <tr><td>Harm occurs</td><td>Victim of harassment (12%) or discrimination (9%) in the past 12 months</td><td class="num">~1 in 9</td><td>Demand exists in every organization, every year</td></tr>
-    <tr><td>Power asymmetry</td><td>Discrimination came from individuals with authority</td><td class="num">75%</td><td>People will not raise issues through a chain of command that contains the problem; an ombuds sits outside it</td></tr>
+    <tr><td>Power asymmetry</td><td>Discrimination came from individuals with authority</td><td class="num">75%</td><td>People will not raise issues through a chain of command that contains the problem; an ombuds or ICMS sits outside it</td></tr>
     <tr><td>Silence</td><td>Discrimination victims who took no action at all</td><td class="num">53%</td><td>Unraised issues do not disappear; they convert into disengagement, sick leave and exits</td></tr>
-    <tr><td>Fear</td><td>Did not file because they feared reprisal (harassment 47%, discrimination 45%)</td><td class="num">~46%</td><td>Confidentiality is the ombuds feature that directly neutralizes reprisal fear</td></tr>
+    <tr><td>Fear</td><td>Did not file because they feared reprisal (harassment 47%, discrimination 45%)</td><td class="num">~46%</td><td>Confidentiality is the feature of an ombuds or informal channel that directly neutralizes reprisal fear</td></tr>
     <tr><td>Futility</td><td>Did not file because they believed it would change nothing (harassment 57%, discrimination 65%)</td><td class="num">57-65%</td><td>An informal channel with visible outcomes rebuilds the belief that raising issues works</td></tr>
-    <tr><td>Recourse distrust</td><td>Feel they could start a formal recourse process without fear of reprisal</td><td class="num">51%</td><td>Half the workforce does not trust the front door; an ombuds is the side door</td></tr>
-    <tr><td>Accountability failure</td><td>Race-discrimination victims satisfied with how racism complaints are resolved</td><td class="num">11%</td><td>The strongest single argument that the current resolution machinery is not working for racialized employees</td></tr>
-    <tr><td>Systemic blindness</td><td>Call to Action seen as having had a positive impact (36% answered don't know)</td><td class="num">43%</td><td>Ombuds annual reporting on patterns and trends is one of the few mechanisms that surfaces systemic issues upward without identifying individuals</td></tr>
+    <tr><td>Recourse distrust</td><td>Feel they could start a formal recourse process without fear of reprisal</td><td class="num">51%</td><td>Half the workforce does not trust the front door; informal services are the side door</td></tr>
+    <tr><td>Accountability failure</td><td>Race-discrimination victims satisfied with how racism complaints are resolved</td><td class="num">11%</td><td>The strongest single argument that the current resolution machinery is not working for racialized employees; the gap an anti-racism team and networks exist to close</td></tr>
+    <tr><td>Systemic blindness</td><td>Call to Action seen as having had a positive impact (36% answered don't know)</td><td class="num">43%</td><td>Aggregated reporting from an ombuds, networks or an IDEA secretariat is one of the few mechanisms that surfaces systemic issues upward without identifying individuals</td></tr>
     </tbody></table></div>
-    <p style="font-size:13.5px;max-width:920px;margin-top:10px">The statutory anchor: section 207 of the Federal Public Sector Labour Relations Act requires every deputy head to establish an informal conflict management system in consultation with bargaining agents. An ombuds office is the most developed form of that obligation. The pattern data an ombuds aggregates also feeds the Employment Equity Act section 5 duty to identify and eliminate barriers, and hazard prevention obligations under Canada Labour Code Part II.</p>
+    <p style="font-size:13.5px;max-width:920px;margin-top:10px">The statutory anchor: section 207 of the Federal Public Sector Labour Relations Act requires every deputy head to establish an informal conflict management system in consultation with bargaining agents; an ombuds office is the most developed form of that obligation. The pattern data these services aggregate also feeds the Employment Equity Act section 5 duty to identify and eliminate barriers, and hazard prevention obligations under Canada Labour Code Part II.</p>
   </div>
   <div class="card">
     <h3>Build the financial case: an interactive calculator</h3>
-    <p class="howto">No invented costs here. Enter your own organization's figures; the starting values are illustrative placeholders only and are not data. The model uses two conservative, direct mechanisms: time recovered from unresolved conflict, and the cost differential when matters resolve informally instead of formally. Indirect effects (turnover avoided, sick leave, legal exposure) are deliberately excluded so the result survives scrutiny.</p>
+    <p class="howto">Costs the value of an early-resolution service, an ombuds office, an informal conflict management system, or a network or anti-racism team that resolves issues informally. No invented costs here: enter your own organization's figures; the starting values are illustrative placeholders only and are not data. The model uses two conservative, direct mechanisms: time recovered from unresolved conflict, and the cost differential when matters resolve informally instead of formally. Indirect effects (turnover avoided, sick leave, legal exposure) are deliberately excluded so the result survives scrutiny.</p>
     <div class="grid2">
       <div>
         <div class="ctl" style="margin-bottom:10px"><label for="c_emp">Employees in the organization</label><input type="number" id="c_emp" value="5000" min="50" step="50" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
@@ -486,7 +562,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
         <div class="ctl" style="margin-bottom:10px"><label for="c_gcost">Average internal cost per formal case ($)</label><input type="number" id="c_gcost" value="15000" min="0" step="1000" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
         <div class="ctl" style="margin-bottom:10px"><label for="c_icost">Average cost per informal resolution ($)</label><input type="number" id="c_icost" value="1500" min="0" step="250" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
         <div class="ctl" style="margin-bottom:10px"><label for="c_div">Share of formal cases divertible to informal resolution (%)</label><input type="number" id="c_div" value="30" min="0" max="100" step="5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
-        <div class="ctl" style="margin-bottom:10px"><label for="c_off">Annual cost of the ombuds office ($)</label><input type="number" id="c_off" value="600000" min="0" step="50000" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
+        <div class="ctl" style="margin-bottom:10px"><label for="c_off">Annual cost of the service ($)</label><input type="number" id="c_off" value="600000" min="0" step="50000" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:160px"></div>
       </div>
     </div>
     <div class="kpis" id="ombKpis"></div>
@@ -538,7 +614,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
   <div class="card">
     <h3>Six linkages hiding in plain sight</h3>
     <p class="howto">Each row connects two or more datasets from this site to raise a question no single table answers. Use it as a menu of hypotheses to test in your own organization; the data trail is stated so you can follow it. These are leads, not conclusions.</p>
-    <div class="tblwrap"><table><caption>Each linkage joins two or more verified datasets from this site. These are hypotheses to investigate, framed in plain language, with the data trail stated.</caption>
+    <div class="tblwrap"><table><caption>Each linkage joins two or more verified datasets from this site. These are hypotheses to investigate, with the data trail stated.</caption>
     <thead><tr><th scope="col">Linkage</th><th scope="col">The data trail (all verified, in this site)</th><th scope="col">The barrier hypothesis</th></tr></thead><tbody>
     <tr><td><strong>The language ladder</strong></td><td>48.5% of Black employees have French as their first official language (vs 30.2% average). 34% say lack of access to second-language training hurt their career. Executive positions are overwhelmingly bilingual-imperative.</td><td>Access to language training functions as a hidden promotion gate, and it gates Black francophone employees hardest. Test: compare language-training allocation by EE group in your organization.</td></tr>
     <tr><td><strong>The disability triple bind</strong></td><td>The only group below availability (9.0% vs 12.0%). Accommodation implementation fell from 81% to 71% while requests rose by half. Disability discrimination as a cited type jumped from 19% to 26%, the fastest of any ground. Separation share rose from 6.6% to 8.7%.</td><td>Recruitment, accommodation and retention are failing simultaneously; fixing only hiring will fill a leaking bucket. Test: track accommodation request-to-implementation time alongside separations.</td></tr>
@@ -562,7 +638,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
   </div>
   <div class="card">
     <h3>Signal builder: turn a threshold into a finding</h3>
-    <p class="howto">Pick a group and how far below the public-service availability counts as a flag. The builder lists every organization that trips it and writes a plain-language summary you can paste into a briefing note. Remember the caveat it includes: departmental availability differs, so these are screening signals.</p>
+    <p class="howto">Pick a group and how far below the public-service availability counts as a flag. The builder lists every organization that trips it and writes a summary you can paste into a briefing note. Remember the caveat it includes: departmental availability differs, so these are screening signals.</p>
     <div class="controls">
       <div class="ctl"><label for="sgGroup">Group</label><select id="sgGroup"></select></div>
       <div class="ctl"><label for="sgThr">Flag when representation is at least this many points below PS availability</label><input type="number" id="sgThr" value="1.0" min="0" step="0.5" style="font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px;width:120px"></div>
@@ -708,7 +784,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 
 <!-- ================= ABOUT ================= -->
 <section class="view" id="view-about">
-  <h2>About the data, in plain language</h2>
+  <h2>About the data</h2>
   <div class="card">
     <h3>Definitions you need</h3>
     <dl class="two-col">
@@ -1055,7 +1131,7 @@ function sparkline(vals,color){
 }
 
 /* ===================== NAVIGATION ===================== */
-const TABS=[["overview","Overview"],["depts","Departments"],["groups","Groups & subgroups"],["salary","Salary"],
+const TABS=[["guide","How to use this"],["overview","Overview"],["depts","Departments"],["groups","Groups & subgroups"],["salary","Salary"],
  ["flows","Hiring & promotion"],["pses","Employee survey"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["ombuds","Support services"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["sources","Data sources"],["about","About the data"]];
 const tabbar=$("#tabbar");
 tabbar.setAttribute("role","tablist");
@@ -1413,7 +1489,7 @@ function renderPSES(){
     }).join("");
     return `<div class="card"><h3>${grp.h}</h3><p class="howto">${grp.intro}</p>
     <div class="tblwrap"><table><caption>Public-service-wide results. Higher is ${grp.rows[0][3]==="neg"?"worse for most rows in this block":"better unless marked otherwise"}; the change column is coloured by whether the move is good or bad.</caption>
-    <thead><tr><th scope="col">Q#</th><th scope="col">What it asks (plain language)</th>${PSES_YEARS.map(y=>`<th scope="col" class="num">${y}</th>`).join("")}<th scope="col" class="num">Change since previous cycle</th></tr></thead>
+    <thead><tr><th scope="col">Q#</th><th scope="col">What it asks</th>${PSES_YEARS.map(y=>`<th scope="col" class="num">${y}</th>`).join("")}<th scope="col" class="num">Change since previous cycle</th></tr></thead>
     <tbody>${rows}</tbody></table></div></div>`;
   }).join("");
 }
@@ -1477,7 +1553,7 @@ function calcOmb(){
    <div class="kpi"><div class="v">${m(timeValue)}</div><div class="l">conflict time recovered per year (${Math.round(conflictHours).toLocaleString("en-CA")} hours at risk, ${v.c_rec}% recovered)</div></div>
    <div class="kpi"><div class="v">${m(divSave)}</div><div class="l">saved by diverting ${Math.round(v.c_grv*v.c_div/100)} formal cases to informal resolution</div></div>
    <div class="kpi"><div class="v">${m(total)}</div><div class="l">total estimated annual value</div></div>
-   <div class="kpi"><div class="v">${roi.toFixed(1)}x</div><div class="l">return per dollar of ombuds office cost (${m(v.c_off)})</div></div>`;
+   <div class="kpi"><div class="v">${roi.toFixed(1)}x</div><div class="l">return per dollar of the service's cost (${m(v.c_off)})</div></div>`;
   $("#ombFormula").textContent=`Formula: value = (employees x conflict% x hours lost x hourly rate x recovered%) + (formal cases x divertible% x (formal cost - informal cost)). Hourly rate = salary / 1950 hours.`;
 }
 ombIds.forEach(id=>$("#"+id).addEventListener("input",calcOmb));
@@ -1781,12 +1857,30 @@ document.querySelectorAll(".tblwrap").forEach(wrap=>{
   wrap.parentNode.insertBefore(bar,wrap);
 });
 // per-section action bar (print) on every view
-const SECTION_TITLES={overview:"Overview",depts:"Departments and agencies",groups:"Groups and subgroups",salary:"Salary and pay equity",flows:"Hiring, promotion and recruitment",pses:"Employee survey (PSES 2024)",ex:"Executives and leadership",profile:"Where and how people work",ombuds:"Employee support services and outcomes",linkages:"Linkages lab",sources:"Data sources",about:"About the data"};
+const SECTION_TITLES={guide:"How to use this tool",overview:"Overview",depts:"Departments and agencies",groups:"Groups and subgroups",salary:"Salary and pay equity",flows:"Hiring, promotion and recruitment",pses:"Employee survey (PSES 2024)",ex:"Executives and leadership",profile:"Where and how people work",ombuds:"Employee support services and outcomes",linkages:"Linkages lab",sources:"Data sources",about:"About the data"};
+const SECTION_CURRENCY={
+  overview:"Representation as of March 31, 2025; 2024 PSES.",
+  depts:"Representation as of March 31, 2025 (TBS Demographic Snapshot 2024-2025).",
+  groups:"Representation as of March 31, 2025; trends to 2018.",
+  salary:"Salary distribution as of March 31, 2025.",
+  flows:"Hires, promotions, separations for fiscal year 2024-25; recruitment audit covers processes closing 2016-17.",
+  pses:"2024 Public Service Employee Survey (fielded Oct–Dec 2024), with 2019–2024 history.",
+  ex:"Executive data as of March 31, 2025; movements for fiscal year 2024-25.",
+  profile:"As of March 31, 2025.",
+  di:"Disproportionality Index, 2017–2024 (source last updated June 2025).",
+  ombuds:"Representation as of March 31, 2025; survey figures 2024.",
+  linkages:"Draws on the datasets dated in each section.",
+  files:"Source files as catalogued; check each for its own release date.",
+  action:"Calendar reflects the 2024–2026 release cycle.",
+  sources:"Sources current as of the June 2026 build.",
+  about:""
+};
 document.querySelectorAll("section.view").forEach(sec=>{
   const id=sec.id.replace("view-","");
   const h2=sec.querySelector("h2");if(!h2)return;
   const bar=document.createElement("div");bar.className="actionbar";
-  bar.innerHTML=`<span class="muted">Tip: use Print to save this section as a PDF for a briefing note.</span>`;
+  const cur=SECTION_CURRENCY[id];
+  bar.innerHTML=`<span class="muted">${cur?"Data currency: "+cur+" ":""}Use Print to save this section as a PDF.</span>`;
   const pBtn=document.createElement("button");pBtn.type="button";pBtn.innerHTML="&#128424; Print / Save as PDF";
   pBtn.addEventListener("click",()=>printSection(sec));
   bar.appendChild(pBtn);
@@ -1803,6 +1897,58 @@ function printSection(sec){
 }
 // guard against any unexpected uncaught rejection surfacing in the console
 window.addEventListener("unhandledrejection",function(ev){ev.preventDefault();});
+
+/* ===================== Hover tooltips on table headers ===================== */
+const TH_DEFS={
+  "rep %":"Representation: the share of employees who self-identified with this group.",
+  "wfa %":"Workforce availability: the share of this group estimated to be available for these jobs in the Canadian workforce — the benchmark under the Employment Equity Act.",
+  "wfa % (where available)":"Workforce availability where published — the benchmark share for this group.",
+  "rep gap (pts)":"Representation minus workforce availability, in percentage points. Negative means below the benchmark.",
+  "ex rep %":"Representation in the executive (EX) ranks.",
+  "ex gap (pts)":"Executive representation minus overall representation, in points. Negative means the group thins out toward the top.",
+  "applicant share %":"Share of applicants who belong to this group.",
+  "hire share %":"Share of people hired who belong to this group.",
+  "hire conversion ratio":"Hire share divided by applicant share. Below 1.0 means the group is hired at a lower rate than it applies.",
+  "promotion share %":"Share of promotions going to this group.",
+  "promotion equity ratio":"Promotion share divided by workforce share. Below 1.0 means fewer promotions than the group's size would predict.",
+  "acting share %":"Share of acting (temporary higher-level) appointments going to this group.",
+  "acting equity ratio":"Acting share divided by workforce share. Below 1.0 means less acting opportunity than the group's size would predict.",
+  "di":"Disproportionality Index: the group's share in this salary range divided by all employees' share. Above 1.0 = overrepresented here; below 1.0 = underrepresented.",
+  "survival ratio":"Representation at the final hiring stage divided by representation at application. Below 1.0 means the process shed the group.",
+  "positive":"Share of respondents who answered positively.",
+  "negative":"Share of respondents who answered negatively.",
+  "responses":"Number of people who answered.",
+  "employees":"Number of employees (headcount).",
+  "women":"Share of employees who self-identified as women.",
+  "indigenous":"Share who self-identified as Indigenous (First Nations, Métis or Inuit).",
+  "indigenous peoples":"Share who self-identified as Indigenous (First Nations, Métis or Inuit).",
+  "disabilities":"Share who self-identified as persons with disabilities.",
+  "persons w/ disabilities":"Share who self-identified as persons with disabilities.",
+  "racialized":"Share who self-identified as a member of a visible minority (racialized).",
+  "black":"Share who self-identified as Black.",
+  "workforce share":"This group's share of the whole workforce.",
+  "hire ratio":"Hire share divided by workforce share. Below 1.0 means hired below the group's size.",
+  "ex hires (of 77)":"Number from this group among 77 external hires into the executive group in 2024-25.",
+  "ex promotions (of 943)":"Number from this group among 943 promotions into or within the executive group in 2024-25.",
+  "ex separations (of 417)":"Number from this group among 417 departures from the executive group in 2024-25."
+};
+function applyThTitles(scope){
+  (scope||document).querySelectorAll("th:not([data-tip-done])").forEach(function(th){
+    var key=(th.textContent||"").replace(/\s+/g," ").trim().toLowerCase().replace(/[▲▼]/g,"").trim();
+    if(TH_DEFS[key]){th.setAttribute("title",TH_DEFS[key]);th.style.cursor="help";}
+    th.setAttribute("data-tip-done","1");
+  });
+}
+applyThTitles();
+// re-apply when dynamic tables re-render (observe additions only; setting title is an attribute change and won't loop)
+try{
+  var thObserver=new MutationObserver(function(muts){
+    var any=false;muts.forEach(function(m){if(m.addedNodes&&m.addedNodes.length)any=true;});
+    if(any)applyThTitles();
+  });
+  var mainEl=document.getElementById("main");
+  if(mainEl)thObserver.observe(mainEl,{childList:true,subtree:true});
+}catch(e){}
 // print stamp element appended once
 (function(){const p=document.createElement("p");p.id="printStamp";p.className="print-only";p.style.cssText="font-size:9pt;color:#444;margin-top:14px;border-top:1px solid #999;padding-top:6px";document.querySelector("main").appendChild(p);})();
 
@@ -1966,10 +2112,10 @@ $("#diMedianChart").innerHTML=lineChart(
 
 /* init route */
 (function(){
-  let start="overview";
+  let start="guide";
   try{
     const h=(location.hash||"").slice(1);
-    if(/^(overview|depts|groups|salary|flows|pses|ex|profile|di|ombuds|linkages|files|action|sources|about)$/.test(h))start=h;
+    if(/^(guide|overview|depts|groups|salary|flows|pses|ex|profile|di|ombuds|linkages|files|action|sources|about)$/.test(h))start=h;
   }catch(e){}
   go(start);
 })();
