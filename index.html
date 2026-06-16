@@ -32,10 +32,23 @@ header.site h1{font-size:clamp(26px,4vw,40px);font-weight:700;max-width:840px}
 header.site p.sub{margin-top:12px;max-width:760px;color:#C9D2DD;font-size:15px}
 header.site p.sub strong{color:#fff}
 nav.tabs{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);z-index:50;box-shadow:0 1px 4px rgba(27,42,65,.06)}
-nav.tabs .wrap{display:flex;flex-wrap:wrap;gap:2px;padding-top:6px;padding-bottom:6px}
-nav.tabs button{appearance:none;border:0;background:none;font:600 13.5px/1 inherit;color:var(--ink-soft);padding:11px 13px;border-radius:6px;cursor:pointer}
-nav.tabs button:hover{background:var(--teal-soft);color:var(--ink)}
-nav.tabs button[aria-current="true"]{background:var(--ink);color:#fff}
+nav.tabs .wrap{display:flex;flex-wrap:wrap;gap:4px;padding-top:7px;padding-bottom:7px;align-items:center}
+.navgroup{position:relative}
+.navgroup>button,.navsolo{appearance:none;border:0;background:none;font:600 13.5px/1 inherit;color:var(--ink-soft);padding:11px 13px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.navgroup>button:hover,.navsolo:hover{background:var(--teal-soft);color:var(--ink)}
+.navgroup>button[aria-expanded="true"]{background:var(--teal-soft);color:var(--ink)}
+.navgroup.active-group>button,.navsolo[aria-current="true"]{background:var(--ink);color:#fff}
+.navgroup>button .caret{font-size:9px;opacity:.7}
+.navpanel{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 8px 24px rgba(27,42,65,.16);padding:6px;z-index:60;display:none}
+.navpanel.open{display:block}
+.navpanel button{display:block;width:100%;text-align:left;appearance:none;border:0;background:none;font:500 13.5px/1.3 inherit;color:var(--ink);padding:10px 12px;border-radius:6px;cursor:pointer}
+.navpanel button:hover{background:var(--teal-soft)}
+.navpanel button[aria-current="true"]{background:var(--ink);color:#fff;font-weight:600}
+@media(max-width:600px){
+  nav.tabs .wrap{gap:2px}
+  .navgroup>button,.navsolo{padding:10px 10px;font-size:13px}
+  .navpanel{min-width:200px}
+}
 main{padding:30px 0 60px}
 section.view{display:none}
 section.view.active{display:block}
@@ -160,6 +173,26 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
   .print-only{display:block!important}
 }
 .print-only{display:none}
+/* department profile + confidence + signal styling */
+.profile-strip{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.profile-strip>div{flex:1;min-width:150px;background:#F1F2EE;border-radius:8px;padding:10px 13px}
+.profile-strip .pl{display:block;font:600 10.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:3px}
+.profile-strip .pv{font-size:17px;font-weight:700;color:var(--ink)}
+.signal-note{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:0 7px 7px 0;padding:9px 13px;font-size:12.5px;color:#5a4a16;margin:10px 0}
+.request-box{background:#EDF3F2;border:1px solid #CFE0DE;border-radius:9px;padding:12px 15px;margin:14px 0;font-size:13.5px}
+.conf{display:inline-block;font:600 10px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:11px;vertical-align:middle}
+.conf-official{background:#E2EFE6;color:#2E6E4E}
+.conf-computed{background:#E6EBF2;color:#3a527d}
+.conf-entered{background:#F5EDD6;color:#8A6D1D}
+.conf-interp{background:#F1E6E0;color:#9a4a28}
+/* task-based entry cards */
+.entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 20px}
+.entry-card{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:18px 18px;transition:border-color .15s,transform .15s}
+.entry-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.entry-card .ico{font-size:22px;display:block;margin-bottom:6px}
+.entry-card h3{margin:0 0 5px;font-size:17px}
+.entry-card p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.45}
+@media(max-width:700px){.entry-grid{grid-template-columns:1fr}}
 @media(max-width:600px){
   body{font-size:15px}
   .wrap{padding:0 14px}
@@ -235,6 +268,13 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
       <li><strong>"supp." means suppressed.</strong> When a count is 1 to 5 people it's hidden to protect privacy. It is not zero, it's just too small to publish.</li>
       <li><strong>Percentages</strong> are a group's share, for example "23.9% racialized" means 23.9% of those employees self-identified as a member of a visible minority.</li>
     </ul>
+    <p style="font-size:13.5px;font-weight:700;margin:14px 0 6px">Where a number comes from is labelled:</p>
+    <p style="font-size:13.5px;line-height:2">
+      <span class="conf conf-official">official data</span> transcribed directly from TBS, the PSC or the survey. &nbsp;
+      <span class="conf conf-computed">computed</span> a ratio, gap or ranking worked out from official figures. &nbsp;
+      <span class="conf conf-entered">you enter</span> values you type into a calculator or comparator. &nbsp;
+      <span class="conf conf-interp">interpretation</span> a possible barrier or hypothesis to test, never a finding.
+    </p>
   </div>
 
   <div class="card">
@@ -285,11 +325,28 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 <!-- ================= OVERVIEW ================= -->
 <section class="view" id="view-overview">
   <h2>Start here</h2>
+  <div class="entry-grid">
+    <a class="entry-card" href="#" data-go="depts">
+      <span class="ico" aria-hidden="true">&#127970;</span>
+      <h3>Check an organization</h3>
+      <p>Pick a department and see its representation, gaps, what to investigate, and what data to request.</p>
+    </a>
+    <a class="entry-card" href="#" data-go="linkages">
+      <span class="ico" aria-hidden="true">&#128269;</span>
+      <h3>Find a systemic barrier</h3>
+      <p>Start from the signals: executive gaps, pay compression, hiring drop-off, accommodation, recourse trust.</p>
+    </a>
+    <a class="entry-card" href="#" data-go="action">
+      <span class="ico" aria-hidden="true">&#128221;</span>
+      <h3>Build a briefing note</h3>
+      <p>Get the legal hooks, the release calendar, and ready-to-send wording to request non-public data.</p>
+    </a>
+  </div>
   <p class="lede">This tool is for <strong>every public servant</strong>, anyone in any department or agency who wants to see <strong>where equity groups stand and where they may face barriers</strong> in hiring, promotion, pay and leadership. All figures are transcribed from published Government of Canada tables, with nothing estimated. Suppressed small counts stay suppressed.</p>
   <div class="banner"><strong>What lives here and what lives in the dashboards.</strong> This site embeds the complete published TBS tables: representation by department, subgroups, salary, hiring, promotion, separations, executives, regions, occupations and languages. Departmental promotions, acting appointments, applicant data by subgroup and PSES results are served by interactive federal dashboards that cannot be copied wholesale; every section links you straight to the right dashboard, pre-pointed at your department where the dashboard allows it. Public-service-wide 2024 PSES results for every equity question are embedded in the Employee survey section, with per-organization pages one link away. New here? Open the <a href="#" data-go="guide">How to use this</a> tab first.</div>
 
   <div class="card" style="border-left:5px solid var(--rust)">
-    <h3>Key signals across the public service</h3>
+    <h3>Key signals across the public service <span class="conf conf-interp">interpretation</span></h3>
     <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px">The most defensible barrier signals in the data, each linked to the section where you can verify it. These are screening signals drawn from published figures, not findings of non-compliance; the value is knowing where to look.</p>
     <ol style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6">
       <li><strong>The executive cliff for racialized employees.</strong> 23.9% of the workforce but 17.3% of executives; for Black employees, 5.1% of the workforce but 3.2% of executives. <a href="#" data-go="ex">See Executives</a>.</li>
@@ -365,8 +422,19 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
   <div class="card">
     <h3>All organizations, side by side</h3>
     <p class="howto">Click any column heading to sort. Type in the box to filter by name. Red bold marks representation below the public service availability for that group; "supp." means the published count was suppressed to protect privacy (1 to 5 people).</p>
-    <div class="ctl" style="margin-bottom:10px"><label for="allDeptFilter">Filter organizations by name</label><input type="search" id="allDeptFilter" placeholder="e.g. health, agency, canada" aria-label="Filter organizations by name" style="min-width:240px"></div>
+    <div class="controls" style="margin-bottom:10px">
+      <div class="ctl"><label for="allDeptFilter">Filter by name</label><input type="search" id="allDeptFilter" placeholder="e.g. health, agency, canada" aria-label="Filter organizations by name" style="min-width:200px"></div>
+      <div class="ctl"><label for="allDeptTier">Filter by size</label><select id="allDeptTier">
+        <option value="all">All sizes</option>
+        <option value="xl">Very large (10,000+)</option>
+        <option value="l">Large (5,000–9,999)</option>
+        <option value="m">Medium (1,000–4,999)</option>
+        <option value="s">Small (250–999)</option>
+        <option value="xs">Micro (under 250)</option>
+      </select></div>
+    </div>
     <div class="tblwrap" style="max-height:560px;overflow-y:auto"><table id="allDeptTable"><caption>Representation by organization, March 31, 2025. Source: TBS Employment Equity Demographic Snapshot 2024-2025, Appendix Table 1.</caption><thead></thead><tbody></tbody></table></div>
+    <p class="signal-note">Screening signal, not a legal conclusion. Each organization's own workforce availability differs by occupation and region; a red cell shows where to investigate, not non-compliance.</p>
   </div>
 </section>
 
@@ -547,7 +615,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <p style="font-size:13.5px;max-width:920px;margin-top:10px">The statutory anchor: section 207 of the Federal Public Sector Labour Relations Act requires every deputy head to establish an informal conflict management system in consultation with bargaining agents; an ombuds office is the most developed form of that obligation. The pattern data these services aggregate also feeds the Employment Equity Act section 5 duty to identify and eliminate barriers, and hazard prevention obligations under Canada Labour Code Part II.</p>
   </div>
   <div class="card">
-    <h3>Build the financial case: an interactive calculator</h3>
+    <h3>Build the financial case: an interactive calculator <span class="conf conf-entered">you enter</span></h3>
     <p class="howto">Costs the value of an early-resolution service, an ombuds office, an informal conflict management system, or a network or anti-racism team that resolves issues informally. No invented costs here: enter your own organization's figures; the starting values are illustrative placeholders only and are not data. The model uses two conservative, direct mechanisms: time recovered from unresolved conflict, and the cost differential when matters resolve informally instead of formally. Indirect effects (turnover avoided, sick leave, legal exposure) are deliberately excluded so the result survives scrutiny.</p>
     <div class="grid2">
       <div>
@@ -1133,36 +1201,60 @@ function sparkline(vals,color){
 /* ===================== NAVIGATION ===================== */
 const TABS=[["guide","How to use this"],["overview","Overview"],["depts","Departments"],["groups","Groups & subgroups"],["salary","Salary"],
  ["flows","Hiring & promotion"],["pses","Employee survey"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["ombuds","Support services"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["sources","Data sources"],["about","About the data"]];
+const LABELS=Object.fromEntries(TABS);
+const NAV_GROUPS=[
+  {solo:"guide"},
+  {label:"Overview & context",items:["overview","depts","about","sources"]},
+  {label:"Talent pipeline",items:["flows","ex","groups"]},
+  {label:"Compensation",items:["salary","di"]},
+  {label:"Workplace culture",items:["pses","profile","ombuds"]},
+  {label:"Data & action",items:["linkages","action","files"]}
+];
+const GROUP_OF={}; NAV_GROUPS.forEach((g,gi)=>{(g.items||[g.solo]).forEach(id=>GROUP_OF[id]=gi);});
 const tabbar=$("#tabbar");
-tabbar.setAttribute("role","tablist");
+tabbar.setAttribute("role","menubar");
 tabbar.setAttribute("aria-label","Sections of the equity data explorer");
-TABS.forEach(([id,label],i)=>{
-  const b=document.createElement("button");b.textContent=label;b.dataset.tab=id;
-  b.setAttribute("role","tab");b.id="tab-"+id;b.setAttribute("tabindex",i===0?"0":"-1");
-  b.addEventListener("click",()=>go(id));
-  tabbar.appendChild(b);
+const navEls=[];
+NAV_GROUPS.forEach((g,gi)=>{
+  if(g.solo){
+    const b=document.createElement("button");b.className="navsolo";b.textContent=LABELS[g.solo];b.dataset.tab=g.solo;
+    b.setAttribute("role","menuitem");b.addEventListener("click",()=>{closeAllPanels();go(g.solo);});
+    tabbar.appendChild(b);navEls.push({type:"solo",id:g.solo,el:b});
+    return;
+  }
+  const wrap=document.createElement("div");wrap.className="navgroup";
+  const btn=document.createElement("button");btn.innerHTML=g.label+' <span class="caret" aria-hidden="true">&#9660;</span>';
+  btn.setAttribute("aria-haspopup","true");btn.setAttribute("aria-expanded","false");btn.setAttribute("role","menuitem");
+  const panel=document.createElement("div");panel.className="navpanel";panel.setAttribute("role","menu");
+  g.items.forEach(id=>{
+    const ib=document.createElement("button");ib.textContent=LABELS[id];ib.dataset.tab=id;ib.setAttribute("role","menuitem");
+    ib.addEventListener("click",()=>{closeAllPanels();go(id);});
+    panel.appendChild(ib);
+  });
+  btn.addEventListener("click",e=>{
+    e.stopPropagation();
+    const isOpen=panel.classList.contains("open");
+    closeAllPanels();
+    if(!isOpen){panel.classList.add("open");btn.setAttribute("aria-expanded","true");}
+  });
+  wrap.appendChild(btn);wrap.appendChild(panel);tabbar.appendChild(wrap);
+  navEls.push({type:"group",gi:gi,wrap:wrap,btn:btn,panel:panel});
 });
-// Arrow-key / Home / End navigation across tabs (WCAG keyboard support)
-tabbar.addEventListener("keydown",e=>{
-  const btns=[...tabbar.querySelectorAll("button")];
-  let idx=btns.indexOf(document.activeElement);
-  if(idx<0)return;
-  let next=null;
-  if(e.key==="ArrowRight"||e.key==="ArrowDown")next=(idx+1)%btns.length;
-  else if(e.key==="ArrowLeft"||e.key==="ArrowUp")next=(idx-1+btns.length)%btns.length;
-  else if(e.key==="Home")next=0;
-  else if(e.key==="End")next=btns.length-1;
-  else return;
-  e.preventDefault();
-  btns.forEach(b=>b.setAttribute("tabindex","-1"));
-  btns[next].setAttribute("tabindex","0");btns[next].focus();
-});
+function closeAllPanels(){navEls.forEach(n=>{if(n.type==="group"){n.panel.classList.remove("open");n.btn.setAttribute("aria-expanded","false");}});}
+document.addEventListener("click",()=>closeAllPanels());
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAllPanels();});
 function go(id){
   document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="view-"+id));
-  tabbar.querySelectorAll("button").forEach(b=>{const cur=b.dataset.tab===id;b.setAttribute("aria-current",cur?"true":"false");b.setAttribute("tabindex",cur?"0":"-1");});
-  // Note: intentionally NOT calling history.replaceState/pushState. The published artifact runs in a
-  // cross-origin iframe where any History API write throws a SecurityError. Section switching is done
-  // purely by toggling visibility, so navigation never touches the URL or the History API.
+  // highlight the active group / solo and mark the active item inside its panel
+  const activeGroup=GROUP_OF[id];
+  navEls.forEach(n=>{
+    if(n.type==="solo"){n.el.setAttribute("aria-current",n.id===id?"true":"false");}
+    else{
+      n.wrap.classList.toggle("active-group",n.gi===activeGroup);
+      n.panel.querySelectorAll("button").forEach(b=>b.setAttribute("aria-current",b.dataset.tab===id?"true":"false"));
+    }
+  });
+  // Section switching is by visibility toggle only; never touches the History API (blocked in the published iframe).
   try{ window.scrollTo({top:0}); }catch(e){ try{window.scrollTo(0,0);}catch(e2){} }
 }
 document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){e.preventDefault();go(g.dataset.go);}});
@@ -1219,11 +1311,13 @@ function renderDept(i){
   }
   const d=DEPTS[i], keys=["w","i","d","v"], idx={w:2,i:3,d:4,v:5};
   const flags=[];
+  let belowCount=0, largest=null;
   GROUPS.forEach(g=>{
     const v=d[idx[g.k]];
     if(v==null){flags.push(`<span class="flag note">${g.name}: suppressed</span>`);return;}
     const diff=v-WFA[g.k];
-    if(diff<0)flags.push(`<span class="flag bad">&#9660; ${g.name}: ${Math.abs(diff).toFixed(1)} pts below PS availability</span>`);
+    if(diff<0){belowCount++;if(largest==null||Math.abs(diff)>largest.gap)largest={name:g.name,gap:Math.abs(diff)};
+      flags.push(`<span class="flag bad">&#9660; ${g.name}: ${Math.abs(diff).toFixed(1)} pts below PS availability</span>`);}
     else flags.push(`<span class="flag ok">&#9650; ${g.name}: above PS availability</span>`);
   });
   const share=(d[1]/CPA.n*100).toFixed(1);
@@ -1231,14 +1325,31 @@ function renderDept(i){
   $("#deptCard").innerHTML=`<div class="card">
     <h3>${d[0]} <span style="font:600 12px/1 var(--mono);color:var(--ink-soft)">${fmt(d[1])} employees &middot; ${share}% of the CPA</span></h3>
     ${d[6]?`<p class="howto">${d[6]}</p>`:""}
-    <div style="margin:6px 0 14px">${flags.join(" ")}</div>
+    <div class="profile-strip">
+      <div><span class="pl">Employees</span><span class="pv">${fmt(d[1])}</span></div>
+      <div><span class="pl">Groups below PS availability</span><span class="pv">${belowCount} of 4</span></div>
+      <div><span class="pl">Largest representation gap</span><span class="pv">${largest?largest.name+" ("+largest.gap.toFixed(1)+" pts)":"none below"}</span></div>
+    </div>
+    <p class="signal-note">Screening signal, not a legal conclusion. Each organization has its own workforce availability reflecting its occupations and region; use this to decide where to investigate, not to declare non-compliance.</p>
+    <div style="margin:6px 0 14px">${flags.join(" ")} <span class="conf conf-official">official data</span></div>
     ${GROUPS.map(g=>gapBar(g.name,d[idx[g.k]],WFA[g.k],"PS WFA",90,g.color)).join("")}
-    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:10px">The tick is the public-service-wide availability. Each organization also has its own availability estimate reflecting its occupation and region mix, published inside the PSC dashboard; treat distance from the tick as a reason to look closer, not a verdict.</p>
-    <p style="font-size:13.5px;margin-top:10px"><strong>Go deeper on this organization:</strong>
+    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:10px">The tick is the public-service-wide availability. Each organization also has its own availability estimate reflecting its occupation and region mix, published inside the PSC dashboard.</p>
+    <div class="request-box">
+      <strong>Not published in per-organization data, request these from your Head of HR:</strong>
+      <ul style="margin:6px 0 0;padding-left:18px;font-size:13px;line-height:1.5">
+        <li>Acting appointments and promotions by group and subgroup, by level</li>
+        <li>Subgroup representation (e.g. Black, specific subgroups) within this organization</li>
+        <li>Accommodation request-to-implementation times</li>
+        <li>Second-language training access by group</li>
+        <li>This organization's own PSES results by demographic group</li>
+      </ul>
+      <p style="margin:8px 0 0;font-size:12.5px"><a href="#" data-go="action">Generate a formal data request &rarr;</a></p>
+    </div>
+    <p style="font-size:13.5px;margin-top:12px"><strong>Go deeper on this organization:</strong>
     <a href="https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html" target="_blank" rel="noopener">subgroups, promotions and acting appointments (PSC)</a> &middot;
     <a href="${psc}" target="_blank" rel="noopener">staffing activity (PSC, pre-set to this organization)</a> &middot;
     <a href="https://hrdatahub-centrededonneesrh.tbs-sct.gc.ca/PSES/Home/Index?GoCTemplateCulture=en-CA" target="_blank" rel="noopener">employee survey results (PSES)</a> &middot;
-    <a href="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index" target="_blank" rel="noopener">this organization's 2024 PSES page (results by question index)</a> &middot;
+    <a href="https://www.tbs-sct.canada.ca/pses-saff/2024/results-resultats/en/bq-pq/index" target="_blank" rel="noopener">this organization's 2024 PSES page</a> &middot;
     <a href="https://hranalytics-analytiquerh.tbs-sct.gc.ca/MentalHealth-Santementale/Home" target="_blank" rel="noopener">psychosocial factors (Mental Health Dashboard)</a></p>
   </div>`;
 }
@@ -1275,21 +1386,26 @@ function renderAllDepts(){
     const c=+th.dataset.c; if(sortCol===c)sortDir*=-1;else{sortCol=c;sortDir=c===0?1:-1;} renderAllDepts();}));
   const wfaIdx={2:"w",3:"i",4:"d",5:"v"};
   const q=(($("#allDeptFilter")||{}).value||"").trim().toLowerCase();
+  const tier=(($("#allDeptTier")||{}).value)||"all";
+  const tierTest={all:()=>true,xl:n=>n>=10000,l:n=>n>=5000&&n<10000,m:n=>n>=1000&&n<5000,s:n=>n>=250&&n<1000,xs:n=>n<250};
   let rows=[...DEPTS].sort((a,b)=>{
     const av=a[sortCol],bv=b[sortCol];
     if(av==null&&bv==null)return 0; if(av==null)return 1; if(bv==null)return -1;
     return (av<bv?-1:av>bv?1:0)*(sortCol===0?1:sortDir)*(sortCol===0&&sortDir<0?-1:1);
   });
   if(q)rows=rows.filter(d=>d[0].toLowerCase().includes(q));
+  rows=rows.filter(d=>(tierTest[tier]||tierTest.all)(d[1]));
+  const emptyMsg=q?'No organizations match "'+q+'"'+(tier!=="all"?" in this size range":"")+'.':'No organizations in this size range.';
   $("#allDeptTable tbody").innerHTML=(rows.length?rows.map(d=>"<tr><td>"+d[0]+"</td><td class='num'>"+fmt(d[1])+"</td>"+
     [2,3,4,5].map(c=>{
       const v=d[c]; if(v==null)return "<td class='num supp'>supp.</td>";
       const below=v<WFA[wfaIdx[c]];
       return `<td class="num ${below?"below-mark":""}">${v.toFixed(1)}%</td>`;
-    }).join("")+"</tr>").join("") : "<tr><td colspan='6' style='color:var(--ink-soft)'>No organizations match \""+q+"\".</td></tr>");
+    }).join("")+"</tr>").join("") : "<tr><td colspan='6' style='color:var(--ink-soft)'>"+emptyMsg+"</td></tr>");
 }
 renderAllDepts();
-(function(){const f=$("#allDeptFilter");if(f)f.addEventListener("input",renderAllDepts);})();
+(function(){const f=$("#allDeptFilter");if(f)f.addEventListener("input",renderAllDepts);
+ const t=$("#allDeptTier");if(t)t.addEventListener("change",renderAllDepts);})();
 
 /* ===================== GROUPS & SUBGROUPS ===================== */
 let grpKey="v";
