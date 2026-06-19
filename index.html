@@ -16,6 +16,31 @@
   --ok:#2E6E4E; --ok-soft:#E2EFE6; --bench:#5B6B7F; --gold:#8A6D1D; --gold-soft:#F5EDD6;
   --mono:ui-monospace,"SF Mono",Consolas,Menlo,monospace;
 }
+:root[data-theme="dark"]{
+  --ink:#E8ECF1; --ink-soft:#AAB4C0; --paper:#12161B; --card:#1B212A; --line:#2C343D;
+  --teal:#46B8B5; --teal-soft:#15323A; --rust:#E27A52; --rust-soft:#3A241C;
+  --ok:#5FC08A; --ok-soft:#16291F; --bench:#8FA0B3; --gold:#C9A94B; --gold-soft:#2C2613;
+}
+:root[data-theme="dark"] .below-mark{color:#FF8F8F!important}
+:root[data-theme="dark"] .above-mark{color:#6FD49B!important}
+:root[data-theme="dark"] rect[fill="#9C0006"]{fill:#E06666!important}
+:root[data-theme="dark"] .conf-official{background:#16323a;color:#9fe6e2}
+:root[data-theme="dark"] img,:root[data-theme="dark"] svg{filter:none}
+:root[data-theme="contrast"]{
+  --ink:#000000; --ink-soft:#1a1a1a; --paper:#FFFFFF; --card:#FFFFFF; --line:#000000;
+  --teal:#005a58; --teal-soft:#d6efee; --rust:#8a2e10; --rust-soft:#f7e4dc;
+  --ok:#0b5a32; --ok-soft:#e2efe6; --bench:#000000; --gold:#5c4708; --gold-soft:#f5edd6;
+}
+:root[data-theme="contrast"] *{border-color:#000!important}
+:root[data-theme="contrast"] .below-mark{color:#a30000!important;font-weight:700}
+:root[data-theme="contrast"] .above-mark{color:#0b5a32!important;font-weight:700}
+:root[data-theme="contrast"] a{text-decoration:underline}
+:root[data-theme="contrast"] nav.tabs .navsolo,:root[data-theme="contrast"] .navgroup>button{border:1px solid #000}
+.themebar{display:inline-flex;gap:4px;align-items:center}
+.themebar button{appearance:none;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;font:600 11px/1 inherit;padding:6px 9px;border-radius:6px;cursor:pointer}
+.themebar button[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+:root[data-theme="dark"] .themebar button,:root[data-theme="contrast"] .themebar button{border-color:var(--line);background:var(--card);color:var(--ink)}
+:root[data-theme="dark"] .themebar button[aria-pressed="true"],:root[data-theme="contrast"] .themebar button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
@@ -213,7 +238,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site">
   <div class="wrap">
-    <div class="eyebrow">Core public administration &middot; as of March 31, 2025</div>
+    <div class="eyebrow" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span>Core public administration &middot; as of March 31, 2025</span><span class="themebar" role="group" aria-label="Colour theme"><button type="button" data-theme-set="light" aria-pressed="true">Light</button><button type="button" data-theme-set="dark" aria-pressed="false">Dark</button><button type="button" data-theme-set="contrast" aria-pressed="false">High contrast</button></span></div>
     <h1>Public Service Equity Data Explorer</h1>
     <p class="sub">Every published employment equity number for Canada's core public administration, gathered in one place from the federal sources catalogued on the <strong>GCwiki Data Equity page</strong>. Pick a department, a group, or a subgroup and see the distance to the benchmark. Where the bar stops short of the tick, there may be a barrier worth investigating.</p>
     <div class="hero-bars" role="img" aria-label="Four bars compare each designated group's representation to its workforce availability. Women 56.8 percent against availability of 54.9, above. Indigenous Peoples 5.5 against 4.0, above. Persons with disabilities 9.0 against 12.0, below by 3 points. Racialized employees 23.9 against 22.7, above.">
@@ -232,6 +257,16 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 <!-- ================= GUIDE ================= -->
 <section class="view" id="view-guide">
   <h2>How to use this tool</h2>
+  <div class="card" style="background:var(--teal-soft);border:0">
+    <h3 style="margin-top:0">What are you here to do?</h3>
+    <p class="howto" style="margin-bottom:12px">Pick the closest fit and jump straight to what tends to be most useful for that work. You can always explore the rest from the menu.</p>
+    <div class="entry-grid">
+      <a class="entry-card" href="#" data-go="depts"><strong>I work in HR or planning</strong><span>Profile any organization, see its representation gaps and survey results, and build a briefing note.</span></a>
+      <a class="entry-card" href="#" data-go="demo"><strong>I run or support an employee network</strong><span>See how each designated group fares, scan for the largest gaps, and find where groups are made invisible.</span></a>
+      <a class="entry-card" href="#" data-go="compare"><strong>I'm a researcher or analyst</strong><span>Join representation, workforce availability and survey data, and test relationships across organizations.</span></a>
+      <a class="entry-card" href="#" data-go="ombuds"><strong>I experienced a barrier</strong><span>See the recourse and resolution data, the support services available, and how to raise concerns.</span></a>
+    </div>
+  </div>
   <p class="lede">The Government of Canada's published employment equity data in one place. See how the four designated groups, women, Indigenous Peoples, persons with disabilities, and racialized (visible minority) employees, and their subgroups are doing on representation, pay, hiring, promotion and leadership, and where barriers may exist. Every figure comes from an official source; nothing is estimated. It covers the core public administration, the roughly 72 organizations where the Treasury Board is the employer, as of March 31, 2025, plus the 2024 employee survey.</p>
 
   <div class="card" style="border-left:5px solid var(--teal)">
@@ -813,6 +848,120 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
   <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px">Sources: representation and workforce availability, Treasury Board of Canada Secretariat employment-equity data (March 31, 2025); survey measures, 2024 Public Service Employee Survey (subset 1, by organization). Correlations are computed live in your browser across the organizations that report both measures. Independent analytical tool, not a Government of Canada publication.</p>
 </section>
 
+<!-- ================= REAL PROGRESS OR OPTICS ================= -->
+<section class="view" id="view-progress">
+  <h2>Real progress, or just optics?</h2>
+  <p class="lede">Representation can rise while the gap to the benchmark widens, because the benchmark itself moved. In 2023 the workforce-availability benchmark was updated to the 2021 Census and, for the first time, counts both Canadian citizens and permanent residents. For racialized (visible minority) employees that raised the bar substantially. A department whose representation held steady can now sit further behind, and one that posted a gain can still have lost ground against the higher benchmark. This page shows the full picture so a moved goalpost is not mistaken for a win.</p>
+
+  <div class="card" style="border-left:5px solid var(--gold)">
+    <h3>What changed, and why it matters <span class="conf conf-official">official data</span></h3>
+    <ul class="howto" style="line-height:1.6">
+      <li>The benchmark for equitable representation is workforce availability (WFA), the share of the workforce, in occupations matching the public service, that belongs to each group.</li>
+      <li>Until recently WFA was based on the <strong>2016 Census</strong> and counted <strong>Canadian citizens only</strong>. It is now based on the <strong>2021 Census</strong> and counts <strong>citizens and permanent residents</strong> (Treasury Board, March 2024 reporting).</li>
+      <li>For racialized employees this moved the bar up by roughly six to seven points, to <strong>22.7%</strong>. The change reflects a more recent count and a broader, fairer population, not a failure by any single department, but it does mean year-over-year representation cannot be read on its own.</li>
+      <li>The honest test is not "did our number go up?" but "did our gap to the current benchmark close?" The two can move in opposite directions.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Racialized representation against the current (raised) benchmark</h3>
+    <p class="howto">Each organization's racialized representation against the 22.7% public-service workforce-availability benchmark. Red sits below it. Many organizations that look healthy on a raw representation number are below the benchmark once the bar is set where it now stands. Sort and filter to see who is genuinely at parity.</p>
+    <div class="controls">
+      <div class="ctl"><label for="progTier">Size band</label><select id="progTier"><option value="all">All organizations</option><option value="xl">Very large (10,000+)</option><option value="l">Large (5,000–9,999)</option><option value="m">Medium (1,000–4,999)</option><option value="s">Small (under 1,000)</option></select></div>
+      <div class="ctl"><label for="progSort">Order</label><select id="progSort"><option value="gap">Furthest below benchmark first</option><option value="rep">Highest representation first</option><option value="name">Organization (A–Z)</option></select></div>
+    </div>
+    <div id="progChart"></div>
+    <div id="progSummary" style="font-size:13px;color:var(--ink-soft);margin-top:6px"></div>
+  </div>
+
+  <div class="card">
+    <h3>How to talk about it honestly</h3>
+    <p style="margin:0">If your organization's racialized representation rose but is still below 22.7%, the accurate statement is that representation improved <em>and</em> a gap to workforce availability remains. If it rose and the benchmark rose faster, say so. Claiming parity because a raw number climbed, when the gap to the current benchmark persists, is the optics trap this page exists to prevent. The same caution applies in reverse: a department that looks worse against the new benchmark has not necessarily regressed; the bar moved.</p>
+  </div>
+  <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px">Sources: Treasury Board of Canada Secretariat, employment-equity representation and workforce-availability estimates (2021 Census and 2022 Canadian Survey on Disability, citizens and permanent residents, as of March 31, 2024 and 2025). The benchmark change is documented in TBS employment-equity reporting. Independent analytical tool.</p>
+</section>
+
+<!-- ================= BRIEFING NOTE BUILDER ================= -->
+<section class="view" id="view-brief">
+  <h2>Briefing note builder</h2>
+  <p class="lede">Pick an organization and this assembles a ready-to-adapt briefing note from the data already in this tool: its representation against workforce availability, the gaps below benchmark, the relevant 2024 survey results, and the legal and policy hooks that make each one matter. Edit it freely; it is a starting draft, not a final product.</p>
+  <div class="card">
+    <div class="controls" style="margin-bottom:6px">
+      <div class="ctl"><label for="briefOrg">Organization</label><select id="briefOrg"></select></div>
+      <div class="ctl"><label for="briefAudience">Audience</label><select id="briefAudience"><option value="dm">Deputy head / senior management</option><option value="hr">HR / staffing</option><option value="network">Employee network / champion</option></select></div>
+    </div>
+    <label for="briefText" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block">Generated briefing note</label>
+    <textarea id="briefText" rows="22" style="width:100%;font:13px/1.55 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:12px;margin-top:6px"></textarea>
+    <div class="actionbar" style="margin-top:10px"><button type="button" id="briefCopy">Copy note</button></div>
+    <p class="signal-note">Figures are drawn from the data in this tool (Treasury Board representation and 2024 PSES). Verify against your organization's own records before sending, and treat survey gaps as screening signals, not findings.</p>
+  </div>
+</section>
+
+<!-- ================= INDIGENOUS PUBLIC SERVANTS ================= -->
+<section class="view" id="view-indigenous">
+  <h2>Indigenous federal public servants</h2>
+  <p class="lede">A focused view of the same datasets, narrowed to Indigenous employees: representation against workforce availability, the 2024 employee survey, the First Nations, Métis and Inuit subgroups where the count allows, and how all of this varies by organization. The aim is to make the Indigenous-specific picture as deep as the whole-of-government one, in one place. Survey figures are official; where an organization's Indigenous count was too small to publish, it is left out rather than estimated. Land acknowledgement aside, the numbers here describe a workforce, and they show a workplace experienced differently by the people in it.</p>
+
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <h3>The Indigenous experience, against everyone else <span class="conf conf-official">official data</span></h3>
+    <p class="howto">Public-service-wide, how Indigenous employees answered each 2024 survey question, next to non-Indigenous employees and the gap. For the two "experienced it" rows lower is better; for the rest higher is better. This is the disproportionate-harm summary for Indigenous employees across the whole public service.</p>
+    <div class="tblwrap"><table id="indPSTable"><caption>2024 PSES, Indigenous vs non-Indigenous, whole public service. Source: Employment Equity derived-variable file.</caption><thead></thead><tbody></tbody></table></div>
+    <div id="indStark" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card">
+    <h3>Representation against workforce availability</h3>
+    <p class="howto">Indigenous workforce availability, the share of the labour market available to the federal government that is Indigenous, is 4.0%. The bars show each organization's Indigenous representation against that benchmark. Red is below availability. Use the size filter to compare like with like.</p>
+    <div class="controls">
+      <div class="ctl"><label for="indRepTier">Size band</label><select id="indRepTier">
+        <option value="all">All organizations</option><option value="xl">Very large (10,000+)</option><option value="l">Large (5,000–9,999)</option><option value="m">Medium (1,000–4,999)</option><option value="s">Small (under 1,000)</option>
+      </select></div>
+      <div class="ctl"><label for="indRepSort">Order</label><select id="indRepSort"><option value="gap">Furthest below availability first</option><option value="rep">Highest representation first</option><option value="name">Organization (A–Z)</option></select></div>
+    </div>
+    <div id="indRepChart"></div>
+    <div id="indRepSummary" style="font-size:13px;color:var(--ink-soft);margin-top:6px"></div>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--teal)">
+    <h3>First Nations, Métis and Inuit, side by side</h3>
+    <p class="howto">The aggregate "Indigenous" figure hides real differences between the three groups. This shows them separately, public-service-wide, on one question at a time, with the aggregate and non-Indigenous lines for reference. Inuit results are published for far fewer organizations because the population is small, so read the Inuit figure with care.</p>
+    <div class="ctl" style="margin-bottom:8px"><label for="indSubQ">Question</label><select id="indSubQ"></select></div>
+    <div id="indSubChart"></div>
+    <div class="tblwrap" style="margin-top:12px"><table id="indSubTable"><caption>2024 PSES by Indigenous subgroup, whole public service, all questions. Inuit cells are sparse. Source: Employment Equity derived-variable file.</caption><thead></thead><tbody></tbody></table></div>
+  </div>
+
+  <div class="card">
+    <h3>Compare Indigenous results across organizations</h3>
+    <p class="howto">Pick a question to rank every organization by its Indigenous employees' result, with the public-service Indigenous figure marked. This answers "where do Indigenous employees report the least trust in recourse?" or "which organizations have the widest discrimination gap for Indigenous staff?"</p>
+    <div class="ctl" style="margin-bottom:8px"><label for="indDeptQ">Question</label><select id="indDeptQ"></select></div>
+    <div id="indDeptChart"></div>
+    <label for="indFinding" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block;margin-top:12px">Paste-ready finding</label>
+    <textarea id="indFinding" rows="3" style="width:100%;font:13px/1.5 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:10px;margin-top:6px" readonly></textarea>
+    <p class="signal-note">Screening signal, not a finding. Indigenous samples in smaller organizations are small, so a single organization's figure can move on a few responses; weight the public-service pattern and larger organizations more heavily.</p>
+  </div>
+
+  <div class="card">
+    <h3>One organization, in depth</h3>
+    <p class="howto">Everything the datasets hold on Indigenous employees in a single organization: representation against availability, the survey results next to both the public-service Indigenous figure and the organization's own overall result, and the subgroups where published.</p>
+    <div class="ctl" style="margin-bottom:8px"><label for="indDept">Organization</label><select id="indDept"></select></div>
+    <div id="indDeptCard"></div>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <h3>Indigenous barrier scan: the largest gaps, ranked</h3>
+    <p class="howto">This scans every organization and every question for Indigenous employees at once, and ranks the largest gaps, where Indigenous employees fare worse than Indigenous employees service-wide, or worse than the organization's own overall result. The fastest way to a shortlist of where to look. Each row is a screening signal to investigate.</p>
+    <div class="controls">
+      <div class="ctl"><label for="indScanRef">Compared to</label><select id="indScanRef"><option value="ps">Indigenous, service-wide</option><option value="dept">The organization's overall result</option></select></div>
+      <div class="ctl"><label for="indScanMin">Minimum gap</label><select id="indScanMin"><option value="10">10+</option><option value="7">7+</option><option value="5" selected>5+</option><option value="3">3+</option></select></div>
+    </div>
+    <div id="indScanSummary" style="font-size:13.5px;margin:8px 0"></div>
+    <div class="tblwrap" style="max-height:460px;overflow:auto"><table id="indScanTable"><caption>Largest gaps for Indigenous employees across the 2024 PSES, ranked. Source: Employment Equity derived-variable file.</caption><thead></thead><tbody></tbody></table></div>
+    <div class="actionbar" style="margin-top:10px"><span class="muted" id="indScanCount"></span><button type="button" id="indScanCopy">Copy these rows</button><button type="button" id="indScanCsv">Download CSV</button></div>
+  </div>
+
+  <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px">Sources: representation and workforce availability, Treasury Board of Canada Secretariat employment-equity data (March 31, 2025); survey measures, 2024 Public Service Employee Survey, including the Employment Equity derived-variable file for results by Indigenous identity and by First Nations, Métis and Inuit subgroup. "Indigenous" and the subgroup labels are respondents' self-identification. Independent analytical tool, not a Government of Canada publication.</p>
+</section>
+
 <!-- ================= LINKAGES LAB ================= -->
 <section class="view" id="view-linkages">
   <h2>Linkages lab: find barriers you did not know about</h2>
@@ -1029,6 +1178,9 @@ const EEG_DEPT={"Public Service":{"woman":{"Q12":69,"Q24":73,"Q42":50,"Q43":57,"
 const EEG_GROUPS=[["woman", "Women"], ["man", "Men"], ["rac", "Racialized"], ["black", "Black"], ["ind", "Indigenous"], ["pwd", "Persons with disabilities"], ["nopwd", "Persons without disabilities"], ["nonrac", "Non-racialized"], ["nonind", "Non-Indigenous"], ["lgbt", "2SLGBTQIA+"]];
 const EEG_QORDER=["Q65", "Q58", "Q42", "Q63", "Q70", "Q72", "Q45", "Q43", "Q47", "Q49", "Q24", "Q52", "Q53", "Q12"];
 const EEG_QMETA={"Q65": ["neg", "Were a victim of discrimination (past 12 months)"], "Q58": ["neg", "Were a victim of harassment (past 12 months)"], "Q42": ["pos", "Could start formal recourse without fear of reprisal"], "Q63": ["pos", "Satisfied with how harassment is resolved"], "Q70": ["pos", "Satisfied with how discrimination is resolved"], "Q72": ["pos", "Satisfied with how racism complaints are resolved"], "Q45": ["pos", "Believe they have opportunities for promotion"], "Q43": ["pos", "Department supports career development"], "Q47": ["pos", "Department respects individual differences"], "Q49": ["pos", "Department implements anti-racism initiatives"], "Q24": ["pos", "Would feel safe speaking about racism without reprisal"], "Q52": ["pos", "Call to Action has had a positive impact"], "Q53": ["pos", "Department treats me with respect"], "Q12": ["pos", "Feel valued at work"]};
+/* 2024 PSES for Indigenous subgroups (First Nations, Métis, Inuit) per organization, from the Employment Equity derived-variable file. Victim questions store percent who experienced it. Suppressed cells omitted. Inuit cells are sparse (small population). */
+const IND_SUB={"Public Service":{"fn":{"Q12":64,"Q24":70,"Q42":49,"Q43":56,"Q45":50,"Q47":66,"Q49":59,"Q52":41,"Q53":76,"Q58":20,"Q63":44,"Q65":16,"Q70":45,"Q72":8},"inuit":{"Q12":67,"Q24":58,"Q42":46,"Q43":57,"Q45":48,"Q47":68,"Q49":49,"Q52":41,"Q53":76,"Q58":17,"Q63":36,"Q65":13,"Q70":48},"metis":{"Q12":60,"Q24":70,"Q42":45,"Q43":52,"Q45":48,"Q47":64,"Q49":62,"Q52":38,"Q53":74,"Q58":19,"Q63":44,"Q65":16,"Q70":48,"Q72":10}},"Canada Revenue Agency":{"fn":{"Q12":61,"Q24":74,"Q42":47,"Q43":59,"Q45":48,"Q47":69,"Q49":71,"Q52":45,"Q53":76,"Q58":13,"Q63":55,"Q65":11,"Q70":55,"Q72":6},"metis":{"Q12":61,"Q24":72,"Q42":50,"Q43":57,"Q45":52,"Q47":68,"Q49":68,"Q52":37,"Q53":74,"Q58":16,"Q63":51,"Q65":12,"Q70":52}},"Employment and Social Development Canada":{"fn":{"Q12":69,"Q24":69,"Q42":52,"Q43":60,"Q45":57,"Q47":69,"Q49":65,"Q52":50,"Q53":79,"Q58":15,"Q63":48,"Q65":15,"Q70":48},"inuit":{"Q12":61,"Q24":81,"Q42":45,"Q43":49,"Q45":38,"Q47":63,"Q49":60,"Q52":62,"Q53":70,"Q58":17,"Q70":56},"metis":{"Q12":66,"Q24":77,"Q42":52,"Q43":63,"Q45":54,"Q47":72,"Q49":69,"Q52":53,"Q53":81,"Q58":18,"Q63":54,"Q65":8,"Q70":59}},"National Defence":{"fn":{"Q12":61,"Q24":73,"Q42":52,"Q43":50,"Q45":41,"Q47":62,"Q49":55,"Q52":36,"Q53":76,"Q58":24,"Q63":43,"Q65":18,"Q70":44,"Q72":7},"inuit":{"Q12":71,"Q24":82,"Q42":40,"Q43":71,"Q45":45,"Q47":73,"Q49":48,"Q52":13,"Q53":80,"Q70":42},"metis":{"Q12":60,"Q24":62,"Q42":46,"Q43":49,"Q45":37,"Q47":62,"Q49":63,"Q52":33,"Q53":79,"Q58":19,"Q63":46,"Q65":20,"Q70":50}},"Correctional Service Canada":{"fn":{"Q12":50,"Q24":58,"Q42":45,"Q43":50,"Q45":50,"Q47":58,"Q49":54,"Q52":34,"Q53":68,"Q58":36,"Q63":31,"Q65":25,"Q70":38},"metis":{"Q12":37,"Q24":53,"Q42":30,"Q43":36,"Q45":39,"Q47":46,"Q49":46,"Q52":22,"Q53":56,"Q58":36,"Q63":28,"Q65":30,"Q70":33}},"Fisheries and Oceans Canada":{"fn":{"Q12":66,"Q24":71,"Q42":45,"Q43":50,"Q45":50,"Q47":66,"Q49":54,"Q52":34,"Q53":77,"Q58":18,"Q63":38,"Q65":21,"Q70":41},"inuit":{"Q12":76,"Q24":45,"Q42":34,"Q43":45,"Q45":63,"Q47":43,"Q49":31,"Q52":44,"Q53":77,"Q58":16,"Q63":30,"Q65":18,"Q70":56},"metis":{"Q12":73,"Q24":73,"Q42":50,"Q43":58,"Q45":52,"Q47":68,"Q49":64,"Q52":36,"Q53":76,"Q58":14,"Q63":53,"Q65":10,"Q70":52}},"Health Canada":{"fn":{"Q12":63,"Q24":75,"Q42":49,"Q43":55,"Q45":51,"Q47":66,"Q49":69,"Q52":38,"Q53":72,"Q58":21,"Q63":44,"Q65":21},"metis":{"Q12":61,"Q24":80,"Q42":49,"Q43":58,"Q45":56,"Q47":67,"Q49":73,"Q52":44,"Q53":79,"Q58":14,"Q63":33,"Q65":15,"Q70":45}},"Public Services and Procurement Canada":{"fn":{"Q12":69,"Q24":78,"Q42":57,"Q43":59,"Q45":56,"Q47":75,"Q49":72,"Q52":52,"Q53":77,"Q58":8,"Q63":63,"Q65":11,"Q70":59},"metis":{"Q12":68,"Q24":72,"Q42":46,"Q43":60,"Q45":51,"Q47":74,"Q49":68,"Q52":36,"Q53":81,"Q58":11,"Q63":45,"Q65":12,"Q70":46}},"Statistics Canada":{"fn":{"Q12":66,"Q24":65,"Q42":48,"Q43":51,"Q45":42,"Q47":59,"Q49":57,"Q52":24,"Q53":73,"Q58":19,"Q63":29,"Q65":10,"Q70":37},"metis":{"Q12":69,"Q24":85,"Q42":51,"Q43":51,"Q45":58,"Q47":75,"Q49":66,"Q52":41,"Q53":85,"Q58":8,"Q63":50,"Q65":8,"Q70":63}},"Agriculture and Agri-Food Canada":{"fn":{"Q12":70,"Q24":60,"Q42":46,"Q43":51,"Q45":39,"Q47":74,"Q49":62,"Q52":53,"Q53":86,"Q58":23,"Q63":55,"Q65":20,"Q70":57},"metis":{"Q12":68,"Q24":70,"Q42":49,"Q43":51,"Q45":40,"Q47":61,"Q49":68,"Q52":28,"Q53":83,"Q58":20,"Q63":43,"Q65":16,"Q70":48}},"Innovation, Science and Economic Development Canada":{"fn":{"Q12":63,"Q24":72,"Q42":51,"Q43":67,"Q45":53,"Q47":73,"Q49":61,"Q52":36,"Q53":73},"metis":{"Q12":74,"Q24":86,"Q42":53,"Q43":63,"Q45":58,"Q47":90,"Q49":84,"Q52":56,"Q53":85,"Q63":57,"Q65":12,"Q70":55}},"Environment and Climate Change Canada":{"fn":{"Q12":65,"Q24":71,"Q42":54,"Q43":65,"Q45":40,"Q47":75,"Q49":56,"Q52":44,"Q53":77,"Q58":21,"Q63":34,"Q65":12},"metis":{"Q12":62,"Q24":79,"Q42":55,"Q43":54,"Q45":49,"Q47":66,"Q49":70,"Q52":40,"Q53":74,"Q58":17,"Q63":58,"Q65":11,"Q70":58}},"Transport Canada":{"fn":{"Q12":57,"Q24":69,"Q42":48,"Q43":58,"Q45":45,"Q47":64,"Q49":62,"Q52":32,"Q53":68,"Q58":25,"Q63":50,"Q65":21,"Q70":52},"metis":{"Q12":55,"Q24":64,"Q42":48,"Q43":54,"Q45":53,"Q47":66,"Q49":79,"Q52":54,"Q53":70,"Q58":29,"Q63":44,"Q65":16,"Q70":48}},"Immigration, Refugees and Citizenship Canada":{"fn":{"Q12":71,"Q24":77,"Q42":55,"Q43":51,"Q45":47,"Q47":69,"Q49":66,"Q52":61,"Q53":79,"Q58":20,"Q63":62,"Q65":14,"Q70":51},"metis":{"Q12":62,"Q24":76,"Q42":50,"Q43":54,"Q45":49,"Q47":74,"Q49":70,"Q52":47,"Q53":76,"Q58":10,"Q63":54,"Q65":14,"Q70":56}},"Global Affairs Canada":{"fn":{"Q12":57,"Q24":90,"Q42":47,"Q43":36,"Q45":29,"Q47":51,"Q49":41,"Q52":45,"Q53":67,"Q58":43},"metis":{"Q12":66,"Q24":61,"Q42":62,"Q43":47,"Q45":58,"Q47":69,"Q49":66,"Q52":73,"Q53":70,"Q58":19}},"Natural Resources Canada":{"fn":{"Q12":81,"Q24":87,"Q42":64,"Q43":74,"Q45":46,"Q47":72,"Q49":54,"Q52":56,"Q53":83,"Q58":10,"Q63":51},"metis":{"Q12":68,"Q24":82,"Q42":46,"Q43":56,"Q45":44,"Q47":72,"Q49":54,"Q52":55,"Q53":84,"Q58":25,"Q65":30}},"Royal Canadian Mounted Police":{"fn":{"Q12":69,"Q24":62,"Q42":49,"Q43":54,"Q45":54,"Q47":71,"Q49":45,"Q52":49,"Q53":75,"Q58":17,"Q63":44,"Q65":6,"Q70":50},"inuit":{"Q12":83,"Q24":72,"Q42":58,"Q43":43,"Q45":34,"Q47":75,"Q49":66,"Q52":41,"Q53":84,"Q65":0},"metis":{"Q12":71,"Q24":78,"Q42":47,"Q43":57,"Q45":45,"Q47":70,"Q49":70,"Q52":40,"Q53":82,"Q58":16,"Q63":51,"Q65":11,"Q70":59}},"Indigenous Services Canada":{"fn":{"Q12":66,"Q24":70,"Q42":48,"Q43":57,"Q45":56,"Q47":68,"Q49":57,"Q52":39,"Q53":78,"Q58":20,"Q63":46,"Q65":14,"Q70":44},"inuit":{"Q12":54,"Q24":41,"Q42":28,"Q43":59,"Q45":37,"Q47":67,"Q49":54,"Q52":46,"Q53":68,"Q63":14},"metis":{"Q12":63,"Q24":74,"Q42":44,"Q43":54,"Q45":59,"Q47":65,"Q49":60,"Q52":42,"Q53":76,"Q58":18,"Q63":49,"Q65":13,"Q70":52,"Q72":6}},"Veterans Affairs Canada":{"fn":{"Q12":74,"Q24":82,"Q42":71,"Q43":65,"Q45":34,"Q47":72,"Q49":75,"Q52":58,"Q53":81,"Q70":77},"metis":{"Q12":49,"Q24":81,"Q42":50,"Q43":46,"Q45":39,"Q47":60,"Q49":66,"Q52":54,"Q53":70,"Q58":19,"Q63":57,"Q70":53}},"Department of Justice Canada":{"fn":{"Q12":73,"Q24":59,"Q42":49,"Q43":68,"Q45":64,"Q47":71,"Q49":59,"Q52":42,"Q53":78,"Q58":21,"Q63":52,"Q65":15},"metis":{"Q12":75,"Q24":72,"Q42":63,"Q43":62,"Q45":54,"Q47":77,"Q49":59,"Q52":41,"Q53":86,"Q65":18,"Q70":72}},"Canadian Heritage":{"fn":{"Q12":84,"Q24":84,"Q42":53,"Q43":65,"Q45":59,"Q47":72,"Q49":71,"Q52":39,"Q53":83},"metis":{"Q12":57,"Q24":76,"Q42":36,"Q43":56,"Q45":39,"Q47":80,"Q49":52,"Q52":37,"Q53":71,"Q63":34,"Q70":36}},"Crown-Indigenous Relations and Northern Affairs Canada":{"fn":{"Q12":75,"Q24":74,"Q42":50,"Q43":62,"Q45":50,"Q47":72,"Q49":52,"Q52":46,"Q53":77,"Q58":16,"Q63":37,"Q65":14,"Q70":39},"inuit":{"Q12":77,"Q24":72,"Q42":85,"Q43":82,"Q45":57,"Q47":82,"Q49":60,"Q52":62,"Q53":94,"Q70":58},"metis":{"Q12":73,"Q24":64,"Q42":44,"Q43":47,"Q45":48,"Q47":61,"Q49":60,"Q52":39,"Q53":77,"Q58":20,"Q65":16,"Q70":53}},"Treasury Board of Canada Secretariat":{"fn":{"Q12":76,"Q24":58,"Q42":62,"Q43":76,"Q45":44,"Q47":71,"Q49":62,"Q52":38,"Q53":76},"metis":{"Q12":73,"Q24":82,"Q42":51,"Q43":66,"Q45":66,"Q47":67,"Q49":78,"Q52":59,"Q53":78}},"Shared Services Canada":{"fn":{"Q12":63,"Q24":84,"Q42":60,"Q43":62,"Q45":50,"Q47":75,"Q49":62,"Q52":34,"Q53":75,"Q58":9,"Q63":64,"Q70":61},"metis":{"Q12":65,"Q24":66,"Q42":47,"Q43":65,"Q45":51,"Q47":71,"Q49":58,"Q52":33,"Q53":76,"Q58":8,"Q63":49,"Q65":7,"Q70":53}},"National Research Council Canada":{"fn":{"Q12":78,"Q24":65,"Q42":55,"Q43":53,"Q45":53,"Q47":70,"Q49":52,"Q52":58,"Q53":83,"Q63":28},"metis":{"Q12":93,"Q24":59,"Q42":66,"Q43":54,"Q45":52,"Q47":66,"Q49":33,"Q52":48,"Q53":87,"Q70":50}},"Public Safety Canada":{"fn":{"Q12":75,"Q24":65,"Q42":73,"Q43":61,"Q45":45,"Q47":70,"Q49":72,"Q52":40,"Q53":100,"Q58":0},"metis":{"Q12":77,"Q24":83,"Q42":38,"Q43":36,"Q45":33,"Q47":63,"Q49":47,"Q52":22,"Q53":92}},"Public Health Agency of Canada":{"fn":{"Q12":49,"Q24":56,"Q42":33,"Q43":61,"Q45":47,"Q47":53,"Q49":64,"Q52":70,"Q53":75},"metis":{"Q12":63,"Q24":61,"Q42":44,"Q43":53,"Q45":34,"Q47":60,"Q49":57,"Q52":39,"Q53":75,"Q58":17,"Q63":36,"Q65":9,"Q70":44}},"Library and Archives Canada":{"fn":{"Q12":90,"Q24":93,"Q42":70,"Q43":68,"Q45":85,"Q47":84,"Q49":42,"Q52":54,"Q53":93,"Q58":0,"Q65":0},"metis":{"Q12":62,"Q24":76,"Q42":49,"Q43":46,"Q45":39,"Q47":70,"Q49":60,"Q52":46,"Q53":70}},"Housing, Infrastructure and Communities Canada":{"fn":{"Q12":56,"Q24":68,"Q42":45,"Q43":47,"Q45":30,"Q47":57,"Q49":59,"Q52":64,"Q53":84,"Q70":72},"metis":{"Q12":61,"Q24":59,"Q42":38,"Q43":56,"Q45":53,"Q47":47,"Q49":72,"Q52":35,"Q53":69,"Q63":15}},"Canada Border Services Agency":{"fn":{"Q12":49,"Q24":68,"Q42":35,"Q43":36,"Q45":38,"Q47":39,"Q49":60,"Q52":30,"Q53":52,"Q58":28,"Q63":29,"Q65":29,"Q70":39},"metis":{"Q12":40,"Q24":61,"Q42":30,"Q43":30,"Q45":36,"Q47":39,"Q49":51,"Q52":29,"Q53":46,"Q58":34,"Q63":26,"Q65":28,"Q70":26}},"Canadian Food Inspection Agency":{"fn":{"Q12":45,"Q24":66,"Q42":41,"Q43":32,"Q45":23,"Q47":59,"Q49":43,"Q52":34,"Q53":68,"Q58":36,"Q63":42,"Q65":18,"Q70":41},"metis":{"Q12":66,"Q24":75,"Q42":45,"Q43":38,"Q45":45,"Q47":65,"Q49":57,"Q52":9,"Q53":84,"Q58":14}},"Parks Canada":{"fn":{"Q12":73,"Q24":66,"Q42":58,"Q43":55,"Q45":54,"Q47":69,"Q49":44,"Q52":35,"Q53":89,"Q58":22,"Q63":43,"Q65":22,"Q70":42},"inuit":{"Q12":66,"Q24":50,"Q42":41,"Q43":74,"Q45":63,"Q47":71,"Q49":58,"Q52":33,"Q53":76,"Q58":19,"Q63":39,"Q65":23,"Q70":50},"metis":{"Q12":80,"Q24":78,"Q42":48,"Q43":60,"Q45":63,"Q47":77,"Q49":52,"Q52":51,"Q53":89,"Q58":15,"Q63":46,"Q65":13,"Q70":51}},"Micro-organizations combined":{"fn":{"Q12":58,"Q24":71,"Q42":59,"Q43":50,"Q45":58,"Q47":82,"Q49":53,"Q52":29,"Q53":63,"Q58":26,"Q70":43},"inuit":{"Q12":53,"Q24":43,"Q42":47,"Q43":51,"Q45":46,"Q47":60,"Q49":23,"Q52":21,"Q53":53,"Q58":44,"Q65":23},"metis":{"Q12":56,"Q24":56,"Q42":30,"Q43":52,"Q45":42,"Q47":74,"Q49":62,"Q52":29,"Q53":68,"Q58":25}},"Public Service Commission of Canada":{"metis":{"Q12":61,"Q24":62,"Q42":53,"Q43":39,"Q45":31,"Q47":67,"Q49":68,"Q52":45,"Q53":79,"Q65":0}},"Immigration and Refugee Board of Canada":{"metis":{"Q12":60,"Q24":53,"Q42":26,"Q43":51,"Q45":33,"Q47":61,"Q49":57,"Q52":20,"Q53":72,"Q63":24,"Q70":43}},"Canadian Grain Commission":{"metis":{"Q12":70,"Q24":91,"Q42":33,"Q43":57,"Q45":53,"Q47":70,"Q49":49,"Q52":28,"Q53":75,"Q65":0}},"Public Prosecution Service of Canada":{"metis":{"Q12":45,"Q24":65,"Q42":58,"Q43":63,"Q45":53,"Q47":57,"Q49":30,"Q52":18,"Q53":69,"Q63":18,"Q70":43}},"Communications Security Establishment Canada":{"metis":{"Q12":85,"Q24":79,"Q42":56,"Q43":72,"Q45":75,"Q47":83,"Q49":78,"Q52":46,"Q53":78,"Q65":20,"Q70":60}}};
+const IND_SUBGROUPS=[["fn","First Nations"],["metis","Métis"],["inuit","Inuit"]];
 
 const EX={n:7926,w:55.9,i:5.6,d:10.9,v:17.3,black:3.2,wfa:{w:41.8,i:3.9,d:5.3,v:15.6}};
 const GROUPS=[
@@ -1350,17 +1502,30 @@ function sparkline(vals,color){
 
 /* ===================== NAVIGATION ===================== */
 const TABS=[["guide","How to use this"],["overview","Overview"],["depts","Departments"],["groups","Groups & subgroups"],["salary","Salary"],
- ["flows","Hiring & promotion"],["pses","Employee survey"],["demo","Demographic gaps"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["ombuds","Support services"],["compare","Cross-dataset explorer"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["sources","Data sources"],["about","About the data"]];
+ ["flows","Hiring & promotion"],["pses","Employee survey"],["demo","Demographic gaps"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["ombuds","Support services"],["compare","Cross-dataset explorer"],["progress","Progress or optics?"],["brief","Briefing note builder"],["indigenous","Indigenous public servants"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["sources","Data sources"],["about","About the data"]];
 const LABELS=Object.fromEntries(TABS);
 const NAV_GROUPS=[
   {solo:"guide"},
-  {label:"Overview & context",items:["overview","depts","about","sources"]},
+  {label:"Overview & context",items:["overview","depts","progress","about","sources"]},
   {label:"Talent pipeline",items:["flows","ex","groups"]},
   {label:"Compensation",items:["salary","di"]},
   {label:"Workplace culture",items:["pses","demo","profile","ombuds"]},
-  {label:"Connect & act",items:["compare","linkages","action","files"]}
+  {solo:"indigenous"},
+  {label:"Connect & act",items:["compare","brief","linkages","action","files"]}
 ];
 const GROUP_OF={}; NAV_GROUPS.forEach((g,gi)=>{(g.items||[g.solo]).forEach(id=>GROUP_OF[id]=gi);});
+/* ---- colour theme (light / dark / high-contrast), persisted ---- */
+(function(){
+  const root=document.documentElement||{setAttribute:function(){},removeAttribute:function(){}};
+  let saved=null; try{saved=localStorage.getItem("gcEquityTheme");}catch(e){}
+  function apply(t){
+    if(t==="dark"||t==="contrast")root.setAttribute("data-theme",t);else root.removeAttribute("data-theme");
+    document.querySelectorAll("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed",(b.dataset.themeSet===t||(t==null&&b.dataset.themeSet==="light"))?"true":"false"));
+    try{localStorage.setItem("gcEquityTheme",t||"light");}catch(e){}
+  }
+  document.querySelectorAll("[data-theme-set]").forEach(b=>b.addEventListener("click",()=>apply(b.dataset.themeSet)));
+  apply(saved||"light");
+})();
 const tabbar=$("#tabbar");
 tabbar.setAttribute("role","menubar");
 tabbar.setAttribute("aria-label","Sections of the equity data explorer");
@@ -2161,7 +2326,7 @@ document.querySelectorAll(".tblwrap").forEach(wrap=>{
   wrap.parentNode.insertBefore(bar,wrap);
 });
 // per-section action bar (print) on every view
-const SECTION_TITLES={guide:"How to use this tool",overview:"Overview",depts:"Departments and agencies",groups:"Groups and subgroups",salary:"Salary and pay equity",flows:"Hiring, promotion and recruitment",pses:"Employee survey (PSES 2024)",demo:"Survey results by designated group",ex:"Executives and leadership",profile:"Where and how people work",ombuds:"Employee support services and outcomes",compare:"Cross-dataset explorer",linkages:"Linkages lab",sources:"Data sources",about:"About the data"};
+const SECTION_TITLES={guide:"How to use this tool",overview:"Overview",depts:"Departments and agencies",groups:"Groups and subgroups",salary:"Salary and pay equity",flows:"Hiring, promotion and recruitment",pses:"Employee survey (PSES 2024)",demo:"Survey results by designated group",ex:"Executives and leadership",profile:"Where and how people work",ombuds:"Employee support services and outcomes",compare:"Cross-dataset explorer",progress:"Real progress, or just optics?",brief:"Briefing note builder",indigenous:"Indigenous federal public servants",linkages:"Linkages lab",sources:"Data sources",about:"About the data"};
 const SECTION_CURRENCY={
   overview:"Representation as of March 31, 2025; 2024 PSES.",
   depts:"Representation as of March 31, 2025 (TBS Demographic Snapshot 2024-2025).",
@@ -2175,6 +2340,9 @@ const SECTION_CURRENCY={
   di:"Disproportionality Index, 2017–2024 (source last updated June 2025).",
   ombuds:"Representation as of March 31, 2025; survey figures 2024.",
   compare:"Joins TBS representation and workforce availability (March 31, 2025) with 2024 PSES results, by organization.",
+  progress:"Representation as of March 31, 2025 against 2021-Census workforce-availability benchmarks (citizens and permanent residents)."
+  ,brief:"Pulls this organization's representation and 2024 PSES figures from the data already in this tool."
+  ,indigenous:"Indigenous representation (TBS, March 31, 2025) and 2024 PSES results for Indigenous employees and the First Nations, Métis and Inuit subgroups.",
   linkages:"Draws on the datasets dated in each section.",
   files:"Source files as catalogued; check each for its own release date.",
   action:"Calendar reflects the 2024–2026 release cycle.",
@@ -2808,12 +2976,290 @@ $("#diMedianChart").innerHTML=lineChart(
   renderLinks();
 })();
 
+/* ===================== Indigenous public servants ===================== */
+(function(){
+  if(typeof EEG_DEPT==="undefined"||typeof DEPTS==="undefined"||typeof WFA==="undefined")return;
+  const PS=EEG_DEPT["Public Service"]||{};
+  const indPS=PS.ind||{}, nonPS=PS.nonind||{};
+  const QO=EEG_QORDER, QM=EEG_QMETA;
+  const overall=(typeof PSES_DEPT!=="undefined"&&PSES_DEPT["Public Service"])||{};
+  const WFA_I=WFA.i;
+  function pc(v){return v==null?"":v+"%";}
+  function neg(q){return QM[q]&&QM[q][0]==="neg";}
+  // Indigenous representation per organization (from DEPTS: [name,n,w,i,d,v])
+  const indRep=DEPTS.map(d=>({name:d[0],n:d[1],rep:d[3]})).filter(o=>o.rep!=null);
+  // ---- 1. Indigenous vs non-Indigenous PS-wide ----
+  (function(){
+    const qs=QO.filter(q=>indPS[q]!=null&&nonPS[q]!=null);
+    $("#indPSTable thead").innerHTML="<tr><th scope='col'>Question</th><th scope='col' class='num'>Indigenous</th><th scope='col' class='num'>Non-Indigenous</th><th scope='col' class='num'>Gap</th></tr>";
+    $("#indPSTable tbody").innerHTML=qs.map(q=>{
+      const a=indPS[q],b=nonPS[q],diff=a-b;
+      const worse=neg(q)?a>b:a<b;
+      const cls=(Math.abs(diff)>=3)?(worse?"below-mark":"above-mark"):"";
+      return `<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td><td class="num ${cls}">${a}%</td><td class="num">${b}%</td><td class="num ${cls}">${diff>0?"+":""}${diff}</td></tr>`;
+    }).join("");
+    // stark
+    const stark=[];
+    [["Q65","reporting discrimination"],["Q58","reporting harassment"],["Q72","satisfied racism complaints resolved"],["Q70","satisfied discrimination resolved"]].forEach(([q,lab])=>{
+      if(indPS[q]!=null&&nonPS[q]!=null){const d=indPS[q]-nonPS[q];const bad=neg(q)?d>=3:d<=-3;if(bad)stark.push(`${lab}: ${indPS[q]}% vs ${nonPS[q]}% (${d>0?"+":""}${d})`);}
+    });
+    if(stark.length)$("#indStark").innerHTML='<strong style="font-size:13.5px">Widest gaps:</strong> '+stark.join("; ")+".";
+  })();
+  // ---- 2. Representation chart ----
+  function band(n){if(n==null)return null;if(n>=10000)return"xl";if(n>=5000)return"l";if(n>=1000)return"m";return"s";}
+  function renderRep(){
+    const tier=$("#indRepTier").value,sort=$("#indRepSort").value;
+    let rows=indRep.filter(o=>tier==="all"||band(o.n)===tier).slice();
+    if(sort==="gap")rows.sort((a,b)=>(a.rep-WFA_I)-(b.rep-WFA_I));
+    else if(sort==="rep")rows.sort((a,b)=>b.rep-a.rep);
+    else rows.sort((a,b)=>a.name.localeCompare(b.name));
+    const show=rows.slice(0,40);
+    const scaleMax=Math.max(8,...show.map(o=>o.rep))*1.05;
+    const W=720,rh=20,pl=250,pr=44,pt=18,h=pt+show.length*rh+6;
+    const bx=WFA_I/scaleMax*(W-pl-pr)+pl;
+    let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="Indigenous representation by organization against 4.0% workforce availability.">`;
+    svg+=`<line x1="${bx}" y1="${pt-4}" x2="${bx}" y2="${h-4}" stroke="#111" stroke-dasharray="3 3"/><text x="${bx}" y="${pt-7}" font-size="10" text-anchor="middle" fill="#111">availability 4.0%</text>`;
+    show.forEach((o,i)=>{
+      const y=pt+i*rh,bw=(W-pl-pr)*(o.rep/scaleMax),below=o.rep<WFA_I;
+      svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="10.5" fill="#44546A">${o.name.length>38?o.name.slice(0,37)+"…":o.name}</text>`;
+      svg+=`<rect x="${pl}" y="${y+3}" width="${bw}" height="${rh-7}" fill="${below?"#9C0006":"#0E7C7B"}" rx="2"><title>${o.name}: ${o.rep}% (availability 4.0%)</title></rect>`;
+      svg+=`<text x="${pl+bw+4}" y="${y+rh/2+4}" font-size="10" font-family="monospace" fill="#444">${o.rep}%</text>`;
+    });
+    svg+="</svg>";
+    $("#indRepChart").innerHTML=(rows.length>40?`<p style="font-size:12px;color:var(--ink-soft);margin:0 0 4px">Showing 40 of ${rows.length}.</p>`:"")+svg;
+    const below=rows.filter(o=>o.rep<WFA_I).length;
+    $("#indRepSummary").textContent=`${below} of ${rows.length} organizations shown are below the 4.0% Indigenous workforce-availability benchmark.`;
+  }
+  ["indRepTier","indRepSort"].forEach(id=>$("#"+id).addEventListener("change",renderRep));
+  renderRep();
+  // ---- 3. Subgroups FN/Métis/Inuit ----
+  const subPS=(typeof IND_SUB!=="undefined"&&IND_SUB["Public Service"])||{};
+  const SUBS=(typeof IND_SUBGROUPS!=="undefined")?IND_SUBGROUPS:[];
+  (function(){
+    const subQ=$("#indSubQ");
+    QO.forEach(q=>{const o=document.createElement("option");o.value=q;o.textContent=q+" — "+QM[q][1];subQ.appendChild(o);});
+    subQ.value="Q65";
+    // full table
+    $("#indSubTable thead").innerHTML="<tr><th scope='col'>Question</th>"+SUBS.map(([k,l])=>`<th scope="col" class="num">${l}</th>`).join("")+"<th scope='col' class='num'>Indigenous (all)</th><th scope='col' class='num'>Non-Indigenous</th></tr>";
+    $("#indSubTable tbody").innerHTML=QO.map(q=>{
+      return `<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td>`+
+        SUBS.map(([k,l])=>{const v=subPS[k]&&subPS[k][q];return `<td class="num">${v!=null?v+"%":"&mdash;"}</td>`;}).join("")+
+        `<td class="num">${indPS[q]!=null?indPS[q]+"%":"&mdash;"}</td><td class="num">${nonPS[q]!=null?nonPS[q]+"%":"&mdash;"}</td></tr>`;
+    }).join("");
+    function renderSubChart(){
+      const q=subQ.value;
+      const bars=[];
+      SUBS.forEach(([k,l])=>{if(subPS[k]&&subPS[k][q]!=null)bars.push([l,subPS[k][q],k]);});
+      if(indPS[q]!=null)bars.push(["Indigenous (all)",indPS[q],"all"]);
+      if(nonPS[q]!=null)bars.push(["Non-Indigenous",nonPS[q],"non"]);
+      if(!bars.length){$("#indSubChart").innerHTML="";return;}
+      const scaleMax=Math.max(100,...bars.map(b=>b[1]));
+      const W=720,rh=28,pl=170,pr=44,pt=6,h=pt+bars.length*rh+6;
+      const col={fn:"#1B2A41",metis:"#8A6D1D",inuit:"#B3401E",all:"#0E7C7B",non:"#9aa8b8"};
+      let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="${QM[q][1]} by Indigenous subgroup.">`;
+      bars.forEach((b,i)=>{const y=pt+i*rh,bw=(W-pl-pr)*(b[1]/scaleMax);
+        svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="11.5" fill="#44546A">${b[0]}</text>`;
+        svg+=`<rect x="${pl}" y="${y+4}" width="${bw}" height="${rh-9}" fill="${col[b[2]]||"#0E7C7B"}" rx="2"><title>${b[0]}: ${b[1]}%</title></rect>`;
+        svg+=`<text x="${pl+bw+5}" y="${y+rh/2+4}" font-size="11" font-family="monospace" fill="#333">${b[1]}%</text>`;});
+      svg+="</svg>";
+      const note=(subPS.inuit&&subPS.inuit[q]!=null)?"":'<p style="font-size:12px;color:var(--ink-soft);margin:4px 0 0">Inuit not published for this question (count too small).</p>';
+      $("#indSubChart").innerHTML=svg+note;
+    }
+    subQ.addEventListener("change",renderSubChart);renderSubChart();
+  })();
+  // ---- 4. Compare across organizations ----
+  (function(){
+    const dq=$("#indDeptQ");
+    QO.forEach(q=>{const o=document.createElement("option");o.value=q;o.textContent=q+" — "+QM[q][1];dq.appendChild(o);});
+    dq.value="Q42";
+    function render(){
+      const q=dq.value,lower=neg(q),psv=indPS[q];
+      const rows=[];
+      Object.keys(EEG_DEPT).forEach(dep=>{if(dep==="Public Service")return;const v=EEG_DEPT[dep].ind&&EEG_DEPT[dep].ind[q];if(v!=null)rows.push([dep,v]);});
+      if(!rows.length){$("#indDeptChart").innerHTML="<p style='color:var(--ink-soft)'>Not published.</p>";$("#indFinding").value="";return;}
+      rows.sort((a,b)=>lower?b[1]-a[1]:a[1]-b[1]);
+      const show=rows.slice(0,18),scaleMax=Math.max(100,...show.map(r=>r[1]));
+      const W=720,rh=22,pl=250,pr=40,pt=20,h=pt+show.length*rh+6;
+      let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="Indigenous employees on ${QM[q][1]} by organization.">`;
+      if(psv!=null){const x=pl+(W-pl-pr)*(psv/scaleMax);svg+=`<line x1="${x}" y1="${pt-4}" x2="${x}" y2="${h-4}" stroke="#111" stroke-dasharray="3 3"/><text x="${x}" y="${pt-7}" font-size="10" text-anchor="middle" fill="#111">Indigenous PS: ${psv}%</text>`;}
+      show.forEach((r,i)=>{const y=pt+i*rh,bw=(W-pl-pr)*(r[1]/scaleMax);const worse=psv!=null&&(lower?r[1]>psv:r[1]<psv);
+        svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="10.5" fill="#44546A">${r[0].length>38?r[0].slice(0,37)+"…":r[0]}</text>`;
+        svg+=`<rect x="${pl}" y="${y+3}" width="${bw}" height="${rh-7}" fill="${worse?"#9C0006":"#0E7C7B"}" rx="2"><title>${r[0]}: ${r[1]}%</title></rect>`;
+        svg+=`<text x="${pl+bw+4}" y="${y+rh/2+4}" font-size="10" font-family="monospace" fill="#444">${r[1]}%</text>`;});
+      svg+="</svg>";
+      $("#indDeptChart").innerHTML=(rows.length>18?`<p style="font-size:12px;color:var(--ink-soft);margin:0 0 4px">Showing the 18 furthest from the favourable end, of ${rows.length}.</p>`:"")+svg;
+      const w=rows[0];
+      $("#indFinding").value=`2024 PSES, Indigenous employees, "${QM[q][1]}". Indigenous service-wide: ${psv!=null?psv+"%":"n/a"}; non-Indigenous: ${nonPS[q]!=null?nonPS[q]+"%":"n/a"}. Of ${rows.length} organizations publishing this, ${w[0]} shows the ${lower?"highest":"lowest"} value at ${w[1]}%. Source: 2024 PSES EE derived-variable file. Screening signal.`;
+    }
+    dq.addEventListener("change",render);render();
+  })();
+  // ---- 5. One organization in depth ----
+  (function(){
+    const sel=$("#indDept");
+    const orgs=Object.keys(EEG_DEPT).filter(o=>o!=="Public Service").sort();
+    orgs.forEach(o=>{const op=document.createElement("option");op.value=o;op.textContent=o;sel.appendChild(op);});
+    // default to a large Indigenous-relevant org if present
+    sel.value=orgs.find(o=>/Indigenous Services/.test(o))||orgs[0];
+    function repFor(name){const r=indRep.find(o=>psesNorm(o.name)===psesNorm(name));return r?r.rep:null;}
+    function render(){
+      const o=sel.value,ind=EEG_DEPT[o].ind||{};
+      const rep=repFor(o);
+      let html='<div class="tblwrap"><table><caption>Indigenous employees in '+o.split(" (")[0]+', 2024 PSES, vs Indigenous service-wide and the organization overall.</caption>';
+      html+="<thead><tr><th scope='col'>Question</th><th scope='col' class='num'>This org (Indigenous)</th><th scope='col' class='num'>Indigenous PS</th><th scope='col' class='num'>Org overall</th></tr></thead><tbody>";
+      const ovr=Object.keys(PSES_DEPT||{}).find(k=>psesNorm(k)===psesNorm(o));
+      const ovrd=ovr?PSES_DEPT[ovr]:{};
+      QO.forEach(q=>{const v=ind[q];if(v==null)return;const psv=indPS[q],ov=ovrd[q];
+        let cls="";if(psv!=null&&Math.abs(v-psv)>=3){const worse=neg(q)?v>psv:v<psv;cls=worse?"below-mark":"above-mark";}
+        html+=`<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td><td class="num ${cls}">${v}%</td><td class="num">${psv!=null?psv+"%":"&mdash;"}</td><td class="num">${ov!=null?ov+"%":"&mdash;"}</td></tr>`;});
+      html+="</tbody></table></div>";
+      // subgroups for this org
+      const sd=(typeof IND_SUB!=="undefined")?IND_SUB[Object.keys(IND_SUB).find(k=>psesNorm(k)===psesNorm(o))||""]:null;
+      let subhtml="";
+      if(sd){
+        const haveSubs=SUBS.filter(([k])=>sd[k]);
+        if(haveSubs.length){
+          const qs=QO.filter(q=>haveSubs.some(([k])=>sd[k][q]!=null));
+          subhtml='<div class="tblwrap" style="margin-top:12px"><table><caption>By Indigenous subgroup in '+o.split(" (")[0]+' (where published).</caption><thead><tr><th scope="col">Question</th>'+haveSubs.map(([k,l])=>`<th scope="col" class="num">${l}</th>`).join("")+'</tr></thead><tbody>'+
+            qs.map(q=>`<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td>`+haveSubs.map(([k,l])=>{const v=sd[k][q];return `<td class="num">${v!=null?v+"%":"&mdash;"}</td>`;}).join("")+"</tr>").join("")+"</tbody></table></div>";
+        }
+      }
+      const repline=`<p style="font-size:13.5px;margin:0 0 10px"><strong>Indigenous representation:</strong> ${rep!=null?rep+"% ":"not available "}${rep!=null?(rep<WFA_I?'<span class="conf" style="background:#fde8e8;color:#9C0006">below the 4.0% availability benchmark</span>':'<span class="conf" style="background:#e6f4ea;color:#1e7a34">at or above the 4.0% benchmark</span>'):""}</p>`;
+      $("#indDeptCard").innerHTML=repline+html+subhtml;
+    }
+    sel.addEventListener("change",render);render();
+  })();
+  // ---- 6. Indigenous barrier scan ----
+  (function(){
+    let results=[];
+    function run(){
+      const ref=$("#indScanRef").value,minGap=+$("#indScanMin").value,out=[];
+      Object.keys(EEG_DEPT).forEach(dep=>{
+        if(dep==="Public Service")return;
+        const ind=EEG_DEPT[dep].ind;if(!ind)return;
+        const ovr=Object.keys(PSES_DEPT||{}).find(k=>psesNorm(k)===psesNorm(dep));const ovrd=ovr?PSES_DEPT[ovr]:null;
+        QO.forEach(q=>{const v=ind[q];if(v==null)return;
+          let base,bl;if(ref==="ps"){base=indPS[q];bl="Indigenous PS";}else{base=ovrd&&ovrd[q];bl="org overall";}
+          if(base==null)return;const worse=neg(q)?v>base:v<base,gap=Math.abs(v-base);
+          if(worse&&gap>=minGap)out.push({dep,q,v,base,gap,bl,lab:QM[q][1]});});
+      });
+      out.sort((a,b)=>b.gap-a.gap);results=out;
+      $("#indScanSummary").innerHTML=out.length?`<strong>${out.length} gaps</strong> meet this filter. Worst: ${out[0].dep}, ${out[0].lab} (${out[0].v}% vs ${out[0].base}% ${out[0].bl}, ${out[0].gap} points).`:"No gaps meet this filter.";
+      $("#indScanTable thead").innerHTML="<tr><th scope='col'>Organization</th><th scope='col'>Question</th><th scope='col' class='num'>Indigenous</th><th scope='col' class='num'>Baseline</th><th scope='col' class='num'>Gap</th></tr>";
+      $("#indScanTable tbody").innerHTML=out.slice(0,200).map(r=>`<tr><td>${r.dep}</td><td>${r.lab} <span style="font-size:11px;color:var(--ink-soft)">(${r.q})</span></td><td class="num">${r.v}%</td><td class="num">${r.base}% <span style="font-size:10px;color:var(--ink-soft)">${r.bl}</span></td><td class="num below-mark">${r.gap}</td></tr>`).join("");
+      $("#indScanCount").textContent=(out.length>200?"Showing 200 of "+out.length+". ":out.length+" rows. ")+"Lower is better for the two experience questions.";
+    }
+    function txt(){return results.slice(0,200).map(r=>`${r.dep} — Indigenous: "${r.lab}" ${r.v}% vs ${r.base}% (${r.bl}); gap ${r.gap}. Source: 2024 PSES EE derived-variable file. Screening signal.`).join("\n");}
+    ["indScanRef","indScanMin"].forEach(id=>$("#"+id).addEventListener("change",run));
+    $("#indScanCopy").addEventListener("click",()=>safeCopy(txt(),$("#indScanCopy")));
+    $("#indScanCsv").addEventListener("click",()=>{
+      const rows=[["Organization","Question code","Question","Indigenous %","Baseline %","Baseline","Gap"]].concat(results.map(r=>[r.dep,r.q,r.lab,r.v,r.base,r.bl,r.gap]));
+      const csv=rows.map(row=>row.map(c=>{c=String(c);return /[",\n]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c;}).join(",")).join("\n");
+      download("indigenous-barrier-scan.csv",csv);
+    });
+    run();
+  })();
+})();
+
+/* ===================== Real progress or optics ===================== */
+(function(){
+  if(typeof DEPTS==="undefined"||typeof WFA==="undefined")return;
+  const BENCH=WFA.v; // racialized workforce availability (2021 Census)
+  const rows0=DEPTS.map(d=>({name:d[0],rep:d[5],n:d[1]})).filter(o=>o.rep!=null);
+  function band(n){if(n==null)return null;if(n>=10000)return"xl";if(n>=5000)return"l";if(n>=1000)return"m";return"s";}
+  function render(){
+    const tier=($("#progTier")||{}).value||"all", sort=($("#progSort")||{}).value||"gap";
+    let rows=rows0.filter(o=>tier==="all"||band(o.n)===tier).slice();
+    if(sort==="gap")rows.sort((a,b)=>(a.rep-BENCH)-(b.rep-BENCH));else if(sort==="rep")rows.sort((a,b)=>b.rep-a.rep);else rows.sort((a,b)=>a.name.localeCompare(b.name));
+    const show=rows.slice(0,45),scaleMax=Math.max(BENCH*1.3,...show.map(o=>o.rep))*1.02;
+    const W=720,rh=20,pl=250,pr=44,pt=18,h=pt+show.length*rh+6,bx=BENCH/scaleMax*(W-pl-pr)+pl;
+    let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="Racialized representation by organization against the 22.7% workforce-availability benchmark.">`;
+    svg+=`<line x1="${bx}" y1="${pt-4}" x2="${bx}" y2="${h-4}" stroke="#111" stroke-dasharray="3 3"/><text x="${bx}" y="${pt-7}" font-size="10" text-anchor="middle" fill="#111">benchmark 22.7%</text>`;
+    show.forEach((o,i)=>{const y=pt+i*rh,bw=(W-pl-pr)*(o.rep/scaleMax),below=o.rep<BENCH;
+      svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="10.5" fill="#44546A">${o.name.length>38?o.name.slice(0,37)+"…":o.name}</text>`;
+      svg+=`<rect x="${pl}" y="${y+3}" width="${bw}" height="${rh-7}" fill="${below?"#9C0006":"#0E7C7B"}" rx="2"><title>${o.name}: ${o.rep}% (benchmark 22.7%)</title></rect>`;
+      svg+=`<text x="${pl+bw+4}" y="${y+rh/2+4}" font-size="10" font-family="monospace" fill="#444">${o.rep}%</text>`;});
+    svg+="</svg>";
+    if($("#progChart"))$("#progChart").innerHTML=(rows.length>45?`<p style="font-size:12px;color:var(--ink-soft);margin:0 0 4px">Showing 45 of ${rows.length}.</p>`:"")+svg;
+    const below=rows.filter(o=>o.rep<BENCH).length;
+    if($("#progSummary"))$("#progSummary").textContent=`${below} of ${rows.length} organizations shown sit below the 22.7% racialized workforce-availability benchmark. A raw representation gain does not close that gap unless it clears the line.`;
+  }
+  ["progTier","progSort"].forEach(id=>{const e=$("#"+id);if(e)e.addEventListener("change",render);});
+  render();
+})();
+
+/* ===================== Briefing note builder ===================== */
+(function(){
+  if(typeof DEPTS==="undefined"||typeof WFA==="undefined")return;
+  const sel=$("#briefOrg"); if(!sel)return;
+  DEPTS.map(d=>d[0]).sort().forEach(n=>{const o=document.createElement("option");o.value=n;o.textContent=n;sel.appendChild(o);});
+  sel.value=DEPTS.map(d=>d[0]).sort().find(n=>/Indigenous Services|Employment and Social/.test(n))||DEPTS[0][0];
+  const LABS={w:["Women",WFA.w],i:["Indigenous Peoples",WFA.i],d:["Persons with disabilities",WFA.d],v:["Racialized employees",WFA.v]};
+  function rec(name){return DEPTS.find(d=>d[0]===name);}
+  function psesNormLocal(s){return (s||"").toLowerCase().split("(")[0].replace(/[^a-z0-9]+/g," ").trim();}
+  function psesOf(name){if(typeof PSES_DEPT==="undefined")return null;const k=Object.keys(PSES_DEPT).find(kk=>psesNormLocal(kk)===psesNormLocal(name));return k?PSES_DEPT[k]:null;}
+  function build(){
+    const name=sel.value, d=rec(name), aud=($("#briefAudience")||{}).value||"dm";
+    const cols={w:2,i:3,d:4,v:5};
+    const gaps=[];
+    Object.keys(cols).forEach(k=>{const v=d[cols[k]];if(v==null)return;const bench=LABS[k][1];const gap=+(v-bench).toFixed(1);gaps.push({k,label:LABS[k][0],v,bench,gap,below:v<bench});});
+    const below=gaps.filter(g=>g.below).sort((a,b)=>a.gap-b.gap);
+    const ps=psesOf(name), psPS=(typeof PSES_DEPT!=="undefined"&&PSES_DEPT["Public Service"])||{};
+    const repLines=gaps.map(g=>`   - ${g.label}: ${g.v}% representation vs ${g.bench}% workforce availability (${g.gap>0?"+":""}${g.gap} points${g.below?", below availability":", at or above"}).`).join("\n");
+    let psLine="";
+    if(ps){
+      const items=[];
+      if(ps.Q65!=null)items.push(`discrimination reported by ${ps.Q65}% of employees (public service ${psPS.Q65!=null?psPS.Q65+"%":"n/a"})`);
+      if(ps.Q58!=null)items.push(`harassment reported by ${ps.Q58}% (public service ${psPS.Q58!=null?psPS.Q58+"%":"n/a"})`);
+      if(ps.Q42!=null)items.push(`${ps.Q42}% feel they could use formal recourse without fear of reprisal (public service ${psPS.Q42!=null?psPS.Q42+"%":"n/a"})`);
+      if(ps.Q45!=null)items.push(`${ps.Q45}% believe they have opportunities for promotion (public service ${psPS.Q45!=null?psPS.Q45+"%":"n/a"})`);
+      if(items.length)psLine="\n\n2024 Public Service Employee Survey (this organization):\n   - "+items.join(".\n   - ")+".";
+    }
+    const audOpen={
+      dm:`This note summarizes where ${name} stands on employment equity representation and workplace experience, and the obligations that attach. It is intended to support decisions on staffing, talent management and reporting.`,
+      hr:`This note pulls together ${name}'s current representation gaps and survey signals to inform staffing strategies, screening review and accommodation planning.`,
+      network:`This note gathers the published numbers for ${name} to support advocacy and engagement with senior management on behalf of employees.`
+    }[aud];
+    const focus=below.length?`The largest representation gap is for ${below[0].label} (${below[0].gap} points below workforce availability).`:`Representation meets or exceeds workforce availability for the groups with published data, which is worth recognizing; the survey signals below still merit attention.`;
+    const txt=
+`BRIEFING NOTE
+Subject: Employment equity, ${name}
+
+Purpose
+${audOpen}
+
+Where the organization stands (representation vs workforce availability, March 31, 2025)
+${repLines||"   - Representation figures not published for this organization."}
+
+Key point
+${focus}${psLine}
+
+Why it matters (legal and policy hooks)
+   - Employment Equity Act, section 5: the employer must identify and remove barriers and achieve representation reflecting workforce availability for the four designated groups.
+   - Canada Labour Code, Part II (and Bill C-65): psychological health and safety, including freedom from harassment and violence, is an occupational health and safety obligation.
+   - The Clerk's Call to Action on Anti-Racism, Equity and Inclusion: deputy heads are expected to act on disaggregated data and report progress.
+   - Treasury Board Directive on Employment Equity, Diversity and Inclusion: representation, self-identification and barrier removal are accountabilities of the deputy head.
+   - Where survey results trail the public service on recourse, discrimination or harassment, these bear on the duty to provide a workplace free of discrimination (Canadian Human Rights Act).
+
+Suggested next steps
+   - Confirm these figures against the organization's own HR and staffing data, including acting appointments and screening outcomes, which are not in public tables.
+   - Where a gap is below workforce availability, set a measurable hiring and advancement objective and a date.
+   - Pair the survey signals with what employees say directly, and review recourse and support services.
+
+Prepared from the Public Service Equity Data Explorer (Treasury Board representation data and the 2024 Public Service Employee Survey). Figures are screening signals; verify before acting.`;
+    $("#briefText").value=txt;
+  }
+  sel.addEventListener("change",build);
+  const a=$("#briefAudience");if(a)a.addEventListener("change",build);
+  const c=$("#briefCopy");if(c)c.addEventListener("click",()=>safeCopy($("#briefText").value,c));
+  build();
+})();
+
 /* init route */
 (function(){
   let start="guide";
   try{
     const h=(location.hash||"").slice(1);
-    if(/^(guide|overview|depts|groups|salary|flows|pses|demo|ex|profile|di|ombuds|compare|linkages|files|action|sources|about)$/.test(h))start=h;
+    if(/^(guide|overview|depts|groups|salary|flows|pses|demo|ex|profile|di|ombuds|compare|progress|brief|indigenous|linkages|files|action|sources|about)$/.test(h))start=h;
   }catch(e){}
   go(start);
 })();
