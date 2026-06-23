@@ -316,7 +316,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 <main id="main" class="wrap">
 
 <!-- ================= DATA EXPLORER LANDING (home) ================= -->
-<section class="view" id="view-home">
+<section class="view active" id="view-home">
   <h2 data-fr="Que voulez-vous faire?">What do you want to do?</h2>
   <div class="entry-grid">
     <a class="entry-card" href="#" data-go="depts"><strong data-fr="Examiner un ministère">Check a department</strong></a>
@@ -1509,6 +1509,12 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 </div></footer>
 
 <script>
+/* progressive render: keeps first paint instant; heavy sections build during idle time */
+var _RQ=[];
+var _ric=(typeof window!=="undefined"&&window.requestIdleCallback)?function(cb){return window.requestIdleCallback(cb,{timeout:400});}:function(cb){return setTimeout(function(){cb();},1);};
+function defer(fn){try{_RQ.push(fn);}catch(e){}}
+function _pump(){var t0=Date.now();while(_RQ.length){var f=_RQ.shift();try{f();}catch(e){}if(Date.now()-t0>14)break;}if(_RQ.length)_ric(_pump);}
+
 /* ===================== DATA (all transcribed from published TBS tables) ===================== */
 const WFA={w:54.9,i:4.0,d:12.0,v:22.7};
 const LMA={w:48.3,i:4.3,d:12.6,v:24.9};
@@ -2145,7 +2151,7 @@ function renderRank(){
   if(supp.length)html+=`<tr><td colspan="4" class="supp">Suppressed (count of 1 to 5, not zero): ${supp.map(s=>s[0]).join("; ")}</td></tr>`;
   $("#rankTable tbody").innerHTML=html;
 }
-renderRank();
+defer(renderRank);
 $("#histChart").innerHTML=lineChart(GROUPS.map(g=>({name:g.name.split(" ")[0]==="Racialized"?"Racialized":g.name.split(" (")[0],vals:HIST[g.k],color:g.color})),HIST.years,{label:"Representation 1998 to 2025"});
 
 /* ===================== DEPARTMENTS ===================== */
@@ -2262,7 +2268,7 @@ function renderCmp(){
   </div>`).join("");
 }
 [cmpA,cmpB].forEach(s=>s.addEventListener("change",renderCmp));
-renderCmp();
+defer(renderCmp);
 // All-dept sortable table
 let sortCol=1,sortDir=-1;
 function renderAllDepts(){
@@ -2290,7 +2296,7 @@ function renderAllDepts(){
       return `<td class="num ${below?"below-mark":""}">${v.toFixed(1)}%</td>`;
     }).join("")+"</tr>").join("") : "<tr><td colspan='6' style='color:var(--ink-soft)'>"+emptyMsg+"</td></tr>");
 }
-renderAllDepts();
+defer(renderAllDepts);
 (function(){const f=$("#allDeptFilter");if(f)f.addEventListener("input",renderAllDepts);
  const t=$("#allDeptTier");if(t)t.addEventListener("change",renderAllDepts);})();
 
@@ -2320,7 +2326,7 @@ function renderGroups(){
     ${s.note?`<p style="font-size:13px;color:var(--ink-soft);margin-top:6px">${s.note}</p>`:""}
     </div>`;}).join("");
 }
-renderGroups();
+defer(renderGroups);
 
 /* ===================== SALARY ===================== */
 let salKey="black";
@@ -2337,7 +2343,7 @@ function renderSal(){
     return gapBar(b+`  (ratio ${di.toFixed(2)})`,SAL6[salKey][bi],SAL6.all[bi],"all employees",48,"#0E7C7B");
   }).join("")+`<p style="font-size:12.5px;color:var(--ink-soft);margin-top:8px">The tick marks the all-employee share of each band. Bars stopping left of the tick in high bands and pushing past it in low bands show pay compression.</p>`;
 }
-renderSal();
+defer(renderSal);
 // DI table
 (function(){
   const keys=[["w","Women"],["i","Indigenous Peoples"],["d","Persons w/ disabilities"],["v","Racialized"],["black","Black"]];
@@ -2365,7 +2371,7 @@ function renderFlow(){
   $("#flowChart").innerHTML=lineChart(series,FY.map(y=>"20"+y.slice(2,4)),{label:f.title});
   $("#flowLegend").innerHTML=`<span style="--c:#B3401E">Racialized</span><span style="--c:#5B6B7F">Persons with disabilities</span><span style="--c:#1B2A41">Black</span><span style="--c:#8A6D1D">Indigenous Peoples</span><span style="color:var(--ink-soft)">Women omitted from the chart for scale; women's ${flowKey==="hires"?"hire":flowKey==="promos"?"promotion":"separation"} share in 2024-25 was ${FLOWS[flowKey].w[8]}%.</span>`;
 }
-renderFlow();
+defer(renderFlow);
 (function(){
   const keys=[["w","Women"],["i","Indigenous Peoples"],["d","Persons w/ disabilities"],["v","Racialized"],["black","Black"]];
   $("#flowRatioTable tbody").innerHTML=keys.map(([k,l])=>{
@@ -2400,7 +2406,7 @@ function renderOcc(){
   $("#occTable tbody").innerHTML=rows.map(r=>"<tr><td>"+r[0]+"</td><td class='num'>"+fmt(r[1])+"</td>"+
    [2,3,4,5,6].map(c=>`<td class="num">${r[c]==null?(c===6?"":"supp."):r[c].toFixed(1)+"%"}</td>`).join("")+"</tr>").join("");
 }
-renderOcc();
+defer(renderOcc);
 $("#langBars").innerHTML=[["All employees","all"],["Women","w"],["Indigenous Peoples","i"],["Persons w/ disabilities","d"],["Racialized","v"],["Black employees","black"]]
  .map(([l,k])=>gapBar(l+", French first official language",LANG.fr[k],LANG.fr.all,"PS average",60,"#0E7C7B")).join("");
 $("#interTable tbody").innerHTML=INTER.map(r=>`<tr><td>${r[0]}</td>`+[1,2,3,4].map(c=>
@@ -2496,7 +2502,7 @@ function renderPSES(){
     <tbody>${rows}</tbody></table></div></div>`;
   }).join("");
 }
-renderPSES();
+defer(renderPSES);
 
 /* ===================== Who holds each pay band (computed from verified counts) ===================== */
 const WITHIN6={w:[68.5,66.9,55.4,52.4,47.5,49.6],i:[5.5,6.0,6.0,5.5,4.1,4.4],d:[9.3,9.4,8.7,8.9,8.7,10.7],v:[19.6,27.2,23.9,22.3,21.9,18.4]};
@@ -2509,7 +2515,7 @@ function renderWB(){
   const g=GROUPS.find(x=>x.k===wbKey);
   $("#wbBars").innerHTML=BANDS6.map((b,bi)=>gapBar(b,WITHIN6[wbKey][bi],CPA[wbKey],"share of whole workforce",80,g.color)).join("");
 }
-renderWB();
+defer(renderWB);
 
 /* ===================== Age, occupational categories, bilingual status ===================== */
 const AGE=[["All employees",11.9,31.3,1],["Women",12.6,29.4,0],["Indigenous Peoples",10.9,34.7,0],["Persons with disabilities",12.2,34.1,0],["Racialized (visible minority)",15.5,25.2,0],["Black",12.8,25.7,0]];
@@ -2592,7 +2598,7 @@ function renderScatter(){
   $("#scatterNote").textContent=`${pts.length} organizations plotted (suppressed values excluded). Correlation r = ${r.toFixed(2)}, ${strength} ${r>0?"positive":"negative"} relationship. Hover or tap any dot to identify the organization.`;
 }
 [sx,sy].forEach(s=>s.addEventListener("change",renderScatter));
-renderScatter();
+defer(renderScatter);
 
 var GRP_FR={w:"Femmes",i:"Peuples autochtones",d:"Personnes en situation de handicap",v:"Employés racisés"};
 function grpFR(k,en){return (typeof isFR==="function"&&isFR()&&GRP_FR[k])?GRP_FR[k]:en;}
@@ -2623,7 +2629,7 @@ function renderSignal(){
 sgSel.addEventListener("change",renderSignal);
 $("#sgThr").addEventListener("input",renderSignal);
 document.addEventListener("langchange",renderSignal);
-renderSignal();
+defer(renderSignal);
 
 /* ===================== Promotion vs acting workbench ===================== */
 const paIds=["pa_name","pa_rep","pa_pro","pa_act"];
@@ -2868,7 +2874,7 @@ $("#rqOrg").addEventListener("input",renderRQ);
 $("#rqFrom").addEventListener("input",renderRQ);
 document.querySelectorAll(".rqc").forEach(c=>c.addEventListener("change",renderRQ));
 document.addEventListener("langchange",renderRQ);
-renderRQ();
+defer(renderRQ);
 /* export package: multiple ready-to-send framings of the same request */
 (function(){
   function picks(){const arr=rqLabels();return [...document.querySelectorAll(".rqc")].filter(c=>c.checked).map(c=>arr[+c.dataset.i]);}
@@ -3309,7 +3315,7 @@ function renderDI(){
     return row+"</tr>";
   }).join("");
 }
-renderDI();
+defer(renderDI);
 $("#diMedianChart").innerHTML=lineChart(
  [{name:"All",vals:DI_MEDIAN.all.map(v=>v/1000),color:"#44546A"},
   {name:"Black",vals:DI_MEDIAN.black.map(v=>v/1000),color:"#1B2A41"},
@@ -3395,7 +3401,7 @@ $("#diMedianChart").innerHTML=lineChart(
         stark.slice(0,6).map(s=>`<li>${s.g}: ${s.v}% ${s.q} vs ${s.base}% overall (${s.gap>0?"+":""}${s.gap} points)</li>`).join("")+'</ul>';
     }
   }
-  buildPSTable();
+  defer(buildPSTable);
   // ---- Tool 2: one group across organizations ----
   const dGroup=$("#demoGroup"),dQ=$("#demoQ");
   EEG_GROUPS.forEach(([k,l])=>{const o=document.createElement("option");o.value=k;o.textContent=l;dGroup.appendChild(o);});
@@ -3441,7 +3447,7 @@ $("#diMedianChart").innerHTML=lineChart(
   }
   [dGroup,dQ].forEach(s=>s.addEventListener("change",renderRank));
   document.addEventListener("langchange",renderRank);
-  renderRank();
+  defer(renderRank);
   // ---- Tool 3: two groups side by side ----
   const dA=$("#demoA"),dB=$("#demoB");
   EEG_GROUPS.forEach(([k,l])=>{[dA,dB].forEach(sel=>{const o=document.createElement("option");o.value=k;o.textContent=l;sel.appendChild(o);});});
@@ -3461,7 +3467,7 @@ $("#diMedianChart").innerHTML=lineChart(
     }).join("");
   }
   [dA,dB].forEach(s=>s.addEventListener("change",renderPair));
-  renderPair();
+  defer(renderPair);
   // ---- Tool 4: several groups at once on one question ----
   const mg=$("#demoMultiGroups"),mq=$("#demoMultiQ");
   const mgState={};
@@ -3498,7 +3504,7 @@ $("#diMedianChart").innerHTML=lineChart(
     $("#demoMulti").innerHTML=svg+`<p style="font-size:12.5px;color:var(--ink-soft);margin-top:4px">Spread between the highest and lowest selected group: ${spread} points. Dashed line is the public-service-wide figure for everyone.</p>`;
   }
   mq.addEventListener("change",renderMulti);
-  renderMulti();
+  defer(renderMulti);
 
   // ---- Tool 5: Systemic barrier scanner (scans all dept x group x question cells) ----
   const DOMAINS={harm:["Q65","Q58"],recourse:["Q42","Q63","Q70","Q72"],advance:["Q45","Q43","Q47","Q12","Q53"],racism:["Q24","Q49","Q52","Q72","Q65"]};
@@ -3720,7 +3726,7 @@ $("#diMedianChart").innerHTML=lineChart(
     $("#cmpReading").innerHTML=reading;
   }
   [xSel,ySel].forEach(s=>s.addEventListener("change",renderScatter));
-  renderScatter();
+  defer(renderScatter);
   // ============ Tool 3: automatic linkage scan ============
   const structKeys=["n","w","i","d","v","gi","gd","gv"];
   const outcomeKeys=PSq.map(q=>"q_"+q);
@@ -4380,6 +4386,8 @@ function _hbar(rows,opts){opts=opts||{};const W=720,rh=opts.rh||22,pl=opts.pl||2
   apply(true);
   window.addEventListener("hashchange",function(){apply(false);});
 })();
+
+try{_ric(_pump);}catch(e){try{_pump();}catch(_){}}
 </script>
 </body>
 </html>
