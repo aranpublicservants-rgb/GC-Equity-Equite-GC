@@ -1525,7 +1525,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <a href="#" data-go="guide" data-fr="Comment utiliser cet outil">How to use this tool</a>
   </nav>
   <span data-fr="Conçu à partir de données publiques du gouvernement du Canada. Sources : Rapport annuel sur l'équité en matière d'emploi du SCT 2024-2025 et Instantané démographique 2024-2025 (publiés en mars 2026); séries du SCT sur la représentation et la disponibilité au sein de la population active; résultats du Sondage auprès des fonctionnaires fédéraux de 2024 par question (SCT et Statistique Canada); audits de recrutement et de dotation de la CFP; inventaire GCwiki sur l'équité des données. Chiffres de représentation au 31 mars 2025; SAFF mené du 28 octobre au 31 décembre 2024. Toutes les valeurs extraites le 11 juin 2026. Outil d'analyse indépendant, et non une publication du gouvernement du Canada.">Built from public Government of Canada data. Sources: TBS Employment Equity Annual Report 2024-25 and Demographic Snapshot 2024-2025 (published March 2026); TBS representation and workforce availability series; 2024 Public Service Employee Survey results by question (TBS and Statistics Canada); PSC recruitment and staffing audits; GCwiki Data Equity inventory. Representation figures as of March 31, 2025; PSES fielded October 28 to December 31, 2024. All values retrieved June 11, 2026. This is an independent analytical tool, not a Government of Canada publication.</span>
-  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-06-24f">Build 2026-06-24f</div>
+  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-06-24g">Build 2026-06-24g</div>
 </div></footer>
 
 <script>
@@ -2382,7 +2382,7 @@ function calcPA(){
   const lblA=fr?"ratio d'équité des intérims":"acting equity ratio";
   $("#paOut").innerHTML=`<p><strong>${name}${fr?" :":":"}</strong> ${lblP}${tag(pr)} &middot; ${lblA}${tag(ar)}</p><p style="color:var(--ink-soft);font-size:13.5px;max-width:880px">${read}</p>`;
 }
-paIds.forEach(id=>$("#"+id).addEventListener("input",calcPA));document.addEventListener("langchange",calcPA);calcPA();
+paIds.forEach(id=>$("#"+id).addEventListener("input",calcPA));document.addEventListener("langchange",calcPA);setTimeout(calcPA,0);
 
 /* ===================== Support-services comparator ===================== */
 const PSWIDE={q42:51,q58:12,q63:50,q65:9,q70:52};
@@ -3476,7 +3476,7 @@ $("#diMedianChart").innerHTML=lineChart(
         $("#indFinding").value=`2024 PSES, Indigenous employees, "${QM[q][1]}". Indigenous service-wide: ${psv!=null?psv+"%":"n/a"}; non-Indigenous: ${nonPS[q]!=null?nonPS[q]+"%":"n/a"}. Of ${rows.length} organizations publishing this, ${w[0]} shows the ${lower?"highest":"lowest"} value at ${w[1]}%. Source: 2024 PSES EE derived-variable file. Screening signal.`;
       }
     }
-    dq.addEventListener("change",render);document.addEventListener("langchange",render);render();
+    dq.addEventListener("change",render);document.addEventListener("langchange",render);setTimeout(render,0);
   })();
   // ---- 5. One organization in depth ----
   (function(){
@@ -3674,8 +3674,7 @@ $("#diMedianChart").innerHTML=lineChart(
   ["briefAudience","briefTone","briefHooks","briefQs","briefNext","briefAnnex"].forEach(id=>{const e=$("#"+id);if(e)e.addEventListener("change",build);});
   const c=$("#briefCopy");if(c)c.addEventListener("click",()=>safeCopy($("#briefText").value,c));
   const bd=$("#briefDocx");if(bd)bd.addEventListener("click",function(){try{const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#briefText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre></body></html>";const b=new Blob([html],{type:"application/msword"});const u=URL.createObjectURL(b);const aa=document.createElement("a");aa.href=u;aa.download="briefing-note-"+sel.value.replace(/[^A-Za-z0-9]+/g,"-")+".doc";document.body.appendChild(aa);aa.click();aa.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}catch(e){}});
-  document.addEventListener("langchange",build);
-  build();
+  document.addEventListener("langchange",build);setTimeout(build,0);
 })();
 
 /* ===================== Request-by-topic builder (11 categories, structured template) ===================== */
