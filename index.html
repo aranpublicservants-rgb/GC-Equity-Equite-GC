@@ -293,6 +293,18 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 .interp .interp-col:last-child{margin-bottom:0}
 .interp .usefind{display:inline-block;margin-top:2px;font-weight:700;color:var(--teal)}
 @media(min-width:760px){.interp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}}
+
+/* Entry screen (home): one large call to action into the data */
+.splash{max-width:660px;margin:0 auto;text-align:center;padding:52px 16px 40px}
+.splash h2{font-size:27px;line-height:1.22;margin:0 0 14px;letter-spacing:-.01em}
+.splash-sub{color:var(--ink-soft);font-size:16.5px;line-height:1.5;margin:0 auto 30px;max-width:560px}
+.splash-cta{display:inline-block;background:var(--teal);color:var(--paper);text-decoration:none;font:700 19px/1 inherit;padding:18px 36px;border-radius:12px;border:2px solid var(--teal)}
+.splash-cta:hover{filter:brightness(1.08)}
+.splash-cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.splash-links{margin:24px 0 0;font-size:14px}
+.splash-links a{color:var(--ink-soft);text-decoration:underline}
+.splash .home-about{margin-top:30px;text-align:left}
+@media (max-width:640px){.splash{padding:34px 14px 30px}.splash h2{font-size:21px}.splash-sub{font-size:15px}.splash-cta{display:block;font-size:18px;padding:16px 22px;min-height:44px}}
 </style>
 </head>
 <body>
@@ -324,20 +336,19 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 
 <!-- ================= DATA EXPLORER LANDING (home) ================= -->
 <section class="view active" id="view-home">
-  <h2 data-fr="Que voulez-vous faire?">What do you want to do?</h2>
-  <div class="entry-grid">
-    <a class="entry-card" href="#" data-go="depts"><strong data-fr="Examiner un ministère">Check a department</strong></a>
-    <a class="entry-card" href="#" data-go="groups"><strong data-fr="Examiner un groupe">Check a group</strong></a>
-    <a class="entry-card" href="#" data-go="overview"><strong data-fr="Repérer des signaux d'obstacle">Find barrier signals</strong></a>
-    <a class="entry-card" href="#" data-go="compare"><strong data-fr="Comparer les données">Compare data</strong></a>
-  </div>
-  <details class="home-about">
+  <div class="splash">
+    <h2 data-fr="Les données sur l'équité en emploi de l'administration publique fédérale, en un seul endroit">Federal public service employment equity data, in one place</h2>
+    <p class="splash-sub" data-fr="Tous les chiffres publiés, par ministère et par groupe désigné, réunis pour aider à repérer les obstacles systémiques.">Every published figure, by department and designated group, brought together to help identify systemic barriers.</p>
+    <a class="splash-cta" href="#" data-go="overview" data-fr="Utiliser l'outil de données sur l'ÉE">Use the EE data tool</a>
+    <p class="splash-links"><a href="#" data-go="guide" data-fr="Comment utiliser cet outil">How to use this tool</a> &nbsp;&middot;&nbsp; <a href="#" data-go="bhome" data-fr="Créer une note d'information">Build a briefing note</a></p>
+    <details class="home-about">
     <summary data-fr="À propos de cet outil et comment lire les chiffres">About this tool and how to read the numbers</summary>
     <div class="home-about-body">
       <p data-fr="Un écart est un signal à examiner, non un constat définitif. Chaque donnée est transcrite des tableaux publiés du gouvernement du Canada; rien n'est estimé, et les petits dénombrements supprimés le restent.">A gap is a signal to investigate, not a final finding. Every figure is transcribed from published Government of Canada tables; nothing is estimated, and suppressed small counts stay suppressed.</p>
       <p data-fr="Portée : l'administration publique centrale, environ 72 organisations, au 31 mars 2025, plus le sondage auprès des employés de 2024. &nbsp;&middot;&nbsp; &lt;a href=&quot;#&quot; data-go=&quot;guide&quot;&gt;Comment utiliser cet outil&lt;/a&gt; &nbsp;&middot;&nbsp; &lt;a href=&quot;#&quot; data-go=&quot;limitations&quot;&gt;Limites&lt;/a&gt;">Coverage: the core public administration, about 72 organizations, as of March 31, 2025, plus the 2024 employee survey. &nbsp;&middot;&nbsp; <a href="#" data-go="guide">How to use this tool</a> &nbsp;&middot;&nbsp; <a href="#" data-go="limitations">Limitations</a></p>
     </div>
   </details>
+  </div>
 </section>
 
 <!-- ================= BUILDER LANDING (bhome) ================= -->
@@ -1514,7 +1525,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <a href="#" data-go="guide" data-fr="Comment utiliser cet outil">How to use this tool</a>
   </nav>
   <span data-fr="Conçu à partir de données publiques du gouvernement du Canada. Sources : Rapport annuel sur l'équité en matière d'emploi du SCT 2024-2025 et Instantané démographique 2024-2025 (publiés en mars 2026); séries du SCT sur la représentation et la disponibilité au sein de la population active; résultats du Sondage auprès des fonctionnaires fédéraux de 2024 par question (SCT et Statistique Canada); audits de recrutement et de dotation de la CFP; inventaire GCwiki sur l'équité des données. Chiffres de représentation au 31 mars 2025; SAFF mené du 28 octobre au 31 décembre 2024. Toutes les valeurs extraites le 11 juin 2026. Outil d'analyse indépendant, et non une publication du gouvernement du Canada.">Built from public Government of Canada data. Sources: TBS Employment Equity Annual Report 2024-25 and Demographic Snapshot 2024-2025 (published March 2026); TBS representation and workforce availability series; 2024 Public Service Employee Survey results by question (TBS and Statistics Canada); PSC recruitment and staffing audits; GCwiki Data Equity inventory. Representation figures as of March 31, 2025; PSES fielded October 28 to December 31, 2024. All values retrieved June 11, 2026. This is an independent analytical tool, not a Government of Canada publication.</span>
-  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-06-24b">Build 2026-06-24b</div>
+  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-06-24f">Build 2026-06-24f</div>
 </div></footer>
 
 <script>
@@ -1769,12 +1780,11 @@ jumpBar.appendChild(jumpLab);jumpBar.appendChild(jumpSel);
 document.addEventListener("langchange",function(){var v=jumpSel.value;buildJump();if(v)jumpSel.value=v;});
 function go(id){
   if(!document.getElementById("view-"+id))id="overview";
-  if(id==="home")id="overview"; // open on the data dashboard, not the old chooser menu
   try{ensureView(id);}catch(e){}
   document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="view-"+id));
   const pg=pageOf(id);
   Object.keys(primaryEls).forEach(k=>primaryEls[k].setAttribute("aria-current",k===pg?"true":"false"));
-  jumpBar.style.display=(pg==="explorer")?"":"none";
+  jumpBar.style.display=(pg==="explorer"&&id!=="home")?"":"none";
   if(EXPLORER_IDS.has(id))jumpSel.value=id;
   // Section switching is by visibility toggle only; never touches the History API (blocked in the published iframe).
   try{ window.scrollTo({top:0}); }catch(e){ try{window.scrollTo(0,0);}catch(e2){} }
@@ -3910,14 +3920,15 @@ function _hbar(rows,opts){opts=opts||{};const W=720,rh=opts.rh||22,pl=opts.pl||2
   ];
   let i=0;
   function show(){const s=STEPS[i];go(s.tab);$("#tourStep").textContent="Step "+(i+1)+" of "+STEPS.length;$("#tourTitle").textContent=s.title;$("#tourBody").textContent=s.body;$("#tourBar").style.width=Math.round((i+1)/STEPS.length*100)+"%";$("#tourPrev").style.visibility=i===0?"hidden":"visible";$("#tourNext").textContent=i===STEPS.length-1?"Finish":"Next";}
-  function open(){i=0;ov.style.display="flex";show();try{$("#tourClose").focus();}catch(e){}}
-  function close(){ov.style.display="none";}
+  var _tourPrev=null;
+  function open(){_tourPrev=document.activeElement;i=0;ov.style.display="flex";show();try{$("#tourClose").focus();}catch(e){}}
+  function close(){ov.style.display="none";try{if(_tourPrev&&_tourPrev.focus)_tourPrev.focus();}catch(e){}}
   const sb=$("#tourStart");if(sb)sb.addEventListener("click",open);
   $("#tourClose").addEventListener("click",close);
   $("#tourPrev").addEventListener("click",function(){if(i>0){i--;show();}});
   $("#tourNext").addEventListener("click",function(){if(i<STEPS.length-1){i++;show();}else{close();}});
   ov.addEventListener("click",function(e){if(e.target===ov)close();});
-  document.addEventListener("keydown",function(e){if(ov.style.display!=="none"&&e.key==="Escape")close();});
+  document.addEventListener("keydown",function(e){if(ov.style.display==="none")return;if(e.key==="Escape"){close();return;}if(e.key!=="Tab")return;var f=Array.prototype.slice.call(ov.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')).filter(function(el){return el.offsetParent!==null;});if(!f.length)return;var first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}});
 })();
 
 /* init route + shareable links (#tab, #org=Name, #department=Name&group=G, #briefing-note?org=X&audience=Y) */
@@ -3927,7 +3938,7 @@ function _hbar(rows,opts){opts=opts||{};const W=720,rh=opts.rh||22,pl=opts.pl||2
   function matchOrg(q){if(!q)return null;const list=(typeof DEPTS!=="undefined"?DEPTS.map(d=>d[0]):[]);const dash=function(x){return x.replace(/[^A-Za-z0-9]+/g,"-").toLowerCase();};const nq=dash(q),aq=q.toUpperCase();
     return list.find(n=>dash(n)===nq)||list.find(n=>n.toLowerCase()===q.toLowerCase())||list.find(n=>acronym(n)===aq)||list.find(n=>n.toLowerCase().indexOf(q.toLowerCase())>=0)||null;}
   function parse(){let raw="";try{raw=(location.hash||"").slice(1);}catch(e){}
-    if(!raw)return {tab:"guide"};
+    if(!raw)return {tab:"home"};
     let tab=raw,params={};
     const qpos=raw.search(/[?&]/);
     if(qpos>=0){tab=raw.slice(0,qpos);}
@@ -3941,7 +3952,7 @@ function _hbar(rows,opts){opts=opts||{};const W=720,rh=opts.rh||22,pl=opts.pl||2
     if(pr.org||pr.department){const name=matchOrg(pr.org||pr.department);go("orgprofile");if(name&&window._opRender)window._opRender(name);return;}
     if(p.tab==="briefing-note"||p.tab==="brief"){go("brief");const sel=document.getElementById("briefOrg");if(sel&&pr.org){const m=matchOrg(pr.org);if(m){sel.value=m;}}const a=document.getElementById("briefAudience");if(a&&pr.audience&&/^(dm|adm|hr|smc|eec|network|ombuds|union|general)$/.test(pr.audience))a.value=pr.audience;if(sel){try{sel.dispatchEvent(new Event("change"));}catch(e){}}return;}
     if(p.tab&&KNOWN.test(p.tab)){go(p.tab);return;}
-    if(initial)go("overview");
+    if(initial)go("home");
   }
   apply(true);
   window.addEventListener("hashchange",function(){apply(false);});
