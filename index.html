@@ -16,6 +16,11 @@
   --ok:#2E6E4E; --ok-soft:#E2EFE6; --bench:#5B6B7F; --gold:#8A6D1D; --gold-soft:#F5EDD6;
   --mono:ui-monospace,"SF Mono",Consolas,Menlo,monospace;
 }
+.ctl{margin:10px 0 14px}
+.ctl label{display:block;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.ctl select{font-size:.95rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);max-width:100%}
+div[tabindex="0"]:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
 :root[data-theme="dark"]{
   --ink:#E8ECF1; --ink-soft:#AAB4C0; --paper:#12161B; --card:#1B212A; --line:#2C343D;
   --teal:#46B8B5; --teal-soft:#15323A; --rust:#E27A52; --rust-soft:#3A241C;
@@ -764,13 +769,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <div class="actionbar" style="margin-top:10px"><span class="muted" id="scanCount"></span><button type="button" id="scanCopy">Copy these rows</button><button type="button" id="scanCsv">Download CSV</button></div>
   </div>
 
-  <div class="card">
-    <h3>Compare several groups at once</h3>
-    <p class="howto" data-fr="Cochez autant de groupes que vous voulez pour les voir sur une même question dans l'ensemble de la fonction publique, en classement, afin de situer les groupes désignés les uns par rapport aux autres et par rapport à leurs groupes de référence d'un seul coup. C'est le portrait multigroupe : qui subit le plus de préjudice, et quelle est l'ampleur de l'écart.">Tick any number of groups to see them on one question across the public service, ranked, so you can place the designated groups against each other and against their reference groups in a single view. This is the multi-group picture: who carries the most harm, and how wide the spread is.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:10px" id="demoMultiGroups"></div>
-    <div class="ctl" style="margin-bottom:8px"><label for="demoMultiQ">Question</label><select id="demoMultiQ"></select></div>
-    <div id="demoMulti"></div>
-  </div>
+  
 
   <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px" data-fr="Source : Sondage auprès des fonctionnaires fédéraux de 2024, jeu de données de variables dérivées sur l'équité en matière d'emploi (Secrétariat du Conseil du Trésor du Canada / Statistique Canada), via le Gouvernement ouvert. Les étiquettes de groupe correspondent à l'auto-identification des répondants. « Racisés » correspond à la catégorie « minorité visible » de l'équité en matière d'emploi. Outil d'analyse indépendant, non une publication du gouvernement du Canada.">Source: 2024 Public Service Employee Survey, Employment Equity derived-variable dataset (Treasury Board of Canada Secretariat / Statistics Canada), via Open Government. Group labels are respondents' self-identification. "Racialized" corresponds to the Employment Equity "visible minority" category. Independent analytical tool, not a Government of Canada publication.</p>
 </section>
@@ -901,40 +900,9 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <p style="font-size:13px;color:var(--ink-soft)" data-fr="Chaque hypothèse est visible et modifiable, et c'est tout l'intérêt : apportez le nombre de griefs de votre organisation, vos données d'admission au SGIC et votre propre composition salariale, et le modèle devient une preuve plutôt qu'une estimation.">Every assumption is visible and editable, which is the point: bring your organization's grievance counts, your ICMS intake data and your own salary mix, and the model becomes evidence rather than estimate.</p>
   </div>
   <div class="card">
-    <h3>Compare two organizations by the support services they offer</h3>
-    <p class="howto" data-fr="&lt;strong&gt;Ce que c'est :&lt;/strong&gt; une comparaison côte à côte de deux organisations, avec leur représentation et leurs résultats au sondage de 2024 remplis automatiquement et un ensemble de services de soutien aux employés que vous cochez pour chacune, réseau d'employés financé, bureau de l'ombuds, gestion informelle des conflits (SGIC), équipe de lutte contre le racisme ou IDEA. &lt;strong&gt;Comment l'utiliser :&lt;/strong&gt; les menus déroulants regroupent les organisations par taille, pour que vous en choisissiez deux de taille semblable (comparer un organisme de 300 personnes à un ministère de 40 000 n'est pas équitable). Cochez les services de chacune; les lignes du sondage se remplissent d'elles-mêmes et vous pouvez remplacer toute valeur. &lt;strong&gt;À quoi ça sert :&lt;/strong&gt; voir si les organisations qui investissent dans les services de soutien obtiennent de meilleurs résultats en matière de harcèlement, de discrimination et de confiance. Une paire ne prouve rien; un profil constant sur plusieurs paires appariées est le genre de preuve sur lequel une analyse de rentabilisation peut s'appuyer. L'information sur les services est à vous de fournir, elle n'est pas publiée de façon centralisée."><strong>What this is:</strong> a side-by-side of two organizations, with their representation and 2024 survey results filled in automatically and a set of employee-support services you tick for each one, funded employee network, ombuds office, informal conflict management (ICMS), anti-racism or IDEA team. <strong>How to use it:</strong> the dropdowns group organizations by size, so you can pick two of similar size (comparing a 300-person agency to a 40,000-person department isn't fair). Tick the services each one has; the survey rows fill themselves and you can override any value. <strong>What it's for:</strong> seeing whether organizations that invest in support services show better outcomes on harassment, discrimination and trust. One pair proves nothing; a consistent pattern across several matched pairs is the kind of evidence a business case can stand on. Service information is yours to supply, it isn't centrally published.</p>
-    <div class="grid2">
-      <div>
-        <div class="ctl" style="margin-bottom:8px"><label for="obA">Organization A</label><select id="obA"></select></div>
-        <div style="font-size:13px;line-height:1.9">
-          <label style="display:block"><input type="checkbox" class="observ" data-o="A" data-s="net"> Funded employee network(s)</label>
-          <label style="display:block"><input type="checkbox" class="observ" data-o="A" data-s="omb"> Ombuds office</label>
-          <label style="display:block"><input type="checkbox" class="observ" data-o="A" data-s="icms"> Informal conflict management (ICMS)</label>
-          <label style="display:block"><input type="checkbox" class="observ" data-o="A" data-s="arax"> Anti-racism / IDEA team or secretariat</label>
-        </div>
-      </div>
-      <div>
-        <div class="ctl" style="margin-bottom:8px"><label for="obB">Organization B</label><select id="obB"></select></div>
-        <div style="font-size:13px;line-height:1.9">
-          <label style="display:block"><input type="checkbox" class="observ" data-o="B" data-s="net"> Funded employee network(s)</label>
-          <label style="display:block"><input type="checkbox" class="observ" data-o="B" data-s="omb"> Ombuds office</label>
-          <label style="display:block"><input type="checkbox" class="observ" data-o="B" data-s="icms"> Informal conflict management (ICMS)</label>
-          <label style="display:block"><input type="checkbox" class="observ" data-o="B" data-s="arax"> Anti-racism / IDEA team or secretariat</label>
-        </div>
-      </div>
-    </div>
-    <div class="tblwrap" style="margin-top:14px"><table><caption data-fr="Côte à côte. La représentation et les résultats du SAFF 2024 se remplissent automatiquement; vous pouvez remplacer toute valeur du sondage. Les lignes « l'a vécu » montrent le pourcentage qui l'a vécu.">Side by side. Representation and 2024 PSES results fill automatically; you can type over any survey value. "Victim" rows show the percent who experienced it.</caption>
-    <thead><tr><th scope="col">Measure</th><th scope="col" class="num" id="obAh">Organization A</th><th scope="col" class="num" id="obBh">Organization B</th><th scope="col" class="num">PS-wide 2024</th></tr></thead>
-    <tbody id="obAuto"></tbody>
-    <tbody>
-      <tr><td>Q42: could start formal recourse without fear of reprisal (positive %)</td><td class="num"><input class="obin" data-q="q42" data-o="A" type="number" min="0" max="100" style="width:70px" aria-label="Organization A Q42"></td><td class="num"><input class="obin" data-q="q42" data-o="B" type="number" min="0" max="100" style="width:70px" aria-label="Organization B Q42"></td><td class="num">51</td></tr>
-      <tr><td>Q58: victim of harassment, past 12 months (%)</td><td class="num"><input class="obin" data-q="q58" data-o="A" type="number" min="0" max="100" style="width:70px" aria-label="Organization A Q58"></td><td class="num"><input class="obin" data-q="q58" data-o="B" type="number" min="0" max="100" style="width:70px" aria-label="Organization B Q58"></td><td class="num">12</td></tr>
-      <tr><td>Q63: satisfied with how harassment matters are resolved (positive %)</td><td class="num"><input class="obin" data-q="q63" data-o="A" type="number" min="0" max="100" style="width:70px" aria-label="Organization A Q63"></td><td class="num"><input class="obin" data-q="q63" data-o="B" type="number" min="0" max="100" style="width:70px" aria-label="Organization B Q63"></td><td class="num">50</td></tr>
-      <tr><td>Q65: victim of discrimination, past 12 months (%)</td><td class="num"><input class="obin" data-q="q65" data-o="A" type="number" min="0" max="100" style="width:70px" aria-label="Organization A Q65"></td><td class="num"><input class="obin" data-q="q65" data-o="B" type="number" min="0" max="100" style="width:70px" aria-label="Organization B Q65"></td><td class="num">9</td></tr>
-      <tr><td>Q70: satisfied with how discrimination matters are resolved (positive %)</td><td class="num"><input class="obin" data-q="q70" data-o="A" type="number" min="0" max="100" style="width:70px" aria-label="Organization A Q70"></td><td class="num"><input class="obin" data-q="q70" data-o="B" type="number" min="0" max="100" style="width:70px" aria-label="Organization B Q70"></td><td class="num">52</td></tr>
-    </tbody></table></div>
-    <label for="obText" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block;margin-top:14px">Generated comparison</label>
-    <textarea id="obText" rows="7" style="width:100%;font:13px/1.5 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:10px;margin-top:6px" readonly></textarea>
+    <h3 data-fr="Comparer deux organisations">Compare two organizations</h3>
+    <p class="howto" data-fr="La comparaison côte à côte de deux organisations se trouve maintenant à un seul endroit, dans la section « Ministères et organismes », afin d'éviter deux comparateurs identiques. Vous y comparez la représentation et les résultats du sondage de deux organisations de taille semblable.">The side-by-side comparison of two organizations now lives in one place, in the Departments and agencies section, so there are not two identical comparators. There you compare the representation and survey results of two organizations of similar size.</p>
+    <p><a href="#" data-go="depts" data-fr="Ouvrir la comparaison des ministères →">Open the department comparison →</a></p>
   </div>
 </section>
 
@@ -963,30 +931,13 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <div class="actionbar" style="margin-top:10px"><span class="muted" id="cmpCount"></span><button type="button" id="cmpCsv">Download CSV</button></div>
   </div>
 
-  <div class="card" style="border-left:5px solid var(--teal)">
-    <h3>2. Relationship finder: does one measure track another?</h3>
-    <p class="howto" data-fr="Choisissez une mesure pour chaque axe. Chaque point est une organisation. L'outil trace la tendance et indique la corrélation, puis explique en mots simples ce qu'elle signifie. Servez-vous-en pour vérifier une intuition, par exemple : « dans les organisations où la représentation des employés racisés est plus faible, la discrimination déclarée est-elle plus élevée? » Une droite forte est une piste; elle ne peut prouver la cause, et elle décrit des organisations, non des individus.">Pick a measure for each axis. Each dot is an organization. The tool draws the trend and reports the correlation, then says in plain words what it means. Use it to test a hunch, for example, "in organizations where racialized representation is lower, is reported discrimination higher?" A strong line is a lead; it cannot prove cause, and it describes organizations, not individuals.</p>
-    <div class="controls">
-      <div class="ctl"><label for="cmpX">Horizontal axis (X)</label><select id="cmpX"></select></div>
-      <div class="ctl"><label for="cmpY">Vertical axis (Y)</label><select id="cmpY"></select></div>
-    </div>
-    <div id="cmpScatter"></div>
-    <div id="cmpReading" style="font-size:13.5px;margin-top:8px"></div>
+  <div class="card">
+    <h3 data-fr="2. Une mesure en suit-elle une autre?">2. Does one measure track another?</h3>
+    <p class="howto" data-fr="L'explorateur de relations se trouve maintenant à un seul endroit, dans le laboratoire des liens, à côté du constructeur de signaux, afin d'éviter deux outils identiques. Vous y tracez une mesure en fonction d'une autre d'une organisation à l'autre.">The relationship explorer now lives in one place, the Linkages lab, next to the signal builder, so there are not two identical tools. There you plot one measure against another across organizations.</p>
+    <p><a href="#" data-go="linkages" data-fr="Ouvrir le laboratoire des liens →">Open the Linkages lab →</a></p>
   </div>
 
-  <div class="card" style="border-left:5px solid var(--rust)">
-    <h3>3. Automatic linkage scan: the strongest patterns in the data</h3>
-    <p class="howto" data-fr="Ceci mesure à quel point chaque facteur structurel (taille, représentation, chaque écart de disponibilité au sein de la population active) varie avec chaque résultat du sondage dans l'ensemble des organisations, puis classe les liens les plus forts. C'est la façon la plus rapide de faire ressortir une relation que personne n'a cherchée. Chaque ligne est un signal de dépistage : une association statistique réelle entre organisations, à vérifier, et non une cause prouvée.">This measures how strongly every structural factor (size, representation, each workforce-availability gap) moves with every survey outcome across all organizations, then ranks the strongest links. It is the fastest way to surface a connection no one has looked for. Each row is a screening signal: a real statistical association across organizations, to be checked, not a proven cause.</p>
-    <div class="controls">
-      <div class="ctl"><label for="scanStrength">Show links at least</label><select id="scanStrength">
-        <option value="0.5">Strong (r ≥ 0.5)</option>
-        <option value="0.4" selected>Moderate (r ≥ 0.4)</option>
-        <option value="0.3">Weak-moderate (r ≥ 0.3)</option>
-      </select></div>
-    </div>
-    <div class="tblwrap" style="max-height:460px;overflow:auto"><table id="linkTable"><caption data-fr="Corrélations par paires entre les facteurs structurels et les résultats du sondage d'une organisation à l'autre, classées par force. Source : SCT et SAFF 2024, à l'échelle de l'organisation.">Pairwise correlations between structural factors and survey outcomes across organizations, ranked by strength. Source: TBS and 2024 PSES, organization level.</caption><thead></thead><tbody></tbody></table></div>
-    <p class="signal-note" data-fr="Ce sont des corrélations entre organisations (une relation écologique). Elles peuvent différer de ce qui vaut pour les individus, et un troisième facteur (comme la taille de l'organisation ou la composition professionnelle) peut influencer les deux mesures. Traitez chacune comme une hypothèse à vérifier, non un constat.">These are correlations across organizations (an ecological relationship). They can differ from what holds for individuals, and a third factor (such as organization size or occupational mix) can drive both measures. Treat each as a hypothesis to test, not a finding.</p>
-  </div>
+  
 
   <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px" data-fr="Sources : représentation et disponibilité au sein de la population active, données sur l'équité en matière d'emploi du Secrétariat du Conseil du Trésor du Canada (31 mars 2025); mesures du sondage, Sondage auprès des fonctionnaires fédéraux de 2024 (sous-ensemble 1, par organisation). Les corrélations sont calculées en direct dans votre navigateur pour les organisations qui déclarent les deux mesures. Outil d'analyse indépendant, non une publication du gouvernement du Canada.">Sources: representation and workforce availability, Treasury Board of Canada Secretariat employment-equity data (March 31, 2025); survey measures, 2024 Public Service Employee Survey (subset 1, by organization). Correlations are computed live in your browser across the organizations that report both measures. Independent analytical tool, not a Government of Canada publication.</p>
 </section>
@@ -1101,6 +1052,12 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 </section>
 
 <!-- ================= LANGUAGE & ADVANCEMENT ================= -->
+<section class="view" id="view-intersect">
+<h2 data-fr="Résultats intersectionnels (SAFF 2024)">Intersectional results (PSES 2024)</h2>
+<p class="lede" data-fr="Comment les résultats du sondage diffèrent lorsque deux identités se recoupent, à l'échelle de la fonction publique, 2024. Deux groupes désignés peuvent chacun se situer au-dessus d'un repère alors que les personnes appartenant aux deux déclarent de moins bonnes expériences. Choisissez une intersection.">How survey results differ when two identities overlap, public-service-wide, 2024. Two designated groups can each sit above a benchmark while people who belong to both report worse experiences. Choose an intersection.</p>
+<div class="ctl"><label for="inxSel" data-fr="Choisir une intersection">Choose an intersection</label><select id="inxSel"></select></div>
+<div id="inxBody"></div>
+</section>
 <section class="view" id="view-language">
   <h2>Language and advancement</h2>
   <p class="lede" data-fr="Le bilinguisme est une porte vers l'avancement dans la fonction publique : la plupart des postes de direction comportent une exigence de bilinguisme, et l'accès à la formation dans la seconde langue officielle n'est pas réparti également. Cela fait de la langue un enjeu d'équité, surtout là où un groupe est plus susceptible de travailler dans sa seconde langue officielle ou de subir de la discrimination en même temps. Cette page montre qui déclare que la formation linguistique et la discrimination freinent sa carrière.">Bilingualism is a gate to advancement in the public service: most executive positions carry a bilingual requirement, and access to second-language training is not evenly available. That makes language an equity issue, especially where a group is more likely to work in its second official language or to face discrimination at the same time. This page shows who reports language training and discrimination holding their careers back.</p>
@@ -1125,22 +1082,9 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 
 <!-- ================= EQUITY TIMELINE ================= -->
 <section class="view" id="view-timeline">
-  <h2>How long will equity take?</h2>
-  <p class="lede" data-fr="À un rythme d'embauche donné, en combien d'années, approximativement, un groupe atteindrait-il son repère de disponibilité au sein de la population active dans une organisation? Il s'agit d'une simple illustration linéaire pour rendre l'ampleur d'un écart tangible, et non d'une prévision. Les effectifs réels évoluent selon l'attrition, la promotion, la conjoncture économique et les taux d'auto-identification, qu'une droite ne peut saisir.">At a chosen pace of hiring, roughly how many years until a group reaches its workforce-availability benchmark in an organization? This is a simple straight-line illustration to make the scale of a gap tangible, not a forecast. Real workforces change with attrition, promotion, economic conditions and self-identification rates, none of which a line can capture.</p>
-  <div class="interp"><div class="interp-grid"><div class="interp-col"><h4 data-fr="Comment lire ceci">How to read this</h4><ul><li data-fr="La barre montre le résultat réel.">The bar shows the actual result.</li><li data-fr="Le repère montre le point de comparaison.">The tick or benchmark shows the comparison point.</li><li data-fr="Un résultat sous le repère peut indiquer un écart.">A result below benchmark may signal a gap.</li><li data-fr="Une donnée supprimée signifie que le dénombrement est trop petit pour être publié. Cela ne veut pas dire zéro.">Suppressed data means the count is too small to publish. It does not mean zero.</li><li data-fr="Lisez ceci avec les données connexes avant de tirer des conclusions.">Read this with related data before drawing conclusions.</li></ul></div><div class="interp-col"><h4 data-fr="Ce que cela peut signifier">What this may mean</h4><p data-fr="Des écarts de longue date qui reviennent au fil des décennies peuvent indiquer que les mesures antérieures n'ont pas éliminé l'obstacle sous-jacent.">Long-running gaps that recur across decades may signal that earlier measures did not remove the underlying barrier.</p></div></div><div class="interp-col"><h4 data-fr="À vérifier ensuite">Check next</h4><p><a href="#" data-go="overview" data-fr="Aperçu">Overview</a> &middot; <a href="#" data-go="progress" data-fr="Progrès ou apparence?">Progress or optics?</a> &middot; <a href="#" data-go="demo" data-fr="Écarts démographiques">Demographic gaps</a> &middot; <a href="#" data-go="brief" data-usefind="1" class="usefind" data-fr="Utiliser ce constat dans une note ou une demande &amp;rarr;">Use this finding in a briefing or request &rarr;</a></p></div></div>
-  <div class="card" style="border-left:5px solid var(--rust)">
-    <h3>Rough projection</h3>
-    <div class="controls">
-      <div class="ctl"><label for="tlOrg">Organization</label><select id="tlOrg"></select></div>
-      <div class="ctl"><label for="tlGroup">Group</label><select id="tlGroup"><option value="w">Women</option><option value="i">Indigenous</option><option value="d">Persons with disabilities</option><option value="v" selected>Racialized</option></select></div>
-    </div>
-    <div class="controls">
-      <div class="ctl"><label for="tlHire">Share of new hires from this group (%)</label><input type="number" id="tlHire" value="30" min="0" max="100" step="1" style="width:90px"></div>
-      <div class="ctl"><label for="tlTurn">Annual workforce turnover (%)</label><input type="number" id="tlTurn" value="8" min="1" max="40" step="1" style="width:90px"></div>
-    </div>
-    <div id="tlResult" style="margin-top:10px"></div>
-    <p class="signal-note" data-fr="Estimation linéaire seulement. Elle suppose un taux de roulement constant, une part d'embauche constante et que toute personne embauchée et retenue s'auto-identifie; elle ne tient pas compte des profils de promotion, des départs propres au groupe, des changements de repère et de bien d'autres choses. Traitez le nombre d'années comme un ordre de grandeur, non une date.">Straight-line estimate only. It assumes a steady turnover rate, a steady hiring share, and that everyone hired and retained self-identifies; it ignores promotion patterns, departures specific to the group, benchmark changes and much else. Treat the number of years as an order of magnitude, not a date.</p>
-  </div>
+  <h2 data-fr="Les écarts se combleront-ils d'eux-mêmes?">Will the gaps close on their own?</h2>
+  <p class="lede" data-fr="Au rythme actuel de la part d'embauche qui revient à un groupe, la plupart des écarts ne se comblent pas d'eux-mêmes dans un délai sur lequel on peut planifier. Combler un écart exige une part d'embauche plus élevée, une attrition plus faible, ou les deux. On ne peut pas projeter honnêtement le temps requis sans modéliser ensemble l'embauche, l'attrition et l'auto-identification, ce que les données publiées ne permettent pas. Cet outil ne met donc aucun nombre d'années sur la question.">At the current share of hiring that goes to a group, most gaps do not close on their own within any timeframe worth planning around. Closing a gap takes a higher hiring share, lower attrition, or both. How long it would take cannot be projected honestly without modelling hiring, attrition and self-identification together, and the published data does not support that. So this tool puts no number of years on the question.</p>
+  <p data-fr="Un écart qui tient bon année après année est lui-même le constat : l'approche actuelle ne le comble pas. Pour voir si un écart bouge réellement, utilisez la section « Ce qui a changé » et comparez la représentation au repère de disponibilité au sein de la population active.">A gap that holds steady year after year is itself the finding: the current approach is not closing it. To see whether a gap is actually moving, use the "What changed" section and compare representation against the workforce-availability benchmark.</p>
 </section>
 
 <!-- ================= MISSING DATA ================= -->
@@ -1263,6 +1207,14 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
 
   <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px" data-fr="Sources : représentation et disponibilité au sein de la population active, données sur l'équité en matière d'emploi du Secrétariat du Conseil du Trésor du Canada (31 mars 2025); mesures du sondage, Sondage auprès des fonctionnaires fédéraux de 2024, y compris le fichier de variables dérivées sur l'équité en matière d'emploi pour les résultats par identité autochtone et par sous-groupe des Premières Nations, des Métis et des Inuits. « Autochtone » et les étiquettes de sous-groupe correspondent à l'auto-identification des répondants. Outil d'analyse indépendant, non une publication du gouvernement du Canada.">Sources: representation and workforce availability, Treasury Board of Canada Secretariat employment-equity data (March 31, 2025); survey measures, 2024 Public Service Employee Survey, including the Employment Equity derived-variable file for results by Indigenous identity and by First Nations, Métis and Inuit subgroup. "Indigenous" and the subgroup labels are respondents' self-identification. Independent analytical tool, not a Government of Canada publication.</p>
 </section>
+
+<!-- ================= BLACK EMPLOYEES (focused) ================= -->
+<section class="view" id="view-black">
+  <h2 data-fr="Les employés noirs dans la fonction publique fédérale">Black employees in the federal public service</h2>
+  <p class="lede" data-fr="Tout ce que cet outil contient de propre aux employés noirs, réuni : le dossier administratif (combien, où dans l'échelle salariale, combien atteignent les rangs de cadres) et le sondage de 2024 (ce que les employés noirs déclarent au sujet de la discrimination, de la sécurité et du règlement). Là où un chiffre manque, l'absence est signalée, non comblée.">Everything in this tool that is specific to Black employees, in one place: the administrative record (how many, where in the salary range, how many reach the executive ranks) and the 2024 employee survey (what Black employees report about discrimination, safety and resolution). Where a number is missing, that absence is named, not filled in.</p>
+  <div id="blackBody"></div>
+</section>
+
 
 <!-- ================= LINKAGES LAB ================= -->
 <section class="view" id="view-linkages">
@@ -1529,7 +1481,7 @@ dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
     <a href="#" data-go="guide" data-fr="Comment utiliser cet outil">How to use this tool</a>
   </nav>
   <span data-fr="Conçu à partir de données publiques du gouvernement du Canada. Sources : Rapport annuel sur l'équité en matière d'emploi du SCT 2024-2025 et Instantané démographique 2024-2025 (publiés en mars 2026); séries du SCT sur la représentation et la disponibilité au sein de la population active; résultats du Sondage auprès des fonctionnaires fédéraux de 2024 par question (SCT et Statistique Canada); audits de recrutement et de dotation de la CFP; inventaire GCwiki sur l'équité des données. Chiffres de représentation au 31 mars 2025; SAFF mené du 28 octobre au 31 décembre 2024. Toutes les valeurs extraites le 11 juin 2026. Outil d'analyse indépendant, et non une publication du gouvernement du Canada.">Built from public Government of Canada data. Sources: TBS Employment Equity Annual Report 2024-25 and Demographic Snapshot 2024-2025 (published March 2026); TBS representation and workforce availability series; 2024 Public Service Employee Survey results by question (TBS and Statistics Canada); PSC recruitment and staffing audits; GCwiki Data Equity inventory. Representation figures as of March 31, 2025; PSES fielded October 28 to December 31, 2024. All values retrieved June 11, 2026. This is an independent analytical tool, not a Government of Canada publication.</span>
-  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-06-24i">Build 2026-06-24i</div>
+  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-06-24l">Build 2026-06-30c</div>
 </div></footer>
 
 <script>
@@ -1727,7 +1679,7 @@ function sparkline(vals,color){
 
 /* ===================== NAVIGATION ===================== */
 const TABS=[["guide","How to use this"],["overview","Overview"],["depts","Departments"],["orgprofile","Department profile"],["groups","Groups & subgroups"],["salary","Salary"],
- ["flows","Hiring & promotion"],["pses","Employee survey"],["yoy","What changed"],["demo","Demographic gaps"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["language","Language & advancement"],["ombuds","Support services"],["timeline","Equity timeline"],["hidden","Missing data"],["compare","Cross-dataset explorer"],["progress","Progress or optics?"],["brief","Briefing note builder"],["indigenous","Indigenous public servants"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["method","Methodology"],["sources","Data sources"],["about","About the data"]];
+ ["flows","Hiring & promotion"],["pses","Employee survey"],["yoy","What changed"],["demo","Demographic gaps"],["intersect","Intersectional results"],["ex","Executives"],["profile","Where people work"],["di","Salary DI tracker"],["language","Language & advancement"],["ombuds","Support services"],["timeline","Equity timeline"],["hidden","Missing data"],["compare","Cross-dataset explorer"],["progress","Progress or optics?"],["brief","Briefing note builder"],["indigenous","Indigenous public servants"],["linkages","Linkages lab"],["files","Data files"],["action","Take action"],["method","Methodology"],["sources","Data sources"],["about","About the data"]];
 const LABELS=Object.fromEntries(TABS);
 /* ---- colour theme (light / dark / high-contrast), persisted ---- */
 (function(){
@@ -1743,7 +1695,7 @@ const LABELS=Object.fromEntries(TABS);
 })();
 /* ---- two-page navigation: Data Explorer + Briefing / Requests ---- */
 const BUILDER_PAGE=new Set(["brief","action","bhome"]);
-var DATA_ORDER=["overview","depts","orgprofile","progress","flows","ex","groups","timeline","salary","di","pses","yoy","demo","language","profile","ombuds","indigenous","compare","linkages","hidden"];
+var DATA_ORDER=["overview","depts","orgprofile","progress","flows","ex","groups","timeline","salary","di","pses","yoy","demo","intersect","language","profile","ombuds","indigenous","black","compare","linkages","hidden"];
 var INFO_ORDER=["guide","about","definitions","sources","files","method","limitations"];
 var PAGES={home:["home"],data:DATA_ORDER,info:INFO_ORDER,builder:["bhome","brief","action"]};
 var PAGE_OF={};Object.keys(PAGES).forEach(function(pg){PAGES[pg].forEach(function(id){PAGE_OF[id]=pg;});});
@@ -1767,7 +1719,7 @@ PRIMARY_NAV.forEach(p=>{
 /* secondary "jump to a data view" menu, replaces the long tab list (all data sections stay reachable) */
 const EXPLORER_NAV=[
  ["Overview & context","Aperçu et contexte",[["overview","Overview","Aperçu"],["depts","Departments","Ministères"],["orgprofile","Department profile","Profil ministériel"],["progress","Progress or optics?","Progrès ou apparence?"],["about","About the data","À propos des données"]]],
- ["Talent pipeline","Filière des talents",[["flows","Hiring & promotion","Embauche et promotion"],["ex","Executives","Cadres"],["groups","Groups & subgroups","Groupes et sous-groupes"],["timeline","Equity timeline","Échéancier de l'équité"]]],
+ ["Talent pipeline","Filière des talents",[["flows","Hiring & promotion","Embauche et promotion"],["ex","Executives","Cadres"],["groups","Groups & subgroups","Groupes et sous-groupes"],["timeline","Will gaps close?","Les écarts se combleront-ils?"]]],
  ["Pay","Rémunération",[["salary","Salary","Salaire"],["di","Salary DI tracker","Suivi de l'IID salarial"]]],
  ["Workplace experience","Expérience en milieu de travail",[["pses","Employee survey","Sondage des employés"],["yoy","What changed","Ce qui a changé"],["demo","Demographic gaps","Écarts démographiques"],["language","Language & advancement","Langue et avancement"],["profile","Where people work","Où les gens travaillent"],["ombuds","Support services","Services de soutien"]]],
  ["Distinctions-based","Selon les distinctions",[["indigenous","Indigenous public servants","Fonctionnaires autochtones"]]],
@@ -1780,7 +1732,7 @@ const jumpLab=document.createElement("label");jumpLab.setAttribute("for","jumpSe
 const jumpSel=document.createElement("select");jumpSel.id="jumpSel";jumpSel.className="jumpsel";jumpSel.setAttribute("aria-label","Jump to a section");
 function buildJump(page){
   page=page||_curPage||"data";
-  if(!_SECLABELS._b){_SECLABELS._b=1;try{EXPLORER_NAV.forEach(function(g){g[2].forEach(function(it){_SECLABELS[it[0]]={en:it[1],fr:it[2]};});});}catch(e){}}
+  if(!_SECLABELS._b){_SECLABELS._b=1;try{EXPLORER_NAV.forEach(function(g){g[2].forEach(function(it){_SECLABELS[it[0]]={en:it[1],fr:it[2]};});});_SECLABELS.black={en:"Black employees",fr:"Employés noirs"};_SECLABELS.intersect={en:"Intersectional results",fr:"Résultats intersectionnels"};}catch(e){}}
   var fr=(typeof isFR==="function")&&isFR();jumpSel.innerHTML="";
   var ph=document.createElement("option");ph.value="";ph.textContent=fr?"Aller à une section…":"Jump to a section…";jumpSel.appendChild(ph);
   (PAGES[page]||[]).forEach(function(id){var o=document.createElement("option");o.value=id;var L=_SECLABELS[id];o.textContent=L?(fr?L.fr:L.en):id;jumpSel.appendChild(o);});
@@ -1825,6 +1777,8 @@ var GLOSSARY_FR=JSON.parse("{\"wfa\":\"Disponibilité au sein de la population a
 var DICT=JSON.parse("{\"$100K and over\":\"100 000 $ et plus\",\"$50K to $74,999\":\"50 000 $ à 74 999 $\",\"$75K to $99,999\":\"75 000 $ à 99 999 $\",\"Under $50K\":\"Moins de 50 000 $\",\"$100,000+\":\"100 000 $ et plus\",\"$125K to $149,999\":\"125 000 $ à 149 999 $\",\"Aged 20 to 29\":\"20 à 29 ans\",\"Aged 50 to 69\":\"50 à 69 ans\",\"Application\":\"Candidature\",\"Appointment\":\"Nomination\",\"Assessment\":\"Évaluation\",\"Automated screening\":\"Présélection automatisée\",\"Organizational screening\":\"Présélection organisationnelle\",\"Stage\":\"Étape\",\"Survival ratio\":\"Ratio de survie\",\"All EX\":\"Tous les EX\",\"EX hires (of 77)\":\"Embauches EX (sur 77)\",\"EX promotions (of 943)\":\"Promotions EX (sur 943)\",\"EX separations (of 417)\":\"Départs EX (sur 417)\",\"Black\":\"Noirs\",\"Disability\":\"Handicap\",\"Disabilities\":\"Handicap\",\"Women\":\"Femmes\",\"Racialized\":\"Employés racisés\",\"Indigenous\":\"Autochtones\",\"Indigenous Peoples\":\"Peuples autochtones\",\"Persons with disabilities\":\"Personnes en situation de handicap\",\"Persons w/ disabilities\":\"Personnes en situation de handicap\",\"Non-Indigenous\":\"Non-autochtones\",\"All employees\":\"Tous les employés\",\"Employees\":\"Employés\",\"Representation\":\"Représentation\",\"Workforce share\":\"Part de l'effectif\",\"Women %\":\"Femmes %\",\"Indigenous Peoples %\":\"Peuples autochtones %\",\"Indigenous %\":\"Autochtones %\",\"Persons with disabilities %\":\"Personnes en situation de handicap %\",\"Persons w/ disabilities %\":\"Personnes en situation de handicap %\",\"Racialized %\":\"Employés racisés %\",\"Headcount\":\"Effectif\",\"Group\":\"Groupe\",\"Organization\":\"Organisation\",\"Organization A\":\"Organisation A\",\"Organization B\":\"Organisation B\",\"Orgs\":\"Organisations\",\"Region\":\"Région\",\"Category\":\"Catégorie\",\"Subgroup\":\"Sous-groupe\",\"Dataset\":\"Jeu de données\",\"Linkage\":\"Lien\",\"Measure\":\"Mesure\",\"Instrument\":\"Instrument\",\"Family\":\"Famille\",\"Cadence\":\"Fréquence\",\"Figure\":\"Chiffre\",\"Finding\":\"Constat\",\"Reading\":\"Lecture\",\"Baseline\":\"Référence\",\"Change\":\"Variation\",\"Difference\":\"Différence\",\"Gap\":\"Écart\",\"Indicator\":\"Indicateur\",\"Question\":\"Question\",\"Salary range\":\"Tranche salariale\",\"Structural factor\":\"Facteur structurel\",\"Survey outcome\":\"Résultat du sondage\",\"Suppressed survey cells\":\"Cellules de sondage supprimées\",\"What it asks\":\"Ce qu'elle demande\",\"Census era\":\"Période de recensement\",\"Distance to PS-wide availability\":\"Écart par rapport à la disponibilité de la FP\",\"Change since previous cycle\":\"Variation depuis le cycle précédent\",\"Indigenous (all)\":\"Autochtones (tous)\",\"Indigenous PS\":\"Autochtones (FP)\",\"Org overall\":\"Ensemble de l'org.\",\"Public service\":\"Fonction publique\",\"This org\":\"Cette org.\",\"This org (Indigenous)\":\"Cette org. (Autochtones)\",\"PS-wide 2024\":\"FP 2024\",\"Hire ratio\":\"Ratio d'embauche\",\"Hire share\":\"Part des embauches\",\"Promotion ratio\":\"Ratio de promotion\",\"Promotion share\":\"Part des promotions\",\"Separation share\":\"Part des départs\",\"Fields used\":\"Champs utilisés\",\"Source & retrieval\":\"Source et extraction\",\"Transformation\":\"Transformation\",\"Suppression & limits\":\"Suppression et limites\",\"The barrier hypothesis\":\"L'hypothèse d'obstacle\",\"The data trail (all verified, in this site)\":\"La piste de données (toutes vérifiées, dans ce site)\",\"The evidence in this site\":\"Les éléments probants dans ce site\",\"The obligation\":\"L'obligation\",\"The question to ask on arrival\":\"La question à poser à l'arrivée\",\"What is in the files\":\"Ce que contiennent les fichiers\",\"What the data says\":\"Ce que disent les données\",\"Where the files live\":\"Où se trouvent les fichiers\",\"Why it matters for the business case\":\"Pourquoi c'est important pour l'analyse de rentabilisation\",\"Why support services matter here\":\"Pourquoi les services de soutien comptent ici\",\"Of employees who are...\":\"Des employés qui sont...\",\"All sizes\":\"Toutes les tailles\",\"All organizations\":\"Toutes les organisations\",\"Very large (10,000+)\":\"Très grande (10 000+)\",\"Large (5,000–9,999)\":\"Grande (5 000–9 999)\",\"Medium (1,000–4,999)\":\"Moyenne (1 000–4 999)\",\"Small (under 1,000)\":\"Petite (moins de 1 000)\",\"Small (250–999)\":\"Petite (250–999)\",\"Micro (under 250)\":\"Très petite (moins de 250)\",\"All designated groups\":\"Tous les groupes désignés\",\"All themes\":\"Tous les thèmes\",\"Discrimination & harassment\":\"Discrimination et harcèlement\",\"Recourse & resolution\":\"Recours et résolution\",\"Advancement & respect\":\"Avancement et respect\",\"Racism & anti-racism\":\"Racisme et lutte contre le racisme\",\"Deputy head / senior management\":\"Administrateur général / haute direction\",\"HR / staffing\":\"RH / dotation\",\"Employee network / champion\":\"Réseau d'employés / champion\",\"Furthest below availability first\":\"Les plus en deçà de la disponibilité d'abord\",\"Furthest below benchmark first\":\"Les plus en deçà du repère d'abord\",\"Highest representation first\":\"Représentation la plus élevée d'abord\",\"Organization (A–Z)\":\"Organisation (A–Z)\",\"Indigenous, service-wide\":\"Autochtones, ensemble de la fonction publique\",\"The organization's overall result\":\"Le résultat global de l'organisation\",\"The organization's own overall result\":\"Le résultat global propre à l'organisation\",\"The public service (same group)\":\"La fonction publique (même groupe)\",\"Strong (r ≥ 0.5)\":\"Forte (r ≥ 0,5)\",\"Moderate (r ≥ 0.4)\":\"Modérée (r ≥ 0,4)\",\"Weak-moderate (r ≥ 0.3)\":\"Faible à modérée (r ≥ 0,3)\",\"Share of new hires from this group (%)\":\"Part des nouvelles embauches de ce groupe (%)\",\"Annual workforce turnover (%)\":\"Taux de roulement annuel de l'effectif (%)\",\"Horizontal axis (X)\":\"Axe horizontal (X)\",\"Vertical axis (Y)\":\"Axe vertical (Y)\",\"Minimum gap (points)\":\"Écart minimal (points)\",\"Minimum gap\":\"Écart minimal\",\"Compared to\":\"Comparé à\",\"Show links at least\":\"Afficher les liens au moins\",\"Size band\":\"Tranche de taille\",\"Order\":\"Ordre\",\"Audience\":\"Public cible\",\"Theme\":\"Thème\",\"Paste-ready finding\":\"Constat prêt à coller\",\"Generated briefing note\":\"Note d'information générée\",\"Designated group\":\"Groupe désigné\",\"Close\":\"Fermer\",\"Back\":\"Précédent\",\"Next\":\"Suivant\",\"Finish\":\"Terminer\",\"Copy these rows\":\"Copier ces lignes\",\"Download CSV\":\"Télécharger le CSV\",\"Copy note\":\"Copier la note\",\"Turn this into a data request\":\"En faire une demande de données\",\"Copy email version\":\"Copier la version courriel\",\"Copy internal briefing version\":\"Copier la version note d'information\",\"Copy ATIP-safe version\":\"Copier la version conforme à l'AIPRP\",\"Copy short version (network chair)\":\"Copier la version courte (président de réseau)\",\"Download Word-style (.doc)\":\"Télécharger en format Word (.doc)\",\"Download plain text (.txt)\":\"Télécharger en texte brut (.txt)\",\"Copy\":\"Copier\",\"Copy table\":\"Copier le tableau\",\"Copy citation\":\"Copier la référence\",\"Print / Save as PDF\":\"Imprimer / Enregistrer en PDF\",\"Copy request\":\"Copier la demande\",\"Copy this table\":\"Copier ce tableau\",\"Copy the full table\":\"Copier le tableau complet\",\"What you can find out\":\"Ce que vous pouvez découvrir\",\"Getting around\":\"Se repérer\",\"How to read what you see\":\"Comment lire ce que vous voyez\",\"What each tab does\":\"Ce que fait chaque onglet\",\"Three cautions to keep in mind\":\"Trois mises en garde à retenir\",\"Check an organization\":\"Examiner une organisation\",\"Find a systemic barrier\":\"Repérer un obstacle systémique\",\"Build a briefing note\":\"Rédiger une note d'information\",\"Key signals across the public service\":\"Signaux clés dans l'ensemble de la fonction publique\",\"Find barriers fast: rank every organization\":\"Repérer vite les obstacles : classer chaque organisation\",\"The long arc, 1998 to 2025\":\"La tendance de fond, de 1998 à 2025\",\"Three patterns the data already shows\":\"Trois tendances que les données montrent déjà\",\"Compare two organizations side by side\":\"Comparer deux organisations côte à côte\",\"All organizations, side by side\":\"Toutes les organisations, côte à côte\",\"Disproportionality ratios at a glance, all groups\":\"Ratios de disproportion en un coup d'œil, tous les groupes\",\"Who holds each pay band\":\"Qui occupe chaque tranche salariale\",\"Subgroup salary distributions\":\"Répartition salariale des sous-groupes\",\"Before hiring: the recruitment funnel, stage by stage\":\"Avant l'embauche : l'entonnoir de recrutement, étape par étape\",\"Promotion vs acting workbench\":\"Atelier promotions et intérims\",\"2024-25 equity check: share of actions vs. share of workforce\":\"Vérification de l'équité 2024-2025 : part des mesures par rapport à la part de l'effectif\",\"Disproportionate harm across the public service\":\"Préjudice disproportionné dans l'ensemble de la fonction publique\",\"Compare one group across organizations\":\"Comparer un groupe d'une organisation à l'autre\",\"The gap between two groups, side by side\":\"L'écart entre deux groupes, côte à côte\",\"Systemic barrier scanner\":\"Détecteur d'obstacles systémiques\",\"Compare several groups at once\":\"Comparer plusieurs groupes à la fois\",\"Workforce vs. executive representation\":\"Représentation dans l'effectif par rapport à la direction\",\"By executive level\":\"Par niveau de cadre\",\"Executive hires, promotions and separations, 2024-25\":\"Embauches, promotions et départs de cadres, 2024-2025\",\"By province and territory of work\":\"Par province et territoire de travail\",\"By occupational group\":\"Par groupe professionnel\",\"First official language\":\"Première langue officielle\",\"Intersectionality\":\"Intersectionnalité\",\"Age profile: the renewal pipeline\":\"Profil par âge : la relève\",\"By occupational category\":\"Par catégorie professionnelle\",\"What these services are\":\"En quoi consistent ces services\",\"The formal-system gap, measured\":\"L'écart du système formel, mesuré\",\"What official evaluations found\":\"Ce qu'ont révélé les évaluations officielles\",\"Build the financial case: an interactive calculator\":\"Bâtir l'argumentaire financier : un calculateur interactif\",\"Compare two organizations by the support services they offer\":\"Comparer deux organisations selon les services de soutien offerts\",\"1. Build your own comparison table\":\"1. Composez votre tableau comparatif\",\"2. Relationship finder: does one measure track another?\":\"2. Détecteur de relations : une mesure en suit-elle une autre?\",\"3. Automatic linkage scan: the strongest patterns in the data\":\"3. Balayage automatique des liens : les tendances les plus fortes des données\",\"What changed, and why it matters\":\"Ce qui a changé, et pourquoi c'est important\",\"Racialized representation against the current (raised) benchmark\":\"Représentation des employés racisés par rapport au repère actuel (relevé)\",\"How to talk about it honestly\":\"Comment en parler honnêtement\",\"Public service, 2022 to 2024\":\"Fonction publique, de 2022 à 2024\",\"Which organizations moved most\":\"Quelles organisations ont le plus bougé\",\"One organization, then and now\":\"Une organisation, avant et maintenant\",\"Lack of second-language training as a career barrier\":\"Le manque de formation dans la seconde langue officielle comme obstacle de carrière\",\"Discrimination as a career barrier\":\"La discrimination comme obstacle de carrière\",\"Why this matters\":\"Pourquoi c'est important\",\"Rough projection\":\"Projection approximative\",\"How much is hidden\":\"Quelle part est cachée\",\"Which groups are most often suppressed in the survey\":\"Quels groupes sont le plus souvent supprimés dans le sondage\",\"Organizations with the most suppressed survey cells\":\"Organisations comptant le plus de cellules supprimées dans le sondage\",\"Principles\":\"Principes\",\"Datasets used\":\"Jeux de données utilisés\",\"Last updated\":\"Dernière mise à jour\",\"The Indigenous experience, against everyone else\":\"L'expérience autochtone, comparée à celle de tous les autres\",\"Representation against workforce availability\":\"Représentation par rapport à la disponibilité au sein de la population active\",\"First Nations, Métis and Inuit, side by side\":\"Premières Nations, Métis et Inuits, côte à côte\",\"Compare Indigenous results across organizations\":\"Comparer les résultats autochtones d'une organisation à l'autre\",\"One organization, in depth\":\"Une organisation, en profondeur\",\"Indigenous barrier scan: the largest gaps, ranked\":\"Balayage des obstacles autochtones : les plus grands écarts, classés\",\"Linkages hiding in plain sight\":\"Des liens cachés à la vue de tous\",\"Relationship explorer: does one measure track another across organizations?\":\"Explorateur de relations : une mesure en suit-elle une autre d'une organisation à l'autre?\",\"Signal builder: turn a threshold into a finding\":\"Générateur de signaux : transformer un seuil en constat\",\"The complete file map\":\"La carte complète des fichiers\",\"Load the official files into this site\":\"Charger les fichiers officiels dans ce site\",\"The accountability calendar\":\"Le calendrier de reddition de comptes\",\"Legal hook map: which obligation each dataset evidences\":\"Carte des leviers juridiques : quelle obligation chaque jeu de données étaye\",\"Data request generator\":\"Générateur de demandes de données\",\"Disproportionality by salary range\":\"Disproportion par tranche salariale\",\"Full DI table, selected year\":\"Tableau complet de l'ID, année choisie\",\"Median salary by group, 2017–2024\":\"Salaire médian par groupe, 2017-2024\",\"The widening gap, in dollars\":\"L'écart qui se creuse, en dollars\",\"Black vs non-racialized DI disparity over time\":\"Écart d'ID entre employés noirs et non racisés au fil du temps\",\"Definitions you need\":\"Définitions utiles\",\"Honest limits of this tool\":\"Les limites honnêtes de cet outil\",\"official data\":\"données officielles\",\"interpretation\":\"interprétation\",\"computed from this data\":\"calculé à partir de ces données\",\"you enter\":\"que vous saisissez\",\"Light\":\"Clair\",\"Dark\":\"Sombre\",\"High contrast\":\"Contraste élevé\",\"Take the 2-minute guided tour\":\"Faire la visite guidée de 2 minutes\",\"Skip to main content\":\"Passer au contenu principal\",\"Overview & context\":\"Aperçu et contexte\",\"Talent pipeline\":\"Filière des talents\",\"Compensation\":\"Rémunération\",\"Workplace culture\":\"Culture en milieu de travail\",\"Connect & act\":\"Relier et agir\",\"Trust & method\":\"Confiance et méthode\",\"How to use this\":\"Comment l'utiliser\",\"Overview\":\"Aperçu\",\"Departments\":\"Ministères\",\"Department profile\":\"Profil ministériel\",\"Groups & subgroups\":\"Groupes et sous-groupes\",\"Salary\":\"Salaire\",\"Hiring & promotion\":\"Embauche et promotion\",\"Employee survey\":\"Sondage des employés\",\"What changed\":\"Ce qui a changé\",\"Demographic gaps\":\"Écarts démographiques\",\"Executives\":\"Cadres\",\"Where people work\":\"Où les gens travaillent\",\"Salary DI tracker\":\"Indice de disproportion salariale\",\"Language & advancement\":\"Langue et avancement\",\"Support services\":\"Services de soutien\",\"Equity timeline\":\"Horizon de l'équité\",\"Missing data\":\"Données manquantes\",\"Cross-dataset explorer\":\"Explorateur multi-données\",\"Progress or optics?\":\"Progrès ou apparence?\",\"Briefing note builder\":\"Générateur de note d'information\",\"Indigenous public servants\":\"Fonctionnaires autochtones\",\"Linkages lab\":\"Laboratoire des liens\",\"Data files\":\"Fichiers de données\",\"Take action\":\"Passer à l'action\",\"Methodology\":\"Méthodologie\",\"Data sources\":\"Sources de données\",\"About the data\":\"À propos des données\",\"How to use this tool\":\"Comment utiliser cet outil\",\"Start here\":\"Commencez ici\",\"Departments and agencies\":\"Ministères et organismes\",\"Equity groups and subgroups\":\"Groupes d'équité et sous-groupes\",\"Salary and pay equity\":\"Salaire et équité salariale\",\"Hiring, promotion and separation\":\"Embauche, promotion et départ\",\"Employee survey (PSES 2024)\":\"Sondage des employés (SAFF 2024)\",\"Survey results by designated group\":\"Résultats du sondage par groupe désigné\",\"Executives and leadership\":\"Cadres et direction\",\"Where and how people work\":\"Où et comment les gens travaillent\",\"Employee support services and outcomes\":\"Services de soutien aux employés et résultats\",\"Real progress, or just optics?\":\"Progrès réel ou simple apparence?\",\"What changed since the last survey\":\"Ce qui a changé depuis le dernier sondage\",\"Language and advancement\":\"Langue et avancement\",\"How long will equity take?\":\"Combien de temps faudra-t-il pour atteindre l'équité?\",\"Where groups are made invisible\":\"Là où des groupes deviennent invisibles\",\"Methodology and audit trail\":\"Méthodologie et piste de vérification\",\"Indigenous federal public servants\":\"Fonctionnaires fédéraux autochtones\",\"Linkages lab: find barriers you did not know about\":\"Laboratoire des liens : repérer des obstacles insoupçonnés\",\"Data files: where every dataset actually lives\":\"Fichiers de données : où se trouve réellement chaque jeu de données\",\"Take action: calendar, legal hooks, and the request that gets the data\":\"Passer à l'action : calendrier, leviers juridiques et la demande qui obtient les données\",\"Salary Disproportionality Index tracker (2017–2024)\":\"Suivi de l'indice de disproportion salariale (2017–2024)\",\"What are you here to do?\":\"Que venez-vous faire ici?\",\"I work in HR or planning\":\"Je travaille en RH ou en planification\",\"I run or support an employee network\":\"J'anime ou je soutiens un réseau d'employés\",\"I'm a researcher or analyst\":\"Je suis chercheur ou analyste\",\"I experienced a barrier\":\"J'ai vécu un obstacle\",\"What this tool can show\":\"Ce que cet outil peut montrer\",\"What it cannot prove on its own\":\"Ce qu'il ne peut pas prouver à lui seul\",\"The Government of Canada's published employment equity data in one place. See how the four designated groups, women, Indigenous Peoples, persons with disabilities, and racialized (visible minority) employees, and their subgroups are doing on representation, pay, hiring, promotion and leadership, and where barriers may exist. Every figure comes from an official source; nothing is estimated. It covers the core public administration, the roughly 72 organizations where the Treasury Board is the employer, as of March 31, 2025, plus the 2024 employee survey.\":\"Les données publiées du gouvernement du Canada sur l'équité en matière d'emploi, réunies en un seul endroit. Voyez comment les quatre groupes désignés, les femmes, les peuples autochtones, les personnes en situation de handicap et les employés racisés (minorités visibles), ainsi que leurs sous-groupes, se situent en matière de représentation, de salaire, d'embauche, de promotion et de direction, et où des obstacles peuvent exister. Chaque donnée provient d'une source officielle; rien n'est estimé. L'outil couvre l'administration publique centrale, soit environ 72 organisations où le Conseil du Trésor est l'employeur, au 31 mars 2025, ainsi que le sondage des employés de 2024.\",\"Profile any organization, see its representation gaps and survey results, and build a briefing note.\":\"Dressez le profil d'une organisation, voyez ses écarts de représentation et ses résultats au sondage, et rédigez une note d'information.\",\"See how each designated group fares, scan for the largest gaps, and find where groups are made invisible.\":\"Voyez comment se porte chaque groupe désigné, repérez les plus grands écarts et trouvez où des groupes deviennent invisibles.\",\"Join representation, workforce availability and survey data, and test relationships across organizations.\":\"Reliez la représentation, la disponibilité au sein de la population active et les données du sondage, et examinez les liens entre organisations.\",\"See the recourse and resolution data, the support services available, and how to raise concerns.\":\"Consultez les données sur les recours et leur résolution, les services de soutien offerts et la façon de soulever des préoccupations.\",\"Disproportionate harm in the survey, by group\":\"Préjudice disproportionné dans le sondage, par groupe\",\"Likely locations of barriers, to investigate\":\"Endroits probables des obstacles, à examiner\",\"Change between survey cycles\":\"Évolution entre les cycles du sondage\",\"Questions an organization should be able to answer\":\"Questions auxquelles une organisation devrait pouvoir répondre\",\"That any individual was discriminated against\":\"Qu'une personne en particulier a subi de la discrimination\",\"Causation, that one thing caused another\":\"La causalité, qu'une chose en a causé une autre\",\"That an organization broke the law\":\"Qu'une organisation a enfreint la loi\",\"Intent\":\"L'intention\",\"The full workforce reality where self-identification is incomplete\":\"La réalité complète de l'effectif là où l'auto-identification est incomplète\",\"Pick the closest fit and jump straight to what tends to be most useful for that work. You can always explore the rest from the menu. New here, or short on time?\":\"Choisissez l'option la plus proche et passez directement à ce qui est généralement le plus utile pour ce travail. Vous pouvez toujours explorer le reste à partir du menu. Vous débutez ou manquez de temps?\",\"A cell counts as hidden when an organization reports a survey result overall but not for a given group, or when a representation figure is not published. Counts are computed from the by-group survey data and the representation tables in this tool.\":\"Une cellule est considérée comme masquée lorsqu'un organisme déclare un résultat de sondage global, mais pas pour un groupe donné, ou lorsqu'un chiffre de représentation n'est pas publié. Les comptes sont calculés à partir des données de sondage par groupe et des tableaux de représentation de cet outil.\"}");
 /* register PSES question short-labels (builder paraphrases, not verbatim official wording) so table cells translate */
 try{Object.keys(EEG_QMETA).forEach(function(c){if(EEG_QMETA_FR[c])DICT[EEG_QMETA[c][1]]=EEG_QMETA_FR[c];});}catch(e){}
+DICT["Intersectional results"]="Résultats intersectionnels";
+DICT["GC-Equity / Équité-GC — Public Service Equity Data Explorer"]="GC-Equity / Équité-GC : Explorateur des données sur l'équité de la fonction publique";
 (function(){
   var STORE={};var _lang="en";var _translating=false;
   function walk(root,toFr){
@@ -1883,6 +1837,7 @@ try{Object.keys(EEG_QMETA).forEach(function(c){if(EEG_QMETA_FR[c])DICT[EEG_QMETA
     [/^Inuit not published for this question \(count too small\)\.$/,"Données sur les Inuits non publiées pour cette question (effectif trop petit)."],
     [/^Showing the (\d+) organizations furthest from the favourable end, of (\d+)\.$/,"Affichage des $1 organisations les plus éloignées de l'extrémité favorable, sur $2."]
   ];
+  REGEX_TR.push([/(\d)\.(\d+)\s?%/g,"$1,$2\u00a0%"],[/(\d)%/g,"$1\u00a0%"]);
   function swapText(n){
     var p=n.parentNode;if(!p)return;var t=p.nodeName;if(t==="SCRIPT"||t==="STYLE"||t==="TEXTAREA")return;
     var raw=n.nodeValue;if(!raw||!raw.trim())return;var key=raw.trim();
@@ -2397,75 +2352,6 @@ function calcPA(){
   $("#paOut").innerHTML=`<p><strong>${name}${fr?" :":":"}</strong> ${lblP}${tag(pr)} &middot; ${lblA}${tag(ar)}</p><p style="color:var(--ink-soft);font-size:13.5px;max-width:880px">${read}</p>`;
 }
 paIds.forEach(id=>$("#"+id).addEventListener("input",calcPA));document.addEventListener("langchange",calcPA);setTimeout(calcPA,0);
-
-/* ===================== Support-services comparator ===================== */
-const PSWIDE={q42:51,q58:12,q63:50,q65:9,q70:52};
-const obA=$("#obA"),obB=$("#obB");
-// size bands for fair comparison
-const SIZE_BANDS=[["5,000 or more employees",d=>d[1]>=5000],["2,000 to 4,999 employees",d=>d[1]>=2000&&d[1]<5000],
- ["1,000 to 1,999 employees",d=>d[1]>=1000&&d[1]<2000],["500 to 999 employees",d=>d[1]>=500&&d[1]<1000],
- ["Under 500 employees",d=>d[1]<500]];
-function fillBanded(selectEl){
-  SIZE_BANDS.forEach(([label,test])=>{
-    const members=DEPTS.map((d,i)=>[d,i]).filter(([d])=>test(d));
-    if(!members.length)return;
-    const og=document.createElement("optgroup");og.label=label;
-    members.forEach(([d,i])=>{const o=document.createElement("option");o.value=i;o.textContent=d[0]+" ("+fmt(d[1])+")";og.appendChild(o);});
-    selectEl.appendChild(og);
-  });
-}
-fillBanded(obA);fillBanded(obB);
-obA.value=0;obB.value=1;
-const obVals={A:{},B:{}};
-const obServ={A:{},B:{}};
-const SERV_LABELS={net:"funded employee network",omb:"ombuds office",icms:"informal conflict management",arax:"anti-racism/IDEA team"};
-const SERV_LABELS_FR={net:"réseau d'employés financé",omb:"bureau de l'ombuds",icms:"gestion informelle des conflits",arax:"équipe de lutte contre le racisme/IDEA"};
-const BAND_FR={"5,000 or more employees":"5 000 employés ou plus","2,000 to 4,999 employees":"2 000 à 4 999 employés","1,000 to 1,999 employees":"1 000 à 1 999 employés","500 to 999 employees":"500 à 999 employés","Under 500 employees":"Moins de 500 employés"};
-function servList(o){const fr=(typeof isFR==="function")&&isFR();const L=fr?SERV_LABELS_FR:SERV_LABELS;return Object.keys(SERV_LABELS).filter(k=>obServ[o][k]).map(k=>L[k]);}
-function renderOb(){
-  const fr=(typeof isFR==="function")&&isFR();
-  const A=DEPTS[+obA.value],B=DEPTS[+obB.value];
-  $("#obAh").textContent=A[0];$("#obBh").textContent=B[0];
-  const rowLabs=fr?["Employés","Représentation des femmes %","Représentation autochtone %","Représentation handicap %","Représentation racisés %"]:["Employees","Women rep %","Indigenous rep %","Disabilities rep %","Racialized rep %"];
-  const rows=[[rowLabs[0],1,(v)=>fmt(v),fmt(CPA.n)],[rowLabs[1],2,(v)=>pct(v),pct(CPA.w)],[rowLabs[2],3,(v)=>pct(v),pct(CPA.i)],[rowLabs[3],4,(v)=>pct(v),pct(CPA.d)],[rowLabs[4],5,(v)=>pct(v),pct(CPA.v)]];
-  const autoTag=fr?"(auto, 31 mars 2025)":"(auto, March 31, 2025)";
-  $("#obAuto").innerHTML=rows.map(([l,idx,f,ps])=>`<tr><td>${l} <span style="font-size:11px;color:var(--ink-soft)">${autoTag}</span></td><td class="num">${f(A[idx])}</td><td class="num">${f(B[idx])}</td><td class="num">${ps}</td></tr>`).join("");
-  const qlabels=fr?{q42:"recours sans crainte (Q42, plus élevé = mieux)",q58:"taux de harcèlement (Q58, plus bas = mieux)",q63:"satisfaction quant au règlement du harcèlement (Q63, plus élevé = mieux)",q65:"taux de discrimination (Q65, plus bas = mieux)",q70:"satisfaction quant au règlement de la discrimination (Q70, plus élevé = mieux)"}:{q42:"recourse without fear (Q42, higher better)",q58:"harassment rate (Q58, lower better)",q63:"harassment resolution satisfaction (Q63, higher better)",q65:"discrimination rate (Q65, lower better)",q70:"discrimination resolution satisfaction (Q70, higher better)"};
-  const higherBetter={q42:true,q58:false,q63:true,q65:false,q70:true};
-  let lines=[],scored=0;
-  Object.keys(qlabels).forEach(q=>{
-    const a=obVals.A[q],b=obVals.B[q];
-    if(a==null||b==null||isNaN(a)||isNaN(b))return;
-    scored++;
-    const diff=a-b;
-    const better=(diff===0)?null:((diff>0)===higherBetter[q]?A[0]:B[0]);
-    lines.push(fr?`${qlabels[q]} : ${A[0]} ${a} % c. ${B[0]} ${b} %${better?`, avantage ${better}`:", à égalité"}`:`${qlabels[q]}: ${A[0]} ${a}% vs ${B[0]} ${b}%${better?`, advantage ${better}`:", tied"}`);
-  });
-  const sa=servList("A"),sb=servList("B");
-  const bandOf=d=>{const f=SIZE_BANDS.find(([l,t])=>t(d));return f?(fr?(BAND_FR[f[0]]||f[0]):f[0]):"";};
-  const sameBand=bandOf(A)===bandOf(B);
-  let head=fr
-    ?`Comparaison des services de soutien.\n${A[0]} — services : ${sa.length?sa.join(", "):"aucun coché"}.\n${B[0]} — services : ${sb.length?sb.join(", "):"aucun coché"}.\nReprésentation au 31 mars 2025 (SCT); valeurs du SAFF 2024 remplies automatiquement par organisation (résultats globaux).`
-    :`Support-services comparison.\n${A[0]} — services: ${sa.length?sa.join(", "):"none ticked"}.\n${B[0]} — services: ${sb.length?sb.join(", "):"none ticked"}.\nRepresentation as of March 31, 2025 (TBS); 2024 PSES values auto-filled per organization (overall results).`;
-  if(!sameBand)head+=fr?`\nNote : ces deux organisations sont dans des tranches de taille différentes (${bandOf(A)} c. ${bandOf(B)}); pour une comparaison plus juste, choisissez deux organisations de taille semblable.`:`\nNote: these two organizations are in different size bands (${bandOf(A)} vs ${bandOf(B)}); for a fairer comparison pick two of similar size.`;
-  $("#obText").value=head+(lines.length?(fr?"\n\nRésultats :\n- ":"\n\nOutcomes:\n- ")+lines.join("\n- "):(fr?"\n\nLes valeurs du SAFF se rempliront une fois que les deux organisations auront publié leurs résultats de 2024.":"\n\nPSES values will fill once both organizations have published 2024 results."))+(fr?"\n\nMise en garde : une seule paire est une piste, non une preuve; la composition professionnelle, la taille, l'historique et les services en place diffèrent tous, et l'information sur les services est fournie par l'utilisateur. Répétez sur plusieurs paires comparables, et utilisez plus d'un cycle de sondage, avant de tirer des conclusions.":"\n\nCaveat: a single pair is a lead, not proof; occupational mix, size, history and which services exist all differ, and the service information is user-supplied. Repeat across several matched pairs, and use more than one survey cycle, before drawing conclusions.");
-}
-function autoFillOb(side){
-  const sel=side==="A"?obA:obB;
-  const org=DEPTS[+sel.value]?DEPTS[+sel.value][0]:"";
-  const d=psesFor(org);
-  ["q42","q58","q63","q65","q70"].forEach(q=>{
-    const val=d&&d[q.toUpperCase()]!=null?d[q.toUpperCase()]:null;
-    obVals[side][q]=val;
-    const inp=document.querySelector('.obin[data-o="'+side+'"][data-q="'+q+'"]');
-    if(inp)inp.value=(val==null?"":val);
-  });
-}
-document.querySelectorAll(".obin").forEach(inp=>inp.addEventListener("input",e=>{obVals[e.target.dataset.o][e.target.dataset.q]=e.target.value===""?null:+e.target.value;renderOb();}));
-document.querySelectorAll(".observ").forEach(c=>c.addEventListener("change",e=>{obServ[e.target.dataset.o][e.target.dataset.s]=e.target.checked;renderOb();}));
-obA.addEventListener("change",()=>{autoFillOb("A");renderOb();});
-obB.addEventListener("change",()=>{autoFillOb("B");renderOb();});
-autoFillOb("A");autoFillOb("B");renderOb();
 
 /* ===================== In-browser CSV importer (official PSES / SNPS files) ===================== */
 let csvRows=[],csvCols={},csvHead=[];
@@ -3086,44 +2972,6 @@ $("#diMedianChart").innerHTML=lineChart(
   }
   [dA,dB].forEach(s=>s.addEventListener("change",renderPair));
   lazyReg("demo",renderPair);
-  // ---- Tool 4: several groups at once on one question ----
-  const mg=$("#demoMultiGroups"),mq=$("#demoMultiQ");
-  const mgState={};
-  EEG_GROUPS.forEach(([k,l])=>{
-    const id="mgchk_"+k;
-    const lab=document.createElement("label");lab.style.cssText="font-size:13px;display:inline-flex;align-items:center;gap:4px";
-    lab.innerHTML=`<input type="checkbox" id="${id}" data-g="${k}"> ${l}`;
-    mg.appendChild(lab);
-    mgState[k]=["black","ind","pwd","rac","nonrac"].includes(k);
-  });
-  EEG_QORDER.forEach(q=>{const o=document.createElement("option");o.value=q;o.textContent=q+" — "+EEG_QMETA[q][1];mq.appendChild(o);});
-  mq.value="Q65";
-  mg.querySelectorAll("input").forEach(c=>{c.checked=mgState[c.dataset.g];c.addEventListener("change",()=>{mgState[c.dataset.g]=c.checked;renderMulti();});});
-  function renderMulti(){
-    const q=mq.value,meta=EEG_QMETA[q],lowerBetter=meta[0]==="neg";
-    const chosen=EEG_GROUPS.filter(([k])=>mgState[k]&&PS[k]&&PS[k][q]!=null);
-    if(!chosen.length){$("#demoMulti").innerHTML="<p style='color:var(--ink-soft)'>Tick at least one group with a published value.</p>";return;}
-    const vals=chosen.map(([k,l])=>[l,PS[k][q],k]);
-    vals.sort((a,b)=>lowerBetter?b[1]-a[1]:a[1]-b[1]);
-    const base=overall[q];
-    const scaleMax=Math.max(100,...vals.map(v=>v[1]));
-    const w=720,rh=26,pl=210,pr=44,pt=base!=null?20:6,h=pt+vals.length*rh+6;
-    let svg=`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Selected groups on ${meta[1]}, public service.">`;
-    if(base!=null){const x=pl+(w-pl-pr)*(base/scaleMax);svg+=`<line x1="${x}" y1="${pt-4}" x2="${x}" y2="${h-4}" stroke="#111" stroke-dasharray="3 3"/><text x="${x}" y="${pt-8}" font-size="10" text-anchor="middle" fill="#111">overall ${base}%</text>`;}
-    const colors={black:"#1B2A41",ind:"#8A6D1D",pwd:"#5B6B7F",rac:"#B3401E",woman:"#0E7C7B",man:"#7a8aa0",lgbt:"#7d5ba6",nonrac:"#9aa8b8",nonind:"#9aa8b8",nopwd:"#9aa8b8"};
-    vals.forEach((v,i)=>{
-      const y=pt+i*rh,bw=(w-pl-pr)*(v[1]/scaleMax),col=colors[v[2]]||"#0E7C7B";
-      svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="11.5" fill="#44546A">${v[0]}</text>`;
-      svg+=`<rect x="${pl}" y="${y+4}" width="${bw}" height="${rh-9}" fill="${col}" rx="2"><title>${v[0]}: ${v[1]}%</title></rect>`;
-      svg+=`<text x="${pl+bw+5}" y="${y+rh/2+4}" font-size="11" font-family="monospace" fill="#333">${v[1]}%</text>`;
-    });
-    svg+="</svg>";
-    const spread=Math.max(...vals.map(v=>v[1]))-Math.min(...vals.map(v=>v[1]));
-    $("#demoMulti").innerHTML=svg+`<p style="font-size:12.5px;color:var(--ink-soft);margin-top:4px">Spread between the highest and lowest selected group: ${spread} points. Dashed line is the public-service-wide figure for everyone.</p>`;
-  }
-  mq.addEventListener("change",renderMulti);
-  lazyReg("demo",renderMulti);
-
   // ---- Tool 5: Systemic barrier scanner (scans all dept x group x question cells) ----
   const DOMAINS={harm:["Q65","Q58"],recourse:["Q42","Q63","Q70","Q72"],advance:["Q45","Q43","Q47","Q12","Q53"],racism:["Q24","Q49","Q52","Q72","Q65"]};
   const sGroup=$("#scanGroup"),sDomain=$("#scanDomain"),sRef=$("#scanRef"),sMin=$("#scanMin");
@@ -3304,72 +3152,197 @@ $("#diMedianChart").innerHTML=lineChart(
     download("cross-dataset-comparison.csv",csv);
   });
   refreshSortOptions();renderCmpTable();
-  // ============ Tool 2: relationship finder ============
-  const xSel=$("#cmpX"),ySel=$("#cmpY");
-  M.forEach(m=>{[xSel,ySel].forEach(sel=>{const o=document.createElement("option");o.value=m.key;o.textContent=m.grp+": "+m.label;sel.appendChild(o);});});
-  xSel.value="v";ySel.value="q_Q65";
-  function renderScatter(){
-    const mx=MK[xSel.value],my=MK[ySel.value];
-    const pts=COMP.map(r=>({name:r.name,x:mx.get(r),y:my.get(r)})).filter(p=>p.x!=null&&p.y!=null);
-    if(pts.length<8){$("#cmpScatter").innerHTML="<p style='color:var(--ink-soft)'>Not enough organizations report both measures to draw a relationship.</p>";$("#cmpReading").innerHTML="";return;}
-    const {r,n}=pearson(pts.map(p=>p.x),pts.map(p=>p.y));
-    const W=720,H=380,pl=58,pr=20,pt=16,pb=46;
-    const xs=pts.map(p=>p.x),ys=pts.map(p=>p.y);
-    const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
-    const xpad=(xmax-xmin)*0.06||1,ypad=(ymax-ymin)*0.06||1;
-    const X0=xmin-xpad,X1=xmax+xpad,Y0=ymin-ypad,Y1=ymax+ypad;
-    const sx=x=>pl+(W-pl-pr)*((x-X0)/(X1-X0)), sy=y=>H-pb-(H-pt-pb)*((y-Y0)/(Y1-Y0));
-    let svg=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Scatter of ${my.label} against ${mx.label} across organizations. Correlation r = ${r==null?"n/a":r.toFixed(2)}.">`;
-    svg+=`<line x1="${pl}" y1="${H-pb}" x2="${W-pr}" y2="${H-pb}" stroke="#ccc"/><line x1="${pl}" y1="${pt}" x2="${pl}" y2="${H-pb}" stroke="#ccc"/>`;
-    // ticks
-    for(let t=0;t<=4;t++){const xv=X0+(X1-X0)*t/4,yv=Y0+(Y1-Y0)*t/4;
-      svg+=`<text x="${sx(xv)}" y="${H-pb+16}" font-size="10" text-anchor="middle" fill="#777">${(+xv.toFixed(1))}</text>`;
-      svg+=`<text x="${pl-6}" y="${sy(yv)+3}" font-size="10" text-anchor="end" fill="#777">${(+yv.toFixed(1))}</text>`;}
-    // trend line (least squares)
-    if(r!=null){const mxv=xs.reduce((s,x)=>s+x,0)/n,myv=ys.reduce((s,y)=>s+y,0)/n;
-      let sxy=0,sxx=0;for(let i=0;i<n;i++){sxy+=(xs[i]-mxv)*(ys[i]-myv);sxx+=(xs[i]-mxv)**2;}
-      const slope=sxy/sxx,inter=myv-slope*mxv;
-      svg+=`<line x1="${sx(X0)}" y1="${sy(slope*X0+inter)}" x2="${sx(X1)}" y2="${sy(slope*X1+inter)}" stroke="#1B2A41" stroke-width="2" stroke-dasharray="5 4"/>`;}
-    pts.forEach(p=>{svg+=`<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5" fill="#0E7C7B" fill-opacity="0.75"><title>${p.name}: ${mx.label} ${mx.fmt(p.x)}, ${my.label} ${my.fmt(p.y)}</title></circle>`;});
-    svg+=`<text x="${(pl+W-pr)/2}" y="${H-6}" font-size="11.5" text-anchor="middle" fill="#44546A">${mx.label}</text>`;
-    svg+=`<text x="14" y="${(pt+H-pb)/2}" font-size="11.5" text-anchor="middle" fill="#44546A" transform="rotate(-90 14 ${(pt+H-pb)/2})">${my.label}</text>`;
-    svg+="</svg>";
-    $("#cmpScatter").innerHTML=svg;
-    // plain reading
-    let strength=Math.abs(r)>=0.6?"strong":Math.abs(r)>=0.4?"moderate":Math.abs(r)>=0.25?"weak":"very weak or no";
-    let dir=r>0?"higher":"lower";
-    let reading=`<strong>Correlation r = ${r.toFixed(2)}</strong> across ${n} organizations (${strength} ${r>=0?"positive":"negative"} relationship). In plain terms: organizations with higher ${mx.label.toLowerCase()} tend to have ${dir} ${my.label.toLowerCase()}.`;
-    if(Math.abs(r)<0.25)reading+=" At this strength there is essentially no linear pattern.";
-    reading+=` <span style="color:var(--ink-soft)">This describes organizations, not individuals, and does not establish cause; a third factor may drive both.</span>`;
-    $("#cmpReading").innerHTML=reading;
+  })();
+
+/* ===================== Black employees (focused view) ===================== */
+(function(){
+  if(typeof EEG_DEPT==="undefined"||typeof SUBG==="undefined"||typeof PSES_DEPT==="undefined"||typeof EEG_QMETA==="undefined")return;
+  function kpi(v,l){return '<div style="flex:1 1 130px;min-width:130px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px"><div style="font-size:23px;font-weight:700;color:var(--ink);line-height:1.1">'+v+'</div><div style="font-size:13px;color:var(--ink-soft);margin-top:3px">'+l+'</div></div>';}
+  function renderBlack(){
+    var host=document.getElementById("blackBody"); if(!host)return;
+    var fr=(typeof isFR==="function")&&isFR();
+    var bk=((SUBG.v&&SUBG.v.rows)||[]).filter(function(r){return r.name==="Black";})[0];
+    var bps=((EEG_DEPT["Public Service"])||{}).black||{};
+    var all=PSES_DEPT["Public Service"]||{};
+    var qm=EEG_QMETA;
+    var order=(typeof EEG_QORDER!=="undefined"&&EEG_QORDER.length)?EEG_QORDER:Object.keys(qm);
+    var nB=0,nT=0,o; for(o in EEG_DEPT){nT++; if(EEG_DEPT[o]&&EEG_DEPT[o].black)nB++;}
+    var H=[];
+    H.push('<div class="interp" style="border-left:4px solid var(--rust)"><p style="margin:0">'+(fr?'Il n\'existe aucun repère de disponibilité propre aux employés noirs. La Loi sur l\'équité en emploi désigne « les membres des minorités visibles » comme un seul groupe, et non les personnes noires séparément. On peut donc dire combien d\'employés noirs il y a, mais pas si ce nombre est « suffisant » par rapport à une cible officielle. Les chiffres du sondage sont déclarés; les chiffres administratifs sont des dénombrements.':'There is no workforce-availability benchmark specific to Black employees. The Employment Equity Act designates "members of visible minorities" as one group, not Black people separately. So this page can say how many Black employees there are, but not whether that count is "enough" against an official target. Survey figures are what people reported; administrative figures are head counts.')+'</p></div>');
+    if(bk){
+      H.push('<h3>'+(fr?'Le dossier administratif':'The administrative record')+'</h3>');
+      H.push('<div style="display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 12px">'+kpi(bk.n.toLocaleString(),fr?'employés noirs':'Black employees')+kpi(bk.p.toFixed(1)+'%',fr?'de l\'effectif':'of the workforce')+kpi(bk.ex.toFixed(1)+'%',fr?'des cadres':'of executives')+kpi(bk.trend[0].toFixed(1)+'% \u2192 '+bk.trend[bk.trend.length-1].toFixed(1)+'%',fr?'part de l\'effectif, tendance sur 8 ans':'workforce share, 8-year trend')+'</div>');
+      var hire=(String(bk.note).match(/Hire share ([\d.]+)%/)||[])[1],promo=(String(bk.note).match(/promotion share ([\d.]+)%/)||[])[1],sep=(String(bk.note).match(/separation share ([\d.]+)%/)||[])[1];
+      H.push('<p>'+(fr?'Les employés noirs représentent <strong>'+bk.p.toFixed(1)+' %</strong> de l\'effectif, mais seulement <strong>'+bk.ex.toFixed(1)+' %</strong> des cadres. En 2024-2025, ils comptaient pour '+hire+' % des embauches et '+sep+' % des départs, donc l\'effectif continue de croître; la part des promotions était de '+promo+' %. L\'obstacle se situe entre l\'effectif et le sommet, et non à l\'entrée.':'Black employees are <strong>'+bk.p.toFixed(1)+'%</strong> of the workforce but only <strong>'+bk.ex.toFixed(1)+'%</strong> of executives. In 2024-25 they were '+hire+'% of hires and '+sep+'% of separations, so the workforce share keeps rising; the promotion share was '+promo+'%. The barrier sits between the workforce and the top, not at the entrance.')+'</p>');
+      if(bk.sal&&bk.sal[3]!=null){
+        H.push('<h3>'+(fr?'Rémunération':'Pay')+'</h3>');
+        H.push('<p>'+(fr?'<strong>'+bk.sal[3].toFixed(1)+' %</strong> des employés noirs gagnent 100 000 $ ou plus, contre 41,5 % de l\'ensemble des employés. '+(bk.sal[1]!=null?'<strong>'+bk.sal[1].toFixed(1)+' %</strong> se situent dans la tranche de 50 000 $ à 74 999 $, contre 27,9 %. ':'')+'La répartition est concentrée vers le milieu et clairsemée au sommet.':'<strong>'+bk.sal[3].toFixed(1)+'%</strong> of Black employees earn $100,000 or more, against 41.5% of all employees. '+(bk.sal[1]!=null?'<strong>'+bk.sal[1].toFixed(1)+'%</strong> sit in the $50,000 to $74,999 band, against 27.9%. ':'')+'The distribution is compressed toward the middle and thin at the top.')+'</p>');
+      }
+    }
+    H.push('<h3>'+(fr?'Ce que les employés noirs déclarent (sondage de 2024)':'What Black employees report (2024 survey)')+'</h3>');
+    var rows=[];
+    order.forEach(function(q){ if(!qm[q])return; var b=bps[q],e=all[q]; if(b==null||e==null)return; var neg=qm[q][0]==="neg"; rows.push({text:qm[q][1],neg:neg,b:b,e:e,disadv:neg?(b-e):(e-b)}); });
+    rows.sort(function(a,b){return b.disadv-a.disadv;});
+    var tb=rows.map(function(r){ var diff=r.b-r.e,d=Math.round(Math.abs(diff)),worse=r.disadv>0.0001,lab; if(d===0)lab=fr?'à parité':'about even'; else if(r.neg)lab=(diff>0)?(d+(fr?' pts de plus (pire)':' pts higher (worse)')):(d+(fr?' pts de moins (mieux)':' pts lower (better)')); else lab=(diff>0)?(d+(fr?' pts de plus (mieux)':' pts higher (better)')):(d+(fr?' pts de moins (pire)':' pts lower (worse)')); var ql=r.text+(r.neg?(fr?' (% l\'ayant vécu)':' (% who experienced it)'):''); return '<tr><td>'+ql+'</td><td class="num'+(worse?' below-mark':'')+'">'+r.b+'%</td><td class="num">'+r.e+'%</td><td style="font-size:13px">'+lab+'</td></tr>'; }).join("");
+    H.push('<div class="tblwrap"><table><caption>'+(fr?'Résultats du Sondage auprès des fonctionnaires fédéraux de 2024, employés noirs comparés à l\'ensemble des employés, à l\'échelle de la fonction publique. Trié pour faire ressortir d\'abord les plus grands désavantages.':'2024 Public Service Employee Survey, Black employees compared with all employees, public-service-wide. Sorted to surface the largest Black disadvantages first.')+'</caption><thead><tr><th scope="col">'+(fr?'Question du sondage (2024)':'Survey question (2024)')+'</th><th scope="col" class="num">'+(fr?'Noirs':'Black')+'</th><th scope="col" class="num">'+(fr?'Tous':'All employees')+'</th><th scope="col">'+(fr?'Écart':'Difference')+'</th></tr></thead><tbody>'+tb+'</tbody></table></div>');
+    function v(q){return bps[q];}
+    H.push('<p>'+(fr?'La forme est constante. Sur les éléments du quotidien, les employés noirs déclarent autant ou plus que l\'ensemble : '+v("Q53")+' % se sentent traités avec respect (contre '+all["Q53"]+' %) et '+v("Q12")+' % se sentent valorisés (contre '+all["Q12"]+' %). Mais '+v("Q65")+' % ont été victimes de discrimination au cours des 12 derniers mois, contre '+all["Q65"]+' % pour l\'ensemble; seulement '+v("Q24")+' % se sentiraient en sécurité pour parler de racisme sans représailles, contre '+all["Q24"]+' %; et '+v("Q49")+' % voient leur ministère mettre en œuvre des initiatives de lutte contre le racisme, contre '+all["Q49"]+' %. C\'est dans les voies formelles que cela se brise : '+v("Q72")+' % sont satisfaits de la façon dont les plaintes de racisme sont réglées.':'The shape is consistent. On everyday items Black employees report at or above all employees: '+v("Q53")+'% feel treated with respect (against '+all["Q53"]+'%) and '+v("Q12")+'% feel valued (against '+all["Q12"]+'%). But '+v("Q65")+'% were a victim of discrimination in the past 12 months, against '+all["Q65"]+'% for all employees; only '+v("Q24")+'% would feel safe speaking about racism without reprisal, against '+all["Q24"]+'%; and '+v("Q49")+'% see their department implementing anti-racism initiatives, against '+all["Q49"]+'%. The formal paths are where it breaks: '+v("Q72")+'% are satisfied with how racism complaints are resolved.')+'</p>');
+    H.push('<h3>'+(fr?'Ce que l\'on ne peut pas voir':'What we cannot see')+'</h3>');
+    H.push('<ul><li>'+(fr?'Aucun repère de disponibilité propre aux employés noirs : la Loi désigne les minorités visibles comme un seul groupe.':'No workforce-availability benchmark for Black employees: the Act designates visible minorities as one group.')+'</li><li>'+(fr?'Les données du sondage pour les employés noirs sont publiées pour '+nB+' des '+nT+' organisations; dans les autres, le dénombrement est trop faible et reste supprimé.':'Black survey data is published for '+nB+' of the '+nT+' organizations; in the rest the count is too small and stays suppressed.')+'</li><li>'+(fr?'Aucune ventilation intersectionnelle publiée pour les employés noirs : il existe des chiffres pour les femmes racisées, mais pas pour les femmes noires ni les personnes noires en situation de handicap en particulier.':'No published intersectional breakdown for Black employees: there are figures for racialized women, but not for Black women, or Black persons with disabilities, specifically.')+'</li><li>'+(fr?'Les nominations intérimaires, les taux de promotion par tranche salariale et l\'accès à la formation linguistique ne sont pas ventilés pour les employés noirs, de sorte que les mécanismes derrière l\'écart au sommet ne se voient pas dans les données publiées.':'Acting appointments, promotion rates by salary band, and language-training access are not broken out for Black employees, so the mechanics behind the gap at the top cannot be traced in the published data.')+'</li></ul>');
+    H.push('<p style="font-size:13.5px;color:var(--ink-soft)">'+(fr?'Pour le détail par organisation, l\'outil « Comparer un groupe d\'une organisation à l\'autre » de la section du sondage affiche les résultats des employés noirs pour les '+nB+' organisations où le dénombrement est publié.':'For organization-level detail, the "Compare one group across organizations" tool in the survey section shows Black results for the '+nB+' organizations where the count is published.')+' <a href="#" data-go="demo">'+(fr?'Ouvrir la section du sondage':'Open the survey section')+'</a>.</p>');
+    host.innerHTML=H.join("");
   }
-  [xSel,ySel].forEach(s=>s.addEventListener("change",renderScatter));
-  lazyReg("compare",renderScatter);
-  // ============ Tool 3: automatic linkage scan ============
-  const structKeys=["n","w","i","d","v","gi","gd","gv"];
-  const outcomeKeys=PSq.map(q=>"q_"+q);
-  function renderLinks(){
-    const thr=+$("#scanStrength").value;
-    const out=[];
-    structKeys.forEach(sk=>{const sm=MK[sk];
-      outcomeKeys.forEach(ok=>{const om=MK[ok];
-        const a=COMP.map(r=>sm.get(r)),b=COMP.map(r=>om.get(r));
-        const {r,n}=pearson(a,b);
-        if(r!=null&&n>=20&&Math.abs(r)>=thr)out.push({sk,ok,sm,om,r,n});
-      });
-    });
-    out.sort((a,b)=>Math.abs(b.r)-Math.abs(a.r));
-    $("#linkTable thead").innerHTML="<tr><th scope='col'>Structural factor</th><th scope='col'>Survey outcome</th><th scope='col' class='num'>r</th><th scope='col'>Reading</th><th scope='col' class='num'>Orgs</th></tr>";
-    $("#linkTable tbody").innerHTML=out.length?out.map(o=>{
-      const dir=o.r>0?"higher":"lower";
-      const reading=`Where ${o.sm.label.toLowerCase()} is higher, ${o.om.label.replace(/\s*\(Q\d+\).*/,"").toLowerCase()} tends to be ${dir}.`;
-      const strong=Math.abs(o.r)>=0.5;
-      return `<tr><td>${o.sm.label}</td><td>${o.om.label.replace(/\s*—\s*lower better/,"")}</td><td class="num ${strong?"below-mark":""}">${o.r.toFixed(2)}</td><td style="font-size:12.5px">${reading}</td><td class="num">${o.n}</td></tr>`;
-    }).join(""):"<tr><td colspan='5' style='color:var(--ink-soft)'>No links at this strength. Lower the threshold to see weaker patterns.</td></tr>";
-  }
-  $("#scanStrength").addEventListener("change",renderLinks);
-  renderLinks();
+  document.addEventListener("langchange",renderBlack);
+  lazyReg("black",renderBlack);
 })();
+/* ===== Intersectional PSES 2024 (added) ===== */
+var INX = {"order": ["pwd_base", "pwd_rac", "pwd_ind", "pwd_wom", "pwd_exec", "lgb_rac", "lgb_ind", "pwdsub_rac", "pwdsub_ind"], "lab": {"pwd_base": {"en": "Persons with disabilities vs without (core public administration)", "fr": "Personnes en situation de handicap c. sans handicap (administration publique centrale)"}, "pwd_rac": {"en": "Among persons with disabilities: racialized vs non-racialized", "fr": "Parmi les personnes en situation de handicap : racis\u00e9es c. non racis\u00e9es"}, "pwd_ind": {"en": "Among persons with disabilities: Indigenous vs non-Indigenous", "fr": "Parmi les personnes en situation de handicap : autochtones c. non autochtones"}, "pwd_wom": {"en": "Among persons with disabilities: women vs non-women", "fr": "Parmi les personnes en situation de handicap : femmes c. non-femmes"}, "pwd_exec": {"en": "Among persons with disabilities: executives vs non-executives", "fr": "Parmi les personnes en situation de handicap : cadres c. non-cadres"}, "lgb_rac": {"en": "2SLGBTQIA+ employees, by racialized group", "fr": "Employ\u00e9s 2ELGBTQIA+, par groupe racis\u00e9"}, "lgb_ind": {"en": "2SLGBTQIA+ employees, by Indigenous group", "fr": "Employ\u00e9s 2ELGBTQIA+, par groupe autochtone"}, "pwdsub_rac": {"en": "Persons with disabilities, by racialized group", "fr": "Personnes en situation de handicap, par groupe racis\u00e9"}, "pwdsub_ind": {"en": "Persons with disabilities, by Indigenous group", "fr": "Personnes en situation de handicap, par groupe autochtone"}}, "sets": {"lgb_rac": {"fam": "23", "cols": [{"k": "Black", "en": "Black", "fr": "Noirs", "n": 580}, {"k": "East Asian", "en": "East Asian", "fr": "Asiatiques de l'Est", "n": 880}, {"k": "South Asian", "en": "South Asian", "fr": "Asiatiques du Sud", "n": 610}, {"k": "Southeast Asian", "en": "Southeast Asian", "fr": "Asiatiques du Sud-Est", "n": 470}, {"k": "West Asian", "en": "West Asian", "fr": "Asiatiques de l'Ouest", "n": 150}, {"k": "Arab", "en": "Arab", "fr": "Arabes", "n": 310}, {"k": "Latin American", "en": "Latin American", "fr": "Latino-Am\u00e9ricains", "n": 420}, {"k": "White", "en": "White", "fr": "Blancs", "n": 13430}], "q": {"Q24": [54, 68, 61, 63, 68, 57, 67, 77], "Q25": [49, 62, 57, 60, 63, 54, 63, 74], "Q50": [57, 68, 64, 67, 63, 60, 68, 78], "Q49": [47, 52, 53, 52, 57, 48, 49, 55], "Q52": [42, 43, 44, 45, 31, 40, 43, 41], "Q72": [11, 12, 3, 8, 15, 6, 4, 14], "Q51": [38, 54, 44, 44, 52, 41, 56, 66], "Q44c": [58, 63, 58, 60, 58, 60, 65, 74], "Q44d": [67, 70, 66, 66, 66, 66, 74, 73], "Q44e": [59, 60, 55, 61, 54, 54, 59, 60]}}, "lgb_ind": {"fam": "23", "cols": [{"k": "First Nations", "en": "First Nations", "fr": "Premi\u00e8res Nations", "n": 470}, {"k": "M\u00e9tis", "en": "M\u00e9tis", "fr": "M\u00e9tis", "n": 450}, {"k": "Inuk (Inuit)", "en": "Inuit", "fr": "Inuits", "n": 30}], "q": {"Q24": [68, 71, 39], "Q25": [66, 67, 40], "Q50": [69, 76, 54], "Q49": [50, 55, 25], "Q52": [41, 40, 22], "Q72": [5, 8, null], "Q51": [49, 58, 18], "Q44c": [60, 63, 33], "Q44d": [63, 68, 66], "Q44e": [49, 54, 24]}}, "pwdsub_rac": {"fam": "23", "cols": [{"k": "Black", "en": "Black", "fr": "Noirs", "n": 830}, {"k": "East Asian", "en": "East Asian", "fr": "Asiatiques de l'Est", "n": 750}, {"k": "South Asian", "en": "South Asian", "fr": "Asiatiques du Sud", "n": 910}, {"k": "Southeast Asian", "en": "Southeast Asian", "fr": "Asiatiques du Sud-Est", "n": 430}, {"k": "West Asian", "en": "West Asian", "fr": "Asiatiques de l'Ouest", "n": 200}, {"k": "Arab", "en": "Arab", "fr": "Arabes", "n": 520}, {"k": "Latin American", "en": "Latin American", "fr": "Latino-Am\u00e9ricains", "n": 420}, {"k": "White", "en": "White", "fr": "Blancs", "n": 23960}], "q": {"Q24": [47, 57, 46, 56, 54, 53, 59, 73], "Q25": [43, 51, 43, 54, 50, 50, 57, 70], "Q50": [50, 57, 52, 60, 58, 57, 62, 74], "Q49": [42, 44, 42, 51, 49, 49, 49, 61], "Q52": [33, 29, 29, 43, 36, 37, 38, 38], "Q72": [4, 10, 4, 1, 13, 11, 15, 13], "Q51": [30, 46, 37, 41, 48, 47, 49, 63], "Q44c": [43, 53, 47, 57, 53, 57, 55, 67], "Q44d": [48, 52, 45, 52, 52, 54, 53, 61], "Q44e": [39, 39, 36, 44, 40, 42, 41, 46]}}, "pwdsub_ind": {"fam": "23", "cols": [{"k": "First Nations", "en": "First Nations", "fr": "Premi\u00e8res Nations", "n": 800}, {"k": "M\u00e9tis", "en": "M\u00e9tis", "fr": "M\u00e9tis", "n": 1020}, {"k": "Inuk (Inuit)", "en": "Inuit", "fr": "Inuits", "n": 50}], "q": {"Q24": [62, 68, 52], "Q25": [58, 63, 52], "Q50": [65, 69, 63], "Q49": [54, 59, 37], "Q52": [36, 35, 25], "Q72": [6, 9, null], "Q51": [44, 53, 28], "Q44c": [55, 58, 40], "Q44d": [55, 57, 70], "Q44e": [39, 40, 27]}}, "pwd_base": {"fam": "16", "cols": [{"k": "Persons with a disability", "en": "Persons with a disability", "fr": "Personnes en situation de handicap", "n": 22930}, {"k": "Persons without a disability", "en": "Persons without a disability", "fr": "Personnes sans handicap", "n": 107720}], "q": {"Q01": [72, 80], "Q04": [57, 66], "Q05": [60, 70], "Q12": [59, 69], "Q22": [78, 85], "Q23": [74, 82], "Q47": [58, 72], "Q48": [66, 77], "Q53": [68, 81], "Q28": [73, 79], "Q43": [47, 57], "Q45": [42, 53], "Q58": [77, 90], "Q65": [78, 93], "Q24": [68, 74], "Q25": [65, 74], "Q49": [56, 66], "Q50": [69, 78], "Q52": [37, 44], "Q72": [7, 12], "Q51": [57, 68], "Q44c": [62, 79], "Q44d": [56, 87], "Q44e": [43, 76], "Q87": [73, 82], "Q88": [72, 80], "Q76": [56, 67], "Q77": [20, 39], "Q78": [77, 82], "Q79": [66, 74], "Q81": [47, 62], "Q34": [47, 57], "Q41": [60, 69], "Q54": [57, 69], "Q55": [56, 69]}}, "pwd_rac": {"fam": "16", "cols": [{"k": "Racialized", "en": "Racialized", "fr": "Personnes racis\u00e9es", "n": 4340}, {"k": "Non-Racialized", "en": "Non-racialized", "fr": "Personnes non racis\u00e9es", "n": 23220}], "q": {"Q01": [72, 73], "Q04": [58, 59], "Q05": [60, 62], "Q12": [57, 60], "Q22": [77, 80], "Q23": [72, 76], "Q47": [55, 61], "Q48": [60, 70], "Q53": [68, 70], "Q28": [72, 74], "Q43": [46, 48], "Q45": [41, 44], "Q58": [75, 79], "Q65": [73, 81], "Q24": [52, 73], "Q25": [49, 71], "Q49": [45, 61], "Q50": [56, 74], "Q52": [34, 38], "Q72": [6, 15], "Q51": [40, 64], "Q44c": [51, 67], "Q44d": [49, 61], "Q44e": [39, 46], "Q87": [73, 73], "Q88": [71, 75], "Q76": [55, 59], "Q77": [21, 20], "Q78": [75, 79], "Q79": [62, 68], "Q81": [48, 48], "Q34": [47, 47], "Q41": [58, 62], "Q54": [57, 58], "Q55": [56, 58]}}, "pwd_ind": {"fam": "16", "cols": [{"k": "Indigenous", "en": "Indigenous", "fr": "Personnes autochtones", "n": 1960}, {"k": "Non-Indigenous", "en": "Non-Indigenous", "fr": "Personnes non autochtones", "n": 27690}], "q": {"Q01": [71, 72], "Q04": [55, 58], "Q05": [57, 62], "Q12": [55, 59], "Q22": [74, 79], "Q23": [71, 75], "Q47": [56, 59], "Q48": [64, 68], "Q53": [66, 69], "Q28": [70, 73], "Q43": [46, 47], "Q45": [41, 43], "Q58": [70, 78], "Q65": [70, 80], "Q24": [65, 69], "Q25": [60, 66], "Q49": [56, 58], "Q50": [66, 70], "Q52": [34, 37], "Q72": [7, 10], "Q51": [48, 59], "Q44c": [56, 64], "Q44d": [56, 59], "Q44e": [39, 44], "Q87": [70, 73], "Q88": [70, 73], "Q76": [54, 58], "Q77": [20, 20], "Q78": [75, 78], "Q79": [64, 67], "Q81": [43, 47], "Q34": [45, 47], "Q41": [57, 60], "Q54": [55, 57], "Q55": [54, 56]}}, "pwd_wom": {"fam": "16", "cols": [{"k": "Women", "en": "Women", "fr": "Femmes", "n": 18720}, {"k": "Non-Women", "en": "Non-women", "fr": "Non-femmes", "n": 10130}], "q": {"Q01": [76, 68], "Q04": [60, 56], "Q05": [65, 58], "Q12": [61, 56], "Q22": [79, 79], "Q23": [75, 74], "Q47": [60, 58], "Q48": [68, 68], "Q53": [71, 66], "Q28": [75, 72], "Q43": [49, 45], "Q45": [45, 41], "Q58": [78, 77], "Q65": [80, 78], "Q24": [70, 69], "Q25": [67, 66], "Q49": [57, 61], "Q50": [71, 69], "Q52": [41, 31], "Q72": [9, 10], "Q51": [57, 61], "Q44c": [65, 63], "Q44d": [57, 63], "Q44e": [42, 49], "Q87": [74, 72], "Q88": [75, 72], "Q76": [60, 55], "Q77": [19, 22], "Q78": [79, 76], "Q79": [68, 65], "Q81": [49, 46], "Q34": [50, 42], "Q41": [63, 57], "Q54": [60, 55], "Q55": [60, 53]}}, "pwd_exec": {"fam": "16", "cols": [{"k": "Executives", "en": "Executives", "fr": "Cadres", "n": 880}, {"k": "Non-Executives", "en": "Non-executives", "fr": "Non-cadres", "n": 28560}], "q": {"Q01": [76, 73], "Q04": [60, 58], "Q05": [70, 61], "Q12": [71, 59], "Q22": [85, 79], "Q23": [86, 74], "Q47": [70, 58], "Q48": [77, 67], "Q53": [75, 68], "Q28": [78, 73], "Q43": [59, 47], "Q45": [55, 42], "Q58": [78, 78], "Q65": [81, 79], "Q24": [81, 68], "Q25": [80, 65], "Q49": [65, 58], "Q50": [81, 69], "Q52": [51, 37], "Q72": [21, 7], "Q51": [67, 57], "Q44c": [67, 63], "Q44d": [74, 57], "Q44e": [67, 43], "Q87": [85, 72], "Q88": [80, 73], "Q76": [68, 57], "Q77": [32, 20], "Q78": [77, 77], "Q79": [68, 67], "Q81": [56, 47], "Q34": [60, 47], "Q41": [73, 60], "Q54": [66, 57], "Q55": [65, 56]}}}};
+
+var Q23LIST=["Q24","Q25","Q50","Q49","Q52","Q72","Q51","Q44c","Q44d","Q44e"];
+var Q16LIST=["Q01","Q04","Q05","Q12","Q22","Q23","Q47","Q48","Q53","Q28","Q43","Q45","Q58","Q65","Q24","Q25","Q49","Q50","Q52","Q72","Q51","Q44c","Q44d","Q44e","Q87","Q88","Q76","Q77","Q78","Q79","Q81","Q34","Q41","Q54","Q55"];
+var _T={job:{en:"My job and tools",fr:"Mon emploi et mes outils"},inc:{en:"Inclusion and respect",fr:"Inclusion et respect"},car:{en:"Career and development",fr:"Carri\u00e8re et perfectionnement"},hd:{en:"Harassment and discrimination",fr:"Harc\u00e8lement et discrimination"},ar:{en:"Anti-racism",fr:"Lutte contre le racisme"},acc:{en:"Duty to accommodate",fr:"Obligation de prendre des mesures d'adaptation"},mh:{en:"Mental health and well-being",fr:"Sant\u00e9 mentale et bien-\u00eatre"},org:{en:"Confidence in the organization",fr:"Confiance envers l'organisation"}};
+var QTHEME={Q01:_T.job,Q04:_T.job,Q05:_T.job,Q12:_T.inc,Q22:_T.inc,Q23:_T.inc,Q47:_T.inc,Q48:_T.inc,Q53:_T.inc,Q28:_T.car,Q43:_T.car,Q45:_T.car,Q58:_T.hd,Q65:_T.hd,Q24:_T.ar,Q25:_T.ar,Q49:_T.ar,Q50:_T.ar,Q52:_T.ar,Q72:_T.ar,Q51:_T.ar,Q44c:_T.ar,Q44d:_T.acc,Q44e:_T.acc,Q87:_T.acc,Q88:_T.acc,Q76:_T.mh,Q77:_T.mh,Q78:_T.mh,Q79:_T.mh,Q81:_T.mh,Q34:_T.org,Q41:_T.org,Q54:_T.org,Q55:_T.org};
+var QLAB={
+ Q01:{en:"Have the tools and equipment to do the job",fr:"Disposent des outils et de l'\u00e9quipement n\u00e9cessaires"},
+ Q04:{en:"Physical environment is suitable",fr:"L'environnement physique est ad\u00e9quat"},
+ Q05:{en:"Get the training needed for the job",fr:"Re\u00e7oivent la formation n\u00e9cessaire"},
+ Q12:{en:"Feel valued at work",fr:"Se sentent valoris\u00e9s au travail"},
+ Q22:{en:"Work unit behaves respectfully",fr:"L'unit\u00e9 de travail se comporte avec respect"},
+ Q23:{en:"Coworkers value my ideas and opinions",fr:"Les coll\u00e8gues valorisent mes id\u00e9es et opinions"},
+ Q47:{en:"Department respects individual differences",fr:"Le minist\u00e8re respecte les diff\u00e9rences individuelles"},
+ Q48:{en:"Department supports a diverse workforce",fr:"Le minist\u00e8re soutient une main-d'\u0153uvre diversifi\u00e9e"},
+ Q53:{en:"Department treats me with respect",fr:"Le minist\u00e8re me traite avec respect"},
+ Q28:{en:"Supervisor supports my career goals",fr:"Le superviseur appuie mes objectifs de carri\u00e8re"},
+ Q43:{en:"Department supports career development",fr:"Le minist\u00e8re soutient le perfectionnement professionnel"},
+ Q45:{en:"Have opportunities for promotion",fr:"Ont des possibilit\u00e9s de promotion"},
+ Q58:{en:"Did not experience harassment (12 months)",fr:"N'ont pas v\u00e9cu de harc\u00e8lement (12 mois)"},
+ Q65:{en:"Did not experience discrimination (12 months)",fr:"N'ont pas v\u00e9cu de discrimination (12 mois)"},
+ Q24:{en:"Safe to speak about racism (career)",fr:"En s\u00e9curit\u00e9 de parler de racisme (carri\u00e8re)"},
+ Q25:{en:"Safe to speak about racism (mental health)",fr:"En s\u00e9curit\u00e9 de parler de racisme (sant\u00e9 mentale)"},
+ Q49:{en:"Department implements anti-racism initiatives",fr:"Le minist\u00e8re met en \u0153uvre des initiatives de lutte contre le racisme"},
+ Q50:{en:"Comfortable raising racism concerns with authority",fr:"\u00c0 l'aise de signaler le racisme \u00e0 une personne en autorit\u00e9"},
+ Q52:{en:"Call to Action has had a positive impact",fr:"L'Appel \u00e0 l'action a eu une incidence positive"},
+ Q72:{en:"Satisfied with how racism complaints are resolved",fr:"Satisfaits du r\u00e8glement des plaintes de racisme"},
+ Q51:{en:"Racism has not harmed my mental health",fr:"Le racisme n'a pas nui \u00e0 ma sant\u00e9 mentale"},
+ Q44c:{en:"Discrimination did not hold back career",fr:"La discrimination n'a pas nui \u00e0 la carri\u00e8re"},
+ Q44d:{en:"Accessibility issues did not hold back career",fr:"Les probl\u00e8mes d'accessibilit\u00e9 n'ont pas nui \u00e0 la carri\u00e8re"},
+ Q44e:{en:"Accommodation issues did not hold back career",fr:"Les mesures d'adaptation n'ont pas nui \u00e0 la carri\u00e8re"},
+ Q87:{en:"Satisfied with accommodation implemented",fr:"Satisfaits des mesures d'adaptation mises en place"},
+ Q88:{en:"Comfortable requesting accommodation from supervisor",fr:"\u00c0 l'aise de demander des mesures d'adaptation au superviseur"},
+ Q76:{en:"Department raises mental health awareness",fr:"Le minist\u00e8re sensibilise \u00e0 la sant\u00e9 mentale"},
+ Q77:{en:"Mental health is good or very good",fr:"Sant\u00e9 mentale bonne ou tr\u00e8s bonne"},
+ Q78:{en:"Supervisor supports my mental health",fr:"Le superviseur soutient ma sant\u00e9 mentale"},
+ Q79:{en:"Comfortable sharing mental health concerns with supervisor",fr:"\u00c0 l'aise de parler de sant\u00e9 mentale au superviseur"},
+ Q81:{en:"Workplace is psychologically healthy",fr:"Le milieu de travail est sain sur le plan psychologique"},
+ Q34:{en:"Confidence in senior management",fr:"Confiance envers la haute direction"},
+ Q41:{en:"Department promotes values and ethics",fr:"Le minist\u00e8re promeut les valeurs et l'\u00e9thique"},
+ Q54:{en:"Would recommend as a great place to work",fr:"Recommanderaient comme un excellent lieu de travail"},
+ Q55:{en:"Satisfied with my department",fr:"Satisfaits de leur minist\u00e8re"}
+};
+var _S44={en:"To what extent have the following adversely affected your career progress in the federal public service over the last 12 months? ",fr:"Dans quelle mesure, estimez-vous que les \u00e9l\u00e9ments suivants ont nui \u00e0 la progression de votre carri\u00e8re au sein de la fonction publique f\u00e9d\u00e9rale au cours des 12 derniers mois? "};
+var INXW={
+ Q01:{en:"I have the tools, technology and equipment I need to do my job.",fr:"Je dispose des outils, de la technologie et de l'\u00e9quipement dont j'ai besoin pour effectuer mon travail."},
+ Q04:{en:"My physical environment (e.g., office, workspace) is suitable for my job requirements.",fr:"Mon environnement physique (p. ex. bureau, espace de travail) est adapt\u00e9 aux exigences de mon travail."},
+ Q05:{en:"I get the training I need to do my job.",fr:"Je re\u00e7ois la formation dont j'ai besoin pour faire mon travail."},
+ Q12:{en:"Overall, I feel valued at work.",fr:"Dans l'ensemble, je me sens valoris\u00e9(e) au travail."},
+ Q22:{en:"In my work unit, individuals behave in a respectful manner.",fr:"Dans mon unit\u00e9 de travail, les gens se comportent de mani\u00e8re respectueuse."},
+ Q23:{en:"The people I work with value my ideas and opinions.",fr:"Les personnes avec lesquelles je travaille valorisent mes id\u00e9es et mes opinions."},
+ Q24:{en:"In my work unit, I would feel safe to speak about racism in the workplace without fear of reprisal or negative impact on my career.",fr:"Dans mon unit\u00e9 de travail, je me sentirais \u00e0 l'aise de parler de racisme en milieu de travail sans crainte de repr\u00e9sailles ou d'impact n\u00e9gatif sur ma carri\u00e8re."},
+ Q25:{en:"In my work unit, I would feel safe to speak about racism in the workplace without negative impact on my mental health.",fr:"Dans mon unit\u00e9 de travail, je me sentirais \u00e0 l'aise de parler de racisme en milieu de travail sans impact n\u00e9gatif sur ma sant\u00e9 mentale."},
+ Q28:{en:"I feel that my immediate supervisor supports my career goals.",fr:"J'estime que mon (ma) superviseur(e) imm\u00e9diat(e) soutient mes aspirations professionnelles."},
+ Q34:{en:"I have confidence in the senior management of my department or agency.",fr:"J'ai confiance en la haute direction de mon minist\u00e8re ou organisme."},
+ Q41:{en:"My department or agency does a good job of promoting values and ethics in the workplace.",fr:"Mon minist\u00e8re ou organisme fait un bon travail de promotion des valeurs et de l'\u00e9thique dans le milieu de travail."},
+ Q43:{en:"My department or agency does a good job of supporting employee career development.",fr:"Mon minist\u00e8re ou organisme met tout en oeuvre pour appuyer ses employ\u00e9(e)s dans leur perfectionnement professionnel."},
+ Q44c:{en:_S44.en+"Discrimination",fr:_S44.fr+"Discrimination"},
+ Q44d:{en:_S44.en+"Accessibility issues",fr:_S44.fr+"Probl\u00e8mes d'accessibilit\u00e9"},
+ Q44e:{en:_S44.en+"Accommodation issues",fr:_S44.fr+"Probl\u00e8mes d'adaptation"},
+ Q45:{en:"I believe I have opportunities for promotion within my department or agency, given my education, skills and experience.",fr:"J'estime avoir des possibilit\u00e9s d'obtenir une promotion au sein de mon minist\u00e8re ou organisme, compte tenu de ma scolarit\u00e9, de mes comp\u00e9tences et de mon exp\u00e9rience."},
+ Q47:{en:"I think that my department or agency respects individual differences.",fr:"Je crois que mon minist\u00e8re ou organisme respecte les diff\u00e9rences individuelles."},
+ Q48:{en:"My department or agency implements activities and practices that support a diverse workforce.",fr:"Mon minist\u00e8re ou organisme met en place des activit\u00e9s et des pratiques qui favorisent une main-d'oeuvre diversifi\u00e9e."},
+ Q49:{en:"My department or agency implements initiatives that promote anti-racism in the workplace.",fr:"Mon minist\u00e8re ou organisme met en oeuvre des initiatives qui favorisent la lutte contre le racisme dans le milieu de travail."},
+ Q50:{en:"I would feel comfortable sharing concerns about racism in the workplace with a person of authority.",fr:"Je me sentirais \u00e0 l'aise de faire part \u00e0 une personne en situation d'autorit\u00e9 de mes pr\u00e9occupations concernant des probl\u00e8mes li\u00e9s au racisme en milieu de travail."},
+ Q51:{en:"I feel that racism in my department or agency has had an adverse or negative impact on my mental health.",fr:"J'estime que le racisme dans mon minist\u00e8re ou organisme a eu une incidence n\u00e9gative sur ma sant\u00e9 mentale."},
+ Q52:{en:"I feel that the Call to Action on Anti-Racism, Equity and Inclusion has had a positive impact in my department or agency, since it launched in January 2021.",fr:"J'estime que l'Appel \u00e0 l'action en faveur de la lutte contre le racisme, de l'\u00e9quit\u00e9 et de l'inclusion a eu un impact positif au sein de mon minist\u00e8re ou organisme depuis son lancement, en janvier 2021."},
+ Q53:{en:"Overall, my department or agency treats me with respect.",fr:"Dans l'ensemble, mon minist\u00e8re ou organisme me traite avec respect."},
+ Q54:{en:"I would recommend my department or agency as a great place to work.",fr:"Je recommanderais mon minist\u00e8re ou organisme comme un excellent milieu de travail."},
+ Q55:{en:"I am satisfied with my department or agency.",fr:"Je suis satisfait(e) de mon minist\u00e8re ou organisme."},
+ Q58:{en:"Having carefully read the definition of harassment above, have you been the victim of harassment on the job in the past 12 months?",fr:"Apr\u00e8s avoir lu attentivement la d\u00e9finition du harc\u00e8lement ci-dessus, au cours des 12 derni\u00e8rs mois, avez-vous \u00e9t\u00e9 victime de harc\u00e8lement au travail?"},
+ Q65:{en:"Having carefully read the definition of discrimination above, have you been the victim of discrimination on the job in the past 12 months?",fr:"Apr\u00e8s avoir lu attentivement la d\u00e9finition de la discrimination, au cours des 12 derniers mois, avez-vous \u00e9t\u00e9 victime de discrimination au travail?"},
+ Q72:{en:"I am satisfied with how concerns or complaints about racism in the workplace are resolved in my department or agency.",fr:"Je suis satisfait(e) de la fa\u00e7on dont les pr\u00e9occupations ou les plaintes au sujet du racisme en milieu de travail sont r\u00e9gl\u00e9es par mon minist\u00e8re ou organisme."},
+ Q76:{en:"My department or agency does a good job of raising awareness of mental health in the workplace.",fr:"Mon minist\u00e8re ou organisme fait un bon travail de sensibilisation \u00e0 la sant\u00e9 mentale en milieu de travail."},
+ Q77:{en:"In general, how is your mental health?",fr:"En g\u00e9n\u00e9ral, comment est votre sant\u00e9 mentale?"},
+ Q78:{en:"My immediate supervisor supports my mental health and well-being.",fr:"Mon (ma) superviseur(e) imm\u00e9diat(e) soutient ma sant\u00e9 mentale et mon bien-\u00eatre."},
+ Q79:{en:"I would feel comfortable sharing concerns with my immediate supervisor about my mental health.",fr:"Je me sentirais \u00e0 l'aise de faire part \u00e0 mon (ma) superviseur(e) imm\u00e9diat(e) de mes pr\u00e9occupations \u00e0 propos de ma sant\u00e9 mentale."},
+ Q81:{en:"I would describe my workplace as being psychologically healthy.",fr:"Je dirais que mon milieu de travail est sain sur le plan psychologique."},
+ Q87:{en:"I am satisfied with the workplace accommodation measures that were implemented.",fr:"Je suis satisfait(e) par les mesures d'adaptation en milieu de travail qui ont \u00e9t\u00e9 prises."},
+ Q88:{en:"I would feel comfortable requesting workplace accommodation measures from my immediate supervisor.",fr:"Je me sentirais \u00e0 l'aise de demander des mesures d'adaptation en milieu de travail aupr\u00e8s de mon (ma) superviseur(e) imm\u00e9diat(e)."}
+};
+var INXGRP=[
+ [{en:"Persons with disabilities: comparisons",fr:"Personnes en situation de handicap\u00a0: comparaisons"},["pwd_base","pwd_rac","pwd_ind","pwd_wom","pwd_exec"]],
+ [{en:"2SLGBTQIA+ employees by subgroup",fr:"Employ\u00e9s 2ELGBTQIA+ par sous-groupe"},["lgb_rac","lgb_ind"]],
+ [{en:"Persons with disabilities by subgroup",fr:"Personnes en situation de handicap par sous-groupe"},["pwdsub_rac","pwdsub_ind"]]
+];
+function renderIntersect(){
+  var sel=document.getElementById("inxSel"),body=document.getElementById("inxBody");
+  if(!sel||!body)return;
+  var fr=(typeof isFR==="function")&&isFR();
+  var cur=sel.value||INX.order[0];
+  sel.innerHTML=INXGRP.map(function(g){
+    var opts=g[1].filter(function(id){return INX.sets[id];}).map(function(id){var l=INX.lab[id];return '<option value="'+id+'"'+(id===cur?' selected':'')+'>'+(fr?l.fr:l.en)+'</option>';}).join("");
+    return '<optgroup label="'+(fr?g[0].fr:g[0].en)+'">'+opts+'</optgroup>';
+  }).join("");
+  var setid=sel.value||cur,set=INX.sets[setid];
+  if(!set){body.innerHTML="";return;}
+  var wordEl=document.getElementById("inxWord"),wasOpen=!!(wordEl&&wordEl.open);
+  var qlist=(set.fam==="23")?Q23LIST:Q16LIST;
+  var colIdx=[];
+  set.cols.forEach(function(c,ci){var any=qlist.some(function(code){return set.q[code]&&set.q[code][ci]!=null;});if(any)colIdx.push(ci);});
+  var cols=colIdx.map(function(ci){return set.cols[ci];});
+  var twoCol=cols.length===2;
+  var totalCols=1+cols.length+(twoCol?1:0);
+  var nf=function(n){return n==null?"":n.toLocaleString(fr?"fr-CA":"en-CA");};
+  var fmt=function(v){return fr?(v+"\u00a0%"):(v+"%");};
+  var head='<th scope="col">'+(fr?"Question du sondage (2024)":"Survey question (2024)")+'</th>'
+    +cols.map(function(c){var nn=c.n?(' <span class="sub">(n\u2248'+nf(c.n)+')</span>'):'';return '<th scope="col" class="num">'+(fr?c.fr:c.en)+nn+'</th>';}).join("")
+    +(twoCol?('<th scope="col" class="num">'+(fr?"\u00c9cart":"Gap")+'</th>'):'');
+  var R=[],lastT=null;
+  qlist.forEach(function(code){
+    var lab=QLAB[code];if(!lab)return;
+    var th=QTHEME[code],tk=th?(fr?th.fr:th.en):null;
+    if(tk&&tk!==lastT){R.push('<tr><th colspan="'+totalCols+'" scope="colgroup" style="text-align:left;font-weight:700;padding-top:14px;border-bottom:2px solid">'+tk+'</th></tr>');lastT=tk;}
+    var vals=colIdx.map(function(ci){return (set.q[code]&&set.q[code][ci]!=null)?set.q[code][ci]:null;});
+    var cells=vals.map(function(v){return '<td class="num">'+(v==null?"supp.":fmt(v))+'</td>';}).join("");
+    var gap='';
+    if(twoCol){var a=vals[0],b=vals[1];gap='<td class="num">'+((a==null||b==null)?"\u2014":((a-b>0?"+":"")+(a-b)+" pts"))+'</td>';}
+    R.push('<tr><th scope="row">'+(fr?lab.fr:lab.en)+'</th>'+cells+gap+'</tr>');
+  });
+  var seen={},wl=[];
+  qlist.forEach(function(code){if(!seen[code]&&INXW[code]){seen[code]=1;wl.push('<li><span class="sub">'+code+'.</span> '+(fr?INXW[code].fr:INXW[code].en)+'</li>');}});
+  var word='<details id="inxWord"'+(wasOpen?' open':'')+' style="margin-top:10px"><summary style="cursor:pointer;font-weight:600">'+(fr?"Libell\u00e9s officiels des questions (texte int\u00e9gral, 2024)":"Official question wordings (verbatim, 2024)")+'</summary><p class="sub" style="margin:8px 0 4px">'+(fr?"Texte exact des \u00e9nonc\u00e9s et questions du questionnaire du SAFF de 2024 (instrument de Statistique Canada). Les lignes du tableau utilisent des libell\u00e9s courts formul\u00e9s dans le sens favorable.":"Exact statement and question text from the 2024 PSES questionnaire (Statistics Canada instrument). Table rows use short favourable-framed labels.")+'</p><ol style="margin:4px 0 0;padding-left:22px">'+wl.join("")+'</ol></details>';
+  var cap=fr?"R\u00e9ponses favorables (plus \u00e9lev\u00e9 = mieux), SAFF 2024, \u00e0 l'\u00e9chelle de la fonction publique.":"Favourable responses (higher is better), PSES 2024, public-service-wide.";
+  var note=fr?"R\u00e9ponses favorables (les r\u00e9ponses les plus positives). Pour les questions sur le harc\u00e8lement, la discrimination, les mesures d'adaptation et le racisme, un chiffre plus \u00e9lev\u00e9 est pr\u00e9f\u00e9rable (par exemple, \u00ab\u00a0n'ont pas v\u00e9cu de discrimination\u00a0\u00bb). Les libell\u00e9s des lignes sont de courtes formulations dans le sens favorable\u202f; le texte officiel int\u00e9gral de chaque question figure ci-dessous. Les effectifs (n) sont approximatifs\u202f; les petits groupes sont moins fiables, et \u00ab\u00a0supp.\u00a0\u00bb indique un r\u00e9sultat supprim\u00e9 pour des raisons de confidentialit\u00e9. Source\u00a0: r\u00e9sultats du Sondage aupr\u00e8s des fonctionnaires f\u00e9d\u00e9raux de 2024 (Secr\u00e9tariat du Conseil du Tr\u00e9sor du Canada).":"Favourable responses (the most positive answers). For the harassment, discrimination, accommodation, and racism questions, a higher figure is better (for example, \u201cdid not experience discrimination\u201d). Row labels are short favourable-framed summaries; the full official wording of every question is listed below. Counts (n) are approximate; small groups are less reliable, and \u201csupp.\u201d marks results suppressed for confidentiality. Source: 2024 Public Service Employee Survey results (Treasury Board of Canada Secretariat)."; 
+  body.innerHTML='<div style="overflow-x:auto"><table><caption class="sub" style="text-align:left;margin:0 0 8px">'+cap+'</caption><thead><tr>'+head+'</tr></thead><tbody>'+R.join("")+'</tbody></table></div><p class="note">'+note+'</p>'+word;
+}
+(function(){var sel=document.getElementById("inxSel");if(sel)sel.addEventListener("change",renderIntersect);document.addEventListener("langchange",renderIntersect);if(typeof lazyReg==="function")lazyReg("intersect",renderIntersect);})();
+(function(){
+  var t=null,_t0=document.title||"";
+  function fix(){
+    var fr=(typeof isFR==="function")&&isFR();
+    var ds=document.querySelectorAll('div[style*="overflow-x"]');
+    for(var i=0;i<ds.length;i++){var d=ds[i];
+      if(d.getAttribute("tabindex")!=="0")d.setAttribute("tabindex","0");
+      if(d.getAttribute("role")!=="group")d.setAttribute("role","group");
+      d.setAttribute("aria-label",fr?"Tableau d\u00e9filant, utilisez les fl\u00e8ches pour faire d\u00e9filer":"Scrollable table, use arrow keys to scroll");
+    }
+    try{document.title=fr?((typeof DICT!=="undefined"&&DICT[_t0])||_t0):_t0;}catch(e){}
+  }
+  function queue(){if(t)clearTimeout(t);t=setTimeout(fix,150);}
+  document.addEventListener("langchange",queue);
+  try{new MutationObserver(queue).observe(document.body,{childList:true,subtree:true});}catch(e){}
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",queue);}else{queue();}
+})();
+
+
 
 /* ===================== Indigenous public servants ===================== */
 (function(){
@@ -3869,32 +3842,6 @@ function _hbar(rows,opts){opts=opts||{};const W=720,rh=opts.rh||22,pl=opts.pl||2
   draw($("#langDiscChart"),Q44.Q44c||{});
 })();
 
-/* ===================== Equity timeline calculator ===================== */
-(function(){
-  if(typeof DEPTS==="undefined"||typeof WFA==="undefined")return;
-  const sel=$("#tlOrg"); if(!sel)return;
-  DEPTS.map(d=>d[0]).sort().forEach(n=>{const o=document.createElement("option");o.value=n;o.textContent=n;sel.appendChild(o);});
-  sel.value=DEPTS.map(d=>d[0]).sort().find(n=>/Public Service|Treasury/.test(n))||DEPTS[0][0];
-  const COL={w:2,i:3,d:4,v:5},BEN={w:WFA.w,i:WFA.i,d:WFA.d,v:WFA.v},GL={w:"Women",i:"Indigenous",d:"Persons with disabilities",v:"Racialized"};
-  function calc(){
-    const d=DEPTS.find(x=>x[0]===sel.value)||DEPTS[0],g=$("#tlGroup").value;
-    const cur=d[COL[g]],target=BEN[g];const hire=Math.max(0,Math.min(100,+$("#tlHire").value||0))/100,turn=Math.max(0.01,Math.min(0.4,(+$("#tlTurn").value||8)/100));
-    const out=$("#tlResult");
-    if(cur==null){out.innerHTML="<p style='color:var(--ink-soft)'>Representation for this group is not published for this organization.</p>";return;}
-    const cur01=cur/100,tgt01=target/100;
-    if(cur>=target){out.innerHTML=`<p style="font-size:14px"><strong>${GL[g]}</strong> are already at or above the ${target}% benchmark in ${d[0]} (currently ${cur}%). No catch-up needed on this measure; the question becomes retention and advancement, not entry.</p>`;return;}
-    if(hire<=tgt01){out.innerHTML=`<p style="font-size:14px">At a hiring share of <strong>${Math.round(hire*100)}%</strong>, the workforce never reaches <strong>${target}%</strong>: you cannot exceed the share you hire at. To close the gap, the hiring share must be above the ${target}% target. Try a higher hiring share.</p>`;return;}
-    // stock model: r_{t+1} = r_t*(1-turn) + turn*hire ; equilibrium = hire
-    let r=cur01,yrs=0;while(r<tgt01&&yrs<200){r=r*(1-turn)+turn*hire;yrs++;}
-    const eq=Math.round(hire*100);
-    out.innerHTML=`<p style="font-size:15px;margin:0 0 6px"><strong>${GL[g]}</strong> in ${d[0]}: <strong>${cur}%</strong> today, benchmark <strong>${target}%</strong>.</p>
-      <p style="font-size:15px;margin:0 0 6px">At ${Math.round(hire*100)}% of new hires and ${Math.round(turn*100)}% annual turnover, representation reaches the benchmark in roughly <strong>${yrs} year${yrs===1?"":"s"}</strong>.</p>
-      <p style="font-size:12.5px;color:var(--ink-soft);margin:0">Over the long run this pace settles around ${eq}% (the hiring share). A straight-line illustration only, see the caution below.</p>`;
-  }
-  [sel,$("#tlGroup"),$("#tlHire"),$("#tlTurn")].forEach(e=>{if(e)e.addEventListener("input",calc);});
-  calc();
-})();
-
 /* ===================== Missing data ===================== */
 (function(){
   if(typeof EEG_DEPT==="undefined"||typeof EEG_GROUPS==="undefined")return;
@@ -3946,7 +3893,7 @@ function _hbar(rows,opts){opts=opts||{};const W=720,rh=opts.rh||22,pl=opts.pl||2
 
 /* init route + shareable links (#tab, #org=Name, #department=Name&group=G, #briefing-note?org=X&audience=Y) */
 (function(){
-  const KNOWN=/^(data|info|home|bhome|guide|overview|depts|orgprofile|groups|salary|flows|pses|yoy|demo|ex|profile|di|language|ombuds|timeline|hidden|compare|progress|brief|indigenous|linkages|files|action|method|sources|about|definitions|limitations)$/;
+  const KNOWN=/^(data|info|black|home|bhome|guide|overview|depts|orgprofile|groups|salary|flows|pses|yoy|demo|ex|profile|di|language|ombuds|timeline|hidden|compare|progress|brief|indigenous|linkages|files|action|method|sources|about|definitions|limitations)$/;
   function acronym(s){return (s||"").split(/\s+/).filter(w=>/^[A-Za-z]/.test(w)&&!/^(of|and|the|for|to|in|on|de|et|la|le|du|des)$/i.test(w)).map(w=>w[0]).join("").toUpperCase();}
   function matchOrg(q){if(!q)return null;const list=(typeof DEPTS!=="undefined"?DEPTS.map(d=>d[0]):[]);const dash=function(x){return x.replace(/[^A-Za-z0-9]+/g,"-").toLowerCase();};const nq=dash(q),aq=q.toUpperCase();
     return list.find(n=>dash(n)===nq)||list.find(n=>n.toLowerCase()===q.toLowerCase())||list.find(n=>acronym(n)===aq)||list.find(n=>n.toLowerCase().indexOf(q.toLowerCase())>=0)||null;}
