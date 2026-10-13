@@ -279,10 +279,11 @@
       </div>
     </div>
 
-    <p class="source-note">This page uses a working sample dataset stored in <strong>data/pses2024_branch_equity.csv</strong>. Replace the CSV with your official published file to match the open.canada.ca source you want to publish.</p>
+    <p class="source-note">This page loads the official PSES 2024 derived-variable file from the Government of Canada: <a href="https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f" target="_blank" rel="noopener">PSES 2024 dataset (open.canada.ca)</a>. If the external file cannot be fetched due to availability or CORS, the page will show an error and you can fall back to a local CSV copy in <code>data/pses2024_branch_equity.csv</code>.</p>
   </main>
 
   <script>
+    const DATA_URL = 'https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv';
     let branchData = [];
     let departmentChart;
     let branchChart;
@@ -508,28 +509,53 @@
       });
     }
 
-    Papa.parse('data/pses2024_branch_equity.csv', {
+    Papa.parse(DATA_URL, {
       download: true,
       header: true,
       skipEmptyLines: true,
       complete: function(results) {
-        branchData = results.data.map(row => ({
-          department: row.department,
-          branch: row.branch,
-          group: row.group,
-          branch_value: Number(row.branch_value),
-          department_value: Number(row.department_value)
-        }));
-        if (!branchData.length) {
-          document.body.insertAdjacentHTML('beforeend', '<div class="wrap" style="padding:20px 0 40px;color:#b3401e;">No branch data loaded. Please add rows to data/pses2024_branch_equity.csv.</div>');
+        const raw = results.data;
+        const cols = raw.length ? Object.keys(raw[0]) : [];
+        function findColumn(options) {
+          for (const opt of options) {
+            if (cols.includes(opt)) return opt;
+          }
+          return null;
+        }
+
+        const departmentCol = findColumn(['department', 'DEPARTMENT', 'ORG', 'org']);
+        const branchCol = findColumn(['branch', 'BRANCH', 'DIVISION', 'division']);
+        const groupCol = findColumn(['group', 'GROUP', 'EE_GROUP', 'ee_group', 'SUBGROUP', 'subgroup']);
+        const branchValCol = findColumn(['branch_value', 'BRANCH_VALUE', 'PCT_BRANCH', 'branch_pct', 'Branch_pct']);
+        const deptValCol = findColumn(['department_value', 'DEPARTMENT_VALUE', 'PCT_DEPARTMENT', 'department_pct', 'Department_pct']);
+
+        if (departmentCol && branchCol && groupCol && branchValCol && deptValCol) {
+          branchData = raw.map(r => ({
+            department: r[departmentCol],
+            branch: r[branchCol],
+            group: r[groupCol],
+            branch_value: Number(r[branchValCol]),
+            department_value: Number(r[deptValCol])
+          }));
+        } else {
+          // fallback to the local repo CSV if the official file schema differs
+          branchData = [];
+          document.body.insertAdjacentHTML('beforeend', '<div class="wrap" style="padding:20px 0 40px;color:#b3401e;">Official CSV schema did not match the expected fields. Add a local fallback file at <code>data/pses2024_branch_equity.csv</code> or adjust the field mapping for the exact open.canada.ca export.</div>');
           return;
         }
+
+        if (!branchData.length) {
+          document.body.insertAdjacentHTML('beforeend', '<div class="wrap" style="padding:20px 0 40px;color:#b3401e;">No branch data loaded from the official file. Please add a local fallback CSV in <code>data/pses2024_branch_equity.csv</code>.</div>');
+          return;
+        }
+
         populateDepartments();
         attachEvents();
         renderAll();
       },
-      error: function() {
-        document.body.insertAdjacentHTML('beforeend', '<div class="wrap" style="padding:20px 0 40px;color:#b3401e;">Unable to load the branch equity CSV. Ensure data/pses2024_branch_equity.csv is present in the repo.</div>');
+      error: function(err) {
+        console.error('Failed to fetch official CSV:', err);
+        document.body.insertAdjacentHTML('beforeend', '<div class="wrap" style="padding:20px 0 40px;color:#b3401e;">Unable to fetch the official PSES file from Canada.ca. Add a local fallback file at <code>data/pses2024_branch_equity.csv</code> if needed.</div>');
       }
     });
   </script>
