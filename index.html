@@ -1138,7 +1138,7 @@ textarea{resize:vertical}
 <!-- ================= CROSS-DATASET EXPLORER ================= -->
 <section class="view" id="view-compare">
   <h2>Cross-dataset explorer</h2>
-  <p class="lede" data-fr="Un seul endroit pour mettre les jeux de données côte à côte, par organisation. Il relie les écarts de représentation et de disponibilité au sein de la population active (Conseil du Trésor) au Sondage auprès des fonctionnaires fédéraux de 2024 (SAFF), de sorte qu'un profil qu'aucun tableau ne montre seul, une représentation plus faible côtoyant une discrimination déclarée plus élevée, un écart de recours concentré là où un groupe est le moins présent, devient visible. Trois outils : un tableau à composer soi-même, un détecteur de relations et un balayage automatique des liens les plus forts. Les associations ici sont des pistes à examiner, jamais une preuve en soi.">One place to put the datasets side by side, by organization. It joins representation and workforce-availability gaps (Treasury Board) with the 2024 employee survey (PSES), so a pattern that no single table shows, lower representation sitting next to higher reported discrimination, a recourse gap concentrated where a group is thinnest, becomes visible. Three tools: a build-your-own table, a relationship finder, and an automatic scan for the strongest links. Associations here are leads to investigate, never proof on their own.</p>
+  <p class="lede" data-fr="Un seul endroit pour mettre les jeux de données côte à côte, par organisation. Il relie les écarts de représentation et de disponibilité au sein de la population active (Conseil du Trésor) au Sondage auprès des fonctionnaires fédéraux de 2024 (SAFF), de sorte qu'un profil qu'aucun tableau ne montre seul, une représentation plus faible côtoyant une discrimination déclarée plus élevée, un écart de recours concentré là où un groupe est le moins présent, devient visible. Il comprend un tableau à composer soi-même, un lien vers le détecteur de relations et une vue qui compare la part de chaque groupe dans l'effectif d'une organisation avec les résultats de ce groupe au sondage. Les associations ici sont des pistes à examiner, jamais une preuve en soi.">One place to put the datasets side by side, by organization. It joins representation and workforce-availability gaps (Treasury Board) with the 2024 employee survey (PSES), so a pattern that no single table shows, lower representation sitting next to higher reported discrimination, a recourse gap concentrated where a group is thinnest, becomes visible. It has a build-your-own table, a link to the relationship finder, and a view that compares each group's share of an organization's workforce with that group's survey results. Associations here are leads to investigate, never proof on their own.</p>
   <div class="interp"><div class="interp-grid"><div class="interp-col"><h4 data-fr="Comment lire ceci">How to read this</h4><ul><li data-fr="La barre montre le résultat réel.">The bar shows the actual result.</li><li data-fr="Le repère montre le point de comparaison.">The tick or benchmark shows the comparison point.</li><li data-fr="Un résultat sous le repère peut indiquer un écart.">A result below benchmark may signal a gap.</li><li data-fr="Une donnée supprimée signifie que le dénombrement est trop petit pour être publié. Cela ne veut pas dire zéro.">Suppressed data means the count is too small to publish. It does not mean zero.</li><li data-fr="Lisez ceci avec les données connexes avant de tirer des conclusions.">Read this with related data before drawing conclusions.</li></ul></div><div class="interp-col"><h4 data-fr="Ce que cela peut signifier">What this may mean</h4><p data-fr="Deux signaux ensemble, par exemple un écart de représentation et une faible promotion, soulèvent une question plus précise que chacun seul, mais nécessitent tout de même des données au niveau des processus.">Two signals together, for example a representation gap plus weak promotion, raise a sharper question than either alone, but still need process-level data.</p></div></div><div class="interp-col"><h4 data-fr="À vérifier ensuite">Check next</h4><p><a href="#" data-go="linkages" data-fr="Relier les données">Connect the data</a> &middot; <a href="#" data-go="demo" data-fr="Écarts démographiques">Demographic gaps</a> &middot; <a href="#" data-go="flows" data-fr="Embauche et promotion">Hiring and promotion</a> &middot; <a href="#" data-go="brief" data-usefind="1" class="usefind" data-fr="Utiliser ce constat dans une note ou une demande &amp;rarr;">Use this finding in a briefing or request &rarr;</a></p></div></div>
 
   <div class="card">
@@ -1164,6 +1164,33 @@ textarea{resize:vertical}
     <h3 data-fr="2. Une mesure en suit-elle une autre?">2. Does one measure track another?</h3>
     <p class="howto" data-fr="L'explorateur de relations se trouve maintenant à un seul endroit, dans le laboratoire des liens, à côté du constructeur de signaux, afin d'éviter deux outils identiques. Vous y tracez une mesure en fonction d'une autre d'une organisation à l'autre.">The relationship explorer now lives in one place, the Linkages lab, next to the signal builder, so there are not two identical tools. There you plot one measure against another across organizations.</p>
     <p><a href="#" data-go="linkages" data-fr="Ouvrir le laboratoire des liens →">Open the Linkages lab →</a></p>
+  </div>
+
+  <div class="card" id="rsCard">
+    <h3 data-fr="3. Les groupes déclarent-ils des expériences différentes là où ils occupent une plus grande part de l&#x27;effectif?">3. Do groups report different experiences where they make up more of the workforce?</h3>
+    <p class="howto" data-fr="Chaque point représente une organisation. Sa position de gauche à droite correspond à la part du groupe dans l&#x27;effectif de cette organisation (Conseil du Trésor, 31 mars 2025). Sa hauteur correspond au résultat du groupe à une question du SAFF 2024 dans la même organisation. Par défaut, la hauteur montre l&#x27;écart entre le groupe et un groupe de comparaison de la même organisation, par exemple les répondants noirs par rapport aux répondants non racisés. L&#x27;écart retire les différences qui touchent tout le personnel d&#x27;une organisation, comme le travail de première ligne où le harcèlement est fréquent pour tous. Servez-vous de cette vue pour voir si un groupe s&#x27;en tire mieux ou moins bien là où il occupe une plus grande part de l&#x27;effectif, et pour repérer les organisations qui s&#x27;écartent des autres. Considérez toute tendance comme une question à examiner. Elle ne montre pas qu&#x27;un facteur en cause un autre.">Each dot is one organization. Its position from left to right is the group's share of that organization's workforce (Treasury Board, March 31, 2025). Its height is the group's result on one 2024 PSES question in the same organization. By default, the height is the gap between the group and a comparison group in the same organization, for example Black respondents compared with non-racialized respondents. The gap removes differences that affect everyone in an organization, such as frontline work where harassment is common for all staff. Use this view to see whether a group fares better or worse where it makes up more of the workforce, and to find organizations far from the others. Treat any pattern as a question to look into. It does not show that one thing causes another.</p>
+    <div class="controls">
+      <div class="ctl"><label for="rsGroup" data-fr="Groupe">Group</label><select id="rsGroup"></select></div>
+      <div class="ctl"><label for="rsQ" data-fr="Question du sondage (SAFF 2024)">Survey question (2024 PSES)</label><select id="rsQ"></select></div>
+      <div class="ctl"><label for="rsMode" data-fr="Afficher">Show</label><select id="rsMode"></select></div>
+    </div>
+    <p id="rsSummary" style="font-size:14.5px;line-height:1.55;max-width:860px" aria-live="polite"></p>
+    <div id="rsChart"></div>
+    <p id="rsLegend" style="font-size:13px;color:var(--ink-soft);max-width:860px;margin-top:6px"></p>
+    <p id="rsPick" style="font-size:13.5px;min-height:1.2em;max-width:860px" aria-live="polite"></p>
+    <div id="rsBands"></div>
+    <p id="rsCount" style="font-size:13px;color:var(--ink-soft);max-width:860px;margin-top:10px"></p>
+    <details><summary><span data-fr="Afficher les données de chaque organisation">Show the figures for each organization</span></summary><div id="rsTable"></div></details>
+    <div class="actionbar" style="margin-top:10px"><button type="button" id="rsCsv" data-fr="Télécharger en CSV">Download CSV</button></div>
+    <h4 style="margin:16px 0 6px;font-size:15px" data-fr="À lire avec prudence">Read with care</h4>
+    <ul style="font-size:13.5px;line-height:1.55;max-width:860px;margin-top:0">
+      <li data-fr="Chaque point représente une organisation. Une tendance entre organisations ne dit pas ce qu&#x27;une personne en particulier a vécu.">Each dot is an organization. A pattern across organizations does not tell you what any one employee experienced.</li>
+      <li data-fr="Les résultats non publiés, généralement parce que le groupe compte trop peu de personnes, sont exclus. Le nombre d&#x27;organisations présentées accompagne chaque résultat.">Results that are not published, usually because too few people are in the group, are left out. The number of organizations shown appears with every result.</li>
+      <li data-fr="Chaque organisation compte une fois dans les moyennes et dans la tendance, quelle que soit sa taille.">Each organization counts once in the averages and in the pattern, whatever its size.</li>
+      <li data-fr="La représentation repose sur l&#x27;auto-identification volontaire. Là où les gens se sentent plus en sécurité, un plus grand nombre peut s&#x27;auto-identifier, ce qui peut faire augmenter la part mesurée.">Representation comes from voluntary self-identification. Where people feel safer, more of them may self-identify, which can raise the measured share.</li>
+      <li data-fr="Les résultats du sondage proviennent du SAFF 2024, et la représentation est en date du 31 mars 2025. Les organismes distincts, comme l&#x27;Agence du revenu du Canada, ne figurent pas dans les tableaux de représentation du Conseil du Trésor; ils n&#x27;apparaissent donc pas ici.">The survey results are from the 2024 PSES and representation is as of March 31, 2025. Separate agencies, such as the Canada Revenue Agency, are not in the Treasury Board representation tables, so they do not appear here.</li>
+    </ul>
+    <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px" data-fr="Sources : représentation des femmes, des Autochtones, des personnes en situation de handicap et des employés racisés, données sur l&#x27;équité en matière d&#x27;emploi du Secrétariat du Conseil du Trésor du Canada, au 31 mars 2025; employés noirs, Secrétariat du Conseil du Trésor du Canada, &lt;a href=&quot;https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/repartition-employes-fonction-publique-canada-sous-groupe-designe-ministere-membres-minorites-visibles.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Répartition des employés de la fonction publique du Canada par sous-groupe et ministère ou organisme - Membres des minorités visibles&lt;/a&gt;, au 31 mars 2025; résultats par groupe, Sondage auprès des fonctionnaires fédéraux de 2024, fichier de variables dérivées sur l&#x27;équité en matière d&#x27;emploi (EEINFODV). Les écarts, les moyennes ainsi que les valeurs r et p sont calculés dans votre navigateur à partir de ces données publiées.">Sources: representation of women, Indigenous Peoples, persons with disabilities and racialized employees, Treasury Board of Canada Secretariat employment equity data, as of March 31, 2025; Black employees, Treasury Board of Canada Secretariat, <a href="https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html" target="_blank" rel="noopener">Distribution of public service of Canada employees by sub-group and department or agency - Members of visible minorities</a>, as of March 31, 2025; results by group, 2024 Public Service Employee Survey, Employment Equity derived-variable file (EEINFODV). Gaps, averages and the r and p values are calculated in your browser from these published figures.</p>
   </div>
 
   
@@ -1766,6 +1793,15 @@ const GROUPS=[
 const BLACK={name:"Black employees",color:"#1B2A41"};
 // Departments: [name, employees, w%, i%, d%, v%, note]  null = suppressed
 const DEPTS=JSON.parse("[[\"Employment and Social Development Canada\",38334,67.2,4.2,8.5,31.2,\"\"],[\"National Defence\",28241,43,3.7,7.3,13.1,\"Civilian staff only; Canadian Armed Forces members are not included.\"],[\"Correctional Service Canada\",18660,51.4,10.6,7.4,15.5,\"\"],[\"Public Services and Procurement Canada\",18381,60.8,3.9,8.6,21.6,\"\"],[\"Canada Border Services Agency\",16235,47.2,4.4,9.4,24.6,\"\"],[\"Fisheries and Oceans Canada\",13924,44.7,7.7,11.8,12.4,\"Includes the Canadian Coast Guard.\"],[\"Immigration, Refugees and Citizenship Canada\",10974,64.4,2.9,7.9,41,\"\"],[\"Royal Canadian Mounted Police (public service employees)\",10822,69.8,5.2,5.5,19.9,\"Public service employees only; Regular and Civilian members are not included.\"],[\"Health Canada\",9173,64.6,3.1,9.9,34.2,\"Statistics affected by the creation of ISC (systems change September 2020).\"],[\"Shared Services Canada\",8671,34.1,4,8.7,24.9,\"\"],[\"Indigenous Services Canada\",8389,70.2,26.9,8.9,21,\"Statistics affected by the creation of ISC (systems change September 2020).\"],[\"Environment and Climate Change Canada\",8180,54.6,3.7,8.8,22.2,\"\"],[\"Global Affairs Canada\",7210,56.9,5.8,6.2,30.2,\"\"],[\"Statistics Canada\",6845,52.9,3.4,10.8,29.7,\"\"],[\"Transport Canada\",6361,47.1,4.3,9.4,22.6,\"\"],[\"Innovation, Science and Economic Development Canada\",6091,51.6,2.8,8.4,30.7,\"\"],[\"Natural Resources Canada\",5613,50.1,4.5,11.2,25.2,\"\"],[\"Department of Justice Canada\",5556,68.5,4.8,19.5,29.1,\"\"],[\"Agriculture and Agri-Food Canada\",5041,53.7,4.7,10,21.7,\"\"],[\"Veterans Affairs Canada\",3657,73,4.6,11.4,11.9,\"\"],[\"Public Health Agency of Canada\",3164,70.2,3.4,8.4,29.2,\"\"],[\"Immigration and Refugee Board of Canada\",2278,65.1,2.2,7.6,47.6,\"\"],[\"Treasury Board of Canada Secretariat\",2271,62.2,4,13.2,27.2,\"\"],[\"Canadian Heritage\",1814,68.4,6.2,10.9,21.5,\"\"],[\"Crown-Indigenous Relations and Northern Affairs Canada\",1808,67.7,18.6,8.8,18,\"Statistics affected by the creation of ISC (systems change September 2020).\"],[\"Public Safety Canada\",1628,61,5,13.6,24.5,\"\"],[\"Housing, Infrastructure and Communities Canada\",1552,61.5,3.5,10.8,28.5,\"\"],[\"Elections Canada\",1308,55,3,8.3,28.2,\"\"],[\"Public Prosecution Service of Canada\",1136,66.1,7.1,9.2,23.2,\"\"],[\"Privy Council Office\",1130,58.1,4.1,9.7,28,\"\"],[\"Library and Archives Canada\",1108,63.2,4.3,6.2,11.3,\"\"],[\"Department of Finance Canada\",946,49.5,2.9,7.9,24.8,\"\"],[\"Canadian Space Agency\",900,47.8,2.3,15.6,23.8,\"\"],[\"Courts Administration Service\",823,62.7,1.9,8.1,29.4,\"\"],[\"Public Service Commission of Canada\",771,66,4,16.9,23.1,\"\"],[\"Canadian Radio-television and Telecommunications Commission\",689,56.6,5.5,11,25.3,\"\"],[\"Administrative Tribunals Support Service of Canada\",571,66.9,2.6,10.7,25.4,\"\"],[\"Canada School of Public Service\",571,66.4,4.7,11.9,24.7,\"\"],[\"Atlantic Canada Opportunities Agency\",564,64.5,4.6,15.8,9.9,\"\"],[\"Impact Assessment Agency of Canada\",550,66.5,6.7,10.9,23.3,\"\"],[\"Western Economic Diversification Canada (incl. PacifiCan and PrairiesCan)\",476,60.7,4.8,9.2,30.7,\"Published combined; separate PacifiCan and PrairiesCan statistics not yet available.\"],[\"Canadian Grain Commission\",449,44.3,4.7,5.6,33,\"\"],[\"Parole Board of Canada\",448,76.1,3.6,10,19.4,\"\"],[\"Women and Gender Equality Canada\",376,83.5,5.3,13,24.5,\"\"],[\"Canada Economic Development for Quebec Regions\",362,56.9,null,9.9,22.7,\"\"],[\"Canadian Transportation Agency\",335,55.8,3,11.3,24.2,\"\"],[\"Offices of the Information and Privacy Commissioners of Canada\",333,62.8,5.4,9.6,20.1,\"\"],[\"Canadian Human Rights Commission\",264,73.5,2.7,18.9,28.8,\"\"],[\"Federal Economic Development Agency for Southern Ontario\",237,61.6,3.8,13.5,30.8,\"\"],[\"Registrar of the Supreme Court of Canada\",226,60.2,3.1,11.5,15.5,\"\"],[\"Transportation Safety Board of Canada\",216,40.3,3.2,8.3,13,\"\"],[\"Office of the Commissioner of Official Languages\",159,66.7,null,9.4,13.2,\"\"],[\"Office of the Secretary to the Governor General\",140,62.9,null,12.1,17.1,\"\"],[\"Veterans Review and Appeal Board\",129,64.3,null,6.2,0,\"\"],[\"Canadian Northern Economic Development Agency\",113,67.3,27.4,9.7,21.2,\"\"],[\"Federal Economic Development Agency for Northern Ontario\",99,60.6,11.1,18.2,12.1,\"\"],[\"Civilian Review and Complaints Commission for the RCMP\",92,70.7,null,10.9,19.6,\"\"],[\"Canadian Dairy Commission\",84,56,null,7.1,23.8,\"\"],[\"Patented Medicine Prices Review Board Canada\",78,55.1,null,null,24.4,\"\"],[\"Office of the Commissioner for Federal Judicial Affairs Canada\",63,68.3,0,null,11.1,\"\"],[\"Accessibility Standards Canada\",57,57.9,null,26.3,29.8,\"\"],[\"Military Grievances External Review Committee\",50,66,null,20,20,\"\"],[\"Canadian Intergovernmental Conference Secretariat\",36,44.4,null,null,33.3,\"\"],[\"Office of the Public Sector Integrity Commissioner of Canada\",33,60.6,null,null,24.2,\"\"],[\"Office of the Commissioner of Lobbying of Canada\",32,53.1,null,null,21.9,\"\"],[\"International Joint Commission\",28,50,null,21.4,null,\"\"],[\"Military Police Complaints Commission of Canada\",25,64,null,null,40,\"\"],[\"RCMP External Review Committee\",22,68.2,null,null,null,\"\"],[\"Copyright Board Canada\",20,60,0,null,null,\"\"],[\"Secretariat of the National Security and Intelligence Committee of Parliamentarians\",8,null,0,0,0,\"\"],[\"Law Commission of Canada\",5,null,0,0,null,\"\"]]");
+/* Black employees by organization, as of March 31, 2025 (core public administration).
+   Source: Treasury Board of Canada Secretariat, "Distribution of public service of Canada employees by sub-group
+   and department or agency - Members of visible minorities", first table (as of March 31, 2025). Copied as published:
+   [number of Black employees, Black employees as % of the organization's employees]. null = suppressed by TBS
+   (counts of 1 to 5, or other cells suppressed to prevent residual disclosure). Keys use this site's DEPTS names;
+   TBS lists three of them differently (Royal Canadian Mounted Police; Western Economic Diversification Canada;
+   Office of the Governor General's Secretary), matched here on identical employee counts.
+   Public service total: 13,741 Black employees of 266,935 (5.1%). */
+const BLACK_DEPT={"Employment and Social Development Canada":[3223,8.4],"National Defence":[719,2.5],"Correctional Service Canada":[617,3.3],"Public Services and Procurement Canada":[1018,5.5],"Canada Border Services Agency":[580,3.6],"Fisheries and Oceans Canada":[188,1.4],"Immigration, Refugees and Citizenship Canada":[1318,12.0],"Royal Canadian Mounted Police (public service employees)":[266,2.5],"Health Canada":[490,5.3],"Shared Services Canada":[489,5.6],"Indigenous Services Canada":[380,4.5],"Environment and Climate Change Canada":[246,3.0],"Global Affairs Canada":[444,6.2],"Statistics Canada":[407,5.9],"Transport Canada":[249,3.9],"Innovation, Science and Economic Development Canada":[394,6.5],"Natural Resources Canada":[220,3.9],"Department of Justice Canada":[300,5.4],"Agriculture and Agri-Food Canada":[190,3.8],"Veterans Affairs Canada":[100,2.7],"Public Health Agency of Canada":[148,4.7],"Immigration and Refugee Board of Canada":[271,11.9],"Treasury Board of Canada Secretariat":[156,6.9],"Canadian Heritage":[121,6.7],"Crown-Indigenous Relations and Northern Affairs Canada":[71,3.9],"Public Safety Canada":[85,5.2],"Housing, Infrastructure and Communities Canada":[107,6.9],"Elections Canada":[123,9.4],"Public Prosecution Service of Canada":[53,4.7],"Privy Council Office":[79,7.0],"Library and Archives Canada":[32,2.9],"Department of Finance Canada":[40,4.2],"Canadian Space Agency":[34,3.8],"Courts Administration Service":[74,9.0],"Public Service Commission of Canada":[49,6.4],"Canadian Radio-television and Telecommunications Commission":[37,5.4],"Administrative Tribunals Support Service of Canada":[50,8.8],"Canada School of Public Service":[49,8.6],"Atlantic Canada Opportunities Agency":[20,3.5],"Impact Assessment Agency of Canada":[41,7.5],"Western Economic Diversification Canada (incl. PacifiCan and PrairiesCan)":[14,2.9],"Canadian Grain Commission":[18,4.0],"Parole Board of Canada":[25,5.6],"Women and Gender Equality Canada":[32,8.5],"Canada Economic Development for Quebec Regions":[19,5.2],"Canadian Transportation Agency":[20,6.0],"Offices of the Information and Privacy Commissioners of Canada":[17,5.1],"Canadian Human Rights Commission":[24,9.1],"Federal Economic Development Agency for Southern Ontario":[14,5.9],"Registrar of the Supreme Court of Canada":[11,4.9],"Transportation Safety Board of Canada":null,"Office of the Commissioner of Official Languages":[7,4.4],"Office of the Secretary to the Governor General":[7,5.0],"Veterans Review and Appeal Board":[0,0.0],"Canadian Northern Economic Development Agency":[9,8.0],"Federal Economic Development Agency for Northern Ontario":[0,0.0],"Civilian Review and Complaints Commission for the RCMP":null,"Canadian Dairy Commission":[6,7.1],"Patented Medicine Prices Review Board Canada":null,"Office of the Commissioner for Federal Judicial Affairs Canada":null,"Accessibility Standards Canada":null,"Military Grievances External Review Committee":null,"Canadian Intergovernmental Conference Secretariat":[6,16.7],"Office of the Public Sector Integrity Commissioner of Canada":null,"Office of the Commissioner of Lobbying of Canada":null,"International Joint Commission":null,"Military Police Complaints Commission of Canada":null,"RCMP External Review Committee":null,"Copyright Board Canada":null,"Secretariat of the National Security and Intelligence Committee of Parliamentarians":[0,0.0],"Law Commission of Canada":null};
 const YEARS=[2018,2019,2020,2021,2022,2023,2024,2025];
 const TREND={w:[54.8,54.8,55.0,55.6,56.0,56.6,56.9,56.8],i:[5.1,5.1,5.1,5.2,5.2,5.3,5.3,5.5],
  d:[5.3,5.2,5.2,5.6,6.2,6.9,7.9,9.0],v:[15.7,16.7,17.8,18.9,20.2,21.7,22.9,23.9],black:[2.9,3.2,3.5,3.8,4.2,4.6,5.0,5.1]};
@@ -3393,6 +3429,293 @@ $("#diMedianChart").innerHTML=lineChart(
   });
   refreshSortOptions();renderCmpTable();
   })();
+
+/* ===================== Representation and survey results, by group (Cross-dataset explorer, tool 3) =====================
+   Each organization's representation of a designated group (TBS, March 31, 2025; Black employees from BLACK_DEPT)
+   against that group's 2024 PSES result in the same organization (EEG_DEPT, Employment Equity derived-variable file).
+   Default measure: the gap between the group and its comparison group in the same organization.
+   Only published figures are used. Gaps, averages, correlations and p-values are calculated here, in the browser.
+   Organizations missing either figure are left out, never estimated. */
+(function(){
+  if(typeof DEPTS==="undefined"||typeof EEG_DEPT==="undefined"||typeof EEG_QMETA==="undefined"||typeof BLACK_DEPT==="undefined")return;
+  var host=document.getElementById("rsChart");
+  if(!host)return;
+  var FRL=function(){return typeof isFR==="function"&&isFR();};
+  var IDX={w:2,i:3,d:4,v:5};
+  function fromDepts(k){return function(d){return d[IDX[k]]==null?null:d[IDX[k]];};}
+  var RSG=[
+    {k:"black",g:"black",c:"nonrac",
+     rep:function(d){var b=BLACK_DEPT[d[0]];return b?b[1]:null;},
+     cnt:function(d){var b=BLACK_DEPT[d[0]];return b?b[0]:null;},
+     en:{opt:"Black employees",share:"the share of Black employees",resp:"Black respondents",comp:"non-racialized respondents",axis:"Black employees, % of workforce",hdr:"Black employees (% of workforce)"},
+     fr:{opt:"Employés noirs",share:"la part des employés noirs",les:"les répondants noirs",des:"des répondants noirs",compLes:"les répondants non racisés",compAux:"aux répondants non racisés",axis:"Employés noirs, % de l'effectif",hdr:"Employés noirs (% de l'effectif)"}},
+    {k:"v",g:"rac",c:"nonrac",rep:fromDepts("v"),
+     en:{opt:"Racialized employees",share:"the share of racialized employees",resp:"racialized respondents",comp:"non-racialized respondents",axis:"Racialized employees, % of workforce",hdr:"Racialized employees (% of workforce)"},
+     fr:{opt:"Employés racisés",share:"la part des employés racisés",les:"les répondants racisés",des:"des répondants racisés",compLes:"les répondants non racisés",compAux:"aux répondants non racisés",axis:"Employés racisés, % de l'effectif",hdr:"Employés racisés (% de l'effectif)"}},
+    {k:"i",g:"ind",c:"nonind",rep:fromDepts("i"),
+     en:{opt:"Indigenous Peoples",share:"the share of Indigenous employees",resp:"Indigenous respondents",comp:"non-Indigenous respondents",axis:"Indigenous employees, % of workforce",hdr:"Indigenous employees (% of workforce)"},
+     fr:{opt:"Peuples autochtones",share:"la part des employés autochtones",les:"les répondants autochtones",des:"des répondants autochtones",compLes:"les répondants non autochtones",compAux:"aux répondants non autochtones",axis:"Employés autochtones, % de l'effectif",hdr:"Employés autochtones (% de l'effectif)"}},
+    {k:"d",g:"pwd",c:"nopwd",rep:fromDepts("d"),
+     en:{opt:"Persons with disabilities",share:"the share of employees with disabilities",resp:"respondents with disabilities",comp:"respondents without disabilities",axis:"Employees with disabilities, % of workforce",hdr:"Employees with disabilities (% of workforce)"},
+     fr:{opt:"Personnes en situation de handicap",share:"la part des employés en situation de handicap",les:"les répondants en situation de handicap",des:"des répondants en situation de handicap",compLes:"les répondants sans handicap",compAux:"aux répondants sans handicap",axis:"Employés en situation de handicap, % de l'effectif",hdr:"Employés en situation de handicap (% de l'effectif)"}},
+    {k:"w",g:"woman",c:"man",rep:fromDepts("w"),
+     en:{opt:"Women",share:"the share of women",resp:"women",comp:"men",axis:"Women, % of workforce",hdr:"Women (% of workforce)"},
+     fr:{opt:"Femmes",share:"la part des femmes",les:"les femmes",des:"des femmes",compLes:"les hommes",compAux:"aux hommes",axis:"Femmes, % de l'effectif",hdr:"Femmes (% de l'effectif)"}}
+  ];
+  // Join TBS organization names to the by-group survey file (same normalization and aliases as the rest of the site)
+  var EEGMAP={};
+  Object.keys(EEG_DEPT).forEach(function(k){if(k!=="Public Service")EEGMAP[psesNorm(k)]=k;});
+  [["elections canada","Office of the Chief Electoral Officer"],["registrar of the supreme court of canada","Supreme Court of Canada"]].forEach(function(a){if(EEG_DEPT[a[1]])EEGMAP[a[0]]=a[1];});
+  var ORGS=DEPTS.map(function(d){return {d:d,key:EEGMAP[psesNorm(d[0])]||null};}).filter(function(o){return o.key;});
+
+  // ---------- helpers ----------
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+  function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+  function num(v,dec){var s=Math.abs(v).toFixed(dec);if(Number(s)===0)v=0;if(FRL())s=s.replace(".",",");return (v<0?"−":"")+s;}
+  function pc(v,dec){return num(v,dec||0)+(FRL()?" %":"%");}
+  function sg(v,dec){var s=num(v,dec||0);return (v>0&&Number(Math.abs(v).toFixed(dec||0))!==0?"+":"")+s;}
+  function pfmt(p){if(p<0.001)return FRL()?"p < 0,001":"p < 0.001";var s=p<0.01?p.toFixed(3):p.toFixed(2);return "p = "+(FRL()?s.replace(".",","):s);}
+  function oname(n){return FRL()&&typeof DEPT_FR!=="undefined"&&DEPT_FR[n]?DEPT_FR[n]:n;}
+  function qlabel(q){return FRL()&&typeof EEG_QMETA_FR!=="undefined"&&EEG_QMETA_FR[q]?EEG_QMETA_FR[q]:EEG_QMETA[q][1];}
+
+  // ---------- statistics ----------
+  function pearson(rows){
+    var n=rows.length;if(n<3)return null;
+    var mx=0,my=0;rows.forEach(function(r){mx+=r.x;my+=r.y;});mx/=n;my/=n;
+    var sxy=0,sxx=0,syy=0;rows.forEach(function(r){var dx=r.x-mx,dy=r.y-my;sxy+=dx*dy;sxx+=dx*dx;syy+=dy*dy;});
+    if(sxx===0||syy===0)return null;return sxy/Math.sqrt(sxx*syy);
+  }
+  // two-sided p-value for Pearson r (Student t with n-2 degrees of freedom, via the regularized incomplete beta function)
+  function lgam(z){var c=[676.5203681218851,-1259.1392167224028,771.32342877765313,-176.61502916214059,12.507343278686905,-0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];if(z<0.5)return Math.log(Math.PI/Math.sin(Math.PI*z))-lgam(1-z);z-=1;var x=0.99999999999980993;for(var i=0;i<8;i++)x+=c[i]/(z+i+1);var t=z+7.5;return 0.5*Math.log(2*Math.PI)+(z+0.5)*Math.log(t)-t+Math.log(x);}
+  function betacf(x,a,b){var FP=1e-300,qab=a+b,qap=a+1,qam=a-1,c=1,d=1-qab*x/qap;if(Math.abs(d)<FP)d=FP;d=1/d;var h=d;for(var m=1;m<=300;m++){var m2=2*m,aa=m*(b-m)*x/((qam+m2)*(a+m2));d=1+aa*d;if(Math.abs(d)<FP)d=FP;c=1+aa/c;if(Math.abs(c)<FP)c=FP;d=1/d;h*=d*c;aa=-(a+m)*(qab+m)*x/((a+m2)*(qap+m2));d=1+aa*d;if(Math.abs(d)<FP)d=FP;c=1+aa/c;if(Math.abs(c)<FP)c=FP;d=1/d;var del=d*c;h*=del;if(Math.abs(del-1)<3e-14)break;}return h;}
+  function ibeta(x,a,b){if(x<=0)return 0;if(x>=1)return 1;var bt=Math.exp(lgam(a+b)-lgam(a)-lgam(b)+a*Math.log(x)+b*Math.log(1-x));return x<(a+1)/(a+b+2)?bt*betacf(x,a,b)/a:1-bt*betacf(1-x,b,a)/b;}
+  function pval(r,n){var df=n-2;if(df<1)return 1;if(Math.abs(r)>=1)return 0;var t2=r*r*df/(1-r*r);return ibeta(df/(df+t2),df/2,0.5);}
+  // thirds of organizations by representation; organizations with the same value always stay in the same third
+  function thirds(rows){
+    var s=rows.slice().sort(function(a,b){return a.x-b.x||a.name.localeCompare(b.name);}),n=s.length;
+    var b1=Math.round(n/3),b2=Math.round(2*n/3);
+    while(b1>0&&b1<n&&s[b1].x===s[b1-1].x)b1++;
+    if(b2<b1)b2=b1;
+    while(b2>0&&b2<n&&s[b2].x===s[b2-1].x)b2++;
+    return [s.slice(0,b1),s.slice(b1,b2),s.slice(b2)];
+  }
+  function mean(a){return a.reduce(function(s,v){return s+v;},0)/a.length;}
+
+  // ---------- data ----------
+  function current(){
+    var G=RSG.filter(function(x){return x.k===$("#rsGroup").value;})[0]||RSG[0];
+    var q=EEG_QMETA[$("#rsQ").value]?$("#rsQ").value:"Q65";
+    var mode=$("#rsMode").value==="own"?"own":"gap";
+    return {G:G,q:q,mode:mode,neg:EEG_QMETA[q][0]==="neg"};
+  }
+  function collect(G,q,mode){
+    var rows=[],out=0;
+    ORGS.forEach(function(o){
+      var x=G.rep(o.d),gv=(EEG_DEPT[o.key][G.g]||{})[q],cv=(EEG_DEPT[o.key][G.c]||{})[q];
+      if(x==null||gv==null||(mode==="gap"&&cv==null)){out++;return;}
+      rows.push({name:o.d[0],x:x,cnt:G.cnt?G.cnt(o.d):null,gv:gv,cv:cv==null?null:cv,gap:cv==null?null:gv-cv,y:mode==="gap"?gv-cv:gv});
+    });
+    return {rows:rows,out:out,total:ORGS.length};
+  }
+
+  // ---------- controls ----------
+  var selG=$("#rsGroup"),selQ=$("#rsQ"),selM=$("#rsMode");
+  function fillControls(){
+    var fr=FRL(),gv=selG.value||"black",qv=selQ.value||"Q65",mv=selM.value||"gap";
+    selG.innerHTML=RSG.map(function(G){return '<option value="'+G.k+'">'+esc(fr?G.fr.opt:G.en.opt)+'</option>';}).join("");
+    var order=(typeof EEG_QORDER!=="undefined"?EEG_QORDER:Object.keys(EEG_QMETA)).filter(function(q){return EEG_QMETA[q];});
+    selQ.innerHTML=order.map(function(q){return '<option value="'+q+'">'+q+(fr?" : ":": ")+esc(qlabel(q))+'</option>';}).join("");
+    selM.innerHTML=fr
+      ?'<option value="gap">Écart avec le groupe de comparaison (recommandé)</option><option value="own">Résultat du groupe seulement</option>'
+      :'<option value="gap">Gap with comparison group (recommended)</option><option value="own">Group\'s own result</option>';
+    selG.value=gv;selQ.value=qv;selM.value=mv;
+  }
+
+  // ---------- chart ----------
+  function step(span,target){var raw=span/target,mag=Math.pow(10,Math.floor(Math.log10(raw))),f=raw/mag;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*mag;}
+  function ticks(lo,hi,target){if(hi-lo<1e-9){lo-=1;hi+=1;}var st=step(hi-lo,target),a=Math.floor(lo/st)*st,b=Math.ceil(hi/st)*st,out=[];for(var v=a;v<=b+st/2;v+=st)out.push(+v.toFixed(6));return out;}
+  var lastRows=[],lastState=null,lastW=0;
+  function drawChart(S,rows,bands,psG){
+    var fr=FRL(),L=fr?S.G.fr:S.G.en;
+    if(!rows.length){host.innerHTML="";return;}
+    lastW=host.clientWidth;
+    var W=Math.max(300,Math.min(960,host.clientWidth||720)),narrow=W<520;
+    var H=narrow?290:340,pl=narrow?46:58,pr=12,pt=14,pb=narrow?46:50;
+    var xs=rows.map(function(r){return r.x;}),ys=rows.map(function(r){return r.y;});
+    var xt=ticks(Math.min.apply(null,xs),Math.max.apply(null,xs),narrow?4:6);
+    var yl=Math.min.apply(null,ys),yh=Math.max.apply(null,ys);
+    if(S.mode==="gap"){yl=Math.min(yl,0);yh=Math.max(yh,0);}else if(psG!=null){yl=Math.min(yl,psG);yh=Math.max(yh,psG);}
+    var yt=ticks(yl,yh,5),x0=xt[0],x1=xt[xt.length-1],y0=yt[0],y1=yt[yt.length-1];
+    function X(v){return pl+(W-pl-pr)*(v-x0)/(x1-x0);}
+    function Y(v){return pt+(H-pt-pb)*(1-(v-y0)/(y1-y0));}
+    var fs=narrow?11:12,g="";
+    g+='<rect x="'+pl+'" y="'+pt+'" width="'+(W-pl-pr)+'" height="'+(H-pt-pb)+'" style="fill:var(--card);stroke:var(--line)"/>';
+    yt.forEach(function(v){var y=Y(v).toFixed(1);g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y+'" y2="'+y+'" style="stroke:var(--line);stroke-width:1"/><text x="'+(pl-6)+'" y="'+(+y+4)+'" text-anchor="end" style="fill:var(--ink-soft);font-size:'+fs+'px">'+(S.mode==="gap"?sg(v,v%1?1:0):pc(v,v%1?1:0))+'</text>';});
+    xt.forEach(function(v){var x=X(v).toFixed(1);g+='<line x1="'+x+'" x2="'+x+'" y1="'+(H-pb)+'" y2="'+(H-pb+4)+'" style="stroke:var(--ink-soft)"/><text x="'+x+'" y="'+(H-pb+16)+'" text-anchor="middle" style="fill:var(--ink-soft);font-size:'+fs+'px">'+pc(v,v%1?1:0)+'</text>';});
+    var refV=S.mode==="gap"?0:psG;
+    if(refV!=null){
+      var ry=Y(refV).toFixed(1);
+      g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+ry+'" y2="'+ry+'" style="stroke:var(--ink);stroke-width:1.3;stroke-dasharray:5 4"/>';
+      if(S.mode==="own")g+='<text x="'+(W-pr-6)+'" y="'+(+ry-6)+'" text-anchor="end" style="fill:var(--ink);font-size:'+fs+'px">'+(fr?"Fonction publique : ":"Public service: ")+pc(refV)+'</text>';
+    }
+    var bn=fr?["Tiers inférieur","Tiers du milieu","Tiers supérieur"]:["Lowest third","Middle third","Highest third"];
+    if(bands)bands.forEach(function(b,i){
+      if(!b.length)return;
+      var lo=b[0].x,hi=b[b.length-1].x,av=mean(b.map(function(r){return r.y;})),xa=X(lo),xb=X(hi);
+      if(xb-xa<12){var mid=(xa+xb)/2;xa=mid-6;xb=mid+6;}
+      var t=bn[i]+(fr?" : moyenne ":": average ")+(S.mode==="gap"?sg(av,1)+(fr?" points":" points"):pc(av,1))+" ("+b.length+" "+(fr?"organisations":"organizations")+")";
+      g+='<line x1="'+xa.toFixed(1)+'" x2="'+xb.toFixed(1)+'" y1="'+Y(av).toFixed(1)+'" y2="'+Y(av).toFixed(1)+'" style="stroke:var(--rust);stroke-width:4;stroke-linecap:round"><title>'+esc(t)+'</title></line>';
+    });
+    var rad=narrow?6:5;
+    rows.forEach(function(r,i){
+      g+='<circle data-i="'+i+'" cx="'+X(r.x).toFixed(1)+'" cy="'+Y(r.y).toFixed(1)+'" r="'+rad+'" style="fill:var(--teal);fill-opacity:.55;stroke:var(--teal);stroke-width:1;cursor:pointer"><title>'+esc(describe(S,r))+'</title></circle>';
+    });
+    g+='<text x="'+((pl+W-pr)/2)+'" y="'+(H-8)+'" text-anchor="middle" style="fill:var(--ink-soft);font-size:'+fs+'px">'+esc(L.axis)+'</text>';
+    var ylab=narrow
+      ?(S.mode==="gap"?(fr?"Écart (points)":"Gap (points)"):(fr?"Résultat (%)":"Result (%)"))
+      :(S.mode==="gap"?(fr?"Écart avec "+L.compLes+" (points)":"Gap with "+L.comp+" (points)"):(fr?"Résultat "+L.des+" (%)":"Result for "+L.resp+" (%)"));
+    var cy=(pt+H-pb)/2;
+    g+='<text x="13" y="'+cy+'" text-anchor="middle" transform="rotate(-90 13 '+cy+')" style="fill:var(--ink-soft);font-size:'+fs+'px">'+esc(ylab)+'</text>';
+    var aria=fr
+      ?"Nuage de points : "+rows.length+" organisations, "+L.axis+", par rapport à "+(S.mode==="gap"?"l'écart avec "+L.compLes:"le résultat "+L.des)+", question "+S.q+"."
+      :"Scatter plot: "+rows.length+" organizations, "+L.axis+", against "+(S.mode==="gap"?"the gap with "+L.comp:"the result for "+L.resp)+", question "+S.q+".";
+    // class "spark" opts this chart out of the site's automatic "Data shown in this visual" list: the card has its own data table
+    host.innerHTML='<svg class="spark" viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(aria)+'" style="display:block;max-width:100%;height:auto">'+g+'</svg>';
+  }
+  function describe(S,r){
+    var fr=FRL(),L=fr?S.G.fr:S.G.en,parts=[];
+    parts.push(oname(r.name)+(fr?" : ":": ")+L.opt+" "+pc(r.x,1)+(fr?" de l'effectif":" of the workforce")+(r.cnt!=null?" ("+r.cnt.toLocaleString(fr?"fr-CA":"en-CA")+")":""));
+    parts.push((fr?cap(L.les):cap(L.resp))+" "+pc(r.gv));
+    parts.push((fr?cap(L.compLes):cap(L.comp))+" "+(r.cv==null?(fr?"non publié":"not published"):pc(r.cv)));
+    if(r.gap!=null)parts.push((fr?"écart ":"gap ")+sg(r.gap)+" points");
+    return parts.join("; ");
+  }
+
+  // ---------- render ----------
+  var built=false;
+  function render(){
+    built=true;
+    var fr=FRL(),S=current(),L=fr?S.G.fr:S.G.en;
+    var c=collect(S.G,S.q,S.mode),rows=c.rows,n=rows.length;
+    var ps=EEG_DEPT["Public Service"]||{},psG=(ps[S.G.g]||{})[S.q];
+    lastRows=rows;lastState=S;
+    $("#rsPick").textContent="";
+    // coverage line
+    $("#rsCount").textContent=fr
+      ?c.total+" organisations figurent dans les deux sources. "+n+(n===1?" est présentée. ":" sont présentées. ")+(c.out?c.out+(c.out===1?" est exclue parce qu'au moins une donnée n'est pas publiée":" sont exclues parce qu'au moins une donnée n'est pas publiée")+", généralement parce que l'effectif est trop petit.":"")
+      :c.total+" organizations appear in both sources. "+n+(n===1?" is shown. ":" are shown. ")+(c.out?c.out+(c.out===1?" is left out because at least one figure is not published":" are left out because at least one figure is not published")+", usually because the count is too small.":"");
+    if(!n){
+      host.innerHTML="";$("#rsBands").innerHTML="";$("#rsTable").innerHTML="";$("#rsLegend").textContent="";
+      $("#rsSummary").textContent=fr?"Aucune organisation n'a publié les deux données pour ce groupe et cette question.":"No organization published both figures for this group and question.";
+      return;
+    }
+    // plain-language summary
+    var sum="";
+    if(S.mode==="gap"){
+      var w=0,b=0,s=0;rows.forEach(function(r){if(r.gap===0)s++;else if((r.gap>0)===S.neg)w++;else b++;});
+      var ex=[];
+      if(fr){
+        if(b)ex.push("un résultat plus favorable dans "+b);
+        if(s)ex.push("le même résultat dans "+s);
+        sum=cap(L.les)+" ont obtenu un résultat moins favorable que "+L.compLes+" dans "+w+" des "+n+" organisations"+(ex.length===2?", "+ex[0]+" et "+ex[1]:ex.length===1?" et "+ex[0]:"")+". ";
+      }else{
+        if(b)ex.push("a better result in "+b);
+        if(s)ex.push("the same result in "+s);
+        sum=cap(L.resp)+" had a worse result than "+L.comp+" in "+w+" of "+n+" organizations"+(ex.length===2?", "+ex[0]+", and "+ex[1]:ex.length===1?", and "+ex[0]:"")+". ";
+      }
+    }else{
+      var mn=Math.min.apply(null,rows.map(function(r){return r.y;})),mxv=Math.max.apply(null,rows.map(function(r){return r.y;}));
+      sum=fr
+        ?"Dans les "+n+" organisations présentées, le résultat "+L.des+" va de "+pc(mn)+" à "+pc(mxv)+(psG!=null?" (fonction publique : "+pc(psG)+")":"")+". "
+        :"Across the "+n+" organizations shown, the result for "+L.resp+" ranges from "+pc(mn)+" to "+pc(mxv)+(psG!=null?" (public service: "+pc(psG)+")":"")+". ";
+    }
+    var r=n>=8?pearson(rows):null,bands=null;
+    if(n<8){
+      sum+=fr?"Moins de 8 organisations ont publié les données nécessaires pour ce groupe et cette question; aucune tendance n'est donc présentée."
+             :"Fewer than 8 organizations published the figures needed for this group and question, so no pattern is shown.";
+    }else if(r==null){
+      sum+=fr?"Les valeurs ne varient pas assez pour mesurer une tendance.":"The values do not vary enough to measure a pattern.";
+    }else{
+      bands=thirds(rows);
+      var a=Math.abs(r),p=pval(r,n),rs="r = "+num(r,2);
+      var subj=S.mode==="gap"?(fr?"le résultat "+L.des+" par rapport "+L.compAux:"the result for "+L.resp+" compared with "+L.comp):(fr?"le résultat "+L.des:"the result for "+L.resp);
+      if(a<0.15){
+        sum+=fr?"Il n'y a pratiquement aucune tendance entre "+L.share+" et "+subj+" ("+rs+")."
+               :"There is essentially no pattern between "+L.share+" and "+subj+" ("+rs+").";
+      }else{
+        var better=(r<0)===S.neg,lvl=a>=0.5?2:a>=0.3?1:0;
+        if(fr){
+          sum+="Dans les organisations où "+L.share+" est plus élevée, "+subj+" tend à être "+(better?"meilleur":"moins bon")+". La tendance est "+["faible","modérée","forte"][lvl]+" ("+rs+"). "
+            +(p<0.05?"Sur "+n+" organisations, une tendance de cette ampleur a peu de chances d'être due au seul hasard ("+pfmt(p)+"). Elle ne montre pas pour autant qu'un facteur cause l'autre."
+                    :"Sur "+n+" organisations, une tendance de cette ampleur pourrait être due au hasard ("+pfmt(p)+").");
+        }else{
+          sum+="In organizations where "+L.share+" is larger, "+subj+" tends to be "+(better?"better":"worse")+". The pattern is "+["weak","moderate","strong"][lvl]+" ("+rs+"). "
+            +(p<0.05?"A pattern of this size across "+n+" organizations is unlikely to be chance alone ("+pfmt(p)+"). It still does not show that one causes the other."
+                    :"Across "+n+" organizations, a pattern of this size could be chance ("+pfmt(p)+").");
+        }
+      }
+    }
+    $("#rsSummary").textContent=sum;
+    drawChart(S,rows,bands,psG);
+    // legend under the chart
+    var leg=fr?"Chaque point représente une organisation; touchez ou survolez un point pour l'identifier. ":"Each dot is one organization; tap or hover over a dot to identify it. ";
+    if(S.mode==="gap")leg+=fr?"Au-dessus de la ligne pointillée, "+L.les+" ont obtenu un résultat "+(S.neg?"moins favorable":"plus favorable")+" que "+L.compLes+". "
+                            :"Above the dashed line, "+L.resp+" had a "+(S.neg?"worse":"better")+" result than "+L.comp+". ";
+    else if(psG!=null)leg+=fr?"La ligne pointillée est le résultat "+L.des+" pour l'ensemble de la fonction publique. ":"The dashed line is the public-service result for "+L.resp+". ";
+    if(bands)leg+=fr?"Les traits horizontaux montrent la moyenne de chaque tiers des organisations, regroupées selon "+L.share+".":"The short horizontal bars show the average for each third of organizations, grouped by "+L.share+".";
+    $("#rsLegend").textContent=leg;
+    // thirds table
+    if(bands){
+      var bnm=fr?["Tiers inférieur","Tiers du milieu","Tiers supérieur"]:["Lowest third","Middle third","Highest third"];
+      var head=fr?["Tiers des organisations",L.axis,"Organisations",S.mode==="gap"?"Écart moyen (points)":"Résultat moyen"]
+                 :["Third of organizations",L.axis,"Organizations",S.mode==="gap"?"Average gap (points)":"Average result"];
+      var body=bands.filter(function(bb){return bb.length;}).map(function(bb,i){
+        var lo=bb[0].x,hi=bb[bb.length-1].x,av=mean(bb.map(function(x){return x.y;}));
+        return "<tr><td>"+bnm[i]+"</td><td>"+(lo===hi?pc(lo,1):pc(lo,1)+(fr?" à ":" to ")+pc(hi,1))+'</td><td class="num">'+bb.length+'</td><td class="num">'+(S.mode==="gap"?sg(av,1):pc(av,1))+"</td></tr>";
+      }).join("");
+      var capt=fr?"Organisations réparties en trois groupes de taille semblable selon "+L.share+". Chaque organisation compte une fois, quelle que soit sa taille."
+                 :"Organizations split into three groups of similar size by "+L.share+". Each organization counts once, whatever its size.";
+      $("#rsBands").innerHTML='<div class="tblwrap" style="margin-top:12px"><table><caption>'+esc(capt)+'</caption><thead><tr>'+head.map(function(h,i){return '<th scope="col"'+(i>=2?' class="num"':"")+">"+esc(h)+"</th>";}).join("")+"</tr></thead><tbody>"+body+"</tbody></table></div>";
+    }else $("#rsBands").innerHTML="";
+    // per-organization table
+    var th=fr?["Organisation",L.hdr,cap(L.les)+" (%)",cap(L.compLes)+" (%)","Écart (points)"]:["Organization",L.hdr,cap(L.resp)+" (%)",cap(L.comp)+" (%)","Gap (points)"];
+    var sorted=rows.slice().sort(function(a2,b2){return b2.x-a2.x||a2.name.localeCompare(b2.name);});
+    var tb=sorted.map(function(x){
+      return "<tr><td>"+esc(oname(x.name))+'</td><td class="num">'+pc(x.x,1)+'</td><td class="num">'+pc(x.gv)+'</td><td class="num">'+(x.cv==null?'<span style="color:var(--ink-soft)">'+(fr?"non publié":"not published")+"</span>":pc(x.cv))+'</td><td class="num">'+(x.gap==null?"":sg(x.gap))+"</td></tr>";
+    }).join("");
+    var tcap=fr?"Données de chaque organisation présentée, question "+S.q+" : "+qlabel(S.q)+". Représentation : SCT, 31 mars 2025. Résultats du sondage : SAFF 2024."
+               :"Figures for each organization shown, question "+S.q+": "+qlabel(S.q)+". Representation: TBS, March 31, 2025. Survey results: 2024 PSES.";
+    $("#rsTable").innerHTML='<div class="tblwrap" style="max-height:520px;overflow:auto;margin-top:8px"><table><caption>'+esc(tcap)+"</caption><thead><tr>"+th.map(function(h,i){return '<th scope="col"'+(i?' class="num"':"")+">"+esc(h)+"</th>";}).join("")+"</tr></thead><tbody>"+tb+"</tbody></table></div>";
+  }
+
+  // tap or click a dot: show its figures under the chart (titles alone do not show on touch screens)
+  host.addEventListener("click",function(e){
+    var t=e.target;if(!t||t.nodeName.toLowerCase()!=="circle"||!lastState)return;
+    var r=lastRows[+t.getAttribute("data-i")];if(r)$("#rsPick").textContent=describe(lastState,r);
+  });
+  $("#rsCsv").addEventListener("click",function(){
+    if(!lastState)render();
+    var S=lastState,fr=FRL(),L=fr?S.G.fr:S.G.en,rows=collect(S.G,S.q,S.mode).rows;
+    var head=fr?["Organisation","Groupe","Représentation (% de l'effectif, SCT, 31 mars 2025)","Question SAFF 2024","Résultat du groupe (%)","Groupe de comparaison","Résultat du groupe de comparaison (%)","Écart (points)"]
+               :["Organization","Group","Representation (% of workforce, TBS, March 31, 2025)","2024 PSES question","Group result (%)","Comparison group","Comparison group result (%)","Gap (points)"];
+    var lines=[head].concat(rows.slice().sort(function(a,b){return b.x-a.x;}).map(function(r){
+      return [oname(r.name),fr?S.G.fr.opt:S.G.en.opt,r.x,S.q+" "+qlabel(S.q),r.gv,cap(fr?L.compLes.replace(/^les /,""):L.comp),r.cv==null?"":r.cv,r.gap==null?"":r.gap];
+    }));
+    var csv=lines.map(function(row){return row.map(function(v){v=String(v);return /[",\n;]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}).join(",");}).join("\n");
+    if(typeof download==="function")download("representation-survey-"+S.G.k+"-"+S.q+".csv","﻿"+csv);
+  });
+  [selG,selQ,selM].forEach(function(s){s.addEventListener("change",render);});
+  // re-render on language change or resize; if the section is hidden, wait until it is shown (its width is unknown while hidden)
+  var sec=document.getElementById("view-compare"),dirty=false,rz=null;
+  function shown(){return !!(sec&&sec.classList.contains("active")&&host.clientWidth>0);}
+  function refresh(){if(!built)return;if(shown()){dirty=false;render();}else dirty=true;}
+  document.addEventListener("langchange",function(){fillControls();refresh();});
+  // phones fire resize when the address bar shows or hides; redraw only when the chart's width really changes
+  window.addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(function(){if(built&&Math.abs(host.clientWidth-lastW)>1)refresh();},200);});
+  if(sec&&window.MutationObserver)new MutationObserver(function(){if(dirty&&shown()){dirty=false;render();}}).observe(sec,{attributes:true,attributeFilter:["class"]});
+  fillControls();
+  if(typeof lazyReg==="function")lazyReg("compare",render);else render();
+})();
 
 /* ===================== Black employees (focused view) ===================== */
 (function(){
