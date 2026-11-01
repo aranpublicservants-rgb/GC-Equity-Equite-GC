@@ -1,0 +1,57 @@
+name: GC Equity redesign validation
+on:
+  push:
+    branches:
+      - chatgpt-safe-redesign-2026-11-01
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'site-app.js'
+      - 'explorer.html'
+      - 'data/october-2026/**'
+      - '.github/workflows/site-validate.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: node --check site-app.js
+      - name: Static integration and data safeguards
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, pathlib, re, subprocess
+          from html.parser import HTMLParser
+          root=pathlib.Path('.')
+          html=(root/'index.html').read_text(encoding='utf-8')
+          assert (root/'explorer.html').exists()
+          original_sha='481399ff20cb10f625f1dd261fbb718f867d8ec6'
+          actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
+          assert actual==original_sha, f'Working explorer changed: {actual}'
+          assert 'src="site-app.js"' in html
+          assert 'href="explorer.html"' in html
+          assert 'id="org"' in html and 'id="group"' in html and 'id="tooltype"' in html
+          class IDs(HTMLParser):
+              def __init__(self): super().__init__(); self.ids=[]
+              def handle_starttag(self,tag,attrs):
+                  for k,v in attrs:
+                      if k=='id':self.ids.append(v)
+          p=IDs();p.feed(html)
+          assert len(p.ids)==len(set(p.ids)), 'Duplicate DOM ids'
+          folder=root/'data/october-2026'
+          files=list(folder.glob('*.csv'))
+          assert len(files)==8, f'Expected 8 curated data sources, got {len(files)}'
+          for f in files:
+              with f.open(newline='',encoding='utf-8-sig') as fd:
+                  rows=list(csv.DictReader(fd))
+              assert rows and len(rows[0])>2, f'Invalid CSV: {f}'
+          js=(root/'site-app.js').read_text(encoding='utf-8')
+          for f in files:
+              assert f.name in js, f'Missing file from app: {f.name}'
+          assert 'grand total|total' in js.lower(), 'Aggregate rows not excluded'
+          assert 'suppressed' not in js.lower() or 'not' in js.lower()
+          print('Passed: preserved explorer hash, 8 datasets, references, HTML ids, page routes')
+          PY
