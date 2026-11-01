@@ -62,7 +62,7 @@ jobs:
                 await page.click('#toolGo');
                 await page.waitForFunction(()=>document.getElementById('draft').value.includes('EQUITY EVIDENCE BRIEFING'));
                 const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
-                if(overflow)throw Error(mode.name+': page horizontal overflow');
+                if(overflow){const extra=await page.evaluate(()=>({innerWidth,scrollWidth:document.documentElement.scrollWidth,offenders:Array.from(document.querySelectorAll('*')).filter(e=>e.getBoundingClientRect().right>innerWidth+3).slice(0,12).map(e=>({tag:e.tagName,id:e.id,cls:String(e.className).slice(0,80),right:Math.round(e.getBoundingClientRect().right),width:Math.round(e.getBoundingClientRect().width)}))}));console.log('OVERFLOW_DIAGNOSTIC',JSON.stringify(extra));throw Error(mode.name+': page horizontal overflow');}
                 if(errors.length)throw Error(mode.name+': browser errors: '+errors.join(' / '));
                 fs.mkdirSync('qa-screenshots',{recursive:true});
                 await page.goto(addr+'index.html');
