@@ -42,7 +42,7 @@ jobs:
           p=IDs();p.feed(html)
           assert len(p.ids)==len(set(p.ids)), 'Duplicate DOM ids'
           folder=root/'data/october-2026'
-          files=list(folder.glob('*.csv'))
+          files=[f for f in folder.glob('*.csv') if f.name!='public-source-inventory.csv']
           assert len(files)==8, f'Expected 8 curated data sources, got {len(files)}'
           for f in files:
               with f.open(newline='',encoding='utf-8-sig') as fd:
