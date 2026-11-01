@@ -38,7 +38,7 @@ function csvParse(raw){
  const header=rows.shift().map(v=>v.replace(/^\uFEFF/,'').trim());return rows.map(values=>Object.fromEntries(header.map((h,i)=>[h,values[i]||''])));
 }
 function data(key){return state.files[key]||[]}
-function mainOrgRows(key){return data(key).filter(r=>r.department_or_agency&&isNum(r.all_employees)&&!/^(total|all departments|core public administration|federal public service)/i.test(r.department_or_agency.trim()));}
+function mainOrgRows(key){return data(key).filter(r=>r.department_or_agency&&isNum(r.all_employees)&&!/^(grand total|total|all departments|core public administration|federal public service)/i.test(r.department_or_agency.trim()));}
 function normalize(s){return String(s||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
 function findOrg(key,name){
  const rows=mainOrgRows(key);
@@ -76,11 +76,20 @@ function rowStats(row,type){
 }
 function showOrg(name){
  const ind=findOrg('ind',name),pwd=findOrg('pwd',name);
+ const totalInd=data('ind').find(r=>r.department_or_agency==='Grand Total');
+ const totalPwd=data('pwd').find(r=>r.department_or_agency==='Total');
+ function benchmarkCard(row,overall,col,label){
+   if(!row||!overall||!isNum(row[col])||!isNum(overall[col]))return'';
+   const gap=(Number(row[col])-Number(overall[col])).toFixed(1);
+   return '<div class="stats">'+entry(label+' — '+tr('organization','organisme'),pct(row[col]))+
+     entry(label+' — '+tr('CPA overall, same year','administration centrale, même année'),pct(overall[col]))+
+     entry(tr('Difference from CPA overall','Écart par rapport à l’ensemble'),(Number(gap)>0?'+':'')+gap+' '+tr('percentage points','points de pourcentage'))+'</div>';
+ }
  const html='<h2>'+safe(name)+'</h2>'+
  '<p class="muted">'+tr('Available departmental subgroup datasets are shown below, each with its own reporting year. For PSES, recruitment, promotions, salary and other detailed records, use the preserved full explorer.','Les sous-groupes ministériels disponibles figurent ci-dessous avec leur année. Pour le SAFF, les promotions, les salaires et autres détails, ouvrir l’explorateur complet.')+'</p>'+
- '<h3>'+tr('Indigenous subgroups — March 31, 2025','Sous-groupes autochtones — 31 mars 2025')+'</h3>'+rowStats(ind,'ind')+
+ '<h3>'+tr('Indigenous subgroups — March 31, 2025','Sous-groupes autochtones — 31 mars 2025')+'</h3>'+benchmarkCard(ind,totalInd,'indigenous_peoples_pct','Indigenous Peoples')+rowStats(ind,'ind')+
  '<p class="sources">'+localSource('ind',tr('Download source CSV','Télécharger le CSV'))+' · '+link(SOURCE.tbs,tr('Official source context','Contexte de la source officielle'))+'</p>'+
- '<h3>'+tr('Disability subgroups — March 31, 2024','Sous-groupes liés aux handicaps — 31 mars 2024')+'</h3>'+rowStats(pwd,'pwd')+
+ '<h3>'+tr('Disability subgroups — March 31, 2024','Sous-groupes liés aux handicaps — 31 mars 2024')+'</h3>'+benchmarkCard(pwd,totalPwd,'persons_with_disabilities_pct','Persons with disabilities')+rowStats(pwd,'pwd')+
  '<p class="sources">'+localSource('pwd',tr('Download source CSV','Télécharger le CSV'))+' · '+link(SOURCE.tbs,tr('Official source context','Contexte de la source officielle'))+'</p>'+
  note(tr('These different-year snapshots must not be combined into one headcount. Published subgroup categories may overlap and suppressed values must remain suppressed. Organization names are matched conservatively; absent entries are not replaced with public-service totals.','Ces données provenant d’années différentes ne doivent pas être additionnées. Certains sous-groupes se chevauchent. Les valeurs supprimées restent supprimées.'),true)+
  '<h3>'+tr('More evidence for this department','Autres données pour ce ministère')+'</h3><p>'+tr('Open the complete preserved explorer for representation benchmarks, employee surveys, staffing, salary, executives and other sections. You may need to reselect the organization there.','Ouvrir l’explorateur complet pour la représentation, les sondages, la dotation, les salaires et les cadres. Il peut être nécessaire de sélectionner de nouveau l’organisme.')+'</p><p><a class="btn" href="explorer.html">'+tr('Open complete explorer','Ouvrir l’explorateur complet')+'</a></p>';
