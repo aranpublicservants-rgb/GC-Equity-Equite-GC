@@ -1,0 +1,17 @@
+row_type,period_or_benchmark,all_employees_number,women_number,women_pct,indigenous_peoples_number,indigenous_peoples_pct,persons_with_disabilities_number,persons_with_disabilities_pct,members_of_visible_minorities_number,members_of_visible_minorities_pct
+representation,As of March 31 2025,266935,151528,56.8,14738,5.5,24128,9.0,63765,23.9
+representation,As of March 31 2024,266433,151607,56.9,14152,5.3,21089,7.9,61015,22.9
+representation,As of March 31 2023,253411,143406,56.6,13363,5.3,17410,6.9,55034,21.7
+representation,As of March 31 2022,236133,132299,56.0,12336,5.2,14573,6.2,47728,20.2
+representation,As of March 31 2021,228345,127043,55.6,11977,5.2,12893,5.6,43122,18.9
+representation,As of March 31 2020,214120,117760,55.0,10888,5.1,11087,5.2,38145,17.8
+representation,As of March 31 2019,203268,111332,54.8,10435,5.1,10622,5.2,34004,16.7
+representation,As of March 31 2018,192467,105465,54.8,9876,5.1,10181,5.3,30273,15.7
+representation,As of March 31 2017,185484,101136,54.5,9726,5.2,10259,5.5,28058,15.1
+workforce_availability,2021 Census and 2022 Canadian Survey on Disability (citizens and permanent residents) - population data as of March 31 2025,n/a,n/a,54.9,n/a,4.0,n/a,12.0,n/a,22.7
+workforce_availability,2021 Census and 2022 Canadian Survey on Disability (citizens and permanent residents) - population data as of March 31 2024,n/a,n/a,55.3,n/a,4.1,n/a,12.0,n/a,22.7
+workforce_availability,2016 Census and 2017 Canadian Survey on Disability (citizens and permanent residents) - population data as of March 31 2023,n/a,n/a,53.7,n/a,3.8,n/a,9.2,n/a,17.3
+workforce_availability,2016 Census and 2017 Canadian Survey on Disability (citizens and permanent residents) - population data as of March 31 2022,n/a,n/a,53.3,n/a,3.8,n/a,9.1,n/a,17.2
+workforce_availability,2016 Census and 2017 Canadian Survey on Disability (Canadian citizens only),n/a,n/a,52.7,n/a,4.0,n/a,9.0,n/a,15.3
+workforce_availability,2011 National Household Survey and 2012 Canadian Survey on Disability,n/a,n/a,52.5,n/a,3.4,n/a,4.4,n/a,13.0
+source,"Treasury Board of Canada Secretariat. Representation in the public service of Canada by designated group and fiscal year with workforce availability estimates. Page modified 2026-06-24. https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/representation-public-service-canada-designated-group-fiscal-year-workforce-availability-estimates.html. Core public administration (FAA Schedules I and IV). Pay System and Employment Equity Data Bank. Values transcribed verbatim from the HTML table; thousands separators removed.",,,,,,,,,
