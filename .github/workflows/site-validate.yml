@@ -4,10 +4,13 @@ on:
     branches:
       - chatgpt-safe-redesign-2026-11-01
       - chatgpt-unified-workspace-2026-11-01
+      - chatgpt-full-data-package-2026-11-01
   pull_request:
     paths:
       - 'index.html'
       - 'site-app.js'
+      - 'sources.html'
+      - 'data/october-2026/package-integrity-audit.json'
       - 'unified-workspace.js'
       - 'explorer.html'
       - 'data/october-2026/**'
@@ -65,5 +68,17 @@ jobs:
           assert 'showView' in unified and 'setTab' in unified
           assert 'src="explorer.html"' in html and 'src="sources.html"' in html, 'Aggregate rows not excluded'
           assert 'suppressed' not in js.lower() or 'not' in js.lower()
-          print('Passed: preserved explorer hash, 8 datasets, references, HTML ids, three in-page routes, embedded frames')
+          import json
+          audit_path=root/'data/october-2026/package-integrity-audit.json'
+          if audit_path.exists():
+              audit=json.loads(audit_path.read_text(encoding='utf-8'))
+              p=audit['drive_verified_site_package']
+              assert p['assets']['unique_js_blocks']==1081
+              assert sum(z['assets'] for z in p['archive_files'])==1081
+              assert p['recorded_assembly_metrics']['inventory_rows']==157
+              assert audit['github_main']['curated_october_csv_files']==len(files)==8
+              assert audit['github_main']['full_october_27_package_deployed'] is False
+              source_page=(root/'sources.html').read_text(encoding='utf-8')
+              assert 'package-integrity-audit.json' in source_page
+          print('Passed: preserved explorer hash, 8 datasets, references, HTML ids, three in-page routes, embedded frames and audit')
           PY
