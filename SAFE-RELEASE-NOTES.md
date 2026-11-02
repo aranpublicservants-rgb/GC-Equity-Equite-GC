@@ -1,5 +1,5 @@
 # GC Equity / Équité-GC — Safe redesign release notes
-**Unified integration branch:** `chatgpt-unified-workspace-2026-11-01`  
+**Released from:** `chatgpt-unified-workspace-2026-11-01` (PR #2, merged to `main`)  
 **Baseline production commit:** `5074a0862533ed7b7dd4e59e78fc0e2564cea292` (October 29 restored website)
 
 ## What this branch does
@@ -41,7 +41,7 @@ The homepage provides an evidence-based browser-local question guide backed by t
 - GitHub Actions is configured to validate JavaScript syntax (including the new workspace), preserved explorer Git blob, data-file references, CSV parsing, route identifiers and duplicate HTML ids. A browser smoke workflow includes in-page explorer and catalogue checks.
 - The previous query/department/document tests were run in a simulated browser DOM using the eight actual source CSVs. The new unified integration requires its own passing browser tests before release.
 - Passing branch/PR CI and desktop/mobile in-page navigation checks remain release gates. The original explorer Git blob is unchanged; the frame integration does not rewrite it.
-- This branch must not be merged to `main` until the CI and browser checks pass.
+- **Released to `main` on November 1, 2026** through pull request #2 after both GitHub Actions workflows passed: static/data validation and desktop/mobile browser smoke checks. Original explorer content and its Git blob remain unchanged. Merge commit: `671836ef1e9b4f085dbdf841901546f564b1374b`.
 
 ## Integration scope and limitation
 The original October 29 charts/tables/tools are available **within the homepage** in a same-origin embedded view. This avoids a separate page navigation and preserves full original functionality, but it does **not** refactor every legacy chart into the new department/group-specific components or automatically synchronize filters between the two implementations. The newer October 27 44.4 MB source package remains outside the newly deployed data layer pending asset verification. Do not represent all 157 inventoried sources as loaded and queryable.
