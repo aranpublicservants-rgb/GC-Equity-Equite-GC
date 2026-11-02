@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-11-01",
+  "purpose": "Reconciliation of Google Drive GC Equity website data files and GitHub deployment. No personal or unrelated documents were opened.",
+  "drive_verified_site_package": {
+    "folder_label": "GC Equity — updated website — 2026-10-27",
+    "html": {
+      "name": "index.html",
+      "size_bytes": 44415295,
+      "sha256": "a7054f1f009254894304553861edb6a6d9af145757909c8f0390e334601bdc1f"
+    },
+    "assets": {
+      "name_pattern": "SITE-ASSETS-{1..4}-of-4.zip",
+      "archive_count": 4,
+      "unique_js_blocks": 1081,
+      "duplicate_asset_paths": 0,
+      "all_four_manifest_sha256_verified": true,
+      "zip_integrity_passed": true
+    },
+    "archive_files": [
+      {
+        "name": "SITE-ASSETS-1-of-4.zip",
+        "bytes": 45480319,
+        "assets": 288,
+        "sha256": "614b3caf33c7d5e5f83d35b82bcb76540e5ac0b44a109bedbdd782524c3760c8"
+      },
+      {
+        "name": "SITE-ASSETS-2-of-4.zip",
+        "bytes": 43920052,
+        "assets": 405,
+        "sha256": "c700b97448b53edbd53e343432095c9df8d8f883226237bd079979566cc79f9f"
+      },
+      {
+        "name": "SITE-ASSETS-3-of-4.zip",
+        "bytes": 43910493,
+        "assets": 289,
+        "sha256": "112b5224a2a6af1974547d3eecc35818ba893cd3b8d818c439d6a04f91097c25"
+      },
+      {
+        "name": "SITE-ASSETS-4-of-4.zip",
+        "bytes": 27087925,
+        "assets": 99,
+        "sha256": "db1e419a3156e1d5fbc655f0194c8e4aa103cb6f3eb3a56c6cbcdbba03e79452"
+      }
+    ],
+    "recorded_assembly_metrics": {
+      "source_folder_items": 79,
+      "older_archive_source_files": 69,
+      "extra_root_items": 9,
+      "inventory_rows": 157,
+      "compatible_dataset_tables": 128,
+      "full_source_rows_retained": 10381498,
+      "pses_distinct_keys": 13725221,
+      "pses_cycles": 4,
+      "conflicting_pses_same_key_values": 500126,
+      "unreadable_oversized_root_file_count": 1
+    },
+    "status": "Verified in local recovery; not deployed to GitHub Pages as a complete asset set"
+  },
+  "earlier_archive_inventory": {
+    "folder_label": "GC Equity — source datasets — 2026-10-26",
+    "separate_zip_parts": 10,
+    "archive_entries_observed": 87,
+    "entries_by_type": {
+      "csv": 70,
+      "json": 15,
+      "txt": 1,
+      "md": 1
+    },
+    "reminder": "Older archives may overlap with the later October 27 assembly. The 70 CSV entries are not 70 additional unique published datasets."
+  },
+  "github_main": {
+    "curated_october_csv_files": 8,
+    "source_inventory_rows": 157,
+    "older_explorer_preserved": true,
+    "october_27_asset_blocks_deployed": 0,
+    "full_october_27_package_deployed": false
+  },
+  "review_limits": [
+    "Site files, manifests, CSV metadata and website archives only; unrelated Google Docs were not examined.",
+    "The three methodological .docx file names were visible in the source folder but their contents were not opened.",
+    "The earlier unverified large Drive-root CSV remains excluded from the recovered October 27 build.",
+    "A locally reconstructed standalone HTML contains all 1081 asset payloads but is not byte-identical to the historical standalone build.",
+    "Do not mislabel inventory-only datasets as active or claim that suppressed figures are zero."
+  ]
+}
