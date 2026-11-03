@@ -1,20 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GC Equity — October Source Catalogue</title><style>
-:root{--ink:#1c2d42;--teal:#086c6a;--line:#c9d4d8}*{box-sizing:border-box}body{font:15px/1.6 system-ui,sans-serif;color:var(--ink);background:#f7f8f8;margin:0}header{background:var(--ink);color:#fff;padding:25px 0}.wrap{max-width:1160px;margin:auto;padding:0 18px}header a{color:#d6fbf8}h1{font-size:clamp(25px,4vw,36px);margin:7px 0}header p{max-width:760px}main{padding-top:20px!important;padding-bottom:50px!important}.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin:14px 0}.stats{display:flex;gap:16px;flex-wrap:wrap}.stat{padding:10px 15px;border:1px solid var(--line);border-radius:8px}.stat b{font-size:24px;display:block}input,select{font:inherit;padding:10px;border:1px solid #8ca4aa;border-radius:7px;max-width:100%;width:100%}.controls{display:grid;grid-template-columns:2fr 1fr;gap:12px}label{font-size:13px;font-weight:700;display:block;margin-bottom:5px}a{color:var(--teal)}a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bf7827;outline-offset:3px}table{border-collapse:collapse;min-width:800px;width:100%}.scroll{overflow:auto}th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #dce4e8;vertical-align:top}th{background:#eff4f5}td:nth-child(1){word-break:break-word;min-width:190px}tr:nth-child(even){background:#fbfdfd}p.note{background:#e7f4f3;padding:12px 15px;border-left:4px solid var(--teal)}@media(max-width:700px){.controls{grid-template-columns:1fr}}@media print{header{background:white;color:black} .controls{display:none}}
-</style></head><body><header><div class="wrap"><a href="index.html">← GC Equity homepage</a><h1>October 2026 source catalogue</h1><p>Browse the 157 recorded October source items. The catalogue preserves duplicate treatment and distinguishes actually published CSVs from files present only in the source inventory.</p></div></header>
-<main class="wrap"><div class="stats"><div class="stat"><b id="count">157</b>Recorded source entries</div><div class="stat"><b>8</b>Curated data files deployed</div><div class="stat"><b>1</b>Oversized file left unverified</div></div>
-<section class="card" aria-labelledby="reconciliation-title"><h2 id="reconciliation-title">October 27 data package: recovered, not yet published here</h2><p>The October 27 Google Drive website package was independently recovered as one 44.4 MB HTML file and four asset archives. Their checksums match the package manifest; all 1,081 dataset asset paths are unique. Its earlier assembled inventory describes 128 compatible table datasets and four PSES cycles. Those records remain separate from the eight curated CSV files loaded by this GitHub homepage.</p><p>The earlier October 26 dataset archive also has ten ZIP parts containing 70 CSV entries, plus supporting non-dataset metadata. These are older source materials, not additional verified unique datasets. One previously unverified large Drive-root source remains excluded. The site must not report these sources as searchable until their files are actually hosted and tested.</p><p><a href="data/october-2026/package-integrity-audit.json">View the checksum-verified data package audit (JSON)</a></p></section>
-<p class="note">The October 27 assembly inventory identifies 11 duplicates recorded as a single stored copy, plus one explicit duplicate of <code>main-principal.csv</code>. Eight additional matching-name, matching-size root items are not treated as independently verified duplicate bytes. Records in this catalogue do not mean their data are present in the new homepage or accessible to its question guide.</p>
-<div class="card"><div class="controls"><div><label for="q">Search file, source type or treatment</label><input id="q" type="search" placeholder="e.g. PSES, staffing, duplicate, disability"></div><div><label for="status">Deployment status</label><select id="status"><option value="">All records</option><option value="Published">Published CSVs</option><option value="Inventory">Catalogue only</option></select></div></div><p id="visible" role="status"></p><div class="scroll"><table><thead><tr><th>File</th><th>Inventory treatment</th><th>Dataset category</th><th>Deployment</th></tr></thead><tbody id="rows"><tr><td colspan="4">Loading source catalogue…</td></tr></tbody></table></div></div>
-<div class="card"><h2>How to interpret the catalogue</h2><p>The eight October CSVs used by the new homepage are separate, small records: 2024 disability subgroups, 2025 Indigenous subgroups, 2017–2025 overall and executive employment equity series, plus independent Disproportionality Index salary analyses. They are not a complete upload of the October 27 multi-gigabyte source collection.</p><p>Older records, data with conflicting keys, suppressed cells, overlapping populations, and incomplete downloads require additional reconciliation. Public URLs to private Drive files are deliberately omitted. Keep the October 29 working explorer for existing survey and staffing features.</p><p><a href="explorer.html">Open preserved full explorer</a> · <a href="data/october-2026/public-source-inventory.csv" download>Download public-safe inventory CSV</a></p></div></main>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GC Equity: data sources / Équité-GC : sources des données</title><style>
+:root{--ink:#1c2d42;--teal:#086c6a;--line:#c9d4d8;--muted:#4a5c6d}*{box-sizing:border-box}body{font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#f7f8f8;margin:0}header{background:var(--ink);color:#fff;padding:22px 0 26px}.wrap{max-width:1160px;margin:auto;padding:0 18px}header a{color:#d6fbf8}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.langbar{display:flex;gap:6px}.langbar button{font:inherit;background:transparent;border:1px solid #8abdbd;color:#fff;border-radius:6px;padding:5px 12px;cursor:pointer}.langbar button[aria-pressed=true]{background:#d6f7f3;color:var(--ink);font-weight:700}h1{font-size:clamp(25px,4vw,36px);margin:10px 0 6px}header p{max-width:780px;margin:0;color:#e4ecf1}main{padding-top:20px;padding-bottom:50px}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:10px;background:#fff;color:var(--ink);padding:10px;z-index:10}.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin:14px 0}.stats{display:flex;gap:16px;flex-wrap:wrap}.stat{padding:10px 15px;border:1px solid var(--line);border-radius:8px;background:#fff}.stat b{font-size:24px;display:block}input,select{font:inherit;padding:10px;border:1px solid #8ca4aa;border-radius:7px;max-width:100%;width:100%;background:#fff;color:var(--ink)}.controls{display:grid;grid-template-columns:2fr 1fr;gap:12px}label{font-size:13px;font-weight:700;display:block;margin-bottom:5px}a{color:var(--teal)}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,.scroll:focus-visible{outline:3px solid #bf7827;outline-offset:3px}table{border-collapse:collapse;min-width:760px;width:100%}caption{text-align:left;font-weight:700;padding:0 0 8px}.scroll{overflow:auto}th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #dce4e8;vertical-align:top}th{background:#eff4f5}td:nth-child(1){word-break:break-word;min-width:180px}tr:nth-child(even){background:#fbfdfd}.muted{color:var(--muted)}@media(max-width:700px){.controls{grid-template-columns:1fr}}@media print{header{background:#fff;color:#000}header a{color:#000}.controls,.langbar{display:none}}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body>
+<a class="skip" href="#main" data-en="Skip to main content" data-fr="Passer au contenu">Skip to main content</a>
+<header><div class="wrap"><div class="top"><a id="home" href="index.html" target="_top" data-en="← GC Equity home" data-fr="← Accueil Équité-GC">← GC Equity home</a><div class="langbar" aria-label="Language / Langue"><button type="button" id="en" lang="en" aria-pressed="true">English</button><button type="button" id="fr" lang="fr" aria-pressed="false">Français</button></div></div>
+<h1 data-en="Data sources" data-fr="Sources des données">Data sources</h1>
+<p data-en="This list covers the source files gathered for this site: published Government of Canada tables and survey files, methodology documents, and the independent Disproportionality Index salary analysis. For each file it gives the table it belongs to, its topic and its type." data-fr="Cette liste présente les fichiers sources réunis pour ce site : tableaux et fichiers de sondage publiés par le gouvernement du Canada, documents méthodologiques et analyse salariale indépendante du projet sur l’indice de disproportion. Pour chaque fichier, elle indique le tableau auquel il appartient, son sujet et son type.">This list covers the source files gathered for this site: published Government of Canada tables and survey files, methodology documents, and the independent Disproportionality Index salary analysis. For each file it gives the table it belongs to, its topic and its type.</p></div></header>
+<main class="wrap" id="main">
+<div class="stats"><div class="stat"><b id="count">157</b><span data-en="source files listed" data-fr="fichiers sources répertoriés">source files listed</span></div><div class="stat"><b id="tables">128</b><span data-en="data tables" data-fr="tableaux de données">data tables</span></div><div class="stat"><b>8</b><span data-en="datasets used in the homepage summaries" data-fr="jeux de données utilisés dans les résumés de la page d’accueil">datasets used in the homepage summaries</span></div></div>
+<div class="card"><div class="controls"><div><label for="q" data-en="Search by file, title or topic" data-fr="Rechercher par fichier, titre ou sujet">Search by file, title or topic</label><input id="q" type="search" autocomplete="off"></div><div><label for="type" data-en="Type" data-fr="Type">Type</label><select id="type"><option value="" data-en="All types" data-fr="Tous les types">All types</option></select></div></div>
+<p id="visible" role="status" aria-live="polite"></p>
+<div class="scroll" tabindex="0" role="region" aria-labelledby="tablecap"><table><caption id="tablecap" data-en="Source files" data-fr="Fichiers sources">Source files</caption><thead><tr><th scope="col" data-en="File" data-fr="Fichier">File</th><th scope="col" data-en="Table or content" data-fr="Tableau ou contenu">Table or content</th><th scope="col" data-en="Topic" data-fr="Sujet">Topic</th><th scope="col" data-en="Type" data-fr="Type">Type</th></tr></thead><tbody id="rows"><tr><td colspan="4" data-en="Loading the list…" data-fr="Chargement de la liste…">Loading the list…</td></tr></tbody></table></div></div>
+<div class="card"><h2 data-en="How to read this list" data-fr="Comment lire cette liste">How to read this list</h2>
+<p data-en="Each file appears once. Duplicate copies are listed so that the count matches the files gathered. They add no new data." data-fr="Chaque fichier figure une seule fois. Les copies en double sont répertoriées pour que le total corresponde aux fichiers réunis. Elles n’ajoutent aucune donnée.">Each file appears once. Duplicate copies are listed so that the count matches the files gathered. They add no new data.</p>
+<p data-en="The four salary files from the Disproportionality Index project (employment-equity.github.io) are an independent analysis, not Government of Canada data. One of them holds estimates for values that the Treasury Board of Canada Secretariat suppressed." data-fr="Les quatre fichiers salariaux du projet sur l’indice de disproportion (employment-equity.github.io) sont une analyse indépendante et non des données du gouvernement du Canada. L’un d’eux contient des estimations de valeurs que le Secrétariat du Conseil du Trésor du Canada a supprimées.">The four salary files from the Disproportionality Index project (employment-equity.github.io) are an independent analysis, not Government of Canada data. One of them holds estimates for values that the Treasury Board of Canada Secretariat suppressed.</p>
+<p><a id="openExplorer" href="explorer.html" target="_top" data-en="Open the data explorer" data-fr="Ouvrir l’explorateur de données">Open the data explorer</a> · <a href="data/october-2026/public-source-inventory.csv" download data-en="Download this list (CSV)" data-fr="Télécharger cette liste (CSV)">Download this list (CSV)</a></p></div></main>
 <script>
 (function(){
-function csv(s){let out=[],row=[],v='',quote=false;s=s.replace(/^\uFEFF/,'');for(let i=0;i<s.length;i++){let c=s[i];if(quote){if(c==='"'&&s[i+1]==='"'){v+='"';i++}else if(c==='"')quote=false;else v+=c}else if(c==='"')quote=true;else if(c===','){row.push(v);v=''}else if(c==='\n'){row.push(v.replace(/\r$/,''));if(row.some(Boolean))out.push(row);row=[];v=''}else v+=c;}if(row.length||v){row.push(v);out.push(row)}let hdr=out.shift();return out.map(a=>Object.fromEntries(hdr.map((h,i)=>[h,a[i]||''])))}
-const rows=document.getElementById('rows'),q=document.getElementById('q'),status=document.getElementById('status');let all=[];
-function fill(){const term=q.value.toLowerCase().trim(),mode=status.value;const show=all.filter(a=>(!term||Object.values(a).some(v=>String(v).toLowerCase().includes(term)))&&(!mode||a['Publication in this branch'].startsWith(mode)));rows.textContent='';document.getElementById('visible').textContent=show.length+' of '+all.length+' entries shown.';
-if(!show.length){let tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=4;td.textContent='No matching entries';tr.appendChild(td);rows.appendChild(tr);return;}
-const frag=document.createDocumentFragment();
-show.forEach(a=>{let tr=document.createElement('tr');['File','Treatment','Embedded dataset','Publication in this branch'].forEach((field,i)=>{let td=document.createElement('td');const val=a[field]||'';if(i===0&&a['Publication in this branch'].startsWith('Published')){const link=document.createElement('a');link.textContent=val;link.href='data/october-2026/'+encodeURIComponent(val);td.appendChild(link)}else td.textContent=val;tr.appendChild(td)});frag.appendChild(tr)});rows.appendChild(frag);}
-q.addEventListener('input',fill);status.addEventListener('change',fill);
-fetch('data/october-2026/public-source-inventory.csv').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{all=csv(t);fill();document.getElementById('count').textContent=all.length}).catch(e=>{rows.textContent='Source catalogue unavailable: '+e.message});
+'use strict';
+const CURATED=new Set(['TBS_Indigenous_subgroups_by_department_2025.csv','TBS_disability_subgroups_by_department_2024.csv','TBS_EE_representation_with_WFA_2017-2025.csv','TBS_EE_executives_by_EX_level_with_WFA_2017-2025.csv','DI_di_disproportionality_index_2017-2025.csv','DI_medians_salary_by_group_2017-2025.csv','DI_cleaned_imputed_salary_counts_2017-2025.csv','DI_imputation_estimates_NOT_TBS_PUBLISHED.csv']);
+const $=id=>document.getElementById(id);
+const rows=$('rows'),q=$('q'),type=$('type');
+let all=[],lang='en';
+const tr=(en,fr)=>lang==='fr'?fr:en;
+function csv(s){let out=[],row=[],v='',quote=false;s=s.replace(/^﻿/,'');for(let i=0;i<s.length;i++){const c=s[i];if(quote){if(c==='"'&&s[i+1]==='"'){v+='"';i++}else if(c==='"')quote=false;else v+=c}else if(c==='"')quote=true;else if(c===','){row.push(v);v=''}else if(c==='\n'){row.push(v.replace(/\r$/,''));if(row.some(Boolean))out.push(row);row=[];v=''}else v+=c;}if(row.length||v){row.push(v);out.push(row)}const hdr=out.shift();return out.map(a=>Object.fromEntries(hdr.map((h,i)=>[h,a[i]||''])))}
+const topic=a=>tr(a['Topic'],a['Topic (French)']);
+const kind=a=>tr(a['Type'],a['Type (French)']);
+function fillTypes(){
+ const keep=type.value;
+ while(type.options.length>1)type.remove(1);
+ const seen=new Map();all.forEach(a=>{if(!seen.has(a['Type']))seen.set(a['Type'],a);});
+ seen.forEach((a,key)=>{const o=document.createElement('option');o.value=key;o.textContent=kind(a);type.appendChild(o);});
+ type.value=keep;
+}
+function fill(){
+ const term=q.value.toLowerCase().trim(),mode=type.value;
+ const show=all.filter(a=>(!mode||a['Type']===mode)&&(!term||[a['File'],a['Title'],topic(a),kind(a)].some(v=>String(v).toLowerCase().includes(term))));
+ rows.textContent='';
+ $('visible').textContent=tr(show.length+' of '+all.length+' entries shown.',show.length+' sur '+all.length+' entrées affichées.');
+ if(!show.length){const r=document.createElement('tr'),d=document.createElement('td');d.colSpan=4;d.textContent=tr('No matching entries.','Aucune entrée correspondante.');r.appendChild(d);rows.appendChild(r);return;}
+ const frag=document.createDocumentFragment();
+ show.forEach(a=>{
+  const r=document.createElement('tr');
+  [a['File'],a['Title'],topic(a),kind(a)].forEach((val,i)=>{
+   const d=document.createElement('td');
+   if(i===0&&CURATED.has(val)){const link=document.createElement('a');link.textContent=val;link.href='data/october-2026/'+encodeURIComponent(val);d.appendChild(link);}
+   else d.textContent=val||'';
+   r.appendChild(d);
+  });
+  frag.appendChild(r);
+ });
+ rows.appendChild(frag);
+}
+function setLang(next){
+ lang=next==='fr'?'fr':'en';
+ document.documentElement.lang=lang;
+ document.querySelectorAll('[data-en][data-fr]').forEach(x=>{x.textContent=x.getAttribute('data-'+lang);});
+ $('en').setAttribute('aria-pressed',String(lang==='en'));$('fr').setAttribute('aria-pressed',String(lang==='fr'));
+ q.placeholder=tr('e.g. PSES, staffing, disability','p. ex. SAFF, dotation, handicap');
+ $('home').href='index.html'+(lang==='fr'?'?lang=fr':'');
+ $('openExplorer').href='explorer.html'+(lang==='fr'?'?lang=fr':'');
+ // Keep the language in the address so a copied link opens in the same language.
+ try{const u=new URL(location.href);if(lang==='fr')u.searchParams.set('lang','fr');else u.searchParams.delete('lang');if(u.href!==location.href)history.replaceState(history.state,'',u.href);}catch(e){}
+ try{localStorage.setItem('gcEquityLang',lang);}catch(e){}
+ if(all.length){fillTypes();fill();}
+}
+window.gcSetLang=setLang; // lets the homepage switch this page when it is shown inside it
+$('en').addEventListener('click',()=>setLang('en'));$('fr').addEventListener('click',()=>setLang('fr'));
+q.addEventListener('input',fill);type.addEventListener('change',fill);
+// Inside the homepage, show the explorer next to this list instead of leaving the page.
+$('openExplorer').addEventListener('click',e=>{if(window.parent===window)return;try{const b=window.parent.document.getElementById('workspace-show-explorer');if(b){e.preventDefault();b.click();}}catch(_){}});
+let start='en';
+try{const p=new URLSearchParams(location.search).get('lang');const saved=localStorage.getItem('gcEquityLang');start=(p==='fr'||p==='en')?p:(saved==='fr'?'fr':'en');}catch(e){}
+setLang(start);
+fetch('data/october-2026/public-source-inventory.csv').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
+ all=csv(t);
+ $('count').textContent=all.length;
+ $('tables').textContent=all.filter(a=>a['Type']==='Data table').length;
+ fillTypes();fill();
+}).catch(err=>{rows.textContent='';const r=document.createElement('tr'),d=document.createElement('td');d.colSpan=4;d.textContent=tr('The list could not be loaded: ','Impossible de charger la liste : ')+err.message;r.appendChild(d);rows.appendChild(r);});
 })();
 </script></body></html>
