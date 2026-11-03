@@ -83,8 +83,32 @@ jobs:
                 await page.waitForFunction(()=>document.getElementById('visible').textContent.includes('157 of 157'));
                 await page.goto(addr+'explorer.html',{waitUntil:'domcontentloaded',timeout:60000});
                 const title=await page.title();if(!title.includes('Equity'))throw Error('Preserved explorer unexpected title: '+title);
+                // A copied French link opens each page in French. A fresh page avoids waiting on the explorer still loading above.
+                const pg=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
+                const pgErrors=[];pg.on('pageerror',e=>pgErrors.push(e.message));
+                await pg.goto(addr+'index.html?lang=fr');
+                await pg.waitForFunction(()=>document.documentElement.lang==='fr'&&document.getElementById('loadstatus').textContent.includes('8 jeux de données sur 8'));
+                await pg.goto(addr+'sources.html?lang=fr');
+                await pg.waitForFunction(()=>document.documentElement.lang==='fr'&&document.getElementById('visible').textContent.includes('157 sur 157'));
+                await pg.close();
+                const pe=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
+                pe.on('pageerror',e=>pgErrors.push(e.message));
+                await pe.goto(addr+'explorer.html?lang=fr',{waitUntil:'load',timeout:90000});
+                await pe.waitForFunction(()=>document.documentElement.lang==='fr-CA',{timeout:60000});
+                await pe.close();
+                // An organization chosen on the homepage opens in the explorer without a second choice.
+                const po=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
+                po.on('pageerror',e=>pgErrors.push(e.message));
+                await po.goto(addr+'index.html?lang=en');
+                await po.waitForFunction(()=>document.getElementById('loadstatus').textContent.includes('8 of 8'));
+                await po.selectOption('#org',{label:'Indigenous Services Canada'});
+                await po.click('#orgGo');
+                await po.click('#resultBody a[href="explorer.html"]');
+                await po.waitForFunction(()=>{const d=document.getElementById('integrated-explorer').contentDocument;return !!(d&&d.getElementById('view-orgprofile')&&d.getElementById('view-orgprofile').classList.contains('active')&&d.getElementById('opOrg')&&d.getElementById('opOrg').value==='Indigenous Services Canada');},{timeout:90000});
+                await po.close();
+                if(pgErrors.length)throw Error(mode.name+': browser errors in language and organization checks: '+pgErrors.join(' / '));
                 await page.close();
-                console.log('PASS: '+mode.name+', department, group, question, tools, integrated explorer, in-page catalogue, preserved explorer');
+                console.log('PASS: '+mode.name+', department, group, question, tools, integrated explorer, in-page catalogue, explorer, French links, organization handoff');
               }
             }finally{await browser.close();server.close()}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});
