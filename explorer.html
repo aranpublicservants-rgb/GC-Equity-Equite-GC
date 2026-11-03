@@ -758,6 +758,10 @@ body.eq-department-all #view-linkages{order:4!important}
 .eq-optional-survey summary{font-size:13px;cursor:pointer;padding:5px 0}
 @media(max-width:800px){.eq-branch-controls{grid-template-columns:1fr}.eq-branch-wide{grid-column:span 1}.eq-native-table-wrap{max-height:none}.eq-native-table thead th{min-width:110px}.eq-native-table tbody th{min-width:145px;max-width:185px}.eq-branch-field select{font-size:16px}}
 </style>
+<style>
+/* Light theme: darker teal for links on tinted panels, so they meet WCAG AA contrast (4.5:1). */
+html:not([data-theme]) .interp a,html:not([data-theme]) .interp .usefind,html:not([data-theme]) .request-box a{color:#0a6463}
+</style>
 </head>
 <body>
 
@@ -2113,7 +2117,7 @@ body.eq-department-all #view-linkages{order:4!important}
   <span data-fr="Conçu à partir de données publiques du gouvernement du Canada. Sources : Rapport annuel sur l'équité en matière d'emploi du SCT 2024-2025 et Instantané démographique 2024-2025 (publiés en mars 2026); séries du SCT sur la représentation et la disponibilité au sein de la population active; résultats du Sondage auprès des fonctionnaires fédéraux de 2024 par question (SCT et Statistique Canada); audits de recrutement et de dotation de la CFP; inventaire GCwiki sur l'équité des données. Chiffres de représentation au 31 mars 2025; SAFF mené du 28 octobre au 31 décembre 2024. Toutes les valeurs extraites le 11 juin 2026. Outil d'analyse indépendant, et non une publication du gouvernement du Canada.">Built from public Government of Canada data. Sources: TBS Employment Equity Annual Report 2024-25 and Demographic Snapshot 2024-2025 (published March 2026); TBS representation and workforce availability series; 2024 Public Service Employee Survey results by question (TBS and Statistics Canada); PSC recruitment and staffing audits; GCwiki Data Equity inventory. Representation figures as of March 31, 2025; PSES fielded October 28 to December 31, 2024. All values retrieved June 11, 2026. This is an independent analytical tool, not a Government of Canada publication.</span>
     </div>
   </details>
-  <div style="margin-top:10px;font-size:11px;color:#999" data-fr="Version 2026-07-23">Build 2026-07-23</div>
+  
 </div></footer>
 
 <script>
@@ -2459,7 +2463,7 @@ DICT["GC-Equity / Équité-GC — Public Service Equity Data Explorer"]="GC-Equi
     // glossary tooltips
     document.querySelectorAll(".tip-pop[data-gk]").forEach(function(p){var k=p.dataset.gk;var def=toFr?(GLOSSARY_FR[k]||GLOSSARY[k]):GLOSSARY[k];if(def)p.textContent=def;});
     document.querySelectorAll("[data-lang-set]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.langSet===_lang?"true":"false");});
-    try{localStorage.setItem("gcEquityLang",_lang);}catch(e){}
+    try{localStorage.setItem("gcEquityLang",_lang);}catch(e){} try{var u=new URL(location.href);if(_lang==="fr")u.searchParams.set("lang","fr");else u.searchParams.delete("lang");if(u.href!==location.href)history.replaceState(history.state,"",u.href);}catch(e){}
     // Reconnect the observers for future on-demand renders, then set header tooltips once.
     try{if(mo&&document.getElementById("main"))mo.observe(document.getElementById("main"),{childList:true,subtree:true,characterData:true});}catch(e){}
     try{if(window._thObserver&&document.getElementById("main"))window._thObserver.observe(document.getElementById("main"),{childList:true,subtree:true});}catch(e){}
@@ -2484,8 +2488,12 @@ DICT["GC-Equity / Équité-GC — Public Service Equity Data Explorer"]="GC-Equi
   function swapText(n){
     var p=n.parentNode;if(!p)return;var t=p.nodeName;if(t==="SCRIPT"||t==="STYLE"||t==="TEXTAREA")return;
     var raw=n.nodeValue;if(!raw||!raw.trim())return;var key=raw.trim();
-    if(DICT[key]){if(n.__en===undefined)n.__en=raw;n.nodeValue=raw.replace(key,DICT[key]);return;}
-    for(var i=0;i<REGEX_TR.length;i++){if(REGEX_TR[i][0].test(key)){if(n.__en===undefined)n.__en=raw;n.nodeValue=raw.replace(REGEX_TR[i][0],REGEX_TR[i][1]);return;}}
+    // Skip text this function already wrote, and write only when the text changes. Rewriting identical text
+    // (for example "Inuit" or a "Q12 — label" line) queued another observer callback each time, which looped
+    // forever and froze the page whenever French was active while sections rendered.
+    if(n.__fr!==undefined&&raw===n.__fr)return;
+    if(DICT[key]){var nv=raw.replace(key,DICT[key]);if(nv!==raw){if(n.__en===undefined)n.__en=raw;n.nodeValue=nv;n.__fr=nv;}return;}
+    for(var i=0;i<REGEX_TR.length;i++){var re=REGEX_TR[i][0];re.lastIndex=0;if(re.test(key)){re.lastIndex=0;var nv2=raw.replace(re,REGEX_TR[i][1]);if(nv2!==raw){if(n.__en===undefined)n.__en=raw;n.nodeValue=nv2;n.__fr=nv2;}return;}}
   }
   function trNode(node){
     if(node.nodeType===3){swapText(node);return;}
@@ -2507,6 +2515,8 @@ DICT["GC-Equity / Équité-GC — Public Service Equity Data Explorer"]="GC-Equi
   window.tr=function(s){return (_lang==="fr"&&DICT[s])?DICT[s]:s;};
   document.querySelectorAll("[data-lang-set]").forEach(function(b){b.addEventListener("click",function(){applyLang(b.dataset.langSet);});});
   var saved="en";try{saved=localStorage.getItem("gcEquityLang")||"en";}catch(e){}
+  /* A language in the address (?lang=fr or ?lang=en) takes precedence, so a copied link opens in the same language. */
+  try{var urlLang=new URLSearchParams(location.search).get("lang");if(urlLang==="fr"||urlLang==="en")saved=urlLang;}catch(e){}
   if(saved==="fr")applyLang("fr");
 })();
 /* copy-citation: any element with class citebtn and a data-cite string */
@@ -5344,6 +5354,13 @@ document.addEventListener("click",function(e){
       const sel=document.getElementById('opOrg');
       if(sel){sel.value=picker.value;sel.dispatchEvent(new Event('change',{bubbles:true}));}
       go('orgprofile');
+      /* The start list is now hidden, so move keyboard focus to the opened organization's results:
+         the first visible heading in that section, or its organization list. */
+      setTimeout(()=>{
+        const vis=el=>!!(el&&(el.offsetParent||el.getClientRects().length));
+        const target=[...document.querySelectorAll('#view-orgprofile h2,#view-orgprofile h3')].find(vis)||document.getElementById('opOrg');
+        if(target&&vis(target)){if(!/^(SELECT|INPUT|BUTTON|A|TEXTAREA)$/.test(target.tagName)&&!target.hasAttribute('tabindex'))target.setAttribute('tabindex','-1');try{target.focus({preventScroll:true});}catch(err){target.focus();}}
+      },0);
     });
   }
   document.addEventListener('click',e=>{
@@ -5830,6 +5847,26 @@ document.addEventListener("click",function(e){
   document.addEventListener('langchange',()=>{if(host()){fillQuestionOptions();if(state.q!==null)changeAnswer();render();}});
 })();
 
+</script>
+<script>
+/* Keyboard access to scrolling tables: each scrolling wrapper gets a tab stop and a name. */
+(function(){
+  function label(w){
+    var c=w.querySelector('caption');if(c&&c.textContent.trim())return c.textContent.trim();
+    var box=w.closest('section,.card,.eq-dept-dataset');var h=box&&box.querySelector('h2,h3,h4');
+    if(h&&h.textContent.trim())return h.textContent.trim();
+    return (document.documentElement.lang||'').indexOf('fr')===0?'Tableau':'Table';
+  }
+  function mark(root){
+    (root||document).querySelectorAll('.tblwrap,.eq-table-scroll').forEach(function(w){
+      if(w.hasAttribute('tabindex'))return;
+      w.setAttribute('tabindex','0');w.setAttribute('role','region');w.setAttribute('aria-label',label(w).slice(0,120));
+    });
+  }
+  mark();
+  var main=document.getElementById('main');
+  if(main&&window.MutationObserver){new MutationObserver(function(){mark(main);}).observe(main,{childList:true,subtree:true});}
+})();
 </script>
 </body>
 </html>
