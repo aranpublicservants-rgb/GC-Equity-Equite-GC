@@ -35,7 +35,12 @@ jobs:
           root=pathlib.Path('.')
           html=(root/'index.html').read_text(encoding='utf-8')
           assert (root/'explorer.html').exists()
-          original_sha='481399ff20cb10f625f1dd261fbb718f867d8ec6'
+          # explorer.html changed on purpose on 2026-11-03: version label removed, ?lang= read on load and kept
+          # in the address, keyboard focus moved to the opened organization's results, French translation
+          # observer no longer rewrites unchanged text (that loop froze the page in French), link contrast on
+          # tinted panels raised to WCAG AA, and scrolling tables reachable by keyboard. Update this hash only
+          # with a reviewed change to the explorer.
+          original_sha='105b4cb6c0d2bea09eed95b162d3c591d6d7c624'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
           assert actual==original_sha, f'Working explorer changed: {actual}'
           assert 'src="site-app.js"' in html
@@ -78,7 +83,14 @@ jobs:
               assert p['recorded_assembly_metrics']['inventory_rows']==157
               assert audit['github_main']['curated_october_csv_files']==len(files)==8
               assert audit['github_main']['full_october_27_package_deployed'] is False
-              source_page=(root/'sources.html').read_text(encoding='utf-8')
-              assert 'package-integrity-audit.json' in source_page
+          source_page=(root/'sources.html').read_text(encoding='utf-8')
+          assert 'id="visible"' in source_page and 'data-fr=' in source_page, 'Source list page must be bilingual'
+          # Visitor pages must not carry internal release or development wording.
+          internal=['October 27','October 29','preserved explorer','preserved full explorer','curated October','not yet published','Drive package','Inventory only','retained original','explorateur préservé','Build 2026']
+          for name in ('index.html','sources.html','site-app.js','unified-workspace.js','data/october-2026/public-source-inventory.csv'):
+              text=(root/name).read_text(encoding='utf-8').lower()
+              for phrase in internal:
+                  assert phrase.lower() not in text, f'Internal wording "{phrase}" found in {name}'
+          assert 'Build 2026-07-23' not in (root/'explorer.html').read_text(encoding='utf-8')
           print('Passed: preserved explorer hash, 8 datasets, references, HTML ids, three in-page routes, embedded frames and audit')
           PY

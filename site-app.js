@@ -86,13 +86,13 @@ function showOrg(name){
      entry(tr('Difference from CPA overall','Écart par rapport à l’ensemble'),(Number(gap)>0?'+':'')+gap+' '+tr('percentage points','points de pourcentage'))+'</div>';
  }
  const html='<h2>'+safe(name)+'</h2>'+
- '<p class="muted">'+tr('Available departmental subgroup datasets are shown below, each with its own reporting year. For PSES, recruitment, promotions, salary and other detailed records, use the preserved full explorer.','Les sous-groupes ministériels disponibles figurent ci-dessous avec leur année. Pour le SAFF, les promotions, les salaires et autres détails, ouvrir l’explorateur complet.')+'</p>'+
+ '<p class="muted">'+tr('Available departmental subgroup datasets are shown below, each with its own reporting year. For PSES, recruitment, promotions, salary and other detailed records, use the data explorer below.','Les sous-groupes ministériels disponibles figurent ci-dessous avec leur année. Pour le SAFF, les promotions, les salaires et autres détails, ouvrir l’explorateur complet.')+'</p>'+
  '<h3>'+tr('Indigenous subgroups — March 31, 2025','Sous-groupes autochtones — 31 mars 2025')+'</h3>'+benchmarkCard(ind,totalInd,'indigenous_peoples_pct','Indigenous Peoples')+rowStats(ind,'ind')+
  '<p class="sources">'+localSource('ind',tr('Download source CSV','Télécharger le CSV'))+' · '+link(SOURCE.tbs,tr('Official source context','Contexte de la source officielle'))+'</p>'+
  '<h3>'+tr('Disability subgroups — March 31, 2024','Sous-groupes liés aux handicaps — 31 mars 2024')+'</h3>'+benchmarkCard(pwd,totalPwd,'persons_with_disabilities_pct','Persons with disabilities')+rowStats(pwd,'pwd')+
  '<p class="sources">'+localSource('pwd',tr('Download source CSV','Télécharger le CSV'))+' · '+link(SOURCE.tbs,tr('Official source context','Contexte de la source officielle'))+'</p>'+
  note(tr('These different-year snapshots must not be combined into one headcount. Published subgroup categories may overlap and suppressed values must remain suppressed. Organization names are matched conservatively; absent entries are not replaced with public-service totals.','Ces données provenant d’années différentes ne doivent pas être additionnées. Certains sous-groupes se chevauchent. Les valeurs supprimées restent supprimées.'),true)+
- '<h3>'+tr('More evidence for this department','Autres données pour ce ministère')+'</h3><p>'+tr('Open the complete preserved explorer for representation benchmarks, employee surveys, staffing, salary, executives and other sections. You may need to reselect the organization there.','Ouvrir l’explorateur complet pour la représentation, les sondages, la dotation, les salaires et les cadres. Il peut être nécessaire de sélectionner de nouveau l’organisme.')+'</p><p><a class="btn" href="explorer.html">'+tr('Open complete explorer','Ouvrir l’explorateur complet')+'</a></p>';
+ '<h3>'+tr('More evidence for this department','Autres données pour ce ministère')+'</h3><p>'+tr('Open the data explorer for representation benchmarks, employee surveys, staffing, salary, executives and other sections. It opens on this organization when its list includes it.','Ouvrir l’explorateur de données pour les repères de représentation, les sondages, la dotation, les salaires, les cadres et d’autres sections. Il s’ouvre sur cet organisme lorsque sa liste le comprend.')+'</p><p><a class="btn" href="explorer.html">'+tr('Open complete explorer','Ouvrir l’explorateur complet')+'</a></p>';
  show(html,{type:'org',name,ind,pwd});
 }
 function repRows(prefix){
@@ -147,7 +147,7 @@ function showGroup(key){
  renderedTable([tr('Salary distribution segment','Segment salarial'),tr('Disproportionality index','Indice de disproportion')],bins.map(r=>[r.quintile_label,fmt(r[diKey])]))+
  '<p class="sources">'+localSource('di','DI index CSV')+' · '+link(SOURCE.di,'DI project')+'</p>';
  }}
- html+='<h3>'+tr('More relevant evidence','Autres données pertinentes')+'</h3><p>'+tr('Use the preserved explorer to examine employee experiences, hiring and promotion pathways, departmental differences, and historical datasets, with each source’s scope retained.','Utilisez l’explorateur préservé pour les expériences des employés, la dotation et les promotions, les différences entre organismes et les données historiques.')+'</p><p><a class="btn" href="explorer.html">'+tr('Explore the complete site','Explorer le site complet')+'</a></p>';
+ html+='<h3>'+tr('More relevant evidence','Autres données pertinentes')+'</h3><p>'+tr('Use the data explorer to examine employee experiences, hiring and promotion pathways, departmental differences, and historical datasets, with each source’s scope retained.','Utilisez l’explorateur de données pour les expériences des employés, la dotation et les promotions, les différences entre organismes et les données historiques.')+'</p><p><a class="btn" href="explorer.html">'+tr('Explore the complete site','Explorer le site complet')+'</a></p>';
  show(html,{type:'group',key,info});
 }
 function answerQuestion(){
@@ -159,7 +159,7 @@ function answerQuestion(){
  for(const [k,pattern] of Object.entries({black:/\bblack\b|noir/,metis:/\bmetis\b/,inuit:/\binuit\b/,first_nations:/first nations|premieres nations/,indigenous:/indigen|autochton/,disability:/disabil|handicap/,racialized:/racial|visible minor|racis/,women:/women|woman|femme/})){if(pattern.test(low)){key=k;break}}
  const answers=[];let source='';
  if(/harass|discrimin|reprisal|pses|saff|mental health|well being|sant[eé] mentale/.test(low)){
- answers.push(tr('This curated subset does not contain the requested employee-survey response data. Open the preserved explorer for PSES and use the reported organization, question, group, year and suppression rules. I cannot infer a number from these files.','Ces fichiers ne contiennent pas les réponses au sondage demandées. Consultez le SAFF dans l’explorateur préservé.'));source='explorer.html';
+ answers.push(tr('This curated subset does not contain the requested employee-survey response data. Open the data explorer for PSES results and use the reported organization, question, group, year and suppression rules. I cannot infer a number from these files.','Ces fichiers ne contiennent pas les réponses au sondage demandées. Consultez le SAFF dans l’explorateur de données.'));source='explorer.html';
  }else if(found&&(!key||['indigenous','inuit','metis','first_nations','disability'].includes(key))){
  const ind=findOrg('ind',found),pwd=findOrg('pwd',found);
  const fields=key==='inuit'?['inuit_pct','inuit_number']:key==='metis'?['metis_pct','metis_number']:key==='first_nations'?['first_nations_pct','first_nations_number']:key==='disability'?['persons_with_disabilities_pct','persons_with_disabilities_number']:['indigenous_peoples_pct','indigenous_peoples_number'];
@@ -173,14 +173,14 @@ function answerQuestion(){
  const info=groupInfo(key);
  if(info.prefix){const rr=repRows(info.prefix),latest=rr[rr.length-1];if(latest){answers.push(info.label+': '+pct(latest.percent)+' '+tr('representation in the core public administration as of March 31, ','de représentation dans l’administration publique centrale au 31 mars ')+latest.year+'.');answers.push(tr('Published employee count: ','Effectif publié : ')+fmt(latest.count)+'.');source=DIR+FILES.rep;}}
  }
- if(!answers.length){answers.push(tr('I can search the selected October datasets for published representation, Indigenous or disability subgroup, executive and independent salary measures. This question cannot be answered reliably from the loaded subset.','Les fichiers sélectionnés permettent de consulter la représentation, certains sous-groupes, les cadres et les salaires indépendants. Cette question ne peut recevoir une réponse fiable à partir de ce sous-ensemble.'));source='explorer.html';}
+ if(!answers.length){answers.push(tr('I can search the datasets loaded on this page for published representation, Indigenous or disability subgroup, executive and independent salary measures. This question cannot be answered reliably from the loaded subset.','Les données chargées dans cette page permettent de consulter la représentation, certains sous-groupes, les cadres et les salaires indépendants. Cette question ne peut recevoir une réponse fiable à partir de ce sous-ensemble.'));source='explorer.html';}
  answers.push(tr('Source: ','Source : ')+source);answers.push(tr('A gap is a signal for further inquiry, not proof of cause.','Un écart constitue un signal à examiner, non une preuve de causalité.'));
  el('answer').textContent=answers.join('\n\n');
 }
 function makeDraft(){
  const mode=el('tooltype').value,subject=el('scope').value.trim()||tr('[Organization or demographic group]','[Organisme ou groupe]'),question=el('objective').value.trim()||tr('[Evidence question]','[Question]'),lines=[];
  const title={brief:'EQUITY EVIDENCE BRIEFING',presentation:'EQUITY EVIDENCE PRESENTATION',matrix:'EVIDENCE MATRIX',request:'REQUEST FOR DISAGGREGATED EVIDENCE'}[mode];
- lines.push(title,'','Subject: '+subject,'Purpose: '+question,'','Evidence available in curated October files:');
+ lines.push(title,'','Subject: '+subject,'Purpose: '+question,'','Evidence available in the datasets loaded on this page:');
  const org=state.orgs.find(o=>normalize(o)===normalize(subject)||normalize(subject).includes(normalize(o)));
  if(org){
  const a=findOrg('ind',org),b=findOrg('pwd',org);
@@ -189,7 +189,7 @@ function makeDraft(){
  }
  const group=Object.keys({women:1,indigenous:1,disability:1,racialized:1,black:1}).find(k=>normalize(subject).includes(normalize(groupInfo(k).label)));
  if(group){const p=groupInfo(group).prefix;const r=p?repRows(p):[];const latest=r[r.length-1];if(latest)lines.push('• '+groupInfo(group).label+' CPA representation, March 31 '+latest.year+': '+pct(latest.percent)+'; count '+fmt(latest.count)+'. Source: '+DIR+FILES.rep);}
- if(lines[lines.length-1]==='Evidence available in curated October files:')lines.push('• No verified figure has been selected for this subject. Add a traceable result from the explorer before publication.');
+ if(lines[lines.length-1]==='Evidence available in the datasets loaded on this page:')lines.push('• No verified figure has been selected for this subject. Add a traceable result from the explorer before publication.');
  if(mode==='brief')lines.push('','Issue / decision required:','Findings and comparison population:','Potential barrier mechanism (hypothesis; not established):','Evidence gaps:','Recommended follow-up:','Decision and accountability:');
  if(mode==='presentation')lines.push('','Slide 1 — Scope and question','Slide 2 — Published findings with denominators','Slide 3 — Experience and advancement pathways','Slide 4 — Missing and suppressed evidence','Slide 5 — Actions and source references');
  if(mode==='matrix')lines.push('','Measure | Group | Organization | Period | Value | Denominator | Comparator | Source | Limitation','[Add verified source-linked entries only]');
@@ -201,6 +201,12 @@ function downloadDraft(){
  const s=el('draft').value.trim();if(!s){el('draftstatus').textContent=tr('Generate a document first.','Générer un document d’abord.');return}
  const blob=new Blob([s],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='GC-Equity-Evidence-Draft.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
+function renderStatus(){
+ if(state.loaded===undefined)return;
+ const total=Object.keys(FILES).length,status=el('loadstatus');
+ status.textContent=tr(state.loaded+' of '+total+' datasets loaded. '+state.orgs.length+' organizations available.',state.loaded+' jeux de données sur '+total+' chargés. '+state.orgs.length+' organismes disponibles.');
+ if(state.errors.length){status.classList.add('warning');status.textContent+=' '+tr('Unavailable: ','Indisponibles : ')+state.errors.join('; ')+'. '+tr('The data explorer remains available.','L’explorateur de données reste accessible.');}
+}
 async function load(){
  let ok=0;
  await Promise.all(Object.entries(FILES).map(async([k,file])=>{
@@ -209,10 +215,16 @@ async function load(){
  const picker=el('org');picker.textContent='';
  const opt=document.createElement('option');opt.value='';opt.textContent=tr('Choose a department or agency…','Choisir un ministère ou organisme…');picker.appendChild(opt);
  state.orgs.forEach(name=>{let o=document.createElement('option');o.value=name;o.textContent=name;picker.appendChild(o)});
- const status=el('loadstatus');status.textContent=tr(ok+' of '+Object.keys(FILES).length+' curated October CSV files loaded. '+state.orgs.length+' distinct organization labels available.',''+ok+' fichiers CSV sur '+Object.keys(FILES).length+' chargés. '+state.orgs.length+' organismes distincts.');
- if(state.errors.length){status.classList.add('warning');status.textContent+=' '+tr('Unavailable: ','Indisponibles : ')+state.errors.join('; ')+'. '+tr('The preserved explorer remains available.','L’explorateur préservé reste accessible.');}
+ state.loaded=ok;renderStatus();
 }
-function setLang(lang){state.lang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-fr]').forEach(x=>x.textContent=x.getAttribute('data-'+lang));el('en').setAttribute('aria-pressed',String(lang==='en'));el('fr').setAttribute('aria-pressed',String(lang==='fr'));if(state.last){if(state.last.type==='org')showOrg(state.last.name);else showGroup(state.last.key);}}
+function setLang(lang){state.lang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-fr]').forEach(x=>x.textContent=x.getAttribute('data-'+lang));el('en').setAttribute('aria-pressed',String(lang==='en'));el('fr').setAttribute('aria-pressed',String(lang==='fr'));if(state.last){if(state.last.type==='org')showOrg(state.last.name);else showGroup(state.last.key);}
+ const first=el('org').querySelector('option[value=""]');if(first&&state.orgs.length)first.textContent=tr('Choose a department or agency…','Choisir un ministère ou organisme…');
+ renderStatus();
+ // Keep the language in the address so a copied link opens in the same language, and remember it for the embedded pages.
+ try{const u=new URL(location.href);if(lang==='fr')u.searchParams.set('lang','fr');else u.searchParams.delete('lang');if(u.href!==location.href)history.replaceState(history.state,'',u.href);}catch(e){}
+ try{localStorage.setItem('gcEquityLang',lang);}catch(e){}
+}
+function initialLang(){let q=null,saved=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{saved=localStorage.getItem('gcEquityLang');}catch(e){}return (q==='fr'||q==='en')?q:(saved==='fr'?'fr':'en');}
 el('en').addEventListener('click',()=>setLang('en'));el('fr').addEventListener('click',()=>setLang('fr'));
 el('orgGo').addEventListener('click',()=>{const v=el('org').value;if(!v){el('org').focus();return}showOrg(v);});
 el('groupGo').addEventListener('click',()=>showGroup(el('group').value));
@@ -222,5 +234,6 @@ el('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writ
 el('back').addEventListener('click',()=>{el('results').hidden=true;document.querySelector('.grid').scrollIntoView({behavior:'smooth'})});
 el('ask').addEventListener('click',answerQuestion);el('question').addEventListener('keydown',e=>{if(e.key==='Enter')answerQuestion()});
 document.querySelectorAll('.qexample').forEach(b=>b.addEventListener('click',()=>{el('question').value=b.dataset.q;answerQuestion()}));
+setLang(initialLang());
 load();
 })();
