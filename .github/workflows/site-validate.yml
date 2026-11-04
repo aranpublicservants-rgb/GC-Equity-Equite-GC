@@ -35,7 +35,7 @@ jobs:
           # explorer.html holds every dataset built so far. Reviewed change: the page text was rewritten to plain,
           # sourced wording in English and French, chart labels and descriptions were translated, and the salary
           # chart now shows dollars. Update this hash only with a reviewed change to the explorer.
-          expected_sha='c9c5aefde996b9ca654ba6720adbdc73b54e879f'
+          expected_sha='055bf69ee5085eb559245dd409d724531ad8a771'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
           assert actual==expected_sha, f'explorer.html changed: {actual}'
           assert explorer.count('<script src="gc-ai.js"></script>')==1
