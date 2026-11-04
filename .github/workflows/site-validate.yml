@@ -33,9 +33,10 @@ jobs:
           ai=(root/'gc-ai.js').read_text(encoding='utf-8')
 
           # explorer.html holds every dataset built so far. Changed on purpose on 2026-11-03: a short script at the
-          # top sends visitors who name no section to the main page, and gc-ai.js and gc-equity-additions.js are loaded
-          # at the end. Update this hash only with a reviewed change to the explorer.
-          expected_sha='3c85fd14664f4abc9647299f5c2e0f2749263a17'
+          # top sends visitors who name no section to the main page, gc-ai.js and gc-equity-additions.js are loaded
+          # at the end, and the department and group page introductions were reworded. Update this hash only with
+          # a reviewed change to the explorer.
+          expected_sha='515dd881572e864048e9ff9a1bfa5cf6aa555053'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
           assert actual==expected_sha, f'explorer.html changed: {actual}'
           assert explorer.count('<script src="gc-ai.js"></script>')==1

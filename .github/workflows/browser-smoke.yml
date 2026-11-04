@@ -56,6 +56,10 @@ jobs:
                 const hrefs=await page.$$eval('.choices h3 a',as=>as.map(a=>a.getAttribute('href')));
                 if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','explorer.html#bhome']))throw Error('main options: '+hrefs);
                 if(await page.$$eval('#aiBox .gcai-bot',a=>a.length)!==4)throw Error('chatbot links missing');
+                if(await page.$$eval('[data-theme-set]',b=>b.length)!==3)throw Error('display choices missing on the main page');
+                await page.click('[data-theme-set="contrast"]');
+                if(await page.evaluate(()=>document.documentElement.getAttribute('data-theme'))!=='contrast')throw Error('high contrast did not apply');
+                await page.click('[data-theme-set="light"]');
                 await page.fill('#aiBox textarea','How has representation changed since 2017?');
                 const [tab]=await Promise.all([ctx.waitForEvent('page'),page.click('#aiBox .gcai-bot[data-bot="chatgpt"]')]);
                 await page.waitForTimeout(800);await tab.close().catch(()=>{});
@@ -86,6 +90,9 @@ jobs:
 
                 // 4. Option 2: choose a group and see all of its data
                 page=await ctx.newPage();watch(page);
+                await page.goto(addr+'explorer.html?lang=en#data',big);
+                await page.waitForSelector('#gcGroup',{timeout:60000});
+                if(!await page.evaluate(()=>document.body.classList.contains('gc-pending')&&!document.getElementById('view-salary').getClientRects().length))throw Error('data showed before a group was chosen');
                 await page.goto(addr+'explorer.html?lang=en&group=black#data',big);
                 await page.waitForFunction(()=>/79,400/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
                 await page.waitForFunction(()=>document.querySelectorAll('.gc-hl').length>10,null,{timeout:30000});

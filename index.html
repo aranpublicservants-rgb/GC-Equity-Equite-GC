@@ -3,53 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GC Equity: employment equity data for the federal public service</title>
+<title>GC Equity: employment equity in the federal public service</title>
 <meta name="description" content="Published Government of Canada data on employment equity in the federal public service, by department or agency and by employment equity group. | Données publiées du gouvernement du Canada sur l’équité en matière d’emploi dans la fonction publique fédérale, par ministère ou organisme et par groupe.">
 <script>
-/* Use the colour theme chosen in the data pages, before the page is drawn. */
+/* Apply the saved display choice before the page is drawn. */
 (function(){try{var t=localStorage.getItem('gcEquityTheme');if(t==='dark'||t==='contrast')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 <style>
-:root{--ink:#1B2A41;--ink-soft:#44546A;--paper:#F7F7F4;--card:#FFFFFF;--line:#DCDFD9;--teal:#0A6463;--teal-soft:#DCEFEE;--head:#1B2A41;--head-ink:#FFFFFF}
-:root[data-theme="dark"]{--ink:#E8ECF1;--ink-soft:#AAB4C0;--paper:#12161B;--card:#1B212A;--line:#3A444F;--teal:#46B8B5;--teal-soft:#15323A;--head:#0B0F14;--head-ink:#E8ECF1}
-:root[data-theme="contrast"]{--ink:#000;--ink-soft:#1a1a1a;--paper:#fff;--card:#fff;--line:#000;--teal:#005a58;--teal-soft:#d6efee;--head:#000;--head-ink:#fff}
+:root{--ink:#1B2A41;--ink-soft:#44546A;--paper:#F7F7F4;--card:#FFFFFF;--line:#C9D0CB;--teal:#0A6463;--head:#1B2A41;--head-ink:#FFFFFF;--focus:#BF7827}
+:root[data-theme="dark"]{--ink:#E8ECF1;--ink-soft:#B4BEC9;--paper:#12161B;--card:#1B212A;--line:#3A444F;--teal:#5CC8C4;--head:#0B0F14;--head-ink:#E8ECF1;--focus:#F2B35A}
+:root[data-theme="contrast"]{--ink:#000;--ink-soft:#000;--paper:#fff;--card:#fff;--line:#000;--teal:#004746;--head:#000;--head-ink:#fff;--focus:#B35900}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;font:17px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper)}
 h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;margin:0}
 a{color:var(--teal)}
-:focus-visible{outline:3px solid #bf7827;outline-offset:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#1B2A41;padding:10px 14px;z-index:10;font-weight:700}
 .skip:focus{left:10px;top:10px}
-header.site{background:var(--head);color:var(--head-ink);padding:18px 0 34px;border-bottom:6px solid var(--teal)}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+header.site{background:var(--head);color:var(--head-ink);padding:16px 0 34px;border-bottom:6px solid var(--teal)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px 18px;flex-wrap:wrap;margin-bottom:28px}
 .brand{margin:0;font-weight:700;letter-spacing:.2px}
-#langToggle{font:inherit;font-size:16px;font-weight:700;min-height:44px;padding:8px 16px;border-radius:8px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;text-decoration:underline}
+.controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.controls button{font:inherit;font-size:15px;font-weight:600;min-height:44px;padding:8px 14px;border-radius:8px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+#langToggle{text-decoration:underline;text-underline-offset:3px}
+.themebar{display:inline-flex;gap:6px;flex-wrap:wrap}
+.themebar button[aria-pressed="true"]{background:var(--head-ink);color:var(--head);border-color:var(--head-ink)}
 header.site h1{font-size:clamp(28px,4.4vw,44px);max-width:900px}
-header.site .lede{max-width:820px;margin:14px 0 0;font-size:19px;opacity:.95}
-#main{padding-top:34px;padding-bottom:20px}
-main>h2,.ai h2{font-size:clamp(23px,3vw,30px);margin:0 0 18px}
+header.site .lede{max-width:820px;margin:14px 0 0;font-size:19px}
+#main{padding-top:36px;padding-bottom:20px}
+#main>h2,.ai h2{font-size:clamp(23px,3vw,30px);margin:0 0 18px}
 .choices{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.choice{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-top:6px solid var(--teal);border-radius:12px;padding:22px 22px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.choice:hover{box-shadow:0 4px 14px rgba(0,0,0,.10)}
-.choice .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;margin-bottom:14px}
-:root[data-theme="dark"] .choice .num{color:#0B0F14}
+.choice{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-top:6px solid var(--teal);border-radius:12px;padding:22px 22px 20px}
+.choice:hover{box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.choice .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--teal);color:var(--card);font-weight:700;margin-bottom:14px}
 .choice h3{font-size:23px;margin:0 0 10px}
 .choice h3 a{color:var(--ink);text-decoration:none}
 .choice h3 a::after{content:"";position:absolute;inset:0;border-radius:12px}
 .choice h3 a:focus-visible{outline:none}
-.choice:focus-within{outline:3px solid #bf7827;outline-offset:3px}
+.choice:focus-within{outline:3px solid var(--focus);outline-offset:3px}
 .choice p{margin:0 0 16px;color:var(--ink-soft);font-size:16px}
-.choice .cta{margin-top:auto;margin-bottom:0;color:var(--teal);font-weight:700;text-decoration:underline}
-.helper{margin:18px 0 0;color:var(--ink-soft);font-size:15px;max-width:900px}
+.choice .cta{margin-top:auto;margin-bottom:0;color:var(--teal);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .ai{margin:40px 0 10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 22px}
 .ai .intro{margin:0 0 16px;max-width:860px}
 footer.site-foot{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 40px;font-size:15px;color:var(--ink-soft)}
 footer.site-foot p{margin:0 0 10px;max-width:900px}
 footer.site-foot strong{color:var(--ink)}
+:root[data-theme="contrast"] .choice,:root[data-theme="contrast"] .ai{border-width:2px}
+:root[data-theme="contrast"] .choice h3 a,:root[data-theme="contrast"] .choice .cta{text-decoration:underline}
 @media (max-width:900px){.choices{grid-template-columns:1fr}}
-@media (max-width:600px){body{font-size:16px}header.site{padding-bottom:26px}header.site .lede{font-size:17px}.choice h3{font-size:21px}.ai{padding:20px 16px}}
+@media (max-width:600px){body{font-size:16px}header.site{padding-bottom:26px}.topbar{margin-bottom:22px}header.site .lede{font-size:17px}.choice h3{font-size:21px}.ai{padding:20px 16px}.controls button{font-size:14px;padding:8px 11px}}
 @media (prefers-reduced-motion:no-preference){.choice{transition:box-shadow .15s}}
 </style>
 </head>
@@ -59,10 +63,17 @@ footer.site-foot strong{color:var(--ink)}
   <div class="wrap">
     <div class="topbar">
       <p class="brand">GC Equity <span aria-hidden="true">·</span> <span lang="fr">Équité-GC</span></p>
-      <button type="button" id="langToggle" lang="fr">Français</button>
+      <div class="controls">
+        <button type="button" id="langToggle" lang="fr">Français</button>
+        <div class="themebar" role="group" id="themebar" aria-label="Display">
+          <button type="button" data-theme-set="light" aria-pressed="true" data-fr="Clair">Light</button>
+          <button type="button" data-theme-set="dark" aria-pressed="false" data-fr="Sombre">Dark</button>
+          <button type="button" data-theme-set="contrast" aria-pressed="false" data-fr="Contraste élevé">High contrast</button>
+        </div>
+      </div>
     </div>
-    <h1 data-fr="Données sur l’équité en matière d’emploi dans la fonction publique fédérale">Employment equity data for the federal public service</h1>
-    <p class="lede" data-fr="Données publiées du gouvernement du Canada sur les femmes, les Autochtones, les personnes en situation de handicap, les employés racisés et les employés noirs de la fonction publique fédérale.">Published Government of Canada data on women, Indigenous Peoples, persons with disabilities, racialized employees and Black employees in the federal public service.</p>
+    <h1 data-fr="L’équité en matière d’emploi dans la fonction publique fédérale">Employment equity in the federal public service</h1>
+    <p class="lede" data-fr="Données publiées du gouvernement du Canada, par ministère ou organisme et par groupe visé par l’équité en matière d’emploi.">Published Government of Canada data, by department or agency and by employment equity group.</p>
   </div>
 </header>
 
@@ -72,27 +83,26 @@ footer.site-foot strong{color:var(--ink)}
     <li class="choice">
       <span class="num" aria-hidden="true">1</span>
       <h3><a id="choice-departments" data-path="explorer.html#departments" href="explorer.html#departments" data-fr="Données des ministères et organismes">Departmental and agency data</a></h3>
-      <p data-fr="Choisissez un ministère ou un organisme pour voir toutes ses données publiées : représentation, sondage auprès des employés, sondage sur la dotation, sous-groupes autochtones, types de handicap, résultats par direction générale et changements depuis 2022.">Choose a department or agency to see all of its published data: representation, employee survey results, the staffing survey, Indigenous subgroups, types of disability, results by branch and changes since 2022.</p>
+      <p data-fr="Choisissez un ministère ou un organisme pour voir ses résultats.">Choose a department or agency to see its results.</p>
       <p class="cta" aria-hidden="true" data-fr="Choisir un organisme →">Choose an organization →</p>
     </li>
     <li class="choice">
       <span class="num" aria-hidden="true">2</span>
       <h3><a id="choice-groups" data-path="explorer.html#data" href="explorer.html#data" data-fr="Données sur les groupes visés par l’équité dans la fonction publique">Data for equity groups across the public service</a></h3>
-      <p data-fr="Choisissez un groupe visé par l’équité en matière d’emploi pour voir sa représentation, les cadres, les salaires, les sous-groupes, l’embauche, les promotions et les résultats de sondage dans l’ensemble de la fonction publique.">Choose an employment equity group to see its representation, executives, salary, subgroups, hiring, promotions and survey results across the public service.</p>
+      <p data-fr="Choisissez un groupe visé par l’équité en matière d’emploi pour voir ses résultats dans l’ensemble de la fonction publique.">Choose an employment equity group to see its results across the public service.</p>
       <p class="cta" aria-hidden="true" data-fr="Choisir un groupe →">Choose a group →</p>
     </li>
     <li class="choice">
       <span class="num" aria-hidden="true">3</span>
       <h3><a id="choice-briefing" data-path="explorer.html#bhome" href="explorer.html#bhome" data-fr="Présentations et notes d’information">Presentations and briefing notes</a></h3>
-      <p data-fr="Préparez une note d’information, un plan de présentation ou une demande de données non publiées, avec des liens vers les données et les sources.">Prepare a briefing note, a presentation outline or a request for data that is not published, with links to the data and sources.</p>
+      <p data-fr="Préparez une note d’information, un plan de présentation ou une demande de données.">Prepare a briefing note, a presentation outline or a request for data.</p>
       <p class="cta" aria-hidden="true" data-fr="Commencer →">Get started →</p>
     </li>
   </ul>
-  <p class="helper" data-fr="Données les plus récentes : représentation au 31 mars 2025 et Sondage auprès des fonctionnaires fédéraux de 2024. La portée varie selon la source. Un écart entre des groupes ne prouve pas à lui seul une discrimination.">Most recent data: representation as of March 31, 2025, and the 2024 Public Service Employee Survey. Coverage differs by source. A difference between groups does not, on its own, establish discrimination.</p>
 
   <section class="ai" id="ai" aria-labelledby="aiTitle">
     <h2 id="aiTitle" data-fr="Poser une question à un agent conversationnel">Ask an AI chatbot</h2>
-    <p class="intro" data-fr="Posez une question sur l’équité en matière d’emploi dans la fonction publique fédérale à ChatGPT, Claude, Copilot ou Gemini. Votre question est copiée et l’agent conversationnel choisi s’ouvre dans un nouvel onglet.">Ask ChatGPT, Claude, Copilot or Gemini a question about employment equity in the federal public service. Your question is copied, and the chatbot you choose opens in a new tab.</p>
+    <p class="intro" data-fr="Tapez votre question, puis choisissez ChatGPT, Claude, Copilot ou Gemini.">Type your question, then choose ChatGPT, Claude, Copilot or Gemini.</p>
     <div id="aiBox"></div>
   </section>
 </main>
@@ -100,6 +110,7 @@ footer.site-foot strong{color:var(--ink)}
 <footer class="site-foot">
   <div class="wrap">
     <p data-fr="&lt;strong&gt;Ressource indépendante.&lt;/strong&gt; Ce site utilise des données publiées du gouvernement du Canada. Il ne s’agit pas d’un site Web, d’un tableau de bord, d’une constatation ni d’une décision officielle du gouvernement du Canada."><strong>Independent resource.</strong> This site uses published Government of Canada data. It is not an official Government of Canada website, dashboard, finding or determination.</p>
+    <p data-fr="Effectif au 31 mars 2025. Sondage auprès des fonctionnaires fédéraux de 2024.">Workforce data as of March 31, 2025. Public Service Employee Survey, 2024.</p>
     <p><a id="sourcesLink" data-path="sources.html" href="sources.html" data-fr="Sources des données">Data sources</a></p>
   </div>
 </footer>
@@ -116,24 +127,33 @@ function withLang(path){
   var i=path.indexOf('#');var base=i<0?path:path.slice(0,i),hash=i<0?'':path.slice(i);
   return base+(base.indexOf('?')<0?'?':'&')+'lang=fr'+hash;
 }
+function setTheme(t){
+  if(t!=='dark'&&t!=='contrast')t='light';
+  if(t==='light')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',t);
+  [].forEach.call(document.querySelectorAll('[data-theme-set]'),function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-theme-set')===t));});
+  try{localStorage.setItem('gcEquityTheme',t);}catch(e){}
+}
 function setLang(next){
   lang=next==='fr'?'fr':'en';
   document.documentElement.lang=lang;
   nodes.forEach(function(n){n.innerHTML=lang==='fr'?n.getAttribute('data-fr'):n.getAttribute('data-en');});
-  document.title=lang==='fr'?'Équité-GC : données sur l’équité en matière d’emploi dans la fonction publique fédérale':'GC Equity: employment equity data for the federal public service';
+  document.title=lang==='fr'?'Équité-GC : l’équité en matière d’emploi dans la fonction publique fédérale':'GC Equity: employment equity in the federal public service';
   var t=document.getElementById('langToggle');
   t.textContent=lang==='fr'?'English':'Français';t.setAttribute('lang',lang==='fr'?'en':'fr');
+  document.getElementById('themebar').setAttribute('aria-label',lang==='fr'?'Affichage':'Display');
   [].forEach.call(document.querySelectorAll('[data-path]'),function(a){a.href=withLang(a.getAttribute('data-path'));});
   try{var u=new URL(location.href);if(lang==='fr')u.searchParams.set('lang','fr');else u.searchParams.delete('lang');if(u.href!==location.href)history.replaceState(history.state,'',u.href);}catch(e){}
   try{localStorage.setItem('gcEquityLang',lang);}catch(e){}
   document.dispatchEvent(new CustomEvent('langchange',{detail:{lang:lang}}));
 }
 document.getElementById('langToggle').addEventListener('click',function(){setLang(lang==='fr'?'en':'fr');});
-var start='en';
-try{var p=new URLSearchParams(location.search).get('lang');start=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}
+[].forEach.call(document.querySelectorAll('[data-theme-set]'),function(b){b.addEventListener('click',function(){setTheme(b.getAttribute('data-theme-set'));});});
+var start='en',theme='light';
+try{var p=new URLSearchParams(location.search).get('lang');start=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');theme=localStorage.getItem('gcEquityTheme')||'light';}catch(e){}
 if(window.GCAI)window.GCAI.render(document.getElementById('aiBox'),{
   placeholder:function(){return lang==='fr'?'Par exemple : Comment la représentation des personnes en situation de handicap a-t-elle évolué depuis 2017?':'For example: How has the representation of persons with disabilities changed since 2017?';}
 });
+setTheme(theme);
 setLang(start);
 })();
 </script>
