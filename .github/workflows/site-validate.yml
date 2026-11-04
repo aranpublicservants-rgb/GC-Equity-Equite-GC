@@ -1,18 +1,12 @@
-name: GC Equity redesign validation
+name: GC Equity site validation
 on:
-  push:
-    branches:
-      - chatgpt-safe-redesign-2026-11-01
-      - chatgpt-unified-workspace-2026-11-01
-      - chatgpt-full-data-package-2026-11-01
   pull_request:
     paths:
       - 'index.html'
-      - 'site-app.js'
-      - 'sources.html'
-      - 'data/october-2026/package-integrity-audit.json'
-      - 'unified-workspace.js'
       - 'explorer.html'
+      - 'sources.html'
+      - 'gc-ai.js'
+      - 'gc-equity-additions.js'
       - 'data/october-2026/**'
       - '.github/workflows/site-validate.yml'
 permissions:
@@ -24,40 +18,46 @@ jobs:
       - uses: actions/checkout@v4
       - name: JavaScript syntax
         run: |
-          node --check site-app.js
-          node --check unified-workspace.js
-      - name: Static integration and data safeguards
+          node --check gc-ai.js
+          node --check gc-equity-additions.js
+      - name: Structure, data references and visitor wording
         shell: bash
         run: |
           python - <<'PY'
-          import csv, hashlib, pathlib, re, subprocess
+          import csv, json, pathlib, re, subprocess
           from html.parser import HTMLParser
           root=pathlib.Path('.')
-          html=(root/'index.html').read_text(encoding='utf-8')
-          assert (root/'explorer.html').exists()
-          # explorer.html changed on purpose on 2026-11-03: version label removed, ?lang= read on load and kept
-          # in the address, keyboard focus moved to the opened organization's results, French translation
-          # observer no longer rewrites unchanged text (that loop froze the page in French), link contrast on
-          # tinted panels raised to WCAG AA, and scrolling tables reachable by keyboard. Update this hash only
-          # with a reviewed change to the explorer.
-          original_sha='105b4cb6c0d2bea09eed95b162d3c591d6d7c624'
+          index=(root/'index.html').read_text(encoding='utf-8')
+          explorer=(root/'explorer.html').read_text(encoding='utf-8')
+          additions=(root/'gc-equity-additions.js').read_text(encoding='utf-8')
+          ai=(root/'gc-ai.js').read_text(encoding='utf-8')
+
+          # explorer.html holds every dataset built so far. Changed on purpose on 2026-11-03: a short script at the
+          # top sends visitors who name no section to the main page, and gc-ai.js and gc-equity-additions.js are loaded
+          # at the end. Update this hash only with a reviewed change to the explorer.
+          expected_sha='3c85fd14664f4abc9647299f5c2e0f2749263a17'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
-          assert actual==original_sha, f'Working explorer changed: {actual}'
-          assert 'src="site-app.js"' in html
-          assert 'src="explorer.html"' in html, 'Preserved explorer must load inside main page'
-          assert 'src="sources.html"' in html, 'Source catalogue must load inside main page'
-          assert 'src="unified-workspace.js"' in html, 'Missing workspace routing'
-          for route in ('departments','groups','tools'):
-              assert f'data-workspace-tab="{route}"' in html
-              assert f'data-workspace="{route}"' in html
-          assert 'id="org"' in html and 'id="group"' in html and 'id="tooltype"' in html
+          assert actual==expected_sha, f'explorer.html changed: {actual}'
+          assert explorer.count('<script src="gc-ai.js"></script>')==1
+          assert explorer.count('<script src="gc-equity-additions.js"></script>')==1
+          assert 'location.replace("index.html"' in explorer[:3000], 'start-screen redirect missing'
+
+          # The main page: three options, the chatbot box, no embedded copies of other pages.
+          for href in ('explorer.html#departments','explorer.html#data','explorer.html#bhome'):
+              assert index.count(f'href="{href}"')==1, f'missing main option {href}'
+          assert index.count('class="choice"')==3, 'main page must offer exactly three options'
+          assert '<iframe' not in index.lower(), 'main page must not embed other pages'
+          assert 'src="gc-ai.js"' in index and 'id="aiBox"' in index
+          for name in ('chatgpt.com','claude.ai','copilot.microsoft.com','gemini.google.com'):
+              assert name in ai, f'chatbot missing: {name}'
           class IDs(HTMLParser):
               def __init__(self): super().__init__(); self.ids=[]
               def handle_starttag(self,tag,attrs):
-                  for k,v in attrs:
-                      if k=='id':self.ids.append(v)
-          p=IDs();p.feed(html)
-          assert len(p.ids)==len(set(p.ids)), 'Duplicate DOM ids'
+                  self.ids+= [v for k,v in attrs if k=='id']
+          p=IDs();p.feed(index)
+          assert len(p.ids)==len(set(p.ids)), 'Duplicate ids on the main page'
+
+          # Every curated dataset is shown in the data pages.
           folder=root/'data/october-2026'
           files=[f for f in folder.glob('*.csv') if f.name!='public-source-inventory.csv']
           assert len(files)==8, f'Expected 8 curated data sources, got {len(files)}'
@@ -65,32 +65,36 @@ jobs:
               with f.open(newline='',encoding='utf-8-sig') as fd:
                   rows=list(csv.DictReader(fd))
               assert rows and len(rows[0])>2, f'Invalid CSV: {f}'
-          js=(root/'site-app.js').read_text(encoding='utf-8')
-          for f in files:
-              assert f.name in js, f'Missing file from app: {f.name}'
-          assert 'grand total|total' in js.lower()
-          unified=(root/'unified-workspace.js').read_text(encoding='utf-8')
-          assert 'showView' in unified and 'setTab' in unified
-          assert 'src="explorer.html"' in html and 'src="sources.html"' in html, 'Aggregate rows not excluded'
-          assert 'suppressed' not in js.lower() or 'not' in js.lower()
-          import json
-          audit_path=root/'data/october-2026/package-integrity-audit.json'
+              assert f.name in additions, f'Dataset not shown: {f.name}'
+
+          audit_path=folder/'package-integrity-audit.json'
           if audit_path.exists():
               audit=json.loads(audit_path.read_text(encoding='utf-8'))
-              p=audit['drive_verified_site_package']
-              assert p['assets']['unique_js_blocks']==1081
-              assert sum(z['assets'] for z in p['archive_files'])==1081
-              assert p['recorded_assembly_metrics']['inventory_rows']==157
+              pkg=audit['drive_verified_site_package']
+              assert pkg['assets']['unique_js_blocks']==1081
+              assert sum(z['assets'] for z in pkg['archive_files'])==1081
+              assert pkg['recorded_assembly_metrics']['inventory_rows']==157
               assert audit['github_main']['curated_october_csv_files']==len(files)==8
               assert audit['github_main']['full_october_27_package_deployed'] is False
+
           source_page=(root/'sources.html').read_text(encoding='utf-8')
           assert 'id="visible"' in source_page and 'data-fr=' in source_page, 'Source list page must be bilingual'
-          # Visitor pages must not carry internal release or development wording.
-          internal=['October 27','October 29','preserved explorer','preserved full explorer','curated October','not yet published','Drive package','Inventory only','retained original','explorateur préservé','Build 2026']
-          for name in ('index.html','sources.html','site-app.js','unified-workspace.js','data/october-2026/public-source-inventory.csv'):
-              text=(root/name).read_text(encoding='utf-8').lower()
+
+          # No keys, no private links and no internal wording on visitor pages.
+          visitor={'index.html':index,'sources.html':source_page,'gc-ai.js':ai,'gc-equity-additions.js':additions,
+                   'public-source-inventory.csv':(folder/'public-source-inventory.csv').read_text(encoding='utf-8')}
+          for name,text in visitor.items():
+              assert not re.search(r'sk-[A-Za-z0-9]{20,}|api[_-]?key\s*[:=]|Bearer\s+[A-Za-z0-9]',text,re.I), f'Possible credential in {name}'
+              assert 'drive.google.com' not in text and 'docs.google.com' not in text, f'Private document link in {name}'
+          internal=['October 27','October 29','preserved explorer','preserved full explorer','curated October','not yet published',
+                    'Drive package','Inventory only','retained original','explorateur préservé','Build 2026','old site','previous version',
+                    'pull request','handoff']
+          for name,text in visitor.items():
+              low=text.lower()
               for phrase in internal:
-                  assert phrase.lower() not in text, f'Internal wording "{phrase}" found in {name}'
-          assert 'Build 2026-07-23' not in (root/'explorer.html').read_text(encoding='utf-8')
-          print('Passed: preserved explorer hash, 8 datasets, references, HTML ids, three in-page routes, embedded frames and audit')
+                  assert phrase.lower() not in low, f'Internal wording "{phrase}" found in {name}'
+          for phrase in ('—',):
+              for name in ('index.html','gc-ai.js','gc-equity-additions.js'):
+                  assert phrase not in visitor[name], f'Em dash in {name}'
+          print('Passed: explorer hash, three main options, chatbot box, 8 datasets shown, audit, bilingual sources, visitor wording')
           PY

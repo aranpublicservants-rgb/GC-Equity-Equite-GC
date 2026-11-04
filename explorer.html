@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>/* The main page (index.html) is the start screen: open it when no section is named in the address. */
+(function(){var h=(location.hash||"").replace(/^#/,""),p;try{p=new URLSearchParams(location.search);}catch(e){return;}
+ if(h&&h!=="home")return;
+ if(p.get("group")){try{history.replaceState(null,"",location.pathname+location.search+"#data");}catch(e){}return;}
+ var fr=p.get("lang")==="fr";if(!p.get("lang")){try{fr=localStorage.getItem("gcEquityLang")==="fr";}catch(e){}}
+ location.replace("index.html"+(fr?"?lang=fr":""));})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GC-Equity / Équité-GC — Public Service Equity Data Explorer</title>
 <meta name="description" content="Uses Government of Canada employment equity data to help identify systemic barriers, workforce gaps, and areas for action. | Utilise les données sur l'équité en matière d'emploi du gouvernement du Canada pour aider à cerner les obstacles systémiques, les écarts dans l'effectif et les pistes d'action.">
@@ -5868,5 +5874,7 @@ document.addEventListener("click",function(e){
   if(main&&window.MutationObserver){new MutationObserver(function(){mark(main);}).observe(main,{childList:true,subtree:true});}
 })();
 </script>
+<script src="gc-ai.js"></script>
+<script src="gc-equity-additions.js"></script>
 </body>
 </html>
