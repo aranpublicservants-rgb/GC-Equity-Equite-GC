@@ -32,11 +32,10 @@ jobs:
           additions=(root/'gc-equity-additions.js').read_text(encoding='utf-8')
           ai=(root/'gc-ai.js').read_text(encoding='utf-8')
 
-          # explorer.html holds every dataset built so far. Changed on purpose on 2026-11-03: a short script at the
-          # top sends visitors who name no section to the main page, gc-ai.js and gc-equity-additions.js are loaded
-          # at the end, and the department and group page introductions were reworded. Update this hash only with
-          # a reviewed change to the explorer.
-          expected_sha='515dd881572e864048e9ff9a1bfa5cf6aa555053'
+          # explorer.html holds every dataset built so far. Reviewed change: the page text was rewritten to plain,
+          # sourced wording in English and French, chart labels and descriptions were translated, and the salary
+          # chart now shows dollars. Update this hash only with a reviewed change to the explorer.
+          expected_sha='055bf69ee5085eb559245dd409d724531ad8a771'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
           assert actual==expected_sha, f'explorer.html changed: {actual}'
           assert explorer.count('<script src="gc-ai.js"></script>')==1
@@ -95,7 +94,8 @@ jobs:
               for phrase in internal:
                   assert phrase.lower() not in low, f'Internal wording "{phrase}" found in {name}'
           for phrase in ('—',):
-              for name in ('index.html','gc-ai.js','gc-equity-additions.js'):
+              for name in ('index.html','sources.html','gc-ai.js','gc-equity-additions.js','public-source-inventory.csv'):
                   assert phrase not in visitor[name], f'Em dash in {name}'
+              assert phrase not in explorer, 'Em dash in explorer.html'
           print('Passed: explorer hash, three main options, chatbot box, 8 datasets shown, audit, bilingual sources, visitor wording')
           PY
