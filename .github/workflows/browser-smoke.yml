@@ -1,16 +1,12 @@
 name: GC Equity desktop and mobile smoke
 on:
-  push:
-    branches:
-      - chatgpt-safe-redesign-2026-11-01
-      - chatgpt-unified-workspace-2026-11-01
   pull_request:
     paths:
       - 'index.html'
-      - 'site-app.js'
-      - 'unified-workspace.js'
       - 'explorer.html'
       - 'sources.html'
+      - 'gc-ai.js'
+      - 'gc-equity-additions.js'
       - 'data/october-2026/**'
       - '.github/workflows/browser-smoke.yml'
 permissions:
@@ -18,7 +14,7 @@ permissions:
 jobs:
   browser-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,87 +24,99 @@ jobs:
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
-      - name: Test desktop, mobile, original explorer and source catalogue
+      - name: Main page, three paths, chatbot links and languages on desktop and phone
         run: |
           node <<'JS'
-          const {chromium}=require('playwright');
+          const {chromium,devices}=require('playwright');
           const fs=require('fs'),path=require('path'),http=require('http');
-          const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.csv':'text/csv; charset=utf-8','.css':'text/css; charset=utf-8'};
+          const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.csv':'text/csv; charset=utf-8','.json':'application/json'};
           const root=process.cwd();
           const server=http.createServer((req,res)=>{
-            let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
-            const filepath=path.resolve(root,'.'+name);
+            const filepath=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
             if(!filepath.startsWith(root+path.sep)&&filepath!==root){res.writeHead(403);res.end();return}
             fs.readFile(filepath,(err,bytes)=>{if(err){res.writeHead(404);res.end();return;}res.writeHead(200,{'content-type':mime[path.extname(filepath)]||'application/octet-stream'});res.end(bytes);});
           });
+          const big={waitUntil:'load',timeout:120000};
           (async()=>{
             await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
             const addr='http://127.0.0.1:'+server.address().port+'/';
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             try{
-              for(const mode of [{name:'desktop',width:1366,height:850},{name:'mobile',width:412,height:915}]){
-                const page=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
-                const errors=[];page.on('pageerror',e=>errors.push(e.message));
-                await page.goto(addr+'index.html',{waitUntil:'domcontentloaded'});
-                await page.waitForFunction(()=>document.getElementById('loadstatus').textContent.includes('8 of 8'),{timeout:15000});
-                await page.selectOption('#org',{label:'Indigenous Services Canada'});
-                await page.click('#orgGo');
-                await page.waitForFunction(()=>document.getElementById('resultBody').textContent.includes('26.9%'));
-                await page.selectOption('#group','black');
-                await page.click('#groupGo');
-                await page.waitForFunction(()=>document.getElementById('resultBody').textContent.includes('79,400'));
-                await page.fill('#question','What is Indigenous representation at Indigenous Services Canada?');
-                await page.click('#ask');
-                await page.waitForFunction(()=>document.getElementById('answer').textContent.includes('26.9%'));
-                await page.selectOption('#tooltype','brief');
-                await page.click('#toolGo');
-                await page.waitForFunction(()=>document.getElementById('draft').value.includes('EQUITY EVIDENCE BRIEFING'));
-                await page.click('#workspace-groups');
-                await page.waitForFunction(()=>document.getElementById('workspace-groups').getAttribute('aria-selected')==='true');
-                await page.click('#workspace-show-explorer');
-                await page.waitForFunction(()=>document.getElementById('integrated-explorer').contentDocument?.title?.includes('Equity'),{timeout:60000});
-                await page.click('#workspace-show-catalogue');
-                await page.waitForFunction(()=>document.getElementById('integrated-catalogue').contentDocument?.getElementById('visible')?.textContent?.includes('157 of 157'),{timeout:30000});
-                await page.click('#workspace-show-explorer');
-                await page.click('#workspace-tools');
-                await page.waitForFunction(()=>document.getElementById('workspace-description').getAttribute('aria-labelledby')==='workspace-tools');
-                const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
-                if(overflow){const diag=await page.evaluate(()=>{const items=Array.from(document.querySelectorAll('*'));return {width:innerWidth,documentWidth:document.documentElement.scrollWidth,inner:items.filter(e=>e.scrollWidth>e.clientWidth+4).slice(0,15).map(e=>({tag:e.tagName,id:e.id,client:e.clientWidth,scroll:e.scrollWidth,overflow:getComputedStyle(e).overflowX}))};});console.log('OVERFLOW_DIAGNOSTIC',JSON.stringify(diag));fs.mkdirSync('qa-screenshots',{recursive:true});await page.screenshot({path:'qa-screenshots/mobile-overflow.png',fullPage:true});throw Error(mode.name+': page horizontal overflow');}
-                if(errors.length)throw Error(mode.name+': browser errors: '+errors.join(' / '));
+              for(const mode of [{name:'desktop',opts:{viewport:{width:1366,height:850}}},{name:'mobile',opts:{...devices['Pixel 5']}}]){
+                const ctx=await browser.newContext(mode.opts);
+                const outside=[];
+                await ctx.route(u=>!String(u).startsWith(addr),r=>{outside.push(r.request().url());r.abort();});
+                const errors=[];const watch=p=>p.on('pageerror',e=>errors.push(p.url()+' :: '+e.message));
+                const overflow=p=>p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
                 fs.mkdirSync('qa-screenshots',{recursive:true});
-                await page.goto(addr+'index.html');
-                await page.waitForFunction(()=>document.getElementById('loadstatus').textContent.includes('8 of 8'));
-                await page.screenshot({path:'qa-screenshots/'+mode.name+'.png',fullPage:true});
-                await page.goto(addr+'sources.html');
-                await page.waitForFunction(()=>document.getElementById('visible').textContent.includes('157 of 157'));
-                await page.goto(addr+'explorer.html',{waitUntil:'domcontentloaded',timeout:60000});
-                const title=await page.title();if(!title.includes('Equity'))throw Error('Preserved explorer unexpected title: '+title);
-                // A copied French link opens each page in French. A fresh page avoids waiting on the explorer still loading above.
-                const pg=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
-                const pgErrors=[];pg.on('pageerror',e=>pgErrors.push(e.message));
-                await pg.goto(addr+'index.html?lang=fr');
-                await pg.waitForFunction(()=>document.documentElement.lang==='fr'&&document.getElementById('loadstatus').textContent.includes('8 jeux de données sur 8'));
-                await pg.goto(addr+'sources.html?lang=fr');
-                await pg.waitForFunction(()=>document.documentElement.lang==='fr'&&document.getElementById('visible').textContent.includes('157 sur 157'));
-                await pg.close();
-                const pe=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
-                pe.on('pageerror',e=>pgErrors.push(e.message));
-                await pe.goto(addr+'explorer.html?lang=fr',{waitUntil:'load',timeout:90000});
-                await pe.waitForFunction(()=>document.documentElement.lang==='fr-CA',{timeout:60000});
-                await pe.close();
-                // An organization chosen on the homepage opens in the explorer without a second choice.
-                const po=await browser.newPage({viewport:{width:mode.width,height:mode.height}});
-                po.on('pageerror',e=>pgErrors.push(e.message));
-                await po.goto(addr+'index.html?lang=en');
-                await po.waitForFunction(()=>document.getElementById('loadstatus').textContent.includes('8 of 8'));
-                await po.selectOption('#org',{label:'Indigenous Services Canada'});
-                await po.click('#orgGo');
-                await po.click('#resultBody a[href="explorer.html"]');
-                await po.waitForFunction(()=>{const d=document.getElementById('integrated-explorer').contentDocument;return !!(d&&d.getElementById('view-orgprofile')&&d.getElementById('view-orgprofile').classList.contains('active')&&d.getElementById('opOrg')&&d.getElementById('opOrg').value==='Indigenous Services Canada');},{timeout:90000});
-                await po.close();
-                if(pgErrors.length)throw Error(mode.name+': browser errors in language and organization checks: '+pgErrors.join(' / '));
+
+                // 1. Main page: three options and the chatbot box
+                let page=await ctx.newPage();watch(page);
+                await page.goto(addr+'index.html?lang=en');
+                const hrefs=await page.$$eval('.choices h3 a',as=>as.map(a=>a.getAttribute('href')));
+                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','explorer.html#bhome']))throw Error('main options: '+hrefs);
+                if(await page.$$eval('#aiBox .gcai-bot',a=>a.length)!==4)throw Error('chatbot links missing');
+                await page.fill('#aiBox textarea','How has representation changed since 2017?');
+                const [tab]=await Promise.all([ctx.waitForEvent('page'),page.click('#aiBox .gcai-bot[data-bot="chatgpt"]')]);
+                await page.waitForTimeout(800);await tab.close().catch(()=>{});
+                if(!outside.some(u=>u.startsWith('https://chatgpt.com/?q=How%20has%20representation')))throw Error('chatbot link did not carry the question: '+outside.join(' '));
+                if(await overflow(page))throw Error(mode.name+': main page scrolls sideways');
+                await page.screenshot({path:'qa-screenshots/'+mode.name+'-main.png',fullPage:true});
+                await page.click('#langToggle');
+                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.getElementById('choice-groups').getAttribute('href')==='explorer.html?lang=fr#data');
+                await page.click('#langToggle');
                 await page.close();
-                console.log('PASS: '+mode.name+', department, group, question, tools, integrated explorer, in-page catalogue, explorer, French links, organization handoff');
+
+                // 2. The old explorer address opens the main page
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'explorer.html',{waitUntil:'domcontentloaded',timeout:120000});
+                await page.waitForURL(/index\.html$/,{timeout:60000});
+                await page.close();
+
+                // 3. Option 1: choose an organization and see all of its data
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'index.html?lang=en');
+                await Promise.all([page.waitForURL(/explorer\.html/,{timeout:120000}),page.click('#choice-departments')]);
+                await page.waitForFunction(()=>document.getElementById('opOrg')&&document.getElementById('opOrg').options.length>50,null,{timeout:120000});
+                await page.selectOption('#opOrg','Correctional Service Canada');
+                await page.waitForFunction(()=>{const s=document.getElementById('gc-d-subgroups');return s&&/1,026/.test(s.textContent)&&/Mobility/.test(s.textContent);},null,{timeout:60000});
+                if(!await page.$('#eq-d-branches'))throw Error('branch results missing for the organization');
+                if(!await page.$('a.gc-mainlink[href="index.html"]'))throw Error('main page link missing');
+                await page.close();
+
+                // 4. Option 2: choose a group and see all of its data
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'explorer.html?lang=en&group=black#data',big);
+                await page.waitForFunction(()=>/79,400/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
+                await page.waitForFunction(()=>document.querySelectorAll('.gc-hl').length>10,null,{timeout:30000});
+                await page.selectOption('#gcGroup','pwd');
+                await page.waitForFunction(()=>/24,128/.test(document.getElementById('gcGroupOut').textContent),null,{timeout:30000});
+                if(await overflow(page))throw Error(mode.name+': group page scrolls sideways');
+                await page.screenshot({path:'qa-screenshots/'+mode.name+'-group.png'});
+                await page.close();
+
+                // 5. Option 3: presentations and briefing notes
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'explorer.html?lang=en#bhome',big);
+                await page.waitForSelector('#view-bhome.active #eqSlidesBuild',{timeout:60000});
+                if(await page.$$eval('#gc-b-ai .gcai-bot',a=>a.length)!==4)throw Error('briefing chatbot links missing');
+                await page.close();
+
+                // 6. French links and the source list
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'explorer.html?lang=fr&group=women#data',big);
+                await page.waitForFunction(()=>document.documentElement.lang==='fr-CA'&&/151\s528/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
+                const alive=await Promise.race([page.evaluate(()=>1+1),new Promise(r=>setTimeout(()=>r('stuck'),5000))]);
+                if(alive!==2)throw Error('French page stopped responding');
+                await page.goto(addr+'sources.html?lang=fr');
+                await page.waitForFunction(()=>document.getElementById('visible').textContent.includes('157 sur 157'));
+                await page.close();
+
+                if(errors.length)throw Error(mode.name+': browser errors: '+errors.join(' / '));
+                const unexpected=outside.filter(u=>!/^https:\/\/(chatgpt\.com|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)\//.test(u));
+                if(unexpected.length)throw Error(mode.name+': outside requests: '+unexpected.join(' '));
+                await ctx.close();
+                console.log('PASS: '+mode.name+', main page, chatbot links, three paths, French, source list');
               }
             }finally{await browser.close();server.close()}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});
