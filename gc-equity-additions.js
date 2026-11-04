@@ -1,10 +1,8 @@
-/* GC Equity: additions to the data explorer.
- * 1. Department page: Indigenous subgroups (March 31, 2025) and types of disability (March 31, 2024)
- *    for the chosen organization. The organization is also carried into the other organization lists.
- * 2. Public-service page: choose an employment equity group to see its representation, executives,
- *    salary and subgroup data, with that group highlighted in every table on the page.
- * 3. A link back to the main page, which replaces the explorer's own start screen.
- * 4. An "ask an AI chatbot" box on the department, group and briefing pages (see gc-ai.js).
+/* GC Equity: department, group and briefing pages.
+ * Department page: Indigenous subgroups (March 31, 2025) and types of disability (March 31, 2024) for the
+ * chosen organization; the organization is carried into the other organization lists on the page.
+ * Group page: a group chooser, then that group's results, followed by the detailed tables with the group shaded.
+ * Every page: a link to the main page, and the AI chatbot box (gc-ai.js).
  * Figures come from the published files in data/october-2026/. Nothing is estimated or filled in here.
  */
 (function(){
@@ -22,6 +20,7 @@ const FILES={
 };
 const TBS={en:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html',fr:'https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion.html'};
 const DI_URL='https://employment-equity.github.io/';
+const NBSP=' ';
 const $=id=>document.getElementById(id);
 const isFr=()=>String(document.documentElement.getAttribute('lang')||'en').toLowerCase().indexOf('fr')===0;
 const tr=(en,fr)=>isFr()?fr:en;
@@ -40,9 +39,9 @@ function notNumber(v){
  return esc(s);
 }
 const num=v=>isNum(v)?Number(v).toLocaleString(loc()):notNumber(v);
-const pct=v=>isNum(v)?Number(v).toLocaleString(loc(),{minimumFractionDigits:1,maximumFractionDigits:2})+(isFr()?' %':'%'):notNumber(v);
+const pct=v=>isNum(v)?Number(v).toLocaleString(loc(),{minimumFractionDigits:1,maximumFractionDigits:2})+(isFr()?NBSP+'%':'%'):notNumber(v);
 const ratio=v=>isNum(v)?Number(v).toLocaleString(loc(),{minimumFractionDigits:2,maximumFractionDigits:2}):notNumber(v);
-const dollars=n=>isFr()?String(n).replace(/,/g,' ')+' $':'$'+n;
+const dollars=n=>isFr()?String(n).replace(/,/g,NBSP)+NBSP+'$':'$'+n;
 const money=v=>isNum(v)?dollars(Number(v).toLocaleString('en-CA')):notNumber(v);
 const march31=y=>isFr()?'31 mars '+y:'March 31, '+y;
 function bandText(s){
@@ -56,7 +55,7 @@ function bandText(s){
 function rangeText(s){
  s=String(s||'');
  if(!isFr())return esc(s);
- return esc(s.replace(/\$([\d,]+)/g,(x,n)=>n.replace(/,/g,' ')+' $').replace(/^Less than /,'Moins de ').replace(/^Over /,'Plus de ').replace(/ to /,' à '));
+ return esc(s.replace(/\$([\d,]+)/g,(x,n)=>n.replace(/,/g,NBSP)+NBSP+'$').replace(/^Less than /,'Moins de ').replace(/^Over /,'Plus de ').replace(/ to /,' à '));
 }
 const FIFTHS={'Bottom 20th':['lowest fifth','cinquième inférieur'],'20th to 40th':['second fifth','deuxième cinquième'],'40th to 60th':['middle fifth','cinquième du milieu'],'60th to 80th':['fourth fifth','quatrième cinquième'],'Top 20th':['highest fifth','cinquième supérieur']};
 function benchText(s){
@@ -120,37 +119,69 @@ function table(caption,head,rows,opts){
 }
 const tbsLink=()=>'<a href="'+(isFr()?TBS.fr:TBS.en)+'" target="_blank" rel="noopener">'+tr('Treasury Board of Canada Secretariat, diversity and inclusion statistics','Secrétariat du Conseil du Trésor du Canada, statistiques sur la diversité et l’inclusion')+'</a>';
 const fileLink=(k,label)=>'<a href="'+DIR+FILES[k]+'" download>'+(label||esc(FILES[k]))+'</a>';
+function focusHeading(el){
+ if(!el)return;
+ const h=/^H[1-6]$/.test(el.tagName)?el:el.querySelector('h2,h3,h4');if(!h)return;
+ if(!h.hasAttribute('tabindex'))h.setAttribute('tabindex','-1');
+ try{h.focus({preventScroll:true});}catch(e){h.focus();}
+}
 
 /* ------------------------------------------------------------------ styles */
 const css=document.createElement('style');
 css.textContent=[
- '.gc-extra h4{font-size:17px;margin:20px 0 8px;line-height:1.35}',
+ '.gc-extra h4{font-size:17px;margin:22px 0 8px;line-height:1.35}',
  '.gc-extra .gc-small{font-size:14px;margin:4px 0 8px;color:var(--ink-soft,#3d4f60)}',
  '.gc-note{font-size:14px;line-height:1.55;border-left:4px solid var(--teal,#0a6463);padding:8px 12px;margin:12px 0;background:var(--teal-soft,#e4f2f1);color:var(--ink,#1c2d42)}',
  '.gc-extra .eq-source-foot{font-size:13.5px}',
  '.gc-wrap{margin:8px 0 8px}',
  '.eq-native-table-wrap.gc-tall{max-height:460px;overflow-y:auto}',
  '.gc-table tr.gc-total th,.gc-table tr.gc-total td{font-weight:700;background:var(--teal-soft,#e4f2f1)}',
- '#gcGroupPicker{margin:6px 0 26px}',
- '#gcGroupPicker h3{margin-top:0}',
+ '#gcGroupPicker{margin:14px 0 22px}',
  '.gc-pick label{display:block;font-weight:700;margin:0 0 6px}',
  '.gc-pick select,.gc-year select{font:inherit;font-size:16px;min-height:44px;padding:8px 10px;border-radius:8px;border:1px solid var(--line,#8a9ba8);background:var(--card,#fff);color:var(--ink,#1c2d42);max-width:100%}',
- '.gc-pick select{min-width:300px}',
- '.gc-year{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}',
+ '.gc-pick select{min-width:320px}',
+ '.gc-year{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 4px}',
  '.gc-year label{font-weight:700}',
- '#gcGroupOut>h3{font-size:24px;margin:24px 0 6px}',
- '.gc-jumps{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px;padding:0;list-style:none}',
- '.gc-jumps button{font:inherit;font-size:14px;min-height:40px;padding:8px 12px;border-radius:8px;border:1px solid var(--teal,#0a6463);background:transparent;color:inherit;cursor:pointer}',
- '.gc-jumps button:hover{background:var(--teal-soft,#e4f2f1)}',
- '.gc-jumps button:focus-visible,.gc-pick select:focus-visible,.gc-year select:focus-visible,.gc-mainlink:focus-visible{outline:3px solid #bf7827;outline-offset:2px}',
+ '#gcGroupOut>h3{font-size:25px;margin:26px 0 10px}',
+ '.gc-gsec{margin:0 0 6px;padding-top:4px;scroll-margin-top:100px}',
+ '.gc-toc{margin:8px 0 18px;padding:14px 18px 8px;border:1px solid var(--line,#c9d4d8);border-radius:10px;background:var(--card,#fff)}',
+ '.gc-toc h4{margin:0 0 8px!important;font-size:16px}',
+ '.gc-toc-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 36px}',
+ '.gc-toc-h{margin:0 0 2px;font-size:14px;font-weight:700;color:var(--ink-soft,#3d4f60)}',
+ '.gc-toc ul{margin:0 0 10px;padding-left:20px}',
+ '.gc-toc li{margin:4px 0}',
+ '.gc-gsec.card{margin:0 0 16px}',
+ '.gc-gsec.card>h4{margin-top:0!important}',
+ '.gc-pick select:focus-visible,.gc-year select:focus-visible,.gc-mainlink:focus-visible,.gc-toc a:focus-visible{outline:3px solid #bf7827;outline-offset:2px}',
+ '[tabindex="-1"]:focus{outline:none}',
  '.gc-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}',
+ '#gcShadeNote{font-weight:600}',
  'html:not([data-theme]) .gc-hl{background:#fff2c2!important;color:#1c2d42!important;font-weight:700}',
  'html[data-theme="dark"] .gc-hl{background:#3d3000!important;color:#fff!important;font-weight:700}',
  'html[data-theme="contrast"] .gc-hl{outline:3px solid currentColor!important;outline-offset:-3px;font-weight:700}',
  '.gc-mainlink{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px 0 0;margin-right:auto;font:700 15px/1.2 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:normal;text-transform:none;color:#fff;text-decoration:underline;text-underline-offset:3px}',
- /* The header takes its colour from --ink, which turns light in the dark theme and hid the white title. */
+ /* Group page: data sections wait until a group is chosen; sections about one other group are left out. */
+ 'body.eq-public-all.gc-pending #main>section.view.active:not(#view-publicintro){display:none!important}',
+ 'body.gc-pending #view-publicintro .eq-after-compare,body.gc-pending #view-publicintro .eq-small{display:none}',
+ 'body[data-gc-group="women"] #view-indigenous,body[data-gc-group="pwd"] #view-indigenous,body[data-gc-group="racialized"] #view-indigenous,body[data-gc-group="black"] #view-indigenous{display:none!important}',
+ 'body[data-gc-group="women"] #view-black,body[data-gc-group="pwd"] #view-black,body[data-gc-group="indigenous"] #view-black,body[data-gc-group="first_nations"] #view-black,body[data-gc-group="metis"] #view-black,body[data-gc-group="inuit"] #view-black{display:none!important}',
+ /* Colour contrast (WCAG 2.1 AA). The header and several panels keep a light background in the dark theme. */
  'html[data-theme="dark"] header.site{background:#0B0F14;color:#E8ECF1}',
- '@media (max-width:600px){.gc-pick select{min-width:0;width:100%}#gcGroupOut>h3{font-size:21px}.gc-table thead th{min-width:70px}.gc-table tbody th{min-width:112px;max-width:160px}.gc-table td,.gc-table th{padding:8px 8px}}'
+ 'html[data-theme="dark"] caption,html[data-theme="dark"] th,html[data-theme="dark"] .profile-strip>div{background:#232A34}',
+ 'html[data-theme="dark"] .scopebar,html[data-theme="dark"] .request-box{background:#15323A;border-color:#2C4A50}',
+ 'html[data-theme="dark"] .scopebar .sl{color:#C9D3DC}',
+ 'html[data-theme="dark"] .scopebar .here{background:#46B8B5;color:#0B0F14}',
+ 'html[data-theme="dark"] .scopebar a{background:transparent;color:#8FDCD9;border-color:#46B8B5}',
+ 'html[data-theme="dark"] .tbltools button,html[data-theme="dark"] .actionbar button,html[data-theme="dark"] .chips button:not([aria-pressed="true"]),html[data-theme="dark"] .entry-card,html[data-theme="dark"] .navpanel,html[data-theme="dark"] .hero-bars{background:var(--card)}',
+ 'html[data-theme="dark"] .chips button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#0B0F14}',
+ 'html[data-theme="dark"] .eq-primary,html[data-theme="dark"] .eq-primary:hover{color:#0B0F14}',
+ 'html[data-theme="dark"] span[style*="color:#9C0006" i]{color:#FF8F8F!important}',
+ 'html[data-theme="dark"] span[style*="color:#006100" i]{color:#6FD49B!important}',
+ 'html[data-theme="dark"] .signal-note{color:#EADFB8}',
+ 'html:not([data-theme]) .banner a,html:not([data-theme]) .snps-context a,html:not([data-theme]) .howto a{color:#0A6463}',
+ '.conf-entered{color:#5C4708}',
+ '@media (max-width:700px){.gc-toc-cols{grid-template-columns:1fr}}',
+ '@media (max-width:600px){.gc-pick select{min-width:0;width:100%}#gcGroupOut>h3{font-size:22px}.gc-table thead th{min-width:70px}.gc-table tbody th{min-width:112px;max-width:160px}.gc-table td,.gc-table th{padding:8px 8px}}'
 ].join('\n');
 document.head.appendChild(css);
 
@@ -170,7 +201,7 @@ function namedAs(row,name){
 const notListed=year=>'<p>'+tr('This organization is not listed in the Treasury Board table for '+march31(year)+'. The table covers the core public administration, so separate agencies, such as the Canada Revenue Agency, are not included.','Cet organisme ne figure pas dans le tableau du Conseil du Trésor au '+march31(year)+'. Le tableau porte sur l’administration publique centrale; les organismes distincts, comme l’Agence du revenu du Canada, n’y figurent pas.')+'</p>';
 function orgSectionHtml(name){
  const ind=findOrg('ind',name),pwd=findOrg('pwd',name);
- let h='<div class="eq-section-head"><h3>'+tr('Indigenous subgroups and types of disability','Sous-groupes autochtones et types de handicap')+'</h3><p>'+tr('Published counts for this organization, with the same share for the whole core public administration.','Chiffres publiés pour cet organisme, avec la même part pour l’ensemble de l’administration publique centrale.')+'</p></div>';
+ let h='<div class="eq-section-head"><h3>'+tr('Indigenous subgroups and types of disability','Sous-groupes autochtones et types de handicap')+'</h3><p>'+tr('Counts for this organization, with the share for the whole core public administration.','Nombres pour cet organisme, avec la part pour l’ensemble de l’administration publique centrale.')+'</p></div>';
  h+='<h4>'+tr('Indigenous Peoples by subgroup, March 31, 2025','Peuples autochtones selon le sous-groupe, 31 mars 2025')+'</h4>';
  h+=ind?namedAs(ind,name)+subgroupTable('ind',IND_TYPES,ind,totalRow('ind'),2025,name):notListed(2025);
  h+='<h4>'+tr('Persons with disabilities by type of disability, March 31, 2024','Personnes en situation de handicap selon le type de handicap, 31 mars 2024')+'</h4>';
@@ -231,23 +262,25 @@ const GROUPS=[
  {key:'metis',en:'Métis',fr:'Métis',s_en:'Métis employees',s_fr:'les employés métis',ind:'metis',di:'indigenous',med:'Indigenous Employees',diAll:true,demo:['ind','nonind'],views:['indigenous'],re:/^\s*m[ée]tis\b/i},
  {key:'inuit',en:'Inuit',fr:'Inuit',s_en:'Inuit employees',s_fr:'les employés inuits',ind:'inuit',di:'indigenous',med:'Indigenous Employees',diAll:true,demo:['ind','nonind'],views:['indigenous'],re:/^\s*inuit/i},
  {key:'pwd',en:'Persons with disabilities',fr:'Personnes en situation de handicap',s_en:'persons with disabilities',s_fr:'les personnes en situation de handicap',rep:'persons_with_disabilities',ex:'persons_with_disabilities',di:'pwd',med:'Employees with Disabilities',pwd:true,demo:['pwd','nopwd'],views:['intersect'],re:/^\s*(persons? (with|w\/) (a )?disabilit|employees with disabilit|disabilit(y|ies)\b|personnes (en situation de |ayant un )?handicap|handicap)/i},
- {key:'racialized',en:'Racialized employees (members of visible minorities)',fr:'Employés racisés (membres des minorités visibles)',s_en:'racialized employees (members of visible minorities)',s_fr:'les employés racisés (membres des minorités visibles)',rep:'members_of_visible_minorities',ex:'members_of_visible_minorities',di:'vm',med:'Visible Minority Employees',demo:['rac','nonrac'],re:/^\s*(racialized|racis[ée]|members of visible minorit|all visible minorit|visible minorit|membres (des|de) minorit[ée]s visibles|minorit[ée]s visibles|employ[ée]s racis)/i},
+ {key:'racialized',en:'Racialized employees (members of visible minorities)',fr:'Employés racisés (membres des minorités visibles)',s_en:'racialized employees (members of visible minorities)',s_fr:'les employés racisés (membres des minorités visibles)',rep:'members_of_visible_minorities',ex:'members_of_visible_minorities',di:'vm',med:'Visible Minority Employees',demo:['rac','nonrac'],views:['black'],re:/^\s*(racialized|racis[ée]|members of visible minorit|all visible minorit|visible minorit|membres (des|de) minorit[ée]s visibles|minorit[ée]s visibles|employ[ée]s racis)/i},
  {key:'black',en:'Black employees',fr:'Employés noirs',s_en:'Black employees',s_fr:'les employés noirs',di:'black',med:'Black Employees',demo:['black','nonrac'],views:['black'],re:/^\s*(black|noir(e|s|es)?\b|employ[ée]s noirs|personnes noires)/i}
 ];
 const label=g=>isFr()?g.fr:g.en;
-let current=null;
+let choice='';      // '', a group key, or 'all'
+let current=null;   // the chosen group, or null for '' and 'all'
 
+function sectionWrap(id,title,body){return '<section class="gc-gsec card" id="'+id+'" aria-labelledby="'+id+'-h"><h4 id="'+id+'-h">'+title+'</h4>'+body+'</section>';}
 function secRepresentation(g){
- let h='<h4>'+tr('Representation in the core public administration, 2017 to 2025','Représentation dans l’administration publique centrale, 2017 à 2025')+'</h4>';
- if(!g.rep)return h+'<p>'+tr('The Treasury Board representation series reports the four designated groups only. ','La série du Conseil du Trésor sur la représentation ne porte que sur les quatre groupes désignés. ')+(g.ind?tr('See the subgroup table by department below.','Voir le tableau des sous-groupes par ministère ci-dessous.'):tr('See the salary data below and the Black employees section of this page.','Voir les données salariales ci-dessous et la section sur les employés noirs de cette page.'))+'</p>';
+ if(!g.rep)return null;
  const reps=data.rep.filter(r=>r.row_type==='representation');
  const wfa=data.rep.filter(r=>r.row_type==='workforce_availability');
  const year=r=>(String(r.period_or_benchmark).match(/(20\d\d)\s*$/)||[])[1]||r.period_or_benchmark;
- h+=table(esc(label(g))+tr(': employees and share of all employees',' : nombre d’employés et part de l’ensemble des employés'),[tr('Date','Date'),tr('Employees','Employés'),tr('Share of all employees','Part de l’ensemble des employés')],reps.map(r=>({cells:[march31(year(r)),num(r[g.rep+'_number']),pct(r[g.rep+'_pct'])]})));
- h+=table(tr('Workforce availability, the benchmark for representation','Disponibilité au sein de la population active, le point de comparaison de la représentation'),[tr('Benchmark source','Source du point de comparaison'),tr('Availability','Disponibilité')],wfa.map(r=>({cells:[benchText(r.period_or_benchmark),pct(r[g.rep+'_pct'])]})));
- h+='<p class="gc-small">'+tr('Compare each year with the benchmark for that year. Benchmarks changed in 2023, when they began to use the 2021 Census and the 2022 Canadian Survey on Disability.','Comparez chaque année avec le point de comparaison de cette année. Les points de comparaison ont changé en 2023, lorsqu’ils ont commencé à utiliser le Recensement de 2021 et l’Enquête canadienne sur l’incapacité de 2022.')+'</p>';
- h+='<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink('rep',tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>';
- return h;
+ const title=tr('Representation, 2017 to 2025','Représentation, 2017 à 2025');
+ return {id:'gc-g-rep',title,html:sectionWrap('gc-g-rep',title,
+  table(esc(label(g))+tr(': employees and share of all employees, core public administration',' : employés et part de l’ensemble des employés, administration publique centrale'),[tr('Date','Date'),tr('Employees','Employés'),tr('Share of all employees','Part de l’ensemble des employés')],reps.map(r=>({cells:[march31(year(r)),num(r[g.rep+'_number']),pct(r[g.rep+'_pct'])]})))+
+  table(tr('Workforce availability, the benchmark for representation','Disponibilité au sein de la population active, le point de comparaison de la représentation'),[tr('Benchmark source','Source du point de comparaison'),tr('Availability','Disponibilité')],wfa.map(r=>({cells:[benchText(r.period_or_benchmark),pct(r[g.rep+'_pct'])]})))+
+  '<p class="gc-small">'+tr('Compare each year with the benchmark for that year. Benchmarks changed in 2023, when they began to use the 2021 Census and the 2022 Canadian Survey on Disability.','Comparez chaque année avec le point de comparaison de cette année. Les points de comparaison ont changé en 2023, lorsqu’ils ont commencé à utiliser le Recensement de 2021 et l’Enquête canadienne sur l’incapacité de 2022.')+'</p>'+
+  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink('rep',tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>')};
 }
 function exLevelName(l){if(l==='Executives')return tr('All executives','Ensemble des cadres');if(l==='Unknown')return tr('Level not reported','Niveau non déclaré');return esc(String(l).replace(/^EX (\d+)$/,'EX-$1'));}
 function exLevels(g,y){
@@ -257,14 +290,15 @@ function exLevels(g,y){
   (wfa?'<p class="gc-small">'+tr('Executive workforce availability for this group in '+y+': ','Disponibilité des cadres pour ce groupe en '+y+' : ')+pct(wfa[g.ex+'_pct'])+'. '+tr('This benchmark applies to all executives together, not to each level.','Ce point de comparaison s’applique à l’ensemble des cadres, et non à chaque niveau.')+'</p>':'');
 }
 function secExecutives(g){
- if(!g.ex)return '';
+ if(!g.ex)return null;
  const years=[...new Set(data.ex.map(r=>r.as_of_march_31))].filter(y=>/^\d{4}$/.test(y)).sort().reverse();
  const trend=years.map(y=>{const t=data.ex.find(r=>r.as_of_march_31===y&&r.level==='Executives'),w=data.ex.find(r=>r.as_of_march_31===y&&r.level==='Overall EX WFA');return {cells:[march31(y),t?num(t[g.ex+'_number']):notNumber(''),t?pct(t[g.ex+'_pct']):notNumber(''),w?pct(w[g.ex+'_pct']):notNumber('')]};});
- return '<h4>'+tr('Executives, 2017 to 2025','Cadres supérieurs, 2017 à 2025')+'</h4>'+
+ const title=tr('Executives, 2017 to 2025','Cadres supérieurs, 2017 à 2025');
+ return {id:'gc-g-ex',title,html:sectionWrap('gc-g-ex',title,
   table(tr('All executives, each year','Ensemble des cadres, chaque année'),[tr('Date','Date'),esc(label(g)),tr('Share of executives','Part des cadres'),tr('Executive availability','Disponibilité des cadres')],trend)+
-  '<div class="gc-year"><label for="gcExYear">'+tr('Show executive levels for','Afficher les niveaux de cadres pour')+'</label><select id="gcExYear">'+years.map(y=>'<option value="'+y+'">'+march31(y)+'</option>').join('')+'</select></div>'+
-  '<div id="gcExLevels">'+exLevels(g,years[0])+'</div>'+
-  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink('ex',tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>';
+  '<div class="gc-year"><label for="gcExYear">'+tr('Executive levels on','Niveaux de cadres au')+'</label><select id="gcExYear">'+years.map(y=>'<option value="'+y+'">'+march31(y)+'</option>').join('')+'</select></div>'+
+  '<div id="gcExLevels" aria-live="polite">'+exLevels(g,years[0])+'</div>'+
+  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink('ex',tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>')};
 }
 function parseBand(s){
  s=String(s||'').replace(/,/g,'');let m;
@@ -290,41 +324,38 @@ function salaryYear(g,y){
   (flagged?'<p class="gc-small">'+tr('* Includes a value estimated by the independent project to replace a small count that the Treasury Board did not publish.','* Comprend une valeur estimée par le projet indépendant pour remplacer un petit nombre que le Conseil du Trésor n’a pas publié.')+'</p>':'');
 }
 function secSalary(g){
- const head='<h4>'+tr('Salary, 2017 to 2025 (independent estimates)','Salaires, 2017 à 2025 (estimations indépendantes)')+'</h4>';
- if(!g.di)return head+'<p>'+tr('The independent salary analysis on this site does not report this group separately.','L’analyse salariale indépendante présentée sur ce site ne présente pas ce groupe séparément.')+'</p>';
+ if(!g.di)return null;
  const glabel=g.diAll?tr('Indigenous employees','Employés autochtones'):esc(label(g));
  const years=[...new Set(data.di.map(r=>r.year_di))].filter(y=>/^\d{4}$/.test(y)).sort().reverse();
  const meds=data.med.filter(r=>/^\d{4}$/.test(r.Year)).sort((a,b)=>b.Year.localeCompare(a.Year)).map(r=>({cells:[march31(r.Year),money(r['All Employees']),money(r[g.med])]}));
- return head+(g.diAll?'<p class="gc-note">'+tr('Salary data are published for Indigenous employees as a whole, not for First Nations, Métis or Inuit employees separately. The tables below are for all Indigenous employees.','Les données salariales portent sur l’ensemble des employés autochtones, et non sur les Premières Nations, les Métis ou les Inuits séparément. Les tableaux ci-dessous portent sur l’ensemble des employés autochtones.')+'</p>':'')+
+ const title=tr('Salary, 2017 to 2025','Salaires, 2017 à 2025');
+ return {id:'gc-g-sal',title,html:sectionWrap('gc-g-sal',title,
+  (g.diAll?'<p class="gc-small">'+tr('Salary figures are published for Indigenous employees as a whole, not for First Nations, Métis or Inuit employees separately.','Les données salariales portent sur l’ensemble des employés autochtones, et non sur les Premières Nations, les Métis ou les Inuits séparément.')+'</p>':'')+
   table(tr('Estimated median salary','Salaire médian estimé'),[tr('Date','Date'),tr('All employees','Ensemble des employés'),glabel],meds)+
-  '<div class="gc-year"><label for="gcSalYear">'+tr('Show salary ranges for','Afficher les tranches salariales pour')+'</label><select id="gcSalYear">'+years.map(y=>'<option value="'+y+'">'+march31(y)+'</option>').join('')+'</select></div>'+
-  '<div id="gcSalOut">'+salaryYear(g,years[0])+'</div>'+
-  '<p class="gc-note">'+tr('These salary figures come from an independent analysis of Treasury Board of Canada Secretariat statistics. They are estimates, not Government of Canada data.','Ces chiffres salariaux proviennent d’une analyse indépendante des statistiques du Secrétariat du Conseil du Trésor du Canada. Ce sont des estimations, et non des données du gouvernement du Canada.')+'</p>'+
-  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+'<a href="'+DI_URL+'" target="_blank" rel="noopener">'+tr('Disproportionality Index project','Projet sur l’indice de disproportion')+'</a>. '+tr('Download: ','Télécharger : ')+fileLink('med',tr('median salaries','salaires médians'))+' · '+fileLink('di',tr('index by salary range','indice par tranche'))+' · '+fileLink('count',tr('counts by salary range','nombres par tranche'))+' · '+fileLink('imputed',tr('estimated values','valeurs estimées'))+' (CSV)</p>';
+  '<div class="gc-year"><label for="gcSalYear">'+tr('Salary ranges on','Tranches salariales au')+'</label><select id="gcSalYear">'+years.map(y=>'<option value="'+y+'">'+march31(y)+'</option>').join('')+'</select></div>'+
+  '<div id="gcSalOut" aria-live="polite">'+salaryYear(g,years[0])+'</div>'+
+  '<p class="gc-note">'+tr('These salary figures are estimates from an independent analysis of Treasury Board of Canada Secretariat statistics. They are not Government of Canada data.','Ces chiffres salariaux sont des estimations tirées d’une analyse indépendante des statistiques du Secrétariat du Conseil du Trésor du Canada. Ce ne sont pas des données du gouvernement du Canada.')+'</p>'+
+  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+'<a href="'+DI_URL+'" target="_blank" rel="noopener">'+tr('Disproportionality Index project','Projet sur l’indice de disproportion')+'</a>. '+tr('Download: ','Télécharger : ')+fileLink('med',tr('median salaries','salaires médians'))+' · '+fileLink('di',tr('index by salary range','indice par tranche'))+' · '+fileLink('count',tr('counts by salary range','nombres par tranche'))+' · '+fileLink('imputed',tr('estimated values','valeurs estimées'))+' (CSV)</p>')};
 }
-function deptTable(g,k,field,year){
+function deptTable(g,k,field){
  const t=totalRow(k);
  const rows=orgRows(k).slice().sort((a,b)=>(isNum(b[field+'_pct'])?+b[field+'_pct']:-1)-(isNum(a[field+'_pct'])?+a[field+'_pct']:-1)||(+b.all_employees||0)-(+a.all_employees||0));
  const out=rows.map(r=>({cells:[esc(r.department_or_agency),num(r.all_employees),num(r[field+'_number']),pct(r[field+'_pct'])]}));
  if(t)out.unshift({cells:[tr('Core public administration','Administration publique centrale'),num(t.all_employees),num(t[field+'_number']),pct(t[field+'_pct'])],cls:'gc-total'});
- return table(tr('All organizations in the published table, highest share first','Tous les organismes du tableau publié, de la part la plus élevée à la plus faible'),[tr('Department or agency','Ministère ou organisme'),tr('All employees','Ensemble des employés'),esc(label(g)),tr('Share of the organization','Part de l’effectif')],out,{tall:true})+
+ return table(tr('All organizations in the table, highest share first','Tous les organismes du tableau, de la part la plus élevée à la plus faible'),[tr('Department or agency','Ministère ou organisme'),tr('All employees','Ensemble des employés'),esc(label(g)),tr('Share of the organization','Part de l’effectif')],out,{tall:true})+
   '<p class="gc-small">'+tr('Shares are within each organization. Suppressed values are listed last; they are not zero.','Les parts sont calculées dans chaque organisme. Les valeurs supprimées figurent en dernier; ce ne sont pas des zéros.')+'</p>'+
   '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink(k,tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>';
 }
 function secDepartments(g){
- if(g.ind)return '<h4>'+esc(label(g))+tr(' by department or agency, March 31, 2025',' par ministère ou organisme, 31 mars 2025')+'</h4>'+deptTable(g,'ind',g.ind,2025);
- if(g.pwd)return '<h4>'+tr('Persons with disabilities by department or agency, March 31, 2024','Personnes en situation de handicap par ministère ou organisme, 31 mars 2024')+'</h4>'+deptTable(g,'pwd','persons_with_disabilities',2024);
- return '';
+ if(g.ind){const title=tr('By department or agency, March 31, 2025','Par ministère ou organisme, 31 mars 2025');return {id:'gc-g-dept',title,html:sectionWrap('gc-g-dept',title,deptTable(g,'ind',g.ind))};}
+ if(g.pwd){const title=tr('By department or agency, March 31, 2024','Par ministère ou organisme, 31 mars 2024');return {id:'gc-g-dept',title,html:sectionWrap('gc-g-dept',title,deptTable(g,'pwd','persons_with_disabilities'))};}
+ return null;
 }
-const JUMP_FALLBACK={groups:['Groups & subgroups','Groupes et sous-groupes'],profile:['Where people work','Lieux de travail'],flows:['Hiring & promotion','Embauche et promotion'],ex:['Executives','Cadres'],salary:['Salary','Salaires'],di:['Salary DI tracker','Suivi de l’indice salarial'],snps:['2025 Staffing Survey','Sondage sur la dotation 2025'],demo:['Demographic gaps','Écarts démographiques'],intersect:['Intersectional results','Résultats intersectionnels'],indigenous:['Indigenous public servants','Fonctionnaires autochtones'],black:['Black employees','Employés noirs']};
-function jumpLabel(id){
- try{if(typeof EXPLORER_NAV!=='undefined'){for(const grp of EXPLORER_NAV){for(const it of grp[2]){if(it[0]===id)return isFr()?it[2]:it[1];}}}}catch(e){}
- const f=JUMP_FALLBACK[id];return f?(isFr()?f[1]:f[0]):id;
-}
-function jumps(g){
- const order=['groups','profile','flows','ex','salary','di','snps','demo','intersect','indigenous','black'];
- const want=new Set(['groups','profile','flows','ex','salary','di','snps','demo'].concat(g.views||[]));
- return order.filter(id=>want.has(id)&&$('view-'+id)).map(id=>'<li><button type="button" data-gc-go="'+id+'">'+esc(jumpLabel(id))+'</button></li>').join('');
+// Detailed sections that matter for each group, in page order. Their titles come from the page itself.
+function detailLinks(g){
+ const ids=['groups','profile','flows','ex','salary','di','snps','demo'].concat(g.views||[]);
+ const order=['groups','profile','snps','flows','ex','salary','di','demo','intersect','indigenous','black'];
+ return order.filter(id=>ids.includes(id)).map(id=>{const sec=$('view-'+id);const h=sec&&sec.querySelector('h2');return h?{id,title:h.textContent.replace(/\s+/g,' ').trim()}:null;}).filter(Boolean);
 }
 function setDemo(g){
  if(!g.demo)return;
@@ -346,52 +377,79 @@ const scheduleHighlight=()=>{clearTimeout(hlTimer);hlTimer=setTimeout(highlight,
 function setUrlGroup(key){
  try{const u=new URL(location.href);if(key)u.searchParams.set('group',key);else u.searchParams.delete('group');if(u.href!==location.href)history.replaceState(history.state,'',u.href);}catch(e){}
 }
+function shadeNote(){
+ const host=document.querySelector('#view-publicintro .eq-small');if(!host)return;
+ let p=$('gcShadeNote');
+ if(!p){p=document.createElement('p');p.id='gcShadeNote';p.className='eq-small';host.insertAdjacentElement('afterend',p);}
+ p.hidden=!current;
+ p.textContent=current?tr('The group you chose is shaded in these tables.','Le groupe choisi est ombré dans ces tableaux.'):'';
+}
+function applyChoice(){
+ document.body.classList.toggle('gc-pending',!choice);
+ if(choice)document.body.setAttribute('data-gc-group',choice);else document.body.removeAttribute('data-gc-group');
+ shadeNote();
+}
+function setChoice(value){
+ if(value!=='all'&&!GROUPS.some(g=>g.key===value))value='';
+ choice=value;current=GROUPS.find(g=>g.key===value)||null;
+ const sel=$('gcGroup');if(sel&&sel.value!==value)sel.value=value;
+ applyChoice();setUrlGroup(value);renderGroup();
+}
 function renderGroup(){
- const out=$('gcGroupOut'),sel=$('gcGroup'),status=$('gcGroupStatus');if(!out||!sel)return;
- current=GROUPS.find(g=>g.key===sel.value)||null;
- setUrlGroup(current&&current.key);
- if(!current){out.innerHTML='';if(status)status.textContent='';highlight();return;}
+ const out=$('gcGroupOut'),status=$('gcGroupStatus');if(!out)return;
+ if(!current){
+  out.innerHTML='';highlight();
+  if(status)status.textContent=choice==='all'?tr('Showing results for all groups.','Résultats pour tous les groupes.'):'';
+  return;
+ }
  const g=current;
  out.innerHTML='<p>'+tr('Loading…','Chargement…')+'</p>';
  load().then(()=>{
   if(current!==g)return;
-  out.innerHTML='<h3>'+esc(label(g))+'</h3>'+
-   '<p>'+tr('Published data for this group across the federal public service. The group is also highlighted in every table further down this page.','Données publiées pour ce groupe dans l’ensemble de la fonction publique fédérale. Le groupe est aussi mis en évidence dans chaque tableau plus bas sur cette page.')+'</p>'+
-   '<p class="gc-small">'+tr('Go to this group’s results in:','Voir les résultats de ce groupe dans :')+'</p><ul class="gc-jumps">'+jumps(g)+'</ul>'+
-   secRepresentation(g)+secExecutives(g)+secSalary(g)+secDepartments(g)+
-   '<p class="gc-note">'+tr('A gap is a reason to look further. It is not, on its own, proof of discrimination or of its cause. Groups overlap, so do not add them together.','Un écart justifie un examen plus poussé. À lui seul, il ne prouve ni la discrimination ni sa cause. Les groupes se chevauchent; ne pas les additionner.')+'</p>'+
-   '<h4>'+tr('Ask an AI chatbot about this group','Poser une question à un agent conversationnel sur ce groupe')+'</h4><div class="gc-ai-host"></div>';
+  const parts=[secRepresentation(g),secExecutives(g),secSalary(g),secDepartments(g)].filter(Boolean);
+  const details=detailLinks(g);
+  const toc='<nav class="gc-toc" aria-labelledby="gcTocTitle"><h4 id="gcTocTitle">'+tr('On this page','Sur cette page')+'</h4><div class="gc-toc-cols">'+
+   '<div><p class="gc-toc-h" id="gcTocSum">'+tr('Summary','Résumé')+'</p><ul aria-labelledby="gcTocSum">'+parts.map(p=>'<li><a href="#'+p.id+'" data-gc-scroll="'+p.id+'">'+p.title+'</a></li>').join('')+'<li><a href="#gc-g-ai" data-gc-scroll="gc-g-ai">'+tr('Ask an AI chatbot','Poser une question à un agent conversationnel')+'</a></li></ul></div>'+
+   (details.length?'<div><p class="gc-toc-h" id="gcTocDet">'+tr('Detailed results','Résultats détaillés')+'</p><ul aria-labelledby="gcTocDet">'+details.map(d=>'<li><a href="#'+d.id+'" data-gc-go="'+d.id+'">'+esc(d.title)+'</a></li>').join('')+'</ul></div>':'')+'</div></nav>';
+  out.innerHTML='<h3 id="gcGroupTitle">'+esc(label(g))+'</h3>'+toc+parts.map(p=>p.html).join('')+
+   sectionWrap('gc-g-ai',tr('Ask an AI chatbot about this group','Poser une question à un agent conversationnel sur ce groupe'),'<div class="gc-ai-host"></div>');
   const ex=$('gcExYear');if(ex)ex.addEventListener('change',()=>{$('gcExLevels').innerHTML=exLevels(g,ex.value);});
   const sy=$('gcSalYear');if(sy)sy.addEventListener('change',()=>{$('gcSalOut').innerHTML=salaryYear(g,sy.value);});
   if(window.GCAI)window.GCAI.render(out.querySelector('.gc-ai-host'),{
    question:()=>tr('What do published data show about '+g.s_en+' in the federal public service? Where are the largest gaps?','Que montrent les données publiées sur '+g.s_fr+' dans la fonction publique fédérale? Où se trouvent les plus grands écarts?'),
    about:()=>label(g)
   });
-  if(status)status.textContent=tr('Showing published data for: ','Données publiées affichées pour : ')+label(g);
+  if(status)status.textContent=tr('Showing results for: ','Résultats affichés pour : ')+label(g);
   setDemo(g);
   scheduleHighlight();
  }).catch(e=>{out.innerHTML=loadError(e);});
 }
 function labelGroupPicker(){
  const sel=$('gcGroup');if(!sel)return;
- $('gcGroupHeading').textContent=tr('Choose an employment equity group','Choisir un groupe visé par l’équité en matière d’emploi');
- $('gcGroupHelp').textContent=tr('See the published data for one group across the federal public service: representation, executives, salary and subgroups. The group is then highlighted in every table on this page.','Consultez les données publiées pour un groupe dans l’ensemble de la fonction publique fédérale : représentation, cadres, salaires et sous-groupes. Le groupe est ensuite mis en évidence dans chaque tableau de cette page.');
  $('gcGroupLabel').textContent=tr('Employment equity group','Groupe visé par l’équité en matière d’emploi');
  const keep=sel.value;
- sel.innerHTML='<option value="">'+tr('Choose a group…','Choisir un groupe…')+'</option>'+GROUPS.map(g=>'<option value="'+g.key+'">'+esc(label(g))+'</option>').join('');
+ sel.innerHTML='<option value="">'+tr('Choose a group…','Choisir un groupe…')+'</option>'+GROUPS.map(g=>'<option value="'+g.key+'">'+esc(label(g))+'</option>').join('')+'<option value="all">'+tr('All groups','Tous les groupes')+'</option>';
  sel.value=keep;
 }
 function buildGroupPicker(){
  const host=$('view-publicintro');if(!host||$('gcGroupPicker'))return;
- const box=document.createElement('section');box.id='gcGroupPicker';box.className='card gc-extra';box.setAttribute('aria-labelledby','gcGroupHeading');
- box.innerHTML='<h3 id="gcGroupHeading"></h3><p id="gcGroupHelp"></p><div class="gc-pick"><label for="gcGroup" id="gcGroupLabel"></label><select id="gcGroup"></select></div><p id="gcGroupStatus" class="gc-status" role="status"></p><div id="gcGroupOut"></div>';
- const after=host.querySelector(':scope > .actionbar')||host.querySelector(':scope > h2');
+ const box=document.createElement('div');box.id='gcGroupPicker';box.className='gc-extra';
+ box.innerHTML='<div class="gc-pick card"><label for="gcGroup" id="gcGroupLabel"></label><select id="gcGroup"></select></div><p id="gcGroupStatus" class="gc-status" role="status"></p><div id="gcGroupOut"></div>';
+ const after=host.querySelector(':scope > .lede')||host.querySelector(':scope > h2');
  if(after)after.insertAdjacentElement('afterend',box);else host.insertBefore(box,host.firstChild);
  labelGroupPicker();
- $('gcGroup').addEventListener('change',renderGroup);
- box.addEventListener('click',e=>{const b=e.target.closest('[data-gc-go]');if(b&&typeof window.go==='function')window.go(b.getAttribute('data-gc-go'));});
+ $('gcGroup').addEventListener('change',e=>setChoice(e.target.value));
+ box.addEventListener('click',e=>{
+  const s=e.target.closest('[data-gc-scroll]');
+  if(s){const t=$(s.getAttribute('data-gc-scroll'));if(t){e.preventDefault();t.scrollIntoView({block:'start'});focusHeading(t);}return;}
+  const g=e.target.closest('[data-gc-go]');
+  if(g&&typeof window.go==='function'){e.preventDefault();const id=g.getAttribute('data-gc-go');window.go(id);focusHeading($('view-'+id));}
+ });
  let start='';try{start=new URLSearchParams(location.search).get('group')||'';}catch(e){}
- if(GROUPS.some(g=>g.key===start)){$('gcGroup').value=start;renderGroup();}
+ const hash=(location.hash||'').replace(/^#/,'').split(/[?&]/)[0];
+ const deep=hash&&hash!=='publicintro'&&hash!=='data'&&typeof PAGE_OF!=='undefined'&&PAGE_OF[hash]==='data';
+ setChoice(start||(deep?'all':''));
+ if(deep&&start)setTimeout(()=>settleOn(hash),400);
 }
 
 /* ============================================ main page, builder and start */
@@ -404,7 +462,7 @@ function addMainLink(){
  const bar=document.querySelector('header.site .eyebrow');if(!bar)return;
  const a=document.createElement('a');a.className='gc-mainlink';a.href=mainHref();
  a.innerHTML='<span aria-hidden="true">←</span><span class="gc-mainlink-t"></span>';
- // After the first span, which the page hides on purpose with a :first-child rule.
+ // After the first span, which the page hides with a :first-child rule.
  const first=bar.firstElementChild;
  if(first&&first.tagName==='SPAN')first.insertAdjacentElement('afterend',a);else bar.insertBefore(a,bar.firstChild);
  labelMainLink();
@@ -429,11 +487,19 @@ function settleOn(id){
  };
  setTimeout(fix,60);
 }
-// The main page replaces the explorer's own start screen.
-function useMainPageAsHome(){
+// The main page replaces the explorer's own start screen. Opening a public-service section
+// directly (from the menu or search) shows all groups.
+function wrapNavigation(){
  if(typeof window.go==='function'&&!window.go.__gcMain){
   const original=window.go;
-  const wrapped=function(id){if(id==='home'){location.href=mainHref();return;}const r=original.apply(this,arguments);try{settleOn(id);}catch(e){}return r;};
+  const wrapped=function(id){
+   if(id==='home'){location.href=mainHref();return;}
+   const page=(typeof PAGE_OF!=='undefined'&&PAGE_OF)?PAGE_OF[id]:'';
+   if(page==='data'&&id!=='publicintro'&&!choice&&$('gcGroup'))setChoice('all');
+   const r=original.apply(this,arguments);
+   try{settleOn(id);}catch(e){}
+   return r;
+  };
   wrapped.__gcMain=true;window.go=wrapped;
  }
  const home=$('view-home');
@@ -444,17 +510,23 @@ function addBuilderAI(){
  const box=document.createElement('div');box.id='gc-b-ai';box.className='card gc-extra';
  box.innerHTML='<h3 id="gcBuilderAiTitle"></h3><div class="gc-ai-host"></div>';
  v.appendChild(box);
- const title=()=>{$('gcBuilderAiTitle').textContent=tr('Ask an AI chatbot for help with a briefing note or presentation','Demander de l’aide à un agent conversationnel pour une note d’information ou une présentation');};
+ const title=()=>{$('gcBuilderAiTitle').textContent=tr('Ask an AI chatbot for help','Demander de l’aide à un agent conversationnel');};
  title();document.addEventListener('langchange',()=>setTimeout(title,0));
  window.GCAI.render(box.querySelector('.gc-ai-host'),{
   question:()=>tr('Help me outline a short briefing note on employment equity in the federal public service. Use published data and say what is not published.','Aidez-moi à préparer le plan d’une courte note d’information sur l’équité en matière d’emploi dans la fonction publique fédérale. Utilisez les données publiées et indiquez ce qui n’est pas publié.'),
   about:()=>tr('briefing notes and presentations','notes d’information et présentations')
  });
 }
+// A card link written around block content is split by the browser into an empty extra link;
+// remove those so keyboard and screen reader users do not land on a link with no name.
+function removeEmptyLinks(){
+ document.querySelectorAll('a.entry-card').forEach(a=>{if(!a.textContent.trim()&&!a.querySelector('img,svg'))a.remove();});
+}
 
 function init(){
- useMainPageAsHome();
+ wrapNavigation();
  addMainLink();
+ removeEmptyLinks();
  const card=$('opCard'),sel=$('opOrg');
  if(card&&sel){
   let t=null;const later=()=>{clearTimeout(t);t=setTimeout(renderOrgExtra,60);};
@@ -469,7 +541,7 @@ function init(){
   if(!current)return;
   if(m.some(x=>[...x.addedNodes].some(n=>n.nodeType===1&&!(n.closest&&n.closest('#gcGroupPicker')))))scheduleHighlight();
  }).observe(main,{childList:true,subtree:true});
- document.addEventListener('langchange',()=>setTimeout(()=>{labelMainLink();labelGroupPicker();if(current)renderGroup();renderOrgExtra();},0));
+ document.addEventListener('langchange',()=>setTimeout(()=>{labelMainLink();labelGroupPicker();shadeNote();if(current)renderGroup();renderOrgExtra();},0));
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

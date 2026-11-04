@@ -57,7 +57,7 @@ function addStyles(){
 function texts(){
  return {
   label:tr('Your question','Votre question'),
-  note:tr('Each button opens a chatbot run by another company (OpenAI, Anthropic, Microsoft or Google) in a new tab. Your question goes to that company under its own terms, and you may need to sign in. Do not include personal or confidential information. Chatbots can be wrong, so check answers against the published data on this site.','Chaque bouton ouvre, dans un nouvel onglet, un agent conversationnel exploité par une autre entreprise (OpenAI, Anthropic, Microsoft ou Google). Votre question est transmise à cette entreprise selon ses propres conditions, et une connexion peut être demandée. N’indiquez aucun renseignement personnel ou confidentiel. Les agents conversationnels peuvent se tromper; vérifiez les réponses à l’aide des données publiées sur ce site.'),
+  note:tr('The chatbot opens in a new tab. Your question goes to the company that runs it (OpenAI, Anthropic, Microsoft or Google), and you may need to sign in. Do not include personal or confidential information. Check answers against the data on this site.','L’agent conversationnel s’ouvre dans un nouvel onglet. Votre question est transmise à l’entreprise qui l’exploite (OpenAI, Anthropic, Microsoft ou Google), et une connexion peut être demandée. N’indiquez aucun renseignement personnel ou confidentiel. Vérifiez les réponses à l’aide des données de ce site.'),
   lead:tr('Ask:','Demander à :'),
   newTab:tr(' (opens in a new tab)',' (s’ouvre dans un nouvel onglet)'),
   empty:tr('Type a question first.','Tapez d’abord une question.'),
