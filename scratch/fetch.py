@@ -17,7 +17,7 @@ def api(action, **params):
                 return json.load(r)
         except Exception as e:
             err = str(e)
-            time.sleep(4 * (attempt + 1))
+            time.sleep(30 * (attempt + 1))
     return {'success': False, 'error': err}
 
 UUID = re.compile(r'^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(?:_(.+)| ?\(1\)\.csv|\.csv)$')
@@ -48,7 +48,16 @@ for k in [k for k, t in targets.items() if not t['rid'] and t['name'] in named]:
     other['inventory_sha'] |= targets[k]['inventory_sha']
     del targets[k]
 
-def download(url, dest):
+def download(url, dest, expect=None):
+    if url.startswith('/'): url = 'https://open.canada.ca' + url
+    for attempt in range(4):
+        info, err = _download(url, dest)
+        if info and not (info['bytes'] < 4000 and expect and min(expect) > 4000):
+            return info, err
+        time.sleep(60 * (attempt + 1))
+    return info, err or 'request rejected or truncated'
+
+def _download(url, dest):
     tmp = dest + '.part'
     cmd = ['curl', '-sSL', '--fail', '--retry', '3', '--retry-delay', '5', '--connect-timeout', '20',
            '--max-time', '1200', '--max-filesize', '300000000', '-A', UA, '-o', tmp, url]
@@ -62,9 +71,16 @@ def download(url, dest):
     os.remove(tmp)
     return {'sha256': h.hexdigest(), 'bytes': n}, None
 
-packages = {}
-manifest = []
+packages, manifest, done = {}, [], set()
+if os.path.exists(os.path.join(OUT, 'manifest.json')):
+    old = json.load(open(os.path.join(OUT, 'manifest.json')))
+    packages = old.get('packages', {})
+    for e in old['files']:
+        if any(d.get('matches_inventory') for d in e.get('downloads', [])) or e.get('skipped'):
+            manifest.append(e); done.add(e['resource_id'] or e['inventory_name'])
 for key, t in sorted(targets.items()):
+    if key in done: continue
+    time.sleep(2)
     entry = {'inventory_name': t['name'], 'resource_id': t['rid'], 'titles': sorted(t['titles']),
              'inventory_sha256': sorted(t['inventory_sha']), 'inventory_bytes': sorted(t['inventory_bytes'])}
     candidates = []
@@ -98,7 +114,8 @@ for key, t in sorted(targets.items()):
         if not url: continue
         safe = re.sub(r'[^A-Za-z0-9._-]+', '_', (c.get('id') or 'x')[:8] + '_' + t['name'])
         dest = os.path.join(OUT, safe + '.gz')
-        info, err = download(url, dest)
+        info, err = download(url, dest, t['inventory_bytes'])
+        time.sleep(3)
         d = {'resource_id': c.get('id'), 'url': url, 'file': dest}
         if err: d['error'] = err
         else:
