@@ -1,0 +1,23 @@
+name: Fetch inventory files for review
+on:
+  push:
+    branches: ['scratch/oct27-fetch']
+    paths: ['scratch/**', '.github/workflows/scratch-fetch.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and verify
+        run: python3 scratch/fetch.py
+      - name: Commit files for review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw
+          git commit -q -m "Fetched official files for review" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+          Claude-Session: https://claude.ai/code/session_01Y4UfNqjs4qdALrszw4F7Y4" || exit 0
+          git push -q origin HEAD:scratch/oct27-fetch
