@@ -7,6 +7,8 @@ on:
       - 'sources.html'
       - 'gc-ai.js'
       - 'gc-equity-additions.js'
+      - 'gc-tools.js'
+      - 'vendor/**'
       - 'data/october-2026/**'
       - '.github/workflows/site-validate.yml'
 permissions:
@@ -20,6 +22,8 @@ jobs:
         run: |
           node --check gc-ai.js
           node --check gc-equity-additions.js
+          node --check gc-tools.js
+          node --check vendor/pptxgen.bundle.js
       - name: Structure, data references and visitor wording
         shell: bash
         run: |
@@ -31,15 +35,20 @@ jobs:
           explorer=(root/'explorer.html').read_text(encoding='utf-8')
           additions=(root/'gc-equity-additions.js').read_text(encoding='utf-8')
           ai=(root/'gc-ai.js').read_text(encoding='utf-8')
+          tools=(root/'gc-tools.js').read_text(encoding='utf-8')
 
-          # explorer.html holds every dataset built so far. Reviewed change: the page text was rewritten to plain,
-          # sourced wording in English and French, chart labels and descriptions were translated, and the salary
-          # chart now shows dollars. Update this hash only with a reviewed change to the explorer.
-          expected_sha='055bf69ee5085eb559245dd409d724531ad8a771'
+          # explorer.html holds every dataset built so far. Reviewed change: each dataset is shown once, organizations are
+          # compared with their own workforce availability, the salary index runs to 2025, and the presentations page has the
+          # PowerPoint and Word tools. Update this hash only with a reviewed change to the explorer.
+          expected_sha='a9a7627116bfe12e7fdf2530bb9fe5aa66fdb005'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
           assert actual==expected_sha, f'explorer.html changed: {actual}'
           assert explorer.count('<script src="gc-ai.js"></script>')==1
           assert explorer.count('<script src="gc-equity-additions.js"></script>')==1
+          assert explorer.count('<script src="gc-tools.js"></script>')==1
+          for f in ('vendor/pptxgen.bundle.js','vendor/LICENSES.txt'):
+              assert (root/f).exists(), f'missing {f}'
+          assert 'PptxGenJS' in (root/'vendor/LICENSES.txt').read_text(encoding='utf-8') and 'JSZip' in (root/'vendor/LICENSES.txt').read_text(encoding='utf-8')
           assert 'location.replace("index.html"' in explorer[:3000], 'start-screen redirect missing'
 
           # The main page: three options, the chatbot box, no embedded copies of other pages.
@@ -81,7 +90,7 @@ jobs:
           assert 'id="visible"' in source_page and 'data-fr=' in source_page, 'Source list page must be bilingual'
 
           # No keys, no private links and no internal wording on visitor pages.
-          visitor={'index.html':index,'sources.html':source_page,'gc-ai.js':ai,'gc-equity-additions.js':additions,
+          visitor={'index.html':index,'sources.html':source_page,'gc-ai.js':ai,'gc-equity-additions.js':additions,'gc-tools.js':tools,
                    'public-source-inventory.csv':(folder/'public-source-inventory.csv').read_text(encoding='utf-8')}
           for name,text in visitor.items():
               assert not re.search(r'sk-[A-Za-z0-9]{20,}|api[_-]?key\s*[:=]|Bearer\s+[A-Za-z0-9]',text,re.I), f'Possible credential in {name}'
@@ -94,8 +103,8 @@ jobs:
               for phrase in internal:
                   assert phrase.lower() not in low, f'Internal wording "{phrase}" found in {name}'
           for phrase in ('—',):
-              for name in ('index.html','sources.html','gc-ai.js','gc-equity-additions.js','public-source-inventory.csv'):
+              for name in ('index.html','sources.html','gc-ai.js','gc-equity-additions.js','gc-tools.js','public-source-inventory.csv'):
                   assert phrase not in visitor[name], f'Em dash in {name}'
               assert phrase not in explorer, 'Em dash in explorer.html'
-          print('Passed: explorer hash, three main options, chatbot box, 8 datasets shown, audit, bilingual sources, visitor wording')
+          print('Passed: explorer hash, three main options, chatbot box, 8 datasets shown, file tools, audit, bilingual sources, visitor wording')
           PY
