@@ -1,0 +1,7 @@
+# GC Equity is a static site. The maintenance files below stay in the repository and are not published.
+exclude:
+  - README.md
+  - MAINTAINING.md
+  - data/october-2026/package-integrity-audit.json
+  - data/checksums.sha256
+  - data/source-dates.json
