@@ -8,8 +8,9 @@ on:
       - 'gc-ai.js'
       - 'gc-equity-additions.js'
       - 'gc-tools.js'
-      - 'vendor/**'
-      - 'data/october-2026/**'
+      - 'lib/**'
+      - 'data/**'
+      - '_config.yml'
       - '.github/workflows/site-validate.yml'
 permissions:
   contents: read
@@ -23,7 +24,7 @@ jobs:
           node --check gc-ai.js
           node --check gc-equity-additions.js
           node --check gc-tools.js
-          node --check vendor/pptxgen.bundle.js
+          node --check lib/pptxgen.bundle.js
       - name: Structure, data references and visitor wording
         shell: bash
         run: |
@@ -37,18 +38,23 @@ jobs:
           ai=(root/'gc-ai.js').read_text(encoding='utf-8')
           tools=(root/'gc-tools.js').read_text(encoding='utf-8')
 
-          # explorer.html holds every dataset built so far. Reviewed change: each dataset is shown once, organizations are
-          # compared with their own workforce availability, the salary index runs to 2025, and the presentations page has the
-          # PowerPoint and Word tools. Update this hash only with a reviewed change to the explorer.
-          expected_sha='a9a7627116bfe12e7fdf2530bb9fe5aa66fdb005'
+          # explorer.html holds the data pages. Reviewed change: the 2024 branch survey rows moved out of the page into
+          # data/pses-2024-branches (one file per organization), and the question assistant uses each organization's own
+          # workforce availability. Update this hash only with a reviewed change to the explorer.
+          expected_sha='d82920228e83f25b741c4137a3cf793b202a8594'
           actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
           assert actual==expected_sha, f'explorer.html changed: {actual}'
           assert explorer.count('<script src="gc-ai.js"></script>')==1
           assert explorer.count('<script src="gc-equity-additions.js"></script>')==1
           assert explorer.count('<script src="gc-tools.js"></script>')==1
-          for f in ('vendor/pptxgen.bundle.js','vendor/LICENSES.txt'):
+          for f in ('lib/pptxgen.bundle.js','lib/LICENSES.txt'):
               assert (root/f).exists(), f'missing {f}'
-          assert 'PptxGenJS' in (root/'vendor/LICENSES.txt').read_text(encoding='utf-8') and 'JSZip' in (root/'vendor/LICENSES.txt').read_text(encoding='utf-8')
+          assert 'PptxGenJS' in (root/'lib/LICENSES.txt').read_text(encoding='utf-8') and 'JSZip' in (root/'lib/LICENSES.txt').read_text(encoding='utf-8')
+          assert "s.src='lib/pptxgen.bundle.js'" in tools, 'gc-tools.js must load the library from lib/'
+          # Page weight: the explorer must stay small; large data load from files when a visitor asks for them.
+          size=(root/'explorer.html').stat().st_size
+          assert size < 2_500_000, f'explorer.html is {size} bytes; move large data into separate files'
+          assert 'eq-dept-gzip-' not in explorer, 'branch survey rows must stay out of explorer.html'
           assert 'location.replace("index.html"' in explorer[:3000], 'start-screen redirect missing'
 
           # The main page: three options, the chatbot box, no embedded copies of other pages.
@@ -75,6 +81,31 @@ jobs:
                   rows=list(csv.DictReader(fd))
               assert rows and len(rows[0])>2, f'Invalid CSV: {f}'
               assert f.name in additions, f'Dataset not shown: {f.name}'
+
+          import gzip, hashlib
+          listed={}
+          for line in (root/'data/checksums.sha256').read_text(encoding='utf-8').splitlines():
+              if line.strip():
+                  digest,path=line.split(None,1); listed[path.strip()]=digest
+          data_files=sorted(str(p) for p in root.glob('data/october-2026/*.csv'))+sorted(str(p) for p in root.glob('data/pses-2024-branches/*.json.gz'))
+          assert set(data_files)==set(listed), f'checksums list differs from the data files: {sorted(set(data_files)^set(listed))[:5]}'
+          for path,digest in listed.items():
+              assert hashlib.sha256((root/path).read_bytes()).hexdigest()==digest, f'{path} changed; review it, then update data/checksums.sha256'
+          meta=json.loads(re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',explorer,re.S).group(1))
+          ids=[d['id'] for d in meta['departments']]
+          branch_files=sorted(p.name.split('.')[0] for p in (root/'data/pses-2024-branches').glob('*.json.gz'))
+          assert sorted(ids)==branch_files, 'every organization in the branch list needs exactly one data file'
+          rows=0
+          for i in ids:
+              data=json.loads(gzip.decompress((root/f'data/pses-2024-branches/{i}.json.gz').read_bytes()))
+              assert isinstance(data,list) and data and all(len(r)==16 for r in data[:50]), f'unexpected rows in {i}.json.gz'
+              rows+=len(data)
+          assert rows==meta['totalRows'], f'branch rows {rows} differ from {meta["totalRows"]}'
+          config=(root/'_config.yml').read_text(encoding='utf-8')
+          for f in ('MAINTAINING.md','data/october-2026/package-integrity-audit.json','data/checksums.sha256','data/source-dates.json'):
+              assert f in config, f'{f} must not be published on the site'
+          src=json.loads((root/'data/source-dates.json').read_text(encoding='utf-8'))
+          assert src['sources'] and all(s['url'].startswith('https://') for s in src['sources'])
 
           audit_path=folder/'package-integrity-audit.json'
           if audit_path.exists():
@@ -106,5 +137,5 @@ jobs:
               for name in ('index.html','sources.html','gc-ai.js','gc-equity-additions.js','gc-tools.js','public-source-inventory.csv'):
                   assert phrase not in visitor[name], f'Em dash in {name}'
               assert phrase not in explorer, 'Em dash in explorer.html'
-          print('Passed: explorer hash, three main options, chatbot box, 8 datasets shown, file tools, audit, bilingual sources, visitor wording')
+          print('Passed: explorer hash and size, three main options, chatbot box, 8 datasets shown, checksums, branch files, file tools, audit, bilingual sources, visitor wording')
           PY

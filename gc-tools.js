@@ -322,7 +322,7 @@ function groupLink(){
 function loadLib(){
  if(window.PptxGenJS&&window.JSZip)return Promise.resolve();
  if(loadLib.p)return loadLib.p;
- loadLib.p=new Promise((res,rej)=>{const s=document.createElement('script');s.src='vendor/pptxgen.bundle.js';s.onload=()=>window.JSZip&&window.PptxGenJS?res():rej(new Error('library'));s.onerror=()=>{loadLib.p=null;rej(new Error(tr('The file builder could not be loaded.','Le générateur de fichiers n’a pas pu être chargé.')));};document.head.appendChild(s);});
+ loadLib.p=new Promise((res,rej)=>{const s=document.createElement('script');s.src='lib/pptxgen.bundle.js';s.onload=()=>window.JSZip&&window.PptxGenJS?res():rej(new Error('library'));s.onerror=()=>{loadLib.p=null;rej(new Error(tr('The file builder could not be loaded.','Le générateur de fichiers n’a pas pu être chargé.')));};document.head.appendChild(s);});
  return loadLib.p;
 }
 const x=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'');

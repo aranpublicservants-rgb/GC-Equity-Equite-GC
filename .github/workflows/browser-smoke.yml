@@ -8,8 +8,9 @@ on:
       - 'gc-ai.js'
       - 'gc-equity-additions.js'
       - 'gc-tools.js'
-      - 'vendor/**'
-      - 'data/october-2026/**'
+      - 'lib/**'
+      - 'data/**'
+      - '_config.yml'
       - '.github/workflows/browser-smoke.yml'
 permissions:
   contents: read
@@ -81,12 +82,17 @@ jobs:
 
                 // 3. Option 1: choose an organization and see all of its data
                 page=await ctx.newPage();watch(page);
+                const branchFiles=[];page.on('request',r=>branchFiles.push(r.url()));
                 await page.goto(addr+'index.html?lang=en');
                 await Promise.all([page.waitForURL(/explorer\.html/,{timeout:120000}),page.click('#choice-departments')]);
                 await page.waitForFunction(()=>document.getElementById('opOrg')&&document.getElementById('opOrg').options.length>50,null,{timeout:120000});
                 await page.selectOption('#opOrg','Correctional Service Canada');
                 await page.waitForFunction(()=>{const s=document.getElementById('gc-d-subgroups');return s&&/1,026/.test(s.textContent)&&/Mobility/.test(s.textContent);},null,{timeout:60000});
                 if(!await page.$('#eq-d-branches'))throw Error('branch results missing for the organization');
+                // Branch results load from data/pses-2024-branches, one organization at a time.
+                await page.waitForFunction(()=>/published branches or second-level units/.test((document.getElementById('eqInlineBranchStatus')||{}).textContent||''),null,{timeout:60000});
+                if(!branchFiles.some(u=>/data\/pses-2024-branches\/\d+\.json\.gz$/.test(u)))throw Error('branch results did not load from their data file');
+                if(await page.$$eval('#eqBranchQuestion option',o=>o.length)<50)throw Error('branch questions missing');
                 if(!await page.$('a.gc-mainlink[href="index.html"]'))throw Error('main page link missing');
                 await page.close();
 
