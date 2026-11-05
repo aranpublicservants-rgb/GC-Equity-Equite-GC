@@ -1,7 +1,8 @@
 /* GC Equity: department, group and briefing pages.
  * Department page: Indigenous subgroups (March 31, 2025) and types of disability (March 31, 2024) for the
  * chosen organization; the organization is carried into the other organization lists on the page.
- * Group page: a group chooser, then that group's results, followed by the detailed tables with the group shaded.
+ * Group page: a group chooser, then a short summary of where differences appear for that group, followed by the
+ * detailed tables with the group shaded.
  * Every page: a link to the main page, and the AI chatbot box (gc-ai.js).
  * Figures come from the published files in data/october-2026/. Nothing is estimated or filled in here.
  */
@@ -44,29 +45,6 @@ const ratio=v=>isNum(v)?Number(v).toLocaleString(loc(),{minimumFractionDigits:2,
 const dollars=n=>isFr()?String(n).replace(/,/g,NBSP)+NBSP+'$':'$'+n;
 const money=v=>isNum(v)?dollars(Number(v).toLocaleString('en-CA')):notNumber(v);
 const march31=y=>isFr()?'31 mars '+y:'March 31, '+y;
-function bandText(s){
- s=String(s||'').trim();let m;
- if(/^total$/i.test(s))return tr('All salary ranges','Toutes les tranches salariales');
- if((m=s.match(/^Under ([\d,]+)$/i)))return tr('Under ','Moins de ')+dollars(m[1]);
- if((m=s.match(/^([\d,]+) to ([\d,]+)$/i)))return dollars(m[1])+tr(' to ',' à ')+dollars(m[2]);
- if((m=s.match(/^([\d,]+) and over$/i)))return dollars(m[1])+tr(' and over',' et plus');
- return esc(s);
-}
-function rangeText(s){
- s=String(s||'');
- if(!isFr())return esc(s);
- return esc(s.replace(/\$([\d,]+)/g,(x,n)=>n.replace(/,/g,NBSP)+NBSP+'$').replace(/^Less than /,'Moins de ').replace(/^Over /,'Plus de ').replace(/ to /,' à '));
-}
-const FIFTHS={'Bottom 20th':['lowest fifth','cinquième inférieur'],'20th to 40th':['second fifth','deuxième cinquième'],'40th to 60th':['middle fifth','cinquième du milieu'],'60th to 80th':['fourth fifth','quatrième cinquième'],'Top 20th':['highest fifth','cinquième supérieur']};
-function benchText(s){
- s=String(s||'');
- if(!isFr())return esc(s.replace(/ - population data as of March 31 (\d{4})/,', population as of March 31, $1'));
- return esc(s.replace(/^(\d{4}) Census and (\d{4}) Canadian Survey on Disability/,'Recensement de $1 et Enquête canadienne sur l’incapacité de $2')
-  .replace(/^(\d{4}) National Household Survey and (\d{4}) Canadian Survey on Disability/,'Enquête nationale auprès des ménages de $1 et Enquête canadienne sur l’incapacité de $2')
-  .replace('(citizens and permanent residents)','(citoyens et résidents permanents)')
-  .replace('(Canadian citizens only)','(citoyens canadiens seulement)')
-  .replace(/ - population data as of March 31 (\d{4})/,', population au 31 mars $1'));
-}
 
 /* ------------------------------------------------------------------- data */
 function csvParse(s){
@@ -82,7 +60,8 @@ function csvParse(s){
 }
 const data={};let loading=null;
 function load(){
- if(!loading)loading=Promise.all(Object.entries(FILES).map(([k,f])=>fetch(DIR+f).then(r=>{if(!r.ok)throw Error(f+' (HTTP '+r.status+')');return r.text();}).then(t=>{data[k]=csvParse(t);})))
+ // The department page uses the subgroup tables; the group summary uses the salary index and medians.
+ if(!loading)loading=Promise.all(Object.entries(FILES).filter(([k])=>['ind','pwd','di','med'].includes(k)).map(([k,f])=>fetch(DIR+f).then(r=>{if(!r.ok)throw Error(f+' (HTTP '+r.status+')');return r.text();}).then(t=>{data[k]=csvParse(t);})))
   .catch(e=>{loading=null;throw e;});
  return loading;
 }
@@ -156,6 +135,12 @@ css.textContent=[
  '[tabindex="-1"]:focus{outline:none}',
  '.gc-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}',
  '#gcShadeNote{font-weight:600}',
+ '.gc-gsub{font-size:15.5px;margin:16px 0 6px}',
+ '.gc-glance{margin:0 0 6px;padding-left:20px;line-height:1.55}',
+ '.gc-glance li{margin:5px 0}',
+ '.gc-ghead{font-weight:600}',
+ '.gc-flag-note{color:var(--rust,#a30000);font-weight:700;white-space:nowrap}',
+ 'html[data-theme="dark"] .gc-flag-note{color:#FF8F8F}',
  'html:not([data-theme]) .gc-hl{background:#fff2c2!important;color:#1c2d42!important;font-weight:700}',
  'html[data-theme="dark"] .gc-hl{background:#3d3000!important;color:#fff!important;font-weight:700}',
  'html[data-theme="contrast"] .gc-hl{outline:3px solid currentColor!important;outline-offset:-3px;font-weight:700}',
@@ -270,86 +255,92 @@ let choice='';      // '', a group key, or 'all'
 let current=null;   // the chosen group, or null for '' and 'all'
 
 function sectionWrap(id,title,body){return '<section class="gc-gsec card" id="'+id+'" aria-labelledby="'+id+'-h"><h4 id="'+id+'-h">'+title+'</h4>'+body+'</section>';}
-function secRepresentation(g){
- if(!g.rep)return null;
- const reps=data.rep.filter(r=>r.row_type==='representation');
- const wfa=data.rep.filter(r=>r.row_type==='workforce_availability');
- const year=r=>(String(r.period_or_benchmark).match(/(20\d\d)\s*$/)||[])[1]||r.period_or_benchmark;
- const title=tr('Representation, 2017 to 2025','Représentation, 2017 à 2025');
- return {id:'gc-g-rep',title,html:sectionWrap('gc-g-rep',title,
-  table(esc(label(g))+tr(': employees and share of all employees, core public administration',' : employés et part de l’ensemble des employés, administration publique centrale'),[tr('Date','Date'),tr('Employees','Employés'),tr('Share of all employees','Part de l’ensemble des employés')],reps.map(r=>({cells:[march31(year(r)),num(r[g.rep+'_number']),pct(r[g.rep+'_pct'])]})))+
-  table(tr('Workforce availability, the benchmark for representation','Disponibilité au sein de la population active, le point de comparaison de la représentation'),[tr('Benchmark source','Source du point de comparaison'),tr('Availability','Disponibilité')],wfa.map(r=>({cells:[benchText(r.period_or_benchmark),pct(r[g.rep+'_pct'])]})))+
-  '<p class="gc-small">'+tr('Compare each year with the benchmark for that year. Benchmarks changed in 2023, when they began to use the 2021 Census and the 2022 Canadian Survey on Disability.','Comparez chaque année avec le point de comparaison de cette année. Les points de comparaison ont changé en 2023, lorsqu’ils ont commencé à utiliser le Recensement de 2021 et l’Enquête canadienne sur l’incapacité de 2022.')+'</p>'+
-  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink('rep',tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>')};
+/* Where differences appear for the chosen group: the figures, with a link to the section that has the full table.
+   Each dataset has one table on this site; this summary does not repeat the tables. */
+const CYCLE_KEY={women:'w',indigenous:'i',pwd:'d',racialized:'v',black:'black'};
+const SURVEY_PAIR={women:['woman','man'],indigenous:['ind','nonind'],pwd:['pwd','nopwd'],racialized:['rac','nonrac'],black:['black','nonrac'],first_nations:['fn','nonind'],metis:['metis','nonind'],inuit:['inuit','nonind']};
+const SUB_ROW={first_nations:'First Nations',metis:'Metis',inuit:'Inuit'};
+const gget=f=>{try{const v=f();return v===undefined?null:v;}catch(e){return null;}};
+const sep=()=>isFr()?NBSP+': ':': ';
+function stageText(st,c){
+ const a=pct(c.a),b=pct(c.b),r=ratio(c.r);
+ const T={
+  rep:[a+' of employees, compared with workforce availability of '+b+'.',a+' de l’effectif, comparativement à une disponibilité de '+b+'.'],
+  hire:[a+' of hires, compared with workforce availability of '+b+'.',a+' des embauches, comparativement à une disponibilité de '+b+'.'],
+  promo:[a+' of promotions, compared with '+b+' of employees.',a+' des promotions, comparativement à '+b+' de l’effectif.'],
+  ex:[a+' of executives, compared with '+b+' of employees.',a+' des cadres, comparativement à '+b+' de l’effectif.'],
+  pay:[a+' earn $100,000 or more, compared with '+b+' of all employees.',a+' gagnent 100'+NBSP+'000'+NBSP+'$ ou plus, comparativement à '+b+' de l’ensemble des employés.'],
+  sep:[a+' of separations, compared with '+b+' of employees.',a+' des départs, comparativement à '+b+' de l’effectif.']
+ }[st.k];
+ return tr(T[0],T[1])+' '+tr('Ratio ','Ratio de ')+r+(st.k==='sep'?tr('; a higher ratio means more employees leaving.','; un ratio plus élevé signifie plus de départs.'):'.');
 }
-function exLevelName(l){if(l==='Executives')return tr('All executives','Ensemble des cadres');if(l==='Unknown')return tr('Level not reported','Niveau non déclaré');return esc(String(l).replace(/^EX (\d+)$/,'EX-$1'));}
-function exLevels(g,y){
- const rows=data.ex.filter(r=>r.as_of_march_31===y&&r.level!=='Overall EX WFA');
- const wfa=data.ex.find(r=>r.as_of_march_31===y&&r.level==='Overall EX WFA');
- return table(tr('Executives by level, ','Cadres selon le niveau, ')+march31(y),[tr('Level','Niveau'),tr('All executives','Ensemble des cadres'),esc(label(g)),tr('Share','Part')],rows.map(r=>({cells:[exLevelName(r.level),num(r.executive_employees),num(r[g.ex+'_number']),pct(r[g.ex+'_pct'])],cls:r.level==='Executives'?'gc-total':''})))+
-  (wfa?'<p class="gc-small">'+tr('Executive workforce availability for this group in '+y+': ','Disponibilité des cadres pour ce groupe en '+y+' : ')+pct(wfa[g.ex+'_pct'])+'. '+tr('This benchmark applies to all executives together, not to each level.','Ce point de comparaison s’applique à l’ensemble des cadres, et non à chaque niveau.')+'</p>':'');
+const STAGE_HEAD={rep:['Representation, March 31, 2025','Représentation, 31 mars 2025'],hire:['Hiring, 2024-25','Embauches, 2024-2025'],promo:['Promotions, 2024-25','Promotions, 2024-2025'],ex:['Executives, March 31, 2025','Cadres, 31 mars 2025'],pay:['Pay, March 31, 2025','Rémunération, 31 mars 2025'],sep:['Separations, 2024-25','Départs, 2024-2025']};
+const goLink=(id,en,fr)=>' <a href="#" data-gc-go="'+id+'">'+tr(en,fr)+'</a>';
+function item(head,text,flag,low){
+ return '<li class="'+(flag?'gc-flag-item':'')+'"><span class="gc-ghead">'+head+'</span>'+sep()+text+
+  (flag?' <span class="gc-flag-note">'+(low?'▼ ':'▲ ')+tr('Marked: ','Signalé'+NBSP+': ')+(low?tr('0.85 or less.','0,85 ou moins.'):tr('1.15 or more.','1,15 ou plus.'))+'</span>':'')+'</li>';
 }
-function secExecutives(g){
- if(!g.ex)return null;
- const years=[...new Set(data.ex.map(r=>r.as_of_march_31))].filter(y=>/^\d{4}$/.test(y)).sort().reverse();
- const trend=years.map(y=>{const t=data.ex.find(r=>r.as_of_march_31===y&&r.level==='Executives'),w=data.ex.find(r=>r.as_of_march_31===y&&r.level==='Overall EX WFA');return {cells:[march31(y),t?num(t[g.ex+'_number']):notNumber(''),t?pct(t[g.ex+'_pct']):notNumber(''),w?pct(w[g.ex+'_pct']):notNumber('')]};});
- const title=tr('Executives, 2017 to 2025','Cadres supérieurs, 2017 à 2025');
- return {id:'gc-g-ex',title,html:sectionWrap('gc-g-ex',title,
-  table(tr('All executives, each year','Ensemble des cadres, chaque année'),[tr('Date','Date'),esc(label(g)),tr('Share of executives','Part des cadres'),tr('Executive availability','Disponibilité des cadres')],trend)+
-  '<div class="gc-year"><label for="gcExYear">'+tr('Executive levels on','Niveaux de cadres au')+'</label><select id="gcExYear">'+years.map(y=>'<option value="'+y+'">'+march31(y)+'</option>').join('')+'</select></div>'+
-  '<div id="gcExLevels" aria-live="polite">'+exLevels(g,years[0])+'</div>'+
-  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink('ex',tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>')};
+function glanceEmployment(g){
+ const T=window.GCTOOLS;const k=CYCLE_KEY[g.key];const out=[];
+ if(T&&k){
+  const gi=T.G5.findIndex(x=>x[0]===k);
+  T.cycle().forEach(r=>{
+   const c=r.cells[gi],h=tr(STAGE_HEAD[r.st.k][0],STAGE_HEAD[r.st.k][1]);
+   if(c.r!==null){out.push(item(h,stageText(r.st,c),c.flag,r.st.low));return;}
+   if(c.a===null)return;
+   const what=r.st.k==='rep'?tr(' of employees.',' de l’effectif.'):r.st.k==='hire'?tr(' of hires.',' des embauches.'):'.';
+   out.push(item(h,pct(c.a)+what+' '+tr('Treasury Board does not publish workforce availability for this group.','Le Conseil du Trésor ne publie pas de disponibilité pour ce groupe.'),false,true));
+  });
+ }
+ if(SUB_ROW[g.key]){
+  const S=gget(()=>SUBG),SG=gget(()=>SGSAL)||[];
+  const row=S&&S.i&&S.i.rows?S.i.rows.find(r=>r.name===SUB_ROW[g.key]):null;
+  const all=SG.find(r=>r[0]==='All employees'),sal=SG.find(r=>r[0]===SUB_ROW[g.key]);
+  if(row){
+   out.push(item(tr('Representation, March 31, 2025','Représentation, 31 mars 2025'),num(row.n)+' '+tr('employees, ','employés, ')+pct(row.p)+tr(' of employees. Workforce availability is published for Indigenous Peoples as a whole (4.0%). It is not published for each subgroup.',' de l’effectif. La disponibilité est publiée pour l’ensemble des Autochtones (4,0'+NBSP+'%). Elle n’est pas publiée pour chaque sous-groupe.'),false,true));
+   if(isNum(row.ex))out.push(item(tr('Executives, March 31, 2025','Cadres, 31 mars 2025'),pct(row.ex)+tr(' of executives, compared with ',' des cadres, comparativement à ')+pct(row.p)+tr(' of employees.',' de l’effectif.'),false,true));
+  }
+  if(sal&&all){
+   if(isNum(sal[4])&&isNum(all[4])){const r=sal[4]/all[4];out.push(item(tr('Pay, March 31, 2025','Rémunération, 31 mars 2025'),pct(sal[4])+tr(' earn $100,000 or more, compared with ',' gagnent 100'+NBSP+'000'+NBSP+'$ ou plus, comparativement à ')+pct(all[4])+tr(' of all employees. Ratio ',' de l’ensemble des employés. Ratio de ')+ratio(r)+'.',r<=0.85,true));}
+   else out.push(item(tr('Pay, March 31, 2025','Rémunération, 31 mars 2025'),tr('The share earning $100,000 or more is suppressed for this subgroup.','La part gagnant 100'+NBSP+'000'+NBSP+'$ ou plus est supprimée pour ce sous-groupe.'),false,true));
+  }
+ }
+ return out;
 }
-function parseBand(s){
- s=String(s||'').replace(/,/g,'');let m;
- if((m=s.match(/^Under (\d+)/i)))return [0,+m[1]];
- if((m=s.match(/^(\d+) to (\d+)/i)))return [+m[1],+m[2]+1];
- if((m=s.match(/^(\d+) and over/i)))return [+m[1],Infinity];
- return null;
+function glanceSurvey(g){
+ const pair=SURVEY_PAIR[g.key];if(!pair)return [];
+ const EEG=gget(()=>EEG_DEPT),SUB=gget(()=>IND_SUB);
+ const ps=EEG&&EEG['Public Service']||{},subPS=SUB&&SUB['Public Service']||{};
+ const A=['fn','metis','inuit'].includes(pair[0])?subPS[pair[0]]:ps[pair[0]],B=ps[pair[1]];
+ if(!A||!B)return [];
+ const T=window.GCTOOLS;if(!T)return [];
+ const cmpName={man:tr('men','les hommes'),nonind:tr('non-Indigenous employees','les employés non autochtones'),nopwd:tr('persons without disabilities','les personnes sans handicap'),nonrac:tr('non-racialized employees','les employés non racisés')}[pair[1]];
+ const rows=Object.keys(A).filter(q=>isNum(A[q])&&isNum(B[q])).map(q=>{const d=A[q]-B[q];return {q,a:A[q],b:B[q],adv:T.qNeg(q)?d:-d};});
+ const pick=rows.filter(r=>r.q==='Q65'||r.q==='Q58').concat(rows.filter(r=>r.q!=='Q65'&&r.q!=='Q58'&&r.adv>0).sort((x,y)=>y.adv-x.adv).slice(0,3));
+ const pv=v=>Number(v).toLocaleString(loc(),{maximumFractionDigits:1})+(isFr()?NBSP+'%':'%');
+ return pick.map(r=>'<li><span class="gc-ghead">'+r.q+' · '+esc(T.qText(r.q))+'</span>'+sep()+pv(r.a)+tr(', compared with ',', comparativement à ')+pv(r.b)+tr(' for ',' pour ')+cmpName+'. '+
+  (()=>{const n=Math.abs(r.a-r.b),pts=n===1?tr(' point',' point'):tr(' points',n<2?' point':' points');return r.adv>0?tr(n+pts+' less favourable.','Écart de '+n+pts+', moins favorable.'):r.adv<0?tr(n+pts+' more favourable.','Écart de '+n+pts+', plus favorable.'):tr('No difference.','Aucun écart.');})()+'</li>');
 }
-function estimatedIn(col,year,band){
- const b=parseBand(band);if(!b)return false;
- return (data.imputed||[]).some(r=>r.Year===year&&r.Group===col&&(x=>x&&x[0]>=b[0]&&x[1]<=b[1])(parseBand(r.salary_range)));
+function glanceSalary(g){
+ if(!g.di)return [];
+ const di=(data.di||[]).filter(r=>r.year_di==='2025'&&r.quintile&&r.quintile!=='NA');
+ const top=di.find(r=>r.quintile_label==='Top 20th'),bottom=di.find(r=>r.quintile_label==='Bottom 20th');
+ const med=(data.med||[]).find(r=>r.Year==='2025');
+ const out=[];
+ const who=g.diAll?tr('Indigenous employees as a whole','l’ensemble des employés autochtones'):'';
+ if(top&&bottom)out.push('<li><span class="gc-ghead">'+tr('Salary index, 2025','Indice salarial, 2025')+'</span>'+sep()+(who?who+(isFr()?NBSP+': ':': '):'')+ratio(top['di_'+g.di])+tr(' in the highest fifth of salaries and ',' dans le cinquième supérieur des salaires et ')+ratio(bottom['di_'+g.di])+tr(' in the lowest. An index of 1.00 means the same concentration as all employees.',' dans le cinquième inférieur. Un indice de 1,00 signifie la même concentration que l’ensemble des employés.')+'</li>');
+ if(med&&isNum(med[g.med])&&isNum(med['All Employees']))out.push('<li><span class="gc-ghead">'+tr('Estimated median salary, 2025','Salaire médian estimé, 2025')+'</span>'+sep()+(who?who+(isFr()?NBSP+': ':': '):'')+money(med[g.med])+tr(', compared with ',', comparativement à ')+money(med['All Employees'])+tr(' for all employees.',' pour l’ensemble des employés.')+'</li>');
+ return out;
 }
-function salaryYear(g,y){
- const glabel=g.diAll?tr('Indigenous employees','Employés autochtones'):esc(label(g));
- const di=data.di.filter(r=>r.year_di===y&&r.quintile&&r.quintile!=='NA');
- const col='count_'+g.di;
- let flagged=false;
- const counts=data.count.filter(r=>r.Year===y).map(r=>{const est=!/^total$/i.test(r.salary_range)&&estimatedIn(col,y,r.salary_range);if(est)flagged=true;return {cells:[bandText(r.salary_range),num(r.count_all),num(r[col])+(est?' *':'')],cls:/^total$/i.test(r.salary_range)?'gc-total':''};});
- if(!di.length&&!counts.length)return '<p>'+tr('No salary ranges are published for this date.','Aucune tranche salariale n’est publiée pour cette date.')+'</p>';
- return table(tr('Where employees sit in the salary range, ','Répartition dans l’échelle salariale, ')+march31(y),[tr('Salary range','Tranche salariale'),tr('All employees','Ensemble des employés'),glabel,tr('Index (1.00 = same as all employees)','Indice (1,00 = comme l’ensemble)')],di.map(r=>{const f=FIFTHS[r.quintile_label];return {cells:[rangeText(r.quintile)+(f?' <span class="gc-small">('+(isFr()?f[1]:f[0])+')</span>':''),pct(r.per_all),pct(r['per_'+g.di]),ratio(r['di_'+g.di])]};}))+
-  '<p class="gc-small">'+tr('Each fifth holds about one fifth of all employees. An index above 1.00 means the group is more concentrated in that range than employees overall; below 1.00, less concentrated.','Chaque cinquième regroupe environ le cinquième de l’ensemble des employés. Un indice supérieur à 1,00 signifie que le groupe est plus concentré dans cette tranche que l’ensemble des employés; inférieur à 1,00, moins concentré.')+'</p>'+
-  table(tr('Number of employees in each salary range, ','Nombre d’employés dans chaque tranche salariale, ')+march31(y),[tr('Salary range','Tranche salariale'),tr('All employees','Ensemble des employés'),glabel],counts,{tall:true})+
-  (flagged?'<p class="gc-small">'+tr('* Includes a value estimated by the independent project to replace a small count that the Treasury Board did not publish.','* Comprend une valeur estimée par le projet indépendant pour remplacer un petit nombre que le Conseil du Trésor n’a pas publié.')+'</p>':'');
-}
-function secSalary(g){
- if(!g.di)return null;
- const glabel=g.diAll?tr('Indigenous employees','Employés autochtones'):esc(label(g));
- const years=[...new Set(data.di.map(r=>r.year_di))].filter(y=>/^\d{4}$/.test(y)).sort().reverse();
- const meds=data.med.filter(r=>/^\d{4}$/.test(r.Year)).sort((a,b)=>b.Year.localeCompare(a.Year)).map(r=>({cells:[march31(r.Year),money(r['All Employees']),money(r[g.med])]}));
- const title=tr('Salary, 2017 to 2025','Salaires, 2017 à 2025');
- return {id:'gc-g-sal',title,html:sectionWrap('gc-g-sal',title,
-  (g.diAll?'<p class="gc-small">'+tr('Salary figures are published for Indigenous employees as a whole, not for First Nations, Métis or Inuit employees separately.','Les données salariales portent sur l’ensemble des employés autochtones, et non sur les Premières Nations, les Métis ou les Inuits séparément.')+'</p>':'')+
-  table(tr('Estimated median salary','Salaire médian estimé'),[tr('Date','Date'),tr('All employees','Ensemble des employés'),glabel],meds)+
-  '<div class="gc-year"><label for="gcSalYear">'+tr('Salary ranges on','Tranches salariales au')+'</label><select id="gcSalYear">'+years.map(y=>'<option value="'+y+'">'+march31(y)+'</option>').join('')+'</select></div>'+
-  '<div id="gcSalOut" aria-live="polite">'+salaryYear(g,years[0])+'</div>'+
-  '<p class="gc-note">'+tr('These salary figures are estimates from an independent analysis of Treasury Board of Canada Secretariat statistics. They are not Government of Canada data.','Ces chiffres salariaux sont des estimations tirées d’une analyse indépendante des statistiques du Secrétariat du Conseil du Trésor du Canada. Ce ne sont pas des données du gouvernement du Canada.')+'</p>'+
-  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+'<a href="'+DI_URL+'" target="_blank" rel="noopener">'+tr('Disproportionality Index project','Projet sur l’indice de disproportion')+'</a>. '+tr('Download: ','Télécharger : ')+fileLink('med',tr('median salaries','salaires médians'))+' · '+fileLink('di',tr('index by salary range','indice par tranche'))+' · '+fileLink('count',tr('counts by salary range','nombres par tranche'))+' · '+fileLink('imputed',tr('estimated values','valeurs estimées'))+' (CSV)</p>')};
-}
-function deptTable(g,k,field){
- const t=totalRow(k);
- const rows=orgRows(k).slice().sort((a,b)=>(isNum(b[field+'_pct'])?+b[field+'_pct']:-1)-(isNum(a[field+'_pct'])?+a[field+'_pct']:-1)||(+b.all_employees||0)-(+a.all_employees||0));
- const out=rows.map(r=>({cells:[esc(r.department_or_agency),num(r.all_employees),num(r[field+'_number']),pct(r[field+'_pct'])]}));
- if(t)out.unshift({cells:[tr('Core public administration','Administration publique centrale'),num(t.all_employees),num(t[field+'_number']),pct(t[field+'_pct'])],cls:'gc-total'});
- return table(tr('All organizations in the table, highest share first','Tous les organismes du tableau, de la part la plus élevée à la plus faible'),[tr('Department or agency','Ministère ou organisme'),tr('All employees','Ensemble des employés'),esc(label(g)),tr('Share of the organization','Part de l’effectif')],out,{tall:true})+
-  '<p class="gc-small">'+tr('Shares are within each organization. Suppressed values are listed last; they are not zero.','Les parts sont calculées dans chaque organisme. Les valeurs supprimées figurent en dernier; ce ne sont pas des zéros.')+'</p>'+
-  '<p class="eq-source-foot">'+tr('Source: ','Source : ')+tbsLink()+'. '+fileLink(k,tr('Download the table (CSV)','Télécharger le tableau (CSV)'))+'</p>';
-}
-function secDepartments(g){
- if(g.ind){const title=tr('By department or agency, March 31, 2025','Par ministère ou organisme, 31 mars 2025');return {id:'gc-g-dept',title,html:sectionWrap('gc-g-dept',title,deptTable(g,'ind',g.ind))};}
- if(g.pwd){const title=tr('By department or agency, March 31, 2024','Par ministère ou organisme, 31 mars 2024');return {id:'gc-g-dept',title,html:sectionWrap('gc-g-dept',title,deptTable(g,'pwd','persons_with_disabilities'))};}
- return null;
+function glance(g){
+ const emp=glanceEmployment(g),sur=glanceSurvey(g),sal=glanceSalary(g);
+ let h='';
+ if(emp.length)h+='<h5 class="gc-gsub">'+tr('Employment, hiring, promotion, pay and separations','Effectif, embauches, promotions, rémunération et départs')+'</h5><ul class="gc-glance">'+emp.join('')+'</ul>'+
+  '<p class="gc-small">'+tr('A ratio compares the group with a benchmark; 1.00 means the same rate. Marked results meet the screening rule used on this site. They show where to look more closely. They do not show the cause.','Un ratio compare le groupe avec un point de comparaison; 1,00 signifie le même taux. Les résultats signalés répondent à la règle de repérage utilisée sur ce site. Ils indiquent où regarder de plus près. Ils n’en indiquent pas la cause.')+goLink('overview','See the employment cycle table','Voir le tableau du cycle d’emploi')+'</p>';
+ if(sur.length)h+='<h5 class="gc-gsub">'+tr('Employee survey, 2024','Sondage auprès des employés, 2024')+'</h5><ul class="gc-glance">'+sur.join('')+'</ul><p class="gc-small">'+tr('Differences are between published percentages. They are not tests of statistical significance.','Les écarts sont calculés entre des pourcentages publiés. Il ne s’agit pas de tests de signification statistique.')+goLink(g.key==='black'?'black':(['indigenous','first_nations','metis','inuit'].includes(g.key)?'indigenous':'demo'),'See the survey results','Voir les résultats du sondage')+'</p>';
+ if(sal.length)h+='<h5 class="gc-gsub">'+tr('Salary estimates, 2025','Estimations salariales, 2025')+'</h5><ul class="gc-glance">'+sal.join('')+'</ul><p class="gc-small">'+tr('These are estimates from an independent analysis of Treasury Board statistics. They are not Government of Canada data.','Ce sont des estimations tirées d’une analyse indépendante des statistiques du Conseil du Trésor. Ce ne sont pas des données du gouvernement du Canada.')+goLink('di','See the salary index','Voir l’indice salarial')+'</p>';
+ if(!h)h='<p>'+tr('No summary is available for this group.','Aucun résumé n’est disponible pour ce groupe.')+'</p>';
+ return h;
 }
 // Detailed sections that matter for each group, in page order. Their titles come from the page itself.
 function detailLinks(g){
@@ -406,15 +397,14 @@ function renderGroup(){
  out.innerHTML='<p>'+tr('Loading…','Chargement…')+'</p>';
  load().then(()=>{
   if(current!==g)return;
-  const parts=[secRepresentation(g),secExecutives(g),secSalary(g),secDepartments(g)].filter(Boolean);
+  const title=tr('Where differences appear','Où se trouvent les écarts');
+  const parts=[{id:'gc-g-glance',title,html:sectionWrap('gc-g-glance',title,glance(g))}];
   const details=detailLinks(g);
   const toc='<nav class="gc-toc" aria-labelledby="gcTocTitle"><h4 id="gcTocTitle">'+tr('On this page','Sur cette page')+'</h4><div class="gc-toc-cols">'+
    '<div><p class="gc-toc-h" id="gcTocSum">'+tr('Summary','Résumé')+'</p><ul aria-labelledby="gcTocSum">'+parts.map(p=>'<li><a href="#'+p.id+'" data-gc-scroll="'+p.id+'">'+p.title+'</a></li>').join('')+'<li><a href="#gc-g-ai" data-gc-scroll="gc-g-ai">'+tr('Ask an AI chatbot','Poser une question à un agent conversationnel')+'</a></li></ul></div>'+
    (details.length?'<div><p class="gc-toc-h" id="gcTocDet">'+tr('Detailed results','Résultats détaillés')+'</p><ul aria-labelledby="gcTocDet">'+details.map(d=>'<li><a href="#'+d.id+'" data-gc-go="'+d.id+'">'+esc(d.title)+'</a></li>').join('')+'</ul></div>':'')+'</div></nav>';
   out.innerHTML='<h3 id="gcGroupTitle">'+esc(label(g))+'</h3>'+toc+parts.map(p=>p.html).join('')+
    sectionWrap('gc-g-ai',tr('Ask an AI chatbot about this group','Poser une question à un agent conversationnel sur ce groupe'),'<div class="gc-ai-host"></div>');
-  const ex=$('gcExYear');if(ex)ex.addEventListener('change',()=>{$('gcExLevels').innerHTML=exLevels(g,ex.value);});
-  const sy=$('gcSalYear');if(sy)sy.addEventListener('change',()=>{$('gcSalOut').innerHTML=salaryYear(g,sy.value);});
   if(window.GCAI)window.GCAI.render(out.querySelector('.gc-ai-host'),{
    question:()=>tr('What do published data show about '+g.s_en+' in the federal public service? Where are the largest gaps?','Que montrent les données publiées sur '+g.s_fr+' dans la fonction publique fédérale? Où se trouvent les plus grands écarts?'),
    about:()=>label(g)
@@ -475,15 +465,16 @@ function settleOn(id){
  if(page!=='data'&&page!=='departments')return;
  if(id==='publicintro'||id==='orgprofile')return;
  const el=$('view-'+id);if(!el)return;
- let n=0,stopped=false;
+ let n=0,steady=0,stopped=false;
  const stop=()=>{stopped=true;};
  const events=['wheel','touchstart','keydown','mousedown'];
  events.forEach(e=>window.addEventListener(e,stop,{once:true,passive:true}));
+ // A long page can take a few seconds to scroll on a phone: keep checking until the section has stayed in place.
  const fix=()=>{
   if(stopped)return;
   const top=el.getBoundingClientRect().top;
-  if(top<-4||top>140)el.scrollIntoView({block:'start'});
-  if(++n<8)setTimeout(fix,250);else events.forEach(e=>window.removeEventListener(e,stop));
+  if(top<-4||top>140){steady=0;el.scrollIntoView({block:'start'});}else steady++;
+  if(++n<24&&steady<3)setTimeout(fix,250);else events.forEach(e=>window.removeEventListener(e,stop));
  };
  setTimeout(fix,60);
 }

@@ -7,6 +7,8 @@ on:
       - 'sources.html'
       - 'gc-ai.js'
       - 'gc-equity-additions.js'
+      - 'gc-tools.js'
+      - 'vendor/**'
       - 'data/october-2026/**'
       - '.github/workflows/browser-smoke.yml'
 permissions:
@@ -47,7 +49,7 @@ jobs:
                 const outside=[];
                 await ctx.route(u=>!String(u).startsWith(addr),r=>{outside.push(r.request().url());r.abort();});
                 const errors=[];const watch=p=>p.on('pageerror',e=>errors.push(p.url()+' :: '+e.message));
-                const overflow=p=>p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
+                const overflow=p=>p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+2||innerWidth>document.documentElement.clientWidth+2);
                 fs.mkdirSync('qa-screenshots',{recursive:true});
 
                 // 1. Main page: three options and the chatbot box
@@ -97,7 +99,8 @@ jobs:
                 await page.waitForFunction(()=>/79,400/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
                 await page.waitForFunction(()=>document.querySelectorAll('.gc-hl').length>10,null,{timeout:30000});
                 await page.selectOption('#gcGroup','pwd');
-                await page.waitForFunction(()=>/24,128/.test(document.getElementById('gcGroupOut').textContent),null,{timeout:30000});
+                await page.waitForFunction(()=>/9\.0% of employees, compared with workforce availability of 12\.0%/.test(document.getElementById('gcGroupOut').textContent),null,{timeout:30000});
+                await page.waitForFunction(()=>document.querySelectorAll('#gtCycleTable td.gt-flag').length>=5,null,{timeout:30000});
                 if(await overflow(page))throw Error(mode.name+': group page scrolls sideways');
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-group.png'});
                 await page.close();
@@ -105,14 +108,22 @@ jobs:
                 // 5. Option 3: presentations and briefing notes
                 page=await ctx.newPage();watch(page);
                 await page.goto(addr+'explorer.html?lang=en#bhome',big);
-                await page.waitForSelector('#view-bhome.active #eqSlidesBuild',{timeout:60000});
+                await page.waitForSelector('#view-bhome.active #gtDeckBuild',{timeout:60000});
                 if(await page.$$eval('#gc-b-ai .gcai-bot',a=>a.length)!==4)throw Error('briefing chatbot links missing');
+                if(mode.name==='desktop'){
+                  const [deck]=await Promise.all([page.waitForEvent('download',{timeout:60000}),page.click('#gtDeckBuild')]);
+                  if(!/\.pptx$/.test(deck.suggestedFilename()))throw Error('presentation not downloaded: '+deck.suggestedFilename());
+                  await page.goto(addr+'explorer.html?lang=en#brief',big);
+                  await page.waitForSelector('#view-brief.active #briefWord',{timeout:60000});
+                  const [word]=await Promise.all([page.waitForEvent('download',{timeout:60000}),page.click('#briefWord')]);
+                  if(!/\.docx$/.test(word.suggestedFilename()))throw Error('briefing note not downloaded: '+word.suggestedFilename());
+                }
                 await page.close();
 
                 // 6. French links and the source list
                 page=await ctx.newPage();watch(page);
                 await page.goto(addr+'explorer.html?lang=fr&group=women#data',big);
-                await page.waitForFunction(()=>document.documentElement.lang==='fr-CA'&&/151\s528/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
+                await page.waitForFunction(()=>document.documentElement.lang==='fr-CA'&&/56,8\s%/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
                 const alive=await Promise.race([page.evaluate(()=>1+1),new Promise(r=>setTimeout(()=>r('stuck'),5000))]);
                 if(alive!==2)throw Error('French page stopped responding');
                 await page.goto(addr+'sources.html?lang=fr');
@@ -123,7 +134,7 @@ jobs:
                 const unexpected=outside.filter(u=>!/^https:\/\/(chatgpt\.com|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)\//.test(u));
                 if(unexpected.length)throw Error(mode.name+': outside requests: '+unexpected.join(' '));
                 await ctx.close();
-                console.log('PASS: '+mode.name+', main page, chatbot links, three paths, French, source list');
+                console.log('PASS: '+mode.name+', main page, chatbot links, three paths, presentation and Word files, French, source list');
               }
             }finally{await browser.close();server.close()}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});
