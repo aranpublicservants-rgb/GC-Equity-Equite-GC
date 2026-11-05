@@ -32,7 +32,7 @@ jobs:
                   cmd += ['-H', k + ': ' + v]
               out = subprocess.run(cmd + [url], capture_output=True, timeout=120)
               if out.returncode != 0:
-                  raise RuntimeError('curl ' + str(out.returncode))
+                  raise RuntimeError('curl exit ' + str(out.returncode))
               return out.stdout.decode('utf-8', 'replace')
           def current(src):
               if src['kind'] == 'canada-page':
@@ -52,7 +52,7 @@ jobs:
               try:
                   now = current(src)
               except Exception as e:
-                  now, note = None, 'not reached (' + type(e).__name__ + ')'
+                  now, note = None, 'not reached (' + (str(e) or type(e).__name__)[:40] + ')'
               else:
                   note = ''
               used = src.get('checked')
