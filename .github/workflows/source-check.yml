@@ -1,5 +1,5 @@
 name: Weekly check of official sources
-# Compares the "date modified" of each official source with the date the site last used (data/source-dates.json).
+# Compares the "date modified" of each official source with the date recorded in data/source-dates.json.
 # When a source has changed, it opens or updates one issue so the site can be refreshed. It never changes the site.
 on:
   schedule:
@@ -20,13 +20,20 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           python3 <<'PY'
-          import json, os, re, urllib.request, urllib.error
+          import json, os, re, subprocess, urllib.request, urllib.error
           cfg = json.load(open('data/source-dates.json', encoding='utf-8'))
           ua = {'User-Agent': 'GC-Equity-source-check'}
           def get(url, headers=None):
-              req = urllib.request.Request(url, headers={**ua, **(headers or {})})
-              with urllib.request.urlopen(req, timeout=40) as r:
-                  return r.read().decode('utf-8', 'replace')
+              # curl with an ordinary browser identity: Canada.ca does not answer some scripted clients.
+              cmd = ['curl', '-sSL', '--compressed', '--max-time', '45', '--retry', '2', '-A',
+                     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
+                     '-H', 'Accept: text/html,application/json;q=0.9,*/*;q=0.8', '-H', 'Accept-Language: en-CA,en;q=0.8']
+              for k, v in (headers or {}).items():
+                  cmd += ['-H', k + ': ' + v]
+              out = subprocess.run(cmd + [url], capture_output=True, timeout=120)
+              if out.returncode != 0:
+                  raise RuntimeError('curl ' + str(out.returncode))
+              return out.stdout.decode('utf-8', 'replace')
           def current(src):
               if src['kind'] == 'canada-page':
                   m = re.search(r'property="dateModified"[^>]*>\s*(\d{4}-\d{2}-\d{2})', get(src['url']))
@@ -48,23 +55,23 @@ jobs:
                   now, note = None, 'not reached (' + type(e).__name__ + ')'
               else:
                   note = ''
-              used = src.get('used')
+              used = src.get('checked')
               if now and used and now > used:
                   changed.append(src)
-                  note = 'changed since the site used it'
+                  note = 'changed since the last check'
               elif now and not used:
-                  note = note or 'no date recorded for the site'
+                  note = note or 'no date recorded yet'
               rows.append('| [' + src['title'] + '](' + src['url'] + ') | ' + (used or '') + ' | ' + (now or '') + ' | ' + note + ' |')
-          table = '| Source | Date used by the site | Date modified now | Note |\n|---|---|---|---|\n' + '\n'.join(rows)
+          table = '| Source | Date recorded | Date modified now | Note |\n|---|---|---|---|\n' + '\n'.join(rows)
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
               f.write('## Official sources\n\n' + table + '\n')
           print(table)
           if not changed:
-              print('No source has changed since the site used it.')
+              print('No source has changed since the last check.')
               raise SystemExit(0)
           title = 'Official sources updated since the site was last refreshed'
           body = ('These sources show a newer "date modified" than the date recorded in data/source-dates.json. '
-                  'Check whether the tables changed, update the site, then set the new dates in data/source-dates.json.\n\n' + table)
+                  'Check whether the published figures changed and update the site if they did. Then record the new dates in data/source-dates.json.\n\n' + table)
           api = 'https://api.github.com/repos/' + os.environ['REPO'] + '/issues'
           auth = {'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json'}
           issues = json.loads(get(api + '?state=open&per_page=100', auth))

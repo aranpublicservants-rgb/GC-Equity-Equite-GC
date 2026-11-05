@@ -1,103 +1,103 @@
 {
- "note": "Date each source was last modified when the site last used it. A weekly check compares these dates with the sources. When the site is updated from a source, set its date here. A null date means the check reports the source's date without comparing it.",
+ "note": "For each official source, the \"date modified\" recorded when the site last used it or when the weekly check last confirmed it. The check opens an issue when a source shows a later date. After reviewing a change and updating the site, record the new date here. A null date means the check reports the source without comparing it.",
  "sources": [
   {
    "id": "tbs-representation",
    "title": "TBS: representation in the public service by designated group and fiscal year, with workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/representation-public-service-canada-designated-group-fiscal-year-workforce-availability-estimates.html",
-   "used": "2026-06-24"
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-indigenous-subgroups",
    "title": "TBS: employees by subgroup and department, Indigenous Peoples",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-indigenous-peoples.html",
-   "used": "2026-06-24"
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-disability-subgroups",
    "title": "TBS: employees by subgroup and department, persons with disabilities",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-persons-disabilities.html",
-   "used": "2026-06-24"
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-racialized-subgroups",
    "title": "TBS: employees by subgroup and department, members of visible minorities",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "tbs-dept-wfa-women",
    "title": "TBS: representation of women by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-women-department-agency-departmental-workforce-availability-estimates.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "tbs-dept-wfa-indigenous",
    "title": "TBS: representation of Indigenous Peoples by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-indigenous-peoples-department-agency-departmental-workforce-availability-estimates.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "tbs-dept-wfa-disabilities",
    "title": "TBS: representation of persons with disabilities by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-persons-disabilities-department-agency-departmental-workforce-availability-estimates.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "tbs-dept-wfa-racialized",
    "title": "TBS: representation of members of visible minorities by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-members-visible-minority-group-department-agency-departmental-workforce-availability-estimates.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "tbs-executive-levels",
    "title": "TBS: population of the federal public service by executive level",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/population-federal-public-service-executive-level.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "tbs-diversity-statistics",
    "title": "TBS: diversity and inclusion statistics (list of tables)",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html",
-   "used": null
+   "checked": null
   },
   {
    "id": "pses-2024-second-level",
    "title": "Open Government: 2024 PSES, employee groups by second organizational level",
    "kind": "open-data",
    "url": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
-   "used": null
+   "checked": "2026-10-02"
   },
   {
    "id": "snps-2023",
    "title": "Open Government: 2023 Staffing and Non-Partisanship Survey",
    "kind": "open-data",
    "url": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
-   "used": null
+   "checked": "2024-12-09"
   },
   {
    "id": "snps-2025",
    "title": "Open Government: 2025 Staffing and Non-Partisanship Survey",
    "kind": "open-data",
    "url": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
-   "used": null
+   "checked": "2026-04-14"
   },
   {
    "id": "di-project",
    "title": "Disproportionality Index project (independent), latest change to its published files",
    "kind": "github",
    "url": "https://github.com/Employment-Equity/employment-equity.github.io",
-   "used": "2026-07-09"
+   "checked": "2026-07-09"
   }
  ]
 }
