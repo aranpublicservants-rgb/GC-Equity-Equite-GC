@@ -1,0 +1,3550 @@
+{
+ "generated": "2026-11-05T11:23:49Z",
+ "packages": {
+  "8766bf91-d14c-423b-a5d1-ac47f5b4dd22": {
+   "title_translated": {
+    "en": "2025 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2025"
+   },
+   "organization": "Public Service Commission of Canada | Commission de la fonction publique du Canada",
+   "metadata_modified": "2026-04-14T14:32:14.326327",
+   "url": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22"
+  },
+  "3aeb9234-2cce-4495-970e-a177d23199ae": {
+   "title_translated": {
+    "en": "Federal public service executive and non-executive statistics",
+    "fr": "Statistiques sur les cadres supérieurs et non-cadres supérieurs de la fonction publique fédérale"
+   },
+   "organization": "Treasury Board of Canada Secretariat | Secrétariat du Conseil du Trésor du Canada",
+   "metadata_modified": "2026-10-04T06:44:48.843298",
+   "url": "https://open.canada.ca/data/en/dataset/3aeb9234-2cce-4495-970e-a177d23199ae"
+  },
+  "88f45a5c-bc57-4483-bc85-2c19bc342039": {
+   "title_translated": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   },
+   "organization": "Public Service Commission of Canada | Commission de la fonction publique du Canada",
+   "metadata_modified": "2024-12-09T17:02:02.186422",
+   "url": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039"
+  },
+  "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a": {
+   "title_translated": {
+    "fr": "Groupes visés par l’équité en matière d’emploi en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Employment Equity Designated Groups under the Public Service Employment Act"
+   },
+   "organization": "Public Service Commission of Canada | Commission de la fonction publique du Canada",
+   "metadata_modified": "2024-12-09T16:50:59.274967",
+   "url": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "7f625e97-9d02-4c12-a756-1ddebb50e69f": {
+   "title_translated": {
+    "en": "2024 Public Service Employee Survey Results",
+    "fr": "Résultats du Sondage auprès des fonctionnaires fédéraux de 2024"
+   },
+   "organization": "Treasury Board of Canada Secretariat | Secrétariat du Conseil du Trésor du Canada",
+   "metadata_modified": "2026-10-02T15:34:10.721115",
+   "url": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f"
+  },
+  "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db": {
+   "title_translated": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   },
+   "organization": "Public Service Commission of Canada | Commission de la fonction publique du Canada",
+   "metadata_modified": "2026-02-19T12:43:14.664488",
+   "url": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "845f9e76-d03e-4652-8f43-bb777ab1d52b": {
+   "title_translated": {
+    "fr": "Effectif en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Population under the Public Service Employment Act"
+   },
+   "organization": "Public Service Commission of Canada | Commission de la fonction publique du Canada",
+   "metadata_modified": "2026-02-19T12:13:08.275511",
+   "url": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b"
+  },
+  "8ceaa13d-603f-4959-a888-fb31fcd20182": {
+   "title_translated": {
+    "fr": "l'équité en matière d'emploi ",
+    "en": "Employment Equity"
+   },
+   "organization": "Shared Services Canada | Services partagés Canada",
+   "metadata_modified": "2026-03-27T15:21:41.837465",
+   "url": "https://open.canada.ca/data/en/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182"
+  },
+  "26ffad36-ca9b-431c-8f6d-a6df02665e2c": {
+   "title_translated": {
+    "fr": "Tableau de bord de la dotation de la Commission de la fonction publique",
+    "en": "Public Service Commission's Staffing Dashboard"
+   },
+   "organization": "Public Service Commission of Canada | Commission de la fonction publique du Canada",
+   "metadata_modified": "2026-10-03T18:07:52.406814",
+   "url": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "e7db3b72-e459-44a6-a749-5d64b57dc3d9": {
+   "title_translated": {
+    "fr": "Représentation de membres de groupes désignés en fonction des catégories professionelles de l'équité en matière d'emploi ",
+    "en": "Representation of Designated Group Members by Employment Equity Occupational Group "
+   },
+   "organization": "Canadian Security Intelligence Service | Service canadien du renseignement de sécurité",
+   "metadata_modified": "2024-11-20T23:03:15.752899",
+   "url": "https://open.canada.ca/data/en/dataset/e7db3b72-e459-44a6-a749-5d64b57dc3d9"
+  }
+ },
+ "files": [
+  {
+   "inventory_name": "cfppsc_snps24.csv",
+   "resource_id": "00b9cfee-3b00-4d2a-980b-72c81017af74",
+   "titles": [
+    "2025 SNPS, by department and by type of disability"
+   ],
+   "inventory_sha256": [
+    "4d14d970df8b61795555ee527ae6ca2bf9b8c8f43a40bfe48d6c150e1f1fa949"
+   ],
+   "inventory_bytes": [
+    44678315
+   ],
+   "candidates": [
+    {
+     "id": "00b9cfee-3b00-4d2a-980b-72c81017af74",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/00b9cfee-3b00-4d2a-980b-72c81017af74/download/cfppsc_snps24.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:24:36.912529",
+     "metadata_modified": "2026-04-13T18:41:33.058869",
+     "name": "By department and by type of disability ",
+     "name_translated": {
+      "en": "By department and by type of disability ",
+      "fr": "Par ministère et par type de handicap "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "00b9cfee-3b00-4d2a-980b-72c81017af74",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/00b9cfee-3b00-4d2a-980b-72c81017af74/download/cfppsc_snps24.csv",
+     "file": "raw/00b9cfee_cfppsc_snps24.csv.gz",
+     "sha256": "4d14d970df8b61795555ee527ae6ca2bf9b8c8f43a40bfe48d6c150e1f1fa949",
+     "bytes": 44678315,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "effectif-des-cadres-superieurs-et-non-cadres-superieurs-de-la-fonction-publique-par-ministere-ma.csv",
+   "resource_id": "06890686-ef92-41f2-877b-d481bccef120",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service executives and non-executives by department or agency · 2010 to 2026 [French source view]"
+   ],
+   "inventory_sha256": [
+    "7e62378d90572f861074ef5615332fe413d5f5167ac38c8cd59f499ba82060a1"
+   ],
+   "inventory_bytes": [
+    232108
+   ],
+   "candidates": [
+    {
+     "id": "06890686-ef92-41f2-877b-d481bccef120",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/06890686-ef92-41f2-877b-d481bccef120/download/effectif-des-cadres-superieurs-et-non-cadres-superieurs-de-la-fonction-publique-par-ministere-ma.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T18:13:12.928926",
+     "metadata_modified": "2026-10-02T06:53:19.259349",
+     "name": "Population of the federal public service executives and non-executives by department or agency",
+     "name_translated": {
+      "en": "Population of the federal public service executives and non-executives by department or agency",
+      "fr": "Effectif des cadres supérieurs et non-cadres supérieurs de la fonction publique fédérale par ministère ou organisme"
+     },
+     "language": [
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 232108
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "06890686-ef92-41f2-877b-d481bccef120",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/06890686-ef92-41f2-877b-d481bccef120/download/effectif-des-cadres-superieurs-et-non-cadres-superieurs-de-la-fonction-publique-par-ministere-ma.csv",
+     "file": "raw/06890686_effectif-des-cadres-superieurs-et-non-cadres-superieurs-de-la-fonction-publique-par-ministere-ma.csv.gz",
+     "sha256": "7e62378d90572f861074ef5615332fe413d5f5167ac38c8cd59f499ba82060a1",
+     "bytes": 232108,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps04-1.csv",
+   "resource_id": "0aa3b961-db7b-492e-a692-01af431ad854",
+   "titles": [
+    "2025 SNPS, by department and by Employment Equity Group: Visible minorities"
+   ],
+   "inventory_sha256": [
+    "ac5ca49cab83601a29065825dbaa59ae0a667c6d9b88e8d331ba19e840bce807"
+   ],
+   "inventory_bytes": [
+    25926811
+   ],
+   "candidates": [
+    {
+     "id": "0aa3b961-db7b-492e-a692-01af431ad854",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/0aa3b961-db7b-492e-a692-01af431ad854/download/cfppsc_snps04-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:04:44.336507",
+     "metadata_modified": "2026-04-13T18:41:32.987472",
+     "name": "By department and by Employment Equity Group: Visible minorities ",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Visible minorities ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Minorités visibles "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "0aa3b961-db7b-492e-a692-01af431ad854",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/0aa3b961-db7b-492e-a692-01af431ad854/download/cfppsc_snps04-1.csv",
+     "file": "raw/0aa3b961_cfppsc_snps04-1.csv.gz",
+     "sha256": "ac5ca49cab83601a29065825dbaa59ae0a667c6d9b88e8d331ba19e840bce807",
+     "bytes": 25926811,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps18.csv",
+   "resource_id": "0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1",
+   "titles": [
+    "2023 SNPS, by department and by 2SLGBTQIA+ identity"
+   ],
+   "inventory_sha256": [
+    "2e1a4d28bbe12a94cfd7a189c648054acdef0bba6fc1c8dd902a5989ca38a330"
+   ],
+   "inventory_bytes": [
+    32277683
+   ],
+   "candidates": [
+    {
+     "id": "0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1/download/cfppsc_snps18.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-09-24T17:49:40.433925",
+     "metadata_modified": "2024-12-09T17:02:02.199130",
+     "name": "By department and by 2SLGBTQIA+ identity",
+     "name_translated": {
+      "en": "By department and by 2SLGBTQIA+ identity",
+      "fr": "Par ministère et selon l’identité 2ELGTQIA+ "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 32277683
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1/download/cfppsc_snps18.csv",
+     "file": "raw/0c3a30e1_cfppsc_snps18.csv.gz",
+     "sha256": "2e1a4d28bbe12a94cfd7a189c648054acdef0bba6fc1c8dd902a5989ca38a330",
+     "bytes": 32277683,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps04.csv",
+   "resource_id": "0eded731-2004-4f00-aa05-606801f5dafc",
+   "titles": [
+    "2023 SNPS, by department and by Employment Equity Group: Visible minorities"
+   ],
+   "inventory_sha256": [
+    "d5a58170d98d58ae68016c51d1c5d967083428dcb7dccd1bbca24700394421e2"
+   ],
+   "inventory_bytes": [
+    20818641
+   ],
+   "candidates": [
+    {
+     "id": "0eded731-2004-4f00-aa05-606801f5dafc",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0eded731-2004-4f00-aa05-606801f5dafc/download/cfppsc_snps04.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:17:13.346972",
+     "metadata_modified": "2024-12-09T17:02:02.197984",
+     "name": "By department and by Employment Equity Group: Visible minorities ",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Visible minorities ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Minorités visibles"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 20818641
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "0eded731-2004-4f00-aa05-606801f5dafc",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0eded731-2004-4f00-aa05-606801f5dafc/download/cfppsc_snps04.csv",
+     "file": "raw/0eded731_cfppsc_snps04.csv.gz",
+     "sha256": "d5a58170d98d58ae68016c51d1c5d967083428dcb7dccd1bbca24700394421e2",
+     "bytes": 20818641,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps22.csv",
+   "resource_id": "143635eb-63b9-4756-8831-d8a2b0585e78",
+   "titles": [
+    "2025 SNPS, by department and by visible minority subgroup"
+   ],
+   "inventory_sha256": [
+    "ee680c33bf5fb3c47ffd56b19e7a1c1e019fc94154157f559b64261262649cbf"
+   ],
+   "inventory_bytes": [
+    19424912
+   ],
+   "candidates": [
+    {
+     "id": "143635eb-63b9-4756-8831-d8a2b0585e78",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/143635eb-63b9-4756-8831-d8a2b0585e78/download/cfppsc_snps22.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:22:50.910173",
+     "metadata_modified": "2026-04-13T18:41:33.052754",
+     "name": "By department and by visible minority subgroup",
+     "name_translated": {
+      "en": "By department and by visible minority subgroup",
+      "fr": "Par ministère et par sous-groupe des minorités visibles "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "143635eb-63b9-4756-8831-d8a2b0585e78",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/143635eb-63b9-4756-8831-d8a2b0585e78/download/cfppsc_snps22.csv",
+     "file": "raw/143635eb_cfppsc_snps22.csv.gz",
+     "sha256": "ee680c33bf5fb3c47ffd56b19e7a1c1e019fc94154157f559b64261262649cbf",
+     "bytes": 19424912,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps13.csv",
+   "resource_id": "1478662e-17d0-4e3a-aacb-e9c4fb87ae8f",
+   "titles": [
+    "2023 SNPS, response profile data"
+   ],
+   "inventory_sha256": [
+    "11f3281a9c56fb31ea25eb3a9efcf4b229e31f42a75a4fb72ea9a2da10840945"
+   ],
+   "inventory_bytes": [
+    59097
+   ],
+   "candidates": [
+    {
+     "id": "1478662e-17d0-4e3a-aacb-e9c4fb87ae8f",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f/download/cfppsc_snps13.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:26:02.524980",
+     "metadata_modified": "2024-12-09T17:02:02.198559",
+     "name": "Response profile data ",
+     "name_translated": {
+      "en": "Response profile data ",
+      "fr": "Données sur le profil des réponses"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 59097
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "1478662e-17d0-4e3a-aacb-e9c4fb87ae8f",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f/download/cfppsc_snps13.csv",
+     "file": "raw/1478662e_cfppsc_snps13.csv.gz",
+     "sha256": "11f3281a9c56fb31ea25eb3a9efcf4b229e31f42a75a4fb72ea9a2da10840945",
+     "bytes": 59097,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps01.csv",
+   "resource_id": "15f9967d-608d-41b2-bced-8d7e61a6d53f",
+   "titles": [
+    "2023 SNPS, by department (including all departments)"
+   ],
+   "inventory_sha256": [
+    "563f03e30d369c78f24258502515b1355e596dc62bfd63b29842523d55735c3b"
+   ],
+   "inventory_bytes": [
+    5306566
+   ],
+   "candidates": [
+    {
+     "id": "15f9967d-608d-41b2-bced-8d7e61a6d53f",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/15f9967d-608d-41b2-bced-8d7e61a6d53f/download/cfppsc_snps01.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:05:11.382007",
+     "metadata_modified": "2024-12-09T17:02:02.197796",
+     "name": "By department (including all departments) ",
+     "name_translated": {
+      "en": "By department (including all departments) ",
+      "fr": "Par ministère (incluant tous les ministères)"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 5306566
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "15f9967d-608d-41b2-bced-8d7e61a6d53f",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/15f9967d-608d-41b2-bced-8d7e61a6d53f/download/cfppsc_snps01.csv",
+     "file": "raw/15f9967d_cfppsc_snps01.csv.gz",
+     "sha256": "563f03e30d369c78f24258502515b1355e596dc62bfd63b29842523d55735c3b",
+     "bytes": 5306566,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-executives-non-executives-by-department-march-2026.csv",
+   "resource_id": "16c75ddc-475b-4e62-b883-d5517181c9cf",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service executives and non-executives by department or agency · 2010 to 2026"
+   ],
+   "inventory_sha256": [
+    "66806aee938753473064e4cf601b7710c582b472e42d3579a9548c2195186c31"
+   ],
+   "inventory_bytes": [
+    191508
+   ],
+   "candidates": [
+    {
+     "id": "16c75ddc-475b-4e62-b883-d5517181c9cf",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/16c75ddc-475b-4e62-b883-d5517181c9cf/download/population-of-the-federal-public-service-executives-non-executives-by-department-march-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:19:23.111066",
+     "metadata_modified": "2026-10-02T06:53:19.259297",
+     "name": "Population of the federal public service executives and non-executives by department or agency",
+     "name_translated": {
+      "en": "Population of the federal public service executives and non-executives by department or agency",
+      "fr": "Effectif des cadres supérieurs et non-cadres supérieurs de la fonction publique fédérale par ministère ou organisme"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 191508
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "16c75ddc-475b-4e62-b883-d5517181c9cf",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/16c75ddc-475b-4e62-b883-d5517181c9cf/download/population-of-the-federal-public-service-executives-non-executives-by-department-march-2026.csv",
+     "file": "raw/16c75ddc_population-of-the-federal-public-service-executives-non-executives-by-department-march-2026.csv.gz",
+     "sha256": "66806aee938753473064e4cf601b7710c582b472e42d3579a9548c2195186c31",
+     "bytes": 191508,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps23.csv",
+   "resource_id": "1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab",
+   "titles": [
+    "2023 SNPS, by department and by type of disability"
+   ],
+   "inventory_sha256": [
+    "5a3b7442cbc7cb26506ff9169c3d48e331f659dbf88aed6808672f01bd7696ae"
+   ],
+   "inventory_bytes": [
+    98264331
+   ],
+   "candidates": [
+    {
+     "id": "1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/download/cfppsc_snps23.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-09-24T17:57:02.672183",
+     "metadata_modified": "2024-12-09T17:02:02.199377",
+     "name": "By department and by type of disability",
+     "name_translated": {
+      "en": "By department and by type of disability",
+      "fr": "Par ministère et par type de handicap"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 98264331
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/download/cfppsc_snps23.csv",
+     "file": "raw/1a6f545e_cfppsc_snps23.csv.gz",
+     "sha256": "5a3b7442cbc7cb26506ff9169c3d48e331f659dbf88aed6808672f01bd7696ae",
+     "bytes": 98264331,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps21.csv",
+   "resource_id": "1c3e883f-b5c4-4ac8-96f0-f9757139bd13",
+   "titles": [
+    "2023 SNPS, by department and by visible minority subgroup"
+   ],
+   "inventory_sha256": [
+    "1629080d8cd47f081d555d671640adc82b7515cabcb4e3358d6590676e55ca2d"
+   ],
+   "inventory_bytes": [
+    74191687
+   ],
+   "candidates": [
+    {
+     "id": "1c3e883f-b5c4-4ac8-96f0-f9757139bd13",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/download/cfppsc_snps21.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-09-24T17:54:27.813744",
+     "metadata_modified": "2024-12-09T17:02:02.199255",
+     "name": "By department and by visible minority subgroup",
+     "name_translated": {
+      "en": "By department and by visible minority subgroup",
+      "fr": "Par ministère et par sous-groupe des minorités visibles"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 74191687
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "1c3e883f-b5c4-4ac8-96f0-f9757139bd13",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/download/cfppsc_snps21.csv",
+     "file": "raw/1c3e883f_cfppsc_snps21.csv.gz",
+     "sha256": "1629080d8cd47f081d555d671640adc82b7515cabcb4e3358d6590676e55ca2d",
+     "bytes": 74191687,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar4a.csv",
+   "resource_id": "24a44ce4-676a-45c3-9718-db34e6c07755",
+   "titles": [
+    "Applicants by employment equity group (%)"
+   ],
+   "inventory_sha256": [
+    "96b19eaf890e469bbf777c6d9a1599e06ce4ae495f9fe6a7378ac235fa802b7e"
+   ],
+   "inventory_bytes": [
+    5642
+   ],
+   "candidates": [
+    {
+     "id": "24a44ce4-676a-45c3-9718-db34e6c07755",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/24a44ce4-676a-45c3-9718-db34e6c07755/download/ar4a.csv",
+     "package_id": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
+     "last_modified": "2024-11-22T16:37:30.071364",
+     "metadata_modified": "2024-12-09T16:50:59.282988",
+     "name": "Percentage of applicants to advertised processes, by Employment Equity designated group and fiscal year",
+     "name_translated": {
+      "en": "Percentage of applicants to advertised processes, by Employment Equity designated group and fiscal year",
+      "fr": "Pourcentage des postulants aux processus annoncés, selon le groupe visé par l'équité en matière d'emploi"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 5642
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "24a44ce4-676a-45c3-9718-db34e6c07755",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/24a44ce4-676a-45c3-9718-db34e6c07755/download/ar4a.csv",
+     "file": "raw/24a44ce4_ar4a.csv.gz",
+     "sha256": "96b19eaf890e469bbf777c6d9a1599e06ce4ae495f9fe6a7378ac235fa802b7e",
+     "bytes": 5642,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "effectif-de-la-fonction-publique-federale-par-sexe-et-niveau-de-cadres-superieurs-mars-2026.csv",
+   "resource_id": "2b3a74b5-f87f-4544-9d30-de261d48ef83",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by sex and executive level [French source view]"
+   ],
+   "inventory_sha256": [
+    "2a593958476700f864866acce221d6bf1cf4aedc9ca8972ea1b1f693fd04fc5e"
+   ],
+   "inventory_bytes": [
+    9069
+   ],
+   "candidates": [
+    {
+     "id": "2b3a74b5-f87f-4544-9d30-de261d48ef83",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/2b3a74b5-f87f-4544-9d30-de261d48ef83/download/effectif-de-la-fonction-publique-federale-par-sexe-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:23:59.128798",
+     "metadata_modified": "2026-10-02T06:53:19.259963",
+     "name": "Population of the federal public service by sex and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by sex and executive level",
+      "fr": "Effectif de la fonction publique fédérale par sexe et niveau de cadres supérieurs"
+     },
+     "language": [
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 9069
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "2b3a74b5-f87f-4544-9d30-de261d48ef83",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/2b3a74b5-f87f-4544-9d30-de261d48ef83/download/effectif-de-la-fonction-publique-federale-par-sexe-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "file": "raw/2b3a74b5_effectif-de-la-fonction-publique-federale-par-sexe-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+     "sha256": "2a593958476700f864866acce221d6bf1cf4aedc9ca8972ea1b1f693fd04fc5e",
+     "bytes": 9069,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps02-1.csv",
+   "resource_id": "37a83f7c-1352-42a5-ac94-d49391535793",
+   "titles": [
+    "2025 SNPS, by department and by Employment Equity Group: Women"
+   ],
+   "inventory_sha256": [
+    "6bfc2acccb48662c0be4cc3e12b5594af80af128f0bbadaa2e2481297e95c093"
+   ],
+   "inventory_bytes": [
+    25731860
+   ],
+   "candidates": [
+    {
+     "id": "37a83f7c-1352-42a5-ac94-d49391535793",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/37a83f7c-1352-42a5-ac94-d49391535793/download/cfppsc_snps02-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:02:56.746577",
+     "metadata_modified": "2026-04-13T18:41:32.981485",
+     "name": "By department and by Employment Equity Group: Women ",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Women ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Femmes"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "37a83f7c-1352-42a5-ac94-d49391535793",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/37a83f7c-1352-42a5-ac94-d49391535793/download/cfppsc_snps02-1.csv",
+     "file": "raw/37a83f7c_cfppsc_snps02-1.csv.gz",
+     "sha256": "6bfc2acccb48662c0be4cc3e12b5594af80af128f0bbadaa2e2481297e95c093",
+     "bytes": 25731860,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "effectif-de-la-fonction-publique-federale-par-region-et-niveau-de-cadres-superieurs-mars-2026.csv",
+   "resource_id": "37e3692c-2dc1-4e14-9623-09f47f0d425a",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by region of work and executive level · 2010 to 2026 [French source view]"
+   ],
+   "inventory_sha256": [
+    "db3c94f78efc5ca530caa17ad2ad602d4257bbfa1cd7f91abca760c25ef061bc"
+   ],
+   "inventory_bytes": [
+    60160
+   ],
+   "candidates": [
+    {
+     "id": "37e3692c-2dc1-4e14-9623-09f47f0d425a",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/37e3692c-2dc1-4e14-9623-09f47f0d425a/download/effectif-de-la-fonction-publique-federale-par-region-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:20:42.661956",
+     "metadata_modified": "2026-10-02T06:53:19.259526",
+     "name": "Population of the federal public service by region of work and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by region of work and executive level",
+      "fr": "Effectif de la fonction publique fédérale par région de travail et niveau de cadres supérieurs"
+     },
+     "language": [
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 60160
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "37e3692c-2dc1-4e14-9623-09f47f0d425a",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/37e3692c-2dc1-4e14-9623-09f47f0d425a/download/effectif-de-la-fonction-publique-federale-par-region-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "file": "raw/37e3692c_effectif-de-la-fonction-publique-federale-par-region-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+     "sha256": "db3c94f78efc5ca530caa17ad2ad602d4257bbfa1cd7f91abca760c25ef061bc",
+     "bytes": 60160,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar4e.csv",
+   "resource_id": "3bcb7687-787d-499d-b9ca-83fc9c49a6a4",
+   "titles": [
+    "Appointments by equity group and region (%)"
+   ],
+   "inventory_sha256": [
+    "7e92f210237b16a802832ff481cb4c6049da2076f00999597c9b39dac6fb434b"
+   ],
+   "inventory_bytes": [
+    99409
+   ],
+   "candidates": [
+    {
+     "id": "3bcb7687-787d-499d-b9ca-83fc9c49a6a4",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/3bcb7687-787d-499d-b9ca-83fc9c49a6a4/download/ar4e.csv",
+     "package_id": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
+     "last_modified": "2024-11-22T16:40:34.406848",
+     "metadata_modified": "2024-12-09T16:50:59.283261",
+     "name": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over by employment equity designated group and geographic area",
+     "name_translated": {
+      "en": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over by employment equity designated group and geographic area",
+      "fr": "Pourcentage des nominations à la fonction publique visant des postes de durée indéterminée et déterminée de trois mois ou plus, selon le groupe visé par l’équité en matière d’emploi et la région géographique"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 99409
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "3bcb7687-787d-499d-b9ca-83fc9c49a6a4",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/3bcb7687-787d-499d-b9ca-83fc9c49a6a4/download/ar4e.csv",
+     "file": "raw/3bcb7687_ar4e.csv.gz",
+     "sha256": "7e92f210237b16a802832ff481cb4c6049da2076f00999597c9b39dac6fb434b",
+     "bytes": 99409,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps15-1.csv",
+   "resource_id": "408590d0-05dd-4467-bc23-b425f9681e3f",
+   "titles": [
+    "2025 SNPS, list of departments"
+   ],
+   "inventory_sha256": [
+    "504c99c3a1956ff1bb9b7bbb25b474c4e33925909f6e3d782aed44f42294134f"
+   ],
+   "inventory_bytes": [
+    10851
+   ],
+   "candidates": [
+    {
+     "id": "408590d0-05dd-4467-bc23-b425f9681e3f",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/408590d0-05dd-4467-bc23-b425f9681e3f/download/cfppsc_snps15-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:16:17.398394",
+     "metadata_modified": "2026-04-13T18:41:33.018005",
+     "name": "List of departments ",
+     "name_translated": {
+      "en": "List of departments ",
+      "fr": "Liste des ministères "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "408590d0-05dd-4467-bc23-b425f9681e3f",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/408590d0-05dd-4467-bc23-b425f9681e3f/download/cfppsc_snps15-1.csv",
+     "file": "raw/408590d0_cfppsc_snps15-1.csv.gz",
+     "sha256": "504c99c3a1956ff1bb9b7bbb25b474c4e33925909f6e3d782aed44f42294134f",
+     "bytes": 10851,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-by-region-of-work-and-executive-level-march-2026.csv",
+   "resource_id": "438804ac-d19f-4dda-9499-f456daa3cb27",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by region of work and executive level · 2010 to 2026"
+   ],
+   "inventory_sha256": [
+    "11bdec471ffb1ce685e9493d8b2936c6a5b187f2f060b776c872c4a965dd15b2"
+   ],
+   "inventory_bytes": [
+    56557
+   ],
+   "candidates": [
+    {
+     "id": "438804ac-d19f-4dda-9499-f456daa3cb27",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/438804ac-d19f-4dda-9499-f456daa3cb27/download/population-of-the-federal-public-service-by-region-of-work-and-executive-level-march-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:20:18.443577",
+     "metadata_modified": "2026-10-02T06:53:19.259462",
+     "name": "Population of the federal public service by region of work and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by region of work and executive level",
+      "fr": "Effectif de la fonction publique fédérale par région de travail et niveau de cadres supérieurs"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 56557
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "438804ac-d19f-4dda-9499-f456daa3cb27",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/438804ac-d19f-4dda-9499-f456daa3cb27/download/population-of-the-federal-public-service-by-region-of-work-and-executive-level-march-2026.csv",
+     "file": "raw/438804ac_population-of-the-federal-public-service-by-region-of-work-and-executive-level-march-2026.csv.gz",
+     "sha256": "11bdec471ffb1ce685e9493d8b2936c6a5b187f2f060b776c872c4a965dd15b2",
+     "bytes": 56557,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-by-executive-level-march-2026.csv",
+   "resource_id": "466d8829-968e-498a-a155-e42a3133f644",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by executive level · 2010 to 2026"
+   ],
+   "inventory_sha256": [
+    "e6bbafdd54b6f195c9d62a413905f53bc7986786e6ebe0d7bc4155d307298538"
+   ],
+   "inventory_bytes": [
+    4490
+   ],
+   "candidates": [
+    {
+     "id": "466d8829-968e-498a-a155-e42a3133f644",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/466d8829-968e-498a-a155-e42a3133f644/download/population-of-the-federal-public-service-by-executive-level-march-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:18:31.737135",
+     "metadata_modified": "2026-10-02T06:53:19.259191",
+     "name": "Population of the federal public service by executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by executive level",
+      "fr": "Effectif de la fonction publique fédérale par niveau de cadres supérieurs"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 4490
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "466d8829-968e-498a-a155-e42a3133f644",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/466d8829-968e-498a-a155-e42a3133f644/download/population-of-the-federal-public-service-by-executive-level-march-2026.csv",
+     "file": "raw/466d8829_population-of-the-federal-public-service-by-executive-level-march-2026.csv.gz",
+     "sha256": "e6bbafdd54b6f195c9d62a413905f53bc7986786e6ebe0d7bc4155d307298538",
+     "bytes": 4490,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "4b707eed-3eb4-4248-b0c6-aacac8dfa12b.csv",
+   "resource_id": "4b707eed-3eb4-4248-b0c6-aacac8dfa12b",
+   "titles": [
+    ""
+   ],
+   "inventory_sha256": [],
+   "inventory_bytes": [
+    1083240647
+   ],
+   "candidates": [
+    {
+     "id": "4b707eed-3eb4-4248-b0c6-aacac8dfa12b",
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/EELEVEL2ID.csv",
+     "package_id": "7f625e97-9d02-4c12-a756-1ddebb50e69f",
+     "last_modified": null,
+     "metadata_modified": "2026-10-02T15:34:10.720982",
+     "name": "2024 PSES Employee Groups by LEVEL2ID Derived Variable Dataset",
+     "name_translated": {
+      "en": "2024 PSES Employee Groups by LEVEL2ID Derived Variable Dataset",
+      "fr": "SAFF 2024 Ensemble de données variables dérivées des groupes d’employés selon LEVEL2ID"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [],
+   "skipped": "larger than 150000000 bytes; metadata only"
+  },
+  {
+   "inventory_name": "effectif-de-la-fonction-publique-federale-par-age-et-niveau-de-cadres-superieurs-mars-2026.csv",
+   "resource_id": "573023d1-5aa9-42fa-80c5-3d84923a260a",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by age band and executive level [French source view]"
+   ],
+   "inventory_sha256": [
+    "d0c6bb33e358662cfe703139c30f2c0ab79fa21d3fc48e99032410c6979580af"
+   ],
+   "inventory_bytes": [
+    27748
+   ],
+   "candidates": [
+    {
+     "id": "573023d1-5aa9-42fa-80c5-3d84923a260a",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/573023d1-5aa9-42fa-80c5-3d84923a260a/download/effectif-de-la-fonction-publique-federale-par-age-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T18:14:00.504989",
+     "metadata_modified": "2026-10-02T06:53:19.259806",
+     "name": "Population of the federal public service by age band and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by age band and executive level",
+      "fr": "Effectif de la fonction publique fédérale par catégorie d’âge et niveau de cadres supérieurs"
+     },
+     "language": [
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 27748
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "573023d1-5aa9-42fa-80c5-3d84923a260a",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/573023d1-5aa9-42fa-80c5-3d84923a260a/download/effectif-de-la-fonction-publique-federale-par-age-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "file": "raw/573023d1_effectif-de-la-fonction-publique-federale-par-age-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+     "sha256": "d0c6bb33e358662cfe703139c30f2c0ab79fa21d3fc48e99032410c6979580af",
+     "bytes": 27748,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps14-1.csv",
+   "resource_id": "5878befe-05bd-42f0-b8cc-1b081a5d5ea7",
+   "titles": [
+    "2025 SNPS, list of questions"
+   ],
+   "inventory_sha256": [
+    "030535a1abda27e19b58adf1cf05bb22bc695d832aa5fee859fbc11fca0f508b"
+   ],
+   "inventory_bytes": [
+    184302
+   ],
+   "candidates": [
+    {
+     "id": "5878befe-05bd-42f0-b8cc-1b081a5d5ea7",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5878befe-05bd-42f0-b8cc-1b081a5d5ea7/download/cfppsc_snps14-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:15:24.724819",
+     "metadata_modified": "2026-04-13T18:41:33.014986",
+     "name": "List of questions ",
+     "name_translated": {
+      "en": "List of questions ",
+      "fr": "Liste de questions "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "5878befe-05bd-42f0-b8cc-1b081a5d5ea7",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5878befe-05bd-42f0-b8cc-1b081a5d5ea7/download/cfppsc_snps14-1.csv",
+     "file": "raw/5878befe_cfppsc_snps14-1.csv.gz",
+     "sha256": "030535a1abda27e19b58adf1cf05bb22bc695d832aa5fee859fbc11fca0f508b",
+     "bytes": 184302,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps05-1.csv",
+   "resource_id": "5903d97e-3ff7-4db9-8a9b-5338cddc0f12",
+   "titles": [
+    "2025 SNPS, by department and by Employment Equity Group: Indigenous Peoples"
+   ],
+   "inventory_sha256": [
+    "427fac1158e69c07123f4ab1930c95afc86db5dcd8649308f9b00cc6bc804435"
+   ],
+   "inventory_bytes": [
+    20152611
+   ],
+   "candidates": [
+    {
+     "id": "5903d97e-3ff7-4db9-8a9b-5338cddc0f12",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5903d97e-3ff7-4db9-8a9b-5338cddc0f12/download/cfppsc_snps05-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:05:31.389504",
+     "metadata_modified": "2026-04-13T18:41:32.990569",
+     "name": "By department and by Employment Equity Group: Indigenous Peoples ",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Indigenous Peoples ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Peuples autochtones "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "5903d97e-3ff7-4db9-8a9b-5338cddc0f12",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5903d97e-3ff7-4db9-8a9b-5338cddc0f12/download/cfppsc_snps05-1.csv",
+     "file": "raw/5903d97e_cfppsc_snps05-1.csv.gz",
+     "sha256": "427fac1158e69c07123f4ab1930c95afc86db5dcd8649308f9b00cc6bc804435",
+     "bytes": 20152611,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar4b.csv",
+   "resource_id": "5dff85d4-e7af-4841-be27-f76826a5f494",
+   "titles": [
+    "Student applicants and hires by equity group (%)"
+   ],
+   "inventory_sha256": [
+    "a92b40655266934af3148d4d6f884e74aa926e55c35a7da1a49ec10cacd6d0f5"
+   ],
+   "inventory_bytes": [
+    12648
+   ],
+   "candidates": [
+    {
+     "id": "5dff85d4-e7af-4841-be27-f76826a5f494",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/5dff85d4-e7af-4841-be27-f76826a5f494/download/ar4b.csv",
+     "package_id": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
+     "last_modified": "2024-11-22T16:38:41.358118",
+     "metadata_modified": "2024-12-09T16:50:59.283057",
+     "name": "Percentage of student applicants to advertised processes and student hiring activities to the public service, by Employment Equity designated group and fiscal year",
+     "name_translated": {
+      "en": "Percentage of student applicants to advertised processes and student hiring activities to the public service, by Employment Equity designated group and fiscal year",
+      "fr": "Pourcentage des étudiants ayant présenté une demande d'emploi à des processus annoncés et pourcentage de l'embauche d'étudiants à la fonction publique, selon le groupe visé par l'équité en matière d'emploi et l'exercice financier"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 12648
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "5dff85d4-e7af-4841-be27-f76826a5f494",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/5dff85d4-e7af-4841-be27-f76826a5f494/download/ar4b.csv",
+     "file": "raw/5dff85d4_ar4b.csv.gz",
+     "sha256": "a92b40655266934af3148d4d6f884e74aa926e55c35a7da1a49ec10cacd6d0f5",
+     "bytes": 12648,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps23.csv",
+   "resource_id": "692c27f1-7dba-48d8-9e6d-8dcddb35bb87",
+   "titles": [
+    "2025 SNPS, by department and by Indigenous subgroup"
+   ],
+   "inventory_sha256": [
+    "d34e4231d08df1179790e1754c33aa23141178ff7b827d038f71ed749eeec78d"
+   ],
+   "inventory_bytes": [
+    8841167
+   ],
+   "candidates": [
+    {
+     "id": "692c27f1-7dba-48d8-9e6d-8dcddb35bb87",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/692c27f1-7dba-48d8-9e6d-8dcddb35bb87/download/cfppsc_snps23.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:23:38.338336",
+     "metadata_modified": "2026-04-13T18:41:33.055686",
+     "name": "By department and by Indigenous subgroup ",
+     "name_translated": {
+      "en": "By department and by Indigenous subgroup ",
+      "fr": "Par ministère et selon les sous-groupes autochtones "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "692c27f1-7dba-48d8-9e6d-8dcddb35bb87",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/692c27f1-7dba-48d8-9e6d-8dcddb35bb87/download/cfppsc_snps23.csv",
+     "file": "raw/692c27f1_cfppsc_snps23.csv.gz",
+     "sha256": "d34e4231d08df1179790e1754c33aa23141178ff7b827d038f71ed749eeec78d",
+     "bytes": 8841167,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-by-sex-and-executive-level-march-2026.csv",
+   "resource_id": "75d1070e-b94d-4e73-b8ff-99ba7304798c",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by sex and executive level"
+   ],
+   "inventory_sha256": [
+    "6dfb6555ae58e5f98521bfe0ec00948dbee87ba4352d8246c2e45e711d1da1ea"
+   ],
+   "inventory_bytes": [
+    8094
+   ],
+   "candidates": [
+    {
+     "id": "75d1070e-b94d-4e73-b8ff-99ba7304798c",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/75d1070e-b94d-4e73-b8ff-99ba7304798c/download/population-of-the-federal-public-service-by-sex-and-executive-level-march-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:23:22.197107",
+     "metadata_modified": "2026-10-02T06:53:19.259888",
+     "name": "Population of the federal public service by sex and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by sex and executive level",
+      "fr": "Effectif de la fonction publique fédérale par sexe et niveau de cadres supérieurs"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 8094
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "75d1070e-b94d-4e73-b8ff-99ba7304798c",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/75d1070e-b94d-4e73-b8ff-99ba7304798c/download/population-of-the-federal-public-service-by-sex-and-executive-level-march-2026.csv",
+     "file": "raw/75d1070e_population-of-the-federal-public-service-by-sex-and-executive-level-march-2026.csv.gz",
+     "sha256": "6dfb6555ae58e5f98521bfe0ec00948dbee87ba4352d8246c2e45e711d1da1ea",
+     "bytes": 8094,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps13-1.csv",
+   "resource_id": "7725a05d-6c06-486e-b707-d845fef9a688",
+   "titles": [
+    "2025 SNPS, response profile data"
+   ],
+   "inventory_sha256": [
+    "84ef16de802c53a2670bb2dcc0f666ed4c9ad52b9b5e102e6cd89a5e8b1703ee"
+   ],
+   "inventory_bytes": [
+    58793
+   ],
+   "candidates": [
+    {
+     "id": "7725a05d-6c06-486e-b707-d845fef9a688",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7725a05d-6c06-486e-b707-d845fef9a688/download/cfppsc_snps13-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:14:26.243540",
+     "metadata_modified": "2026-04-13T18:41:33.011704",
+     "name": "Response profile data ",
+     "name_translated": {
+      "en": "Response profile data ",
+      "fr": "Données sur le profil des réponses "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "7725a05d-6c06-486e-b707-d845fef9a688",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7725a05d-6c06-486e-b707-d845fef9a688/download/cfppsc_snps13-1.csv",
+     "file": "raw/7725a05d_cfppsc_snps13-1.csv.gz",
+     "sha256": "84ef16de802c53a2670bb2dcc0f666ed4c9ad52b9b5e102e6cd89a5e8b1703ee",
+     "bytes": 58793,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps05.csv",
+   "resource_id": "77c9c20e-691b-4c13-8243-9cf9cf81c8dc",
+   "titles": [
+    "2023 SNPS, by department and by Employment Equity Group: Indigenous Peoples"
+   ],
+   "inventory_sha256": [
+    "9379c2f19b79185bc9ed76dfe9b5d043302a9931eff44c3dbd72da099acd86f7"
+   ],
+   "inventory_bytes": [
+    21026218
+   ],
+   "candidates": [
+    {
+     "id": "77c9c20e-691b-4c13-8243-9cf9cf81c8dc",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/download/cfppsc_snps05.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:18:48.076975",
+     "metadata_modified": "2024-12-09T17:02:02.198052",
+     "name": "By department and by Employment Equity Group: Indigenous Peoples ",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Indigenous Peoples ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Peuples autochtones"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 21026218
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "77c9c20e-691b-4c13-8243-9cf9cf81c8dc",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/download/cfppsc_snps05.csv",
+     "file": "raw/77c9c20e_cfppsc_snps05.csv.gz",
+     "sha256": "5b0103974ee2b29501bf0fc315f6ff3bfc20442c5d83d471eabf24b328cb47aa",
+     "bytes": 244,
+     "matches_inventory": false
+    }
+   ]
+  },
+  {
+   "inventory_name": "equite_en_maitre_d_emploi-2025-2026.csv",
+   "resource_id": "7a743875-2b16-4464-ae28-524def42e692",
+   "titles": [
+    "Employment Equity [French source view]"
+   ],
+   "inventory_sha256": [
+    "b2b8388a7027ee37585bfa7cb2dc569304a3fd1ac51e7d2c7b47c320dd02d9f6"
+   ],
+   "inventory_bytes": [
+    1861
+   ],
+   "error": "resource_show failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "cfppsc_snps03-2.csv",
+   "resource_id": "840e8e64-9177-4c72-a84d-3d1cfb8e280e",
+   "titles": [
+    "2025 SNPS, by department and by Employment Equity Group: Persons with disabilities"
+   ],
+   "inventory_sha256": [
+    "f4e232125e9ccf213c46503a28d466e184766376499c9787be56a1f4b61c8b85"
+   ],
+   "inventory_bytes": [
+    29834750
+   ],
+   "error": "resource_show failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-by-fol-and-executive-level-march-2026.csv",
+   "resource_id": "90739ef5-3a92-4484-85e4-9ad4533fc239",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by first official language and executive level"
+   ],
+   "inventory_sha256": [
+    "7abcf5bf1e1ef33f6f061b08c6b2ae866a75a289b1a6901c3380b86d5a2aecf1"
+   ],
+   "inventory_bytes": [
+    9110
+   ],
+   "error": "resource_show failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "effectif-de-la-fonction-publique-par-niveau-de-cadres-superieurs-mars-2026.csv",
+   "resource_id": "9ceb08ca-55c7-4a04-9819-7d49759083cb",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by executive level · 2010 to 2026 [French source view]"
+   ],
+   "inventory_sha256": [
+    "0ffefc4aa91a0ae3e910725d3f8645385c2a8416588f117c2e54fd3c3bfd54a4"
+   ],
+   "inventory_bytes": [
+    4505
+   ],
+   "error": "resource_show failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1CC.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by organization and region"
+   ],
+   "inventory_sha256": [
+    "32358ae80152c1558027ddb61312b9b0ccdcfd73d31fae06ec4cc936f9073fe7"
+   ],
+   "inventory_bytes": [
+    982069
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1D.csv",
+   "resource_id": null,
+   "titles": [
+    "Staffing activities"
+   ],
+   "inventory_sha256": [
+    "871aff9aa75472194a0716c8b5b835e98c66275a0322672a293ed7b25fe76d96"
+   ],
+   "inventory_bytes": [
+    2660
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1E.csv",
+   "resource_id": null,
+   "titles": [
+    "Separations"
+   ],
+   "inventory_sha256": [
+    "9747933ccdac3187dad1bdc021b0828cac2e06020b31e18c3883b21818641f88"
+   ],
+   "inventory_bytes": [
+    834
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1EE.csv",
+   "resource_id": null,
+   "titles": [
+    "Staffing by language requirements and region"
+   ],
+   "inventory_sha256": [
+    "b71303c0733b2320f02410b14521888cbe2b6a0b85733c45bd7d50e779882a79"
+   ],
+   "inventory_bytes": [
+    130703
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1J.csv",
+   "resource_id": null,
+   "titles": [
+    "Appointments by position and language requirements"
+   ],
+   "inventory_sha256": [
+    "899d7963133938c89f6c1c0a058d02cd857ba26513365839e7f2df943a77c605"
+   ],
+   "inventory_bytes": [
+    6805
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1K.csv",
+   "resource_id": null,
+   "titles": [
+    "Student applications and hiring"
+   ],
+   "inventory_sha256": [
+    "c01c2c5c546f26fcc02c214a37bd2a0b9a96594fe4faa17151b25c43cbc5b5c9"
+   ],
+   "inventory_bytes": [
+    4355
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1N.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by tenure"
+   ],
+   "inventory_sha256": [
+    "3c6572714bd103a434ba3103c4092e6f09c38dc5f25329537131de2a1252174d"
+   ],
+   "inventory_bytes": [
+    4258
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1O.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by tenure transition"
+   ],
+   "inventory_sha256": [
+    "4e8c95d30f657838aa04675c18c211c84aba1a2b4a3c02dae8f4be956c50dbdc"
+   ],
+   "inventory_bytes": [
+    6761
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1R.csv",
+   "resource_id": null,
+   "titles": [
+    "Staffing by first official language"
+   ],
+   "inventory_sha256": [
+    "35d7bfb630ef17c7a50dc7b53b443701f94fdbfc0d80a239fca226c4e587972d"
+   ],
+   "inventory_bytes": [
+    3545
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1S.csv",
+   "resource_id": null,
+   "titles": [
+    "Appointments by type and language requirements"
+   ],
+   "inventory_sha256": [
+    "f5692f8d0d33f6358c8d0bff2aca7996f29fb94d27b10917694374049ba213e1"
+   ],
+   "inventory_bytes": [
+    14996
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1T.csv",
+   "resource_id": null,
+   "titles": [
+    "Student recruitment by region and program"
+   ],
+   "inventory_sha256": [
+    "25e0e83c294f95c773de045950dce168cb5c7d3aa2006ebeb5bba03a514d2e97"
+   ],
+   "inventory_bytes": [
+    29552
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1U.csv",
+   "resource_id": null,
+   "titles": [
+    "Staffing by organization and appointment type"
+   ],
+   "inventory_sha256": [
+    "539cd075421b35189ee5c4e775dd811f49a3661bf2e538262ee3960735abfa58"
+   ],
+   "inventory_bytes": [
+    234706
+   ],
+   "error": "resource_search failed: Expecting value: line 1 column 1 (char 0)",
+   "candidates": [],
+   "downloads": []
+  },
+  {
+   "inventory_name": "CFPPSC_AR1V.csv",
+   "resource_id": null,
+   "titles": [
+    "Executive staffing language requirements"
+   ],
+   "inventory_sha256": [
+    "0d0e0b6e69e7db35714770906215f52f6fd36bdb1c4159d1101eee2741f2ebbc"
+   ],
+   "inventory_bytes": [
+    3866
+   ],
+   "candidates": [
+    {
+     "id": "6dd6c8c3-e799-4f06-b281-eac59d644526",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1V.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": null,
+     "metadata_modified": "2024-04-20T15:11:08.770875",
+     "name": "Executive indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)",
+     "name_translated": "{\"fr\": \"Activités de dotation à des postes pour une période indéterminée ou des postes de durée déterminée visant le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques et l'exercice financier (Valable jusqu'en mars 2017)\", \"en\": \"Executive indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "6dd6c8c3-e799-4f06-b281-eac59d644526",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1V.csv",
+     "file": "raw/6dd6c8c3_CFPPSC_AR1V.csv.gz",
+     "sha256": "0d0e0b6e69e7db35714770906215f52f6fd36bdb1c4159d1101eee2741f2ebbc",
+     "bytes": 3866,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "CFPPSC_AR1W.csv",
+   "resource_id": null,
+   "titles": [
+    "Executive indeterminate staffing requirements"
+   ],
+   "inventory_sha256": [
+    "2d97aee97418bff1915f19cddba874d4909013463a2ac450b58199d04064ed02"
+   ],
+   "inventory_bytes": [
+    6704
+   ],
+   "candidates": [
+    {
+     "id": "b1319884-6af8-4572-8aba-e5c62d0a58b3",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": null,
+     "metadata_modified": "2024-04-20T15:11:08.770985",
+     "name": "Indeterminate appointments and staffing activities to Executive bilingual positions under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)",
+     "name_translated": "{\"fr\": \"Nominations à des postes pour une période indéterminée et activités de dotation  pour des postes bilingues dans le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)\", \"en\": \"Indeterminate appointments and staffing activities to Executive bilingual positions under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "b1319884-6af8-4572-8aba-e5c62d0a58b3",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv",
+     "file": "raw/b1319884_CFPPSC_AR1W.csv.gz",
+     "sha256": "2d97aee97418bff1915f19cddba874d4909013463a2ac450b58199d04064ed02",
+     "bytes": 6704,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "CFPPSC_AR1X.csv",
+   "resource_id": null,
+   "titles": [
+    "Appointments by type and language requirements"
+   ],
+   "inventory_sha256": [
+    "06e182695b6822ca2e6d6761a13c951e1e7f883e2cb6b6683b1cd1d06f521e3a"
+   ],
+   "inventory_bytes": [
+    10776
+   ],
+   "candidates": [
+    {
+     "id": "6982dce4-52d7-4bf1-ab79-98cfd12ceabc",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1X.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": null,
+     "metadata_modified": "2024-04-20T15:11:08.771092",
+     "name": "Indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position, type of appointment and fiscal year (Valid until March 2017)",
+     "name_translated": "{\"fr\": \"Activités de dotation à des postes pour une période indéterminée ou des postes de durée déterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste, le type de nomination et l'exercice financier (Valable jusqu'en mars 2017)\", \"en\": \"Indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position, type of appointment and fiscal year (Valid until March 2017)\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "6982dce4-52d7-4bf1-ab79-98cfd12ceabc",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1X.csv",
+     "file": "raw/6982dce4_CFPPSC_AR1X.csv.gz",
+     "sha256": "06e182695b6822ca2e6d6761a13c951e1e7f883e2cb6b6683b1cd1d06f521e3a",
+     "bytes": 10776,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "CFPPSC_AR2C.csv",
+   "resource_id": null,
+   "titles": [
+    "PSEA workforce by organization"
+   ],
+   "inventory_sha256": [
+    "29513c5b89c8079299e98d55fb92dde6b831398cf0dcc5e3fedb7f4c52df2d4f"
+   ],
+   "inventory_bytes": [
+    38834
+   ],
+   "candidates": [
+    {
+     "id": "4caef01d-ea3e-4121-b7c5-c292826d2829",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/pop-eff/CFPPSC_AR2C.csv",
+     "package_id": "845f9e76-d03e-4652-8f43-bb777ab1d52b",
+     "last_modified": null,
+     "metadata_modified": "2024-04-20T14:41:11.131498",
+     "name": "Public Service Employment Act population by organization (Valid until March 2018)",
+     "name_translated": "{\"fr\": \"Variation de l’effectif dans les organisations assujetties à la Loi sur l’emploi dans la fonction publique, selon l’organisation (Valable jusqu'en mars 2018)\", \"en\": \"Public Service Employment Act population by organization (Valid until March 2018)\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "4caef01d-ea3e-4121-b7c5-c292826d2829",
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/pop-eff/CFPPSC_AR2C.csv",
+     "file": "raw/4caef01d_CFPPSC_AR2C.csv.gz",
+     "sha256": "29513c5b89c8079299e98d55fb92dde6b831398cf0dcc5e3fedb7f4c52df2d4f",
+     "bytes": 38834,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps01-1.csv",
+   "resource_id": "a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b",
+   "titles": [
+    "2025 SNPS, by department (including all departments)"
+   ],
+   "inventory_sha256": [
+    "fedd4678bd9f152365e63f79a1898894d0185223fba00f03160033d989954eb5"
+   ],
+   "inventory_bytes": [
+    6943261
+   ],
+   "candidates": [
+    {
+     "id": "a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b/download/cfppsc_snps01-1.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:00:22.706395",
+     "metadata_modified": "2026-04-13T18:41:32.978435",
+     "name": "By department (including all departments)",
+     "name_translated": {
+      "en": "By department (including all departments)",
+      "fr": "Par ministère (incluant tous les ministères) "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b/download/cfppsc_snps01-1.csv",
+     "file": "raw/a5a37b44_cfppsc_snps01-1.csv.gz",
+     "sha256": "fedd4678bd9f152365e63f79a1898894d0185223fba00f03160033d989954eb5",
+     "bytes": 6943261,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "employment-equity-2025-2026.csv",
+   "resource_id": "aae683dc-c33c-47c9-8ffe-7b6bdef8ef40",
+   "titles": [
+    "Employment Equity"
+   ],
+   "inventory_sha256": [
+    "49a564c2e8bc1842ce9edb1101af049aa689b91dcea3a91597f2c65f93cc402b"
+   ],
+   "inventory_bytes": [
+    1882
+   ],
+   "candidates": [
+    {
+     "id": "aae683dc-c33c-47c9-8ffe-7b6bdef8ef40",
+     "url": "https://open.canada.ca/data/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182/resource/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40/download/employment-equity-2025-2026.csv",
+     "package_id": "8ceaa13d-603f-4959-a888-fb31fcd20182",
+     "last_modified": "2026-03-27T15:14:05.205286",
+     "metadata_modified": "2026-03-27T15:21:41.828932",
+     "name": "Employment Equity ",
+     "name_translated": {
+      "en": "Employment Equity ",
+      "fr": "equite en maitre d'emploi"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 1882
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "aae683dc-c33c-47c9-8ffe-7b6bdef8ef40",
+     "url": "https://open.canada.ca/data/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182/resource/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40/download/employment-equity-2025-2026.csv",
+     "file": "raw/aae683dc_employment-equity-2025-2026.csv.gz",
+     "sha256": "49a564c2e8bc1842ce9edb1101af049aa689b91dcea3a91597f2c65f93cc402b",
+     "bytes": 1882,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "adv_type.csv",
+   "resource_id": null,
+   "titles": [
+    "Advertisements by type · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "9214365991bdc9483989089c34435a53bc17a6410879146f9d789741bb0cb88b"
+   ],
+   "inventory_bytes": [
+    555644
+   ],
+   "candidates": [
+    {
+     "id": "f3d46f61-3523-4b5c-9dee-29ff0d0aced4",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/f3d46f61-3523-4b5c-9dee-29ff0d0aced4/download/adv_type.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:27:47.504654",
+     "metadata_modified": "2026-10-01T18:23:29.387502",
+     "name": "Public Service Commission's Staffing Dashboard: Advertisement Types ",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Advertisement Types \", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Types d’annonces\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 555644
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "f3d46f61-3523-4b5c-9dee-29ff0d0aced4",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/f3d46f61-3523-4b5c-9dee-29ff0d0aced4/download/adv_type.csv",
+     "file": "raw/f3d46f61_adv_type.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "advs.csv",
+   "resource_id": null,
+   "titles": [
+    "Advertisements, duration and applications · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "19799254340f8bf131768609938fbd353718c44043880cc10bf6cb71d9b0f9b4"
+   ],
+   "inventory_bytes": [
+    6009515
+   ],
+   "candidates": [
+    {
+     "id": "e41a2a80-1af8-47d6-b993-c051686bc1fa",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/e41a2a80-1af8-47d6-b993-c051686bc1fa/download/advs.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:27:01.371279",
+     "metadata_modified": "2026-10-01T18:23:29.387454",
+     "name": "Public Service Commission's Staffing Dashboard: Advertisements",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Advertisements\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Annonces\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 6009515
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "e41a2a80-1af8-47d6-b993-c051686bc1fa",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/e41a2a80-1af8-47d6-b993-c051686bc1fa/download/advs.csv",
+     "file": "raw/e41a2a80_advs.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1a.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring activity by tenure · 2013-2014 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "9785718425c736cec13ec615c6b8eaba4301fb35097a7dae77f130bb35f1281b"
+   ],
+   "inventory_bytes": [
+    4506
+   ],
+   "candidates": [
+    {
+     "id": "3c37d066-9c05-404c-bd80-7413e423828a",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/3c37d066-9c05-404c-bd80-7413e423828a/download/ar1a.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:14:37.562159",
+     "metadata_modified": "2026-02-19T12:23:13.353907",
+     "name": "Hiring activities under the Public Service Employment Act, by tenure and fiscal year",
+     "name_translated": "{\"en\": \"Hiring activities under the Public Service Employment Act, by tenure and fiscal year\", \"fr\": \"Activités d’embauche en vertu de la Loi sur l’emploi dans la fonction publique, selon la durée d’emploi et l’exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 4506
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "3c37d066-9c05-404c-bd80-7413e423828a",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/3c37d066-9c05-404c-bd80-7413e423828a/download/ar1a.csv",
+     "file": "raw/3c37d066_ar1a.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1aa.csv",
+   "resource_id": null,
+   "titles": [
+    "Tenure transitions · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "e502f663fedbf5b341def2a663a6afe46025e21895f26b36db13ab0fdb6c5ec2"
+   ],
+   "inventory_bytes": [
+    283307
+   ],
+   "candidates": [
+    {
+     "id": "f3a2ad68-e852-4b26-b7fa-a163561cb34a",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f3a2ad68-e852-4b26-b7fa-a163561cb34a/download/ar1aa.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:26:32.117574",
+     "metadata_modified": "2026-02-19T12:33:10.950547",
+     "name": "Overall hiring and staffing activities to and within the public service, by tenure, previous employment status and geographic area",
+     "name_translated": "{\"en\": \"Overall hiring and staffing activities to and within the public service, by tenure, previous employment status and geographic area\", \"fr\": \"Activités globales de dotation à la fonction publique et au sein de celle-ci, selon la durée d’emploi, la situation professionnelle antérieure et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 283307
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "f3a2ad68-e852-4b26-b7fa-a163561cb34a",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f3a2ad68-e852-4b26-b7fa-a163561cb34a/download/ar1aa.csv",
+     "file": "raw/f3a2ad68_ar1aa.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1b.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and population by region · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "08fbb0026e04460b81120fb9dc57380c4ea8e132132107865722f56b5dacc592"
+   ],
+   "inventory_bytes": [
+    30948
+   ],
+   "candidates": [
+    {
+     "id": "76a47801-dbda-422c-bc4b-0a0304b05bb9",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/76a47801-dbda-422c-bc4b-0a0304b05bb9/download/ar1b.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:15:49.652943",
+     "metadata_modified": "2026-02-19T12:23:13.354034",
+     "name": "Hiring activities and population under the Public Service Employment Act, by geographic area",
+     "name_translated": "{\"en\": \"Hiring activities and population under the Public Service Employment Act, by geographic area\", \"fr\": \"Activités d’embauche et effectif assujetti à la Loi sur l’emploi dans la fonction publique, selon la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 30948
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "76a47801-dbda-422c-bc4b-0a0304b05bb9",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/76a47801-dbda-422c-bc4b-0a0304b05bb9/download/ar1b.csv",
+     "file": "raw/76a47801_ar1b.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1bb.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by region and occupational group · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "e22507972ebbe328d3f2c1db45304d6e4e3f7e1fd58cee80c1e1b220b865f7d1"
+   ],
+   "inventory_bytes": [
+    3979356
+   ],
+   "candidates": [
+    {
+     "id": "ded1b8b4-df88-4149-87f0-b28c9006e29f",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ded1b8b4-df88-4149-87f0-b28c9006e29f/download/ar1bb.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:28:38.728306",
+     "metadata_modified": "2026-02-19T12:33:10.950602",
+     "name": "Staffing activities by type, occupational group and geographic area",
+     "name_translated": "{\"en\": \"Staffing activities by type, occupational group and geographic area\", \"fr\": \"Activités de dotation, selon le type de nomination, le groupe professionnel et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 3979356
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "ded1b8b4-df88-4149-87f0-b28c9006e29f",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ded1b8b4-df88-4149-87f0-b28c9006e29f/download/ar1bb.csv",
+     "file": "raw/ded1b8b4_ar1bb.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1c.csv",
+   "resource_id": null,
+   "titles": [
+    "Indeterminate appointments and conversions · 2013-2014 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "b046d8de81ef575615e1af8685fb210c1d539dc11d741ac1b0c7ac899f9a7a00"
+   ],
+   "inventory_bytes": [
+    4789
+   ],
+   "candidates": [
+    {
+     "id": "952ee162-1ef9-4c28-9bfd-20e8b02e7f4b",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/download/ar1c.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:17:04.008522",
+     "metadata_modified": "2026-02-19T12:23:13.354130",
+     "name": "Indeterminate staffing activities to the public service under the Public Service Employment Act, contributing to movement of indeterminate employees, by fiscal year ",
+     "name_translated": "{\"en\": \"Indeterminate staffing activities to the public service under the Public Service Employment Act, contributing to movement of indeterminate employees, by fiscal year \", \"fr\": \"Activités de dotation en vertu de la Loi sur l’emploi dans la fonction publique : nominations à un poste pour une période indéterminée à la fonction publique et au sein de celle-ci ayant contribué aux mouvements de fonctionnaires nommés à un poste pour une période indéterminée par exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 4789
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "952ee162-1ef9-4c28-9bfd-20e8b02e7f4b",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/download/ar1c.csv",
+     "file": "raw/952ee162_ar1c.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1dd.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by first official language and region · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "1ba448041236b09f0ee2016d9b6fd76f9e6531eda1db6df04d0c083738ba7332"
+   ],
+   "inventory_bytes": [
+    242147
+   ],
+   "candidates": [
+    {
+     "id": "f252ee8f-77bd-4c6f-9427-bfba04834e43",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f252ee8f-77bd-4c6f-9427-bfba04834e43/download/ar1dd.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:29:57.117135",
+     "metadata_modified": "2026-02-19T12:33:10.950701",
+     "name": "Staffing activities by type, first official language group and geographic area",
+     "name_translated": "{\"en\": \"Staffing activities by type, first official language group and geographic area\", \"fr\": \"Activités de dotation, selon le type de nomination, la première langue officielle et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 242147
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "f252ee8f-77bd-4c6f-9427-bfba04834e43",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f252ee8f-77bd-4c6f-9427-bfba04834e43/download/ar1dd.csv",
+     "file": "raw/f252ee8f_ar1dd.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1f.csv",
+   "resource_id": null,
+   "titles": [
+    "New indeterminate employees · 2000-2001 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "8596f164815051ab4e7c131a5dcca1735b2875420d65b676559e37334471b725"
+   ],
+   "inventory_bytes": [
+    3089
+   ],
+   "candidates": [
+    {
+     "id": "31f1217b-506e-4746-a38c-5385a0bf40e9",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/31f1217b-506e-4746-a38c-5385a0bf40e9/download/ar1f.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:18:05.780558",
+     "metadata_modified": "2026-02-19T12:23:13.354297",
+     "name": "Appointments under the Public Service Employment Act of new indeterminate employees, by fiscal year",
+     "name_translated": "{\"en\": \"Appointments under the Public Service Employment Act of new indeterminate employees, by fiscal year\", \"fr\": \"Nominations de nouveaux fonctionnaires à des postes pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon l'exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 3089
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "31f1217b-506e-4746-a38c-5385a0bf40e9",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/31f1217b-506e-4746-a38c-5385a0bf40e9/download/ar1f.csv",
+     "file": "raw/31f1217b_ar1f.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1ff.csv",
+   "resource_id": null,
+   "titles": [
+    "Student hiring by organization, region and program · 2017-2018 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "cb41e49032cdec90d5899f4fbe4b0b64443d13a88ed7f99ac2de491bd1a666c2"
+   ],
+   "inventory_bytes": [
+    900364
+   ],
+   "candidates": [
+    {
+     "id": "4ae8e18c-3bfe-4386-ac13-c270a1067513",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/4ae8e18c-3bfe-4386-ac13-c270a1067513/download/ar1ff.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:31:22.351409",
+     "metadata_modified": "2026-02-19T12:33:46.000743",
+     "name": "Student hiring to the public service, by program and geographic area",
+     "name_translated": "{\"en\": \"Student hiring to the public service, by program and geographic area\", \"fr\": \"Activités d’embauche d’étudiants à la fonction publique, selon le programme et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 900364
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "4ae8e18c-3bfe-4386-ac13-c270a1067513",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/4ae8e18c-3bfe-4386-ac13-c270a1067513/download/ar1ff.csv",
+     "file": "raw/4ae8e18c_ar1ff.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1g.csv",
+   "resource_id": null,
+   "titles": [
+    "Internal staffing by activity · 2013-2014 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "70194733bb948b35628faa8028039dccd6c4210b28dfd13a64e304fa5a0dfd54"
+   ],
+   "inventory_bytes": [
+    6251
+   ],
+   "candidates": [
+    {
+     "id": "f7324346-53c4-4205-910a-0b70521c7ee2",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:18:56.329618",
+     "metadata_modified": "2026-02-19T12:23:13.354354",
+     "name": "Internal staffing activities of indeterminate employees under the Public Service Employment Act, by type and fiscal year",
+     "name_translated": "{\"en\": \"Internal staffing activities of indeterminate employees under the Public Service Employment Act, by type and fiscal year\", \"fr\": \"Activités de dotation internes liées aux nominations pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon le type et l'exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 6251
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "f7324346-53c4-4205-910a-0b70521c7ee2",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv",
+     "file": "raw/f7324346_ar1g.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1gg.csv",
+   "resource_id": null,
+   "titles": [
+    "Staffing by organization, region and appointment type · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "98c7ff8b08ca312b437c73ac83ee0df90759afb3e2b673859258c95e71216c0b"
+   ],
+   "inventory_bytes": [
+    4899434
+   ],
+   "candidates": [
+    {
+     "id": "ed783874-8549-42e6-9d4e-ac223c16617e",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ed783874-8549-42e6-9d4e-ac223c16617e/download/ar1gg.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:32:28.351060",
+     "metadata_modified": "2026-02-19T12:33:46.000807",
+     "name": "Staffing activities by type, organization and geographic area",
+     "name_translated": "{\"en\": \"Staffing activities by type, organization and geographic area\", \"fr\": \"Activités de dotation, selon le type de nomination, l’organisation et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 4899434
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "ed783874-8549-42e6-9d4e-ac223c16617e",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ed783874-8549-42e6-9d4e-ac223c16617e/download/ar1gg.csv",
+     "file": "raw/ed783874_ar1gg.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1h.csv",
+   "resource_id": null,
+   "titles": [
+    "Internal staffing by type · 2011-2012 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "67a8f80ee1d11436faaf6cbd7d03fc47a35e798039fa52e2b402f193a8109b16"
+   ],
+   "inventory_bytes": [
+    9263
+   ],
+   "candidates": [
+    {
+     "id": "f560a4ad-edc9-4bc8-a0ed-2e174bb88d23",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/download/ar1h.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:19:48.811407",
+     "metadata_modified": "2026-02-19T12:23:13.354409",
+     "name": "Staffing activities of new indeterminate executive employees under the Public Service Employment Act, by source and fiscal year",
+     "name_translated": "{\"en\": \"Staffing activities of new indeterminate executive employees under the Public Service Employment Act, by source and fiscal year\", \"fr\": \"Activités de dotation relatives aux nouvelles nominations pour une période indéterminée au groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon la source et l'exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 9263
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "f560a4ad-edc9-4bc8-a0ed-2e174bb88d23",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/download/ar1h.csv",
+     "file": "raw/f560a4ad_ar1h.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1hh.csv",
+   "resource_id": null,
+   "titles": [
+    "Recruitment program appointments by region · 2017-2018 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "50e38a807fa1edc574c2cb39e3a158f396527278a1a14a946ec39923cd6e36d0"
+   ],
+   "inventory_bytes": [
+    13316
+   ],
+   "candidates": [
+    {
+     "id": "14f5dcaa-9223-4981-9245-09773e14ae91",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/14f5dcaa-9223-4981-9245-09773e14ae91/download/ar1hh.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:34:46.772348",
+     "metadata_modified": "2026-02-19T12:43:14.657952",
+     "name": "Appointments to the public service, Post-secondary Recruitment Program, by geographic area",
+     "name_translated": "{\"en\": \"Appointments to the public service, Post-secondary Recruitment Program, by geographic area\", \"fr\": \"Nominations à la fonction publique, Recrutement postsecondaire, selon la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 13316
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "14f5dcaa-9223-4981-9245-09773e14ae91",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/14f5dcaa-9223-4981-9245-09773e14ae91/download/ar1hh.csv",
+     "file": "raw/14f5dcaa_ar1hh.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1i.csv",
+   "resource_id": null,
+   "titles": [
+    "Advertised and non-advertised staffing (%) · 2013-2014 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "f1612d081d9c03654a7bec1808c3dd8ad1d9180536789a49acc53100b51a05e1"
+   ],
+   "inventory_bytes": [
+    12610
+   ],
+   "candidates": [
+    {
+     "id": "70c0042e-37d0-49ca-aafc-b21cab7c5555",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/70c0042e-37d0-49ca-aafc-b21cab7c5555/download/ar1i.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:21:40.089392",
+     "metadata_modified": "2026-02-19T12:23:45.112353",
+     "name": "Estimates of percentage of appointments under the Public Service Employment Act to and within the public service, by appointment type, process and fiscal year",
+     "name_translated": "{\"en\": \"Estimates of percentage of appointments under the Public Service Employment Act to and within the public service, by appointment type, process and fiscal year\", \"fr\": \"Estimation du pourcentage de nominations à la fonction publique et au sein de celle-ci en vertu de la Loi sur l’emploi dans la fonction publique, selon le type de nomination, le processus et l’exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 12610
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "70c0042e-37d0-49ca-aafc-b21cab7c5555",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/70c0042e-37d0-49ca-aafc-b21cab7c5555/download/ar1i.csv",
+     "file": "raw/70c0042e_ar1i.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1ii.csv",
+   "resource_id": null,
+   "titles": [
+    "Recruitment program appointments · 2017-2018 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "071f49b0178253aeac1b50034d9d0c9f251eee483a775ce2296066d8a2ef471c"
+   ],
+   "inventory_bytes": [
+    270
+   ],
+   "candidates": [
+    {
+     "id": "adfef7af-54da-4b2a-880e-0cbe2266e6c1",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/adfef7af-54da-4b2a-880e-0cbe2266e6c1/download/ar1ii.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:35:40.856496",
+     "metadata_modified": "2026-02-19T12:43:14.658012",
+     "name": "Hiring and staffing activities, Recruitment of Policy Leaders",
+     "name_translated": "{\"en\": \"Hiring and staffing activities, Recruitment of Policy Leaders\", \"fr\": \"Activités d’embauche et de dotation, Recrutement de leaders en politiques\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 270
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "adfef7af-54da-4b2a-880e-0cbe2266e6c1",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/adfef7af-54da-4b2a-880e-0cbe2266e6c1/download/ar1ii.csv",
+     "file": "raw/adfef7af_ar1ii.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1l.csv",
+   "resource_id": null,
+   "titles": [
+    "Post-secondary recruitment · 2013-2014 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "18e38752baf8adbae5d2ced9b054a70bcc58f80b4458fe14064adfb1e36979ae"
+   ],
+   "inventory_bytes": [
+    4778
+   ],
+   "candidates": [
+    {
+     "id": "bc3fc632-00dc-47b9-b1a8-2da8d7e776eb",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/bc3fc632-00dc-47b9-b1a8-2da8d7e776eb/download/ar1l.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:22:53.487596",
+     "metadata_modified": "2026-02-19T12:23:45.112501",
+     "name": "Post-Secondary Recruitment program highlights, by fiscal year",
+     "name_translated": "{\"en\": \"Post-Secondary Recruitment program highlights, by fiscal year\", \"fr\": \"Points saillants du Programme de recrutement postsecondaire, selon l'exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 4778
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "bc3fc632-00dc-47b9-b1a8-2da8d7e776eb",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/bc3fc632-00dc-47b9-b1a8-2da8d7e776eb/download/ar1l.csv",
+     "file": "raw/bc3fc632_ar1l.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1q.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by region · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "3fd84f8547c7c4aa57bdb905a1f1b290be16512b978da89d5e49c824d1642d4c"
+   ],
+   "inventory_bytes": [
+    94175
+   ],
+   "candidates": [
+    {
+     "id": "028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3/download/ar1q.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:23:54.771664",
+     "metadata_modified": "2026-02-19T12:33:10.950121",
+     "name": "Staffing activities by type and geographic area",
+     "name_translated": "{\"en\": \"Staffing activities by type and geographic area\", \"fr\": \"Activités de dotation, selon le type de nomination et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 94175
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3/download/ar1q.csv",
+     "file": "raw/028566a5_ar1q.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1y.csv",
+   "resource_id": null,
+   "titles": [
+    "Appointments by first official language and region · 2011-2012 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "6f702a7aac3917edcbd0f8345a08c4cdb6b2ba7991577e37810ec483f306f6c7"
+   ],
+   "inventory_bytes": [
+    16297
+   ],
+   "candidates": [
+    {
+     "id": "34ea0731-9705-4d54-850a-005291dbf063",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/34ea0731-9705-4d54-850a-005291dbf063/download/ar1y.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:25:02.837575",
+     "metadata_modified": "2026-02-19T12:33:10.950492",
+     "name": "Indeterminate and term appointments to the public service under the Public Service Employment Act, by first official language group and fiscal year within and outside the National Capital Region",
+     "name_translated": "{\"en\": \"Indeterminate and term appointments to the public service under the Public Service Employment Act, by first official language group and fiscal year within and outside the National Capital Region\", \"fr\": \"Nominations à la fonction publique pour une période indéterminée ou une durée déterminée en vertu de la Loi sur l’emploi dans la fonction publique, dans la région de la capitale nationale et les autres régions, selon la première langue officielle et l'exercice financier\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 16297
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "34ea0731-9705-4d54-850a-005291dbf063",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/34ea0731-9705-4d54-850a-005291dbf063/download/ar1y.csv",
+     "file": "raw/34ea0731_ar1y.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar1z.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring and staffing by region and tenure · 2015-2016 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "f4a95cb2dd8930e954dda42b7503bc9679facff6af171b8bd3654dd9cc3e0f34"
+   ],
+   "inventory_bytes": [
+    312797
+   ],
+   "candidates": [
+    {
+     "id": "75d9db1f-86f5-4d72-bf1b-85f500c6d7ac",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/75d9db1f-86f5-4d72-bf1b-85f500c6d7ac/download/ar1z.csv",
+     "package_id": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+     "last_modified": "2026-02-19T12:33:34.271025",
+     "metadata_modified": "2026-02-19T12:34:14.070369",
+     "name": "Overall hiring and staffing activities to and within the public service, by type, tenure and geographic area",
+     "name_translated": "{\"en\": \"Overall hiring and staffing activities to and within the public service, by type, tenure and geographic area\", \"fr\": \"Activités globales de dotation à la fonction publique et au sein de celle-ci, selon le type, la durée d’emploi et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 312797
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "75d9db1f-86f5-4d72-bf1b-85f500c6d7ac",
+     "url": "/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/75d9db1f-86f5-4d72-bf1b-85f500c6d7ac/download/ar1z.csv",
+     "file": "raw/75d9db1f_ar1z.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar2a.csv",
+   "resource_id": null,
+   "titles": [
+    "PSEA workforce by tenure · 2007-03-31 to 2025-03-31"
+   ],
+   "inventory_sha256": [
+    "0b76d32f0a632d6a750daeb0731b61e95d52228f22be0839ce7f09e33f924885"
+   ],
+   "inventory_bytes": [
+    13852
+   ],
+   "candidates": [
+    {
+     "id": "427efaed-60c6-477f-b561-5d9771ecd533",
+     "url": "/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/427efaed-60c6-477f-b561-5d9771ecd533/download/ar2a.csv",
+     "package_id": "845f9e76-d03e-4652-8f43-bb777ab1d52b",
+     "last_modified": "2026-02-19T12:03:05.813258",
+     "metadata_modified": "2026-02-19T12:12:57.747457",
+     "name": "Public Service Employment Act population, by year and tenure",
+     "name_translated": "{\"en\": \"Public Service Employment Act population, by year and tenure\", \"fr\": \"Effectif assujetti à la Loi sur l’emploi dans la fonction publique, selon l’exercice financier et la durée d’emploi\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 13852
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "427efaed-60c6-477f-b561-5d9771ecd533",
+     "url": "/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/427efaed-60c6-477f-b561-5d9771ecd533/download/ar2a.csv",
+     "file": "raw/427efaed_ar2a.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar2d.csv",
+   "resource_id": null,
+   "titles": [
+    "PSEA workforce by organization and region · 2015-03-31 to 2025-03-31"
+   ],
+   "inventory_sha256": [
+    "e56a0ba22153e003c90675e7bb5913ef761d1f0509718fdf63d6b1d39d6850f7"
+   ],
+   "inventory_bytes": [
+    928281
+   ],
+   "candidates": [
+    {
+     "id": "42f285e9-5085-4f38-98a2-1dcd2c0bad42",
+     "url": "/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/42f285e9-5085-4f38-98a2-1dcd2c0bad42/download/ar2d.csv",
+     "package_id": "845f9e76-d03e-4652-8f43-bb777ab1d52b",
+     "last_modified": "2026-02-19T12:04:28.621163",
+     "metadata_modified": "2026-02-19T12:12:57.747618",
+     "name": "Public Service Employment Act population by organization and geographic area",
+     "name_translated": "{\"en\": \"Public Service Employment Act population by organization and geographic area\", \"fr\": \"L’effectif des organisations assujetties à la Loi sur l’emploi dans la fonction publique, selon l’organisation et la région géographique\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 928281
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "42f285e9-5085-4f38-98a2-1dcd2c0bad42",
+     "url": "/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/42f285e9-5085-4f38-98a2-1dcd2c0bad42/download/ar2d.csv",
+     "file": "raw/42f285e9_ar2d.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "effectif-de-la-fonction-publique-federale-par-province-et-niveau-de-cadres-superieurs-mars-2026.csv",
+   "resource_id": "b9b8a079-ab4d-477f-9a31-b0e16a2cb126",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by province or territory of work and executive level · 2010 to 2026 [French source view]"
+   ],
+   "inventory_sha256": [
+    "72f032a23b513146304cb457d961aade201ce8dfff8915dca252b4f83f7ec774"
+   ],
+   "inventory_bytes": [
+    96896
+   ],
+   "candidates": [
+    {
+     "id": "b9b8a079-ab4d-477f-9a31-b0e16a2cb126",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/b9b8a079-ab4d-477f-9a31-b0e16a2cb126/download/effectif-de-la-fonction-publique-federale-par-province-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:21:29.898603",
+     "metadata_modified": "2026-10-02T06:53:19.259650",
+     "name": "Population of the federal public service by province or territory of work and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by province or territory of work and executive level",
+      "fr": "Effectif de la fonction publique fédérale par province ou territoire de travail et niveau de cadres supérieurs"
+     },
+     "language": [
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 96896
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "b9b8a079-ab4d-477f-9a31-b0e16a2cb126",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/b9b8a079-ab4d-477f-9a31-b0e16a2cb126/download/effectif-de-la-fonction-publique-federale-par-province-et-niveau-de-cadres-superieurs-mars-2026.csv",
+     "file": "raw/b9b8a079_effectif-de-la-fonction-publique-federale-par-province-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+     "sha256": "72f032a23b513146304cb457d961aade201ce8dfff8915dca252b4f83f7ec774",
+     "bytes": 96896,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps03-1.csv",
+   "resource_id": "be6fe4fa-37f7-4224-8108-095e66008b05",
+   "titles": [
+    "2023 SNPS, by department and by Employment Equity Group: Persons with disabilities"
+   ],
+   "inventory_sha256": [
+    "1e63113355242a059479dd0a2da7a9cb505a35827269b6f549fa63f21171c9b4"
+   ],
+   "inventory_bytes": [
+    29914418
+   ],
+   "candidates": [
+    {
+     "id": "be6fe4fa-37f7-4224-8108-095e66008b05",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/be6fe4fa-37f7-4224-8108-095e66008b05/download/cfppsc_snps03-1.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-11-05T19:53:44.125055",
+     "metadata_modified": "2024-12-09T17:02:02.199693",
+     "name": "By department and by Employment Equity Group: Persons with disabilities",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Persons with disabilities",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Personnes en situation de handicap "
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 29914418
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "be6fe4fa-37f7-4224-8108-095e66008b05",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/be6fe4fa-37f7-4224-8108-095e66008b05/download/cfppsc_snps03-1.csv",
+     "file": "raw/be6fe4fa_cfppsc_snps03-1.csv.gz",
+     "sha256": "1e63113355242a059479dd0a2da7a9cb505a35827269b6f549fa63f21171c9b4",
+     "bytes": 29914418,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-by-age-band-and-executive-level-march-2026.csv",
+   "resource_id": "cbc448b6-0007-4838-819b-a388b642f1fe",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by age band and executive level"
+   ],
+   "inventory_sha256": [
+    "8e1b06ae5f920c67e3ef2ad003619ac07a611519729bf8238a2e5df901032d6f"
+   ],
+   "inventory_bytes": [
+    25128
+   ],
+   "candidates": [
+    {
+     "id": "cbc448b6-0007-4838-819b-a388b642f1fe",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/cbc448b6-0007-4838-819b-a388b642f1fe/download/population-of-the-federal-public-service-by-age-band-and-executive-level-march-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T18:13:37.779305",
+     "metadata_modified": "2026-10-02T06:53:19.259732",
+     "name": "Population of the federal public service by age band and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by age band and executive level",
+      "fr": "Effectif de la fonction publique fédérale par catégorie d’âge et niveau de cadres supérieurs"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 25128
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "cbc448b6-0007-4838-819b-a388b642f1fe",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/cbc448b6-0007-4838-819b-a388b642f1fe/download/population-of-the-federal-public-service-by-age-band-and-executive-level-march-2026.csv",
+     "file": "raw/cbc448b6_population-of-the-federal-public-service-by-age-band-and-executive-level-march-2026.csv.gz",
+     "sha256": "8e1b06ae5f920c67e3ef2ad003619ac07a611519729bf8238a2e5df901032d6f",
+     "bytes": 25128,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps02.csv",
+   "resource_id": "d0437695-b1da-4bcd-bd4e-4eef0f62d8a8",
+   "titles": [
+    "2023 SNPS, by department and by Employment Equity Group: Women"
+   ],
+   "inventory_sha256": [
+    "9e70ee67125d2a9ae430a608782ca3ac9e65ee7a80a584533fe766624066ede5"
+   ],
+   "inventory_bytes": [
+    32059050
+   ],
+   "candidates": [
+    {
+     "id": "d0437695-b1da-4bcd-bd4e-4eef0f62d8a8",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/download/cfppsc_snps02.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:07:42.829891",
+     "metadata_modified": "2024-12-09T17:02:02.197910",
+     "name": "By department and by Employment Equity Group: Women ",
+     "name_translated": {
+      "en": "By department and by Employment Equity Group: Women ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Femmes"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 32059050
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "d0437695-b1da-4bcd-bd4e-4eef0f62d8a8",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/download/cfppsc_snps02.csv",
+     "file": "raw/d0437695_cfppsc_snps02.csv.gz",
+     "sha256": "9e70ee67125d2a9ae430a608782ca3ac9e65ee7a80a584533fe766624066ede5",
+     "bytes": 32059050,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps14.csv",
+   "resource_id": "d583d90e-4aca-43b3-95cb-5137c239d05d",
+   "titles": [
+    "2023 SNPS, list of questions"
+   ],
+   "inventory_sha256": [
+    "cf1a56d15e622c514b8bd739ec949246090efd6b0fd140e2d56d1cc2e6e999f1"
+   ],
+   "inventory_bytes": [
+    101026
+   ],
+   "candidates": [
+    {
+     "id": "d583d90e-4aca-43b3-95cb-5137c239d05d",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d583d90e-4aca-43b3-95cb-5137c239d05d/download/cfppsc_snps14.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:26:50.646284",
+     "metadata_modified": "2024-12-09T17:02:02.198622",
+     "name": "List of questions ",
+     "name_translated": {
+      "en": "List of questions ",
+      "fr": "Liste de questions"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 101026
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "d583d90e-4aca-43b3-95cb-5137c239d05d",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d583d90e-4aca-43b3-95cb-5137c239d05d/download/cfppsc_snps14.csv",
+     "file": "raw/d583d90e_cfppsc_snps14.csv.gz",
+     "sha256": "cf1a56d15e622c514b8bd739ec949246090efd6b0fd140e2d56d1cc2e6e999f1",
+     "bytes": 101026,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps15.csv",
+   "resource_id": "dca15e16-3a29-4fc6-84e7-73032062a239",
+   "titles": [
+    "2023 SNPS, list of departments"
+   ],
+   "inventory_sha256": [
+    "53d86c45a05560717ad9f70c71aa90e8fe9f0485e58e653380db7e9bc92cc347"
+   ],
+   "inventory_bytes": [
+    9841
+   ],
+   "candidates": [
+    {
+     "id": "dca15e16-3a29-4fc6-84e7-73032062a239",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/dca15e16-3a29-4fc6-84e7-73032062a239/download/cfppsc_snps15.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-06-10T19:27:30.891488",
+     "metadata_modified": "2024-12-09T17:02:02.198707",
+     "name": "List of departments ",
+     "name_translated": {
+      "en": "List of departments ",
+      "fr": "Liste des ministères"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 9841
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "dca15e16-3a29-4fc6-84e7-73032062a239",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/dca15e16-3a29-4fc6-84e7-73032062a239/download/cfppsc_snps15.csv",
+     "file": "raw/dca15e16_cfppsc_snps15.csv.gz",
+     "sha256": "53d86c45a05560717ad9f70c71aa90e8fe9f0485e58e653380db7e9bc92cc347",
+     "bytes": 9841,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "population-of-the-federal-public-service-by-province-and-executive-level-march-2026.csv",
+   "resource_id": "dcf0e800-a624-426e-9215-70509861850b",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by province or territory of work and executive level · 2010 to 2026"
+   ],
+   "inventory_sha256": [
+    "f7e79d912d5540bc77d8db91b6aa72225b03db4c801115d47da4e37335c447ed"
+   ],
+   "inventory_bytes": [
+    91772
+   ],
+   "candidates": [
+    {
+     "id": "dcf0e800-a624-426e-9215-70509861850b",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/dcf0e800-a624-426e-9215-70509861850b/download/population-of-the-federal-public-service-by-province-and-executive-level-march-2026.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T15:21:08.703610",
+     "metadata_modified": "2026-10-02T06:53:19.259579",
+     "name": "Population of the federal public service by province or territory of work and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by province or territory of work and executive level",
+      "fr": "Effectif de la fonction publique fédérale par province ou territoire de travail et niveau de cadres supérieurs"
+     },
+     "language": [
+      "en"
+     ],
+     "format": "CSV",
+     "size": 91772
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "dcf0e800-a624-426e-9215-70509861850b",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/dcf0e800-a624-426e-9215-70509861850b/download/population-of-the-federal-public-service-by-province-and-executive-level-march-2026.csv",
+     "file": "raw/dcf0e800_population-of-the-federal-public-service-by-province-and-executive-level-march-2026.csv.gz",
+     "sha256": "f7e79d912d5540bc77d8db91b6aa72225b03db4c801115d47da4e37335c447ed",
+     "bytes": 91772,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "demo_age.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring by age group · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "50b2801d7a903921f54ef18e19b4eeb0b792814eec493754a6e0d8bddfbe8a4a"
+   ],
+   "inventory_bytes": [
+    3299497
+   ],
+   "candidates": [
+    {
+     "id": "0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3/download/demo_age.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:26:08.232524",
+     "metadata_modified": "2026-10-01T18:23:29.387405",
+     "name": "Public Service Commission's Staffing Dashboard: Demographics Age",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Demographics Age\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Démographie âge\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 3299497
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3/download/demo_age.csv",
+     "file": "raw/0c1b0f39_demo_age.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "demo_ee.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring by pooled equity self-identification · 2011-2012 to 2024-2025"
+   ],
+   "inventory_sha256": [
+    "0f0216568883a111efa41de26d6f2af715486c788e891151fc83391a069a005b"
+   ],
+   "inventory_bytes": [
+    384878
+   ],
+   "candidates": [
+    {
+     "id": "bc1f4229-b228-4000-9233-86c763b012ec",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bc1f4229-b228-4000-9233-86c763b012ec/download/demo_ee.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:25:17.726643",
+     "metadata_modified": "2026-10-01T18:23:29.387339",
+     "name": "Public Service Commission's Staffing Dashboard: Demographics Employment Equity",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Demographics Employment Equity\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Démographie équité en matière d'emploi\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 384878
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "bc1f4229-b228-4000-9233-86c763b012ec",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bc1f4229-b228-4000-9233-86c763b012ec/download/demo_ee.csv",
+     "file": "raw/bc1f4229_demo_ee.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "demo_fol.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring by first official language · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "d5433a074eaddbe05a26640a3c597f3ac416caf92c2f1ad4c31031a2c9cfe024"
+   ],
+   "inventory_bytes": [
+    335062
+   ],
+   "candidates": [
+    {
+     "id": "845143a0-fe5e-459a-9534-10fd688f5b10",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/845143a0-fe5e-459a-9534-10fd688f5b10/download/demo_fol.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:24:26.803925",
+     "metadata_modified": "2026-10-01T18:23:29.387292",
+     "name": "Public Service Commission's Staffing Dashboard: Demographics First Official Language",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Demographics First Official Language\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Démographie première langue officielle\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 335062
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "845143a0-fe5e-459a-9534-10fd688f5b10",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/845143a0-fe5e-459a-9534-10fd688f5b10/download/demo_fol.csv",
+     "file": "raw/845143a0_demo_fol.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "demo_group.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring by occupational group · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "81990e744b66245876b19ae790f678457ec1f7a8a98ba12d516ee5ac71b53de4"
+   ],
+   "inventory_bytes": [
+    5033726
+   ],
+   "candidates": [
+    {
+     "id": "ba48f743-388d-46de-ac6b-4d1a3bc47806",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/ba48f743-388d-46de-ac6b-4d1a3bc47806/download/demo_group.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:23:32.923702",
+     "metadata_modified": "2026-10-01T18:23:29.387244",
+     "name": "Public Service Commission's Staffing Dashboard: Demographics Group",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Demographics Group\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Démographie groupe\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 5033726
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "ba48f743-388d-46de-ac6b-4d1a3bc47806",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/ba48f743-388d-46de-ac6b-4d1a3bc47806/download/demo_group.csv",
+     "file": "raw/ba48f743_demo_group.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "demo_region.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring by region · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "23d277525648c50ed0d11a5bb7c9dc0374b54d3fc0d5bef0da9a6d970ad3af36"
+   ],
+   "inventory_bytes": [
+    14611563
+   ],
+   "candidates": [
+    {
+     "id": "bfbecc14-d38e-4605-9218-09bef964643d",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bfbecc14-d38e-4605-9218-09bef964643d/download/demo_region.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:22:33.916496",
+     "metadata_modified": "2026-10-01T18:23:29.387195",
+     "name": "Public Service Commission's Staffing Dashboard: Demographics Region",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Demographics Region\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Démographie région\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 14611563
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "bfbecc14-d38e-4605-9218-09bef964643d",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bfbecc14-d38e-4605-9218-09bef964643d/download/demo_region.csv",
+     "file": "raw/bfbecc14_demo_region.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar4c.csv",
+   "resource_id": "e0c16e15-2f40-4129-ac35-283b3aab3c8c",
+   "titles": [
+    "Appointments by employment equity group (%)"
+   ],
+   "inventory_sha256": [
+    "e8e6245b1d740602b969a624a4e10b4af7f99ebc129ef639955ef10b9a6ac04f"
+   ],
+   "inventory_bytes": [
+    6545
+   ],
+   "candidates": [
+    {
+     "id": "e0c16e15-2f40-4129-ac35-283b3aab3c8c",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/e0c16e15-2f40-4129-ac35-283b3aab3c8c/download/ar4c.csv",
+     "package_id": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
+     "last_modified": "2024-11-22T16:39:15.645586",
+     "metadata_modified": "2024-12-09T16:50:59.283122",
+     "name": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over, by employment equity designated group and fiscal year",
+     "name_translated": {
+      "en": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over, by employment equity designated group and fiscal year",
+      "fr": "Pourcentage des nominations à la fonction publique pour une période indéterminée et déterminée de trois mois et plus, selon le groupe visé par l’équité en matière d’emploi et l'exercice financier"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 6545
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "e0c16e15-2f40-4129-ac35-283b3aab3c8c",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/e0c16e15-2f40-4129-ac35-283b3aab3c8c/download/ar4c.csv",
+     "file": "raw/e0c16e15_ar4c.csv.gz",
+     "sha256": "e8e6245b1d740602b969a624a4e10b4af7f99ebc129ef639955ef10b9a6ac04f",
+     "bytes": 6545,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps19.csv",
+   "resource_id": "e5fdffd2-d510-4fc5-b57f-512a9f1ac261",
+   "titles": [
+    "2025 SNPS, by department and by identity"
+   ],
+   "inventory_sha256": [
+    "cc776d7026ff00581bf08cea0dd551dbd2d3c621c47712b3cf8a226644db0093"
+   ],
+   "inventory_bytes": [
+    13945685
+   ],
+   "candidates": [
+    {
+     "id": "e5fdffd2-d510-4fc5-b57f-512a9f1ac261",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e5fdffd2-d510-4fc5-b57f-512a9f1ac261/download/cfppsc_snps19.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:19:56.048314",
+     "metadata_modified": "2026-04-13T18:41:33.043314",
+     "name": "By department and by identity ",
+     "name_translated": {
+      "en": "By department and by identity ",
+      "fr": "Par ministère et selon l’identité"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "e5fdffd2-d510-4fc5-b57f-512a9f1ac261",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e5fdffd2-d510-4fc5-b57f-512a9f1ac261/download/cfppsc_snps19.csv",
+     "file": "raw/e5fdffd2_cfppsc_snps19.csv.gz",
+     "sha256": "cc776d7026ff00581bf08cea0dd551dbd2d3c621c47712b3cf8a226644db0093",
+     "bytes": 13945685,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps18.csv",
+   "resource_id": "e80977dc-ef10-436f-b154-af08c420cd3d",
+   "titles": [
+    "2025 SNPS, by department and by sexual orientation"
+   ],
+   "inventory_sha256": [
+    "08cdb8ad28c63bf97a2aa26665af0851d0d1c18d84e28799f6a5417f586e418a"
+   ],
+   "inventory_bytes": [
+    23406790
+   ],
+   "candidates": [
+    {
+     "id": "e80977dc-ef10-436f-b154-af08c420cd3d",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e80977dc-ef10-436f-b154-af08c420cd3d/download/cfppsc_snps18.csv",
+     "package_id": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+     "last_modified": "2026-04-13T18:18:51.614278",
+     "metadata_modified": "2026-04-13T18:41:33.027076",
+     "name": "By department and by sexual orientation ",
+     "name_translated": {
+      "en": "By department and by sexual orientation ",
+      "fr": "Par ministère et selon l’orientation sexuelle"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "e80977dc-ef10-436f-b154-af08c420cd3d",
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e80977dc-ef10-436f-b154-af08c420cd3d/download/cfppsc_snps18.csv",
+     "file": "raw/e80977dc_cfppsc_snps18.csv.gz",
+     "sha256": "08cdb8ad28c63bf97a2aa26665af0851d0d1c18d84e28799f6a5417f586e418a",
+     "bytes": 23406790,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "cfppsc_snps22.csv",
+   "resource_id": "ed359432-8f40-4096-a0fd-1f6bc44c7490",
+   "titles": [
+    "2023 SNPS, by department and by Indigenous subgroup"
+   ],
+   "inventory_sha256": [
+    "9ce07905c4bc21bc0dc4bce81e05cd6617c82bdbc6521f9aa9e52f0c29c7321b"
+   ],
+   "inventory_bytes": [
+    22349284
+   ],
+   "candidates": [
+    {
+     "id": "ed359432-8f40-4096-a0fd-1f6bc44c7490",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/ed359432-8f40-4096-a0fd-1f6bc44c7490/download/cfppsc_snps22.csv",
+     "package_id": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+     "last_modified": "2024-09-24T17:55:44.147646",
+     "metadata_modified": "2024-12-09T17:02:02.199316",
+     "name": "By department and by Indigenous subgroup",
+     "name_translated": {
+      "en": "By department and by Indigenous subgroup",
+      "fr": "Par ministère et selon les sous-groupes autochtones"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 22349284
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "ed359432-8f40-4096-a0fd-1f6bc44c7490",
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/ed359432-8f40-4096-a0fd-1f6bc44c7490/download/cfppsc_snps22.csv",
+     "file": "raw/ed359432_cfppsc_snps22.csv.gz",
+     "sha256": "9ce07905c4bc21bc0dc4bce81e05cd6617c82bdbc6521f9aa9e52f0c29c7321b",
+     "bytes": 22349284,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "ar4d.csv",
+   "resource_id": "ef7e5729-7a5b-40ed-baf2-0d8cadb01341",
+   "titles": [
+    "Appointments by equity group and sex (%)"
+   ],
+   "inventory_sha256": [
+    "32f94dea61a2464a17cc262b4de3ee78c34b1bdcfe1e23f75cd2419dee329b4e"
+   ],
+   "inventory_bytes": [
+    11311
+   ],
+   "candidates": [
+    {
+     "id": "ef7e5729-7a5b-40ed-baf2-0d8cadb01341",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/ef7e5729-7a5b-40ed-baf2-0d8cadb01341/download/ar4d.csv",
+     "package_id": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
+     "last_modified": "2024-11-22T16:39:52.608214",
+     "metadata_modified": "2024-12-09T16:50:59.283194",
+     "name": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over by employment equity designated group, sex and fiscal year",
+     "name_translated": {
+      "en": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over by employment equity designated group, sex and fiscal year",
+      "fr": "Pourcentage des nominations à la fonction publique visant des postes de durée indéterminée et déterminée de trois mois ou plus, selon le groupe visé par l’équité en matière d’emploi, le sexe et l'exercice financier"
+     },
+     "language": [
+      "en",
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 11311
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "ef7e5729-7a5b-40ed-baf2-0d8cadb01341",
+     "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/ef7e5729-7a5b-40ed-baf2-0d8cadb01341/download/ar4d.csv",
+     "file": "raw/ef7e5729_ar4d.csv.gz",
+     "sha256": "32f94dea61a2464a17cc262b4de3ee78c34b1bdcfe1e23f75cd2419dee329b4e",
+     "bytes": 11311,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "effectif-de-la-fonction-publique-federale-par-langue-officiel-et-niveau-de-cadres-superieurs-mar.csv",
+   "resource_id": "efa475ff-75b5-4f6a-94f7-c2e7ba7a00a6",
+   "titles": [
+    "Federal public service executive and non-executive statistics, population of the federal public service by first official language and executive level [French source view]"
+   ],
+   "inventory_sha256": [
+    "8aa32e43ca11c7bc7bbc2d3608bd808f43607e05494afee4c2e47809554f8bc6"
+   ],
+   "inventory_bytes": [
+    10208
+   ],
+   "candidates": [
+    {
+     "id": "efa475ff-75b5-4f6a-94f7-c2e7ba7a00a6",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/efa475ff-75b5-4f6a-94f7-c2e7ba7a00a6/download/effectif-de-la-fonction-publique-federale-par-langue-officiel-et-niveau-de-cadres-superieurs-mar.csv",
+     "package_id": "3aeb9234-2cce-4495-970e-a177d23199ae",
+     "last_modified": "2026-06-22T18:14:26.845090",
+     "metadata_modified": "2026-10-02T06:53:19.260108",
+     "name": "Population of the federal public service by first official language and executive level",
+     "name_translated": {
+      "en": "Population of the federal public service by first official language and executive level",
+      "fr": "Effectif de la fonction publique fédérale par première langue officielle et niveau de cadres supérieurs"
+     },
+     "language": [
+      "fr"
+     ],
+     "format": "CSV",
+     "size": 10208
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "efa475ff-75b5-4f6a-94f7-c2e7ba7a00a6",
+     "url": "https://open.canada.ca/data/dataset/3aeb9234-2cce-4495-970e-a177d23199ae/resource/efa475ff-75b5-4f6a-94f7-c2e7ba7a00a6/download/effectif-de-la-fonction-publique-federale-par-langue-officiel-et-niveau-de-cadres-superieurs-mar.csv",
+     "file": "raw/efa475ff_effectif-de-la-fonction-publique-federale-par-langue-officiel-et-niveau-de-cadres-superieurs-mar.csv.gz",
+     "sha256": "8aa32e43ca11c7bc7bbc2d3608bd808f43607e05494afee4c2e47809554f8bc6",
+     "bytes": 10208,
+     "matches_inventory": true
+    }
+   ]
+  },
+  {
+   "inventory_name": "inflow.csv",
+   "resource_id": null,
+   "titles": [
+    "Hiring into the public service · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "80b35701600c61888e11b501d9ee8c647e523cfe2bbcfea4c9ef4a6e8b5076fd"
+   ],
+   "inventory_bytes": [
+    1638772
+   ],
+   "candidates": [
+    {
+     "id": "5456d998-fc83-4871-b6b2-deaff7be5c98",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/5456d998-fc83-4871-b6b2-deaff7be5c98/download/inflow.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:21:38.636899",
+     "metadata_modified": "2026-10-01T18:23:29.387147",
+     "name": "Public Service Commission's Staffing Dashboard: Inflow",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Inflow\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Nouvelles arrivées\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 1638772
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "5456d998-fc83-4871-b6b2-deaff7be5c98",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/5456d998-fc83-4871-b6b2-deaff7be5c98/download/inflow.csv",
+     "file": "raw/5456d998_inflow.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "internal_mob.csv",
+   "resource_id": null,
+   "titles": [
+    "Internal mobility · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "9d6c4672f78e373df9c6921c735c8b5d045ffb1b3bc8a77a521b0a036acd9aca"
+   ],
+   "inventory_bytes": [
+    615083
+   ],
+   "candidates": [
+    {
+     "id": "347ba6ff-7c58-4775-ba3a-3a4d9e23eb06",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/347ba6ff-7c58-4775-ba3a-3a4d9e23eb06/download/internal_mob.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:20:39.483501",
+     "metadata_modified": "2026-10-01T18:23:29.387097",
+     "name": "Public Service Commission's Staffing Dashboard: Internal Mobility",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Internal Mobility\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Mobilité interne\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 615083
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "347ba6ff-7c58-4775-ba3a-3a4d9e23eb06",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/347ba6ff-7c58-4775-ba3a-3a4d9e23eb06/download/internal_mob.csv",
+     "file": "raw/347ba6ff_internal_mob.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "outflow.csv",
+   "resource_id": null,
+   "titles": [
+    "Departures from the public service · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "4bf002944cfb664904c6d4dcfe73731b37393e620c70a86812f1ca309e16c66b"
+   ],
+   "inventory_bytes": [
+    1159232
+   ],
+   "candidates": [
+    {
+     "id": "d4ad133f-d6c0-46c4-ab17-89c6eb03b788",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/d4ad133f-d6c0-46c4-ab17-89c6eb03b788/download/outflow.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:19:45.248327",
+     "metadata_modified": "2026-10-01T18:23:29.387047",
+     "name": "Public Service Commission's Staffing Dashboard: Outflow",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Outflow\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Départs\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 1159232
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "d4ad133f-d6c0-46c4-ab17-89c6eb03b788",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/d4ad133f-d6c0-46c4-ab17-89c6eb03b788/download/outflow.csv",
+     "file": "raw/d4ad133f_outflow.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "reappointments.csv",
+   "resource_id": null,
+   "titles": [
+    "Reappointments and priority appointments · 2011-2012 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "e329de31c1a60d9e1a89a722d08995d6f3a7e600fdf9e7b1c6792951f193284b"
+   ],
+   "inventory_bytes": [
+    134874
+   ],
+   "candidates": [
+    {
+     "id": "3df3bcf0-bdde-45c0-8a39-158c656da604",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/3df3bcf0-bdde-45c0-8a39-158c656da604/download/reappointments.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:18:07.622834",
+     "metadata_modified": "2026-10-01T18:23:29.386944",
+     "name": "Public Service Commission's Staffing Dashboard: Reappointments",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Reappointments\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Administration des priorités\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 134874
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "3df3bcf0-bdde-45c0-8a39-158c656da604",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/3df3bcf0-bdde-45c0-8a39-158c656da604/download/reappointments.csv",
+     "file": "raw/3df3bcf0_reappointments.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "representation-designated-groups_occupational-groups.csv",
+   "resource_id": null,
+   "titles": [
+    "CSIS occupational equity representation"
+   ],
+   "inventory_sha256": [
+    "919"
+   ],
+   "inventory_bytes": [],
+   "candidates": [
+    {
+     "id": "1fd24a95-8f39-410f-a669-46d11e48583b",
+     "url": "/data/dataset/e7db3b72-e459-44a6-a749-5d64b57dc3d9/resource/1fd24a95-8f39-410f-a669-46d11e48583b/download/representation-designated-groups_occupational-groups.csv",
+     "package_id": "e7db3b72-e459-44a6-a749-5d64b57dc3d9",
+     "last_modified": null,
+     "metadata_modified": "2024-11-20T23:03:15.776739",
+     "name": "Representation of Designated Group Members by Employment Equity Occupational Group",
+     "name_translated": "{\"fr\": \"Représentation de membres de groupes désignés en fonction des catégories professionelles de l'équité en matière d'emploi\", \"en\": \"Representation of Designated Group Members by Employment Equity Occupational Group\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 919
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "1fd24a95-8f39-410f-a669-46d11e48583b",
+     "url": "/data/dataset/e7db3b72-e459-44a6-a749-5d64b57dc3d9/resource/1fd24a95-8f39-410f-a669-46d11e48583b/download/representation-designated-groups_occupational-groups.csv",
+     "file": "raw/1fd24a95_representation-designated-groups_occupational-groups.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "vha_1.csv",
+   "resource_id": null,
+   "titles": [
+    "Veterans hiring: applications and advertisements · 2015-2016 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "d8e758f94ed623809f97e5f703612af104e9deecc73ba7bc1b5b193cc9beb2e6"
+   ],
+   "inventory_bytes": [
+    6757
+   ],
+   "candidates": [
+    {
+     "id": "425f80cf-2e70-421e-8832-8d67fcd1356e",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/425f80cf-2e70-421e-8832-8d67fcd1356e/download/vha_1.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:15:45.228043",
+     "metadata_modified": "2026-10-01T18:23:29.386727",
+     "name": "Public Service Commission's Staffing Dashboard: Veterans Hiring Act 1",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Veterans Hiring Act 1\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Loi sur l'embauche des anciens combattants 1\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 6757
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "425f80cf-2e70-421e-8832-8d67fcd1356e",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/425f80cf-2e70-421e-8832-8d67fcd1356e/download/vha_1.csv",
+     "file": "raw/425f80cf_vha_1.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "vha_2.csv",
+   "resource_id": null,
+   "titles": [
+    "Veterans hiring: appointment types · 2015-2016 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "9b81bf04efc3099255a885801258cea8c2bde7b0bcae2eadfb6b2d4f1929f4d4"
+   ],
+   "inventory_bytes": [
+    12713
+   ],
+   "candidates": [
+    {
+     "id": "0065a7ca-6495-45fc-a457-5a27e1a28889",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0065a7ca-6495-45fc-a457-5a27e1a28889/download/vha_2.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:16:35.115645",
+     "metadata_modified": "2026-10-01T18:23:29.386830",
+     "name": "Public Service Commission's Staffing Dashboard: Veterans Hiring Act 2",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Veterans Hiring Act 2\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Loi sur l'embauche des anciens combattants 2\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 12713
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "0065a7ca-6495-45fc-a457-5a27e1a28889",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0065a7ca-6495-45fc-a457-5a27e1a28889/download/vha_2.csv",
+     "file": "raw/0065a7ca_vha_2.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  },
+  {
+   "inventory_name": "vha_3.csv",
+   "resource_id": null,
+   "titles": [
+    "Veterans hiring: eligibility · 2015-2016 to 2026-2027"
+   ],
+   "inventory_sha256": [
+    "d3005edf5eb58242fb9d86144d3c2cd702583aae95bab1727422e2d3332c33af"
+   ],
+   "inventory_bytes": [
+    2148
+   ],
+   "candidates": [
+    {
+     "id": "9a671e77-9506-4f48-9f36-ddc2d5f102da",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/9a671e77-9506-4f48-9f36-ddc2d5f102da/download/vha_3.csv",
+     "package_id": "26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+     "last_modified": "2026-09-22T10:17:20.068759",
+     "metadata_modified": "2026-10-01T18:23:29.386889",
+     "name": "Public Service Commission's Staffing Dashboard: Veterans Hiring Act 3",
+     "name_translated": "{\"en\": \"Public Service Commission's Staffing Dashboard: Veterans Hiring Act 3\", \"fr\": \"Tableau de bord de la dotation de la Commission de la fonction publique : Loi sur l'embauche des anciens combattants 3\"}",
+     "language": "[\"en\", \"fr\"]",
+     "format": "CSV",
+     "size": 2148
+    }
+   ],
+   "downloads": [
+    {
+     "resource_id": "9a671e77-9506-4f48-9f36-ddc2d5f102da",
+     "url": "/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/9a671e77-9506-4f48-9f36-ddc2d5f102da/download/vha_3.csv",
+     "file": "raw/9a671e77_vha_3.csv.gz",
+     "error": "curl exit 3 curl: (3) URL rejected: No host part in the URL"
+    }
+   ]
+  }
+ ]
+}
