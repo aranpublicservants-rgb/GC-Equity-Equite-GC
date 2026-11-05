@@ -24,8 +24,9 @@ jobs:
           cfg = json.load(open('data/source-dates.json', encoding='utf-8'))
           ua = {'User-Agent': 'GC-Equity-source-check'}
           def get(url, headers=None):
-              # curl with an ordinary browser identity: Canada.ca does not answer some scripted clients.
-              cmd = ['curl', '-sSL', '--http1.1', '--fail', '--compressed', '--max-time', '45', '--retry', '2', '-A',
+              # curl with an ordinary browser identity. Canada.ca refuses requests from GitHub's servers at the moment;
+              # those pages are listed as not reached and are checked by hand.
+              cmd = ['curl', '-sSL', '--fail', '--compressed', '--connect-timeout', '15', '--max-time', '30', '-A',
                      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
                      '-H', 'Accept: text/html,application/json;q=0.9,*/*;q=0.8', '-H', 'Accept-Language: en-CA,en;q=0.8']
               for k, v in (headers or {}).items():
