@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>2026–27 Departmental Plans: Term Mentions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f3ec; --surface:#fffdf8; --surface2:#efe9dd; --ink:#1a1e23; --muted:#5b6570; --line:#ddd3c2;
+  --navy:#16324a; --red:#a6192e; --red-soft:#fbecec; --amber-bg:#fff3d6; --amber-line:#d9a441; --amber-ink:#6b4a00;
+  --teal:#14665a; --teal-soft:#e0efeb; --blue-soft:#e6ecf2;
+  --radius:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#12161a; --surface:#1b2127; --surface2:#232b33; --ink:#ece8df; --muted:#a8b0b8; --line:#333d47; --navy:#8fb6d1; --red:#ff8a9a; --red-soft:#3a2328; --amber-bg:#332a14; --amber-line:#8a6d2b; --amber-ink:#f2d492; --teal:#6ec9b6; --teal-soft:#1e3330; --blue-soft:#223140; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Libre Franklin",system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55;font-size:16px}
+a{color:var(--navy);text-decoration-color:color-mix(in srgb,var(--navy) 45%,transparent);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+.top-rule{height:6px;background:var(--red)}
+header{padding:34px 0 8px}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.4rem);margin:10px 0 14px;max-width:18ch}
+h2{font-size:clamp(1.5rem,3vw,2rem);margin:0 0 10px}
+h3{font-size:1.25rem;margin:0 0 8px}
+.lede{font-size:1.12rem;max-width:72ch;color:var(--ink)}
+.meta{color:var(--muted);font-size:.92rem;display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.meta span::before{content:"• ";color:var(--red)}
+.meta span:first-child::before{content:""}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.pill.red{color:var(--red);border-color:color-mix(in srgb,var(--red) 35%,var(--line))}
+.pill.green{color:var(--teal);border-color:color-mix(in srgb,var(--teal) 35%,var(--line))}
+.alert{margin:22px 0;padding:18px 20px;background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:var(--radius);color:var(--amber-ink)}
+.alert strong{color:inherit}
+.alert p{margin:6px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.stat b{display:block;font-size:2rem;line-height:1;font-family:"Newsreader",serif}
+.stat span{display:block;margin-top:6px;color:var(--muted);font-size:.88rem;line-height:1.4}
+section{margin-top:38px}
+.section-head{max-width:76ch}
+.section-head p{color:var(--muted);margin:6px 0 0}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0}
+.seg{display:inline-flex;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:4px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--ink);font:inherit;font-size:.9rem;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+@media (prefers-color-scheme:dark){.seg button[aria-pressed="true"]{color:#0f1a24}}
+.legend{font-size:.88rem;color:var(--muted)}
+.legend b{color:var(--ink)}
+.searchbox{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.searchbox input{flex:1;min-width:200px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.searchbox select{padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.table-scroll{max-height:880px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+thead th{background:var(--navy);color:#fff;text-align:right;padding:12px 12px;font-size:.82rem;letter-spacing:.02em;vertical-align:bottom;position:sticky;top:0;z-index:2}
+thead th:first-child{text-align:left;min-width:190px}
+@media (prefers-color-scheme:dark){thead th{color:#0f1a24;background:var(--navy)}}
+tbody td{padding:12px;border-top:1px solid var(--line);text-align:right;vertical-align:top}
+tbody td:first-child{text-align:left}
+.org-name{font-weight:700;line-height:1.3}
+.org-sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.org-sub a{font-size:.82rem}
+.rank{color:var(--muted);font-weight:600;font-size:.82rem;margin-right:6px}
+.cell-total{font-size:1.15rem;font-weight:800;line-height:1}
+.cell-int{font-size:.8rem;color:var(--teal);font-weight:700;margin-top:3px}
+.mode-total .cell-int{display:none}
+.mode-internal .cell-total{display:none}
+.mode-internal .cell-int{font-size:1.12rem;margin-top:0;color:var(--ink)}
+.row-total .cell-total{color:var(--red)}
+tfoot td{padding:12px;border-top:2px solid var(--line);font-size:.88rem;color:var(--muted)}
+.note{font-size:.9rem;color:var(--muted);margin-top:10px}
+.note strong{color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card p{margin:8px 0;color:var(--muted);font-size:.95rem}
+.card p strong{color:var(--ink)}
+.card .nums{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.card .nums div b{display:block;font-size:1.4rem;line-height:1}
+.card .nums div span{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+.tag{font-size:.75rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 8px;border-radius:999px;display:inline-block}
+.tag.full{background:var(--teal-soft);color:var(--teal)}
+.tag.part{background:var(--amber-bg);color:var(--amber-ink);border:1px solid var(--amber-line)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;overflow-x:auto}
+.chart svg{width:100%;min-width:560px;height:auto;display:block}
+.findings{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+.findings ul{margin:8px 0 0;padding-left:18px}
+.findings li{margin:8px 0}
+.findings li::marker{color:var(--red)}
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.method ul,.method ol{margin:8px 0;padding-left:20px;color:var(--muted);font-size:.95rem}
+.method li{margin:6px 0}
+.method li strong{color:var(--ink)}
+code{background:var(--surface2);padding:1px 6px;border-radius:6px;font-size:.88em}
+.sources{font-size:.92rem}
+.sources li{margin:10px 0;color:var(--muted)}
+.sources a{word-break:break-word}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+.hidden{display:none !important}
+.vtable{width:100%;border-collapse:collapse;font-size:.92rem}
+.vtable th,.vtable td{padding:9px 10px;border-top:1px solid var(--line);text-align:right}
+.vtable th:first-child,.vtable td:first-child{text-align:left}
+.vtable thead th{border-top:0;color:var(--muted);font-size:.8rem}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.grid3,.terms{grid-template-columns:1fr 1fr}.findings,.grid2,.method{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .wrap{padding:0 14px 48px}
+  .stats,.grid3,.terms{grid-template-columns:1fr}
+  .chart svg{min-width:0}
+  .table-scroll{max-height:none;overflow:visible}
+  .table-wrap{border:0;background:transparent;overflow:visible}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tbody tr{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:6px 4px}
+  tbody td{border:0;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;text-align:right;padding:10px 12px}
+  tbody td:first-child{border-top:0;display:block;text-align:left}
+  tbody td::before{content:attr(data-label);font-weight:700;font-size:.85rem;text-align:left;color:var(--muted)}
+  tbody td:first-child::before{content:""}
+  tfoot{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="top-rule"></div>
+<div class="wrap">
+<header>
+  <span class="pill red">Government of Canada · Fiscal year 2026–27</span>
+  <h1>Departmental Plans: how often six terms appear — and how much of it sits in Internal Services</h1>
+  <p class="lede">Mechanical counts of <strong>anti-racism, equity, inclusion, diversity, accessibility,</strong> and <strong>reconciliation</strong> in the 2026–27 Departmental Plans of all <strong>90 institutions</strong> that table one — each term shown as a <strong>total</strong> for the whole plan and the subset falling inside the plan’s <strong>Internal Services section</strong>, the part of the plan about running the organisation itself rather than programs and services delivered to people in Canada.</p>
+  <div class="meta">
+    <span>Plans cover 1 April 2026 – 31 March 2027</span>
+    <span>English versions · full mechanical count completed 6 Nov 2026</span>
+    <span>Scope: the 90 institutions named on the TBS list</span>
+  </div>
+  <div class="alert" role="note">
+    <strong>How to read the “internal” column — it changed definition, on purpose.</strong>
+    <p>In this complete count, <strong>internal = occurrences inside the plan’s “Internal services” section only</strong> (from that heading to the next heading of the same or higher level). That is <em>narrower</em> than the earlier hand count of three plans, which also counted workforce and workplace passages elsewhere in the plan (key priorities, People Management). Internal figures here are therefore a <strong>lower bound</strong> on employee-context mentions — a plan can talk about its workforce outside that one section and score low here. The Office of the Auditor General’s plan has no Internal Services section at all, so its internal value is shown as “—”, not zero.</p>
+  </div>
+  <div class="stats" aria-label="Coverage at a glance">
+    <div class="stat"><b>90</b><span>institutions counted in full — every institution named on the TBS 2026–27 list (the list page says 92 but names 90)</span></div>
+    <div class="stat"><b>4,190</b><span>total mentions of the six terms across all 90 plans; 953 of them inside Internal Services sections</span></div>
+    <div class="stat"><b>33 / 46.6</b><span>median / mean mentions per plan — the top 10 plans alone hold 1,448 (35%) of all mentions</span></div>
+    <div class="stat"><b>27 of 90</b><span>plans mention anti-racism at all — 63 plans never use the term; it is the rarest of the six</span></div>
+  </div>
+</header>
+
+<section id="counts">
+  <div class="section-head">
+    <h2>The complete table — all 90 plans</h2>
+    <p>One row per institution, sorted by total mentions. Each cell shows the total for the whole plan and, underneath, how many of those fall inside the Internal Services section. The internal count is always part of the total — nothing is double-counted. Search or filter the list, re-sort it, or use the toggle to focus on one view.</p>
+  </div>
+  <div class="searchbox">
+    <input type="search" id="tblSearch" placeholder="Search institutions — e.g. Transport, Health, Statistics…" aria-label="Search institutions in the table">
+    <select id="tblFilter" aria-label="Filter institutions">
+      <option value="all">All 90 institutions</option>
+      <option value="top10">Top 10 by total</option>
+      <option value="hasint">Has Internal Services mentions</option>
+      <option value="zeroint">Zero Internal Services mentions (16)</option>
+      <option value="anti">Mentions anti-racism (27)</option>
+      <option value="noanti">Never mentions anti-racism (63)</option>
+      <option value="nointsec">No Internal Services section (1)</option>
+    </select>
+    <select id="tblSort" aria-label="Sort the table">
+      <option value="total">Sort: total mentions, high → low</option>
+      <option value="internal">Sort: Internal Services mentions, high → low</option>
+      <option value="name">Sort: institution name, A → Z</option>
+    </select>
+  </div>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Count view">
+      <button type="button" data-mode="both" aria-pressed="true">Total + internal</button>
+      <button type="button" data-mode="total" aria-pressed="false">Totals only</button>
+      <button type="button" data-mode="internal" aria-pressed="false">Internal only</button>
+    </div>
+    <span class="legend"><b>↳ teal number</b> = mentions inside the Internal Services section</span>
+  </div>
+  <p class="note" id="tblCount" aria-live="polite"></p>
+  <div class="table-wrap" id="countsWrap">
+    <div class="table-scroll">
+    <table aria-describedby="counts-note">
+      <thead>
+        <tr>
+          <th scope="col">Organisation</th>
+          <th scope="col">Anti-racism</th>
+          <th scope="col">Equity</th>
+          <th scope="col">Inclusion</th>
+          <th scope="col">Diversity</th>
+          <th scope="col">Accessibility</th>
+          <th scope="col">Reconciliation</th>
+          <th scope="col">Row total</th>
+        </tr>
+      </thead>
+      <tbody id="countsBody"></tbody>
+      <tfoot><tr><td colspan="8" id="counts-note">Counts include headings, tables, and the standard Definitions section. Variants were counted and the accounting sense of “reconciliation” was excluded — see Methodology. “Internal” means inside the Internal Services section only.</td></tr></tfoot>
+    </table>
+    </div>
+  </div>
+  <p class="note"><strong>Totals follow mandates.</strong> The highest counts belong to organisations whose subject matter <em>is</em> one of the six terms — Accessibility Standards Canada (accessibility 170 of its 224), the Canadian Human Rights Commission (equity 73 of its 164), Canadian Heritage (diversity 92 of its 256). A high total says the plan talks about the topic a lot, mostly in program delivery; the internal column is the better guide to the employee-facing focus.</p>
+</section>
+
+<section id="chart">
+  <div class="section-head"><h2>Top 10 plans by total mentions</h2><p>The ten highest totals, with the Internal Services subset in teal. Even in the biggest plans, most mentions sit outside Internal Services — the exceptions are in the findings below.</p></div>
+  <div class="chart" style="margin-top:14px">
+    <svg viewBox="0 0 720 520" role="img" aria-label="Bar chart of the ten plans with the most total mentions, with the Internal Services subset shown in teal">
+      <text x="0" y="16" font-size="12" fill="var(--muted)" font-weight="700">■ Total mentions &nbsp;&nbsp; <tspan fill="#14665a">■</tspan> Inside Internal Services section</text>
+      <line x1="185" y1="28" x2="185" y2="494" stroke="var(--line)" stroke-dasharray="3 4"/>
+      <text x="185" y="512" font-size="11" fill="var(--muted)">0</text>
+      <line x1="305" y1="28" x2="305" y2="494" stroke="var(--line)" stroke-dasharray="3 4"/>
+      <text x="305" y="512" font-size="11" fill="var(--muted)">70</text>
+      <line x1="425" y1="28" x2="425" y2="494" stroke="var(--line)" stroke-dasharray="3 4"/>
+      <text x="425" y="512" font-size="11" fill="var(--muted)">140</text>
+      <line x1="545" y1="28" x2="545" y2="494" stroke="var(--line)" stroke-dasharray="3 4"/>
+      <text x="545" y="512" font-size="11" fill="var(--muted)">210</text>
+      <line x1="665" y1="28" x2="665" y2="494" stroke="var(--line)" stroke-dasharray="3 4"/>
+      <text x="665" y="512" font-size="11" fill="var(--muted)">280</text>
+      <text x="0" y="49" font-size="12.5" font-weight="700" fill="var(--ink)">Canadian Heritage</text>
+      <rect x="185" y="34" width="439" height="17" rx="4" fill="#16324a"/><text x="631" y="47" font-size="12" font-weight="700" fill="var(--ink)">256</text>
+      <rect x="185" y="54" width="53" height="13" rx="4" fill="#14665a"/><text x="245" y="64" font-size="11" fill="var(--ink)">31 internal</text>
+      <text x="0" y="95" font-size="12.5" font-weight="700" fill="var(--ink)">Accessibility Standards</text>
+      <rect x="185" y="80" width="384" height="17" rx="4" fill="#16324a"/><text x="576" y="93" font-size="12" font-weight="700" fill="var(--ink)">224</text>
+      <rect x="185" y="100" width="36" height="13" rx="4" fill="#14665a"/><text x="228" y="110" font-size="11" fill="var(--ink)">21 internal</text>
+      <text x="0" y="141" font-size="12.5" font-weight="700" fill="var(--ink)">National Defence</text>
+      <rect x="185" y="126" width="285" height="17" rx="4" fill="#16324a"/><text x="477" y="139" font-size="12" font-weight="700" fill="var(--ink)">166</text>
+      <rect x="185" y="146" width="14" height="13" rx="4" fill="#14665a"/><text x="206" y="156" font-size="11" fill="var(--ink)">8 internal</text>
+      <text x="0" y="187" font-size="12.5" font-weight="700" fill="var(--ink)">Human Rights Commission</text>
+      <rect x="185" y="172" width="281" height="17" rx="4" fill="#16324a"/><text x="473" y="185" font-size="12" font-weight="700" fill="var(--ink)">164</text>
+      <rect x="185" y="192" width="24" height="13" rx="4" fill="#14665a"/><text x="216" y="202" font-size="11" fill="var(--ink)">14 internal</text>
+      <text x="0" y="233" font-size="12.5" font-weight="700" fill="var(--ink)">ESDC</text>
+      <rect x="185" y="218" width="221" height="17" rx="4" fill="#16324a"/><text x="413" y="231" font-size="12" font-weight="700" fill="var(--ink)">129</text>
+      <rect x="185" y="238" width="21" height="13" rx="4" fill="#14665a"/><text x="213" y="248" font-size="11" fill="var(--ink)">12 internal</text>
+      <text x="0" y="279" font-size="12.5" font-weight="700" fill="var(--ink)">ISED</text>
+      <rect x="185" y="264" width="192" height="17" rx="4" fill="#16324a"/><text x="384" y="277" font-size="12" font-weight="700" fill="var(--ink)">112</text>
+      <rect x="185" y="284" width="55" height="13" rx="4" fill="#14665a"/><text x="247" y="294" font-size="11" fill="var(--ink)">32 internal</text>
+      <text x="0" y="325" font-size="12.5" font-weight="700" fill="var(--ink)">Public Service Commission</text>
+      <rect x="185" y="310" width="185" height="17" rx="4" fill="#16324a"/><text x="377" y="323" font-size="12" font-weight="700" fill="var(--ink)">108</text>
+      <rect x="185" y="330" width="51" height="13" rx="4" fill="#14665a"/><text x="243" y="340" font-size="11" fill="var(--ink)">30 internal</text>
+      <text x="0" y="371" font-size="12.5" font-weight="700" fill="var(--ink)">Justice</text>
+      <rect x="185" y="356" width="166" height="17" rx="4" fill="#16324a"/><text x="358" y="369" font-size="12" font-weight="700" fill="var(--ink)">97</text>
+      <rect x="185" y="376" width="43" height="13" rx="4" fill="#14665a"/><text x="235" y="386" font-size="11" fill="var(--ink)">25 internal</text>
+      <text x="0" y="417" font-size="12.5" font-weight="700" fill="var(--ink)">Parks Canada</text>
+      <rect x="185" y="402" width="165" height="17" rx="4" fill="#16324a"/><text x="357" y="415" font-size="12" font-weight="700" fill="var(--ink)">96</text>
+      <rect x="185" y="422" width="22" height="13" rx="4" fill="#14665a"/><text x="214" y="432" font-size="11" fill="var(--ink)">13 internal</text>
+      <text x="0" y="463" font-size="12.5" font-weight="700" fill="var(--ink)">Public Health Agency</text>
+      <rect x="185" y="448" width="165" height="17" rx="4" fill="#16324a"/><text x="357" y="461" font-size="12" font-weight="700" fill="var(--ink)">96</text>
+      <rect x="185" y="468" width="39" height="13" rx="4" fill="#14665a"/><text x="231" y="478" font-size="11" fill="var(--ink)">23 internal</text>
+      </svg>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="findings">
+    <div class="card">
+      <h3>Headline findings — all 90 plans</h3>
+      <ul>
+        <li><strong>Most mentions overall: Canadian Heritage (256)</strong> — diversity 92, inclusion 59, equity 41. Then Accessibility Standards Canada (224; accessibility alone is 170), National Defence (166; inclusion 61, reconciliation 22), the Canadian Human Rights Commission (164; equity 73), ESDC (129) and ISED (112).</li>
+        <li><strong>Fewest mentions:</strong> Northern Pipeline Agency (3 — all three in the standard Definitions / GBA Plus block), the NSICOP Secretariat (5), the Information Commissioner (6), the Law Commission and the Intelligence Commissioner (7 each).</li>
+        <li><strong>Most employee-focused by the internal column:</strong> Agriculture and Agri-Food (60 of its 87 mentions sit in Internal Services), the Privy Council Office (53 of 87), the Canadian Food Inspection Agency (47 of 80), Fisheries and Oceans (37 of 89) and the Treasury Board Secretariat (36 of 82).</li>
+        <li><strong>Sixteen plans have zero mentions inside Internal Services</strong> — including the Canadian Transportation Agency (62 total, all program-facing), the Canada Energy Regulator, Global Affairs, and Women and Gender Equality. The Auditor General has no Internal Services section to count.</li>
+        <li><strong>Concentration:</strong> the top 10 plans hold 1,448 of the 4,190 mentions (35%); the bottom 10 hold just 77.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The two rarest terms</h3>
+      <p><strong>Anti-racism — 83 mentions, only 27 of 90 plans.</strong> Highest: Canadian Heritage (15), Privy Council Office (9), Canadian Human Rights Commission (6), Justice and National Defence (5 each). It is also the most internally concentrated term proportionally: 48 of its 83 mentions sit in Internal Services sections, 7 of them in PCO’s alone.</p>
+      <p><strong>Reconciliation — 293 mentions, 66 of 90 plans.</strong> Highest: Crown-Indigenous Relations and Northern Affairs (26), National Defence (22), Fisheries and Oceans (14), Canadian Heritage (13), the Impact Assessment Agency (12). Only 55 of the 293 mentions are in Internal Services sections — reconciliation is overwhelmingly program-facing. The accounting sense of the word (“reconciliation of the net cost of operations”) was excluded throughout; see the caveat in Methodology.</p>
+    </div>
+  </div>
+  <div class="terms" style="margin-top:14px" aria-label="Totals by term across all 90 plans">
+    <div class="card"><h3>Inclusion — 1,156</h3><p>In <strong>every one of the 90 plans</strong>. 296 mentions sit in Internal Services sections — the most of any term.</p></div>
+    <div class="card"><h3>Diversity — 1,031</h3><p>Also in <strong>every plan</strong>. Canadian Heritage alone accounts for 92. 180 mentions are internal-section.</p></div>
+    <div class="card"><h3>Accessibility — 999</h3><p>In <strong>85 plans</strong>. Dominated by one plan: Accessibility Standards Canada’s 170 is 17% of all accessibility mentions. 220 are internal-section.</p></div>
+    <div class="card"><h3>Equity — 628</h3><p>In <strong>72 plans</strong>. The Human Rights Commission’s 73 is the largest single-plan equity count. 154 are internal-section.</p></div>
+    <div class="card"><h3>Reconciliation — 293</h3><p>In <strong>66 plans</strong>; 24 plans never mention it (accounting uses excluded). 55 are internal-section.</p></div>
+    <div class="card"><h3>Anti-racism — 83</h3><p>In <strong>27 plans</strong>; 63 plans never mention it. 48 of the 83 are internal-section — the highest internal share of any term.</p></div>
+  </div>
+</section>
+
+<section id="details">
+  <div class="section-head"><h2>Per-plan detail — the plans that stand out</h2><p>The six highest totals, plus the three most Internal-Services-focused plans. Full numbers for every plan are in the table above.</p></div>
+  <div class="grid3" style="margin-top:14px">
+    <article class="card">
+      <span class="tag full">Highest total</span>
+      <h3 style="margin-top:10px">Canadian Heritage</h3>
+      <div class="nums"><div><b>256</b><span>Total</span></div><div><b>31</b><span>Internal</span></div><div><b>92</b><span>Diversity</span></div></div>
+      <p>The largest plan count by a wide margin, led by <strong>diversity (92)</strong>, inclusion (59) and equity (41), and the most anti-racism mentions of any plan (15). Most of it is program delivery; 31 mentions sit in Internal Services, 15 of those accessibility.</p>
+      <p><a href="https://www.canada.ca/en/canadian-heritage/corporate/publications/plans-reports/departmental-plan-2026-2027.html">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Highest total</span>
+      <h3 style="margin-top:10px">Accessibility Standards Canada</h3>
+      <div class="nums"><div><b>224</b><span>Total</span></div><div><b>21</b><span>Internal</span></div><div><b>170</b><span>Accessibility</span></div></div>
+      <p>A single-term profile: <strong>accessibility is 170 of its 224 mentions</strong> — unsurprising, since developing accessibility standards is its mandate. It never mentions anti-racism or reconciliation. Only 21 mentions are in Internal Services.</p>
+      <p><a href="https://accessible.canada.ca/reports/departmental-plan-2026-2027">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Highest total</span>
+      <h3 style="margin-top:10px">National Defence</h3>
+      <div class="nums"><div><b>166</b><span>Total</span></div><div><b>8</b><span>Internal</span></div><div><b>61</b><span>Inclusion</span></div></div>
+      <p>The largest department by plan size, with the most inclusion mentions of any plan (61) and the second-most reconciliation (22). Despite the big total, only <strong>8 mentions</strong> fall inside its Internal Services section.</p>
+      <p><a href="https://www.canada.ca/en/department-national-defence/corporate/reports-publications/departmental-plans/departmental-plan-2026-27.html">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Highest total</span>
+      <h3 style="margin-top:10px">Canadian Human Rights Commission</h3>
+      <div class="nums"><div><b>164</b><span>Total</span></div><div><b>14</b><span>Internal</span></div><div><b>73</b><span>Equity</span></div></div>
+      <p><strong>Equity (73)</strong> is the highest single-term, single-plan count after ASC’s accessibility — equity dominates its total, with accessibility second (56). It never mentions reconciliation. 14 mentions are internal-section.</p>
+      <p><a href="https://www.chrc-ccdp.gc.ca/resources/publications/chrc-2026-2027-departmental-plan">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Highest total</span>
+      <h3 style="margin-top:10px">Employment and Social Development Canada</h3>
+      <div class="nums"><div><b>129</b><span>Total</span></div><div><b>12</b><span>Internal</span></div><div><b>52</b><span>Accessibility</span></div></div>
+      <p>Accessibility (52) and inclusion (34) lead a program-heavy profile, and it never mentions anti-racism. Just 12 of its 129 mentions sit in Internal Services.</p>
+      <p><a href="https://www.canada.ca/en/employment-social-development/corporate/reports/departmental-plan/2026-2027.html">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Highest total</span>
+      <h3 style="margin-top:10px">Innovation, Science and Economic Development Canada</h3>
+      <div class="nums"><div><b>112</b><span>Total</span></div><div><b>32</b><span>Internal</span></div><div><b>46</b><span>Inclusion</span></div></div>
+      <p>Inclusion (46) and equity (26) lead. Unlike the other top-total plans, a comparatively large share — <strong>32 mentions</strong> — sits in Internal Services. It never mentions anti-racism.</p>
+      <p><a href="https://ised-isde.canada.ca/site/planning-performance-reporting/en/departmental-plans/innovation-science-and-economic-development-canadas-2026-27-departmental-plan">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Most internal</span>
+      <h3 style="margin-top:10px">Agriculture and Agri-Food Canada</h3>
+      <div class="nums"><div><b>87</b><span>Total</span></div><div><b>60</b><span>Internal</span></div><div><b>69%</b><span>Internal share</span></div></div>
+      <p>The most Internal-Services-concentrated plan in the public service: <strong>60 of 87 mentions</strong> are in that section — including all 11 of its reconciliation mentions and 18 of its 25 inclusion mentions.</p>
+      <p><a href="https://agriculture.canada.ca/en/department/transparency/departmental-plan/2026-27-departmental-plan">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Most internal</span>
+      <h3 style="margin-top:10px">Privy Council Office</h3>
+      <div class="nums"><div><b>87</b><span>Total</span></div><div><b>53</b><span>Internal</span></div><div><b>7</b><span>Anti-racism, internal</span></div></div>
+      <p>Second-highest internal count (53), spread across all six terms — including <strong>7 internal anti-racism mentions</strong>, the most of any plan, and 15 internal equity mentions.</p>
+      <p><a href="https://www.canada.ca/en/privy-council/corporate/transparency/planned-spending/departmental-plans/2026-2027.html">Read the plan ↗</a></p>
+    </article>
+    <article class="card">
+      <span class="tag full">Most internal</span>
+      <h3 style="margin-top:10px">Canadian Food Inspection Agency</h3>
+      <div class="nums"><div><b>80</b><span>Total</span></div><div><b>47</b><span>Internal</span></div><div><b>20</b><span>Inclusion, internal</span></div></div>
+      <p>Third-highest internal count (47 of 80). Its Internal Services section carries 20 inclusion, 11 equity and all 3 of its anti-racism mentions.</p>
+      <p><a href="https://inspection.canada.ca/en/node/6874">Read the plan ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="validation">
+  <div class="section-head">
+    <h2>Cross-check: mechanical count vs the earlier hand count</h2>
+    <p>Three plans were first counted by hand, line by line. The mechanical count used one consistent method for all 90 rows — the figures in the table above — and the hand counts are kept here as a validation record. Totals agree closely; internal figures differ because the definitions differ.</p>
+  </div>
+  <div class="card" style="margin-top:14px;overflow-x:auto">
+    <table class="vtable">
+      <thead><tr><th>Plan</th><th>Hand count (total / internal)</th><th>Mechanical (total / internal)</th><th>Why they differ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Public Service Commission</strong></td><td>102 / 98</td><td>108 / 30</td><td style="text-align:left">Internal: the hand count included core-responsibility staffing passages (PSC’s core job is staffing the public service); the mechanical count is Internal-Services-section only. Totals differ by a few (archived snapshot vs live page; hand-count error ±1–2 per term).</td></tr>
+        <tr><td><strong>Public Prosecution Service</strong></td><td>64 / 46</td><td>62 / 21</td><td style="text-align:left">Same internal-definition difference; totals within 2.</td></tr>
+        <tr><td><strong>Correctional Investigator (OCI)</strong></td><td>37 / 27</td><td>29 / 6</td><td style="text-align:left">The hand count used the tabled PDF; the mechanical count used the web (HTML) version, which is abridged — fewer IDEAA expansions and no program “accessible” passages. Plus the internal-definition difference.</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Because of the PSC staffing-passage issue, no plan’s internal figure in this table should be read as “all employee-context mentions” — it is strictly the Internal Services section count, applied identically to every plan.</p>
+  </div>
+</section>
+
+<section id="method">
+  <div class="section-head"><h2>Methodology &amp; caveats</h2></div>
+  <div class="method" style="margin-top:14px">
+    <div class="card">
+      <h3>How the mechanical count was done</h3>
+      <ul>
+        <li><strong>One script, one method for all 90 plans</strong> (<code>count.py</code>): each plan’s published English text was fetched and every occurrence of the six term patterns was counted — case-insensitive, on word boundaries, in the plan’s main content, including headings, tables, and the standard Definitions section.</li>
+        <li><strong>Fetching:</strong> plans were fetched directly where the host allows it. <code>*.canada.ca</code> hosts drop direct connections from the research environment, so those plans came via the Wayback Machine (2026 snapshots), Jina Reader, or the search-index crawler. The plans are fixed documents tabled in 2026, so an archived copy is the same content. Multi-page plans had their section pages concatenated, excluding prior-year plans and unrelated site pages; a full-plan PDF linked from an index page was preferred when identifiable.</li>
+        <li><strong>Two plans were counted from their full-plan PDFs</strong> on publications.gc.ca (Official Languages; Intelligence Commissioner) because their HTML versions were incomplete.</li>
+        <li><strong>Variants included:</strong> anti-racism (<code>anti-racism</code>, <code>antiracism</code>, <code>anti-racist</code>); equity (<code>equity</code>, <code>equitable</code>); inclusion (<code>inclusion</code>, <code>inclusive</code>, <code>inclusivity</code>, <code>inclusiveness</code>); diversity (<code>diversity</code>, <code>diverse</code>); accessibility (<code>accessibility</code>, <code>accessible</code>); reconciliation (<code>reconciliation</code>, <code>reconciliatory</code>).</li>
+        <li><strong>Excluded:</strong> “equality”, “inequity”, “access” alone, acronyms (EDI / EDIA / IDEA / IDEAA — only their expanded forms count), “biodiversity”, and “diversified / diversification”.</li>
+        <li><strong>Internal column</strong> = occurrences inside the plan’s “Internal services” section only — from that heading to the next heading of the same or higher level (h2/h3 preferred, h4 fallback). The internal count is a subset of the total; nothing is double-counted.</li>
+        <li><strong>Verification:</strong> where two renderings of a plan were available, counts were cross-checked and corrected where they disagreed — e.g. PCO (anti-racism 10→9, equity 19→18, diversity 23→22, where one line had been double-counted), Correctional Service Canada (equity / inclusion / diversity each −2, an expansion double-count), Parks Canada internal diversity (3→2), and ±1–2 adjustments on accessibility / diversity / reconciliation for CRA, CFIA, ESDC, ECCC and FedNor.</li>
+        <li><strong>NSERC correction (applied):</strong> the Natural Sciences and Engineering Research Council’s first capture ended before its Definitions section. A live-browser read recovered the GBA Plus definition — inclusion +1, diversity +2 — so NSERC stands at <strong>29 total</strong> (2 / 2 / 6 / 13 / 4 / 2), internal 11, and the all-plans grand total is <strong>4,190</strong>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Caveats — read before using any number</h3>
+      <ol>
+        <li><strong>The internal column is a lower bound.</strong> It counts only the Internal Services section — narrower than an “all employee-context passages” definition. Workforce discussion in key priorities, highlights, or People Management passages is in the total, not the internal column. Compare internal figures across plans only on that understanding.</li>
+        <li><strong>Reconciliation and the financial sections:</strong> the accounting sense of “reconciliation” (“reconciliation of the net cost of operations”, statements of operations, planned spending) appears in nearly every plan’s financial section and was excluded — it is not the Indigenous-reconciliation term. The exclusion looks ±100 characters around each match, so a genuine mention sitting within 100 characters of the phrase “planned spending” can be wrongly excluded. One such case was caught and corrected (Polar Knowledge Canada: 8, not 7); other plans’ reconciliation counts may be low by ~1 where the same proximity occurs.</li>
+        <li><strong>Scope is 90, not 92:</strong> the TBS list page says 92 institutions but names 90; the table covers the 90 named. No names were guessed to fill the gap. Crown corporations do not table Departmental Plans and are out of scope.</li>
+        <li><strong>OCI was counted from the web version,</strong> which is abridged relative to its tabled PDF (see the cross-check above) — its mechanical total (29) understates the PDF.</li>
+        <li><strong>The Definitions section adds a small constant:</strong> the standard GBA Plus definition contains “inclusive” and “diverse / diversity”, so most plans pick up roughly inclusion +1, diversity +2 from boilerplate alone. Northern Pipeline Agency’s entire total of 3 is that block.</li>
+        <li><strong>Format differences:</strong> counts were taken from HTML main content, Jina markdown, crawler text, or PDF text depending on the source; the same plan in another rendering can differ by a mention or two, which is why cross-check corrections above were applied where a second rendering existed.</li>
+        <li><strong>The Auditor General has no Internal Services section,</strong> so its internal value is “not separated” (—), not zero. Sixteen other plans have a section but zero counted mentions inside it.</li>
+      </ol>
+      <h3 style="margin-top:16px">Not in scope</h3>
+      <ul>
+        <li>Major federal organisations that do <em>not</em> table a Departmental Plan report another way (corporate plans / annual reports) — e.g. Canada Post, CBC/Radio-Canada, VIA Rail, CMHC, Export Development Canada, BDC, Farm Credit Canada, and the Royal Canadian Mint.</li>
+        <li>French versions of the plans were not counted.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="section-head"><h2>Sources</h2><p>All sources are public canada.ca / gc.ca pages. Every row of the table links to the plan that was counted.</p></div>
+  <ul class="sources">
+    <li><strong>Official scope (the 90 named institutions):</strong> Treasury Board of Canada Secretariat, “2026-27 Departmental Plans” — <a href="https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/reports-plans-priorities/2026-27-departmental-plans.html">canada.ca/en/treasury-board-secretariat/…/2026-27-departmental-plans.html</a>. TBS provides the listing “to make it easier for you to access the Departmental Plans on various departmental websites.”</li>
+    <li><strong>Counts:</strong> full mechanical count of the 90 published 2026–27 Departmental Plans (English versions), completed 6 Nov 2026 — one counting script and one set of term patterns applied to every plan; per-plan figures, including each plan’s URL, are in the table above. Where a plan’s host blocked direct fetching, the count used a 2026 Wayback Machine snapshot, Jina Reader rendering, or search-index crawler text of the same published plan; two plans (Official Languages, Intelligence Commissioner) were counted from their full-plan PDFs on publications.gc.ca.</li>
+    <li><strong>Hand-count cross-check:</strong> the earlier line-by-line counts of the PSC, PPSC and OCI plans (OCI from its tabled PDF, <a href="https://publications.gc.ca/collections/collection_2026/bec-oci/JA2-4-2026-eng.pdf">publications.gc.ca/…/JA2-4-2026-eng.pdf</a>), retained in the cross-check section above.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Scope: 2026–27 Departmental Plans (1 April 2026 – 31 March 2027), English versions, all 90 institutions named on the TBS list. Totals count every occurrence of the six terms and their listed variants; the internal column counts only occurrences inside each plan’s Internal Services section and is a subset of the total.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var DATA=[{"name": "Canadian Heritage", "url": "https://www.canada.ca/en/canadian-heritage/corporate/publications/plans-reports/departmental-plan-2026-2027.html", "t": [15, 41, 59, 92, 36, 13], "tt": 256, "i": [0, 3, 6, 5, 15, 2], "it": 31}, {"name": "Accessibility Standards Canada", "url": "https://accessible.canada.ca/reports/departmental-plan-2026-2027", "t": [0, 9, 24, 21, 170, 0], "tt": 224, "i": [0, 1, 7, 4, 9, 0], "it": 21}, {"name": "National Defence and the Canadian Armed Forces", "url": "https://www.canada.ca/en/department-national-defence/corporate/reports-publications/departmental-plans/departmental-plan-2026-27.html", "t": [5, 27, 61, 32, 19, 22], "tt": 166, "i": [0, 0, 2, 2, 3, 1], "it": 8}, {"name": "Canadian Human Rights Commission", "url": "https://www.chrc-ccdp.gc.ca/resources/publications/chrc-2026-2027-departmental-plan", "t": [6, 73, 13, 16, 56, 0], "tt": 164, "i": [3, 2, 2, 2, 5, 0], "it": 14}, {"name": "Employment and Social Development Canada", "url": "https://www.canada.ca/en/employment-social-development/corporate/reports/departmental-plan/2026-2027.html", "t": [0, 18, 34, 22, 52, 3], "tt": 129, "i": [0, 0, 1, 1, 9, 1], "it": 12}, {"name": "Innovation, Science and Economic Development Canada", "url": "https://ised-isde.canada.ca/site/planning-performance-reporting/en/departmental-plans/innovation-science-and-economic-development-canadas-2026-27-departmental-plan", "t": [0, 26, 46, 16, 23, 1], "tt": 112, "i": [0, 8, 12, 3, 8, 1], "it": 32}, {"name": "Public Service Commission of Canada", "url": "https://www.canada.ca/en/public-service-commission/services/publications/2026-2027-departmental-plan.html", "t": [0, 33, 35, 24, 15, 1], "tt": 108, "i": [0, 4, 13, 6, 7, 0], "it": 30}, {"name": "Department of Justice Canada", "url": "https://www.justice.gc.ca/eng/rp-pr/cp-pm/rpp/2026_2027/rep-rap/index.html", "t": [5, 16, 21, 18, 27, 10], "tt": 97, "i": [5, 5, 8, 3, 4, 0], "it": 25}, {"name": "Parks Canada", "url": "https://parks.canada.ca/agence-agency/bib-lib/plans/dp/plan-ministeriel-2026-2027-departmental-plan", "t": [0, 5, 36, 24, 25, 6], "tt": 96, "i": [0, 2, 5, 2, 4, 0], "it": 13}, {"name": "Public Health Agency of Canada", "url": "https://www.canada.ca/en/public-health/corporate/transparency/corporate-management-reporting/reports-plans-priorities/2026-2027-departmental-plan.html", "t": [3, 31, 26, 18, 9, 9], "tt": 96, "i": [3, 3, 8, 4, 4, 1], "it": 23}, {"name": "Fisheries and Oceans Canada", "url": "https://www.dfo-mpo.gc.ca/dp-pm/2026-27/index-eng.html", "t": [1, 6, 30, 21, 17, 14], "tt": 89, "i": [1, 4, 14, 7, 11, 0], "it": 37}, {"name": "Agriculture and Agri-Food Canada", "url": "https://agriculture.canada.ca/en/department/transparency/departmental-plan/2026-27-departmental-plan", "t": [2, 11, 25, 28, 10, 11], "tt": 87, "i": [2, 8, 18, 11, 10, 11], "it": 60}, {"name": "Privy Council Office", "url": "https://www.canada.ca/en/privy-council/corporate/transparency/planned-spending/departmental-plans/2026-2027.html", "t": [9, 18, 23, 22, 8, 7], "tt": 87, "i": [7, 15, 14, 8, 7, 2], "it": 53}, {"name": "Veterans Affairs Canada", "url": "https://veterans.gc.ca/en/about-vac/reports-policies-and-legislation/departmental-reports/departmental-plans", "t": [0, 13, 25, 21, 24, 1], "tt": 84, "i": [0, 1, 5, 2, 7, 0], "it": 15}, {"name": "Treasury Board of Canada Secretariat", "url": "https://www.canada.ca/en/treasury-board-secretariat/corporate/reports/treasury-board-canada-secretariat-2026-27-departmental-plan.html", "t": [4, 19, 17, 24, 14, 4], "tt": 82, "i": [4, 7, 9, 6, 7, 3], "it": 36}, {"name": "Canadian Food Inspection Agency", "url": "https://inspection.canada.ca/en/node/6874", "t": [3, 14, 31, 15, 12, 5], "tt": 80, "i": [3, 11, 20, 7, 5, 1], "it": 47}, {"name": "Crown-Indigenous Relations and Northern Affairs Canada", "url": "https://www.rcaanc-cirnac.gc.ca/eng/1768404784619", "t": [2, 9, 21, 15, 7, 26], "tt": 80, "i": [2, 3, 7, 2, 2, 2], "it": 18}, {"name": "Public Services and Procurement Canada", "url": "https://www.canada.ca/en/public-services-procurement/corporate/transparency/departmental-plan/2026-2027-plan.html", "t": [0, 5, 22, 21, 28, 2], "tt": 78, "i": [0, 3, 6, 6, 3, 0], "it": 18}, {"name": "Canada Revenue Agency", "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/departmental-plan/2026-27-cra-departmental-plan.html", "t": [0, 9, 28, 16, 18, 4], "tt": 75, "i": [0, 6, 12, 9, 1, 2], "it": 30}, {"name": "Health Canada", "url": "https://www.canada.ca/en/health-canada/corporate/transparency/corporate-management-reporting/report-plans-priorities/2026-2027-departmental-plan.html", "t": [2, 9, 21, 20, 14, 3], "tt": 69, "i": [0, 0, 9, 5, 5, 2], "it": 21}, {"name": "Canadian Transportation Agency", "url": "https://otc-cta.gc.ca/eng/publication/departmental-plan-2026-2027", "t": [0, 4, 10, 8, 37, 3], "tt": 62, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Public Prosecution Service of Canada", "url": "https://www.ppsc-sppc.gc.ca/eng/pub/dp-pm/2026_2027/index.html", "t": [4, 14, 17, 16, 8, 3], "tt": 62, "i": [3, 7, 6, 4, 1, 0], "it": 21}, {"name": "Royal Canadian Mounted Police", "url": "https://rcmp.ca/en/corporate-information/publications-and-manuals/departmental-plans/2026-2027", "t": [0, 5, 14, 29, 3, 8], "tt": 59, "i": [0, 1, 3, 2, 0, 2], "it": 8}, {"name": "Social Sciences and Humanities Research Council of Canada", "url": "https://sshrc-crsh.canada.ca/en/about-sshrc/planning-and-performance-reporting/corporate-reports/departmental-plans/2026-2027/full-plan.aspx", "t": [1, 13, 14, 17, 8, 3], "tt": 56, "i": [1, 1, 2, 2, 2, 1], "it": 9}, {"name": "Housing, Infrastructure and Communities Canada", "url": "https://housing-infrastructure.canada.ca/pub/dp-pm/2026-27/2026-dp-pm-eng.html", "t": [1, 9, 15, 10, 16, 2], "tt": 53, "i": [1, 4, 3, 3, 5, 0], "it": 16}, {"name": "Canada Border Services Agency", "url": "https://www.cbsa-asfc.gc.ca/agency-agence/reports-rapports/rpp/2026-2027/full-plan-plan-complet-eng.html", "t": [3, 8, 10, 17, 10, 4], "tt": 52, "i": [2, 3, 6, 5, 6, 0], "it": 22}, {"name": "Canada School of Public Service", "url": "https://www.csps-efpc.gc.ca/about_us/currentreport/dp-pm2026-27/index-eng.aspx", "t": [0, 6, 18, 13, 11, 3], "tt": 51, "i": [0, 0, 0, 1, 0, 0], "it": 1}, {"name": "National Research Council of Canada", "url": "https://nrc.canada.ca/en/corporate/planning-reporting/national-research-council-canadas-2026-27-departmental-plan", "t": [0, 13, 18, 11, 6, 2], "tt": 50, "i": [0, 3, 3, 2, 2, 0], "it": 10}, {"name": "Federal Economic Development Agency for Northern Ontario", "url": "https://fednor.canada.ca/en/transparency/2026-2027-departmental-plan", "t": [1, 7, 26, 4, 5, 5], "tt": 48, "i": [1, 1, 2, 1, 3, 0], "it": 8}, {"name": "Canada Energy Regulator", "url": "https://www.cer-rec.gc.ca/en/about/publications-reports/departmental-plan/index.html", "t": [0, 0, 15, 17, 6, 6], "tt": 44, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Federal Economic Development Agency for Southern Ontario", "url": "https://feddev-ontario.canada.ca/en/transparency/departmental-plan/federal-economic-development-agency-southern-ontario-2026-27-departmental-plan", "t": [0, 9, 16, 11, 6, 1], "tt": 43, "i": [0, 2, 6, 3, 5, 0], "it": 16}, {"name": "Natural Resources Canada", "url": "https://natural-resources.canada.ca/corporate/planning-reporting/departmental-plan/nrcan-2026-27-departmental-plan", "t": [0, 6, 13, 8, 8, 8], "tt": 43, "i": [0, 0, 0, 0, 0, 1], "it": 1}, {"name": "Administrative Tribunals Support Service of Canada", "url": "https://www.canada.ca/en/administrative-tribunals-support-service/reports/dp-2026-27.html", "t": [0, 3, 17, 9, 13, 0], "tt": 42, "i": [0, 0, 4, 1, 3, 0], "it": 8}, {"name": "Impact Assessment Agency of Canada", "url": "https://www.canada.ca/en/impact-assessment-agency/corporate/transparency/accountability-performance-financial-reporting/2026-2027-departmental-plan.html", "t": [1, 0, 9, 8, 12, 12], "tt": 42, "i": [1, 0, 3, 2, 4, 0], "it": 10}, {"name": "Statistics Canada", "url": "https://www.statcan.gc.ca/en/about/transparency/departmental-plan/2026-2027", "t": [0, 6, 12, 15, 7, 2], "tt": 42, "i": [0, 1, 4, 6, 2, 1], "it": 14}, {"name": "Canadian Radio-television and Telecommunications Commission", "url": "https://crtc.gc.ca/eng/publications/reports/dp2026/dp2026.htm", "t": [2, 4, 6, 12, 15, 2], "tt": 41, "i": [2, 4, 5, 3, 6, 1], "it": 21}, {"name": "Library and Archives Canada", "url": "https://www.canada.ca/en/library-archives/corporate/transparency/reports-publications/departmental-plans/2026-2027.html", "t": [0, 2, 3, 18, 12, 6], "tt": 41, "i": [0, 0, 0, 0, 1, 0], "it": 1}, {"name": "Veterans Review and Appeal Board", "url": "https://vrab-tacra.gc.ca/en/about-us/plans-and-reports/departmental-plans/2026-27-departmental-plan", "t": [1, 2, 9, 15, 11, 0], "tt": 38, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Atlantic Canada Opportunities Agency", "url": "https://www.canada.ca/en/atlantic-canada-opportunities/corporate/transparency/2026-27-departmental-plan.html", "t": [2, 2, 14, 11, 4, 4], "tt": 37, "i": [1, 1, 2, 2, 3, 0], "it": 9}, {"name": "Canadian Institutes of Health Research", "url": "https://cihr-irsc.gc.ca/e/54533.html", "t": [0, 12, 6, 11, 5, 2], "tt": 36, "i": [0, 2, 1, 0, 0, 0], "it": 3}, {"name": "National Film Board", "url": "https://www.canada.ca/en/national-film-board/corporate/publications/plans-reports/departmental-plans/2026-2027/departmental-plan-2026-2027.html", "t": [1, 5, 4, 15, 10, 1], "tt": 36, "i": [1, 2, 2, 2, 3, 0], "it": 10}, {"name": "Department of Finance Canada", "url": "https://www.canada.ca/en/department-finance/corporate/transparency/plans-performance/departmental-plans/2026-2027/dp-combined.html", "t": [0, 3, 13, 10, 2, 7], "tt": 35, "i": [0, 1, 1, 0, 0, 1], "it": 3}, {"name": "Polar Knowledge Canada", "url": "https://www.canada.ca/en/polar-knowledge/reports/departmental-plans/2026-2027/full-plan.html", "t": [0, 2, 17, 7, 1, 8], "tt": 35, "i": [0, 1, 2, 1, 0, 2], "it": 6}, {"name": "Indigenous Services Canada", "url": "https://www.sac-isc.gc.ca/eng/1767990598033", "t": [0, 13, 6, 6, 2, 7], "tt": 34, "i": [0, 0, 0, 1, 0, 0], "it": 1}, {"name": "Courts Administration Service", "url": "https://www.cas-satj.gc.ca/en/pages/publications/rpp/dp-2026-27", "t": [0, 3, 8, 7, 15, 0], "tt": 33, "i": [0, 0, 3, 2, 2, 0], "it": 7}, {"name": "Canadian Intergovernmental Conference Secretariat", "url": "https://scics.ca/DP-2026-27/en/index.html", "t": [0, 6, 6, 3, 16, 1], "tt": 32, "i": [0, 1, 0, 0, 2, 0], "it": 3}, {"name": "Canadian Northern Economic Development Agency", "url": "https://www.cannor.gc.ca/eng/1768407300012/1768407976393", "t": [0, 3, 10, 4, 5, 7], "tt": 29, "i": [0, 0, 1, 2, 2, 0], "it": 5}, {"name": "Immigration, Refugees and Citizenship Canada", "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/departmental-plans/2026-27-departmental-plan.html", "t": [1, 5, 11, 7, 3, 2], "tt": 29, "i": [1, 2, 5, 1, 1, 1], "it": 11}, {"name": "Natural Sciences and Engineering Research Council of Canada", "url": "https://nserc-crsng.canada.ca/en/plans-priorities-and-performance/2026-27-departmental-plan-glance/2026-27-departmental-plan", "t": [2, 2, 6, 13, 4, 2], "tt": 29, "i": [1, 1, 3, 3, 2, 1], "it": 11}, {"name": "Office of the Correctional Investigator Canada", "url": "https://oci-bec.gc.ca/en/content/correctional-investigator-canada-2026-27-departmental-plan", "t": [4, 5, 5, 11, 4, 0], "tt": 29, "i": [1, 1, 1, 2, 1, 0], "it": 6}, {"name": "Transport Canada", "url": "https://tc.canada.ca/en/corporate-services/transparency/corporate-management-reporting/departmental-plans-dp/transport-canada-2026-2027-departmental-plan", "t": [1, 2, 7, 4, 11, 2], "tt": 27, "i": [1, 1, 2, 1, 7, 2], "it": 14}, {"name": "Canadian Space Agency", "url": "https://www.asc-csa.gc.ca/eng/publications/dp-2026-2027.asp", "t": [0, 5, 6, 8, 6, 1], "tt": 26, "i": [0, 0, 3, 3, 4, 1], "it": 11}, {"name": "Office of the Chief Electoral Officer", "url": "https://www.elections.ca/content.aspx?section=abo&dir=dp/dp2026&document=index&lang=e", "t": [0, 0, 14, 2, 8, 2], "tt": 26, "i": [0, 0, 1, 0, 1, 0], "it": 2}, {"name": "Canada Water Agency", "url": "https://www.canada.ca/en/canada-water-agency/corporate/transparency/priorities/departmental-plans/2026-2027.html", "t": [0, 1, 4, 13, 4, 3], "tt": 25, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Environment and Climate Change Canada", "url": "https://www.canada.ca/en/environment-climate-change/corporate/transparency/priorities-management/departmental-plans/2026-2027.html", "t": [0, 4, 6, 7, 2, 6], "tt": 25, "i": [0, 2, 1, 1, 0, 1], "it": 5}, {"name": "Office of the Auditor General of Canada", "url": "https://www.canada.ca/en/auditor-general/transparency/departmental-plans/2026-27-full-report.html", "t": [0, 2, 8, 8, 4, 3], "tt": 25, "i": null, "it": null}, {"name": "Shared Services Canada", "url": "https://www.canada.ca/en/shared-services/corporate/about-us/transparency/departmental-plan/2026-27/shared-services-canada-2026-27-departmental-plan.html", "t": [0, 0, 6, 6, 11, 2], "tt": 25, "i": [0, 0, 4, 1, 0, 2], "it": 7}, {"name": "Canada Economic Development for Quebec Regions", "url": "https://www.canada.ca/en/economic-development-quebec-regions/corporate/departmental-publications/2026-27-departmental-plan.html", "t": [0, 3, 13, 5, 1, 1], "tt": 23, "i": [0, 1, 2, 1, 1, 0], "it": 5}, {"name": "Copyright Board Canada", "url": "https://cb-cda.gc.ca/en/about-us/reports-publications/departmental-reports-and-plans", "t": [0, 4, 6, 5, 7, 0], "tt": 22, "i": [0, 3, 4, 3, 7, 0], "it": 17}, {"name": "Correctional Service Canada", "url": "https://www.canada.ca/en/correctional-service/corporate/transparency/reporting/departmental-plan/2026-2027.html", "t": [0, 6, 5, 9, 1, 1], "tt": 22, "i": [0, 3, 1, 1, 1, 0], "it": 6}, {"name": "Military Grievances External Review Committee", "url": "https://www.canada.ca/en/military-grievances-external-review/corporate/departmental-plans/2026-2027-departmental-plan.html", "t": [1, 1, 9, 5, 4, 2], "tt": 22, "i": [1, 1, 3, 2, 2, 2], "it": 11}, {"name": "Prairies Economic Development Canada", "url": "https://www.canada.ca/en/prairies-economic-development/corporate/transparency/departmental-plans/dp-2026-2027.html", "t": [0, 2, 14, 5, 0, 1], "tt": 22, "i": [0, 2, 4, 0, 0, 1], "it": 7}, {"name": "The National Battlefields Commission", "url": "https://www.canada.ca/en/national-battlefields-commission/corporate/publications/plans-reports/departmental-plans/2026-2027-departmental-plan.html", "t": [0, 0, 4, 5, 11, 2], "tt": 22, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "RCMP External Review Committee", "url": "https://www.canada.ca/en/rcmp-external-review-committee/corporate/reports-information-resources/departmental-plans/departmental-plan-2026-27.html", "t": [0, 2, 7, 6, 4, 2], "tt": 21, "i": [0, 2, 2, 1, 1, 2], "it": 8}, {"name": "Office of the Commissioner of Lobbying of Canada", "url": "https://lobbycanada.gc.ca/en/reports-and-publications/departmental-plan-2026-27/", "t": [0, 2, 5, 2, 10, 1], "tt": 20, "i": [0, 1, 1, 1, 1, 0], "it": 4}, {"name": "Women and Gender Equality Canada", "url": "https://www.canada.ca/en/women-gender-equality/transparency/departmental-plans/2026-2027.html", "t": [0, 4, 11, 5, 0, 0], "tt": 20, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Invest in Canada Hub", "url": "https://www.investcanada.ca/transparency/2026-2027-departmental-plan", "t": [0, 5, 5, 8, 1, 0], "tt": 19, "i": [0, 5, 4, 6, 1, 0], "it": 16}, {"name": "Military Police Complaints Commission of Canada", "url": "https://www.mpcc-cppm.gc.ca/corporate-organisation/reports-rapports/departmental-plan-ministeriel/departmental-plan-ministeriel-2026-2027-eng.html", "t": [0, 0, 1, 4, 13, 1], "tt": 19, "i": [0, 0, 0, 0, 0, 1], "it": 1}, {"name": "Patented Medicine Prices Review Board Canada", "url": "https://www.canada.ca/en/patented-medicine-prices-review/corporate/transparency/departmental-plan/2026-27-departmental-plan.html", "t": [0, 3, 5, 7, 4, 0], "tt": 19, "i": [0, 2, 2, 2, 2, 0], "it": 8}, {"name": "Immigration and Refugee Board of Canada", "url": "https://irb-cisr.gc.ca/en/reports-publications/planning-performance/Pages/departmental-plan-report-2627.aspx", "t": [0, 0, 5, 6, 4, 2], "tt": 17, "i": [0, 0, 4, 3, 1, 2], "it": 10}, {"name": "Office of the Commissioner for Federal Judicial Affairs Canada", "url": "https://www.fja.gc.ca/publications/dp-pm/2026-2027/dp-pm-2026-2027_eng.html", "t": [0, 3, 5, 6, 3, 0], "tt": 17, "i": [0, 1, 1, 1, 1, 0], "it": 4}, {"name": "Parole Board of Canada", "url": "https://www.canada.ca/en/parole-board/corporate/transparency/reporting-to-canadians/report-on-plans-and-priorities/2026-27-departmental-plan.html", "t": [0, 1, 6, 9, 1, 0], "tt": 17, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Office of the Registrar of the Supreme Court of Canada", "url": "https://www.scc-csc.ca/resources-ressources/reports-rapports/planning-planification/2026-2027-departmental-ministeriel/", "t": [0, 0, 4, 4, 7, 1], "tt": 16, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Canadian Centre for Occupational Health and Safety", "url": "https://www.ccohs.ca/ccohs/reports.html", "t": [0, 0, 4, 5, 5, 0], "tt": 14, "i": [0, 0, 2, 1, 0, 0], "it": 3}, {"name": "Canadian Grain Commission", "url": "https://www.grainscanada.gc.ca/en/about-us/reports/planning-performance-reporting/departmental-plan/2026-2027/", "t": [0, 5, 4, 5, 0, 0], "tt": 14, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Global Affairs Canada", "url": "https://international.canada.ca/en/global-affairs/corporate/reports/departmental-plan/global-affairs-2026-2027-departmental-plan", "t": [0, 1, 4, 6, 3, 0], "tt": 14, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Pacific Economic Development Canada", "url": "https://www.canada.ca/en/pacific-economic-development/corporate/transparency/departmental-plans/2026-2027-departmental-plan.html", "t": [0, 2, 6, 4, 2, 0], "tt": 14, "i": [0, 2, 2, 1, 2, 0], "it": 7}, {"name": "Public Safety Canada", "url": "https://www.publicsafety.gc.ca/cnt/rsrcs/pblctns/dprtmntl-pln-2026-27/index-en.aspx", "t": [0, 1, 3, 5, 5, 0], "tt": 14, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Office of the Commissioner of Official Languages", "url": "https://publications.gc.ca/collections/collection_2026/clo-ocol/SF1-5-2026-eng.pdf", "t": [0, 1, 4, 5, 1, 2], "tt": 13, "i": [0, 1, 1, 1, 0, 0], "it": 3}, {"name": "Canadian Nuclear Safety Commission", "url": "https://www.cnsc-ccsn.gc.ca/eng/corporate/plans-results/rpp/dp-2026-2027/", "t": [0, 0, 5, 2, 2, 2], "tt": 11, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Financial Transactions and Reports Analysis Centre of Canada", "url": "https://fintrac-canafe.canada.ca/publications/dp/2026-2027/dp-pm-eng", "t": [0, 2, 4, 3, 2, 0], "tt": 11, "i": [0, 2, 2, 1, 2, 0], "it": 7}, {"name": "Office of the Public Sector Integrity Commissioner of Canada", "url": "https://www.psic-ispc.gc.ca/en/resources/corporate-publications/2026-27/departmental-plan", "t": [0, 2, 3, 3, 2, 1], "tt": 11, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Transportation Safety Board of Canada", "url": "https://www.tsb.gc.ca/eng/publications/priorites-priorities/2026/2026.html", "t": [0, 0, 4, 4, 1, 1], "tt": 10, "i": [0, 0, 2, 1, 0, 1], "it": 4}, {"name": "Office of the Privacy Commissioner of Canada", "url": "https://www.priv.gc.ca/en/about-the-opc/opc-operational-reports/planned-opc-spending/dp-index/2026-2027/dp-2026-27/", "t": [0, 0, 4, 4, 1, 0], "tt": 9, "i": [0, 0, 1, 1, 0, 0], "it": 2}, {"name": "National Security and Intelligence Review Agency", "url": "https://nsira-ossnr.gc.ca/en/secretariat/secretariat-operations/departmental-plan-2026-2027/", "t": [0, 0, 2, 4, 2, 0], "tt": 8, "i": [0, 0, 0, 1, 2, 0], "it": 3}, {"name": "Law Commission of Canada", "url": "https://www.canada.ca/en/law-commission-canada/corporate-documents/2026-27-department-plan.html", "t": [0, 0, 1, 3, 2, 1], "tt": 7, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Office of the Intelligence Commissioner", "url": "https://publications.gc.ca/collections/collection_2026/bcr-oic/D95-6-2026-eng.pdf", "t": [0, 0, 1, 2, 4, 0], "tt": 7, "i": [0, 0, 0, 0, 2, 0], "it": 2}, {"name": "Office of the Information Commissioner of Canada", "url": "https://www.oic-ci.gc.ca/en/resources/reports-publications/2026-2027-departmental-plan", "t": [0, 0, 2, 3, 1, 0], "tt": 6, "i": [0, 0, 0, 0, 0, 0], "it": 0}, {"name": "Secretariat of the National Security and Intelligence Committee of Parliamentarians", "url": "https://www.canada.ca/en/secretariat-national-security-intelligence-committee-parliamentarians/corporate/transparency/departmental-plan/2026-2027.html", "t": [0, 0, 2, 3, 0, 0], "tt": 5, "i": [0, 0, 1, 0, 0, 0], "it": 1}, {"name": "Northern Pipeline Agency Canada", "url": "https://northern-pipeline.canada.ca/reports-and-publications/northern-pipeline-agency-reports/northern-pipeline-agency-2026-27-departmental-plan", "t": [0, 0, 1, 2, 0, 0], "tt": 3, "i": [0, 0, 0, 0, 0, 0], "it": 0}];
+  var TERMS=['Anti-racism','Equity','Inclusion','Diversity','Accessibility','Reconciliation'];
+  var body=document.getElementById('countsBody');
+  var wrap=document.getElementById('countsWrap');
+  var search=document.getElementById('tblSearch');
+  var filter=document.getElementById('tblFilter');
+  var sortSel=document.getElementById('tblSort');
+  var countEl=document.getElementById('tblCount');
+  function cell(t,i){
+    var td=document.createElement('td');
+    if(i===null||i===undefined){ td.innerHTML='<div class="cell-total">'+t+'</div><div class="cell-int">— n/a</div>'; return td; }
+    td.innerHTML='<div class="cell-total">'+t+'</div><div class="cell-int">'+i+' internal</div>';
+    return td;
+  }
+  function render(){
+    var q=(search.value||'').toLowerCase().trim();
+    var f=filter.value, s=sortSel.value;
+    var rows=DATA.slice();
+    if(s==='total') rows.sort(function(a,b){return b.tt-a.tt || a.name.localeCompare(b.name)});
+    if(s==='internal') rows.sort(function(a,b){return (b.it===null?-1:b.it)-(a.it===null?-1:a.it) || b.tt-a.tt});
+    if(s==='name') rows.sort(function(a,b){return a.name.localeCompare(b.name)});
+    body.innerHTML=''; var shown=0;
+    rows.forEach(function(d,idx){
+      if(q && d.name.toLowerCase().indexOf(q)===-1) return;
+      if(f==='top10' && DATA.slice().sort(function(a,b){return b.tt-a.tt}).indexOf(d)>=10) return;
+      if(f==='hasint' && !(d.it>0)) return;
+      if(f==='zeroint' && d.it!==0) return;
+      if(f==='anti' && !(d.t[0]>0)) return;
+      if(f==='noanti' && d.t[0]!==0) return;
+      if(f==='nointsec' && d.it!==null) return;
+      shown++;
+      var tr=document.createElement('tr');
+      var td0=document.createElement('td');
+      var rank=document.createElement('span'); rank.className='rank'; rank.textContent='#'+(DATA.indexOf(d)+1);
+      var nm=document.createElement('div'); nm.className='org-name'; nm.appendChild(rank); nm.appendChild(document.createTextNode(d.name));
+      var sub=document.createElement('div'); sub.className='org-sub';
+      var a=document.createElement('a'); a.href=d.url; a.textContent='Plan ↗'; a.target='_blank'; a.rel='noopener';
+      sub.appendChild(a); td0.appendChild(nm); td0.appendChild(sub); tr.appendChild(td0);
+      for(var k=0;k<6;k++){ var c=cell(d.t[k], d.i?d.i[k]:null); c.setAttribute('data-label',TERMS[k]); tr.appendChild(c); }
+      var ct=cell(d.tt, d.it); ct.className='row-total'; ct.setAttribute('data-label','Row total'); tr.appendChild(ct);
+      body.appendChild(tr);
+    });
+    countEl.textContent='Showing '+shown+' of 90 institutions.';
+    if(shown===0){ var tr2=document.createElement('tr'); var td2=document.createElement('td'); td2.colSpan=8; td2.style.textAlign='left'; td2.textContent='No institution matches that search and filter.'; tr2.appendChild(td2); body.appendChild(tr2); }
+  }
+  var btns=document.querySelectorAll('.seg button');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      wrap.classList.remove('mode-total','mode-internal');
+      var m=b.getAttribute('data-mode');
+      if(m==='total') wrap.classList.add('mode-total');
+      if(m==='internal') wrap.classList.add('mode-internal');
+    });
+  });
+  search.addEventListener('input',render);
+  filter.addEventListener('change',render);
+  sortSel.addEventListener('change',render);
+  render();
+})();
+</script>
+</body>
+</html>
