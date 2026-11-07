@@ -1,17 +1,10 @@
 name: GC Equity site validation
 on:
+  push:
+    branches: [main]
+    paths: ['**.html', '**.js', '**.mjs', '**.css', 'assets/**', 'data/**', 'scripts/**', '_config.yml', '.github/workflows/site-validate.yml']
   pull_request:
-    paths:
-      - 'index.html'
-      - 'explorer.html'
-      - 'sources.html'
-      - 'gc-ai.js'
-      - 'gc-equity-additions.js'
-      - 'gc-tools.js'
-      - 'lib/**'
-      - 'data/**'
-      - '_config.yml'
-      - '.github/workflows/site-validate.yml'
+    paths: ['**.html', '**.js', '**.mjs', '**.css', 'assets/**', 'data/**', 'scripts/**', '_config.yml', '.github/workflows/site-validate.yml']
 permissions:
   contents: read
 jobs:
@@ -19,123 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: JavaScript syntax
-        run: |
-          node --check gc-ai.js
-          node --check gc-equity-additions.js
-          node --check gc-tools.js
-          node --check lib/pptxgen.bundle.js
-      - name: Structure, data references and visitor wording
-        shell: bash
-        run: |
-          python - <<'PY'
-          import csv, json, pathlib, re, subprocess
-          from html.parser import HTMLParser
-          root=pathlib.Path('.')
-          index=(root/'index.html').read_text(encoding='utf-8')
-          explorer=(root/'explorer.html').read_text(encoding='utf-8')
-          additions=(root/'gc-equity-additions.js').read_text(encoding='utf-8')
-          ai=(root/'gc-ai.js').read_text(encoding='utf-8')
-          tools=(root/'gc-tools.js').read_text(encoding='utf-8')
-
-          # explorer.html holds the data pages. Reviewed change: the 2024 branch survey rows moved out of the page into
-          # data/pses-2024-branches (one file per organization), and the question assistant uses each organization's own
-          # workforce availability. Update this hash only with a reviewed change to the explorer.
-          expected_sha='d82920228e83f25b741c4137a3cf793b202a8594'
-          actual=subprocess.check_output(['git','hash-object','explorer.html'],text=True).strip()
-          assert actual==expected_sha, f'explorer.html changed: {actual}'
-          assert explorer.count('<script src="gc-ai.js"></script>')==1
-          assert explorer.count('<script src="gc-equity-additions.js"></script>')==1
-          assert explorer.count('<script src="gc-tools.js"></script>')==1
-          for f in ('lib/pptxgen.bundle.js','lib/LICENSES.txt'):
-              assert (root/f).exists(), f'missing {f}'
-          assert 'PptxGenJS' in (root/'lib/LICENSES.txt').read_text(encoding='utf-8') and 'JSZip' in (root/'lib/LICENSES.txt').read_text(encoding='utf-8')
-          assert "s.src='lib/pptxgen.bundle.js'" in tools, 'gc-tools.js must load the library from lib/'
-          # Page weight: the explorer must stay small; large data load from files when a visitor asks for them.
-          size=(root/'explorer.html').stat().st_size
-          assert size < 2_500_000, f'explorer.html is {size} bytes; move large data into separate files'
-          assert 'eq-dept-gzip-' not in explorer, 'branch survey rows must stay out of explorer.html'
-          assert 'location.replace("index.html"' in explorer[:3000], 'start-screen redirect missing'
-
-          # The main page: three options, the chatbot box, no embedded copies of other pages.
-          for href in ('explorer.html#departments','explorer.html#data','explorer.html#bhome'):
-              assert index.count(f'href="{href}"')==1, f'missing main option {href}'
-          assert index.count('class="choice"')==3, 'main page must offer exactly three options'
-          assert '<iframe' not in index.lower(), 'main page must not embed other pages'
-          assert 'src="gc-ai.js"' in index and 'id="aiBox"' in index
-          for name in ('chatgpt.com','claude.ai','copilot.microsoft.com','gemini.google.com'):
-              assert name in ai, f'chatbot missing: {name}'
-          class IDs(HTMLParser):
-              def __init__(self): super().__init__(); self.ids=[]
-              def handle_starttag(self,tag,attrs):
-                  self.ids+= [v for k,v in attrs if k=='id']
-          p=IDs();p.feed(index)
-          assert len(p.ids)==len(set(p.ids)), 'Duplicate ids on the main page'
-
-          # Every curated dataset is shown in the data pages.
-          folder=root/'data/october-2026'
-          files=[f for f in folder.glob('*.csv') if f.name!='public-source-inventory.csv']
-          assert len(files)==8, f'Expected 8 curated data sources, got {len(files)}'
-          for f in files:
-              with f.open(newline='',encoding='utf-8-sig') as fd:
-                  rows=list(csv.DictReader(fd))
-              assert rows and len(rows[0])>2, f'Invalid CSV: {f}'
-              assert f.name in additions, f'Dataset not shown: {f.name}'
-
-          import gzip, hashlib
-          listed={}
-          for line in (root/'data/checksums.sha256').read_text(encoding='utf-8').splitlines():
-              if line.strip():
-                  digest,path=line.split(None,1); listed[path.strip()]=digest
-          data_files=sorted(str(p) for p in root.glob('data/october-2026/*.csv'))+sorted(str(p) for p in root.glob('data/pses-2024-branches/*.json.gz'))
-          assert set(data_files)==set(listed), f'checksums list differs from the data files: {sorted(set(data_files)^set(listed))[:5]}'
-          for path,digest in listed.items():
-              assert hashlib.sha256((root/path).read_bytes()).hexdigest()==digest, f'{path} changed; review it, then update data/checksums.sha256'
-          meta=json.loads(re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',explorer,re.S).group(1))
-          ids=[d['id'] for d in meta['departments']]
-          branch_files=sorted(p.name.split('.')[0] for p in (root/'data/pses-2024-branches').glob('*.json.gz'))
-          assert sorted(ids)==branch_files, 'every organization in the branch list needs exactly one data file'
-          rows=0
-          for i in ids:
-              data=json.loads(gzip.decompress((root/f'data/pses-2024-branches/{i}.json.gz').read_bytes()))
-              assert isinstance(data,list) and data and all(len(r)==16 for r in data[:50]), f'unexpected rows in {i}.json.gz'
-              rows+=len(data)
-          assert rows==meta['totalRows'], f'branch rows {rows} differ from {meta["totalRows"]}'
-          config=(root/'_config.yml').read_text(encoding='utf-8')
-          for f in ('MAINTAINING.md','data/october-2026/package-integrity-audit.json','data/checksums.sha256','data/source-dates.json'):
-              assert f in config, f'{f} must not be published on the site'
-          src=json.loads((root/'data/source-dates.json').read_text(encoding='utf-8'))
-          assert src['sources'] and all(s['url'].startswith('https://') for s in src['sources'])
-
-          audit_path=folder/'package-integrity-audit.json'
-          if audit_path.exists():
-              audit=json.loads(audit_path.read_text(encoding='utf-8'))
-              pkg=audit['drive_verified_site_package']
-              assert pkg['assets']['unique_js_blocks']==1081
-              assert sum(z['assets'] for z in pkg['archive_files'])==1081
-              assert pkg['recorded_assembly_metrics']['inventory_rows']==157
-              assert audit['github_main']['curated_october_csv_files']==len(files)==8
-              assert audit['github_main']['full_october_27_package_deployed'] is False
-
-          source_page=(root/'sources.html').read_text(encoding='utf-8')
-          assert 'id="visible"' in source_page and 'data-fr=' in source_page, 'Source list page must be bilingual'
-
-          # No keys, no private links and no internal wording on visitor pages.
-          visitor={'index.html':index,'sources.html':source_page,'gc-ai.js':ai,'gc-equity-additions.js':additions,'gc-tools.js':tools,
-                   'public-source-inventory.csv':(folder/'public-source-inventory.csv').read_text(encoding='utf-8')}
-          for name,text in visitor.items():
-              assert not re.search(r'sk-[A-Za-z0-9]{20,}|api[_-]?key\s*[:=]|Bearer\s+[A-Za-z0-9]',text,re.I), f'Possible credential in {name}'
-              assert 'drive.google.com' not in text and 'docs.google.com' not in text, f'Private document link in {name}'
-          internal=['October 27','October 29','preserved explorer','preserved full explorer','curated October','not yet published',
-                    'Drive package','Inventory only','retained original','explorateur préservé','Build 2026','old site','previous version',
-                    'pull request','handoff']
-          for name,text in visitor.items():
-              low=text.lower()
-              for phrase in internal:
-                  assert phrase.lower() not in low, f'Internal wording "{phrase}" found in {name}'
-          for phrase in ('—',):
-              for name in ('index.html','sources.html','gc-ai.js','gc-equity-additions.js','gc-tools.js','public-source-inventory.csv'):
-                  assert phrase not in visitor[name], f'Em dash in {name}'
-              assert phrase not in explorer, 'Em dash in explorer.html'
-          print('Passed: explorer hash and size, three main options, chatbot box, 8 datasets shown, checksums, branch files, file tools, audit, bilingual sources, visitor wording')
-          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate pages, published data, source snapshots and research tools
+        run: python scripts/check-site.py

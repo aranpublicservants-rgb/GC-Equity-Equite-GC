@@ -779,6 +779,7 @@ html[lang^="fr"] .tick[data-lab="PS average"]::after{content:"moyenne FP"}
 body[data-gc-group] #view-publicintro{order:-3!important}
 body[data-gc-group="black"] #view-black,body[data-gc-group="indigenous"] #view-indigenous,body[data-gc-group="first_nations"] #view-indigenous,body[data-gc-group="metis"] #view-indigenous,body[data-gc-group="inuit"] #view-indigenous,body[data-gc-group="pwd"] #view-intersect{order:-2!important}
 </style>
+<link rel="stylesheet" href="gc-workspace.css">
 </head>
 <body>
 
@@ -3282,7 +3283,7 @@ This is the internal data that isn't published, and it's what we need to see whe
   E("rqFmtBrief",briefing);
   E("rqFmtAtip",atip);
   E("rqFmtShort",short);
-  const d1=$("#rqFmtDocx");if(d1)d1.addEventListener("click",function(){const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#rqText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre></body></html>";dl("data-request-"+org().replace(/[^A-Za-z0-9]+/g,"-")+".doc",html,"application/msword");});
+  const d1=$("#rqFmtDocx");if(d1)d1.addEventListener("click",function(){const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#rqText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre><\/body></html>";dl("data-request-"+org().replace(/[^A-Za-z0-9]+/g,"-")+".doc",html,"application/msword");});
   const d2=$("#rqFmtTxt");if(d2)d2.addEventListener("click",function(){dl("data-request-"+org().replace(/[^A-Za-z0-9]+/g,"-")+".txt",$("#rqText").value,"text/plain");});
 })();
 
@@ -4688,7 +4689,7 @@ function renderIntersect(){
   sel.addEventListener("change",build);
   ["briefAudience","briefTone","briefHooks","briefQs","briefNext","briefAnnex"].forEach(id=>{const e=$("#"+id);if(e)e.addEventListener("change",build);});
   const c=$("#briefCopy");if(c)c.addEventListener("click",()=>safeCopy($("#briefText").value,c));
-  const bd=$("#briefDocx");if(bd)bd.addEventListener("click",function(){try{const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#briefText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre></body></html>";const b=new Blob([html],{type:"application/msword"});const u=URL.createObjectURL(b);const aa=document.createElement("a");aa.href=u;aa.download="briefing-note-"+sel.value.replace(/[^A-Za-z0-9]+/g,"-")+".doc";document.body.appendChild(aa);aa.click();aa.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}catch(e){}});
+  const bd=$("#briefDocx");if(bd)bd.addEventListener("click",function(){try{const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#briefText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre><\/body></html>";const b=new Blob([html],{type:"application/msword"});const u=URL.createObjectURL(b);const aa=document.createElement("a");aa.href=u;aa.download="briefing-note-"+sel.value.replace(/[^A-Za-z0-9]+/g,"-")+".doc";document.body.appendChild(aa);aa.click();aa.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}catch(e){}});
   document.addEventListener("langchange",build);setTimeout(build,0);
 })();
 
@@ -4752,7 +4753,7 @@ Requester: ${from}.`;
   selC.addEventListener("change",gen);
   ["reqOrg2","reqFrom2","reqYrs"].forEach(id=>{const e=$("#"+id);if(e)e.addEventListener("input",gen);});
   const cc=$("#reqCatCopy");if(cc)cc.addEventListener("click",()=>safeCopy($("#reqCatText").value,cc));
-  const cd=$("#reqCatDocx");if(cd)cd.addEventListener("click",function(){try{const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#reqCatText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre></body></html>";const b=new Blob([html],{type:"application/msword"});const u=URL.createObjectURL(b);const aa=document.createElement("a");aa.href=u;aa.download="data-request-"+selC.value+".doc";document.body.appendChild(aa);aa.click();aa.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}catch(e){}});
+  const cd=$("#reqCatDocx");if(cd)cd.addEventListener("click",function(){try{const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'></head><body><pre style=\"font-family:Calibri,Arial,sans-serif;white-space:pre-wrap\">"+($("#reqCatText").value.replace(/&/g,"&amp;").replace(/</g,"&lt;"))+"</pre><\/body></html>";const b=new Blob([html],{type:"application/msword"});const u=URL.createObjectURL(b);const aa=document.createElement("a");aa.href=u;aa.download="data-request-"+selC.value+".doc";document.body.appendChild(aa);aa.click();aa.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}catch(e){}});
   document.addEventListener("langchange",function(){var v=selC.value;buildOpts();selC.value=v;gen();});
   gen();
 })();
@@ -5869,5 +5870,6 @@ document.addEventListener("click",function(e){
 <script src="gc-ai.js"></script>
 <script src="gc-equity-additions.js"></script>
 <script src="gc-tools.js"></script>
+<script src="gc-workspace.js"></script>
 </body>
 </html>

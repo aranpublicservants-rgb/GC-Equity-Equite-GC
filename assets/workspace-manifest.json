@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "assembled": "2026-11-07",
+  "files": [
+    {
+      "file": "assets/workspace-data.json",
+      "bytes": 281127,
+      "sha256": "ea73b3eafb98535a019951b3da4feb8bfcc5f3fed6c7a56da633836781830f32"
+    },
+    {
+      "file": "assets/search-index.json",
+      "bytes": 594707,
+      "sha256": "0b73d4d99bf856a4fae3c53ca986e5470caed0c39d033aefa805d5f219a453f8"
+    }
+  ],
+  "related": [
+    {
+      "repo": "isc-sac-equity-equite",
+      "label": "ISC / SAC",
+      "url": "https://aranpublicservants-rgb.github.io/isc-sac-equity-equite/",
+      "commit": "a9ab31acd80265a6affb81d06b2fcb80f5a2e826"
+    },
+    {
+      "repo": "Indigenous-GC---GC-Autochtone",
+      "label": "Indigenous public servants",
+      "url": "https://aranpublicservants-rgb.github.io/Indigenous-GC---GC-Autochtone/",
+      "commit": "8f7bb441d98e6f8c2d6e475708967a2c42224f48"
+    },
+    {
+      "repo": "Black-Public-Servants---Fonctionnaires-noirs",
+      "label": "Black public servants",
+      "url": "https://aranpublicservants-rgb.github.io/Black-Public-Servants---Fonctionnaires-noirs/",
+      "commit": "0d61001a9e0cb49a5fae24d48f3a1b6f52851ec4"
+    },
+    {
+      "repo": "aran-raar",
+      "label": "ARAN / RAAR",
+      "url": "https://aranpublicservants-rgb.github.io/aran-raar/",
+      "commit": "5b3c1018b5bd06a0285fc7619567634bbc14cfb4"
+    },
+    {
+      "repo": "GC-Equity-History-Histoire-de-l-equite-au-GC",
+      "label": "Equity history",
+      "url": "https://aranpublicservants-rgb.github.io/GC-Equity-History-Histoire-de-l-equite-au-GC/",
+      "commit": "a915ce38cdc51596d65f7bdb80e35460d7ab2fc9"
+    },
+    {
+      "repo": "Accessibility-and-Inclusion-Accessibilit-et-inclusion",
+      "label": "Accessibility and inclusion",
+      "url": "https://aranpublicservants-rgb.github.io/Accessibility-and-Inclusion-Accessibilit-et-inclusion/",
+      "commit": "e768cf6e0e2a7251a1606ff7bf5b4c951b8309c0"
+    },
+    {
+      "repo": "Filipino-Public-Servants-Fonctionnaires-Philippins",
+      "label": "Filipino public servants",
+      "url": "https://aranpublicservants-rgb.github.io/Filipino-Public-Servants-Fonctionnaires-Philippins/",
+      "commit": "fccc14e4ff9f420f4b11db242a8cec4a53f3d690"
+    },
+    {
+      "repo": "pses-2024-branch.html",
+      "label": "PSES branches",
+      "url": "https://aranpublicservants-rgb.github.io/pses-2024-branch.html/",
+      "commit": "b00ceb563cd25708aaa491a0c082bf3f63217a2d"
+    }
+  ]
+}

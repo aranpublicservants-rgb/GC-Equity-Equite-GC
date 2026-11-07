@@ -1,10 +1,16 @@
 name: GC Equity desktop and mobile smoke
 on:
+  push:
+    branches: [main]
+    paths: ['**.html', '**.js', '**.css', 'assets/**', 'data/**', '.github/workflows/browser-smoke.yml']
   pull_request:
     paths:
       - 'index.html'
       - 'explorer.html'
       - 'sources.html'
+      - 'gc-workspace.js'
+      - 'gc-workspace.css'
+      - 'assets/**'
       - 'gc-ai.js'
       - 'gc-equity-additions.js'
       - 'gc-tools.js'
@@ -32,7 +38,7 @@ jobs:
           node <<'JS'
           const {chromium,devices}=require('playwright');
           const fs=require('fs'),path=require('path'),http=require('http');
-          const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.csv':'text/csv; charset=utf-8','.json':'application/json'};
+          const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.csv':'text/csv; charset=utf-8','.json':'application/json','.css':'text/css'};
           const root=process.cwd();
           const server=http.createServer((req,res)=>{
             const filepath=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
@@ -56,22 +62,51 @@ jobs:
                 // 1. Main page: three options and the chatbot box
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                const hrefs=await page.$$eval('.choices h3 a',as=>as.map(a=>a.getAttribute('href')));
+                const hrefs=await page.$$eval('.choices > li > a',as=>as.map(a=>new URL(a.href).pathname.replace(/^\//,'')+new URL(a.href).hash));
                 if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','explorer.html#bhome']))throw Error('main options: '+hrefs);
                 if(await page.$$eval('#aiBox .gcai-bot',a=>a.length)!==4)throw Error('chatbot links missing');
-                if(await page.$$eval('[data-theme-set]',b=>b.length)!==3)throw Error('display choices missing on the main page');
-                await page.click('[data-theme-set="contrast"]');
+                if(await page.$$eval('#gcw-theme option',b=>b.length)!==3)throw Error('display choices missing on the main page');
+                await page.selectOption('#gcw-theme','contrast');
                 if(await page.evaluate(()=>document.documentElement.getAttribute('data-theme'))!=='contrast')throw Error('high contrast did not apply');
-                await page.click('[data-theme-set="light"]');
+                await page.selectOption('#gcw-theme','light');
+                await page.click('details.gcw-card > summary');
                 await page.fill('#aiBox textarea','How has representation changed since 2017?');
                 const [tab]=await Promise.all([ctx.waitForEvent('page'),page.click('#aiBox .gcai-bot[data-bot="chatgpt"]')]);
                 await page.waitForTimeout(800);await tab.close().catch(()=>{});
                 if(!outside.some(u=>u.startsWith('https://chatgpt.com/?q=How%20has%20representation')))throw Error('chatbot link did not carry the question: '+outside.join(' '));
                 if(await overflow(page))throw Error(mode.name+': main page scrolls sideways');
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-main.png',fullPage:true});
-                await page.click('#langToggle');
-                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.getElementById('choice-groups').getAttribute('href')==='explorer.html?lang=fr#data');
-                await page.click('#langToggle');
+                await page.click('#gcw-lang');
+                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&new URL(document.getElementById('choice-groups').href).searchParams.get('lang')==='fr');
+                await page.click('#gcw-lang');
+                await page.close();
+
+                // Shared research tools use local data and retain their sources.
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'index.html?lang=en');
+                await page.click('#gcw-header [data-gcw="guide"]');
+                await page.fill('#gcw-guide-query','What is disability representation at ISC?');
+                await page.click('#gcw-guide-form button');
+                await page.waitForFunction(()=>document.getElementById('gcw-guide-answer').textContent.includes('-3.1 percentage points'));
+                await page.click('#gcw-guide-answer [data-gcw="save-fact"]');
+                await page.click('#gcw-guide-answer [data-gcw="trace-fact"]');
+                if(!/8.9 − 12.0/.test(await page.locator('#gcw-trace').innerText()))throw Error('source calculation missing');
+                await page.click('[data-gcw="close-trace"]');
+                await page.click('#gcw-dialog [data-gcw="close"]');
+                await page.click('#gcw-header [data-gcw="basket"]');
+                if(!/Persons with disabilities/.test(await page.locator('#gcw-evidence-list').innerText()))throw Error('saved evidence missing');
+                const [briefing]=await Promise.all([page.waitForEvent('download'),page.click('[data-gcw="export-html"]')]);
+                if(!briefing.suggestedFilename().endsWith('.html'))throw Error('briefing export missing');
+                await page.click('#gcw-dialog [data-gcw="close"]');
+                await page.click('[data-gcw="changes"]');
+                await page.selectOption('#gcw-change-from','2017');
+                if(!/8.8 percentage points/.test(await page.locator('#gcw-change-result').innerText()))throw Error('year comparison failed');
+                await page.click('#gcw-dialog [data-gcw="close"]');
+                await page.click('#gcw-search-button');
+                await page.fill('#gcw-query','Indigenous');
+                await page.click('#gcw-search-form button');
+                await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
+                if(await overflow(page))throw Error(mode.name+': research tools scroll sideways');
                 await page.close();
 
                 // 2. The old explorer address opens the main page
@@ -93,7 +128,7 @@ jobs:
                 await page.waitForFunction(()=>/published branches or second-level units/.test((document.getElementById('eqInlineBranchStatus')||{}).textContent||''),null,{timeout:60000});
                 if(!branchFiles.some(u=>/data\/pses-2024-branches\/\d+\.json\.gz$/.test(u)))throw Error('branch results did not load from their data file');
                 if(await page.$$eval('#eqBranchQuestion option',o=>o.length)<50)throw Error('branch questions missing');
-                if(!await page.$('a.gc-mainlink[href="index.html"]'))throw Error('main page link missing');
+                if(!await page.$('#gcw-header a.gcw-brand'))throw Error('workspace navigation missing');
                 await page.close();
 
                 // 4. Option 2: choose a group and see all of its data

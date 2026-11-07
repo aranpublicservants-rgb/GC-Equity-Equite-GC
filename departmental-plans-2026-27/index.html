@@ -14,6 +14,7 @@
 @media(max-width:600px){body{font-size:16px}.wrap{padding:0 16px}.brand{font-size:1.2rem}.brand small{font-size:.7rem}.brand-row{gap:10px;min-height:73px}.intro{padding-top:22px}h1{max-width:none;font-size:2rem}.lede{font-size:1.03rem}.stats{gap:10px}.stat{padding:14px 12px}.stat strong{font-size:1.65rem}.stat span{font-size:.78rem}.toolbar{padding:16px}.filters{grid-template-columns:1fr}.search-field{grid-column:auto}.view-row{gap:14px}.view-row .field{min-width:100%}.view-row .btn{width:100%}.term-summary{grid-template-columns:1fr}.term-buttons{gap:6px}.term-btn{font-size:.82rem;padding:7px 9px}.download-row .btn{width:100%}.counts-table th:first-child,.counts-table td:first-child,.counts-table th:first-child button{min-width:180px;max-width:220px}.counts-table td{padding:12px 9px}.table-scroll{max-height:680px}.jump{gap:8px 17px;font-size:.92rem}.source-list{overflow-wrap:anywhere}.date-label{font-size:.7rem}}
 @media print{.masthead,.toolbar,.download-row,.live-status,.jump,.sort-help,.sort-note{display:none}.table-scroll{max-height:none;overflow:visible;border:0}.counts-table th,.counts-table td:first-child{position:static}.wrap{max-width:none;padding:0}.counts-table{font-size:8pt}.counts-table th button{min-width:0;padding:6px;color:#000}.counts-table th{color:#000;background:#eee!important}.counts-table td{min-width:0;padding:6px}.counts-table td:first-child,.counts-table th:first-child,.counts-table th:first-child button{min-width:120px}.term-summary{break-inside:avoid}.print-only{display:block}.footer{background:#fff}a{color:#000}}
 </style>
+<link rel="stylesheet" href="../gc-workspace.css">
 </head>
 <body>
 <a href="#main" class="skip" data-i18n="skip">Skip to main content</a>
@@ -135,7 +136,7 @@ sourceDescriptions:['Répertoire officiel des plans ministériels. Les limites d
 sourceNames:['Secrétariat du Conseil du Trésor du Canada : plans ministériels de 2026–2027','Secrétariat du Conseil du Trésor du Canada : effectif de la fonction publique fédérale par ministère ou organisme','Secrétariat du Conseil du Trésor du Canada : aperçu des organismes et des intérêts fédéraux','Loi sur la gestion des finances publiques']
 }
 };
-let lang='en';
+let lang='en';try{const p=new URLSearchParams(location.search).get('lang');lang=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}
 let state={query:'',type:'all',size:'all',group:'none',mention:'all',view:'both',sort:'total',direction:'desc',visible:new Set(KEYS)};
 let displayed=[];
 const text=()=>copy[lang];
@@ -174,8 +175,11 @@ $('sort-direction').addEventListener('click',()=>{state.direction=state.directio
 $('reset').addEventListener('click',()=>{state={query:'',type:'all',size:'all',group:'none',mention:'all',view:'both',sort:'total',direction:'desc',visible:new Set(KEYS)};$('search').value='';$('download-status').textContent='';render();});
 $('download-current').addEventListener('click',()=>exportData(false));$('download-all').addEventListener('click',()=>exportData(true));
 $('language').addEventListener('click',()=>{lang=lang==='en'?'fr':'en';translate();});
+window.gcSetLang=next=>{lang=next==='fr'?'fr':'en';translate();};
+try{state.query=new URLSearchParams(location.search).get('q')||'';$('search').value=state.query;}catch(e){}
 translate();
 })();
 </script>
+<script src="../gc-workspace.js"></script>
 </body>
 </html>

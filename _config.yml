@@ -5,3 +5,8 @@ exclude:
   - data/october-2026/package-integrity-audit.json
   - data/checksums.sha256
   - data/source-dates.json
+  - AGENTS.md
+  - scripts
+  - dist
+  - node_modules
+  - qa-screenshots
