@@ -11,8 +11,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch catalogue records
-        run: python3 scratch/fetch4.py
+      - name: Check links
+        run: python3 scratch/urlcheck.py
       - name: Commit files for review
         run: |
           git config user.name "github-actions[bot]"
