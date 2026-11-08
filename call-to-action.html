@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call to Action: commitments and results by organization | GC Equity</title>
+<meta name="description" content="The 2021 Call to Action letters and 2024 self-assessments of federal organizations, beside published representation and survey results. | Les lettres de 2021 et les autoévaluations de 2024 sur l’appel à l’action, à côté des données publiées.">
+<script>
+(function(){try{var t=localStorage.getItem('gcEquityTheme');if(t==='dark'||t==='contrast')document.documentElement.dataset.theme=t;var p=new URLSearchParams(location.search).get('lang');document.documentElement.lang=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="gc-workspace.css">
+<style>
+.cta{max-width:1224px}
+.cta h1{font-family:var(--gw-serif);font-size:clamp(30px,3.8vw,48px);line-height:1.14;font-weight:600;margin:8px 0 18px;max-width:900px}
+.cta h2{font-family:var(--gw-serif);font-size:clamp(24px,2.6vw,31px);margin:0 0 12px;line-height:1.2}
+.cta h3{font-size:19px;margin:26px 0 10px;line-height:1.3}
+.cta h4{font-size:16px;margin:20px 0 8px}
+.cta p,.cta li{max-width:88ch}
+.cta-meta{font-size:14px;color:var(--gw-muted);margin:0 0 18px}
+.cta-jump{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;padding:0;margin:0 0 22px}
+.cta-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 8px;padding:0;list-style:none}
+.cta-stats li{background:var(--gw-card);border:1px solid var(--gw-line);border-radius:8px;padding:14px 16px;max-width:none}
+.cta-stats b{display:block;font-size:26px;line-height:1.1;font-family:var(--gw-serif)}
+.cta-section{margin-top:40px;padding-top:6px}
+.cta-card{background:var(--gw-card);border:1px solid var(--gw-line);border-radius:10px;padding:20px 22px;margin:16px 0}
+.cta-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 16px;margin:14px 0}
+.cta-controls label,.cta-pick label{display:block;font-size:14px;font-weight:700;margin-bottom:5px}
+.cta-controls select,.cta-controls input,.cta-pick select{width:100%;min-height:44px;border:1px solid #8a9daa;border-radius:6px;padding:8px 10px;background:var(--gw-card);color:var(--gw-ink)}
+.cta-pick{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:12px 16px;margin:10px 0 4px}
+.cta-scroll{position:relative;overflow-x:auto;border:1px solid var(--gw-line);border-radius:8px;background:var(--gw-card)}
+.cta-scroll:focus-visible{outline:3px solid var(--gw-focus);outline-offset:2px}
+.cta table{border-collapse:collapse;width:100%;font-size:14px}
+.cta caption{text-align:left;font-weight:700;padding:12px 14px 8px;font-size:15px}
+.cta th,.cta td{padding:8px 10px;border-bottom:1px solid var(--gw-line);vertical-align:top;text-align:left}
+.cta thead th{background:var(--gw-soft);font-size:13px;line-height:1.35}
+.cta td.num,.cta th.num{text-align:right;font-variant-numeric:tabular-nums}.cta td.num{white-space:nowrap}.cta thead th{min-width:92px}.cta thead th:first-child{min-width:190px}
+.cta tbody th{font-weight:600}
+.cta-compare{min-width:1100px}
+.cta-compare tbody th a{font-weight:650}
+.cta-sort{font:inherit;font-weight:700;background:none;border:0;padding:0;color:inherit;text-align:inherit;cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+.cta-mark{color:#9c0006;font-weight:700;white-space:nowrap}
+:root[data-theme=dark] .cta-mark{color:#ff9d93}
+:root[data-theme=contrast] .cta-mark{color:#7a0000}
+.cta-up{white-space:nowrap}
+.cta-na{color:var(--gw-muted)}
+.cta-status{display:inline-block;border-radius:4px;padding:1px 7px;font-size:12.5px;font-weight:650;border:1px solid var(--gw-line);white-space:nowrap}
+.cta-status.set{background:var(--gw-soft)}
+.cta-status.underway{border-style:dashed}
+.cta-status.none{color:var(--gw-muted)}
+.cta-docs{font-size:12.5px;white-space:nowrap}
+.cta-list{padding-left:22px;margin:8px 0 0}
+.cta-list li{margin:0 0 7px}
+.cta-goals td{min-width:180px}
+.cta-goals td p{margin:6px 0 0;font-size:13.5px}
+.cta-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.cta-two>*,.cta-controls>*,.cta-pick>*{min-width:0}
+.cta-small,.cta .note{font-size:13.5px;color:var(--gw-muted)}
+.cta-langnote{border-left:4px solid var(--gw-teal);padding:8px 12px;background:var(--gw-soft);margin:12px 0}
+.cta-results{font-size:14px;margin:8px 0}
+.cta-sources li{margin-bottom:8px}
+.cta-btnrow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.cta-pill{display:inline-block;font-size:12.5px;border:1px solid var(--gw-line);border-radius:20px;padding:2px 10px;margin:0 6px 6px 0}
+@media (max-width:820px){.cta-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.cta-controls,.cta-pick,.cta-two{grid-template-columns:minmax(0,1fr)}.cta-card{padding:16px 14px}}
+@media print{.cta-controls,.cta-pick,.cta-btnrow,#gcw-header,.gcw-context{display:none!important}.cta-scroll{overflow:visible;border:0}}
+</style>
+</head>
+<body class="gcw-page">
+<main id="main" class="gcw-frame cta">
+<p class="gcw-eyebrow" data-i18n="eyebrow">Call to Action on Anti-Racism, Equity, and Inclusion</p>
+<h1 data-i18n="title">Call to Action: commitments and results by organization</h1>
+<p class="gcw-lede" data-i18n="lede">In 2021, deputy heads published open letters on how they were carrying out the Clerk of the Privy Council’s Call to Action. In 2024, organizations answered a self-assessment on the forward direction of the Call to Action, including whether they had set recruitment and promotion goals. This page places each organization’s commitments and goals beside published workforce and survey data, so you can see where results changed and where gaps remain.</p>
+<p class="cta-meta" data-i18n="meta">Letters: 2021. Self-assessments: April 2024. Workforce data: March 31, 2021, to March 31, 2025. Surveys: 2024 Public Service Employee Survey and 2025 Staffing and Non-Partisanship Survey.</p>
+<ul class="cta-jump">
+<li><a href="#compare" data-i18n="jumpCompare">Compare organizations</a></li>
+<li><a href="#record" data-i18n="jumpRecord">Organization record</a></li>
+<li><a href="#method" data-i18n="jumpMethod">How to read this page</a></li>
+<li><a href="#sources" data-i18n="jumpSources">Sources and data files</a></li>
+</ul>
+<ul class="cta-stats" id="cta-stats" aria-label="Coverage"></ul>
+<p id="cta-loading" role="status" data-i18n="loading">Loading the letters, self-assessments and data…</p>
+<noscript><p>This page needs JavaScript to combine the documents with the data. The data files are listed under Sources. / Cette page a besoin de JavaScript pour combiner les documents et les données. Les fichiers de données sont indiqués sous Sources.</p></noscript>
+
+<section id="compare" class="cta-section" aria-labelledby="compare-title">
+<h2 id="compare-title" data-i18n="compareTitle">Compare organizations</h2>
+<p data-i18n="compareIntro">Choose an employee group. For each organization, the table shows the 2024 goals reported for that group, its representation in 2021 and 2025, and two survey results compared with a comparison group in the same organization.</p>
+<div class="cta-controls">
+<div><label for="cta-group" data-i18n="groupLabel">Employee group</label><select id="cta-group"></select></div>
+<div><label for="cta-filter" data-i18n="filterLabel">Show</label><select id="cta-filter"></select></div>
+<div><label for="cta-search" data-i18n="searchLabel">Find an organization</label><input id="cta-search" type="search" autocomplete="off"></div>
+</div>
+<p id="cta-count" class="cta-results" role="status" aria-live="polite"></p>
+<div class="cta-scroll table-scroll" tabindex="0" role="region" aria-labelledby="cta-compare-caption" id="cta-compare-region">
+<table class="cta-compare" id="cta-compare" data-gcw-ready="yes"><caption id="cta-compare-caption"></caption><thead id="cta-compare-head"></thead><tbody id="cta-compare-body"></tbody></table>
+</div>
+<p class="note" id="cta-compare-note"></p>
+<div class="cta-btnrow"><button type="button" class="gcw-btn" id="cta-download" data-i18n="download">Download this table (CSV)</button></div>
+</section>
+
+<section id="record" class="cta-section" aria-labelledby="record-title">
+<h2 id="record-title" data-i18n="recordTitle">Organization record</h2>
+<p data-i18n="recordIntro">Read what an organization committed to, the goals it reported, and the published results for the same organization.</p>
+<div class="cta-pick">
+<div><label for="cta-org" data-i18n="orgLabel">Organization</label><select id="cta-org"></select></div>
+<div><label for="cta-rgroup" data-i18n="rgroupLabel">Survey results for</label><select id="cta-rgroup"></select></div>
+</div>
+<div id="cta-record"></div>
+</section>
+
+<section id="method" class="cta-section" aria-labelledby="method-title">
+<h2 id="method-title" data-i18n="methodTitle">How to read this page</h2>
+<div id="cta-method"></div>
+</section>
+
+<section id="sources" class="cta-section" aria-labelledby="sources-title">
+<h2 id="sources-title" data-i18n="sourcesTitle">Sources and data files</h2>
+<div id="cta-sources"></div>
+</section>
+</main>
+<script src="call-to-action.js"></script>
+<script src="gc-workspace.js"></script>
+</body>
+</html>
