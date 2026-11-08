@@ -625,6 +625,155 @@ function buildDeck(s){
  return pptx.writeFile({fileName:name}).then(()=>name);
 }
 
+/* ------------------------------------------------------------------ organization page: Call to Action and the 2025 staffing survey */
+// Both sections read files published on this site. A value missing from a source stays missing.
+const JFILES={cta:'data/call-to-action-letters.json',rep:'data/tbs-departmental-representation-2017-2025.json',snps:'data/snps-2025-by-organization.json'};
+const jcache={};
+function getJSON(k){
+ if(!jcache[k])jcache[k]=fetch(JFILES[k]).then(r=>{if(!r.ok)throw new Error(r.status+' '+JFILES[k]);return r.json();}).catch(e=>{delete jcache[k];throw e;});
+ return jcache[k];
+}
+const nkey=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+const nbase=s=>nkey(String(s||'').split('(')[0]);
+function findKey(keys,name){const k=nkey(name),b=nbase(name);return keys.find(x=>nkey(x)===k)||keys.find(x=>nbase(x)===b)||null;}
+// The organization's own names come first. A Treasury Board row can cover more than one organization.
+function ctaMatches(cta,name){
+ const L=cta.organizations,k=nkey(name),b=nbase(name);
+ let m=L.filter(o=>[o.pses_name,o.name_en].some(x=>x&&nkey(x)===k));
+ if(!m.length)m=L.filter(o=>o.site_name&&nkey(o.site_name)===k);
+ if(!m.length)m=L.filter(o=>[o.site_name,o.pses_name,o.name_en].some(x=>x&&nbase(x)===b));
+ return m;
+}
+// The survey files spell a few organizations differently from the other sources.
+const SNPS_SAME={'library and archives canada':'Library and Archives of Canada','veterans affairs canada':'Veteran Affairs Canada'};
+function snpsKey(sn,o,name){
+ if(o&&o.snps_name&&sn.orgs[o.snps_name])return o.snps_name;
+ const s=SNPS_SAME[nkey(name)];if(s&&sn.orgs[s])return s;
+ return findKey(Object.keys(sn.orgs),name);
+}
+function eegKey(o,name){
+ const E=get(()=>EEG_DEPT)||{};
+ if(o&&o.pses_name&&E[o.pses_name])return o.pses_name;
+ return findKey(Object.keys(E),name);
+}
+const CTA_G=[{k:'i',goal:'indigenous',a:'ind',b:'nonind'},{k:'v',goal:'racialized',a:'rac',b:'nonrac'},{k:'b',goal:'black',a:'black',b:'nonrac'},{k:'d',goal:null,a:'pwd',b:'nopwd'}];
+const ctaGroup=k=>({i:tr('Indigenous Peoples','Peuples autochtones'),v:tr('Racialized employees','Employés racisés'),b:tr('Black employees','Employés noirs'),d:tr('Persons with disabilities','Personnes en situation de handicap')})[k];
+const ctaCmp=k=>({i:tr('non-Indigenous employees','employés non autochtones'),v:tr('non-racialized employees','employés non racisés'),b:tr('non-racialized employees','employés non racisés'),d:tr('employees without disabilities','employés sans handicap')})[k];
+const CTA_STATUS={set:['Set','Fixé'],underway:['Work under way','En cours'],none:['None stated','Aucun indiqué']};
+const GAP=3;   // the survey screening rule used on this site: 3 points or more less favourable than the comparison group
+const mark=()=>'<span aria-hidden="true" class="gt-mark"> ▼</span><span class="gt-sr"> ('+tr('marked','signalé')+')</span>';
+const notPub=()=>tr('Not published','Non publié');
+const ctaName=o=>isFr()&&o.name_fr?o.name_fr:o.name_en;
+function ctaLink(o){const q=[o?'org='+encodeURIComponent(o.id):'',isFr()?'lang=fr':''].filter(Boolean).join('&');return 'call-to-action.html'+(q?'?'+q:'')+(o?'#record':'');}
+function orgLinkFor(o){
+ const names=window.GC_EQUITY_ORG_NAMES||[];
+ const n=names.find(x=>[o.pses_name,o.name_en].some(y=>y&&nkey(y)===nkey(x)));
+ return n?'explorer.html?org='+encodeURIComponent(n)+(isFr()?'&lang=fr':'')+'#departments':null;
+}
+function memberList(list,withRecord){
+ return '<ul class="gt-cta-docs">'+list.map(o=>{const a=orgLinkFor(o);
+  return '<li>'+(a?'<a href="'+esc(a)+'">'+esc(ctaName(o))+'</a>':esc(ctaName(o)))+(withRecord?' · <a href="'+esc(ctaLink(o))+'">'+tr('Call to Action record','Dossier de l’appel à l’action')+'</a>':'')+'</li>';}).join('')+'</ul>';
+}
+function ctaRep(R,site,g,y){const s=site&&R.orgs[site];const a=s&&s[g]&&s[g][y];if(!a)return null;return {rep:a[2],wfa:g==='b'?null:a[3]};}
+// kinds: 'num' for a figure, 'txt' for words. Long column headings may wrap.
+function gtTable(id,caption,head,rows,kinds){
+ return '<div class="tblwrap"><table class="gt-table gt-org-table" id="'+id+'"><caption>'+caption+'</caption><thead><tr>'+
+  head.map((h,i)=>'<th scope="col"'+(i>0?' class="'+(kinds[i]==='num'?'num ':'')+'gt-wrap"':'')+'>'+h+'</th>').join('')+'</tr></thead><tbody>'+
+  rows.map(r=>'<tr>'+r.cells.map((c,i)=>i===0?'<th scope="row">'+c+'</th>':'<td class="'+(kinds[i]==='num'?'num':'gt-txt')+(r.cc&&r.cc[i]?' '+r.cc[i]:'')+'">'+c+'</td>').join('')+'</tr>').join('')+
+  '</tbody></table></div>';
+}
+function repBlock(R,site){
+ const ser=site&&R.orgs[site];
+ if(!ser)return '<p>'+tr('This organization is not in the Treasury Board departmental tables, which cover the core public administration. Separate agencies publish their own employment equity reports.','Cette organisation ne figure pas dans les tableaux ministériels du Conseil du Trésor, qui portent sur l’administration publique centrale. Les organismes distincts publient leurs propres rapports sur l’équité en matière d’emploi.')+'</p>';
+ const rows=CTA_G.map(g=>{
+  const a=ctaRep(R,site,g.k,'2021'),b=ctaRep(R,site,g.k,'2025');
+  const ra=a&&isNum(a.rep)?+a.rep:null,rb=b&&isNum(b.rep)?+b.rep:null;
+  const ch=ra!==null&&rb!==null?Math.round((rb-ra)*10)/10:null;
+  const w=b&&isNum(b.wfa)?+b.wfa:null,r=rb!==null&&w!==null&&w>0?rb/w:null,low=r!==null&&r<=LOW;
+  return {cells:[esc(ctaGroup(g.k)),a?(ra===null?notPub():pc(ra)):tr('No data','Aucune donnée'),b?(rb===null?notPub():pc(rb)):tr('No data','Aucune donnée'),ch===null?'':signed(ch),
+   g.k==='b'?tr('No benchmark','Aucune'):(w===null?'':pc(w)),r===null?'':ratio(r)+(low?mark():'')],cc:['','','','','',low?'gt-flag':'']};
+ });
+ const lab=ser.labels?[...new Set(['2021','2025'].map(y=>ser.labels[y]).filter(Boolean))]:[];
+ return gtTable('gtCtaRep',tr('Representation, March 31, 2021, and March 31, 2025','Représentation au 31 mars 2021 et au 31 mars 2025'),
+  [tr('Employee group','Groupe d’employés'),march31('2021'),march31('2025'),tr('Change, points','Variation, points'),tr('Availability, 2025','Disponibilité, 2025'),tr('2025 ÷ availability','2025 ÷ disponibilité')],rows,['','num','num','num','num','num'])+
+  '<p class="gt-plan">'+(lab.length?tr('Treasury Board labels for this row','Libellés du Conseil du Trésor pour cette ligne')+tr(': ',NB+': ')+lab.map(l=>'<span lang="en">'+esc(l)+'</span>').join(', ')+'. ':'')+
+  tr('Representation counts employees who self-identified. Each year uses the availability benchmark published with it, so the change since 2021 is a change in representation, not in the gap. ▼ marks a ratio of 0.85 or less. Treasury Board publishes no availability benchmark for Black employees.','La représentation compte les employés qui se sont auto-identifiés. Chaque année utilise la disponibilité publiée avec elle; la variation depuis 2021 est donc une variation de la représentation, et non de l’écart. ▼ signale un ratio de 0,85 ou moins. Le Conseil du Trésor ne publie aucune disponibilité pour les employés noirs.')+'</p>';
+}
+function renderCtaOrg(el,cta,R,sn){
+ const name=el.getAttribute('data-org');
+ const m=ctaMatches(cta,name);
+ const heading='<h4>'+tr('Representation since the 2021 letters','Représentation depuis les lettres de 2021')+'</h4>';
+ if(!m.length){mount(el,'<p>'+tr('This organization has no 2021 letter or 2024 self-assessment in the Privy Council Office collections.','Cette organisation n’a ni lettre de 2021 ni autoévaluation de 2024 dans les collections du Bureau du Conseil privé.')+'</p>'+
+  '<p><a href="'+esc(ctaLink(null))+'">'+tr('Compare the organizations that responded to the Call to Action','Comparer les organisations qui ont répondu à l’appel à l’action')+'</a></p>');return;}
+ if(m.length>1){
+  mount(el,'<p>'+tr('Treasury Board publishes one row for these organizations. Each responded to the Call to Action separately. Choose an organization to see its letter, goals and survey results.','Le Conseil du Trésor publie une seule ligne pour ces organisations. Chacune a répondu séparément à l’appel à l’action. Choisissez une organisation pour consulter sa lettre, ses objectifs et ses résultats de sondage.')+'</p>'+
+   memberList(m,true)+heading+repBlock(R,m[0].site_name));
+  return;
+ }
+ const o=m[0],L=o.letter,S=o.self_assessment,colon=tr(': ',NB+': ');
+ const none=tr('none in the Privy Council Office collection','aucune dans la collection du Bureau du Conseil privé');
+ const docs='<ul class="gt-cta-docs">'+
+  '<li>'+tr('2021 letter','Lettre de 2021')+colon+(L?'<a href="'+esc(L.url)+'" target="_blank" rel="noopener noreferrer">'+tr('read the letter on Canada.ca','lire la lettre sur Canada.ca')+'</a>'+(L.author?' ('+tr('signed by ','signée par ')+'<span lang="en">'+esc(L.author)+'</span>)':''):none)+'</li>'+
+  '<li>'+tr('2024 self-assessment','Autoévaluation de 2024')+colon+(S?'<a href="'+esc(S.url)+'" target="_blank" rel="noopener noreferrer">'+tr('read the self-assessment on Canada.ca','lire l’autoévaluation sur Canada.ca')+'</a>':none)+'</li></ul>';
+ let goals='';
+ if(S){
+  const st=k=>{const v=S.goals[k];const s=v&&CTA_STATUS[v.status]?v.status:'none';return tr(CTA_STATUS[s][0],CTA_STATUS[s][1]);};
+  goals=gtTable('gtCtaGoals',tr('Recruitment and promotion goals reported in the 2024 self-assessment','Objectifs de recrutement et de promotion déclarés dans l’autoévaluation de 2024'),
+   [tr('Employee group','Groupe d’employés'),tr('Recruitment goal','Objectif de recrutement'),tr('Promotion goal','Objectif de promotion')],
+   CTA_G.filter(g=>g.goal).map(g=>({cells:[esc(ctaGroup(g.k)),st(g.goal+'_recruitment'),st(g.goal+'_promotion')]})),['','txt','txt']);
+ }
+ const shared=o.site_name?cta.organizations.filter(x=>x!==o&&x.site_name===o.site_name):[];
+ const ser=o.site_name&&R.orgs[o.site_name];
+ const sharedNote=shared.length&&ser?'<p class="gt-plan">'+tr('Treasury Board publishes one row for this organization and ','Le Conseil du Trésor publie une seule ligne pour cette organisation et ')+shared.map(x=>esc(ctaName(x))).join(tr(' and ',' et '))+colon+'<span lang="en">'+esc((ser.labels&&ser.labels['2025'])||o.site_name)+'</span>. '+tr('The representation figures below cover the whole row.','Les chiffres de représentation ci-dessous portent sur l’ensemble de la ligne.')+'</p>':'';
+ const E=get(()=>EEG_DEPT)||{},ek=eegKey(o,name),sk=snpsKey(sn,o,name);
+ const pair=(A,B,q,dir)=>{const a=A&&isNum(A[q])?+A[q]:null,b=B&&isNum(B[q])?+B[q]:null;if(a===null||b===null)return {html:notPub(),flag:false};
+  const d=a-b,f=dir==='neg'?d>=GAP:d<=-GAP;return {html:pc(a,0)+' / '+pc(b,0)+(f?mark():''),flag:f};};
+ const srows=CTA_G.map(g=>{
+  const p=ek?pair(E[ek][g.a],E[ek][g.b],'Q52','pos'):{html:notPub(),flag:false};
+  const s=sk?pair(sn.orgs[sk][g.a],sn.orgs[sk][g.b],'STA_14A','neg'):{html:notPub(),flag:false};
+  return {cells:[esc(ctaGroup(g.k))+'<span class="gt-base">'+tr('compared with ','par rapport aux ')+esc(ctaCmp(g.k))+'</span>',p.html,s.html],cc:['',p.flag?'gt-flag':'',s.flag?'gt-flag':'']};
+ });
+ const survey=gtTable('gtCtaSurvey',tr('Two survey results for each group, compared with a group in the same organization','Deux résultats de sondage pour chaque groupe, comparés à un groupe de la même organisation'),
+  [tr('Employee group','Groupe d’employés'),tr('The Call to Action has had a positive impact (2024 employee survey)','L’appel à l’action a eu une incidence positive (sondage auprès des fonctionnaires de 2024)'),tr('Experienced bias or barriers in a staffing process (2025 staffing survey)','Préjugés ou obstacles subis dans un processus de dotation (sondage sur la dotation de 2025)')],srows,['','num','num']);
+ mount(el,docs+goals+heading+sharedNote+repBlock(R,o.site_name)+
+  '<h4>'+tr('Employee views on the Call to Action and on staffing','Opinions des employés sur l’appel à l’action et sur la dotation')+'</h4>'+survey+
+  '<p class="gt-plan">'+tr('Each cell shows the group’s result, then the comparison group’s result, as a percentage of respondents. ▼ marks a result 3 or more points less favourable than the comparison group. For staffing barriers, a higher percentage is less favourable. A goal stated in a document is not evidence that it was met, and these results do not show the cause of a difference.','Chaque cellule présente le résultat du groupe, puis celui du groupe de comparaison, en pourcentage des répondants. ▼ signale un résultat moins favorable d’au moins 3 points que celui du groupe de comparaison. Pour les obstacles à la dotation, un pourcentage plus élevé est moins favorable. Un objectif inscrit dans un document ne prouve pas qu’il a été atteint, et ces résultats n’indiquent pas la cause d’un écart.')+'</p>'+
+  '<p><a href="'+esc(ctaLink(o))+'">'+tr('Read the commitments, goals, progress and barriers reported by this organization','Consulter les engagements, objectifs, progrès et obstacles déclarés par cette organisation')+'</a></p>');
+}
+const SN_PAIRS=[
+ ['ind','nonind',['Indigenous respondents','Répondants autochtones'],['Non-Indigenous respondents','Répondants non autochtones'],['Indigenous and non-Indigenous respondents','Répondants autochtones et non autochtones']],
+ ['rac','nonrac',['Racialized respondents','Répondants racisés'],['Non-racialized respondents','Répondants non racisés'],['Racialized and non-racialized respondents','Répondants racisés et non racisés']],
+ ['black','nonrac',['Black respondents','Répondants noirs'],['Non-racialized respondents','Répondants non racisés'],['Black and non-racialized respondents','Répondants noirs et répondants non racisés']],
+ ['pwd','nopwd',['Respondents with disabilities','Répondants en situation de handicap'],['Respondents without disabilities','Répondants sans handicap'],['Respondents with and without disabilities','Répondants en situation de handicap et répondants sans handicap']],
+ ['woman','man',['Women','Femmes'],['Men','Hommes'],['Women and men','Femmes et hommes']]];
+let snPair='rac';
+function renderSnpsOrg(el,sn,cta){
+ const name=el.getAttribute('data-org');
+ const m=ctaMatches(cta,name);
+ if(m.length>1){mount(el,'<p>'+tr('The survey publishes results separately for each organization in this Treasury Board row. Choose an organization:','Le sondage publie des résultats distincts pour chaque organisation de cette ligne du Conseil du Trésor. Choisissez une organisation'+NB+':')+'</p>'+memberList(m,false));return;}
+ const key=snpsKey(sn,m[0],name);
+ if(!key){mount(el,'<p>'+tr('No 2025 staffing survey results are published for this organization.','Aucun résultat du Sondage sur la dotation de 2025 n’est publié pour cette organisation.')+'</p>');return;}
+ const R=sn.orgs[key],P=SN_PAIRS.find(p=>p[0]===snPair)||SN_PAIRS[1];
+ const A=R[P[0]]||{},B=R[P[1]]||{},ALL=R.all||{};
+ const rows=Object.keys(sn.questions).map(q=>{
+  const Q=sn.questions[q],a=isNum(A[q])?+A[q]:null,b=isNum(B[q])?+B[q]:null,d=a!==null&&b!==null?a-b:null;
+  const f=d!==null&&(Q.dir==='neg'?d>=GAP:d<=-GAP);
+  return {cells:[esc(isFr()?Q.fr:Q.en)+'<span class="gt-base">'+esc(isFr()?Q.base_fr:Q.base)+'</span>',isNum(ALL[q])?pc(ALL[q],0):notPub(),a===null?notPub():pc(a,0),b===null?notPub():pc(b,0),d===null?'':signed(d,0)+(f?mark():'')],cc:['','','','',f?'gt-flag':'']};
+ });
+ const opts=SN_PAIRS.map(p=>'<option value="'+p[0]+'"'+(p===P?' selected':'')+'>'+esc(tr(p[4][0],p[4][1]))+'</option>').join('');
+ mount(el,'<div class="gt-snps-pick"><label for="gtSnpsPair">'+tr('Compare','Comparer')+'</label> <select id="gtSnpsPair">'+opts+'</select></div>'+
+  gtTable('gtSnpsOrg',tr('2025 staffing survey results, percentage of respondents','Résultats du Sondage sur la dotation de 2025, pourcentage des répondants'),
+   [tr('Question and respondents','Question et répondants'),tr('All respondents','Tous les répondants'),esc(tr(P[2][0],P[2][1])),esc(tr(P[3][0],P[3][1])),tr('Difference, points','Écart, points')],rows,['','num','num','num','num'])+
+  '<p class="gt-plan">'+esc(isFr()?sn.method_fr:sn.method)+' '+esc(isFr()?sn.period_fr:sn.period)+'. '+tr('▼ marks a result 3 or more points less favourable than the comparison group. For the first question, a higher percentage is less favourable. Black respondents are compared with non-racialized respondents.','▼ signale un résultat moins favorable d’au moins 3 points que celui du groupe de comparaison. Pour la première question, un pourcentage plus élevé est moins favorable. Les répondants noirs sont comparés aux répondants non racisés.')+'</p>');
+ const s=el.querySelector('#gtSnpsPair');
+ if(s)s.addEventListener('change',()=>{snPair=s.value;renderSnpsOrg(el,sn,cta);const n=el.querySelector('#gtSnpsPair');if(n)n.focus();});
+}
+function orgCards(){
+ const s=document.querySelector('.gc-snps-org:not([data-gt-done])'),c=document.querySelector('.gc-cta-org:not([data-gt-done])');
+ if(s){s.dataset.gtDone='1';Promise.all([getJSON('snps'),getJSON('cta')]).then(([sn,cta])=>{if(s.isConnected)renderSnpsOrg(s,sn,cta);}).catch(e=>{if(s.isConnected)s.innerHTML=failed(e);});}
+ if(c){c.dataset.gtDone='1';Promise.all([getJSON('cta'),getJSON('rep'),getJSON('snps')]).then(([cta,R,sn])=>{if(c.isConnected)renderCtaOrg(c,cta,R,sn);}).catch(e=>{if(c.isConnected)c.innerHTML=failed(e);});}
+}
+
 /* ------------------------------------------------------------------ styles */
 const css=document.createElement('style');
 css.textContent=[
@@ -638,6 +787,7 @@ css.textContent=[
  '#gtCycleTable td.gt-flag{background:rgba(163,0,0,.08)}',
  '#gtCycleTable td.gt-flag .gt-r,#gtCycleTable td.gt-flag .gt-mark{color:var(--rust,#a30000)}',
  '#gtCycleTable .gt-mark{font-size:13px;font-weight:700}',
+ 'html[data-theme="dark"] #gtCycleTable td.gt-flag.gc-hl .gt-r,html[data-theme="dark"] #gtCycleTable td.gt-flag.gc-hl .gt-mark{color:#f29a76}',
  '.gt-stage{display:block}',
  '.gt-how{display:block;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}',
  'html:not([data-theme]) .gt-how a,html[data-theme="light"] .gt-how a{color:#0A6463}',
@@ -654,7 +804,17 @@ css.textContent=[
  '#gcDeckCard:not(.gt-deck-org) .gt-org-only,#gcDeckCard.gt-deck-org .gt-ps-only{display:none}',
  '.gt-status{margin:6px 0 0;font-size:13.5px}',
  '.gt-plan{font-size:13.5px;line-height:1.5;color:var(--ink-soft);margin:4px 0 12px}',
- '@media (max-width:640px){#gtCycleTable td{min-width:84px}.gt-check{white-space:normal}}'
+ '.gt-cta-docs{margin:4px 0 12px;padding-left:20px;line-height:1.55}',
+ '.gt-org-table th.gt-wrap{white-space:normal;min-width:96px;vertical-align:bottom}',
+ '.gt-org-table td.gt-txt{text-align:left;font-family:inherit;font-size:14px;white-space:normal}',
+ '.gt-org-table tbody th[scope=row]{min-width:180px}',
+ '.gt-base{display:block;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}',
+ '.gt-org-table td.gt-flag{background:rgba(163,0,0,.08)}',
+ '.gt-org-table td.gt-flag,.gt-org-table td.gt-flag .gt-mark{color:var(--rust,#a30000);font-weight:700}',
+ '.gt-snps-pick{margin:6px 0 10px}',
+ '.gt-snps-pick label{font-weight:600;margin-right:6px}',
+ '.gt-snps-pick select{min-width:0;max-width:100%;width:min(460px,100%);min-height:44px;font-size:15px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 10px}',
+ '@media (max-width:640px){#gtCycleTable td{min-width:84px}.gt-check{white-space:normal}.gt-org-table tbody th[scope=row]{min-width:150px}}'
 ].join('\n');
 document.head.appendChild(css);
 
@@ -682,7 +842,7 @@ function start(){
  renderAll();watch();
  wordButton('briefWord','briefText',()=>tr('briefing-note-','note-information-')+fileSlug((($('briefDept')||$('briefOrg')||{}).value)||''));
  wordButton('rqWord','rqText',()=>tr('data-request-','demande-donnees-')+fileSlug((($('rqOrg')||{}).value)||''));
- const card=$('opCard');if(card&&typeof MutationObserver!=='undefined'){new MutationObserver(()=>{try{orgLink();}catch(e){}}).observe(card,{childList:true});orgLink();}
+ const card=$('opCard');if(card&&typeof MutationObserver!=='undefined'){new MutationObserver(()=>{try{orgLink();}catch(e){}try{orgCards();}catch(e){}}).observe(card,{childList:true});orgLink();orgCards();}
  const gs=$('gcGroup');if(gs)gs.addEventListener('change',()=>setTimeout(groupLink,0));
  const op=$('opOrg');if(op)op.addEventListener('change',()=>setTimeout(()=>{const a=$('cmpA'),b=$('cmpB');if(a&&b&&a.value===b.value&&a.value!=='-1'){b.value='-1';b.dispatchEvent(new Event('change'));}},400));
  setTimeout(groupLink,600);

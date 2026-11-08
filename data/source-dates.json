@@ -27,7 +27,7 @@
    "title": "TBS: employees by subgroup and department, members of visible minorities",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
-   "checked": null
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-dept-wfa-women",
@@ -41,21 +41,21 @@
    "title": "TBS: representation of Indigenous Peoples by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-indigenous-peoples-department-agency-departmental-workforce-availability-estimates.html",
-   "checked": null
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-dept-wfa-disabilities",
    "title": "TBS: representation of persons with disabilities by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-persons-disabilities-department-agency-departmental-workforce-availability-estimates.html",
-   "checked": null
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-dept-wfa-racialized",
    "title": "TBS: representation of members of visible minorities by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-members-visible-minority-group-department-agency-departmental-workforce-availability-estimates.html",
-   "checked": null
+   "checked": "2026-06-24"
   },
   {
    "id": "tbs-executive-levels",
@@ -69,6 +69,20 @@
    "title": "TBS: diversity and inclusion statistics (list of tables)",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html",
+   "checked": null
+  },
+  {
+   "id": "pco-cta-letters",
+   "title": "PCO: letters on the implementation of the Call to Action on Anti-Racism, Equity, and Inclusion (2021)",
+   "kind": "canada-page",
+   "url": "https://www.canada.ca/en/privy-council/corporate/clerk/call-to-action-anti-racism-equity-inclusion-federal-public-service/letters-implementation.html",
+   "checked": "2023-05-09"
+  },
+  {
+   "id": "pco-cta-self-assessments",
+   "title": "PCO: responses to the self-assessment on the forward direction of the Call to Action (2024)",
+   "kind": "canada-page",
+   "url": "https://www.canada.ca/en/privy-council/corporate/about-call-action/self-assessment-forward-direction.html",
    "checked": null
   },
   {

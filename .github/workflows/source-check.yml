@@ -11,7 +11,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - name: Compare source dates
@@ -24,20 +24,24 @@ jobs:
           cfg = json.load(open('data/source-dates.json', encoding='utf-8'))
           ua = {'User-Agent': 'GC-Equity-source-check'}
           def get(url, headers=None):
-              # curl with an ordinary browser identity. Canada.ca refuses requests from GitHub's servers at the moment;
-              # those pages are listed as not reached and are checked by hand.
-              cmd = ['curl', '-sSL', '--fail', '--compressed', '--connect-timeout', '15', '--max-time', '30', '-A',
+              # curl with an ordinary browser identity, over HTTP/1.1 and without compression. Canada.ca refused
+              # GitHub's servers with other settings. A page that still does not answer is listed as not reached.
+              cmd = ['curl', '-sSL', '--fail', '--http1.1', '--connect-timeout', '20', '--max-time', '75', '-A',
                      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
                      '-H', 'Accept: text/html,application/json;q=0.9,*/*;q=0.8', '-H', 'Accept-Language: en-CA,en;q=0.8']
               for k, v in (headers or {}).items():
                   cmd += ['-H', k + ': ' + v]
-              out = subprocess.run(cmd + [url], capture_output=True, timeout=120)
+              out = subprocess.run(cmd + [url], capture_output=True, timeout=100)
               if out.returncode != 0:
                   raise RuntimeError('curl exit ' + str(out.returncode))
               return out.stdout.decode('utf-8', 'replace')
           def current(src):
               if src['kind'] == 'canada-page':
-                  m = re.search(r'property="dateModified"[^>]*>\s*(\d{4}-\d{2}-\d{2})', get(src['url']))
+                  page = get(src['url'])
+                  # Older Canada.ca pages use property="dateModified"; newer ones use <gcds-date-modified>.
+                  m = (re.search(r'property="dateModified"[^>]*>\s*(\d{4}-\d{2}-\d{2})', page)
+                       or re.search(r'<gcds-date-modified[^>]*>\s*(\d{4}-\d{2}-\d{2})', page)
+                       or re.search(r'name="dcterms\.modified"[^>]*content="(\d{4}-\d{2}-\d{2})"', page))
                   return m.group(1) if m else None
               if src['kind'] == 'open-data':
                   ident = src['url'].rstrip('/').split('/')[-1]

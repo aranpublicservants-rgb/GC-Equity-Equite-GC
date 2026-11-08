@@ -8,6 +8,8 @@ on:
       - 'index.html'
       - 'explorer.html'
       - 'sources.html'
+      - 'call-to-action.html'
+      - 'call-to-action.js'
       - 'gc-workspace.js'
       - 'gc-workspace.css'
       - 'assets/**'
@@ -33,7 +35,7 @@ jobs:
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
-      - name: Main page, three paths, chatbot links and languages on desktop and phone
+      - name: Main page, four paths, chatbot links and languages on desktop and phone
         run: |
           node <<'JS'
           const {chromium,devices}=require('playwright');
@@ -59,11 +61,11 @@ jobs:
                 const overflow=p=>p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+2||innerWidth>document.documentElement.clientWidth+2);
                 fs.mkdirSync('qa-screenshots',{recursive:true});
 
-                // 1. Main page: three options and the chatbot box
+                // 1. Main page: four options and the chatbot box
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
                 const hrefs=await page.$$eval('.choices > li > a',as=>as.map(a=>new URL(a.href).pathname.replace(/^\//,'')+new URL(a.href).hash));
-                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','explorer.html#bhome']))throw Error('main options: '+hrefs);
+                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','explorer.html#bhome','call-to-action.html']))throw Error('main options: '+hrefs);
                 if(await page.$$eval('#aiBox .gcai-bot',a=>a.length)!==4)throw Error('chatbot links missing');
                 if(await page.$$eval('#gcw-theme option',b=>b.length)!==3)throw Error('display choices missing on the main page');
                 await page.selectOption('#gcw-theme','contrast');
@@ -129,6 +131,27 @@ jobs:
                 if(!branchFiles.some(u=>/data\/pses-2024-branches\/\d+\.json\.gz$/.test(u)))throw Error('branch results did not load from their data file');
                 if(await page.$$eval('#eqBranchQuestion option',o=>o.length)<50)throw Error('branch questions missing');
                 if(!await page.$('#gcw-header a.gcw-brand'))throw Error('workspace navigation missing');
+                // The Call to Action section reads its own data files: 2021 and 2025 representation, with the 0.85 rule.
+                await page.waitForFunction(()=>{const t=document.getElementById('gtCtaRep');return t&&/10\.6%/.test(t.textContent)&&/0\.61/.test(t.textContent)&&t.querySelector('td.gt-flag');},null,{timeout:60000});
+                await page.waitForFunction(()=>{const t=document.getElementById('gtSnpsOrg');return t&&t.querySelectorAll('tbody tr').length===7;},null,{timeout:60000});
+                await page.selectOption('#gtSnpsPair','pwd');
+                await page.waitForFunction(()=>/Respondents with disabilities/.test(document.getElementById('gtSnpsOrg').textContent),null,{timeout:30000});
+                if(await overflow(page))throw Error(mode.name+': organization page scrolls sideways');
+                await page.close();
+
+                // 3b. The Call to Action page: compare organizations, filter, and open a record
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'call-to-action.html?lang=en',big);
+                await page.waitForFunction(()=>document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
+                await page.selectOption('#cta-group','b');
+                await page.selectOption('#cta-filter','goal');
+                await page.waitForFunction(()=>{const n=document.querySelectorAll('#cta-compare tbody tr').length;return n>0&&n<100;},null,{timeout:30000});
+                await page.goto(addr+'call-to-action.html?lang=en&org=correctional-service-canada#record',big);
+                await page.waitForFunction(()=>{const r=document.getElementById('cta-record');return r&&/Correctional Service Canada/.test(r.textContent)&&/Targets in the letter/.test(r.textContent);},null,{timeout:60000});
+                if(await overflow(page))throw Error(mode.name+': Call to Action page scrolls sideways');
+                await page.screenshot({path:'qa-screenshots/'+mode.name+'-call-to-action.png'});
+                await page.goto(addr+'call-to-action.html?lang=fr',big);
+                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Appel à l’action/.test(document.querySelector('h1').textContent)&&document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
                 await page.close();
 
                 // 4. Option 2: choose a group and see all of its data
@@ -175,7 +198,7 @@ jobs:
                 const unexpected=outside.filter(u=>!/^https:\/\/(chatgpt\.com|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)\//.test(u));
                 if(unexpected.length)throw Error(mode.name+': outside requests: '+unexpected.join(' '));
                 await ctx.close();
-                console.log('PASS: '+mode.name+', main page, chatbot links, three paths, presentation and Word files, French, source list');
+                console.log('PASS: '+mode.name+', main page, chatbot links, four paths, Call to Action page and sections, presentation and Word files, French, source list');
               }
             }finally{await browser.close();server.close()}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});
