@@ -1,165 +1,21 @@
 {
  "pages": {
-  "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c": {
-   "status": "200 https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+  "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024-25.html": {
+   "status": "200 https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024-25.html",
+   "fr": "/fr/secretariat-conseil-tresor/services/innovation/sondage-fonctionnaires-federaux/2024-25.html",
+   "title": "2024 Public Service Employee Survey Results - Canada.ca",
+   "err": ""
+  },
+  "https://ouvert.canada.ca/data/fr/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f": {
+   "status": "200 https://ouvert.canada.ca/data/fr/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
    "fr": "",
-   "title": "Public Service Commission&#39;s Staffing Dashboard - Open Government Portal",
+   "title": "R\u00e9sultats du Sondage aupr\u00e8s des fonctionnaires f\u00e9d\u00e9raux de 2024 - Portail du gouvernement ouvert",
    "err": ""
   },
-  "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db": {
-   "status": "200 https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+  "https://www.canada.ca/fr/commission-fonction-publique/services/publications/groupes-vises-equite-matiere-emploi-vertu-loi-emploi.html": {
+   "status": "200 https://www.canada.ca/fr/commission-fonction-publique/services/publications/groupes-vises-equite-matiere-emploi-vertu-loi-emploi.html",
    "fr": "",
-   "title": "Public Service Hiring and Staffing Activities under the Public Service Employment Act - Open Government Portal",
-   "err": ""
-  },
-  "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a": {
-   "status": "200 https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
-   "fr": "",
-   "title": "Employment Equity Designated Groups under the Public Service Employment Act - Open Government Portal",
-   "err": ""
-  },
-  "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f": {
-   "status": "200 https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
-   "fr": "",
-   "title": "2024 Public Service Employee Survey Results - Open Government Portal",
-   "err": ""
-  },
-  "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b": {
-   "status": "200 https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
-   "fr": "",
-   "title": "Population under the Public Service Employment Act - Open Government Portal",
-   "err": ""
-  },
-  "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22": {
-   "status": "200 https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
-   "fr": "",
-   "title": "2025 Staffing and Non-Partisanship Survey - Open Government Portal",
-   "err": ""
-  },
-  "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039": {
-   "status": "200 https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
-   "fr": "",
-   "title": "2023 Staffing and Non-Partisanship Survey - Open Government Portal",
-   "err": ""
-  },
-  "https://ouvert.canada.ca/data/fr/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c": {
-   "status": "200 https://ouvert.canada.ca/data/fr/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
-   "fr": "",
-   "title": "Tableau de bord de la dotation de la Commission de la fonction publique - Portail du gouvernement ouvert",
-   "err": ""
-  },
-  "https://ouvert.canada.ca/data/fr/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db": {
-   "status": "200 https://ouvert.canada.ca/data/fr/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
-   "fr": "",
-   "title": "Embauche et dotation \u00e0 la fonction publique en vertu de la Loi sur l&#39;emploi dans la fonction publique - Portail du gouvernement ouvert",
-   "err": ""
-  },
-  "https://ouvert.canada.ca/data/fr/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a": {
-   "status": "200 https://ouvert.canada.ca/data/fr/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
-   "fr": "",
-   "title": "Groupes vis\u00e9s par l\u2019\u00e9quit\u00e9 en mati\u00e8re d\u2019emploi en vertu de la Loi sur l&#39;emploi dans la fonction publique - Portail du gouvernement ouvert",
-   "err": ""
-  },
-  "https://ouvert.canada.ca/data/fr/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b": {
-   "status": "200 https://ouvert.canada.ca/data/fr/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
-   "fr": "",
-   "title": "Effectif en vertu de la Loi sur l&#39;emploi dans la fonction publique - Portail du gouvernement ouvert",
-   "err": ""
-  },
-  "https://ouvert.canada.ca/data/fr/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22": {
-   "status": "200 https://ouvert.canada.ca/data/fr/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
-   "fr": "",
-   "title": "Sondage sur la dotation et l\u2019impartialit\u00e9 politique de 2025 - Portail du gouvernement ouvert",
-   "err": ""
-  },
-  "https://ouvert.canada.ca/data/fr/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039": {
-   "status": "200 https://ouvert.canada.ca/data/fr/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
-   "fr": "",
-   "title": "Sondage sur la dotation et l\u2019impartialit\u00e9 politique de 2023 - Portail du gouvernement ouvert",
-   "err": ""
-  },
-  "https://www.canada.ca/en/privy-council/corporate/about-call-action/message-call-to-action-and-values-ethics-self-assessments/call-to-action-self-assessments.html": {
-   "status": "200 https://www.canada.ca/en/privy-council/corporate/about-call-action/message-call-to-action-and-values-ethics-self-assessments/call-to-action-self-assessments.html",
-   "fr": "/fr/conseil-prive/organisation/a-propos-appel-action/message-autoevaluations-appel-action-et-valeurs-ethique/autoevaluations-appel-action.html",
-   "title": "Self-assessment on the forward direction of the Call to Action on Anti-Racism, Equity, and Inclusion in the Federal Public Service - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/privy-council/corporate/about-call-action/self-assessment-forward-direction.html": {
-   "status": "200 https://www.canada.ca/en/privy-council/corporate/about-call-action/self-assessment-forward-direction.html",
-   "fr": "/fr/conseil-prive/organisation/a-propos-appel-action/autoevaluation-orientations-suivre.html",
-   "title": "Responses to the self-assessment on the forward direction of the Call to Action on Anti-Racism, Equity, and Inclusion in the Federal Public Service - ",
-   "err": ""
-  },
-  "https://www.canada.ca/en/privy-council/corporate/clerk/call-to-action-anti-racism-equity-inclusion-federal-public-service.html": {
-   "status": "200 https://www.canada.ca/en/privy-council/corporate/clerk/call-to-action-anti-racism-equity-inclusion-federal-public-service.html",
-   "fr": "/fr/conseil-prive/organisation/greffier/appel-action-faveur-lutte-contre-racisme-equite-inclusion-fonction-publique-federale.html",
-   "title": "Call to Action on Anti-Racism, Equity, and Inclusion in the Federal Public Service - Privy Council Office - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/privy-council/corporate/clerk/call-to-action-anti-racism-equity-inclusion-federal-public-service/letters-implementation.html": {
-   "status": "200 https://www.canada.ca/en/privy-council/corporate/clerk/call-to-action-anti-racism-equity-inclusion-federal-public-service/letters-implementation.html",
-   "fr": "/fr/conseil-prive/organisation/greffier/appel-action-faveur-lutte-contre-racisme-equite-inclusion-fonction-publique-federale/lettres-mise-en-oeuvre.html",
-   "title": "Letters on the Implementation of the Call to Action on Anti-Racism, Equity, and Inclusion in the Federal Public Service - Privy Council Office - Canad",
-   "err": ""
-  },
-  "https://www.canada.ca/en/public-service-commission/services/publications/audit-of-employment-equity-representation-in-recruitment.html": {
-   "status": "200 https://www.canada.ca/en/public-service-commission/services/publications/audit-of-employment-equity-representation-in-recruitment.html",
-   "fr": "/fr/commission-fonction-publique/services/publications/verification-representation-groupes-vises-equite-matiere-demploi-lors-du-recrutement.html",
-   "title": "Audit of Employment Equity Representation in Recruitment - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/public-service-commission/services/publications/employment-equity-designated-groups-public-service-employment-act.html": {
-   "status": "200 https://www.canada.ca/en/public-service-commission/services/publications/employment-equity-designated-groups-public-service-employment-act.html",
-   "fr": "/fr/commission-fonction-publique/services/publications/groupes-vises-equite-matiere-emploi-vertu-loi-emploi.html",
-   "title": "Employment Equity Designated Groups under the Public Service Employment Act: Supporting Documentation - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/public-service-commission/services/publications/staffing-dashboard.html": {
-   "status": "200 https://www.canada.ca/en/public-service-commission/services/publications/staffing-dashboard.html",
-   "fr": "/fr/commission-fonction-publique/services/publications/tableau-de-bord-dotation.html",
-   "title": "Public Service Commission&#39;s Staffing Dashboard - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-executive-employees.html": {
-   "status": "200 https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-executive-employees.html",
-   "fr": "/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/distribution-fonction-publique-canada-cadres-employes.html",
-   "title": "Distribution of public service of Canada executive employees (Executives (EX) and Law Management (LC)) by designated group and level with workforce av",
-   "err": ""
-  },
-  "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html": {
-   "status": "200 https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html",
-   "fr": "/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html",
-   "title": "Employment Equity Demographic Snapshot 2024\u20132025 - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/representation-public-service-canada-designated-group-fiscal-year-workforce-availability-estimates.html": {
-   "status": "200 https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/representation-public-service-canada-designated-group-fiscal-year-workforce-availability-estimates.html",
-   "fr": "/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-groupes-designes-fonction-publique-canada-exercice-estimations-disponibilite-sein-population-active.html",
-   "title": "Representation in the public service of Canada by designated group and fiscal year with workforce availability estimates - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024.html": {
-   "status": "404 https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024.html",
-   "fr": "/fr/erreurs/404.html",
-   "title": "Not Found - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/fr/commission-fonction-publique/services/publications/audit-representation-equite-emploi-recrutement.html": {
-   "status": "404 https://www.canada.ca/fr/commission-fonction-publique/services/publications/audit-representation-equite-emploi-recrutement.html",
-   "fr": "",
-   "title": "Pas trouv\u00e9 - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/fr/commission-fonction-publique/services/publications/groupes-designes-equite-matiere-emploi-loi-emploi-fonction-publique.html": {
-   "status": "404 https://www.canada.ca/fr/commission-fonction-publique/services/publications/groupes-designes-equite-matiere-emploi-loi-emploi-fonction-publique.html",
-   "fr": "",
-   "title": "Pas trouv\u00e9 - Canada.ca",
-   "err": ""
-  },
-  "https://www.canada.ca/fr/commission-fonction-publique/services/publications/tableau-de-bord-dotation.html": {
-   "status": "200 https://www.canada.ca/fr/commission-fonction-publique/services/publications/tableau-de-bord-dotation.html",
-   "fr": "",
-   "title": "Tableau de bord de la dotation de la Commission de la fonction publique  - Canada.ca",
+   "title": "Groupes vis\u00e9s par l\u2019\u00e9quit\u00e9 en mati\u00e8re d\u2019emploi en vertu de la Loi sur l&#39;emploi dans la fonction publique : Documentation \u00e0 l&#39;appui - Canada.ca",
    "err": ""
   },
   "https://www.canada.ca/fr/commission-fonction-publique/services/publications/verification-representation-groupes-vises-equite-matiere-demploi-lors-du-recrutement.html": {
@@ -168,115 +24,54 @@
    "title": "V\u00e9rification portant sur la repr\u00e9sentation des groupes vis\u00e9s par l\u2019\u00e9quit\u00e9 en mati\u00e8re d\u2019emploi lors du recrutement - Canada.ca",
    "err": ""
   },
-  "https://www.canada.ca/fr/commission-fonction-publique/services/publications/groupes-vises-equite-matiere-emploi-loi-emploi-fonction-publique.html": {
-   "status": "404 https://www.canada.ca/fr/commission-fonction-publique/services/publications/groupes-vises-equite-matiere-emploi-loi-emploi-fonction-publique.html",
+  "https://www.canada.ca/fr/conseil-prive/organisation/greffier/appel-action-faveur-lutte-contre-racisme-equite-inclusion-fonction-publique-federale.html": {
+   "status": "200 https://www.canada.ca/fr/conseil-prive/organisation/greffier/appel-action-faveur-lutte-contre-racisme-equite-inclusion-fonction-publique-federale.html",
    "fr": "",
-   "title": "Pas trouv\u00e9 - Canada.ca",
+   "title": "Appel \u00e0 l\u2019action en faveur de la lutte contre le racisme, de l\u2019\u00e9quit\u00e9 et de l\u2019inclusion dans la fonction publique f\u00e9d\u00e9rale - Bureau du Conseil priv\u00e9 -",
+   "err": ""
+  },
+  "https://www.canada.ca/fr/conseil-prive/organisation/greffier/appel-action-faveur-lutte-contre-racisme-equite-inclusion-fonction-publique-federale/lettres-mise-en-oeuvre.html": {
+   "status": "200 https://www.canada.ca/fr/conseil-prive/organisation/greffier/appel-action-faveur-lutte-contre-racisme-equite-inclusion-fonction-publique-federale/lettres-mise-en-oeuvre.html",
+   "fr": "",
+   "title": "Lettres sur la mise en \u0153uvre de l\u2019Appel \u00e0 l\u2019action en faveur de la lutte contre le racisme, de l\u2019\u00e9quit\u00e9 et de l\u2019inclusion dans la fonction publique f\u00e9",
+   "err": ""
+  },
+  "https://www.canada.ca/fr/conseil-prive/organisation/a-propos-appel-action/autoevaluation-orientations-suivre.html": {
+   "status": "200 https://www.canada.ca/fr/conseil-prive/organisation/a-propos-appel-action/autoevaluation-orientations-suivre.html",
+   "fr": "",
+   "title": "R\u00e9ponses \u00e0 l\u2019auto\u00e9valuation sur les orientations \u00e0 suivre concernant l\u2019Appel \u00e0 l\u2019action en faveur de la lutte contre le racisme, de l\u2019\u00e9quit\u00e9 et de l\u2019i",
+   "err": ""
+  },
+  "https://www.canada.ca/fr/conseil-prive/organisation/a-propos-appel-action/message-autoevaluations-appel-action-et-valeurs-ethique/autoevaluations-appel-action.html": {
+   "status": "200 https://www.canada.ca/fr/conseil-prive/organisation/a-propos-appel-action/message-autoevaluations-appel-action-et-valeurs-ethique/autoevaluations-appel-action.html",
+   "fr": "",
+   "title": "Auto\u00e9valuation sur les orientations \u00e0 suivre concernant l\u2019Appel \u00e0 l\u2019action en faveur de la lutte contre le racisme, de l\u2019\u00e9quit\u00e9 et de l\u2019inclusion dans",
+   "err": ""
+  },
+  "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/distribution-fonction-publique-canada-cadres-employes.html": {
+   "status": "200 https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/distribution-fonction-publique-canada-cadres-employes.html",
+   "fr": "",
+   "title": "R\u00e9partition des cadres (groupe de la direction (EX) et groupe Gestion du droit (LC)) de la fonction publique du Canada par groupe d\u00e9sign\u00e9 et niveau et",
+   "err": ""
+  },
+  "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html": {
+   "status": "200 https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html",
+   "fr": "",
+   "title": "Aper\u00e7u des donn\u00e9es d\u00e9mographiques sur l\u2019\u00e9quit\u00e9 en mati\u00e8re d\u2019emploi 2024-2025 - Canada.ca",
+   "err": ""
+  },
+  "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-groupes-designes-fonction-publique-canada-exercice-estimations-disponibilite-sein-population-active.html": {
+   "status": "200 https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-groupes-designes-fonction-publique-canada-exercice-estimations-disponibilite-sein-population-active.html",
+   "fr": "",
+   "title": "Repr\u00e9sentation des groupes d\u00e9sign\u00e9s \u00e0 la fonction publique du Canada par exercice avec estimations de la disponibilit\u00e9 au sein de la population active",
+   "err": ""
+  },
+  "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey.html": {
+   "status": "200 https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey.html",
+   "fr": "/fr/secretariat-conseil-tresor/services/innovation/sondage-fonctionnaires-federaux.html",
+   "title": "Public Service Employee Survey - Canada.ca",
    "err": ""
   }
  },
- "files": {
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1CC.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1D.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1E.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1EE.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1K.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1N.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1O.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1R.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1S.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1T.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1U.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1V.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1X.csv": "200",
-  "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/pop-eff/CFPPSC_AR2C.csv": "200",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/f3d46f61-3523-4b5c-9dee-29ff0d0aced4/download/adv_type.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/e41a2a80-1af8-47d6-b993-c051686bc1fa/download/advs.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/3c37d066-9c05-404c-bd80-7413e423828a/download/ar1a.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f3a2ad68-e852-4b26-b7fa-a163561cb34a/download/ar1aa.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/76a47801-dbda-422c-bc4b-0a0304b05bb9/download/ar1b.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ded1b8b4-df88-4149-87f0-b28c9006e29f/download/ar1bb.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/download/ar1c.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f252ee8f-77bd-4c6f-9427-bfba04834e43/download/ar1dd.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/31f1217b-506e-4746-a38c-5385a0bf40e9/download/ar1f.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/4ae8e18c-3bfe-4386-ac13-c270a1067513/download/ar1ff.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ed783874-8549-42e6-9d4e-ac223c16617e/download/ar1gg.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/download/ar1h.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/14f5dcaa-9223-4981-9245-09773e14ae91/download/ar1hh.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/70c0042e-37d0-49ca-aafc-b21cab7c5555/download/ar1i.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/adfef7af-54da-4b2a-880e-0cbe2266e6c1/download/ar1ii.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/bc3fc632-00dc-47b9-b1a8-2da8d7e776eb/download/ar1l.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3/download/ar1q.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/34ea0731-9705-4d54-850a-005291dbf063/download/ar1y.csv": "206",
-  "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/75d9db1f-86f5-4d72-bf1b-85f500c6d7ac/download/ar1z.csv": "206",
-  "https://open.canada.ca/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/427efaed-60c6-477f-b561-5d9771ecd533/download/ar2a.csv": "206",
-  "https://open.canada.ca/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/42f285e9-5085-4f38-98a2-1dcd2c0bad42/download/ar2d.csv": "206",
-  "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/24a44ce4-676a-45c3-9718-db34e6c07755/download/ar4a.csv": "206",
-  "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/5dff85d4-e7af-4841-be27-f76826a5f494/download/ar4b.csv": "206",
-  "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/e0c16e15-2f40-4129-ac35-283b3aab3c8c/download/ar4c.csv": "206",
-  "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/ef7e5729-7a5b-40ed-baf2-0d8cadb01341/download/ar4d.csv": "206",
-  "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/3bcb7687-787d-499d-b9ca-83fc9c49a6a4/download/ar4e.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3/download/demo_age.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bc1f4229-b228-4000-9233-86c763b012ec/download/demo_ee.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/845143a0-fe5e-459a-9534-10fd688f5b10/download/demo_fol.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/ba48f743-388d-46de-ac6b-4d1a3bc47806/download/demo_group.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bfbecc14-d38e-4605-9218-09bef964643d/download/demo_region.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/5456d998-fc83-4871-b6b2-deaff7be5c98/download/inflow.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/347ba6ff-7c58-4775-ba3a-3a4d9e23eb06/download/internal_mob.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/d4ad133f-d6c0-46c4-ab17-89c6eb03b788/download/outflow.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/3df3bcf0-bdde-45c0-8a39-158c656da604/download/reappointments.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/425f80cf-2e70-421e-8832-8d67fcd1356e/download/vha_1.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0065a7ca-6495-45fc-a457-5a27e1a28889/download/vha_2.csv": "206",
-  "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/9a671e77-9506-4f48-9f36-ddc2d5f102da/download/vha_3.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/15f9967d-608d-41b2-bced-8d7e61a6d53f/download/cfppsc_snps01.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/download/cfppsc_snps02.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/be6fe4fa-37f7-4224-8108-095e66008b05/download/cfppsc_snps03-1.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0eded731-2004-4f00-aa05-606801f5dafc/download/cfppsc_snps04.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/download/cfppsc_snps05.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/68c92f22-dc23-4027-a714-214600063ed6/download/cfppsc_snps06.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/cdabf3bd-cfca-42b0-a58f-1d963a1af5ec/download/cfppsc_snps07.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/95829e14-df60-4766-afd5-ae8864580266/download/cfppsc_snps08.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/85ec7faf-90e5-4015-932b-f24fb97133b2/download/cfppsc_snps09.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/a45a3101-33be-453b-b5e2-144d8c50a7a0/download/cfppsc_snps10.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/54b1b522-573f-469e-97f8-de9c75a46106/download/cfppsc_snps11.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/2ae9d18b-3ccc-409a-935b-197bf2a580d6/download/cfppsc_snps12-1.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f/download/cfppsc_snps13.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d583d90e-4aca-43b3-95cb-5137c239d05d/download/cfppsc_snps14.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/dca15e16-3a29-4fc6-84e7-73032062a239/download/cfppsc_snps15.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/05442d31-89b6-4b97-a40f-7ee8f1cf756e/download/cfppsc_snps16.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/bf726802-12f3-4337-a5a0-facd70299a28/download/cfppsc_snps17.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1/download/cfppsc_snps18.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/5daa5fd7-6597-4edf-93b5-ea2b43854df4/download/cfppsc_snps20.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/download/cfppsc_snps21.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/ed359432-8f40-4096-a0fd-1f6bc44c7490/download/cfppsc_snps22.csv": "206",
-  "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/download/cfppsc_snps23.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b/download/cfppsc_snps01-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/37a83f7c-1352-42a5-ac94-d49391535793/download/cfppsc_snps02-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/840e8e64-9177-4c72-a84d-3d1cfb8e280e/download/cfppsc_snps03-2.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/0aa3b961-db7b-492e-a692-01af431ad854/download/cfppsc_snps04-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5903d97e-3ff7-4db9-8a9b-5338cddc0f12/download/cfppsc_snps05-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/aae3c25b-c61d-425a-9a1e-ed0deb7865b1/download/cfppsc_snps06-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7b6df281-e5ff-47a3-a3e3-aba70168fefd/download/cfppsc_snps07-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/16e1bab4-ef46-4857-8ac6-67ee9c99fa53/download/cfppsc_snps08-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/8c22ddff-2ff6-4e33-be6b-a1973005d861/download/cfppsc_snps09-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/2c7fd358-5262-446e-9ddf-980252552e76/download/cfppsc_snps10-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/c46d24c1-dcbc-4cce-87a1-fc42e6311720/download/cfppsc_snps11-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/9ed3ae74-9458-47ec-882d-e3d785e34389/download/cfppsc_snps12_a.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/74bfd99f-b71b-44ab-9c5f-174f1eb4c602/download/cfppsc_snps12_b.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7725a05d-6c06-486e-b707-d845fef9a688/download/cfppsc_snps13-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5878befe-05bd-42f0-b8cc-1b081a5d5ea7/download/cfppsc_snps14-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/408590d0-05dd-4467-bc23-b425f9681e3f/download/cfppsc_snps15-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/ff6d0c37-9b0d-4eca-9f32-d348f8048d48/download/cfppsc_snps16-1.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/242e8a2e-4604-48c2-afaa-5fff0aba51f6/download/cfppsc_snps17.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e80977dc-ef10-436f-b154-af08c420cd3d/download/cfppsc_snps18.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e5fdffd2-d510-4fc5-b57f-512a9f1ac261/download/cfppsc_snps19.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5a913b41-78d7-4378-9fa5-6be450950731/download/cfppsc_snps20.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7a37434b-a859-477c-a753-0a1c5fc77e0d/download/cfppsc_snps21.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/143635eb-63b9-4756-8831-d8a2b0585e78/download/cfppsc_snps22.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/692c27f1-7dba-48d8-9e6d-8dcddb35bb87/download/cfppsc_snps23.csv": "206",
-  "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/00b9cfee-3b00-4d2a-980b-72c81017af74/download/cfppsc_snps24.csv": "206"
- }
+ "files": {}
 }
