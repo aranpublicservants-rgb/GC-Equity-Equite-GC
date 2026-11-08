@@ -1,0 +1,61 @@
+[
+ {
+  "file": "demo_ee.csv",
+  "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bc1f4229-b228-4000-9233-86c763b012ec/download/demo_ee.csv",
+  "expected_sha256": "0f0216568883a111efa41de26d6f2af715486c788e891151fc83391a069a005b",
+  "bytes": 384878,
+  "sha256": "0f0216568883a111efa41de26d6f2af715486c788e891151fc83391a069a005b",
+  "final_url": "https://opencanada.blob.core.windows.net/opengovprod/resources/bc1f4229-b228-4000-9233-86c763b012ec/demo_ee.csv?se=2026-11-08T15%3A44%3A49Z&sp=r&sv=2024-08-04&sr=b&sig=LoTz56NrLlKeWKj5cWjeZrDPL63N8ASfE/mbznIXbCM%3D",
+  "matches": true
+ },
+ {
+  "file": "840e8e64_cfppsc_snps03-2.csv",
+  "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/840e8e64-9177-4c72-a84d-3d1cfb8e280e/download/cfppsc_snps03-2.csv",
+  "expected_sha256": null,
+  "bytes": 29834750,
+  "sha256": "f4e232125e9ccf213c46503a28d466e184766376499c9787be56a1f4b61c8b85",
+  "final_url": "https://opencanada.blob.core.windows.net/opengovprod/resources/840e8e64-9177-4c72-a84d-3d1cfb8e280e/cfppsc_snps03-2.csv?se=2026-11-08T15%3A44%3A55Z&sp=r&sv=2024-08-04&sr=b&sig=767r59c65T2oKBoo2z8P24WY9KmIcJerkXSg8Wt46ac%3D",
+  "matches": null
+ },
+ {
+  "file": "77c9c20e_cfppsc_snps05.csv",
+  "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/download/cfppsc_snps05.csv",
+  "expected_sha256": null,
+  "bytes": 21026218,
+  "sha256": "9379c2f19b79185bc9ed76dfe9b5d043302a9931eff44c3dbd72da099acd86f7",
+  "final_url": "https://opencanada.blob.core.windows.net/opengovprod/resources/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/cfppsc_snps05.csv?se=2026-11-08T15%3A45%3A02Z&sp=r&sv=2024-08-04&sr=b&sig=Q3LQlTNHRKRxS6DtXKVeOYYtnhhxf977DmTV/u8YrcY%3D",
+  "matches": null
+ },
+ {
+  "file": "tbs_indigenous_dept_wfa.html",
+  "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-indigenous-peoples-department-agency-departmental-workforce-availability-estimates.html",
+  "bytes": 310425,
+  "sha256": "71d26f8273d9f2aa85f6931ad85cce290b036cee6a9a22b62bb357ed5bf81b32",
+  "final_url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-indigenous-peoples-department-agency-departmental-workforce-availability-estimates.html",
+  "via": "canada.ca"
+ },
+ {
+  "file": "tbs_disability_dept_wfa.html",
+  "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-persons-disabilities-department-agency-departmental-workforce-availability-estimates.html",
+  "bytes": 319034,
+  "sha256": "ed5cc1d4e30a52f5249835d37544598718a94c1dcaa58698bfb79d437684a975",
+  "final_url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-persons-disabilities-department-agency-departmental-workforce-availability-estimates.html",
+  "via": "canada.ca"
+ },
+ {
+  "file": "tbs_vismin_dept_wfa.html",
+  "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-members-visible-minority-group-department-agency-departmental-workforce-availability-estimates.html",
+  "bytes": 312304,
+  "sha256": "65ad0a5660481a3253a587e7e467365e096d00d8a5e7bba2d87f8a459f848a68",
+  "final_url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-members-visible-minority-group-department-agency-departmental-workforce-availability-estimates.html",
+  "via": "canada.ca"
+ },
+ {
+  "file": "tbs_vismin_subgroup_dept.html",
+  "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
+  "bytes": 1445902,
+  "sha256": "c7fb499a3e50e4a07bf8b460d2a4accfda380734f4bf1af83c0d2db38b419eb1",
+  "final_url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
+  "via": "canada.ca"
+ }
+]
