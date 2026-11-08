@@ -1,0 +1,1192 @@
+{
+ "fetched": [
+  {
+   "name": "CFPPSC_AR1CC.csv",
+   "expected": [
+    "32358ae80152c1558027ddb61312b9b0ccdcfd73d31fae06ec4cc936f9073fe7"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1CC.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1CC.csv"
+   ],
+   "bytes": 982069,
+   "sha256": "32358ae80152c1558027ddb61312b9b0ccdcfd73d31fae06ec4cc936f9073fe7",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1CC.csv"
+  },
+  {
+   "name": "CFPPSC_AR1D.csv",
+   "expected": [
+    "871aff9aa75472194a0716c8b5b835e98c66275a0322672a293ed7b25fe76d96"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1D.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1D.csv"
+   ],
+   "bytes": 2660,
+   "sha256": "871aff9aa75472194a0716c8b5b835e98c66275a0322672a293ed7b25fe76d96",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1D.csv"
+  },
+  {
+   "name": "CFPPSC_AR1E.csv",
+   "expected": [
+    "9747933ccdac3187dad1bdc021b0828cac2e06020b31e18c3883b21818641f88"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1E.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1E.csv"
+   ],
+   "bytes": 834,
+   "sha256": "9747933ccdac3187dad1bdc021b0828cac2e06020b31e18c3883b21818641f88",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1E.csv"
+  },
+  {
+   "name": "CFPPSC_AR1EE.csv",
+   "expected": [
+    "b71303c0733b2320f02410b14521888cbe2b6a0b85733c45bd7d50e779882a79"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1EE.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1EE.csv"
+   ],
+   "bytes": 130703,
+   "sha256": "b71303c0733b2320f02410b14521888cbe2b6a0b85733c45bd7d50e779882a79",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1EE.csv"
+  },
+  {
+   "name": "CFPPSC_AR1J.csv",
+   "expected": [
+    "899d7963133938c89f6c1c0a058d02cd857ba26513365839e7f2df943a77c605"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1J.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv"
+   ],
+   "bytes": 6805,
+   "sha256": "899d7963133938c89f6c1c0a058d02cd857ba26513365839e7f2df943a77c605",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv"
+  },
+  {
+   "name": "CFPPSC_AR1K.csv",
+   "expected": [
+    "c01c2c5c546f26fcc02c214a37bd2a0b9a96594fe4faa17151b25c43cbc5b5c9"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1K.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1K.csv"
+   ],
+   "bytes": 4355,
+   "sha256": "c01c2c5c546f26fcc02c214a37bd2a0b9a96594fe4faa17151b25c43cbc5b5c9",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1K.csv"
+  },
+  {
+   "name": "CFPPSC_AR1N.csv",
+   "expected": [
+    "3c6572714bd103a434ba3103c4092e6f09c38dc5f25329537131de2a1252174d"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1N.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1N.csv"
+   ],
+   "bytes": 4258,
+   "sha256": "3c6572714bd103a434ba3103c4092e6f09c38dc5f25329537131de2a1252174d",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1N.csv"
+  },
+  {
+   "name": "CFPPSC_AR1O.csv",
+   "expected": [
+    "4e8c95d30f657838aa04675c18c211c84aba1a2b4a3c02dae8f4be956c50dbdc"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1O.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1O.csv"
+   ],
+   "bytes": 6761,
+   "sha256": "4e8c95d30f657838aa04675c18c211c84aba1a2b4a3c02dae8f4be956c50dbdc",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1O.csv"
+  },
+  {
+   "name": "CFPPSC_AR1R.csv",
+   "expected": [
+    "35d7bfb630ef17c7a50dc7b53b443701f94fdbfc0d80a239fca226c4e587972d"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1R.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1R.csv"
+   ],
+   "bytes": 3545,
+   "sha256": "35d7bfb630ef17c7a50dc7b53b443701f94fdbfc0d80a239fca226c4e587972d",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1R.csv"
+  },
+  {
+   "name": "CFPPSC_AR1S.csv",
+   "expected": [
+    "f5692f8d0d33f6358c8d0bff2aca7996f29fb94d27b10917694374049ba213e1"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1S.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1S.csv"
+   ],
+   "bytes": 14996,
+   "sha256": "f5692f8d0d33f6358c8d0bff2aca7996f29fb94d27b10917694374049ba213e1",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1S.csv"
+  },
+  {
+   "name": "CFPPSC_AR1T.csv",
+   "expected": [
+    "25e0e83c294f95c773de045950dce168cb5c7d3aa2006ebeb5bba03a514d2e97"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1T.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1T.csv"
+   ],
+   "bytes": 29552,
+   "sha256": "25e0e83c294f95c773de045950dce168cb5c7d3aa2006ebeb5bba03a514d2e97",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1T.csv"
+  },
+  {
+   "name": "CFPPSC_AR1U.csv",
+   "expected": [
+    "539cd075421b35189ee5c4e775dd811f49a3661bf2e538262ee3960735abfa58"
+   ],
+   "search": [
+    {
+     "q": "https://open.canada.ca/data/api/action/resource_search?query=url:CFPPSC_AR1U.csv",
+     "rc": 0,
+     "found": 1
+    }
+   ],
+   "urls": [
+    "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1U.csv"
+   ],
+   "bytes": 234706,
+   "sha256": "539cd075421b35189ee5c4e775dd811f49a3661bf2e538262ee3960735abfa58",
+   "matches": true,
+   "final": "200 https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1U.csv"
+  },
+  {
+   "name": "adv_type.csv",
+   "expected": [
+    "9214365991bdc9483989089c34435a53bc17a6410879146f9d789741bb0cb88b"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/f3d46f61-3523-4b5c-9dee-29ff0d0aced4/download/adv_type.csv"
+   ],
+   "bytes": 555644,
+   "sha256": "9214365991bdc9483989089c34435a53bc17a6410879146f9d789741bb0cb88b",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/f3d46f61-3523-4b5c-9dee-29ff0d0aced4/adv_type.csv?se=2026-11-08T23%3A03%3A47Z&sp=r&sv=2024-08-04&sr=b&sig=g/hbEIlYCfxV6UmDdEcFLYvzW9CA1s2kLMzhVtaK4L4%3D"
+  },
+  {
+   "name": "advs.csv",
+   "expected": [
+    "19799254340f8bf131768609938fbd353718c44043880cc10bf6cb71d9b0f9b4"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/e41a2a80-1af8-47d6-b993-c051686bc1fa/download/advs.csv"
+   ],
+   "bytes": 6009515,
+   "sha256": "19799254340f8bf131768609938fbd353718c44043880cc10bf6cb71d9b0f9b4",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/e41a2a80-1af8-47d6-b993-c051686bc1fa/advs.csv?se=2026-11-08T23%3A03%3A51Z&sp=r&sv=2024-08-04&sr=b&sig=peWlj/C/ZBRM52wN/EmBneSznvIhWghQ3DHzpRmk3NM%3D"
+  },
+  {
+   "name": "ar1a.csv",
+   "expected": [
+    "9785718425c736cec13ec615c6b8eaba4301fb35097a7dae77f130bb35f1281b"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/3c37d066-9c05-404c-bd80-7413e423828a/download/ar1a.csv"
+   ],
+   "bytes": 4506,
+   "sha256": "9785718425c736cec13ec615c6b8eaba4301fb35097a7dae77f130bb35f1281b",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/3c37d066-9c05-404c-bd80-7413e423828a/ar1a.csv?se=2026-11-08T23%3A03%3A56Z&sp=r&sv=2024-08-04&sr=b&sig=nxPVA1NZkMQE1i8wTq2ckmzyTukAA%2BKVZAKyFB7/DsU%3D"
+  },
+  {
+   "name": "ar1aa.csv",
+   "expected": [
+    "e502f663fedbf5b341def2a663a6afe46025e21895f26b36db13ab0fdb6c5ec2"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f3a2ad68-e852-4b26-b7fa-a163561cb34a/download/ar1aa.csv"
+   ],
+   "bytes": 283307,
+   "sha256": "e502f663fedbf5b341def2a663a6afe46025e21895f26b36db13ab0fdb6c5ec2",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/f3a2ad68-e852-4b26-b7fa-a163561cb34a/ar1aa.csv?se=2026-11-08T23%3A03%3A59Z&sp=r&sv=2024-08-04&sr=b&sig=PxIXvUCGH2EMjxIqmQDucp%2BT0VvhtiVqR99UHLRtzdU%3D"
+  },
+  {
+   "name": "ar1b.csv",
+   "expected": [
+    "08fbb0026e04460b81120fb9dc57380c4ea8e132132107865722f56b5dacc592"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/76a47801-dbda-422c-bc4b-0a0304b05bb9/download/ar1b.csv"
+   ],
+   "bytes": 30948,
+   "sha256": "08fbb0026e04460b81120fb9dc57380c4ea8e132132107865722f56b5dacc592",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/76a47801-dbda-422c-bc4b-0a0304b05bb9/ar1b.csv?se=2026-11-08T23%3A04%3A03Z&sp=r&sv=2024-08-04&sr=b&sig=o/F2ioRk431rxBAewpQtuh6yVKHWqVsDph7RjXdVy1E%3D"
+  },
+  {
+   "name": "ar1bb.csv",
+   "expected": [
+    "e22507972ebbe328d3f2c1db45304d6e4e3f7e1fd58cee80c1e1b220b865f7d1"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ded1b8b4-df88-4149-87f0-b28c9006e29f/download/ar1bb.csv"
+   ],
+   "bytes": 3979356,
+   "sha256": "e22507972ebbe328d3f2c1db45304d6e4e3f7e1fd58cee80c1e1b220b865f7d1",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/ded1b8b4-df88-4149-87f0-b28c9006e29f/ar1bb.csv?se=2026-11-08T23%3A04%3A07Z&sp=r&sv=2024-08-04&sr=b&sig=xy3RkHN8jNLTkZRNBc%2BGngppkU2VseQDyE2AnK8Cdps%3D"
+  },
+  {
+   "name": "ar1c.csv",
+   "expected": [
+    "b046d8de81ef575615e1af8685fb210c1d539dc11d741ac1b0c7ac899f9a7a00"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/download/ar1c.csv"
+   ],
+   "bytes": 4789,
+   "sha256": "b046d8de81ef575615e1af8685fb210c1d539dc11d741ac1b0c7ac899f9a7a00",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/ar1c.csv?se=2026-11-08T23%3A04%3A11Z&sp=r&sv=2024-08-04&sr=b&sig=7HBzsgFjQUqnUQmDnwKCaPVaZ%2Bf1WNLjMFzNiRzR%2B6M%3D"
+  },
+  {
+   "name": "ar1dd.csv",
+   "expected": [
+    "1ba448041236b09f0ee2016d9b6fd76f9e6531eda1db6df04d0c083738ba7332"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f252ee8f-77bd-4c6f-9427-bfba04834e43/download/ar1dd.csv"
+   ],
+   "bytes": 242147,
+   "sha256": "1ba448041236b09f0ee2016d9b6fd76f9e6531eda1db6df04d0c083738ba7332",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/f252ee8f-77bd-4c6f-9427-bfba04834e43/ar1dd.csv?se=2026-11-08T23%3A04%3A15Z&sp=r&sv=2024-08-04&sr=b&sig=rvoF5R/DxX8/v1e/pcsMgmOh214VXB5qnKypaCw%2B/V4%3D"
+  },
+  {
+   "name": "ar1f.csv",
+   "expected": [
+    "8596f164815051ab4e7c131a5dcca1735b2875420d65b676559e37334471b725"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/31f1217b-506e-4746-a38c-5385a0bf40e9/download/ar1f.csv"
+   ],
+   "bytes": 3089,
+   "sha256": "8596f164815051ab4e7c131a5dcca1735b2875420d65b676559e37334471b725",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/31f1217b-506e-4746-a38c-5385a0bf40e9/ar1f.csv?se=2026-11-08T23%3A04%3A19Z&sp=r&sv=2024-08-04&sr=b&sig=nc48TK%2B1%2BGnX2h4q04lyxV3u5MEUrWT11WgIUjYFn4g%3D"
+  },
+  {
+   "name": "ar1ff.csv",
+   "expected": [
+    "cb41e49032cdec90d5899f4fbe4b0b64443d13a88ed7f99ac2de491bd1a666c2"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/4ae8e18c-3bfe-4386-ac13-c270a1067513/download/ar1ff.csv"
+   ],
+   "bytes": 900364,
+   "sha256": "cb41e49032cdec90d5899f4fbe4b0b64443d13a88ed7f99ac2de491bd1a666c2",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/4ae8e18c-3bfe-4386-ac13-c270a1067513/ar1ff.csv?se=2026-11-08T23%3A04%3A22Z&sp=r&sv=2024-08-04&sr=b&sig=x%2Bd/jFwWYFCSkrazU/5lvTOkT1Jk15hPnVcpacmrTjw%3D"
+  },
+  {
+   "name": "ar1g.csv",
+   "expected": [
+    "70194733bb948b35628faa8028039dccd6c4210b28dfd13a64e304fa5a0dfd54"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv"
+   ],
+   "bytes": 6251,
+   "sha256": "70194733bb948b35628faa8028039dccd6c4210b28dfd13a64e304fa5a0dfd54",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/f7324346-53c4-4205-910a-0b70521c7ee2/ar1g.csv?se=2026-11-08T23%3A04%3A26Z&sp=r&sv=2024-08-04&sr=b&sig=RLVyN7pJ2Dwff/AG3QRYcQVmHqaLHeSo91whRByDs/E%3D"
+  },
+  {
+   "name": "ar1gg.csv",
+   "expected": [
+    "98c7ff8b08ca312b437c73ac83ee0df90759afb3e2b673859258c95e71216c0b"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ed783874-8549-42e6-9d4e-ac223c16617e/download/ar1gg.csv"
+   ],
+   "bytes": 4899434,
+   "sha256": "98c7ff8b08ca312b437c73ac83ee0df90759afb3e2b673859258c95e71216c0b",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/ed783874-8549-42e6-9d4e-ac223c16617e/ar1gg.csv?se=2026-11-08T23%3A04%3A30Z&sp=r&sv=2024-08-04&sr=b&sig=HgFPQWurw%2Bopy21WwTlxOxl5gKJo1M0k7hj5xxRFlP8%3D"
+  },
+  {
+   "name": "ar1h.csv",
+   "expected": [
+    "67a8f80ee1d11436faaf6cbd7d03fc47a35e798039fa52e2b402f193a8109b16"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/download/ar1h.csv"
+   ],
+   "bytes": 9263,
+   "sha256": "67a8f80ee1d11436faaf6cbd7d03fc47a35e798039fa52e2b402f193a8109b16",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/ar1h.csv?se=2026-11-08T23%3A04%3A34Z&sp=r&sv=2024-08-04&sr=b&sig=OygMC3wSCYGtI4%2BFdo18QKAslB158DXzpbaiDOtINjo%3D"
+  },
+  {
+   "name": "ar1hh.csv",
+   "expected": [
+    "50e38a807fa1edc574c2cb39e3a158f396527278a1a14a946ec39923cd6e36d0"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/14f5dcaa-9223-4981-9245-09773e14ae91/download/ar1hh.csv"
+   ],
+   "bytes": 13316,
+   "sha256": "50e38a807fa1edc574c2cb39e3a158f396527278a1a14a946ec39923cd6e36d0",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/14f5dcaa-9223-4981-9245-09773e14ae91/ar1hh.csv?se=2026-11-08T23%3A04%3A38Z&sp=r&sv=2024-08-04&sr=b&sig=ZSkFOVACS34glR90dosUv7SMvI09qew6xTGuqQqQsq4%3D"
+  },
+  {
+   "name": "ar1i.csv",
+   "expected": [
+    "f1612d081d9c03654a7bec1808c3dd8ad1d9180536789a49acc53100b51a05e1"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/70c0042e-37d0-49ca-aafc-b21cab7c5555/download/ar1i.csv"
+   ],
+   "bytes": 12610,
+   "sha256": "f1612d081d9c03654a7bec1808c3dd8ad1d9180536789a49acc53100b51a05e1",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/70c0042e-37d0-49ca-aafc-b21cab7c5555/ar1i.csv?se=2026-11-08T23%3A04%3A42Z&sp=r&sv=2024-08-04&sr=b&sig=KW6782T4WgP1w1MisgmEc7/rAo5%2BMi0hOzlKWUFZ9co%3D"
+  },
+  {
+   "name": "ar1ii.csv",
+   "expected": [
+    "071f49b0178253aeac1b50034d9d0c9f251eee483a775ce2296066d8a2ef471c"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/adfef7af-54da-4b2a-880e-0cbe2266e6c1/download/ar1ii.csv"
+   ],
+   "bytes": 270,
+   "sha256": "071f49b0178253aeac1b50034d9d0c9f251eee483a775ce2296066d8a2ef471c",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/adfef7af-54da-4b2a-880e-0cbe2266e6c1/ar1ii.csv?se=2026-11-08T23%3A04%3A45Z&sp=r&sv=2024-08-04&sr=b&sig=K7ZtdcXox0Q4LxMmZov4LlIhh90YQmUlTKLhbAFGxTI%3D"
+  },
+  {
+   "name": "ar1l.csv",
+   "expected": [
+    "18e38752baf8adbae5d2ced9b054a70bcc58f80b4458fe14064adfb1e36979ae"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/bc3fc632-00dc-47b9-b1a8-2da8d7e776eb/download/ar1l.csv"
+   ],
+   "bytes": 4778,
+   "sha256": "18e38752baf8adbae5d2ced9b054a70bcc58f80b4458fe14064adfb1e36979ae",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/bc3fc632-00dc-47b9-b1a8-2da8d7e776eb/ar1l.csv?se=2026-11-08T23%3A04%3A49Z&sp=r&sv=2024-08-04&sr=b&sig=qSlv4XK0ReojoKzMvurwcyl504Kjf9ydlZG04Uz2x2w%3D"
+  },
+  {
+   "name": "ar1q.csv",
+   "expected": [
+    "3fd84f8547c7c4aa57bdb905a1f1b290be16512b978da89d5e49c824d1642d4c"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3/download/ar1q.csv"
+   ],
+   "bytes": 94175,
+   "sha256": "3fd84f8547c7c4aa57bdb905a1f1b290be16512b978da89d5e49c824d1642d4c",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3/ar1q.csv?se=2026-11-08T23%3A04%3A53Z&sp=r&sv=2024-08-04&sr=b&sig=782evOlabw8%2BB0wj1/O1o67LpMSlMf/QYU8U0YmfU/w%3D"
+  },
+  {
+   "name": "ar1y.csv",
+   "expected": [
+    "6f702a7aac3917edcbd0f8345a08c4cdb6b2ba7991577e37810ec483f306f6c7"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/34ea0731-9705-4d54-850a-005291dbf063/download/ar1y.csv"
+   ],
+   "bytes": 16297,
+   "sha256": "6f702a7aac3917edcbd0f8345a08c4cdb6b2ba7991577e37810ec483f306f6c7",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/34ea0731-9705-4d54-850a-005291dbf063/ar1y.csv?se=2026-11-08T23%3A04%3A56Z&sp=r&sv=2024-08-04&sr=b&sig=rZLQqcRn8pcySpIU4JzGjQlUfhndMeQGiXXUmMsJ2Qk%3D"
+  },
+  {
+   "name": "ar1z.csv",
+   "expected": [
+    "f4a95cb2dd8930e954dda42b7503bc9679facff6af171b8bd3654dd9cc3e0f34"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/75d9db1f-86f5-4d72-bf1b-85f500c6d7ac/download/ar1z.csv"
+   ],
+   "bytes": 312797,
+   "sha256": "f4a95cb2dd8930e954dda42b7503bc9679facff6af171b8bd3654dd9cc3e0f34",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/75d9db1f-86f5-4d72-bf1b-85f500c6d7ac/ar1z.csv?se=2026-11-08T23%3A05%3A00Z&sp=r&sv=2024-08-04&sr=b&sig=FGuX1bukK%2B4C71cybcGm0Yax%2Bb1%2Bfd7i/F%2BzgJPTCEc%3D"
+  },
+  {
+   "name": "ar2a.csv",
+   "expected": [
+    "0b76d32f0a632d6a750daeb0731b61e95d52228f22be0839ce7f09e33f924885"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/427efaed-60c6-477f-b561-5d9771ecd533/download/ar2a.csv"
+   ],
+   "bytes": 13852,
+   "sha256": "0b76d32f0a632d6a750daeb0731b61e95d52228f22be0839ce7f09e33f924885",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/427efaed-60c6-477f-b561-5d9771ecd533/ar2a.csv?se=2026-11-08T23%3A05%3A04Z&sp=r&sv=2024-08-04&sr=b&sig=xCWPl79578lyPhU/tgUvMHoL4jGstrW1XMHIiY4mAiA%3D"
+  },
+  {
+   "name": "ar2d.csv",
+   "expected": [
+    "e56a0ba22153e003c90675e7bb5913ef761d1f0509718fdf63d6b1d39d6850f7"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/42f285e9-5085-4f38-98a2-1dcd2c0bad42/download/ar2d.csv"
+   ],
+   "bytes": 928281,
+   "sha256": "e56a0ba22153e003c90675e7bb5913ef761d1f0509718fdf63d6b1d39d6850f7",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/42f285e9-5085-4f38-98a2-1dcd2c0bad42/ar2d.csv?se=2026-11-08T23%3A05%3A07Z&sp=r&sv=2024-08-04&sr=b&sig=CYFCEtojHYys/2S2NgImPJ7r1Q4nsxXKt8g8G83COQ0%3D"
+  },
+  {
+   "name": "demo_age.csv",
+   "expected": [
+    "50b2801d7a903921f54ef18e19b4eeb0b792814eec493754a6e0d8bddfbe8a4a"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3/download/demo_age.csv"
+   ],
+   "bytes": 3299497,
+   "sha256": "50b2801d7a903921f54ef18e19b4eeb0b792814eec493754a6e0d8bddfbe8a4a",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3/demo_age.csv?se=2026-11-08T23%3A05%3A11Z&sp=r&sv=2024-08-04&sr=b&sig=VopXUmGdx5Vg169kAbyo9a2qSz8TVu%2BwIjFANpaDC/8%3D"
+  },
+  {
+   "name": "demo_fol.csv",
+   "expected": [
+    "d5433a074eaddbe05a26640a3c597f3ac416caf92c2f1ad4c31031a2c9cfe024"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/845143a0-fe5e-459a-9534-10fd688f5b10/download/demo_fol.csv"
+   ],
+   "bytes": 335062,
+   "sha256": "d5433a074eaddbe05a26640a3c597f3ac416caf92c2f1ad4c31031a2c9cfe024",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/845143a0-fe5e-459a-9534-10fd688f5b10/demo_fol.csv?se=2026-11-08T23%3A05%3A16Z&sp=r&sv=2024-08-04&sr=b&sig=RYEIMAnd209aDuLwJdm1wpIghoRWKU7Cc64OSLFfh5g%3D"
+  },
+  {
+   "name": "demo_group.csv",
+   "expected": [
+    "81990e744b66245876b19ae790f678457ec1f7a8a98ba12d516ee5ac71b53de4"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/ba48f743-388d-46de-ac6b-4d1a3bc47806/download/demo_group.csv"
+   ],
+   "bytes": 5033726,
+   "sha256": "81990e744b66245876b19ae790f678457ec1f7a8a98ba12d516ee5ac71b53de4",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/ba48f743-388d-46de-ac6b-4d1a3bc47806/demo_group.csv?se=2026-11-08T23%3A05%3A20Z&sp=r&sv=2024-08-04&sr=b&sig=6CLi%2B4Bnyf9Pq074eSj4Sq15IlNPKWjiZES6h5kWKaw%3D"
+  },
+  {
+   "name": "demo_region.csv",
+   "expected": [
+    "23d277525648c50ed0d11a5bb7c9dc0374b54d3fc0d5bef0da9a6d970ad3af36"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bfbecc14-d38e-4605-9218-09bef964643d/download/demo_region.csv"
+   ],
+   "bytes": 14611563,
+   "sha256": "23d277525648c50ed0d11a5bb7c9dc0374b54d3fc0d5bef0da9a6d970ad3af36",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/bfbecc14-d38e-4605-9218-09bef964643d/demo_region.csv?se=2026-11-08T23%3A05%3A24Z&sp=r&sv=2024-08-04&sr=b&sig=h91Amkc9ycPWGjerzyIbaZwbp3VWbTBLnI/GEvuFI%2Bk%3D"
+  },
+  {
+   "name": "inflow.csv",
+   "expected": [
+    "80b35701600c61888e11b501d9ee8c647e523cfe2bbcfea4c9ef4a6e8b5076fd"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/5456d998-fc83-4871-b6b2-deaff7be5c98/download/inflow.csv"
+   ],
+   "bytes": 1638772,
+   "sha256": "80b35701600c61888e11b501d9ee8c647e523cfe2bbcfea4c9ef4a6e8b5076fd",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/5456d998-fc83-4871-b6b2-deaff7be5c98/inflow.csv?se=2026-11-08T23%3A05%3A29Z&sp=r&sv=2024-08-04&sr=b&sig=nurSxp0Htxd%2BBfkJO6IkHeJ/uVqIZFPAzBt9a%2BtICYo%3D"
+  },
+  {
+   "name": "internal_mob.csv",
+   "expected": [
+    "9d6c4672f78e373df9c6921c735c8b5d045ffb1b3bc8a77a521b0a036acd9aca"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/347ba6ff-7c58-4775-ba3a-3a4d9e23eb06/download/internal_mob.csv"
+   ],
+   "bytes": 615083,
+   "sha256": "9d6c4672f78e373df9c6921c735c8b5d045ffb1b3bc8a77a521b0a036acd9aca",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/347ba6ff-7c58-4775-ba3a-3a4d9e23eb06/internal_mob.csv?se=2026-11-08T23%3A05%3A33Z&sp=r&sv=2024-08-04&sr=b&sig=LGBysJtT1mYhdYrYbWH2X9gP9mGNudd/F6RuUXLhII8%3D"
+  },
+  {
+   "name": "outflow.csv",
+   "expected": [
+    "4bf002944cfb664904c6d4dcfe73731b37393e620c70a86812f1ca309e16c66b"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/d4ad133f-d6c0-46c4-ab17-89c6eb03b788/download/outflow.csv"
+   ],
+   "bytes": 1159232,
+   "sha256": "4bf002944cfb664904c6d4dcfe73731b37393e620c70a86812f1ca309e16c66b",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/d4ad133f-d6c0-46c4-ab17-89c6eb03b788/outflow.csv?se=2026-11-08T23%3A05%3A37Z&sp=r&sv=2024-08-04&sr=b&sig=LnutrXKvWcB4u2w7wy3hOKxh/7FBdRnllXoDiYf%2Bzy8%3D"
+  },
+  {
+   "name": "reappointments.csv",
+   "expected": [
+    "e329de31c1a60d9e1a89a722d08995d6f3a7e600fdf9e7b1c6792951f193284b"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/3df3bcf0-bdde-45c0-8a39-158c656da604/download/reappointments.csv"
+   ],
+   "bytes": 134874,
+   "sha256": "e329de31c1a60d9e1a89a722d08995d6f3a7e600fdf9e7b1c6792951f193284b",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/3df3bcf0-bdde-45c0-8a39-158c656da604/reappointments.csv?se=2026-11-08T23%3A05%3A41Z&sp=r&sv=2024-08-04&sr=b&sig=D49PHyC%2BtelRA8gsDF5aEQyuUt0M3pl424bZc20v%2BNI%3D"
+  },
+  {
+   "name": "vha_1.csv",
+   "expected": [
+    "d8e758f94ed623809f97e5f703612af104e9deecc73ba7bc1b5b193cc9beb2e6"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/425f80cf-2e70-421e-8832-8d67fcd1356e/download/vha_1.csv"
+   ],
+   "bytes": 6757,
+   "sha256": "d8e758f94ed623809f97e5f703612af104e9deecc73ba7bc1b5b193cc9beb2e6",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/425f80cf-2e70-421e-8832-8d67fcd1356e/vha_1.csv?se=2026-11-08T23%3A05%3A45Z&sp=r&sv=2024-08-04&sr=b&sig=RV1Jn6CWRb1u6XZr1TdI/MQkDSvTfM0UQzVm7r96y54%3D"
+  },
+  {
+   "name": "vha_2.csv",
+   "expected": [
+    "9b81bf04efc3099255a885801258cea8c2bde7b0bcae2eadfb6b2d4f1929f4d4"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0065a7ca-6495-45fc-a457-5a27e1a28889/download/vha_2.csv"
+   ],
+   "bytes": 12713,
+   "sha256": "9b81bf04efc3099255a885801258cea8c2bde7b0bcae2eadfb6b2d4f1929f4d4",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/0065a7ca-6495-45fc-a457-5a27e1a28889/vha_2.csv?se=2026-11-08T23%3A05%3A48Z&sp=r&sv=2024-08-04&sr=b&sig=ck/g4uLrkYIzMK0pZlG9htnwv/1mnP8vj9ykRbivbvQ%3D"
+  },
+  {
+   "name": "vha_3.csv",
+   "expected": [
+    "d3005edf5eb58242fb9d86144d3c2cd702583aae95bab1727422e2d3332c33af"
+   ],
+   "urls": [
+    "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/9a671e77-9506-4f48-9f36-ddc2d5f102da/download/vha_3.csv"
+   ],
+   "bytes": 2148,
+   "sha256": "d3005edf5eb58242fb9d86144d3c2cd702583aae95bab1727422e2d3332c33af",
+   "matches": true,
+   "final": "200 https://opencanada.blob.core.windows.net/opengovprod/resources/9a671e77-9506-4f48-9f36-ddc2d5f102da/vha_3.csv?se=2026-11-08T23%3A05%3A52Z&sp=r&sv=2024-08-04&sr=b&sig=W2/xApHIJqOS%2BY4bcrXiepl%2BBeoHDVVatWbGMeEGMNQ%3D"
+  }
+ ],
+ "snps_links": [
+  {
+   "file": "cfppsc_snps24.csv",
+   "resource_id": "00b9cfee-3b00-4d2a-980b-72c81017af74",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by type of disability",
+   "bytes": "44678315",
+   "sha256": "4d14d970df8b61795555ee527ae6ca2bf9b8c8f43a40bfe48d6c150e1f1fa949",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/00b9cfee-3b00-4d2a-980b-72c81017af74/download/cfppsc_snps24.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/00b9cfee-3b00-4d2a-980b-72c81017af74/cfppsc_snps24.csv?se=2026-11-08T23%3A05%3A56Z&sp=r&sv=2024-08-04&sr=b&sig=jizi4xYtLGTa%2BG2fWqniEYumi%2BAKjlSNBuhVw%2Bl8EBI%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps16.csv",
+   "resource_id": "05442d31-89b6-4b97-a40f-7ee8f1cf756e",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by diploma",
+   "bytes": "84402451",
+   "sha256": "948efd6025d5096d558aea5f582910b0971f24a90e283cc138ed9770dcf69d0e",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/05442d31-89b6-4b97-a40f-7ee8f1cf756e/download/cfppsc_snps16.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/05442d31-89b6-4b97-a40f-7ee8f1cf756e/cfppsc_snps16.csv?se=2026-11-08T23%3A05%3A58Z&sp=r&sv=2024-08-04&sr=b&sig=MxRkYXNuAyij15yhQcHKK0NWRPmekvhKk9Rj6FRk8EA%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps04-1.csv",
+   "resource_id": "0aa3b961-db7b-492e-a692-01af431ad854",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Employment Equity Group: Visible minorities",
+   "bytes": "25926811",
+   "sha256": "ac5ca49cab83601a29065825dbaa59ae0a667c6d9b88e8d331ba19e840bce807",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/0aa3b961-db7b-492e-a692-01af431ad854/download/cfppsc_snps04-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/0aa3b961-db7b-492e-a692-01af431ad854/cfppsc_snps04-1.csv?se=2026-11-08T23%3A06%3A01Z&sp=r&sv=2024-08-04&sr=b&sig=yLl5Wl0oMsHXzBm2HADwuhjzfEl0oDqXbhDwN5BTnis%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps18.csv",
+   "resource_id": "0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by 2SLGBTQIA+ identity",
+   "bytes": "32277683",
+   "sha256": "2e1a4d28bbe12a94cfd7a189c648054acdef0bba6fc1c8dd902a5989ca38a330",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1/download/cfppsc_snps18.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1/cfppsc_snps18.csv?se=2026-11-08T23%3A06%3A04Z&sp=r&sv=2024-08-04&sr=b&sig=FdkZpKZvUXuxSfdBfosWl5CZiuNKpjJWrev%2BaXHH%2B%2BQ%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps04.csv",
+   "resource_id": "0eded731-2004-4f00-aa05-606801f5dafc",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Employment Equity Group: Visible minorities",
+   "bytes": "20818641",
+   "sha256": "d5a58170d98d58ae68016c51d1c5d967083428dcb7dccd1bbca24700394421e2",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0eded731-2004-4f00-aa05-606801f5dafc/download/cfppsc_snps04.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/0eded731-2004-4f00-aa05-606801f5dafc/cfppsc_snps04.csv?se=2026-11-08T23%3A06%3A06Z&sp=r&sv=2024-08-04&sr=b&sig=IU/pphz/j5yt1g1qqSUaDRcWHz369F2f8lMkcgjYQ4g%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps22.csv",
+   "resource_id": "143635eb-63b9-4756-8831-d8a2b0585e78",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by visible minority subgroup",
+   "bytes": "19424912",
+   "sha256": "ee680c33bf5fb3c47ffd56b19e7a1c1e019fc94154157f559b64261262649cbf",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/143635eb-63b9-4756-8831-d8a2b0585e78/download/cfppsc_snps22.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/143635eb-63b9-4756-8831-d8a2b0585e78/cfppsc_snps22.csv?se=2026-11-08T23%3A06%3A09Z&sp=r&sv=2024-08-04&sr=b&sig=xcH0pf%2BCyV0lI%2BgPTEM6vHfKoZVMNih9yPTeNsy60UU%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps13.csv",
+   "resource_id": "1478662e-17d0-4e3a-aacb-e9c4fb87ae8f",
+   "year": "2023",
+   "title": "2023 SNPS, response profile data",
+   "bytes": "59097",
+   "sha256": "11f3281a9c56fb31ea25eb3a9efcf4b229e31f42a75a4fb72ea9a2da10840945",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f/download/cfppsc_snps13.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f/cfppsc_snps13.csv?se=2026-11-08T23%3A06%3A11Z&sp=r&sv=2024-08-04&sr=b&sig=M3xYwbOSf51vPmlbP4TiqYIJRI1dbauE8rhPRSEHjsE%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps01.csv",
+   "resource_id": "15f9967d-608d-41b2-bced-8d7e61a6d53f",
+   "year": "2023",
+   "title": "2023 SNPS, by department (including all departments)",
+   "bytes": "5306566",
+   "sha256": "563f03e30d369c78f24258502515b1355e596dc62bfd63b29842523d55735c3b",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/15f9967d-608d-41b2-bced-8d7e61a6d53f/download/cfppsc_snps01.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/15f9967d-608d-41b2-bced-8d7e61a6d53f/cfppsc_snps01.csv?se=2026-11-08T23%3A06%3A14Z&sp=r&sv=2024-08-04&sr=b&sig=mZfxasnC%2BF4%2BLJuuJYKtDCUFv%2BekkDgeCYV3CLiMAuc%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps08-1.csv",
+   "resource_id": "16e1bab4-ef46-4857-8ac6-67ee9c99fa53",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Occupational group",
+   "bytes": "91558678",
+   "sha256": "f90dd24acec6c4f6de06904c5aa221577b46d396ab4a4394a7db7efbe141bb05",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/16e1bab4-ef46-4857-8ac6-67ee9c99fa53/download/cfppsc_snps08-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/16e1bab4-ef46-4857-8ac6-67ee9c99fa53/cfppsc_snps08-1.csv?se=2026-11-08T23%3A06%3A17Z&sp=r&sv=2024-08-04&sr=b&sig=wiGYj9L0S44udOXBXpcqnOo1kPIj22r3gnCkYrByChM%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps23.csv",
+   "resource_id": "1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by type of disability",
+   "bytes": "98264331",
+   "sha256": "5a3b7442cbc7cb26506ff9169c3d48e331f659dbf88aed6808672f01bd7696ae",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/download/cfppsc_snps23.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/cfppsc_snps23.csv?se=2026-11-08T23%3A06%3A19Z&sp=r&sv=2024-08-04&sr=b&sig=1SR6F32CJU/%2BX1e8JEoq%2BETn1gT165AFDWhOqzUXcmc%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps21.csv",
+   "resource_id": "1c3e883f-b5c4-4ac8-96f0-f9757139bd13",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by visible minority subgroup",
+   "bytes": "74191687",
+   "sha256": "1629080d8cd47f081d555d671640adc82b7515cabcb4e3358d6590676e55ca2d",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/download/cfppsc_snps21.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/cfppsc_snps21.csv?se=2026-11-08T23%3A06%3A22Z&sp=r&sv=2024-08-04&sr=b&sig=rH0aiwCPBNLak4%2ByvcDDzZvGnK2jfOVYWznimcp3%2Bk0%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps17.csv",
+   "resource_id": "242e8a2e-4604-48c2-afaa-5fff0aba51f6",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by marital status",
+   "bytes": "33402953",
+   "sha256": "102447d850ff26d91e310607901ad6b48f1125856659f5852aaf6a0dbc838aa7",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/242e8a2e-4604-48c2-afaa-5fff0aba51f6/download/cfppsc_snps17.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/242e8a2e-4604-48c2-afaa-5fff0aba51f6/cfppsc_snps17.csv?se=2026-11-08T23%3A06%3A24Z&sp=r&sv=2024-08-04&sr=b&sig=tSW2F46P4s8Rmi/OOxea9E4WYoZGCkVw7DLJxDnozMg%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps12-1.csv",
+   "resource_id": "2ae9d18b-3ccc-409a-935b-197bf2a580d6",
+   "year": "2023",
+   "title": "2023 SNPS, data Visualization Dataset \u00b7 2023",
+   "bytes": "22792314",
+   "sha256": "ce7fe2b20dd2195442c7dbadd0320c031f29d0b30cc853fb65abbb413e57f3c1",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/2ae9d18b-3ccc-409a-935b-197bf2a580d6/download/cfppsc_snps12-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/2ae9d18b-3ccc-409a-935b-197bf2a580d6/cfppsc_snps12-1.csv?se=2026-11-08T23%3A06%3A27Z&sp=r&sv=2024-08-04&sr=b&sig=kn2V2F2LL8SDyQDXRZqQWowSu55%2BB10T/ZnA/Ctmtwc%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps10-1.csv",
+   "resource_id": "2c7fd358-5262-446e-9ddf-980252552e76",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Years of Service",
+   "bytes": "38636825",
+   "sha256": "c40f4c5d9d202141503e660097e5f3f052185b3d64a6dea0d1d20a2deaa48b9d",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/2c7fd358-5262-446e-9ddf-980252552e76/download/cfppsc_snps10-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/2c7fd358-5262-446e-9ddf-980252552e76/cfppsc_snps10-1.csv?se=2026-11-08T23%3A06%3A30Z&sp=r&sv=2024-08-04&sr=b&sig=gDVgJvG4dBMUA3Ioa1Wp32r8HmixcUBhYBrG5OxfsNM%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps02-1.csv",
+   "resource_id": "37a83f7c-1352-42a5-ac94-d49391535793",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Employment Equity Group: Women",
+   "bytes": "25731860",
+   "sha256": "6bfc2acccb48662c0be4cc3e12b5594af80af128f0bbadaa2e2481297e95c093",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/37a83f7c-1352-42a5-ac94-d49391535793/download/cfppsc_snps02-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/37a83f7c-1352-42a5-ac94-d49391535793/cfppsc_snps02-1.csv?se=2026-11-08T23%3A06%3A32Z&sp=r&sv=2024-08-04&sr=b&sig=D2lUUyz0QlEsHVbM25XfK8tsA3JWFGHR9ykT1i3gAIo%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps15-1.csv",
+   "resource_id": "408590d0-05dd-4467-bc23-b425f9681e3f",
+   "year": "2025",
+   "title": "2025 SNPS, list of departments",
+   "bytes": "10851",
+   "sha256": "504c99c3a1956ff1bb9b7bbb25b474c4e33925909f6e3d782aed44f42294134f",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/408590d0-05dd-4467-bc23-b425f9681e3f/download/cfppsc_snps15-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/408590d0-05dd-4467-bc23-b425f9681e3f/cfppsc_snps15-1.csv?se=2026-11-08T23%3A06%3A35Z&sp=r&sv=2024-08-04&sr=b&sig=T1ZfcmCGMzLme/PMBefUzCRWP9rqddifw7IZOYFlr/o%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps11.csv",
+   "resource_id": "54b1b522-573f-469e-97f8-de9c75a46106",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Tenure",
+   "bytes": "21149703",
+   "sha256": "617c419a854b3882486a3ec73d4c9cf6ed57355bb7250d46270f5927a51e6fb8",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/54b1b522-573f-469e-97f8-de9c75a46106/download/cfppsc_snps11.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/54b1b522-573f-469e-97f8-de9c75a46106/cfppsc_snps11.csv?se=2026-11-08T23%3A06%3A38Z&sp=r&sv=2024-08-04&sr=b&sig=VElIT8YPU3kxafhps/N0IoNEcB9VmJ%2B2/M6ZNXMkWwI%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps14-1.csv",
+   "resource_id": "5878befe-05bd-42f0-b8cc-1b081a5d5ea7",
+   "year": "2025",
+   "title": "2025 SNPS, list of questions",
+   "bytes": "184302",
+   "sha256": "030535a1abda27e19b58adf1cf05bb22bc695d832aa5fee859fbc11fca0f508b",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5878befe-05bd-42f0-b8cc-1b081a5d5ea7/download/cfppsc_snps14-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/5878befe-05bd-42f0-b8cc-1b081a5d5ea7/cfppsc_snps14-1.csv?se=2026-11-08T23%3A06%3A40Z&sp=r&sv=2024-08-04&sr=b&sig=zlijHqI15d042YOQup6YRSlk5HhlbclTF0OyLBxFhDM%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps05-1.csv",
+   "resource_id": "5903d97e-3ff7-4db9-8a9b-5338cddc0f12",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Employment Equity Group: Indigenous Peoples",
+   "bytes": "20152611",
+   "sha256": "427fac1158e69c07123f4ab1930c95afc86db5dcd8649308f9b00cc6bc804435",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5903d97e-3ff7-4db9-8a9b-5338cddc0f12/download/cfppsc_snps05-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/5903d97e-3ff7-4db9-8a9b-5338cddc0f12/cfppsc_snps05-1.csv?se=2026-11-08T23%3A06%3A43Z&sp=r&sv=2024-08-04&sr=b&sig=LWnWoS3EJLmROzbPorLrUoyOjAwQ7%2B31RYuXC89c8fQ%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps20.csv",
+   "resource_id": "5a913b41-78d7-4378-9fa5-6be450950731",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by family status",
+   "bytes": "42990153",
+   "sha256": "e5e9f40858d2e809ff5458c8b494eead27301421905ea10f7fdfea1bce564cfe",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/5a913b41-78d7-4378-9fa5-6be450950731/download/cfppsc_snps20.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/5a913b41-78d7-4378-9fa5-6be450950731/cfppsc_snps20.csv?se=2026-11-08T23%3A06%3A45Z&sp=r&sv=2024-08-04&sr=b&sig=hhWPFbaDiHl62oxwr1HU7%2BRyJR1Z/UkNpaQsANIfC6I%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps20.csv",
+   "resource_id": "5daa5fd7-6597-4edf-93b5-ea2b43854df4",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by religion",
+   "bytes": "90286235",
+   "sha256": "aaae1f4a03254e280a614ca57174340a264cd3a8d8513f5fa934dfceec3812e0",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/5daa5fd7-6597-4edf-93b5-ea2b43854df4/download/cfppsc_snps20.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/5daa5fd7-6597-4edf-93b5-ea2b43854df4/cfppsc_snps20.csv?se=2026-11-08T23%3A06%3A48Z&sp=r&sv=2024-08-04&sr=b&sig=b9wQe15YfoaNzaW7/aDdHApyGaMRoNQfaD%2BjzKNHM%2BY%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps06.csv",
+   "resource_id": "68c92f22-dc23-4027-a714-214600063ed6",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by First Official Language",
+   "bytes": "18735121",
+   "sha256": "e64d924258976b7f95c4ca4cd47cac4fcc69007e93f0ffe642e8c20f2a69519e",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/68c92f22-dc23-4027-a714-214600063ed6/download/cfppsc_snps06.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/68c92f22-dc23-4027-a714-214600063ed6/cfppsc_snps06.csv?se=2026-11-08T23%3A06%3A51Z&sp=r&sv=2024-08-04&sr=b&sig=j/NDYZHGFN13ZDpd0VdwFqxL6%2BgGdBbfqqs2UFILtEg%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps23.csv",
+   "resource_id": "692c27f1-7dba-48d8-9e6d-8dcddb35bb87",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Indigenous subgroup",
+   "bytes": "8841167",
+   "sha256": "d34e4231d08df1179790e1754c33aa23141178ff7b827d038f71ed749eeec78d",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/692c27f1-7dba-48d8-9e6d-8dcddb35bb87/download/cfppsc_snps23.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/692c27f1-7dba-48d8-9e6d-8dcddb35bb87/cfppsc_snps23.csv?se=2026-11-08T23%3A06%3A53Z&sp=r&sv=2024-08-04&sr=b&sig=XOnaIGuoT2zsT3Dv%2Bt2vYAZJDrrg98ES/vErBeHSZSc%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps12_b.csv",
+   "resource_id": "74bfd99f-b71b-44ab-9c5f-174f1eb4c602",
+   "year": "2025",
+   "title": "2025 SNPS, data Visualization Dataset (Dataset B) \u00b7 2025",
+   "bytes": "413273290",
+   "sha256": "330a3346c6bec2166dd62613ddc00122a99f643dc5caf682abff7c22ff8dfc97",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/74bfd99f-b71b-44ab-9c5f-174f1eb4c602/download/cfppsc_snps12_b.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/74bfd99f-b71b-44ab-9c5f-174f1eb4c602/cfppsc_snps12_b.csv?se=2026-11-08T23%3A06%3A56Z&sp=r&sv=2024-08-04&sr=b&sig=cnyFxZUleeSLNv2be9oKM6KsQYGd5xrVes/jmY3Hc5A%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps13-1.csv",
+   "resource_id": "7725a05d-6c06-486e-b707-d845fef9a688",
+   "year": "2025",
+   "title": "2025 SNPS, response profile data",
+   "bytes": "58793",
+   "sha256": "84ef16de802c53a2670bb2dcc0f666ed4c9ad52b9b5e102e6cd89a5e8b1703ee",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7725a05d-6c06-486e-b707-d845fef9a688/download/cfppsc_snps13-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/7725a05d-6c06-486e-b707-d845fef9a688/cfppsc_snps13-1.csv?se=2026-11-08T23%3A06%3A58Z&sp=r&sv=2024-08-04&sr=b&sig=0DffjgIaCtTREEJGB5emEhbGgfFCy%2B2WarYQlcZqZZ0%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps05.csv",
+   "resource_id": "77c9c20e-691b-4c13-8243-9cf9cf81c8dc",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Employment Equity Group: Indigenous Peoples",
+   "bytes": "21026218",
+   "sha256": "9379c2f19b79185bc9ed76dfe9b5d043302a9931eff44c3dbd72da099acd86f7",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/download/cfppsc_snps05.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/cfppsc_snps05.csv?se=2026-11-08T23%3A07%3A01Z&sp=r&sv=2024-08-04&sr=b&sig=ULwALLDJLwr1SOX0w%2Bh4UIkJ4JDmgAbXgLZdwrCUUnY%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps21.csv",
+   "resource_id": "7a37434b-a859-477c-a753-0a1c5fc77e0d",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by religion",
+   "bytes": "39569253",
+   "sha256": "5c4c3f2bfffdb9cff7e81b50d42d88676fca26c8caaeb14f34a554e21cecfded",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7a37434b-a859-477c-a753-0a1c5fc77e0d/download/cfppsc_snps21.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/7a37434b-a859-477c-a753-0a1c5fc77e0d/cfppsc_snps21.csv?se=2026-11-08T23%3A07%3A04Z&sp=r&sv=2024-08-04&sr=b&sig=xTh0gnVIIYhL4RxrHCnKVnNZwXk5wyZ0tS3ikfpq198%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps07-1.csv",
+   "resource_id": "7b6df281-e5ff-47a3-a3e3-aba70168fefd",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Region",
+   "bytes": "32976113",
+   "sha256": "f5f95e5c20e95835b93bfbdf26aadbc3dc1185969e041507b5bb3dc5a4d05c9f",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7b6df281-e5ff-47a3-a3e3-aba70168fefd/download/cfppsc_snps07-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/7b6df281-e5ff-47a3-a3e3-aba70168fefd/cfppsc_snps07-1.csv?se=2026-11-08T23%3A07%3A06Z&sp=r&sv=2024-08-04&sr=b&sig=2ZVcfxRpgRyDAhcDVktJpyxIVw7J7XmAyiLxT054Wac%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps03-2.csv",
+   "resource_id": "840e8e64-9177-4c72-a84d-3d1cfb8e280e",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Employment Equity Group: Persons with disabilities",
+   "bytes": "29834750",
+   "sha256": "f4e232125e9ccf213c46503a28d466e184766376499c9787be56a1f4b61c8b85",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/840e8e64-9177-4c72-a84d-3d1cfb8e280e/download/cfppsc_snps03-2.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/840e8e64-9177-4c72-a84d-3d1cfb8e280e/cfppsc_snps03-2.csv?se=2026-11-08T23%3A07%3A09Z&sp=r&sv=2024-08-04&sr=b&sig=wadqoSKG9Nw3j27ZAnLQvJkZ6s521cy3DMK/P7MjUBY%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps09.csv",
+   "resource_id": "85ec7faf-90e5-4015-932b-f24fb97133b2",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Age group",
+   "bytes": "64592020",
+   "sha256": "a5a40aba87326c6d41cef9e5d04c1427c49df01fe844a039cb0aaef979017324",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/85ec7faf-90e5-4015-932b-f24fb97133b2/download/cfppsc_snps09.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/85ec7faf-90e5-4015-932b-f24fb97133b2/cfppsc_snps09.csv?se=2026-11-08T23%3A07%3A12Z&sp=r&sv=2024-08-04&sr=b&sig=f/kHaCnFSxBwBl6ndwA1UgjA6VaOLZaz6OtZqJm812Q%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps09-1.csv",
+   "resource_id": "8c22ddff-2ff6-4e33-be6b-a1973005d861",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Age group",
+   "bytes": "45044594",
+   "sha256": "21fc353cfb1c0df770c322bef6c1e14b53784fac271818ff2823b0dd75505da1",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/8c22ddff-2ff6-4e33-be6b-a1973005d861/download/cfppsc_snps09-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/8c22ddff-2ff6-4e33-be6b-a1973005d861/cfppsc_snps09-1.csv?se=2026-11-08T23%3A07%3A14Z&sp=r&sv=2024-08-04&sr=b&sig=qCP02KNBa7Y7VbAQ2Iz4ovczr97Ub2zJDUjkKBW5GO4%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps08.csv",
+   "resource_id": "95829e14-df60-4766-afd5-ae8864580266",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Occupational group",
+   "bytes": "52471505",
+   "sha256": "4e87b7eeb97f93eeecf8dec972b6f3f9d5dc6ac2e26a6dbf3c0aa9ac6b6408be",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/95829e14-df60-4766-afd5-ae8864580266/download/cfppsc_snps08.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/95829e14-df60-4766-afd5-ae8864580266/cfppsc_snps08.csv?se=2026-11-08T23%3A07%3A17Z&sp=r&sv=2024-08-04&sr=b&sig=Us83sMk9MdFnwMNwHW%2BByiTza5Q8U3GO9eX8XwbMCzY%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps12_a.csv",
+   "resource_id": "9ed3ae74-9458-47ec-882d-e3d785e34389",
+   "year": "2025",
+   "title": "2025 SNPS, data Visualization Dataset (Dataset B) \u00b7 2025",
+   "bytes": "546715782",
+   "sha256": "f8260a251b0e5f1f4ca0c9454b20252f081e13ba4f5e90769da6dfb643f75ce2",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/9ed3ae74-9458-47ec-882d-e3d785e34389/download/cfppsc_snps12_a.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/9ed3ae74-9458-47ec-882d-e3d785e34389/cfppsc_snps12_a.csv?se=2026-11-08T23%3A07%3A19Z&sp=r&sv=2024-08-04&sr=b&sig=2nr8%2B82WBJBCoj1JI7ldipgpSXOQikmprgYZCgwXHgw%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps10.csv",
+   "resource_id": "a45a3101-33be-453b-b5e2-144d8c50a7a0",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Years of Service",
+   "bytes": "50316433",
+   "sha256": "0421be6ff6a372fc3f2f21ba45d9d4d51c1a718567808274cc70884f42005a1d",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/a45a3101-33be-453b-b5e2-144d8c50a7a0/download/cfppsc_snps10.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/a45a3101-33be-453b-b5e2-144d8c50a7a0/cfppsc_snps10.csv?se=2026-11-08T23%3A07%3A22Z&sp=r&sv=2024-08-04&sr=b&sig=/d4%2BQOLhwoIE/0XTa4cNUMDoxMFgtPKW6NZgw5Fu7Vk%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps01-1.csv",
+   "resource_id": "a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b",
+   "year": "2025",
+   "title": "2025 SNPS, by department (including all departments)",
+   "bytes": "6943261",
+   "sha256": "fedd4678bd9f152365e63f79a1898894d0185223fba00f03160033d989954eb5",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b/download/cfppsc_snps01-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b/cfppsc_snps01-1.csv?se=2026-11-08T23%3A07%3A25Z&sp=r&sv=2024-08-04&sr=b&sig=M5KAFxoww3AoVhlx69Z7zACJHF22cYWoTpNFX58w9HE%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps06-1.csv",
+   "resource_id": "aae3c25b-c61d-425a-9a1e-ed0deb7865b1",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by First Official Language",
+   "bytes": "21693732",
+   "sha256": "54a33c604f21d207c1558b585354a9f03cd652a83684558812d17c047d8aa632",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/aae3c25b-c61d-425a-9a1e-ed0deb7865b1/download/cfppsc_snps06-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/aae3c25b-c61d-425a-9a1e-ed0deb7865b1/cfppsc_snps06-1.csv?se=2026-11-08T23%3A07%3A27Z&sp=r&sv=2024-08-04&sr=b&sig=/HPRRd%2BqhzRRNJJ2ReqRJjsaIW9ITMasxflOAqp0f9I%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps03-1.csv",
+   "resource_id": "be6fe4fa-37f7-4224-8108-095e66008b05",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Employment Equity Group: Persons with disabilities",
+   "bytes": "29914418",
+   "sha256": "1e63113355242a059479dd0a2da7a9cb505a35827269b6f549fa63f21171c9b4",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/be6fe4fa-37f7-4224-8108-095e66008b05/download/cfppsc_snps03-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/be6fe4fa-37f7-4224-8108-095e66008b05/cfppsc_snps03-1.csv?se=2026-11-08T23%3A07%3A30Z&sp=r&sv=2024-08-04&sr=b&sig=ZLH81dx1M0lrjJb7c6TVb%2BVjA2WcP3oVrv79pUhsECs%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps17.csv",
+   "resource_id": "bf726802-12f3-4337-a5a0-facd70299a28",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by marital status",
+   "bytes": "66512792",
+   "sha256": "7892d16447e949314a3157b15acb31b6974015f84a1447eb684d70f20e1d2aac",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/bf726802-12f3-4337-a5a0-facd70299a28/download/cfppsc_snps17.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/bf726802-12f3-4337-a5a0-facd70299a28/cfppsc_snps17.csv?se=2026-11-08T23%3A07%3A33Z&sp=r&sv=2024-08-04&sr=b&sig=peZfuHOabCTb4ldin8A6UJ0wMxYS8dK/u0QD8IAsA2Y%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps11-1.csv",
+   "resource_id": "c46d24c1-dcbc-4cce-87a1-fc42e6311720",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by Tenure",
+   "bytes": "21756458",
+   "sha256": "81377856d3c562d8881a3a4c5e379f186257afcef45b83b18f4d76bce1b65fe8",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/c46d24c1-dcbc-4cce-87a1-fc42e6311720/download/cfppsc_snps11-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/c46d24c1-dcbc-4cce-87a1-fc42e6311720/cfppsc_snps11-1.csv?se=2026-11-08T23%3A07%3A35Z&sp=r&sv=2024-08-04&sr=b&sig=htVBWcarnRRqLFFGG9onzJr8ciBhEwJgizWhYqcDTu4%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps07.csv",
+   "resource_id": "cdabf3bd-cfca-42b0-a58f-1d963a1af5ec",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Region",
+   "bytes": "63124446",
+   "sha256": "4582fdd68c2c411d3d987094acad36c148d5f77ad318cca0113e87959029fad5",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/cdabf3bd-cfca-42b0-a58f-1d963a1af5ec/download/cfppsc_snps07.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/cdabf3bd-cfca-42b0-a58f-1d963a1af5ec/cfppsc_snps07.csv?se=2026-11-08T23%3A07%3A38Z&sp=r&sv=2024-08-04&sr=b&sig=aSFLwz4HTh9saTTMBFiuK8ehh5w570BeHZxbDXle6Q0%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps02.csv",
+   "resource_id": "d0437695-b1da-4bcd-bd4e-4eef0f62d8a8",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Employment Equity Group: Women",
+   "bytes": "32059050",
+   "sha256": "9e70ee67125d2a9ae430a608782ca3ac9e65ee7a80a584533fe766624066ede5",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/download/cfppsc_snps02.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/cfppsc_snps02.csv?se=2026-11-08T23%3A07%3A40Z&sp=r&sv=2024-08-04&sr=b&sig=P%2BC%2BmZri7iqNUJ0A684tWSdks%2BvUQj9yhPBsGJAULNk%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps14.csv",
+   "resource_id": "d583d90e-4aca-43b3-95cb-5137c239d05d",
+   "year": "2023",
+   "title": "2023 SNPS, list of questions",
+   "bytes": "101026",
+   "sha256": "cf1a56d15e622c514b8bd739ec949246090efd6b0fd140e2d56d1cc2e6e999f1",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d583d90e-4aca-43b3-95cb-5137c239d05d/download/cfppsc_snps14.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/d583d90e-4aca-43b3-95cb-5137c239d05d/cfppsc_snps14.csv?se=2026-11-08T23%3A07%3A43Z&sp=r&sv=2024-08-04&sr=b&sig=bEkZVTH8ZB0ArSnL4Pn/6cuhwTpXc/RodzuGjD6%2B804%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps15.csv",
+   "resource_id": "dca15e16-3a29-4fc6-84e7-73032062a239",
+   "year": "2023",
+   "title": "2023 SNPS, list of departments",
+   "bytes": "9841",
+   "sha256": "53d86c45a05560717ad9f70c71aa90e8fe9f0485e58e653380db7e9bc92cc347",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/dca15e16-3a29-4fc6-84e7-73032062a239/download/cfppsc_snps15.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/dca15e16-3a29-4fc6-84e7-73032062a239/cfppsc_snps15.csv?se=2026-11-08T23%3A07%3A46Z&sp=r&sv=2024-08-04&sr=b&sig=8rRweg2pz9EGY2oAdUOQMp73rjknTpH3xUNKEN8R3U4%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps19.csv",
+   "resource_id": "e5fdffd2-d510-4fc5-b57f-512a9f1ac261",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by identity",
+   "bytes": "13945685",
+   "sha256": "cc776d7026ff00581bf08cea0dd551dbd2d3c621c47712b3cf8a226644db0093",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e5fdffd2-d510-4fc5-b57f-512a9f1ac261/download/cfppsc_snps19.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/e5fdffd2-d510-4fc5-b57f-512a9f1ac261/cfppsc_snps19.csv?se=2026-11-08T23%3A07%3A48Z&sp=r&sv=2024-08-04&sr=b&sig=WNyfl9I5Qv6MWiYOnkaqbBVBCq06%2BPc0hJKXY1yL1Zg%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps18.csv",
+   "resource_id": "e80977dc-ef10-436f-b154-af08c420cd3d",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by sexual orientation",
+   "bytes": "23406790",
+   "sha256": "08cdb8ad28c63bf97a2aa26665af0851d0d1c18d84e28799f6a5417f586e418a",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/e80977dc-ef10-436f-b154-af08c420cd3d/download/cfppsc_snps18.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/e80977dc-ef10-436f-b154-af08c420cd3d/cfppsc_snps18.csv?se=2026-11-08T23%3A07%3A51Z&sp=r&sv=2024-08-04&sr=b&sig=AJK9rVhviqdPXMxCbfY9mtF4GWVjOEp5xxUddDZ97tI%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps22.csv",
+   "resource_id": "ed359432-8f40-4096-a0fd-1f6bc44c7490",
+   "year": "2023",
+   "title": "2023 SNPS, by department and by Indigenous subgroup",
+   "bytes": "22349284",
+   "sha256": "9ce07905c4bc21bc0dc4bce81e05cd6617c82bdbc6521f9aa9e52f0c29c7321b",
+   "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/ed359432-8f40-4096-a0fd-1f6bc44c7490/download/cfppsc_snps22.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/ed359432-8f40-4096-a0fd-1f6bc44c7490/cfppsc_snps22.csv?se=2026-11-08T23%3A07%3A53Z&sp=r&sv=2024-08-04&sr=b&sig=wDQAMbwBwmTOSk7VjRKNcy5teqHxowWxD20ZR5to8rU%3D",
+   "rc": 0
+  },
+  {
+   "file": "cfppsc_snps16-1.csv",
+   "resource_id": "ff6d0c37-9b0d-4eca-9f32-d348f8048d48",
+   "year": "2025",
+   "title": "2025 SNPS, by department and by diploma",
+   "bytes": "55444370",
+   "sha256": "b5bba5123f58c0db07fcb9fbece4f3d850041f66279099149706d77e9890bc7a",
+   "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/ff6d0c37-9b0d-4eca-9f32-d348f8048d48/download/cfppsc_snps16-1.csv",
+   "check": "206 https://opencanada.blob.core.windows.net/opengovprod/resources/ff6d0c37-9b0d-4eca-9f32-d348f8048d48/cfppsc_snps16-1.csv?se=2026-11-08T23%3A07%3A56Z&sp=r&sv=2024-08-04&sr=b&sig=czmfQYOMdOWL%2BSIaX9Ti4mPe6pL9lGBu0iK6zALAjPs%3D",
+   "rc": 0
+  }
+ ]
+}
