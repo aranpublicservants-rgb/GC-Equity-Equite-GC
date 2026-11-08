@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiring and staffing data from the Public Service Commission | GC Equity</title>
+<meta name="description" content="Public Service Commission data on applicants, appointments and staffing by employment equity group, with every Commission data file on this site. | Données de la Commission de la fonction publique sur les postulants, les nominations et la dotation selon le groupe visé par l’équité en matière d’emploi.">
+<script>
+(function(){try{var t=localStorage.getItem('gcEquityTheme');if(t==='dark'||t==='contrast')document.documentElement.dataset.theme=t;var p=new URLSearchParams(location.search).get('lang');document.documentElement.lang=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="gc-workspace.css">
+<style>
+.cta{max-width:1224px}
+.cta h1{font-family:var(--gw-serif);font-size:clamp(30px,3.8vw,48px);line-height:1.14;font-weight:600;margin:8px 0 18px;max-width:900px}
+.cta h2{font-family:var(--gw-serif);font-size:clamp(24px,2.6vw,31px);margin:0 0 12px;line-height:1.2}
+.cta h3{font-size:19px;margin:26px 0 10px;line-height:1.3}
+.cta p,.cta li{max-width:88ch}
+.cta-meta{font-size:14px;color:var(--gw-muted);margin:0 0 18px}
+.cta-jump{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;padding:0;margin:0 0 22px}
+.cta-section{margin-top:40px;padding-top:6px}
+.cta-pick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:10px 0 12px}
+.cta-pick>*{min-width:0}
+.cta-pick label{display:block;font-size:14px;font-weight:700;margin-bottom:5px}
+.cta-pick select,.cta-pick input{width:100%;min-height:44px;border:1px solid #8a9daa;border-radius:6px;padding:8px 10px;background:var(--gw-card);color:var(--gw-ink)}
+.cta-scroll{position:relative;overflow-x:auto;border:1px solid var(--gw-line);border-radius:8px;background:var(--gw-card);margin:0 0 10px}
+.cta-scroll:focus-visible{outline:3px solid var(--gw-focus);outline-offset:2px}
+.cta table{border-collapse:collapse;width:100%;font-size:14px}
+.cta caption{text-align:left;font-weight:700;padding:12px 14px 8px;font-size:15px}
+.cta th,.cta td{padding:8px 10px;border-bottom:1px solid var(--gw-line);vertical-align:top;text-align:left}
+.cta thead th{background:var(--gw-soft);font-size:13px;line-height:1.35;min-width:92px}
+.cta thead th:first-child{min-width:150px}
+.cta td.num,.cta th.num{text-align:right;font-variant-numeric:tabular-nums}
+.cta td.num{white-space:nowrap}
+.cta tbody th{font-weight:600}
+.cta .st-files{min-width:860px}
+.cta .st-files td:nth-child(2){min-width:280px}
+.cta .st-files td:nth-child(n+3){white-space:nowrap}
+.cta code{font-size:13px;word-break:break-all}
+.cta-mark{color:#9c0006;font-weight:700;white-space:nowrap}
+:root[data-theme=dark] .cta-mark{color:#ff9d93}
+:root[data-theme=contrast] .cta-mark{color:#7a0000}
+.cta-na{color:var(--gw-muted)}
+.cta-list{padding-left:22px;margin:8px 0 0}
+.cta-list li{margin:0 0 7px}
+.cta-small,.cta .note{font-size:13.5px;color:var(--gw-muted)}
+.cta-results{font-size:14px;margin:8px 0}
+.cta-sources li{margin-bottom:8px}
+.cta-btnrow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.cta-pill{display:inline-block;font-size:12.5px;border:1px solid var(--gw-line);border-radius:20px;padding:1px 9px;margin:2px 0 4px;white-space:nowrap}
+.cta-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.cta-two>*{min-width:0}
+@media (max-width:820px){.cta-pick,.cta-two{grid-template-columns:minmax(0,1fr)}}
+@media print{.cta-pick,.cta-btnrow,#gcw-header,.gcw-context{display:none!important}.cta-scroll{overflow:visible;border:0}}
+</style>
+</head>
+<body class="gcw-page">
+<main id="main" class="gcw-frame cta">
+<p class="gcw-eyebrow" data-i18n="eyebrow">Public Service Commission of Canada · Open data</p>
+<h1 data-i18n="title">Hiring and staffing data from the Public Service Commission</h1>
+<p class="gcw-lede" data-i18n="lede">The Public Service Commission publishes data on applications, appointments and staffing in organizations subject to the Public Service Employment Act. This page shows the tables that report on employment equity groups, and lists every Commission data file on this site with a link to its official source.</p>
+<p class="cta-meta" id="st-meta"></p>
+<ul class="cta-jump">
+<li><a href="#applicants" data-i18n="jumpFunnel">Applicants and appointments</a></li>
+<li><a href="#detail" data-i18n="jumpDetail">By sex and region</a></li>
+<li><a href="#students" data-i18n="jumpStudents">Students</a></li>
+<li><a href="#organizations" data-i18n="jumpOrg">By organization</a></li>
+<li><a href="#files" data-i18n="jumpFiles">All data files</a></li>
+<li><a href="#method" data-i18n="jumpMethod">How to read these tables</a></li>
+</ul>
+<p id="st-loading" role="status" data-i18n="loading">Loading the Commission’s data…</p>
+<noscript><p>This page needs JavaScript to show the tables. The Commission’s files are in the data/psc folder of this site. / Cette page a besoin de JavaScript pour afficher les tableaux. Les fichiers de la Commission se trouvent dans le dossier data/psc de ce site.</p></noscript>
+
+<section id="applicants" class="cta-section st-after" aria-labelledby="applicants-title" hidden>
+<h2 id="applicants-title" data-i18n="funnelTitle">Applicants and appointments by employment equity group</h2>
+<p data-i18n="funnelIntro"></p>
+<div id="st-latest"></div>
+<div class="cta-pick"><div><label for="st-group" data-i18n="groupLabel">Employment equity group</label><select id="st-group"></select></div></div>
+<div id="st-funnel"></div>
+<p class="note" id="st-funnel-note"></p>
+<div class="cta-btnrow"><button type="button" class="gcw-btn" id="st-dl-funnel" data-i18n="download">Download this table (CSV)</button></div>
+</section>
+
+<section id="detail" class="cta-section st-after" aria-labelledby="detail-title" hidden>
+<h2 id="detail-title" data-i18n="detailTitle">Appointments by group, sex and region</h2>
+<p data-i18n="detailIntro"></p>
+<div class="cta-two">
+<div>
+<div class="cta-pick" style="grid-template-columns:minmax(0,1fr)"><div><label for="st-sgroup" data-i18n="sgroupLabel">Group</label><select id="st-sgroup"></select></div></div>
+<div id="st-sex"></div>
+</div>
+<div>
+<div class="cta-pick" style="grid-template-columns:minmax(0,1fr)"><div><label for="st-year" data-i18n="yearLabel">Fiscal year</label><select id="st-year"></select></div></div>
+<div id="st-region"></div>
+<p class="note" data-i18n="regionNote"></p>
+</div>
+</div>
+</section>
+
+<section id="students" class="cta-section st-after" aria-labelledby="students-title" hidden>
+<h2 id="students-title" data-i18n="studentsTitle">Students: applicants and hires</h2>
+<p data-i18n="studentsIntro"></p>
+<div class="cta-pick"><div><label for="st-stgroup" data-i18n="groupLabel">Employment equity group</label><select id="st-stgroup"></select></div></div>
+<div id="st-students"></div>
+</section>
+
+<section id="organizations" class="cta-section st-after" aria-labelledby="org-title" hidden>
+<h2 id="org-title" data-i18n="orgTitle">Appointments by organization and employment equity self-identification</h2>
+<p data-i18n="orgIntro"></p>
+<div class="cta-pick"><div><label for="st-org" data-i18n="orgLabel">Organization</label><select id="st-org"></select></div></div>
+<div id="st-org-table"></div>
+<p class="note" id="st-org-note"></p>
+<div class="cta-btnrow"><button type="button" class="gcw-btn" id="st-dl-org" data-i18n="download">Download this table (CSV)</button></div>
+</section>
+
+<section id="files" class="cta-section st-after" aria-labelledby="files-title" hidden>
+<h2 id="files-title" data-i18n="filesTitle">All Public Service Commission data files on this site</h2>
+<p data-i18n="filesIntro"></p>
+<div class="cta-pick"><div><label for="st-filter" data-i18n="filterLabel">Find a file</label><input id="st-filter" type="search" autocomplete="off"></div></div>
+<p id="st-files-count" class="cta-results" role="status" aria-live="polite"></p>
+<div id="st-files"></div>
+<div id="st-snps"></div>
+</section>
+
+<section id="method" class="cta-section st-after" aria-labelledby="method-title" hidden>
+<h2 id="method-title" data-i18n="methodTitle">How to read these tables</h2>
+<div id="st-method"></div>
+</section>
+</main>
+<script src="staffing.js"></script>
+<script src="gc-workspace.js"></script>
+</body>
+</html>
