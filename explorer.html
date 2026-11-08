@@ -572,7 +572,7 @@ textarea{resize:vertical}
 #view-orgprofile .eq-dept-head .actionbar,#view-publicintro>.actionbar{display:none!important}
 .eq-topic-trail{display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:950px;margin:0 0 16px;padding:11px 12px;background:var(--teal-soft);border-radius:8px;font-size:13px}
 .eq-topic-trail[hidden]{display:none!important}
-.eq-topic-trail button{color:var(--teal);background:none;border:none;text-decoration:underline;font-weight:700;cursor:pointer;padding:4px}
+.eq-topic-trail button{color:var(--teal);background:none;border:none;text-decoration:underline;font-weight:700;cursor:pointer;padding:4px}:root:not([data-theme]) .eq-topic-trail button{color:#0B6E6D}
 .eq-topic-trail strong{font-size:13px;color:var(--ink)}
 
 /* 2025 Staffing and Non-Partisanship Survey integration */
@@ -1258,6 +1258,7 @@ body[data-gc-group="black"] #view-black,body[data-gc-group="indigenous"] #view-i
     <tr><td>South Asian / East Indian</td><td class="num">5.6%</td><td class="num">5.8%</td><td class="num">5.0%</td><td class="num">5.2%</td><td class="num">5.9%</td><td class="num above-mark">1.05</td></tr>
     </tbody></table></div>
     <p style="font-size:13.5px;max-width:940px;margin-top:10px" data-fr="L’audit présente des résultats pour chaque étape. La présélection automatisée n’a réduit la représentation d’aucun groupe. La présélection organisationnelle a réduit la représentation des candidats racisés, et surtout celle des candidats noirs; l’audit a relevé le statut de citoyenneté et l’évaluation de l’expérience comme facteurs, et a constaté que les candidats de minorités visibles réussissaient moins bien même lorsqu’ils avaient de l’expérience fédérale. À l’étape de l’évaluation, les examens écrits, surtout conçus par les organisations, à réponse ouverte et notés de façon subjective, ont réduit la représentation des candidats racisés, et en particulier des candidats noirs. Les entrevues expliquent la baisse chez les candidats autochtones. Les vérifications des références ont accru la représentation des femmes seulement. L’étape de la nomination a réduit la représentation des personnes en situation de handicap, leur plus forte baisse à toutes les étapes. L’audit de suivi de 2023 sur la préévaluation a constaté que la présélection réduisait aussi la représentation des Autochtones en situation de handicap et des personnes racisées en situation de handicap. 50 % des organisations avaient effectué un examen des systèmes d’emploi au cours des 3 à 5 années précédentes, et 62 % d’entre elles avaient conclu ne pas avoir d’obstacles systémiques au recrutement.">The audit reported results for each stage. Automated screening did not reduce any group’s representation. Organizational screening reduced the representation of racialized candidates, and of Black candidates the most; the audit identified citizenship status and the assessment of experience as factors, and found that visible minority candidates were less successful even when they had federal experience. At assessment, written tests, mostly developed by organizations, open-ended and scored subjectively, reduced the representation of racialized candidates, and of Black candidates in particular. Interviews accounted for the decline for Indigenous candidates. Reference checks increased representation only for women. The appointment stage reduced the representation of persons with disabilities, their largest decline at any stage. The 2023 follow-up audit on pre-assessment found that screening also reduced the representation of Indigenous people with disabilities and racialized people with disabilities. 50% of organizations had completed an employment systems review in the previous 3 to 5 years, and 62% of those concluded that they had no systemic barriers in recruitment.</p>
+    <p style="font-size:13.5px;max-width:940px" data-fr="Les tableaux annuels de la Commission de la fonction publique sur les postulants et les nominations selon le groupe, de 2012-2013 à 2022-2023, se trouvent sur la &lt;a href=&quot;staffing.html#applicants&quot;&gt;page sur l’embauche et la dotation&lt;/a&gt;.">The Public Service Commission’s annual tables on applicants and appointments by group, from 2012-13 to 2022-23, are on the <a href="staffing.html#applicants">hiring and staffing page</a>.</p>
   </div>
   <div class="card">
     <h3>Promotions and acting appointments</h3>
@@ -5386,6 +5387,13 @@ const DEPT_WFA_SOURCES={"w":"https://www.canada.ca/en/treasury-board-secretariat
     if(initial)go("home");
   }
   apply(true);
+  /* Sections above the target can finish drawing after the first scroll and push it down the page.
+     On first load, scroll to the linked section again while it is out of view, unless the visitor has started scrolling. */
+  (function(){try{const t=parse().tab;if(!t||!KNOWN.test(t))return;const el=document.getElementById("view-"+t);if(!el)return;let moved=false;const stop=function(){moved=true;};
+   ["wheel","touchstart","keydown","mousedown"].forEach(function(ev){window.addEventListener(ev,stop,{once:true,passive:true});});
+   const fix=function(){if(moved||parse().tab!==t)return;const top=el.getBoundingClientRect().top;if(top>Math.min(window.innerHeight*0.6,480)||top<-48){try{el.scrollIntoView({block:"start",behavior:"instant"});}catch(e){try{el.scrollIntoView(true);}catch(e2){}}}};
+   let ro=null;if(window.ResizeObserver){ro=new ResizeObserver(fix);ro.observe(document.body);}
+   [500,1300,2600].forEach(function(ms){setTimeout(fix,ms);});setTimeout(function(){if(ro)ro.disconnect();},5000);}catch(e){}})();
   window.addEventListener("hashchange",function(){apply(false);});
 })();
 

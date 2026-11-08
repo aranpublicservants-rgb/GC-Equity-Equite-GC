@@ -1,0 +1,662 @@
+{
+ "datasets": {
+  "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db": {
+   "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act",
+   "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+   "url": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "url_fr": "https://ouvert.canada.ca/data/fr/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "845f9e76-d03e-4652-8f43-bb777ab1d52b": {
+   "en": "Population under the Public Service Employment Act",
+   "fr": "Effectif en vertu de la Loi sur l'emploi dans la fonction publique",
+   "url": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
+   "url_fr": "https://ouvert.canada.ca/data/fr/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b"
+  },
+  "26ffad36-ca9b-431c-8f6d-a6df02665e2c": {
+   "en": "Public Service Commission's Staffing Dashboard",
+   "fr": "Tableau de bord de la dotation de la Commission de la fonction publique",
+   "url": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+   "url_fr": "https://ouvert.canada.ca/data/fr/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a": {
+   "en": "Employment Equity Designated Groups under the Public Service Employment Act",
+   "fr": "Groupes visés par l’équité en matière d’emploi en vertu de la Loi sur l'emploi dans la fonction publique",
+   "url": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
+   "url_fr": "https://ouvert.canada.ca/data/fr/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "88f45a5c-bc57-4483-bc85-2c19bc342039": {
+   "en": "2023 Staffing and Non-Partisanship Survey",
+   "fr": "Sondage sur la dotation et l’impartialité politique de 2023",
+   "url": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "url_fr": "https://ouvert.canada.ca/data/fr/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039"
+  },
+  "8766bf91-d14c-423b-a5d1-ac47f5b4dd22": {
+   "en": "2025 Staffing and Non-Partisanship Survey",
+   "fr": "Sondage sur la dotation et l’impartialité politique de 2025",
+   "url": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+   "url_fr": "https://ouvert.canada.ca/data/fr/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22"
+  }
+ },
+ "files": {
+  "CFPPSC_AR1CC.csv": {
+   "file": "CFPPSC_AR1CC.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1CC.csv",
+   "package": null,
+   "title_en": "Hiring and staffing by organization and region",
+   "title_fr": "Embauches et dotation par organisation et par région"
+  },
+  "CFPPSC_AR1D.csv": {
+   "file": "CFPPSC_AR1D.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1D.csv",
+   "package": null,
+   "title_en": "Staffing activities",
+   "title_fr": "Activités de dotation"
+  },
+  "CFPPSC_AR1E.csv": {
+   "file": "CFPPSC_AR1E.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1E.csv",
+   "package": null,
+   "title_en": "Separations",
+   "title_fr": "Départs"
+  },
+  "CFPPSC_AR1EE.csv": {
+   "file": "CFPPSC_AR1EE.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1EE.csv",
+   "package": null,
+   "title_en": "Staffing by language requirements and region",
+   "title_fr": "Dotation selon les exigences linguistiques et la région"
+  },
+  "CFPPSC_AR1J.csv": {
+   "file": "CFPPSC_AR1J.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv",
+   "package": null,
+   "title_en": "Appointments by position and language requirements",
+   "title_fr": "Nominations selon le poste et les exigences linguistiques"
+  },
+  "CFPPSC_AR1K.csv": {
+   "file": "CFPPSC_AR1K.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1K.csv",
+   "package": null,
+   "title_en": "Student applications and hiring",
+   "title_fr": "Demandes d’emploi et embauches d’étudiants"
+  },
+  "CFPPSC_AR1N.csv": {
+   "file": "CFPPSC_AR1N.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1N.csv",
+   "package": null,
+   "title_en": "Hiring and staffing by tenure",
+   "title_fr": "Embauches et dotation selon la durée d’emploi"
+  },
+  "CFPPSC_AR1O.csv": {
+   "file": "CFPPSC_AR1O.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1O.csv",
+   "package": null,
+   "title_en": "Hiring and staffing by tenure transition",
+   "title_fr": "Embauches et dotation selon la transition de durée d’emploi"
+  },
+  "CFPPSC_AR1R.csv": {
+   "file": "CFPPSC_AR1R.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1R.csv",
+   "package": null,
+   "title_en": "Staffing by first official language",
+   "title_fr": "Dotation selon la première langue officielle"
+  },
+  "CFPPSC_AR1S.csv": {
+   "file": "CFPPSC_AR1S.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1S.csv",
+   "package": null,
+   "title_en": "Appointments by type and language requirements",
+   "title_fr": "Nominations selon le type et les exigences linguistiques"
+  },
+  "CFPPSC_AR1T.csv": {
+   "file": "CFPPSC_AR1T.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1T.csv",
+   "package": null,
+   "title_en": "Student recruitment by region and program",
+   "title_fr": "Recrutement d’étudiants par région et par programme"
+  },
+  "CFPPSC_AR1U.csv": {
+   "file": "CFPPSC_AR1U.csv",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1U.csv",
+   "package": null,
+   "title_en": "Staffing by organization and appointment type",
+   "title_fr": "Dotation par organisation et type de nomination"
+  },
+  "CFPPSC_AR1V.csv": {
+   "file": "CFPPSC_AR1V.csv",
+   "title_en": "Executive indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)",
+   "title_fr": "Activités de dotation pour une période indéterminée ou déterminée de cadres supérieurs en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l’exercice (valide jusqu’en mars 2017)",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1V.csv",
+   "package": null
+  },
+  "CFPPSC_AR1W.csv": {
+   "file": "CFPPSC_AR1W.csv",
+   "title_en": "Indeterminate appointments and staffing activities to Executive bilingual positions under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)",
+   "title_fr": "Nominations et activités de dotation pour une période indéterminée à des postes bilingues de cadres supérieurs en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l’exercice (valide jusqu’en mars 2017)",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv",
+   "package": null
+  },
+  "CFPPSC_AR1X.csv": {
+   "file": "CFPPSC_AR1X.csv",
+   "title_en": "Indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position, type of appointment and fiscal year (Valid until March 2017)",
+   "title_fr": "Activités de dotation pour une période indéterminée ou déterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste, le type de nomination et l’exercice (valide jusqu’en mars 2017)",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1X.csv",
+   "package": null
+  },
+  "CFPPSC_AR2C.csv": {
+   "file": "CFPPSC_AR2C.csv",
+   "title_en": "Public Service Employment Act population by organization (Valid until March 2018)",
+   "title_fr": "Effectif assujetti à la Loi sur l’emploi dans la fonction publique, par organisation (valide jusqu’en mars 2018)",
+   "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/pop-eff/CFPPSC_AR2C.csv",
+   "package": null
+  },
+  "adv_type.csv": {
+   "file": "adv_type.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Advertisement Types",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Types d’annonces",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/f3d46f61-3523-4b5c-9dee-29ff0d0aced4/download/adv_type.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "advs.csv": {
+   "file": "advs.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Advertisements",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Annonces",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/e41a2a80-1af8-47d6-b993-c051686bc1fa/download/advs.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "ar1a.csv": {
+   "file": "ar1a.csv",
+   "title_en": "Hiring activities under the Public Service Employment Act, by tenure and fiscal year",
+   "title_fr": "Activités d’embauche en vertu de la Loi sur l’emploi dans la fonction publique, selon la durée d’emploi et l’exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/3c37d066-9c05-404c-bd80-7413e423828a/download/ar1a.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1aa.csv": {
+   "file": "ar1aa.csv",
+   "title_en": "Overall hiring and staffing activities to and within the public service, by tenure, previous employment status and geographic area",
+   "title_fr": "Activités globales de dotation à la fonction publique et au sein de celle-ci, selon la durée d’emploi, la situation professionnelle antérieure et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f3a2ad68-e852-4b26-b7fa-a163561cb34a/download/ar1aa.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1b.csv": {
+   "file": "ar1b.csv",
+   "title_en": "Hiring activities and population under the Public Service Employment Act, by geographic area",
+   "title_fr": "Activités d’embauche et effectif assujetti à la Loi sur l’emploi dans la fonction publique, selon la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/76a47801-dbda-422c-bc4b-0a0304b05bb9/download/ar1b.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1bb.csv": {
+   "file": "ar1bb.csv",
+   "title_en": "Staffing activities by type, occupational group and geographic area",
+   "title_fr": "Activités de dotation, selon le type de nomination, le groupe professionnel et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ded1b8b4-df88-4149-87f0-b28c9006e29f/download/ar1bb.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1c.csv": {
+   "file": "ar1c.csv",
+   "title_en": "Indeterminate staffing activities to the public service under the Public Service Employment Act, contributing to movement of indeterminate employees, by fiscal year",
+   "title_fr": "Activités de dotation en vertu de la Loi sur l’emploi dans la fonction publique : nominations à un poste pour une période indéterminée à la fonction publique et au sein de celle-ci ayant contribué aux mouvements de fonctionnaires nommés à un poste pour une période indéterminée par exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/download/ar1c.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1dd.csv": {
+   "file": "ar1dd.csv",
+   "title_en": "Staffing activities by type, first official language group and geographic area",
+   "title_fr": "Activités de dotation, selon le type de nomination, la première langue officielle et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f252ee8f-77bd-4c6f-9427-bfba04834e43/download/ar1dd.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1f.csv": {
+   "file": "ar1f.csv",
+   "title_en": "Appointments under the Public Service Employment Act of new indeterminate employees, by fiscal year",
+   "title_fr": "Nominations de nouveaux fonctionnaires à des postes pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/31f1217b-506e-4746-a38c-5385a0bf40e9/download/ar1f.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1ff.csv": {
+   "file": "ar1ff.csv",
+   "title_en": "Student hiring to the public service, by program and geographic area",
+   "title_fr": "Activités d’embauche d’étudiants à la fonction publique, selon le programme et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/4ae8e18c-3bfe-4386-ac13-c270a1067513/download/ar1ff.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1g.csv": {
+   "file": "ar1g.csv",
+   "title_en": "Internal staffing activities of indeterminate employees under the Public Service Employment Act, by type and fiscal year",
+   "title_fr": "Activités de dotation internes liées aux nominations pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon le type et l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1gg.csv": {
+   "file": "ar1gg.csv",
+   "title_en": "Staffing activities by type, organization and geographic area",
+   "title_fr": "Activités de dotation, selon le type de nomination, l’organisation et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ed783874-8549-42e6-9d4e-ac223c16617e/download/ar1gg.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1h.csv": {
+   "file": "ar1h.csv",
+   "title_en": "Staffing activities of new indeterminate executive employees under the Public Service Employment Act, by source and fiscal year",
+   "title_fr": "Activités de dotation relatives aux nouvelles nominations pour une période indéterminée au groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon la source et l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/download/ar1h.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1hh.csv": {
+   "file": "ar1hh.csv",
+   "title_en": "Appointments to the public service, Post-secondary Recruitment Program, by geographic area",
+   "title_fr": "Nominations à la fonction publique, Recrutement postsecondaire, selon la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/14f5dcaa-9223-4981-9245-09773e14ae91/download/ar1hh.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1i.csv": {
+   "file": "ar1i.csv",
+   "title_en": "Estimates of percentage of appointments under the Public Service Employment Act to and within the public service, by appointment type, process and fiscal year",
+   "title_fr": "Estimation du pourcentage de nominations à la fonction publique et au sein de celle-ci en vertu de la Loi sur l’emploi dans la fonction publique, selon le type de nomination, le processus et l’exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/70c0042e-37d0-49ca-aafc-b21cab7c5555/download/ar1i.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1ii.csv": {
+   "file": "ar1ii.csv",
+   "title_en": "Hiring and staffing activities, Recruitment of Policy Leaders",
+   "title_fr": "Activités d’embauche et de dotation, Recrutement de leaders en politiques",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/adfef7af-54da-4b2a-880e-0cbe2266e6c1/download/ar1ii.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1l.csv": {
+   "file": "ar1l.csv",
+   "title_en": "Post-Secondary Recruitment program highlights, by fiscal year",
+   "title_fr": "Points saillants du Programme de recrutement postsecondaire, selon l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/bc3fc632-00dc-47b9-b1a8-2da8d7e776eb/download/ar1l.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1q.csv": {
+   "file": "ar1q.csv",
+   "title_en": "Staffing activities by type and geographic area",
+   "title_fr": "Activités de dotation, selon le type de nomination et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/028566a5-b0d7-4d70-9d9b-bb9fe8ea28a3/download/ar1q.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1y.csv": {
+   "file": "ar1y.csv",
+   "title_en": "Indeterminate and term appointments to the public service under the Public Service Employment Act, by first official language group and fiscal year within and outside the National Capital Region",
+   "title_fr": "Nominations à la fonction publique pour une période indéterminée ou une durée déterminée en vertu de la Loi sur l’emploi dans la fonction publique, dans la région de la capitale nationale et les autres régions, selon la première langue officielle et l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/34ea0731-9705-4d54-850a-005291dbf063/download/ar1y.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar1z.csv": {
+   "file": "ar1z.csv",
+   "title_en": "Overall hiring and staffing activities to and within the public service, by type, tenure and geographic area",
+   "title_fr": "Activités globales de dotation à la fonction publique et au sein de celle-ci, selon le type, la durée d’emploi et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/75d9db1f-86f5-4d72-bf1b-85f500c6d7ac/download/ar1z.csv",
+   "package": "2fe6b7f1-fbfe-4aaf-808f-b977d40d44db"
+  },
+  "ar2a.csv": {
+   "file": "ar2a.csv",
+   "title_en": "Public Service Employment Act population, by year and tenure",
+   "title_fr": "Effectif assujetti à la Loi sur l’emploi dans la fonction publique, selon l’exercice financier et la durée d’emploi",
+   "url": "https://open.canada.ca/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/427efaed-60c6-477f-b561-5d9771ecd533/download/ar2a.csv",
+   "package": "845f9e76-d03e-4652-8f43-bb777ab1d52b"
+  },
+  "ar2d.csv": {
+   "file": "ar2d.csv",
+   "title_en": "Public Service Employment Act population by organization and geographic area",
+   "title_fr": "L’effectif des organisations assujetties à la Loi sur l’emploi dans la fonction publique, selon l’organisation et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b/resource/42f285e9-5085-4f38-98a2-1dcd2c0bad42/download/ar2d.csv",
+   "package": "845f9e76-d03e-4652-8f43-bb777ab1d52b"
+  },
+  "ar4a.csv": {
+   "file": "ar4a.csv",
+   "title_en": "Percentage of applicants to advertised processes, by Employment Equity designated group and fiscal year",
+   "title_fr": "Pourcentage des postulants aux processus annoncés, selon le groupe visé par l'équité en matière d'emploi",
+   "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/24a44ce4-676a-45c3-9718-db34e6c07755/download/ar4a.csv",
+   "package": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "ar4b.csv": {
+   "file": "ar4b.csv",
+   "title_en": "Percentage of student applicants to advertised processes and student hiring activities to the public service, by Employment Equity designated group and fiscal year",
+   "title_fr": "Pourcentage des étudiants ayant présenté une demande d'emploi à des processus annoncés et pourcentage de l'embauche d'étudiants à la fonction publique, selon le groupe visé par l'équité en matière d'emploi et l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/5dff85d4-e7af-4841-be27-f76826a5f494/download/ar4b.csv",
+   "package": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "ar4c.csv": {
+   "file": "ar4c.csv",
+   "title_en": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over, by employment equity designated group and fiscal year",
+   "title_fr": "Pourcentage des nominations à la fonction publique pour une période indéterminée et déterminée de trois mois et plus, selon le groupe visé par l’équité en matière d’emploi et l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/e0c16e15-2f40-4129-ac35-283b3aab3c8c/download/ar4c.csv",
+   "package": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "ar4d.csv": {
+   "file": "ar4d.csv",
+   "title_en": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over by employment equity designated group, sex and fiscal year",
+   "title_fr": "Pourcentage des nominations à la fonction publique visant des postes de durée indéterminée et déterminée de trois mois ou plus, selon le groupe visé par l’équité en matière d’emploi, le sexe et l'exercice financier",
+   "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/ef7e5729-7a5b-40ed-baf2-0d8cadb01341/download/ar4d.csv",
+   "package": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "ar4e.csv": {
+   "file": "ar4e.csv",
+   "title_en": "Percentage of appointments to the public service to indeterminate positions and terms of three months and over by employment equity designated group and geographic area",
+   "title_fr": "Pourcentage des nominations à la fonction publique visant des postes de durée indéterminée et déterminée de trois mois ou plus, selon le groupe visé par l’équité en matière d’emploi et la région géographique",
+   "url": "https://open.canada.ca/data/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a/resource/3bcb7687-787d-499d-b9ca-83fc9c49a6a4/download/ar4e.csv",
+   "package": "6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a"
+  },
+  "demo_age.csv": {
+   "file": "demo_age.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Demographics Age",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Démographie âge",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0c1b0f39-adbe-4fe4-8aa6-1d97cdf1dfb3/download/demo_age.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "demo_ee.csv": {
+   "file": "demo_ee.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Demographics Employment Equity",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Démographie équité en matière d'emploi",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bc1f4229-b228-4000-9233-86c763b012ec/download/demo_ee.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "demo_fol.csv": {
+   "file": "demo_fol.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Demographics First Official Language",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Démographie première langue officielle",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/845143a0-fe5e-459a-9534-10fd688f5b10/download/demo_fol.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "demo_group.csv": {
+   "file": "demo_group.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Demographics Group",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Démographie groupe",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/ba48f743-388d-46de-ac6b-4d1a3bc47806/download/demo_group.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "demo_region.csv": {
+   "file": "demo_region.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Demographics Region",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Démographie région",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/bfbecc14-d38e-4605-9218-09bef964643d/download/demo_region.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "inflow.csv": {
+   "file": "inflow.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Inflow",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Nouvelles arrivées",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/5456d998-fc83-4871-b6b2-deaff7be5c98/download/inflow.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "internal_mob.csv": {
+   "file": "internal_mob.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Internal Mobility",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Mobilité interne",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/347ba6ff-7c58-4775-ba3a-3a4d9e23eb06/download/internal_mob.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "outflow.csv": {
+   "file": "outflow.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Outflow",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Départs",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/d4ad133f-d6c0-46c4-ab17-89c6eb03b788/download/outflow.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "reappointments.csv": {
+   "file": "reappointments.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Reappointments",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Administration des priorités",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/3df3bcf0-bdde-45c0-8a39-158c656da604/download/reappointments.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "vha_1.csv": {
+   "file": "vha_1.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Veterans Hiring Act 1",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Loi sur l'embauche des anciens combattants 1",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/425f80cf-2e70-421e-8832-8d67fcd1356e/download/vha_1.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "vha_2.csv": {
+   "file": "vha_2.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Veterans Hiring Act 2",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Loi sur l'embauche des anciens combattants 2",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/0065a7ca-6495-45fc-a457-5a27e1a28889/download/vha_2.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  },
+  "vha_3.csv": {
+   "file": "vha_3.csv",
+   "title_en": "Public Service Commission's Staffing Dashboard: Veterans Hiring Act 3",
+   "title_fr": "Tableau de bord de la dotation de la Commission de la fonction publique : Loi sur l'embauche des anciens combattants 3",
+   "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/9a671e77-9506-4f48-9f36-ddc2d5f102da/download/vha_3.csv",
+   "package": "26ffad36-ca9b-431c-8f6d-a6df02665e2c"
+  }
+ },
+ "snps": {
+  "2023": "88f45a5c-bc57-4483-bc85-2c19bc342039",
+  "2025": "8766bf91-d14c-423b-a5d1-ac47f5b4dd22"
+ },
+ "snps_names": {
+  "15f9967d-608d-41b2-bced-8d7e61a6d53f": {
+   "en": "By department (including all departments)",
+   "fr": "Par ministère (incluant tous les ministères)"
+  },
+  "d0437695-b1da-4bcd-bd4e-4eef0f62d8a8": {
+   "en": "By department and by Employment Equity Group: Women",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Femmes"
+  },
+  "0eded731-2004-4f00-aa05-606801f5dafc": {
+   "en": "By department and by Employment Equity Group: Visible minorities",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Minorités visibles"
+  },
+  "77c9c20e-691b-4c13-8243-9cf9cf81c8dc": {
+   "en": "By department and by Employment Equity Group: Indigenous Peoples",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Peuples autochtones"
+  },
+  "68c92f22-dc23-4027-a714-214600063ed6": {
+   "en": "By department and by First Official Language",
+   "fr": "Par ministère et par première langue officielle"
+  },
+  "cdabf3bd-cfca-42b0-a58f-1d963a1af5ec": {
+   "en": "By department and by Region",
+   "fr": "Par ministère et par région"
+  },
+  "95829e14-df60-4766-afd5-ae8864580266": {
+   "en": "By department and by Occupational group",
+   "fr": "Par ministère et par groupe professionnel"
+  },
+  "85ec7faf-90e5-4015-932b-f24fb97133b2": {
+   "en": "By department and by Age group",
+   "fr": "Par ministère et par groupe d’âge"
+  },
+  "a45a3101-33be-453b-b5e2-144d8c50a7a0": {
+   "en": "By department and by Years of Service",
+   "fr": "Par ministère et par années de service"
+  },
+  "54b1b522-573f-469e-97f8-de9c75a46106": {
+   "en": "By department and by Tenure",
+   "fr": "Par ministère et par situation professionnelle"
+  },
+  "2ae9d18b-3ccc-409a-935b-197bf2a580d6": {
+   "en": "Data Visualization Dataset",
+   "fr": "Ensemble de données pour la visualisation de données"
+  },
+  "1478662e-17d0-4e3a-aacb-e9c4fb87ae8f": {
+   "en": "Response profile data",
+   "fr": "Données sur le profil des réponses"
+  },
+  "d583d90e-4aca-43b3-95cb-5137c239d05d": {
+   "en": "List of questions",
+   "fr": "Liste de questions"
+  },
+  "dca15e16-3a29-4fc6-84e7-73032062a239": {
+   "en": "List of departments",
+   "fr": "Liste des ministères"
+  },
+  "05442d31-89b6-4b97-a40f-7ee8f1cf756e": {
+   "en": "By department and by diploma",
+   "fr": "Par ministère et par diplôme"
+  },
+  "2163b99b-836d-46b8-9fbf-1d05355fdfc9": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "eacf2c01-c889-453d-b564-0ee1863a23a5": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "d4f089ff-e657-4caf-92d9-567b55faa0c9": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "5985494d-cc7e-47e0-8884-20f99b976a0d": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "bf726802-12f3-4337-a5a0-facd70299a28": {
+   "en": "By department and by marital status",
+   "fr": "Par ministère et selon l’état matrimonial"
+  },
+  "0c3a30e1-e97a-4f47-a1f6-7ae8976b17d1": {
+   "en": "By department and by 2SLGBTQIA+ identity",
+   "fr": "Par ministère et selon l’identité 2ELGTQIA+"
+  },
+  "5daa5fd7-6597-4edf-93b5-ea2b43854df4": {
+   "en": "By department and by religion",
+   "fr": "Par ministère et par religion"
+  },
+  "1c3e883f-b5c4-4ac8-96f0-f9757139bd13": {
+   "en": "By department and by visible minority subgroup",
+   "fr": "Par ministère et par sous-groupe des minorités visibles"
+  },
+  "ed359432-8f40-4096-a0fd-1f6bc44c7490": {
+   "en": "By department and by Indigenous subgroup",
+   "fr": "Par ministère et selon les sous-groupes autochtones"
+  },
+  "1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab": {
+   "en": "By department and by type of disability",
+   "fr": "Par ministère et par type de handicap"
+  },
+  "c5418e16-a115-4ced-8fbc-01f5adcfa7a3": {
+   "en": "2023 SNPS Thematic Report on the Results for Employment Equity Groups and Equity Seeking Groups",
+   "fr": "SDIP 2023 - Rapport thématique sur les résultats pour les groupes visés par l’équité en matière d’emploi et les groupes en quête d’équité"
+  },
+  "b9db9212-c72b-49c4-9122-11c1c0693801": {
+   "en": "2023 SNPS Thematic Report on the Results for Employment Equity Groups and Equity Seeking Groups",
+   "fr": "SDIP 2023 - Rapport thématique sur les résultats pour les groupes visés par l’équité en matière d’emploi et les groupes en quête d’équité"
+  },
+  "b045205e-2ffa-4d6f-9b36-679c0c1f52e9": {
+   "en": "2023 SNPS Thematic Report on the Results for Employment Equity Groups and Equity Seeking Groups",
+   "fr": "SDIP 2023 - Rapport thématique sur les résultats pour les groupes visés par l’équité en matière d’emploi et les groupes en quête d’équité"
+  },
+  "be6fe4fa-37f7-4224-8108-095e66008b05": {
+   "en": "By department and by Employment Equity Group: Persons with disabilities",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Personnes en situation de handicap"
+  },
+  "fc3e0cda-1d7c-4502-8b39-a4be26dc9341": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "c5606da0-4239-4b0f-b459-4b24d3c3d0f1": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "ffda41e0-1b4f-49db-b38b-75cfa1c31e7d": {
+   "en": "Staffing and Non-Partisanship Survey Data Release: Supporting Documentation",
+   "fr": "Sondage sur la dotation et l'impartialité politique Publication des données : Documents à l'appui"
+  },
+  "a5a37b44-448e-4c2e-8c2f-e6ccf0ea128b": {
+   "en": "By department (including all departments)",
+   "fr": "Par ministère (incluant tous les ministères)"
+  },
+  "37a83f7c-1352-42a5-ac94-d49391535793": {
+   "en": "By department and by Employment Equity Group: Women",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Femmes"
+  },
+  "840e8e64-9177-4c72-a84d-3d1cfb8e280e": {
+   "en": "By department and by Employment Equity Group: Persons with disabilities",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Personnes en situation de handicap"
+  },
+  "0aa3b961-db7b-492e-a692-01af431ad854": {
+   "en": "By department and by Employment Equity Group: Visible minorities",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Minorités visibles"
+  },
+  "5903d97e-3ff7-4db9-8a9b-5338cddc0f12": {
+   "en": "By department and by Employment Equity Group: Indigenous Peoples",
+   "fr": "Par ministère et par groupe d'équité en matière d'emploi : Peuples autochtones"
+  },
+  "aae3c25b-c61d-425a-9a1e-ed0deb7865b1": {
+   "en": "By department and by First Official Language",
+   "fr": "Par ministère et par première langue officielle"
+  },
+  "7b6df281-e5ff-47a3-a3e3-aba70168fefd": {
+   "en": "By department and by Region",
+   "fr": "Par ministère et par région"
+  },
+  "16e1bab4-ef46-4857-8ac6-67ee9c99fa53": {
+   "en": "By department and by Occupational group",
+   "fr": "Par ministère et par groupe professionnel"
+  },
+  "8c22ddff-2ff6-4e33-be6b-a1973005d861": {
+   "en": "By department and by Age group",
+   "fr": "Par ministère et par groupe d’âge"
+  },
+  "2c7fd358-5262-446e-9ddf-980252552e76": {
+   "en": "By department and by Years of Service",
+   "fr": "Par ministère et par années de service"
+  },
+  "c46d24c1-dcbc-4cce-87a1-fc42e6311720": {
+   "en": "By department and by Tenure",
+   "fr": "Par ministère et par situation professionnelle"
+  },
+  "9ed3ae74-9458-47ec-882d-e3d785e34389": {
+   "en": "Data Visualization Dataset (dataset A)",
+   "fr": "Ensemble de données pour la visualisation de données (Ensemble de données A)"
+  },
+  "74bfd99f-b71b-44ab-9c5f-174f1eb4c602": {
+   "en": "Data Visualization Dataset (Dataset B)",
+   "fr": "Ensemble de données pour la visualisation de données (Ensemble de données B)"
+  },
+  "7725a05d-6c06-486e-b707-d845fef9a688": {
+   "en": "Response profile data",
+   "fr": "Données sur le profil des réponses"
+  },
+  "5878befe-05bd-42f0-b8cc-1b081a5d5ea7": {
+   "en": "List of questions",
+   "fr": "Liste de questions"
+  },
+  "408590d0-05dd-4467-bc23-b425f9681e3f": {
+   "en": "List of departments",
+   "fr": "Liste des ministères"
+  },
+  "ff6d0c37-9b0d-4eca-9f32-d348f8048d48": {
+   "en": "By department and by diploma",
+   "fr": "Par ministère et par diplôme"
+  },
+  "242e8a2e-4604-48c2-afaa-5fff0aba51f6": {
+   "en": "By department and by marital status",
+   "fr": "Par ministère et selon l’état matrimonial"
+  },
+  "e80977dc-ef10-436f-b154-af08c420cd3d": {
+   "en": "By department and by sexual orientation",
+   "fr": "Par ministère et selon l’orientation sexuelle"
+  },
+  "e5fdffd2-d510-4fc5-b57f-512a9f1ac261": {
+   "en": "By department and by identity",
+   "fr": "Par ministère et selon l’identité"
+  },
+  "5a913b41-78d7-4378-9fa5-6be450950731": {
+   "en": "By department and by family status",
+   "fr": "Par ministère et selon la situation familiale"
+  },
+  "7a37434b-a859-477c-a753-0a1c5fc77e0d": {
+   "en": "By department and by religion",
+   "fr": "Par ministère et par religion"
+  },
+  "143635eb-63b9-4756-8831-d8a2b0585e78": {
+   "en": "By department and by visible minority subgroup",
+   "fr": "Par ministère et par sous-groupe des minorités visibles"
+  },
+  "692c27f1-7dba-48d8-9e6d-8dcddb35bb87": {
+   "en": "By department and by Indigenous subgroup",
+   "fr": "Par ministère et selon les sous-groupes autochtones"
+  },
+  "00b9cfee-3b00-4d2a-980b-72c81017af74": {
+   "en": "By department and by type of disability",
+   "fr": "Par ministère et par type de handicap"
+  }
+ },
+ "retrieved": "2026-11-08"
+}

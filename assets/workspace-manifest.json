@@ -4,13 +4,13 @@
   "files": [
     {
       "file": "assets/workspace-data.json",
-      "bytes": 281127,
-      "sha256": "ea73b3eafb98535a019951b3da4feb8bfcc5f3fed6c7a56da633836781830f32"
+      "bytes": 281130,
+      "sha256": "b377103ec69a261edc7d9537cc5d06198a8dfa8bd3ecb7c4b6f92a730fdc71df"
     },
     {
       "file": "assets/search-index.json",
-      "bytes": 606458,
-      "sha256": "061b8e55d1c278058fdc22e334fff02050059294014a7148fb44b5dd37923997"
+      "bytes": 635962,
+      "sha256": "815df8b74f05d1167c83f357b6acec80282666842de61464bbd611d539b0f852"
     }
   ],
   "related": [

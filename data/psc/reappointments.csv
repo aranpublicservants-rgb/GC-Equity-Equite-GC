@@ -1,0 +1,1313 @@
+﻿"Fiscal_Year","department_e","department_f","count","priority_count"
+"2011-2012","Public Service - Average","Fonction Publique - Moyenne","252",17
+"2012-2013","Public Service - Average","Fonction Publique - Moyenne","107",19
+"2013-2014","Public Service - Average","Fonction Publique - Moyenne","138",20
+"2014-2015","Public Service - Average","Fonction Publique - Moyenne","170",14
+"2015-2016","Public Service - Average","Fonction Publique - Moyenne","237",16
+"2016-2017","Public Service - Average","Fonction Publique - Moyenne","321",17
+"2017-2018","Public Service - Average","Fonction Publique - Moyenne","386",17
+"2018-2019","Public Service - Average","Fonction Publique - Moyenne","486",16
+"2019-2020","Public Service - Average","Fonction Publique - Moyenne","506",11
+"2020-2021","Public Service - Average","Fonction Publique - Moyenne","438",9
+"2021-2022","Public Service - Average","Fonction Publique - Moyenne","534",11
+"2022-2023","Public Service - Average","Fonction Publique - Moyenne","605",9
+"2023-2024","Public Service - Average","Fonction Publique - Moyenne","549",8
+"2024-2025","Public Service - Average","Fonction Publique - Moyenne","425",8
+"2025-2026","Public Service - Average","Fonction Publique - Moyenne","216",8
+"2026-2027","Public Service - Average","Fonction Publique - Moyenne","46",7
+"2011-2012","Public Service - Total","Fonction Publique - Total","20633",810
+"2012-2013","Public Service - Total","Fonction Publique - Total","8903",1001
+"2013-2014","Public Service - Total","Fonction Publique - Total","11181",1191
+"2014-2015","Public Service - Total","Fonction Publique - Total","14133",718
+"2015-2016","Public Service - Total","Fonction Publique - Total","17056",787
+"2016-2017","Public Service - Total","Fonction Publique - Total","22817",696
+"2017-2018","Public Service - Total","Fonction Publique - Total","27786",678
+"2018-2019","Public Service - Total","Fonction Publique - Total","35509",619
+"2019-2020","Public Service - Total","Fonction Publique - Total","37475",490
+"2020-2021","Public Service - Total","Fonction Publique - Total","32381",392
+"2021-2022","Public Service - Total","Fonction Publique - Total","39510",431
+"2022-2023","Public Service - Total","Fonction Publique - Total","45378",330
+"2023-2024","Public Service - Total","Fonction Publique - Total","41723",306
+"2024-2025","Public Service - Total","Fonction Publique - Total","32297",265
+"2025-2026","Public Service - Total","Fonction Publique - Total","16415",298
+"2026-2027","Public Service - Total","Fonction Publique - Total","3472",241
+"2011-2012","Micro - Average","Micro - Moyenne","5",1
+"2012-2013","Micro - Average","Micro - Moyenne","3",2
+"2013-2014","Micro - Average","Micro - Moyenne","3",1
+"2014-2015","Micro - Average","Micro - Moyenne","5",1
+"2015-2016","Micro - Average","Micro - Moyenne","6",1
+"2016-2017","Micro - Average","Micro - Moyenne","7",1
+"2017-2018","Micro - Average","Micro - Moyenne","6",
+"2018-2019","Micro - Average","Micro - Moyenne","8",
+"2019-2020","Micro - Average","Micro - Moyenne","9",1
+"2020-2021","Micro - Average","Micro - Moyenne","7",1
+"2021-2022","Micro - Average","Micro - Moyenne","6",1
+"2022-2023","Micro - Average","Micro - Moyenne","10",
+"2023-2024","Micro - Average","Micro - Moyenne","9",1
+"2024-2025","Micro - Average","Micro - Moyenne","8",
+"2025-2026","Micro - Average","Micro - Moyenne","4",1
+"2026-2027","Micro - Average","Micro - Moyenne","1",1
+"2011-2012","Small - Average","Petite - Moyenne","37",1
+"2012-2013","Small - Average","Petite - Moyenne","18",4
+"2013-2014","Small - Average","Petite - Moyenne","20",3
+"2014-2015","Small - Average","Petite - Moyenne","26",2
+"2015-2016","Small - Average","Petite - Moyenne","30",2
+"2016-2017","Small - Average","Petite - Moyenne","39",3
+"2017-2018","Small - Average","Petite - Moyenne","41",1
+"2018-2019","Small - Average","Petite - Moyenne","55",2
+"2019-2020","Small - Average","Petite - Moyenne","57",2
+"2020-2021","Small - Average","Petite - Moyenne","38",2
+"2021-2022","Small - Average","Petite - Moyenne","44",1
+"2022-2023","Small - Average","Petite - Moyenne","52",1
+"2023-2024","Small - Average","Petite - Moyenne","54",1
+"2024-2025","Small - Average","Petite - Moyenne","30",1
+"2025-2026","Small - Average","Petite - Moyenne","19",1
+"2026-2027","Small - Average","Petite - Moyenne","4",1
+"2011-2012","Medium - Average","Moyenne - Moyenne","94",2
+"2012-2013","Medium - Average","Moyenne - Moyenne","61",6
+"2013-2014","Medium - Average","Moyenne - Moyenne","63",7
+"2014-2015","Medium - Average","Moyenne - Moyenne","77",3
+"2015-2016","Medium - Average","Moyenne - Moyenne","89",3
+"2016-2017","Medium - Average","Moyenne - Moyenne","128",3
+"2017-2018","Medium - Average","Moyenne - Moyenne","151",3
+"2018-2019","Medium - Average","Moyenne - Moyenne","159",2
+"2019-2020","Medium - Average","Moyenne - Moyenne","183",2
+"2020-2021","Medium - Average","Moyenne - Moyenne","137",2
+"2021-2022","Medium - Average","Moyenne - Moyenne","155",1
+"2022-2023","Medium - Average","Moyenne - Moyenne","209",2
+"2023-2024","Medium - Average","Moyenne - Moyenne","178",2
+"2024-2025","Medium - Average","Moyenne - Moyenne","143",2
+"2025-2026","Medium - Average","Moyenne - Moyenne","73",2
+"2026-2027","Medium - Average","Moyenne - Moyenne","13",2
+"2011-2012","Large - Average","Large - Moyenne","804",35
+"2012-2013","Large - Average","Large - Moyenne","340",40
+"2013-2014","Large - Average","Large - Moyenne","441",47
+"2014-2015","Large - Average","Large - Moyenne","562",31
+"2015-2016","Large - Average","Large - Moyenne","717",34
+"2016-2017","Large - Average","Large - Moyenne","956",30
+"2017-2018","Large - Average","Large - Moyenne","1172",31
+"2018-2019","Large - Average","Large - Moyenne","1456",28
+"2019-2020","Large - Average","Large - Moyenne","1516",20
+"2020-2021","Large - Average","Large - Moyenne","1267",16
+"2021-2022","Large - Average","Large - Moyenne","1501",17
+"2022-2023","Large - Average","Large - Moyenne","1639",13
+"2023-2024","Large - Average","Large - Moyenne","1560",12
+"2024-2025","Large - Average","Large - Moyenne","1252",12
+"2025-2026","Large - Average","Large - Moyenne","635",13
+"2026-2027","Large - Average","Large - Moyenne","136",10
+"2011-2012","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","31",2
+"2012-2013","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","22",8
+"2013-2014","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","22",7
+"2014-2015","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","61",
+"2015-2016","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","41",1
+"2016-2017","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","47",
+"2017-2018","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","58",1
+"2018-2019","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","70",1
+"2019-2020","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","78",3
+"2020-2021","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","50",
+"2021-2022","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","58",1
+"2022-2023","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","80",
+"2023-2024","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","47",1
+"2024-2025","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","31",
+"2025-2026","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","21",
+"2026-2027","Atlantic Canada Opportunities Agency","Agence de promotion économique du Canada atlantique","0",
+"2011-2012","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","571",10
+"2012-2013","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","260",7
+"2013-2014","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","202",9
+"2014-2015","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","231",7
+"2015-2016","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","375",8
+"2016-2017","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","516",8
+"2017-2018","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","667",5
+"2018-2019","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","681",8
+"2019-2020","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","655",3
+"2020-2021","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","580",4
+"2021-2022","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","653",3
+"2022-2023","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","643",2
+"2023-2024","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","651",3
+"2024-2025","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","413",1
+"2025-2026","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","266",1
+"2026-2027","Agriculture and Agri-Food Canada","Agriculture et Agroalimentaire Canada","42",2
+"2011-2012","Public Health Agency of Canada","Agence de la santé publique du Canada","293",1
+"2012-2013","Public Health Agency of Canada","Agence de la santé publique du Canada","45",26
+"2013-2014","Public Health Agency of Canada","Agence de la santé publique du Canada","128",15
+"2014-2015","Public Health Agency of Canada","Agence de la santé publique du Canada","134",3
+"2015-2016","Public Health Agency of Canada","Agence de la santé publique du Canada","166",4
+"2016-2017","Public Health Agency of Canada","Agence de la santé publique du Canada","210",2
+"2017-2018","Public Health Agency of Canada","Agence de la santé publique du Canada","248",
+"2018-2019","Public Health Agency of Canada","Agence de la santé publique du Canada","322",2
+"2019-2020","Public Health Agency of Canada","Agence de la santé publique du Canada","377",3
+"2020-2021","Public Health Agency of Canada","Agence de la santé publique du Canada","412",3
+"2021-2022","Public Health Agency of Canada","Agence de la santé publique du Canada","613",3
+"2022-2023","Public Health Agency of Canada","Agence de la santé publique du Canada","688",3
+"2023-2024","Public Health Agency of Canada","Agence de la santé publique du Canada","513",4
+"2024-2025","Public Health Agency of Canada","Agence de la santé publique du Canada","281",4
+"2025-2026","Public Health Agency of Canada","Agence de la santé publique du Canada","72",2
+"2026-2027","Public Health Agency of Canada","Agence de la santé publique du Canada","38",6
+"2011-2012","Canadian Artists and Producers Professional Relations Tribunal","Tribunal canadien des relations professionnelles artistes-producteurs","0",
+"2012-2013","Canadian Artists and Producers Professional Relations Tribunal","Tribunal canadien des relations professionnelles artistes-producteurs","0",
+"2011-2012","Canadian Transportation Agency","Office des transports du Canada","30",1
+"2012-2013","Canadian Transportation Agency","Office des transports du Canada","12",1
+"2013-2014","Canadian Transportation Agency","Office des transports du Canada","10",
+"2014-2015","Canadian Transportation Agency","Office des transports du Canada","21",2
+"2015-2016","Canadian Transportation Agency","Office des transports du Canada","16",
+"2016-2017","Canadian Transportation Agency","Office des transports du Canada","42",
+"2017-2018","Canadian Transportation Agency","Office des transports du Canada","29",
+"2018-2019","Canadian Transportation Agency","Office des transports du Canada","51",1
+"2019-2020","Canadian Transportation Agency","Office des transports du Canada","49",
+"2020-2021","Canadian Transportation Agency","Office des transports du Canada","53",
+"2021-2022","Canadian Transportation Agency","Office des transports du Canada","37",
+"2022-2023","Canadian Transportation Agency","Office des transports du Canada","42",
+"2023-2024","Canadian Transportation Agency","Office des transports du Canada","105",
+"2024-2025","Canadian Transportation Agency","Office des transports du Canada","34",
+"2025-2026","Canadian Transportation Agency","Office des transports du Canada","15",
+"2026-2027","Canadian Transportation Agency","Office des transports du Canada","2",
+"2014-2015","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","8",
+"2015-2016","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","40",1
+"2016-2017","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","82",
+"2017-2018","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","100",
+"2018-2019","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","130",1
+"2019-2020","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","112",
+"2020-2021","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","93",2
+"2021-2022","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","146",
+"2022-2023","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","183",1
+"2023-2024","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","98",
+"2024-2025","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","48",1
+"2025-2026","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","18",
+"2026-2027","Administrative Tribunals Support Service of Canada","Service canadien d'appui aux tribunaux administratifs","6",1
+"2013-2014","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","2",
+"2014-2015","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","8",
+"2015-2016","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","4",
+"2016-2017","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","8",
+"2017-2018","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","23",
+"2018-2019","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","10",
+"2019-2020","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","6",
+"2020-2021","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","17",
+"2021-2022","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","9",1
+"2022-2023","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","7",
+"2023-2024","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","25",1
+"2024-2025","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","13",
+"2025-2026","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","5",1
+"2026-2027","Veterans Review and Appeal Board","Tribunal des anciens combattants (révision et appel)","1",
+"2011-2012","Library and Archives Canada","Bibliothèque et Archives Canada","90",
+"2012-2013","Library and Archives Canada","Bibliothèque et Archives Canada","39",4
+"2013-2014","Library and Archives Canada","Bibliothèque et Archives Canada","56",20
+"2014-2015","Library and Archives Canada","Bibliothèque et Archives Canada","85",8
+"2015-2016","Library and Archives Canada","Bibliothèque et Archives Canada","56",4
+"2016-2017","Library and Archives Canada","Bibliothèque et Archives Canada","106",4
+"2017-2018","Library and Archives Canada","Bibliothèque et Archives Canada","73",1
+"2018-2019","Library and Archives Canada","Bibliothèque et Archives Canada","138",3
+"2019-2020","Library and Archives Canada","Bibliothèque et Archives Canada","120",1
+"2020-2021","Library and Archives Canada","Bibliothèque et Archives Canada","62",
+"2021-2022","Library and Archives Canada","Bibliothèque et Archives Canada","47",
+"2022-2023","Library and Archives Canada","Bibliothèque et Archives Canada","205",2
+"2023-2024","Library and Archives Canada","Bibliothèque et Archives Canada","178",1
+"2024-2025","Library and Archives Canada","Bibliothèque et Archives Canada","90",
+"2025-2026","Library and Archives Canada","Bibliothèque et Archives Canada","54",2
+"2026-2027","Library and Archives Canada","Bibliothèque et Archives Canada","19",3
+"2011-2012","Canadian International Trade Tribunal","Tribunal canadien du commerce extérieur","10",
+"2012-2013","Canadian International Trade Tribunal","Tribunal canadien du commerce extérieur","10",4
+"2013-2014","Canadian International Trade Tribunal","Tribunal canadien du commerce extérieur","7",2
+"2014-2015","Canadian International Trade Tribunal","Tribunal canadien du commerce extérieur","8",2
+"2011-2012","Canada Border Services Agency","Agence des services frontaliers du Canada","1446",32
+"2012-2013","Canada Border Services Agency","Agence des services frontaliers du Canada","624",32
+"2013-2014","Canada Border Services Agency","Agence des services frontaliers du Canada","902",34
+"2014-2015","Canada Border Services Agency","Agence des services frontaliers du Canada","1015",32
+"2015-2016","Canada Border Services Agency","Agence des services frontaliers du Canada","1335",36
+"2016-2017","Canada Border Services Agency","Agence des services frontaliers du Canada","1108",31
+"2017-2018","Canada Border Services Agency","Agence des services frontaliers du Canada","1235",41
+"2018-2019","Canada Border Services Agency","Agence des services frontaliers du Canada","1605",48
+"2019-2020","Canada Border Services Agency","Agence des services frontaliers du Canada","2231",28
+"2020-2021","Canada Border Services Agency","Agence des services frontaliers du Canada","1958",15
+"2021-2022","Canada Border Services Agency","Agence des services frontaliers du Canada","1998",28
+"2022-2023","Canada Border Services Agency","Agence des services frontaliers du Canada","2534",31
+"2023-2024","Canada Border Services Agency","Agence des services frontaliers du Canada","2531",15
+"2024-2025","Canada Border Services Agency","Agence des services frontaliers du Canada","2061",13
+"2025-2026","Canada Border Services Agency","Agence des services frontaliers du Canada","1297",12
+"2026-2027","Canada Border Services Agency","Agence des services frontaliers du Canada","285",7
+"2011-2012","Courts Administration Service","Service administratif des tribunaux judiciaires","59",1
+"2012-2013","Courts Administration Service","Service administratif des tribunaux judiciaires","19",
+"2013-2014","Courts Administration Service","Service administratif des tribunaux judiciaires","14",
+"2014-2015","Courts Administration Service","Service administratif des tribunaux judiciaires","34",2
+"2015-2016","Courts Administration Service","Service administratif des tribunaux judiciaires","77",1
+"2016-2017","Courts Administration Service","Service administratif des tribunaux judiciaires","137",1
+"2017-2018","Courts Administration Service","Service administratif des tribunaux judiciaires","84",
+"2018-2019","Courts Administration Service","Service administratif des tribunaux judiciaires","129",
+"2019-2020","Courts Administration Service","Service administratif des tribunaux judiciaires","179",
+"2020-2021","Courts Administration Service","Service administratif des tribunaux judiciaires","108",1
+"2021-2022","Courts Administration Service","Service administratif des tribunaux judiciaires","106",
+"2022-2023","Courts Administration Service","Service administratif des tribunaux judiciaires","152",
+"2023-2024","Courts Administration Service","Service administratif des tribunaux judiciaires","149",
+"2024-2025","Courts Administration Service","Service administratif des tribunaux judiciaires","99",
+"2025-2026","Courts Administration Service","Service administratif des tribunaux judiciaires","50",
+"2026-2027","Courts Administration Service","Service administratif des tribunaux judiciaires","15",3
+"2022-2023","Accessibility Standards Canada","Normes d'accessibilité Canada","47",
+"2023-2024","Accessibility Standards Canada","Normes d'accessibilité Canada","11",
+"2024-2025","Accessibility Standards Canada","Normes d'accessibilité Canada","9",
+"2025-2026","Accessibility Standards Canada","Normes d'accessibilité Canada","6",
+"2026-2027","Accessibility Standards Canada","Normes d'accessibilité Canada","1",1
+"2011-2012","Office of the Chief Electoral Officer","Bureau du directeur général des élections","26",1
+"2012-2013","Office of the Chief Electoral Officer","Bureau du directeur général des élections","4",
+"2013-2014","Office of the Chief Electoral Officer","Bureau du directeur général des élections","22",2
+"2014-2015","Office of the Chief Electoral Officer","Bureau du directeur général des élections","43",
+"2015-2016","Office of the Chief Electoral Officer","Bureau du directeur général des élections","34",1
+"2016-2017","Office of the Chief Electoral Officer","Bureau du directeur général des élections","50",2
+"2017-2018","Office of the Chief Electoral Officer","Bureau du directeur général des élections","49",2
+"2018-2019","Office of the Chief Electoral Officer","Bureau du directeur général des élections","63",
+"2019-2020","Office of the Chief Electoral Officer","Bureau du directeur général des élections","131",
+"2020-2021","Office of the Chief Electoral Officer","Bureau du directeur général des élections","98",
+"2021-2022","Office of the Chief Electoral Officer","Bureau du directeur général des élections","85",2
+"2022-2023","Office of the Chief Electoral Officer","Bureau du directeur général des élections","89",
+"2023-2024","Office of the Chief Electoral Officer","Bureau du directeur général des élections","66",
+"2024-2025","Office of the Chief Electoral Officer","Bureau du directeur général des élections","59",2
+"2025-2026","Office of the Chief Electoral Officer","Bureau du directeur général des élections","60",2
+"2026-2027","Office of the Chief Electoral Officer","Bureau du directeur général des élections","6",
+"2011-2012","Canada School of Public Service","École de la fonction publique du Canada","91",1
+"2012-2013","Canada School of Public Service","École de la fonction publique du Canada","24",8
+"2013-2014","Canada School of Public Service","École de la fonction publique du Canada","38",3
+"2014-2015","Canada School of Public Service","École de la fonction publique du Canada","47",2
+"2015-2016","Canada School of Public Service","École de la fonction publique du Canada","53",4
+"2016-2017","Canada School of Public Service","École de la fonction publique du Canada","56",3
+"2017-2018","Canada School of Public Service","École de la fonction publique du Canada","115",6
+"2018-2019","Canada School of Public Service","École de la fonction publique du Canada","123",1
+"2019-2020","Canada School of Public Service","École de la fonction publique du Canada","139",1
+"2020-2021","Canada School of Public Service","École de la fonction publique du Canada","153",3
+"2021-2022","Canada School of Public Service","École de la fonction publique du Canada","143",1
+"2022-2023","Canada School of Public Service","École de la fonction publique du Canada","164",4
+"2023-2024","Canada School of Public Service","École de la fonction publique du Canada","123",
+"2024-2025","Canada School of Public Service","École de la fonction publique du Canada","89",1
+"2025-2026","Canada School of Public Service","École de la fonction publique du Canada","24",1
+"2026-2027","Canada School of Public Service","École de la fonction publique du Canada","1",1
+"2011-2012","Canadian Grain Commission","Commission canadienne des grains","59",1
+"2012-2013","Canadian Grain Commission","Commission canadienne des grains","22",
+"2013-2014","Canadian Grain Commission","Commission canadienne des grains","37",12
+"2014-2015","Canadian Grain Commission","Commission canadienne des grains","34",2
+"2015-2016","Canadian Grain Commission","Commission canadienne des grains","24",
+"2016-2017","Canadian Grain Commission","Commission canadienne des grains","69",
+"2017-2018","Canadian Grain Commission","Commission canadienne des grains","49",
+"2018-2019","Canadian Grain Commission","Commission canadienne des grains","70",
+"2019-2020","Canadian Grain Commission","Commission canadienne des grains","71",
+"2020-2021","Canadian Grain Commission","Commission canadienne des grains","45",
+"2021-2022","Canadian Grain Commission","Commission canadienne des grains","81",
+"2022-2023","Canadian Grain Commission","Commission canadienne des grains","74",
+"2023-2024","Canadian Grain Commission","Commission canadienne des grains","87",
+"2024-2025","Canadian Grain Commission","Commission canadienne des grains","64",
+"2025-2026","Canadian Grain Commission","Commission canadienne des grains","70",
+"2026-2027","Canadian Grain Commission","Commission canadienne des grains","21",
+"2011-2012","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","1",
+"2012-2013","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","0",
+"2013-2014","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","5",2
+"2014-2015","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","5",
+"2015-2016","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","2",
+"2016-2017","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","1",
+"2017-2018","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","4",
+"2018-2019","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","6",
+"2019-2020","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","5",
+"2020-2021","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","7",
+"2021-2022","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","5",
+"2022-2023","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","8",
+"2023-2024","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","13",
+"2024-2025","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","2",
+"2025-2026","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","2",
+"2026-2027","Canadian Intergovernmental Conference Secretariat","Secrétariat des conférences intergouvernementales canadiennes","0",
+"2023-2024","Law Commission of Canada","Commission du droit du Canada","2",
+"2024-2025","Law Commission of Canada","Commission du droit du Canada","1",
+"2025-2026","Law Commission of Canada","Commission du droit du Canada","2",
+"2026-2027","Law Commission of Canada","Commission du droit du Canada","0",
+"2011-2012","Canada Industrial Relations Board","Conseil canadien des relations industrielles","13",
+"2012-2013","Canada Industrial Relations Board","Conseil canadien des relations industrielles","6",2
+"2013-2014","Canada Industrial Relations Board","Conseil canadien des relations industrielles","5",1
+"2014-2015","Canada Industrial Relations Board","Conseil canadien des relations industrielles","12",2
+"2011-2012","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","20",1
+"2012-2013","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","10",2
+"2013-2014","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","15",2
+"2014-2015","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","13",
+"2015-2016","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","16",
+"2016-2017","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","26",
+"2017-2018","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","18",
+"2018-2019","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","37",
+"2019-2020","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","43",
+"2020-2021","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","16",
+"2021-2022","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","25",
+"2022-2023","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","20",
+"2023-2024","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","27",
+"2024-2025","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","35",
+"2025-2026","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","24",
+"2026-2027","Office of the Commissioner of Official Languages","Commissariat aux langues officielles","3",1
+"2011-2012","Copyright Board Canada","Commission du droit d'auteur Canada","2",
+"2012-2013","Copyright Board Canada","Commission du droit d'auteur Canada","3",
+"2013-2014","Copyright Board Canada","Commission du droit d'auteur Canada","0",
+"2014-2015","Copyright Board Canada","Commission du droit d'auteur Canada","3",
+"2015-2016","Copyright Board Canada","Commission du droit d'auteur Canada","2",
+"2016-2017","Copyright Board Canada","Commission du droit d'auteur Canada","1",
+"2017-2018","Copyright Board Canada","Commission du droit d'auteur Canada","2",
+"2018-2019","Copyright Board Canada","Commission du droit d'auteur Canada","1",
+"2019-2020","Copyright Board Canada","Commission du droit d'auteur Canada","3",
+"2020-2021","Copyright Board Canada","Commission du droit d'auteur Canada","2",
+"2021-2022","Copyright Board Canada","Commission du droit d'auteur Canada","3",
+"2022-2023","Copyright Board Canada","Commission du droit d'auteur Canada","2",
+"2023-2024","Copyright Board Canada","Commission du droit d'auteur Canada","3",
+"2024-2025","Copyright Board Canada","Commission du droit d'auteur Canada","4",
+"2025-2026","Copyright Board Canada","Commission du droit d'auteur Canada","3",
+"2026-2027","Copyright Board Canada","Commission du droit d'auteur Canada","0",
+"2011-2012","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","7",
+"2012-2013","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","1",
+"2013-2014","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","2",
+"2014-2015","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","9",1
+"2015-2016","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","4",
+"2016-2017","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","1",
+"2017-2018","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","2",
+"2018-2019","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","9",
+"2019-2020","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","5",
+"2020-2021","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","6",1
+"2021-2022","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","2",
+"2022-2023","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","5",
+"2023-2024","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","7",
+"2024-2025","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","6",
+"2025-2026","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","2",
+"2026-2027","Military Police Complaints Commission of Canada","Commission d'examen des plaintes concernant la police militaire du Canada","0",
+"2011-2012","Canadian Space Agency","Agence spatiale canadienne","55",5
+"2012-2013","Canadian Space Agency","Agence spatiale canadienne","16",1
+"2013-2014","Canadian Space Agency","Agence spatiale canadienne","20",9
+"2014-2015","Canadian Space Agency","Agence spatiale canadienne","15",5
+"2015-2016","Canadian Space Agency","Agence spatiale canadienne","31",1
+"2016-2017","Canadian Space Agency","Agence spatiale canadienne","43",2
+"2017-2018","Canadian Space Agency","Agence spatiale canadienne","84",3
+"2018-2019","Canadian Space Agency","Agence spatiale canadienne","69",1
+"2019-2020","Canadian Space Agency","Agence spatiale canadienne","88",
+"2020-2021","Canadian Space Agency","Agence spatiale canadienne","72",1
+"2021-2022","Canadian Space Agency","Agence spatiale canadienne","143",
+"2022-2023","Canadian Space Agency","Agence spatiale canadienne","202",1
+"2023-2024","Canadian Space Agency","Agence spatiale canadienne","194",
+"2024-2025","Canadian Space Agency","Agence spatiale canadienne","215",5
+"2025-2026","Canadian Space Agency","Agence spatiale canadienne","122",2
+"2026-2027","Canadian Space Agency","Agence spatiale canadienne","30",1
+"2011-2012","Employment and Social Development Canada","Emploi et Développement social Canada","1312",44
+"2012-2013","Employment and Social Development Canada","Emploi et Développement social Canada","307",155
+"2013-2014","Employment and Social Development Canada","Emploi et Développement social Canada","630",142
+"2014-2015","Employment and Social Development Canada","Emploi et Développement social Canada","1074",77
+"2015-2016","Employment and Social Development Canada","Emploi et Développement social Canada","1639",103
+"2016-2017","Employment and Social Development Canada","Emploi et Développement social Canada","1999",55
+"2017-2018","Employment and Social Development Canada","Emploi et Développement social Canada","2382",47
+"2018-2019","Employment and Social Development Canada","Emploi et Développement social Canada","3261",41
+"2019-2020","Employment and Social Development Canada","Emploi et Développement social Canada","3669",28
+"2020-2021","Employment and Social Development Canada","Emploi et Développement social Canada","4054",56
+"2021-2022","Employment and Social Development Canada","Emploi et Développement social Canada","5636",64
+"2022-2023","Employment and Social Development Canada","Emploi et Développement social Canada","5817",20
+"2023-2024","Employment and Social Development Canada","Emploi et Développement social Canada","3626",15
+"2024-2025","Employment and Social Development Canada","Emploi et Développement social Canada","3470",14
+"2025-2026","Employment and Social Development Canada","Emploi et Développement social Canada","300",20
+"2026-2027","Employment and Social Development Canada","Emploi et Développement social Canada","15",14
+"2011-2012","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","9",
+"2012-2013","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","3",1
+"2013-2014","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","6",1
+"2014-2015","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","5",
+"2015-2016","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","9",
+"2016-2017","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","13",
+"2017-2018","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","16",1
+"2018-2019","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","34",1
+"2019-2020","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","79",
+"2020-2021","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","68",
+"2021-2022","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","63",1
+"2022-2023","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","92",
+"2023-2024","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","90",1
+"2024-2025","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","56",
+"2025-2026","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","17",
+"2026-2027","Women and Gender Equality Canada","Femmes et Égalité des genres Canada","2",
+"2011-2012","Fisheries and Oceans Canada","Pêches et Océans Canada","1035",22
+"2012-2013","Fisheries and Oceans Canada","Pêches et Océans Canada","591",54
+"2013-2014","Fisheries and Oceans Canada","Pêches et Océans Canada","611",49
+"2014-2015","Fisheries and Oceans Canada","Pêches et Océans Canada","753",43
+"2015-2016","Fisheries and Oceans Canada","Pêches et Océans Canada","958",31
+"2016-2017","Fisheries and Oceans Canada","Pêches et Océans Canada","1422",32
+"2017-2018","Fisheries and Oceans Canada","Pêches et Océans Canada","1971",35
+"2018-2019","Fisheries and Oceans Canada","Pêches et Océans Canada","2164",27
+"2019-2020","Fisheries and Oceans Canada","Pêches et Océans Canada","2004",19
+"2020-2021","Fisheries and Oceans Canada","Pêches et Océans Canada","1820",15
+"2021-2022","Fisheries and Oceans Canada","Pêches et Océans Canada","2048",16
+"2022-2023","Fisheries and Oceans Canada","Pêches et Océans Canada","2211",11
+"2023-2024","Fisheries and Oceans Canada","Pêches et Océans Canada","1793",8
+"2024-2025","Fisheries and Oceans Canada","Pêches et Océans Canada","1245",4
+"2025-2026","Fisheries and Oceans Canada","Pêches et Océans Canada","963",1
+"2026-2027","Fisheries and Oceans Canada","Pêches et Océans Canada","249",5
+"2020-2021","Indigenous Services Canada","Services aux Autochtones Canada","571",13
+"2021-2022","Indigenous Services Canada","Services aux Autochtones Canada","1236",13
+"2022-2023","Indigenous Services Canada","Services aux Autochtones Canada","1633",6
+"2023-2024","Indigenous Services Canada","Services aux Autochtones Canada","1650",12
+"2024-2025","Indigenous Services Canada","Services aux Autochtones Canada","1258",4
+"2025-2026","Indigenous Services Canada","Services aux Autochtones Canada","316",2
+"2026-2027","Indigenous Services Canada","Services aux Autochtones Canada","36",2
+"2011-2012","National Defence (Public service employees)","Défense nationale (fonctionnaires)","2404",213
+"2012-2013","National Defence (Public service employees)","Défense nationale (fonctionnaires)","856",46
+"2013-2014","National Defence (Public service employees)","Défense nationale (fonctionnaires)","895",107
+"2014-2015","National Defence (Public service employees)","Défense nationale (fonctionnaires)","1334",157
+"2015-2016","National Defence (Public service employees)","Défense nationale (fonctionnaires)","2080",217
+"2016-2017","National Defence (Public service employees)","Défense nationale (fonctionnaires)","2728",199
+"2017-2018","National Defence (Public service employees)","Défense nationale (fonctionnaires)","3283",237
+"2018-2019","National Defence (Public service employees)","Défense nationale (fonctionnaires)","4310",206
+"2019-2020","National Defence (Public service employees)","Défense nationale (fonctionnaires)","4354",175
+"2020-2021","National Defence (Public service employees)","Défense nationale (fonctionnaires)","3481",113
+"2021-2022","National Defence (Public service employees)","Défense nationale (fonctionnaires)","4243",117
+"2022-2023","National Defence (Public service employees)","Défense nationale (fonctionnaires)","4712",102
+"2023-2024","National Defence (Public service employees)","Défense nationale (fonctionnaires)","4833",104
+"2024-2025","National Defence (Public service employees)","Défense nationale (fonctionnaires)","4339",104
+"2025-2026","National Defence (Public service employees)","Défense nationale (fonctionnaires)","5054",139
+"2026-2027","National Defence (Public service employees)","Défense nationale (fonctionnaires)","1460",87
+"2011-2012","Environment and Climate Change Canada","Environnement et Changement climatique Canada","509",17
+"2012-2013","Environment and Climate Change Canada","Environnement et Changement climatique Canada","527",77
+"2013-2014","Environment and Climate Change Canada","Environnement et Changement climatique Canada","663",40
+"2014-2015","Environment and Climate Change Canada","Environnement et Changement climatique Canada","608",20
+"2015-2016","Environment and Climate Change Canada","Environnement et Changement climatique Canada","553",11
+"2016-2017","Environment and Climate Change Canada","Environnement et Changement climatique Canada","751",12
+"2017-2018","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1014",10
+"2018-2019","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1331",13
+"2019-2020","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1178",7
+"2020-2021","Environment and Climate Change Canada","Environnement et Changement climatique Canada","884",7
+"2021-2022","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1139",5
+"2022-2023","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1264",7
+"2023-2024","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1252",5
+"2024-2025","Environment and Climate Change Canada","Environnement et Changement climatique Canada","1093",5
+"2025-2026","Environment and Climate Change Canada","Environnement et Changement climatique Canada","448",1
+"2026-2027","Environment and Climate Change Canada","Environnement et Changement climatique Canada","44",1
+"2011-2012","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","588",15
+"2012-2013","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","268",28
+"2013-2014","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","333",17
+"2014-2015","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","441",11
+"2015-2016","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","595",9
+"2016-2017","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","722",10
+"2017-2018","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","943",6
+"2018-2019","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","1217",1
+"2019-2020","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","1199",9
+"2020-2021","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","907",4
+"2021-2022","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","1320",6
+"2022-2023","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","1303",3
+"2023-2024","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","1409",2
+"2024-2025","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","1081",3
+"2025-2026","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","500",2
+"2026-2027","Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada","32",3
+"2011-2012","Veterans Affairs Canada","Anciens Combattants Canada","190",13
+"2012-2013","Veterans Affairs Canada","Anciens Combattants Canada","125",6
+"2013-2014","Veterans Affairs Canada","Anciens Combattants Canada","105",8
+"2014-2015","Veterans Affairs Canada","Anciens Combattants Canada","101",12
+"2015-2016","Veterans Affairs Canada","Anciens Combattants Canada","341",26
+"2016-2017","Veterans Affairs Canada","Anciens Combattants Canada","532",29
+"2017-2018","Veterans Affairs Canada","Anciens Combattants Canada","338",15
+"2018-2019","Veterans Affairs Canada","Anciens Combattants Canada","531",15
+"2019-2020","Veterans Affairs Canada","Anciens Combattants Canada","459",20
+"2020-2021","Veterans Affairs Canada","Anciens Combattants Canada","359",9
+"2021-2022","Veterans Affairs Canada","Anciens Combattants Canada","292",8
+"2022-2023","Veterans Affairs Canada","Anciens Combattants Canada","278",7
+"2023-2024","Veterans Affairs Canada","Anciens Combattants Canada","278",9
+"2024-2025","Veterans Affairs Canada","Anciens Combattants Canada","213",5
+"2025-2026","Veterans Affairs Canada","Anciens Combattants Canada","93",2
+"2026-2027","Veterans Affairs Canada","Anciens Combattants Canada","6",
+"2011-2012","Canada Energy Regulator","Régie de l'énergie du Canada","104",
+"2012-2013","Canada Energy Regulator","Régie de l'énergie du Canada","78",
+"2013-2014","Canada Energy Regulator","Régie de l'énergie du Canada","87",
+"2014-2015","Canada Energy Regulator","Régie de l'énergie du Canada","89",
+"2015-2016","Canada Energy Regulator","Régie de l'énergie du Canada","88",
+"2016-2017","Canada Energy Regulator","Régie de l'énergie du Canada","59",
+"2017-2018","Canada Energy Regulator","Régie de l'énergie du Canada","59",
+"2018-2019","Canada Energy Regulator","Régie de l'énergie du Canada","66",
+"2019-2020","Canada Energy Regulator","Régie de l'énergie du Canada","65",
+"2020-2021","Canada Energy Regulator","Régie de l'énergie du Canada","140",
+"2021-2022","Canada Energy Regulator","Régie de l'énergie du Canada","46",1
+"2022-2023","Canada Energy Regulator","Régie de l'énergie du Canada","45",
+"2023-2024","Canada Energy Regulator","Régie de l'énergie du Canada","46",
+"2024-2025","Canada Energy Regulator","Régie de l'énergie du Canada","54",1
+"2025-2026","Canada Energy Regulator","Régie de l'énergie du Canada","43",2
+"2026-2027","Canada Energy Regulator","Régie de l'énergie du Canada","26",
+"2011-2012","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","42",1
+"2012-2013","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","17",7
+"2013-2014","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","12",1
+"2014-2015","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","20",
+"2015-2016","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","27",1
+"2016-2017","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","26",2
+"2017-2018","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","31",1
+"2018-2019","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","34",1
+"2019-2020","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","68",2
+"2020-2021","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","42",3
+"2021-2022","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","33",
+"2022-2023","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","30",1
+"2023-2024","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","32",
+"2024-2025","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","23",
+"2025-2026","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","4",
+"2026-2027","Federal Economic Development Agency for Southern Ontario","Agence fédérale de développement économique pour le Sud de l'Ontario","0",
+"2011-2012","Global Affairs Canada","Affaires mondiales Canada","537",9
+"2012-2013","Global Affairs Canada","Affaires mondiales Canada","152",17
+"2013-2014","Global Affairs Canada","Affaires mondiales Canada","180",31
+"2014-2015","Global Affairs Canada","Affaires mondiales Canada","367",16
+"2015-2016","Global Affairs Canada","Affaires mondiales Canada","764",30
+"2016-2017","Global Affairs Canada","Affaires mondiales Canada","657",33
+"2017-2018","Global Affairs Canada","Affaires mondiales Canada","596",10
+"2018-2019","Global Affairs Canada","Affaires mondiales Canada","782",9
+"2019-2020","Global Affairs Canada","Affaires mondiales Canada","1024",9
+"2020-2021","Global Affairs Canada","Affaires mondiales Canada","749",8
+"2021-2022","Global Affairs Canada","Affaires mondiales Canada","833",2
+"2022-2023","Global Affairs Canada","Affaires mondiales Canada","1118",5
+"2023-2024","Global Affairs Canada","Affaires mondiales Canada","1157",9
+"2024-2025","Global Affairs Canada","Affaires mondiales Canada","1008",10
+"2025-2026","Global Affairs Canada","Affaires mondiales Canada","453",5
+"2026-2027","Global Affairs Canada","Affaires mondiales Canada","50",2
+"2011-2012","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","3",
+"2012-2013","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","3",1
+"2013-2014","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","2",1
+"2014-2015","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","9",2
+"2015-2016","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","5",
+"2016-2017","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","9",
+"2017-2018","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","3",
+"2018-2019","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","7",
+"2019-2020","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","5",
+"2020-2021","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","8",1
+"2021-2022","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","8",
+"2022-2023","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","8",
+"2023-2024","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","12",
+"2024-2025","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","3",
+"2025-2026","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","3",
+"2026-2027","Military Grievances External Review Committee","Comité externe d'examen des griefs militaires","2",
+"2011-2012","Department of Finance Canada","Ministère des Finances Canada","224",
+"2012-2013","Department of Finance Canada","Ministère des Finances Canada","107",2
+"2013-2014","Department of Finance Canada","Ministère des Finances Canada","107",1
+"2014-2015","Department of Finance Canada","Ministère des Finances Canada","147",
+"2015-2016","Department of Finance Canada","Ministère des Finances Canada","155",1
+"2016-2017","Department of Finance Canada","Ministère des Finances Canada","214",1
+"2017-2018","Department of Finance Canada","Ministère des Finances Canada","215",3
+"2018-2019","Department of Finance Canada","Ministère des Finances Canada","313",
+"2019-2020","Department of Finance Canada","Ministère des Finances Canada","245",2
+"2020-2021","Department of Finance Canada","Ministère des Finances Canada","209",2
+"2021-2022","Department of Finance Canada","Ministère des Finances Canada","257",
+"2022-2023","Department of Finance Canada","Ministère des Finances Canada","256",
+"2023-2024","Department of Finance Canada","Ministère des Finances Canada","273",1
+"2024-2025","Department of Finance Canada","Ministère des Finances Canada","178",
+"2025-2026","Department of Finance Canada","Ministère des Finances Canada","109",
+"2026-2027","Department of Finance Canada","Ministère des Finances Canada","22",
+"2011-2012","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","10",
+"2012-2013","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","6",
+"2013-2014","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","4",1
+"2014-2015","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","5",1
+"2015-2016","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","11",
+"2016-2017","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","8",
+"2017-2018","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","21",
+"2018-2019","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","7",
+"2019-2020","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","20",
+"2020-2021","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","7",
+"2021-2022","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","6",
+"2022-2023","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","18",
+"2023-2024","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","13",1
+"2024-2025","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","14",
+"2025-2026","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","8",
+"2026-2027","Office of the Commissioner for Federal Judicial Affairs Canada","Commissariat à la magistrature fédérale Canada","1",
+"2011-2012","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","13",
+"2012-2013","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","7",
+"2013-2014","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","7",2
+"2014-2015","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","15",1
+"2015-2016","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","17",
+"2016-2017","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","15",
+"2017-2018","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","22",
+"2018-2019","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","25",
+"2019-2020","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","37",
+"2020-2021","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","30",2
+"2021-2022","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","36",
+"2022-2023","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","41",
+"2023-2024","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","48",
+"2024-2025","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","24",1
+"2025-2026","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","26",
+"2026-2027","Financial Consumer Agency of Canada","Agence de la consommation en matière financière du Canada","1",
+"2011-2012","Farm Products Council of Canada","Conseil des produits agricoles du Canada","3",
+"2012-2013","Farm Products Council of Canada","Conseil des produits agricoles du Canada","2",
+"2013-2014","Farm Products Council of Canada","Conseil des produits agricoles du Canada","0",
+"2014-2015","Farm Products Council of Canada","Conseil des produits agricoles du Canada","3",1
+"2015-2016","Farm Products Council of Canada","Conseil des produits agricoles du Canada","0",
+"2016-2017","Farm Products Council of Canada","Conseil des produits agricoles du Canada","1",
+"2017-2018","Farm Products Council of Canada","Conseil des produits agricoles du Canada","4",
+"2018-2019","Farm Products Council of Canada","Conseil des produits agricoles du Canada","4",
+"2019-2020","Farm Products Council of Canada","Conseil des produits agricoles du Canada","1",
+"2020-2021","Farm Products Council of Canada","Conseil des produits agricoles du Canada","2",
+"2021-2022","Farm Products Council of Canada","Conseil des produits agricoles du Canada","0",
+"2022-2023","Farm Products Council of Canada","Conseil des produits agricoles du Canada","3",
+"2011-2012","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","11",
+"2012-2013","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","13",3
+"2013-2014","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","5",1
+"2014-2015","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","17",
+"2015-2016","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","31",3
+"2016-2017","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","43",4
+"2017-2018","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","25",
+"2018-2019","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","34",1
+"2019-2020","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","38",1
+"2020-2021","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","51",
+"2021-2022","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","67",1
+"2022-2023","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","72",
+"2023-2024","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","77",
+"2024-2025","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","38",
+"2025-2026","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","12",
+"2026-2027","Canada Economic Development for Quebec Regions","Développement économique Canada pour les régions du Québec","1",
+"2011-2012","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","16",1
+"2012-2013","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","12",
+"2013-2014","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","9",1
+"2014-2015","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","22",
+"2015-2016","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","21",
+"2016-2017","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","17",
+"2017-2018","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","15",
+"2018-2019","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","23",
+"2019-2020","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","25",1
+"2020-2021","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","22",
+"2021-2022","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","26",1
+"2022-2023","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","33",
+"2023-2024","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","5",
+"2024-2025","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","10",
+"2025-2026","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","11",
+"2026-2027","Office of the Secretary to the Governor General","Bureau du secrétaire du gouverneur général","2",
+"2012-2013","Shared Services Canada","Services partagés Canada","49",10
+"2013-2014","Shared Services Canada","Services partagés Canada","226",7
+"2014-2015","Shared Services Canada","Services partagés Canada","341",7
+"2015-2016","Shared Services Canada","Services partagés Canada","199",11
+"2016-2017","Shared Services Canada","Services partagés Canada","418",1
+"2017-2018","Shared Services Canada","Services partagés Canada","1031",16
+"2018-2019","Shared Services Canada","Services partagés Canada","1454",10
+"2019-2020","Shared Services Canada","Services partagés Canada","1359",8
+"2020-2021","Shared Services Canada","Services partagés Canada","1346",6
+"2021-2022","Shared Services Canada","Services partagés Canada","1489",11
+"2022-2023","Shared Services Canada","Services partagés Canada","1822",9
+"2023-2024","Shared Services Canada","Services partagés Canada","1652",12
+"2024-2025","Shared Services Canada","Services partagés Canada","867",8
+"2025-2026","Shared Services Canada","Services partagés Canada","324",2
+"2026-2027","Shared Services Canada","Services partagés Canada","11",1
+"2011-2012","Registry of the Specific Claims Tribunal of Canada","Greffe du Tribunal des revendications particulières du Canada","4",
+"2012-2013","Registry of the Specific Claims Tribunal of Canada","Greffe du Tribunal des revendications particulières du Canada","0",
+"2013-2014","Registry of the Specific Claims Tribunal of Canada","Greffe du Tribunal des revendications particulières du Canada","0",
+"2014-2015","Registry of the Specific Claims Tribunal of Canada","Greffe du Tribunal des revendications particulières du Canada","2",
+"2011-2012","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","41",
+"2012-2013","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","22",
+"2013-2014","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","33",
+"2014-2015","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","58",
+"2015-2016","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","58",
+"2016-2017","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","51",
+"2017-2018","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","110",
+"2018-2019","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","170",
+"2019-2020","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","232",
+"2020-2021","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","151",
+"2021-2022","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","395",
+"2022-2023","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","405",
+"2023-2024","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","446",
+"2024-2025","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","324",1
+"2025-2026","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","122",
+"2026-2027","Housing, Infrastructure and Communities Canada","Logement, Infrastructures et Collectivités Canada","6",
+"2011-2012","Canadian Human Rights Commission","Commission canadienne des droits de la personne","30",
+"2012-2013","Canadian Human Rights Commission","Commission canadienne des droits de la personne","6",
+"2013-2014","Canadian Human Rights Commission","Commission canadienne des droits de la personne","17",
+"2014-2015","Canadian Human Rights Commission","Commission canadienne des droits de la personne","8",
+"2015-2016","Canadian Human Rights Commission","Commission canadienne des droits de la personne","19",
+"2016-2017","Canadian Human Rights Commission","Commission canadienne des droits de la personne","15",
+"2017-2018","Canadian Human Rights Commission","Commission canadienne des droits de la personne","36",
+"2018-2019","Canadian Human Rights Commission","Commission canadienne des droits de la personne","43",
+"2019-2020","Canadian Human Rights Commission","Commission canadienne des droits de la personne","43",1
+"2020-2021","Canadian Human Rights Commission","Commission canadienne des droits de la personne","42",2
+"2021-2022","Canadian Human Rights Commission","Commission canadienne des droits de la personne","56",
+"2022-2023","Canadian Human Rights Commission","Commission canadienne des droits de la personne","55",1
+"2023-2024","Canadian Human Rights Commission","Commission canadienne des droits de la personne","58",1
+"2024-2025","Canadian Human Rights Commission","Commission canadienne des droits de la personne","26",
+"2025-2026","Canadian Human Rights Commission","Commission canadienne des droits de la personne","16",
+"2026-2027","Canadian Human Rights Commission","Commission canadienne des droits de la personne","1",
+"2011-2012","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","21",
+"2012-2013","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","9",
+"2013-2014","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","6",
+"2014-2015","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","21",
+"2015-2016","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","35",
+"2016-2017","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","61",
+"2017-2018","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","64",
+"2018-2019","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","89",
+"2019-2020","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","120",
+"2020-2021","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","71",
+"2021-2022","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","67",
+"2022-2023","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","110",1
+"2023-2024","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","117",2
+"2024-2025","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","124",
+"2025-2026","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","31",
+"2026-2027","Impact Assessment Agency of Canada","Agence d'évaluation d'impact du Canada","0",
+"2011-2012","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","566",17
+"2012-2013","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","192",35
+"2013-2014","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","234",34
+"2014-2015","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","277",28
+"2015-2016","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","322",17
+"2016-2017","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","662",30
+"2017-2018","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","757",21
+"2018-2019","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","897",22
+"2019-2020","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","1144",7
+"2020-2021","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","621",3
+"2021-2022","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","484",10
+"2022-2023","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","505",4
+"2023-2024","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","449",3
+"2024-2025","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","261",1
+"2025-2026","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","99",
+"2026-2027","Crown-Indigenous Relations and Northern Affairs Canada","Relations Couronne-Autochtones et Affaires du Nord Canada","25",
+"2011-2012","Canadian International Development Agency","Agence canadienne de développement international","136",2
+"2012-2013","Canadian International Development Agency","Agence canadienne de développement international","64",4
+"2013-2014","Canadian International Development Agency","Agence canadienne de développement international","68",3
+"2011-2012","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","1",
+"2012-2013","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","7",
+"2013-2014","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","2",
+"2014-2015","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","4",
+"2015-2016","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","0",
+"2016-2017","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","0",
+"2017-2018","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","1",
+"2018-2019","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","6",
+"2019-2020","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","4",1
+"2020-2021","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","1",
+"2021-2022","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","3",
+"2022-2023","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","2",
+"2023-2024","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","7",
+"2024-2025","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","3",
+"2025-2026","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","2",
+"2026-2027","International Joint Commission (Canadian section)","Commission mixte internationale (section canadienne)","1",
+"2011-2012","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","393",8
+"2012-2013","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","174",25
+"2013-2014","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","299",24
+"2014-2015","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","415",13
+"2015-2016","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","509",13
+"2016-2017","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","617",5
+"2017-2018","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","925",15
+"2018-2019","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","1412",20
+"2019-2020","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","1168",6
+"2020-2021","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","1038",5
+"2021-2022","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","1394",8
+"2022-2023","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","2134",9
+"2023-2024","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","2195",7
+"2024-2025","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","1004",3
+"2025-2026","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","110",25
+"2026-2027","Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada","21",14
+"2011-2012","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","12",
+"2012-2013","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","4",
+"2013-2014","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","6",
+"2014-2015","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","1",
+"2015-2016","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","5",1
+"2016-2017","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","4",
+"2017-2018","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","3",
+"2018-2019","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","8",
+"2019-2020","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","5",
+"2020-2021","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","10",
+"2021-2022","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","3",1
+"2022-2023","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","4",
+"2023-2024","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","9",
+"2024-2025","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","6",
+"2025-2026","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","7",
+"2026-2027","Office of the Public Sector Integrity Commissioner of Canada","Commissariat à l'intégrité du secteur public du Canada","1",
+"2011-2012","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","6",1
+"2012-2013","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","7",
+"2013-2014","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","6",1
+"2014-2015","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","7",
+"2015-2016","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","5",1
+"2016-2017","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","16",
+"2017-2018","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","7",
+"2018-2019","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","6",
+"2019-2020","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","10",
+"2020-2021","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","5",1
+"2021-2022","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","7",
+"2022-2023","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","4",
+"2023-2024","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","10",
+"2024-2025","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","16",
+"2025-2026","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","13",1
+"2026-2027","Indian Oil and Gas Canada","Pétrole et gaz des Indiens Canada","9",1
+"2011-2012","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","10",2
+"2012-2013","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","2",5
+"2013-2014","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","11",1
+"2014-2015","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","4",1
+"2015-2016","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","11",
+"2016-2017","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","25",
+"2017-2018","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","13",
+"2018-2019","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","12",
+"2019-2020","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","27",
+"2020-2021","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","25",
+"2021-2022","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","35",
+"2022-2023","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","11",
+"2023-2024","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","38",
+"2024-2025","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","9",
+"2025-2026","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","20",
+"2026-2027","Office of the Information Commissioner of Canada","Commissariat à l'information du Canada","3",
+"2011-2012","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","78",2
+"2012-2013","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","153",2
+"2013-2014","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","29",10
+"2014-2015","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","33",3
+"2015-2016","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","58",3
+"2016-2017","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","64",2
+"2017-2018","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","83",3
+"2018-2019","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","109",1
+"2019-2020","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","151",1
+"2020-2021","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","112",1
+"2021-2022","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","105",
+"2022-2023","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","383",
+"2023-2024","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","334",1
+"2024-2025","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","248",1
+"2025-2026","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","84",
+"2026-2027","Immigration and Refugee Board of Canada","Commission de l'immigration et du statut de réfugié du Canada","24",
+"2011-2012","Indian Residential Schools Truth and Reconciliation Commission","Commission de vérité et de réconciliation relative aux pensionnats indiens","2",
+"2012-2013","Indian Residential Schools Truth and Reconciliation Commission","Commission de vérité et de réconciliation relative aux pensionnats indiens","0",
+"2013-2014","Indian Residential Schools Truth and Reconciliation Commission","Commission de vérité et de réconciliation relative aux pensionnats indiens","0",
+"2014-2015","Indian Residential Schools Truth and Reconciliation Commission","Commission de vérité et de réconciliation relative aux pensionnats indiens","0",
+"2011-2012","Department of Justice Canada","Ministère de la Justice Canada","340",7
+"2012-2013","Department of Justice Canada","Ministère de la Justice Canada","81",13
+"2013-2014","Department of Justice Canada","Ministère de la Justice Canada","137",10
+"2014-2015","Department of Justice Canada","Ministère de la Justice Canada","280",15
+"2015-2016","Department of Justice Canada","Ministère de la Justice Canada","328",15
+"2016-2017","Department of Justice Canada","Ministère de la Justice Canada","418",4
+"2017-2018","Department of Justice Canada","Ministère de la Justice Canada","551",10
+"2018-2019","Department of Justice Canada","Ministère de la Justice Canada","633",6
+"2019-2020","Department of Justice Canada","Ministère de la Justice Canada","886",4
+"2020-2021","Department of Justice Canada","Ministère de la Justice Canada","653",2
+"2021-2022","Department of Justice Canada","Ministère de la Justice Canada","944",2
+"2022-2023","Department of Justice Canada","Ministère de la Justice Canada","993",4
+"2023-2024","Department of Justice Canada","Ministère de la Justice Canada","897",2
+"2024-2025","Department of Justice Canada","Ministère de la Justice Canada","645",5
+"2025-2026","Department of Justice Canada","Ministère de la Justice Canada","105",1
+"2026-2027","Department of Justice Canada","Ministère de la Justice Canada","66",6
+"2011-2012","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","5",
+"2012-2013","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","2",
+"2013-2014","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","1",
+"2014-2015","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","2",
+"2015-2016","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","2",1
+"2016-2017","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","6",
+"2017-2018","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","3",
+"2018-2019","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","2",
+"2019-2020","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","7",
+"2020-2021","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","5",
+"2021-2022","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","9",
+"2022-2023","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","9",
+"2023-2024","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","7",
+"2024-2025","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","11",
+"2025-2026","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","2",
+"2026-2027","Office of the Commissioner of Lobbying of Canada","Commissariat au lobbying du Canada","0",
+"2011-2012","Hazardous Materials Information Review Commission","Conseil de contrôle des renseignements relatifs aux matières dangereuses","1",
+"2012-2013","Hazardous Materials Information Review Commission","Conseil de contrôle des renseignements relatifs aux matières dangereuses","0",1
+"2014-2015","Hazardous Materials Information Review Commission","Conseil de contrôle des renseignements relatifs aux matières dangereuses","0",
+"2011-2012","Transport Canada","Transports Canada","604",12
+"2012-2013","Transport Canada","Transports Canada","207",32
+"2013-2014","Transport Canada","Transports Canada","297",38
+"2014-2015","Transport Canada","Transports Canada","807",31
+"2015-2016","Transport Canada","Transports Canada","743",21
+"2016-2017","Transport Canada","Transports Canada","278",10
+"2017-2018","Transport Canada","Transports Canada","743",17
+"2018-2019","Transport Canada","Transports Canada","1127",8
+"2019-2020","Transport Canada","Transports Canada","1155",7
+"2020-2021","Transport Canada","Transports Canada","1315",7
+"2021-2022","Transport Canada","Transports Canada","954",7
+"2022-2023","Transport Canada","Transports Canada","1013",4
+"2023-2024","Transport Canada","Transports Canada","1248",2
+"2024-2025","Transport Canada","Transports Canada","846",3
+"2025-2026","Transport Canada","Transports Canada","261",7
+"2026-2027","Transport Canada","Transports Canada","38",8
+"2014-2015","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","17",
+"2015-2016","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","15",
+"2016-2017","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","11",
+"2017-2018","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","8",
+"2018-2019","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","19",
+"2019-2020","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","49",
+"2020-2021","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","16",
+"2021-2022","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","30",
+"2022-2023","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","30",2
+"2023-2024","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","23",
+"2024-2025","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","32",
+"2025-2026","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","29",2
+"2026-2027","Canadian Northern Economic Development Agency","Agence canadienne de développement économique du Nord","14",
+"2023-2024","Federal Economic Development Agency for Northern Ontario","Agence fédérale de développement économique pour le Nord de l'Ontario","8",
+"2024-2025","Federal Economic Development Agency for Northern Ontario","Agence fédérale de développement économique pour le Nord de l'Ontario","33",
+"2025-2026","Federal Economic Development Agency for Northern Ontario","Agence fédérale de développement économique pour le Nord de l'Ontario","15",
+"2026-2027","Federal Economic Development Agency for Northern Ontario","Agence fédérale de développement économique pour le Nord de l'Ontario","1",
+"2011-2012","Parole Board of Canada","Commission des libérations conditionnelles du Canada","66",2
+"2012-2013","Parole Board of Canada","Commission des libérations conditionnelles du Canada","15",8
+"2013-2014","Parole Board of Canada","Commission des libérations conditionnelles du Canada","34",7
+"2014-2015","Parole Board of Canada","Commission des libérations conditionnelles du Canada","22",2
+"2015-2016","Parole Board of Canada","Commission des libérations conditionnelles du Canada","35",1
+"2016-2017","Parole Board of Canada","Commission des libérations conditionnelles du Canada","27",3
+"2017-2018","Parole Board of Canada","Commission des libérations conditionnelles du Canada","44",2
+"2018-2019","Parole Board of Canada","Commission des libérations conditionnelles du Canada","54",4
+"2019-2020","Parole Board of Canada","Commission des libérations conditionnelles du Canada","81",5
+"2020-2021","Parole Board of Canada","Commission des libérations conditionnelles du Canada","45",1
+"2021-2022","Parole Board of Canada","Commission des libérations conditionnelles du Canada","42",2
+"2022-2023","Parole Board of Canada","Commission des libérations conditionnelles du Canada","91",
+"2023-2024","Parole Board of Canada","Commission des libérations conditionnelles du Canada","77",1
+"2024-2025","Parole Board of Canada","Commission des libérations conditionnelles du Canada","40",1
+"2025-2026","Parole Board of Canada","Commission des libérations conditionnelles du Canada","7",1
+"2026-2027","Parole Board of Canada","Commission des libérations conditionnelles du Canada","2",1
+"2018-2019","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","2",
+"2019-2020","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","2",
+"2020-2021","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","1",
+"2021-2022","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","1",
+"2022-2023","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","2",
+"2023-2024","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","2",
+"2024-2025","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","2",
+"2025-2026","Secretariat of the National Security and Intelligence Committee of Parliamentarians","Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement","4",
+"2011-2012","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","5",1
+"2012-2013","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","12",
+"2013-2014","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","1",
+"2014-2015","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","3",
+"2015-2016","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","1",
+"2016-2017","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","11",
+"2017-2018","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","3",
+"2018-2019","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","13",
+"2019-2020","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","3",
+"2020-2021","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","7",
+"2021-2022","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","1",
+"2022-2023","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","2",
+"2023-2024","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","14",
+"2024-2025","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","8",
+"2025-2026","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","6",
+"2026-2027","The Correctional Investigator Canada","L'Enquêteur correctionnel Canada","0",
+"2011-2012","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","36",
+"2012-2013","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","19",
+"2013-2014","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","10",
+"2014-2015","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","12",
+"2015-2016","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","19",
+"2016-2017","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","19",
+"2017-2018","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","28",
+"2018-2019","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","43",
+"2019-2020","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","63",1
+"2020-2021","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","32",
+"2021-2022","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","34",
+"2022-2023","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","34",
+"2023-2024","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","45",1
+"2024-2025","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","36",
+"2025-2026","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","6",
+"2026-2027","Office of the Privacy Commissioner of Canada","Commissariat à la protection de la vie privée du Canada","0",
+"2011-2012","Canadian Heritage","Patrimoine canadien","143",11
+"2012-2013","Canadian Heritage","Patrimoine canadien","68",10
+"2013-2014","Canadian Heritage","Patrimoine canadien","133",8
+"2014-2015","Canadian Heritage","Patrimoine canadien","80",2
+"2015-2016","Canadian Heritage","Patrimoine canadien","170",7
+"2016-2017","Canadian Heritage","Patrimoine canadien","234",3
+"2017-2018","Canadian Heritage","Patrimoine canadien","250",2
+"2018-2019","Canadian Heritage","Patrimoine canadien","275",3
+"2019-2020","Canadian Heritage","Patrimoine canadien","322",
+"2020-2021","Canadian Heritage","Patrimoine canadien","262",
+"2021-2022","Canadian Heritage","Patrimoine canadien","360",4
+"2022-2023","Canadian Heritage","Patrimoine canadien","238",
+"2023-2024","Canadian Heritage","Patrimoine canadien","217",2
+"2024-2025","Canadian Heritage","Patrimoine canadien","236",1
+"2025-2026","Canadian Heritage","Patrimoine canadien","104",1
+"2026-2027","Canadian Heritage","Patrimoine canadien","10",
+"2011-2012","Privy Council Office","Bureau du Conseil privé","118",2
+"2012-2013","Privy Council Office","Bureau du Conseil privé","36",1
+"2013-2014","Privy Council Office","Bureau du Conseil privé","40",7
+"2014-2015","Privy Council Office","Bureau du Conseil privé","82",2
+"2015-2016","Privy Council Office","Bureau du Conseil privé","95",3
+"2016-2017","Privy Council Office","Bureau du Conseil privé","131",1
+"2017-2018","Privy Council Office","Bureau du Conseil privé","229",2
+"2018-2019","Privy Council Office","Bureau du Conseil privé","193",
+"2019-2020","Privy Council Office","Bureau du Conseil privé","209",2
+"2020-2021","Privy Council Office","Bureau du Conseil privé","207",2
+"2021-2022","Privy Council Office","Bureau du Conseil privé","191",1
+"2022-2023","Privy Council Office","Bureau du Conseil privé","271",
+"2023-2024","Privy Council Office","Bureau du Conseil privé","269",2
+"2024-2025","Privy Council Office","Bureau du Conseil privé","188",
+"2025-2026","Privy Council Office","Bureau du Conseil privé","67",1
+"2026-2027","Privy Council Office","Bureau du Conseil privé","5",2
+"2011-2012","Correctional Service Canada","Service correctionnel Canada","2309",70
+"2012-2013","Correctional Service Canada","Service correctionnel Canada","985",76
+"2013-2014","Correctional Service Canada","Service correctionnel Canada","1105",202
+"2014-2015","Correctional Service Canada","Service correctionnel Canada","1038",51
+"2015-2016","Correctional Service Canada","Service correctionnel Canada","689",54
+"2016-2017","Correctional Service Canada","Service correctionnel Canada","1318",53
+"2017-2018","Correctional Service Canada","Service correctionnel Canada","1364",60
+"2018-2019","Correctional Service Canada","Service correctionnel Canada","1682",53
+"2019-2020","Correctional Service Canada","Service correctionnel Canada","1919",32
+"2020-2021","Correctional Service Canada","Service correctionnel Canada","1469",24
+"2021-2022","Correctional Service Canada","Service correctionnel Canada","1982",23
+"2022-2023","Correctional Service Canada","Service correctionnel Canada","2298",24
+"2023-2024","Correctional Service Canada","Service correctionnel Canada","2125",22
+"2024-2025","Correctional Service Canada","Service correctionnel Canada","1891",17
+"2025-2026","Correctional Service Canada","Service correctionnel Canada","1177",21
+"2026-2027","Correctional Service Canada","Service correctionnel Canada","254",1
+"2011-2012","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","103",
+"2012-2013","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","92",2
+"2013-2014","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","103",5
+"2014-2015","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","72",1
+"2015-2016","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","81",6
+"2016-2017","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","139",5
+"2017-2018","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","112",4
+"2018-2019","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","140",
+"2019-2020","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","180",5
+"2020-2021","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","182",1
+"2021-2022","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","184",1
+"2022-2023","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","198",
+"2023-2024","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","232",3
+"2024-2025","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","139",2
+"2025-2026","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","111",1
+"2026-2027","Public Prosecution Service of Canada","Service des poursuites pénales du Canada","41",1
+"2011-2012","Passport Canada","Passeport Canada","161",5
+"2012-2013","Passport Canada","Passeport Canada","130",3
+"2013-2014","Passport Canada","Passeport Canada","121",3
+"2014-2015","Passport Canada","Passeport Canada","0",
+"2011-2012","Public Servants Disclosure Protection Tribunal Canada","Tribunal de la protection des fonctionnaires divulgateurs Canada","1",
+"2012-2013","Public Servants Disclosure Protection Tribunal Canada","Tribunal de la protection des fonctionnaires divulgateurs Canada","2",
+"2013-2014","Public Servants Disclosure Protection Tribunal Canada","Tribunal de la protection des fonctionnaires divulgateurs Canada","2",
+"2014-2015","Public Servants Disclosure Protection Tribunal Canada","Tribunal de la protection des fonctionnaires divulgateurs Canada","0",
+"2011-2012","Public Service Commission of Canada","Commission de la fonction publique du Canada","101",6
+"2012-2013","Public Service Commission of Canada","Commission de la fonction publique du Canada","46",7
+"2013-2014","Public Service Commission of Canada","Commission de la fonction publique du Canada","18",4
+"2014-2015","Public Service Commission of Canada","Commission de la fonction publique du Canada","60",4
+"2015-2016","Public Service Commission of Canada","Commission de la fonction publique du Canada","59",5
+"2016-2017","Public Service Commission of Canada","Commission de la fonction publique du Canada","101",3
+"2017-2018","Public Service Commission of Canada","Commission de la fonction publique du Canada","165",
+"2018-2019","Public Service Commission of Canada","Commission de la fonction publique du Canada","210",2
+"2019-2020","Public Service Commission of Canada","Commission de la fonction publique du Canada","251",5
+"2020-2021","Public Service Commission of Canada","Commission de la fonction publique du Canada","131",
+"2021-2022","Public Service Commission of Canada","Commission de la fonction publique du Canada","163",1
+"2022-2023","Public Service Commission of Canada","Commission de la fonction publique du Canada","258",4
+"2023-2024","Public Service Commission of Canada","Commission de la fonction publique du Canada","105",1
+"2024-2025","Public Service Commission of Canada","Commission de la fonction publique du Canada","83",
+"2025-2026","Public Service Commission of Canada","Commission de la fonction publique du Canada","32",
+"2026-2027","Public Service Commission of Canada","Commission de la fonction publique du Canada","5",2
+"2011-2012","Public Safety Canada","Sécurité publique Canada","129",1
+"2012-2013","Public Safety Canada","Sécurité publique Canada","62",12
+"2013-2014","Public Safety Canada","Sécurité publique Canada","60",9
+"2014-2015","Public Safety Canada","Sécurité publique Canada","75",2
+"2015-2016","Public Safety Canada","Sécurité publique Canada","154",3
+"2016-2017","Public Safety Canada","Sécurité publique Canada","197",5
+"2017-2018","Public Safety Canada","Sécurité publique Canada","205",5
+"2018-2019","Public Safety Canada","Sécurité publique Canada","272",4
+"2019-2020","Public Safety Canada","Sécurité publique Canada","305",1
+"2020-2021","Public Safety Canada","Sécurité publique Canada","243",5
+"2021-2022","Public Safety Canada","Sécurité publique Canada","339",4
+"2022-2023","Public Safety Canada","Sécurité publique Canada","439",2
+"2023-2024","Public Safety Canada","Sécurité publique Canada","191",
+"2024-2025","Public Safety Canada","Sécurité publique Canada","383",2
+"2025-2026","Public Safety Canada","Sécurité publique Canada","129",3
+"2026-2027","Public Safety Canada","Sécurité publique Canada","1",
+"2011-2012","Human Rights Tribunal of Canada","Tribunal des droits de la personne du Canada","2",
+"2012-2013","Human Rights Tribunal of Canada","Tribunal des droits de la personne du Canada","1",
+"2013-2014","Human Rights Tribunal of Canada","Tribunal des droits de la personne du Canada","1",
+"2014-2015","Human Rights Tribunal of Canada","Tribunal des droits de la personne du Canada","2",
+"2011-2012","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","5",
+"2012-2013","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","5",
+"2013-2014","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","2",
+"2014-2015","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","11",
+"2015-2016","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","13",
+"2016-2017","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","4",
+"2017-2018","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","5",
+"2018-2019","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","21",
+"2019-2020","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","11",
+"2020-2021","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","15",
+"2021-2022","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","18",
+"2022-2023","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","16",
+"2023-2024","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","10",
+"2024-2025","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","6",
+"2025-2026","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","6",1
+"2026-2027","Patented Medicine Prices Review Board Canada","Conseil d'examen du prix des médicaments brevetés Canada","0",
+"2011-2012","Assisted Human Reproduction Agency of Canada","Agence Canadienne de contrôle de la procréation assistée","1",
+"2012-2013","Assisted Human Reproduction Agency of Canada","Agence Canadienne de contrôle de la procréation assistée","0",
+"2011-2012","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","828",56
+"2012-2013","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","358",72
+"2013-2014","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","536",97
+"2014-2015","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","784",76
+"2015-2016","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","714",51
+"2016-2017","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1079",45
+"2017-2018","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1202",45
+"2018-2019","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1393",55
+"2019-2020","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1450",35
+"2020-2021","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1223",37
+"2021-2022","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1475",35
+"2022-2023","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","2027",30
+"2023-2024","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","2035",38
+"2024-2025","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","2285",29
+"2025-2026","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","1347",24
+"2026-2027","Royal Canadian Mounted Police (Public Service Employees)","Gendarmerie royale du Canada (fonctionnaires)","262",13
+"2011-2012","Registry of the Competition Tribunal","Greffe du Tribunal de la concurrence","1",
+"2012-2013","Registry of the Competition Tribunal","Greffe du Tribunal de la concurrence","0",
+"2013-2014","Registry of the Competition Tribunal","Greffe du Tribunal de la concurrence","0",
+"2014-2015","Registry of the Competition Tribunal","Greffe du Tribunal de la concurrence","1",
+"2011-2012","RCMP External Review Committee","Comité externe d'examen de la GRC","0",
+"2012-2013","RCMP External Review Committee","Comité externe d'examen de la GRC","0",
+"2013-2014","RCMP External Review Committee","Comité externe d'examen de la GRC","2",
+"2014-2015","RCMP External Review Committee","Comité externe d'examen de la GRC","2",
+"2015-2016","RCMP External Review Committee","Comité externe d'examen de la GRC","0",
+"2017-2018","RCMP External Review Committee","Comité externe d'examen de la GRC","0",
+"2018-2019","RCMP External Review Committee","Comité externe d'examen de la GRC","2",
+"2019-2020","RCMP External Review Committee","Comité externe d'examen de la GRC","1",
+"2020-2021","RCMP External Review Committee","Comité externe d'examen de la GRC","7",
+"2021-2022","RCMP External Review Committee","Comité externe d'examen de la GRC","10",
+"2022-2023","RCMP External Review Committee","Comité externe d'examen de la GRC","6",
+"2023-2024","RCMP External Review Committee","Comité externe d'examen de la GRC","2",
+"2024-2025","RCMP External Review Committee","Comité externe d'examen de la GRC","1",
+"2025-2026","RCMP External Review Committee","Comité externe d'examen de la GRC","1",
+"2026-2027","RCMP External Review Committee","Comité externe d'examen de la GRC","1",
+"2011-2012","Public Service Labour Relations and Employment Board","Commission des relations de travail et de l'emploi dans la fonction publique","9",
+"2012-2013","Public Service Labour Relations and Employment Board","Commission des relations de travail et de l'emploi dans la fonction publique","6",
+"2013-2014","Public Service Labour Relations and Employment Board","Commission des relations de travail et de l'emploi dans la fonction publique","7",1
+"2014-2015","Public Service Labour Relations and Employment Board","Commission des relations de travail et de l'emploi dans la fonction publique","4",
+"2011-2012","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","8",
+"2012-2013","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","7",
+"2013-2014","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","1",
+"2014-2015","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","2",
+"2015-2016","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","11",1
+"2016-2017","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","8",1
+"2017-2018","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","3",
+"2018-2019","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","21",
+"2019-2020","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","20",
+"2020-2021","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","16",
+"2021-2022","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","12",1
+"2022-2023","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","23",
+"2023-2024","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","21",
+"2024-2025","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","17",
+"2025-2026","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","4",
+"2026-2027","Civilian Review and Complaints Commission for the RCMP","Commission civile d'examen et de traitement des plaintes relatives à la GRC","2",1
+"2011-2012","Natural Resources Canada","Ressources naturelles Canada","417",8
+"2012-2013","Natural Resources Canada","Ressources naturelles Canada","217",12
+"2013-2014","Natural Resources Canada","Ressources naturelles Canada","208",16
+"2014-2015","Natural Resources Canada","Ressources naturelles Canada","248",10
+"2015-2016","Natural Resources Canada","Ressources naturelles Canada","406",2
+"2016-2017","Natural Resources Canada","Ressources naturelles Canada","495",3
+"2017-2018","Natural Resources Canada","Ressources naturelles Canada","566",2
+"2018-2019","Natural Resources Canada","Ressources naturelles Canada","701",4
+"2019-2020","Natural Resources Canada","Ressources naturelles Canada","781",5
+"2020-2021","Natural Resources Canada","Ressources naturelles Canada","666",2
+"2021-2022","Natural Resources Canada","Ressources naturelles Canada","798",8
+"2022-2023","Natural Resources Canada","Ressources naturelles Canada","1238",4
+"2023-2024","Natural Resources Canada","Ressources naturelles Canada","1118",1
+"2024-2025","Natural Resources Canada","Ressources naturelles Canada","1022",
+"2025-2026","Natural Resources Canada","Ressources naturelles Canada","378",1
+"2026-2027","Natural Resources Canada","Ressources naturelles Canada","76",3
+"2011-2012","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","82",
+"2012-2013","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","39",
+"2013-2014","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","27",1
+"2014-2015","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","60",
+"2015-2016","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","42",1
+"2016-2017","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","65",
+"2017-2018","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","73",
+"2018-2019","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","71",2
+"2019-2020","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","122",
+"2020-2021","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","67",
+"2021-2022","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","72",1
+"2022-2023","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","81",
+"2023-2024","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","147",
+"2024-2025","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","127",
+"2025-2026","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","92",1
+"2026-2027","Canadian Radio-television and Telecommunications Commission","Conseil de la radiodiffusion et des télécommunications canadiennes","5",2
+"2011-2012","Health Canada","Santé Canada","1210",17
+"2012-2013","Health Canada","Santé Canada","328",59
+"2013-2014","Health Canada","Santé Canada","557",85
+"2014-2015","Health Canada","Santé Canada","636",15
+"2015-2016","Health Canada","Santé Canada","729",26
+"2016-2017","Health Canada","Santé Canada","1179",18
+"2017-2018","Health Canada","Santé Canada","1452",13
+"2018-2019","Health Canada","Santé Canada","1913",19
+"2019-2020","Health Canada","Santé Canada","1872",5
+"2020-2021","Health Canada","Santé Canada","1557",6
+"2021-2022","Health Canada","Santé Canada","1570",8
+"2022-2023","Health Canada","Santé Canada","1262",7
+"2023-2024","Health Canada","Santé Canada","1128",2
+"2024-2025","Health Canada","Santé Canada","635",
+"2025-2026","Health Canada","Santé Canada","214",1
+"2026-2027","Health Canada","Santé Canada","42",13
+"2011-2012","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","105",1
+"2012-2013","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","116",
+"2013-2014","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","124",
+"2014-2015","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","101",
+"2015-2016","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","79",2
+"2016-2017","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","85",
+"2017-2018","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","127",1
+"2018-2019","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","125",2
+"2019-2020","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","179",1
+"2020-2021","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","130",
+"2021-2022","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","160",
+"2022-2023","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","317",1
+"2023-2024","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","376",1
+"2024-2025","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","96",
+"2025-2026","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","103",
+"2026-2027","Office of the Superintendent of Financial Institutions Canada","Bureau du surintendant des institutions financières Canada","27",3
+"2011-2012","Statistics Canada","Statistique Canada","698",
+"2012-2013","Statistics Canada","Statistique Canada","278",13
+"2013-2014","Statistics Canada","Statistique Canada","363",10
+"2014-2015","Statistics Canada","Statistique Canada","604",5
+"2015-2016","Statistics Canada","Statistique Canada","640",7
+"2016-2017","Statistics Canada","Statistique Canada","913",4
+"2017-2018","Statistics Canada","Statistique Canada","1216",3
+"2018-2019","Statistics Canada","Statistique Canada","1049",4
+"2019-2020","Statistics Canada","Statistique Canada","795",2
+"2020-2021","Statistics Canada","Statistique Canada","794",2
+"2021-2022","Statistics Canada","Statistique Canada","1062",5
+"2022-2023","Statistics Canada","Statistique Canada","1581",2
+"2023-2024","Statistics Canada","Statistique Canada","1378",
+"2024-2025","Statistics Canada","Statistique Canada","528",1
+"2025-2026","Statistics Canada","Statistique Canada","100",1
+"2026-2027","Statistics Canada","Statistique Canada","5",4
+"2011-2012","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","31",1
+"2012-2013","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","10",
+"2013-2014","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","9",
+"2014-2015","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","11",1
+"2015-2016","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","12",
+"2016-2017","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","24",2
+"2017-2018","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","39",
+"2018-2019","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","37",
+"2019-2020","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","25",
+"2020-2021","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","35",1
+"2021-2022","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","26",
+"2022-2023","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","36",
+"2023-2024","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","39",
+"2024-2025","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","26",
+"2025-2026","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","30",1
+"2026-2027","Registrar of the Supreme Court of Canada","Registraire de la Cour suprême du Canada","3",
+"2011-2012","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","1536",177
+"2012-2013","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","721",83
+"2013-2014","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","973",60
+"2014-2015","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","879",25
+"2015-2016","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","979",25
+"2016-2017","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2060",52
+"2017-2018","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2127",19
+"2018-2019","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2997",18
+"2019-2020","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","3153",24
+"2020-2021","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2312",14
+"2021-2022","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","3050",19
+"2022-2023","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2676",10
+"2023-2024","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2666",8
+"2024-2025","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","2055",10
+"2025-2026","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","670",4
+"2026-2027","Public Services and Procurement Canada","Services publics et Approvisionnement Canada","73",22
+"2011-2012","Transportation Appeal Tribunal of Canada","Tribunal d'appel des transports du Canada","1",
+"2012-2013","Transportation Appeal Tribunal of Canada","Tribunal d'appel des transports du Canada","0",
+"2013-2014","Transportation Appeal Tribunal of Canada","Tribunal d'appel des transports du Canada","0",
+"2014-2015","Transportation Appeal Tribunal of Canada","Tribunal d'appel des transports du Canada","0",
+"2011-2012","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","409",4
+"2012-2013","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","154",15
+"2013-2014","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","187",8
+"2014-2015","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","226",6
+"2015-2016","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","195",8
+"2016-2017","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","311",4
+"2017-2018","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","412",5
+"2018-2019","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","568",
+"2019-2020","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","519",3
+"2020-2021","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","376",
+"2021-2022","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","457",2
+"2022-2023","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","615",3
+"2023-2024","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","521",2
+"2024-2025","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","313",
+"2025-2026","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","71",
+"2026-2027","Treasury Board of Canada Secretariat","Secrétariat du Conseil du Trésor du Canada","7",2
+"2011-2012","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","25",2
+"2012-2013","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","13",
+"2013-2014","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","22",
+"2014-2015","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","25",1
+"2015-2016","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","15",
+"2016-2017","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","17",
+"2017-2018","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","16",1
+"2018-2019","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","32",
+"2019-2020","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","24",1
+"2020-2021","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","24",
+"2021-2022","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","22",
+"2022-2023","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","18",1
+"2023-2024","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","29",
+"2024-2025","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","26",
+"2025-2026","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","11",
+"2026-2027","Transportation Safety Board of Canada","Bureau de la sécurité des transports du Canada","2",
+"2011-2012","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","29",
+"2012-2013","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","13",3
+"2013-2014","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","20",7
+"2014-2015","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","20",3
+"2015-2016","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","39",4
+"2016-2017","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","35",5
+"2017-2018","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","35",1
+"2018-2019","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","51",
+"2019-2020","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","64",2
+"2020-2021","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","33",1
+"2021-2022","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","63",
+"2022-2023","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","92",
+"2023-2024","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","54",
+"2024-2025","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","38",
+"2025-2026","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","32",
+"2026-2027","Prairies Economic Development Canada","Développement économique Canada pour les Prairies","9",1

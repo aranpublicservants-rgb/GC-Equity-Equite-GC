@@ -10,6 +10,8 @@ on:
       - 'sources.html'
       - 'call-to-action.html'
       - 'call-to-action.js'
+      - 'staffing.html'
+      - 'staffing.js'
       - 'gc-workspace.js'
       - 'gc-workspace.css'
       - 'assets/**'
@@ -152,6 +154,24 @@ jobs:
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-call-to-action.png'});
                 await page.goto(addr+'call-to-action.html?lang=fr',big);
                 await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Appel à l’action/.test(document.querySelector('h1').textContent)&&document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
+                // The conclusions are listed by priority, in French with French number formats.
+                await page.waitForFunction(()=>{const l=document.querySelectorAll('#cta-findings > li');return l.length===12&&/Priorité 1/.test(l[0].textContent)&&/30,6\u00a0%/.test(l[0].textContent);},null,{timeout:30000});
+                await page.close();
+
+                // 3c. The Public Service Commission page: applicants and appointments, suppressed counts and the file list
+                page=await ctx.newPage();watch(page);
+                await page.goto(addr+'staffing.html?lang=en',big);
+                await page.waitForFunction(()=>{const t=document.getElementById('st-latest-t');return t&&t.querySelectorAll('tbody tr').length===4&&/30\.6%/.test(t.textContent)&&/0\.88/.test(t.textContent);},null,{timeout:60000});
+                if(await page.$$eval('#st-funnel-t tbody tr',r=>r.length)<10)throw Error('applicant and appointment years missing');
+                await page.selectOption('#st-org','Canadian Transportation Agency');
+                await page.waitForFunction(()=>{const t=document.getElementById('st-org-t');return /Suppressed/.test(t.textContent)&&![...t.querySelectorAll('td')].some(td=>/^-\d/.test(td.textContent.trim()));},null,{timeout:30000});
+                if(await page.$$eval('#st-files-t tbody tr',r=>r.length)!==55||await page.$$eval('#st-snps-t tbody tr',r=>r.length)!==47)throw Error('Commission file list incomplete');
+                await page.fill('#st-filter','ar4');
+                await page.waitForFunction(()=>document.querySelectorAll('#st-files-t tbody tr').length===5,null,{timeout:30000});
+                if(await overflow(page))throw Error(mode.name+': Public Service Commission page scrolls sideways');
+                await page.screenshot({path:'qa-screenshots/'+mode.name+'-staffing.png'});
+                await page.goto(addr+'staffing.html?lang=fr',big);
+                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Commission de la fonction publique/.test(document.querySelector('h1').textContent)&&/30,6\u00a0%/.test((document.getElementById('st-latest-t')||{}).textContent||''),null,{timeout:60000});
                 await page.close();
 
                 // 4. Option 2: choose a group and see all of its data
@@ -192,13 +212,14 @@ jobs:
                 if(alive!==2)throw Error('French page stopped responding');
                 await page.goto(addr+'sources.html?lang=fr');
                 await page.waitForFunction(()=>document.getElementById('visible').textContent.includes('157 sur 157'));
+                await page.waitForFunction(()=>document.querySelector('#rows a[href="data/psc/ar4a.csv"]')&&document.getElementById('downloads').textContent!=='8',null,{timeout:30000});
                 await page.close();
 
                 if(errors.length)throw Error(mode.name+': browser errors: '+errors.join(' / '));
                 const unexpected=outside.filter(u=>!/^https:\/\/(chatgpt\.com|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)\//.test(u));
                 if(unexpected.length)throw Error(mode.name+': outside requests: '+unexpected.join(' '));
                 await ctx.close();
-                console.log('PASS: '+mode.name+', main page, chatbot links, four paths, Call to Action page and sections, presentation and Word files, French, source list');
+                console.log('PASS: '+mode.name+', main page, chatbot links, four paths, Call to Action page, conclusions and sections, Public Service Commission page, presentation and Word files, French, source list');
               }
             }finally{await browser.close();server.close()}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});

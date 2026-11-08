@@ -44,7 +44,7 @@ data.groups=[
 const dates=JSON.parse(read('data/source-dates.json'));
 data.sources={
  rep:dates.sources.find(s=>s.id==='tbs-representation').url,
- pses:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024.html',
+ pses:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024-25.html',
  psesData:dates.sources.find(s=>s.id==='pses-2024-second-level').url,
  executive:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-executive-employees.html',
  salary:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html',
@@ -83,6 +83,15 @@ for(const [repo,label] of repos){const dir=path.join(relatedRoot,repo);if(!fs.ex
  const blocks=[...html.matchAll(/<(section|article)\b([^>]*)>([\s\S]*?)<\/\1>/gi)];
  for(const [,tag,attrs,body] of blocks){const id=attrs.match(/\bid="([^"]+)"/)?.[1];const h=body.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/);if(!h||!id)continue;const hfr=body.match(/<h[1-4][^>]*data-fr="([^"]+)"/);const text=strip(body);if(text.length<40)continue;add({site:label,kind:'section',en:strip(h[1]),fr:strip(hfr?.[1]||h[1]),text:text.slice(0,1300),textFr:[...body.matchAll(/data-fr="([^"]+)"/g)].map(m=>strip(m[1])).join(' ').slice(0,1300),url:url+'#'+id});}
  if(repo.includes('History')){for(const e of literal(html,'ENTRIES')){if(!e.src?.url)continue;add({site:label,kind:'history',en:e.y+' · '+e.t.en,fr:e.y+' · '+e.t.fr,text:e.s?.en||'',textFr:e.s?.fr||'',url:url+'#e-'+e.id,source:e.src.url});}}
+}
+// Pages built from their own data files. They are added last so the identifiers of earlier entries do not change.
+for(const d of pageDocs())add(d);
+function pageDocs(){
+ const findings=literal(read('call-to-action.js'),'FINDINGS'),catalogue=JSON.parse(read('data/psc/catalogue.json'));
+ const out=[{site:'GC Equity',kind:'section',en:'Call to Action: what the data point to',fr:'Appel à l’action : ce que les données indiquent',text:findings.map(f=>f.t[0]).join('. ')+'.',textFr:findings.map(f=>f.t[1]).join('. ')+'.',url:'call-to-action.html#findings'},
+  {site:'GC Equity',kind:'section',en:'Hiring and staffing data from the Public Service Commission',fr:'Données sur l’embauche et la dotation de la Commission de la fonction publique',text:'Public Service Commission applicants and appointments by employment equity group, appointments by sex and region, student applicants and hires, appointments by organization and self-identification, and every Commission data file on this site.',textFr:'Postulants et nominations de la Commission de la fonction publique selon le groupe visé par l’équité en matière d’emploi, nominations selon le sexe et la région, étudiants postulants et embauchés, nominations par organisation et selon l’auto-identification, et chaque fichier de données de la Commission sur ce site.',url:'staffing.html'}];
+ for(const f of catalogue.files)out.push({site:'GC Equity',kind:'source',en:f.en,fr:f.fr,text:f.file+' · Public Service Commission'+(f.years?' · '+f.years.join(' to '):''),textFr:f.file+' · Commission de la fonction publique'+(f.years?' · '+f.years.join(' à '):''),url:'staffing.html#files'});
+ return out;
 }
 fs.mkdirSync(path.join(root,'assets'),{recursive:true});
 fs.writeFileSync(path.join(root,'assets/workspace-data.json'),JSON.stringify(data));
