@@ -11,8 +11,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch PSC tables
-        run: python3 scratch/fetch3.py
+      - name: Fetch catalogue records
+        run: python3 scratch/fetch4.py
       - name: Commit files for review
         run: |
           git config user.name "github-actions[bot]"
