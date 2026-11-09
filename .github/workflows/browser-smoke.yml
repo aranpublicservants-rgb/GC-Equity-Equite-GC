@@ -145,6 +145,7 @@ jobs:
                 page=await ctx.newPage();watch(page);
                 await page.goto(addr+'call-to-action.html?lang=en',big);
                 await page.waitForFunction(()=>document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
+                await page.waitForFunction(()=>{const l=document.querySelectorAll('#cta-findings > li');return l.length===12&&/Strong evidence/.test(l[0].textContent)&&/3,413 comparisons/.test(document.getElementById('findings').textContent);},null,{timeout:30000});
                 await page.selectOption('#cta-group','b');
                 await page.selectOption('#cta-filter','goal');
                 await page.waitForFunction(()=>{const n=document.querySelectorAll('#cta-compare tbody tr').length;return n>0&&n<100;},null,{timeout:30000});
@@ -154,8 +155,8 @@ jobs:
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-call-to-action.png'});
                 await page.goto(addr+'call-to-action.html?lang=fr',big);
                 await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Appel à l’action/.test(document.querySelector('h1').textContent)&&document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
-                // The conclusions are listed by priority, in French with French number formats.
-                await page.waitForFunction(()=>{const l=document.querySelectorAll('#cta-findings > li');return l.length===12&&/Priorité 1/.test(l[0].textContent)&&/30,6\u00a0%/.test(l[0].textContent);},null,{timeout:30000});
+                // The findings are listed from the strongest link to the weakest, in French with French number formats.
+                await page.waitForFunction(()=>{const l=document.querySelectorAll('#cta-findings > li');return l.length===12&&/Priorité 1/.test(l[0].textContent)&&/Niveau de preuve élevé/.test(l[0].textContent)&&/45 des 90 lettres/.test(l[0].textContent)&&/15,2\u00a0%/.test(l[2].textContent)&&/Niveau de preuve faible/.test(l[11].textContent);},null,{timeout:30000});
                 await page.close();
 
                 // 3c. The Public Service Commission page: applicants and appointments, suppressed counts and the file list
@@ -219,7 +220,7 @@ jobs:
                 const unexpected=outside.filter(u=>!/^https:\/\/(chatgpt\.com|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)\//.test(u));
                 if(unexpected.length)throw Error(mode.name+': outside requests: '+unexpected.join(' '));
                 await ctx.close();
-                console.log('PASS: '+mode.name+', main page, chatbot links, four paths, Call to Action page, conclusions and sections, Public Service Commission page, presentation and Word files, French, source list');
+                console.log('PASS: '+mode.name+', main page, chatbot links, four paths, Call to Action page, findings and sections, Public Service Commission page, presentation and Word files, French, source list');
               }
             }finally{await browser.close();server.close()}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});

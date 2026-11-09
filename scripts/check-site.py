@@ -82,108 +82,93 @@ pcat=json.loads((ROOT/'data/psc/catalogue.json').read_text())
 assert len(pcat['files'])==len(list((ROOT/'data/psc').glob('*.csv'))) and all(f['url'].startswith('https://') for f in pcat['files']+pcat['snps'])
 for org,rec in psc['hiring'].items():
     assert all(v is None or v=='x' or (isinstance(v,int) and v>=0) for pair in rec['years'].values() for v in pair),f'PSC count not a published value: {org}'
-# The conclusions on the Call to Action page quote figures from the data. Recalculate each one; a change in the data
-# fails here until the wording is updated.
+# The findings on the Call to Action page quote figures from data/call-to-action-comparisons.json. Recalculate that file,
+# then check each finding against it; a change in the data fails here until the wording is updated.
+subprocess.run(['python3','scripts/build-cta-comparisons.py','--check'],cwd=ROOT,check=True)
+from decimal import Decimal,ROUND_HALF_UP
 ctajs=(ROOT/'call-to-action.js').read_text()
-def quoted(text):
-    assert text in ctajs,f'Call to Action conclusion no longer matches the data: {text}'
-def p1(v):
-    return f'{v:.1f}'
-sa=[o for o in orgs if o['self_assessment']]
-goal=lambda o,k:o['self_assessment']['goals'][k]['status']=='set'
-ngoal=lambda k:sum(1 for o in sa if goal(o,k))
-quoted(f"({ngoal('indigenous_promotion')} compared with {ngoal('indigenous_recruitment')} of {len(sa)} for Indigenous employees, {ngoal('racialized_promotion')} compared with {ngoal('racialized_recruitment')} for racialized employees, and {ngoal('black_promotion')} compared with {ngoal('black_recruitment')} for Black employees)")
-quoted(f"Of the {len(sa)} organizations that completed a self-assessment, {ngoal('indigenous_recruitment')} reported an Indigenous recruitment goal")
-assert ngoal('indigenous_recruitment')==max(ngoal(k) for k in ['indigenous_recruitment','racialized_recruitment','black_recruitment'])
-quoted(f"Of the {len(sa)} self-assessments, {sum(1 for o in sa if goal(o,'black_recruitment') or goal(o,'black_promotion'))} reported a recruitment or promotion goal for Black employees")
-databar=sum(1 for o in sa if any(re.search(r'\bdata\b|self-identif|disaggregat|self-declar',b,re.I) for b in o['self_assessment'].get('barriers') or []))
-quoted(f'{databar} of {len(sa)} organizations named a data problem among their barriers')
-quoted(f"Of the {len(orgs)} organizations on this page, {sum(1 for o in orgs if o.get('site_name') not in series['orgs'])} are not in the Treasury Board departmental tables, {sum(1 for o in orgs if o['letter'] and not o['self_assessment'])} have a 2021 letter but no 2024 self-assessment, and {sum(1 for o in orgs if o['self_assessment'] and not o['letter'])} have a self-assessment but no letter")
-ps=series['orgs']['Public Service']
-def moved(g,a='2021',b='2025'):
-    up=down=n=0
-    for org,rec in series['orgs'].items():
-        x,y=rec.get(g,{}).get(a),rec.get(g,{}).get(b)
-        if org=='Public Service' or not x or not y or x[2] is None or y[2] is None:continue
-        n+=1;up+=y[2]>x[2];down+=y[2]<x[2]
-    return up,down,n
-def marked(g,y):
-    rows=[r[g][y] for o,r in series['orgs'].items() if o!='Public Service' and r.get(g,{}).get(y) and r[g][y][2] is not None and r[g][y][3]]
-    return sum(1 for r in rows if r[2]/r[3]<=0.85),len(rows)
-quoted(f"rose from {p1(ps['i']['2021'][2])}% in 2021 to {p1(ps['i']['2025'][2])}% in 2025, the smallest increase of the four groups on this page, and it fell in {moved('i')[1]} of the {moved('i')[2]} organizations")
-assert ps['i']['2025'][2]-ps['i']['2021'][2]<min(ps[g]['2025'][2]-ps[g]['2021'][2] for g in 'vdb')
-quoted(f"rose from {p1(ps['b']['2021'][2])}% in 2021 to {p1(ps['b']['2025'][2])}% in 2025, and it rose in {moved('b')[0]} of the {moved('b')[2]} organizations")
-quoted(f"rose from {p1(ps['v']['2021'][2])}% in 2021 to {p1(ps['v']['2025'][2])}% in 2025, and it rose in {moved('v')[0]} of the {moved('v')[2]} organizations")
-quoted(f"rose from {p1(ps['v']['2021'][3])}% to {p1(ps['v']['2025'][3])}% when Treasury Board added permanent residents")
-quoted(f"In 2025, {marked('v','2025')[0]} of {marked('v','2025')[1]} organizations were at 0.85 or less of their own availability, compared with {marked('v','2021')[0]} of {marked('v','2021')[1]} in 2021")
-quoted(f"rose from {p1(ps['d']['2021'][2])}% in 2021 to {p1(ps['d']['2025'][2])}% in 2025")
-quoted(f"The availability estimate rose to {p1(ps['d']['2024'][3])}% in 2024")
-quoted(f"In 2025, {marked('d','2025')[0]} of {marked('d','2025')[1]} organizations were at 0.85 or less")
-shared={n for n in (o.get('site_name') for o in orgs) if n and sum(1 for x in orgs if x.get('site_name')==n)>1}
-three=[(o,[(r.get(g,{}).get('2021'),r.get(g,{}).get('2025')) for g in 'idv']) for o,r in series['orgs'].items() if o!='Public Service']
-three=[(o,v) for o,v in three if all(a and b and a[2] is not None and b[2] is not None for a,b in v)]
-quoted(f"Of the {len(three)} organizations with published values for Indigenous employees, persons with disabilities and racialized employees in both 2021 and 2025, {sum(1 for o,v in three if all(b[2]>a[2] for a,b in v))} saw representation rise for all three groups and none saw it fall for all three")
-assert not any(all(b[2]<a[2] for a,b in v) for o,v in three)
-below=sorted(o for o,r in series['orgs'].items() if o!='Public Service' and all(r.get(g,{}).get('2025') and r[g]['2025'][2] is not None and r[g]['2025'][3] and r[g]['2025'][2]<r[g]['2025'][3] for g in 'idv'))
-assert below==['National Defence','Royal Canadian Mounted Police (public service employees)','Secretariat of the National Security and Intelligence Committee of Parliamentarians','Veterans Affairs Canada'],f'organizations below availability for all three groups changed: {below}'
-quoted('four organizations were below their own availability for all three groups')
-big=sum(series['orgs'][o]['i']['2025'][0] for o in below if 'Secretariat' not in o)
-assert 42000<big<43000 and series['orgs'][below[2]]['i']['2025'][0]==8
-quoted('together employ more than 42,000 people. The Secretariat has 8 employees')
-for o in orgs:
-    if o.get('site_name') in below:
-        g=(o['self_assessment'] or {}).get('goals')
-        assert (g is None)==('Secretariat' in o['site_name']) and (g is None or (g['indigenous_recruitment']['status']==g['racialized_recruitment']['status']=='set')),f'goals changed: {o["id"]}'
-def gap(g,keys):
-    yes,no=[],[]
-    for o in sa:
-        n=o.get('site_name')
-        if not n or n in shared or n not in series['orgs']:continue
-        x,y=series['orgs'][n].get(g,{}).get('2021'),series['orgs'][n].get(g,{}).get('2025')
-        if not x or not y or x[2] is None or y[2] is None:continue
-        (yes if any(goal(o,k) for k in keys) else no).append(y[2]-x[2])
-    r=lambda v:f'{(sum(v)/len(v))+1e-9:.1f}'
-    return r(yes),len(yes),r(no),len(no)
-gv,gb,gi=gap('v',['racialized_recruitment','racialized_promotion']),gap('b',['black_recruitment','black_promotion']),gap('i',['indigenous_recruitment','indigenous_promotion'])
-quoted(f'rose by an average of {gv[0]} percentage points in the {gv[1]} organizations whose 2024 self-assessment reported a recruitment or promotion goal for racialized employees, and by {gv[2]} points in the {gv[3]} that did not')
-assert gb[0]==gb[2];quoted(f'the average rise was {gb[0]} points in both groups ({gb[1]} and {gb[3]} organizations)')
-quoted(f'it was {gi[0]} points where a goal was reported ({gi[1]} organizations) and {gi[2]} points where none was ({gi[3]})')
-cpa,ex,fl=model['CPA'],model['EX'],model['FLOW25']
-quoted(f"racialized employees were {p1(cpa['v'])}% of employees and {p1(ex['v'])}% of executives. Black employees were {p1(cpa['black'])}% of employees and {p1(ex['black'])}% of executives")
-quoted(f"availability estimate for executive jobs ({p1(ex['wfa']['v'])}%)")
-quoted(f"racialized employees received {p1(fl['v']['p'])}% of promotions and Black employees {p1(fl['black']['p'])}%, above their shares of employees")
-assert fl['v']['p']>cpa['v'] and fl['black']['p']>cpa['black']
-quoted(f"Indigenous employees made up {p1(fl['i']['h'])}% of people hired and {p1(fl['i']['s'])}% of people who left, compared with {p1(fl['i']['rep'])}% of employees")
-quoted(f"racialized employees made up {p1(fl['v']['h'])}% of people hired and {p1(fl['v']['s'])}% of people who left")
-sal={r[0]:r for r in model['SGSAL']}
-quoted(f"{p1(sal['Black'][4])}% of Black employees earned $100,000 or more, compared with {p1(sal['All employees'][4])}% of all employees, and {p1(sal['Black'][2])}% were in the $50,000 to $74,999 band, compared with {p1(sal['All employees'][2])}%")
-inuit=next(r for r in model['SUBG']['i']['rows'] if r['name']=='Inuit');other=model['SUBG']['d']['rows'][0]
-quoted(f"There were {inuit['n']} Inuit employees in 2025, {p1(inuit['p'])}% of the workforce")
-quoted(f"({p1(other['trend'][3])}% to {p1(other['trend'][-1])}%)")
-e=model['EEG_DEPT']['Public Service'];yoy=model['YOY']['Public Service']
-quoted(f"{e['black']['Q24']}% of Black employees said they would feel safe speaking about racism without fear of reprisal, compared with {e['nonrac']['Q24']}% of non-racialized employees")
-quoted(f"({e['black']['Q65']}%, compared with {e['nonrac']['Q65']}%)")
-quoted(f"harassment ({e['pwd']['Q58']}%) and discrimination ({e['pwd']['Q65']}%), compared with {e['nopwd']['Q58']}% and {e['nopwd']['Q65']}%")
-quoted(f"rates of {e['ind']['Q58']}% and {e['ind']['Q65']}%, compared with {e['nonind']['Q58']}% and {e['nonind']['Q65']}%")
-quoted(f"({e['pwd']['Q45']}%, compared with {e['nopwd']['Q45']}% of employees without disabilities)")
-quoted(f"fell from {yoy['Q52']['a']}% in 2022 to {yoy['Q52']['b']}% in 2024")
-quoted(f"({yoy['Q24']['a']}% to {yoy['Q24']['b']}%) and agreeing that the department implements anti-racism initiatives ({yoy['Q49']['a']}% to {yoy['Q49']['b']}%)")
-quoted(f"feeling valued at work ({yoy['Q12']['a']}% to {yoy['Q12']['b']}%)")
-quoted(f"Black employees ({e['black']['Q52']}%) and racialized employees ({e['rac']['Q52']}%) were more likely than non-racialized employees ({e['nonrac']['Q52']}%)")
-quoted(f"Persons with disabilities ({e['pwd']['Q52']}%) and Indigenous employees ({e['ind']['Q52']}%) were less likely than their comparison groups ({e['nopwd']['Q52']}% and {e['nonind']['Q52']}%)")
-plans=model['plans']
-quoted(f"words for inclusion appear {sum(x['t'][2] for x in plans):,} times and words for diversity {sum(x['t'][3] for x in plans):,} times")
-assert all(x['t'][2] and x['t'][3] for x in plans)
-quoted(f"Words for anti-racism appear {sum(x['t'][0] for x in plans)} times, in {sum(1 for x in plans if x['t'][0])} of the {len(plans)} plans")
-fy=lambda y:y[:5]+y[-2:]
-last=max(y for y in psc['applicants'] if y in psc['appointments'])
-quoted(f"In {fy(last)}, they were {p1(psc['applicants'][last]['v'])}% of applicants and {p1(psc['appointments'][last]['v'])}% of appointments")
-both=[y for y in psc['appointments'] if y in psc['applicants']]
-assert all(psc['appointments'][y]['v']<psc['applicants'][y]['v'] for y in both)
-quoted(f'In every year from {fy(min(both))} to {fy(max(both))}, members of visible minorities made up a smaller share of appointments')
+comp=json.loads((ROOT/'data/call-to-action-comparisons.json').read_text())
+findings=json.loads(subprocess.run(['node','scripts/check-findings.js','--json'],cwd=ROOT,check=True,capture_output=True,text=True).stdout)
+assert len(findings)==12
+def h1(v):
+    return str(Decimal(str(v)).quantize(Decimal('0.1'),rounding=ROUND_HALF_UP))
+def p3(v):
+    return str(Decimal(str(v)).quantize(Decimal('0.001'),rounding=ROUND_HALF_UP))
+def sg(v):
+    t=h1(abs(v));return ('+' if v>0 else '−' if v<0 else '')+t
+def quoted(i,text):
+    f=findings[i];en=' '.join([f['t'][0],f['b'][0],f['e'][0]])
+    assert text in en,f'Call to Action finding {i+1} no longer matches the data: {text}'
+C={(c['feature'],c['outcome']):c for c in comp['comparisons']}
+rank={'strong':0,'moderate':1,'limited':2}
+assert [rank[f['level']] for f in findings]==sorted(rank[f['level']] for f in findings),'findings are not ordered from the strongest link to the weakest'
+assert all(f['src'][-1]=='comparisons' for f in findings)
+sc=comp['scan']
+assert f"Across {sc['comparisons']:,} comparisons of this kind, {sc['at_5_percent']} met the usual 5% threshold for a difference, while chance alone would produce about {sc['expected_by_chance']}," in ctajs
+assert '3,000 times' in comp['method'][3] and 'reshuffles 3,000 times which organizations reported the action' in ctajs
+rp,dc,gl=comp['reporting'],comp['documents'],comp['goals']
+quoted(0,f"Bias or anti-racism training was among the commitments in {rp['bias_training']['letters']} of the {dc['letters']} letters in 2021 and in the progress reported in {rp['bias_training']['self_assessments']} of the {dc['self_assessments']} self-assessments in 2024.")
+quoted(0,f"Of the {dc['both']} organizations that have both documents, {rp['bias_training']['both_documents']} described training in 2021 and {rp['bias_training']['both_documents_2024']} of them described it again in 2024.")
+quoted(0,f"Action plans or strategies went from {rp['plan']['letters']} letters to {rp['plan']['self_assessments']} self-assessments, and listening sessions from {rp['listening']['letters']} to {rp['listening']['self_assessments']}.")
+quoted(0,f"Sponsorship programs went the other way, from {rp['sponsorship']['letters']} letters to {rp['sponsorship']['self_assessments']} self-assessments, and data or dashboards from {rp['data']['letters']} to {rp['data']['self_assessments']}.")
+assert all(rp[k]['letters']>rp[k]['self_assessments'] for k in ['bias_training','plan','listening']) and all(rp[k]['letters']<rp[k]['self_assessments'] for k in ['sponsorship','data'])
+gi,gv,gd=gl['G_indigenous_recruitment_set'],gl['G_racialized_recruitment_set'],gl['disability_self_assessment_organizations']
+quoted(1,f"Of the {gi['organizations']} organizations that reported having set an Indigenous recruitment goal and have published figures, {gi['organizations']-gi['below_availability_2023']} were already at or above their Indigenous availability in 2023.")
+quoted(1,f"Of the {gv['organizations']} that reported having set a racialized recruitment goal, {gv['organizations']-gv['below_availability_2023']} were at or above their availability.")
+quoted(1,f"Persons with disabilities were below availability in {gd['below_availability_2023']} of the {gd['organizations']} organizations that completed a self-assessment")
+share=lambda k:gl[k]['below_availability_2023']/gl[k]['organizations']
+assert share('disability_self_assessment_organizations')>max(share('indigenous_self_assessment_organizations'),share('racialized_self_assessment_organizations'))
+assert all(set(o['self_assessment']['goals'])=={'indigenous_recruitment','black_recruitment','racialized_recruitment','indigenous_promotion','black_promotion','racialized_promotion','inclusion'} for o in orgs if o['self_assessment'])
+def moderate(c):
+    assert c['level']=='moderate' and c['holds_in_each_size_group'] and c['p']<0.05 and abs(c['adjusted_t'])>=2,f"no longer moderate: {c['feature']} {c['outcome']}"
+def limited(c):
+    assert c['level']=='limited' and not (c['p']<0.05 and c['holds_in_each_size_group']),f"no longer limited: {c['feature']} {c['outcome']}"
+c=C['E_bias_training','snps_rac_STA_14A'];moderate(c);b=c['bands']
+quoted(2,f"In the {c['n1']} organizations that reported bias or anti-racism training in their 2021 letter or 2024 self-assessment, {h1(c['mean1'])}% of racialized respondents")
+quoted(2,f"In the {c['n0']} organizations that did not report such training, the share was {h1(c['mean0'])}%.")
+assert b[0]['n0']<2 and b[1]['diff']<0 and b[2]['diff']<0
+quoted(2,f"The difference holds among organizations of 500 to 4,999 employees ({h1(-b[1]['diff'])} points) and of 5,000 or more ({h1(-b[2]['diff'])} points), passes the chance check (p = {p3(c['p'])})")
+c=C['E_self_id','chg_d'];moderate(c)
+quoted(3,f"In the {c['n1']} organizations that reported a self-identification campaign in 2021 or 2024, representation of persons with disabilities rose by {h1(c['mean1'])} points from 2021 to 2025, on average, compared with {h1(c['mean0'])} points in the {c['n0']} organizations that did not.")
+quoted(3,f"(p = {p3(c['p'])})")
+c=C['L_leadership_dev','yoy_Q52'];moderate(c)
+assert c['mean1']<0 and c['mean0']<0 and c['baseline1']>c['baseline0'] and c['adjusted']<0
+quoted(4,f"In the {c['n1']} organizations whose 2021 letters described leadership or talent development programs, the share of employees who said the Call to Action had a positive impact fell by {h1(-c['mean1'])} points from 2022 to 2024, on average. In the {c['n0']} organizations whose letters did not, it fell by {h1(-c['mean0'])} points. The first group started slightly higher in 2022 ({h1(c['baseline1'])}% compared with {h1(c['baseline0'])}%).")
+quoted(4,f"(p = {p3(c['p'])}) and, after accounting for size and 2022 levels, the drop is still {h1(-c['adjusted'])} points larger.")
+a,c=C['E_black','pses_Q52'],C['E_black','eeg_black_Q52'];moderate(a);limited(c)
+assert a['mean1']>a['mean0'] and c['mean1']<c['mean0'] and not c['holds_in_each_size_group'] and c['p']>=0.05
+quoted(5,f"In the {a['n1']} organizations whose letter or self-assessment named Black employees, {h1(a['mean1'])}% of employees said the Call to Action had a positive impact in 2024, on average, compared with {h1(a['mean0'])}% in the {a['n0']} organizations that did not.")
+quoted(5,f"Among Black employees, the shares were {h1(c['mean1'])}% and {h1(c['mean0'])}% ({c['n1']} and {c['n0']} organizations with published results for Black employees).")
+quoted(5,f"(p = {p3(a['p'])})")
+c=C['G_racialized_recruitment','gap_rac_Q45'];moderate(c)
+assert c['mean1']>0>c['mean0']
+quoted(6,f"In the {c['n1']} organizations whose 2024 self-assessment reported that a recruitment goal for racialized employees was set, the share of racialized employees who believe they have opportunities for promotion was {h1(c['mean1'])} points higher than among non-racialized employees")
+quoted(6,f"In the {c['n0']} organizations that had not set such a goal, it was {h1(-c['mean0'])} points lower.")
+quoted(6,f"(p = {p3(c['p'])})");quoted(6,f"Only {c['n0']} organizations had not set a racialized recruitment goal.")
+c=C['E_esr','pses_Q52'];moderate(c)
+quoted(7,f"In the {c['n1']} organizations that reported an employment systems review in 2021 or 2024, {h1(c['mean1'])}% of employees said the Call to Action had a positive impact in 2024, on average, compared with {h1(c['mean0'])}% in the {c['n0']} organizations that did not.")
+quoted(7,f"(p = {p3(c['p'])})")
+i,v,b=C['G_indigenous_recruitment','chg2325_i'],C['G_racialized_recruitment','chg2325_v'],C['G_black_recruitment','chg2325_b']
+for x in (i,v,b):limited(x);assert x['p']>=0.05
+quoted(8,f"Indigenous representation changed by {sg(i['mean1'])} points where a recruitment goal was set ({i['n1']} organizations) and by {sg(i['mean0'])} points where none was set ({i['n0']}).")
+quoted(8,f"For racialized employees the changes were {sg(v['mean1'])} and {sg(v['mean0'])} points ({v['n1']} and {v['n0']} organizations), and for Black employees {sg(b['mean1'])} and {sg(b['mean0'])} points ({b['n1']} and {b['n0']}).")
+quoted(8,f"only {i['n0']} of the organizations compared had not set an Indigenous recruitment goal.")
+v,h=C['L_targeted_recruitment','chg_v'],C['L_targeted_recruitment','psc_chg']
+for x in (v,h):limited(x);assert x['p']>=0.05
+assert h['n1']==h['n0'] and not h['holds_in_each_size_group']
+quoted(9,f"In the {v['n1']} organizations whose 2021 letters described targeted recruitment, inventories or outreach, racialized representation rose by {h1(v['mean1'])} points from 2021 to 2025, on average, compared with {h1(v['mean0'])} points in the {v['n0']} that did not.")
+quoted(9,f"rose by {h1(h['mean1'])} points in these organizations and by {h1(h['mean0'])} points in the others ({h['n1']} organizations in each group).")
+r,b=C['E_sponsorship','gap_rac_Q45'],C['E_sponsorship','gap_black_Q45']
+for x in (r,b):limited(x);assert x['p']>=0.05 and x['mean1']>0>x['mean0']
+assert not b['holds_in_each_size_group']
+quoted(10,f"In the {r['n1']} organizations that reported sponsorship programs in 2021 or 2024, the share of racialized employees who believe they have opportunities for promotion was {h1(r['mean1'])} points higher than among non-racialized employees, on average, compared with {h1(-r['mean0'])} points lower in the {r['n0']} organizations that did not.")
+quoted(10,f"For Black employees, the differences were {h1(b['mean1'])} points higher and {h1(-b['mean0'])} points lower ({b['n1']} and {b['n0']} organizations).")
+c=C['E_exec_accountability','pses_Q52'];limited(c)
+assert c['p']>=0.05 and c['bands'][0]['diff']>0 and all(x['diff']<=0 for x in c['bands'][1:])
+quoted(11,f"In the {c['n1']} organizations that reported equity commitments in executive performance agreements in 2021 or 2024, {h1(c['mean1'])}% of employees said the Call to Action had a positive impact in 2024, on average, compared with {h1(c['mean0'])}% in the {c['n0']} organizations that did not.")
 for cell in ['Black candidates</td><td class="num">10.3%','<td class="num">6.6%</td><td class="num below-mark">0.64</td>']:
     assert cell in explorer,f'audit figures changed in the data explorer: {cell}'
-for name in ['gc-workspace.js','gc-workspace.css','index.html','call-to-action.html','call-to-action.js','staffing.html','staffing.js','gc-tools.js','data/call-to-action-letters.json','data/tbs-departmental-representation-2017-2025.json','data/snps-2025-by-organization.json','data/psc/catalogue.json','data/psc/psc-equity.json']:
+for name in ['gc-workspace.js','gc-workspace.css','index.html','call-to-action.html','call-to-action.js','staffing.html','staffing.js','gc-tools.js','data/call-to-action-letters.json','data/call-to-action-comparisons.json','data/tbs-departmental-representation-2017-2025.json','data/snps-2025-by-organization.json','data/psc/catalogue.json','data/psc/psc-equity.json']:
     text=(ROOT/name).read_text()
     assert '—' not in text, f'em dash: {name}'
     assert not re.search(r'sk-[A-Za-z0-9]{20,}|Bearer\s+[A-Za-z0-9]',text),f'possible credential: {name}'
@@ -191,4 +176,4 @@ for name in ['gc-workspace.js','gc-workspace.css','index.html','call-to-action.h
         assert phrase not in text.lower(),f'internal wording: {name}'
 subprocess.run(['node','scripts/check-workspace.mjs'],cwd=ROOT,check=True)
 subprocess.run(['node','scripts/check-findings.js'],cwd=ROOT,check=True)
-print(f'PASS: seven pages, local assets, JavaScript, published-data checksums, {meta["totalRows"]:,} branch rows, {len(index["docs"])} search entries, {len(orgs)} Call to Action records with {len(re.findall(chr(10)+" {level:'",ctajs))} conclusions checked against the data, {len(pcat['files'])} Public Service Commission files, and snapshot provenance')
+print(f'PASS: seven pages, local assets, JavaScript, published-data checksums, {meta["totalRows"]:,} branch rows, {len(index["docs"])} search entries, {len(orgs)} Call to Action records with {len(findings)} findings checked against the data, {len(pcat['files'])} Public Service Commission files, and snapshot provenance')
