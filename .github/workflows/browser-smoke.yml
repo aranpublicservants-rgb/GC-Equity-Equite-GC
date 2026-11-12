@@ -63,37 +63,33 @@ jobs:
                 const overflow=p=>p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+2||innerWidth>document.documentElement.clientWidth+2);
                 fs.mkdirSync('qa-screenshots',{recursive:true});
 
-                // 1. Main page: four options and the chatbot box
+                // 1. Two clear data pathways, grouped resources and unobtrusive credit
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                const hrefs=await page.$$eval('.choices > li > a',as=>as.map(a=>new URL(a.href).pathname.replace(/^\//,'')+new URL(a.href).hash));
-                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','departmental-plans-2026-27/index.html','call-to-action.html']))throw Error('main options: '+hrefs);
-                if(await page.$eval('#collection .gcw-directory-card',items=>items.length)<15)throw Error('full public service resource directory missing');
-                if(!await page.$('#collection-accountability a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plan directory link missing');
-                if(!await page.$('#collection-accountability a[href*="call-to-action.html"]'))throw Error('Call to Action directory link missing');
+                const hrefs=await page.$$eval('.gcw-main-choices > a',as=>as.map(a=>new URL(a.href).pathname.replace(/^\\//,'')+new URL(a.href).hash));
+                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data']))throw Error('two main options: '+hrefs);
+                if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
+                if(!await page.$('#equity-data a[href*="call-to-action.html"]'))throw Error('Call to Action not grouped with public service equity');
+                if(await page.$$eval('main a[href]',as=>as.some(a=>/isc-racialized|isc-sac-equity|nadia-ferrara/i.test(a.href))))throw Error('ISC-specific or personal site leaked into public service directory');
+                if(await page.$$eval('main a[href]',as=>as.some(a=>a.protocol==='mailto:')))throw Error('contact link appears on GC Equity homepage');
                 if(!await page.$('#gcw-footer .gcw-credit a[href="https://aranpublicservants-rgb.github.io/aran-raar/"]'))throw Error('ARAN footer credit missing');
-                if(await page.$eval('#collection a[href]',as=>as.some(a=>/isc-racialized|isc-sac-equity|nadia-ferrara/i.test(a.href))))throw Error('ISC-specific or personal website incorrectly in public service collection');
-                if(await page.$$eval('#aiBox .gcai-bot',a=>a.length)!==4)throw Error('chatbot links missing');
-                if(await page.$$eval('#gcw-theme option',b=>b.length)!==3)throw Error('display choices missing on the main page');
+                if(await page.$$eval('#gcw-theme option',b=>b.length)!==3)throw Error('display choices missing');
                 await page.selectOption('#gcw-theme','contrast');
                 if(await page.evaluate(()=>document.documentElement.getAttribute('data-theme'))!=='contrast')throw Error('high contrast did not apply');
                 await page.selectOption('#gcw-theme','light');
-                await page.click('details.gcw-card > summary');
-                await page.fill('#aiBox textarea','How has representation changed since 2017?');
-                const [tab]=await Promise.all([ctx.waitForEvent('page'),page.click('#aiBox .gcai-bot[data-bot="chatgpt"]')]);
-                await page.waitForTimeout(800);await tab.close().catch(()=>{});
-                if(!outside.some(u=>u.startsWith('https://chatgpt.com/?q=How%20has%20representation')))throw Error('chatbot link did not carry the question: '+outside.join(' '));
-                if(await overflow(page))throw Error(mode.name+': main page scrolls sideways');
+                if(await overflow(page))throw Error(mode.name+': homepage scrolls sideways');
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-main.png',fullPage:true});
                 await page.click('#gcw-lang');
                 await page.waitForFunction(()=>document.documentElement.lang==='fr'&&new URL(document.getElementById('choice-groups').href).searchParams.get('lang')==='fr');
+                if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]')||!await page.$('#equity-data a[href*="call-to-action.html"]'))throw Error('French homepage links missing');
                 await page.click('#gcw-lang');
                 await page.close();
 
                 // Shared research tools use local data and retain their sources.
                 page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                await page.click('#gcw-header [data-gcw="guide"]');
+                await page.click('.gcw-tools-compact summary');
+                await page.click('.gcw-tools-compact [data-gcw="guide"]');
                 await page.fill('#gcw-guide-query','What is disability representation at ISC?');
                 await page.click('#gcw-guide-form button');
                 await page.waitForFunction(()=>document.getElementById('gcw-guide-answer').textContent.includes('-3.1 percentage points'));
@@ -102,12 +98,12 @@ jobs:
                 if(!/8.9 − 12.0/.test(await page.locator('#gcw-trace').innerText()))throw Error('source calculation missing');
                 await page.click('[data-gcw="close-trace"]');
                 await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.click('#gcw-header [data-gcw="basket"]');
+                await page.click('.gcw-tools-compact [data-gcw="basket"]');
                 if(!/Persons with disabilities/.test(await page.locator('#gcw-evidence-list').innerText()))throw Error('saved evidence missing');
                 const [briefing]=await Promise.all([page.waitForEvent('download'),page.click('[data-gcw="export-html"]')]);
                 if(!briefing.suggestedFilename().endsWith('.html'))throw Error('briefing export missing');
                 await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.click('[data-gcw="changes"]');
+                await page.click('.gcw-tools-compact [data-gcw="changes"]');
                 await page.selectOption('#gcw-change-from','2017');
                 if(!/8.8 percentage points/.test(await page.locator('#gcw-change-result').innerText()))throw Error('year comparison failed');
                 await page.click('#gcw-dialog [data-gcw="close"]');
