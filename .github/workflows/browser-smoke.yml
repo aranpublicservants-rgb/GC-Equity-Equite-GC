@@ -66,7 +66,7 @@ jobs:
                 // 1. Two clear data pathways, grouped resources and unobtrusive credit
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                const hrefs=await page.$$eval('.gcw-main-choices > a',as=>as.map(a=>new URL(a.href).pathname.replace(/^\\//,'')+new URL(a.href).hash));
+                const hrefs=await page.$$eval('.gcw-main-choices > a',as=>as.map(a=>new URL(a.href).pathname.slice(1)+new URL(a.href).hash));
                 if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data']))throw Error('two main options: '+hrefs);
                 if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
                 if(!await page.$('#equity-data a[href*="call-to-action.html"]'))throw Error('Call to Action not grouped with public service equity');
