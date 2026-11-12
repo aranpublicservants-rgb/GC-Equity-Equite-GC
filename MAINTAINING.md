@@ -4,6 +4,9 @@ This file describes the site as it is now. It is kept in the repository and is n
 
 ## Pages
 
+- `organizations.html` / `organizations.js`: bilingual searchable catalogue based on the official Canada.ca directory, updated October 15, 2026 (215 entries in `assets/federal-organizations-2026-10-15.json`). It overlays published source coverage from the Treasury Board core-public-administration tables, 2024 Public Service Employee Survey, Call to Action responses, 2025 Staffing and Non-Partisanship Survey and 2026–27 departmental plans. These source populations are not interchangeable. CSE is included in the official directory and 2024 survey, and its separate 2025–26 annual-report employment-equity figures are identified as a different reporting series. Do not manufacture missing core-public-administration data for CSE or other separate entities.
+- Public-service-wide related sites are cross-linked via original `github.io` addresses. Links to ISC-only and Nadia Ferrara sites are excluded from GC Equity navigation. ARAN is placed below research links.
+
 - `index.html`: the main page, with four options (department or agency data, data for equity groups across the public service, presentations and briefing notes, and the Call to Action page) and the AI chatbot box.
 - `explorer.html`: the data pages, opened from the main page (`#departments`, `#data`, `#bhome`) and the guide and source pages. Opening `explorer.html` without a section returns visitors to the main page.
 - `sources.html`: the list of 157 source files, showing which data files can be downloaded from the site. Public Service Commission files link to the copies in `data/psc/`, and the Staffing and Non-Partisanship Survey files link to their official source.
