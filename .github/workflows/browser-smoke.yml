@@ -67,7 +67,12 @@ jobs:
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
                 const hrefs=await page.$$eval('.choices > li > a',as=>as.map(a=>new URL(a.href).pathname.replace(/^\//,'')+new URL(a.href).hash));
-                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','explorer.html#bhome','call-to-action.html']))throw Error('main options: '+hrefs);
+                if(JSON.stringify(hrefs)!==JSON.stringify(['explorer.html#departments','explorer.html#data','departmental-plans-2026-27/index.html','call-to-action.html']))throw Error('main options: '+hrefs);
+                if(await page.$eval('#collection .gcw-directory-card',items=>items.length)<15)throw Error('full public service resource directory missing');
+                if(!await page.$('#collection-accountability a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plan directory link missing');
+                if(!await page.$('#collection-accountability a[href*="call-to-action.html"]'))throw Error('Call to Action directory link missing');
+                if(!await page.$('#gcw-footer .gcw-credit a[href="https://aranpublicservants-rgb.github.io/aran-raar/"]'))throw Error('ARAN footer credit missing');
+                if(await page.$eval('#collection a[href]',as=>as.some(a=>/isc-racialized|isc-sac-equity|nadia-ferrara/i.test(a.href))))throw Error('ISC-specific or personal website incorrectly in public service collection');
                 if(await page.$$eval('#aiBox .gcai-bot',a=>a.length)!==4)throw Error('chatbot links missing');
                 if(await page.$$eval('#gcw-theme option',b=>b.length)!==3)throw Error('display choices missing on the main page');
                 await page.selectOption('#gcw-theme','contrast');
