@@ -132,7 +132,7 @@ async function init(){
   $('q').addEventListener('input',render);$('category').addEventListener('change',render);$('download').addEventListener('click',csv);
   $('filters').addEventListener('submit',e=>e.preventDefault());
   $('lang').addEventListener('click',()=>{lang=lang==='fr'?'en':'fr';renderLang();});
-  if(urlQ){let r=byKey.get(getKey(urlQ));if(r)detail(r);}
+  if(urlQ){let r=byKey.get(getKey(urlQ));if(!r&&['cse','cstc'].includes(getKey(urlQ)))r=byKey.get(getKey('Communications Security Establishment Canada'));if(r)detail(r);}
  }catch(err){$('count').textContent=(lang==='fr'?'Impossible de charger les fichiers du répertoire. ':'Could not load the directory files. ')+err.message;}
 }
 init();
