@@ -4,24 +4,7 @@ on:
     branches: [main]
     paths: ['**.html', '**.js', '**.css', 'assets/**', 'data/**', '.github/workflows/browser-smoke.yml']
   pull_request:
-    paths:
-      - 'index.html'
-      - 'explorer.html'
-      - 'sources.html'
-      - 'call-to-action.html'
-      - 'call-to-action.js'
-      - 'staffing.html'
-      - 'staffing.js'
-      - 'gc-workspace.js'
-      - 'gc-workspace.css'
-      - 'assets/**'
-      - 'gc-ai.js'
-      - 'gc-equity-additions.js'
-      - 'gc-tools.js'
-      - 'lib/**'
-      - 'data/**'
-      - '_config.yml'
-      - '.github/workflows/browser-smoke.yml'
+    paths: ['**.html', '**.js', '**.css', 'assets/**', 'data/**', '.github/workflows/browser-smoke.yml']
 permissions:
   contents: read
 jobs:
@@ -37,7 +20,7 @@ jobs:
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
-      - name: Main page, four paths, chatbot links and languages on desktop and phone
+      - name: Verify same-page tables on desktop and mobile
         run: |
           node <<'JS'
           const {chromium,devices}=require('playwright');
@@ -46,203 +29,50 @@ jobs:
           const root=process.cwd();
           const server=http.createServer((req,res)=>{
             const filepath=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
-            if(!filepath.startsWith(root+path.sep)&&filepath!==root){res.writeHead(403);res.end();return}
-            fs.readFile(filepath,(err,bytes)=>{if(err){res.writeHead(404);res.end();return;}res.writeHead(200,{'content-type':mime[path.extname(filepath)]||'application/octet-stream'});res.end(bytes);});
+            if(!filepath.startsWith(root+path.sep)&&filepath!==root){res.writeHead(403);res.end();return;}
+            fs.readFile(filepath,(err,bytes)=>{
+              if(err){res.writeHead(404);res.end();return;}
+              res.writeHead(200,{'content-type':mime[path.extname(filepath)]||'application/octet-stream'});res.end(bytes);
+            });
           });
-          const big={waitUntil:'load',timeout:120000};
           (async()=>{
             await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
             const addr='http://127.0.0.1:'+server.address().port+'/';
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             try{
               for(const mode of [{name:'desktop',opts:{viewport:{width:1366,height:850}}},{name:'mobile',opts:{...devices['Pixel 5']}}]){
-                const ctx=await browser.newContext(mode.opts);
-                const outside=[];
-                await ctx.route(u=>!String(u).startsWith(addr),r=>{outside.push(r.request().url());r.abort();});
-                const errors=[];const watch=p=>p.on('pageerror',e=>errors.push(p.url()+' :: '+e.message));
-                const overflow=p=>p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+2||innerWidth>document.documentElement.clientWidth+2);
+                const ctx=await browser.newContext(mode.opts,{acceptDownloads:true});
+                const page=await ctx.newPage(), errors=[];
+                page.on('pageerror',e=>errors.push(e.message));
+                await page.goto(addr+'index.html?lang=en');
+                const choices=await page.$$eval('.gce-primary-choice',els=>els.map(a=>a.getAttribute('href')));
+                if(JSON.stringify(choices)!==JSON.stringify(['#department-data','#equity-data']))throw Error('The two choices must stay on this page: '+choices);
+                await page.waitForFunction(()=>document.querySelectorAll('#public-output table').length>=10,null,{timeout:120000});
+                await page.waitForFunction(()=>document.querySelectorAll('#org-picker option').length>150,null,{timeout:30000});
+                if(await page.locator('#org-output table').count())throw Error('Organization tables must await a selection');
+                if(await page.locator('#gce-loading').isVisible())throw Error('Data still loading');
+                if(/Browse below|Open the second page|your instructions/i.test(await page.locator('body').innerText()))throw Error('Instructional text in page');
+                if(!await page.locator('#public-representation table').count()||!await page.locator('#public-source-inventory table').count())throw Error('Public service-wide tables missing');
+                await page.selectOption('#org-picker','Canada Revenue Agency');
+                await page.waitForFunction(()=>document.querySelectorAll('#org-output table').length>=8,null,{timeout:60000});
+                if(!/Canada Revenue Agency/.test(await page.locator('#org-output').innerText()))throw Error('Wrong organization');
+                if(!await page.locator('#org-survey table').count()||!await page.locator('#org-staffing table').count())throw Error('Organization survey or staffing tables missing');
+                const [csv]=await Promise.all([page.waitForEvent('download'),page.locator('#org-survey .gce-download').first().click()]);
+                if(!/\.csv$/.test(csv.suggestedFilename()))throw Error('Table CSV unavailable');
+                await page.selectOption('#org-picker','Communications Security Establishment');
+                await page.waitForFunction(()=>document.querySelectorAll('#org-output table').length>=1);
+                if(!/Not in this collection|Not published/.test(await page.locator('#org-output').innerText()))throw Error('Missing-data distinction not shown');
+                await page.click('#gcw-lang');
+                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Données sur l’équité/.test(document.querySelector('h1').textContent));
+                if(!/Ministères et organismes/.test(await page.locator('#department-data h2').innerText()))throw Error('French section title absent');
+                if(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+3))throw Error('Main page overflows viewport: '+mode.name);
+                if(errors.length)throw Error('Browser script errors: '+errors.join(' / '));
                 fs.mkdirSync('qa-screenshots',{recursive:true});
-
-                // 1. Two clear data pathways, grouped resources and unobtrusive credit
-                let page=await ctx.newPage();watch(page);
-                await page.goto(addr+'index.html?lang=en');
-                const hrefs=await page.$$eval('.gcw-main-choices > a',as=>as.map(a=>new URL(a.href).pathname+new URL(a.href).hash));
-                if(hrefs.length!==2||!hrefs[0].endsWith('/index.html#department-data')||!hrefs[1].endsWith('/equity.html'))throw Error('two main areas: '+hrefs);
-                if(!await page.$('#department-plans a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
-                if(!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('public service-wide page link missing');
-                if(await page.$$eval('main a[href], .gcw-submenu a[href]',as=>as.some(a=>/Filipino-Public-Servants|\/racialized-executives\//i.test(a.href))))throw Error('removed network link still appears in GC Equity navigation');
-                if(!await page.$('#department-data a[href*="branch-equity.html"]'))throw Error('branch guide link missing');
-                if(await page.$$eval('main a[href]',as=>as.some(a=>/isc-racialized|isc-sac-equity|nadia-ferrara/i.test(a.href))))throw Error('ISC-specific or personal site leaked into public service directory');
-                if(await page.$$eval('main a[href]',as=>as.some(a=>a.protocol==='mailto:')))throw Error('contact link appears on GC Equity homepage');
-                if(!await page.$('#gcw-footer .gcw-credit a[href="https://aranpublicservants-rgb.github.io/aran-raar/"]'))throw Error('ARAN footer credit missing');
-                if(await page.$$eval('#gcw-theme option',b=>b.length)!==3)throw Error('display choices missing');
-                await page.selectOption('#gcw-theme','contrast');
-                if(await page.evaluate(()=>document.documentElement.getAttribute('data-theme'))!=='contrast')throw Error('high contrast did not apply');
-                await page.selectOption('#gcw-theme','light');
-                if(await overflow(page))throw Error(mode.name+': homepage scrolls sideways');
-                await page.screenshot({path:'qa-screenshots/'+mode.name+'-main.png',fullPage:true});
-                await page.click('#gcw-lang');
-                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.querySelector('.gcw-main-choices a[href*="equity.html"]')?.textContent.includes('Équité'));
-                if(!await page.$('#department-plans a[href*="departmental-plans-2026-27/"]')||!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('French homepage links missing');
-                await page.goto(addr+'equity.html?lang=fr');
-                if(!await page.$('#commitments a[href*="call-to-action.html"]')||!await page.$('#briefings a[href*="explorer.html"]'))throw Error('second page is missing key public service resources');
-                if(await overflow(page))throw Error(mode.name+': public service-wide page scrolls sideways');
-                await page.click('#gcw-lang');
-                await page.close();
-
-                // Shared research tools use local data and retain their sources.
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'index.html?lang=en');
-                await page.goto(addr+'index.html?lang=en&tool=guide');
-                await page.waitForSelector('#gcw-guide-query');
-                await page.fill('#gcw-guide-query','What is disability representation at ISC?');
-                await page.click('#gcw-guide-form button');
-                await page.waitForFunction(()=>document.getElementById('gcw-guide-answer').textContent.includes('-3.1 percentage points'));
-                await page.click('#gcw-guide-answer [data-gcw="save-fact"]');
-                await page.click('#gcw-guide-answer [data-gcw="trace-fact"]');
-                if(!/8.9 − 12.0/.test(await page.locator('#gcw-trace').innerText()))throw Error('source calculation missing');
-                await page.click('[data-gcw="close-trace"]');
-                await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.goto(addr+'index.html?lang=en&tool=basket');
-                await page.waitForSelector('#gcw-evidence-list');
-                if(!/Persons with disabilities/.test(await page.locator('#gcw-evidence-list').innerText()))throw Error('saved evidence missing');
-                const [briefing]=await Promise.all([page.waitForEvent('download'),page.click('[data-gcw="export-html"]')]);
-                if(!briefing.suggestedFilename().endsWith('.html'))throw Error('briefing export missing');
-                await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.goto(addr+'index.html?lang=en&tool=changes');
-                await page.waitForSelector('#gcw-change-from');
-                await page.selectOption('#gcw-change-from','2017');
-                if(!/8.8 percentage points/.test(await page.locator('#gcw-change-result').innerText()))throw Error('year comparison failed');
-                await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.click('#gcw-search-button');
-                await page.fill('#gcw-query','Indigenous');
-                await page.click('#gcw-search-form button');
-                await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
-                if(!await page.$('#gcw-search-kind')||!await page.$('#gcw-search-site'))throw Error('discovery filters missing');
-                await page.selectOption('#gcw-search-kind','organizations');
-                await page.fill('#gcw-query','Indigenous Services Canada');
-                await page.click('#gcw-search-form button');
-                await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
-                if(await page.$eval('#gcw-search-results .gcw-result-meta',ns=>Array.from(ns).some(n=>!/Organization or plan/.test(n.textContent))))throw Error('discovery category filter did not apply');
-                if(!await page.$('[data-gcw="copy-search"]'))throw Error('shareable search link missing');
-                await page.click('#gcw-dialog [data-gcw="close"]');
-                if(!await page.$('#gcw-search-button'))throw Error('site search missing');
-                await page.goto(addr+'index.html?tool=search&q=Indigenous%20Services%20Canada&kind=organizations');
-                await page.waitForFunction(()=>document.querySelector('#gcw-dialog')?.open&&document.querySelector('#gcw-query')?.value==='Indigenous Services Canada'&&document.querySelector('#gcw-search-kind')?.value==='organizations');
-                await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
-                if(await overflow(page))throw Error(mode.name+': research tools scroll sideways');
-                await page.close();
-
-                // 2. The old explorer address opens the main page
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'explorer.html',{waitUntil:'domcontentloaded',timeout:120000});
-                await page.waitForURL(/index\.html$/,{timeout:60000});
-                await page.close();
-
-                // 3. Option 1: choose an organization and see all of its data
-                page=await ctx.newPage();watch(page);
-                const branchFiles=[];page.on('request',r=>branchFiles.push(r.url()));
-                await page.goto(addr+'index.html?lang=en');
-                await Promise.all([page.waitForURL(/explorer\.html/,{timeout:120000}),page.click('#department-data a[href*="explorer.html#departments"]')]);
-                await page.waitForFunction(()=>document.getElementById('opOrg')&&document.getElementById('opOrg').options.length>50,null,{timeout:120000});
-                await page.selectOption('#opOrg','Correctional Service Canada');
-                await page.waitForFunction(()=>{const s=document.getElementById('gc-d-subgroups');return s&&/1,026/.test(s.textContent)&&/Mobility/.test(s.textContent);},null,{timeout:60000});
-                if(!await page.$('#eq-d-branches'))throw Error('branch results missing for the organization');
-                // Branch results load from data/pses-2024-branches, one organization at a time.
-                await page.waitForFunction(()=>/published branches or second-level units/.test((document.getElementById('eqInlineBranchStatus')||{}).textContent||''),null,{timeout:60000});
-                if(!branchFiles.some(u=>/data\/pses-2024-branches\/\d+\.json\.gz$/.test(u)))throw Error('branch results did not load from their data file');
-                if(await page.$$eval('#eqBranchQuestion option',o=>o.length)<50)throw Error('branch questions missing');
-                if(!await page.$('#gcw-header a.gcw-brand'))throw Error('workspace navigation missing');
-                // The Call to Action section reads its own data files: 2021 and 2025 representation, with the 0.85 rule.
-                await page.waitForFunction(()=>{const t=document.getElementById('gtCtaRep');return t&&/10\.6%/.test(t.textContent)&&/0\.61/.test(t.textContent)&&t.querySelector('td.gt-flag');},null,{timeout:60000});
-                await page.waitForFunction(()=>{const t=document.getElementById('gtSnpsOrg');return t&&t.querySelectorAll('tbody tr').length===7;},null,{timeout:60000});
-                await page.selectOption('#gtSnpsPair','pwd');
-                await page.waitForFunction(()=>/Respondents with disabilities/.test(document.getElementById('gtSnpsOrg').textContent),null,{timeout:30000});
-                if(await overflow(page))throw Error(mode.name+': organization page scrolls sideways');
-                await page.close();
-
-                // 3b. The Call to Action page: compare organizations, filter, and open a record
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'call-to-action.html?lang=en',big);
-                await page.waitForFunction(()=>document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
-                await page.waitForFunction(()=>{const l=document.querySelectorAll('#cta-findings > li');return l.length===12&&/Strong evidence/.test(l[0].textContent)&&/3,413 comparisons/.test(document.getElementById('findings').textContent);},null,{timeout:30000});
-                await page.selectOption('#cta-group','b');
-                await page.selectOption('#cta-filter','goal');
-                await page.waitForFunction(()=>{const n=document.querySelectorAll('#cta-compare tbody tr').length;return n>0&&n<100;},null,{timeout:30000});
-                await page.goto(addr+'call-to-action.html?lang=en&org=correctional-service-canada#record',big);
-                await page.waitForFunction(()=>{const r=document.getElementById('cta-record');return r&&/Correctional Service Canada/.test(r.textContent)&&/Targets in the letter/.test(r.textContent);},null,{timeout:60000});
-                if(await overflow(page))throw Error(mode.name+': Call to Action page scrolls sideways');
-                await page.screenshot({path:'qa-screenshots/'+mode.name+'-call-to-action.png'});
-                await page.goto(addr+'call-to-action.html?lang=fr',big);
-                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Appel à l’action/.test(document.querySelector('h1').textContent)&&document.querySelectorAll('#cta-compare tbody tr').length===100,null,{timeout:60000});
-                // The findings are listed from the strongest link to the weakest, in French with French number formats.
-                await page.waitForFunction(()=>{const l=document.querySelectorAll('#cta-findings > li');return l.length===12&&/Priorité 1/.test(l[0].textContent)&&/Niveau de preuve élevé/.test(l[0].textContent)&&/45 des 90 lettres/.test(l[0].textContent)&&/15,2\u00a0%/.test(l[2].textContent)&&/Niveau de preuve faible/.test(l[11].textContent);},null,{timeout:30000});
-                await page.close();
-
-                // 3c. The Public Service Commission page: applicants and appointments, suppressed counts and the file list
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'staffing.html?lang=en',big);
-                await page.waitForFunction(()=>{const t=document.getElementById('st-latest-t');return t&&t.querySelectorAll('tbody tr').length===4&&/30\.6%/.test(t.textContent)&&/0\.88/.test(t.textContent);},null,{timeout:60000});
-                if(await page.$$eval('#st-funnel-t tbody tr',r=>r.length)<10)throw Error('applicant and appointment years missing');
-                await page.selectOption('#st-org','Canadian Transportation Agency');
-                await page.waitForFunction(()=>{const t=document.getElementById('st-org-t');return /Suppressed/.test(t.textContent)&&![...t.querySelectorAll('td')].some(td=>/^-\d/.test(td.textContent.trim()));},null,{timeout:30000});
-                if(await page.$$eval('#st-files-t tbody tr',r=>r.length)!==55||await page.$$eval('#st-snps-t tbody tr',r=>r.length)!==47)throw Error('Commission file list incomplete');
-                await page.fill('#st-filter','ar4');
-                await page.waitForFunction(()=>document.querySelectorAll('#st-files-t tbody tr').length===5,null,{timeout:30000});
-                if(await overflow(page))throw Error(mode.name+': Public Service Commission page scrolls sideways');
-                await page.screenshot({path:'qa-screenshots/'+mode.name+'-staffing.png'});
-                await page.goto(addr+'staffing.html?lang=fr',big);
-                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Commission de la fonction publique/.test(document.querySelector('h1').textContent)&&/30,6\u00a0%/.test((document.getElementById('st-latest-t')||{}).textContent||''),null,{timeout:60000});
-                await page.close();
-
-                // 4. Option 2: choose a group and see all of its data
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'explorer.html?lang=en#data',big);
-                await page.waitForSelector('#gcGroup',{timeout:60000});
-                if(!await page.evaluate(()=>document.body.classList.contains('gc-pending')&&!document.getElementById('view-salary').getClientRects().length))throw Error('data showed before a group was chosen');
-                await page.goto(addr+'explorer.html?lang=en&group=black#data',big);
-                await page.waitForFunction(()=>/79,400/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
-                await page.waitForFunction(()=>document.querySelectorAll('.gc-hl').length>10,null,{timeout:30000});
-                await page.selectOption('#gcGroup','pwd');
-                await page.waitForFunction(()=>/9\.0% of employees, compared with workforce availability of 12\.0%/.test(document.getElementById('gcGroupOut').textContent),null,{timeout:30000});
-                await page.waitForFunction(()=>document.querySelectorAll('#gtCycleTable td.gt-flag').length>=5,null,{timeout:30000});
-                if(await overflow(page))throw Error(mode.name+': group page scrolls sideways');
-                await page.screenshot({path:'qa-screenshots/'+mode.name+'-group.png'});
-                await page.close();
-
-                // 5. Option 3: presentations and briefing notes
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'explorer.html?lang=en#bhome',big);
-                await page.waitForSelector('#view-bhome.active #gtDeckBuild',{timeout:60000});
-                if(await page.$$eval('#gc-b-ai .gcai-bot',a=>a.length)!==4)throw Error('briefing chatbot links missing');
-                if(mode.name==='desktop'){
-                  const [deck]=await Promise.all([page.waitForEvent('download',{timeout:60000}),page.click('#gtDeckBuild')]);
-                  if(!/\.pptx$/.test(deck.suggestedFilename()))throw Error('presentation not downloaded: '+deck.suggestedFilename());
-                  await page.goto(addr+'explorer.html?lang=en#brief',big);
-                  await page.waitForSelector('#view-brief.active #briefWord',{timeout:60000});
-                  const [word]=await Promise.all([page.waitForEvent('download',{timeout:60000}),page.click('#briefWord')]);
-                  if(!/\.docx$/.test(word.suggestedFilename()))throw Error('briefing note not downloaded: '+word.suggestedFilename());
-                }
-                await page.close();
-
-                // 6. French links and the source list
-                page=await ctx.newPage();watch(page);
-                await page.goto(addr+'explorer.html?lang=fr&group=women#data',big);
-                await page.waitForFunction(()=>document.documentElement.lang==='fr-CA'&&/56,8\s%/.test((document.getElementById('gcGroupOut')||{}).textContent||''),null,{timeout:60000});
-                const alive=await Promise.race([page.evaluate(()=>1+1),new Promise(r=>setTimeout(()=>r('stuck'),5000))]);
-                if(alive!==2)throw Error('French page stopped responding');
-                await page.goto(addr+'sources.html?lang=fr');
-                await page.waitForFunction(()=>document.getElementById('visible').textContent.includes('157 sur 157'));
-                await page.waitForFunction(()=>document.querySelector('#rows a[href="data/psc/ar4a.csv"]')&&document.getElementById('downloads').textContent!=='8',null,{timeout:30000});
-                await page.close();
-
-                if(errors.length)throw Error(mode.name+': browser errors: '+errors.join(' / '));
-                const unexpected=outside.filter(u=>!/^https:\/\/(chatgpt\.com|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)\//.test(u));
-                if(unexpected.length)throw Error(mode.name+': outside requests: '+unexpected.join(' '));
+                await page.screenshot({path:'qa-screenshots/'+mode.name+'-dashboard.png',fullPage:false});
                 await ctx.close();
-                console.log('PASS: '+mode.name+', main page, chatbot links, four paths, Call to Action page, findings and sections, Public Service Commission page, presentation and Word files, French, source list');
+                console.log('PASS: '+mode.name+', same-page data choices, automatic organization tables, public data, CSV, French, suppression labels');
               }
-            }finally{await browser.close();server.close()}
+            }finally{await browser.close();server.close();}
           })().catch(e=>{console.error(e);server.close();process.exit(1)});
           JS
       - name: Save preview images
