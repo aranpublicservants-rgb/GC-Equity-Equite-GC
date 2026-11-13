@@ -68,7 +68,7 @@ jobs:
                 await page.goto(addr+'index.html?lang=en');
                 const hrefs=await page.$$eval('.gcw-main-choices > a',as=>as.map(a=>new URL(a.href).pathname+new URL(a.href).hash));
                 if(hrefs.length!==2||!hrefs[0].endsWith('/index.html#department-data')||!hrefs[1].endsWith('/equity.html'))throw Error('two main areas: '+hrefs);
-                if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
+                if(!await page.$('#department-plans a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
                 if(!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('public service-wide page link missing');
                 if(await page.$$eval('main a[href], .gcw-submenu a[href]',as=>as.some(a=>/Filipino-Public-Servants|\/racialized-executives\//i.test(a.href))))throw Error('removed network link still appears in GC Equity navigation');
                 if(!await page.$('#department-data a[href*="branch-equity.html"]'))throw Error('branch guide link missing');
@@ -83,7 +83,7 @@ jobs:
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-main.png',fullPage:true});
                 await page.click('#gcw-lang');
                 await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.querySelector('.gcw-main-choices a[href*="equity.html"]')?.textContent.includes('Équité'));
-                if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]')||!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('French homepage links missing');
+                if(!await page.$('#department-plans a[href*="departmental-plans-2026-27/"]')||!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('French homepage links missing');
                 await page.goto(addr+'equity.html?lang=fr');
                 if(!await page.$('#commitments a[href*="call-to-action.html"]')||!await page.$('#briefings a[href*="explorer.html#bhome"]'))throw Error('second page is missing key public service resources');
                 if(await overflow(page))throw Error(mode.name+': public service-wide page scrolls sideways');
