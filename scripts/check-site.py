@@ -57,7 +57,7 @@ explorer=(ROOT/'explorer.html').read_text()
 meta=json.loads(re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',explorer,re.S)[1])
 probe_dept=meta['departments'][0]
 probe_rows=json.loads(gzip.decompress((ROOT/f'data/pses-2024-branches/{probe_dept["id"]}.json.gz').read_bytes()))
-print('BRANCH_METADATA_DIAGNOSTIC:'+json.dumps({'department':probe_dept,'question':meta['questions'][:2],'metadata_keys':list(meta),'row_type':type(probe_rows[0]).__name__,'sample_row':probe_rows[0]},ensure_ascii=False)[:4500],flush=True)
+print('BRANCH_SCHEMA_DIAGNOSTIC:'+json.dumps({'schema':meta['schema'],'demographics':meta['demographics'][:5],'notes':meta['notes'][:2],'sample_row':probe_rows[0],'first_branch':probe_dept['branches'][0]},ensure_ascii=False)[:6000],flush=True)
 assert sum(len(json.loads(gzip.decompress((ROOT/f'data/pses-2024-branches/{d["id"]}.json.gz').read_bytes()))) for d in meta['departments'])==meta['totalRows']
 model=json.loads((ROOT/'assets/workspace-data.json').read_text())
 with (ROOT/'data/october-2026/TBS_EE_representation_with_WFA_2017-2025.csv').open(newline='') as f:assert list(csv.DictReader(f))==model['rep']
