@@ -331,8 +331,8 @@ function publicTables(){
  out+=sCard('public-representation',L('Representation in the core public administration, 2017–2025','Représentation dans l’administration publique centrale, 2017-2025'),
  L('Employee counts and shares are published for each year. The four groups can overlap; do not add their counts together.','Les effectifs et les parts sont publiés pour chaque année. Les quatre groupes peuvent se chevaucher : leurs nombres ne doivent pas être additionnés.'),
  table(L('Representation by year: Treasury Board','Représentation selon l’année : Conseil du Trésor'),
- [L('Date','Date'),L('All employees','Tout l’effectif'),L('Women (%)','Femmes (%)'),L('Indigenous (%)','Autochtones (%)'),L('Disability (%)','Handicap (%)'),L('Racialized (%)','Racisés (%)')],
- rep.map(r=>[r.period_or_benchmark,N(r.all_employees_number),P(r.women_pct),P(r.indigenous_peoples_pct),P(r.persons_with_disabilities_pct),P(r.members_of_visible_minorities_pct)]),'public-workforce-trends'),
+ [L('Date','Date'),L('All employees','Tout l’effectif'),L('Women (number)','Femmes (nombre)'),L('Women (%)','Femmes (%)'),L('Indigenous (number)','Autochtones (nombre)'),L('Indigenous (%)','Autochtones (%)'),L('Disability (number)','Handicap (nombre)'),L('Disability (%)','Handicap (%)'),L('Racialized (number)','Racisés (nombre)'),L('Racialized (%)','Racisés (%)')],
+ rep.map(r=>[r.period_or_benchmark,N(r.all_employees_number),N(r.women_number),P(r.women_pct),N(r.indigenous_peoples_number),P(r.indigenous_peoples_pct),N(r.persons_with_disabilities_number),P(r.persons_with_disabilities_pct),N(r.members_of_visible_minorities_number),P(r.members_of_visible_minorities_pct)]),'public-workforce-trends'),
  L('Treasury Board Secretariat, employment equity annual statistics','Secrétariat du Conseil du Trésor, statistiques annuelles sur l’équité'),source.tbs);
  // Executive data by level 2025.
  const ex=m.executives.filter(r=>r.as_of_march_31==='2025'&&/^EX \d\d|^Overall EX/.test(r.level));
@@ -342,6 +342,19 @@ function publicTables(){
  [L('Executive level','Niveau de direction'),L('All executives','Tous les cadres'),L('Women (%)','Femmes (%)'),L('Indigenous (%)','Autochtones (%)'),L('Disability (%)','Handicap (%)'),L('Racialized (%)','Racisés (%)')],
  ex.map(r=>[r.level,N(r.executive_employees),P(r.women_pct),P(r.indigenous_peoples_pct),P(r.persons_with_disabilities_pct),P(r.members_of_visible_minorities_pct)]),'public-executive-2025'),
  L('Treasury Board Secretariat','Secrétariat du Conseil du Trésor'),source.tbs);
+
+ // Detailed group subgroups and overlapping identities from the published workforce dataset.
+ for(const g of [['i','Indigenous subgroups','Sous-groupes autochtones'],['v','Racialized subgroups','Sous-groupes racisés'],['d','Disability subgroups','Sous-groupes de handicap'],['w','Women and intersecting identities','Femmes et identités croisées']]){
+  const item=m.SUBG[g[0]];
+  if(!item?.rows?.length)continue;
+  const rows=item.rows.map(x=>[x.name,x.n===null?missing():N(x.n),P(x.p),x.ex===null?missing():P(x.ex)]);
+  out+=sCard('public-subgroups-'+g[0],L(g[1],g[2])+' · 2025',
+   L('Shares and counts are reproduced as published. Categories may overlap, be incomplete or have unavailable values; do not sum them to reconstruct group totals.','Les parts et les nombres sont reproduits tels que publiés. Les catégories peuvent se chevaucher, être incomplètes ou comporter des données manquantes. Ne les additionnez pas pour reconstituer des totaux.')+(item.note?' '+item.note:''),
+   table(L('Subgroup representation, 2025: ','Représentation des sous-groupes, 2025 : ')+L(g[1],g[2]),
+   [L('Published subgroup','Sous-groupe publié'),L('Employees (count)','Employés (nombre)'),L('Share of workforce or group (%)','Part de l’effectif ou du groupe (%)'),L('Executive representation (%)','Représentation des cadres (%)')],rows,'public-subgroups-'+g[0]),
+   L('Treasury Board Secretariat, employment equity data','Secrétariat du Conseil du Trésor, données sur l’équité'),source.tbs);
+ }
+
  // Employee surveys overall across equity groups 2024.
  const qs=Object.keys(m.PSES_QMETA),qmeta=m.PSES_QMETA,by=m.EEG_DEPT['Public Service']||{},all=m.PSES_DEPT['Public Service']||{};
  out+=sCard('public-survey',L('2024 Public Service Employee Survey by employee group','Sondage auprès des fonctionnaires de 2024 selon le groupe'),
@@ -359,7 +372,7 @@ function publicTables(){
  Object.keys(yoy).map(q=>[q+' · '+(lang()?m.EEG_QMETA_FR[q]||qmeta[q]?.[1]:qmeta[q]?.[1]||q),P(yoy[q].a),P(yoy[q].b),N(yoy[q].b-yoy[q].a)]),'public-survey-change'),
  L('Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux'),source.pses);
  // Public service staffing surveys.
- const staffing=D.snps.orgs['Public Service']||findEntry(D.snps.orgs,'Public Service'),q=D.snps.questions;
+ const staffing=D.snps.orgs['Federal Public Service']||D.snps.orgs['Public Service']||findEntry(D.snps.orgs,'Federal Public Service'),q=D.snps.questions;
  out+=sCard('public-staffing-survey',L('2025 Staffing and Non-Partisanship Survey','Sondage sur la dotation et l’impartialité politique de 2025'),
  L('Questions have different respondent bases. Some questions apply only to people who participated in staffing processes. Missing published values are shown as unavailable, not zero.','Les questions n’ont pas toutes les mêmes répondants. Certaines visent uniquement les participants aux processus de dotation. Les valeurs non publiées sont indiquées comme indisponibles et non comme zéro.'),
  table(L('Staffing survey by employee group, 2025','Sondage sur la dotation selon le groupe, 2025'),
