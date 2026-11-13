@@ -120,3 +120,12 @@
 .gcw-discovery-shortcuts a:hover{background:var(--gw-soft);text-decoration:underline}
 .gcw-result h3 a{overflow-wrap:anywhere}
 @media(max-width:560px){.gcw-discovery-shortcuts ul{grid-template-columns:1fr}.gcw-home-search .gcw-searchform{flex-direction:column}.gcw-home-search .gcw-searchform button{width:100%}}
+
+/* Two clear browsing destinations and plain-language table guidance. */
+.gcw-branch-note{max-width:1180px;margin:14px auto 0;padding:14px 20px}
+.gcw-branch-note p{margin:5px 0 6px;max-width:90ch}
+.gcw-branch-note a{font-weight:700}
+.gcw-catalogue-end{padding-top:25px;border-top:1px solid var(--gw-line);margin-top:30px}
+.gcw-simple-section{scroll-margin-top:18px}
+.gcw-simple-item a{overflow-wrap:anywhere}
+@media(max-width:720px){.gcw-branch-note{margin:12px 16px 0}.gcw-main-choices a.gcw-choice{min-height:150px}}
