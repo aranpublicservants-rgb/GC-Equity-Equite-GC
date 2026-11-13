@@ -201,6 +201,116 @@ function plansTable(name){
  [L('Topic','Thème'),L('Whole plan: mentions','Plan entier : mentions'),L('Internal Services: mentions','Services internes : mentions')],rows,'org-departmental-plan'),
  L('Published 2026–27 departmental plan','Plan ministériel publié de 2026-2027'),p?.url||'departmental-plans-2026-27/');
 }
+/* 2024 Public Service Employee Survey by second-level organizational unit.
+   Source rows are [branch ID, demographic index, question index, ...schema fields].
+   Code 9999 and null are unavailable, not zero. */
+let branchMetaPromise=null,branchRequest=0;
+const branchDataCache=new Map();
+function branchMeta(){
+ if(!branchMetaPromise)branchMetaPromise=fetch('explorer.html').then(r=>{if(!r.ok)throw Error('metadata HTTP '+r.status);return r.text();}).then(html=>{
+  const match=html.match(/<script type="application\/json" id="eq-branch-meta">([\s\S]*?)<\/script>/);
+  if(!match)throw Error('2024 branch metadata absent');
+  const data=JSON.parse(match[1]);
+  if(!Array.isArray(data.departments)||!Array.isArray(data.questions)||!Array.isArray(data.demographics)||!Array.isArray(data.schema))throw Error('2024 branch metadata incomplete');
+  return data;
+ }).catch(e=>{branchMetaPromise=null;throw e;});
+ return branchMetaPromise;
+}
+const branchValue=v=>v===9999||v===null||v===undefined||v===''?missing():N(v);
+function branchLabel(d,list){return lang()?d?.fr||d?.en||'':d?.en||d?.fr||'';}
+function branchRow(r,meta,dept){
+ const branch=dept.branches.find(x=>String(x.id)===String(r[0]));
+ const demo=meta.demographics[r[1]],q=meta.questions[r[2]];
+ return {branch:branchLabel(branch),group:branchLabel(demo),question:branchLabel(q),code:q?.id||'',values:r.slice(3)};
+}
+function branchCsv(rows,meta,dept){
+ const cols=[L('Branch or second-level unit','Direction ou unité de deuxième niveau'),L('Respondent group','Groupe de répondants'),L('Survey question','Question du sondage'),...meta.schema.map(x=>x)];
+ const lines=[cols];
+ rows.forEach(r=>{const a=branchRow(r,meta,dept);lines.push([a.branch,a.group,a.question,...a.values.map(branchValue)]);});
+ const quoted=v=>'"'+String(v===null?'':v).replace(/"/g,'""')+'"';
+ const blob=new Blob(['\ufeff'+lines.map(row=>row.map(quoted).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'});
+ const href=URL.createObjectURL(blob),el=document.createElement('a');
+ el.href=href;el.download='GC-Equity-2024-branch-results.csv';document.body.append(el);el.click();el.remove();setTimeout(()=>URL.revokeObjectURL(href),3000);
+}
+function branchFullTable(host,rows,meta,dept,request){
+ const keys=meta.schema,heads=[L('Branch','Direction'),L('Employee group','Groupe d’employés'),L('Question','Question'),...keys.map(k=>{
+  if(/^ANS[1-7]$/.test(k))return L('Response option ','Option de réponse ')+k.slice(-1)+' (%)';
+  return ({MOSTPOS:L('Most positive (%)','Plus positive (%)'),NEUTRAL:L('Neutral (%)','Neutre (%)'),MOSTNEG:L('Most negative (%)','Plus négative (%)'),AGREE:L('Agreement measure (%)','Mesure de l’accord (%)'),SCORE100:L('Score out of 100','Note sur 100'),ANSCOUNT:L('Published response count','Nombre publié de réponses')})[k]||k;
+ })];
+ const first='<thead><tr>'+heads.map(x=>'<th scope="col">'+escape(x)+'</th>').join('')+'</tr></thead>';
+ host.innerHTML='<div class="gce-table-actions"><button type="button" id="gce-branch-download">'+escape(L('Download all branch results (CSV)','Télécharger tous les résultats des directions (CSV)'))+'</button></div>'+
+ '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(L('Complete 2024 branch survey response table','Tableau complet des réponses du sondage de 2024 par direction'))+'"><table id="gce-branch-complete" data-gcw-ready="yes"><caption>'+escape(L('2024 survey response options, by organizational unit, respondent group and question','Options de réponse au sondage de 2024, selon l’unité, le groupe et la question'))+'</caption>'+first+'<tbody id="gce-branch-rows"></tbody></table></div>'+
+ '<p id="gce-branch-count" class="gce-footnote" role="status" aria-live="polite"></p><div id="gce-branch-sentinel" class="gce-branch-sentinel" aria-hidden="true"></div>';
+ const tbody=$('gce-branch-rows'),count=$('gce-branch-count'),sentinel=$('gce-branch-sentinel');
+ let next=0,observer=null,appending=false;
+ function addBatch(){
+  if(appending||request!==branchRequest||!tbody?.isConnected)return;
+  appending=true;const stop=Math.min(next+200,rows.length);let html='';
+  for(let i=next;i<stop;i++){
+   const item=branchRow(rows[i],meta,dept);
+   html+='<tr><th scope="row">'+escape(item.branch)+'</th><td>'+escape(item.group)+'</td><td>'+escape(item.question)+'</td>'+item.values.map(x=>'<td>'+escape(branchValue(x))+'</td>').join('')+'</tr>';
+  }
+  tbody.insertAdjacentHTML('beforeend',html);next=stop;
+  count.textContent=L('Displayed results: ','Résultats affichés : ')+N(next)+' / '+N(rows.length);
+  appending=false;
+  if(next===rows.length){observer?.disconnect();sentinel.remove();}
+ }
+ $('gce-branch-download')?.addEventListener('click',()=>branchCsv(rows,meta,dept));
+ addBatch();
+ if(next<rows.length&&typeof IntersectionObserver!=='undefined'){
+  observer=new IntersectionObserver(entries=>{if(entries.some(x=>x.isIntersecting))addBatch();},{root:null,rootMargin:'1200px'});
+  observer.observe(sentinel);
+ }else if(next<rows.length){
+  // Automatic growth for browsers without IntersectionObserver.
+  let t=0;
+  window.addEventListener('scroll',function grow(){if(request!==branchRequest||next>=rows.length){window.removeEventListener('scroll',grow);return;}if(++t%2===0)addBatch();},{passive:true});
+ }
+}
+async function renderBranches(name){
+ const id=++branchRequest;
+ const host=$('org-branches');if(!host||!name)return;
+ host.innerHTML='<h3>'+escape(L('7. Branch and organizational-unit survey results, 2024','7. Résultats du sondage par direction et unité organisationnelle, 2024'))+'</h3>'+
+ '<p class="gce-explain">'+escape(L('The source reports 2024 survey results by second organizational level and respondent group. Percentages and response categories are those provided by the original data; a missing or suppressed result is not zero.','La source présente les résultats de 2024 par deuxième niveau organisationnel et groupe de répondants. Les pourcentages et catégories proviennent des données originales; un résultat manquant ou supprimé ne vaut pas zéro.'))+'</p>'+
+ '<p role="status">'+escape(L('Loading branch results…','Chargement des résultats par direction…'))+'</p>';
+ try{
+  const meta=await branchMeta();
+  if(id!==branchRequest)return;
+  const dept=meta.departments.find(d=>norm(d.en)===norm(name)||norm(d.fr)===norm(name));
+  if(!dept){host.innerHTML='<h3>'+escape(L('7. Branch survey results, 2024','7. Résultats du sondage par direction, 2024'))+'</h3><p>'+escape(L('This organization has no second-level unit results in the published file used by this collection.','Cet organisme ne possède aucun résultat au deuxième niveau organisationnel dans le fichier publié utilisé ici.'))+'</p>';return;}
+  let data=branchDataCache.get(dept.id);
+  if(!data){
+   if(typeof DecompressionStream==='undefined')throw Error('gzip browser support unavailable');
+   const response=await fetch('data/pses-2024-branches/'+encodeURIComponent(dept.id)+'.json.gz');
+   if(!response.ok)throw Error('2024 branch data HTTP '+response.status);
+   data=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
+   if(!Array.isArray(data))throw Error('branch rows are not a list');
+   branchDataCache.set(dept.id,data);
+  }
+  if(id!==branchRequest)return;
+  const important=/^Q(12|24|42|43|45|47|49|52|53|58|63|65|70|72)(?:_|$)/;
+  const focus=data.filter(r=>important.test(meta.questions[r[2]]?.id||''));
+  const metric=k=>meta.schema.indexOf(k)+3;
+  const keyRows=focus.map(r=>{
+   const a=branchRow(r,meta,dept);
+   return [a.branch,a.group,a.question,branchValue(r[metric('MOSTPOS')]),branchValue(r[metric('AGREE')]),branchValue(r[metric('MOSTNEG')]),branchValue(r[metric('SCORE100')]),branchValue(r[metric('ANSCOUNT')])];
+  });
+  host.innerHTML='<h3>'+escape(L('7. Branch and organizational-unit survey results, 2024','7. Résultats du sondage par direction et unité organisationnelle, 2024'))+'</h3>'+
+   '<p class="gce-explain">'+escape(L('Each row identifies the second-level unit, the respondent group, and the full question. Summary measures appear only where that question has a published value. Unavailable and suppressed values are not zero.','Chaque ligne précise l’unité de deuxième niveau, le groupe de répondants et la question complète. Les indicateurs sommaires figurent seulement si une valeur est publiée. Les valeurs manquantes et supprimées ne valent pas zéro.'))+'</p>'+
+   '<p class="gce-summary">'+escape(L('Published organizational units: ','Unités organisationnelles publiées : ')+N(dept.branches.length)+' · '+L('Source data rows: ','Lignes de données sources : ')+N(data.length))+'</p>'+
+   table(L('2024 workplace survey by branch and respondent group: ','Sondage de 2024 par direction et groupe : ')+deptName(name),
+   [L('Branch or unit','Direction ou unité'),L('Respondent group','Groupe de répondants'),L('Question','Question'),L('Most positive response (%)','Réponse la plus positive (%)'),L('Agreement measure (%)','Mesure de l’accord (%)'),L('Most negative response (%)','Réponse la plus négative (%)'),L('Score (out of 100)','Note (sur 100)'),L('Published responses','Réponses publiées')],keyRows,'2024-branch-key-questions')+
+   '<h3>'+escape(L('All 2024 survey questions and published response categories by branch','Toutes les questions du sondage de 2024 et les catégories de réponses publiées par direction'))+'</h3>'+
+   '<p class="gce-explain">'+escape(L('The columns “Response option 1” to “Response option 7” retain the source-coded answer order. Options differ by question, so they must not be assumed to mean the same answer across questions. The remaining columns are the original named measures. Results appear automatically as this table is scrolled.','Les colonnes « Option de réponse 1 » à « Option de réponse 7 » conservent l’ordre de codage de la source. Les options changent selon la question et ne représentent donc pas nécessairement la même réponse. Les autres colonnes reprennent les indicateurs nommés dans la source. Les résultats apparaissent automatiquement pendant le défilement.'))+'</p>'+
+   '<div id="gce-branch-full"></div>'+
+   '<p class="gce-source">'+L('Source','Source')+': '+link(meta.sourceCsv||meta.source||'https://open.canada.ca/',L('2024 Public Service Employee Survey, second organizational level','Sondage auprès des fonctionnaires fédéraux de 2024, deuxième niveau organisationnel'))+'.</p>';
+  branchFullTable($('gce-branch-full'),data,meta,dept,id);
+ }catch(error){
+  if(id!==branchRequest)return;
+  host.innerHTML='<h3>'+escape(L('7. Branch survey data, 2024','7. Données du sondage par direction, 2024'))+'</h3><p role="alert">'+escape(L('The branch source file could not be loaded in this browser. Other organization tables remain available.','Impossible de charger le fichier source des directions dans ce navigateur. Les autres tableaux de l’organisme demeurent disponibles.'))+'</p>';
+  console.warn('Branch survey:',error);
+ }
+}
+
 function renderOrg(){
  if(!D)return;const out=$('org-output');if(!out)return;
  selected=$('org-picker')?.value||'';
@@ -211,6 +321,7 @@ function renderOrg(){
  L('Different datasets cover different populations and years. The presence of an organization in the directory does not mean every dataset applies to it.','Les sources couvrent des populations et des années différentes. La présence d’un organisme dans le répertoire ne signifie pas que chaque jeu de données le concerne.'),
  statusTable(name),L('Official federal organization directory','Répertoire fédéral officiel des organismes'),'https://www.canada.ca/en/government/dept.html');
  out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+psesTables(name)+staffingTables(name)+hiringTable(name)+ctaTables(name)+plansTable(name);
+ const branchArea=document.createElement('section');branchArea.className='gce-data-block';branchArea.id='org-branches';out.append(branchArea);renderBranches(name);
  const url=new URL(location.href);url.searchParams.set('org',name);history.replaceState(null,'',url.pathname+url.search+url.hash);
 }
 function publicTables(){
