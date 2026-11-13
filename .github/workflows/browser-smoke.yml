@@ -66,11 +66,11 @@ jobs:
                 // 1. Two clear data pathways, grouped resources and unobtrusive credit
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                const hrefs=await page.$eval('.gcw-home-jump > a',as=>as.map(a=>new URL(a.href).hash));
+                const hrefs=await page.$$eval('.gcw-home-jump > a',as=>as.map(a=>new URL(a.href).hash));
                 if(JSON.stringify(hrefs)!==JSON.stringify(['#department-data','#equity-data']))throw Error('two main areas: '+hrefs);
                 if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
                 if(!await page.$('#equity-data a[href*="call-to-action.html"]'))throw Error('Call to Action not grouped with public service equity');
-                if(await page.$eval('main a[href], .gcw-submenu a[href]',as=>as.some(a=>/Filipino-Public-Servants|\/racialized-executives\//i.test(a.href))))throw Error('removed network link still appears in GC Equity navigation');
+                if(await page.$$eval('main a[href], .gcw-submenu a[href]',as=>as.some(a=>/Filipino-Public-Servants|\/racialized-executives\//i.test(a.href))))throw Error('removed network link still appears in GC Equity navigation');
                 if(!await page.$('#gcw-menu-departments a[href*="pses-2024-branch.html"]'))throw Error('branch menu link missing');
                 if(await page.$$eval('main a[href]',as=>as.some(a=>/isc-racialized|isc-sac-equity|nadia-ferrara/i.test(a.href))))throw Error('ISC-specific or personal site leaked into public service directory');
                 if(await page.$$eval('main a[href]',as=>as.some(a=>a.protocol==='mailto:')))throw Error('contact link appears on GC Equity homepage');
