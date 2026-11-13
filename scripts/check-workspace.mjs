@@ -28,6 +28,10 @@ assert.equal(t.safeCSV('=HYPERLINK("https://example.org")').startsWith('"\'='),t
 assert.equal(t.sanitizeFact({title:'Example',url:'javascript:alert(1)'}),null);
 assert.equal(t.searchDocs(index,'Indigenous Services Canada')[0].kind,'organization');
 assert(t.searchDocs(index,'harcèlement').length>0);
+assert(t.searchDocs(index,'2026 departmental plan','', 'organizations').every(d=>d.kind==='plan'||d.kind==='organization'));
+assert(t.searchDocs(index,'disability','', 'data').every(d=>['question','source','group'].includes(d.kind)));
+assert(!t.searchDocs(index,'accessibility').some(d=>/isc-sac-equity-equite|nadia-ferrara|racialized-executives|Filipino-Public-Servants/i.test(d.url)));
+assert(!t.searchDocs(index,'racialized executives').some(d=>/racialized executives/i.test(d.en)));
 assert(t.searchDocs(index,'representation','Indigenous public servants').every(d=>d.site==='Indigenous public servants'));
 stub.documentElement.lang='fr';
 assert.equal(t.pct(8.9),'8,9 %');assert.match(t.repFact(m,disability,'Indigenous Services Canada').title,/handicap/);
