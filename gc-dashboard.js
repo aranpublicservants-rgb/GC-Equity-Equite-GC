@@ -188,6 +188,7 @@ function ctaTables(name){
  table(L('2024 reported goals: ','Objectifs déclarés en 2024 : ')+deptName(name),[L('Area','Domaine'),L('Reported status','État déclaré'),L('Details from the summary','Détails du résumé')],goalRows,'org-call-to-action-goals')+
  table(L('2024 reported progress','Progrès déclarés en 2024'),[L('Item','Élément'),L('Reported action or progress','Action ou progrès déclaré')],progress,'org-call-to-action-progress')+
  table(L('2024 reported barriers','Obstacles déclarés en 2024'),[L('Item','Élément'),L('Reported barrier','Obstacle déclaré')],barriers,'org-call-to-action-barriers'),
+ (doc?.letter?.url?'<p class="gce-source">'+link(doc.letter.url,L('2021 original letter','Lettre originale de 2021'))+'</p>':'')+(doc?.self_assessment?.url?'<p class="gce-source">'+link(doc.self_assessment.url,L('2024 original self-assessment','Autoévaluation originale de 2024'))+'</p>':''),
  L('Privy Council Office documents','Documents du Bureau du Conseil privé'),doc?.self_assessment?.url||doc?.letter?.url||'call-to-action.html');
 }
 function plansTable(name){
@@ -349,9 +350,9 @@ function publicTables(){
   if(!item?.rows?.length)continue;
   const rows=item.rows.map(x=>[x.name,x.n===null?missing():N(x.n),P(x.p),x.ex===null?missing():P(x.ex)]);
   out+=sCard('public-subgroups-'+g[0],L(g[1],g[2])+' · 2025',
-   L('Shares and counts are reproduced as published. Categories may overlap, be incomplete or have unavailable values; do not sum them to reconstruct group totals.','Les parts et les nombres sont reproduits tels que publiés. Les catégories peuvent se chevaucher, être incomplètes ou comporter des données manquantes. Ne les additionnez pas pour reconstituer des totaux.')+(item.note?' '+item.note:''),
+   L('Shares and counts are reproduced as published. Categories may overlap, be incomplete or have unavailable values; do not sum them to reconstruct group totals.','Les parts et les nombres sont reproduits tels que publiés. Les catégories peuvent se chevaucher, être incomplètes ou comporter des données manquantes. Ne les additionnez pas pour reconstituer des totaux.')+(!lang()&&item.note?' '+item.note:''),
    table(L('Subgroup representation, 2025: ','Représentation des sous-groupes, 2025 : ')+L(g[1],g[2]),
-   [L('Published subgroup','Sous-groupe publié'),L('Employees (count)','Employés (nombre)'),L('Share of workforce or group (%)','Part de l’effectif ou du groupe (%)'),L('Executive representation (%)','Représentation des cadres (%)')],rows,'public-subgroups-'+g[0]),
+   [L('Published subgroup','Sous-groupe publié'),L('Employees (count)','Employés (nombre)'),g[0]==='w'?L('Share of women (%)','Part des femmes (%)'):L('Share of workforce (%)','Part de l’effectif (%)'),L('Executive representation (%)','Représentation des cadres (%)')],rows,'public-subgroups-'+g[0]),
    L('Treasury Board Secretariat, employment equity data','Secrétariat du Conseil du Trésor, données sur l’équité'),source.tbs);
  }
 
