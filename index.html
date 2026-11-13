@@ -1,45 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GC Equity: federal public service equity data</title>
-<meta name="description" content="Find published equity datasets for federal departments and agencies, or browse public service-wide equity reports and resources.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GC Equity | Federal public service equity data</title>
+<meta name="description" content="Published federal equity data, organizational tables, workforce trends, employee surveys, staffing, departmental plans and public service-wide comparisons on one page.">
 <link rel="canonical" href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/">
-<script>(function(){try{var t=localStorage.getItem('gcEquityTheme');if(t==='dark'||t==='contrast')document.documentElement.dataset.theme=t;var p=new URLSearchParams(location.search).get('lang');document.documentElement.lang=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}})();</script>
+<script>(function(){try{var theme=localStorage.getItem('gcEquityTheme');if(theme==='dark'||theme==='contrast')document.documentElement.dataset.theme=theme;var p=new URLSearchParams(location.search).get('lang');document.documentElement.lang=p==='fr'||p==='en'?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}})();</script>
 <link rel="stylesheet" href="gc-workspace.css">
-<script src="gc-ai.js" defer></script><script src="gc-workspace.js" defer></script>
+<link rel="stylesheet" href="gc-dashboard.css">
+<script src="gc-ai.js" defer></script>
+<script src="gc-workspace.js" defer></script>
+<script src="gc-dashboard.js" defer></script>
 </head>
 <body class="gcw-page">
 <main id="gcw-home" class="gcw-frame gcw-landing">
-<section class="gcw-hero gcw-simplified-hero">
+<div id="gc-dashboard">
+<header class="gce-intro">
 <p class="gcw-eyebrow">GC Equity · <span lang="fr">Équité-GC</span></p>
-<h1>Find equity data in the federal public service</h1>
-<p class="gcw-lede">Everything is organized into two places. The first choice takes you farther down this page. The second opens a separate page.</p>
-</section>
-<nav class="gcw-main-choices" aria-label="Choose one of two areas">
-<a class="gcw-choice" href="#department-data"><span class="gcw-choice-heading">Departments and agencies</span><span>Organizations, branches, representation, staffing and departmental plans.</span><span class="gcw-choice-verb">Browse below</span></a>
-<a class="gcw-choice" href="equity.html"><span class="gcw-choice-heading">Equity across the public service</span><span>Equity groups, Call to Action, briefing binder and guides.</span><span class="gcw-choice-verb">Open the second page</span></a>
+<h1 data-gce-en="Equity data in the federal public service" data-gce-fr="Données sur l’équité dans la fonction publique fédérale">Equity data in the federal public service</h1>
+<p class="gcw-lede" data-gce-en="Published workforce, survey and policy data from identified sources. Reporting periods and populations vary." data-gce-fr="Données publiées sur l’effectif, les sondages et les politiques, provenant de sources indiquées. Les périodes et les populations varient.">Published workforce, survey and policy data from identified sources. Reporting periods and populations vary.</p>
+</header>
+<nav class="gce-two-choices" aria-label="Main data areas">
+<article class="gce-choice">
+<a class="gce-primary-choice" href="#department-data" data-gce-en="Departments and agencies" data-gce-fr="Ministères et organismes">Departments and agencies</a>
+<h2 data-gce-en="What's inside" data-gce-fr="Contenu">What's inside</h2>
+<ul>
+<li><a href="#org-picker" data-gce-en="Organization data" data-gce-fr="Données par organisme">Organization data</a></li>
+<li><a href="#org-output" data-gce-en="Workforce and survey tables" data-gce-fr="Tableaux sur l’effectif et les sondages">Workforce and survey tables</a></li>
+<li><a href="#org-output" data-gce-en="Staffing and commitments" data-gce-fr="Dotation et engagements">Staffing and commitments</a></li>
+<li><a href="#org-output" data-gce-en="Departmental plans" data-gce-fr="Plans ministériels">Departmental plans</a></li>
+</ul>
+</article>
+<article class="gce-choice">
+<a class="gce-primary-choice" href="#equity-data" data-gce-en="Equity across the public service" data-gce-fr="Équité dans l’ensemble de la fonction publique">Equity across the public service</a>
+<h2 data-gce-en="What's inside" data-gce-fr="Contenu">What's inside</h2>
+<ul>
+<li><a href="#public-representation" data-gce-en="Equity group representation" data-gce-fr="Représentation des groupes visés par l’équité">Equity group representation</a></li>
+<li><a href="#public-survey" data-gce-en="Employee experiences" data-gce-fr="Expériences des employés">Employee experiences</a></li>
+<li><a href="#public-cta" data-gce-en="Call to Action and reports" data-gce-fr="Appel à l’action et rapports">Call to Action and reports</a></li>
+<li><a href="#public-source-inventory" data-gce-en="Data and source library" data-gce-fr="Données et sources">Data and source library</a></li>
+</ul>
+</article>
 </nav>
-<p class="gcw-small">These links lead to existing data tables, downloads and resources. Reporting years and populations can differ by source.</p>
-<section class="gcw-section gcw-simple-section" id="department-data" aria-labelledby="department-data-title"><h2 id="department-data-title">Departments and agencies</h2><p class="gcw-small">Start with an organization, then scroll through the available datasets.</p><ul class="gcw-simple-list">
-<li class="gcw-simple-item"><a href="organizations.html">Find an organization and its datasets</a><p>Search the official federal directory and check published coverage.</p></li>
-<li class="gcw-simple-item"><a href="explorer.html#departments">Compare departments and agencies</a><p>Published workforce representation and employee survey comparisons.</p></li>
-<li class="gcw-simple-item"><a href="branch-equity.html">2024 employee survey by branch</a><p>What the branch tables show and where to read the complete results.</p></li></ul></section>
-<section class="gcw-section gcw-simple-section" aria-labelledby="workforce-title"><h2 id="workforce-title">Workforce and representation</h2><ul class="gcw-simple-list">
-<li class="gcw-simple-item"><a href="data/tbs-departmental-representation-2017-2025.json">Departmental representation, 2017–2025 (JSON)</a><p>Published Treasury Board series, with missing values left blank.</p></li>
-<li class="gcw-simple-item"><a href="data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv">Indigenous subgroups, 2025 (CSV)</a></li>
-<li class="gcw-simple-item"><a href="data/october-2026/TBS_disability_subgroups_by_department_2024.csv">Disability subgroups, 2024 (CSV)</a></li>
-<li class="gcw-simple-item"><a href="data/october-2026/TBS_EE_executives_by_EX_level_with_WFA_2017-2025.csv">Executive representation by level (CSV)</a></li></ul></section>
-<section class="gcw-section gcw-simple-section" aria-labelledby="staffing-title"><h2 id="staffing-title">Hiring, staffing and careers</h2><ul class="gcw-simple-list">
-<li class="gcw-simple-item"><a href="staffing.html#applicants">Applicants and appointments</a></li>
-<li class="gcw-simple-item"><a href="staffing.html#organizations">Appointments by organization</a></li>
-<li class="gcw-simple-item"><a href="staffing.html#detail">By sex and region</a></li>
-<li class="gcw-simple-item"><a href="staffing.html#students">Student hiring</a></li>
-<li class="gcw-simple-item"><a href="staffing.html#files">All Public Service Commission datasets</a></li></ul></section>
-<section class="gcw-section gcw-simple-section" aria-labelledby="plans-title"><h2 id="plans-title">Plans and commitments</h2><ul class="gcw-simple-list">
-<li class="gcw-simple-item"><a href="departmental-plans-2026-27/">Departmental plans, 2026–27</a></li>
-<li class="gcw-simple-item"><a href="call-to-action.html#compare">Call to Action: compare organizations</a></li>
-<li class="gcw-simple-item"><a href="call-to-action.html#record">Call to Action: individual organization records</a></li>
-<li class="gcw-simple-item"><a href="sources.html">All source files and methods</a></li></ul></section>
+<p id="gce-loading" class="gce-loading" role="status" data-gce-en="Loading the published data tables…" data-gce-fr="Chargement des tableaux de données publiées…">Loading the published data tables…</p>
+<section id="department-data" class="gce-major-section" aria-labelledby="org-title">
+<h2 id="org-title" data-gce-en="Departments and agencies" data-gce-fr="Ministères et organismes">Departments and agencies</h2>
+<p class="gce-section-intro" data-gce-en="Data are shown separately for the selected federal organization. Not every source covers every organization." data-gce-fr="Les données sont présentées séparément pour l’organisme fédéral choisi. Les sources ne couvrent pas tous les organismes.">Data are shown separately for the selected federal organization. Not every source covers every organization.</p>
+<div class="gce-picker">
+<label id="org-picker-label" for="org-picker" data-gce-en="Department or agency" data-gce-fr="Ministère ou organisme">Department or agency</label>
+<select id="org-picker" aria-describedby="org-picker-note">
+<option value="">Select a department or agency</option>
+</select>
+<p id="org-picker-note" class="gce-footnote" data-gce-en="The organization list includes entries outside the scope of some federal workforce datasets." data-gce-fr="Le répertoire comprend des organismes exclus de certains jeux de données sur l’effectif fédéral.">The organization list includes entries outside the scope of some federal workforce datasets.</p>
+</div>
+<div id="org-output" class="gce-tables" aria-live="polite" aria-relevant="additions text"></div>
+</section>
+<section id="equity-data" class="gce-major-section" aria-labelledby="equity-title">
+<h2 id="equity-title" data-gce-en="Equity across the public service" data-gce-fr="Équité dans l’ensemble de la fonction publique">Equity across the public service</h2>
+<p class="gce-section-intro" data-gce-en="Published public service-wide figures, employment equity groups, employee surveys, staffing, Call to Action records and source files." data-gce-fr="Chiffres publiés pour l’ensemble de la fonction publique, groupes visés par l’équité, sondages, dotation, dossiers de l’appel à l’action et fichiers sources.">Published public service-wide figures, employment equity groups, employee surveys, staffing, Call to Action records and source files.</p>
+<div id="public-output" class="gce-tables"></div>
+</section>
+<section id="related-public-resources" class="gce-major-section gce-last" aria-labelledby="resources-title">
+<h2 id="resources-title" data-gce-en="Related public service-wide resources" data-gce-fr="Autres ressources pour l’ensemble de la fonction publique">Related public service-wide resources</h2>
+<p class="gce-section-intro" data-gce-en="Additional specialized research resources. Their original sources and methodologies remain on their respective sites." data-gce-fr="Autres ressources de recherche spécialisées. Leurs sources et méthodes demeurent accessibles dans leurs sites respectifs.">Additional specialized research resources. Their original sources and methodologies remain on their respective sites.</p>
+<ul class="gce-resource-list">
+<li><a href="women-femmes/" data-gce-en="Women and intersectional barriers" data-gce-fr="Femmes et obstacles intersectionnels">Women and intersectional barriers</a></li>
+<li><a href="https://aranpublicservants-rgb.github.io/Indigenous-GC---GC-Autochtone/" data-gce-en="Indigenous public servants" data-gce-fr="Fonctionnaires autochtones">Indigenous public servants</a></li>
+<li><a href="https://aranpublicservants-rgb.github.io/Black-Public-Servants---Fonctionnaires-noirs/" data-gce-en="Black public servants" data-gce-fr="Fonctionnaires noirs">Black public servants</a></li>
+<li><a href="https://aranpublicservants-rgb.github.io/Accessibility-and-Inclusion-Accessibilit-et-inclusion/" data-gce-en="Accessibility and inclusion" data-gce-fr="Accessibilité et inclusion">Accessibility and inclusion</a></li>
+<li><a href="https://aranpublicservants-rgb.github.io/Accessibility-and-Inclusion-Accessibilit-et-inclusion/duty-to-accommodate/" data-gce-en="Duty to accommodate" data-gce-fr="Obligation d’adaptation">Duty to accommodate</a></li>
+<li><a href="https://aranpublicservants-rgb.github.io/aran-raar/recourse/" data-gce-en="Employee recourse options" data-gce-fr="Options de recours des employés">Employee recourse options</a></li>
+<li><a href="https://aranpublicservants-rgb.github.io/GC-Equity-History-Histoire-de-l-equite-au-GC/" data-gce-en="History of equity in the public service" data-gce-fr="Histoire de l’équité dans la fonction publique">History of equity in the public service</a></li>
+</ul>
+</section>
+</div>
+<noscript><p>JavaScript is required to display the tables for individual organizations. The original source files can be read in <a href="sources.html">Sources and methods</a>. / JavaScript est nécessaire pour afficher les tableaux par organisme. Les fichiers sources se trouvent dans <a href="sources.html">Sources et méthodes</a>.</p></noscript>
 </main>
-</body></html>
+</body>
+</html>
