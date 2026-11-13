@@ -56,10 +56,12 @@ jobs:
                 await page.selectOption('#org-picker','Canada Revenue Agency');
                 await page.waitForFunction(()=>document.querySelectorAll('#org-output table').length>=8,null,{timeout:60000});
                 if(!/Canada Revenue Agency/.test(await page.locator('#org-output').innerText()))throw Error('Wrong organization');
-                if(!await page.locator('#org-survey table').count()||!await page.locator('#org-staffing table').count())throw Error('Organization survey or staffing tables missing');
+                if(!await page.locator('#org-survey table').count())throw Error('Organization survey missing');
+                if(await page.locator('#org-staffing table').count())throw Error('Unavailable CRA staffing source should not be represented as published');
                 const [csv]=await Promise.all([page.waitForEvent('download'),page.locator('#org-survey .gce-download').first().click()]);
                 if(!/\.csv$/.test(csv.suggestedFilename()))throw Error('Table CSV unavailable');
                 await page.selectOption('#org-picker','Administrative Tribunals Support Service of Canada');
+                await page.waitForFunction(()=>document.querySelectorAll('#org-staffing table').length===1,null,{timeout:30000});
                 await page.waitForFunction(()=>document.querySelectorAll('#gce-branch-complete tbody tr').length>=50,null,{timeout:120000});
                 if(!/2024/.test(await page.locator('#org-branches').innerText()))throw Error('2024 inline branch tables unavailable');
                 if(!await page.locator('#org-branches .gce-table-wrap').count())throw Error('branch table missing');
