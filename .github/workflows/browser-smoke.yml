@@ -126,7 +126,7 @@ jobs:
                 page=await ctx.newPage();watch(page);
                 const branchFiles=[];page.on('request',r=>branchFiles.push(r.url()));
                 await page.goto(addr+'index.html?lang=en');
-                await Promise.all([page.waitForURL(/explorer\.html/,{timeout:120000}),page.click('#choice-departments')]);
+                await Promise.all([page.waitForURL(/explorer\.html/,{timeout:120000}),page.click('#department-data a[href*="explorer.html#departments"]')]);
                 await page.waitForFunction(()=>document.getElementById('opOrg')&&document.getElementById('opOrg').options.length>50,null,{timeout:120000});
                 await page.selectOption('#opOrg','Correctional Service Canada');
                 await page.waitForFunction(()=>{const s=document.getElementById('gc-d-subgroups');return s&&/1,026/.test(s.textContent)&&/Mobility/.test(s.textContent);},null,{timeout:60000});
