@@ -102,6 +102,7 @@ function trendTables(name){
  for(const g of groups.filter(g=>g[0]!=='w')){
   const label=rowsTitle(g), series=rec?.[g[0]]||{};
   const years=Object.keys(series).sort();
+  if(!years.length)continue;
   const rows=years.map(y=>{let x=series[y];return [y,N(x[0]),x[1]===null?missing():N(x[1]),P(x[2]),g[0]==='b'?L('Not provided for this subgroup','Aucune valeur pour ce sous-groupe'):P(x[3])];});
   content+=sCard('org-trend-'+g[0],L('Representation over time: ','Représentation au fil du temps : ')+label+' ('+(years.length?years[0]+'–'+years[years.length-1]:'2017–2025')+')',
    L('Separate yearly workforce counts, employee-group counts, representation percentages and the benchmark used for that year. Some benchmark definitions changed over time.','Effectif annuel, effectif du groupe, pourcentage de représentation et valeur de référence de l’année. Certaines définitions de la valeur de référence ont changé au fil du temps.'),
@@ -116,7 +117,7 @@ function subgroupTables(name){
   {key:'ind',year:'2025',title:L('Indigenous subgroups in 2025','Sous-groupes autochtones en 2025'),cols:[['inuit','Inuit','Inuits'],['metis','Métis','Métis'],['first_nations','First Nations','Premières Nations'],['other','Other or not specified','Autres ou non précisés']]},
   {key:'dis',year:'2024',title:L('Disability subgroups in 2024','Sous-groupes de handicap en 2024'),cols:[['coordination_dexterity','Coordination or dexterity','Coordination ou dextérité'],['mobility','Mobility','Mobilité'],['speech_impairment','Speech','Parole'],['blind_visual_impairment','Blind or visual impairment','Cécité ou déficience visuelle'],['deaf_hard_of_hearing','Deaf or hard of hearing','Surdité ou perte auditive'],['other_disability','Other disability','Autre handicap']]}
  ];
- for(const d of datasets){const row=findRow(D[d.key],name);let rows=[];
+ for(const d of datasets){const row=findRow(D[d.key],name);if(!row)continue;let rows=[];
   if(row)rows=d.cols.map(x=>[L(x[1],x[2]),/^suppressed$/i.test(row[x[0]+'_number'])?L('Suppressed','Supprimé'):N(row[x[0]+'_number']),/^suppressed$/i.test(row[x[0]+'_pct'])?L('Suppressed','Supprimé'):P(row[x[0]+'_pct'])]);
   result+=sCard('org-sub-'+d.key,d.title,L('Reported shares are of the organization’s published workforce in the stated year. Subgroup categories may be incomplete or suppressed; do not add them to recreate missing counts.','Les parts sont celles de l’effectif publié de l’organisme durant l’année indiquée. Les catégories peuvent être incomplètes ou supprimées. Ne les additionnez pas pour reconstituer des nombres manquants.'),
   table(d.title+': '+deptName(name),[L('Subgroup','Sous-groupe'),L('Employees','Employés'),L('Share of workforce','Part de l’effectif')],rows,'org-subgroup-'+d.key),
@@ -126,6 +127,7 @@ function subgroupTables(name){
 }
 function psesTables(name){
  const all=findEntry(D.model.PSES_DEPT,name)||{},by=findEntry(D.model.EEG_DEPT,name)||{},yoy=findEntry(D.model.YOY,name)||{};
+ if(!Object.keys(all).length&&!Object.keys(by).length)return '';
  const qmeta=D.model.PSES_QMETA||{},qs=Object.keys(qmeta);
  const qsText=q=>lang()?(D.model.EEG_QMETA_FR[q]||qmeta[q]?.[1]||q):(qmeta[q]?.[1]||q);
  const groupKeys=['all','woman','pwd','ind','rac','black'];
@@ -143,6 +145,7 @@ function psesTables(name){
 }
 function staffingTables(name){
  const data=findEntry(D.snps.orgs,name)||{};
+ if(!Object.keys(data).length)return '';
  const questions=D.snps.questions;
  const keys=['all','woman','man','pwd','nopwd','ind','nonind','rac','nonrac','black'];
  const rows=Object.keys(questions).map(id=>{
@@ -155,7 +158,8 @@ function staffingTables(name){
  L('Public Service Commission, 2025 staffing survey','Commission de la fonction publique, sondage de 2025'),D.snps.dataset);
 }
 function hiringTable(name){
- const obj=findEntry(D.psc.hiring,name),rows=obj?Object.keys(obj.years).sort().map(year=>{
+ const obj=findEntry(D.psc.hiring,name);if(!obj)return '';
+ const rows=Object.keys(obj.years).sort().map(year=>{
   const v=obj.years[year];return [year,...v.map(x=>x==='x'?L('Suppressed','Supprimé'):N(x))];
  }):[];
  return sCard('org-appointments',L('4. Appointments by equity self-identification','4. Nominations selon l’auto-identification aux fins de l’équité'),
@@ -174,7 +178,7 @@ const goalNames={
  inclusion:['Inclusion','Inclusion']
 };
 function ctaTables(name){
- const doc=recordFor(name);
+ const doc=recordFor(name);if(!doc)return '';
  const letters=doc?.letter?.commitments||[];
  const targets=doc?.letter?.targets||[];
  const assessment=doc?.self_assessment;
@@ -192,7 +196,8 @@ function ctaTables(name){
  L('Privy Council Office documents','Documents du Bureau du Conseil privé'),doc?.self_assessment?.url||doc?.letter?.url||'call-to-action.html');
 }
 function plansTable(name){
- const p=planFor(name),terms=[
+ const p=planFor(name);if(!p)return '';
+ const terms=[
  ['Anti-racism','Antiracisme'],['Employment equity','Équité en matière d’emploi'],['Inclusion','Inclusion'],['Diversity','Diversité'],['Accessibility','Accessibilité'],['Reconciliation','Réconciliation']
  ];
  const rows=p?terms.map((g,i)=>[L(g[0],g[1]),N(p.t?.[i]),N(p.i?.[i])]):[];
