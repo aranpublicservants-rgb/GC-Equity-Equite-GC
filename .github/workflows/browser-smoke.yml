@@ -118,7 +118,7 @@ jobs:
                 await page.fill('#gcw-query','Indigenous Services Canada');
                 await page.click('#gcw-search-form button');
                 await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
-                if(await page.$eval('#gcw-search-results .gcw-result-meta',ns=>ns.some(n=>!/Organization or plan/.test(n.textContent))))throw Error('discovery category filter did not apply');
+                if(await page.$eval('#gcw-search-results .gcw-result-meta',ns=>Array.from(ns).some(n=>!/Organization or plan/.test(n.textContent))))throw Error('discovery category filter did not apply');
                 if(!await page.$('[data-gcw="copy-search"]'))throw Error('shareable search link missing');
                 await page.click('#gcw-dialog [data-gcw="close"]');
                 if(!await page.$('#gcw-home-search input[type="search"]'))throw Error('homepage discovery search missing');
