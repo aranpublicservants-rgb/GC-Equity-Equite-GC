@@ -41,7 +41,7 @@ function renderHeader(){
  header.innerHTML='<div class="gcw-top"><a class="gcw-brand" href="'+esc(localized('index.html'))+'">GC Equity <span lang="fr">Équité-GC</span></a><div class="gcw-utilities"><button type="button" id="gcw-search-button" data-gcw="search" aria-haspopup="dialog">'+esc(tr('Search','Rechercher'))+'</button><button type="button" id="gcw-lang" data-gcw="language" lang="'+(fr()?'en':'fr')+'">'+(fr()?'English':'Français')+'</button><label class="gcw-sr" for="gcw-theme">'+esc(tr('Display','Affichage'))+'</label><select id="gcw-theme">'+[['light',tr('Light','Clair')],['dark',tr('Dark','Sombre')],['contrast',tr('High contrast','Contraste élevé')]].map(([k,l])=>'<option value="'+k+'"'+((document.documentElement.dataset.theme||'light')===k?' selected':'')+'>'+esc(l)+'</option>').join('')+'</select></div></div>'+
  '<nav class="gcw-nav" aria-label="'+esc(tr('Main navigation','Navigation principale'))+'">'+
  '<a href="'+esc(localized('index.html'))+'#department-data">'+esc(tr('Departments and agencies','Ministères et organismes'))+'</a>'+
- '<a href="'+esc(localized('equity.html'))+'"'+(location.pathname.endsWith('/equity.html')?' aria-current="page"':'')+'>'+esc(tr('Equity across the public service','Équité dans la fonction publique'))+'</a></nav>';
+ '<a href="'+esc(localized('index.html'))+'#equity-data">'+esc(tr('Equity across the public service','Équité dans la fonction publique'))+'</a></nav>';
 }
 function renderFooter(){
  let foot=$('gcw-footer');
@@ -234,6 +234,7 @@ function enhanceTables(root=document){const main=root.querySelector?.('main')||r
 
 /* A focused, task-first homepage. The two pathways remain visible without opening a menu. */
 function renderHome(){
+ if($('gc-dashboard'))return;
  const home=$('gcw-home'),equity=$('gcw-equity');
  if(!home&&!equity)return;
  const L=(href,en,frLabel,descriptionEn,descriptionFr,external=false)=>'<li class="gcw-simple-item"><a href="'+esc(external?href:localized(href))+'">'+esc(tr(en,frLabel))+'</a><p>'+esc(tr(descriptionEn,descriptionFr))+'</p></li>';
