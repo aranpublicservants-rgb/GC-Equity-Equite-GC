@@ -113,6 +113,18 @@ jobs:
                 await page.fill('#gcw-query','Indigenous');
                 await page.click('#gcw-search-form button');
                 await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
+                if(!await page.$('#gcw-search-kind')||!await page.$('#gcw-search-site'))throw Error('discovery filters missing');
+                await page.selectOption('#gcw-search-kind','organizations');
+                await page.fill('#gcw-query','Indigenous Services Canada');
+                await page.click('#gcw-search-form button');
+                await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
+                if(await page.$eval('#gcw-search-results .gcw-result-meta',ns=>ns.some(n=>!/Organization or plan/.test(n.textContent))))throw Error('discovery category filter did not apply');
+                if(!await page.$('[data-gcw="copy-search"]'))throw Error('shareable search link missing');
+                await page.click('#gcw-dialog [data-gcw="close"]');
+                if(!await page.$('#gcw-home-search input[type="search"]'))throw Error('homepage discovery search missing');
+                await page.goto(addr+'index.html?tool=search&q=Indigenous%20Services%20Canada&kind=organizations');
+                await page.waitForFunction(()=>document.querySelector('#gcw-dialog')?.open&&document.querySelector('#gcw-query')?.value==='Indigenous Services Canada'&&document.querySelector('#gcw-search-kind')?.value==='organizations');
+                await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
                 if(await overflow(page))throw Error(mode.name+': research tools scroll sideways');
                 await page.close();
 
