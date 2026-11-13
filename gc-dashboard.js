@@ -161,7 +161,7 @@ function hiringTable(name){
  const obj=findEntry(D.psc.hiring,name);if(!obj)return '';
  const rows=Object.keys(obj.years).sort().map(year=>{
   const v=obj.years[year];return [year,...v.map(x=>x==='x'?L('Suppressed','Supprimé'):N(x))];
- }):[];
+ });
  return sCard('org-appointments',L('4. Appointments by equity self-identification','4. Nominations selon l’auto-identification aux fins de l’équité'),
  L('The Commission publishes appointment counts for people who self-identified as belonging to at least one employment equity group and those who did not. It does not identify the specific groups in this table. Suppressed counts are not zero.','La Commission publie le nombre de nominations de personnes s’étant auto-identifiées comme membres d’au moins un groupe visé par l’équité et de celles ne l’ayant pas fait. Ce tableau ne précise pas les groupes. Les nombres supprimés ne sont pas des zéros.'),
  table(L('Appointments by fiscal year: ','Nominations selon l’exercice : ')+deptName(name),
