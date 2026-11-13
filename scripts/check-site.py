@@ -37,15 +37,17 @@ for name in ['index.html','equity.html','branch-equity.html','explorer.html','so
         with tempfile.NamedTemporaryFile(suffix='.js',mode='w') as f:
             f.write(script);f.flush();subprocess.run(['node','--check',f.name],check=True,capture_output=True)
     assert p.stat().st_size<2_500_000,f'page too large: {name}'
-# Ensure the two primary choices lead to the requested destinations.
+# Two homepage links lead to the two sections of the same page.
 home_html=(ROOT/'index.html').read_text()
-equity_html=(ROOT/'equity.html').read_text()
-assert 'href="#department-data"' in home_html, 'department button must stay on the homepage'
-assert 'href="equity.html"' in home_html, 'public service-wide button must open the separate page'
-assert 'id="gcw-equity"' in equity_html, 'second page missing'
-assert 'explorer.html#bhome' in equity_html, 'briefing binder must be discoverable'
+assert 'href="#department-data"' in home_html, 'department anchor missing'
+assert 'href="#equity-data"' in home_html, 'public service-wide anchor missing'
+assert 'id="org-picker"' in home_html, 'organization selector missing'
+assert 'id="org-output"' in home_html, 'inline organization tables missing'
+assert 'id="public-output"' in home_html, 'inline public service-wide tables missing'
+assert 'gc-dashboard.js' in home_html and 'gc-dashboard.css' in home_html, 'dashboard assets missing'
+assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
 
-for name in ['gc-workspace.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
+for name in ['gc-workspace.js','gc-dashboard.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
 for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
     if line.strip():
@@ -176,7 +178,7 @@ assert c['p']>=0.05 and c['bands'][0]['diff']>0 and all(x['diff']<=0 for x in c[
 quoted(11,f"In the {c['n1']} organizations that reported equity commitments in executive performance agreements in 2021 or 2024, {h1(c['mean1'])}% of employees said the Call to Action had a positive impact in 2024, on average, compared with {h1(c['mean0'])}% in the {c['n0']} organizations that did not.")
 for cell in ['Black candidates</td><td class="num">10.3%','<td class="num">6.6%</td><td class="num below-mark">0.64</td>']:
     assert cell in explorer,f'audit figures changed in the data explorer: {cell}'
-for name in ['gc-workspace.js','gc-workspace.css','index.html','call-to-action.html','call-to-action.js','staffing.html','staffing.js','gc-tools.js','data/call-to-action-letters.json','data/call-to-action-comparisons.json','data/tbs-departmental-representation-2017-2025.json','data/snps-2025-by-organization.json','data/psc/catalogue.json','data/psc/psc-equity.json']:
+for name in ['gc-workspace.js','gc-workspace.css','gc-dashboard.css','gc-dashboard.js','index.html','call-to-action.html','call-to-action.js','staffing.html','staffing.js','gc-tools.js','data/call-to-action-letters.json','data/call-to-action-comparisons.json','data/tbs-departmental-representation-2017-2025.json','data/snps-2025-by-organization.json','data/psc/catalogue.json','data/psc/psc-equity.json']:
     text=(ROOT/name).read_text()
     assert '—' not in text, f'em dash: {name}'
     assert not re.search(r'sk-[A-Za-z0-9]{20,}|Bearer\s+[A-Za-z0-9]',text),f'possible credential: {name}'
@@ -184,4 +186,4 @@ for name in ['gc-workspace.js','gc-workspace.css','index.html','call-to-action.h
         assert phrase not in text.lower(),f'internal wording: {name}'
 subprocess.run(['node','scripts/check-workspace.mjs'],cwd=ROOT,check=True)
 subprocess.run(['node','scripts/check-findings.js'],cwd=ROOT,check=True)
-print(f'PASS: seven pages, local assets, JavaScript, published-data checksums, {meta["totalRows"]:,} branch rows, {len(index["docs"])} search entries, {len(orgs)} Call to Action records with {len(findings)} findings checked against the data, {len(pcat['files'])} Public Service Commission files, and snapshot provenance')
+print(f'PASS: all published pages, local assets, JavaScript, published-data checksums, {meta["totalRows"]:,} branch rows, {len(index["docs"])} search entries, {len(orgs)} Call to Action records with {len(findings)} findings checked against the data, {len(pcat['files'])} Public Service Commission files, and snapshot provenance')
