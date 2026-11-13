@@ -187,7 +187,7 @@ function ctaTables(name){
  (targets.length?table(L('Targets stated in the 2021 letter','Objectifs de la lettre de 2021'),[L('Item','Élément'),L('Target','Objectif')],targets.map((x,i)=>[String(i+1),String(x)]),'org-cta-targets'):'')+
  table(L('2024 reported goals: ','Objectifs déclarés en 2024 : ')+deptName(name),[L('Area','Domaine'),L('Reported status','État déclaré'),L('Details from the summary','Détails du résumé')],goalRows,'org-call-to-action-goals')+
  table(L('2024 reported progress','Progrès déclarés en 2024'),[L('Item','Élément'),L('Reported action or progress','Action ou progrès déclaré')],progress,'org-call-to-action-progress')+
- table(L('2024 reported barriers','Obstacles déclarés en 2024'),[L('Item','Élément'),L('Reported barrier','Obstacle déclaré')],barriers,'org-call-to-action-barriers'),
+ table(L('2024 reported barriers','Obstacles déclarés en 2024'),[L('Item','Élément'),L('Reported barrier','Obstacle déclaré')],barriers,'org-call-to-action-barriers')+
  (doc?.letter?.url?'<p class="gce-source">'+link(doc.letter.url,L('2021 original letter','Lettre originale de 2021'))+'</p>':'')+(doc?.self_assessment?.url?'<p class="gce-source">'+link(doc.self_assessment.url,L('2024 original self-assessment','Autoévaluation originale de 2024'))+'</p>':''),
  L('Privy Council Office documents','Documents du Bureau du Conseil privé'),doc?.self_assessment?.url||doc?.letter?.url||'call-to-action.html');
 }
