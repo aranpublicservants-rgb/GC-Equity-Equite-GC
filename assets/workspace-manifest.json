@@ -9,8 +9,8 @@
     },
     {
       "file": "assets/search-index.json",
-      "bytes": 636882,
-      "sha256": "db71fd146bc3a5c8fba45dee77252ee013764934c749c614184656ce71181971"
+      "bytes": 609258,
+      "sha256": "472860a2c02e68f48b39f0583a4054cea64a68a9195e90a13d71538de4d1a57c"
     }
   ],
   "related": [
@@ -49,12 +49,6 @@
       "label": "Accessibility and inclusion",
       "url": "https://aranpublicservants-rgb.github.io/Accessibility-and-Inclusion-Accessibilit-et-inclusion/",
       "commit": "e768cf6e0e2a7251a1606ff7bf5b4c951b8309c0"
-    },
-    {
-      "repo": "Filipino-Public-Servants-Fonctionnaires-Philippins",
-      "label": "Filipino public servants",
-      "url": "https://aranpublicservants-rgb.github.io/Filipino-Public-Servants-Fonctionnaires-Philippins/",
-      "commit": "fccc14e4ff9f420f4b11db242a8cec4a53f3d690"
     },
     {
       "repo": "pses-2024-branch.html",
