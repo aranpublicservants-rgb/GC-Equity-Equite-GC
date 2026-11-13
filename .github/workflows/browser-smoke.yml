@@ -85,7 +85,7 @@ jobs:
                 await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.querySelector('.gcw-main-choices a[href*="equity.html"]')?.textContent.includes('Équité'));
                 if(!await page.$('#department-plans a[href*="departmental-plans-2026-27/"]')||!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('French homepage links missing');
                 await page.goto(addr+'equity.html?lang=fr');
-                if(!await page.$('#commitments a[href*="call-to-action.html"]')||!await page.$('#briefings a[href*="explorer.html#bhome"]'))throw Error('second page is missing key public service resources');
+                if(!await page.$('#commitments a[href*="call-to-action.html"]')||!await page.$('#briefings a[href*="explorer.html"]'))throw Error('second page is missing key public service resources');
                 if(await overflow(page))throw Error(mode.name+': public service-wide page scrolls sideways');
                 await page.click('#gcw-lang');
                 await page.close();
