@@ -66,12 +66,12 @@ jobs:
                 // 1. Two clear data pathways, grouped resources and unobtrusive credit
                 let page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                const hrefs=await page.$$eval('.gcw-home-jump > a',as=>as.map(a=>new URL(a.href).hash));
-                if(JSON.stringify(hrefs)!==JSON.stringify(['#department-data','#equity-data']))throw Error('two main areas: '+hrefs);
+                const hrefs=await page.$eval('.gcw-main-choices > a',as=>as.map(a=>new URL(a.href).pathname+new URL(a.href).hash));
+                if(hrefs.length!==2||!hrefs[0].endsWith('/index.html#department-data')||!hrefs[1].endsWith('/equity.html'))throw Error('two main areas: '+hrefs);
                 if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]'))throw Error('departmental plans not grouped with organization data');
-                if(!await page.$('#equity-data a[href*="call-to-action.html"]'))throw Error('Call to Action not grouped with public service equity');
+                if(!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('public service-wide page link missing');
                 if(await page.$$eval('main a[href], .gcw-submenu a[href]',as=>as.some(a=>/Filipino-Public-Servants|\/racialized-executives\//i.test(a.href))))throw Error('removed network link still appears in GC Equity navigation');
-                if(!await page.$('#gcw-menu-departments a[href*="pses-2024-branch.html"]'))throw Error('branch menu link missing');
+                if(!await page.$('#department-data a[href*="branch-equity.html"]'))throw Error('branch guide link missing');
                 if(await page.$$eval('main a[href]',as=>as.some(a=>/isc-racialized|isc-sac-equity|nadia-ferrara/i.test(a.href))))throw Error('ISC-specific or personal site leaked into public service directory');
                 if(await page.$$eval('main a[href]',as=>as.some(a=>a.protocol==='mailto:')))throw Error('contact link appears on GC Equity homepage');
                 if(!await page.$('#gcw-footer .gcw-credit a[href="https://aranpublicservants-rgb.github.io/aran-raar/"]'))throw Error('ARAN footer credit missing');
@@ -82,16 +82,19 @@ jobs:
                 if(await overflow(page))throw Error(mode.name+': homepage scrolls sideways');
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-main.png',fullPage:true});
                 await page.click('#gcw-lang');
-                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.querySelector('.gcw-home-jump a[href="#equity-data"]')?.textContent.includes('Équité'));
-                if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]')||!await page.$('#equity-data a[href*="call-to-action.html"]'))throw Error('French homepage links missing');
+                await page.waitForFunction(()=>document.documentElement.lang==='fr'&&document.querySelector('.gcw-main-choices a[href*="equity.html"]')?.textContent.includes('Équité'));
+                if(!await page.$('#department-data a[href*="departmental-plans-2026-27/"]')||!await page.$('.gcw-main-choices a[href*="equity.html"]'))throw Error('French homepage links missing');
+                await page.goto(addr+'equity.html?lang=fr');
+                if(!await page.$('#commitments a[href*="call-to-action.html"]')||!await page.$('#briefings a[href*="explorer.html#bhome"]'))throw Error('second page is missing key public service resources');
+                if(await overflow(page))throw Error(mode.name+': public service-wide page scrolls sideways');
                 await page.click('#gcw-lang');
                 await page.close();
 
                 // Shared research tools use local data and retain their sources.
                 page=await ctx.newPage();watch(page);
                 await page.goto(addr+'index.html?lang=en');
-                await page.click('#gcw-menu-tools summary');
-                await page.click('#gcw-menu-tools [data-gcw="guide"]');
+                await page.goto(addr+'index.html?lang=en&tool=guide');
+                await page.waitForSelector('#gcw-guide-query');
                 await page.fill('#gcw-guide-query','What is disability representation at ISC?');
                 await page.click('#gcw-guide-form button');
                 await page.waitForFunction(()=>document.getElementById('gcw-guide-answer').textContent.includes('-3.1 percentage points'));
@@ -100,12 +103,14 @@ jobs:
                 if(!/8.9 − 12.0/.test(await page.locator('#gcw-trace').innerText()))throw Error('source calculation missing');
                 await page.click('[data-gcw="close-trace"]');
                 await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.click('#gcw-menu-tools [data-gcw="basket"]');
+                await page.goto(addr+'index.html?lang=en&tool=basket');
+                await page.waitForSelector('#gcw-evidence-list');
                 if(!/Persons with disabilities/.test(await page.locator('#gcw-evidence-list').innerText()))throw Error('saved evidence missing');
                 const [briefing]=await Promise.all([page.waitForEvent('download'),page.click('[data-gcw="export-html"]')]);
                 if(!briefing.suggestedFilename().endsWith('.html'))throw Error('briefing export missing');
                 await page.click('#gcw-dialog [data-gcw="close"]');
-                await page.click('#gcw-menu-tools [data-gcw="changes"]');
+                await page.goto(addr+'index.html?lang=en&tool=changes');
+                await page.waitForSelector('#gcw-change-from');
                 await page.selectOption('#gcw-change-from','2017');
                 if(!/8.8 percentage points/.test(await page.locator('#gcw-change-result').innerText()))throw Error('year comparison failed');
                 await page.click('#gcw-dialog [data-gcw="close"]');
@@ -121,7 +126,7 @@ jobs:
                 if(await page.$eval('#gcw-search-results .gcw-result-meta',ns=>Array.from(ns).some(n=>!/Organization or plan/.test(n.textContent))))throw Error('discovery category filter did not apply');
                 if(!await page.$('[data-gcw="copy-search"]'))throw Error('shareable search link missing');
                 await page.click('#gcw-dialog [data-gcw="close"]');
-                if(!await page.$('#gcw-home-search input[type="search"]'))throw Error('homepage discovery search missing');
+                if(!await page.$('#gcw-search-button'))throw Error('site search missing');
                 await page.goto(addr+'index.html?tool=search&q=Indigenous%20Services%20Canada&kind=organizations');
                 await page.waitForFunction(()=>document.querySelector('#gcw-dialog')?.open&&document.querySelector('#gcw-query')?.value==='Indigenous Services Canada'&&document.querySelector('#gcw-search-kind')?.value==='organizations');
                 await page.waitForFunction(()=>document.querySelectorAll('#gcw-search-results .gcw-result').length>0);
