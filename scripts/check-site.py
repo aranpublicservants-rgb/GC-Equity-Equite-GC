@@ -27,7 +27,7 @@ class Page(HTMLParser):
         if tag=='script' and self.in_script:
             self.scripts.append(''.join(self.script));self.in_script=False
 
-for name in ['index.html','explorer.html','sources.html','call-to-action.html','staffing.html','departmental-plans-2026-27/index.html','women-femmes/index.html']:
+for name in ['index.html','equity.html','branch-equity.html','explorer.html','sources.html','call-to-action.html','staffing.html','departmental-plans-2026-27/index.html','women-femmes/index.html']:
     p=ROOT/name;html=p.read_text();page=Page();page.feed(html)
     assert len(page.ids)==len(set(page.ids)),f'duplicate static IDs: {name}'
     assert 'gc-workspace.js' in html and 'gc-workspace.css' in html,f'shared tools missing: {name}'
@@ -37,6 +37,14 @@ for name in ['index.html','explorer.html','sources.html','call-to-action.html','
         with tempfile.NamedTemporaryFile(suffix='.js',mode='w') as f:
             f.write(script);f.flush();subprocess.run(['node','--check',f.name],check=True,capture_output=True)
     assert p.stat().st_size<2_500_000,f'page too large: {name}'
+# Ensure the two primary choices lead to the requested destinations.
+home_html=(ROOT/'index.html').read_text()
+equity_html=(ROOT/'equity.html').read_text()
+assert 'href="#department-data"' in home_html, 'department button must stay on the homepage'
+assert 'href="equity.html"' in home_html, 'public service-wide button must open the separate page'
+assert 'id="gcw-equity"' in equity_html, 'second page missing'
+assert 'explorer.html#bhome' in equity_html, 'briefing binder must be discoverable'
+
 for name in ['gc-workspace.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
 for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
