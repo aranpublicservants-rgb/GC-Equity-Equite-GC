@@ -27,7 +27,7 @@
 <h2 data-gce-en="What's inside" data-gce-fr="Contenu">What's inside</h2>
 <ul>
 <li><a href="#org-picker" data-gce-en="Organization data" data-gce-fr="Données par organisme">Organization data</a></li>
-<li><a href="#org-output" data-gce-en="Workforce and survey tables" data-gce-fr="Tableaux sur l’effectif et les sondages">Workforce and survey tables</a></li>
+<li><a href="#org-group-picker" data-gce-en="Workforce and survey tables" data-gce-fr="Tableaux sur l’effectif et les sondages">Workforce and survey tables</a></li>
 <li><a href="#org-output" data-gce-en="Staffing and commitments" data-gce-fr="Dotation et engagements">Staffing and commitments</a></li>
 <li><a href="#org-output" data-gce-en="Departmental plans" data-gce-fr="Plans ministériels">Departmental plans</a></li>
 </ul>
@@ -54,11 +54,35 @@
 </select>
 <p id="org-picker-note" class="gce-footnote" data-gce-en="The organization list includes entries outside the scope of some federal workforce datasets." data-gce-fr="Le répertoire comprend des organismes exclus de certains jeux de données sur l’effectif fédéral.">The organization list includes entries outside the scope of some federal workforce datasets.</p>
 </div>
+<div class="gce-picker">
+<label for="org-group-picker" data-gce-en="Employee group" data-gce-fr="Groupe d’employés">Employee group</label>
+<select id="org-group-picker" aria-describedby="org-group-note">
+<option value="all">All employees / all respondents</option>
+<option value="w">Women</option><option value="man">Men</option>
+<option value="i">Indigenous employees</option><option value="nonind">Non-Indigenous employees</option>
+<option value="d">Employees with disabilities</option><option value="nopwd">Employees without disabilities</option>
+<option value="v">Racialized employees</option><option value="nonrac">Non-racialized employees</option>
+<option value="b">Black employees</option><option value="lgbt">2SLGBTQIA+ employees</option>
+</select>
+<p id="org-group-note" class="gce-footnote" data-gce-en="Tables show the selected group where the published source includes it; some sources report totals only." data-gce-fr="Les tableaux présentent le groupe choisi lorsque la source publie ce résultat; certaines sources ne présentent que des totaux.">Tables show the selected group where the published source includes it; some sources report totals only.</p>
+</div>
 <div id="org-output" class="gce-tables" aria-live="polite" aria-relevant="additions text"></div>
 </section>
 <section id="equity-data" class="gce-major-section" aria-labelledby="equity-title">
 <h2 id="equity-title" data-gce-en="Equity across the public service" data-gce-fr="Équité dans l’ensemble de la fonction publique">Equity across the public service</h2>
 <p class="gce-section-intro" data-gce-en="Published public service-wide figures, employment equity groups, employee surveys, staffing, Call to Action records and source files." data-gce-fr="Chiffres publiés pour l’ensemble de la fonction publique, groupes visés par l’équité, sondages, dotation, dossiers de l’appel à l’action et fichiers sources.">Published public service-wide figures, employment equity groups, employee surveys, staffing, Call to Action records and source files.</p>
+<div class="gce-picker">
+<label for="public-group-picker" data-gce-en="Equity group" data-gce-fr="Groupe visé par l’équité">Equity group</label>
+<select id="public-group-picker" aria-describedby="public-group-note">
+<option value="all">All employee groups</option>
+<option value="w">Women</option><option value="man">Men</option>
+<option value="i">Indigenous employees</option><option value="nonind">Non-Indigenous employees</option>
+<option value="d">Employees with disabilities</option><option value="nopwd">Employees without disabilities</option>
+<option value="v">Racialized employees</option><option value="nonrac">Non-racialized employees</option>
+<option value="b">Black employees</option><option value="lgbt">2SLGBTQIA+ employees</option>
+</select>
+<p id="public-group-note" class="gce-footnote" data-gce-en="Choosing a group updates the relevant tables and keeps public service-wide context and source information visible." data-gce-fr="Le choix d’un groupe actualise les tableaux pertinents, tout en conservant le contexte et les sources pour l’ensemble de la fonction publique.">Choosing a group updates the relevant tables and keeps public service-wide context and source information visible.</p>
+</div>
 <div id="public-output" class="gce-tables"></div>
 </section>
 <section id="related-public-resources" class="gce-major-section gce-last" aria-labelledby="resources-title">
