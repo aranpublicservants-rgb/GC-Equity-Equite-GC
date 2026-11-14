@@ -245,6 +245,50 @@ function ctaTables(name){
  (doc?.letter?.url?'<p class="gce-source">'+link(doc.letter.url,L('2021 original letter','Lettre originale de 2021'))+'</p>':'')+(doc?.self_assessment?.url?'<p class="gce-source">'+link(doc.self_assessment.url,L('2024 original self-assessment','Autoévaluation originale de 2024'))+'</p>':''),
  L('Privy Council Office documents','Documents du Bureau du Conseil privé'),doc?.self_assessment?.url||doc?.letter?.url||'call-to-action.html');
 }
+const extraSourceCache=new Map();
+let extraOrgRequest=0;
+function optionalCsv(path){
+ if(!extraSourceCache.has(path))extraSourceCache.set(path,fetch(path).then(r=>{if(!r.ok)throw Error(path+': HTTP '+r.status);return r.text();}).then(csvParse).catch(e=>{extraSourceCache.delete(path);throw e;}));
+ return extraSourceCache.get(path);
+}
+async function renderAdditionalOrgData(name){
+ const token=++extraOrgRequest,host=$('org-additional-psc');if(!host||!name)return;
+ host.innerHTML='<p class="gce-explain" role="status">'+escape(L('Checking additional published organizational staffing and regional data…','Vérification des autres données publiées sur la dotation et les régions de l’organisme…'))+'</p>';
+ try{
+  const [regions,mobility]=await Promise.all([
+   optionalCsv('data/psc/ar2d.csv'),
+   optionalCsv('data/psc/internal_mob.csv')
+  ]);
+  if(token!==extraOrgRequest||!host.isConnected||selectGroup('org')!=='all')return;
+  let html='';
+  const orgRegions=regions.filter(x=>norm(x.organization_e)===norm(name));
+  if(orgRegions.length){
+   const latest=[...new Set(orgRegions.map(x=>x.month_end_date))].sort().at(-1);
+   const rs=orgRegions.filter(x=>x.month_end_date===latest).sort((a,b)=>a.geo_region_e.localeCompare(b.geo_region_e));
+   if(rs.length)html+=sCard('org-psc-region',L('Public Service Employment Act workforce by region, ','Effectif selon la LEFP par région, ')+latest,
+    L('These are employees in the Public Service Commission population, shown by work region for this organization at the stated date. They are not broken down by equity group and are not Treasury Board core-public-administration representation.','Il s’agit de l’effectif assujetti à la LEFP selon la région de travail dans cet organisme à la date indiquée. Ces données ne sont pas ventilées selon le groupe visé par l’équité et ne correspondent pas à la représentation de l’administration publique centrale selon le Conseil du Trésor.'),
+    table(L('PSEA employees by region: ','Employés assujettis à la LEFP selon la région : ')+deptName(name),
+    [L('Region','Région'),L('Published employee count','Effectif publié')],rs.map(x=>[lang()?x.geo_region_f||x.geo_region_e:x.geo_region_e,N(x.n)]),'organization-psc-regional-workforce'),
+    L('Public Service Commission regional PSEA population data','Commission de la fonction publique, effectif selon la LEFP par région'),'data/psc/ar2d.csv');
+  }
+  const orgMoves=mobility.filter(x=>norm(x.department_e)===norm(name)&&x.quarter==='Q1');
+  if(orgMoves.length){
+   const fy=[...new Set(orgMoves.map(x=>x.fiscal_year))].sort().at(-1),moves=orgMoves.filter(x=>x.fiscal_year===fy);
+   if(moves.length)html+=sCard('org-psc-mobility',L('Staffing movements recorded in ','Mouvements de dotation déclarés dans ')+fy,
+    L('The Public Service Commission publishes separate counts of acting appointments, promotions and lateral/downward movements. These are staffing events, not necessarily unique people, and cannot be treated as equity-group promotion rates.','La Commission de la fonction publique publie des nombres distincts de nominations intérimaires, de promotions et de mouvements latéraux ou régressifs. Il s’agit d’activités de dotation, pas nécessairement de personnes distinctes; ces nombres ne sont pas des taux de promotion selon le groupe visé par l’équité.'),
+    table(L('Reported staffing movements: ','Mouvements de dotation déclarés : ')+deptName(name)+' ('+fy+')',
+    [L('Movement type','Type de mouvement'),L('Published annual count','Nombre annuel publié')],
+    moves.map(x=>[lang()?x.mob_type_f||x.mob_type_e:x.mob_type_e,N(x.count)]),'organization-psc-mobility'),
+    L('Public Service Commission staffing dashboard, internal mobility','Commission de la fonction publique, tableau de bord de la dotation, mobilité interne'),'data/psc/internal_mob.csv');
+  }
+  host.innerHTML=html;
+ }catch(e){
+  if(token!==extraOrgRequest||!host.isConnected)return;
+  host.innerHTML='<p class="gce-unavailable">'+escape(L('Additional region or mobility tables are temporarily unavailable. Other verified tables remain accessible.','Les tableaux supplémentaires sur les régions ou la mobilité sont temporairement indisponibles. Les autres tableaux vérifiés demeurent accessibles.'))+'</p>';
+  console.warn('PSC optional organization sources:',e);
+ }
+}
+
 function pscPopulationOrg(name){
  const rows=D.pscPopulation.filter(r=>norm(r.organization_e)===norm(name)&&r.description_e==='Population').sort((a,b)=>String(a.month_year_e).localeCompare(String(b.month_year_e)));
  if(!rows.length)return '';
@@ -484,6 +528,7 @@ function renderOrg(){
  L('Different datasets cover different populations and years. The presence of an organization in the directory does not mean every dataset applies to it.','Les sources couvrent des populations et des années différentes. La présence d’un organisme dans le répertoire ne signifie pas que chaque jeu de données le concerne.'),
  statusTable(name),L('Official federal organization directory','Répertoire fédéral officiel des organismes'),'https://www.canada.ca/en/government/dept.html');
  out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+pscPopulationOrg(name)+pscLanguageOrg(name)+psesTables(name)+staffingTables(name)+hiringTable(name)+ctaTables(name)+plansTable(name);
+ if(selectGroup('org')==='all'){const extra=document.createElement('div');extra.id='org-additional-psc';out.append(extra);renderAdditionalOrgData(name);}else extraOrgRequest++;
  const branchArea=document.createElement('section');branchArea.className='gce-data-block';branchArea.id='org-branches';out.append(branchArea);renderBranches(name);
  const url=new URL(location.href);url.searchParams.set('org',name);history.replaceState(null,'',url.pathname+url.search+url.hash);
 }
