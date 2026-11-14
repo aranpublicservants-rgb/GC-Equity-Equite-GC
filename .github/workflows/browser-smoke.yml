@@ -79,7 +79,13 @@ jobs:
                 if(await page.locator('#public-survey table thead th').count()!==3)throw Error('Public survey group comparison columns missing');
                 await page.selectOption('#public-group-picker','all');
                 await page.selectOption('#gce-raw-kind','restored');
-                if(await page.locator('#gce-raw-file option').count()<10)throw Error('Complete verified source tables from original collection missing');
+                if(await page.locator('#gce-raw-file option').count()!==61)throw Error('All complete nationally scoped files and federal-service staffing-survey partitions must be present');
+                await page.selectOption('#gce-raw-file','data/restored/24a44ce4-676a-45c3-9718-db34e6c07755.csv');
+                await page.waitForFunction(()=>document.querySelectorAll('#gce-raw-table tbody tr').length>0,null,{timeout:30000});
+                if(!/applicants/i.test(await page.locator('#gce-raw-table caption').innerText()))throw Error('Public Service Employment Act source not shown');
+                await page.selectOption('#gce-raw-file','data/restored/org/af319ac52c317e9459/federal-public-service-cbe6f8d4.csv.gz');
+                await page.waitForFunction(()=>document.querySelectorAll('#gce-raw-table tbody tr').length===18,null,{timeout:40000});
+                if(!/Federal Public Service/i.test(await page.locator('#gce-raw-source').innerText()))throw Error('Published federal public service survey scope missing');
                 await page.selectOption('#gce-raw-kind','psc');
                 if(await page.locator('#gce-raw-file option').count()!==38)throw Error('All 38 locally hosted PSC source files not available');
                 await page.selectOption('#org-picker','Canada Revenue Agency');
