@@ -236,7 +236,7 @@ function ctaTables(name){
  const progress=(assessment?.progress||[]).map((v,i)=>[String(i+1),v]);
  const barriers=(assessment?.barriers||[]).map((v,i)=>[String(i+1),v]);
  return sCard('org-cta',L('5. Call to Action commitments and self-assessment','5. Engagements liés à l’appel à l’action et autoévaluation'),
- L('These are summaries of what organizations reported in 2021 and 2024. They are not independently verified achievements. The original letters and assessments are linked below.','Il s’agit de résumés des déclarations des organismes en 2021 et 2024, et non de réalisations vérifiées de façon indépendante. Les lettres et les autoévaluations originales sont accessibles ci-dessous.'),
+ L('These are organization-wide summaries of what was reported in 2021 and 2024, not group-specific measurements or independently verified achievements. The original letters and assessments are linked below.','Il s’agit de résumés concernant l’ensemble de l’organisme déclarés en 2021 et 2024, et non de mesures propres au groupe choisi ni de réalisations vérifiées de façon indépendante. Les documents originaux sont accessibles ci-dessous.'),
  table(L('2021 stated commitments: ','Engagements déclarés en 2021 : ')+deptName(name),[L('Item','Élément'),L('Published commitment summary','Résumé de l’engagement publié')],letters.map((x,i)=>[String(i+1),x]),'org-call-to-action-commitments')+
  (targets.length?table(L('Targets stated in the 2021 letter','Objectifs de la lettre de 2021'),[L('Item','Élément'),L('Target','Objectif')],targets.map((x,i)=>[String(i+1),String(x)]),'org-cta-targets'):'')+
  table(L('2024 reported goals: ','Objectifs déclarés en 2024 : ')+deptName(name),[L('Area','Domaine'),L('Reported status','État déclaré'),L('Details from the summary','Détails du résumé')],goalRows,'org-call-to-action-goals')+
@@ -394,7 +394,7 @@ function plansTable(name){
  ];
  const rows=p?terms.map((g,i)=>[L(g[0],g[1]),N(p.t?.[i]),N(p.i?.[i])]):[];
  return sCard('org-plans',L('6. Terms in the 2026–27 departmental plan','6. Termes dans le plan ministériel de 2026-2027'),
- L('These counts show occurrences of six topics in the complete departmental plan and in its Internal Services section. A mention is not evidence of an action or result.','Ces nombres représentent les mentions de six thèmes dans l’ensemble du plan ministériel et dans sa section Services internes. Une mention ne démontre ni une action ni un résultat.'),
+ L('These counts are organization-wide mentions of six topics in the complete plan and its Internal Services section, not measurements for the selected employee group. A mention is not proof of action or results.','Ces nombres sont les mentions de six thèmes dans le plan entier et sa section Services internes, sans ventilation selon le groupe d’employés choisi. Une mention ne prouve ni une action ni un résultat.'),
  table(L('2026–27 departmental plan term counts: ','Mentions dans le plan ministériel de 2026-2027 : ')+deptName(name),
  [L('Topic','Thème'),L('Whole plan: mentions','Plan entier : mentions'),L('Internal Services: mentions','Services internes : mentions')],rows,'org-departmental-plan'),
  L('Published 2026–27 departmental plan','Plan ministériel publié de 2026-2027'),p?.url||'departmental-plans-2026-27/');
@@ -527,7 +527,7 @@ function renderOrg(){
  const s=sCard('org-coverage',L('Published data coverage','Données publiées disponibles'),
  L('Different datasets cover different populations and years. The presence of an organization in the directory does not mean every dataset applies to it.','Les sources couvrent des populations et des années différentes. La présence d’un organisme dans le répertoire ne signifie pas que chaque jeu de données le concerne.'),
  statusTable(name),L('Official federal organization directory','Répertoire fédéral officiel des organismes'),'https://www.canada.ca/en/government/dept.html');
- out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+pscPopulationOrg(name)+pscLanguageOrg(name)+psesTables(name)+staffingTables(name)+hiringTable(name)+ctaTables(name)+plansTable(name);
+ out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+(selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+ctaTables(name)+plansTable(name);
  if(selectGroup('org')==='all'){const extra=document.createElement('div');extra.id='org-additional-psc';out.append(extra);renderAdditionalOrgData(name);}else extraOrgRequest++;
  const branchArea=document.createElement('section');branchArea.className='gce-data-block';branchArea.id='org-branches';out.append(branchArea);renderBranches(name);
  const url=new URL(location.href);url.searchParams.set('org',name);history.replaceState(null,'',url.pathname+url.search+url.hash);
