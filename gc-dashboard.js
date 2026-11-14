@@ -267,6 +267,67 @@ function pscLanguageOrg(name){
    [L('Fiscal year','Exercice'),...labels.map(x=>x[0])],rows,'organization-first-official-language-appointments'),
   L('Public Service Commission staffing dashboard, first official language','Commission de la fonction publique, tableau de bord de la dotation, première langue officielle'),'data/psc/demo_fol.csv');
 }
+function renderSourceCatalogue(){
+ const host=$('public-source-inventory');if(!host||!D)return;
+ const categories=[['onpage','Data shown on this page','Données présentées dans cette page'],['psc','55 Public Service Commission data files','55 fichiers de données de la Commission de la fonction publique'],['snps','2023 and 2025 staffing survey source files','Fichiers sources des sondages sur la dotation de 2023 et 2025'],['archive','Archived source inventory','Inventaire des sources archivées']];
+ const onpage=[
+ ['Workforce representation and availability','Représentation de l’effectif et disponibilité','#public-representation','2017–2025'],
+ ['Long-term equity representation','Représentation à long terme','#public-history','1998–2025'],
+ ['Executive representation','Représentation des cadres','#public-executives','2025'],
+ ['Hiring, promotions and separations','Embauches, promotions et départs','#public-workforce-flow','2024–25'],
+ ['2024 employee survey by department and public service','Sondage auprès des fonctionnaires de 2024, par organisme et pour la fonction publique','#public-survey','2024'],
+ ['2024 branch and respondent-group survey','Sondage de 2024 selon la direction et le groupe de répondants','#department-data','2024'],
+ ['2025 staffing survey','Sondage sur la dotation de 2025','#public-staffing-survey','2025'],
+ ['PSC applicant, appointment and student series','Séries sur les candidatures, nominations et étudiants','#public-applicants','2013–2023'],
+ ['PSC region and first official language','PSC : région et première langue officielle','#public-regions','2011–2025'],
+ ['PSEA workforce and tenure','Effectif et durée d’emploi selon la LEFP','#public-psea-tenure','2007–2025'],
+ ['Published salary distribution by group','Répartition salariale publiée selon le groupe','#public-salary-bands','2025'],
+ ['Independent salary estimates and index','Estimations et indice salariaux indépendants','#public-pay','2017–2025'],
+ ['Clerk’s Call to Action commitments and self-assessments','Engagements et autoévaluations liés à l’Appel à l’action du greffier','#public-cta','2021–2024'],
+ ['2026–27 departmental plan mentions','Mentions dans les plans ministériels de 2026-2027','#public-plans','2026–27']
+ ].map(([en,fr,href,year])=>({kind:'onpage',en,fr,href,year,location:'onpage'}));
+ const local=(D.pscCatalog.files||[]).map(x=>({kind:'psc',en:x.en||x.file,fr:x.fr||x.en||x.file,href:x.path,year:(x.years||[]).join('–')||'',file:x.file,location:'local'}));
+ const external=(D.pscCatalog.snps||[]).map(x=>({kind:'snps',en:x.en||x.file,fr:x.fr||x.en||x.file,href:x.url||'',year:x.year||'',file:x.file,location:'external'}));
+ const known=new Map(local.map(x=>[x.file.toLowerCase(),x.href]));
+ const archived=(D.inventory||[]).filter(x=>x.File&&!/^(main-principal \(1\)\.csv)$/i.test(x.File)).map(x=>({
+  kind:'archive',en:x.Title||x.File,fr:x.Title||x.File,href:known.get(x.File.toLowerCase())||'',
+  year:x.Topic||'',file:x.File,location:known.has(x.File.toLowerCase())?'local':'reference'
+ }));
+ const data=onpage.concat(local,external,archived);
+ const kindCount=key=>data.filter(x=>x.kind===key).length;
+ host.innerHTML='<h3>'+escape(L('Dataset finder: included tables and source files','Recherche de données : tableaux inclus et fichiers sources'))+'</h3>'+
+ '<p class="gce-explain">'+escape(L('The full tables are shown on this page. This catalogue also identifies additional Public Service Commission files, official survey downloads, and archive references. A catalogue entry is not a claim that its entire file is visualized or hosted here.','Les tableaux intégrés se trouvent dans cette page. Ce catalogue répertorie aussi d’autres fichiers de la Commission de la fonction publique, des téléchargements officiels des sondages et des références archivées. Une entrée au catalogue ne signifie pas que tout le fichier est visualisé ou hébergé ici.'))+'</p>'+
+ '<div class="gce-filter-panel"><div><label for="gce-source-kind">'+escape(L('Dataset collection','Collection de données'))+'</label><select id="gce-source-kind">'+categories.map(([k,en,fr])=>'<option value="'+k+'">'+escape(L(en,fr))+' ('+kindCount(k)+')</option>').join('')+'</select></div>'+
+ '<div><label for="gce-source-search">'+escape(L('Search titles and file names','Rechercher un titre ou un nom de fichier'))+'</label><input type="search" id="gce-source-search" placeholder="'+escape(L('Search a dataset','Rechercher des données'))+'"></div></div>'+
+ '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(L('Dataset file catalogue','Catalogue des fichiers de données'))+'"><table id="gce-source-table" data-gcw-ready="yes"><caption>'+escape(L('Verified source and dataset inventory','Inventaire des données et sources vérifiées'))+'</caption><thead><tr>'+
+ [L('Dataset or file','Données ou fichier'),L('Period or topic','Période ou sujet'),L('Available here','Disponible ici')].map(x=>'<th scope="col">'+escape(x)+'</th>').join('')+'</tr></thead><tbody id="gce-source-rows"></tbody></table></div>'+
+ '<div class="gce-pager"><button type="button" id="gce-source-prev" disabled>'+escape(L('Previous','Précédent'))+'</button><span id="gce-source-count" role="status" aria-live="polite"></span><button type="button" id="gce-source-next">'+escape(L('Next','Suivant'))+'</button></div>';
+ const kind=$('gce-source-kind'),search=$('gce-source-search'),body=$('gce-source-rows');
+ let filtered=[],page=0;
+ function filter(){
+  const term=norm(search.value);
+  filtered=data.filter(x=>x.kind===kind.value&&(!term||norm([x.en,x.fr,x.file,x.year].join(' ')).includes(term)));
+  page=0;draw();
+ }
+ function draw(){
+  body.innerHTML=filtered.slice(page*15,(page+1)*15).map(x=>{
+   const name=escape(L(x.en,x.fr));
+   const label=x.href?link(x.href,L(x.en,x.fr)):name;
+   const status=x.location==='onpage'?L('Table on this page','Tableau dans cette page'):
+     x.location==='local'?L('Data file stored in this repository','Fichier de données dans le dépôt'):
+     x.location==='external'?L('Official source only','Source officielle seulement'):L('Catalogue reference; source not hosted','Référence du catalogue; source non hébergée');
+   return '<tr><th scope="row">'+label+(x.file?'<div class="gce-file-name">'+escape(x.file)+'</div>':'')+'</th><td>'+escape(x.year||'')+'</td><td>'+escape(status)+'</td></tr>';
+  }).join('');
+  $('gce-source-count').textContent=filtered.length?L('Items ','Éléments ')+(page*15+1)+'–'+Math.min((page+1)*15,filtered.length)+' / '+filtered.length:L('No matching datasets.','Aucune donnée correspondante.');
+  $('gce-source-prev').disabled=page===0;
+  $('gce-source-next').disabled=(page+1)*15>=filtered.length;
+ }
+ kind.addEventListener('change',filter);search.addEventListener('input',filter);
+ $('gce-source-prev').addEventListener('click',()=>{if(page>0){page--;draw();}});
+ $('gce-source-next').addEventListener('click',()=>{if((page+1)*15<filtered.length){page++;draw();}});
+ filter();
+}
+
 function publicTenureTable(){
  const data=D.pscTenure.filter(r=>r.description_e?.includes('Public Service Employment Act')&&String(r.month_end_date).endsWith('-03-31'));
  if(!data.length)return '';
@@ -615,15 +676,10 @@ function publicTables(){
  [L('Organization','Organisme'),...terms.map(x=>L(x[0],x[1])),L('All six terms','Les six termes')],
  m.plans.map(p=>[deptName(p.name),...p.t.map(N),N(p.tt)]),'public-departmental-plan-mentions'),
  L('Departmental plan analysis and definitions','Analyse et définitions des plans ministériels'),'departmental-plans-2026-27/');
- // Complete source inventory, displayed inline as a table rather than another click.
- const inv=D.inventory.filter(r=>r.File&&!/^(main-principal \(1\)\.csv)$/i.test(r.File));
- out+=sCard('public-source-inventory',L('Source file inventory','Inventaire des fichiers sources'),
- L('File titles and topics are reproduced from the site inventory. A listed file does not mean that every organization has results in that file.','Les titres et sujets proviennent de l’inventaire du site. La présence d’un fichier ne signifie pas que tous les organismes y figurent.'),
- table(L('Available and catalogued source files','Fichiers sources disponibles et répertoriés'),
- [L('File','Fichier'),L('Title','Titre'),L('Topic','Sujet'),L('Type','Type')],
- inv.map(r=>[r.File,r.Title,lang()?r['Topic (French)']:r.Topic,lang()?r['Type (French)']:r.Type]),'gc-equity-source-inventory'),
- L('Site source catalogue and methods','Catalogue de sources et méthodes du site'),'sources.html');
+ // The full dataset catalogue is filtered and paginated, never rendered as one giant list.
+ out+='<section class="gce-data-block" id="public-source-inventory"></section>';
  $('public-output').innerHTML=out;
+ renderSourceCatalogue();
 }
 function populatePicker(){
  const names=[...new Set([...(D.orglist.organizations||[]),...Object.keys(D.series.orgs||{}),...Object.keys(D.model.PSES_DEPT||{}).filter(x=>x!=='Public Service'),...D.model.plans.map(x=>x.name),...D.cta.organizations.map(x=>x.name_en)])].sort((a,b)=>a.localeCompare(b,lang()?'fr':'en'));
