@@ -69,7 +69,7 @@ jobs:
                 await page.selectOption('#gce-raw-kind','tbs');
                 if(await page.locator('#gce-raw-file option').count()!==5)throw Error('Official 2026 source CSVs missing');
                 await page.selectOption('#gce-raw-kind','derived');
-                if(await page.locator('#gce-raw-file option').count()!==4)throw Error('Independent derived source tables missing');
+                if(await page.locator('#gce-raw-file option').count()!==5)throw Error('Independent derived source tables missing');
                 await page.locator('a[data-gce-scope="public"][data-gce-topic="sources"]').click();
                 if(await page.locator('#public-topic-picker').inputValue()!=='sources')throw Error('One-click topic navigation failed');
                 await page.selectOption('#public-topic-picker','all');
@@ -100,6 +100,16 @@ jobs:
                 await page.selectOption('#org-group-picker','w');
                 if(!await page.locator('#org-women-representation table').count())throw Error('Published women departmental data missing');
                 await page.selectOption('#org-group-picker','all');
+                await page.waitForFunction(()=>document.querySelectorAll('#gce-restored-surveys option').length>2,null,{timeout:60000});
+                await page.waitForFunction(()=>document.querySelectorAll('#gce-restored-current-surveys tbody tr').length>0,null,{timeout:60000});
+                const sourcePreview=await page.locator('#gce-restored-current-surveys tbody tr').count();
+                if(sourcePreview>18)throw Error('Restored department-only complete survey must be paginated');
+                const sourceZip=await page.locator('#gce-restored-surveys option').count();
+                if(sourceZip<3)throw Error('Complete older staffing source collections missing');
+                const [completeDownload]=await Promise.all([page.waitForEvent('download'),page.locator('#gce-restored-current-surveys .gce-download').click()]);
+                const completeBody=fs.readFileSync(await completeDownload.path(),'utf8');
+                if(!completeBody.includes('Administrative Tribunals Support Service of Canada'))throw Error('Complete source download does not contain the selected organization');
+                if(completeBody.includes('Agriculture and Agri-Food Canada'))throw Error('Another employer leaked into restored complete source data');
                 await page.waitForFunction(()=>document.querySelectorAll('#org-staffing table').length===1,null,{timeout:30000});
                 await page.waitForFunction(()=>document.querySelectorAll('#gce-org-source-tables .gce-org-source').length===17,null,{timeout:45000});
                 const sources=await page.locator('#gce-org-source-tables .gce-org-source').evaluateAll(els=>els.map(e=>e.dataset.source));
@@ -126,6 +136,12 @@ jobs:
                 if(await page.locator('#gce-branch-complete tbody tr').count()>18)throw Error('Black branch results not paginated');
                 if(!/2024/.test(await page.locator('#org-branches').innerText()))throw Error('2024 inline branch tables unavailable');
                 if(!await page.locator('#org-branches .gce-table-wrap').count())throw Error('branch table missing');
+                await page.selectOption('#org-picker','Canadian Security Intelligence Service');
+                await page.waitForFunction(()=>document.querySelectorAll('#gce-restored-workforce option').length>0,null,{timeout:30000});
+                const csisOpts=await page.locator('#gce-restored-workforce option').allTextContents();
+                if(!csisOpts.some(x=>x.includes('occupational group')))throw Error('Complete CSIS 2017-18 equity file missing from CSIS department view');
+                await page.locator('#gce-restored-workforce').selectOption({label:'Representation by employment-equity occupational group, 2017–18'});
+                await page.waitForFunction(()=>document.querySelectorAll('#gce-restored-current-workforce tbody tr').length===13,null,{timeout:30000});
                 await page.selectOption('#org-picker','Communications Security Establishment');
                 await page.waitForFunction(()=>document.querySelectorAll('#org-output table').length>=1);
                 if(!/Not in this collection|Not published/.test(await page.locator('#org-output').innerText()))throw Error('Missing-data distinction not shown');
