@@ -2,23 +2,24 @@
 
 **Website / Site Web:** https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/
 
-An independent, bilingual resource created by the Anti-Racism Ambassadors Network (ARAN) using published federal public service data. It is **not** an official Government of Canada website. Une ressource indépendante et bilingue créée par le Réseau des ambassadeurs de l’antiracisme (RAAR) à partir de données publiques de la fonction publique fédérale. **Ce site n’est pas un site officiel du gouvernement du Canada.**
+An independent, bilingual resource created by the Anti-Racism Ambassadors Network (ARAN) using previously collected, published Government of Canada datasets. It is **not** an official Government of Canada website.
 
-## Find evidence on one page / Trouver des données dans une page
+Ressource bilingue indépendante du Réseau des ambassadeurs de l'antiracisme (RAAR), fondée sur des jeux de données publiés déjà recueillis. **Il ne s'agit pas d'un site officiel du gouvernement du Canada.**
 
-**Departments and agencies / Ministères et organismes:** Select one organization. Only its published workforce, survey, staffing, representation, departmental-plan and Call to Action records appear. Choose an employee group or topic to narrow the tables; missing organization-specific data are never replaced by public service-wide values.
+## Two data areas / Deux domaines de données
 
-**Equity across the public service / Équité dans l’ensemble de la fonction publique:** Review public service-wide trends, equity group comparisons and the original files for 38 PSC national/region-specific CSVs, 26 women/intersectional CSVs, and nine Treasury Board/derived CSVs in the page. The site provides a searchable 157-item archive source inventory that distinguishes live, partial, archive-only, duplicate and unverified sources.
+**Departments and agencies / Ministères et organismes:** Select one organization, then view only its published representation, surveys, staffing, branch results, 2026 executive workforce, departmental plans and Call to Action results. The source viewer loads only that employer's compressed records.
 
-**Both areas are sections of the same homepage, not separate data destinations.** Table previews are paginated at 18 rows and allow full filtered CSV downloads. Original source periods, publishers and reporting populations must remain distinguishable.
+**Equity across the public service / Équité dans l'ensemble de la fonction publique:** Published public-service-wide equity histories and group comparisons, 38 existing PSC source CSVs without an employer column, 26 previously incorporated women/intersectional CSVs, nine Treasury Board/derived source files, and the original whole-service results from the recovered archived collections.
 
-## Data and quality limits / Limites des données
+Original tables support search, 18-row previews and full filtered CSV exports. Source denominators and reporting populations remain distinct. Missing and suppressed figures are never inferred.
 
-The 27 October 2026 Google Drive website archive included a much larger historical dataset package; it has **not all been rebuilt inside this modular GitHub repository**. The old archive includes unresolved conflicting PSES source values. The archived dataset list is an audit record, not a statement that all its data are deployed. Do not infer missing departmental figures, recalculate suppressed cells, or treat independent salary estimates as official Treasury Board results.
+## Exact original source restoration
 
-- [Detailed publishing and source review](QUALITY-REVIEW-2026-11.md)
-- [Maintainer architecture, source lineage and update procedure](MAINTAINING.md)
-- [Current live database audit manifest](assets/data-coverage-audit.json)
-- [Continuous source and publishing audit](scripts/audit-publishing.py)
+The source register was recovered from the prior GC Equity Google Drive collection and its own publication metadata. **All 69 complete original source files are now represented**, covering **10,200,710 original source records**. Large survey files were divided losslessly into **2,927 employer partitions**, and every published source file retains its original SHA-256, byte count and source URL. The 2023 and 2025 staffing-survey breakdowns and 2026 executive-population series are available within the two primary areas. Employer-only SSC and CSIS datasets are displayed only under those employers.
 
-Source code and published datasets are kept separate. No paid services or customer login are required to use the page.
+Source originals are tracked in `assets/restored-datasets.json`, `assets/organization-source-scopes.json` and `scripts/archived-source-registry.json`. `scripts/audit-publishing.py` and the GitHub Actions browser tests check presence, organization isolation and data integrity.
+
+The earlier full PSES assembly, with historical 2019/2020/2022/2024 data and competing same-key records, is a distinct unresolved historical survey restoration. It is not declared reconciled. Suppressed values, differing methods and source conflicts must remain clearly distinguished.
+
+**Maintenance documentation:** [MAINTAINING.md](MAINTAINING.md) and [QUALITY-REVIEW-2026-11.md](QUALITY-REVIEW-2026-11.md). These are not linked from the public website.
