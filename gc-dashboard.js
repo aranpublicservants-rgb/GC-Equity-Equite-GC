@@ -549,6 +549,9 @@ function renderOrg(){
  renderBranches(name);
  const allSources=document.createElement('div');allSources.id='org-complete-sources';out.append(allSources);
  window.GCEOrgSources?.render(name,selectGroup('org'));
+ const restoredWorkforce=document.createElement('div');restoredWorkforce.id='org-restored-workforce';out.append(restoredWorkforce);
+ const restoredSurveys=document.createElement('div');restoredSurveys.id='org-restored-surveys';out.append(restoredSurveys);
+ window.GCERestoredSources?.render(name,deptName(name),selectGroup('org'));
  const url=new URL(location.href);url.searchParams.set('org',name);
  if(/^#(?:equity-data|public-|related-public-resources)/.test(url.hash))url.hash='department-data';
  history.replaceState(null,'',url.pathname+url.search+url.hash);
@@ -762,6 +765,7 @@ function tableCategory(id,scope){
  if(scope==='org'){
   if(/^(org-coverage|org-complete-sources)$/.test(id))return 'sources';
   if(/(?:org-branches|org-survey|org-staffing)/.test(id))return 'experience';
+  if(id==='org-restored-surveys')return 'experience';
   if(/(?:org-cta|org-cta-outcomes|org-cta-coding)/.test(id))return 'commitments';
   if(id==='org-plans')return 'plans';
   if(/(?:mobility|appointments|org-psc-mobility)/.test(id))return 'staffing';
