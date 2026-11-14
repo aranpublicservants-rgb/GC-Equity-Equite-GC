@@ -13035,6 +13035,25 @@
       "reportingPeriod": "As published in original source"
     },
     {
+      "originalName": "f5efcbba_imputation_estimates.csv",
+      "dataset": "Disproportionality Index supplementary imputation",
+      "title": "Supplemental salary imputation estimates",
+      "publisherUrl": "https://employment-equity.github.io/supplementary_tables/imputation_estimates.csv",
+      "archivedSha256": "ca8d8fb552b8e6cd4597217fa27529107c9f0322a44109650f2eab20ca1f417e",
+      "sourceBytes": 895,
+      "encodingConvertedFrom": "utf-8-sig",
+      "headers": [
+        "Year",
+        "Group",
+        "salary_range",
+        "value"
+      ],
+      "organizationField": null,
+      "rows": 22,
+      "path": "data/restored/imputation-estimates-original.csv",
+      "method": "Independent derived estimates; not published Treasury Board salary observations."
+    },
+    {
       "originalName": "ff6d0c37-9b0d-4eca-9f32-d348f8048d48_cfppsc_snps16-1.csv",
       "dataset": "2025 Staffing and Non-Partisanship Survey",
       "title": "By department and by diploma",
