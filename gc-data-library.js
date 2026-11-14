@@ -23,7 +23,7 @@ function entries(){
  const PSC=(coverage?.hostedAdditional?.psc||[]).filter(x=>!(pscIndex?.files||[]).some(f=>f.file===x.name)).map(x=>({...x,category:'psc',kind:'PSC source without explicit organization field',kindFr:'Source de la CFP sans champ d’organisme explicite'}));
  const W=(coverage?.hostedAdditional?.women||[]).map(x=>({...x,category:'women',titleEn:W_TITLES[x.name]?.[0]||human(x.name),titleFr:W_TITLES[x.name]?.[1]||human(x.name),kind:'Women and intersectional dataset',kindFr:'Données sur les femmes et l’intersectionnalité'}));
  const O=(coverage?.hostedAdditional?.other||[]).map(x=>({...x,category:x.kind==='derived'?'derived':'tbs',titleEn:human(x.name),titleFr:human(x.name),kind:x.kind==='derived'?'Independent derived analysis':'Treasury Board source file',kindFr:x.kind==='derived'?'Analyse dérivée indépendante':'Fichier source du Conseil du Trésor'}));
- const R=(restored?.files||[]).filter(x=>!x.organizationField && x.path && !/under the Public Service Employment Act/.test(x.dataset||'')).map(x=>({
+ const R=(restored?.files||[]).filter(x=>!x.organizationField && x.dataset!=='Employment Equity' && x.path && !/under the Public Service Employment Act/.test(x.dataset||'')).map(x=>({
    name:x.originalName,path:x.path,category:'restored',
    titleEn:x.title||x.dataset,titleFr:x.title||x.dataset,
    dataset:x.dataset,publisherUrl:x.publisherUrl,rows:x.rows
