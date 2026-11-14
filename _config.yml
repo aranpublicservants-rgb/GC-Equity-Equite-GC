@@ -6,6 +6,8 @@ exclude:
   - data/checksums.sha256
   - data/source-dates.json
   - AGENTS.md
+  - QUALITY-REVIEW-2026-11.md
+  - archive-source
   - scripts
   - dist
   - node_modules
