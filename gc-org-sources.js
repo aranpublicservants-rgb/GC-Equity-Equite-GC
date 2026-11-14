@@ -68,12 +68,14 @@ function parseOnlyOrganization(text,field,orgName){
 }
 async function departmentRows(file,field,originalName){
  const key=file+'|'+norm(originalName);
- if(cache.has(key))return cache.get(key);
+ if(cache.has(key)){const hit=cache.get(key);cache.delete(key);cache.set(key,hit);return hit;}
  const p=fetch('data/psc/'+file).then(async response=>{
   if(!response.ok)throw Error(file+': HTTP '+response.status);
   return parseOnlyOrganization(await response.text(),field,originalName);
  });
  cache.set(key,p);
+ // Bound memory usage: each raw file can have tens of thousands of records.
+ while(cache.size>8)cache.delete(cache.keys().next().value);
  try{return await p;}catch(e){cache.delete(key);throw e;}
 }
 function displayColumns(headers,field){
