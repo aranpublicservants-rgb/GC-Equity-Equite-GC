@@ -9,6 +9,7 @@ import json
 ROOT=Path(__file__).resolve().parent.parent
 ORG_FIELDS=("department_e","organization_e","orgnization_e","department_or_agency","Department","Organization","DEPARTMENT","ORGANIZATION")
 items=[]
+index_records=[]
 for path in sorted((ROOT/"data"/"psc").glob("*.csv")):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
         reader=csv.DictReader(f)
@@ -22,7 +23,11 @@ for path in sorted((ROOT/"data"/"psc").glob("*.csv")):
             value=(row.get(col) or "").strip()
             if value:count[value]+=1
         items.append((path.name,col,len(count),sum(count.values()),count.get("Canada Revenue Agency",0),count.get("Administrative Tribunals Support Service of Canada",0)))
+        index_records.append({"file":path.name,"field":col,"columns":fields,"organizations":dict(sorted(count.items()))})
         print("PSC-ORG-INDEX:"+json.dumps({"file":path.name,"field":col,"columns":fields,"organizations":dict(sorted(count.items()))},ensure_ascii=False,separators=(",",":")))
         print("PSC-DEPARTMENT:",path.name,"field="+col,"orgs="+str(len(count)),"rows="+str(sum(count.values())),"CRA="+str(count.get("Canada Revenue Agency",0)),"ATSSC="+str(count.get("Administrative Tribunals Support Service of Canada",0)))
 print("PSC-ORG-AUDIT-SUMMARY:",len(items),"of",len(list((ROOT/"data"/"psc").glob("*.csv"))),"PSC CSVs have explicit organization fields")
-assert len(items)>=17, "The organization dataset inventory is unexpectedly small"
+assert len(items)==17, "Unexpected number of department-identifiable Public Service Commission files"
+index=json.loads((ROOT/"assets"/"psc-organization-index.json").read_text(encoding="utf-8"))
+assert sorted(index["files"],key=lambda x:x["file"])==sorted(index_records,key=lambda x:x["file"]), "Organization source index is out of sync with the actual CSV records"
+print("PSC-ORG-INDEX-CHECK: PASS all 17 departmental files, original source headers and per-department record counts")
