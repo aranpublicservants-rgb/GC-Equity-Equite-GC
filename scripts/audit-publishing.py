@@ -7,6 +7,7 @@ live unless its declared GitHub path exists. No missing data are inferred.
 """
 import csv
 import gzip
+import hashlib
 import json
 import pathlib
 import re
