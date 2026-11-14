@@ -1,0 +1,33 @@
+name: Restore verified GC Equity source tables
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-verified-source-files.yml'
+      - 'scripts/import-verified-source-files.py'
+      - 'scripts/archived-source-registry.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore only exact source files with verified checksums
+        run: python scripts/import-verified-source-files.py --set small
+      - name: Publish verified complete data files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/restored assets/restored-datasets.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore complete archived source tables with matching publisher checksums"
+            git push
+          fi
