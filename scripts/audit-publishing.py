@@ -111,7 +111,7 @@ for entry in index['files']:
     if not (ROOT/'data/psc'/entry['file']).is_file():
         errors.append('Missing indexed departmental CSV: '+entry['file'])
 branches=list((ROOT/'data/pses-2024-branches').glob('*.json.gz'))
-branch_meta=re.search(r'<script type="application/json" id="eq-branch-meta">([\\s\\S]*?)</script>',(ROOT/'explorer.html').read_text(),re.S)
+branch_meta=re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',(ROOT/'explorer.html').read_text(),re.S)
 if not branch_meta:errors.append('Branch metadata is missing from explorer')
 else:
     expected={str(d['id']) for d in json.loads(branch_meta.group(1))['departments']}
