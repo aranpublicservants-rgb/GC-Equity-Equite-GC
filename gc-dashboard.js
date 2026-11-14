@@ -80,6 +80,7 @@ async function load(){
   ['model','assets/workspace-data.json','json'],
   ['pscCatalog','data/psc/catalogue.json','json'],
   ['pscOrgIndex','assets/psc-organization-index.json','json'],
+  ['womenOrg','women-femmes/data/csv/women-by-organization-2025.csv','csv'],
   ['driveAudit','assets/data-coverage-audit.json','json'],
   ['pscPopulation','data/psc/CFPPSC_AR2C.csv','csv'],
   ['pscTenure','data/psc/ar2a.csv','csv'],
@@ -141,6 +142,17 @@ function representation(name){
  L('Treasury Board Secretariat','Secrétariat du Conseil du Trésor'),source.tbs);
 }
 
+function womenRepresentationForDept(name){
+ if(!['all','w'].includes(selectGroup('org')))return '';
+ const r=(D.womenOrg||[]).find(x=>norm(x.Organization)===norm(name)||norm(x.Organisation)===norm(name));
+ if(!r)return '';
+ const cols=[L('Selected organization','Organisme sélectionné'),L('Total employees (all groups)','Effectif total (tous les groupes)'),L('Women in workforce (%)','Femmes dans l’effectif (%)'),L('Women workforce availability (%)','Disponibilité des femmes dans la population active (%)'),L('Difference (percentage points)','Différence (points de pourcentage)')];
+ const value=[deptName(name),N(r.Employees),P(r['Women (%)']),P(r['Departmental workforce availability for women (%)']),r['Difference (points, calculated)']===''?missing():N(r['Difference (points, calculated)'])];
+ return sCard('org-women-representation',L('Women: departmental workforce compared with availability, 2025','Femmes : effectif ministériel comparé à la disponibilité, 2025'),
+ L('The employee count is the entire departmental workforce, NOT a count of women. The published difference compares the representation percentage with the available-workforce estimate; it is not a hiring target.','L’effectif indiqué comprend tous les employés du ministère et NON seulement les femmes. La différence publiée compare le pourcentage de représentation à l’estimation de la disponibilité dans la population active; ce n’est pas un objectif d’embauche.'),
+ table(L('Published women’s representation: ','Représentation publiée des femmes : ')+deptName(name),cols,[value],'organization-women-2025'),
+ L('Published organization-specific women dataset','Jeu de données publié sur les femmes selon l’organisme'),'women-femmes/data/csv/women-by-organization-2025.csv');
+}
 function trendTables(name){
  const rec=findEntry(D.series.orgs,name),selectedGroup=selectGroup('org');
  if(!rec)return '';
@@ -588,7 +600,7 @@ function renderOrg(){
  const s=sCard('org-coverage',L('Published data coverage for the selected organization','Données publiées disponibles pour l’organisme sélectionné'),
  L('Only records explicitly attributed to this organization are included here. Each source may use a different workforce population and reporting period. Public service-wide figures appear only in the separate equity section when no organization is selected.','Seules les données explicitement attribuées à cet organisme figurent ici. Les sources peuvent utiliser des populations et périodes de référence différentes. Les chiffres visant l’ensemble de la fonction publique sont affichés dans la section générale lorsqu’aucun organisme n’est sélectionné.'),
  statusTable(name),L('Federal government department and agency directory','Répertoire des ministères et organismes fédéraux'),'https://www.canada.ca/en/government/dept.html');
- out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+
+ out.innerHTML=meta+s+representation(name)+womenRepresentationForDept(name)+trendTables(name)+subgroupTables(name)+
  (selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+
  psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+
  ctaTables(name)+ctaComparisonOrg(name)+plansTable(name);
