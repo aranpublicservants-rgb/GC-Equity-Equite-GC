@@ -1,0 +1,23 @@
+﻿Year,Group,salary_range,value
+2022,count_black,"Under 25,000",17
+2022,count_black,"250,000 and over",1
+2022,count_vm,"Under 25,000",12
+2022,count_vm,"250,000 and over",1
+2021,count_black,"Under 25,000",17
+2021,count_black,"250,000 and over",0
+2021,count_black,"200,000 to 249,999",3
+2021,count_vm,"Under 25,000",80
+2021,count_vm,"250,000 and over",2
+2020,count_black,"200,000 to 249,999",4
+2020,count_black,"250,000 and over",0
+2020,count_vm,"200,000 to 249,999",36
+2020,count_vm,"250,000 and over",2
+2020,count_indigenous,"150,000 to 199,999",116
+2020,count_indigenous,"200,000 to 249,999",3
+2019,count_black,"Under 15,000",2
+2019,count_black,"200,000 to 249,999",1
+2019,count_black,"250,000 and over",0
+2019,count_vm,"Under 15,000",21
+2019,count_vm,"250,000 and over",1
+2019,count_indigenous,"Under 15,000",5
+2019,count_indigenous,"200,000 to 249,999",2
