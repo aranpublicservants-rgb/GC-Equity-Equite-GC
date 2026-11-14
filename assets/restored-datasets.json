@@ -15,10 +15,10 @@
         "Année",
         "Univers",
         "Cadres supérieurs",
-        "\nMinistère ou organisme",
+        "Ministère ou organisme",
         "Total"
       ],
-      "organizationField": null,
+      "organizationField": "Ministère ou organisme",
       "reportingPeriod": "As published in original source"
     },
     {
