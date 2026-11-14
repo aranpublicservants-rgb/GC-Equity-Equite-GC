@@ -311,7 +311,7 @@ function ctaComparisonOrg(name){
    table(L('Equity representation outcomes: ','Résultats de représentation en matière d’équité : ')+deptName(name),
    [L('Employee group','Groupe d’employés'),L('2021 representation (%)','Représentation 2021 (%)'),L('2023 representation (%)','Représentation 2023 (%)'),L('2025 representation (%)','Représentation 2025 (%)'),L('2025 workforce availability (%)','Disponibilité 2025 (%)')],
    metrics,'organization-call-to-action-representation'),
-   L('Site’s organization-level Call to Action comparison dataset','Données comparatives de l’appel à l’action selon l’organisme'),'data/call-to-action-comparisons.json');
+   L('Organization-specific comparison records','Données comparatives propres à l’organisme'),null);
  }
  const categories=Object.entries(sourceData.categories||{});
  if(categories.length){
@@ -322,7 +322,7 @@ function ctaComparisonOrg(name){
    table(L('Coded mentions in organization documents: ','Mentions codées dans les documents de l’organisme : ')+deptName(name),
    [L('Topic or initiative','Thème ou initiative'),L('2021 letter','Lettre de 2021'),L('2024 self-assessment','Autoévaluation de 2024')],
    categories.map(([key,meta])=>[L(meta.en,meta.fr),label(rec['L_'+key]),label(rec['S_'+key])]),'organization-call-to-action-keyword-codes'),
-   L('Method and locally published comparison dataset','Méthode et données comparatives publiées ici'),'data/call-to-action-comparisons.json');
+   L('Automated coding of the selected organization’s own documents','Codage automatisé des documents de l’organisme sélectionné'),null);
  }
  return out;
 }
