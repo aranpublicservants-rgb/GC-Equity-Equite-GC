@@ -451,46 +451,73 @@ function publicTables(){
    k.map(g=>[groupWord(g),P(f[g]?.rep),P(f[g]?.h),P(f[g]?.p),P(f[g]?.s)]),'public-workforce-flow'),
    L('Treasury Board 2024–25 Employment Equity demographic snapshot','Aperçu démographique de l’équité en matière d’emploi 2024-2025'),source.tbs);
  }
- // Employee surveys overall across equity groups 2024.
- const qs=Object.keys(m.PSES_QMETA),qmeta=m.PSES_QMETA,by=m.EEG_DEPT['Public Service']||{},all=m.PSES_DEPT['Public Service']||{};
- out+=sCard('public-survey',L('2024 Public Service Employee Survey by employee group','Sondage auprès des fonctionnaires de 2024 selon le groupe'),
- L('Each cell is a response percentage among that group’s survey respondents. The meaning of a higher percentage depends on the question. Respondent groups can overlap.','Chaque cellule indique le pourcentage de réponses des répondants du groupe. Le sens d’un pourcentage plus élevé dépend de la question. Les groupes peuvent se chevaucher.'),
+ // Public Service Employee Survey: group-specific responses with overall comparison.
+ const sgKey=surveyGroup(current),qs=Object.keys(m.PSES_QMETA),qmeta=m.PSES_QMETA,by=m.EEG_DEPT['Public Service']||{},all=m.PSES_DEPT['Public Service']||{};
+ const questionName=q=>q+' · '+(lang()?m.EEG_QMETA_FR[q]||qmeta[q]?.[1]:qmeta[q]?.[1]||q);
+ out+=sCard('public-survey',L('2024 employee experiences by respondent group','Expérience des employés en 2024, selon le groupe de répondants'),
+ L('Percentages refer to respondents who gave the stated response. Harassment and discrimination are adverse outcomes; higher percentages for these questions are not better. Respondent groups may overlap.','Les pourcentages portent sur les répondants ayant donné la réponse indiquée. Le harcèlement et la discrimination sont des expériences négatives; un pourcentage plus élevé n’est pas préférable. Les groupes peuvent se chevaucher.'),
  table(L('Public service survey responses, 2024','Réponses au sondage dans la fonction publique, 2024'),
- [L('Question and response','Question et réponse'),L('All respondents','Tous les répondants'),L('Women','Femmes'),L('Disability','Handicap'),L('Indigenous','Autochtones'),L('Racialized','Racisés'),L('Black','Noirs')],
- qs.map(q=>[q+' · '+(lang()?m.EEG_QMETA_FR[q]||qmeta[q][1]:qmeta[q][1]),...['all','woman','pwd','ind','rac','black'].map(k=>P(k==='all'?all[q]:by[k]?.[q]))]),'public-survey-2024'),
+ [L('Question and response','Question et réponse'),L('All respondents (%)','Tous les répondants (%)'),...(sgKey!=='all'?[groupWord(current)+' (%)']:[])],
+ qs.map(q=>[questionName(q),P(all[q]),...(sgKey!=='all'?[P(by[sgKey]?.[q])]:[])]),'public-survey-2024'),
  L('2024 Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux de 2024'),source.pses);
- // Changes 2022-24.
  const yoy=m.YOY['Public Service']||{};
- out+=sCard('public-survey-change',L('Employee survey changes: 2022 and 2024','Évolution des sondages : 2022 et 2024'),
- L('These are published results for comparable questions in each year. A larger share is not necessarily a better outcome; see the question.','Ces résultats publiés portent sur des questions comparables. Une part plus grande n’est pas nécessairement un meilleur résultat : il faut lire la question.'),
- table(L('Public service survey changes by question','Évolution des réponses selon la question'),
+ out+=sCard('public-survey-change',L('Change in survey results, 2022 to 2024','Évolution des résultats du sondage, 2022 à 2024'),
+ L('Comparisons are for all public service respondents, not broken down by the selected group. A positive numerical change is not necessarily a favourable outcome.','Ces comparaisons portent sur tous les répondants de la fonction publique, sans ventilation par le groupe choisi. Une augmentation numérique n’est pas nécessairement un résultat favorable.'),
+ table(L('Public service survey changes','Évolution des réponses dans la fonction publique'),
  [L('Question and response','Question et réponse'),L('2022 (%)','2022 (%)'),L('2024 (%)','2024 (%)'),L('Change (percentage points)','Variation (points de pourcentage)')],
- Object.keys(yoy).map(q=>[q+' · '+(lang()?m.EEG_QMETA_FR[q]||qmeta[q]?.[1]:qmeta[q]?.[1]||q),P(yoy[q].a),P(yoy[q].b),N(yoy[q].b-yoy[q].a)]),'public-survey-change'),
+ Object.keys(yoy).map(q=>[questionName(q),P(yoy[q].a),P(yoy[q].b),N(yoy[q].b-yoy[q].a)]),'public-survey-change'),
  L('Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux'),source.pses);
- // Public service staffing surveys.
- const staffing=D.snps.orgs['Federal Public Service']||D.snps.orgs['Public Service']||findEntry(D.snps.orgs,'Federal Public Service'),q=D.snps.questions;
- out+=sCard('public-staffing-survey',L('2025 Staffing and Non-Partisanship Survey','Sondage sur la dotation et l’impartialité politique de 2025'),
- L('Questions have different respondent bases. Some questions apply only to people who participated in staffing processes. Missing published values are shown as unavailable, not zero.','Les questions n’ont pas toutes les mêmes répondants. Certaines visent uniquement les participants aux processus de dotation. Les valeurs non publiées sont indiquées comme indisponibles et non comme zéro.'),
- table(L('Staffing survey by employee group, 2025','Sondage sur la dotation selon le groupe, 2025'),
- [L('Question and response','Question et réponse'),L('All respondents','Tous les répondants'),L('Women','Femmes'),L('Disability','Handicap'),L('Indigenous','Autochtones'),L('Racialized','Racisés'),L('Black','Noirs')],
- Object.keys(q).map(code=>[code+' · '+L(q[code].en,q[code].fr),...['all','woman','pwd','ind','rac','black'].map(k=>P(staffing?.[k]?.[code]))]),'public-staffing-survey'),
+ // 2025 staffing survey: respondent group with aggregate benchmark.
+ const staff=D.snps.orgs['Federal Public Service']||D.snps.orgs['Public Service']||findEntry(D.snps.orgs,'Federal Public Service'),questions=D.snps.questions;
+ if(staff)out+=sCard('public-staffing-survey',L('2025 staffing experiences by employee group','Expérience de la dotation en 2025 selon le groupe'),
+ L('Questions use different respondent populations; some apply only to people involved in staffing. Missing values are not zero.','Les questions concernent des populations de répondants différentes; certaines visent seulement les personnes ayant participé à la dotation. Les valeurs manquantes ne valent pas zéro.'),
+ table(L('2025 Staffing and Non-Partisanship Survey','Sondage sur la dotation et l’impartialité politique de 2025'),
+ [L('Question and measured response','Question et réponse mesurée'),L('All respondents (%)','Tous les répondants (%)'),...(sgKey!=='all'?[groupWord(current)+' (%)']:[])],
+ Object.keys(questions).map(id=>[id+' · '+L(questions[id].en,questions[id].fr),P(staff.all?.[id]),...(sgKey!=='all'?[P(staff[sgKey]?.[id])]:[])]),'public-staffing-2025'),
  L('Public Service Commission, 2025 survey','Commission de la fonction publique, sondage de 2025'),D.snps.dataset);
- // Staffing funnel by fiscal year.
+ // Public Service Commission employment equity funnel, 2013–2023; don't mix with 2024–25 annual TBS flow.
  const ps=D.psc,years=Object.keys(ps.appointments).filter(y=>ps.applicants[y]).sort();
- out+=sCard('public-applicants',L('Applicants and appointments by employment equity group','Candidatures et nominations selon le groupe visé par l’équité'),
- L('These figures compare each group’s percentage among applicants and among appointments in a fiscal year. Applicants and appointees are distinct populations.','Ces chiffres comparent la part du groupe parmi les candidatures et parmi les nominations au cours d’un exercice. Les postulants et les personnes nommées sont des populations distinctes.'),
- table(L('Public Service Commission staffing pipeline','Cheminement de la dotation selon la Commission de la fonction publique'),
- [L('Fiscal year','Exercice'),...['w','i','d','v'].flatMap(g=>[L(ps.groups[g][0],ps.groups[g][1])+' · '+L('applicants (%)','candidatures (%)'),L(ps.groups[g][0],ps.groups[g][1])+' · '+L('appointments (%)','nominations (%)')])],
- years.map(y=>[y,...['w','i','d','v'].flatMap(g=>[P(ps.applicants[y]?.[g]),P(ps.appointments[y]?.[g])])]),'public-staffing-pipeline'),
- L('Public Service Commission staffing open data','Données ouvertes sur la dotation de la Commission de la fonction publique'),source.psc);
- // Student pipeline
- const stud=ps.students,syears=Object.keys(stud.hires).filter(y=>stud.applicants[y]).sort();
- out+=sCard('public-students',L('Student applicants and hires by group','Candidatures et embauches d’étudiants selon le groupe'),
- L('The two percentages describe different stages of student recruitment. Interpret them as shares of applicants and hires, not as headcounts.','Les deux pourcentages décrivent des étapes différentes du recrutement étudiant : parts des candidatures et des embauches, non nombres de personnes.'),
- table(L('Student staffing, by fiscal year','Dotation étudiante selon l’exercice'),
- [L('Fiscal year','Exercice'),...['w','i','d','v'].flatMap(g=>[L(ps.groups[g][0],ps.groups[g][1])+' · '+L('applicants','candidatures'),L(ps.groups[g][0],ps.groups[g][1])+' · '+L('hires','embauches')])],
- syears.map(y=>[y,...['w','i','d','v'].flatMap(g=>[P(stud.applicants[y]?.[g]),P(stud.hires[y]?.[g])])]),'public-students'),
- L('Public Service Commission open data','Données ouvertes de la Commission de la fonction publique'),source.psc);
+ const eeKeys=['w','i','d','v'],picked=eeKeys.includes(current)?[current]:current==='all'?eeKeys:[];
+ if(picked.length){
+  const head=current==='all'?[L('Employee group','Groupe d’employés'),L('Applicant share (%)','Part des candidatures (%)'),L('Appointee share (%)','Part des nominations (%)')]:
+   [L('Fiscal year','Exercice'),L('Applicant share (%)','Part des candidatures (%)'),L('Appointee share (%)','Part des nominations (%)')];
+  const rows=current==='all'?picked.map(k=>[groupWord(k),P(ps.applicants[years[years.length-1]]?.[k]),P(ps.appointments[years[years.length-1]]?.[k])]):
+   years.map(y=>[y,P(ps.applicants[y]?.[current]),P(ps.appointments[y]?.[current])]);
+  out+=sCard('public-applicants',L('Applicants and appointments by employment equity group','Candidatures et nominations selon le groupe visé par l’équité'),
+   L('These are separate percentage shares among applicants and appointees to processes covered by Public Service Commission data; they are not applicant success rates. The latest year in this series is 2022–23.','Ces parts portent sur deux populations distinctes, les candidatures et les nominations selon les données de la Commission de la fonction publique; il ne s’agit pas de taux de réussite individuels. La dernière année de cette série est 2022-2023.'),
+   table(L('Public Service Commission applicant and appointment shares','Parts des candidatures et des nominations selon la Commission de la fonction publique'),head,rows,'public-psc-applicants-appointments'),
+   L('Public Service Commission staffing open data','Données ouvertes de la Commission de la fonction publique'),source.psc);
+  const students=ps.students,yearsStudents=Object.keys(students.hires).filter(y=>students.applicants[y]).sort();
+  const srows=current==='all'?picked.map(k=>[groupWord(k),P(students.applicants[yearsStudents.at(-1)]?.[k]),P(students.hires[yearsStudents.at(-1)]?.[k])]):
+   yearsStudents.map(y=>[y,P(students.applicants[y]?.[current]),P(students.hires[y]?.[current])]);
+  out+=sCard('public-students',L('Student applicants and student hires','Candidatures et embauches d’étudiants'),
+   L('Shares among student applicants and student hires, not numbers of students. These denominators differ.','Parts parmi les étudiants qui présentent leur candidature et les étudiants embauchés, et non nombres d’étudiants. Les dénominateurs sont différents.'),
+   table(L('Student recruitment by group','Recrutement étudiant selon le groupe'),
+   current==='all'?[L('Employee group','Groupe d’employés'),L('Student applicant share (%)','Part des candidatures étudiantes (%)'),L('Student hire share (%)','Part des embauches étudiantes (%)')]:
+   [L('Fiscal year','Exercice'),L('Student applicant share (%)','Part des candidatures étudiantes (%)'),L('Student hire share (%)','Part des embauches étudiantes (%)')],srows,'public-student-hiring'),
+   L('Public Service Commission student staffing data','Données de la Commission de la fonction publique sur la dotation étudiante'),source.psc);
+ }
+ // Regional appointment share by equity group, latest published year in this source.
+ const regions=ps.by_region,regYear=Object.keys(regions||{}).sort().at(-1);
+ if(regYear&&picked.length){
+  const reg=regions[regYear],cols=current==='all'?picked:[current];
+  out+=sCard('public-regions',L('Equity-group appointment shares by region','Parts des nominations selon le groupe visé par l’équité et la région'),
+   L('The percentage is the equity group’s share among appointments in the named region in the stated year. Different regions can have different numbers of appointments.','Le pourcentage représente la part des nominations du groupe dans la région indiquée et pour l’année indiquée. Les volumes de nominations varient selon la région.'),
+   table(L('Regional appointment shares, ','Parts des nominations par région, ')+regYear,
+   [L('Region','Région'),...cols.map(k=>groupWord(k)+' (%)')],Object.keys(reg).sort().map(region=>[region,...cols.map(k=>P(reg[region]?.[k]))]),'public-regional-appointments'),
+   L('Public Service Commission staffing data','Données sur la dotation de la Commission de la fonction publique'),source.psc);
+ }
+ // By sex of appointees, 2022–23; not interchangeable with workforce gender statistics.
+ const sexYear=Object.keys(ps.by_sex||{}).sort().at(-1),sex=ps.by_sex?.[sexYear]||{};
+ if(sexYear&&(current==='all'||['i','v','d'].includes(current))){
+  const keys=current==='all'?['i','d','v']:[current];
+  out+=sCard('public-appointment-sex',L('Appointments within equity groups by sex','Nominations au sein des groupes visés par l’équité selon le sexe'),
+   L('Women’s and men’s percentages within each listed equity group of appointees; these figures are not the sex distribution of the entire public service.','Pourcentages de femmes et d’hommes parmi les personnes nommées au sein de chaque groupe indiqué; ils ne représentent pas la répartition par sexe de l’ensemble de la fonction publique.'),
+   table(L('Appointments by sex and group, ','Nominations selon le sexe et le groupe, ')+sexYear,
+   [L('Equity group','Groupe visé par l’équité'),L('Women (%)','Femmes (%)'),L('Men (%)','Hommes (%)')],
+   keys.map(k=>[groupWord(k),P(sex[k]?.women),P(sex[k]?.men)]),'public-appointments-by-sex'),
+   L('Public Service Commission, staffing data','Commission de la fonction publique, données sur la dotation'),source.psc);
+ }
  // Salary source (separate independent derived project)
  const salary=D.salary.slice().sort((a,b)=>Number(b.Year)-Number(a.Year));
  out+=sCard('public-pay',L('Median salaries by employee group, 2017–2025','Salaires médians selon le groupe, 2017-2025'),
