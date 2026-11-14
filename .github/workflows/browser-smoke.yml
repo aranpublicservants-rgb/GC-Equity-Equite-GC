@@ -79,7 +79,7 @@ jobs:
                 await page.selectOption('#org-picker','Administrative Tribunals Support Service of Canada');
                 await page.waitForFunction(()=>document.querySelectorAll('#org-staffing table').length===1,null,{timeout:30000});
                 await page.waitForFunction(()=>document.querySelectorAll('#gce-org-source-tables .gce-org-source').length===17,null,{timeout:45000});
-                const sources=await page.$eval('#gce-org-source-tables .gce-org-source',els=>els.map(e=>e.dataset.source));
+                const sources=await page.locator('#gce-org-source-tables .gce-org-source').evaluateAll(els=>els.map(e=>e.dataset.source));
                 if(sources.includes('ar4e.csv')||sources.includes('ar2a.csv'))throw Error('National-only PSC files must never appear under one department');
                 await page.locator('.gce-org-source[data-source="adv_type.csv"]').scrollIntoViewIfNeeded();
                 await page.waitForFunction(()=>document.querySelector('.gce-org-source[data-source="adv_type.csv"] tbody tr')!==null,null,{timeout:45000});
