@@ -101,8 +101,7 @@ async function load(){
 }
 function findKey(keys,name){const n=norm(name);return keys.find(x=>norm(x)===n)||null;}
 function findEntry(obj,name){if(!obj)return null;const k=findKey(Object.keys(obj),name);return k?obj[k]:null;}
-function findRow(rows,name){return (rows||[]).find(r=>norm(r.department_or_agency)===norm(name))||
- (rows||[]).find(r=>norm(r.department_or_agency).startsWith(norm(name))||norm(name).startsWith(norm(r.department_or_agency))&&norm(r.department_or_agency).length>10)||null;}
+function findRow(rows,name){return (rows||[]).find(r=>norm(r.department_or_agency)===norm(name))||null;}
 function recordFor(name){return D.cta.organizations.find(o=>[o.site_name,o.pses_name,o.plan_name,o.snps_name,o.name_en].some(n=>norm(n)===norm(name)))||null;}
 function planFor(name){return D.model.plans.find(p=>norm(p.name)===norm(name))||null;}
 function deptName(name){if(!lang())return name;return D.model.DEPT_FR[name]||D.model.planOrgs[name]?.nameFr||recordFor(name)?.name_fr||name;}
@@ -123,6 +122,7 @@ function statusTable(name){
 }
 function representation(name){
  const rec=findEntry(D.series.orgs,name),d=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
+ if(!rec&&!d)return '';
  const wfa=findEntry(D.model.DEPT_WFA_2025,name)||{},current=selectGroup('org');
  const shown=current==='all'?groups:groups.filter(x=>x[0]===current);
  if(!shown.length)return '';
@@ -521,16 +521,37 @@ async function renderBranches(name){
 function renderOrg(){
  if(!D)return;const out=$('org-output');if(!out)return;
  selected=$('org-picker')?.value||'';
- if(!selected){out.innerHTML='';return;}
+ const showDepartment=!!selected;
+ const global=document.getElementById('equity-data'),related=document.getElementById('related-public-resources');
+ if(global)global.hidden=showDepartment;
+ if(related)related.hidden=showDepartment;
+ if(!selected){
+  extraOrgRequest++;branchRequest++;
+  window.GCEOrgSources?.render(null);
+  out.innerHTML='';
+  const url=new URL(location.href);url.searchParams.delete('org');
+  history.replaceState(null,'',url.pathname+url.search+url.hash);
+  return;
+ }
  const name=selected;const p=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
  const meta='<p class="gce-summary">'+escape(deptName(name))+(p?' · '+L('Published workforce 2025','Effectif publié en 2025')+': '+N(p[1]):'')+'</p>';
- const s=sCard('org-coverage',L('Published data coverage','Données publiées disponibles'),
- L('Different datasets cover different populations and years. The presence of an organization in the directory does not mean every dataset applies to it.','Les sources couvrent des populations et des années différentes. La présence d’un organisme dans le répertoire ne signifie pas que chaque jeu de données le concerne.'),
- statusTable(name),L('Official federal organization directory','Répertoire fédéral officiel des organismes'),'https://www.canada.ca/en/government/dept.html');
- out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+(selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+ctaTables(name)+plansTable(name);
- if(selectGroup('org')==='all'){const extra=document.createElement('div');extra.id='org-additional-psc';out.append(extra);renderAdditionalOrgData(name);}else extraOrgRequest++;
- const branchArea=document.createElement('section');branchArea.className='gce-data-block';branchArea.id='org-branches';out.append(branchArea);renderBranches(name);
- const url=new URL(location.href);url.searchParams.set('org',name);history.replaceState(null,'',url.pathname+url.search+url.hash);
+ const s=sCard('org-coverage',L('Published data coverage for the selected organization','Données publiées disponibles pour l’organisme sélectionné'),
+ L('Only records explicitly attributed to this organization are included here. Each source may use a different workforce population and reporting period. Public service-wide figures appear only in the separate equity section when no organization is selected.','Seules les données explicitement attribuées à cet organisme figurent ici. Les sources peuvent utiliser des populations et périodes de référence différentes. Les chiffres visant l’ensemble de la fonction publique sont affichés dans la section générale lorsqu’aucun organisme n’est sélectionné.'),
+ statusTable(name),L('Federal government department and agency directory','Répertoire des ministères et organismes fédéraux'),'https://www.canada.ca/en/government/dept.html');
+ out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+
+ (selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+
+ psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+
+ ctaTables(name)+plansTable(name);
+ if(selectGroup('org')==='all'){
+  const extra=document.createElement('div');extra.id='org-additional-psc';out.append(extra);renderAdditionalOrgData(name);
+ }else extraOrgRequest++;
+ const branchArea=document.createElement('section');branchArea.className='gce-data-block';branchArea.id='org-branches';out.append(branchArea);
+ renderBranches(name);
+ const allSources=document.createElement('div');allSources.id='org-complete-sources';out.append(allSources);
+ window.GCEOrgSources?.render(name,selectGroup('org'));
+ const url=new URL(location.href);url.searchParams.set('org',name);
+ if(/^#(?:equity-data|public-|related-public-resources)/.test(url.hash))url.hash='department-data';
+ history.replaceState(null,'',url.pathname+url.search+url.hash);
 }
 function publicTables(){
  const m=D.model;let out='';
@@ -746,6 +767,13 @@ function downloadTable(btn){
  a.href=u;a.download=(entry.filename||'gc-equity')+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
 }
 root.addEventListener('click',e=>{const btn=e.target.closest('.gce-download');if(btn)downloadTable(btn);const n=e.target.closest('.gce-page-next');if(n)paginate(n,1);const p=e.target.closest('.gce-page-prev');if(p)paginate(p,-1);});
+root.addEventListener('click',e=>{
+ const a=e.target.closest('a[href^="#"]');if(!a||!selected)return;
+ const href=a.getAttribute('href');
+ if(/^#(?:equity-data|public-|related-public-resources)/.test(href)){
+  const picker=$('org-picker');if(picker){picker.value='';renderOrg();}
+ }
+});
 $('org-picker')?.addEventListener('change',()=>renderOrg());
 $('org-group-picker')?.addEventListener('change',()=>renderOrg());
 $('public-group-picker')?.addEventListener('change',()=>publicTables());
