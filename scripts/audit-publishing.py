@@ -174,6 +174,32 @@ if restored_path.exists():
     if total_parts!=2927:
         errors.append(f'Organization partition count changed unexpectedly: {total_parts}')
     print('COMPLETE-SOURCE-AUDIT:',restored_count,'of',len(source_registry),'original source files;',restored_rows,'source rows;',total_parts,'organization partitions')
+    # Every complete imported source must be accessible in exactly the applicable
+    # homepage area: named employer records in Department and agency, other source
+    # tables and explicitly published Federal Public Service survey partitions in
+    # Equity across the public service. No default-to-national substitution.
+    source_view=(ROOT/'gc-data-library.js').read_text(encoding='utf-8')
+    employer_view=(ROOT/'gc-restored-sources.js').read_text(encoding='utf-8')
+    source_scope=json.loads((ROOT/'assets/organization-source-scopes.json').read_text(encoding='utf-8'))
+    complete=restored['files']
+    assert len(complete)==69, 'Complete imported source manifest is not 69 files'
+    employer_files=[e for e in complete if e.get('organizationField') or e.get('dataset')=='Employment Equity']
+    public_files=[e for e in complete if not e.get('organizationField') and e.get('dataset')!='Employment Equity']
+    assert len(employer_files)==49 and len(public_files)==20, 'Original source scope mapping changed unexpectedly'
+    psea=[e for e in public_files if e.get('dataset')=='Employment Equity Designated Groups under the Public Service Employment Act']
+    assert len(psea)==5, 'Published employment-equity staffing datasets missing from public service area'
+    aggregate=[e for e in employer_files if any(k.casefold()=='federal public service' for k in e.get('partitions',{}))]
+    assert len(aggregate)==41, 'Published federal public service survey source partitions missing'
+    for marker_text in ('const publicSurvey=','const complete=','federalpublicservice'):
+        if marker_text not in source_view:errors.append('Public service source viewer no longer includes: '+marker_text)
+    if "GCERestoredSources={render}" not in employer_view:
+        errors.append('Original departmental source viewer is no longer connected')
+    if len(source_scope.get('scopeOverrides',[]))!=2:
+        errors.append('Employer-only employment equity source scope overrides missing')
+    print('PUBLISHED-SOURCE-VIEWS:',len(employer_files),'employer-identified sources,',
+          len(public_files),'complete non-employer sources,',
+          len(aggregate),'published federal-service survey partitions; 5 PSEA equity staffing files')
+
 
 print('REPOSITORY-PUBLISHING-AUDIT',json.dumps({
     'htmlFiles':len(html_files),'javascriptFiles':len(js_files),
