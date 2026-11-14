@@ -8,7 +8,7 @@ const fr=()=>document.documentElement.lang.startsWith('fr');
 const T=(en,frs)=>fr()?frs:en;
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
-let coverage=null,pscIndex=null,cache=new Map(),request=0,active=null;
+let coverage=null,pscIndex=null,restored=null,cache=new Map(),request=0,active=null;
 const SIZE=18;
 function parseCSV(s){
  let rows=[],row=[],v='',quoted=false;
@@ -23,7 +23,12 @@ function entries(){
  const PSC=(coverage?.hostedAdditional?.psc||[]).filter(x=>!(pscIndex?.files||[]).some(f=>f.file===x.name)).map(x=>({...x,category:'psc',kind:'PSC source without explicit organization field',kindFr:'Source de la CFP sans champ d’organisme explicite'}));
  const W=(coverage?.hostedAdditional?.women||[]).map(x=>({...x,category:'women',titleEn:W_TITLES[x.name]?.[0]||human(x.name),titleFr:W_TITLES[x.name]?.[1]||human(x.name),kind:'Women and intersectional dataset',kindFr:'Données sur les femmes et l’intersectionnalité'}));
  const O=(coverage?.hostedAdditional?.other||[]).map(x=>({...x,category:x.kind==='derived'?'derived':'tbs',titleEn:human(x.name),titleFr:human(x.name),kind:x.kind==='derived'?'Independent derived analysis':'Treasury Board source file',kindFr:x.kind==='derived'?'Analyse dérivée indépendante':'Fichier source du Conseil du Trésor'}));
- return PSC.concat(W,O);
+ const R=(restored?.files||[]).filter(x=>!x.organizationField && !/under the Public Service Employment Act/.test(x.dataset||'')).map(x=>({
+   name:x.originalName,path:x.path,category:'restored',
+   titleEn:x.title||x.dataset,titleFr:x.title||x.dataset,
+   dataset:x.dataset,publisherUrl:x.publisherUrl,rows:x.rows
+ }));
+ return PSC.concat(W,O,R);
 }
 const W_TITLES={
  'pses2022-indigenous-women.csv':['2022 employee survey: Indigenous women','Sondage de 2022 : femmes autochtones'],
@@ -114,7 +119,8 @@ function mount(){
  ['psc',T('PSC data across the public service','Données de la CFP dans l’ensemble de la fonction publique')],
  ['women',T('Women and intersectional data','Données sur les femmes et l’intersectionnalité')],
  ['tbs',T('Workforce source tables','Tableaux sources sur l’effectif')],
- ['derived',T('Independent salary estimates','Estimations salariales indépendantes')]
+ ['derived',T('Independent salary estimates','Estimations salariales indépendantes')],
+ ['restored',T('Additional complete workforce and staffing tables','Autres tableaux complets sur l’effectif et la dotation')]
  ];
  const options=cats.map(([v,label])=>'<option value="'+v+'">'+E(label)+' ('+data.filter(x=>x.category===v).length+')</option>').join('');
  host.innerHTML='<h3>'+E(T('Explore a complete published data table','Explorer un tableau de données publiées complet'))+'</h3>'+
@@ -166,7 +172,9 @@ function mount(){
   $('gce-raw-pager').hidden=max<=SIZE;
   $('gce-raw-prev').disabled=page===0;
   $('gce-raw-next').disabled=(page+1)*SIZE>=max;
-  $('gce-raw-source').textContent=T('Source: ','Source : ')+active.name+'. '+T(active.category==='derived'?'Independent estimates; not official published TBS values.':'Published dataset. Source reporting populations and periods vary.',active.category==='derived'?'Estimations indépendantes, non officielles du Conseil du Trésor.':'Données publiées. Les populations et périodes de référence varient.');
+  const source=$('gce-raw-source'),title=T('Source file: ','Fichier source : ')+active.name+'. ';
+  source.textContent=title+T(active.category==='derived'?'Independent estimates; not official published TBS values.':'Reporting scope and period are defined by the original source.',active.category==='derived'?'Estimations indépendantes, non officielles du Conseil du Trésor.':'La population et la période sont définies dans la source originale.');
+  if(active.publisherUrl){const a=document.createElement('a');a.href=active.publisherUrl;a.target='_blank';a.rel='noopener noreferrer';a.textContent=T('Original source','Source originale');source.append(' ');source.append(a);}
  }
  kind.addEventListener('change',setFiles);
  file.addEventListener('change',setEntry);
@@ -180,10 +188,11 @@ function mount(){
 async function render(){
  const host=$('public-data-library');if(!host)return;
  try{
-  if(!coverage){const [a,b]=await Promise.all([
+  if(!coverage){const [a,b,d]=await Promise.all([
    fetch('assets/hosted-datasets.json').then(r=>r.json()),
-   fetch('assets/psc-organization-index.json').then(r=>r.json())
-  ]);coverage=a;pscIndex=b;}
+   fetch('assets/psc-organization-index.json').then(r=>r.json()),
+   fetch('assets/restored-datasets.json').then(r=>r.ok?r.json():{files:[]}).catch(()=>({files:[]}))
+  ]);coverage=a;pscIndex=b;restored=d;}
   if(!host.isConnected)return;
   mount();
  }catch(e){host.innerHTML='<p role="alert">'+E(T('The source catalogue could not be loaded. Published summary tables remain available.','Impossible de charger le catalogue de sources. Les tableaux sommaires publiés demeurent disponibles.'))+'</p>';console.warn('dataset finder',e);}
