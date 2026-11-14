@@ -80,6 +80,7 @@ async function load(){
   ['model','assets/workspace-data.json','json'],
   ['pscCatalog','data/psc/catalogue.json','json'],
   ['pscOrgIndex','assets/psc-organization-index.json','json'],
+  ['driveAudit','assets/data-coverage-audit.json','json'],
   ['pscPopulation','data/psc/CFPPSC_AR2C.csv','csv'],
   ['pscTenure','data/psc/ar2a.csv','csv'],
   ['pscOfficialLanguage','data/psc/demo_fol.csv','csv'],
@@ -354,7 +355,7 @@ function pscLanguageOrg(name){
 }
 function renderSourceCatalogue(){
  const host=$('public-source-inventory');if(!host||!D)return;
- const categories=[['onpage','Data shown on this page','Données présentées dans cette page'],['psc','55 Public Service Commission data files','55 fichiers de données de la Commission de la fonction publique'],['snps','2023 and 2025 staffing survey source files','Fichiers sources des sondages sur la dotation de 2023 et 2025'],['archive','Archived source inventory','Inventaire des sources archivées']];
+ const categories=[['onpage','Data shown on this page','Données présentées dans cette page'],['psc','55 Public Service Commission data files','55 fichiers de données de la Commission de la fonction publique'],['snps','2023 and 2025 staffing survey source files','Fichiers sources des sondages sur la dotation de 2023 et 2025'],['archive','Archived source inventory','Inventaire des sources archivées'],['drive','Google Drive archive coverage','Couverture des archives Google Drive']];
  const onpage=[
  ['Workforce representation and availability','Représentation de l’effectif et disponibilité','#public-representation','2017–2025'],
  ['Long-term equity representation','Représentation à long terme','#public-history','1998–2025'],
@@ -370,7 +371,7 @@ function renderSourceCatalogue(){
  ['Independent salary estimates and index','Estimations et indice salariaux indépendants','#public-pay','2017–2025'],
  ['Clerk’s Call to Action commitments and self-assessments','Engagements et autoévaluations liés à l’Appel à l’action du greffier','#public-cta','2021–2024'],
  ['2026–27 departmental plan mentions','Mentions dans les plans ministériels de 2026-2027','#public-plans','2026–27']
- ].map(([en,fr,href,year])=>({kind:'onpage',en,fr,href,year,location:'onpage'}));
+ ].filter(([en,fr,href])=>document.getElementById(href.slice(1))!==null).map(([en,fr,href,year])=>({kind:'onpage',en,fr,href,year,location:'onpage'}));
  const local=(D.pscCatalog.files||[]).map(x=>({kind:'psc',en:x.en||x.file,fr:x.fr||x.en||x.file,href:x.path,year:(x.years||[]).join('–')||'',file:x.file,location:'local'}));
  const external=(D.pscCatalog.snps||[]).map(x=>({kind:'snps',en:x.en||x.file,fr:x.fr||x.en||x.file,href:x.url||'',year:x.year||'',file:x.file,location:'external'}));
  const known=new Map(local.map(x=>[x.file.toLowerCase(),x.href]));
@@ -378,7 +379,12 @@ function renderSourceCatalogue(){
   kind:'archive',en:x.Title||x.File,fr:x.Title||x.File,href:known.get(x.File.toLowerCase())||'',
   year:x.Topic||'',file:x.File,location:known.has(x.File.toLowerCase())?'local':'reference'
  }));
- const data=onpage.concat(local,external,archived);
+ const historical=(D.driveAudit?.drive?.rows||[]).map(r=>({
+  kind:'drive',en:r.name,fr:r.name,href:r.status==='hosted'?r.repositoryPath:'',
+  year:(r.origin||'')+' · '+r.status,file:r.name,
+  location:r.status==='hosted'?'local':r.status==='duplicate'?'duplicate':r.status==='partial_derived'?'partial':r.status==='unverified'?'unverified':'archive_only'
+ }));
+ const data=onpage.concat(local,external,archived,historical);
  const kindCount=key=>data.filter(x=>x.kind===key).length;
  host.innerHTML='<h3>'+escape(L('Dataset finder: included tables and source files','Recherche de données : tableaux inclus et fichiers sources'))+'</h3>'+
  '<p class="gce-explain">'+escape(L('The full tables are shown on this page. This catalogue also identifies additional Public Service Commission files, official survey downloads, and archive references. A catalogue entry is not a claim that its entire file is visualized or hosted here.','Les tableaux intégrés se trouvent dans cette page. Ce catalogue répertorie aussi d’autres fichiers de la Commission de la fonction publique, des téléchargements officiels des sondages et des références archivées. Une entrée au catalogue ne signifie pas que tout le fichier est visualisé ou hébergé ici.'))+'</p>'+
@@ -400,7 +406,12 @@ function renderSourceCatalogue(){
    const label=x.href?link(x.href,L(x.en,x.fr)):name;
    const status=x.location==='onpage'?L('Table on this page','Tableau dans cette page'):
      x.location==='local'?L('Data file stored in this repository','Fichier de données dans le dépôt'):
-     x.location==='external'?L('Official source only','Source officielle seulement'):L('Catalogue reference; source not hosted','Référence du catalogue; source non hébergée');
+     x.location==='external'?L('Official source only','Source officielle seulement'):
+     x.location==='duplicate'?L('Duplicate already accounted for','Double déjà pris en compte'):
+     x.location==='partial'?L('Only a processed subset is hosted','Seul un sous-ensemble traité est hébergé'):
+     x.location==='unverified'?L('Unverified; not on this site','Non vérifié; absent du site'):
+     x.location==='archive_only'?L('Historical Drive package; not hosted in current site','Ancienne archive Drive; absente du site actuel'):
+     L('Catalogue reference; source not hosted','Référence du catalogue; source non hébergée');
    return '<tr><th scope="row">'+label+(x.file?'<div class="gce-file-name">'+escape(x.file)+'</div>':'')+'</th><td>'+escape(x.year||'')+'</td><td>'+escape(status)+'</td></tr>';
   }).join('');
   $('gce-source-count').textContent=filtered.length?L('Items ','Éléments ')+(page*15+1)+'–'+Math.min((page+1)*15,filtered.length)+' / '+filtered.length:L('No matching datasets.','Aucune donnée correspondante.');
@@ -591,6 +602,7 @@ function renderOrg(){
  const url=new URL(location.href);url.searchParams.set('org',name);
  if(/^#(?:equity-data|public-|related-public-resources)/.test(url.hash))url.hash='department-data';
  history.replaceState(null,'',url.pathname+url.search+url.hash);
+ applyTopics('org');
 }
 function publicTables(){
  const m=D.model;let out='';
@@ -783,16 +795,50 @@ function publicTables(){
  [L('Organization','Organisme'),...terms.map(x=>L(x[0],x[1])),L('All six terms','Les six termes')],
  m.plans.map(p=>[deptName(p.name),...p.t.map(N),N(p.tt)]),'public-departmental-plan-mentions'),
  L('Departmental plan analysis and definitions','Analyse et définitions des plans ministériels'),'departmental-plans-2026-27/');
- // The full dataset catalogue is filtered and paginated, never rendered as one giant list.
+ // Archive status is explicit; the historical Drive package must never be mistaken for current live tables.
  out+='<section class="gce-data-block" id="public-source-inventory"></section>';
+ out+='<section class="gce-data-block" id="public-data-library"><p role="status">'+escape(L('Loading available datasets…','Chargement des jeux de données disponibles…'))+'</p></section>';
  $('public-output').innerHTML=out;
  renderSourceCatalogue();
+ window.GCEDataLibrary?.render();
+ applyTopics('public');
 }
 function populatePicker(){
  const names=[...new Set([...(D.orglist.organizations||[]),...Object.keys(D.series.orgs||{}),...Object.keys(D.model.PSES_DEPT||{}).filter(x=>x!=='Public Service'),...D.model.plans.map(x=>x.name),...D.cta.organizations.map(x=>x.name_en),...D.pscOrgIndex.files.flatMap(f=>Object.keys(f.organizations||{}))])].filter(n=>!/^(?:Public Service\s*[-–]\s*(?:Total|Average)|(?:Micro|Small|Medium|Large)\s*[-–]\s*Average)$/i.test(n)).sort((a,b)=>a.localeCompare(b,lang()?'fr':'en'));
  const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
  if(names.includes(old)){picker.value=old;selected=old;}
+}
+function tableCategory(id,scope){
+ if(scope==='org'){
+  if(/^(org-coverage|org-complete-sources)$/.test(id))return 'sources';
+  if(/(?:org-branches|org-survey|org-staffing)/.test(id))return 'experience';
+  if(/(?:org-cta|org-cta-outcomes|org-cta-coding)/.test(id))return 'commitments';
+  if(id==='org-plans')return 'plans';
+  if(/(?:mobility|appointments|org-psc-mobility)/.test(id))return 'staffing';
+  return 'workforce';
+ }
+ if(/^(?:public-source-inventory|public-data-library)$/.test(id))return 'sources';
+ if(/(?:public-survey|public-staffing-survey)/.test(id))return 'experience';
+ if(/(?:public-cta|public-plans)/.test(id))return 'commitments';
+ if(/(?:public-pay|public-salary)/.test(id))return 'pay';
+ if(/(?:public-applicants|public-students|public-regions|public-appointment-sex|public-psea-tenure)/.test(id))return 'staffing';
+ return 'workforce';
+}
+function applyTopics(scope){
+ const wrapper=$(scope==='org'?'org-output':'public-output'),value=$(scope+'-topic-picker')?.value||'all';if(!wrapper)return;
+ const targets=scope==='org'?[...wrapper.children].filter(el=>el.id||el.classList.contains('gce-data-block')):[...wrapper.children].filter(el=>el.classList.contains('gce-data-block'));
+ for(const el of targets){
+  if(!el.id||el.classList.contains('gce-summary'))continue;
+  const cat=el.id==='org-additional-psc'?'workforce':tableCategory(el.id,scope);
+  el.hidden=value!=='all'&&cat!==value;
+ }
+ const status=$(scope+'-topic-status');
+ if(status){
+  const total=targets.filter(el=>el.querySelector('table')||el.querySelector('h3')||el.id==='org-branches'||el.id==='org-complete-sources').length;
+  const shown=targets.filter(el=>!el.hidden&&(el.querySelector('table')||el.querySelector('h3')||el.id==='org-branches'||el.id==='org-complete-sources')).length;
+  status.textContent=L('Visible topics: ','Sujets visibles : ')+shown+' / '+total;
+ }
 }
 function updateStatic(){
  document.querySelectorAll('[data-gce-en]').forEach(el=>{const value=lang()?el.dataset.gceFr:el.dataset.gceEn;if(el.tagName==='INPUT')el.placeholder=value;else el.textContent=value;});
@@ -816,6 +862,8 @@ root.addEventListener('click',e=>{
 $('org-picker')?.addEventListener('change',()=>renderOrg());
 $('org-group-picker')?.addEventListener('change',()=>renderOrg());
 $('public-group-picker')?.addEventListener('change',()=>publicTables());
+$('org-topic-picker')?.addEventListener('change',()=>applyTopics('org'));
+$('public-topic-picker')?.addEventListener('change',()=>applyTopics('public'));
 let rerenderTimer;
 const update=()=>{if(!D)return;updateStatic();updateGroupLabels();populatePicker();renderOrg();publicTables();};
 new MutationObserver(()=>{clearTimeout(rerenderTimer);rerenderTimer=setTimeout(update,50);}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
