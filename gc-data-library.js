@@ -197,7 +197,7 @@ function mount(){
   $('gce-raw-prev').disabled=page===0;
   $('gce-raw-next').disabled=(page+1)*SIZE>=max;
   const source=$('gce-raw-source'),title=T('Source file: ','Fichier source : ')+active.name+'. ';
-  source.textContent=title+T(active.category==='derived'?'Independent estimates; not official published TBS values.':'Reporting scope and period are defined by the original source.',active.category==='derived'?'Estimations indépendantes, non officielles du Conseil du Trésor.':'La population et la période sont définies dans la source originale.');
+  source.textContent=title+(active.sourceScope?T('Published population or source category: ','Population publiée ou catégorie de source : ')+active.sourceScope+'. ':'')+T(active.category==='derived'?'Independent estimates; not official published TBS values.':'Reporting period and measures retain the original source definitions.',active.category==='derived'?'Estimations indépendantes, non officielles du Conseil du Trésor.':'La période et les indicateurs conservent les définitions de la source originale.');
   if(active.publisherUrl){const a=document.createElement('a');a.href=active.publisherUrl;a.target='_blank';a.rel='noopener noreferrer';a.textContent=T('Original source','Source originale');source.append(' ');source.append(a);}
  }
  kind.addEventListener('change',setFiles);
