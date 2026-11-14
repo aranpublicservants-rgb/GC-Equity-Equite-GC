@@ -88,6 +88,12 @@ jobs:
                 if(await page.locator('.gce-org-source[data-source="adv_type.csv"] table thead th').count()<2)throw Error('PSC source columns not available');
                 const [orgCsv]=await Promise.all([page.waitForEvent('download'),page.locator('.gce-org-source[data-source="adv_type.csv"] .gce-source-export').click()]);
                 if(!/selected-organization.csv/.test(orgCsv.suggestedFilename()))throw Error('Department-only CSV export unavailable');
+                const downloaded=fs.readFileSync(await orgCsv.path(),'utf8');
+                const index=JSON.parse(fs.readFileSync(path.join(root,'assets/psc-organization-index.json'),'utf8'));
+                const deptCount=index.files.find(x=>x.file==='adv_type.csv').organizations['Administrative Tribunals Support Service of Canada'];
+                if(!downloaded.includes('Administrative Tribunals Support Service of Canada'))throw Error('Department name missing from PSC export');
+                if(downloaded.includes('Agriculture and Agri-Food Canada')||downloaded.includes('Canada Border Services Agency'))throw Error('Another organization leaked into PSC export');
+                if(downloaded.split(/\\r?\\n/).filter(Boolean).length-1!==deptCount)throw Error('PSC export did not include exactly the selected organization source rows');
                 await page.waitForFunction(()=>document.querySelectorAll('#gce-branch-complete tbody tr').length>0,null,{timeout:120000});
                 const branchRows=await page.locator('#gce-branch-complete tbody tr').count();
                 if(branchRows>18)throw Error('Branch table should never display more than 18 rows');
