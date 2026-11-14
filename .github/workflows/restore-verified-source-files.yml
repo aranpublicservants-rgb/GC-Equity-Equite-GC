@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/restore-verified-source-files.yml'
       - 'scripts/import-verified-source-files.py'
+      - 'scripts/import-complete-sources.py'
       - 'scripts/archived-source-registry.json'
   workflow_dispatch:
 permissions:
@@ -12,7 +13,7 @@ permissions:
 jobs:
   restore:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,13 +22,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Restore only exact source files with verified checksums
-        run: python scripts/import-verified-source-files.py --set small
+        run: python scripts/import-complete-sources.py
       - name: Publish verified complete data files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/restored assets/restored-datasets.json
           if ! git diff --cached --quiet; then
-            git commit -m "Restore complete archived source tables with matching publisher checksums"
+            git commit -m "Restore complete publisher-verified GC Equity data source partitions"
+            git pull --rebase origin main
             git push
           fi
