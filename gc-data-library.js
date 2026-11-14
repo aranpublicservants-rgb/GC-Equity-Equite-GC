@@ -25,7 +25,7 @@ function entries(){
  const O=(coverage?.hostedAdditional?.other||[]).map(x=>({...x,category:x.kind==='derived'?'derived':'tbs',titleEn:human(x.name),titleFr:human(x.name),kind:x.kind==='derived'?'Independent derived analysis':'Treasury Board source file',kindFr:x.kind==='derived'?'Analyse dérivée indépendante':'Fichier source du Conseil du Trésor'}));
  const R=(restored?.files||[]).filter(x=>!x.organizationField && x.dataset!=='Employment Equity' && x.path && !/under the Public Service Employment Act/.test(x.dataset||'')).map(x=>({
    name:x.originalName,path:x.path,category:x.dataset==='Disproportionality Index supplementary imputation'?'derived':'restored',
-   titleEn:(/^(2023|2025) Staffing/.test(x.dataset||'')?x.dataset+' — ':'')+(x.title||x.dataset),titleFr:(/^(2023|2025) Staffing/.test(x.dataset||'')?('Sondage sur la dotation de '+x.dataset.slice(0,4)+' — '):'')+(x.title||x.dataset),
+   titleEn:(/^(2023|2025) Staffing/.test(x.dataset||'')?x.dataset+' – ':'')+(x.title||x.dataset),titleFr:(/^(2023|2025) Staffing/.test(x.dataset||'')?('Sondage sur la dotation de '+x.dataset.slice(0,4)+' – '):'')+(x.title||x.dataset),
    dataset:x.dataset,publisherUrl:x.publisherUrl,rows:x.rows
  }));
  return PSC.concat(W,O,R);
