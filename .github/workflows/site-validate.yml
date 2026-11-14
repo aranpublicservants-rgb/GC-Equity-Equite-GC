@@ -18,4 +18,5 @@ jobs:
       - name: Validate pages, published data, source snapshots and research tools
         run: |
           python scripts/audit-organization-datasets.py
+          python scripts/audit-publishing.py
           python scripts/check-site.py
