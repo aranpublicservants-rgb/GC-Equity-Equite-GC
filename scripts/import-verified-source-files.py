@@ -20,7 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"scripts/archived-source-registry.json"
 DEST=ROOT/"data/restored"
 INDEX=ROOT/"assets/restored-datasets.json"
-ORG_KEYS=("Department or agency","Department or Agency","department_e","dept_e","DEPT_E","organization_e","orgnization_e","Deparment_e","Organization","Organisation","Department/Agency")
+ORG_KEYS=("Department or agency","Department or Agency","Ministère ou organisme","Ministère ou agence","department_e","dept_e","DEPT_E","organization_e","orgnization_e","Deparment_e","Organization","Organisation","Department/Agency")
 
 def fetch_verified(e):
     url=e["source"]
@@ -54,7 +54,7 @@ def decode(raw):
 
 def row_info(text):
     reader=csv.reader(io.StringIO(text))
-    head=next(reader,[])
+    head=[c.strip() for c in next(reader,[])]
     if len(head)<2:raise ValueError("Not a source table with at least two columns")
     field=next((key for key in ORG_KEYS if key in head),None)
     count=sum(1 for _ in reader)
@@ -78,7 +78,11 @@ def run():
         if len(slug)>40:slug=hashlib.sha256(e["name"].encode()).hexdigest()[:16]
         path=DEST/(slug+".csv")
         if e["name"] in indexed and (ROOT/indexed[e["name"]]["path"]).exists():
-            print("EXISTS",e["name"]);continue
+            existing=ROOT/indexed[e["name"]]["path"]
+            heads,org_field,count=row_info(existing.read_text(encoding="utf-8"))
+            indexed[e["name"]].update({"headers":heads,"organizationField":org_field,"rows":count})
+            print("VERIFIED_EXISTING",e["name"],org_field,count,flush=True)
+            continue
         print("IMPORT",idx,len(records),e["name"],flush=True)
         try:
             raw=fetch_verified(e)
