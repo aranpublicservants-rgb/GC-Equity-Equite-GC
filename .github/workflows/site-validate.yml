@@ -16,4 +16,6 @@ jobs:
         with:
           node-version: '22'
       - name: Validate pages, published data, source snapshots and research tools
-        run: python scripts/check-site.py
+        run: |
+          python scripts/audit-organization-datasets.py
+          python scripts/check-site.py
