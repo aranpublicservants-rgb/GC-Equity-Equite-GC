@@ -23,12 +23,29 @@ function entries(){
  const PSC=(coverage?.hostedAdditional?.psc||[]).filter(x=>!(pscIndex?.files||[]).some(f=>f.file===x.name)).map(x=>({...x,category:'psc',kind:'PSC source without explicit organization field',kindFr:'Source de la CFP sans champ d’organisme explicite'}));
  const W=(coverage?.hostedAdditional?.women||[]).map(x=>({...x,category:'women',titleEn:W_TITLES[x.name]?.[0]||human(x.name),titleFr:W_TITLES[x.name]?.[1]||human(x.name),kind:'Women and intersectional dataset',kindFr:'Données sur les femmes et l’intersectionnalité'}));
  const O=(coverage?.hostedAdditional?.other||[]).map(x=>({...x,category:x.kind==='derived'?'derived':'tbs',titleEn:human(x.name),titleFr:human(x.name),kind:x.kind==='derived'?'Independent derived analysis':'Treasury Board source file',kindFr:x.kind==='derived'?'Analyse dérivée indépendante':'Fichier source du Conseil du Trésor'}));
- const R=(restored?.files||[]).filter(x=>!x.organizationField && x.dataset!=='Employment Equity' && x.path && !/under the Public Service Employment Act/.test(x.dataset||'')).map(x=>({
+ // Use only complete source files already in the verified local manifest.
+ // Employer-specific Employment Equity records remain in the employer view.
+ const complete=(restored?.files||[]).filter(x=>!x.organizationField&&x.dataset!=='Employment Equity'&&x.path).map(x=>({
    name:x.originalName,path:x.path,category:x.dataset==='Disproportionality Index supplementary imputation'?'derived':'restored',
-   titleEn:(/^(2023|2025) Staffing/.test(x.dataset||'')?x.dataset+' – ':'')+(x.title||x.dataset),titleFr:(/^(2023|2025) Staffing/.test(x.dataset||'')?('Sondage sur la dotation de '+x.dataset.slice(0,4)+' – '):'')+(x.title||x.dataset),
-   dataset:x.dataset,publisherUrl:x.publisherUrl,rows:x.rows
+   titleEn:(/^(2023|2025) Staffing/.test(x.dataset||'')?x.dataset+' – ':'')+(x.title||x.dataset),
+   titleFr:(/^(2023|2025) Staffing/.test(x.dataset||'')?('Sondage sur la dotation de '+x.dataset.slice(0,4)+' – '):'')+(x.title||x.dataset),
+   dataset:x.dataset,publisherUrl:x.publisherUrl,rows:x.rows,sourceScope:x.dataset
  }));
- return PSC.concat(W,O,R);
+ // These 2023/2025 staffing survey CSVs have a published Federal Public
+ // Service respondent group. Display only that original partition here,
+ // never all employers mixed together.
+ const publicSurvey=(restored?.files||[]).filter(x=>x.organizationField).flatMap(x=>{
+   const key=Object.keys(x.partitions||{}).find(k=>norm(k)==='federalpublicservice');
+   if(!key)return [];
+   const part=x.partitions[key];if(!part.path)return [];
+   return [{
+     name:x.originalName,path:part.path,category:'restored',
+     titleEn:x.dataset+' – '+(x.title||x.originalName)+' – '+key,
+     titleFr:'Sondage sur la dotation de '+x.dataset.slice(0,4)+' – '+(x.title||x.originalName)+' – '+key,
+     dataset:x.dataset,publisherUrl:x.publisherUrl,rows:part.rows,sourceScope:key
+   }];
+ });
+ return PSC.concat(W,O,complete,publicSurvey);
 }
 const W_TITLES={
  'pses2022-indigenous-women.csv':['2022 employee survey: Indigenous women','Sondage de 2022 : femmes autochtones'],
