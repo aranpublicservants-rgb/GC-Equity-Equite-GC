@@ -2,6 +2,21 @@
 
 This file describes the site as it is now. It is kept in the repository and is not published on the site (see `_config.yml`).
 
+## November 2026 publication-quality redesign and coverage audit
+
+The GC Equity homepage has **exactly two** primary in-page choices. Each data area offers an employee-group selector and a topic selector. The two/three selectors share a responsive horizontal control bar. The smaller “What's inside” links use `data-gce-scope`/`data-gce-topic` to select their relevant area directly. Top navigation clears a chosen department when entering the public service-wide area; only one area's data tables are retained in the DOM at a time.
+
+New files:
+- `gc-data-library.js` is the second area's in-page CSV viewer. It provides the 38 PSC files without an explicit department column, 26 women/intersectional datasets, and nine Treasury Board/independent salary data sources: choose collection, file and optional search, then read paged rows or download filtered source data. Derived salary estimates remain identified as independent.
+- `assets/data-coverage-audit.json` compares all 157 historical Drive source-manifest entries against the GitHub tree. A prior Drive package is **not** automatically treated as available on GitHub: 65 named files are hosted; 72 are in archived packages only; 7 are not hosted; 4 are historical raw sources not hosted; 6 are known duplicates; two are only partly represented in processed form; one source is unverified. File presence is not row-level reconciliation.
+- `women-femmes/data/csv/women-by-organization-2025.csv` is now used in the first area for organization-specific women's representation; its `Employees` column means **all employees in the organization**, not a headcount of women.
+- `scripts/audit-publishing.py` checks checked-in HTML/JS/CSS/CSV/JSON formats, local resources, compressed branch-data assets against source metadata, and current source inventory integrity on every push. It complements `scripts/audit-organization-datasets.py` and `scripts/check-site.py`.
+- `QUALITY-REVIEW-2026-11.md` records the detailed audit, corrections, evidence standards and unresolved historical restoration.
+
+**Limits:** the original Google Drive 27 October assembled website recorded 128 additional dataset tables and 10,381,498 retained dataset rows, including 500,126 conflicting same-key PSES records. The current repository does not host that entire historical snapshot. These conflicts have not been adjudicated; they must never be averaged or merged. A future data import must split and reconcile the actual source files with clear version, organization and survey period lineage. Do not claim the historical raw data have been fully integrated.
+
+**Accessibility:** use current GC Design System and Accessibility Standards Canada guidance as references, but do not claim this independent ARAN website is an official federal publication. Automated keyboard/mobile browser tests and static syntax checks do not replace an actual assistive technology assessment.
+
 ## Pages
 
 - `organizations.html` / `organizations.js`: bilingual searchable catalogue based on the official Canada.ca directory, updated October 15, 2026 (215 entries in `assets/federal-organizations-2026-10-15.json`). It overlays published source coverage from the Treasury Board core-public-administration tables, 2024 Public Service Employee Survey, Call to Action responses, 2025 Staffing and Non-Partisanship Survey and 2026–27 departmental plans. These source populations are not interchangeable. CSE is included in the official directory and 2024 survey, and its separate 2025–26 annual-report employment-equity figures are identified as a different reporting series. Do not manufacture missing core-public-administration data for CSE or other separate entities.
