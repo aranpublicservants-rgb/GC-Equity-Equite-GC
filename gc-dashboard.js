@@ -41,6 +41,13 @@ function table(caption,heads,rows,filename){
  '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(caption)+'"><table id="'+id+'" data-gcw-ready="yes"><caption>'+escape(caption)+'</caption><thead><tr>'+heads.map(h=>'<th scope="col">'+escape(h)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>'+
  (rows.length>PAGE_ROWS?'<div class="gce-pager" data-for="'+id+'"><button type="button" class="gce-page-prev" disabled>'+escape(L('Previous','Précédent'))+'</button><span class="gce-page-count" role="status" aria-live="polite">'+escape(pageText(0,rows.length))+'</span><button type="button" class="gce-page-next">'+escape(L('Next','Suivant'))+'</button></div>':'');
 }
+function dropTables(containerId){
+ const region=$(containerId);if(!region)return;
+ for(const [id] of tableStore){
+  const el=$(id);
+  if(!el||region.contains(el))tableStore.delete(id);
+ }
+}
 function tableRows(rows,page){
  return rows.slice(page*PAGE_ROWS,(page+1)*PAGE_ROWS).map(r=>'<tr>'+r.map((v,i)=>i===0?'<th scope="row">'+escape(v)+'</th>':'<td>'+escape(v)+'</td>').join('')+'</tr>').join('');
 }
@@ -582,11 +589,13 @@ async function renderBranches(name){
 
 function renderOrg(){
  if(!D)return;const out=$('org-output');if(!out)return;
+ dropTables('org-output');
  selected=$('org-picker')?.value||'';
  const showDepartment=!!selected;
  const global=document.getElementById('equity-data'),related=document.getElementById('related-public-resources');
  if(global)global.hidden=showDepartment;
  if(related)related.hidden=showDepartment;
+ if(showDepartment){dropTables('public-output');$('public-output').innerHTML='';}
  if(!selected){
   extraOrgRequest++;branchRequest++;
   window.GCEOrgSources?.render(null);
@@ -617,6 +626,7 @@ function renderOrg(){
  applyTopics('org');
 }
 function publicTables(){
+ dropTables('public-output');
  const m=D.model;let out='';
  // Public service-wide historical workforce representation and selected equity group.
  const current=selectGroup('public'),rep=m.rep.filter(r=>r.row_type==='representation').sort((a,b)=>Number(a.period_or_benchmark.slice(-4))-Number(b.period_or_benchmark.slice(-4)));
@@ -854,6 +864,7 @@ function applyTopics(scope){
 }
 function updateStatic(){
  document.querySelectorAll('[data-gce-en]').forEach(el=>{const value=lang()?el.dataset.gceFr:el.dataset.gceEn;if(el.tagName==='INPUT')el.placeholder=value;else el.textContent=value;});
+ document.querySelectorAll('[data-gce-aria-en]').forEach(el=>el.setAttribute('aria-label',lang()?el.dataset.gceAriaFr:el.dataset.gceAriaEn));
 }
 function downloadTable(btn){
  const entry=tableStore.get(btn.dataset.table);if(!entry)return;
@@ -864,11 +875,21 @@ function downloadTable(btn){
  a.href=u;a.download=(entry.filename||'gc-equity')+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
 }
 root.addEventListener('click',e=>{const btn=e.target.closest('.gce-download');if(btn)downloadTable(btn);const n=e.target.closest('.gce-page-next');if(n)paginate(n,1);const p=e.target.closest('.gce-page-prev');if(p)paginate(p,-1);});
-root.addEventListener('click',e=>{
- const a=e.target.closest('a[href^="#"]');if(!a||!selected)return;
- const href=a.getAttribute('href');
- if(/^#(?:equity-data|public-|related-public-resources)/.test(href)){
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a[href]');if(!a||!D)return;
+ let next;try{next=new URL(a.getAttribute('href'),location.href);}catch{return;}
+ const same=next.origin===location.origin&&
+  next.pathname.replace(/\/index\.html$/,'/')===location.pathname.replace(/\/index\.html$/,'/');
+ if(!same)return;
+ const hash=next.hash;
+ if(selected&&/^#(?:equity-data|public-|related-public-resources)/.test(hash)){
   const picker=$('org-picker');if(picker){picker.value='';renderOrg();}
+  if(!$('public-output').children.length)publicTables();
+ }
+ const topic=a.dataset.gceTopic,scope=a.dataset.gceScope;
+ if(topic&&scope){
+  const picker=$(scope+'-topic-picker');
+  if(picker){picker.value=topic;applyTopics(scope);}
  }
 });
 $('org-picker')?.addEventListener('change',()=>renderOrg());
@@ -877,9 +898,9 @@ $('public-group-picker')?.addEventListener('change',()=>publicTables());
 $('org-topic-picker')?.addEventListener('change',()=>applyTopics('org'));
 $('public-topic-picker')?.addEventListener('change',()=>applyTopics('public'));
 let rerenderTimer;
-const update=()=>{if(!D)return;updateStatic();updateGroupLabels();populatePicker();renderOrg();publicTables();};
+const update=()=>{if(!D)return;updateStatic();updateGroupLabels();populatePicker();renderOrg();if(!selected)publicTables();};
 new MutationObserver(()=>{clearTimeout(rerenderTimer);rerenderTimer=setTimeout(update,50);}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 (async()=>{try{
- updateStatic();D=await load();updateGroupLabels();populatePicker();publicTables();renderOrg();$('gce-loading').hidden=true;
+ updateStatic();D=await load();updateGroupLabels();populatePicker();renderOrg();if(!selected)publicTables();$('gce-loading').hidden=true;
 }catch(e){const status=$('gce-loading');if(status)status.textContent=L('The published data could not be loaded. Please reload the page.','Impossible de charger les données publiées. Veuillez recharger la page.');console.error('GC Equity data tables:',e);}})();
 })();
