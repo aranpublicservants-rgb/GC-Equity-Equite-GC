@@ -518,22 +518,43 @@ function publicTables(){
    keys.map(k=>[groupWord(k),P(sex[k]?.women),P(sex[k]?.men)]),'public-appointments-by-sex'),
    L('Public Service Commission, staffing data','Commission de la fonction publique, données sur la dotation'),source.psc);
  }
- // Salary source (separate independent derived project)
- const salary=D.salary.slice().sort((a,b)=>Number(b.Year)-Number(a.Year));
- out+=sCard('public-pay',L('Median salaries by employee group, 2017–2025','Salaires médians selon le groupe, 2017-2025'),
- L('These are figures from an independent published analysis and not an official Treasury Board salary series. Compare with its methods, scope and estimates before drawing conclusions.','Ces chiffres proviennent d’une analyse indépendante publiée et non d’une série salariale officielle du Conseil du Trésor. Vérifiez la méthode, la portée et les estimations avant de conclure.'),
- table(L('Median salary in dollars by group','Salaire médian en dollars selon le groupe'),
- [L('Year','Année'),L('All employees ($)','Tous les employés ($)'),L('Black ($)','Noirs ($)'),L('Racialized ($)','Racisés ($)'),L('Indigenous ($)','Autochtones ($)'),L('Disability ($)','Handicap ($)')],
- salary.map(r=>[r.Year,N(r['All Employees']),N(r['Black Employees']),N(r['Visible Minority Employees']),N(r['Indigenous Employees']),N(r['Employees with Disabilities'])]),'public-salary'),
- L('Independent Disproportionality Index project','Projet indépendant Indice de disproportion'),'https://employment-equity.github.io/');
- // Disproportionality
- const di=D.di.filter(r=>r.year_di==='2025');
- out+=sCard('public-pay-index',L('Salary distribution: independent Disproportionality Index, 2025','Répartition salariale : indice indépendant de disproportion, 2025'),
- L('A value of 1 means the group’s share in the salary band matches its overall workforce share under this project’s method. Values above or below 1 describe relative concentration, not discrimination findings.','Une valeur de 1 signifie que la part du groupe dans la tranche salariale correspond à sa part de l’effectif selon la méthode du projet. Les valeurs supérieures ou inférieures à 1 montrent une concentration relative, et non une conclusion de discrimination.'),
- table(L('2025 salary distribution index by group','Indice de répartition salariale en 2025 selon le groupe'),
- [L('Salary band','Tranche salariale'),L('All employees','Tous'),L('Black','Noirs'),L('Racialized','Racisés'),L('Indigenous','Autochtones'),L('Disability','Handicap')],
- di.map(r=>[r.quintile, N(r.di_all),N(r.di_black),N(r.di_vm),N(r.di_indigenous),N(r.di_pwd)]),'public-pay-index'),
- L('Independent Disproportionality Index project','Projet indépendant Indice de disproportion'),'https://employment-equity.github.io/');
+ // Treasury Board 2025 published salary brackets; percentages are within each group.
+ const salChoices={i:'Indigenous Peoples',d:'Persons with disabilities',v:'Racialized (visible minority)',b:'Black'};
+ const salaryBands=['Under $50,000','$50,000–$74,999','$75,000–$99,999','$100,000 or more'];
+ const salRows=m.SGSAL.filter(r=>current==='all'?['All employees','Indigenous Peoples','Persons with disabilities','Racialized (visible minority)','Black'].includes(r[0]):r[0]==='All employees'||r[0]===salChoices[current]);
+ if(salChoices[current]||current==='all'){
+  out+=sCard('public-salary-bands',L('Published salary distribution by employee group, 2025','Répartition salariale publiée selon le groupe, 2025'),
+   L('Each cell is the percentage of employees in that group whose salary falls in the stated band. The bands describe groups; they do not compare equal jobs or establish pay discrimination.','Chaque cellule indique le pourcentage des employés du groupe dont le salaire se situe dans la tranche indiquée. Ces données ne comparent pas les emplois équivalents et n’établissent pas l’existence de discrimination salariale.'),
+   table(L('Salary bands by equity group, March 31, 2025','Tranches salariales selon le groupe visé par l’équité, 31 mars 2025'),
+   [L('Employee group','Groupe d’employés'),...salaryBands.map((x,i)=>lang()?['Moins de 50 000 $','50 000 $ à 74 999 $','75 000 $ à 99 999 $','100 000 $ ou plus'][i]+' (%)':x+' (%)')],
+   salRows.map(r=>[r[0],...r.slice(1).map(P)]),'public-salary-bands'),
+   L('Treasury Board 2024–25 demographic snapshot, salary bands','Conseil du Trésor, aperçu démographique de 2024-2025, tranches salariales'),source.tbs);
+ }
+ // The following dataset is an independent derived analysis and NOT the TBS salary series.
+ const medianField={i:'Indigenous Employees',d:'Employees with Disabilities',v:'Visible Minority Employees',b:'Black Employees'};
+ const salary=D.salary.slice().sort((a,b)=>Number(b.Year)-Number(a.Year)),fieldMedian=medianField[current];
+ if(current==='all'||fieldMedian){
+  const head=current==='all'?[L('Employee group','Groupe d’employés'),L('Derived median salary in 2025 ($)','Salaire médian dérivé en 2025 ($)')]:
+   [L('Year','Année'),L('All employees ($)','Tous les employés ($)'),groupWord(current)+' ($)'];
+  const row=current==='all'?[
+   [L('All employees','Tous les employés'),N(salary[0]?.['All Employees'])],
+   ...[['b','Black Employees'],['v','Visible Minority Employees'],['i','Indigenous Employees'],['d','Employees with Disabilities']].map(([k,field])=>[groupWord(k),N(salary[0]?.[field])])
+  ]:salary.map(r=>[r.Year,N(r['All Employees']),N(r[fieldMedian])]);
+  out+=sCard('public-pay',L('Median salary analysis, 2017–2025 (derived estimates)','Analyse des salaires médians, 2017-2025 (estimations dérivées)'),
+   L('These are calculations from a separate analytical project, not a Treasury Board official salary table. Do not treat derived figures as published official workforce salaries.','Il s’agit de calculs d’un projet analytique distinct, et non d’un tableau salarial officiel du Conseil du Trésor. Ne considérez pas ces données dérivées comme des salaires officiels publiés.'),
+   table(L('Derived median salary estimates','Estimations dérivées du salaire médian'),head,row,'public-derived-median-salary'),
+   L('Source file: independent derived salary data','Fichier source : données salariales dérivées indépendantes'),'data/october-2026/DI_medians_salary_by_group_2017-2025.csv');
+ }
+ const idxField={i:'di_indigenous',d:'di_pwd',v:'di_vm',b:'di_black'},band=D.di.filter(r=>r.year_di==='2025');
+ if(current==='all'||idxField[current]){
+  const keys=current==='all'?['b','v','i','d']:[current];
+  out+=sCard('public-pay-index',L('Independent salary disproportionality index, 2025','Indice indépendant de disproportion salariale, 2025'),
+   L('An index of 1 is equal to the project’s workforce reference concentration in that salary band. It is a derived screening indicator, not a finding of discrimination or an official Treasury Board index.','Un indice de 1 correspond à la concentration de référence de l’effectif dans cette tranche. Il s’agit d’un indicateur dérivé de dépistage et non d’une conclusion de discrimination ou d’un indice officiel du Conseil du Trésor.'),
+   table(L('Salary distribution index by band and group','Indice de répartition salariale selon la tranche et le groupe'),
+   [L('Salary band','Tranche salariale'),L('All employees (index)','Tous les employés (indice)'),...keys.map(k=>groupWord(k)+' ('+L('index','indice')+')')],
+   band.map(r=>[r.quintile,N(r.di_all),...keys.map(k=>N(r[idxField[k]]))]),'public-derived-pay-index'),
+   L('Independent derived index file','Fichier de l’indice dérivé indépendant'),'data/october-2026/DI_di_disproportionality_index_2017-2025.csv');
+ }
  // Call to Action and plans organization comparison from same source.
  const stats=D.cta.counts;
  out+=sCard('public-cta',L('Clerk’s Call to Action: reported documents','Appel à l’action du greffier : documents déclarés'),
