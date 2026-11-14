@@ -11,7 +11,7 @@ const PAGE=18;
 function sourceTitle(file){
  const cycle=String(file.dataset||'').match(/(?:2023|2025) Staffing and Non-Partisanship Survey/);
  return cycle?L(cycle[0].startsWith('2025')?'2025 staffing survey':'2023 staffing survey',
-                  cycle[0].startsWith('2025')?'Sondage sur la dotation de 2025':'Sondage sur la dotation de 2023')+' — '+(file.title||file.dataset):
+                  cycle[0].startsWith('2025')?'Sondage sur la dotation de 2025':'Sondage sur la dotation de 2023')+' – '+(file.title||file.dataset):
     (file.title||file.dataset);
 }
 let pending=0,manifestPromise=null;
