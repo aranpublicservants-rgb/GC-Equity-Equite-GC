@@ -46,9 +46,12 @@ assert 'id="org-output"' in home_html, 'inline organization tables missing'
 assert 'id="public-output"' in home_html, 'inline public service-wide tables missing'
 assert 'gc-dashboard.js' in home_html and 'gc-dashboard.css' in home_html, 'dashboard assets missing'
 assert 'gc-org-sources.js' in home_html, 'department-only PSC source integration missing'
+assert 'gc-data-library.js' in home_html, 'public service-wide dataset browser missing'
+assert 'id="org-topic-picker"' in home_html and 'id="public-topic-picker"' in home_html, 'topic controls missing'
+assert 'href="#department-data"' in home_html and 'href="#equity-data"' in home_html, 'homepage two-area navigation broken'
 assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
 
-for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
+for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
 for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
     if line.strip():
@@ -57,6 +60,23 @@ for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
 explorer=(ROOT/'explorer.html').read_text()
 meta=json.loads(re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',explorer,re.S)[1])
 assert sum(len(json.loads(gzip.decompress((ROOT/f'data/pses-2024-branches/{d["id"]}.json.gz').read_bytes()))) for d in meta['departments'])==meta['totalRows']
+coverage=json.loads((ROOT/'assets/data-coverage-audit.json').read_text())
+assert coverage['drive']['total']==157, 'Drive source manifest count changed'
+counts={}
+for row in coverage['drive']['rows']:
+    status=row['status'];counts[status]=counts.get(status,0)+1
+    if status=='hosted':
+        assert (ROOT/row['repositoryPath']).exists(), f'Drive source incorrectly marked hosted: {row["name"]}'
+assert counts==coverage['drive']['counts'], 'Drive source audit status totals do not reconcile'
+assert len(coverage['hostedAdditional']['psc'])==55, 'PSC source coverage incomplete'
+assert len(coverage['hostedAdditional']['women'])==26, 'women source coverage incomplete'
+assert len(coverage['hostedAdditional']['other'])==9, 'Treasury Board and derived source coverage incomplete'
+for category in ['psc','women','other']:
+    for dataset in coverage['hostedAdditional'][category]:
+        assert (ROOT/dataset['path']).is_file(),f'catalogue points to missing file: {dataset["path"]}'
+assert all('https://drive.google.com/' not in row.get('repositoryPath','') for row in coverage['drive']['rows'] if row.get('repositoryPath')), 'private Drive addresses must not become site links'
+print('SOURCE-AUDIT: 157 Drive file entries classified, 55 PSC, 26 women, 9 TBS/derived CSV sources with verified local paths')
+
 model=json.loads((ROOT/'assets/workspace-data.json').read_text())
 with (ROOT/'data/october-2026/TBS_EE_representation_with_WFA_2017-2025.csv').open(newline='') as f:assert list(csv.DictReader(f))==model['rep']
 with (ROOT/'data/october-2026/TBS_EE_executives_by_EX_level_with_WFA_2017-2025.csv').open(newline='') as f:assert list(csv.DictReader(f))==model['executives']
@@ -179,7 +199,7 @@ assert c['p']>=0.05 and c['bands'][0]['diff']>0 and all(x['diff']<=0 for x in c[
 quoted(11,f"In the {c['n1']} organizations that reported equity commitments in executive performance agreements in 2021 or 2024, {h1(c['mean1'])}% of employees said the Call to Action had a positive impact in 2024, on average, compared with {h1(c['mean0'])}% in the {c['n0']} organizations that did not.")
 for cell in ['Black candidates</td><td class="num">10.3%','<td class="num">6.6%</td><td class="num below-mark">0.64</td>']:
     assert cell in explorer,f'audit figures changed in the data explorer: {cell}'
-for name in ['gc-workspace.js','gc-workspace.css','gc-dashboard.css','gc-dashboard.js','index.html','call-to-action.html','call-to-action.js','staffing.html','staffing.js','gc-tools.js','data/call-to-action-letters.json','data/call-to-action-comparisons.json','data/tbs-departmental-representation-2017-2025.json','data/snps-2025-by-organization.json','data/psc/catalogue.json','data/psc/psc-equity.json']:
+for name in ['gc-workspace.js','gc-workspace.css','gc-dashboard.css','gc-dashboard.js','gc-data-library.js','index.html','call-to-action.html','call-to-action.js','staffing.html','staffing.js','gc-tools.js','data/call-to-action-letters.json','data/call-to-action-comparisons.json','data/tbs-departmental-representation-2017-2025.json','data/snps-2025-by-organization.json','data/psc/catalogue.json','data/psc/psc-equity.json']:
     text=(ROOT/name).read_text()
     assert '—' not in text, f'em dash: {name}'
     assert not re.search(r'sk-[A-Za-z0-9]{20,}|Bearer\s+[A-Za-z0-9]',text),f'possible credential: {name}'
