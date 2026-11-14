@@ -107,17 +107,19 @@ function recordFor(name){return D.cta.organizations.find(o=>[o.site_name,o.pses_
 function planFor(name){return D.model.plans.find(p=>norm(p.name)===norm(name))||null;}
 function deptName(name){if(!lang())return name;return D.model.DEPT_FR[name]||D.model.planOrgs[name]?.nameFr||recordFor(name)?.name_fr||name;}
 function statusTable(name){
- const labels=[
- [L('Core public administration representation, 2017–2025','Représentation dans l’administration publique centrale, 2017-2025'),!!findEntry(D.series.orgs,name),'2017–2025',L('Core public administration','Administration publique centrale')],
- [L('2024 employee survey by organization','Sondage auprès des fonctionnaires de 2024, par organisme'),!!findEntry(D.model.PSES_DEPT,name),'2024',L('Survey respondents','Répondants au sondage')],
- [L('2025 staffing survey by organization','Sondage sur la dotation de 2025, par organisme'),!!findEntry(D.snps.orgs,name),'2025',L('Staffing survey respondents','Répondants au sondage sur la dotation')],
- [L('Staffing appointments by self-identification','Nominations selon l’auto-identification'),!!findEntry(D.psc.hiring,name),'2011–2025',L('Organizations in the Commission staffing dashboard','Organismes du tableau de bord de dotation')],
- [L('Call to Action documents','Documents de l’appel à l’action'),!!recordFor(name),'2021 and 2024',L('Participating organizations','Organismes participants')],
- [L('Departmental plan term counts','Fréquence de termes dans les plans ministériels'),!!planFor(name),'2026–27',L('Organizations with a published plan','Organismes ayant un plan publié')]
+ const coverage=[
+ [L('Treasury Board workforce representation, 2017–2025','Représentation de l’effectif du Conseil du Trésor, 2017-2025'),!!findEntry(D.series.orgs,name),L('Core public administration','Administration publique centrale')],
+ [L('2024 employee survey, organization','Sondage de 2024 auprès des employés, par organisme'),!!findEntry(D.model.PSES_DEPT,name),L('Survey respondents','Répondants au sondage')],
+ [L('2025 staffing experiences by group','Expérience de la dotation de 2025 selon le groupe'),!!findEntry(D.snps.orgs,name),L('Staffing survey respondents','Répondants au sondage sur la dotation')],
+ [L('PSEA workforce by organization','Effectif selon la LEFP par organisme'),D.pscPopulation.some(x=>norm(x.organization_e)===norm(name)),L('PSEA workforce','Effectif assujetti à la LEFP')],
+ [L('Appointments by first official language','Nominations selon la première langue officielle'),D.pscOfficialLanguage.some(x=>norm(x.department_e)===norm(name)),L('Appointees in staffing data','Personnes nommées dans les données de dotation')],
+ [L('Appointments by equity self-identification','Nominations selon l’auto-identification aux fins de l’équité'),!!findEntry(D.psc.hiring,name),L('Public Service Commission appointments','Nominations selon la Commission de la fonction publique')],
+ [L('Clerk’s Call to Action documents','Documents de l’Appel à l’action du greffier'),!!recordFor(name),L('Published organizational responses','Réponses publiées des organismes')],
+ [L('2026–27 departmental plan','Plan ministériel de 2026-2027'),!!planFor(name),L('Organizations with published plans','Organismes ayant publié un plan')]
  ];
- return table(L('Dataset coverage for ','Données disponibles pour ')+deptName(name),
- [L('Published dataset','Jeu de données publié'),L('Available here','Disponible ici'),L('Period','Période'),L('Population or scope','Population ou portée')],
- labels.map(x=>[x[0],x[1]?L('Yes','Oui'):L('Not in this collection','Absent de cette collection'),x[2],x[3]]),'organization-source-coverage');
+ return table(L('Published source coverage for ','Couverture des sources publiées pour ')+deptName(name),
+ [L('Dataset','Jeu de données'),L('Available for this organization','Disponible pour cet organisme'),L('Population in this source','Population visée par la source')],
+ coverage.map(x=>[x[0],x[1]?L('Published here','Publié ici'):L('Not in selected source collection','Absent des sources retenues'),x[2]]),'organization-data-coverage');
 }
 function representation(name){
  const rec=findEntry(D.series.orgs,name),d=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
