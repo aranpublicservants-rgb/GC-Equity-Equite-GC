@@ -1,6 +1,6 @@
 /* Public-service data library: one page, one selected dataset, full-source exports.
    Files are loaded only when opened. Department-labelled files are never treated as
-   whole-public-service totals. The Drive manifest is only an audit of file coverage. */
+   whole-public-service totals. All files are part of the verified local dataset registry. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
@@ -181,7 +181,7 @@ async function render(){
  const host=$('public-data-library');if(!host)return;
  try{
   if(!coverage){const [a,b]=await Promise.all([
-   fetch('assets/data-coverage-audit.json').then(r=>r.json()),
+   fetch('assets/hosted-datasets.json').then(r=>r.json()),
    fetch('assets/psc-organization-index.json').then(r=>r.json())
   ]);coverage=a;pscIndex=b;}
   if(!host.isConnected)return;
