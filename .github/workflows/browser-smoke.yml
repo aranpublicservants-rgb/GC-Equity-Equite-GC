@@ -93,7 +93,7 @@ jobs:
                 const deptCount=index.files.find(x=>x.file==='adv_type.csv').organizations['Administrative Tribunals Support Service of Canada'];
                 if(!downloaded.includes('Administrative Tribunals Support Service of Canada'))throw Error('Department name missing from PSC export');
                 if(downloaded.includes('Agriculture and Agri-Food Canada')||downloaded.includes('Canada Border Services Agency'))throw Error('Another organization leaked into PSC export');
-                if(downloaded.split(/\\r?\\n/).filter(Boolean).length-1!==deptCount)throw Error('PSC export did not include exactly the selected organization source rows');
+                if(downloaded.split(/\r?\n/).filter(Boolean).length-1!==deptCount)throw Error('PSC export did not include exactly the selected organization source rows');
                 await page.waitForFunction(()=>document.querySelectorAll('#gce-branch-complete tbody tr').length>0,null,{timeout:120000});
                 const branchRows=await page.locator('#gce-branch-complete tbody tr').count();
                 if(branchRows>18)throw Error('Branch table should never display more than 18 rows');
