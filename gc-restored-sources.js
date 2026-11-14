@@ -8,6 +8,12 @@ const L=(e,f)=>fr()?f:e;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
 const PAGE=18;
+function sourceTitle(file){
+ const cycle=String(file.dataset||'').match(/(?:2023|2025) Staffing and Non-Partisanship Survey/);
+ return cycle?L(cycle[0].startsWith('2025')?'2025 staffing survey':'2023 staffing survey',
+                  cycle[0].startsWith('2025')?'Sondage sur la dotation de 2025':'Sondage sur la dotation de 2023')+' — '+(file.title||file.dataset):
+    (file.title||file.dataset);
+}
 let pending=0,manifestPromise=null;
 const cache=new Map();
 function parseCsv(s){
@@ -59,7 +65,7 @@ function attach(host,kind,files,name,frenchName,requestId){
  host.innerHTML='<section class="gce-data-block">'+
   '<h3>'+esc(title)+'</h3>'+
   '<p class="gce-explain">'+esc(L('Choose a published dataset. Only records naming this organization will be displayed, with all original columns available for download.','Choisissez un jeu de données publié. Seules les lignes qui nomment cet organisme seront affichées, avec toutes les colonnes originales téléchargeables.'))+'</p>'+
-  '<div class="gce-filter-panel"><div><label for="gce-restored-'+kind+'">'+esc(L('Dataset','Jeu de données'))+'</label><select id="gce-restored-'+kind+'">'+files.map((x,i)=>'<option value="'+i+'">'+esc(x.title||x.dataset)+'</option>').join('')+'</select></div>'+
+  '<div class="gce-filter-panel"><div><label for="gce-restored-'+kind+'">'+esc(L('Dataset','Jeu de données'))+'</label><select id="gce-restored-'+kind+'">'+files.map((x,i)=>'<option value="'+i+'">'+esc(sourceTitle(x))+'</option>').join('')+'</select></div>'+
   '<div><label for="gce-restored-query-'+kind+'">'+esc(L('Search within this dataset','Rechercher dans ce jeu de données'))+'</label><input type="search" id="gce-restored-query-'+kind+'" placeholder="'+esc(L('Question, group, year or term','Question, groupe, année ou terme'))+'"></div></div>'+
   '<div id="gce-restored-current-'+kind+'"></div></section>';
  const picker=$('gce-restored-'+kind),query=$('gce-restored-query-'+kind),area=$('gce-restored-current-'+kind);
@@ -81,7 +87,7 @@ function attach(host,kind,files,name,frenchName,requestId){
    area.innerHTML='<p class="gce-explain">'+esc(L('Published rows for this organization: ','Lignes publiées pour cet organisme : ')+rows.length)+'</p>'+
     '<div class="gce-inline-tools"><label><input type="checkbox" id="gce-restored-all-'+kind+'"> '+esc(L('Show all original columns','Afficher toutes les colonnes originales'))+'</label>'+
     '<button type="button" class="gce-download" id="gce-restored-export-'+kind+'">'+esc(L('Download all matching rows (CSV)','Télécharger toutes les lignes correspondantes (CSV)'))+'</button></div>'+
-    '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+esc(file.title||file.dataset)+'"><table data-gcw-ready="yes"><caption>'+esc(file.title||file.dataset)+'</caption><thead></thead><tbody></tbody></table></div>'+
+    '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+esc(sourceTitle(file))+'"><table data-gcw-ready="yes"><caption>'+esc(sourceTitle(file))+'</caption><thead></thead><tbody></tbody></table></div>'+
     '<div class="gce-pager"><button type="button" class="gce-prev">'+esc(L('Previous','Précédent'))+'</button><span class="gce-count" role="status" aria-live="polite"></span><button type="button" class="gce-next">'+esc(L('Next','Suivant'))+'</button></div>'+
     '<p class="gce-source"><a href="'+esc(file.publisherUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Original published source','Source originale publiée'))+'</a></p>';
    const header=area.querySelector('thead'),body=area.querySelector('tbody'),count=area.querySelector('.gce-count');
