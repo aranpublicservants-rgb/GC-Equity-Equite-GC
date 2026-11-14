@@ -49,6 +49,8 @@ jobs:
                 if(JSON.stringify(choices)!==JSON.stringify(['#department-data','#equity-data']))throw Error('The two choices must stay on this page: '+choices);
                 await page.waitForFunction(()=>document.querySelectorAll('#public-output table').length>=10,null,{timeout:120000});
                 await page.waitForFunction(()=>document.querySelectorAll('#org-picker option').length>150,null,{timeout:30000});
+                const namedOptions=await page.locator('#org-picker option').allTextContents();
+                if(namedOptions.some(x=>/^(Public Service - Total|Public Service - Average|Micro - Average|Small - Average|Medium - Average|Large - Average)$/i.test(x.trim())))throw Error('National aggregates cannot be selectable as individual departments');
                 if(await page.locator('#org-output table').count())throw Error('Organization tables must await a selection');
                 if(await page.locator('#gce-loading').isVisible())throw Error('Data still loading');
                 if(/Browse below|Open the second page|your instructions/i.test(await page.locator('body').innerText()))throw Error('Instructional text in page');
