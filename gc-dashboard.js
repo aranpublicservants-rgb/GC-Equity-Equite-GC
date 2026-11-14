@@ -243,6 +243,43 @@ function ctaTables(name){
  (doc?.letter?.url?'<p class="gce-source">'+link(doc.letter.url,L('2021 original letter','Lettre originale de 2021'))+'</p>':'')+(doc?.self_assessment?.url?'<p class="gce-source">'+link(doc.self_assessment.url,L('2024 original self-assessment','Autoévaluation originale de 2024'))+'</p>':''),
  L('Privy Council Office documents','Documents du Bureau du Conseil privé'),doc?.self_assessment?.url||doc?.letter?.url||'call-to-action.html');
 }
+function pscPopulationOrg(name){
+ const rows=D.pscPopulation.filter(r=>norm(r.organization_e)===norm(name)&&r.description_e==='Population').sort((a,b)=>String(a.month_year_e).localeCompare(String(b.month_year_e)));
+ if(!rows.length)return '';
+ return sCard('org-psc-population',L('Public Service Employment Act workforce size','Effectif assujetti à la Loi sur l’emploi dans la fonction publique'),
+  L('Published Public Service Commission organization population counts at the reporting date shown. This series has a different legal and organizational scope from Treasury Board employment-equity representation.','Effectifs publiés par la Commission de la fonction publique à la date indiquée. Cette série a une portée juridique et organisationnelle différente de celle du Conseil du Trésor sur la représentation en matière d’équité.'),
+  table(L('PSEA workforce counts for ','Effectif selon la LEFP pour ')+deptName(name),
+  [L('Reporting month and year','Mois et année de référence'),L('Reported employees','Effectif déclaré')],
+  rows.map(r=>[lang()?r.month_year_f||r.month_year_e:r.month_year_e,N(r.n)]),'organization-psc-psea-workforce'),
+  L('Public Service Commission workforce by organization','Commission de la fonction publique, effectif par organisme'),'data/psc/CFPPSC_AR2C.csv');
+}
+function pscLanguageOrg(name){
+ const matches=D.pscOfficialLanguage.filter(r=>norm(r.department_e)===norm(name));
+ if(!matches.length)return '';
+ const years=[...new Set(matches.map(r=>r.fiscal_year))].sort();
+ const cols=[['Anglophones','Anglophones'],['Francophones','Francophones']];
+ const other=[...new Set(matches.map(r=>r.fol_e))].filter(x=>!cols.some(z=>z[0]===x));
+ const labels=cols.concat(other.map(x=>[x,x]));
+ const rows=years.map(y=>[y,...labels.map(([k])=>{const entry=matches.find(r=>r.fiscal_year===y&&r.fol_e===k);return entry?N(entry.count):missing();})]);
+ return sCard('org-official-language',L('Appointments by first official language','Nominations selon la première langue officielle'),
+  L('Counts of appointments in this Public Service Commission staffing source, by the appointee’s first official language and fiscal year. They are not counts of all employees or of bilingual positions.','Nombres de nominations dans cette source de la Commission de la fonction publique, selon la première langue officielle de la personne nommée et l’exercice. Il ne s’agit ni du nombre total d’employés ni du nombre de postes bilingues.'),
+  table(L('Appointments by first official language for ','Nominations selon la première langue officielle pour ')+deptName(name),
+   [L('Fiscal year','Exercice'),...labels.map(x=>x[0])],rows,'organization-first-official-language-appointments'),
+  L('Public Service Commission staffing dashboard, first official language','Commission de la fonction publique, tableau de bord de la dotation, première langue officielle'),'data/psc/demo_fol.csv');
+}
+function publicTenureTable(){
+ const data=D.pscTenure.filter(r=>r.description_e?.includes('Public Service Employment Act')&&String(r.month_end_date).endsWith('-03-31'));
+ if(!data.length)return '';
+ const yrs=[...new Set(data.map(r=>r.month_end_date))].sort().slice(-10);
+ const types=[['Indeterminate','Indeterminate','Période indéterminée'],['Term','Term','Durée déterminée'],['Casual','Casual','Emploi occasionnel'],['Student','Student','Étudiant']];
+ return sCard('public-psea-tenure',L('Public Service Employment Act workforce by employment tenure','Effectif selon la durée d’emploi sous la Loi sur l’emploi dans la fonction publique'),
+  L('Published workforce counts by employment tenure, a separate Public Service Commission population from the Treasury Board core public administration. These are counts, not employment equity breakdowns.','Nombres d’employés publiés selon la durée d’emploi dans la population de la Commission de la fonction publique, distincte de l’administration publique centrale du Conseil du Trésor. Il s’agit d’effectifs, non de ventilations par groupe d’équité.'),
+  table(L('PSEA workforce counts by tenure, March of each year','Effectif de la LEFP selon la durée d’emploi, mars de chaque année'),
+   [L('Reporting date','Date de référence'),...types.map(x=>L(x[1],x[2]))],
+   yrs.map(y=>[y,...types.map(t=>{const z=data.find(r=>r.month_end_date===y&&r.tenure_e===t[0]);return z?N(z.n):missing()})]),'public-psea-workforce-by-tenure'),
+  L('Public Service Commission, PSEA workforce by tenure','Commission de la fonction publique, effectif selon la durée d’emploi'),'data/psc/ar2a.csv');
+}
+
 function plansTable(name){
  const p=planFor(name);if(!p)return '';
  const terms=[
@@ -383,7 +420,7 @@ function renderOrg(){
  const s=sCard('org-coverage',L('Published data coverage','Données publiées disponibles'),
  L('Different datasets cover different populations and years. The presence of an organization in the directory does not mean every dataset applies to it.','Les sources couvrent des populations et des années différentes. La présence d’un organisme dans le répertoire ne signifie pas que chaque jeu de données le concerne.'),
  statusTable(name),L('Official federal organization directory','Répertoire fédéral officiel des organismes'),'https://www.canada.ca/en/government/dept.html');
- out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+psesTables(name)+staffingTables(name)+hiringTable(name)+ctaTables(name)+plansTable(name);
+ out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+pscPopulationOrg(name)+pscLanguageOrg(name)+psesTables(name)+staffingTables(name)+hiringTable(name)+ctaTables(name)+plansTable(name);
  const branchArea=document.createElement('section');branchArea.className='gce-data-block';branchArea.id='org-branches';out.append(branchArea);renderBranches(name);
  const url=new URL(location.href);url.searchParams.set('org',name);history.replaceState(null,'',url.pathname+url.search+url.hash);
 }
@@ -555,6 +592,7 @@ function publicTables(){
    band.map(r=>[r.quintile,N(r.di_all),...keys.map(k=>N(r[idxField[k]]))]),'public-derived-pay-index'),
    L('Independent derived index file','Fichier de l’indice dérivé indépendant'),'data/october-2026/DI_di_disproportionality_index_2017-2025.csv');
  }
+ if(current==='all')out+=publicTenureTable();
  // Call to Action and plans organization comparison from same source.
  const stats=D.cta.counts;
  out+=sCard('public-cta',L('Clerk’s Call to Action: reported documents','Appel à l’action du greffier : documents déclarés'),
