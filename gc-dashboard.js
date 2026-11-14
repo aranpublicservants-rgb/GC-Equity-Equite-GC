@@ -389,35 +389,68 @@ function renderOrg(){
 }
 function publicTables(){
  const m=D.model;let out='';
- // Workforce statistics by year.
- const rep=m.rep.filter(r=>r.row_type==='representation').sort((a,b)=>b.period_or_benchmark.localeCompare(a.period_or_benchmark));
- out+=sCard('public-representation',L('Representation in the core public administration, 2017–2025','Représentation dans l’administration publique centrale, 2017-2025'),
- L('Employee counts and shares are published for each year. The four groups can overlap; do not add their counts together.','Les effectifs et les parts sont publiés pour chaque année. Les quatre groupes peuvent se chevaucher : leurs nombres ne doivent pas être additionnés.'),
- table(L('Representation by year: Treasury Board','Représentation selon l’année : Conseil du Trésor'),
- [L('Date','Date'),L('All employees','Tout l’effectif'),L('Women (number)','Femmes (nombre)'),L('Women (%)','Femmes (%)'),L('Indigenous (number)','Autochtones (nombre)'),L('Indigenous (%)','Autochtones (%)'),L('Disability (number)','Handicap (nombre)'),L('Disability (%)','Handicap (%)'),L('Racialized (number)','Racisés (nombre)'),L('Racialized (%)','Racisés (%)')],
- rep.map(r=>[r.period_or_benchmark,N(r.all_employees_number),N(r.women_number),P(r.women_pct),N(r.indigenous_peoples_number),P(r.indigenous_peoples_pct),N(r.persons_with_disabilities_number),P(r.persons_with_disabilities_pct),N(r.members_of_visible_minorities_number),P(r.members_of_visible_minorities_pct)]),'public-workforce-trends'),
- L('Treasury Board Secretariat, employment equity annual statistics','Secrétariat du Conseil du Trésor, statistiques annuelles sur l’équité'),source.tbs);
- // Executive data by level 2025.
- const ex=m.executives.filter(r=>r.as_of_march_31==='2025'&&/^EX \d\d|^Overall EX/.test(r.level));
- out+=sCard('public-executives',L('Executive representation by EX level, 2025','Représentation des cadres selon le niveau EX, 2025'),
- L('Each row is an executive classification level, not a department. Workforce availability benchmarks for executives are a separate comparison population.','Chaque ligne représente un niveau de classification des cadres, et non un ministère. Les valeurs de disponibilité des cadres correspondent à une population de comparaison distincte.'),
- table(L('Executive representation, March 31, 2025','Représentation des cadres au 31 mars 2025'),
- [L('Executive level','Niveau de direction'),L('All executives','Tous les cadres'),L('Women (%)','Femmes (%)'),L('Indigenous (%)','Autochtones (%)'),L('Disability (%)','Handicap (%)'),L('Racialized (%)','Racisés (%)')],
- ex.map(r=>[r.level,N(r.executive_employees),P(r.women_pct),P(r.indigenous_peoples_pct),P(r.persons_with_disabilities_pct),P(r.members_of_visible_minorities_pct)]),'public-executive-2025'),
- L('Treasury Board Secretariat','Secrétariat du Conseil du Trésor'),source.tbs);
-
- // Detailed group subgroups and overlapping identities from the published workforce dataset.
- for(const g of [['i','Indigenous subgroups','Sous-groupes autochtones'],['v','Racialized subgroups','Sous-groupes racisés'],['d','Disability subgroups','Sous-groupes de handicap'],['w','Women and intersecting identities','Femmes et identités croisées']]){
-  const item=m.SUBG[g[0]];
-  if(!item?.rows?.length)continue;
-  const rows=item.rows.map(x=>[x.name,x.n===null?missing():N(x.n),P(x.p),x.ex===null?missing():P(x.ex)]);
-  out+=sCard('public-subgroups-'+g[0],L(g[1],g[2])+' · 2025',
-   L('Shares and counts are reproduced as published. Categories may overlap, be incomplete or have unavailable values; do not sum them to reconstruct group totals.','Les parts et les nombres sont reproduits tels que publiés. Les catégories peuvent se chevaucher, être incomplètes ou comporter des données manquantes. Ne les additionnez pas pour reconstituer des totaux.')+(!lang()&&item.note?' '+item.note:''),
-   table(L('Subgroup representation, 2025: ','Représentation des sous-groupes, 2025 : ')+L(g[1],g[2]),
-   [L('Published subgroup','Sous-groupe publié'),L('Employees (count)','Employés (nombre)'),g[0]==='w'?L('Share of women (%)','Part des femmes (%)'):L('Share of workforce (%)','Part de l’effectif (%)'),L('Executive representation (%)','Représentation des cadres (%)')],rows,'public-subgroups-'+g[0]),
-   L('Treasury Board Secretariat, employment equity data','Secrétariat du Conseil du Trésor, données sur l’équité'),source.tbs);
+ // Public service-wide historical workforce representation and selected equity group.
+ const current=selectGroup('public'),rep=m.rep.filter(r=>r.row_type==='representation').sort((a,b)=>Number(a.period_or_benchmark.slice(-4))-Number(b.period_or_benchmark.slice(-4)));
+ const latest=rep[rep.length-1],repCols={w:['women_number','women_pct'],i:['indigenous_peoples_number','indigenous_peoples_pct'],d:['persons_with_disabilities_number','persons_with_disabilities_pct'],v:['members_of_visible_minorities_number','members_of_visible_minorities_pct']};
+ const field=repCols[current];
+ let repRows=[],repHead=[];
+ if(current==='all'){
+  repHead=[L('Employee group','Groupe d’employés'),L('Employees, 2025','Employés en 2025'),L('Workforce share, 2025 (%)','Part de l’effectif en 2025 (%)')];
+  repRows=[['w',L('Women','Femmes')],['i',L('Indigenous employees','Employés autochtones')],['d',L('Employees with disabilities','Employés en situation de handicap')],['v',L('Racialized employees','Employés racisés')]].map(([k,label])=>[label,N(latest[repCols[k][0]]),P(latest[repCols[k][1]])]);
+  const black=m.SUBG.v.rows.find(x=>x.name==='Black');if(black)repRows.push([L('Black employees (racialized subgroup)','Employés noirs (sous-groupe racisé)'),N(black.n),P(black.p)]);
+ }else if(field){
+  repHead=[L('Year','Année'),L('Total employees','Effectif total'),L('Group employees','Employés du groupe'),L('Group share (%)','Part du groupe (%)')];
+  repRows=rep.map(r=>[r.period_or_benchmark,N(r.all_employees_number),N(r[field[0]]),P(r[field[1]])]);
+ }else if(current==='b'){
+  const black=m.SUBG.v.rows.find(x=>x.name==='Black');
+  repHead=[L('Year','Année'),L('Employees in group','Employés du groupe'),L('Share of workforce (%)','Part de l’effectif (%)')];
+  if(black)repRows=[['2025',N(black.n),P(black.p)]];
  }
-
+ if(repRows.length)out+=sCard('public-representation',L('Workforce representation, 2025 and historical series','Représentation au sein de l’effectif, en 2025 et au fil du temps'),
+  L('Treasury Board representation data for the core public administration. Other respondent groups do not necessarily have a corresponding published workforce series. Groups overlap.','Données du Conseil du Trésor sur la représentation dans l’administration publique centrale. Les autres groupes de répondants n’ont pas nécessairement de série correspondante sur l’effectif. Les groupes se chevauchent.'),
+  table(L('Published workforce representation','Représentation publiée au sein de l’effectif'),repHead,repRows,'public-workforce-representation'),
+  L('Treasury Board Secretariat annual equity statistics','Statistiques annuelles sur l’équité du Conseil du Trésor'),source.tbs);
+ // 1998–2025 long historical series not represented by the annual file.
+ const historical=m.HIST;
+ const historicalKeys=current==='all'?['w','i','d','v']:['w','i','d','v'].includes(current)?[current]:[];
+ if(historicalKeys.length)out+=sCard('public-history',L('Long-term workforce representation, 1998–2025','Représentation à long terme au sein de l’effectif, 1998-2025'),
+  L('A selected set of historical years. These are workforce representation percentages, not an annual series for every year. The reporting population and definitions have evolved.','Un ensemble d’années historiques sélectionnées. Il s’agit de pourcentages de représentation au sein de l’effectif, et non d’une série annuelle complète. La population et les définitions ont évolué.'),
+  table(L('Representation across selected historical years','Représentation selon les années historiques choisies'),
+  [L('Year','Année'),...historicalKeys.map(k=>groupWord(k)+' (%)')],
+  historical.years.map((y,i)=>[String(y),...historicalKeys.map(k=>P(historical[k]?.[i]))]),'public-historical-representation'),
+  L('Treasury Board employment equity historical tables','Tableaux historiques de l’équité du Conseil du Trésor'),source.tbs);
+ // EX representation at level; source does not report a full subgroup series for every group.
+ const ex=m.executives.filter(r=>r.as_of_march_31==='2025'&&/^EX \d\d|^Overall EX/.test(r.level));
+ const exKeys={w:'women_pct',i:'indigenous_peoples_pct',d:'persons_with_disabilities_pct',v:'members_of_visible_minorities_pct'};
+ if(current==='all'||exKeys[current]||current==='b'){
+  const col=current==='all'?['w','i','d','v']:[current];
+  out+=sCard('public-executives',L('Executive representation by classification, 2025','Représentation des cadres selon la classification, 2025'),
+   L('Shares are the published proportion of each executive group at that classification level. The executive workforce availability estimate is distinct from representation.','Les parts représentent la proportion publiée du groupe à chaque niveau de direction. La disponibilité de la main-d’œuvre des cadres se distingue de la représentation.'),
+   table(L('Executive representation at March 31, 2025','Représentation des cadres au 31 mars 2025'),
+   [L('Executive level','Niveau de direction'),L('Executive employees','Effectif de direction'),...col.map(k=>groupWord(k)+' (%)')],
+   ex.filter(r=>/^EX \d\d/.test(r.level)).map((r,i)=>[r.level,N(r.executive_employees),...col.map(k=>k==='b'?P(m.EXLEV.black?.[i]):P(r[exKeys[k]]))]),'public-executive-levels'),
+   L('Treasury Board, executive representation','Conseil du Trésor, représentation des cadres'),source.tbs);
+ }
+ // Group-specific workforce subgroups, deliberately not stacked on the overview.
+ const sg=current==='b'?'v':current;
+ if(['i','v','d','w'].includes(sg)){
+  const item=m.SUBG[sg],rows=(item?.rows||[]).filter(x=>current!=='b'||x.name==='Black').map(x=>[x.name,x.n===null?missing():N(x.n),P(x.p),x.ex===null?missing():P(x.ex)]);
+  if(rows.length)out+=sCard('public-subgroups',L('Selected group and published subgroups, 2025','Groupe choisi et sous-groupes publiés, 2025'),
+   L('Subgroup counts and percentages are reported as published. Subgroup data may be incomplete or suppressed, and are not necessarily additive.','Les nombres et pourcentages des sous-groupes sont reproduits tels que publiés. Les données peuvent être incomplètes ou supprimées et ne sont pas nécessairement additionnables.'),
+   table(L('Subgroup representation, 2025','Représentation des sous-groupes, 2025'),
+   [L('Subgroup','Sous-groupe'),L('Employees','Employés'),sg==='w'?L('Share of women (%)','Part des femmes (%)'):L('Share of workforce (%)','Part de l’effectif (%)'),L('Executive representation (%)','Représentation des cadres (%)')],rows,'public-subgroup-representation'),
+   L('Treasury Board Secretariat subgroup statistics','Statistiques sur les sous-groupes du Conseil du Trésor'),source.tbs);
+ }
+ // Official published 2024–25 workforce lifecycle shares.
+ if(current==='all'||['w','i','d','v','b'].includes(current)){
+  const k=current==='all'?['w','i','d','v','b']:[current],f=m.FLOW25;
+  out+=sCard('public-workforce-flow',L('Hiring, promotions and separations, 2024–25','Embauches, promotions et départs, 2024-2025'),
+   L('Each percentage is the group’s share of the employees at that stage (workforce, hires, promotions or separations); the denominators differ. These are not individual promotion or separation rates.','Chaque pourcentage représente la part du groupe dans une population différente (effectif, embauches, promotions ou départs). Il ne s’agit pas de taux individuels de promotion ou de départ.'),
+   table(L('Published employment cycle by equity group, 2024–25','Cycle de l’emploi publié selon le groupe, 2024-2025'),
+   [L('Group','Groupe'),L('Workforce share (%)','Part de l’effectif (%)'),L('Share of hires (%)','Part des embauches (%)'),L('Share of promotions (%)','Part des promotions (%)'),L('Share of separations (%)','Part des départs (%)')],
+   k.map(g=>[groupWord(g),P(f[g]?.rep),P(f[g]?.h),P(f[g]?.p),P(f[g]?.s)]),'public-workforce-flow'),
+   L('Treasury Board 2024–25 Employment Equity demographic snapshot','Aperçu démographique de l’équité en matière d’emploi 2024-2025'),source.tbs);
+ }
  // Employee surveys overall across equity groups 2024.
  const qs=Object.keys(m.PSES_QMETA),qmeta=m.PSES_QMETA,by=m.EEG_DEPT['Public Service']||{},all=m.PSES_DEPT['Public Service']||{};
  out+=sCard('public-survey',L('2024 Public Service Employee Survey by employee group','Sondage auprès des fonctionnaires de 2024 selon le groupe'),
