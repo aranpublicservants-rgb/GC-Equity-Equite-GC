@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="gc-dashboard.css">
 <script src="gc-ai.js" defer></script>
 <script src="gc-workspace.js" defer></script>
+<script src="gc-data-library.js" defer></script>
 <script src="gc-org-sources.js" defer></script>
 <script src="gc-dashboard.js" defer></script>
 </head>
@@ -67,6 +68,18 @@
 </select>
 <p id="org-group-note" class="gce-footnote" data-gce-en="Tables show the selected group where the published source includes it; some sources report totals only." data-gce-fr="Les tableaux présentent le groupe choisi lorsque la source publie ce résultat; certaines sources ne présentent que des totaux.">Tables show the selected group where the published source includes it; some sources report totals only.</p>
 </div>
+<div class="gce-picker gce-topic">
+<label for="org-topic-picker" data-gce-en="Show tables about" data-gce-fr="Afficher les tableaux sur">Show tables about</label>
+<select id="org-topic-picker">
+<option value="all" data-gce-en="All available topics" data-gce-fr="Tous les sujets disponibles">All available topics</option>
+<option value="workforce" data-gce-en="Workforce and representation" data-gce-fr="Effectif et représentation">Workforce and representation</option>
+<option value="experience" data-gce-en="Employee experiences and surveys" data-gce-fr="Expérience des employés et sondages">Employee experiences and surveys</option>
+<option value="staffing" data-gce-en="Recruitment, staffing and departures" data-gce-fr="Recrutement, dotation et départs">Recruitment, staffing and departures</option>
+<option value="commitments" data-gce-en="Call to Action commitments and outcomes" data-gce-fr="Engagements et résultats liés à l’appel à l’action">Call to Action commitments and outcomes</option>
+<option value="plans" data-gce-en="Departmental plans" data-gce-fr="Plans ministériels">Departmental plans</option>
+<option value="sources" data-gce-en="Available datasets and sources" data-gce-fr="Données et sources disponibles">Available datasets and sources</option>
+</select>
+</div>
 <div id="org-output" class="gce-tables" aria-live="polite" aria-relevant="additions text"></div>
 </section>
 <section id="equity-data" class="gce-major-section" aria-labelledby="equity-title">
@@ -83,6 +96,18 @@
 <option value="b">Black employees</option><option value="lgbt">2SLGBTQIA+ employees</option>
 </select>
 <p id="public-group-note" class="gce-footnote" data-gce-en="Choosing a group updates the relevant tables and keeps public service-wide context and source information visible." data-gce-fr="Le choix d’un groupe actualise les tableaux pertinents, tout en conservant le contexte et les sources pour l’ensemble de la fonction publique.">Choosing a group updates the relevant tables and keeps public service-wide context and source information visible.</p>
+</div>
+<div class="gce-picker gce-topic">
+<label for="public-topic-picker" data-gce-en="Show tables about" data-gce-fr="Afficher les tableaux sur">Show tables about</label>
+<select id="public-topic-picker">
+<option value="all" data-gce-en="All available topics" data-gce-fr="Tous les sujets disponibles">All available topics</option>
+<option value="workforce" data-gce-en="Workforce and representation" data-gce-fr="Effectif et représentation">Workforce and representation</option>
+<option value="experience" data-gce-en="Employee experiences" data-gce-fr="Expérience des employés">Employee experiences</option>
+<option value="staffing" data-gce-en="Recruitment and staffing" data-gce-fr="Recrutement et dotation">Recruitment and staffing</option>
+<option value="pay" data-gce-en="Salary bands and independent analyses" data-gce-fr="Tranches salariales et analyses indépendantes">Salary bands and independent analyses</option>
+<option value="commitments" data-gce-en="Call to Action and departmental plans" data-gce-fr="Appel à l’action et plans ministériels">Call to Action and departmental plans</option>
+<option value="sources" data-gce-en="Search every available source" data-gce-fr="Rechercher toutes les sources disponibles">Search every available source</option>
+</select>
 </div>
 <div id="public-output" class="gce-tables"></div>
 </section>
