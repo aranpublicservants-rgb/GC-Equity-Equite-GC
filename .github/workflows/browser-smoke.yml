@@ -54,7 +54,7 @@ jobs:
                 if(await page.locator('#org-output table').count())throw Error('Organization tables must await a selection');
                 if(await page.locator('#gce-loading').isVisible())throw Error('Data still loading');
                 if(/Browse below|Open the second page|your instructions/i.test(await page.locator('body').innerText()))throw Error('Instructional text in page');
-                if(!await page.locator('#public-representation table').count()||!await page.locator('#public-source-inventory table').count())throw Error('Public service-wide tables missing');
+                if(!await page.locator('#public-representation table').count()||!await page.locator('#public-data-library').count())throw Error('Public service-wide tables missing');
                 if(!await page.locator('#public-topic-picker option').count()||!await page.locator('#org-topic-picker option').count())throw Error('Topic selectors missing');
                 await page.waitForFunction(()=>document.querySelectorAll('#gce-raw-file option').length===38,null,{timeout:30000});
                 await page.selectOption('#gce-raw-file','data/psc/ar4e.csv');
@@ -70,9 +70,6 @@ jobs:
                 if(await page.locator('#gce-raw-file option').count()!==5)throw Error('Official 2026 source CSVs missing');
                 await page.selectOption('#gce-raw-kind','derived');
                 if(await page.locator('#gce-raw-file option').count()!==4)throw Error('Independent derived source tables missing');
-                await page.selectOption('#gce-source-kind','drive');
-                if(!/157/.test(await page.locator('#gce-source-count').innerText()))throw Error('The historical 157-item Drive source manifest is not represented');
-                await page.selectOption('#gce-source-kind','onpage');
                 await page.locator('a[data-gce-scope="public"][data-gce-topic="sources"]').click();
                 if(await page.locator('#public-topic-picker').inputValue()!=='sources')throw Error('One-click topic navigation failed');
                 await page.selectOption('#public-topic-picker','all');
@@ -81,13 +78,10 @@ jobs:
                 if(!await page.locator('#public-history table').count()||!await page.locator('#public-salary-bands table').count())throw Error('Historical or salary equity datasets missing');
                 if(await page.locator('#public-survey table thead th').count()!==3)throw Error('Public survey group comparison columns missing');
                 await page.selectOption('#public-group-picker','all');
-                await page.selectOption('#gce-source-kind','psc');
-                const cat=await page.locator('#gce-source-rows tr').count();
-                if(cat>15||cat<1)throw Error('PSC catalogue missing or too long');
-                await page.click('#gce-source-next');
-                if(!/16/.test(await page.locator('#gce-source-count').innerText()))throw Error('Source catalogue paging broken');
-                await page.selectOption('#gce-source-kind','snps');
-                if(!await page.locator('#gce-source-rows a').count())throw Error('2023/2025 survey official source links missing');
+                await page.selectOption('#gce-raw-kind','restored');
+                if(await page.locator('#gce-raw-file option').count()<10)throw Error('Complete verified source tables from original collection missing');
+                await page.selectOption('#gce-raw-kind','psc');
+                if(await page.locator('#gce-raw-file option').count()!==38)throw Error('All 38 locally hosted PSC source files not available');
                 await page.selectOption('#org-picker','Canada Revenue Agency');
                 await page.waitForFunction(()=>document.querySelector('#public-output').children.length===0);
                 if(await page.locator('#public-data-library').count())throw Error('Public service-wide raw tables must not remain in selected department DOM');
