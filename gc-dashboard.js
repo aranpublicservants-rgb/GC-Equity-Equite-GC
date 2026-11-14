@@ -789,7 +789,7 @@ function publicTables(){
  renderSourceCatalogue();
 }
 function populatePicker(){
- const names=[...new Set([...(D.orglist.organizations||[]),...Object.keys(D.series.orgs||{}),...Object.keys(D.model.PSES_DEPT||{}).filter(x=>x!=='Public Service'),...D.model.plans.map(x=>x.name),...D.cta.organizations.map(x=>x.name_en),...D.pscOrgIndex.files.flatMap(f=>Object.keys(f.organizations||{}))])].sort((a,b)=>a.localeCompare(b,lang()?'fr':'en'));
+ const names=[...new Set([...(D.orglist.organizations||[]),...Object.keys(D.series.orgs||{}),...Object.keys(D.model.PSES_DEPT||{}).filter(x=>x!=='Public Service'),...D.model.plans.map(x=>x.name),...D.cta.organizations.map(x=>x.name_en),...D.pscOrgIndex.files.flatMap(f=>Object.keys(f.organizations||{}))])].filter(n=>!/^(?:Public Service\s*[-–]\s*(?:Total|Average)|(?:Micro|Small|Medium|Large)\s*[-–]\s*Average)$/i.test(n)).sort((a,b)=>a.localeCompare(b,lang()?'fr':'en'));
  const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
  if(names.includes(old)){picker.value=old;selected=old;}
