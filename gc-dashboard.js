@@ -164,20 +164,24 @@ function trendTables(name){
 
 function subgroupTables(name){
  const choice=selectGroup('org');
- if(choice!=='i'&&choice!=='d')return '';
- const data=choice==='i'?{
-  year:'2025',cols:[['inuit','Inuit','Inuits'],['metis','Métis','Métis'],['first_nations','First Nations','Premières Nations'],['other','Other or not specified','Autres ou non précisés']]
- }:{
-  year:'2024',cols:[['coordination_dexterity','Coordination or dexterity','Coordination ou dextérité'],['mobility','Mobility','Mobilité'],['speech_impairment','Speech','Parole'],['blind_visual_impairment','Blind or visual impairment','Cécité ou déficience visuelle'],['deaf_hard_of_hearing','Deaf or hard of hearing','Surdité ou perte auditive'],['other_disability','Other disability','Autre handicap']]
- };
- const row=findRow(D[choice==='i'?'ind':'dis'],name);if(!row)return '';
- const rows=data.cols.map(x=>[L(x[1],x[2]),/^suppressed$/i.test(row[x[0]+'_number'])?L('Suppressed','Supprimé'):N(row[x[0]+'_number']),/^suppressed$/i.test(row[x[0]+'_pct'])?L('Suppressed','Supprimé'):P(row[x[0]+'_pct'])]);
- return sCard('org-subgroups',L('Subgroups in ','Sous-groupes dans ')+deptName(name)+' · '+data.year,
-  L('These shares describe the organization’s published workforce. Subgroup figures may be suppressed or incomplete, and subgroups are not automatically additive.','Ces parts concernent l’effectif publié de l’organisme. Les données des sous-groupes peuvent être supprimées ou incomplètes et ne sont pas automatiquement additionnables.'),
-  table(L('Published subgroups, ','Sous-groupes publiés, ')+data.year,[L('Subgroup','Sous-groupe'),L('Employees','Employés'),L('Share (%)','Part (%)')],rows,'organization-subgroups'),
-  L('Treasury Board Secretariat subgroup data','Données du Conseil du Trésor sur les sous-groupes'),source.tbs);
+ const choices=choice==='all'?['i','d']:['i','d'].includes(choice)?[choice]:[];
+ let result='';
+ for(const which of choices){
+  const data=which==='i'?{
+   year:'2025',cols:[['inuit','Inuit','Inuits'],['metis','Métis','Métis'],['first_nations','First Nations','Premières Nations'],['other','Other or not specified','Autres ou non précisés']]
+  }:{
+   year:'2024',cols:[['coordination_dexterity','Coordination or dexterity','Coordination ou dextérité'],['mobility','Mobility','Mobilité'],['speech_impairment','Speech','Parole'],['blind_visual_impairment','Blind or visual impairment','Cécité ou déficience visuelle'],['deaf_hard_of_hearing','Deaf or hard of hearing','Surdité ou perte auditive'],['other_disability','Other disability','Autre handicap']]
+  };
+  const row=findRow(D[which==='i'?'ind':'dis'],name);if(!row)continue;
+  const rows=data.cols.map(x=>[L(x[1],x[2]),/^suppressed$/i.test(row[x[0]+'_number'])?L('Suppressed','Supprimé'):N(row[x[0]+'_number']),/^suppressed$/i.test(row[x[0]+'_pct'])?L('Suppressed','Supprimé'):P(row[x[0]+'_pct'])]);
+  result+=sCard('org-subgroups-'+which,L(which==='i'?'Indigenous subgroups: ':'Disability subgroups: ',which==='i'?'Sous-groupes autochtones : ':'Sous-groupes de handicap : ')+deptName(name)+' · '+data.year,
+   L('Employee counts and shares refer only to the selected organization in the stated year. Suppressed subgroup values are not zero.','Le nombre et la part des employés concernent uniquement l’organisme sélectionné et l’année indiquée. Les données supprimées ne sont pas des zéros.'),
+   table(L('Published subgroups in ','Sous-groupes publiés dans ')+deptName(name)+' ('+data.year+')',
+    [L('Subgroup','Sous-groupe'),L('Employee count','Nombre d’employés'),L('Workforce share (%)','Part de l’effectif (%)')],rows,'organization-subgroups-'+which),
+   L('Treasury Board Secretariat, organization subgroup dataset','Secrétariat du Conseil du Trésor, sous-groupes selon l’organisme'),source.tbs);
+ }
+ return result;
 }
-
 function psesTables(name){
  const all=findEntry(D.model.PSES_DEPT,name)||{},by=findEntry(D.model.EEG_DEPT,name)||{},yoy=findEntry(D.model.YOY,name)||{};
  if(!Object.keys(all).length&&!Object.keys(by).length)return '';
