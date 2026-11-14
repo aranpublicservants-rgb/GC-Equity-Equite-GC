@@ -97,9 +97,12 @@ function exportCSV(entry,rows){
  a.href=u;a.download='GC-Equity-'+entry.name.replace(/\.csv$/i,'')+'-filtered.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000);
 }
 async function loadEntry(e){
- if(cache.has(e.path))return cache.get(e.path);
+ if(cache.has(e.path)){const existing=cache.get(e.path);cache.delete(e.path);cache.set(e.path,existing);return existing;}
  const promise=fetch(e.path).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text();}).then(parseCSV);
  cache.set(e.path,promise);
+ // Two source files are enough for quick switching without accumulating a large
+ // number of parsed CSV arrays during a long browser session.
+ while(cache.size>2)cache.delete(cache.keys().next().value);
  try{return await promise;}catch(error){cache.delete(e.path);throw error;}
 }
 function setState(message){const el=$('gce-raw-status');if(el)el.textContent=message;}
