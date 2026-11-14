@@ -88,7 +88,6 @@ async function load(){
   ['pscCatalog','data/psc/catalogue.json','json'],
   ['pscOrgIndex','assets/psc-organization-index.json','json'],
   ['womenOrg','women-femmes/data/csv/women-by-organization-2025.csv','csv'],
-  ['driveAudit','assets/data-coverage-audit.json','json'],
   ['pscPopulation','data/psc/CFPPSC_AR2C.csv','csv'],
   ['pscTenure','data/psc/ar2a.csv','csv'],
   ['pscOfficialLanguage','data/psc/demo_fol.csv','csv'],
@@ -101,9 +100,8 @@ async function load(){
   ['ind','data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv','csv'],
   ['dis','data/october-2026/TBS_disability_subgroups_by_department_2024.csv','csv'],
   ['salary','data/october-2026/DI_medians_salary_by_group_2017-2025.csv','csv'],
-  ['di','data/october-2026/DI_di_disproportionality_index_2017-2025.csv','csv'],
-  ['inventory','data/october-2026/public-source-inventory.csv','csv']
- ];
+  ['di','data/october-2026/DI_di_disproportionality_index_2017-2025.csv','csv']
+  ];
  const results=await Promise.all(files.map(async ([k,path,type])=>{
   const res=await fetch(path);if(!res.ok)throw Error(path+': HTTP '+res.status);
   return [k,type==='json'?await res.json():csvParse(await res.text())];
@@ -372,77 +370,6 @@ function pscLanguageOrg(name){
    [L('Fiscal year','Exercice'),...labels.map(x=>x[0])],rows,'organization-first-official-language-appointments'),
   L('Public Service Commission staffing dashboard, first official language','Commission de la fonction publique, tableau de bord de la dotation, première langue officielle'),'data/psc/demo_fol.csv');
 }
-function renderSourceCatalogue(){
- const host=$('public-source-inventory');if(!host||!D)return;
- const categories=[['onpage','Data shown on this page','Données présentées dans cette page'],['psc','55 Public Service Commission data files','55 fichiers de données de la Commission de la fonction publique'],['snps','2023 and 2025 staffing survey source files','Fichiers sources des sondages sur la dotation de 2023 et 2025'],['archive','Archived source inventory','Inventaire des sources archivées'],['drive','Google Drive archive coverage','Couverture des archives Google Drive']];
- const onpage=[
- ['Workforce representation and availability','Représentation de l’effectif et disponibilité','#public-representation','2017–2025'],
- ['Long-term equity representation','Représentation à long terme','#public-history','1998–2025'],
- ['Executive representation','Représentation des cadres','#public-executives','2025'],
- ['Hiring, promotions and separations','Embauches, promotions et départs','#public-workforce-flow','2024–25'],
- ['2024 employee survey by department and public service','Sondage auprès des fonctionnaires de 2024, par organisme et pour la fonction publique','#public-survey','2024'],
- ['2024 branch and respondent-group survey','Sondage de 2024 selon la direction et le groupe de répondants','#department-data','2024'],
- ['2025 staffing survey','Sondage sur la dotation de 2025','#public-staffing-survey','2025'],
- ['PSC applicant, appointment and student series','Séries sur les candidatures, nominations et étudiants','#public-applicants','2013–2023'],
- ['PSC region and first official language','PSC : région et première langue officielle','#public-regions','2011–2025'],
- ['PSEA workforce and tenure','Effectif et durée d’emploi selon la LEFP','#public-psea-tenure','2007–2025'],
- ['Published salary distribution by group','Répartition salariale publiée selon le groupe','#public-salary-bands','2025'],
- ['Independent salary estimates and index','Estimations et indice salariaux indépendants','#public-pay','2017–2025'],
- ['Clerk’s Call to Action commitments and self-assessments','Engagements et autoévaluations liés à l’Appel à l’action du greffier','#public-cta','2021–2024'],
- ['2026–27 departmental plan mentions','Mentions dans les plans ministériels de 2026-2027','#public-plans','2026–27']
- ].filter(([en,fr,href])=>document.getElementById(href.slice(1))!==null).map(([en,fr,href,year])=>({kind:'onpage',en,fr,href,year,location:'onpage'}));
- const local=(D.pscCatalog.files||[]).map(x=>({kind:'psc',en:x.en||x.file,fr:x.fr||x.en||x.file,href:x.path,year:(x.years||[]).join('–')||'',file:x.file,location:'local'}));
- const external=(D.pscCatalog.snps||[]).map(x=>({kind:'snps',en:x.en||x.file,fr:x.fr||x.en||x.file,href:x.url||'',year:x.year||'',file:x.file,location:'external'}));
- const known=new Map(local.map(x=>[x.file.toLowerCase(),x.href]));
- const archived=(D.inventory||[]).filter(x=>x.File&&!/^(main-principal \(1\)\.csv)$/i.test(x.File)).map(x=>({
-  kind:'archive',en:x.Title||x.File,fr:x.Title||x.File,href:known.get(x.File.toLowerCase())||'',
-  year:x.Topic||'',file:x.File,location:known.has(x.File.toLowerCase())?'local':'reference'
- }));
- const historical=(D.driveAudit?.drive?.rows||[]).map(r=>({
-  kind:'drive',en:r.name,fr:r.name,href:r.status==='hosted'?r.repositoryPath:'',
-  year:(r.origin||'')+' · '+r.status,file:r.name,
-  location:r.status==='hosted'?'local':r.status==='duplicate'?'duplicate':r.status==='partial_derived'?'partial':r.status==='unverified'?'unverified':'archive_only'
- }));
- const data=onpage.concat(local,external,archived,historical);
- const kindCount=key=>data.filter(x=>x.kind===key).length;
- host.innerHTML='<h3>'+escape(L('Dataset finder: included tables and source files','Recherche de données : tableaux inclus et fichiers sources'))+'</h3>'+
- '<p class="gce-explain">'+escape(L('The full tables are shown on this page. This catalogue also identifies additional Public Service Commission files, official survey downloads, and archive references. A catalogue entry is not a claim that its entire file is visualized or hosted here.','Les tableaux intégrés se trouvent dans cette page. Ce catalogue répertorie aussi d’autres fichiers de la Commission de la fonction publique, des téléchargements officiels des sondages et des références archivées. Une entrée au catalogue ne signifie pas que tout le fichier est visualisé ou hébergé ici.'))+'</p>'+
- '<div class="gce-filter-panel"><div><label for="gce-source-kind">'+escape(L('Dataset collection','Collection de données'))+'</label><select id="gce-source-kind">'+categories.map(([k,en,fr])=>'<option value="'+k+'">'+escape(L(en,fr))+' ('+kindCount(k)+')</option>').join('')+'</select></div>'+
- '<div><label for="gce-source-search">'+escape(L('Search titles and file names','Rechercher un titre ou un nom de fichier'))+'</label><input type="search" id="gce-source-search" placeholder="'+escape(L('Search a dataset','Rechercher des données'))+'"></div></div>'+
- '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(L('Dataset file catalogue','Catalogue des fichiers de données'))+'"><table id="gce-source-table" data-gcw-ready="yes"><caption>'+escape(L('Verified source and dataset inventory','Inventaire des données et sources vérifiées'))+'</caption><thead><tr>'+
- [L('Dataset or file','Données ou fichier'),L('Period or topic','Période ou sujet'),L('Available here','Disponible ici')].map(x=>'<th scope="col">'+escape(x)+'</th>').join('')+'</tr></thead><tbody id="gce-source-rows"></tbody></table></div>'+
- '<div class="gce-pager"><button type="button" id="gce-source-prev" disabled>'+escape(L('Previous','Précédent'))+'</button><span id="gce-source-count" role="status" aria-live="polite"></span><button type="button" id="gce-source-next">'+escape(L('Next','Suivant'))+'</button></div>';
- const kind=$('gce-source-kind'),search=$('gce-source-search'),body=$('gce-source-rows');
- let filtered=[],page=0;
- function filter(){
-  const term=norm(search.value);
-  filtered=data.filter(x=>x.kind===kind.value&&(!term||norm([x.en,x.fr,x.file,x.year].join(' ')).includes(term)));
-  page=0;draw();
- }
- function draw(){
-  body.innerHTML=filtered.slice(page*15,(page+1)*15).map(x=>{
-   const name=escape(L(x.en,x.fr));
-   const label=x.href?link(x.href,L(x.en,x.fr)):name;
-   const status=x.location==='onpage'?L('Table on this page','Tableau dans cette page'):
-     x.location==='local'?L('Data file stored in this repository','Fichier de données dans le dépôt'):
-     x.location==='external'?L('Official source only','Source officielle seulement'):
-     x.location==='duplicate'?L('Duplicate already accounted for','Double déjà pris en compte'):
-     x.location==='partial'?L('Only a processed subset is hosted','Seul un sous-ensemble traité est hébergé'):
-     x.location==='unverified'?L('Unverified; not on this site','Non vérifié; absent du site'):
-     x.location==='archive_only'?L('Historical Drive package; not hosted in current site','Ancienne archive Drive; absente du site actuel'):
-     L('Catalogue reference; source not hosted','Référence du catalogue; source non hébergée');
-   return '<tr><th scope="row">'+label+(x.file?'<div class="gce-file-name">'+escape(x.file)+'</div>':'')+'</th><td>'+escape(x.year||'')+'</td><td>'+escape(status)+'</td></tr>';
-  }).join('');
-  $('gce-source-count').textContent=filtered.length?L('Items ','Éléments ')+(page*15+1)+'–'+Math.min((page+1)*15,filtered.length)+' / '+filtered.length:L('No matching datasets.','Aucune donnée correspondante.');
-  $('gce-source-prev').disabled=page===0;
-  $('gce-source-next').disabled=(page+1)*15>=filtered.length;
- }
- kind.addEventListener('change',filter);search.addEventListener('input',filter);
- $('gce-source-prev').addEventListener('click',()=>{if(page>0){page--;draw();}});
- $('gce-source-next').addEventListener('click',()=>{if((page+1)*15<filtered.length){page++;draw();}});
- filter();
-}
-
 function publicTenureTable(){
  const data=D.pscTenure.filter(r=>r.description_e?.includes('Public Service Employment Act')&&String(r.month_end_date).endsWith('-03-31'));
  if(!data.length)return '';
@@ -819,11 +746,9 @@ function publicTables(){
  [L('Organization','Organisme'),...terms.map(x=>L(x[0],x[1])),L('All six terms','Les six termes')],
  m.plans.map(p=>[deptName(p.name),...p.t.map(N),N(p.tt)]),'public-departmental-plan-mentions'),
  L('Departmental plan analysis and definitions','Analyse et définitions des plans ministériels'),'departmental-plans-2026-27/');
- // Archive status is explicit; the historical Drive package must never be mistaken for current live tables.
- out+='<section class="gce-data-block" id="public-source-inventory"></section>';
- out+='<section class="gce-data-block" id="public-data-library"><p role="status">'+escape(L('Loading available datasets…','Chargement des jeux de données disponibles…'))+'</p></section>';
+ // Read complete hosted datasets directly inside this section.
+ out+='<section class="gce-data-block" id="public-data-library"><p role="status">'+escape(L('Loading source tables…','Chargement des tableaux sources…'))+'</p></section>';
  $('public-output').innerHTML=out;
- renderSourceCatalogue();
  window.GCEDataLibrary?.render();
  applyTopics('public');
 }
