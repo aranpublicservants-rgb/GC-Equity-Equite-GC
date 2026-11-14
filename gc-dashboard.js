@@ -597,6 +597,7 @@ function renderOrg(){
  if(related)related.hidden=showDepartment;
  if(showDepartment){dropTables('public-output');$('public-output').innerHTML='';}
  if(!selected){
+  const announce=$('org-view-status');if(announce)announce.textContent=L('No department is selected.','Aucun ministère n’est sélectionné.');
   extraOrgRequest++;branchRequest++;
   window.GCEOrgSources?.render(null);
   out.innerHTML='';
@@ -605,6 +606,7 @@ function renderOrg(){
   return;
  }
  const name=selected;const p=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
+ const announce=$('org-view-status');if(announce)announce.textContent=L('Showing published data for ','Affichage des données publiées pour ')+deptName(name)+'.';
  const meta='<p class="gce-summary">'+escape(deptName(name))+(p?' · '+L('Published workforce 2025','Effectif publié en 2025')+': '+N(p[1]):'')+'</p>';
  const s=sCard('org-coverage',L('Published data coverage for the selected organization','Données publiées disponibles pour l’organisme sélectionné'),
  L('Only records explicitly attributed to this organization are included here. Each source may use a different workforce population and reporting period. Public service-wide figures appear only in the separate equity section when no organization is selected.','Seules les données explicitement attribuées à cet organisme figurent ici. Les sources peuvent utiliser des populations et périodes de référence différentes. Les chiffres visant l’ensemble de la fonction publique sont affichés dans la section générale lorsqu’aucun organisme n’est sélectionné.'),
