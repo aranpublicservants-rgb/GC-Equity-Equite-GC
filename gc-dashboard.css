@@ -81,3 +81,15 @@
  .gce-pager{justify-content:center}
  .gce-data-block{padding:1.4rem 0 1rem}
 }
+
+/* The selected department is an isolated data view; all-public-service sections
+   are hidden until the visitor chooses the second homepage area. */
+#gc-dashboard [hidden]{display:none!important}
+.gce-org-source{padding:1.35rem 0 1.65rem;border-top:1px solid var(--gw-line);scroll-margin-top:1rem}
+.gce-org-source h4{font:750 clamp(1.04rem,2vw,1.24rem)/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 0 .55rem;color:var(--gw-ink)}
+.gce-org-source .gce-table-wrap{max-width:100%;margin-top:.4rem}
+.gce-org-source .gce-explain{max-width:95ch;font-size:.92rem;line-height:1.6}
+.gce-org-source table{min-width:max-content;width:100%}
+.gce-org-source td,.gce-org-source th{max-width:24rem;white-space:normal;overflow-wrap:anywhere}
+#gce-org-sources-total{font-weight:650;font-size:.9rem;color:var(--gw-muted)}
+#gce-org-source-tables:empty{display:none}
