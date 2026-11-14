@@ -855,6 +855,7 @@ function applyTopics(scope){
   const cat=el.id==='org-additional-psc'?'workforce':tableCategory(el.id,scope);
   el.hidden=value!=='all'&&cat!==value;
  }
+ if(scope==='public'){const related=$('related-public-resources');if(related)related.hidden=!!selected||(value!=='all'&&value!=='sources');}
  const status=$(scope+'-topic-status');
  if(status){
   const total=targets.filter(el=>el.querySelector('table')||el.querySelector('h3')||el.id==='org-branches'||el.id==='org-complete-sources').length;
