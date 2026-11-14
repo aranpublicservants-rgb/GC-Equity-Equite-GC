@@ -45,9 +45,10 @@ assert 'id="org-picker"' in home_html, 'organization selector missing'
 assert 'id="org-output"' in home_html, 'inline organization tables missing'
 assert 'id="public-output"' in home_html, 'inline public service-wide tables missing'
 assert 'gc-dashboard.js' in home_html and 'gc-dashboard.css' in home_html, 'dashboard assets missing'
+assert 'gc-org-sources.js' in home_html, 'department-only PSC source integration missing'
 assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
 
-for name in ['gc-workspace.js','gc-dashboard.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
+for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
 for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
     if line.strip():
