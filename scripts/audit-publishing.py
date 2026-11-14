@@ -111,7 +111,12 @@ for entry in index['files']:
     if not (ROOT/'data/psc'/entry['file']).is_file():
         errors.append('Missing indexed departmental CSV: '+entry['file'])
 branches=list((ROOT/'data/pses-2024-branches').glob('*.json.gz'))
-if len(branches)<70:errors.append('Branch survey assets appear incomplete')
+branch_meta=re.search(r'<script type="application/json" id="eq-branch-meta">([\\s\\S]*?)</script>',(ROOT/'explorer.html').read_text(),re.S)
+if not branch_meta:errors.append('Branch metadata is missing from explorer')
+else:
+    expected={str(d['id']) for d in json.loads(branch_meta.group(1))['departments']}
+    actual={p.name.split('.')[0] for p in branches}
+    if expected!=actual:errors.append('Branch assets differ from the exact published department IDs: missing '+str(sorted(expected-actual))+' extra '+str(sorted(actual-expected)))
 for path in branches:
     try:
         with gzip.open(path,'rt',encoding='utf-8') as f:
