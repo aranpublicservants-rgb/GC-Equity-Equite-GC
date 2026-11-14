@@ -21,11 +21,62 @@ function parseCSV(s){
 }
 function entries(){
  const PSC=(coverage?.hostedAdditional?.psc||[]).filter(x=>!(pscIndex?.files||[]).some(f=>f.file===x.name)).map(x=>({...x,category:'psc',kind:'PSC source without explicit organization field',kindFr:'Source de la CFP sans champ d’organisme explicite'}));
- const W=(coverage?.hostedAdditional?.women||[]).map(x=>({...x,category:'women',titleEn:human(x.name),titleFr:human(x.name),kind:'Women and intersectional dataset',kindFr:'Données sur les femmes et l’intersectionnalité'}));
+ const W=(coverage?.hostedAdditional?.women||[]).map(x=>({...x,category:'women',titleEn:W_TITLES[x.name]?.[0]||human(x.name),titleFr:W_TITLES[x.name]?.[1]||human(x.name),kind:'Women and intersectional dataset',kindFr:'Données sur les femmes et l’intersectionnalité'}));
  const O=(coverage?.hostedAdditional?.other||[]).map(x=>({...x,category:x.kind==='derived'?'derived':'tbs',titleEn:human(x.name),titleFr:human(x.name),kind:x.kind==='derived'?'Independent derived analysis':'Treasury Board source file',kindFr:x.kind==='derived'?'Analyse dérivée indépendante':'Fichier source du Conseil du Trésor'}));
  return PSC.concat(W,O);
 }
+const W_TITLES={
+ 'pses2022-indigenous-women.csv':['2022 employee survey: Indigenous women','Sondage de 2022 : femmes autochtones'],
+ 'pses2022-racialized-women.csv':['2022 employee survey: racialized women','Sondage de 2022 : femmes racisées'],
+ 'pses2022-women-with-disability.csv':['2022 employee survey: women with disabilities','Sondage de 2022 : femmes en situation de handicap'],
+ 'pses2022-women.csv':['2022 employee survey: women','Sondage de 2022 : femmes'],
+ 'pses2024-women-with-disabilities.csv':['2024 employee survey: women with disabilities','Sondage de 2024 : femmes en situation de handicap'],
+ 'pses2024-women-men.csv':['2024 employee survey: women and men','Sondage de 2024 : femmes et hommes'],
+ 'pses2024-groups.csv':['2024 employee survey: equity groups','Sondage de 2024 : groupes visés par l’équité'],
+ 'snps2021-men-intersections.csv':['2021 staffing survey: intersecting identities among men','Sondage sur la dotation de 2021 : identités croisées chez les hommes'],
+ 'snps2021-women-intersections.csv':['2021 staffing survey: intersecting identities among women','Sondage sur la dotation de 2021 : identités croisées chez les femmes'],
+ 'snps2025-biases-barriers.csv':['2025 staffing survey: barriers and bias','Sondage sur la dotation de 2025 : obstacles et préjugés'],
+ 'women-by-organization-2025.csv':['Women by department and agency, 2025','Femmes selon le ministère ou l’organisme, 2025'],
+ 'women-by-region-2025.csv':['Women by region of work, 2025','Femmes selon la région de travail, 2025'],
+ 'women-by-occupational-category-2025.csv':['Women by occupational category, 2025','Femmes selon la catégorie professionnelle, 2025'],
+ 'women-by-occupational-group-2025.csv':['Women by occupational group, 2025','Femmes selon le groupe professionnel, 2025'],
+ 'women-executives-by-level-2017-2025.csv':['Women executives by level, 2017–2025','Femmes cadres selon le niveau, 2017-2025'],
+ 'women-representation-2017-2025.csv':['Women: workforce representation, 2017–2025','Femmes : représentation au sein de l’effectif, 2017-2025'],
+ 'women-hires-promotions-separations.csv':['Women: hiring, promotions and departures','Femmes : embauches, promotions et départs'],
+ 'women-share-of-salary-ranges-2025.csv':['Women: published salary bands, 2025','Femmes : tranches salariales publiées, 2025'],
+ 'women-in-other-groups-2025.csv':['Women in intersecting equity groups, 2025','Femmes dans les groupes visés par l’équité, 2025'],
+ 'women-age-language-2025.csv':['Women by age and first official language, 2025','Femmes selon l’âge et la première langue officielle, 2025'],
+ 'women-executive-movements-2024-25.csv':['Women: executive-level employment movements, 2024–25','Femmes : mouvements de l’effectif de direction, 2024-2025'],
+ 'salary-distribution-by-group-2025.csv':['Published salary distribution by group, 2025','Répartition salariale publiée selon le groupe, 2025'],
+ 'share-women-by-group-2025.csv':['Share of women by equity group, 2025','Part des femmes selon le groupe visé par l’équité, 2025'],
+ 'psc-promotion-rates-women-vs-men-2010-2023.csv':['Staffing: promotion rates for women and men, 2010–2023','Dotation : taux de promotion des femmes et des hommes, 2010-2023'],
+ 'psc-promotion-rates-women-by-group-2010-2023.csv':['Staffing: promotion rates for women by group, 2010–2023','Dotation : taux de promotion des femmes selon le groupe, 2010-2023'],
+ 'psc-audit-recruitment-stages.csv':['Recruitment stages: PSC audit evidence','Étapes de recrutement : données de vérification de la CFP']
+};
 function human(s){return s.replace(/\.csv$/i,'').replace(/^(TBS_|DI_)/,'').replace(/_/g,' ').replace(/-/g,' ');}
+const LABELS={
+ FISCAL_YEAR:['Fiscal year','Exercice'],fiscal_year:['Fiscal year','Exercice'],Fiscal_Year:['Fiscal year','Exercice'],
+ Year:['Year','Année'],year:['Year','Année'],month_end_date:['Reference date','Date de référence'],
+ description_e:['Reported measure','Indicateur publié'],Description:['Reported measure','Indicateur publié'],
+ description_f:['Reported measure','Indicateur publié'],geo_region_e:['Region','Région'],
+ geo_region_f:['Region','Région'],region_e:['Region','Région'],region_f:['Region','Région'],
+ first_official_language_e:['First official language','Première langue officielle'],
+ staffing_act_appt_type_e:['Staffing or appointment type','Type de dotation ou de nomination'],
+ emp_equity_designated_group_e:['Employment equity group','Groupe visé par l’équité en matière d’emploi'],
+ age_group_e:['Age group','Groupe d’âge'],department_e:['Department or agency','Ministère ou organisme'],
+ Organization:['Department or agency','Ministère ou organisme'],Organisation:['Department or agency','Ministère ou organisme'],
+ n:['Published number','Nombre publié'],N:['Published number','Nombre publié'],count:['Published number','Nombre publié'],
+ Women:['Women','Femmes'],'Women (%)':['Women (%)','Femmes (%)'],
+ 'Persons with disabilities':['Persons with disabilities','Personnes en situation de handicap'],
+ 'Indigenous Peoples':['Indigenous peoples','Peuples autochtones'],
+ 'All Employees':['All employees','Tous les employés'],
+ 'Question':['Survey question','Question du sondage'],
+ 'Question Value':['Reported answer','Réponse déclarée'],
+ 'Women with disabilities (%)':['Women with disabilities (%)','Femmes en situation de handicap (%)'],
+ 'Employees':['Employees (count)','Employés (nombre)']
+};
+function headerName(s){return T(...(LABELS[s]||LABELS[s.replace(/_(?:e|f)$/,'')]||[s.replace(/_e$/,'').replace(/_/g,' '),s.replace(/_e$/,'').replace(/_/g,' ')]));}
+
 function heading(e){return T(e.titleEn||e.name,e.titleFr||e.titleEn||e.name);}
 function fields(h){
  const wanted=[],seen=new Set();
@@ -35,11 +86,11 @@ function fields(h){
   if(seen.has(base))continue;
   seen.add(base);
   const french=h.indexOf(base+'_f');
-  wanted.push({col:i,fr:/(?:_e|_E)$/.test(v)&&french>=0?french:-1,label:v.replace(/_e$/,'').replace(/_/g,' ')});
+  wanted.push({col:i,fr:/(?:_e|_E)$/.test(v)&&french>=0?french:-1,label:headerName(v)});
  }
  return wanted;
 }
-function quote(s){let v=String(s??'');if(/^[\s]*[=+\-@]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"';}
+function quote(s){let v=String(s??'');if(/^[\s]*[=+@]/.test(v)||/^\s*-(?!\d+(?:[.,]\d+)?$)/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"';}
 function exportCSV(entry,rows){
  const b='\ufeff'+[entry.data.head,...rows].map(r=>r.map(quote).join(',')).join('\r\n');
  const u=URL.createObjectURL(new Blob([b],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');
