@@ -1,0 +1,2450 @@
+Year,Universe,Executive level,Province or territory of work,Number of employees
+2010,CPA,Non-EX,Alberta,11381
+2010,CPA,Non-EX,British Columbia,19584
+2010,CPA,Non-EX,Manitoba,8120
+2010,CPA,Non-EX,National Capital Region (NCR),88936
+2010,CPA,Non-EX,New Brunswick,7301
+2010,CPA,Non-EX,Newfoundland and Labrador,3505
+2010,CPA,Non-EX,Northwest Territories,681
+2010,CPA,Non-EX,Nova Scotia,10278
+2010,CPA,Non-EX,Nunavut,214
+2010,CPA,Non-EX,Ontario (minus the NCR),27757
+2010,CPA,Non-EX,Outside of Canada,1254
+2010,CPA,Non-EX,Prince Edward Island,2007
+2010,CPA,Non-EX,Quebec (minus the NCR),24480
+2010,CPA,Non-EX,Saskatchewan,5327
+2010,CPA,Non-EX,Yukon,330
+2010,CPA,ex   01,Alberta,49
+2010,CPA,ex   01,British Columbia,113
+2010,CPA,ex   01,Manitoba,55
+2010,CPA,ex   01,National Capital Region (NCR),2174
+2010,CPA,ex   01,New Brunswick,44
+2010,CPA,ex   01,Newfoundland and Labrador,21
+2010,CPA,ex   01,Northwest Territories,6
+2010,CPA,ex   01,Nova Scotia,54
+2010,CPA,ex   01,Nunavut,4
+2010,CPA,ex   01,Ontario (minus the NCR),123
+2010,CPA,ex   01,Outside of Canada,134
+2010,CPA,ex   01,Prince Edward Island,26
+2010,CPA,ex   01,Quebec (minus the NCR),126
+2010,CPA,ex   01,Saskatchewan,25
+2010,CPA,ex   01,Yukon,5
+2010,CPA,ex   02,Alberta,26
+2010,CPA,ex   02,British Columbia,36
+2010,CPA,ex   02,Manitoba,18
+2010,CPA,ex   02,National Capital Region (NCR),904
+2010,CPA,ex   02,New Brunswick,21
+2010,CPA,ex   02,Newfoundland and Labrador,10
+2010,CPA,ex   02,Northwest Territories,3
+2010,CPA,ex   02,Nova Scotia,21
+2010,CPA,ex   02,Nunavut,1
+2010,CPA,ex   02,Ontario (minus the NCR),52
+2010,CPA,ex   02,Outside of Canada,83
+2010,CPA,ex   02,Prince Edward Island,8
+2010,CPA,ex   02,Quebec (minus the NCR),73
+2010,CPA,ex   02,Saskatchewan,15
+2010,CPA,ex   03,Alberta,11
+2010,CPA,ex   03,British Columbia,19
+2010,CPA,ex   03,Manitoba,10
+2010,CPA,ex   03,National Capital Region (NCR),695
+2010,CPA,ex   03,New Brunswick,9
+2010,CPA,ex   03,Newfoundland and Labrador,4
+2010,CPA,ex   03,Northwest Territories,1
+2010,CPA,ex   03,Nova Scotia,11
+2010,CPA,ex   03,Ontario (minus the NCR),18
+2010,CPA,ex   03,Outside of Canada,60
+2010,CPA,ex   03,Prince Edward Island,12
+2010,CPA,ex   03,Quebec (minus the NCR),29
+2010,CPA,ex   03,Saskatchewan,6
+2010,CPA,ex   04,Alberta,1
+2010,CPA,ex   04,British Columbia,3
+2010,CPA,ex   04,Manitoba,2
+2010,CPA,ex   04,National Capital Region (NCR),187
+2010,CPA,ex   04,New Brunswick,3
+2010,CPA,ex   04,Newfoundland and Labrador,1
+2010,CPA,ex   04,Nova Scotia,2
+2010,CPA,ex   04,Ontario (minus the NCR),3
+2010,CPA,ex   04,Outside of Canada,15
+2010,CPA,ex   04,Prince Edward Island,2
+2010,CPA,ex   04,Quebec (minus the NCR),7
+2010,CPA,ex   04,Saskatchewan,2
+2010,CPA,ex   05,National Capital Region (NCR),81
+2010,CPA,ex   05,Newfoundland and Labrador,1
+2010,CPA,ex   05,Ontario (minus the NCR),1
+2010,CPA,ex   05,Outside of Canada,13
+2010,CPA,ex   05,Prince Edward Island,1
+2010,CPA,ex   05,Quebec (minus the NCR),1
+2010,SA,Non-EX,Alberta,4992
+2010,SA,Non-EX,British Columbia,6222
+2010,SA,Non-EX,Manitoba,3735
+2010,SA,Non-EX,National Capital Region (NCR),21084
+2010,SA,Non-EX,New Brunswick,1176
+2010,SA,Non-EX,Newfoundland and Labrador,1936
+2010,SA,Non-EX,Northwest Territories,74
+2010,SA,Non-EX,Nova Scotia,1698
+2010,SA,Non-EX,Nunavut,33
+2010,SA,Non-EX,Ontario (minus the NCR),12767
+2010,SA,Non-EX,Outside of Canada,3
+2010,SA,Non-EX,Prince Edward Island,1317
+2010,SA,Non-EX,Quebec (minus the NCR),8633
+2010,SA,Non-EX,Saskatchewan,1295
+2010,SA,Non-EX,Yukon,89
+2010,SA,ex   01,Alberta,20
+2010,SA,ex   01,British Columbia,35
+2010,SA,ex   01,Manitoba,13
+2010,SA,ex   01,National Capital Region (NCR),434
+2010,SA,ex   01,New Brunswick,5
+2010,SA,ex   01,Newfoundland and Labrador,6
+2010,SA,ex   01,Nova Scotia,12
+2010,SA,ex   01,Ontario (minus the NCR),72
+2010,SA,ex   01,Outside of Canada,1
+2010,SA,ex   01,Prince Edward Island,5
+2010,SA,ex   01,Quebec (minus the NCR),40
+2010,SA,ex   01,Saskatchewan,6
+2010,SA,ex   02,Alberta,13
+2010,SA,ex   02,British Columbia,16
+2010,SA,ex   02,Manitoba,6
+2010,SA,ex   02,National Capital Region (NCR),198
+2010,SA,ex   02,New Brunswick,4
+2010,SA,ex   02,Newfoundland and Labrador,3
+2010,SA,ex   02,Northwest Territories,2
+2010,SA,ex   02,Nova Scotia,7
+2010,SA,ex   02,Nunavut,1
+2010,SA,ex   02,Ontario (minus the NCR),35
+2010,SA,ex   02,Prince Edward Island,3
+2010,SA,ex   02,Quebec (minus the NCR),43
+2010,SA,ex   02,Saskatchewan,5
+2010,SA,ex   02,Yukon,1
+2010,SA,ex   03,Alberta,19
+2010,SA,ex   03,British Columbia,6
+2010,SA,ex   03,Manitoba,3
+2010,SA,ex   03,National Capital Region (NCR),174
+2010,SA,ex   03,New Brunswick,2
+2010,SA,ex   03,Newfoundland and Labrador,2
+2010,SA,ex   03,Northwest Territories,1
+2010,SA,ex   03,Nova Scotia,3
+2010,SA,ex   03,Ontario (minus the NCR),16
+2010,SA,ex   03,Quebec (minus the NCR),6
+2010,SA,ex   03,Saskatchewan,2
+2010,SA,ex   04,Alberta,6
+2010,SA,ex   04,British Columbia,1
+2010,SA,ex   04,Manitoba,1
+2010,SA,ex   04,National Capital Region (NCR),38
+2010,SA,ex   04,Nova Scotia,1
+2010,SA,ex   04,Ontario (minus the NCR),2
+2010,SA,ex   04,Quebec (minus the NCR),7
+2010,SA,ex   05,Alberta,2
+2010,SA,ex   05,National Capital Region (NCR),45
+2010,SA,ex   05,Nova Scotia,1
+2010,SA,ex   05,Ontario (minus the NCR),5
+2010,SA,ex   05,Quebec (minus the NCR),1
+2011,CPA,Non-EX,Alberta,11183
+2011,CPA,Non-EX,British Columbia,19259
+2011,CPA,Non-EX,Manitoba,7762
+2011,CPA,Non-EX,National Capital Region (NCR),90249
+2011,CPA,Non-EX,New Brunswick,7468
+2011,CPA,Non-EX,Newfoundland and Labrador,3429
+2011,CPA,Non-EX,Northwest Territories,645
+2011,CPA,Non-EX,Nova Scotia,10109
+2011,CPA,Non-EX,Nunavut,237
+2011,CPA,Non-EX,Ontario (minus the NCR),27910
+2011,CPA,Non-EX,Outside of Canada,1333
+2011,CPA,Non-EX,Prince Edward Island,1996
+2011,CPA,Non-EX,Quebec (minus the NCR),24440
+2011,CPA,Non-EX,Saskatchewan,5291
+2011,CPA,Non-EX,Yukon,348
+2011,CPA,ex   01,Alberta,56
+2011,CPA,ex   01,British Columbia,112
+2011,CPA,ex   01,Manitoba,52
+2011,CPA,ex   01,National Capital Region (NCR),2255
+2011,CPA,ex   01,New Brunswick,48
+2011,CPA,ex   01,Newfoundland and Labrador,23
+2011,CPA,ex   01,Northwest Territories,6
+2011,CPA,ex   01,Nova Scotia,57
+2011,CPA,ex   01,Nunavut,5
+2011,CPA,ex   01,Ontario (minus the NCR),124
+2011,CPA,ex   01,Outside of Canada,139
+2011,CPA,ex   01,Prince Edward Island,21
+2011,CPA,ex   01,Quebec (minus the NCR),123
+2011,CPA,ex   01,Saskatchewan,27
+2011,CPA,ex   01,Yukon,2
+2011,CPA,ex   02,Alberta,25
+2011,CPA,ex   02,British Columbia,35
+2011,CPA,ex   02,Manitoba,17
+2011,CPA,ex   02,National Capital Region (NCR),920
+2011,CPA,ex   02,New Brunswick,23
+2011,CPA,ex   02,Newfoundland and Labrador,8
+2011,CPA,ex   02,Northwest Territories,3
+2011,CPA,ex   02,Nova Scotia,24
+2011,CPA,ex   02,Nunavut,1
+2011,CPA,ex   02,Ontario (minus the NCR),54
+2011,CPA,ex   02,Outside of Canada,76
+2011,CPA,ex   02,Prince Edward Island,11
+2011,CPA,ex   02,Quebec (minus the NCR),71
+2011,CPA,ex   02,Saskatchewan,19
+2011,CPA,ex   03,Alberta,11
+2011,CPA,ex   03,British Columbia,18
+2011,CPA,ex   03,Manitoba,8
+2011,CPA,ex   03,National Capital Region (NCR),725
+2011,CPA,ex   03,New Brunswick,10
+2011,CPA,ex   03,Newfoundland and Labrador,5
+2011,CPA,ex   03,Northwest Territories,1
+2011,CPA,ex   03,Nova Scotia,8
+2011,CPA,ex   03,Ontario (minus the NCR),19
+2011,CPA,ex   03,Outside of Canada,63
+2011,CPA,ex   03,Prince Edward Island,9
+2011,CPA,ex   03,Quebec (minus the NCR),29
+2011,CPA,ex   03,Saskatchewan,5
+2011,CPA,ex   04,Alberta,1
+2011,CPA,ex   04,British Columbia,3
+2011,CPA,ex   04,Manitoba,2
+2011,CPA,ex   04,National Capital Region (NCR),185
+2011,CPA,ex   04,New Brunswick,3
+2011,CPA,ex   04,Newfoundland and Labrador,1
+2011,CPA,ex   04,Nova Scotia,1
+2011,CPA,ex   04,Ontario (minus the NCR),3
+2011,CPA,ex   04,Outside of Canada,13
+2011,CPA,ex   04,Prince Edward Island,3
+2011,CPA,ex   04,Quebec (minus the NCR),4
+2011,CPA,ex   04,Saskatchewan,2
+2011,CPA,ex   05,National Capital Region (NCR),82
+2011,CPA,ex   05,Newfoundland and Labrador,1
+2011,CPA,ex   05,Ontario (minus the NCR),1
+2011,CPA,ex   05,Outside of Canada,12
+2011,SA,Non-EX,Alberta,4882
+2011,SA,Non-EX,British Columbia,6166
+2011,SA,Non-EX,Manitoba,3750
+2011,SA,Non-EX,National Capital Region (NCR),21007
+2011,SA,Non-EX,New Brunswick,1112
+2011,SA,Non-EX,Newfoundland and Labrador,1744
+2011,SA,Non-EX,Northwest Territories,88
+2011,SA,Non-EX,Nova Scotia,1620
+2011,SA,Non-EX,Nunavut,33
+2011,SA,Non-EX,Ontario (minus the NCR),12515
+2011,SA,Non-EX,Outside of Canada,3
+2011,SA,Non-EX,Prince Edward Island,1210
+2011,SA,Non-EX,Quebec (minus the NCR),8284
+2011,SA,Non-EX,Saskatchewan,1240
+2011,SA,Non-EX,Yukon,90
+2011,SA,ex   01,Alberta,25
+2011,SA,ex   01,British Columbia,32
+2011,SA,ex   01,Manitoba,14
+2011,SA,ex   01,National Capital Region (NCR),441
+2011,SA,ex   01,New Brunswick,2
+2011,SA,ex   01,Newfoundland and Labrador,6
+2011,SA,ex   01,Nova Scotia,13
+2011,SA,ex   01,Ontario (minus the NCR),81
+2011,SA,ex   01,Outside of Canada,1
+2011,SA,ex   01,Prince Edward Island,4
+2011,SA,ex   01,Quebec (minus the NCR),36
+2011,SA,ex   01,Saskatchewan,6
+2011,SA,ex   02,Alberta,15
+2011,SA,ex   02,British Columbia,18
+2011,SA,ex   02,Manitoba,5
+2011,SA,ex   02,National Capital Region (NCR),222
+2011,SA,ex   02,New Brunswick,4
+2011,SA,ex   02,Newfoundland and Labrador,4
+2011,SA,ex   02,Northwest Territories,2
+2011,SA,ex   02,Nova Scotia,7
+2011,SA,ex   02,Nunavut,1
+2011,SA,ex   02,Ontario (minus the NCR),38
+2011,SA,ex   02,Prince Edward Island,3
+2011,SA,ex   02,Quebec (minus the NCR),42
+2011,SA,ex   02,Saskatchewan,5
+2011,SA,ex   02,Yukon,1
+2011,SA,ex   03,Alberta,22
+2011,SA,ex   03,British Columbia,6
+2011,SA,ex   03,Manitoba,3
+2011,SA,ex   03,National Capital Region (NCR),188
+2011,SA,ex   03,New Brunswick,2
+2011,SA,ex   03,Newfoundland and Labrador,1
+2011,SA,ex   03,Northwest Territories,1
+2011,SA,ex   03,Nova Scotia,4
+2011,SA,ex   03,Ontario (minus the NCR),14
+2011,SA,ex   03,Quebec (minus the NCR),6
+2011,SA,ex   03,Saskatchewan,2
+2011,SA,ex   04,Alberta,6
+2011,SA,ex   04,British Columbia,1
+2011,SA,ex   04,Manitoba,1
+2011,SA,ex   04,National Capital Region (NCR),41
+2011,SA,ex   04,Nova Scotia,1
+2011,SA,ex   04,Ontario (minus the NCR),2
+2011,SA,ex   04,Quebec (minus the NCR),7
+2011,SA,ex   05,Alberta,2
+2011,SA,ex   05,National Capital Region (NCR),42
+2011,SA,ex   05,Ontario (minus the NCR),3
+2011,SA,ex   05,Quebec (minus the NCR),1
+2012,CPA,Non-EX,Alberta,10707
+2012,CPA,Non-EX,British Columbia,18746
+2012,CPA,Non-EX,Manitoba,7632
+2012,CPA,Non-EX,National Capital Region (NCR),88773
+2012,CPA,Non-EX,New Brunswick,6956
+2012,CPA,Non-EX,Newfoundland and Labrador,3277
+2012,CPA,Non-EX,Northwest Territories,588
+2012,CPA,Non-EX,Nova Scotia,9844
+2012,CPA,Non-EX,Nunavut,247
+2012,CPA,Non-EX,Ontario (minus the NCR),27216
+2012,CPA,Non-EX,Outside of Canada,1296
+2012,CPA,Non-EX,Prince Edward Island,1872
+2012,CPA,Non-EX,Quebec (minus the NCR),23820
+2012,CPA,Non-EX,Saskatchewan,5179
+2012,CPA,Non-EX,Yukon,337
+2012,CPA,ex   01,Alberta,54
+2012,CPA,ex   01,British Columbia,115
+2012,CPA,ex   01,Manitoba,54
+2012,CPA,ex   01,National Capital Region (NCR),2242
+2012,CPA,ex   01,New Brunswick,47
+2012,CPA,ex   01,Newfoundland and Labrador,24
+2012,CPA,ex   01,Northwest Territories,7
+2012,CPA,ex   01,Nova Scotia,54
+2012,CPA,ex   01,Nunavut,3
+2012,CPA,ex   01,Ontario (minus the NCR),123
+2012,CPA,ex   01,Outside of Canada,135
+2012,CPA,ex   01,Prince Edward Island,22
+2012,CPA,ex   01,Quebec (minus the NCR),128
+2012,CPA,ex   01,Saskatchewan,27
+2012,CPA,ex   01,Yukon,4
+2012,CPA,ex   02,Alberta,22
+2012,CPA,ex   02,British Columbia,34
+2012,CPA,ex   02,Manitoba,19
+2012,CPA,ex   02,National Capital Region (NCR),918
+2012,CPA,ex   02,New Brunswick,24
+2012,CPA,ex   02,Newfoundland and Labrador,7
+2012,CPA,ex   02,Northwest Territories,1
+2012,CPA,ex   02,Nova Scotia,23
+2012,CPA,ex   02,Nunavut,2
+2012,CPA,ex   02,Ontario (minus the NCR),57
+2012,CPA,ex   02,Outside of Canada,72
+2012,CPA,ex   02,Prince Edward Island,9
+2012,CPA,ex   02,Quebec (minus the NCR),66
+2012,CPA,ex   02,Saskatchewan,16
+2012,CPA,ex   02,Yukon,1
+2012,CPA,ex   03,Alberta,12
+2012,CPA,ex   03,British Columbia,17
+2012,CPA,ex   03,Manitoba,9
+2012,CPA,ex   03,National Capital Region (NCR),723
+2012,CPA,ex   03,New Brunswick,8
+2012,CPA,ex   03,Newfoundland and Labrador,5
+2012,CPA,ex   03,Northwest Territories,1
+2012,CPA,ex   03,Nova Scotia,7
+2012,CPA,ex   03,Ontario (minus the NCR),19
+2012,CPA,ex   03,Outside of Canada,59
+2012,CPA,ex   03,Prince Edward Island,8
+2012,CPA,ex   03,Quebec (minus the NCR),27
+2012,CPA,ex   03,Saskatchewan,6
+2012,CPA,ex   04,Alberta,2
+2012,CPA,ex   04,British Columbia,3
+2012,CPA,ex   04,Manitoba,1
+2012,CPA,ex   04,National Capital Region (NCR),191
+2012,CPA,ex   04,New Brunswick,2
+2012,CPA,ex   04,Newfoundland and Labrador,1
+2012,CPA,ex   04,Nova Scotia,3
+2012,CPA,ex   04,Ontario (minus the NCR),5
+2012,CPA,ex   04,Outside of Canada,9
+2012,CPA,ex   04,Prince Edward Island,2
+2012,CPA,ex   04,Quebec (minus the NCR),6
+2012,CPA,ex   04,Saskatchewan,2
+2012,CPA,ex   05,National Capital Region (NCR),88
+2012,CPA,ex   05,Newfoundland and Labrador,1
+2012,CPA,ex   05,Ontario (minus the NCR),1
+2012,CPA,ex   05,Outside of Canada,9
+2012,CPA,ex   05,Prince Edward Island,1
+2012,SA,Non-EX,Alberta,4782
+2012,SA,Non-EX,British Columbia,6407
+2012,SA,Non-EX,Manitoba,3782
+2012,SA,Non-EX,National Capital Region (NCR),20803
+2012,SA,Non-EX,New Brunswick,1127
+2012,SA,Non-EX,Newfoundland and Labrador,1835
+2012,SA,Non-EX,Northwest Territories,81
+2012,SA,Non-EX,Nova Scotia,1676
+2012,SA,Non-EX,Nunavut,34
+2012,SA,Non-EX,Ontario (minus the NCR),13207
+2012,SA,Non-EX,Outside of Canada,1
+2012,SA,Non-EX,Prince Edward Island,1368
+2012,SA,Non-EX,Quebec (minus the NCR),8278
+2012,SA,Non-EX,Saskatchewan,1235
+2012,SA,Non-EX,Yukon,80
+2012,SA,ex   01,Alberta,27
+2012,SA,ex   01,British Columbia,29
+2012,SA,ex   01,Manitoba,12
+2012,SA,ex   01,National Capital Region (NCR),442
+2012,SA,ex   01,New Brunswick,2
+2012,SA,ex   01,Newfoundland and Labrador,7
+2012,SA,ex   01,Nova Scotia,10
+2012,SA,ex   01,Ontario (minus the NCR),81
+2012,SA,ex   01,Outside of Canada,1
+2012,SA,ex   01,Prince Edward Island,4
+2012,SA,ex   01,Quebec (minus the NCR),37
+2012,SA,ex   01,Saskatchewan,4
+2012,SA,ex   02,Alberta,15
+2012,SA,ex   02,British Columbia,17
+2012,SA,ex   02,Manitoba,5
+2012,SA,ex   02,National Capital Region (NCR),214
+2012,SA,ex   02,New Brunswick,4
+2012,SA,ex   02,Newfoundland and Labrador,3
+2012,SA,ex   02,Northwest Territories,1
+2012,SA,ex   02,Nova Scotia,7
+2012,SA,ex   02,Nunavut,1
+2012,SA,ex   02,Ontario (minus the NCR),38
+2012,SA,ex   02,Prince Edward Island,3
+2012,SA,ex   02,Quebec (minus the NCR),43
+2012,SA,ex   02,Saskatchewan,4
+2012,SA,ex   02,Yukon,1
+2012,SA,ex   03,Alberta,23
+2012,SA,ex   03,British Columbia,7
+2012,SA,ex   03,Manitoba,3
+2012,SA,ex   03,National Capital Region (NCR),179
+2012,SA,ex   03,New Brunswick,3
+2012,SA,ex   03,Newfoundland and Labrador,2
+2012,SA,ex   03,Northwest Territories,1
+2012,SA,ex   03,Nova Scotia,4
+2012,SA,ex   03,Ontario (minus the NCR),13
+2012,SA,ex   03,Quebec (minus the NCR),9
+2012,SA,ex   03,Saskatchewan,3
+2012,SA,ex   04,Alberta,4
+2012,SA,ex   04,British Columbia,1
+2012,SA,ex   04,Manitoba,1
+2012,SA,ex   04,National Capital Region (NCR),47
+2012,SA,ex   04,Nova Scotia,1
+2012,SA,ex   04,Ontario (minus the NCR),5
+2012,SA,ex   04,Quebec (minus the NCR),6
+2012,SA,ex   05,Alberta,3
+2012,SA,ex   05,British Columbia,1
+2012,SA,ex   05,National Capital Region (NCR),36
+2012,SA,ex   05,Nova Scotia,1
+2012,SA,ex   05,Ontario (minus the NCR),2
+2012,SA,ex   05,Quebec (minus the NCR),1
+2013,CPA,Non-EX,Alberta,10082
+2013,CPA,Non-EX,British Columbia,17524
+2013,CPA,Non-EX,Manitoba,7273
+2013,CPA,Non-EX,National Capital Region (NCR),83800
+2013,CPA,Non-EX,New Brunswick,6715
+2013,CPA,Non-EX,Newfoundland and Labrador,3105
+2013,CPA,Non-EX,Northwest Territories,539
+2013,CPA,Non-EX,Nova Scotia,9281
+2013,CPA,Non-EX,Nunavut,247
+2013,CPA,Non-EX,Ontario (minus the NCR),25884
+2013,CPA,Non-EX,Outside of Canada,1253
+2013,CPA,Non-EX,Prince Edward Island,1842
+2013,CPA,Non-EX,Quebec (minus the NCR),22558
+2013,CPA,Non-EX,Saskatchewan,4912
+2013,CPA,Non-EX,Yukon,322
+2013,CPA,ex   01,Alberta,47
+2013,CPA,ex   01,British Columbia,101
+2013,CPA,ex   01,Manitoba,50
+2013,CPA,ex   01,National Capital Region (NCR),2064
+2013,CPA,ex   01,New Brunswick,40
+2013,CPA,ex   01,Newfoundland and Labrador,20
+2013,CPA,ex   01,Northwest Territories,8
+2013,CPA,ex   01,Nova Scotia,52
+2013,CPA,ex   01,Nunavut,7
+2013,CPA,ex   01,Ontario (minus the NCR),107
+2013,CPA,ex   01,Outside of Canada,132
+2013,CPA,ex   01,Prince Edward Island,24
+2013,CPA,ex   01,Quebec (minus the NCR),115
+2013,CPA,ex   01,Saskatchewan,22
+2013,CPA,ex   01,Yukon,5
+2013,CPA,ex   02,Alberta,23
+2013,CPA,ex   02,British Columbia,37
+2013,CPA,ex   02,Manitoba,14
+2013,CPA,ex   02,National Capital Region (NCR),875
+2013,CPA,ex   02,New Brunswick,23
+2013,CPA,ex   02,Newfoundland and Labrador,6
+2013,CPA,ex   02,Northwest Territories,2
+2013,CPA,ex   02,Nova Scotia,23
+2013,CPA,ex   02,Ontario (minus the NCR),56
+2013,CPA,ex   02,Outside of Canada,65
+2013,CPA,ex   02,Prince Edward Island,8
+2013,CPA,ex   02,Quebec (minus the NCR),59
+2013,CPA,ex   02,Saskatchewan,16
+2013,CPA,ex   02,Yukon,1
+2013,CPA,ex   03,Alberta,10
+2013,CPA,ex   03,British Columbia,15
+2013,CPA,ex   03,Manitoba,7
+2013,CPA,ex   03,National Capital Region (NCR),713
+2013,CPA,ex   03,New Brunswick,9
+2013,CPA,ex   03,Newfoundland and Labrador,3
+2013,CPA,ex   03,Nova Scotia,8
+2013,CPA,ex   03,Ontario (minus the NCR),18
+2013,CPA,ex   03,Outside of Canada,56
+2013,CPA,ex   03,Prince Edward Island,6
+2013,CPA,ex   03,Quebec (minus the NCR),31
+2013,CPA,ex   03,Saskatchewan,4
+2013,CPA,ex   04,Alberta,2
+2013,CPA,ex   04,British Columbia,4
+2013,CPA,ex   04,Manitoba,2
+2013,CPA,ex   04,National Capital Region (NCR),167
+2013,CPA,ex   04,New Brunswick,3
+2013,CPA,ex   04,Newfoundland and Labrador,1
+2013,CPA,ex   04,Nova Scotia,3
+2013,CPA,ex   04,Ontario (minus the NCR),4
+2013,CPA,ex   04,Outside of Canada,13
+2013,CPA,ex   04,Prince Edward Island,1
+2013,CPA,ex   04,Quebec (minus the NCR),5
+2013,CPA,ex   04,Saskatchewan,2
+2013,CPA,ex   05,National Capital Region (NCR),80
+2013,CPA,ex   05,New Brunswick,1
+2013,CPA,ex   05,Newfoundland and Labrador,1
+2013,CPA,ex   05,Outside of Canada,7
+2013,CPA,ex   05,Prince Edward Island,1
+2013,SA,Non-EX,Alberta,4520
+2013,SA,Non-EX,British Columbia,6059
+2013,SA,Non-EX,Manitoba,3325
+2013,SA,Non-EX,National Capital Region (NCR),19830
+2013,SA,Non-EX,New Brunswick,1078
+2013,SA,Non-EX,Newfoundland and Labrador,1643
+2013,SA,Non-EX,Northwest Territories,60
+2013,SA,Non-EX,Nova Scotia,1419
+2013,SA,Non-EX,Nunavut,27
+2013,SA,Non-EX,Ontario (minus the NCR),12667
+2013,SA,Non-EX,Outside of Canada,1
+2013,SA,Non-EX,Prince Edward Island,1328
+2013,SA,Non-EX,Quebec (minus the NCR),7825
+2013,SA,Non-EX,Saskatchewan,1106
+2013,SA,Non-EX,Yukon,49
+2013,SA,ex   01,Alberta,32
+2013,SA,ex   01,British Columbia,31
+2013,SA,ex   01,Manitoba,14
+2013,SA,ex   01,National Capital Region (NCR),426
+2013,SA,ex   01,New Brunswick,2
+2013,SA,ex   01,Newfoundland and Labrador,9
+2013,SA,ex   01,Nova Scotia,10
+2013,SA,ex   01,Ontario (minus the NCR),85
+2013,SA,ex   01,Outside of Canada,1
+2013,SA,ex   01,Prince Edward Island,2
+2013,SA,ex   01,Quebec (minus the NCR),39
+2013,SA,ex   01,Saskatchewan,3
+2013,SA,ex   02,Alberta,14
+2013,SA,ex   02,British Columbia,16
+2013,SA,ex   02,Manitoba,3
+2013,SA,ex   02,National Capital Region (NCR),217
+2013,SA,ex   02,New Brunswick,5
+2013,SA,ex   02,Newfoundland and Labrador,4
+2013,SA,ex   02,Northwest Territories,2
+2013,SA,ex   02,Nova Scotia,5
+2013,SA,ex   02,Nunavut,1
+2013,SA,ex   02,Ontario (minus the NCR),39
+2013,SA,ex   02,Prince Edward Island,3
+2013,SA,ex   02,Quebec (minus the NCR),36
+2013,SA,ex   02,Saskatchewan,4
+2013,SA,ex   02,Yukon,1
+2013,SA,ex   03,Alberta,21
+2013,SA,ex   03,British Columbia,8
+2013,SA,ex   03,Manitoba,4
+2013,SA,ex   03,National Capital Region (NCR),175
+2013,SA,ex   03,New Brunswick,1
+2013,SA,ex   03,Northwest Territories,1
+2013,SA,ex   03,Nova Scotia,4
+2013,SA,ex   03,Ontario (minus the NCR),21
+2013,SA,ex   03,Prince Edward Island,1
+2013,SA,ex   03,Quebec (minus the NCR),7
+2013,SA,ex   03,Saskatchewan,3
+2013,SA,ex   04,Alberta,4
+2013,SA,ex   04,British Columbia,1
+2013,SA,ex   04,Manitoba,1
+2013,SA,ex   04,National Capital Region (NCR),46
+2013,SA,ex   04,Nova Scotia,1
+2013,SA,ex   04,Ontario (minus the NCR),5
+2013,SA,ex   04,Quebec (minus the NCR),7
+2013,SA,ex   05,Alberta,3
+2013,SA,ex   05,British Columbia,1
+2013,SA,ex   05,National Capital Region (NCR),40
+2013,SA,ex   05,Nova Scotia,1
+2013,SA,ex   05,Ontario (minus the NCR),3
+2013,SA,ex   05,Quebec (minus the NCR),1
+2014,CPA,Non-EX,Alberta,9696
+2014,CPA,Non-EX,British Columbia,16727
+2014,CPA,Non-EX,Manitoba,6983
+2014,CPA,Non-EX,National Capital Region (NCR),82841
+2014,CPA,Non-EX,New Brunswick,6739
+2014,CPA,Non-EX,Newfoundland and Labrador,2946
+2014,CPA,Non-EX,Northwest Territories,419
+2014,CPA,Non-EX,Nova Scotia,9024
+2014,CPA,Non-EX,Nunavut,247
+2014,CPA,Non-EX,Ontario (minus the NCR),24893
+2014,CPA,Non-EX,Outside of Canada,1242
+2014,CPA,Non-EX,Prince Edward Island,1667
+2014,CPA,Non-EX,Quebec (minus the NCR),21829
+2014,CPA,Non-EX,Saskatchewan,4783
+2014,CPA,Non-EX,Yukon,299
+2014,CPA,ex   01,Alberta,50
+2014,CPA,ex   01,British Columbia,94
+2014,CPA,ex   01,Manitoba,49
+2014,CPA,ex   01,National Capital Region (NCR),1960
+2014,CPA,ex   01,New Brunswick,39
+2014,CPA,ex   01,Newfoundland and Labrador,17
+2014,CPA,ex   01,Northwest Territories,5
+2014,CPA,ex   01,Nova Scotia,52
+2014,CPA,ex   01,Nunavut,5
+2014,CPA,ex   01,Ontario (minus the NCR),111
+2014,CPA,ex   01,Outside of Canada,134
+2014,CPA,ex   01,Prince Edward Island,27
+2014,CPA,ex   01,Quebec (minus the NCR),102
+2014,CPA,ex   01,Saskatchewan,19
+2014,CPA,ex   01,Yukon,5
+2014,CPA,ex   02,Alberta,24
+2014,CPA,ex   02,British Columbia,31
+2014,CPA,ex   02,Manitoba,17
+2014,CPA,ex   02,National Capital Region (NCR),864
+2014,CPA,ex   02,New Brunswick,20
+2014,CPA,ex   02,Newfoundland and Labrador,6
+2014,CPA,ex   02,Nova Scotia,22
+2014,CPA,ex   02,Ontario (minus the NCR),49
+2014,CPA,ex   02,Outside of Canada,65
+2014,CPA,ex   02,Prince Edward Island,11
+2014,CPA,ex   02,Quebec (minus the NCR),66
+2014,CPA,ex   02,Saskatchewan,15
+2014,CPA,ex   03,Alberta,9
+2014,CPA,ex   03,British Columbia,15
+2014,CPA,ex   03,Manitoba,7
+2014,CPA,ex   03,National Capital Region (NCR),692
+2014,CPA,ex   03,New Brunswick,8
+2014,CPA,ex   03,Newfoundland and Labrador,3
+2014,CPA,ex   03,Nova Scotia,9
+2014,CPA,ex   03,Ontario (minus the NCR),18
+2014,CPA,ex   03,Outside of Canada,54
+2014,CPA,ex   03,Prince Edward Island,7
+2014,CPA,ex   03,Quebec (minus the NCR),22
+2014,CPA,ex   03,Saskatchewan,3
+2014,CPA,ex   04,Alberta,1
+2014,CPA,ex   04,British Columbia,4
+2014,CPA,ex   04,Manitoba,2
+2014,CPA,ex   04,National Capital Region (NCR),162
+2014,CPA,ex   04,New Brunswick,4
+2014,CPA,ex   04,Newfoundland and Labrador,1
+2014,CPA,ex   04,Nova Scotia,2
+2014,CPA,ex   04,Ontario (minus the NCR),3
+2014,CPA,ex   04,Outside of Canada,14
+2014,CPA,ex   04,Prince Edward Island,2
+2014,CPA,ex   04,Quebec (minus the NCR),4
+2014,CPA,ex   04,Saskatchewan,1
+2014,CPA,ex   05,National Capital Region (NCR),82
+2014,CPA,ex   05,Newfoundland and Labrador,1
+2014,CPA,ex   05,Ontario (minus the NCR),1
+2014,CPA,ex   05,Outside of Canada,5
+2014,SA,Non-EX,Alberta,4588
+2014,SA,Non-EX,British Columbia,5871
+2014,SA,Non-EX,Manitoba,3246
+2014,SA,Non-EX,National Capital Region (NCR),19753
+2014,SA,Non-EX,New Brunswick,1081
+2014,SA,Non-EX,Newfoundland and Labrador,1617
+2014,SA,Non-EX,Northwest Territories,60
+2014,SA,Non-EX,Nova Scotia,1467
+2014,SA,Non-EX,Nunavut,32
+2014,SA,Non-EX,Ontario (minus the NCR),12508
+2014,SA,Non-EX,Outside of Canada,1
+2014,SA,Non-EX,Prince Edward Island,1397
+2014,SA,Non-EX,Quebec (minus the NCR),7622
+2014,SA,Non-EX,Saskatchewan,1125
+2014,SA,Non-EX,Yukon,58
+2014,SA,ex   01,Alberta,35
+2014,SA,ex   01,British Columbia,32
+2014,SA,ex   01,Manitoba,15
+2014,SA,ex   01,National Capital Region (NCR),418
+2014,SA,ex   01,New Brunswick,4
+2014,SA,ex   01,Newfoundland and Labrador,7
+2014,SA,ex   01,Nova Scotia,11
+2014,SA,ex   01,Ontario (minus the NCR),98
+2014,SA,ex   01,Outside of Canada,1
+2014,SA,ex   01,Prince Edward Island,4
+2014,SA,ex   01,Quebec (minus the NCR),44
+2014,SA,ex   01,Saskatchewan,4
+2014,SA,ex   02,Alberta,16
+2014,SA,ex   02,British Columbia,17
+2014,SA,ex   02,Manitoba,4
+2014,SA,ex   02,National Capital Region (NCR),234
+2014,SA,ex   02,New Brunswick,3
+2014,SA,ex   02,Newfoundland and Labrador,6
+2014,SA,ex   02,Northwest Territories,2
+2014,SA,ex   02,Nova Scotia,4
+2014,SA,ex   02,Nunavut,1
+2014,SA,ex   02,Ontario (minus the NCR),38
+2014,SA,ex   02,Prince Edward Island,4
+2014,SA,ex   02,Quebec (minus the NCR),38
+2014,SA,ex   02,Saskatchewan,4
+2014,SA,ex   02,Yukon,1
+2014,SA,ex   03,Alberta,22
+2014,SA,ex   03,British Columbia,8
+2014,SA,ex   03,Manitoba,2
+2014,SA,ex   03,National Capital Region (NCR),165
+2014,SA,ex   03,New Brunswick,1
+2014,SA,ex   03,Newfoundland and Labrador,1
+2014,SA,ex   03,Northwest Territories,1
+2014,SA,ex   03,Nova Scotia,5
+2014,SA,ex   03,Ontario (minus the NCR),19
+2014,SA,ex   03,Quebec (minus the NCR),5
+2014,SA,ex   03,Saskatchewan,3
+2014,SA,ex   04,Alberta,4
+2014,SA,ex   04,British Columbia,1
+2014,SA,ex   04,Manitoba,1
+2014,SA,ex   04,National Capital Region (NCR),40
+2014,SA,ex   04,Nova Scotia,1
+2014,SA,ex   04,Ontario (minus the NCR),6
+2014,SA,ex   04,Quebec (minus the NCR),9
+2014,SA,ex   05,Alberta,2
+2014,SA,ex   05,British Columbia,1
+2014,SA,ex   05,National Capital Region (NCR),36
+2014,SA,ex   05,Nova Scotia,1
+2014,SA,ex   05,Ontario (minus the NCR),2
+2014,SA,ex   05,Quebec (minus the NCR),1
+2015,CPA,Non-EX,Alberta,9742
+2015,CPA,Non-EX,British Columbia,16895
+2015,CPA,Non-EX,Manitoba,6839
+2015,CPA,Non-EX,National Capital Region (NCR),82919
+2015,CPA,Non-EX,New Brunswick,7116
+2015,CPA,Non-EX,Newfoundland and Labrador,2999
+2015,CPA,Non-EX,Northwest Territories,396
+2015,CPA,Non-EX,Nova Scotia,8978
+2015,CPA,Non-EX,Nunavut,249
+2015,CPA,Non-EX,Ontario (minus the NCR),25003
+2015,CPA,Non-EX,Outside of Canada,1205
+2015,CPA,Non-EX,Prince Edward Island,1667
+2015,CPA,Non-EX,Quebec (minus the NCR),21566
+2015,CPA,Non-EX,Saskatchewan,4745
+2015,CPA,Non-EX,Yukon,288
+2015,CPA,ex   01,Alberta,48
+2015,CPA,ex   01,British Columbia,91
+2015,CPA,ex   01,Manitoba,44
+2015,CPA,ex   01,National Capital Region (NCR),1936
+2015,CPA,ex   01,New Brunswick,40
+2015,CPA,ex   01,Newfoundland and Labrador,19
+2015,CPA,ex   01,Northwest Territories,3
+2015,CPA,ex   01,Nova Scotia,53
+2015,CPA,ex   01,Nunavut,6
+2015,CPA,ex   01,Ontario (minus the NCR),102
+2015,CPA,ex   01,Outside of Canada,128
+2015,CPA,ex   01,Prince Edward Island,23
+2015,CPA,ex   01,Quebec (minus the NCR),107
+2015,CPA,ex   01,Saskatchewan,14
+2015,CPA,ex   01,Yukon,6
+2015,CPA,ex   02,Alberta,23
+2015,CPA,ex   02,British Columbia,31
+2015,CPA,ex   02,Manitoba,15
+2015,CPA,ex   02,National Capital Region (NCR),879
+2015,CPA,ex   02,New Brunswick,21
+2015,CPA,ex   02,Newfoundland and Labrador,6
+2015,CPA,ex   02,Northwest Territories,2
+2015,CPA,ex   02,Nova Scotia,20
+2015,CPA,ex   02,Ontario (minus the NCR),52
+2015,CPA,ex   02,Outside of Canada,73
+2015,CPA,ex   02,Prince Edward Island,8
+2015,CPA,ex   02,Quebec (minus the NCR),66
+2015,CPA,ex   02,Saskatchewan,12
+2015,CPA,ex   02,Yukon,1
+2015,CPA,ex   03,Alberta,10
+2015,CPA,ex   03,British Columbia,17
+2015,CPA,ex   03,Manitoba,7
+2015,CPA,ex   03,National Capital Region (NCR),685
+2015,CPA,ex   03,New Brunswick,8
+2015,CPA,ex   03,Newfoundland and Labrador,4
+2015,CPA,ex   03,Nova Scotia,9
+2015,CPA,ex   03,Ontario (minus the NCR),21
+2015,CPA,ex   03,Outside of Canada,53
+2015,CPA,ex   03,Prince Edward Island,9
+2015,CPA,ex   03,Quebec (minus the NCR),23
+2015,CPA,ex   03,Saskatchewan,2
+2015,CPA,ex   04,Alberta,1
+2015,CPA,ex   04,British Columbia,4
+2015,CPA,ex   04,Manitoba,2
+2015,CPA,ex   04,National Capital Region (NCR),162
+2015,CPA,ex   04,New Brunswick,3
+2015,CPA,ex   04,Newfoundland and Labrador,1
+2015,CPA,ex   04,Nova Scotia,3
+2015,CPA,ex   04,Ontario (minus the NCR),4
+2015,CPA,ex   04,Outside of Canada,15
+2015,CPA,ex   04,Prince Edward Island,4
+2015,CPA,ex   04,Quebec (minus the NCR),5
+2015,CPA,ex   04,Saskatchewan,2
+2015,CPA,ex   05,National Capital Region (NCR),72
+2015,CPA,ex   05,Ontario (minus the NCR),1
+2015,CPA,ex   05,Outside of Canada,2
+2015,SA,Non-EX,Alberta,4520
+2015,SA,Non-EX,British Columbia,5826
+2015,SA,Non-EX,Manitoba,3162
+2015,SA,Non-EX,National Capital Region (NCR),19743
+2015,SA,Non-EX,New Brunswick,1083
+2015,SA,Non-EX,Newfoundland and Labrador,1670
+2015,SA,Non-EX,Northwest Territories,70
+2015,SA,Non-EX,Nova Scotia,1465
+2015,SA,Non-EX,Nunavut,30
+2015,SA,Non-EX,Ontario (minus the NCR),12444
+2015,SA,Non-EX,Outside of Canada,1
+2015,SA,Non-EX,Prince Edward Island,1397
+2015,SA,Non-EX,Quebec (minus the NCR),7509
+2015,SA,Non-EX,Saskatchewan,1096
+2015,SA,Non-EX,Yukon,71
+2015,SA,ex   01,Alberta,36
+2015,SA,ex   01,British Columbia,30
+2015,SA,ex   01,Manitoba,12
+2015,SA,ex   01,National Capital Region (NCR),404
+2015,SA,ex   01,New Brunswick,3
+2015,SA,ex   01,Newfoundland and Labrador,6
+2015,SA,ex   01,Nova Scotia,13
+2015,SA,ex   01,Ontario (minus the NCR),96
+2015,SA,ex   01,Prince Edward Island,3
+2015,SA,ex   01,Quebec (minus the NCR),43
+2015,SA,ex   01,Saskatchewan,6
+2015,SA,ex   02,Alberta,16
+2015,SA,ex   02,British Columbia,21
+2015,SA,ex   02,Manitoba,3
+2015,SA,ex   02,National Capital Region (NCR),237
+2015,SA,ex   02,New Brunswick,6
+2015,SA,ex   02,Newfoundland and Labrador,5
+2015,SA,ex   02,Nova Scotia,3
+2015,SA,ex   02,Nunavut,1
+2015,SA,ex   02,Ontario (minus the NCR),42
+2015,SA,ex   02,Prince Edward Island,4
+2015,SA,ex   02,Quebec (minus the NCR),38
+2015,SA,ex   02,Saskatchewan,4
+2015,SA,ex   02,Yukon,1
+2015,SA,ex   03,Alberta,23
+2015,SA,ex   03,British Columbia,5
+2015,SA,ex   03,Manitoba,2
+2015,SA,ex   03,National Capital Region (NCR),167
+2015,SA,ex   03,New Brunswick,1
+2015,SA,ex   03,Newfoundland and Labrador,1
+2015,SA,ex   03,Northwest Territories,1
+2015,SA,ex   03,Nova Scotia,2
+2015,SA,ex   03,Ontario (minus the NCR),18
+2015,SA,ex   03,Quebec (minus the NCR),5
+2015,SA,ex   03,Saskatchewan,3
+2015,SA,ex   04,Alberta,5
+2015,SA,ex   04,British Columbia,3
+2015,SA,ex   04,Manitoba,2
+2015,SA,ex   04,National Capital Region (NCR),44
+2015,SA,ex   04,Nova Scotia,2
+2015,SA,ex   04,Ontario (minus the NCR),6
+2015,SA,ex   04,Quebec (minus the NCR),11
+2015,SA,ex   05,Alberta,4
+2015,SA,ex   05,National Capital Region (NCR),40
+2015,SA,ex   05,Nova Scotia,1
+2015,SA,ex   05,Ontario (minus the NCR),2
+2015,SA,ex   05,Quebec (minus the NCR),1
+2016,CPA,Non-EX,Alberta,10083
+2016,CPA,Non-EX,British Columbia,16870
+2016,CPA,Non-EX,Manitoba,6763
+2016,CPA,Non-EX,National Capital Region (NCR),82706
+2016,CPA,Non-EX,New Brunswick,7164
+2016,CPA,Non-EX,Newfoundland and Labrador,2983
+2016,CPA,Non-EX,Northwest Territories,400
+2016,CPA,Non-EX,Nova Scotia,8820
+2016,CPA,Non-EX,Nunavut,230
+2016,CPA,Non-EX,Ontario (minus the NCR),25159
+2016,CPA,Non-EX,Outside of Canada,1168
+2016,CPA,Non-EX,Prince Edward Island,1705
+2016,CPA,Non-EX,Quebec (minus the NCR),21711
+2016,CPA,Non-EX,Saskatchewan,4787
+2016,CPA,Non-EX,Unknown,1490
+2016,CPA,Non-EX,Yukon,280
+2016,CPA,ex   01,Alberta,47
+2016,CPA,ex   01,British Columbia,94
+2016,CPA,ex   01,Manitoba,43
+2016,CPA,ex   01,National Capital Region (NCR),1940
+2016,CPA,ex   01,New Brunswick,38
+2016,CPA,ex   01,Newfoundland and Labrador,20
+2016,CPA,ex   01,Northwest Territories,3
+2016,CPA,ex   01,Nova Scotia,52
+2016,CPA,ex   01,Nunavut,6
+2016,CPA,ex   01,Ontario (minus the NCR),95
+2016,CPA,ex   01,Outside of Canada,134
+2016,CPA,ex   01,Prince Edward Island,29
+2016,CPA,ex   01,Quebec (minus the NCR),101
+2016,CPA,ex   01,Saskatchewan,16
+2016,CPA,ex   01,Unknown,8
+2016,CPA,ex   01,Yukon,6
+2016,CPA,ex   02,Alberta,25
+2016,CPA,ex   02,British Columbia,31
+2016,CPA,ex   02,Manitoba,16
+2016,CPA,ex   02,National Capital Region (NCR),889
+2016,CPA,ex   02,New Brunswick,24
+2016,CPA,ex   02,Newfoundland and Labrador,5
+2016,CPA,ex   02,Northwest Territories,2
+2016,CPA,ex   02,Nova Scotia,18
+2016,CPA,ex   02,Nunavut,2
+2016,CPA,ex   02,Ontario (minus the NCR),56
+2016,CPA,ex   02,Outside of Canada,79
+2016,CPA,ex   02,Prince Edward Island,10
+2016,CPA,ex   02,Quebec (minus the NCR),67
+2016,CPA,ex   02,Saskatchewan,14
+2016,CPA,ex   02,Unknown,5
+2016,CPA,ex   02,Yukon,1
+2016,CPA,ex   03,Alberta,8
+2016,CPA,ex   03,British Columbia,19
+2016,CPA,ex   03,Manitoba,6
+2016,CPA,ex   03,National Capital Region (NCR),706
+2016,CPA,ex   03,New Brunswick,8
+2016,CPA,ex   03,Newfoundland and Labrador,6
+2016,CPA,ex   03,Nova Scotia,10
+2016,CPA,ex   03,Ontario (minus the NCR),16
+2016,CPA,ex   03,Outside of Canada,51
+2016,CPA,ex   03,Prince Edward Island,11
+2016,CPA,ex   03,Quebec (minus the NCR),22
+2016,CPA,ex   03,Saskatchewan,3
+2016,CPA,ex   03,Unknown,2
+2016,CPA,ex   04,Alberta,1
+2016,CPA,ex   04,British Columbia,5
+2016,CPA,ex   04,Manitoba,3
+2016,CPA,ex   04,National Capital Region (NCR),161
+2016,CPA,ex   04,New Brunswick,4
+2016,CPA,ex   04,Newfoundland and Labrador,1
+2016,CPA,ex   04,Nova Scotia,3
+2016,CPA,ex   04,Ontario (minus the NCR),3
+2016,CPA,ex   04,Outside of Canada,13
+2016,CPA,ex   04,Prince Edward Island,2
+2016,CPA,ex   04,Quebec (minus the NCR),5
+2016,CPA,ex   04,Saskatchewan,1
+2016,CPA,ex   05,National Capital Region (NCR),85
+2016,CPA,ex   05,Ontario (minus the NCR),1
+2016,CPA,ex   05,Outside of Canada,2
+2016,CPA,ex   05,Unknown,1
+2016,SA,Non-EX,Alberta,4551
+2016,SA,Non-EX,British Columbia,5746
+2016,SA,Non-EX,Manitoba,3168
+2016,SA,Non-EX,National Capital Region (NCR),20007
+2016,SA,Non-EX,New Brunswick,1078
+2016,SA,Non-EX,Newfoundland and Labrador,1534
+2016,SA,Non-EX,Northwest Territories,83
+2016,SA,Non-EX,Nova Scotia,1512
+2016,SA,Non-EX,Nunavut,42
+2016,SA,Non-EX,Ontario (minus the NCR),12409
+2016,SA,Non-EX,Outside of Canada,2
+2016,SA,Non-EX,Prince Edward Island,1373
+2016,SA,Non-EX,Quebec (minus the NCR),7549
+2016,SA,Non-EX,Saskatchewan,1069
+2016,SA,Non-EX,Unknown,33
+2016,SA,Non-EX,Yukon,90
+2016,SA,ex   01,Alberta,35
+2016,SA,ex   01,British Columbia,33
+2016,SA,ex   01,Manitoba,15
+2016,SA,ex   01,National Capital Region (NCR),394
+2016,SA,ex   01,New Brunswick,6
+2016,SA,ex   01,Newfoundland and Labrador,8
+2016,SA,ex   01,Nova Scotia,13
+2016,SA,ex   01,Ontario (minus the NCR),99
+2016,SA,ex   01,Prince Edward Island,2
+2016,SA,ex   01,Quebec (minus the NCR),40
+2016,SA,ex   01,Saskatchewan,6
+2016,SA,ex   01,Unknown,1
+2016,SA,ex   02,Alberta,18
+2016,SA,ex   02,British Columbia,18
+2016,SA,ex   02,Manitoba,3
+2016,SA,ex   02,National Capital Region (NCR),245
+2016,SA,ex   02,New Brunswick,4
+2016,SA,ex   02,Newfoundland and Labrador,3
+2016,SA,ex   02,Northwest Territories,2
+2016,SA,ex   02,Nova Scotia,3
+2016,SA,ex   02,Nunavut,1
+2016,SA,ex   02,Ontario (minus the NCR),42
+2016,SA,ex   02,Outside of Canada,1
+2016,SA,ex   02,Prince Edward Island,3
+2016,SA,ex   02,Quebec (minus the NCR),37
+2016,SA,ex   02,Saskatchewan,5
+2016,SA,ex   02,Unknown,1
+2016,SA,ex   02,Yukon,1
+2016,SA,ex   03,Alberta,28
+2016,SA,ex   03,British Columbia,5
+2016,SA,ex   03,Manitoba,1
+2016,SA,ex   03,National Capital Region (NCR),163
+2016,SA,ex   03,New Brunswick,2
+2016,SA,ex   03,Newfoundland and Labrador,2
+2016,SA,ex   03,Northwest Territories,1
+2016,SA,ex   03,Nova Scotia,2
+2016,SA,ex   03,Ontario (minus the NCR),17
+2016,SA,ex   03,Quebec (minus the NCR),6
+2016,SA,ex   03,Saskatchewan,1
+2016,SA,ex   04,Alberta,4
+2016,SA,ex   04,British Columbia,3
+2016,SA,ex   04,Manitoba,1
+2016,SA,ex   04,National Capital Region (NCR),43
+2016,SA,ex   04,Nova Scotia,2
+2016,SA,ex   04,Ontario (minus the NCR),5
+2016,SA,ex   04,Quebec (minus the NCR),9
+2016,SA,ex   05,Alberta,3
+2016,SA,ex   05,National Capital Region (NCR),36
+2016,SA,ex   05,Nova Scotia,1
+2016,SA,ex   05,Ontario (minus the NCR),4
+2016,SA,ex   05,Quebec (minus the NCR),1
+2017,CPA,Non-EX,Alberta,10141
+2017,CPA,Non-EX,British Columbia,16577
+2017,CPA,Non-EX,Manitoba,6568
+2017,CPA,Non-EX,National Capital Region (NCR),84997
+2017,CPA,Non-EX,New Brunswick,7180
+2017,CPA,Non-EX,Newfoundland and Labrador,3054
+2017,CPA,Non-EX,Northwest Territories,401
+2017,CPA,Non-EX,Nova Scotia,8490
+2017,CPA,Non-EX,Nunavut,230
+2017,CPA,Non-EX,Ontario (minus the NCR),24604
+2017,CPA,Non-EX,Outside of Canada,1079
+2017,CPA,Non-EX,Prince Edward Island,1750
+2017,CPA,Non-EX,Quebec (minus the NCR),20788
+2017,CPA,Non-EX,Saskatchewan,4727
+2017,CPA,Non-EX,Unknown,3739
+2017,CPA,Non-EX,Yukon,272
+2017,CPA,ex   01,Alberta,37
+2017,CPA,ex   01,British Columbia,96
+2017,CPA,ex   01,Manitoba,41
+2017,CPA,ex   01,National Capital Region (NCR),1917
+2017,CPA,ex   01,New Brunswick,36
+2017,CPA,ex   01,Newfoundland and Labrador,17
+2017,CPA,ex   01,Northwest Territories,4
+2017,CPA,ex   01,Nova Scotia,56
+2017,CPA,ex   01,Nunavut,6
+2017,CPA,ex   01,Ontario (minus the NCR),94
+2017,CPA,ex   01,Outside of Canada,130
+2017,CPA,ex   01,Prince Edward Island,31
+2017,CPA,ex   01,Quebec (minus the NCR),105
+2017,CPA,ex   01,Saskatchewan,14
+2017,CPA,ex   01,Unknown,55
+2017,CPA,ex   01,Yukon,5
+2017,CPA,ex   02,Alberta,24
+2017,CPA,ex   02,British Columbia,34
+2017,CPA,ex   02,Manitoba,17
+2017,CPA,ex   02,National Capital Region (NCR),902
+2017,CPA,ex   02,New Brunswick,27
+2017,CPA,ex   02,Newfoundland and Labrador,5
+2017,CPA,ex   02,Northwest Territories,2
+2017,CPA,ex   02,Nova Scotia,20
+2017,CPA,ex   02,Nunavut,1
+2017,CPA,ex   02,Ontario (minus the NCR),50
+2017,CPA,ex   02,Outside of Canada,74
+2017,CPA,ex   02,Prince Edward Island,11
+2017,CPA,ex   02,Quebec (minus the NCR),66
+2017,CPA,ex   02,Saskatchewan,14
+2017,CPA,ex   02,Unknown,41
+2017,CPA,ex   02,Yukon,1
+2017,CPA,ex   03,Alberta,8
+2017,CPA,ex   03,British Columbia,16
+2017,CPA,ex   03,Manitoba,5
+2017,CPA,ex   03,National Capital Region (NCR),683
+2017,CPA,ex   03,New Brunswick,10
+2017,CPA,ex   03,Newfoundland and Labrador,5
+2017,CPA,ex   03,Nova Scotia,10
+2017,CPA,ex   03,Ontario (minus the NCR),13
+2017,CPA,ex   03,Outside of Canada,47
+2017,CPA,ex   03,Prince Edward Island,10
+2017,CPA,ex   03,Quebec (minus the NCR),22
+2017,CPA,ex   03,Saskatchewan,4
+2017,CPA,ex   03,Unknown,30
+2017,CPA,ex   04,Alberta,1
+2017,CPA,ex   04,British Columbia,4
+2017,CPA,ex   04,Manitoba,2
+2017,CPA,ex   04,National Capital Region (NCR),158
+2017,CPA,ex   04,New Brunswick,3
+2017,CPA,ex   04,Newfoundland and Labrador,1
+2017,CPA,ex   04,Nova Scotia,2
+2017,CPA,ex   04,Ontario (minus the NCR),3
+2017,CPA,ex   04,Outside of Canada,9
+2017,CPA,ex   04,Prince Edward Island,1
+2017,CPA,ex   04,Quebec (minus the NCR),6
+2017,CPA,ex   04,Saskatchewan,1
+2017,CPA,ex   04,Unknown,17
+2017,CPA,ex   05,National Capital Region (NCR),81
+2017,CPA,ex   05,Outside of Canada,2
+2017,CPA,ex   05,Prince Edward Island,1
+2017,CPA,ex   05,Unknown,6
+2017,SA,Non-EX,Alberta,4612
+2017,SA,Non-EX,British Columbia,5598
+2017,SA,Non-EX,Manitoba,3431
+2017,SA,Non-EX,National Capital Region (NCR),18404
+2017,SA,Non-EX,New Brunswick,1088
+2017,SA,Non-EX,Newfoundland and Labrador,1688
+2017,SA,Non-EX,Northwest Territories,86
+2017,SA,Non-EX,Nova Scotia,1500
+2017,SA,Non-EX,Nunavut,47
+2017,SA,Non-EX,Ontario (minus the NCR),12487
+2017,SA,Non-EX,Prince Edward Island,1336
+2017,SA,Non-EX,Quebec (minus the NCR),7648
+2017,SA,Non-EX,Saskatchewan,1044
+2017,SA,Non-EX,Unknown,2583
+2017,SA,Non-EX,Yukon,67
+2017,SA,ex   01,Alberta,35
+2017,SA,ex   01,British Columbia,33
+2017,SA,ex   01,Manitoba,13
+2017,SA,ex   01,National Capital Region (NCR),405
+2017,SA,ex   01,New Brunswick,6
+2017,SA,ex   01,Newfoundland and Labrador,6
+2017,SA,ex   01,Nova Scotia,10
+2017,SA,ex   01,Ontario (minus the NCR),104
+2017,SA,ex   01,Prince Edward Island,4
+2017,SA,ex   01,Quebec (minus the NCR),36
+2017,SA,ex   01,Saskatchewan,5
+2017,SA,ex   01,Unknown,2
+2017,SA,ex   02,Alberta,20
+2017,SA,ex   02,British Columbia,15
+2017,SA,ex   02,Manitoba,5
+2017,SA,ex   02,National Capital Region (NCR),224
+2017,SA,ex   02,New Brunswick,2
+2017,SA,ex   02,Newfoundland and Labrador,4
+2017,SA,ex   02,Northwest Territories,2
+2017,SA,ex   02,Nova Scotia,6
+2017,SA,ex   02,Nunavut,1
+2017,SA,ex   02,Ontario (minus the NCR),40
+2017,SA,ex   02,Prince Edward Island,2
+2017,SA,ex   02,Quebec (minus the NCR),32
+2017,SA,ex   02,Saskatchewan,5
+2017,SA,ex   02,Unknown,41
+2017,SA,ex   02,Yukon,1
+2017,SA,ex   03,Alberta,28
+2017,SA,ex   03,British Columbia,7
+2017,SA,ex   03,Manitoba,2
+2017,SA,ex   03,National Capital Region (NCR),135
+2017,SA,ex   03,Newfoundland and Labrador,2
+2017,SA,ex   03,Northwest Territories,1
+2017,SA,ex   03,Nova Scotia,3
+2017,SA,ex   03,Ontario (minus the NCR),18
+2017,SA,ex   03,Quebec (minus the NCR),9
+2017,SA,ex   03,Unknown,18
+2017,SA,ex   04,Alberta,5
+2017,SA,ex   04,British Columbia,3
+2017,SA,ex   04,Manitoba,1
+2017,SA,ex   04,National Capital Region (NCR),37
+2017,SA,ex   04,Newfoundland and Labrador,1
+2017,SA,ex   04,Nova Scotia,2
+2017,SA,ex   04,Ontario (minus the NCR),3
+2017,SA,ex   04,Quebec (minus the NCR),7
+2017,SA,ex   04,Unknown,4
+2017,SA,ex   05,Alberta,1
+2017,SA,ex   05,National Capital Region (NCR),34
+2017,SA,ex   05,Nova Scotia,1
+2017,SA,ex   05,Ontario (minus the NCR),3
+2017,SA,ex   05,Quebec (minus the NCR),1
+2017,SA,ex   05,Unknown,1
+2018,CPA,Non-EX,Alberta,10236
+2018,CPA,Non-EX,British Columbia,16842
+2018,CPA,Non-EX,Manitoba,6668
+2018,CPA,Non-EX,National Capital Region (NCR),90076
+2018,CPA,Non-EX,New Brunswick,7848
+2018,CPA,Non-EX,Newfoundland and Labrador,3272
+2018,CPA,Non-EX,Northwest Territories,401
+2018,CPA,Non-EX,Nova Scotia,8616
+2018,CPA,Non-EX,Nunavut,231
+2018,CPA,Non-EX,Ontario (minus the NCR),24978
+2018,CPA,Non-EX,Outside of Canada,1109
+2018,CPA,Non-EX,Prince Edward Island,1763
+2018,CPA,Non-EX,Quebec (minus the NCR),21534
+2018,CPA,Non-EX,Saskatchewan,4710
+2018,CPA,Non-EX,Unknown,4426
+2018,CPA,Non-EX,Yukon,306
+2018,CPA,ex   01,Alberta,43
+2018,CPA,ex   01,British Columbia,88
+2018,CPA,ex   01,Manitoba,35
+2018,CPA,ex   01,National Capital Region (NCR),2005
+2018,CPA,ex   01,New Brunswick,36
+2018,CPA,ex   01,Newfoundland and Labrador,22
+2018,CPA,ex   01,Northwest Territories,6
+2018,CPA,ex   01,Nova Scotia,51
+2018,CPA,ex   01,Nunavut,7
+2018,CPA,ex   01,Ontario (minus the NCR),104
+2018,CPA,ex   01,Outside of Canada,130
+2018,CPA,ex   01,Prince Edward Island,31
+2018,CPA,ex   01,Quebec (minus the NCR),105
+2018,CPA,ex   01,Saskatchewan,17
+2018,CPA,ex   01,Unknown,64
+2018,CPA,ex   01,Yukon,6
+2018,CPA,ex   02,Alberta,21
+2018,CPA,ex   02,British Columbia,33
+2018,CPA,ex   02,Manitoba,23
+2018,CPA,ex   02,National Capital Region (NCR),923
+2018,CPA,ex   02,New Brunswick,21
+2018,CPA,ex   02,Newfoundland and Labrador,5
+2018,CPA,ex   02,Northwest Territories,1
+2018,CPA,ex   02,Nova Scotia,20
+2018,CPA,ex   02,Nunavut,2
+2018,CPA,ex   02,Ontario (minus the NCR),52
+2018,CPA,ex   02,Outside of Canada,67
+2018,CPA,ex   02,Prince Edward Island,11
+2018,CPA,ex   02,Quebec (minus the NCR),63
+2018,CPA,ex   02,Saskatchewan,14
+2018,CPA,ex   02,Unknown,50
+2018,CPA,ex   02,Yukon,1
+2018,CPA,ex   03,Alberta,9
+2018,CPA,ex   03,British Columbia,16
+2018,CPA,ex   03,Manitoba,5
+2018,CPA,ex   03,National Capital Region (NCR),727
+2018,CPA,ex   03,New Brunswick,10
+2018,CPA,ex   03,Newfoundland and Labrador,5
+2018,CPA,ex   03,Nova Scotia,7
+2018,CPA,ex   03,Ontario (minus the NCR),12
+2018,CPA,ex   03,Outside of Canada,52
+2018,CPA,ex   03,Prince Edward Island,10
+2018,CPA,ex   03,Quebec (minus the NCR),19
+2018,CPA,ex   03,Saskatchewan,4
+2018,CPA,ex   03,Unknown,33
+2018,CPA,ex   04,Alberta,1
+2018,CPA,ex   04,British Columbia,5
+2018,CPA,ex   04,Manitoba,2
+2018,CPA,ex   04,National Capital Region (NCR),179
+2018,CPA,ex   04,New Brunswick,3
+2018,CPA,ex   04,Newfoundland and Labrador,1
+2018,CPA,ex   04,Nova Scotia,3
+2018,CPA,ex   04,Ontario (minus the NCR),2
+2018,CPA,ex   04,Outside of Canada,7
+2018,CPA,ex   04,Prince Edward Island,1
+2018,CPA,ex   04,Quebec (minus the NCR),6
+2018,CPA,ex   04,Saskatchewan,1
+2018,CPA,ex   04,Unknown,21
+2018,CPA,ex   05,British Columbia,1
+2018,CPA,ex   05,National Capital Region (NCR),80
+2018,CPA,ex   05,Outside of Canada,2
+2018,CPA,ex   05,Prince Edward Island,1
+2018,CPA,ex   05,Quebec (minus the NCR),1
+2018,CPA,ex   05,Unknown,13
+2018,SA,Non-EX,Alberta,4722
+2018,SA,Non-EX,British Columbia,5870
+2018,SA,Non-EX,Manitoba,4099
+2018,SA,Non-EX,National Capital Region (NCR),18210
+2018,SA,Non-EX,New Brunswick,1106
+2018,SA,Non-EX,Newfoundland and Labrador,2031
+2018,SA,Non-EX,Northwest Territories,74
+2018,SA,Non-EX,Nova Scotia,1524
+2018,SA,Non-EX,Nunavut,47
+2018,SA,Non-EX,Ontario (minus the NCR),13070
+2018,SA,Non-EX,Prince Edward Island,1374
+2018,SA,Non-EX,Quebec (minus the NCR),7901
+2018,SA,Non-EX,Saskatchewan,1040
+2018,SA,Non-EX,Unknown,2739
+2018,SA,Non-EX,Yukon,70
+2018,SA,ex   01,Alberta,35
+2018,SA,ex   01,British Columbia,29
+2018,SA,ex   01,Manitoba,13
+2018,SA,ex   01,National Capital Region (NCR),389
+2018,SA,ex   01,New Brunswick,4
+2018,SA,ex   01,Newfoundland and Labrador,7
+2018,SA,ex   01,Nova Scotia,12
+2018,SA,ex   01,Ontario (minus the NCR),96
+2018,SA,ex   01,Prince Edward Island,7
+2018,SA,ex   01,Quebec (minus the NCR),40
+2018,SA,ex   01,Saskatchewan,5
+2018,SA,ex   01,Unknown,2
+2018,SA,ex   02,Alberta,15
+2018,SA,ex   02,British Columbia,19
+2018,SA,ex   02,Manitoba,6
+2018,SA,ex   02,National Capital Region (NCR),226
+2018,SA,ex   02,New Brunswick,3
+2018,SA,ex   02,Newfoundland and Labrador,3
+2018,SA,ex   02,Northwest Territories,1
+2018,SA,ex   02,Nova Scotia,6
+2018,SA,ex   02,Nunavut,1
+2018,SA,ex   02,Ontario (minus the NCR),45
+2018,SA,ex   02,Prince Edward Island,3
+2018,SA,ex   02,Quebec (minus the NCR),34
+2018,SA,ex   02,Saskatchewan,5
+2018,SA,ex   02,Unknown,46
+2018,SA,ex   02,Yukon,2
+2018,SA,ex   03,Alberta,30
+2018,SA,ex   03,British Columbia,6
+2018,SA,ex   03,Manitoba,2
+2018,SA,ex   03,National Capital Region (NCR),144
+2018,SA,ex   03,New Brunswick,1
+2018,SA,ex   03,Newfoundland and Labrador,2
+2018,SA,ex   03,Nova Scotia,3
+2018,SA,ex   03,Ontario (minus the NCR),18
+2018,SA,ex   03,Quebec (minus the NCR),8
+2018,SA,ex   03,Unknown,17
+2018,SA,ex   04,Alberta,4
+2018,SA,ex   04,British Columbia,2
+2018,SA,ex   04,Manitoba,1
+2018,SA,ex   04,National Capital Region (NCR),39
+2018,SA,ex   04,Nova Scotia,2
+2018,SA,ex   04,Ontario (minus the NCR),2
+2018,SA,ex   04,Quebec (minus the NCR),7
+2018,SA,ex   04,Unknown,4
+2018,SA,ex   05,National Capital Region (NCR),30
+2018,SA,ex   05,Ontario (minus the NCR),4
+2018,SA,ex   05,Quebec (minus the NCR),1
+2018,SA,ex   05,Unknown,1
+2019,CPA,Non-EX,Alberta,10573
+2019,CPA,Non-EX,British Columbia,17628
+2019,CPA,Non-EX,Manitoba,6888
+2019,CPA,Non-EX,National Capital Region (NCR),97507
+2019,CPA,Non-EX,New Brunswick,8417
+2019,CPA,Non-EX,Newfoundland and Labrador,3429
+2019,CPA,Non-EX,Northwest Territories,411
+2019,CPA,Non-EX,Nova Scotia,9214
+2019,CPA,Non-EX,Nunavut,234
+2019,CPA,Non-EX,Ontario (minus the NCR),25433
+2019,CPA,Non-EX,Outside of Canada,1161
+2019,CPA,Non-EX,Prince Edward Island,2000
+2019,CPA,Non-EX,Quebec (minus the NCR),22569
+2019,CPA,Non-EX,Saskatchewan,4781
+2019,CPA,Non-EX,Unknown,4128
+2019,CPA,Non-EX,Yukon,316
+2019,CPA,ex   01,Alberta,42
+2019,CPA,ex   01,British Columbia,101
+2019,CPA,ex   01,Manitoba,39
+2019,CPA,ex   01,National Capital Region (NCR),2152
+2019,CPA,ex   01,New Brunswick,41
+2019,CPA,ex   01,Newfoundland and Labrador,18
+2019,CPA,ex   01,Northwest Territories,8
+2019,CPA,ex   01,Nova Scotia,54
+2019,CPA,ex   01,Nunavut,5
+2019,CPA,ex   01,Ontario (minus the NCR),101
+2019,CPA,ex   01,Outside of Canada,127
+2019,CPA,ex   01,Prince Edward Island,24
+2019,CPA,ex   01,Quebec (minus the NCR),106
+2019,CPA,ex   01,Saskatchewan,20
+2019,CPA,ex   01,Unknown,60
+2019,CPA,ex   01,Yukon,2
+2019,CPA,ex   02,Alberta,24
+2019,CPA,ex   02,British Columbia,36
+2019,CPA,ex   02,Manitoba,20
+2019,CPA,ex   02,National Capital Region (NCR),999
+2019,CPA,ex   02,New Brunswick,26
+2019,CPA,ex   02,Newfoundland and Labrador,7
+2019,CPA,ex   02,Northwest Territories,2
+2019,CPA,ex   02,Nova Scotia,23
+2019,CPA,ex   02,Nunavut,2
+2019,CPA,ex   02,Ontario (minus the NCR),56
+2019,CPA,ex   02,Outside of Canada,65
+2019,CPA,ex   02,Prince Edward Island,10
+2019,CPA,ex   02,Quebec (minus the NCR),70
+2019,CPA,ex   02,Saskatchewan,16
+2019,CPA,ex   02,Unknown,35
+2019,CPA,ex   02,Yukon,1
+2019,CPA,ex   03,Alberta,11
+2019,CPA,ex   03,British Columbia,21
+2019,CPA,ex   03,Manitoba,6
+2019,CPA,ex   03,National Capital Region (NCR),799
+2019,CPA,ex   03,New Brunswick,11
+2019,CPA,ex   03,Newfoundland and Labrador,6
+2019,CPA,ex   03,Northwest Territories,1
+2019,CPA,ex   03,Nova Scotia,9
+2019,CPA,ex   03,Nunavut,1
+2019,CPA,ex   03,Ontario (minus the NCR),14
+2019,CPA,ex   03,Outside of Canada,52
+2019,CPA,ex   03,Prince Edward Island,9
+2019,CPA,ex   03,Quebec (minus the NCR),23
+2019,CPA,ex   03,Saskatchewan,5
+2019,CPA,ex   03,Unknown,28
+2019,CPA,ex   04,Alberta,1
+2019,CPA,ex   04,British Columbia,5
+2019,CPA,ex   04,Manitoba,2
+2019,CPA,ex   04,National Capital Region (NCR),187
+2019,CPA,ex   04,New Brunswick,3
+2019,CPA,ex   04,Newfoundland and Labrador,1
+2019,CPA,ex   04,Nova Scotia,3
+2019,CPA,ex   04,Ontario (minus the NCR),2
+2019,CPA,ex   04,Outside of Canada,6
+2019,CPA,ex   04,Prince Edward Island,2
+2019,CPA,ex   04,Quebec (minus the NCR),6
+2019,CPA,ex   04,Saskatchewan,1
+2019,CPA,ex   04,Unknown,15
+2019,CPA,ex   05,National Capital Region (NCR),90
+2019,CPA,ex   05,Ontario (minus the NCR),1
+2019,CPA,ex   05,Outside of Canada,2
+2019,CPA,ex   05,Prince Edward Island,1
+2019,CPA,ex   05,Quebec (minus the NCR),2
+2019,CPA,ex   05,Unknown,8
+2019,SA,Non-EX,Alberta,4816
+2019,SA,Non-EX,British Columbia,6038
+2019,SA,Non-EX,Manitoba,4385
+2019,SA,Non-EX,National Capital Region (NCR),18631
+2019,SA,Non-EX,New Brunswick,1128
+2019,SA,Non-EX,Newfoundland and Labrador,1961
+2019,SA,Non-EX,Northwest Territories,82
+2019,SA,Non-EX,Nova Scotia,1554
+2019,SA,Non-EX,Nunavut,52
+2019,SA,Non-EX,Ontario (minus the NCR),13843
+2019,SA,Non-EX,Prince Edward Island,1525
+2019,SA,Non-EX,Quebec (minus the NCR),7962
+2019,SA,Non-EX,Saskatchewan,1088
+2019,SA,Non-EX,Unknown,3081
+2019,SA,Non-EX,Yukon,78
+2019,SA,ex   01,Alberta,36
+2019,SA,ex   01,British Columbia,33
+2019,SA,ex   01,Manitoba,16
+2019,SA,ex   01,National Capital Region (NCR),414
+2019,SA,ex   01,New Brunswick,6
+2019,SA,ex   01,Newfoundland and Labrador,9
+2019,SA,ex   01,Nova Scotia,12
+2019,SA,ex   01,Ontario (minus the NCR),97
+2019,SA,ex   01,Prince Edward Island,6
+2019,SA,ex   01,Quebec (minus the NCR),39
+2019,SA,ex   01,Saskatchewan,6
+2019,SA,ex   01,Unknown,4
+2019,SA,ex   02,Alberta,18
+2019,SA,ex   02,British Columbia,16
+2019,SA,ex   02,Manitoba,7
+2019,SA,ex   02,National Capital Region (NCR),234
+2019,SA,ex   02,New Brunswick,5
+2019,SA,ex   02,Newfoundland and Labrador,4
+2019,SA,ex   02,Northwest Territories,2
+2019,SA,ex   02,Nova Scotia,6
+2019,SA,ex   02,Nunavut,2
+2019,SA,ex   02,Ontario (minus the NCR),49
+2019,SA,ex   02,Prince Edward Island,3
+2019,SA,ex   02,Quebec (minus the NCR),35
+2019,SA,ex   02,Saskatchewan,4
+2019,SA,ex   02,Unknown,43
+2019,SA,ex   02,Yukon,1
+2019,SA,ex   03,Alberta,31
+2019,SA,ex   03,British Columbia,6
+2019,SA,ex   03,Manitoba,1
+2019,SA,ex   03,National Capital Region (NCR),136
+2019,SA,ex   03,New Brunswick,1
+2019,SA,ex   03,Newfoundland and Labrador,2
+2019,SA,ex   03,Nova Scotia,2
+2019,SA,ex   03,Ontario (minus the NCR),16
+2019,SA,ex   03,Quebec (minus the NCR),7
+2019,SA,ex   03,Unknown,12
+2019,SA,ex   04,Alberta,7
+2019,SA,ex   04,British Columbia,6
+2019,SA,ex   04,Manitoba,2
+2019,SA,ex   04,National Capital Region (NCR),43
+2019,SA,ex   04,Newfoundland and Labrador,1
+2019,SA,ex   04,Nova Scotia,3
+2019,SA,ex   04,Ontario (minus the NCR),2
+2019,SA,ex   04,Quebec (minus the NCR),7
+2019,SA,ex   04,Unknown,6
+2019,SA,ex   05,National Capital Region (NCR),38
+2019,SA,ex   05,Ontario (minus the NCR),5
+2019,SA,ex   05,Quebec (minus the NCR),1
+2019,SA,ex   05,Unknown,2
+2020,CPA,Non-EX,Alberta,11067
+2020,CPA,Non-EX,British Columbia,18298
+2020,CPA,Non-EX,Manitoba,7174
+2020,CPA,Non-EX,National Capital Region (NCR),102412
+2020,CPA,Non-EX,New Brunswick,8847
+2020,CPA,Non-EX,Newfoundland and Labrador,3677
+2020,CPA,Non-EX,Northwest Territories,412
+2020,CPA,Non-EX,Nova Scotia,9422
+2020,CPA,Non-EX,Nunavut,248
+2020,CPA,Non-EX,Ontario (minus the NCR),26835
+2020,CPA,Non-EX,Outside of Canada,1236
+2020,CPA,Non-EX,Prince Edward Island,2108
+2020,CPA,Non-EX,Quebec (minus the NCR),23311
+2020,CPA,Non-EX,Saskatchewan,4950
+2020,CPA,Non-EX,Unknown,4922
+2020,CPA,Non-EX,Yukon,335
+2020,CPA,ex   01,Alberta,41
+2020,CPA,ex   01,British Columbia,113
+2020,CPA,ex   01,Manitoba,46
+2020,CPA,ex   01,National Capital Region (NCR),2263
+2020,CPA,ex   01,New Brunswick,46
+2020,CPA,ex   01,Newfoundland and Labrador,23
+2020,CPA,ex   01,Northwest Territories,7
+2020,CPA,ex   01,Nova Scotia,59
+2020,CPA,ex   01,Nunavut,6
+2020,CPA,ex   01,Ontario (minus the NCR),110
+2020,CPA,ex   01,Outside of Canada,124
+2020,CPA,ex   01,Prince Edward Island,24
+2020,CPA,ex   01,Quebec (minus the NCR),114
+2020,CPA,ex   01,Saskatchewan,18
+2020,CPA,ex   01,Unknown,75
+2020,CPA,ex   01,Yukon,5
+2020,CPA,ex   02,Alberta,21
+2020,CPA,ex   02,British Columbia,43
+2020,CPA,ex   02,Manitoba,25
+2020,CPA,ex   02,National Capital Region (NCR),1060
+2020,CPA,ex   02,New Brunswick,24
+2020,CPA,ex   02,Newfoundland and Labrador,7
+2020,CPA,ex   02,Northwest Territories,2
+2020,CPA,ex   02,Nova Scotia,22
+2020,CPA,ex   02,Nunavut,1
+2020,CPA,ex   02,Ontario (minus the NCR),55
+2020,CPA,ex   02,Outside of Canada,69
+2020,CPA,ex   02,Prince Edward Island,15
+2020,CPA,ex   02,Quebec (minus the NCR),72
+2020,CPA,ex   02,Saskatchewan,13
+2020,CPA,ex   02,Unknown,37
+2020,CPA,ex   02,Yukon,1
+2020,CPA,ex   03,Alberta,9
+2020,CPA,ex   03,British Columbia,17
+2020,CPA,ex   03,Manitoba,6
+2020,CPA,ex   03,National Capital Region (NCR),830
+2020,CPA,ex   03,New Brunswick,12
+2020,CPA,ex   03,Newfoundland and Labrador,5
+2020,CPA,ex   03,Northwest Territories,1
+2020,CPA,ex   03,Nova Scotia,10
+2020,CPA,ex   03,Nunavut,2
+2020,CPA,ex   03,Ontario (minus the NCR),13
+2020,CPA,ex   03,Outside of Canada,53
+2020,CPA,ex   03,Prince Edward Island,8
+2020,CPA,ex   03,Quebec (minus the NCR),22
+2020,CPA,ex   03,Saskatchewan,5
+2020,CPA,ex   03,Unknown,35
+2020,CPA,ex   04,Alberta,1
+2020,CPA,ex   04,British Columbia,5
+2020,CPA,ex   04,Manitoba,2
+2020,CPA,ex   04,National Capital Region (NCR),195
+2020,CPA,ex   04,New Brunswick,3
+2020,CPA,ex   04,Newfoundland and Labrador,1
+2020,CPA,ex   04,Nova Scotia,3
+2020,CPA,ex   04,Ontario (minus the NCR),3
+2020,CPA,ex   04,Outside of Canada,8
+2020,CPA,ex   04,Prince Edward Island,2
+2020,CPA,ex   04,Quebec (minus the NCR),6
+2020,CPA,ex   04,Saskatchewan,1
+2020,CPA,ex   04,Unknown,11
+2020,CPA,ex   05,National Capital Region (NCR),97
+2020,CPA,ex   05,Outside of Canada,2
+2020,CPA,ex   05,Prince Edward Island,1
+2020,CPA,ex   05,Unknown,12
+2020,SA,Non-EX,Alberta,4866
+2020,SA,Non-EX,British Columbia,6214
+2020,SA,Non-EX,Manitoba,4343
+2020,SA,Non-EX,National Capital Region (NCR),19359
+2020,SA,Non-EX,New Brunswick,1185
+2020,SA,Non-EX,Newfoundland and Labrador,2003
+2020,SA,Non-EX,Northwest Territories,91
+2020,SA,Non-EX,Nova Scotia,1607
+2020,SA,Non-EX,Nunavut,59
+2020,SA,Non-EX,Ontario (minus the NCR),13904
+2020,SA,Non-EX,Prince Edward Island,1501
+2020,SA,Non-EX,Quebec (minus the NCR),8151
+2020,SA,Non-EX,Saskatchewan,1090
+2020,SA,Non-EX,Unknown,3369
+2020,SA,Non-EX,Yukon,78
+2020,SA,ex   01,Alberta,34
+2020,SA,ex   01,British Columbia,31
+2020,SA,ex   01,Manitoba,17
+2020,SA,ex   01,National Capital Region (NCR),406
+2020,SA,ex   01,New Brunswick,7
+2020,SA,ex   01,Newfoundland and Labrador,7
+2020,SA,ex   01,Nova Scotia,14
+2020,SA,ex   01,Ontario (minus the NCR),96
+2020,SA,ex   01,Prince Edward Island,5
+2020,SA,ex   01,Quebec (minus the NCR),41
+2020,SA,ex   01,Saskatchewan,6
+2020,SA,ex   01,Unknown,4
+2020,SA,ex   02,Alberta,11
+2020,SA,ex   02,British Columbia,20
+2020,SA,ex   02,Manitoba,10
+2020,SA,ex   02,National Capital Region (NCR),243
+2020,SA,ex   02,New Brunswick,4
+2020,SA,ex   02,Newfoundland and Labrador,4
+2020,SA,ex   02,Northwest Territories,2
+2020,SA,ex   02,Nova Scotia,6
+2020,SA,ex   02,Nunavut,1
+2020,SA,ex   02,Ontario (minus the NCR),53
+2020,SA,ex   02,Prince Edward Island,3
+2020,SA,ex   02,Quebec (minus the NCR),36
+2020,SA,ex   02,Saskatchewan,5
+2020,SA,ex   02,Unknown,43
+2020,SA,ex   02,Yukon,1
+2020,SA,ex   03,Alberta,30
+2020,SA,ex   03,British Columbia,6
+2020,SA,ex   03,Manitoba,1
+2020,SA,ex   03,National Capital Region (NCR),146
+2020,SA,ex   03,New Brunswick,1
+2020,SA,ex   03,Newfoundland and Labrador,2
+2020,SA,ex   03,Nova Scotia,2
+2020,SA,ex   03,Ontario (minus the NCR),18
+2020,SA,ex   03,Quebec (minus the NCR),6
+2020,SA,ex   03,Unknown,15
+2020,SA,ex   04,Alberta,8
+2020,SA,ex   04,British Columbia,3
+2020,SA,ex   04,National Capital Region (NCR),40
+2020,SA,ex   04,Newfoundland and Labrador,1
+2020,SA,ex   04,Nova Scotia,3
+2020,SA,ex   04,Ontario (minus the NCR),1
+2020,SA,ex   04,Quebec (minus the NCR),7
+2020,SA,ex   04,Unknown,5
+2020,SA,ex   05,Manitoba,1
+2020,SA,ex   05,National Capital Region (NCR),41
+2020,SA,ex   05,Ontario (minus the NCR),4
+2020,SA,ex   05,Quebec (minus the NCR),1
+2020,SA,ex   05,Unknown,2
+2021,CPA,Non-EX,Alberta,11825
+2021,CPA,Non-EX,British Columbia,19674
+2021,CPA,Non-EX,Manitoba,7557
+2021,CPA,Non-EX,National Capital Region (NCR),108805
+2021,CPA,Non-EX,New Brunswick,9421
+2021,CPA,Non-EX,Newfoundland and Labrador,4309
+2021,CPA,Non-EX,Northwest Territories,457
+2021,CPA,Non-EX,Nova Scotia,9938
+2021,CPA,Non-EX,Nunavut,265
+2021,CPA,Non-EX,Ontario (minus the NCR),28483
+2021,CPA,Non-EX,Outside of Canada,1096
+2021,CPA,Non-EX,Prince Edward Island,2293
+2021,CPA,Non-EX,Quebec (minus the NCR),24984
+2021,CPA,Non-EX,Saskatchewan,5124
+2021,CPA,Non-EX,Unknown,4743
+2021,CPA,Non-EX,Yukon,344
+2021,CPA,ex   01,Alberta,46
+2021,CPA,ex   01,British Columbia,134
+2021,CPA,ex   01,Manitoba,52
+2021,CPA,ex   01,National Capital Region (NCR),2455
+2021,CPA,ex   01,New Brunswick,62
+2021,CPA,ex   01,Newfoundland and Labrador,23
+2021,CPA,ex   01,Northwest Territories,5
+2021,CPA,ex   01,Nova Scotia,59
+2021,CPA,ex   01,Nunavut,5
+2021,CPA,ex   01,Ontario (minus the NCR),126
+2021,CPA,ex   01,Outside of Canada,107
+2021,CPA,ex   01,Prince Edward Island,29
+2021,CPA,ex   01,Quebec (minus the NCR),118
+2021,CPA,ex   01,Saskatchewan,21
+2021,CPA,ex   01,Unknown,68
+2021,CPA,ex   01,Yukon,5
+2021,CPA,ex   02,Alberta,25
+2021,CPA,ex   02,British Columbia,41
+2021,CPA,ex   02,Manitoba,19
+2021,CPA,ex   02,National Capital Region (NCR),1221
+2021,CPA,ex   02,New Brunswick,24
+2021,CPA,ex   02,Newfoundland and Labrador,7
+2021,CPA,ex   02,Northwest Territories,2
+2021,CPA,ex   02,Nova Scotia,22
+2021,CPA,ex   02,Nunavut,1
+2021,CPA,ex   02,Ontario (minus the NCR),62
+2021,CPA,ex   02,Outside of Canada,61
+2021,CPA,ex   02,Prince Edward Island,12
+2021,CPA,ex   02,Quebec (minus the NCR),69
+2021,CPA,ex   02,Saskatchewan,14
+2021,CPA,ex   02,Unknown,37
+2021,CPA,ex   02,Yukon,1
+2021,CPA,ex   03,Alberta,11
+2021,CPA,ex   03,British Columbia,18
+2021,CPA,ex   03,Manitoba,5
+2021,CPA,ex   03,National Capital Region (NCR),900
+2021,CPA,ex   03,New Brunswick,13
+2021,CPA,ex   03,Newfoundland and Labrador,6
+2021,CPA,ex   03,Northwest Territories,1
+2021,CPA,ex   03,Nova Scotia,13
+2021,CPA,ex   03,Nunavut,2
+2021,CPA,ex   03,Ontario (minus the NCR),15
+2021,CPA,ex   03,Outside of Canada,49
+2021,CPA,ex   03,Prince Edward Island,10
+2021,CPA,ex   03,Quebec (minus the NCR),31
+2021,CPA,ex   03,Saskatchewan,5
+2021,CPA,ex   03,Unknown,33
+2021,CPA,ex   04,Alberta,1
+2021,CPA,ex   04,British Columbia,4
+2021,CPA,ex   04,Manitoba,2
+2021,CPA,ex   04,National Capital Region (NCR),210
+2021,CPA,ex   04,New Brunswick,3
+2021,CPA,ex   04,Newfoundland and Labrador,1
+2021,CPA,ex   04,Nova Scotia,5
+2021,CPA,ex   04,Ontario (minus the NCR),3
+2021,CPA,ex   04,Outside of Canada,8
+2021,CPA,ex   04,Prince Edward Island,3
+2021,CPA,ex   04,Quebec (minus the NCR),6
+2021,CPA,ex   04,Saskatchewan,1
+2021,CPA,ex   04,Unknown,9
+2021,CPA,ex   05,National Capital Region (NCR),110
+2021,CPA,ex   05,Outside of Canada,2
+2021,CPA,ex   05,Quebec (minus the NCR),1
+2021,CPA,ex   05,Unknown,7
+2021,SA,Non-EX,Alberta,5524
+2021,SA,Non-EX,British Columbia,6538
+2021,SA,Non-EX,Manitoba,4492
+2021,SA,Non-EX,National Capital Region (NCR),20188
+2021,SA,Non-EX,New Brunswick,1345
+2021,SA,Non-EX,Newfoundland and Labrador,2492
+2021,SA,Non-EX,Northwest Territories,104
+2021,SA,Non-EX,Nova Scotia,1743
+2021,SA,Non-EX,Nunavut,60
+2021,SA,Non-EX,Ontario (minus the NCR),14626
+2021,SA,Non-EX,Prince Edward Island,1532
+2021,SA,Non-EX,Quebec (minus the NCR),8674
+2021,SA,Non-EX,Saskatchewan,1066
+2021,SA,Non-EX,Unknown,3851
+2021,SA,Non-EX,Yukon,76
+2021,SA,ex   01,Alberta,21
+2021,SA,ex   01,British Columbia,24
+2021,SA,ex   01,Manitoba,14
+2021,SA,ex   01,National Capital Region (NCR),441
+2021,SA,ex   01,New Brunswick,6
+2021,SA,ex   01,Newfoundland and Labrador,6
+2021,SA,ex   01,Nova Scotia,13
+2021,SA,ex   01,Ontario (minus the NCR),103
+2021,SA,ex   01,Prince Edward Island,5
+2021,SA,ex   01,Quebec (minus the NCR),36
+2021,SA,ex   01,Saskatchewan,5
+2021,SA,ex   01,Unknown,10
+2021,SA,ex   02,Alberta,16
+2021,SA,ex   02,British Columbia,23
+2021,SA,ex   02,Manitoba,11
+2021,SA,ex   02,National Capital Region (NCR),255
+2021,SA,ex   02,New Brunswick,6
+2021,SA,ex   02,Newfoundland and Labrador,5
+2021,SA,ex   02,Northwest Territories,1
+2021,SA,ex   02,Nova Scotia,7
+2021,SA,ex   02,Nunavut,1
+2021,SA,ex   02,Ontario (minus the NCR),60
+2021,SA,ex   02,Prince Edward Island,4
+2021,SA,ex   02,Quebec (minus the NCR),45
+2021,SA,ex   02,Saskatchewan,5
+2021,SA,ex   02,Unknown,58
+2021,SA,ex   02,Yukon,1
+2021,SA,ex   03,Alberta,35
+2021,SA,ex   03,British Columbia,6
+2021,SA,ex   03,Manitoba,2
+2021,SA,ex   03,National Capital Region (NCR),142
+2021,SA,ex   03,New Brunswick,1
+2021,SA,ex   03,Newfoundland and Labrador,2
+2021,SA,ex   03,Northwest Territories,1
+2021,SA,ex   03,Nova Scotia,3
+2021,SA,ex   03,Ontario (minus the NCR),20
+2021,SA,ex   03,Quebec (minus the NCR),5
+2021,SA,ex   03,Unknown,22
+2021,SA,ex   04,Alberta,7
+2021,SA,ex   04,British Columbia,2
+2021,SA,ex   04,Manitoba,1
+2021,SA,ex   04,National Capital Region (NCR),47
+2021,SA,ex   04,Newfoundland and Labrador,1
+2021,SA,ex   04,Nova Scotia,3
+2021,SA,ex   04,Ontario (minus the NCR),1
+2021,SA,ex   04,Quebec (minus the NCR),10
+2021,SA,ex   04,Saskatchewan,1
+2021,SA,ex   04,Unknown,5
+2021,SA,ex   05,Manitoba,1
+2021,SA,ex   05,National Capital Region (NCR),43
+2021,SA,ex   05,Ontario (minus the NCR),4
+2021,SA,ex   05,Quebec (minus the NCR),2
+2021,SA,ex   05,Unknown,2
+2022,CPA,Non-EX,Alberta,12207
+2022,CPA,Non-EX,British Columbia,19750
+2022,CPA,Non-EX,Manitoba,7752
+2022,CPA,Non-EX,National Capital Region (NCR),114132
+2022,CPA,Non-EX,New Brunswick,9866
+2022,CPA,Non-EX,Newfoundland and Labrador,4309
+2022,CPA,Non-EX,Northwest Territories,455
+2022,CPA,Non-EX,Nova Scotia,10199
+2022,CPA,Non-EX,Nunavut,278
+2022,CPA,Non-EX,Ontario (minus the NCR),29282
+2022,CPA,Non-EX,Outside of Canada,1231
+2022,CPA,Non-EX,Prince Edward Island,2245
+2022,CPA,Non-EX,Quebec (minus the NCR),25950
+2022,CPA,Non-EX,Saskatchewan,5142
+2022,CPA,Non-EX,Unknown,4304
+2022,CPA,Non-EX,Yukon,337
+2022,CPA,ex   01,Alberta,52
+2022,CPA,ex   01,British Columbia,149
+2022,CPA,ex   01,Manitoba,54
+2022,CPA,ex   01,National Capital Region (NCR),2609
+2022,CPA,ex   01,New Brunswick,70
+2022,CPA,ex   01,Newfoundland and Labrador,25
+2022,CPA,ex   01,Northwest Territories,7
+2022,CPA,ex   01,Nova Scotia,72
+2022,CPA,ex   01,Nunavut,6
+2022,CPA,ex   01,Ontario (minus the NCR),137
+2022,CPA,ex   01,Outside of Canada,127
+2022,CPA,ex   01,Prince Edward Island,29
+2022,CPA,ex   01,Quebec (minus the NCR),142
+2022,CPA,ex   01,Saskatchewan,21
+2022,CPA,ex   01,Unknown,67
+2022,CPA,ex   01,Yukon,6
+2022,CPA,ex   02,Alberta,25
+2022,CPA,ex   02,British Columbia,43
+2022,CPA,ex   02,Manitoba,24
+2022,CPA,ex   02,National Capital Region (NCR),1319
+2022,CPA,ex   02,New Brunswick,28
+2022,CPA,ex   02,Newfoundland and Labrador,12
+2022,CPA,ex   02,Northwest Territories,2
+2022,CPA,ex   02,Nova Scotia,23
+2022,CPA,ex   02,Nunavut,1
+2022,CPA,ex   02,Ontario (minus the NCR),59
+2022,CPA,ex   02,Outside of Canada,60
+2022,CPA,ex   02,Prince Edward Island,15
+2022,CPA,ex   02,Quebec (minus the NCR),74
+2022,CPA,ex   02,Saskatchewan,13
+2022,CPA,ex   02,Unknown,35
+2022,CPA,ex   02,Yukon,1
+2022,CPA,ex   03,Alberta,10
+2022,CPA,ex   03,British Columbia,20
+2022,CPA,ex   03,Manitoba,8
+2022,CPA,ex   03,National Capital Region (NCR),961
+2022,CPA,ex   03,New Brunswick,10
+2022,CPA,ex   03,Newfoundland and Labrador,8
+2022,CPA,ex   03,Northwest Territories,1
+2022,CPA,ex   03,Nova Scotia,13
+2022,CPA,ex   03,Nunavut,2
+2022,CPA,ex   03,Ontario (minus the NCR),20
+2022,CPA,ex   03,Outside of Canada,53
+2022,CPA,ex   03,Prince Edward Island,9
+2022,CPA,ex   03,Quebec (minus the NCR),29
+2022,CPA,ex   03,Saskatchewan,7
+2022,CPA,ex   03,Unknown,30
+2022,CPA,ex   04,Alberta,1
+2022,CPA,ex   04,British Columbia,8
+2022,CPA,ex   04,Manitoba,2
+2022,CPA,ex   04,National Capital Region (NCR),209
+2022,CPA,ex   04,New Brunswick,4
+2022,CPA,ex   04,Newfoundland and Labrador,1
+2022,CPA,ex   04,Nova Scotia,4
+2022,CPA,ex   04,Ontario (minus the NCR),4
+2022,CPA,ex   04,Outside of Canada,7
+2022,CPA,ex   04,Prince Edward Island,3
+2022,CPA,ex   04,Quebec (minus the NCR),7
+2022,CPA,ex   04,Saskatchewan,2
+2022,CPA,ex   04,Unknown,19
+2022,CPA,ex   05,National Capital Region (NCR),101
+2022,CPA,ex   05,Unknown,10
+2022,SA,Non-EX,Alberta,6048
+2022,SA,Non-EX,British Columbia,7611
+2022,SA,Non-EX,Manitoba,5198
+2022,SA,Non-EX,National Capital Region (NCR),21439
+2022,SA,Non-EX,New Brunswick,1726
+2022,SA,Non-EX,Newfoundland and Labrador,3372
+2022,SA,Non-EX,Northwest Territories,108
+2022,SA,Non-EX,Nova Scotia,1841
+2022,SA,Non-EX,Nunavut,65
+2022,SA,Non-EX,Ontario (minus the NCR),15361
+2022,SA,Non-EX,Prince Edward Island,1701
+2022,SA,Non-EX,Quebec (minus the NCR),10000
+2022,SA,Non-EX,Saskatchewan,1132
+2022,SA,Non-EX,Unknown,4323
+2022,SA,Non-EX,Yukon,87
+2022,SA,ex   01,Alberta,28
+2022,SA,ex   01,British Columbia,26
+2022,SA,ex   01,Manitoba,11
+2022,SA,ex   01,National Capital Region (NCR),456
+2022,SA,ex   01,New Brunswick,7
+2022,SA,ex   01,Newfoundland and Labrador,11
+2022,SA,ex   01,Nova Scotia,15
+2022,SA,ex   01,Ontario (minus the NCR),103
+2022,SA,ex   01,Prince Edward Island,5
+2022,SA,ex   01,Quebec (minus the NCR),36
+2022,SA,ex   01,Saskatchewan,5
+2022,SA,ex   01,Unknown,24
+2022,SA,ex   02,Alberta,16
+2022,SA,ex   02,British Columbia,23
+2022,SA,ex   02,Manitoba,12
+2022,SA,ex   02,National Capital Region (NCR),272
+2022,SA,ex   02,New Brunswick,8
+2022,SA,ex   02,Newfoundland and Labrador,5
+2022,SA,ex   02,Northwest Territories,1
+2022,SA,ex   02,Nova Scotia,6
+2022,SA,ex   02,Ontario (minus the NCR),60
+2022,SA,ex   02,Prince Edward Island,3
+2022,SA,ex   02,Quebec (minus the NCR),44
+2022,SA,ex   02,Saskatchewan,6
+2022,SA,ex   02,Unknown,61
+2022,SA,ex   02,Yukon,1
+2022,SA,ex   03,Alberta,31
+2022,SA,ex   03,British Columbia,8
+2022,SA,ex   03,Manitoba,2
+2022,SA,ex   03,National Capital Region (NCR),168
+2022,SA,ex   03,New Brunswick,1
+2022,SA,ex   03,Newfoundland and Labrador,1
+2022,SA,ex   03,Northwest Territories,1
+2022,SA,ex   03,Nova Scotia,3
+2022,SA,ex   03,Nunavut,1
+2022,SA,ex   03,Ontario (minus the NCR),19
+2022,SA,ex   03,Quebec (minus the NCR),6
+2022,SA,ex   03,Unknown,27
+2022,SA,ex   03,Yukon,1
+2022,SA,ex   04,Alberta,6
+2022,SA,ex   04,British Columbia,3
+2022,SA,ex   04,Manitoba,1
+2022,SA,ex   04,National Capital Region (NCR),42
+2022,SA,ex   04,Newfoundland and Labrador,1
+2022,SA,ex   04,Nova Scotia,5
+2022,SA,ex   04,Ontario (minus the NCR),1
+2022,SA,ex   04,Quebec (minus the NCR),7
+2022,SA,ex   04,Unknown,8
+2022,SA,ex   05,Manitoba,1
+2022,SA,ex   05,National Capital Region (NCR),39
+2022,SA,ex   05,Ontario (minus the NCR),2
+2022,SA,ex   05,Quebec (minus the NCR),3
+2022,SA,ex   05,Unknown,3
+2023,CPA,Non-EX,Alberta,12956
+2023,CPA,Non-EX,British Columbia,20964
+2023,CPA,Non-EX,Manitoba,8268
+2023,CPA,Non-EX,National Capital Region (NCR),121970
+2023,CPA,Non-EX,New Brunswick,10564
+2023,CPA,Non-EX,Newfoundland and Labrador,4341
+2023,CPA,Non-EX,Northwest Territories,471
+2023,CPA,Non-EX,Nova Scotia,10978
+2023,CPA,Non-EX,Nunavut,285
+2023,CPA,Non-EX,Ontario (minus the NCR),31792
+2023,CPA,Non-EX,Outside of Canada,1277
+2023,CPA,Non-EX,Prince Edward Island,2481
+2023,CPA,Non-EX,Quebec (minus the NCR),28014
+2023,CPA,Non-EX,Saskatchewan,5397
+2023,CPA,Non-EX,Unknown,3348
+2023,CPA,Non-EX,Yukon,372
+2023,CPA,ex   01,Alberta,64
+2023,CPA,ex   01,British Columbia,157
+2023,CPA,ex   01,Manitoba,60
+2023,CPA,ex   01,National Capital Region (NCR),2773
+2023,CPA,ex   01,New Brunswick,75
+2023,CPA,ex   01,Newfoundland and Labrador,28
+2023,CPA,ex   01,Northwest Territories,6
+2023,CPA,ex   01,Nova Scotia,86
+2023,CPA,ex   01,Nunavut,8
+2023,CPA,ex   01,Ontario (minus the NCR),144
+2023,CPA,ex   01,Outside of Canada,130
+2023,CPA,ex   01,Prince Edward Island,30
+2023,CPA,ex   01,Quebec (minus the NCR),163
+2023,CPA,ex   01,Saskatchewan,19
+2023,CPA,ex   01,Unknown,74
+2023,CPA,ex   01,Yukon,6
+2023,CPA,ex   02,Alberta,25
+2023,CPA,ex   02,British Columbia,56
+2023,CPA,ex   02,Manitoba,28
+2023,CPA,ex   02,National Capital Region (NCR),1366
+2023,CPA,ex   02,New Brunswick,37
+2023,CPA,ex   02,Newfoundland and Labrador,10
+2023,CPA,ex   02,Northwest Territories,2
+2023,CPA,ex   02,Nova Scotia,21
+2023,CPA,ex   02,Nunavut,1
+2023,CPA,ex   02,Ontario (minus the NCR),75
+2023,CPA,ex   02,Outside of Canada,67
+2023,CPA,ex   02,Prince Edward Island,20
+2023,CPA,ex   02,Quebec (minus the NCR),86
+2023,CPA,ex   02,Saskatchewan,10
+2023,CPA,ex   02,Unknown,35
+2023,CPA,ex   02,Yukon,2
+2023,CPA,ex   03,Alberta,10
+2023,CPA,ex   03,British Columbia,26
+2023,CPA,ex   03,Manitoba,8
+2023,CPA,ex   03,National Capital Region (NCR),1013
+2023,CPA,ex   03,New Brunswick,11
+2023,CPA,ex   03,Newfoundland and Labrador,8
+2023,CPA,ex   03,Nova Scotia,13
+2023,CPA,ex   03,Nunavut,1
+2023,CPA,ex   03,Ontario (minus the NCR),22
+2023,CPA,ex   03,Outside of Canada,56
+2023,CPA,ex   03,Prince Edward Island,10
+2023,CPA,ex   03,Quebec (minus the NCR),40
+2023,CPA,ex   03,Saskatchewan,8
+2023,CPA,ex   03,Unknown,41
+2023,CPA,ex   03,Yukon,2
+2023,CPA,ex   04,Alberta,2
+2023,CPA,ex   04,British Columbia,6
+2023,CPA,ex   04,Manitoba,2
+2023,CPA,ex   04,National Capital Region (NCR),213
+2023,CPA,ex   04,New Brunswick,3
+2023,CPA,ex   04,Newfoundland and Labrador,1
+2023,CPA,ex   04,Nova Scotia,4
+2023,CPA,ex   04,Ontario (minus the NCR),4
+2023,CPA,ex   04,Outside of Canada,9
+2023,CPA,ex   04,Prince Edward Island,2
+2023,CPA,ex   04,Quebec (minus the NCR),5
+2023,CPA,ex   04,Saskatchewan,2
+2023,CPA,ex   04,Unknown,17
+2023,CPA,ex   05,British Columbia,1
+2023,CPA,ex   05,National Capital Region (NCR),105
+2023,CPA,ex   05,Outside of Canada,1
+2023,CPA,ex   05,Prince Edward Island,1
+2023,CPA,ex   05,Quebec (minus the NCR),1
+2023,CPA,ex   05,Unknown,8
+2023,SA,Non-EX,Alberta,6340
+2023,SA,Non-EX,British Columbia,7985
+2023,SA,Non-EX,Manitoba,5011
+2023,SA,Non-EX,National Capital Region (NCR),23455
+2023,SA,Non-EX,New Brunswick,1725
+2023,SA,Non-EX,Newfoundland and Labrador,3446
+2023,SA,Non-EX,Northwest Territories,115
+2023,SA,Non-EX,Nova Scotia,1872
+2023,SA,Non-EX,Nunavut,70
+2023,SA,Non-EX,Ontario (minus the NCR),16506
+2023,SA,Non-EX,Prince Edward Island,1740
+2023,SA,Non-EX,Quebec (minus the NCR),10495
+2023,SA,Non-EX,Saskatchewan,1151
+2023,SA,Non-EX,Unknown,4695
+2023,SA,Non-EX,Yukon,94
+2023,SA,ex   01,Alberta,22
+2023,SA,ex   01,British Columbia,23
+2023,SA,ex   01,Manitoba,10
+2023,SA,ex   01,National Capital Region (NCR),494
+2023,SA,ex   01,New Brunswick,5
+2023,SA,ex   01,Newfoundland and Labrador,11
+2023,SA,ex   01,Nova Scotia,11
+2023,SA,ex   01,Ontario (minus the NCR),117
+2023,SA,ex   01,Prince Edward Island,5
+2023,SA,ex   01,Quebec (minus the NCR),40
+2023,SA,ex   01,Saskatchewan,4
+2023,SA,ex   01,Unknown,28
+2023,SA,ex   02,Alberta,15
+2023,SA,ex   02,British Columbia,29
+2023,SA,ex   02,Manitoba,12
+2023,SA,ex   02,National Capital Region (NCR),282
+2023,SA,ex   02,New Brunswick,9
+2023,SA,ex   02,Newfoundland and Labrador,5
+2023,SA,ex   02,Northwest Territories,1
+2023,SA,ex   02,Nova Scotia,13
+2023,SA,ex   02,Ontario (minus the NCR),62
+2023,SA,ex   02,Prince Edward Island,2
+2023,SA,ex   02,Quebec (minus the NCR),46
+2023,SA,ex   02,Saskatchewan,5
+2023,SA,ex   02,Unknown,72
+2023,SA,ex   03,Alberta,39
+2023,SA,ex   03,British Columbia,6
+2023,SA,ex   03,Manitoba,3
+2023,SA,ex   03,National Capital Region (NCR),177
+2023,SA,ex   03,New Brunswick,2
+2023,SA,ex   03,Newfoundland and Labrador,1
+2023,SA,ex   03,Northwest Territories,1
+2023,SA,ex   03,Nova Scotia,3
+2023,SA,ex   03,Nunavut,1
+2023,SA,ex   03,Ontario (minus the NCR),21
+2023,SA,ex   03,Prince Edward Island,1
+2023,SA,ex   03,Quebec (minus the NCR),9
+2023,SA,ex   03,Saskatchewan,1
+2023,SA,ex   03,Unknown,28
+2023,SA,ex   03,Yukon,1
+2023,SA,ex   04,Alberta,6
+2023,SA,ex   04,British Columbia,2
+2023,SA,ex   04,Manitoba,1
+2023,SA,ex   04,National Capital Region (NCR),48
+2023,SA,ex   04,Newfoundland and Labrador,1
+2023,SA,ex   04,Nova Scotia,3
+2023,SA,ex   04,Ontario (minus the NCR),2
+2023,SA,ex   04,Quebec (minus the NCR),9
+2023,SA,ex   04,Unknown,7
+2023,SA,ex   05,British Columbia,2
+2023,SA,ex   05,National Capital Region (NCR),40
+2023,SA,ex   05,Nova Scotia,1
+2023,SA,ex   05,Ontario (minus the NCR),4
+2023,SA,ex   05,Quebec (minus the NCR),2
+2023,SA,ex   05,Unknown,4
+2024,CPA,Non-EX,Alberta,13754
+2024,CPA,Non-EX,British Columbia,21930
+2024,CPA,Non-EX,Manitoba,8880
+2024,CPA,Non-EX,National Capital Region (NCR),124279
+2024,CPA,Non-EX,New Brunswick,11589
+2024,CPA,Non-EX,Newfoundland and Labrador,4402
+2024,CPA,Non-EX,Northwest Territories,491
+2024,CPA,Non-EX,Nova Scotia,11583
+2024,CPA,Non-EX,Nunavut,292
+2024,CPA,Non-EX,Ontario (minus the NCR),34232
+2024,CPA,Non-EX,Outside of Canada,1309
+2024,CPA,Non-EX,Prince Edward Island,2553
+2024,CPA,Non-EX,Quebec (minus the NCR),29505
+2024,CPA,Non-EX,Saskatchewan,5663
+2024,CPA,Non-EX,Unknown,3883
+2024,CPA,Non-EX,Yukon,391
+2024,CPA,ex   01,Alberta,59
+2024,CPA,ex   01,British Columbia,151
+2024,CPA,ex   01,Manitoba,54
+2024,CPA,ex   01,National Capital Region (NCR),2804
+2024,CPA,ex   01,New Brunswick,79
+2024,CPA,ex   01,Newfoundland and Labrador,29
+2024,CPA,ex   01,Northwest Territories,4
+2024,CPA,ex   01,Nova Scotia,70
+2024,CPA,ex   01,Nunavut,6
+2024,CPA,ex   01,Ontario (minus the NCR),139
+2024,CPA,ex   01,Outside of Canada,135
+2024,CPA,ex   01,Prince Edward Island,32
+2024,CPA,ex   01,Quebec (minus the NCR),156
+2024,CPA,ex   01,Saskatchewan,22
+2024,CPA,ex   01,Unknown,79
+2024,CPA,ex   01,Yukon,4
+2024,CPA,ex   02,Alberta,30
+2024,CPA,ex   02,British Columbia,58
+2024,CPA,ex   02,Manitoba,29
+2024,CPA,ex   02,National Capital Region (NCR),1397
+2024,CPA,ex   02,New Brunswick,32
+2024,CPA,ex   02,Newfoundland and Labrador,12
+2024,CPA,ex   02,Northwest Territories,3
+2024,CPA,ex   02,Nova Scotia,25
+2024,CPA,ex   02,Ontario (minus the NCR),87
+2024,CPA,ex   02,Outside of Canada,64
+2024,CPA,ex   02,Prince Edward Island,14
+2024,CPA,ex   02,Quebec (minus the NCR),75
+2024,CPA,ex   02,Saskatchewan,10
+2024,CPA,ex   02,Unknown,46
+2024,CPA,ex   02,Yukon,2
+2024,CPA,ex   03,Alberta,8
+2024,CPA,ex   03,British Columbia,29
+2024,CPA,ex   03,Manitoba,9
+2024,CPA,ex   03,National Capital Region (NCR),1031
+2024,CPA,ex   03,New Brunswick,10
+2024,CPA,ex   03,Newfoundland and Labrador,6
+2024,CPA,ex   03,Northwest Territories,1
+2024,CPA,ex   03,Nova Scotia,10
+2024,CPA,ex   03,Ontario (minus the NCR),21
+2024,CPA,ex   03,Outside of Canada,55
+2024,CPA,ex   03,Prince Edward Island,9
+2024,CPA,ex   03,Quebec (minus the NCR),47
+2024,CPA,ex   03,Saskatchewan,10
+2024,CPA,ex   03,Unknown,43
+2024,CPA,ex   03,Yukon,1
+2024,CPA,ex   04,Alberta,2
+2024,CPA,ex   04,British Columbia,7
+2024,CPA,ex   04,Manitoba,2
+2024,CPA,ex   04,National Capital Region (NCR),238
+2024,CPA,ex   04,New Brunswick,3
+2024,CPA,ex   04,Newfoundland and Labrador,1
+2024,CPA,ex   04,Nova Scotia,4
+2024,CPA,ex   04,Ontario (minus the NCR),5
+2024,CPA,ex   04,Outside of Canada,7
+2024,CPA,ex   04,Prince Edward Island,2
+2024,CPA,ex   04,Quebec (minus the NCR),4
+2024,CPA,ex   04,Saskatchewan,3
+2024,CPA,ex   04,Unknown,17
+2024,CPA,ex   05,National Capital Region (NCR),112
+2024,CPA,ex   05,Outside of Canada,1
+2024,CPA,ex   05,Prince Edward Island,1
+2024,CPA,ex   05,Quebec (minus the NCR),1
+2024,CPA,ex   05,Unknown,9
+2024,SA,Non-EX,Alberta,5686
+2024,SA,Non-EX,British Columbia,7648
+2024,SA,Non-EX,Manitoba,4994
+2024,SA,Non-EX,National Capital Region (NCR),24618
+2024,SA,Non-EX,New Brunswick,1682
+2024,SA,Non-EX,Newfoundland and Labrador,3138
+2024,SA,Non-EX,Northwest Territories,98
+2024,SA,Non-EX,Nova Scotia,1719
+2024,SA,Non-EX,Nunavut,93
+2024,SA,Non-EX,Ontario (minus the NCR),16184
+2024,SA,Non-EX,Prince Edward Island,1722
+2024,SA,Non-EX,Quebec (minus the NCR),10034
+2024,SA,Non-EX,Saskatchewan,1084
+2024,SA,Non-EX,Unknown,5101
+2024,SA,Non-EX,Yukon,80
+2024,SA,ex   01,Alberta,17
+2024,SA,ex   01,British Columbia,24
+2024,SA,ex   01,Manitoba,13
+2024,SA,ex   01,National Capital Region (NCR),490
+2024,SA,ex   01,New Brunswick,5
+2024,SA,ex   01,Newfoundland and Labrador,10
+2024,SA,ex   01,Nova Scotia,14
+2024,SA,ex   01,Nunavut,3
+2024,SA,ex   01,Ontario (minus the NCR),124
+2024,SA,ex   01,Prince Edward Island,6
+2024,SA,ex   01,Quebec (minus the NCR),39
+2024,SA,ex   01,Saskatchewan,4
+2024,SA,ex   01,Unknown,20
+2024,SA,ex   02,Alberta,13
+2024,SA,ex   02,British Columbia,22
+2024,SA,ex   02,Manitoba,11
+2024,SA,ex   02,National Capital Region (NCR),285
+2024,SA,ex   02,New Brunswick,8
+2024,SA,ex   02,Newfoundland and Labrador,5
+2024,SA,ex   02,Northwest Territories,2
+2024,SA,ex   02,Nova Scotia,13
+2024,SA,ex   02,Nunavut,1
+2024,SA,ex   02,Ontario (minus the NCR),71
+2024,SA,ex   02,Prince Edward Island,3
+2024,SA,ex   02,Quebec (minus the NCR),47
+2024,SA,ex   02,Saskatchewan,7
+2024,SA,ex   02,Unknown,72
+2024,SA,ex   02,Yukon,2
+2024,SA,ex   03,Alberta,27
+2024,SA,ex   03,British Columbia,7
+2024,SA,ex   03,Manitoba,3
+2024,SA,ex   03,National Capital Region (NCR),164
+2024,SA,ex   03,New Brunswick,2
+2024,SA,ex   03,Newfoundland and Labrador,1
+2024,SA,ex   03,Northwest Territories,1
+2024,SA,ex   03,Nova Scotia,4
+2024,SA,ex   03,Nunavut,1
+2024,SA,ex   03,Ontario (minus the NCR),20
+2024,SA,ex   03,Quebec (minus the NCR),8
+2024,SA,ex   03,Unknown,33
+2024,SA,ex   04,Alberta,6
+2024,SA,ex   04,British Columbia,3
+2024,SA,ex   04,National Capital Region (NCR),50
+2024,SA,ex   04,Newfoundland and Labrador,2
+2024,SA,ex   04,Northwest Territories,1
+2024,SA,ex   04,Nova Scotia,3
+2024,SA,ex   04,Ontario (minus the NCR),4
+2024,SA,ex   04,Quebec (minus the NCR),8
+2024,SA,ex   04,Unknown,9
+2024,SA,ex   04,Yukon,1
+2024,SA,ex   05,British Columbia,2
+2024,SA,ex   05,National Capital Region (NCR),37
+2024,SA,ex   05,Nova Scotia,1
+2024,SA,ex   05,Ontario (minus the NCR),4
+2024,SA,ex   05,Quebec (minus the NCR),2
+2024,SA,ex   05,Unknown,4
+2025,CPA,Non-EX,Alberta,13565
+2025,CPA,Non-EX,British Columbia,21842
+2025,CPA,Non-EX,Manitoba,8749
+2025,CPA,Non-EX,National Capital Region (NCR),123758
+2025,CPA,Non-EX,New Brunswick,11492
+2025,CPA,Non-EX,Newfoundland and Labrador,4336
+2025,CPA,Non-EX,Northwest Territories,485
+2025,CPA,Non-EX,Nova Scotia,11325
+2025,CPA,Non-EX,Nunavut,296
+2025,CPA,Non-EX,Ontario (minus the NCR),34190
+2025,CPA,Non-EX,Outside of Canada,1322
+2025,CPA,Non-EX,Prince Edward Island,2530
+2025,CPA,Non-EX,Quebec (minus the NCR),29579
+2025,CPA,Non-EX,Saskatchewan,5582
+2025,CPA,Non-EX,Unknown,2411
+2025,CPA,Non-EX,Yukon,379
+2025,CPA,ex   01,Alberta,63
+2025,CPA,ex   01,British Columbia,163
+2025,CPA,ex   01,Manitoba,53
+2025,CPA,ex   01,National Capital Region (NCR),2814
+2025,CPA,ex   01,New Brunswick,82
+2025,CPA,ex   01,Newfoundland and Labrador,26
+2025,CPA,ex   01,Northwest Territories,8
+2025,CPA,ex   01,Nova Scotia,76
+2025,CPA,ex   01,Nunavut,5
+2025,CPA,ex   01,Ontario (minus the NCR),156
+2025,CPA,ex   01,Outside of Canada,137
+2025,CPA,ex   01,Prince Edward Island,33
+2025,CPA,ex   01,Quebec (minus the NCR),172
+2025,CPA,ex   01,Saskatchewan,20
+2025,CPA,ex   01,Unknown,31
+2025,CPA,ex   01,Yukon,7
+2025,CPA,ex   02,Alberta,36
+2025,CPA,ex   02,British Columbia,60
+2025,CPA,ex   02,Manitoba,29
+2025,CPA,ex   02,National Capital Region (NCR),1453
+2025,CPA,ex   02,New Brunswick,30
+2025,CPA,ex   02,Newfoundland and Labrador,10
+2025,CPA,ex   02,Northwest Territories,2
+2025,CPA,ex   02,Nova Scotia,23
+2025,CPA,ex   02,Nunavut,3
+2025,CPA,ex   02,Ontario (minus the NCR),89
+2025,CPA,ex   02,Outside of Canada,62
+2025,CPA,ex   02,Prince Edward Island,22
+2025,CPA,ex   02,Quebec (minus the NCR),90
+2025,CPA,ex   02,Saskatchewan,7
+2025,CPA,ex   02,Unknown,21
+2025,CPA,ex   02,Yukon,3
+2025,CPA,ex   03,Alberta,11
+2025,CPA,ex   03,British Columbia,28
+2025,CPA,ex   03,Manitoba,11
+2025,CPA,ex   03,National Capital Region (NCR),1100
+2025,CPA,ex   03,New Brunswick,12
+2025,CPA,ex   03,Newfoundland and Labrador,6
+2025,CPA,ex   03,Northwest Territories,2
+2025,CPA,ex   03,Nova Scotia,13
+2025,CPA,ex   03,Ontario (minus the NCR),26
+2025,CPA,ex   03,Outside of Canada,56
+2025,CPA,ex   03,Prince Edward Island,11
+2025,CPA,ex   03,Quebec (minus the NCR),42
+2025,CPA,ex   03,Saskatchewan,10
+2025,CPA,ex   03,Unknown,19
+2025,CPA,ex   03,Yukon,1
+2025,CPA,ex   04,Alberta,2
+2025,CPA,ex   04,British Columbia,10
+2025,CPA,ex   04,Manitoba,2
+2025,CPA,ex   04,National Capital Region (NCR),238
+2025,CPA,ex   04,New Brunswick,3
+2025,CPA,ex   04,Newfoundland and Labrador,1
+2025,CPA,ex   04,Nova Scotia,3
+2025,CPA,ex   04,Ontario (minus the NCR),6
+2025,CPA,ex   04,Outside of Canada,7
+2025,CPA,ex   04,Prince Edward Island,3
+2025,CPA,ex   04,Quebec (minus the NCR),3
+2025,CPA,ex   04,Saskatchewan,4
+2025,CPA,ex   04,Unknown,5
+2025,CPA,ex   05,National Capital Region (NCR),132
+2025,CPA,ex   05,Prince Edward Island,1
+2025,CPA,ex   05,Quebec (minus the NCR),1
+2025,SA,Non-EX,Alberta,5125
+2025,SA,Non-EX,British Columbia,6740
+2025,SA,Non-EX,Manitoba,4364
+2025,SA,Non-EX,National Capital Region (NCR),23459
+2025,SA,Non-EX,New Brunswick,1475
+2025,SA,Non-EX,Newfoundland and Labrador,2598
+2025,SA,Non-EX,Northwest Territories,91
+2025,SA,Non-EX,Nova Scotia,1492
+2025,SA,Non-EX,Nunavut,97
+2025,SA,Non-EX,Ontario (minus the NCR),14192
+2025,SA,Non-EX,Prince Edward Island,1520
+2025,SA,Non-EX,Quebec (minus the NCR),8876
+2025,SA,Non-EX,Saskatchewan,1008
+2025,SA,Non-EX,Unknown,5666
+2025,SA,Non-EX,Yukon,81
+2025,SA,ex   01,Alberta,24
+2025,SA,ex   01,British Columbia,21
+2025,SA,ex   01,Manitoba,13
+2025,SA,ex   01,National Capital Region (NCR),485
+2025,SA,ex   01,New Brunswick,4
+2025,SA,ex   01,Newfoundland and Labrador,8
+2025,SA,ex   01,Nova Scotia,15
+2025,SA,ex   01,Nunavut,3
+2025,SA,ex   01,Ontario (minus the NCR),124
+2025,SA,ex   01,Prince Edward Island,4
+2025,SA,ex   01,Quebec (minus the NCR),40
+2025,SA,ex   01,Saskatchewan,2
+2025,SA,ex   01,Unknown,29
+2025,SA,ex   02,Alberta,14
+2025,SA,ex   02,British Columbia,24
+2025,SA,ex   02,Manitoba,12
+2025,SA,ex   02,National Capital Region (NCR),289
+2025,SA,ex   02,New Brunswick,8
+2025,SA,ex   02,Newfoundland and Labrador,7
+2025,SA,ex   02,Northwest Territories,2
+2025,SA,ex   02,Nova Scotia,11
+2025,SA,ex   02,Nunavut,2
+2025,SA,ex   02,Ontario (minus the NCR),70
+2025,SA,ex   02,Prince Edward Island,5
+2025,SA,ex   02,Quebec (minus the NCR),50
+2025,SA,ex   02,Saskatchewan,7
+2025,SA,ex   02,Unknown,86
+2025,SA,ex   02,Yukon,2
+2025,SA,ex   03,Alberta,34
+2025,SA,ex   03,British Columbia,8
+2025,SA,ex   03,Manitoba,2
+2025,SA,ex   03,National Capital Region (NCR),169
+2025,SA,ex   03,New Brunswick,2
+2025,SA,ex   03,Newfoundland and Labrador,1
+2025,SA,ex   03,Nova Scotia,4
+2025,SA,ex   03,Nunavut,2
+2025,SA,ex   03,Ontario (minus the NCR),25
+2025,SA,ex   03,Prince Edward Island,1
+2025,SA,ex   03,Quebec (minus the NCR),9
+2025,SA,ex   03,Unknown,30
+2025,SA,ex   04,Alberta,6
+2025,SA,ex   04,British Columbia,3
+2025,SA,ex   04,National Capital Region (NCR),46
+2025,SA,ex   04,Newfoundland and Labrador,2
+2025,SA,ex   04,Northwest Territories,1
+2025,SA,ex   04,Nova Scotia,4
+2025,SA,ex   04,Ontario (minus the NCR),4
+2025,SA,ex   04,Quebec (minus the NCR),8
+2025,SA,ex   04,Unknown,13
+2025,SA,ex   04,Yukon,1
+2025,SA,ex   05,British Columbia,2
+2025,SA,ex   05,National Capital Region (NCR),36
+2025,SA,ex   05,Nova Scotia,1
+2025,SA,ex   05,Ontario (minus the NCR),4
+2025,SA,ex   05,Quebec (minus the NCR),2
+2025,SA,ex   05,Unknown,4
+2026,CPA,Non-EX,Alberta,13405
+2026,CPA,Non-EX,British Columbia,21302
+2026,CPA,Non-EX,Manitoba,8405
+2026,CPA,Non-EX,National Capital Region (NCR),118253
+2026,CPA,Non-EX,New Brunswick,10999
+2026,CPA,Non-EX,Newfoundland and Labrador,4312
+2026,CPA,Non-EX,Northwest Territories,488
+2026,CPA,Non-EX,Nova Scotia,11281
+2026,CPA,Non-EX,Nunavut,277
+2026,CPA,Non-EX,Ontario (minus the NCR),33549
+2026,CPA,Non-EX,Outside of Canada,1330
+2026,CPA,Non-EX,Prince Edward Island,2439
+2026,CPA,Non-EX,Quebec (minus the NCR),28906
+2026,CPA,Non-EX,Saskatchewan,5352
+2026,CPA,Non-EX,Unknown,2500
+2026,CPA,Non-EX,Yukon,378
+2026,CPA,ex   01,Alberta,58
+2026,CPA,ex   01,British Columbia,158
+2026,CPA,ex   01,Manitoba,55
+2026,CPA,ex   01,National Capital Region (NCR),2698
+2026,CPA,ex   01,New Brunswick,84
+2026,CPA,ex   01,Newfoundland and Labrador,24
+2026,CPA,ex   01,Northwest Territories,9
+2026,CPA,ex   01,Nova Scotia,68
+2026,CPA,ex   01,Nunavut,5
+2026,CPA,ex   01,Ontario (minus the NCR),148
+2026,CPA,ex   01,Outside of Canada,142
+2026,CPA,ex   01,Prince Edward Island,30
+2026,CPA,ex   01,Quebec (minus the NCR),189
+2026,CPA,ex   01,Saskatchewan,23
+2026,CPA,ex   01,Unknown,26
+2026,CPA,ex   01,Yukon,7
+2026,CPA,ex   02,Alberta,33
+2026,CPA,ex   02,British Columbia,56
+2026,CPA,ex   02,Manitoba,35
+2026,CPA,ex   02,National Capital Region (NCR),1393
+2026,CPA,ex   02,New Brunswick,29
+2026,CPA,ex   02,Newfoundland and Labrador,8
+2026,CPA,ex   02,Northwest Territories,3
+2026,CPA,ex   02,Nova Scotia,25
+2026,CPA,ex   02,Nunavut,4
+2026,CPA,ex   02,Ontario (minus the NCR),88
+2026,CPA,ex   02,Outside of Canada,66
+2026,CPA,ex   02,Prince Edward Island,21
+2026,CPA,ex   02,Quebec (minus the NCR),94
+2026,CPA,ex   02,Saskatchewan,9
+2026,CPA,ex   02,Unknown,6
+2026,CPA,ex   02,Yukon,2
+2026,CPA,ex   03,Alberta,13
+2026,CPA,ex   03,British Columbia,24
+2026,CPA,ex   03,Manitoba,12
+2026,CPA,ex   03,National Capital Region (NCR),1066
+2026,CPA,ex   03,New Brunswick,13
+2026,CPA,ex   03,Newfoundland and Labrador,6
+2026,CPA,ex   03,Northwest Territories,2
+2026,CPA,ex   03,Nova Scotia,12
+2026,CPA,ex   03,Ontario (minus the NCR),29
+2026,CPA,ex   03,Outside of Canada,54
+2026,CPA,ex   03,Prince Edward Island,11
+2026,CPA,ex   03,Quebec (minus the NCR),39
+2026,CPA,ex   03,Saskatchewan,10
+2026,CPA,ex   03,Unknown,5
+2026,CPA,ex   03,Yukon,2
+2026,CPA,ex   04,Alberta,2
+2026,CPA,ex   04,British Columbia,6
+2026,CPA,ex   04,Manitoba,2
+2026,CPA,ex   04,National Capital Region (NCR),222
+2026,CPA,ex   04,New Brunswick,2
+2026,CPA,ex   04,Newfoundland and Labrador,1
+2026,CPA,ex   04,Nova Scotia,4
+2026,CPA,ex   04,Ontario (minus the NCR),8
+2026,CPA,ex   04,Outside of Canada,7
+2026,CPA,ex   04,Prince Edward Island,2
+2026,CPA,ex   04,Quebec (minus the NCR),5
+2026,CPA,ex   04,Saskatchewan,3
+2026,CPA,ex   04,Unknown,1
+2026,CPA,ex   05,Alberta,5
+2026,CPA,ex   05,British Columbia,1
+2026,CPA,ex   05,Manitoba,1
+2026,CPA,ex   05,National Capital Region (NCR),127
+2026,CPA,ex   05,Ontario (minus the NCR),3
+2026,CPA,ex   05,Outside of Canada,1
+2026,CPA,ex   05,Quebec (minus the NCR),3
+2026,CPA,ex   05,Yukon,1
+2026,SA,Non-EX,Alberta,5007
+2026,SA,Non-EX,British Columbia,6341
+2026,SA,Non-EX,Manitoba,4144
+2026,SA,Non-EX,National Capital Region (NCR),21429
+2026,SA,Non-EX,New Brunswick,1366
+2026,SA,Non-EX,Newfoundland and Labrador,2521
+2026,SA,Non-EX,Northwest Territories,89
+2026,SA,Non-EX,Nova Scotia,1450
+2026,SA,Non-EX,Nunavut,74
+2026,SA,Non-EX,Ontario (minus the NCR),13324
+2026,SA,Non-EX,Prince Edward Island,1444
+2026,SA,Non-EX,Quebec (minus the NCR),8545
+2026,SA,Non-EX,Saskatchewan,975
+2026,SA,Non-EX,Unknown,6284
+2026,SA,Non-EX,Yukon,72
+2026,SA,ex   01,Alberta,24
+2026,SA,ex   01,British Columbia,18
+2026,SA,ex   01,Manitoba,12
+2026,SA,ex   01,National Capital Region (NCR),451
+2026,SA,ex   01,New Brunswick,5
+2026,SA,ex   01,Newfoundland and Labrador,8
+2026,SA,ex   01,Nova Scotia,15
+2026,SA,ex   01,Nunavut,6
+2026,SA,ex   01,Ontario (minus the NCR),121
+2026,SA,ex   01,Prince Edward Island,4
+2026,SA,ex   01,Quebec (minus the NCR),42
+2026,SA,ex   01,Saskatchewan,3
+2026,SA,ex   01,Unknown,33
+2026,SA,ex   02,Alberta,14
+2026,SA,ex   02,British Columbia,23
+2026,SA,ex   02,Manitoba,12
+2026,SA,ex   02,National Capital Region (NCR),282
+2026,SA,ex   02,New Brunswick,6
+2026,SA,ex   02,Newfoundland and Labrador,5
+2026,SA,ex   02,Northwest Territories,2
+2026,SA,ex   02,Nova Scotia,14
+2026,SA,ex   02,Nunavut,2
+2026,SA,ex   02,Ontario (minus the NCR),75
+2026,SA,ex   02,Prince Edward Island,1
+2026,SA,ex   02,Quebec (minus the NCR),52
+2026,SA,ex   02,Saskatchewan,6
+2026,SA,ex   02,Unknown,96
+2026,SA,ex   02,Yukon,2
+2026,SA,ex   03,Alberta,36
+2026,SA,ex   03,British Columbia,8
+2026,SA,ex   03,Manitoba,2
+2026,SA,ex   03,National Capital Region (NCR),150
+2026,SA,ex   03,New Brunswick,3
+2026,SA,ex   03,Newfoundland and Labrador,2
+2026,SA,ex   03,Nova Scotia,1
+2026,SA,ex   03,Nunavut,4
+2026,SA,ex   03,Ontario (minus the NCR),23
+2026,SA,ex   03,Prince Edward Island,1
+2026,SA,ex   03,Quebec (minus the NCR),9
+2026,SA,ex   03,Unknown,40
+2026,SA,ex   04,Alberta,5
+2026,SA,ex   04,British Columbia,2
+2026,SA,ex   04,National Capital Region (NCR),46
+2026,SA,ex   04,Newfoundland and Labrador,2
+2026,SA,ex   04,Northwest Territories,1
+2026,SA,ex   04,Nova Scotia,4
+2026,SA,ex   04,Ontario (minus the NCR),3
+2026,SA,ex   04,Quebec (minus the NCR),8
+2026,SA,ex   04,Unknown,9
+2026,SA,ex   04,Yukon,1
+2026,SA,ex   05,Alberta,1
+2026,SA,ex   05,British Columbia,2
+2026,SA,ex   05,National Capital Region (NCR),32
+2026,SA,ex   05,Nova Scotia,1
+2026,SA,ex   05,Ontario (minus the NCR),3
+2026,SA,ex   05,Quebec (minus the NCR),2
+2026,SA,ex   05,Unknown,5

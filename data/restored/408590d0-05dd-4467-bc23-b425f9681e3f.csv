@@ -1,0 +1,82 @@
+Dept_number,dept_f,dept_e,Dept_size_F,Dept_size_E,Size
+0,Département non spécifié,Department not specified,Non déclaré,Not stated,Not stated
+1,Normes d'accessibilité Canada,Accessibility Standards Canada,Très petite (< 100),Very small (< 100),56.0
+2,Service canadien d’appui aux tribunaux administratifs,Administrative Tribunals Support Service of Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",549.0
+3,Agriculture et Agroalimentaire Canada,Agriculture and Agri-Food Canada,"Grande (>= 2,000)","Large (>= 2,000)",4907.0
+4,Agence de promotion économique du Canada atlantique,Atlantic Canada Opportunities Agency,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",552.0
+5,Agence des services frontaliers du Canada,Canada Border Services Agency,"Grande (>= 2,000)","Large (>= 2,000)",16164.0
+6,Développement économique Canada pour les régions du Québec,Canada Economic Development for Quebec Regions,Petite (100 à 499),Small (100 to 499),357.0
+7,Régie de l'énergie du Canada,Canada Energy Regulator,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",549.0
+8,École de la fonction publique du Canada,Canada School of Public Service,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",590.0
+9,Commission canadienne des grains,Canadian Grain Commission,Petite (100 à 499),Small (100 to 499),444.0
+10,Patrimoine canadien,Canadian Heritage,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1835.0
+11,Commission canadienne des droits de la personne,Canadian Human Rights Commission,Petite (100 à 499),Small (100 to 499),247.0
+12,Secrétariat des conférences intergouvernementales canadiennes,Canadian Intergovernmental Conference Secretariat,Très petite (< 100),Very small (< 100),38.0
+13,Agence canadienne de développement économique du Nord,Canadian Northern Economic Development Agency,Petite (100 à 499),Small (100 to 499),109.0
+14,Conseil de la radiodiffusion et des télécommunications canadiennes,Canadian Radio-television and Telecommunications Commission,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",643.0
+15,Agence spatiale canadienne,Canadian Space Agency,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",936.0
+16,Office des transports du Canada,Canadian Transportation Agency,Petite (100 à 499),Small (100 to 499),361.0
+17,Commission civile d'examen et de traitement des plaintes relatives à la Gendarmerie royale du Canada,Civilian Review and Complaints Commission for the Royal Canadian Mounted Police,Très petite (< 100),Very small (< 100),89.0
+18,Bureau du directeur général des élections (Élections Canada),Office of the Chief Electoral Officer (Elections Canada),"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1251.0
+19,Bureau du Commissaire aux élections fédérales,Office of the Commissioner of Canada Elections,Très petite (< 100),Very small (< 100),58.0
+20,Commissariat aux langues officielles,Office of the Commissioner of Official Languages,Petite (100 à 499),Small (100 to 499),163.0
+21,Commission du droit d'auteur du Canada,Copyright Board of Canada,Très petite (< 100),Very small (< 100),20.0
+22,Service correctionnel Canada,Correctional Service Canada,"Grande (>= 2,000)","Large (>= 2,000)",17819.0
+23,Service administratif des tribunaux judiciaires,Courts Administration Service,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",787.0
+24,Relations Couronne-Autochtones et Affaires du Nord Canada,Crown-Indigenous Relations and Northern Affairs Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1740.0
+25,Ministère des Finances Canada,Department of Finance Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",882.0
+26,Ministère de la Justice Canada,Department of Justice Canada,"Grande (>= 2,000)","Large (>= 2,000)",5333.0
+27,Défense nationale,National Defence,"Grande (>= 2,000)","Large (>= 2,000)",30788.0
+28,Emploi et Développement social Canada,Employment and Social Development Canada,"Grande (>= 2,000)","Large (>= 2,000)",35608.0
+29,Environnement et Changement climatique Canada,Environment and Climate Change Canada,"Grande (>= 2,000)","Large (>= 2,000)",7951.0
+30,Agence fédérale de développement économique pour le Nord de l’Ontario,Federal Economic Development Agency for Northern Ontario,Très petite (< 100),Very small (< 100),99.0
+31,Agence fédérale de développement économique pour le Sud de l'Ontario,Federal Economic Development Agency for Southern Ontario,Petite (100 à 499),Small (100 to 499),230.0
+32,Agence de la consommation en matière financière du Canada,Financial Consumer Agency of Canada,Petite (100 à 499),Small (100 to 499),234.0
+33,Pêches et Océans Canada,Fisheries and Oceans Canada,"Grande (>= 2,000)","Large (>= 2,000)",14826.0
+34,Affaires mondiales Canada,Global Affairs Canada,"Grande (>= 2,000)","Large (>= 2,000)",7150.0
+35,Santé Canada,Health Canada,"Grande (>= 2,000)","Large (>= 2,000)",8970.0
+36,Commission de l'immigration et du statut de réfugié du Canada,Immigration and Refugee Board of Canada,"Grande (>= 2,000)","Large (>= 2,000)",2502.0
+37,"Immigration, Réfugiés et Citoyenneté Canada","Immigration, Refugees and Citizenship Canada","Grande (>= 2,000)","Large (>= 2,000)",10841.0
+38,Agence d'évaluation d'impact du Canada,Impact Assessment Agency of Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",573.0
+39,Pétrole et gaz des Indiens du Canada,Indian Oil and Gas Canada,Très petite (< 100),Very small (< 100),73.0
+40,Services aux Autochtones Canada,Indigenous Services Canada,"Grande (>= 2,000)","Large (>= 2,000)",8151.0
+41,"Logement, Infrastructures et Collectivités Canada","Housing, Infrastructure and Communities Canada","Moyenne (500 à 1,900)","Medium (500 to 1,999)",1688.0
+42,"Innovation, Sciences et Développement économique Canada","Innovation, Science and Economic Development Canada","Grande (>= 2,000)","Large (>= 2,000)",5977.0
+43,Commission mixte internationale,International Joint Commission,Très petite (< 100),Very small (< 100),30.0
+44,Bibliothèque et Archives Canada,Library and Archives of Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1105.0
+45,Comité externe d’examen des griefs militaires,Military Grievances External Review Committee,Très petite (< 100),Very small (< 100),49.0
+46,Conseil des produits agricoles du Canada,Farm Products Council of Canada,Très petite (< 100),Very small (< 100),7.0
+47,Ressources naturelles Canada,Natural Resources Canada,"Grande (>= 2,000)","Large (>= 2,000)",5465.0
+48,Commissariat à la magistrature fédérale Canada,Office of the Commissioner for Federal Judicial Affairs Canada,Très petite (< 100),Very small (< 100),64.0
+49,Commissariat au lobbying du Canada,Office of the Commissioner of Lobbying of Canada,Très petite (< 100),Very small (< 100),29.0
+50,Bureau de l'enquêteur correctionnel,Office of the Correctional Investigator,Très petite (< 100),Very small (< 100),34.0
+51,Bureau du secrétaire du gouverneur général,Office of the Secretary to the Governor General,Petite (100 à 499),Small (100 to 499),155.0
+52,Commissariat à l'information du Canada,Office of the Information Commissioner of Canada,Petite (100 à 499),Small (100 to 499),114.0
+53,Commissariat à la protection de la vie privée du Canada,Office of the Privacy Commissioner of Canada,Petite (100 à 499),Small (100 to 499),228.0
+54,Commissariat à l'intégrité du secteur public du Canada,Office of the Public Sector Integrity Commissioner of Canada,Très petite (< 100),Very small (< 100),31.0
+55,Bureau du surintendant des institutions financières,Office of the Superintendent of Financial Institutions,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1251.0
+56,Développement économique Canada pour le Pacifique,Pacific Economic Development Canada,Petite (100 à 499),Small (100 to 499),181.0
+57,Commission des libérations conditionnelles du Canada,Parole Board of Canada,Petite (100 à 499),Small (100 to 499),416.0
+58,Conseil d’examen du prix des médicaments brevetés Canada,Patented Medicine Prices Review Board Canada,Très petite (< 100),Very small (< 100),78.0
+59,Développement économique Canada pour les Prairies,Prairies Economic Development Canada,Petite (100 à 499),Small (100 to 499),312.0
+60,Bureau du Conseil privé,Privy Council Office,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1057.0
+61,Agence de la santé publique du Canada,Public Health Agency of Canada,"Grande (>= 2,000)","Large (>= 2,000)",3110.0
+62,Service des poursuites pénales du Canada,Public Prosecution Service of Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1074.0
+63,Sécurité publique Canada,Public Safety Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",1527.0
+64,Commission de la fonction publique du Canada,Public Service Commission of Canada,"Moyenne (500 à 1,900)","Medium (500 to 1,999)",764.0
+65,Services publics et Approvisionnement Canada,Public Services and Procurement Canada,"Grande (>= 2,000)","Large (>= 2,000)",18248.0
+66,Registraire de la Cour suprême du Canada,Registrar of the Supreme Court of Canada,Petite (100 à 499),Small (100 to 499),224.0
+67,Gendarmerie royale du Canada,Royal Canadian Mounted Police,"Grande (>= 2,000)","Large (>= 2,000)",12271.0
+68,Comité externe d’examen de la Gendarmerie royale du Canada,Royal Canadian Mounted Police External Review Committee,Très petite (< 100),Very small (< 100),24.0
+69,Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement,Secretariat of the National Security and Intelligence Committee of Parliamentarians,Très petite (< 100),Very small (< 100),5.0
+70,Services partagés Canada,Shared Services Canada,"Grande (>= 2,000)","Large (>= 2,000)",8777.0
+71,Statistique Canada,Statistics Canada,"Grande (>= 2,000)","Large (>= 2,000)",6973.0
+72,Transports Canada,Transport Canada,"Grande (>= 2,000)","Large (>= 2,000)",6205.0
+73,Bureau de la sécurité des transports du Canada,Transportation Safety Board of Canada,Petite (100 à 499),Small (100 to 499),222.0
+74,Secrétariat du Conseil du Trésor du Canada,Treasury Board of Canada Secretariat,"Grande (>= 2,000)","Large (>= 2,000)",2130.0
+75,Anciens Combattants Canada,Veteran Affairs Canada,"Grande (>= 2,000)","Large (>= 2,000)",3617.0
+76,Tribunal des anciens combattants (révision et appel),Veterans Review and Appeal Board,Petite (100 à 499),Small (100 to 499),122.0
+77,Femmes et Égalité des genres Canada,Women and Gender Equality Canada,Petite (100 à 499),Small (100 to 499),337.0
+78,Commission du droit du Canada,Law Commission of Canada,Très petite (< 100),Very small (< 100),9.0
+79,Commission d’examen des plaintes concernant la police militaire du Canada,Military Police Complaints Commission of Canada,Très petite (< 100),Very small (< 100),25.0
+80,Agence de l’eau du Canada,Canada Water Agency,Petite (100 à 499),Small (100 to 499),174.0
