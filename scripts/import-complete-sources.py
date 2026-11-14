@@ -6,6 +6,7 @@ are from the archived GC Equity source package. Missing or mismatched files
 are NEVER silently replaced. Every row is retained exactly once.
 """
 import csv
+from collections import OrderedDict
 import hashlib
 import io
 import gzip
@@ -93,22 +94,30 @@ def import_file(item):
     counts={}
     names={}
     seen=set()
+    open_files=OrderedDict()
     try:
         for row in reader:
             if not row or not any(x.strip() for x in row):continue
             group=(row[ix] if ix<len(row) else "").strip() or "(Not specified in source)"
             key=slug(group)
             names[key]=group
-            # Open for append each time: avoids hundreds of open file descriptors.
-            # Only one header per group, preserving all source column values.
-            t=scratch/(key+".csv")
-            first=key not in seen
-            with t.open("a",encoding="utf-8",newline="") as f:
-                wr=csv.writer(f)
-                if first:wr.writerow(head);seen.add(key)
-                wr.writerow(row)
+            if key not in open_files:
+                t=scratch/(key+".csv")
+                first=key not in seen
+                handle=t.open("a",encoding="utf-8",newline="")
+                writer=csv.writer(handle)
+                if first:writer.writerow(head);seen.add(key)
+                open_files[key]=(handle,writer)
+            handle,writer=open_files.pop(key)
+            writer.writerow(row)
+            open_files[key]=(handle,writer)
+            if len(open_files)>96:
+                old,(h,w)=open_files.popitem(last=False)
+                h.close()
             counts[key]=counts.get(key,0)+1
             total+=1
+        for h,w in open_files.values():h.close()
+        open_files.clear()
         if not total:raise ValueError("Source contains zero data rows")
         destroot=DEST/"org"/sourceid
         destroot.mkdir(parents=True,exist_ok=True)
@@ -124,7 +133,9 @@ def import_file(item):
         if sum(x["rows"] for x in partitions.values())!=total:
             raise ValueError("Department partition accounting mismatch")
         return {**base_meta(item,sourceid,codec,head,orgkey,total),"partitions":partitions}
-    finally:shutil.rmtree(scratch,ignore_errors=True)
+    finally:
+        for h,w in open_files.values():h.close()
+        shutil.rmtree(scratch,ignore_errors=True)
 
 def base_meta(item,key,codec,head,orgfield,rows):
     return {
