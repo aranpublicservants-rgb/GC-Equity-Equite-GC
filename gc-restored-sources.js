@@ -44,6 +44,7 @@ function download(file,head,rows){
  document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
 }
 function sourceParts(file,name,frenchName){
+ if(file.organizationScope){return norm(file.organizationScope)===norm(name)||norm(file.organizationScope)===norm(frenchName)?file.path||null:null;}
  if(!file.organizationField)return null;
  if(file.partitions){
   const key=Object.keys(file.partitions).find(x=>norm(x)===norm(name)||norm(x)===norm(frenchName));
@@ -72,9 +73,9 @@ function attach(host,kind,files,name,frenchName,requestId){
   try{
    const raw=await loadSource(path);
    if(requestId!==pending||token!==serial||!area.isConnected)return;
-   const ix=raw.headers.indexOf(file.organizationField);
-   if(ix<0)throw Error('Published organization field missing');
-   rows=raw.rows.filter(r=>norm(r[ix])===norm(name)||norm(r[ix])===norm(frenchName));
+   const ix=file.organizationField?raw.headers.indexOf(file.organizationField):-1;
+   if(file.organizationField&&ix<0)throw Error('Published organization field missing');
+   rows=file.organizationScope?raw.rows:raw.rows.filter(r=>norm(r[ix])===norm(name)||norm(r[ix])===norm(frenchName));
    if(!rows.length){area.innerHTML='<p class="gce-unavailable">'+esc(L('No matching published rows for this employer in the selected file.','Aucune ligne publiée pour cet employeur dans le fichier choisi.'))+'</p>';return;}
    const visibleHeaders=raw.headers.slice(0,8),headers=raw.headers;
    area.innerHTML='<p class="gce-explain">'+esc(L('Published rows for this organization: ','Lignes publiées pour cet organisme : ')+rows.length)+'</p>'+
@@ -113,10 +114,17 @@ async function render(name,frenchName,group){
  workforce.replaceChildren();surveys.replaceChildren();
  if(!name||group!=='all')return;
  try{
-  if(!manifestPromise)manifestPromise=fetch('assets/restored-datasets.json').then(r=>{if(!r.ok)throw Error('No original data index');return r.json();});
-  const source=await manifestPromise;
+  if(!manifestPromise)manifestPromise=Promise.all([
+    fetch('assets/restored-datasets.json').then(r=>{if(!r.ok)throw Error('No source index');return r.json();}),
+    fetch('assets/organization-source-scopes.json').then(r=>{if(!r.ok)throw Error('No employer scope index');return r.json();})
+  ]);
+  const [source,scope]=await manifestPromise;
   if(id!==pending)return;
-  const files=(source.files||[]).filter(f=>!!f.organizationField&&sourceParts(f,name,frenchName));
+  const records=(source.files||[]).map(f=>{
+   const override=(scope.scopeOverrides||[]).find(x=>f.originalName.startsWith(x.namePrefix));
+   return override?{...f,organizationScope:override.organizationScope}:f;
+  }).concat(scope.files||[]);
+  const files=records.filter(f=>sourceParts(f,name,frenchName));
   const workforceFiles=files.filter(f=>!/Survey/i.test(f.dataset||''));
   const surveyFiles=files.filter(f=>/Survey/i.test(f.dataset||''));
   attach(workforce,'workforce',workforceFiles,name,frenchName,id);
