@@ -287,81 +287,90 @@ function branchCsv(rows,meta,dept){
  el.href=href;el.download='GC-Equity-2024-branch-results.csv';document.body.append(el);el.click();el.remove();setTimeout(()=>URL.revokeObjectURL(href),3000);
 }
 function branchFullTable(host,rows,meta,dept,request){
- const keys=meta.schema,heads=[L('Branch','Direction'),L('Employee group','Groupe d’employés'),L('Question','Question'),...keys.map(k=>{
-  if(/^ANS[1-7]$/.test(k))return L('Response option ','Option de réponse ')+k.slice(-1)+' (%)';
-  return ({MOSTPOS:L('Most positive (%)','Plus positive (%)'),NEUTRAL:L('Neutral (%)','Neutre (%)'),MOSTNEG:L('Most negative (%)','Plus négative (%)'),AGREE:L('Agreement measure (%)','Mesure de l’accord (%)'),SCORE100:L('Score out of 100','Note sur 100'),ANSCOUNT:L('Published response count','Nombre publié de réponses')})[k]||k;
- })];
- const first='<thead><tr>'+heads.map(x=>'<th scope="col">'+escape(x)+'</th>').join('')+'</tr></thead>';
- host.innerHTML='<div class="gce-table-actions"><button type="button" id="gce-branch-download">'+escape(L('Download all branch results (CSV)','Télécharger tous les résultats des directions (CSV)'))+'</button></div>'+
- '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(L('Complete 2024 branch survey response table','Tableau complet des réponses du sondage de 2024 par direction'))+'"><table id="gce-branch-complete" data-gcw-ready="yes"><caption>'+escape(L('2024 survey response options, by organizational unit, respondent group and question','Options de réponse au sondage de 2024, selon l’unité, le groupe et la question'))+'</caption>'+first+'<tbody id="gce-branch-rows"></tbody></table></div>'+
- '<p id="gce-branch-count" class="gce-footnote" role="status" aria-live="polite"></p><div id="gce-branch-sentinel" class="gce-branch-sentinel" aria-hidden="true"></div>';
- const tbody=$('gce-branch-rows'),count=$('gce-branch-count'),sentinel=$('gce-branch-sentinel');
- let next=0,observer=null,appending=false;
- function addBatch(){
-  if(appending||request!==branchRequest||!tbody?.isConnected)return;
-  appending=true;const stop=Math.min(next+200,rows.length);let html='';
-  for(let i=next;i<stop;i++){
-   const item=branchRow(rows[i],meta,dept);
-   html+='<tr><th scope="row">'+escape(item.branch)+'</th><td>'+escape(item.group)+'</td><td>'+escape(item.question)+'</td>'+item.values.map(x=>'<td>'+escape(branchValue(x))+'</td>').join('')+'</tr>';
-  }
-  tbody.insertAdjacentHTML('beforeend',html);next=stop;
-  count.textContent=L('Displayed results: ','Résultats affichés : ')+N(next)+' / '+N(rows.length);
-  appending=false;
-  if(next===rows.length){observer?.disconnect();sentinel.remove();}
+ const labels={
+ MOSTPOS:[L('Most positive (%)','Plus positive (%)'), 'MOSTPOS'],
+ NEUTRAL:[L('Neutral (%)','Neutre (%)'), 'NEUTRAL'],
+ MOSTNEG:[L('Most negative (%)','Plus négative (%)'), 'MOSTNEG'],
+ AGREE:[L('Agreement measure (%)','Mesure de l’accord (%)'), 'AGREE'],
+ SCORE100:[L('Score (out of 100)','Note (sur 100)'), 'SCORE100'],
+ ANSCOUNT:[L('Published response count','Nombre de réponses publié'), 'ANSCOUNT']
+ };
+ const options=(items,value='',text='')=>'<option value="'+escape(value)+'">'+escape(text||value)+'</option>'+items.map(([v,n])=>'<option value="'+escape(v)+'">'+escape(n)+'</option>').join('');
+ const demoGroups=meta.demographics.map((d,i)=>[String(i),branchLabel(d)]).sort((a,b)=>a[1].localeCompare(b[1]));
+ const metaQs=meta.questions.map((q,i)=>[String(i),q.id+' · '+branchLabel(q)]);
+ const codes=['Q12','Q24','Q42','Q43','Q45','Q47','Q49','Q52','Q53','Q58','Q63','Q65','Q70','Q72'];
+ const focus=new Set(meta.questions.map((q,i)=>codes.some(prefix=>new RegExp('^'+prefix+'(?:_|$)').test(q.id))?i:null).filter(x=>x!==null));
+ const selected=selectGroup('org'),map={w:'Woman',i:'Indigenous',nonind:'Non-Indigenous',d:'Person with disability',nopwd:'Person without a disability',v:'Racialized',nonrac:'Non-racialized',b:'Black',lgbt:'2SLGBTQIA+'};
+ const preferred=meta.demographics.findIndex(x=>x.en===map[selected]);
+ const branches=dept.branches.map(b=>[String(b.id),branchLabel(b)]).sort((a,b)=>a[1].localeCompare(b[1]));
+ host.innerHTML='<div class="gce-filter-panel">'+
+ '<div><label for="gce-branch-unit">'+escape(L('Branch or unit','Direction ou unité'))+'</label><select id="gce-branch-unit">'+options(branches,'',L('All published units','Toutes les unités publiées'))+'</select></div>'+
+ '<div><label for="gce-branch-group">'+escape(L('Respondent group','Groupe de répondants'))+'</label><select id="gce-branch-group">'+options(demoGroups,'',L('All published respondent groups','Tous les groupes de répondants publiés'))+'</select></div>'+
+ '<div><label for="gce-branch-question">'+escape(L('Survey question','Question du sondage'))+'</label><select id="gce-branch-question"><option value="key">'+escape(L('Workplace experience questions','Questions sur l’expérience au travail'))+'</option><option value="all">'+escape(L('All questions (207 in source)','Toutes les questions (207 dans la source)'))+'</option>'+metaQs.map(([v,n])=>'<option value="'+escape(v)+'">'+escape(n)+'</option>').join('')+'</select></div>'+
+ '</div>'+
+ '<p class="gce-explain">'+escape(L('Choose a unit, group or question to narrow the results. Only 18 rows appear at once. “Response option” codes depend on the question and are not interchangeable. Suppressed and unpublished values are never treated as zero.','Choisissez une unité, un groupe ou une question pour préciser les résultats. Seulement 18 lignes sont affichées à la fois. Les codes des options de réponse dépendent de la question et ne sont pas interchangeables. Les valeurs supprimées ou non publiées ne sont jamais considérées comme des zéros.'))+'</p>'+
+ '<div class="gce-table-actions"><button type="button" id="gce-branch-download" class="gce-download">'+escape(L('Download filtered results (CSV)','Télécharger les résultats filtrés (CSV)'))+'</button></div>'+
+ '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(L('2024 branch survey results','Résultats du sondage de 2024 par direction'))+'">'+
+ '<table id="gce-branch-complete" data-gcw-ready="yes"><caption>'+escape(L('2024 Public Service Employee Survey by second-level unit, question and respondent group','Sondage auprès des fonctionnaires fédéraux de 2024 selon la direction, la question et le groupe de répondants'))+'</caption><thead><tr>'+
+ [L('Branch','Direction'),L('Respondent group','Groupe de répondants'),L('Survey question','Question du sondage'),labels.MOSTPOS[0],labels.MOSTNEG[0],labels.AGREE[0],labels.SCORE100[0],labels.ANSCOUNT[0]].map(x=>'<th scope="col">'+escape(x)+'</th>').join('')+
+ '</tr></thead><tbody id="gce-branch-rows"></tbody></table></div>'+
+ '<div class="gce-pager"><button type="button" id="gce-branch-prev" disabled>'+escape(L('Previous','Précédent'))+'</button><span id="gce-branch-count" role="status" aria-live="polite"></span><button type="button" id="gce-branch-next">'+escape(L('Next','Suivant'))+'</button></div>';
+ const unit=$('gce-branch-unit'),group=$('gce-branch-group'),question=$('gce-branch-question');
+ if(preferred>=0)group.value=String(preferred);
+ const indices=Object.fromEntries(Object.values(labels).map(x=>[x[1],meta.schema.indexOf(x[1])+3]));
+ const tbody=$('gce-branch-rows'),status=$('gce-branch-count');let current=[],page=0;
+ function update(){
+  if(request!==branchRequest||!host.isConnected)return;
+  const filterUnit=unit.value,filterGroup=group.value,filterQuestion=question.value;
+  current=rows.filter(r=>
+   (!filterUnit||String(r[0])===filterUnit)&&
+   (!filterGroup||String(r[1])===filterGroup)&&
+   (filterQuestion==='all'||(filterQuestion==='key'?focus.has(r[2]):String(r[2])===filterQuestion)));
+  page=0;show();
  }
- $('gce-branch-download')?.addEventListener('click',()=>branchCsv(rows,meta,dept));
- addBatch();
- if(next<rows.length&&typeof IntersectionObserver!=='undefined'){
-  observer=new IntersectionObserver(entries=>{if(entries.some(x=>x.isIntersecting))addBatch();},{root:null,rootMargin:'1200px'});
-  observer.observe(sentinel);
- }else if(next<rows.length){
-  // Automatic growth for browsers without IntersectionObserver.
-  let t=0;
-  window.addEventListener('scroll',function grow(){if(request!==branchRequest||next>=rows.length){window.removeEventListener('scroll',grow);return;}if(++t%2===0)addBatch();},{passive:true});
+ function show(){
+  if(request!==branchRequest||!tbody.isConnected)return;
+  const slice=current.slice(page*PAGE_ROWS,(page+1)*PAGE_ROWS);
+  tbody.innerHTML=slice.map(r=>{
+   const a=branchRow(r,meta,dept);
+   return '<tr><th scope="row">'+escape(a.branch)+'</th><td>'+escape(a.group)+'</td><td>'+escape(a.question)+'</td>'+
+    ['MOSTPOS','MOSTNEG','AGREE','SCORE100','ANSCOUNT'].map(k=>'<td>'+escape(branchValue(r[indices[k]]))+'</td>').join('')+'</tr>';
+  }).join('');
+  status.textContent=current.length?pageText(page,current.length):L('No published rows match these selections.','Aucune ligne publiée ne correspond à ces choix.');
+  $('gce-branch-prev').disabled=page===0;
+  $('gce-branch-next').disabled=(page+1)*PAGE_ROWS>=current.length;
  }
+ for(const el of [unit,group,question])el.addEventListener('change',update);
+ $('gce-branch-prev').addEventListener('click',()=>{if(page>0){page--;show();}});
+ $('gce-branch-next').addEventListener('click',()=>{if((page+1)*PAGE_ROWS<current.length){page++;show();}});
+ $('gce-branch-download').addEventListener('click',()=>branchCsv(current,meta,dept));
+ update();
 }
 async function renderBranches(name){
- const id=++branchRequest;
- const host=$('org-branches');if(!host||!name)return;
- host.innerHTML='<h3>'+escape(L('7. Branch and organizational-unit survey results, 2024','7. Résultats du sondage par direction et unité organisationnelle, 2024'))+'</h3>'+
- '<p class="gce-explain">'+escape(L('The source reports 2024 survey results by second organizational level and respondent group. Percentages and response categories are those provided by the original data; a missing or suppressed result is not zero.','La source présente les résultats de 2024 par deuxième niveau organisationnel et groupe de répondants. Les pourcentages et catégories proviennent des données originales; un résultat manquant ou supprimé ne vaut pas zéro.'))+'</p>'+
- '<p role="status">'+escape(L('Loading branch results…','Chargement des résultats par direction…'))+'</p>';
+ const id=++branchRequest,host=$('org-branches');if(!host||!name)return;
+ host.innerHTML='<h3>'+escape(L('2024 employee survey by branch','Sondage de 2024 selon la direction'))+'</h3><p role="status">'+escape(L('Loading published branch results…','Chargement des résultats publiés par direction…'))+'</p>';
  try{
-  const meta=await branchMeta();
-  if(id!==branchRequest)return;
+  const meta=await branchMeta();if(id!==branchRequest)return;
   const dept=meta.departments.find(d=>norm(d.en)===norm(name)||norm(d.fr)===norm(name));
-  if(!dept){host.innerHTML='<h3>'+escape(L('7. Branch survey results, 2024','7. Résultats du sondage par direction, 2024'))+'</h3><p>'+escape(L('This organization has no second-level unit results in the published file used by this collection.','Cet organisme ne possède aucun résultat au deuxième niveau organisationnel dans le fichier publié utilisé ici.'))+'</p>';return;}
+  if(!dept){host.innerHTML='';return;}
   let data=branchDataCache.get(dept.id);
   if(!data){
-   if(typeof DecompressionStream==='undefined')throw Error('gzip browser support unavailable');
+   if(typeof DecompressionStream==='undefined')throw Error('Browser gzip support unavailable');
    const response=await fetch('data/pses-2024-branches/'+encodeURIComponent(dept.id)+'.json.gz');
-   if(!response.ok)throw Error('2024 branch data HTTP '+response.status);
+   if(!response.ok)throw Error('2024 branch source HTTP '+response.status);
    data=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
-   if(!Array.isArray(data))throw Error('branch rows are not a list');
+   if(!Array.isArray(data))throw Error('Branch rows not in expected list');
    branchDataCache.set(dept.id,data);
   }
   if(id!==branchRequest)return;
-  const important=/^Q(12|24|42|43|45|47|49|52|53|58|63|65|70|72)(?:_|$)/;
-  const focus=data.filter(r=>important.test(meta.questions[r[2]]?.id||''));
-  const metric=k=>meta.schema.indexOf(k)+3;
-  const keyRows=focus.map(r=>{
-   const a=branchRow(r,meta,dept);
-   return [a.branch,a.group,a.question,branchValue(r[metric('MOSTPOS')]),branchValue(r[metric('AGREE')]),branchValue(r[metric('MOSTNEG')]),branchValue(r[metric('SCORE100')]),branchValue(r[metric('ANSCOUNT')])];
-  });
-  host.innerHTML='<h3>'+escape(L('7. Branch and organizational-unit survey results, 2024','7. Résultats du sondage par direction et unité organisationnelle, 2024'))+'</h3>'+
-   '<p class="gce-explain">'+escape(L('Each row identifies the second-level unit, the respondent group, and the full question. Summary measures appear only where that question has a published value. Unavailable and suppressed values are not zero.','Chaque ligne précise l’unité de deuxième niveau, le groupe de répondants et la question complète. Les indicateurs sommaires figurent seulement si une valeur est publiée. Les valeurs manquantes et supprimées ne valent pas zéro.'))+'</p>'+
-   '<p class="gce-summary">'+escape(L('Published organizational units: ','Unités organisationnelles publiées : ')+N(dept.branches.length)+' · '+L('Source data rows: ','Lignes de données sources : ')+N(data.length))+'</p>'+
-   table(L('2024 workplace survey by branch and respondent group: ','Sondage de 2024 par direction et groupe : ')+deptName(name),
-   [L('Branch or unit','Direction ou unité'),L('Respondent group','Groupe de répondants'),L('Question','Question'),L('Most positive response (%)','Réponse la plus positive (%)'),L('Agreement measure (%)','Mesure de l’accord (%)'),L('Most negative response (%)','Réponse la plus négative (%)'),L('Score (out of 100)','Note (sur 100)'),L('Published responses','Réponses publiées')],keyRows,'2024-branch-key-questions')+
-   '<h3>'+escape(L('All 2024 survey questions and published response categories by branch','Toutes les questions du sondage de 2024 et les catégories de réponses publiées par direction'))+'</h3>'+
-   '<p class="gce-explain">'+escape(L('The columns “Response option 1” to “Response option 7” retain the source-coded answer order. Options differ by question, so they must not be assumed to mean the same answer across questions. The remaining columns are the original named measures. Results appear automatically as this table is scrolled.','Les colonnes « Option de réponse 1 » à « Option de réponse 7 » conservent l’ordre de codage de la source. Les options changent selon la question et ne représentent donc pas nécessairement la même réponse. Les autres colonnes reprennent les indicateurs nommés dans la source. Les résultats apparaissent automatiquement pendant le défilement.'))+'</p>'+
+  host.innerHTML='<h3>'+escape(L('2024 Public Service Employee Survey by branch','Sondage auprès des fonctionnaires fédéraux de 2024 selon la direction'))+'</h3>'+
+   '<p class="gce-explain">'+escape(L('These are second-level organizational units from the original published survey. Each question and respondent group has its own response percentages. The data are not a survey of all employees in the unit.','Il s’agit des unités organisationnelles de deuxième niveau du sondage publié. Chaque question et groupe de répondants a ses propres pourcentages. Les données ne constituent pas un recensement de tous les employés de l’unité.'))+'</p>'+
    '<div id="gce-branch-full"></div>'+
    '<p class="gce-source">'+L('Source','Source')+': '+link(meta.sourceCsv||meta.source||'https://open.canada.ca/',L('2024 Public Service Employee Survey, second organizational level','Sondage auprès des fonctionnaires fédéraux de 2024, deuxième niveau organisationnel'))+'.</p>';
   branchFullTable($('gce-branch-full'),data,meta,dept,id);
  }catch(error){
   if(id!==branchRequest)return;
-  host.innerHTML='<h3>'+escape(L('7. Branch survey data, 2024','7. Données du sondage par direction, 2024'))+'</h3><p role="alert">'+escape(L('The branch source file could not be loaded in this browser. Other organization tables remain available.','Impossible de charger le fichier source des directions dans ce navigateur. Les autres tableaux de l’organisme demeurent disponibles.'))+'</p>';
-  console.warn('Branch survey:',error);
+  host.innerHTML='<h3>'+escape(L('2024 branch survey data','Résultats du sondage de 2024 par direction'))+'</h3><p role="alert">'+escape(L('Branch data could not be loaded in this browser. Other tables remain available.','Impossible de charger les données des directions dans ce navigateur. Les autres tableaux demeurent disponibles.'))+'</p>';console.warn('2024 branch survey:',error);
  }
 }
 
