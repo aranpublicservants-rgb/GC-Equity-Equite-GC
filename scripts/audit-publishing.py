@@ -77,6 +77,14 @@ for path in html_files:
         elif not candidate.exists() and tag=='a':
             warnings.append('Missing local document/resource: '+str(path.relative_to(ROOT))+' -> '+dest)
 
+visitor_sources=[ROOT/'index.html',ROOT/'gc-dashboard.js',ROOT/'gc-data-library.js',ROOT/'gc-restored-sources.js',ROOT/'gc-org-sources.js']
+for path in visitor_sources:
+    if not path.exists():continue
+    page_text=path.read_text(encoding='utf-8').lower()
+    for phrase in ('our conversation','our previous discussion','you asked me','as requested','my earlier response','chat history','user instructions','previous conversations','you told me to','the user asked'):
+        if phrase in page_text:
+            errors.append('Private conversation or development wording in visitor source: '+str(path.relative_to(ROOT))+' : '+phrase)
+
 for path in js_files:
     result=subprocess.run(['node','--check',str(path)],capture_output=True,text=True)
     if result.returncode:errors.append('JavaScript syntax: '+str(path.relative_to(ROOT))+' :: '+result.stderr.splitlines()[-1])
