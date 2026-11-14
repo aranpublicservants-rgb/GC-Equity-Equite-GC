@@ -130,6 +130,8 @@ restored_path=ROOT/'assets/restored-datasets.json'
 if restored_path.exists():
     restored=json.loads(restored_path.read_text())
     restored_count=0
+    restored_rows=0
+    total_parts=0
     for entry in restored.get('files',[]):
         name=entry['originalName']
         original=source_registry.get(name)
@@ -138,8 +140,10 @@ if restored_path.exists():
             continue
         if entry['archivedSha256']!=original['sha256']:
             errors.append('Restored source checksum does not match original register: '+name)
+        restored_rows+=int(entry['rows'])
         if entry.get('partitions'):
             parts=entry['partitions']
+            total_parts+=len(parts)
             if sum(int(v['rows']) for v in parts.values())!=int(entry['rows']):
                 errors.append('Source-partition row count mismatch: '+name)
             for org,part in parts.items():
@@ -149,8 +153,18 @@ if restored_path.exists():
         else:
             path=ROOT/entry.get('path','')
             if not path.is_file():errors.append('Restored complete source missing: '+name)
+            if name=='f5efcbba_imputation_estimates.csv' and path.is_file():
+                checksum=hashlib.sha256(path.read_bytes()).hexdigest()
+                if checksum!=original['sha256']:errors.append('Original derived imputation source bytes do not match SHA-256')
+                if path.stat().st_size!=original['bytes']:errors.append('Original derived imputation source size mismatch')
         restored_count+=1
-    print('COMPLETE-SOURCE-AUDIT:',restored_count,'of',len(source_registry),'original source files verified and present')
+    if restored_count!=len(source_registry):
+        errors.append(f'Complete source coverage regression: {restored_count}/{len(source_registry)}')
+    if restored_rows!=10200710:
+        errors.append(f'Imported row count changed unexpectedly: {restored_rows}')
+    if total_parts!=2927:
+        errors.append(f'Organization partition count changed unexpectedly: {total_parts}')
+    print('COMPLETE-SOURCE-AUDIT:',restored_count,'of',len(source_registry),'original source files;',restored_rows,'source rows;',total_parts,'organization partitions')
 
 print('REPOSITORY-PUBLISHING-AUDIT',json.dumps({
     'htmlFiles':len(html_files),'javascriptFiles':len(js_files),
