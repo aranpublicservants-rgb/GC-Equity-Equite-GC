@@ -121,78 +121,90 @@ function statusTable(name){
 }
 function representation(name){
  const rec=findEntry(D.series.orgs,name),d=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
- const wfa=findEntry(D.model.DEPT_WFA_2025,name)||{};
- const rows=groups.map(g=>{
-  if(g[0]==='w')return [rowsTitle(g),missing(),d?P(d[2]):missing(),number(wfa.w)===null?missing():P(wfa.w),L('Treasury Board workforce snapshot, 2025','Aperçu de l’effectif du Conseil du Trésor, 2025')];
+ const wfa=findEntry(D.model.DEPT_WFA_2025,name)||{},current=selectGroup('org');
+ const shown=current==='all'?groups:groups.filter(x=>x[0]===current);
+ if(!shown.length)return '';
+ const rows=shown.map(g=>{
+  if(g[0]==='w')return [rowsTitle(g),missing(),d?P(d[2]):missing(),number(wfa.w)===null?missing():P(wfa.w),L('Workforce snapshot, March 2025','Aperçu de l’effectif, mars 2025')];
   const key=g[0],v=rec?.[key]?.['2025']||[];
-  return [rowsTitle(g),v[1]===null||v[1]===undefined?missing():N(v[1]),P(v[2]),key==='b'?L('No benchmark published','Aucune valeur de référence publiée'):P(v[3]),L('March 31, 2025','31 mars 2025')];
+  return [rowsTitle(g),v[1]===null||v[1]===undefined?missing():N(v[1]),P(v[2]),key==='b'?L('Not established','Non établie'):P(v[3]),L('March 31, 2025','31 mars 2025')];
  });
- const body=table(L('Representation in ','Représentation dans ')+deptName(name),
- [L('Employee group','Groupe d’employés'),L('Employees (published count)','Employés (nombre publié)'),L('Share of workforce','Part de l’effectif'),L('Workforce availability estimate','Estimation de la disponibilité'),L('Date or source','Date ou source')],rows,'organization-representation');
- return sCard('org-representation',L('1. Workforce representation in 2025','1. Représentation au sein de l’effectif en 2025'),
- L('Employee shares describe the published workforce population. Workforce availability is a separate benchmark, and is not a hiring target. Unavailable values are not zero.','Les parts concernent la population de l’effectif publiée. La disponibilité est une valeur de référence distincte et non un objectif d’embauche. Les données non disponibles ne valent pas zéro.'),body,L('Treasury Board Secretariat','Secrétariat du Conseil du Trésor'),source.tbs);
+ return sCard('org-representation',L('Workforce representation, 2025','Représentation au sein de l’effectif, 2025'),
+  L('These published workforce figures cover the core public administration, not every listed organization. Workforce availability is a benchmark, not a hiring target. Missing values are not zero.','Ces chiffres publiés visent l’administration publique centrale et non tous les organismes du répertoire. La disponibilité est une valeur de référence, non un objectif d’embauche. Les valeurs manquantes ne sont pas des zéros.'),
+  table(L('Representation in ','Représentation dans ')+deptName(name),
+ [L('Group','Groupe'),L('Published count','Nombre publié'),L('Share of workforce (%)','Part de l’effectif (%)'),L('Workforce availability (%)','Disponibilité (%)'),L('Period','Période')],rows,'organization-representation'),
+ L('Treasury Board Secretariat','Secrétariat du Conseil du Trésor'),source.tbs);
 }
+
 function trendTables(name){
- const rec=findEntry(D.series.orgs,name);
- let content='';
- for(const g of groups.filter(g=>g[0]!=='w')){
-  const label=rowsTitle(g), series=rec?.[g[0]]||{};
-  const years=Object.keys(series).sort();
-  if(!years.length)continue;
-  const rows=years.map(y=>{let x=series[y];return [y,N(x[0]),x[1]===null?missing():N(x[1]),P(x[2]),g[0]==='b'?L('Not provided for this subgroup','Aucune valeur pour ce sous-groupe'):P(x[3])];});
-  content+=sCard('org-trend-'+g[0],L('Representation over time: ','Représentation au fil du temps : ')+label+' ('+(years.length?years[0]+'–'+years[years.length-1]:'2017–2025')+')',
-   L('Separate yearly workforce counts, employee-group counts, representation percentages and the benchmark used for that year. Some benchmark definitions changed over time.','Effectif annuel, effectif du groupe, pourcentage de représentation et valeur de référence de l’année. Certaines définitions de la valeur de référence ont changé au fil du temps.'),
-   table(label+' '+deptName(name),[L('Year','Année'),L('Total employees','Effectif total'),L('Employees in group','Employés du groupe'),L('Representation (%)','Représentation (%)'),L('Workforce availability (%)','Disponibilité (%)')],rows,'organization-'+g[0]+'-trend'),
-   L('Treasury Board Secretariat, departmental representation','Secrétariat du Conseil du Trésor, représentation ministérielle'),D.series.pages?.[g[0]]?.url||source.tbs);
+ const rec=findEntry(D.series.orgs,name),selectedGroup=selectGroup('org');
+ if(!rec)return '';
+ if(selectedGroup==='all'){
+  const years=[...new Set(['i','d','v','b'].flatMap(k=>Object.keys(rec[k]||{})))].sort();
+  const rows=years.map(y=>[y,...['i','d','v','b'].map(k=>P(rec[k]?.[y]?.[2]))]);
+  return sCard('org-trends',L('Workforce representation over time','Évolution de la représentation au sein de l’effectif'),
+   L('Percentage of the workforce belonging to each group as published in each year. A blank is not zero; benchmark methods and departmental structures changed over time.','Pourcentage de l’effectif appartenant à chaque groupe selon les données publiées chaque année. Une valeur manquante ne vaut pas zéro; les méthodes et la structure des ministères ont changé.'),
+   table(L('Published representation trends: ','Tendances de représentation publiées : ')+deptName(name),
+    [L('Year','Année'),L('Indigenous (%)','Autochtones (%)'),L('Disability (%)','Handicap (%)'),L('Racialized (%)','Racisés (%)'),L('Black (%)','Noirs (%)')],rows,'organization-representation-trends'),
+   L('Treasury Board Secretariat, departmental representation','Secrétariat du Conseil du Trésor, représentation ministérielle'),source.tbs);
  }
- return content;
+ if(!['i','d','v','b'].includes(selectedGroup))return '';
+ const group=groups.find(g=>g[0]===selectedGroup),years=Object.keys(rec[selectedGroup]||{}).sort();
+ if(!years.length)return '';
+ return sCard('org-trends',L('Representation over time: ','Évolution de la représentation : ')+rowsTitle(group),
+  L('The organization’s published representation, counts and comparison benchmark for the selected group. The benchmark may change between years.','La représentation, le nombre d’employés et la valeur de référence publiés pour le groupe choisi. La valeur de référence peut changer selon l’année.'),
+  table(rowsTitle(group)+' · '+deptName(name),
+  [L('Year','Année'),L('Workforce size','Effectif total'),L('Group employees','Employés du groupe'),L('Representation (%)','Représentation (%)'),L('Availability (%)','Disponibilité (%)')],
+  years.map(y=>{const a=rec[selectedGroup][y];return[y,N(a[0]),N(a[1]),P(a[2]),selectedGroup==='b'?L('Not available','Non disponible'):P(a[3])]}),'organization-selected-group-trend'),
+  L('Treasury Board Secretariat','Secrétariat du Conseil du Trésor'),D.series.pages?.[selectedGroup]?.url||source.tbs);
 }
+
 function subgroupTables(name){
- let result='';
- const datasets=[
-  {key:'ind',year:'2025',title:L('Indigenous subgroups in 2025','Sous-groupes autochtones en 2025'),cols:[['inuit','Inuit','Inuits'],['metis','Métis','Métis'],['first_nations','First Nations','Premières Nations'],['other','Other or not specified','Autres ou non précisés']]},
-  {key:'dis',year:'2024',title:L('Disability subgroups in 2024','Sous-groupes de handicap en 2024'),cols:[['coordination_dexterity','Coordination or dexterity','Coordination ou dextérité'],['mobility','Mobility','Mobilité'],['speech_impairment','Speech','Parole'],['blind_visual_impairment','Blind or visual impairment','Cécité ou déficience visuelle'],['deaf_hard_of_hearing','Deaf or hard of hearing','Surdité ou perte auditive'],['other_disability','Other disability','Autre handicap']]}
- ];
- for(const d of datasets){const row=findRow(D[d.key],name);if(!row)continue;let rows=[];
-  if(row)rows=d.cols.map(x=>[L(x[1],x[2]),/^suppressed$/i.test(row[x[0]+'_number'])?L('Suppressed','Supprimé'):N(row[x[0]+'_number']),/^suppressed$/i.test(row[x[0]+'_pct'])?L('Suppressed','Supprimé'):P(row[x[0]+'_pct'])]);
-  result+=sCard('org-sub-'+d.key,d.title,L('Reported shares are of the organization’s published workforce in the stated year. Subgroup categories may be incomplete or suppressed; do not add them to recreate missing counts.','Les parts sont celles de l’effectif publié de l’organisme durant l’année indiquée. Les catégories peuvent être incomplètes ou supprimées. Ne les additionnez pas pour reconstituer des nombres manquants.'),
-  table(d.title+': '+deptName(name),[L('Subgroup','Sous-groupe'),L('Employees','Employés'),L('Share of workforce','Part de l’effectif')],rows,'org-subgroup-'+d.key),
-  L('Treasury Board Secretariat, subgroup tables','Secrétariat du Conseil du Trésor, tableaux des sous-groupes'),source.tbs);
- }
- return result;
+ const choice=selectGroup('org');
+ if(choice!=='i'&&choice!=='d')return '';
+ const data=choice==='i'?{
+  year:'2025',cols:[['inuit','Inuit','Inuits'],['metis','Métis','Métis'],['first_nations','First Nations','Premières Nations'],['other','Other or not specified','Autres ou non précisés']]
+ }:{
+  year:'2024',cols:[['coordination_dexterity','Coordination or dexterity','Coordination ou dextérité'],['mobility','Mobility','Mobilité'],['speech_impairment','Speech','Parole'],['blind_visual_impairment','Blind or visual impairment','Cécité ou déficience visuelle'],['deaf_hard_of_hearing','Deaf or hard of hearing','Surdité ou perte auditive'],['other_disability','Other disability','Autre handicap']]
+ };
+ const row=findRow(D[choice==='i'?'ind':'dis'],name);if(!row)return '';
+ const rows=data.cols.map(x=>[L(x[1],x[2]),/^suppressed$/i.test(row[x[0]+'_number'])?L('Suppressed','Supprimé'):N(row[x[0]+'_number']),/^suppressed$/i.test(row[x[0]+'_pct'])?L('Suppressed','Supprimé'):P(row[x[0]+'_pct'])]);
+ return sCard('org-subgroups',L('Subgroups in ','Sous-groupes dans ')+deptName(name)+' · '+data.year,
+  L('These shares describe the organization’s published workforce. Subgroup figures may be suppressed or incomplete, and subgroups are not automatically additive.','Ces parts concernent l’effectif publié de l’organisme. Les données des sous-groupes peuvent être supprimées ou incomplètes et ne sont pas automatiquement additionnables.'),
+  table(L('Published subgroups, ','Sous-groupes publiés, ')+data.year,[L('Subgroup','Sous-groupe'),L('Employees','Employés'),L('Share (%)','Part (%)')],rows,'organization-subgroups'),
+  L('Treasury Board Secretariat subgroup data','Données du Conseil du Trésor sur les sous-groupes'),source.tbs);
 }
+
 function psesTables(name){
  const all=findEntry(D.model.PSES_DEPT,name)||{},by=findEntry(D.model.EEG_DEPT,name)||{},yoy=findEntry(D.model.YOY,name)||{};
  if(!Object.keys(all).length&&!Object.keys(by).length)return '';
- const qmeta=D.model.PSES_QMETA||{},qs=Object.keys(qmeta);
- const qsText=q=>lang()?(D.model.EEG_QMETA_FR[q]||qmeta[q]?.[1]||q):(qmeta[q]?.[1]||q);
- const groupKeys=['all','woman','pwd','ind','rac','black'];
- const row=qs.map(q=>[q+' · '+qsText(q),...groupKeys.map(g=>P(g==='all'?all[q]:by[g]?.[q]))]);
- const body=table(L('2024 survey responses for ','Réponses au sondage de 2024 pour ')+deptName(name),
- [L('2024 survey question and measured response','Question du sondage de 2024 et réponse mesurée'),L('All respondents','Tous les répondants'),L('Women','Femmes'),L('Disability','Handicap'),L('Indigenous','Autochtones'),L('Racialized','Racisés'),L('Black','Noirs')],row,'org-survey-2024');
- const years=qs.filter(q=>yoy[q]).map(q=>[q+' · '+qsText(q),P(yoy[q].a),P(yoy[q].b),number(yoy[q].a)!==null&&number(yoy[q].b)!==null?N(yoy[q].b-yoy[q].a)+' '+L('percentage points','points de pourcentage'):missing()]);
- return sCard('org-survey',L('2. Employee experiences: 2024 survey','2. Expérience des employés : sondage de 2024'),
-  L('Each cell is the percentage of the stated respondent group giving the specified response. Questions have different meanings; harassment and discrimination are adverse experiences, while several other questions are favourable responses. Groups can overlap.','Chaque cellule indique le pourcentage de répondants du groupe ayant donné la réponse précisée. Les questions ont des sens différents : le harcèlement et la discrimination sont des expériences négatives, contrairement à plusieurs autres réponses. Les groupes peuvent se chevaucher.'),body,L('Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux'),source.pses)+
- sCard('org-survey-change',L('Employee survey changes: 2022 to 2024','Évolution des réponses : 2022 à 2024'),
-  L('For each comparable question available, a positive change means a larger share chose the response. It is not necessarily an improvement: see the question wording.','Pour chaque question comparable, un changement positif signifie qu’une part plus élevée a choisi cette réponse. Ce n’est pas nécessairement une amélioration : il faut lire le libellé de la question.'),
-  table(L('Published survey changes for ','Évolution des réponses publiées pour ')+deptName(name),
-  [L('Question and response','Question et réponse'),L('2022 respondents (%)','Répondants en 2022 (%)'),L('2024 respondents (%)','Répondants en 2024 (%)'),L('Change','Variation')],years,'org-survey-trend'),
+ const selectedGroup=selectGroup('org'),key=surveyGroup(selectedGroup),qmeta=D.model.PSES_QMETA||{},qs=Object.keys(qmeta);
+ const label=q=>lang()?(D.model.EEG_QMETA_FR[q]||qmeta[q]?.[1]||q):(qmeta[q]?.[1]||q);
+ const rows=qs.map(q=>[q+' · '+label(q),P(all[q]),...(key!=='all'?[P(by[key]?.[q])]:[])]);
+ const title=L('2024 employee survey by respondent group: ','Sondage de 2024 selon le groupe de répondants : ')+deptName(name);
+ const body=table(title,[L('Question and response','Question et réponse'),L('All respondents (%)','Tous les répondants (%)'),...(key!=='all'?[groupWord(selectedGroup)+' (%)']:[])],rows,'organization-survey-2024');
+ const yearRows=qs.filter(q=>yoy[q]).map(q=>[q+' · '+label(q),P(yoy[q].a),P(yoy[q].b),number(yoy[q].a)!==null&&number(yoy[q].b)!==null?N(yoy[q].b-yoy[q].a)+' '+L('percentage points','points de pourcentage'):missing()]);
+ return sCard('org-survey',L('Employee experiences: 2024 Public Service Employee Survey','Expérience des employés : Sondage auprès des fonctionnaires fédéraux de 2024'),
+  L('Results show the published response percentage among respondents in the chosen group. The direction of a favourable outcome depends on the question; groups may overlap.','Les résultats indiquent le pourcentage de réponses publié pour le groupe choisi. Selon la question, un résultat plus élevé n’est pas nécessairement favorable; les groupes peuvent se chevaucher.'),
+  body,L('Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux'),source.pses)+
+ sCard('org-survey-change',L('Employee survey changes: 2022 to 2024, all respondents','Évolution du sondage : 2022 à 2024, tous les répondants'),
+  L('These time comparisons are organization-wide, not necessarily broken down by the chosen group. A positive change is not automatically an improvement.','Ces comparaisons concernent l’ensemble de l’organisme et pas nécessairement le groupe choisi. Une variation positive n’est pas automatiquement une amélioration.'),
+  table(L('Reported survey changes: ','Évolution des réponses : ')+deptName(name),
+  [L('Question and response','Question et réponse'),L('2022 (%)','2022 (%)'),L('2024 (%)','2024 (%)'),L('Change','Variation')],yearRows,'organization-survey-trends'),
   L('Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux'),source.pses);
 }
+
 function staffingTables(name){
- const data=findEntry(D.snps.orgs,name)||{};
- if(!Object.keys(data).length)return '';
- const questions=D.snps.questions;
- const keys=['all','woman','man','pwd','nopwd','ind','nonind','rac','nonrac','black'];
- const rows=Object.keys(questions).map(id=>{
-  const q=questions[id];return [id+' · '+L(q.en,q.fr),...keys.map(k=>P(data[k]?.[id]))];
- });
- return sCard('org-staffing',L('3. Staffing experiences: 2025 survey','3. Expérience de la dotation : sondage de 2025'),
- L('Each question has its own respondent population, including some that apply only to people involved in staffing. Percentages must not be compared as if their denominators were the same.','Chaque question porte sur sa propre population de répondants; certaines visent seulement les personnes ayant participé à des activités de dotation. Les pourcentages ne doivent pas être comparés comme si les dénominateurs étaient identiques.'),
- table(L('2025 staffing survey by respondent group: ','Sondage de 2025 sur la dotation par groupe : ')+deptName(name),
- [L('Question and response','Question et réponse'),...keys.map(k=>L(surveyGroups.find(x=>x[0]===k)[1],surveyGroups.find(x=>x[0]===k)[2]))],rows,'org-staffing-survey'),
- L('Public Service Commission, 2025 staffing survey','Commission de la fonction publique, sondage de 2025'),D.snps.dataset);
+ const data=findEntry(D.snps.orgs,name)||{};if(!Object.keys(data).length)return '';
+ const key=surveyGroup(selectGroup('org')),q=D.snps.questions;
+ const rows=Object.keys(q).map(id=>[id+' · '+L(q[id].en,q[id].fr),P(data.all?.[id]),...(key!=='all'?[P(data[key]?.[id])]:[])]);
+ return sCard('org-staffing',L('2025 staffing experiences','Expérience de la dotation en 2025'),
+  L('Question denominators differ. Some questions only apply to respondents who participated in staffing activities. Results are not workforce representation.','Les dénominateurs varient selon la question. Certaines questions portent seulement sur les participants aux activités de dotation. Il ne s’agit pas de données sur la représentation de l’effectif.'),
+  table(L('2025 Staffing and Non-Partisanship Survey: ','Sondage de 2025 sur la dotation : ')+deptName(name),
+  [L('Question and response','Question et réponse'),L('All respondents (%)','Tous les répondants (%)'),...(key!=='all'?[groupWord(selectGroup('org'))+' (%)']:[])],rows,'organization-staffing-survey'),
+  L('Public Service Commission, 2025 staffing survey','Commission de la fonction publique, sondage de 2025'),D.snps.dataset);
 }
+
 function hiringTable(name){
  const obj=findEntry(D.psc.hiring,name);if(!obj)return '';
  const rows=Object.keys(obj.years).sort().map(year=>{
