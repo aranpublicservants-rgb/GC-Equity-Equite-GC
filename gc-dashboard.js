@@ -22,15 +22,47 @@ const source={
  catalogue:'sources.html'
 };
 let D=null,selected='',tableSequence=0;
+const tableStore=new Map();
+const PAGE_ROWS=18;
+const GROUP_OPTIONS=[['all','All employees / respondents','Tous les employés / répondants'],['w','Women','Femmes'],['man','Men','Hommes'],['i','Indigenous employees','Employés autochtones'],['nonind','Non-Indigenous employees','Employés non autochtones'],['d','Employees with disabilities','Employés en situation de handicap'],['nopwd','Employees without disabilities','Employés sans handicap'],['v','Racialized employees','Employés racisés'],['nonrac','Non-racialized employees','Employés non racisés'],['b','Black employees','Employés noirs'],['lgbt','2SLGBTQIA+ employees','Employés 2ELGBTQIA+']];
+const selectGroup=where=>$(where+'-group-picker')?.value||'all';
+const groupWord=g=>{const x=GROUP_OPTIONS.find(z=>z[0]===g)||GROUP_OPTIONS[0];return L(x[1],x[2]);};
+const surveyGroup=g=>({all:'all',w:'woman',man:'man',i:'ind',nonind:'nonind',d:'pwd',nopwd:'nopwd',v:'rac',nonrac:'nonrac',b:'black',lgbt:'lgbt'})[g]||'all';
 function sCard(id,title,description,body,srcLabel,srcUrl){
+ if(!body)return '';
  return '<section class="gce-data-block" id="'+id+'"><h3>'+escape(title)+'</h3><p class="gce-explain">'+escape(description)+'</p>'+body+(srcUrl?'<p class="gce-source">'+L('Source','Source')+': '+link(srcUrl,srcLabel)+'.</p>':'')+'</section>';
 }
 function table(caption,heads,rows,filename){
- if(!rows||!rows.length)return '<p class="gce-unavailable">'+escape(L('No published result in this collection for the selected organization and measure.','Aucun résultat publié dans cette collection pour cet organisme et cet indicateur.'))+'</p>';
+ if(!rows||!rows.length)return '<p class="gce-unavailable">'+escape(L('No published result for this selection.','Aucun résultat publié pour cette sélection.'))+'</p>';
  const id='gce-table-'+(++tableSequence);
- const cells=rows.map(r=>'<tr>'+r.map((c,i)=>i===0?'<th scope="row">'+escape(c)+'</th>':'<td>'+escape(c)+'</td>').join('')+'</tr>').join('');
- return '<div class="gce-table-actions"><button type="button" class="gce-download" data-table="'+id+'" data-file="'+escape(filename||'gc-equity-data')+'">'+escape(L('Download this table (CSV)','Télécharger ce tableau (CSV)'))+'</button></div>'+
- '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(caption)+'"><table id="'+id+'" data-gcw-ready="yes"><caption>'+escape(caption)+'</caption><thead><tr>'+heads.map(h=>'<th scope="col">'+escape(h)+'</th>').join('')+'</tr></thead><tbody>'+cells+'</tbody></table></div>';
+ tableStore.set(id,{caption,heads,rows,filename:filename||'gc-equity-data',page:0});
+ const body=tableRows(rows,0);
+ return '<div class="gce-table-actions"><button type="button" class="gce-download" data-table="'+id+'" data-file="'+escape(filename||'gc-equity-data')+'">'+escape(L('Download full table (CSV)','Télécharger le tableau complet (CSV)'))+'</button></div>'+
+ '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(caption)+'"><table id="'+id+'" data-gcw-ready="yes"><caption>'+escape(caption)+'</caption><thead><tr>'+heads.map(h=>'<th scope="col">'+escape(h)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>'+
+ (rows.length>PAGE_ROWS?'<div class="gce-pager" data-for="'+id+'"><button type="button" class="gce-page-prev" disabled>'+escape(L('Previous','Précédent'))+'</button><span class="gce-page-count" role="status" aria-live="polite">'+escape(pageText(0,rows.length))+'</span><button type="button" class="gce-page-next">'+escape(L('Next','Suivant'))+'</button></div>':'');
+}
+function tableRows(rows,page){
+ return rows.slice(page*PAGE_ROWS,(page+1)*PAGE_ROWS).map(r=>'<tr>'+r.map((v,i)=>i===0?'<th scope="row">'+escape(v)+'</th>':'<td>'+escape(v)+'</td>').join('')+'</tr>').join('');
+}
+function pageText(page,total){
+ return L('Rows ','Lignes ')+(page*PAGE_ROWS+1)+'–'+Math.min((page+1)*PAGE_ROWS,total)+' / '+total;
+}
+function paginate(btn,delta){
+ const controls=btn.closest('.gce-pager'),key=controls?.dataset.for,entry=tableStore.get(key),target=$(key);
+ if(!entry||!target)return;
+ entry.page=Math.max(0,Math.min(Math.ceil(entry.rows.length/PAGE_ROWS)-1,entry.page+delta));
+ target.tBodies[0].innerHTML=tableRows(entry.rows,entry.page);
+ controls.querySelector('.gce-page-count').textContent=pageText(entry.page,entry.rows.length);
+ controls.querySelector('.gce-page-prev').disabled=entry.page===0;
+ controls.querySelector('.gce-page-next').disabled=(entry.page+1)*PAGE_ROWS>=entry.rows.length;
+}
+function updateGroupLabels(){
+ for(const area of ['org','public']){
+  const el=$(area+'-group-picker');if(!el)continue;
+  const current=el.value;
+  el.innerHTML=GROUP_OPTIONS.map(g=>'<option value="'+g[0]+'">'+escape(L(g[1],g[2]))+'</option>').join('');
+  el.value=current||'all';
+ }
 }
 const rowsTitle=(group)=>L(group[1],group[2]);
 const missing=()=>L('Not published','Non publié');
@@ -46,6 +78,10 @@ function csvParse(s){
 async function load(){
  const files=[
   ['model','assets/workspace-data.json','json'],
+  ['pscCatalog','data/psc/catalogue.json','json'],
+  ['pscPopulation','data/psc/CFPPSC_AR2C.csv','csv'],
+  ['pscTenure','data/psc/ar2a.csv','csv'],
+  ['pscOfficialLanguage','data/psc/demo_fol.csv','csv'],
   ['orglist','assets/federal-organizations-2026-10-15.json','json'],
   ['series','data/tbs-departmental-representation-2017-2025.json','json'],
   ['snps','data/snps-2025-by-organization.json','json'],
@@ -459,19 +495,21 @@ function updateStatic(){
  document.querySelectorAll('[data-gce-en]').forEach(el=>{const value=lang()?el.dataset.gceFr:el.dataset.gceEn;if(el.tagName==='INPUT')el.placeholder=value;else el.textContent=value;});
 }
 function downloadTable(btn){
- const t=$(btn.dataset.table);if(!t)return;
- const clean=s=>String(s||'').replace(/\s+/g,' ').trim(),quote=s=>'"'+clean(s).replace(/"/g,'""')+'"';
- let lines=[[clean(t.caption?.textContent||'')],...[...t.rows].map(r=>[...r.cells].map(c=>clean(c.textContent)))];
- const csv='\ufeff'+lines.map(r=>r.map(quote).join(',')).join('\r\n');
+ const entry=tableStore.get(btn.dataset.table);if(!entry)return;
+ const clean=s=>String(s??'').replace(/\s+/g,' ').trim(),quote=s=>'"'+clean(s).replace(/"/g,'""')+'"';
+ const lines=[[entry.caption],entry.heads,...entry.rows];
+ const csv='\ufeff'+lines.map(row=>row.map(quote).join(',')).join('\r\n');
  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=u;a.download=(btn.dataset.file||'gc-equity')+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
+ a.href=u;a.download=(entry.filename||'gc-equity')+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
 }
-root.addEventListener('click',e=>{const btn=e.target.closest('.gce-download');if(btn)downloadTable(btn);});
+root.addEventListener('click',e=>{const btn=e.target.closest('.gce-download');if(btn)downloadTable(btn);const n=e.target.closest('.gce-page-next');if(n)paginate(n,1);const p=e.target.closest('.gce-page-prev');if(p)paginate(p,-1);});
 $('org-picker')?.addEventListener('change',()=>renderOrg());
+$('org-group-picker')?.addEventListener('change',()=>renderOrg());
+$('public-group-picker')?.addEventListener('change',()=>publicTables());
 let rerenderTimer;
-const update=()=>{if(!D)return;updateStatic();populatePicker();renderOrg();publicTables();};
+const update=()=>{if(!D)return;updateStatic();updateGroupLabels();populatePicker();renderOrg();publicTables();};
 new MutationObserver(()=>{clearTimeout(rerenderTimer);rerenderTimer=setTimeout(update,50);}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 (async()=>{try{
- updateStatic();D=await load();populatePicker();publicTables();renderOrg();$('gce-loading').hidden=true;
+ updateStatic();D=await load();updateGroupLabels();populatePicker();publicTables();renderOrg();$('gce-loading').hidden=true;
 }catch(e){const status=$('gce-loading');if(status)status.textContent=L('The published data could not be loaded. Please reload the page.','Impossible de charger les données publiées. Veuillez recharger la page.');console.error('GC Equity data tables:',e);}})();
 })();
