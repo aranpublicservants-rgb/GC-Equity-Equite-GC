@@ -124,6 +124,34 @@ for path in branches:
             while f.read(1024*1024):pass
     except Exception as e:errors.append('Corrupt branch data file: '+path.name+' '+str(e))
 
+# All imported tables must belong to the exact original source register.
+source_registry={r['name']:r for r in json.loads((ROOT/'scripts/archived-source-registry.json').read_text())['files']}
+restored_path=ROOT/'assets/restored-datasets.json'
+if restored_path.exists():
+    restored=json.loads(restored_path.read_text())
+    restored_count=0
+    for entry in restored.get('files',[]):
+        name=entry['originalName']
+        original=source_registry.get(name)
+        if original is None:
+            errors.append('Restored source was never in the verified original dataset register: '+name)
+            continue
+        if entry['archivedSha256']!=original['sha256']:
+            errors.append('Restored source checksum does not match original register: '+name)
+        if entry.get('partitions'):
+            parts=entry['partitions']
+            if sum(int(v['rows']) for v in parts.values())!=int(entry['rows']):
+                errors.append('Source-partition row count mismatch: '+name)
+            for org,part in parts.items():
+                path=ROOT/part['path']
+                if not path.exists():errors.append('Missing original complete source partition: '+part['path'])
+                elif path.stat().st_size>100_000_000:errors.append('Source partition exceeds GitHub file limit: '+part['path'])
+        else:
+            path=ROOT/entry.get('path','')
+            if not path.is_file():errors.append('Restored complete source missing: '+name)
+        restored_count+=1
+    print('COMPLETE-SOURCE-AUDIT:',restored_count,'of',len(source_registry),'original source files verified and present')
+
 print('REPOSITORY-PUBLISHING-AUDIT',json.dumps({
     'htmlFiles':len(html_files),'javascriptFiles':len(js_files),
     'cssFiles':len(css_files),'csvFiles':len(csv_files),'jsonFiles':len(json_files),
