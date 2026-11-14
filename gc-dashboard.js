@@ -86,6 +86,7 @@ async function load(){
   ['series','data/tbs-departmental-representation-2017-2025.json','json'],
   ['snps','data/snps-2025-by-organization.json','json'],
   ['cta','data/call-to-action-letters.json','json'],
+  ['ctaComparisons','data/call-to-action-comparisons.json','json'],
   ['psc','data/psc/psc-equity.json','json'],
   ['ind','data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv','csv'],
   ['dis','data/october-2026/TBS_disability_subgroups_by_department_2024.csv','csv'],
@@ -287,6 +288,39 @@ async function renderAdditionalOrgData(name){
   host.innerHTML='<p class="gce-unavailable">'+escape(L('Additional region or mobility tables are temporarily unavailable. Other verified tables remain accessible.','Les tableaux supplémentaires sur les régions ou la mobilité sont temporairement indisponibles. Les autres tableaux vérifiés demeurent accessibles.'))+'</p>';
   console.warn('PSC optional organization sources:',e);
  }
+}
+
+function ctaComparisonOrg(name){
+ const sourceData=D.ctaComparisons;
+ const rec=sourceData?.organizations?.find(o=>norm(o.name_en)===norm(name)||norm(o.name_fr)===norm(name));
+ if(!rec)return '';
+ let out='';
+ const g=selectGroup('org'),groupsAvailable=g==='all'?['i','v','d','b']:['i','v','d','b'].includes(g)?[g]:[];
+ if(groupsAvailable.length){
+  const metrics=groupsAvailable.map(key=>[
+   groupWord(key),
+   P(rec['rep_'+key+'_2021']),P(rec['rep_'+key+'_2023']),P(rec['rep_'+key+'_2025']),
+   key==='b'?L('No Black-specific benchmark','Aucune valeur de référence propre au groupe des employés noirs'):P(rec['wfa_'+key+'_2025'])
+  ]);
+  out+=sCard('org-cta-outcomes',L('Published equity representation in this organization: 2021, 2023 and 2025','Représentation publiée dans cet organisme : 2021, 2023 et 2025'),
+   L('Representation figures and workforce availability estimates are attributed to this organization alone. They are not public service totals. Comparing years does not identify the cause of a change.','Les chiffres de représentation et les estimations de disponibilité sont attribués à cet organisme seulement. Il ne s’agit pas de totaux pour la fonction publique. Une comparaison entre les années ne permet pas de déterminer les causes de la variation.'),
+   table(L('Equity representation outcomes: ','Résultats de représentation en matière d’équité : ')+deptName(name),
+   [L('Employee group','Groupe d’employés'),L('2021 representation (%)','Représentation 2021 (%)'),L('2023 representation (%)','Représentation 2023 (%)'),L('2025 representation (%)','Représentation 2025 (%)'),L('2025 workforce availability (%)','Disponibilité 2025 (%)')],
+   metrics,'organization-call-to-action-representation'),
+   L('Site’s organization-level Call to Action comparison dataset','Données comparatives de l’appel à l’action selon l’organisme'),'data/call-to-action-comparisons.json');
+ }
+ const categories=Object.entries(sourceData.categories||{});
+ if(categories.length){
+  const label=v=>v===true?L('Mention detected in document','Mention relevée dans le document'):
+    v===false?L('No mention detected','Aucune mention relevée'):L('No comparable document coded','Aucun document comparable codé');
+  out+=sCard('org-cta-coding',L('Issues and initiatives mentioned in this organization’s Call to Action documents','Thèmes et initiatives mentionnés dans les documents de cet organisme sur l’appel à l’action'),
+   L('These columns are automated keyword classifications of the organization’s own 2021 letter and 2024 self-assessment, not proof that a program exists or was effective. An undetected mention is not evidence that an action never occurred.','Les colonnes sont issues d’un classement automatisé par mots-clés de la lettre de 2021 et de l’autoévaluation de 2024 de cet organisme. Elles ne prouvent ni l’existence ni l’efficacité d’un programme. L’absence de mention détectée ne signifie pas qu’aucune mesure n’a été prise.'),
+   table(L('Coded mentions in organization documents: ','Mentions codées dans les documents de l’organisme : ')+deptName(name),
+   [L('Topic or initiative','Thème ou initiative'),L('2021 letter','Lettre de 2021'),L('2024 self-assessment','Autoévaluation de 2024')],
+   categories.map(([key,meta])=>[L(meta.en,meta.fr),label(rec['L_'+key]),label(rec['S_'+key])]),'organization-call-to-action-keyword-codes'),
+   L('Method and locally published comparison dataset','Méthode et données comparatives publiées ici'),'data/call-to-action-comparisons.json');
+ }
+ return out;
 }
 
 function pscPopulationOrg(name){
@@ -541,7 +575,7 @@ function renderOrg(){
  out.innerHTML=meta+s+representation(name)+trendTables(name)+subgroupTables(name)+
  (selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+
  psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+
- ctaTables(name)+plansTable(name);
+ ctaTables(name)+ctaComparisonOrg(name)+plansTable(name);
  if(selectGroup('org')==='all'){
   const extra=document.createElement('div');extra.id='org-additional-psc';out.append(extra);renderAdditionalOrgData(name);
  }else extraOrgRequest++;
