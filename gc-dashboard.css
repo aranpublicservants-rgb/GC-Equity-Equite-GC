@@ -130,3 +130,10 @@
 @media(prefers-contrast:more){
  #gc-dashboard .gce-controls .gce-picker,#gc-dashboard .gce-choice{border-width:2px}
 }
+
+/* Tables added in November 2026: closed by default, loaded when opened. */
+.gce-added{border:1px solid var(--gw-line);border-radius:6px;margin:.55rem 0;padding:0 .85rem;background:var(--gw-card)}
+.gce-added>summary{cursor:pointer;font-weight:700;padding:.7rem 0;min-height:44px;line-height:1.4}
+.gce-added>summary:focus-visible{outline:3px solid var(--gw-focus,#efb62f);outline-offset:2px}
+.gce-added-body{padding:0 0 .8rem}
+.gce-added-files{margin:.6rem 0 0;padding-left:1.2rem;line-height:1.7}

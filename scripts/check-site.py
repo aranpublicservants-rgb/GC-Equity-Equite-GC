@@ -51,7 +51,7 @@ assert 'id="org-topic-picker"' in home_html and 'id="public-topic-picker"' in ho
 assert 'href="#department-data"' in home_html and 'href="#equity-data"' in home_html, 'homepage two-area navigation broken'
 assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
 
-for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
+for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-added-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
 for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
     if line.strip():

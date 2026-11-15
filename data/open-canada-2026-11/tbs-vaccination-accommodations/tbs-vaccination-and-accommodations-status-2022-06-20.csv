@@ -1,0 +1,56 @@
+d_nm_e,d_nm_f,d_code,vacc_fv,vacc_pv,vacc_uv,accr_tot,accr_med,accr_rel,accr_oth,decr_num,decr_per,decip_num,decip_per
+Administrative Tribunals Support Service of Canada,Service canadien d’appui aux tribunaux administratifs,ATS,607,1,1,4,1,2,1,4,1,0,0
+Agriculture and Agri-Food Canada,Agriculture et Agroalimentaire Canada,AGR,5874,10,11,47,8,32,7,36,0.77,11,0.23
+Atlantic Canada Opportunities Agency,Agence de promotion économique du Canada atlantique,ACO,663,0,0,3,0,3,0,2,0.67,1,0.33
+Canada Border Services Agency,Agence des services frontaliers du Canada,BSF,15122,39,18,183,38,139,6,153,0.84,30,0.16
+Canada Economic Development for Quebec Regions,Développement économique Canada pour les régions du Québec,FRD,394,0,1,4,1,3,0,3,0.75,1,0.25
+Canada School of Public Service,École de la fonction publique du Canada,CES,693,5,2,8,3,5,0,7,0.88,1,0.13
+Canadian Grain Commission,Commission canadienne des grains,CGC,488,0,0,2,2,0,0,2,1,0,0
+Canadian Heritage,Patrimoine canadien,PCH,2094,0,10,27,9,15,3,17,0.63,10,0.37
+Canadian Human Rights Commission,Commission canadienne des droits de la personne,HRC,301,0,0,0,0,0,0,0,1,0,0
+Canadian Northern Economic Development Agency,Agence canadienne de développement économique du Nord,NED,112,0,0,0,0,0,0,0,1,0,0
+Canadian Radio-television and Telecommunications Commission,Conseil de la radiodiffusion et des télécommunications canadiennes,RTC,568,0,1,4,3,1,0,4,1,0,0
+Canadian Space Agency,Agence spatiale canadienne,CSA,845,0,1,15,4,11,0,11,0.73,4,0.27
+Canadian Transportation Agency,Office des transports du Canada,ATN,295,0,0,1,0,1,0,0,0,1,1
+Correctional Service Canada,Service correctionnel du Canada,PEN,18326,54,55,174,38,114,22,161,0.93,13,0.07
+Courts Administration Service,Service administratif des tribunaux judiciaires,CAJ,869,0,6,9,2,7,0,5,0.56,4,0.44
+Crown-Indigenous Relations and Northern Affairs Canada,Relations Couronne-Autochtones et Affaires du Nord Canada,IAN,2066,6,3,11,7,3,1,6,0.55,5,0.45
+Department of Finance Canada,Ministère des Finances Canada,FIN,912,0,1,4,1,3,0,4,1,0,0
+Department of Justice Canada,Ministère de la Justice Canada,JUS,5244,6,9,49,12,36,1,47,0.96,2,0.04
+Elections Canada,Élections Canada,CEO,1200,4,3,13,3,10,0,13,1,0,0
+Employment and Social Development Canada,Emploi et Développement social Canada,CSD,35410,75,147,366,104,220,42,288,0.79,78,0.21
+Environment and Climate Change Canada,Environnement et Changement climatique Canada,DOE,8898,13,21,58,23,27,8,53,0.91,5,0.09
+Federal Economic Development Agency for Southern Ontario,Agence fédérale de développement économique pour le Sud de l’Ontario,ESO,352,0,0,8,0,6,2,6,0.75,2,0.25
+Fisheries and Oceans Canada,Pêches et Océans Canada,DFO,14022,62,30,67,14,44,9,61,0.91,6,0.09
+Global Affairs Canada,Affaires mondiales Canada,EXT,7446,10,8,46,19,20,7,36,0.78,10,0.22
+Health Canada,Santé Canada,NHW,10280,18,16,96,28,57,11,87,0.91,9,0.09
+Immigration and Refugee Board of Canada,Commission de l’immigration et du statut de réfugié,IRB,2193,4,2,36,8,28,0,32,0.89,4,0.11
+"Immigration, Refugees and Citizenship Canada","Immigration, Réfugiés et Citoyenneté Canada",IMC,9805,33,28,112,28,71,13,51,0.46,61,0.54
+Impact Assessment Agency of Canada,Agence canadienne d’évaluation d’impact,EAA,465,0,2,5,0,4,1,5,1,0,0
+Indigenous Services Canada,Services autochtones Canada,DIS,6386,17,14,62,22,32,8,34,0.55,28,0.45
+Infrastructure Canada,Infrastructure Canada,INF,1038,1,1,5,1,3,1,3,0.6,2,0.4
+"Innovation, Science and Economic Development Canada","Innovation, Sciences et Développement économique Canada",DUS,6059,11,19,64,12,47,5,52,0.81,12,0.19
+Library and Archives Canada,Bibliothèque et Archives du Canada,BAL,881,0,1,9,2,7,0,7,0.78,2,0.22
+National Defence,Défense nationale,DND,27170,104,94,234,68,130,36,101,0.43,133,0.57
+Natural Resources Canada,Ressources naturelles Canada,RSN,4821,6,6,38,9,25,4,25,0.66,13,0.34
+Office of the Commissioner of Official Languages,Commissariat aux langues officielles,COL,191,0,0,4,1,3,0,3,0.75,1,0.25
+Office of the Information Commissioner of Canada,Commissariat à l'information au Canada,IPC,368,1,2,5,2,2,1,4,0.8,1,0.2
+Office of the Secretary to the Governor General,Bureau du secrétaire du gouverneur général,GGS,177,0,0,3,0,3,0,3,1,0,0
+Parole Board of Canada,Commission des libérations conditionnelles du Canada,NPB,543,2,1,9,2,7,0,9,1,0,0
+Privy Council Office,Bureau du Conseil privé,PCO,1294,0,3,7,1,5,1,6,0.86,1,0.14
+Public Health Agency of Canada,Agence de la santé publique du Canada,AHS,4669,15,12,24,8,15,1,19,0.79,5,0.21
+Public Prosecution Service of Canada,Service des poursuites pénales du Canada,PPD,1101,4,2,17,4,12,1,6,0.35,11,0.65
+Public Safety Canada,Sécurité publique Canada,PSP,1379,2,3,8,1,7,0,5,0.63,3,0.38
+Public Service Commission of Canada,Commission de la fonction publique,PSC,895,0,4,9,1,7,1,9,1,0,0
+Public Services and Procurement Canada,Services publics et Approvisionnement Canada,SVC,17771,39,68,189,41,119,29,153,0.81,36,0.19
+Registrar of the Supreme Court of Canada,Registraire de la Cour suprême du Canada,SUC,224,0,1,6,0,5,1,5,0.83,1,0.17
+Royal Canadian Mounted Police,Gendarmerie royale du Canada,RCM,30464,133,92,209,36,154,19,128,0.61,81,0.39
+Shared Services Canada,Services partagés Canada,GSS,8024,20,24,139,33,84,22,101,0.73,38,0.27
+Statistics Canada,Statistique Canada,STC,6472,11,10,57,11,43,3,46,0.81,11,0.19
+Transport Canada,Transports Canada,MOT,6389,11,18,67,15,43,9,37,0.55,30,0.45
+Transportation Safety Board of Canada,Bureau de la sécurité des transports du Canada,TSB,231,0,0,1,0,1,0,0,0,1,1
+Treasury Board of Canada Secretariat,Secrétariat du Conseil du Trésor du Canada,TBD,2589,3,5,23,9,11,3,15,0.65,8,0.35
+Veterans Affairs Canada,Anciens Combattants Canada,DVA,3689,6,4,37,14,21,2,32,0.86,5,0.14
+Western Economic Diversification Canada,Diversification de l'économie de l'Ouest Canada,WCO,435,0,1,7,1,5,1,3,0.43,4,0.57
+Women and Gender Equality Canada,Femmes et Égalité des genres Canada,CSW,413,1,1,2,1,1,0,2,1,0,0
+Other*,Autres**,OTH,717,0,2,5,1,4,0,5,1,0,0

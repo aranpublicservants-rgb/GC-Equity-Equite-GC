@@ -96,7 +96,14 @@ for path in json_files:
 csv_columns={}
 for path in csv_files:
     try:
-        with path.open(newline='',encoding='utf-8-sig') as f:
+        # Files in data/open-canada-2026-11 are stored byte for byte as published.
+        # Several are Windows-1252, not UTF-8, so they are read with that fallback.
+        as_published='data/open-canada-2026-11/' in path.as_posix()
+        try:path.read_bytes().decode('utf-8-sig');enc='utf-8-sig'
+        except UnicodeDecodeError:
+            if not as_published:raise
+            enc='cp1252'
+        with path.open(newline='',encoding=enc) as f:
             reader=csv.reader(f)
             cols=next(reader,[])
             if len(cols)<2:warnings.append('CSV has fewer than two columns: '+str(path.relative_to(ROOT)))
@@ -114,6 +121,17 @@ for kind,n in [('psc',55),('women',26),('other',9)]:
     if len(items)!=n:errors.append(f'{kind} source inventory should have {n} entries')
     for entry in items:
         if entry['path'] not in csv_columns:errors.append('Missing hosted source: '+entry['path'])
+added=json.loads((ROOT/'assets/added-sources.json').read_text(encoding='utf-8'))
+import hashlib as _hashlib
+on_disk={p.relative_to(ROOT).as_posix() for p in (ROOT/'data/open-canada-2026-11').rglob('*') if p.is_file()}
+if on_disk!={f['path'] for f in added['files']}:errors.append('data/open-canada-2026-11 does not match assets/added-sources.json; run scripts/build-added-sources.py')
+for f in added['files']:
+    p=ROOT/f['path']
+    if not p.is_file():errors.append('Missing added source: '+f['path']);continue
+    if _hashlib.sha256(p.read_bytes()).hexdigest()!=f['sha256']:errors.append('Added source changed since it was indexed: '+f['path'])
+for t in added['tables']:
+    for side in ('en','fr'):
+        if not (ROOT/t[side]['path']).is_file():errors.append('Missing added table: '+t[side]['path'])
 index=json.loads((ROOT/'assets/psc-organization-index.json').read_text())
 if len(index['files'])!=17:errors.append('Department PSC source index should contain 17 files')
 for entry in index['files']:

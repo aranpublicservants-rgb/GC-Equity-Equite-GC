@@ -88,3 +88,21 @@ Evidence, views and working records use browser local storage. Evidence can be e
 Regenerate with `node scripts/build-workspace.mjs` after reviewing source changes. The script adds the Call to Action findings, the Public Service Commission page and its files to the search index last, so earlier entries keep their identifiers. The eight related repository checkouts are expected under `../related/`, using the repository names in that script. Keep their commit provenance with the generated index; never imply that a snapshot is a live search of those sites. Primary-source links for policy milestones and the executive and salary series were checked when this workspace was assembled.
 
 Run `python scripts/check-site.py` before publishing. It checks inline and external JavaScript, linked assets, original published-data checksums and branch row counts, the new snapshot integrity and numeric/scope behavior. The desktop and phone smoke workflow also checks the guide, saved evidence, briefing download and year comparisons, then the original department, group, Word and PowerPoint flows. Maintenance files, test scripts and local preview output are excluded from the published site.
+
+## Files added from open.canada.ca in November 2026
+
+`data/open-canada-2026-11/` holds 68 files copied byte for byte from the Drive folder "New datasets to be added". Several are Windows-1252, not UTF-8. Do not re-save or convert them.
+
+- `scripts/build-added-sources.py` writes `assets/added-sources.json`: paths, sizes, SHA-256 values, table titles taken from the published column names, and the number of published rows that name each organization. Run it after adding or removing a file in that folder.
+- `gc-added-sources.js` shows the files on the home page. Under "Departments and agencies" it lists the tables whose rows name the selected organization, and the files published by that employer. Under "Equity across the public service" it lists the Treasury Board population tables that have no department column.
+- `scripts/audit-publishing.py` fails if a file in the folder is missing from the index or if its SHA-256 has changed.
+
+Covered: Treasury Board federal public service statistics for March 2010 to March 2026 (11 tables, English and French files), the vaccination and accommodation status file of 20 June 2022, and files published by Veterans Affairs Canada, the Canada School of Public Service, the Canadian Security Intelligence Service, the Communications Security Establishment and the Department of National Defence (civilian employees).
+
+Not added, and why:
+
+- Three Treasury Board tables are held back: by department and sex, by department and first official language, and by department and age band. Their English and French files do not agree on every row. In 2, 3 and 7 rows respectively, one language shows a count where the other shows the suppression symbol `*`. Publishing both would let a reader recover a suppressed count. They stay in Drive until that is settled with the publisher or by an editorial decision.
+- Five of the seven files in the Communications Security Establishment package "CSE Workforce Representation as of June 30th, 2022" were not found by name in Drive.
+- The Canadian Armed Forces file is military, not public service, data.
+- Excel workbooks are offered as downloads only. They are not shown as tables.
+
