@@ -131,11 +131,16 @@ PACKAGES = [
  ('snps-2018', PSC, 'Staffing and Non-Partisanship Survey 2018', 'Sondage sur la dotation et l’impartialité politique de 2018', '060a017e-3c68-4754-a0c7-91cd031b4480', ['2018', '2018']),
  ('snps-2021', PSC, 'Staffing and Non-Partisanship Survey 2021', 'Sondage sur la dotation et l’impartialité politique de 2021', '90705678-982e-49db-8f1b-13e93ede3a95', ['2021', '2021']),
  ('tbs-executives-wfa-2019', TBS, 'Distribution and workforce availability estimates of public service of Canada employees by designated group, Executives', 'Répartition des employés de la fonction publique du Canada par groupe désigné et estimations de la disponibilité au sein de la population active, cadres supérieurs', '73fe0c0f-cdf8-4932-b8a6-c32f4edd3cea', ['2019', '2019']),
- ('pses-2020', TBS, 'Public Service Employee Survey 2020: diversity and inclusion tables', 'Sondage auprès des fonctionnaires fédéraux de 2020 : tableaux sur la diversité et l’inclusion', '4301f4bb-1daa-4b50-afab-d1193b5d2284', ['2020', '2020']),
+ ('pses-2020', TBS, 'Public Service Employee Survey 2020', 'Sondage auprès des fonctionnaires fédéraux de 2020', '4301f4bb-1daa-4b50-afab-d1193b5d2284', ['2020', '2020']),
 
  ('psc-applicants-ar6', PSC, 'Applications to the Public Service', 'Demandes d’emploi à la fonction publique', '7f459f0c-979f-4d2f-b22b-8484571dc543', ['2012-2013 to 2024-2025', '2012-2013 à 2024-2025']),
  ('esdc-wfa-benchmarks', ESDC, 'Workforce availability by designated group, employment equity occupational group and National Occupational Classification unit group', 'Disponibilité au sein de la population active par groupe désigné, groupe professionnel de l’équité en matière d’emploi et groupe de base de la Classification nationale des professions', '07deee9b-4275-40ab-a0d3-9cd913feed47', ['2006, 2016 and 2021 Census', 'Recensements de 2006, de 2016 et de 2021']),
  ('harassment-violence-occurrences', ESDC, 'Harassment and Violence Occurrences in the Canadian Federal Jurisdiction', 'Incidents de harcèlement et de violence dans les secteurs de compétence fédérale au Canada', '340a348c-79b3-42b3-a3e5-ab8098ea7aed', ['2021 to 2024', '2021 à 2024']),
+ ('psc-fswep-referrals', PSC, 'Federal Student Work Experience Program requests for referrals submitted by hiring departments', 'Programme fédéral d’expérience de travail étudiant : demandes de présentation soumises par les ministères d’embauche', '3fe41e48-850e-4df2-81db-9df16d3c56a5', ['2017 to 2026', '2017 à 2026']),
+ ('pses-2018', TBS, 'Public Service Employee Survey 2018', 'Sondage auprès des fonctionnaires fédéraux de 2018', 'a2f9e2ca-237b-4dda-ba19-d52c84844b54', ['2018', '2018']),
+ ('pses-2019', TBS, 'Public Service Employee Survey 2019', 'Sondage auprès des fonctionnaires fédéraux de 2019', '2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf', ['2019', '2019']),
+ ('pses-2022-2023', TBS, 'Public Service Employee Survey 2022-2023', 'Sondage auprès des fonctionnaires fédéraux de 2022-2023', '9f9501f3-8188-4386-87ba-50730a979044', ['2022-2023', '2022-2023']),
+ ('pses-2024', TBS, 'Public Service Employee Survey 2024', 'Sondage auprès des fonctionnaires fédéraux de 2024', '7f625e97-9d02-4c12-a756-1ddebb50e69f', ['2024', '2024']),
 ]
 NOTES = {
  'harassment-violence-occurrences': ['These tables cover federally regulated employers, public and private. They are not limited to the federal public service.', 'Ces tableaux portent sur les employeurs sous réglementation fédérale, publics et privés. Ils ne se limitent pas à la fonction publique fédérale.'],
@@ -148,9 +153,17 @@ fr_names = {norm(f): k for k, o in orgs.items() for f in o['fr']}
 packages = []
 for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
     entries = []
+    if not (BASE / folder).is_dir():
+        continue
+    side = BASE / folder / 'large-files.json'
+    large = {x['gz']: x for x in json.loads(side.read_text(encoding='utf-8'))['files']} if side.is_file() else {}
     for p in sorted((BASE / folder).iterdir()):
+        if p.name == 'large-files.json':
+            continue
         size = p.stat().st_size
         item = {'path': rel(p), 'bytes': size, 'format': p.suffix[1:].upper(), 'name': p.name}
+        if p.name in large:
+            item['originalBytes'] = large[p.name]['bytes']; item['originalSha256'] = large[p.name]['sha256']; item['sourceUrl'] = large[p.name]['url']
         lang = re.search(r'-(en|fr)$', p.stem)
         if lang: item['lang'] = lang.group(1)
         if p.suffix.lower() == '.csv':
@@ -181,7 +194,7 @@ for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
                      'url': PORTAL + uuid, 'periodText': span, 'files': entries,
                      **({'note': NOTES[folder]} if folder in NOTES else {})})
 
-listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / 'README.json')} | {f['path'] for p in packages for f in p['files']}
+listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / 'README.json')} | {f['path'] for p in packages for f in p['files']} | {rel(q) for q in BASE.glob('*/large-files.json')}
 for f in files:
     if f['path'] not in listed:
         errors.append('File is stored but not indexed: ' + f['path'])
@@ -191,6 +204,10 @@ out = {
     'note': 'Files downloaded from open.canada.ca and stored unchanged. Row counts count published rows; no value is recalculated.',
     'tables': tables, 'employers': employers, 'packages': packages, 'organizations': orgs, 'files': files,
 }
+# Keep data/checksums.sha256 in step with this folder.
+sums = ROOT / 'data/checksums.sha256'
+kept = [l for l in sums.read_text(encoding='utf-8').splitlines() if l.strip() and 'data/open-canada-2026-11/' not in l]
+sums.write_text('\n'.join(kept + [f"{f['sha256']}  {f['path']}" for f in files]) + '\n', encoding='utf-8')
 if errors:
     print('\n'.join('ERROR: ' + e for e in errors)); sys.exit(1)
 (ROOT / 'assets/added-sources.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')

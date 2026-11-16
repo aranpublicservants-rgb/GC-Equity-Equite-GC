@@ -159,7 +159,7 @@ function packageBlock(pack){
  const body=d.querySelector('.gce-added-body'),links=[];
  if(pack.note)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L(pack.note[0],pack.note[1]))+'</p>');
  pack.files.filter(f=>!f.lang||f.lang===(fr()?'fr':'en')).forEach(f=>{if(f.preview)body.append(packageFile(f,pack));else links.push(f);});
- if(links.length)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L('These files are too large or too wide to show as a table here. Download them as published:','Ces fichiers sont trop volumineux ou trop larges pour être affichés ici sous forme de tableau. Téléchargez-les tels que publiés :'))+'</p><ul class="gce-added-files">'+links.map(f=>'<li><a href="'+esc(f.path)+'" download>'+esc(f.name)+'</a> ('+esc(f.format+', '+size(f.bytes))+')</li>').join('')+'</ul>');
+ if(links.length)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L('These files are too large or too wide to show as a table here. Download them as published:','Ces fichiers sont trop volumineux ou trop larges pour être affichés ici sous forme de tableau. Téléchargez-les tels que publiés :'))+'</p><ul class="gce-added-files">'+links.map(f=>'<li><a href="'+esc(f.path)+'" download>'+esc(f.name)+'</a> ('+esc((f.format==='GZ'?L('CSV compressed with gzip','CSV compressé avec gzip'):f.format)+', '+size(f.bytes)+(f.originalBytes?L('; ',' ; ')+size(f.originalBytes)+L(' once opened',' une fois ouvert'):''))+')</li>').join('')+'</ul>');
  return d;
 }
 function heading(text){return '<h3>'+esc(text)+'</h3>';}
@@ -214,6 +214,17 @@ async function renderPublic(){
    host.insertAdjacentHTML('beforeend','<h4>'+esc(L('Staffing, survey, workforce availability and executive files','Fichiers sur la dotation, les sondages, la disponibilité au sein de la population active et les cadres supérieurs'))+'</h4><p class="gce-explain">'+esc(L('Files from federal publishers that cover the public service or its organizations generally. Each file keeps its own population and reporting period.','Fichiers d’éditeurs fédéraux qui portent sur l’ensemble de la fonction publique ou de ses organismes. Chaque fichier conserve sa propre population et sa propre période de référence.'))+'</p>');
    m.packages.forEach(pack=>host.append(packageBlock(pack)));
   }
+  try{
+   const r=await fetch('assets/library-documents.json');
+   if(r.ok&&id===publicRequest&&host.isConnected){
+    const lang=fr()?'fr':'en',docs=(await r.json()).documents.filter(d=>d.lang===lang||d.lang==='both');
+    if(docs.length){
+     const d=document.createElement('details');d.className='gce-added';
+     d.innerHTML='<summary>'+esc(L('Federal public service documents','Documents sur la fonction publique fédérale')+' ('+docs.length+')')+'</summary><div class="gce-added-body"><p class="gce-explain">'+esc(L('Each link opens the copy held by the publisher. No document is stored on this site.','Chaque lien ouvre l’exemplaire conservé par l’éditeur. Aucun document n’est conservé sur ce site.'))+'</p><ul class="gce-added-files">'+docs.map(x=>'<li><a href="'+esc(x.url)+'">'+esc(x.title)+'</a>. '+esc(x.publisher+(x.year?', '+x.year:'')+' ('+x.format+')')+'</li>').join('')+'</ul></div>';
+     host.append(d);
+    }
+   }
+  }catch(e){console.warn('library documents',e);}
  }catch(e){
   if(id!==publicRequest||!host.isConnected)return;
   host.innerHTML=title+'<p role="alert">'+esc(L('The list of tables could not be loaded.','Impossible de charger la liste des tableaux.'))+'</p>';
