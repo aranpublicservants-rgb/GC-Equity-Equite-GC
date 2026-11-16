@@ -157,7 +157,8 @@ function packageBlock(pack){
  const d=document.createElement('details');d.className='gce-added';
  d.innerHTML='<summary>'+esc(L(pack.titleEn,pack.titleFr)+' ('+L(pack.periodText[0],pack.periodText[1])+')')+'</summary><div class="gce-added-body">'+sourceLine(pack.publisher,'',pack.url)+'</div>';
  const body=d.querySelector('.gce-added-body'),links=[];
- pack.files.forEach(f=>{if(f.preview)body.append(packageFile(f,pack));else links.push(f);});
+ if(pack.note)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L(pack.note[0],pack.note[1]))+'</p>');
+ pack.files.filter(f=>!f.lang||f.lang===(fr()?'fr':'en')).forEach(f=>{if(f.preview)body.append(packageFile(f,pack));else links.push(f);});
  if(links.length)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L('These files are too large or too wide to show as a table here. Download them as published:','Ces fichiers sont trop volumineux ou trop larges pour être affichés ici sous forme de tableau. Téléchargez-les tels que publiés :'))+'</p><ul class="gce-added-files">'+links.map(f=>'<li><a href="'+esc(f.path)+'" download>'+esc(f.name)+'</a> ('+esc(f.format+', '+size(f.bytes))+')</li>').join('')+'</ul>');
  return d;
 }
@@ -210,7 +211,7 @@ async function renderPublic(){
   host.innerHTML=title+'<p class="gce-explain">'+esc(L('Treasury Board of Canada Secretariat tables for the whole federal public service. CPA is the core public administration. SA is separate agencies. Tables by department or agency appear under Departments and agencies once an organization is chosen.','Tableaux du Secrétariat du Conseil du Trésor du Canada pour l’ensemble de la fonction publique fédérale. APC désigne l’administration publique centrale. OD désigne les organismes distincts. Les tableaux par ministère ou organisme se trouvent sous Ministères et organismes, une fois un organisme choisi.'))+'</p>';
   m.tables.filter(t=>t.scope==='all').forEach(t=>host.append(fullTable(t)));
   if((m.packages||[]).length){
-   host.insertAdjacentHTML('beforeend','<h4>'+esc(L('Staffing, survey and executive files','Fichiers sur la dotation, les sondages et les cadres supérieurs'))+'</h4><p class="gce-explain">'+esc(L('Files from the Public Service Commission of Canada and the Treasury Board of Canada Secretariat that cover the public service or its organizations generally. Each file keeps its own population and reporting period.','Fichiers de la Commission de la fonction publique du Canada et du Secrétariat du Conseil du Trésor du Canada qui portent sur l’ensemble de la fonction publique ou de ses organismes. Chaque fichier conserve sa propre population et sa propre période de référence.'))+'</p>');
+   host.insertAdjacentHTML('beforeend','<h4>'+esc(L('Staffing, survey, workforce availability and executive files','Fichiers sur la dotation, les sondages, la disponibilité au sein de la population active et les cadres supérieurs'))+'</h4><p class="gce-explain">'+esc(L('Files from federal publishers that cover the public service or its organizations generally. Each file keeps its own population and reporting period.','Fichiers d’éditeurs fédéraux qui portent sur l’ensemble de la fonction publique ou de ses organismes. Chaque fichier conserve sa propre population et sa propre période de référence.'))+'</p>');
    m.packages.forEach(pack=>host.append(packageBlock(pack)));
   }
  }catch(e){

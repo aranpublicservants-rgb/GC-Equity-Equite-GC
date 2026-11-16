@@ -118,6 +118,7 @@ employers = []
 
 # 3. Other datasets that cover the public service or its organizations generally ---
 PSC = ['Public Service Commission of Canada', 'Commission de la fonction publique du Canada']
+ESDC = ['Employment and Social Development Canada', 'Emploi et Développement social Canada']
 PACKAGES = [
  ('psc-advertisements-by-year', PSC, 'Advertisements to the Public Service', 'Annonces d’emploi à la fonction publique', 'e61c8587-2cc9-4775-b34e-f1041ad00410', ['2017-2018 to 2026-2027', '2017-2018 à 2026-2027']),
  ('psc-priority-entitlements', PSC, 'Priority Entitlements', 'Droits de priorité', '83dcf122-d050-4def-8456-d23b718c6b22', ['2011-2012 to 2023-2024', '2011-2012 à 2023-2024']),
@@ -131,7 +132,17 @@ PACKAGES = [
  ('snps-2021', PSC, 'Staffing and Non-Partisanship Survey 2021', 'Sondage sur la dotation et l’impartialité politique de 2021', '90705678-982e-49db-8f1b-13e93ede3a95', ['2021', '2021']),
  ('tbs-executives-wfa-2019', TBS, 'Distribution and workforce availability estimates of public service of Canada employees by designated group, Executives', 'Répartition des employés de la fonction publique du Canada par groupe désigné et estimations de la disponibilité au sein de la population active, cadres supérieurs', '73fe0c0f-cdf8-4932-b8a6-c32f4edd3cea', ['2019', '2019']),
  ('pses-2020', TBS, 'Public Service Employee Survey 2020: diversity and inclusion tables', 'Sondage auprès des fonctionnaires fédéraux de 2020 : tableaux sur la diversité et l’inclusion', '4301f4bb-1daa-4b50-afab-d1193b5d2284', ['2020', '2020']),
+
+ ('psc-applicants-ar6', PSC, 'Applications to the Public Service', 'Demandes d’emploi à la fonction publique', '7f459f0c-979f-4d2f-b22b-8484571dc543', ['2012-2013 to 2024-2025', '2012-2013 à 2024-2025']),
+ ('esdc-wfa-benchmarks', ESDC, 'Workforce availability by designated group, employment equity occupational group and National Occupational Classification unit group', 'Disponibilité au sein de la population active par groupe désigné, groupe professionnel de l’équité en matière d’emploi et groupe de base de la Classification nationale des professions', '07deee9b-4275-40ab-a0d3-9cd913feed47', ['2006, 2016 and 2021 Census', 'Recensements de 2006, de 2016 et de 2021']),
+ ('harassment-violence-occurrences', ESDC, 'Harassment and Violence Occurrences in the Canadian Federal Jurisdiction', 'Incidents de harcèlement et de violence dans les secteurs de compétence fédérale au Canada', '340a348c-79b3-42b3-a3e5-ab8098ea7aed', ['2021 to 2024', '2021 à 2024']),
 ]
+NOTES = {
+ 'harassment-violence-occurrences': ['These tables cover federally regulated employers, public and private. They are not limited to the federal public service.', 'Ces tableaux portent sur les employeurs sous réglementation fédérale, publics et privés. Ils ne se limitent pas à la fonction publique fédérale.'],
+ 'esdc-wfa-benchmarks': ['These files come from several Employment and Social Development Canada datasets. The link opens the 2021 Census dataset.', 'Ces fichiers proviennent de plusieurs jeux de données d’Emploi et Développement social Canada. Le lien ouvre le jeu de données du Recensement de 2021.'],
+ 'snps-2018': ['Only the smaller files of this survey are stored here.', 'Seuls les plus petits fichiers de ce sondage sont conservés ici.'],
+ 'snps-2021': ['Only the smaller files of this survey are stored here.', 'Seuls les plus petits fichiers de ce sondage sont conservés ici.'],
+}
 PREVIEW_BYTES, PREVIEW_COLUMNS, ORG_BYTES = 3_000_000, 30, 7_000_000
 fr_names = {norm(f): k for k, o in orgs.items() for f in o['fr']}
 packages = []
@@ -140,6 +151,8 @@ for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
     for p in sorted((BASE / folder).iterdir()):
         size = p.stat().st_size
         item = {'path': rel(p), 'bytes': size, 'format': p.suffix[1:].upper(), 'name': p.name}
+        lang = re.search(r'-(en|fr)$', p.stem)
+        if lang: item['lang'] = lang.group(1)
         if p.suffix.lower() == '.csv':
             head, rows = table(p)
             item['columns'] = len(head)
@@ -165,7 +178,8 @@ for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
                                    'dataset': [title_en, title_fr], 'url': PORTAL + uuid})
         entries.append(item)
     packages.append({'id': folder, 'titleEn': title_en, 'titleFr': title_fr, 'publisher': publisher,
-                     'url': PORTAL + uuid, 'periodText': span, 'files': entries})
+                     'url': PORTAL + uuid, 'periodText': span, 'files': entries,
+                     **({'note': NOTES[folder]} if folder in NOTES else {})})
 
 listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / 'README.json')} | {f['path'] for p in packages for f in p['files']}
 for f in files:
