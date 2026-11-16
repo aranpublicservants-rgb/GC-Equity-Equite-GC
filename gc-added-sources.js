@@ -159,7 +159,7 @@ function packageBlock(pack){
  const body=d.querySelector('.gce-added-body'),links=[];
  if(pack.note)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L(pack.note[0],pack.note[1]))+'</p>');
  pack.files.filter(f=>!f.lang||f.lang===(fr()?'fr':'en')).forEach(f=>{if(f.preview)body.append(packageFile(f,pack));else links.push(f);});
- if(links.length)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L('These files are too large or too wide to show as a table here. Download them as published:','Ces fichiers sont trop volumineux ou trop larges pour être affichés ici sous forme de tableau. Téléchargez-les tels que publiés :'))+'</p><ul class="gce-added-files">'+links.map(f=>'<li><a href="'+esc(f.path)+'" download>'+esc(f.name)+'</a> ('+esc((f.format==='GZ'?L('CSV compressed with gzip','CSV compressé avec gzip'):f.format)+', '+size(f.bytes)+(f.originalBytes?L('; ',' ; ')+size(f.originalBytes)+L(' once opened',' une fois ouvert'):''))+')</li>').join('')+'</ul>');
+ if(links.length)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L('These files are too large or too wide to show as a table here. Download them as published:','Ces fichiers sont trop volumineux ou trop larges pour être affichés ici sous forme de tableau. Téléchargez-les tels que publiés :'))+'</p><ul class="gce-added-files">'+links.map(f=>'<li><a href="'+esc(f.path)+'" download>'+esc(f.titleEn?L(f.titleEn,f.titleFr)+' ['+f.name+']':f.name)+'</a> ('+esc((f.format==='GZ'?L('CSV compressed with gzip','CSV compressé avec gzip'):f.format)+', '+size(f.bytes)+(f.originalBytes?L('; ',' ; ')+size(f.originalBytes)+L(' once opened',' une fois ouvert'):''))+')</li>').join('')+'</ul>');
  return d;
 }
 function heading(text){return '<h3>'+esc(text)+'</h3>';}

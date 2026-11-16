@@ -164,6 +164,11 @@ for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
         item = {'path': rel(p), 'bytes': size, 'format': p.suffix[1:].upper(), 'name': p.name}
         if p.name in large:
             item['originalBytes'] = large[p.name]['bytes']; item['originalSha256'] = large[p.name]['sha256']; item['sourceUrl'] = large[p.name]['url']
+            title = large[p.name].get('title')
+            if isinstance(title, dict) and title.get('en') and title.get('fr'):
+                item['titleEn'], item['titleFr'] = title['en'], title['fr']
+            elif isinstance(title, str) and title:
+                item['titleEn'] = item['titleFr'] = title
         lang = re.search(r'-(en|fr)$', p.stem)
         if lang: item['lang'] = lang.group(1)
         if p.suffix.lower() == '.csv':

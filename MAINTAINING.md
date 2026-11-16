@@ -114,9 +114,19 @@ Fifteen packages are stored as published and listed under "Equity across the pub
 - Where a package has separate English and French files (names ending in `-en` or `-fr`), the page lists the file for the page language.
 - In a file that holds both languages, columns ending in `_e`/`_en` or `_f`/`_fr` are shown for the page language only.
 
-Still in Drive and not stored here:
+### Files over 10 MB
 
-- Files over 10 MB, which the Drive connector used for this work cannot download: the employee survey data files for 2018 to 2024, the student referral file, and most cuts of the 2018 and 2021 Staffing and Non-Partisanship Survey.
-- Not yet added: the 2013-14 employment equity annual report tables (38 Excel files recovered from the Wayback Machine), the priority administration file from the staffing dashboard package, and the employee survey Excel tables for years other than 2020.
+The Drive connector cannot download a file over 10 MB. `scripts/fetch-large-sources.py` gets those files from open.canada.ca instead and stores each one compressed with gzip. Opening a `.csv.gz` file gives back the published bytes exactly. `large-files.json` in each folder records the source link, the published size and the SHA-256 of the published bytes. The script runs in the "Fetch large open.canada.ca files" workflow, which starts when `scripts/large-sources.json` changes, and commits what it downloads.
+
+Stored this way: 12 cuts of the 2021 Staffing and Non-Partisanship Survey, 14 cuts of the 2018 survey, the Federal Student Work Experience Program referral file, and subset 1 of the employee survey open dataset for 2018, 2019, 2020, 2022-2023 and 2024. The page lists them as downloads. They are not shown as tables.
+
+### Federal public service documents
+
+`assets/library-documents.json` lists 28 documents from the "Federal public service" list of the resource library manifest in Drive. Only documents with a link to the publisher's own copy (gc.ca, canada.ca or ourcommons.ca) are listed. The page links to that copy. No document is stored here.
+
+Not added:
+
+- 56 documents in that list exist only as Trello attachments. They are not published here because their public status has not been confirmed.
+- The other lists in the library (groups and communities, research and reports, training, non-federal strategies, and the additional documents) are not specific to the federal public service or have not been reviewed one by one.
+- The 2013-14 employment equity annual report tables (38 Excel files recovered from the Wayback Machine), the priority administration file from the staffing dashboard package, and the employee survey Excel tables for years other than 2020.
 - Out of scope for this site: the federally regulated private sector file and the Canadian Armed Forces file.
-
