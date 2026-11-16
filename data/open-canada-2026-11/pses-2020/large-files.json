@@ -1,0 +1,16 @@
+{
+ "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+ "files": [
+  {
+   "gz": "subset-1-sous-ensemble-1.csv.gz",
+   "name": "subset-1-sous-ensemble-1.csv",
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/83b8d566-8199-40a3-9d87-6b99e9600c5b/download/subset-1-sous-ensemble-1.csv",
+   "bytes": 27409789,
+   "sha256": "f685f95f29914569cf5dc82421940b6a0e682306a17669c49ad65a0c6af20e30",
+   "title": {
+    "fr": "Sous-ensemble 1 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 1 - 2020 Public Service Employee Survey open dataset - with labels"
+   }
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+ "files": [
+  {
+   "gz": "subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv.gz",
+   "name": "subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv",
+   "url": "https://open.canada.ca/data/dataset/9f9501f3-8188-4386-87ba-50730a979044/resource/526ea41d-d7cb-44a5-9982-8fc1d09221ac/download/subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv",
+   "bytes": 36557874,
+   "sha256": "1ddd17c011a15e03749e3ec79810f4e2cd173f3a414a236240a3d104eac93252",
+   "title": {
+    "fr": "Sous-ensemble 1 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 1 - 2022_2023 PSES open dataset - with labels"
+   }
+  }
+ ]
+}
