@@ -22,8 +22,10 @@ def norm(s):
 
 def text(path):
     raw = path.read_bytes()
+    if raw[:3] == b'\xef\xbb\xbf':
+        raw = raw[3:]
     try:
-        return raw.decode('utf-8-sig')
+        return raw.decode('utf-8')
     except UnicodeDecodeError:
         return raw.decode('cp1252', errors='replace')
 
@@ -114,7 +116,58 @@ for en in sorted(ALIGNED.glob('*-en.csv')):
 
 employers = []
 
-listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / 'README.json')}
+# 3. Other datasets that cover the public service or its organizations generally ---
+PSC = ['Public Service Commission of Canada', 'Commission de la fonction publique du Canada']
+PACKAGES = [
+ ('psc-advertisements-by-year', PSC, 'Advertisements to the Public Service', 'Annonces d’emploi à la fonction publique', 'e61c8587-2cc9-4775-b34e-f1041ad00410', ['2017-2018 to 2026-2027', '2017-2018 à 2026-2027']),
+ ('psc-priority-entitlements', PSC, 'Priority Entitlements', 'Droits de priorité', '83dcf122-d050-4def-8456-d23b718c6b22', ['2011-2012 to 2023-2024', '2011-2012 à 2023-2024']),
+ ('psc-drf-indicators', PSC, 'Public Service Commission Departmental Results Framework Indicators', 'Indicateurs du Cadre ministériel des résultats de la Commission de la fonction publique', '00887ede-ac6b-47c1-af0c-aea61f2be345', ['2018-2019 to 2023-2024', '2018-2019 à 2023-2024']),
+ ('psc-hiring-staffing-ar1-legacy', PSC, 'Public Service Hiring and Staffing Activities under the Public Service Employment Act, files valid to March 2018', 'Activités d’embauche et de dotation à la fonction publique en vertu de la Loi sur l’emploi dans la fonction publique, fichiers valides jusqu’en mars 2018', '2fe6b7f1-fbfe-4aaf-808f-b977d40d44db', ['2013-2014 to 2017-2018', '2013-2014 à 2017-2018']),
+ ('psc-population-ar2', PSC, 'Population under the Public Service Employment Act: indeterminate employees under 35', 'Effectif assujetti à la Loi sur l’emploi dans la fonction publique : employés nommés pour une période indéterminée de moins de 35 ans', '845f9e76-d03e-4652-8f43-bb777ab1d52b', ['1996 to 2025', '1996 à 2025']),
+ ('psc-staffing-audit-tool', PSC, 'Staffing Audit Tool', 'Outil de vérification de la dotation', '349e07cf-7df8-4714-8f44-7afd7d997aa6', ['2013 to 2016', '2013 à 2016']),
+ ('psc-system-wide-staffing-audit', PSC, 'System-Wide Staffing Audit', 'Vérification de la dotation à l’échelle du système', '45db0901-fe73-4f7f-beb9-598d7ab98acd', ['April to November 2016', 'avril à novembre 2016']),
+ ('survey-of-staffing-2017', PSC, 'Survey of Staffing 2017', 'Sondage sur la dotation de 2017', 'a8d64d9c-db9a-4f71-8be4-f11eaf4d306d', ['2017', '2017']),
+ ('snps-2018', PSC, 'Staffing and Non-Partisanship Survey 2018', 'Sondage sur la dotation et l’impartialité politique de 2018', '060a017e-3c68-4754-a0c7-91cd031b4480', ['2018', '2018']),
+ ('snps-2021', PSC, 'Staffing and Non-Partisanship Survey 2021', 'Sondage sur la dotation et l’impartialité politique de 2021', '90705678-982e-49db-8f1b-13e93ede3a95', ['2021', '2021']),
+ ('tbs-executives-wfa-2019', TBS, 'Distribution and workforce availability estimates of public service of Canada employees by designated group, Executives', 'Répartition des employés de la fonction publique du Canada par groupe désigné et estimations de la disponibilité au sein de la population active, cadres supérieurs', '73fe0c0f-cdf8-4932-b8a6-c32f4edd3cea', ['2019', '2019']),
+ ('pses-2020', TBS, 'Public Service Employee Survey 2020: diversity and inclusion tables', 'Sondage auprès des fonctionnaires fédéraux de 2020 : tableaux sur la diversité et l’inclusion', '4301f4bb-1daa-4b50-afab-d1193b5d2284', ['2020', '2020']),
+]
+PREVIEW_BYTES, PREVIEW_COLUMNS, ORG_BYTES = 3_000_000, 30, 7_000_000
+fr_names = {norm(f): k for k, o in orgs.items() for f in o['fr']}
+packages = []
+for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
+    entries = []
+    for p in sorted((BASE / folder).iterdir()):
+        size = p.stat().st_size
+        item = {'path': rel(p), 'bytes': size, 'format': p.suffix[1:].upper(), 'name': p.name}
+        if p.suffix.lower() == '.csv':
+            head, rows = table(p)
+            item['columns'] = len(head)
+            item['preview'] = size <= PREVIEW_BYTES and len(head) <= PREVIEW_COLUMNS
+            if size <= ORG_BYTES and len(head) <= PREVIEW_COLUMNS and rows and 'list-of-' not in p.name:
+                # An organization column is one where most rows name a known organization.
+                share = lambda i, known: sum(1 for r in rows if i < len(r) and norm(r[i]) in known) / len(rows)
+                en_col = max(range(len(head)), key=lambda i: share(i, orgs))
+                fr_col = max(range(len(head)), key=lambda i: share(i, fr_names))
+                if share(en_col, orgs) >= 0.5:
+                    tid = 'pkg-' + p.stem
+                    has_fr = fr_col != en_col and share(fr_col, fr_names) >= 0.5
+                    for r in rows:
+                        k = norm(r[en_col]) if en_col < len(r) else ''
+                        if k in orgs:
+                            orgs[k]['t'][tid] = orgs[k]['t'].get(tid, 0) + 1
+                    tables.append({'id': tid, 'scope': 'org', 'bilingualFile': True,
+                                   'titleEn': title_en + ': ' + p.name, 'titleFr': title_fr + ' : ' + p.name,
+                                   'en': {'path': rel(p), 'field': head[en_col]},
+                                   'fr': {'path': rel(p), 'field': head[fr_col] if has_fr else head[en_col], 'names': 'fr' if has_fr else 'en'},
+                                   'hide': [head[en_col]] + ([head[fr_col]] if has_fr else []),
+                                   'rows': len(rows), 'periodText': span, 'publisher': publisher,
+                                   'dataset': [title_en, title_fr], 'url': PORTAL + uuid})
+        entries.append(item)
+    packages.append({'id': folder, 'titleEn': title_en, 'titleFr': title_fr, 'publisher': publisher,
+                     'url': PORTAL + uuid, 'periodText': span, 'files': entries})
+
+listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / 'README.json')} | {f['path'] for p in packages for f in p['files']}
 for f in files:
     if f['path'] not in listed:
         errors.append('File is stored but not indexed: ' + f['path'])
@@ -122,9 +175,9 @@ for f in files:
 out = {
     'version': '2026-11-14',
     'note': 'Files downloaded from open.canada.ca and stored unchanged. Row counts count published rows; no value is recalculated.',
-    'tables': tables, 'employers': employers, 'organizations': orgs, 'files': files,
+    'tables': tables, 'employers': employers, 'packages': packages, 'organizations': orgs, 'files': files,
 }
 if errors:
     print('\n'.join('ERROR: ' + e for e in errors)); sys.exit(1)
 (ROOT / 'assets/added-sources.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
-print(f'added-sources: {len(files)} files, {len(tables)} tables, {len(employers)} employers, {len(orgs)} organization names')
+print(f'added-sources: {len(files)} files, {len(tables)} tables, {len(packages)} packages, {len(orgs)} organization names')

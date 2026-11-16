@@ -1,0 +1,77 @@
+﻿"Dept_number","Dept_size","dept_f","dept_e","Dept_size_F","Dept_size_E"
+"000","9","Département non spécifié","Department not specified","Non déclaré",Not stated
+"002","1","Emploi et Développement social Canada","Employment and Social Development Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"003","1","Défense nationale","National Defence","Grande (>= 2 000)","Large (>= 2, 000)"
+"004","1","Service correctionnel Canada","Correctional Service Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"005","1","Pêches et Océans Canada","Fisheries and Oceans Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"006","1","Santé Canada","Health Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"007","1","Services publics et Approvisionnement Canada","Public Services and Procurement Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"008","1","Statistique Canada","Statistics Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"009","1","Agriculture et Agroalimentaire Canada","Agriculture and Agri-Food Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"010","1","Innovation, Sciences et Développement économique Canada","Innovation, Science and Economic Development Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"011","1","Environnement et Changement climatique Canada","Environment and Climate Change Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"012","1","Transports Canada","Transport Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"013","1","Immigration, Réfugiés et Citoyenneté Canada","Immigration, Refugees and Citizenship Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"014","1","Affaires mondiales Canada","Global Affairs Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"015","1","Ressources naturelles Canada","Natural Resources Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"016","1","Gendarmerie royale du Canada","Royal Canadian Mounted Police","Grande (>= 2 000)","Large (>= 2, 000)"
+"018","1","Anciens Combattants Canada","Veterans Affairs Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"019","1","Ministère de la Justice Canada","Department of Justice Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"020","2","Patrimoine canadien","Canadian Heritage","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"021","2","Commission de la fonction publique du Canada","Public Service Commission of Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"023","2","Commission de l'immigration et du statut de réfugié du Canada","Immigration and Refugee Board of Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"024","2","Ministère des Finances Canada","Department of Finance Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"025","3","Commission canadienne des grains","Canadian Grain Commission","Petite (100 à 499)",Small (100 to 499)
+"026","1","Secrétariat du Conseil du Trésor du Canada","Treasury Board of Canada Secretariat","Grande (>= 2 000)","Large (>= 2, 000)"
+"028","2","Bureau du Conseil privé","Privy Council Office","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"030","2","Service administratif des tribunaux judiciaires","Courts Administration Service","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"031","2","Conseil de la radiodiffusion et des télécommunications canadiennes","Canadian Radio-television and TeleCommunications Commission","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"032","2","Agence de promotion économique du Canada atlantique","Atlantic Canada Opportunities Agency","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"033","2","Agence spatiale canadienne","Canadian Space Agency","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"034","3","Développement économique Canada pour les régions du Québec","Canada Economic Development for Quebec Regions","Petite (100 à 499)",Small (100 to 499)
+"036","2","Commission des libérations conditionnelles du Canada","Parole Board of Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"039","3","Bureau de la sécurité des transports du Canada","Transportation Safety Board of Canada","Petite (100 à 499)",Small (100 to 499)
+"041","3","Commission canadienne des droits de la personne","Canadian Human Rights Commission","Petite (100 à 499)",Small (100 to 499)
+"042","3","Commissariat aux langues officielles","Office of the Commissioner of Official Languages","Petite (100 à 499)",Small (100 to 499)
+"043","3","Diversification de l'économie de l'Ouest Canada","Western Economic Diversification Canada","Petite (100 à 499)",Small (100 to 499)
+"044","3","Registraire de la Cour suprême du Canada","Registrar of the Supreme Court of Canada","Petite (100 à 499)",Small (100 to 499)
+"046","2","Service des poursuites pénales du Canada","Public Prosecution Service of Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"047","3","Agence d'évaluation d'impact du Canada","Impact Assessment Agency of Canada","Petite (100 à 499)",Small (100 to 499)
+"053","2","Sécurité publique Canada","Public Safety Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"054","3","Office des transports du Canada","Canadian Transportation Agency","Petite (100 à 499)",Small (100 to 499)
+"063","2","Bureau du surintendant des institutions financières Canada","Office of the Superintendent of Financial Institutions Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"070","1","Agence de la santé publique du Canada","Public Health Agency of Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"073","3","Bureau du secrétaire du gouverneur général","Office of the Secretary to the Governor General","Petite (100 à 499)",Small (100 to 499)
+"074","2","Bibliothèque et Archives Canada","Library and Archives Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"075","2","Régie de l'énergie du Canada","Canada Energy Regulator","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"078","2","École de la fonction publique du Canada","Canada School of Public Service","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"080","3","Commissariat à la protection de la vie privée du Canada","Office of the Privacy Commissioner of Canada","Petite (100 à 499)",Small (100 to 499)
+"082","2","Infrastructure Canada","Infrastructure Canada","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"083","1","Agence des services frontaliers du Canada","Canada Border Services Agency","Grande (>= 2 000)","Large (>= 2, 000)"
+"091","3","Service canadien d'appui aux tribunaux administratifs","Administrative Tribunals Support Service of Canada","Petite (100 à 499)",Small (100 to 499)
+"093","3","Agence fédérale de développement économique pour le Sud de l'Ontario","Federal Economic Development Agency for Southern Ontario","Petite (100 à 499)",Small (100 to 499)
+"094","1","Services partagés Canada","Shared Services Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"097","4","Bureau du commissaire aux élections fédérales","Office of the Commissioner of Canada Elections","Très petite (< 100)",Very small (<100)
+"101","4","Commission d'examen des plaintes concernant la police militaire du Canada","Military Police Complaints Commission of Canada","Très petite (< 100)",Very small (<100)
+"103","4","Secrétariat des conférences intergouvernementales canadiennes","Canadian Intergovernmental Conference Secretariat","Très petite (< 100)",Very small (<100)
+"105","4","Commission du droit d'auteur Canada","Copyright Board Canada","Très petite (< 100)",Very small (<100)
+"107","4","Commission mixte internationale (section canadienne)","International Joint Commission (Canadian Section)","Très petite (< 100)",Very small (<100)
+"109","4","Conseil des produits agricoles du Canada","Farm Products Council of Canada","Très petite (< 100)",Very small (<100)
+"110","4","Commissariat à la magistrature fédérale Canada","Office of the Commissioner for Federal Judicial Affairs Canada","Très petite (< 100)",Very small (<100)
+"111","4","Conseil d'examen du prix des médicaments brevetés Canada","Patented Medicine Prices Review Board Canada","Très petite (< 100)",Very small (<100)
+"114","4","Commission civile d'examen et de traitement des plaintes relatives à la GRC","Civilian Review and Complaints Commission for the RCMP","Très petite (< 100)",Very small (<100)
+"119","4","Comité externe d'examen des griefs militaires","Military Grievances External Review Committee","Très petite (< 100)",Very small (<100)
+"125","4","Comité externe d'examen de la GRC","RCMP External Review Committee","Très petite (< 100)",Very small (<100)
+"128","2","Bureau du Directeur général des élections","Office of the Chief Electoral Officer","Moyenne (500 à 1 999)","Medium (500 to 1,999)"
+"130","3","Agence de la consommation en matière financière du Canada","Financial Consumer Agency of Canada","Petite (100 à 499)",Small (100 to 499)
+"139","4","Commissariat au lobbying du Canada","Office of the Commissioner of Lobbying of Canada","Très petite (< 100)",Very small (<100)
+"140","3","Condition féminine Canada","Status of Women Canada","Petite (100 à 499)",Small (100 to 499)
+"143","4","Commissariat à l'intégrité du secteur public du Canada","Office of the Public Sector Integrity Commissioner of Canada","Très petite (< 100)",Very small (<100)
+"144","3","Agence canadienne de développement économique du Nord","Canadian Northern Economic Development Agency","Petite (100 à 499)",Small (100 to 499)
+"147","4","Enquêteur correctionnel Canada","Correctional Investigator Canada","Très petite (< 100)",Very small (<100)
+"149","4","Pétrole et gaz des Indiens du Canada","Indian Oil and Gas Canada","Très petite (< 100)",Very small (<100)
+"150","4","Tribunal des anciens combattants (révision et appel)","Veterans Review and Appeal Board","Très petite (< 100)",Very small (<100)
+"151","3","Commissariat à l'information du Canada","Office of the Information Commissioner of Canada","Petite (100 à 499)",Small (100 to 499)
+"152","1","Relations Couronne-Autochtones et Affaires du Nord","Crown-Indigenous Relations and Northern Affairs Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"153","1","Services aux Autochtones Canada","Indigenous Services Canada","Grande (>= 2 000)","Large (>= 2, 000)"
+"161","4","Normes d'accessibilité Canada","Accessibility Standards Canada","Très petite (< 100)",Very small (<100)

@@ -15,8 +15,21 @@ function manifest(){
  return manifestPromise;
 }
 function decode(buffer){
- try{return new TextDecoder('utf-8',{fatal:true}).decode(buffer);}
- catch(e){return new TextDecoder('windows-1252').decode(buffer);}
+ let bytes=new Uint8Array(buffer);
+ if(bytes[0]===0xEF&&bytes[1]===0xBB&&bytes[2]===0xBF)bytes=bytes.subarray(3);
+ try{return new TextDecoder('utf-8',{fatal:true}).decode(bytes);}
+ catch(e){return new TextDecoder('windows-1252').decode(bytes);}
+}
+/* In a file that holds both languages, columns ending in _e/_en or _f/_fr come in pairs.
+   Returns the positions of the columns written in the language not being read. */
+function otherLanguage(head){
+ const lower=head.map(h=>h.toLowerCase()),other=fr()?/_(e|en)$/:/_(f|fr)$/,swap={'_e':'_f','_en':'_fr','_f':'_e','_fr':'_en'},out=new Set();
+ lower.forEach((h,i)=>{if(other.test(h)&&lower.includes(h.replace(other,m=>swap[m])))out.add(i);});
+ return out;
+}
+function size(bytes){
+ const mb=bytes/1048576,text=mb>=1?mb.toFixed(1):Math.max(1,Math.round(bytes/1024)).toString();
+ return (fr()?text.replace('.',','):text)+(mb>=1?L(' MB',' Mo'):L(' KB',' Ko'));
 }
 function parse(text){
  const rows=[];let row=[],value='',quoted=false;
@@ -84,7 +97,7 @@ function lazy(title,fill){
 function period(t){
  return t.period[0]===t.period[1]?t.period[0]:L('March '+t.period[0]+' to March '+t.period[1],'mars '+t.period[0]+' à mars '+t.period[1]);
 }
-function tableTitle(t){return L(t.titleEn,t.titleFr)+(t.asPublished?'':' ('+period(t)+')');}
+function tableTitle(t){return L(t.titleEn,t.titleFr)+' ('+(t.periodText?L(t.periodText[0],t.periodText[1]):period(t))+')';}
 function fullTable(t){
  return lazy(tableTitle(t),async box=>{
   const side=fr()?t.fr:t.en,rows=await load(side.path),head=rows[0].map(h=>h.trim());
@@ -98,9 +111,11 @@ function orgTable(t,org){
  return lazy(tableTitle(t),async box=>{
   const side=fr()?t.fr:t.en,rows=await load(side.path),head=rows[0].map(h=>h.trim()),at=head.indexOf(side.field);
   if(at<0)throw Error('organization column missing: '+side.field);
-  const wanted=new Set((fr()&&org.fr.length?org.fr:[org.en]).map(norm));
+  const wanted=new Set((fr()&&side.names!=='en'&&org.fr.length?org.fr:[org.en]).map(norm));
   const names=r=>{const c=String(r[at]||'');return wanted.has(norm(c))||(/ Total$/.test(c)&&wanted.has(norm(c.slice(0,-6))));};
   const hidden=new Set([at]);
+  (t.hide||[]).forEach(f=>{const i=head.indexOf(f);if(i>=0)hidden.add(i);});
+  if(t.bilingualFile)otherLanguage(head).forEach(i=>hidden.add(i));
   const keep=head.map((_,i)=>i).filter(i=>!hidden.has(i));
   const match=rows.slice(1).filter(names);
   const holder=document.createElement('div');
@@ -128,6 +143,23 @@ function employerFile(f,employer){
   drawTable(holder,title,grid[0],grid.slice(1));
   box.insertAdjacentHTML('beforeend',sourceLine(employer.publisher,f.path,f.url));
  });
+}
+function packageFile(f,pack){
+ return lazy(f.name+' ('+size(f.bytes)+')',async box=>{
+  const rows=await load(f.path),head=rows[0].map(h=>h.trim()),skip=otherLanguage(head),keep=head.map((_,i)=>i).filter(i=>!skip.has(i));
+  const holder=document.createElement('div');
+  box.innerHTML='';box.append(holder);
+  drawTable(holder,L(pack.titleEn,pack.titleFr)+': '+f.name,keep.map(i=>head[i]),rows.slice(1).map(r=>keep.map(i=>r[i])));
+  box.insertAdjacentHTML('beforeend','<p class="gce-source"><a href="'+esc(f.path)+'" download>'+esc(L('Download the file as published','Télécharger le fichier tel que publié'))+'</a>.</p>');
+ });
+}
+function packageBlock(pack){
+ const d=document.createElement('details');d.className='gce-added';
+ d.innerHTML='<summary>'+esc(L(pack.titleEn,pack.titleFr)+' ('+L(pack.periodText[0],pack.periodText[1])+')')+'</summary><div class="gce-added-body">'+sourceLine(pack.publisher,'',pack.url)+'</div>';
+ const body=d.querySelector('.gce-added-body'),links=[];
+ pack.files.forEach(f=>{if(f.preview)body.append(packageFile(f,pack));else links.push(f);});
+ if(links.length)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L('These files are too large or too wide to show as a table here. Download them as published:','Ces fichiers sont trop volumineux ou trop larges pour être affichés ici sous forme de tableau. Téléchargez-les tels que publiés :'))+'</p><ul class="gce-added-files">'+links.map(f=>'<li><a href="'+esc(f.path)+'" download>'+esc(f.name)+'</a> ('+esc(f.format+', '+size(f.bytes))+')</li>').join('')+'</ul>');
+ return d;
 }
 function heading(text){return '<h3>'+esc(text)+'</h3>';}
 async function renderOrg(name){
@@ -177,6 +209,10 @@ async function renderPublic(){
   if(id!==publicRequest||!host.isConnected)return;
   host.innerHTML=title+'<p class="gce-explain">'+esc(L('Treasury Board of Canada Secretariat tables for the whole federal public service. CPA is the core public administration. SA is separate agencies. Tables by department or agency appear under Departments and agencies once an organization is chosen.','Tableaux du Secrétariat du Conseil du Trésor du Canada pour l’ensemble de la fonction publique fédérale. APC désigne l’administration publique centrale. OD désigne les organismes distincts. Les tableaux par ministère ou organisme se trouvent sous Ministères et organismes, une fois un organisme choisi.'))+'</p>';
   m.tables.filter(t=>t.scope==='all').forEach(t=>host.append(fullTable(t)));
+  if((m.packages||[]).length){
+   host.insertAdjacentHTML('beforeend','<h4>'+esc(L('Staffing, survey and executive files','Fichiers sur la dotation, les sondages et les cadres supérieurs'))+'</h4><p class="gce-explain">'+esc(L('Files from the Public Service Commission of Canada and the Treasury Board of Canada Secretariat that cover the public service or its organizations generally. Each file keeps its own population and reporting period.','Fichiers de la Commission de la fonction publique du Canada et du Secrétariat du Conseil du Trésor du Canada qui portent sur l’ensemble de la fonction publique ou de ses organismes. Chaque fichier conserve sa propre population et sa propre période de référence.'))+'</p>');
+   m.packages.forEach(pack=>host.append(packageBlock(pack)));
+  }
  }catch(e){
   if(id!==publicRequest||!host.isConnected)return;
   host.innerHTML=title+'<p role="alert">'+esc(L('The list of tables could not be loaded.','Impossible de charger la liste des tableaux.'))+'</p>';

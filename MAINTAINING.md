@@ -104,3 +104,18 @@ Rule for this folder: a file is added only when it covers departments and agenci
 Eleven tables are stored as published, in English and French.
 
 Three tables are stored with suppression aligned: by department and sex, by department and first official language, and by department and age band. The English and French files published for these tables do not suppress the same cells. `scripts/build-harmonized-population.py` writes a copy of each file in which a cell is `*` when either language file suppresses it. No number is changed or calculated. The counts of cells affected are in `tbs-fps-population-2010-2026-suppression-aligned/README.json`. The untouched originals are in Drive and are not stored here, so a reader cannot recover a suppressed count by comparing the two languages.
+
+### Staffing, survey and executive files
+
+Twelve packages are stored as published and listed under "Equity across the public service": Public Service Commission advertisements by fiscal year, priority entitlements, departmental results indicators, two hiring and staffing files valid to March 2018, the share of indeterminate employees under 35, the Staffing Audit Tool, the System-Wide Staffing Audit, the Survey of Staffing 2017, parts of the Staffing and Non-Partisanship Survey for 2018 and 2021, the 2019 executive workforce availability workbook, and the 2020 employee survey diversity and inclusion tables.
+
+- A CSV of 3 MB or less with 30 columns or fewer opens as a table. Larger or wider files and Excel workbooks are download links.
+- Where a file has a column naming organizations, its rows also appear under "Departments and agencies" for the selected organization. `scripts/build-added-sources.py` detects that column: at least half of the rows must name a known organization.
+- In a file that holds both languages, columns ending in `_e`/`_en` or `_f`/`_fr` are shown for the page language only.
+
+Still in Drive and not stored here:
+
+- Files over 10 MB, which the Drive connector used for this work cannot download: the employee survey data files for 2018 to 2024, the student referral file, and most cuts of the 2018 and 2021 Staffing and Non-Partisanship Survey.
+- Packages not yet reviewed file by file: the ESDC workforce availability benchmarks, the 2013-14 employment equity annual report tables, the applications to the public service files, and the harassment and violence occurrence tables.
+- Out of scope for this site: the federally regulated private sector file and the Canadian Armed Forces file.
+

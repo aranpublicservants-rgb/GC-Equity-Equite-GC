@@ -1,0 +1,989 @@
+﻿"fiscal_year","geo_region_e","geo_region_f","age","n","percent"
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","<20","2",0.0080997894
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","20 - 24","59",0.2389437875
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","25 - 29","70",0.2834926292
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","30 - 34","69",0.2794427345
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","35 - 39","62",0.2510934716
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","40 - 44","56",0.2267941034
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","45 - 49","47",0.190345051
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","50 - 54","34",0.1376964199
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","55 - 59","33",0.1336465252
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador","60 - 64","13",0.0526486311
+"2018-2019","Newfoundland and Labrador","Terre-Neuve-et-Labrador",">=65","5",0.0202494735
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","<20","1",0.0040498947
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","20 - 24","35",0.1417463146
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","25 - 29","51",0.2065446298
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","30 - 34","55",0.2227442087
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","35 - 39","43",0.1741454722
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","40 - 44","45",0.1822452616
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","45 - 49","22",0.0890976835
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","50 - 54","16",0.0647983152
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","55 - 59","18",0.0728981046
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard","60 - 64","14",0.0566985258
+"2018-2019","Prince Edward Island","Île-du-Prince-Édouard",">=65","5",0.0202494735
+"2018-2019","Nova Scotia","Nouvelle-Écosse","<20","7",0.0283492629
+"2018-2019","Nova Scotia","Nouvelle-Écosse","20 - 24","143",0.5791349425
+"2018-2019","Nova Scotia","Nouvelle-Écosse","25 - 29","162",0.6560829418
+"2018-2019","Nova Scotia","Nouvelle-Écosse","30 - 34","132",0.5345861008
+"2018-2019","Nova Scotia","Nouvelle-Écosse","35 - 39","118",0.4778875749
+"2018-2019","Nova Scotia","Nouvelle-Écosse","40 - 44","101",0.409039365
+"2018-2019","Nova Scotia","Nouvelle-Écosse","45 - 49","112",0.4535882067
+"2018-2019","Nova Scotia","Nouvelle-Écosse","50 - 54","93",0.3766402074
+"2018-2019","Nova Scotia","Nouvelle-Écosse","55 - 59","76",0.3077919974
+"2018-2019","Nova Scotia","Nouvelle-Écosse","60 - 64","50",0.2024947351
+"2018-2019","Nova Scotia","Nouvelle-Écosse",">=65","5",0.0202494735
+"2018-2019","New Brunswick","Nouveau-Brunswick","<20","9",0.0364490523
+"2018-2019","New Brunswick","Nouveau-Brunswick","20 - 24","154",0.6236837842
+"2018-2019","New Brunswick","Nouveau-Brunswick","25 - 29","195",0.789729467
+"2018-2019","New Brunswick","Nouveau-Brunswick","30 - 34","160",0.6479831524
+"2018-2019","New Brunswick","Nouveau-Brunswick","35 - 39","142",0.5750850478
+"2018-2019","New Brunswick","Nouveau-Brunswick","40 - 44","153",0.6196338895
+"2018-2019","New Brunswick","Nouveau-Brunswick","45 - 49","129",0.5224364167
+"2018-2019","New Brunswick","Nouveau-Brunswick","50 - 54","97",0.3928397862
+"2018-2019","New Brunswick","Nouveau-Brunswick","55 - 59","76",0.3077919974
+"2018-2019","New Brunswick","Nouveau-Brunswick","60 - 64","44",0.1781953669
+"2018-2019","New Brunswick","Nouveau-Brunswick",">=65","7",0.0283492629
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","<20","11",0.0445488417
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","20 - 24","313",1.267617042
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","25 - 29","559",2.2638911388
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","30 - 34","417",1.688806091
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","35 - 39","379",1.5349100923
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","40 - 44","314",1.2716669367
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","45 - 49","210",0.8504778876
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","50 - 54","149",0.6034343107
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","55 - 59","118",0.4778875749
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)","60 - 64","47",0.190345051
+"2018-2019","Quebec  (except NCR)","Québec (sauf la RCN)",">=65","29",0.1174469464
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","N/A","3",0.0121496841
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","<20","68",0.2753928398
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","20 - 24","2417",9.7885954965
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","25 - 29","2854",11.558399482
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","30 - 34","1779",7.2047626762
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","35 - 39","1379",5.5848047951
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","40 - 44","1052",4.2604892273
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","45 - 49","898",3.6368054431
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","50 - 54","694",2.8106269237
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","55 - 59","528",2.138344403
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)","60 - 64","268",1.0853717803
+"2018-2019","National Capital Region (NCR)","Région de la capitale nationale (RCN)",">=65","152",0.6155839948
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","<20","4",0.0161995788
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","20 - 24","309",1.2514174631
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","25 - 29","482",1.9520492467
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","30 - 34","374",1.5146606188
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","35 - 39","222",0.899076624
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","40 - 44","211",0.8545277823
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","45 - 49","170",0.6884820995
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","50 - 54","151",0.6115341001
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","55 - 59","132",0.5345861008
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)","60 - 64","69",0.2794427345
+"2018-2019","Ontario (except NCR)","Ontario (sauf la RCN)",">=65","44",0.1781953669
+"2018-2019","Manitoba","Manitoba","20 - 24","110",0.4454884173
+"2018-2019","Manitoba","Manitoba","25 - 29","152",0.6155839948
+"2018-2019","Manitoba","Manitoba","30 - 34","82",0.3320913656
+"2018-2019","Manitoba","Manitoba","35 - 39","87",0.3523408391
+"2018-2019","Manitoba","Manitoba","40 - 44","67",0.2713429451
+"2018-2019","Manitoba","Manitoba","45 - 49","68",0.2753928398
+"2018-2019","Manitoba","Manitoba","50 - 54","49",0.1984448404
+"2018-2019","Manitoba","Manitoba","55 - 59","30",0.1214968411
+"2018-2019","Manitoba","Manitoba","60 - 64","18",0.0728981046
+"2018-2019","Manitoba","Manitoba",">=65","7",0.0283492629
+"2018-2019","Saskatchewan","Saskatchewan","<20","6",0.0242993682
+"2018-2019","Saskatchewan","Saskatchewan","20 - 24","71",0.2875425239
+"2018-2019","Saskatchewan","Saskatchewan","25 - 29","120",0.4859873643
+"2018-2019","Saskatchewan","Saskatchewan","30 - 34","84",0.340191155
+"2018-2019","Saskatchewan","Saskatchewan","35 - 39","57",0.2308439981
+"2018-2019","Saskatchewan","Saskatchewan","40 - 44","55",0.2227442087
+"2018-2019","Saskatchewan","Saskatchewan","45 - 49","42",0.1700955775
+"2018-2019","Saskatchewan","Saskatchewan","50 - 54","28",0.1133970517
+"2018-2019","Saskatchewan","Saskatchewan","55 - 59","22",0.0890976835
+"2018-2019","Saskatchewan","Saskatchewan","60 - 64","19",0.0769479994
+"2018-2019","Saskatchewan","Saskatchewan",">=65","3",0.0121496841
+"2018-2019","Alberta","Alberta","<20","9",0.0364490523
+"2018-2019","Alberta","Alberta","20 - 24","198",0.8018791511
+"2018-2019","Alberta","Alberta","25 - 29","265",1.0732220962
+"2018-2019","Alberta","Alberta","30 - 34","196",0.7937793617
+"2018-2019","Alberta","Alberta","35 - 39","167",0.6763324154
+"2018-2019","Alberta","Alberta","40 - 44","150",0.6074842054
+"2018-2019","Alberta","Alberta","45 - 49","117",0.4738376802
+"2018-2019","Alberta","Alberta","50 - 54","102",0.4130892597
+"2018-2019","Alberta","Alberta","55 - 59","55",0.2227442087
+"2018-2019","Alberta","Alberta","60 - 64","30",0.1214968411
+"2018-2019","Alberta","Alberta",">=65","7",0.0283492629
+"2018-2019","British Columbia","Colombie-Britannique","<20","10",0.040498947
+"2018-2019","British Columbia","Colombie-Britannique","20 - 24","273",1.1056212538
+"2018-2019","British Columbia","Colombie-Britannique","25 - 29","434",1.757654301
+"2018-2019","British Columbia","Colombie-Britannique","30 - 34","280",1.1339705168
+"2018-2019","British Columbia","Colombie-Britannique","35 - 39","240",0.9719747287
+"2018-2019","British Columbia","Colombie-Britannique","40 - 44","196",0.7937793617
+"2018-2019","British Columbia","Colombie-Britannique","45 - 49","155",0.6277336789
+"2018-2019","British Columbia","Colombie-Britannique","50 - 54","111",0.449538312
+"2018-2019","British Columbia","Colombie-Britannique","55 - 59","88",0.3563907338
+"2018-2019","British Columbia","Colombie-Britannique","60 - 64","55",0.2227442087
+"2018-2019","British Columbia","Colombie-Britannique",">=65","32",0.1295966305
+"2018-2019","Yukon","Yukon","20 - 24","2",0.0080997894
+"2018-2019","Yukon","Yukon","25 - 29","12",0.0485987364
+"2018-2019","Yukon","Yukon","30 - 34","8",0.0323991576
+"2018-2019","Yukon","Yukon","35 - 39","5",0.0202494735
+"2018-2019","Yukon","Yukon","40 - 44","5",0.0202494735
+"2018-2019","Yukon","Yukon","45 - 49","1",0.0040498947
+"2018-2019","Yukon","Yukon","50 - 54","2",0.0080997894
+"2018-2019","Yukon","Yukon","55 - 59","1",0.0040498947
+"2018-2019","Yukon","Yukon","60 - 64","4",0.0161995788
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","20 - 24","3",0.0121496841
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","25 - 29","16",0.0647983152
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","30 - 34","9",0.0364490523
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","35 - 39","4",0.0161995788
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","40 - 44","13",0.0526486311
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","50 - 54","4",0.0161995788
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","55 - 59","3",0.0121496841
+"2018-2019","Northwest Territories","Territoires du Nord-Ouest","60 - 64","2",0.0080997894
+"2018-2019","Nunavut","Nunavut","<20","2",0.0080997894
+"2018-2019","Nunavut","Nunavut","20 - 24","18",0.0728981046
+"2018-2019","Nunavut","Nunavut","25 - 29","14",0.0566985258
+"2018-2019","Nunavut","Nunavut","30 - 34","11",0.0445488417
+"2018-2019","Nunavut","Nunavut","35 - 39","4",0.0161995788
+"2018-2019","Nunavut","Nunavut","40 - 44","3",0.0121496841
+"2018-2019","Nunavut","Nunavut","45 - 49","2",0.0080997894
+"2018-2019","Nunavut","Nunavut","55 - 59","2",0.0080997894
+"2018-2019","Nunavut","Nunavut","60 - 64","1",0.0040498947
+"2018-2019","Nunavut","Nunavut",">=65","1",0.0040498947
+"2018-2019","Outside Canada","Extérieur du Canada","25 - 29","3",0.0121496841
+"2018-2019","Outside Canada","Extérieur du Canada","30 - 34","1",0.0040498947
+"2018-2019","Outside Canada","Extérieur du Canada","50 - 54","1",0.0040498947
+"2018-2019","Outside Canada","Extérieur du Canada","55 - 59","1",0.0040498947
+"2018-2019","Outside Canada","Extérieur du Canada","60 - 64","1",0.0040498947
+"2018-2019","Unknown","Inconnu","<20","48",0.1943949457
+"2018-2019","Unknown","Inconnu","20 - 24","68",0.2753928398
+"2018-2019","Unknown","Inconnu","25 - 29","74",0.299692208
+"2018-2019","Unknown","Inconnu","30 - 34","68",0.2753928398
+"2018-2019","Unknown","Inconnu","35 - 39","50",0.2024947351
+"2018-2019","Unknown","Inconnu","40 - 44","37",0.149846104
+"2018-2019","Unknown","Inconnu","45 - 49","32",0.1295966305
+"2018-2019","Unknown","Inconnu","50 - 54","19",0.0769479994
+"2018-2019","Unknown","Inconnu","55 - 59","29",0.1174469464
+"2018-2019","Unknown","Inconnu","60 - 64","10",0.040498947
+"2018-2019","Unknown","Inconnu",">=65","25",0.1012473676
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","<20","1",0.0038173767
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","20 - 24","51",0.1946862116
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","25 - 29","61",0.2328599786
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","30 - 34","75",0.2863032524
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","35 - 39","71",0.2710337456
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","40 - 44","62",0.2366773553
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","45 - 49","46",0.1755993281
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","50 - 54","29",0.1107039243
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","55 - 59","34",0.1297908078
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador","60 - 64","22",0.0839822874
+"2019-2020","Newfoundland and Labrador","Terre-Neuve-et-Labrador",">=65","5",0.0190868835
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","<20","1",0.0038173767
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","20 - 24","44",0.1679645747
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","25 - 29","43",0.164147198
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","30 - 34","46",0.1755993281
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","35 - 39","37",0.1412429379
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","40 - 44","33",0.1259734311
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","45 - 49","30",0.114521301
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","50 - 54","24",0.0916170408
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","55 - 59","11",0.0419911437
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard","60 - 64","11",0.0419911437
+"2019-2020","Prince Edward Island","Île-du-Prince-Édouard",">=65","6",0.0229042602
+"2019-2020","Nova Scotia","Nouvelle-Écosse","<20","1",0.0038173767
+"2019-2020","Nova Scotia","Nouvelle-Écosse","20 - 24","117",0.4466330738
+"2019-2020","Nova Scotia","Nouvelle-Écosse","25 - 29","166",0.633684532
+"2019-2020","Nova Scotia","Nouvelle-Écosse","30 - 34","150",0.5726065048
+"2019-2020","Nova Scotia","Nouvelle-Écosse","35 - 39","138",0.5267979844
+"2019-2020","Nova Scotia","Nouvelle-Écosse","40 - 44","89",0.3397465262
+"2019-2020","Nova Scotia","Nouvelle-Écosse","45 - 49","97",0.3702855398
+"2019-2020","Nova Scotia","Nouvelle-Écosse","50 - 54","77",0.2939380058
+"2019-2020","Nova Scotia","Nouvelle-Écosse","55 - 59","72",0.2748511223
+"2019-2020","Nova Scotia","Nouvelle-Écosse","60 - 64","39",0.1488776913
+"2019-2020","Nova Scotia","Nouvelle-Écosse",">=65","9",0.0343563903
+"2019-2020","New Brunswick","Nouveau-Brunswick","<20","5",0.0190868835
+"2019-2020","New Brunswick","Nouveau-Brunswick","20 - 24","145",0.5535196213
+"2019-2020","New Brunswick","Nouveau-Brunswick","25 - 29","152",0.5802412582
+"2019-2020","New Brunswick","Nouveau-Brunswick","30 - 34","126",0.480989464
+"2019-2020","New Brunswick","Nouveau-Brunswick","35 - 39","146",0.557336998
+"2019-2020","New Brunswick","Nouveau-Brunswick","40 - 44","120",0.4580852038
+"2019-2020","New Brunswick","Nouveau-Brunswick","45 - 49","111",0.4237288136
+"2019-2020","New Brunswick","Nouveau-Brunswick","50 - 54","71",0.2710337456
+"2019-2020","New Brunswick","Nouveau-Brunswick","55 - 59","45",0.1717819514
+"2019-2020","New Brunswick","Nouveau-Brunswick","60 - 64","36",0.1374255612
+"2019-2020","New Brunswick","Nouveau-Brunswick",">=65","7",0.0267216369
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","<20","17",0.0648954039
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","20 - 24","333",1.2711864407
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","25 - 29","545",2.0804703008
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","30 - 34","391",1.4925942892
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","35 - 39","392",1.4964116659
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","40 - 44","322",1.229195297
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","45 - 49","199",0.759657963
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","50 - 54","136",0.519163231
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","55 - 59","126",0.480989464
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)","60 - 64","72",0.2748511223
+"2019-2020","Quebec  (except NCR)","Québec (sauf la RCN)",">=65","27",0.1030691709
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","<20","65",0.2481294854
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","20 - 24","2572",9.8182928691
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","25 - 29","2974",11.352878302
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","30 - 34","1835",7.0048862422
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","35 - 39","1484",5.6649870209
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","40 - 44","1079",4.1189494579
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","45 - 49","862",3.2905787143
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","50 - 54","644",2.458390594
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","55 - 59","452",1.7254542678
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)","60 - 64","253",0.9657963048
+"2019-2020","National Capital Region (NCR)","Région de la capitale nationale (RCN)",">=65","169",0.6451366621
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","<20","7",0.0267216369
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","20 - 24","485",1.8514276989
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","25 - 29","742",2.8324935105
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","30 - 34","528",2.0155748969
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","35 - 39","384",1.4658726523
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","40 - 44","267",1.0192395786
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","45 - 49","221",0.8436402504
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","50 - 54","194",0.7405710796
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","55 - 59","154",0.5878760116
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)","60 - 64","72",0.2748511223
+"2019-2020","Ontario (except NCR)","Ontario (sauf la RCN)",">=65","65",0.2481294854
+"2019-2020","Manitoba","Manitoba","<20","3",0.0114521301
+"2019-2020","Manitoba","Manitoba","20 - 24","99",0.3779202932
+"2019-2020","Manitoba","Manitoba","25 - 29","150",0.5726065048
+"2019-2020","Manitoba","Manitoba","30 - 34","125",0.4771720873
+"2019-2020","Manitoba","Manitoba","35 - 39","94",0.3588334097
+"2019-2020","Manitoba","Manitoba","40 - 44","80",0.3053901359
+"2019-2020","Manitoba","Manitoba","45 - 49","60",0.2290426019
+"2019-2020","Manitoba","Manitoba","50 - 54","51",0.1946862116
+"2019-2020","Manitoba","Manitoba","55 - 59","31",0.1183386777
+"2019-2020","Manitoba","Manitoba","60 - 64","27",0.1030691709
+"2019-2020","Manitoba","Manitoba",">=65","4",0.0152695068
+"2019-2020","Saskatchewan","Saskatchewan","<20","3",0.0114521301
+"2019-2020","Saskatchewan","Saskatchewan","20 - 24","96",0.3664681631
+"2019-2020","Saskatchewan","Saskatchewan","25 - 29","114",0.4351809437
+"2019-2020","Saskatchewan","Saskatchewan","30 - 34","90",0.3435639029
+"2019-2020","Saskatchewan","Saskatchewan","35 - 39","69",0.2633989922
+"2019-2020","Saskatchewan","Saskatchewan","40 - 44","67",0.2557642388
+"2019-2020","Saskatchewan","Saskatchewan","45 - 49","42",0.1603298213
+"2019-2020","Saskatchewan","Saskatchewan","50 - 54","37",0.1412429379
+"2019-2020","Saskatchewan","Saskatchewan","55 - 59","33",0.1259734311
+"2019-2020","Saskatchewan","Saskatchewan","60 - 64","13",0.0496258971
+"2019-2020","Saskatchewan","Saskatchewan",">=65","2",0.0076347534
+"2019-2020","Alberta","Alberta","<20","15",0.0572606505
+"2019-2020","Alberta","Alberta","20 - 24","222",0.8474576271
+"2019-2020","Alberta","Alberta","25 - 29","279",1.0650480989
+"2019-2020","Alberta","Alberta","30 - 34","217",0.8283707436
+"2019-2020","Alberta","Alberta","35 - 39","214",0.8169186135
+"2019-2020","Alberta","Alberta","40 - 44","173",0.6604061689
+"2019-2020","Alberta","Alberta","45 - 49","128",0.4886242174
+"2019-2020","Alberta","Alberta","50 - 54","106",0.4046419301
+"2019-2020","Alberta","Alberta","55 - 59","79",0.3015727592
+"2019-2020","Alberta","Alberta","60 - 64","37",0.1412429379
+"2019-2020","Alberta","Alberta",">=65","12",0.0458085204
+"2019-2020","British Columbia","Colombie-Britannique","<20","16",0.0610780272
+"2019-2020","British Columbia","Colombie-Britannique","20 - 24","334",1.2750038174
+"2019-2020","British Columbia","Colombie-Britannique","25 - 29","459",1.7521759047
+"2019-2020","British Columbia","Colombie-Britannique","30 - 34","326",1.2444648038
+"2019-2020","British Columbia","Colombie-Britannique","35 - 39","232",0.8856313941
+"2019-2020","British Columbia","Colombie-Britannique","40 - 44","193",0.7367537029
+"2019-2020","British Columbia","Colombie-Britannique","45 - 49","183",0.6985799359
+"2019-2020","British Columbia","Colombie-Britannique","50 - 54","109",0.4160940602
+"2019-2020","British Columbia","Colombie-Britannique","55 - 59","99",0.3779202932
+"2019-2020","British Columbia","Colombie-Britannique","60 - 64","46",0.1755993281
+"2019-2020","British Columbia","Colombie-Britannique",">=65","30",0.114521301
+"2019-2020","Yukon","Yukon","<20","1",0.0038173767
+"2019-2020","Yukon","Yukon","20 - 24","5",0.0190868835
+"2019-2020","Yukon","Yukon","25 - 29","18",0.0687127806
+"2019-2020","Yukon","Yukon","30 - 34","14",0.0534432738
+"2019-2020","Yukon","Yukon","35 - 39","12",0.0458085204
+"2019-2020","Yukon","Yukon","40 - 44","3",0.0114521301
+"2019-2020","Yukon","Yukon","45 - 49","4",0.0152695068
+"2019-2020","Yukon","Yukon","50 - 54","2",0.0076347534
+"2019-2020","Yukon","Yukon","55 - 59","4",0.0152695068
+"2019-2020","Yukon","Yukon",">=65","1",0.0038173767
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","20 - 24","6",0.0229042602
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","25 - 29","23",0.0877996641
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","30 - 34","13",0.0496258971
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","35 - 39","10",0.038173767
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","40 - 44","5",0.0190868835
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","45 - 49","2",0.0076347534
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","50 - 54","2",0.0076347534
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest","60 - 64","2",0.0076347534
+"2019-2020","Northwest Territories","Territoires du Nord-Ouest",">=65","1",0.0038173767
+"2019-2020","Nunavut","Nunavut","<20","2",0.0076347534
+"2019-2020","Nunavut","Nunavut","20 - 24","17",0.0648954039
+"2019-2020","Nunavut","Nunavut","25 - 29","16",0.0610780272
+"2019-2020","Nunavut","Nunavut","30 - 34","10",0.038173767
+"2019-2020","Nunavut","Nunavut","35 - 39","7",0.0267216369
+"2019-2020","Nunavut","Nunavut","40 - 44","4",0.0152695068
+"2019-2020","Nunavut","Nunavut","45 - 49","4",0.0152695068
+"2019-2020","Nunavut","Nunavut","50 - 54","3",0.0114521301
+"2019-2020","Nunavut","Nunavut","55 - 59","4",0.0152695068
+"2019-2020","Nunavut","Nunavut","60 - 64","6",0.0229042602
+"2019-2020","Nunavut","Nunavut",">=65","1",0.0038173767
+"2019-2020","Outside Canada","Extérieur du Canada","45 - 49","2",0.0076347534
+"2019-2020","Outside Canada","Extérieur du Canada","55 - 59","1",0.0038173767
+"2019-2020","Outside Canada","Extérieur du Canada","60 - 64","2",0.0076347534
+"2019-2020","Outside Canada","Extérieur du Canada",">=65","3",0.0114521301
+"2019-2020","Unknown","Inconnu","<20","54",0.2061383417
+"2019-2020","Unknown","Inconnu","20 - 24","79",0.3015727592
+"2019-2020","Unknown","Inconnu","25 - 29","92",0.3511986563
+"2019-2020","Unknown","Inconnu","30 - 34","63",0.240494732
+"2019-2020","Unknown","Inconnu","35 - 39","45",0.1717819514
+"2019-2020","Unknown","Inconnu","40 - 44","36",0.1374255612
+"2019-2020","Unknown","Inconnu","45 - 49","23",0.0877996641
+"2019-2020","Unknown","Inconnu","50 - 54","20",0.076347534
+"2019-2020","Unknown","Inconnu","55 - 59","18",0.0687127806
+"2019-2020","Unknown","Inconnu","60 - 64","13",0.0496258971
+"2019-2020","Unknown","Inconnu",">=65","14",0.0534432738
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","<20","4",0.0158196559
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","20 - 24","80",0.3163931184
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","25 - 29","130",0.5141388175
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","30 - 34","96",0.3796717421
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","35 - 39","101",0.399446312
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","40 - 44","84",0.3322127744
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","45 - 49","81",0.3203480324
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","50 - 54","52",0.205655527
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","55 - 59","32",0.1265572474
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador","60 - 64","26",0.1028277635
+"2020-2021","Newfoundland and Labrador","Terre-Neuve-et-Labrador",">=65","12",0.0474589678
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","<20","1",0.003954914
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","20 - 24","46",0.1819260431
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","25 - 29","34",0.1344670753
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","30 - 34","49",0.1937907851
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","35 - 39","53",0.209610441
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","40 - 44","38",0.1502867313
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","45 - 49","30",0.1186474194
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","50 - 54","16",0.0632786237
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","55 - 59","17",0.0672335377
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard","60 - 64","15",0.0593237097
+"2020-2021","Prince Edward Island","Île-du-Prince-Édouard",">=65","6",0.0237294839
+"2020-2021","Nova Scotia","Nouvelle-Écosse","<20","1",0.003954914
+"2020-2021","Nova Scotia","Nouvelle-Écosse","20 - 24","86",0.3401226023
+"2020-2021","Nova Scotia","Nouvelle-Écosse","25 - 29","157",0.620921495
+"2020-2021","Nova Scotia","Nouvelle-Écosse","30 - 34","142",0.5615977852
+"2020-2021","Nova Scotia","Nouvelle-Écosse","35 - 39","117",0.4627249357
+"2020-2021","Nova Scotia","Nouvelle-Écosse","40 - 44","102",0.403401226
+"2020-2021","Nova Scotia","Nouvelle-Écosse","45 - 49","93",0.3678070002
+"2020-2021","Nova Scotia","Nouvelle-Écosse","50 - 54","79",0.3124382045
+"2020-2021","Nova Scotia","Nouvelle-Écosse","55 - 59","58",0.2293850109
+"2020-2021","Nova Scotia","Nouvelle-Écosse","60 - 64","24",0.0949179355
+"2020-2021","Nova Scotia","Nouvelle-Écosse",">=65","20",0.0790982796
+"2020-2021","New Brunswick","Nouveau-Brunswick","<20","11",0.0435040538
+"2020-2021","New Brunswick","Nouveau-Brunswick","20 - 24","117",0.4627249357
+"2020-2021","New Brunswick","Nouveau-Brunswick","25 - 29","129",0.5101839035
+"2020-2021","New Brunswick","Nouveau-Brunswick","30 - 34","124",0.4904093336
+"2020-2021","New Brunswick","Nouveau-Brunswick","35 - 39","109",0.4310856239
+"2020-2021","New Brunswick","Nouveau-Brunswick","40 - 44","123",0.4864544196
+"2020-2021","New Brunswick","Nouveau-Brunswick","45 - 49","89",0.3519873443
+"2020-2021","New Brunswick","Nouveau-Brunswick","50 - 54","70",0.2768439786
+"2020-2021","New Brunswick","Nouveau-Brunswick","55 - 59","48",0.1898358711
+"2020-2021","New Brunswick","Nouveau-Brunswick","60 - 64","36",0.1423769033
+"2020-2021","New Brunswick","Nouveau-Brunswick",">=65","9",0.0355942258
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","<20","11",0.0435040538
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","20 - 24","280",1.1073759146
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","25 - 29","560",2.2147518291
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","30 - 34","515",2.0367807
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","35 - 39","490",1.9379078505
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","40 - 44","432",1.7085228396
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","45 - 49","309",1.22206842
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","50 - 54","196",0.7751631402
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","55 - 59","151",0.5971920111
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)","60 - 64","94",0.3717619142
+"2020-2021","Quebec  (except NCR)","Québec (sauf la RCN)",">=65","60",0.2372948388
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","N/A","1",0.003954914
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","<20","45",0.1779711291
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","20 - 24","2331",9.2189044888
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","25 - 29","2585",10.22345264
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","30 - 34","1511",5.9758750247
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","35 - 39","1133",4.48091754
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","40 - 44","938",3.7097093138
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","45 - 49","668",2.6418825391
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","50 - 54","516",2.040735614
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","55 - 59","427",1.6887482697
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)","60 - 64","258",1.020367807
+"2020-2021","National Capital Region (NCR)","Région de la capitale nationale (RCN)",">=65","136",0.5378683014
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","N/A","1",0.003954914
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","<20","4",0.0158196559
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","20 - 24","411",1.625469646
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","25 - 29","665",2.6300177971
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","30 - 34","472",1.8667193989
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","35 - 39","359",1.419814119
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","40 - 44","272",1.0757366027
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","45 - 49","222",0.8779909037
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","50 - 54","195",0.7712082262
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","55 - 59","153",0.605101839
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)","60 - 64","91",0.3598971722
+"2020-2021","Ontario (except NCR)","Ontario (sauf la RCN)",">=65","90",0.3559422583
+"2020-2021","Manitoba","Manitoba","<20","9",0.0355942258
+"2020-2021","Manitoba","Manitoba","20 - 24","130",0.5141388175
+"2020-2021","Manitoba","Manitoba","25 - 29","148",0.5853272691
+"2020-2021","Manitoba","Manitoba","30 - 34","121",0.4785445917
+"2020-2021","Manitoba","Manitoba","35 - 39","114",0.4508601938
+"2020-2021","Manitoba","Manitoba","40 - 44","93",0.3678070002
+"2020-2021","Manitoba","Manitoba","45 - 49","84",0.3322127744
+"2020-2021","Manitoba","Manitoba","50 - 54","45",0.1779711291
+"2020-2021","Manitoba","Manitoba","55 - 59","37",0.1463318173
+"2020-2021","Manitoba","Manitoba","60 - 64","23",0.0909630216
+"2020-2021","Manitoba","Manitoba",">=65","10",0.0395491398
+"2020-2021","Saskatchewan","Saskatchewan","<20","4",0.0158196559
+"2020-2021","Saskatchewan","Saskatchewan","20 - 24","78",0.3084832905
+"2020-2021","Saskatchewan","Saskatchewan","25 - 29","103",0.40735614
+"2020-2021","Saskatchewan","Saskatchewan","30 - 34","95",0.3757168282
+"2020-2021","Saskatchewan","Saskatchewan","35 - 39","80",0.3163931184
+"2020-2021","Saskatchewan","Saskatchewan","40 - 44","71",0.2807988926
+"2020-2021","Saskatchewan","Saskatchewan","45 - 49","53",0.209610441
+"2020-2021","Saskatchewan","Saskatchewan","50 - 54","44",0.1740162151
+"2020-2021","Saskatchewan","Saskatchewan","55 - 59","34",0.1344670753
+"2020-2021","Saskatchewan","Saskatchewan","60 - 64","14",0.0553687957
+"2020-2021","Saskatchewan","Saskatchewan",">=65","11",0.0435040538
+"2020-2021","Alberta","Alberta","N/A","1",0.003954914
+"2020-2021","Alberta","Alberta","<20","6",0.0237294839
+"2020-2021","Alberta","Alberta","20 - 24","215",0.8503065058
+"2020-2021","Alberta","Alberta","25 - 29","321",1.2695273878
+"2020-2021","Alberta","Alberta","30 - 34","234",0.9254498715
+"2020-2021","Alberta","Alberta","35 - 39","240",0.9491793553
+"2020-2021","Alberta","Alberta","40 - 44","208",0.822622108
+"2020-2021","Alberta","Alberta","45 - 49","196",0.7751631402
+"2020-2021","Alberta","Alberta","50 - 54","133",0.5260035594
+"2020-2021","Alberta","Alberta","55 - 59","103",0.40735614
+"2020-2021","Alberta","Alberta","60 - 64","55",0.2175202689
+"2020-2021","Alberta","Alberta",">=65","16",0.0632786237
+"2020-2021","British Columbia","Colombie-Britannique","<20","8",0.0316393118
+"2020-2021","British Columbia","Colombie-Britannique","20 - 24","361",1.427723947
+"2020-2021","British Columbia","Colombie-Britannique","25 - 29","518",2.048645442
+"2020-2021","British Columbia","Colombie-Britannique","30 - 34","331",1.3090765276
+"2020-2021","British Columbia","Colombie-Britannique","35 - 39","256",1.012457979
+"2020-2021","British Columbia","Colombie-Britannique","40 - 44","201",0.7949377101
+"2020-2021","British Columbia","Colombie-Britannique","45 - 49","184",0.7277041724
+"2020-2021","British Columbia","Colombie-Britannique","50 - 54","142",0.5615977852
+"2020-2021","British Columbia","Colombie-Britannique","55 - 59","107",0.4231757959
+"2020-2021","British Columbia","Colombie-Britannique","60 - 64","66",0.2610243227
+"2020-2021","British Columbia","Colombie-Britannique",">=65","33",0.1305121614
+"2020-2021","Yukon","Yukon","20 - 24","4",0.0158196559
+"2020-2021","Yukon","Yukon","25 - 29","17",0.0672335377
+"2020-2021","Yukon","Yukon","30 - 34","9",0.0355942258
+"2020-2021","Yukon","Yukon","35 - 39","7",0.0276843979
+"2020-2021","Yukon","Yukon","40 - 44","4",0.0158196559
+"2020-2021","Yukon","Yukon","45 - 49","3",0.0118647419
+"2020-2021","Yukon","Yukon","50 - 54","2",0.007909828
+"2020-2021","Yukon","Yukon","55 - 59","2",0.007909828
+"2020-2021","Yukon","Yukon","60 - 64","3",0.0118647419
+"2020-2021","Yukon","Yukon",">=65","3",0.0118647419
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","20 - 24","9",0.0355942258
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","25 - 29","18",0.0711884517
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","30 - 34","13",0.0514138817
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","35 - 39","5",0.0197745699
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","40 - 44","6",0.0237294839
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","45 - 49","6",0.0237294839
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","50 - 54","6",0.0237294839
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","55 - 59","3",0.0118647419
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest","60 - 64","2",0.007909828
+"2020-2021","Northwest Territories","Territoires du Nord-Ouest",">=65","2",0.007909828
+"2020-2021","Nunavut","Nunavut","20 - 24","10",0.0395491398
+"2020-2021","Nunavut","Nunavut","25 - 29","11",0.0435040538
+"2020-2021","Nunavut","Nunavut","30 - 34","12",0.0474589678
+"2020-2021","Nunavut","Nunavut","35 - 39","3",0.0118647419
+"2020-2021","Nunavut","Nunavut","40 - 44","4",0.0158196559
+"2020-2021","Nunavut","Nunavut","45 - 49","4",0.0158196559
+"2020-2021","Nunavut","Nunavut","55 - 59","2",0.007909828
+"2020-2021","Nunavut","Nunavut","60 - 64","2",0.007909828
+"2020-2021","Outside Canada","Extérieur du Canada","25 - 29","1",0.003954914
+"2020-2021","Outside Canada","Extérieur du Canada","35 - 39","1",0.003954914
+"2020-2021","Outside Canada","Extérieur du Canada","50 - 54","1",0.003954914
+"2020-2021","Outside Canada","Extérieur du Canada",">=65","1",0.003954914
+"2020-2021","Unknown","Inconnu","<20","46",0.1819260431
+"2020-2021","Unknown","Inconnu","20 - 24","54",0.213565355
+"2020-2021","Unknown","Inconnu","25 - 29","80",0.3163931184
+"2020-2021","Unknown","Inconnu","30 - 34","52",0.205655527
+"2020-2021","Unknown","Inconnu","35 - 39","64",0.2531144948
+"2020-2021","Unknown","Inconnu","40 - 44","30",0.1186474194
+"2020-2021","Unknown","Inconnu","45 - 49","28",0.1107375915
+"2020-2021","Unknown","Inconnu","50 - 54","32",0.1265572474
+"2020-2021","Unknown","Inconnu","55 - 59","25",0.0988728495
+"2020-2021","Unknown","Inconnu","60 - 64","16",0.0632786237
+"2020-2021","Unknown","Inconnu",">=65","17",0.0672335377
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","<20","2",0.0065930443
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","20 - 24","79",0.2604252514
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","25 - 29","131",0.4318444042
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","30 - 34","88",0.2900939509
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","35 - 39","79",0.2604252514
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","40 - 44","91",0.2999835174
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","45 - 49","68",0.2241635075
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","50 - 54","48",0.1582330641
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","55 - 59","40",0.1318608868
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador","60 - 64","20",0.0659304434
+"2021-2022","Newfoundland and Labrador","Terre-Neuve-et-Labrador",">=65","9",0.0296686995
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","<20","1",0.0032965222
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","20 - 24","29",0.0955991429
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","25 - 29","24",0.0791165321
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","30 - 34","20",0.0659304434
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","35 - 39","25",0.0824130542
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","40 - 44","20",0.0659304434
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","45 - 49","16",0.0527443547
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","50 - 54","8",0.0263721774
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","55 - 59","7",0.0230756552
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard","60 - 64","6",0.019779133
+"2021-2022","Prince Edward Island","Île-du-Prince-Édouard",">=65","4",0.0131860887
+"2021-2022","Nova Scotia","Nouvelle-Écosse","<20","3",0.0098895665
+"2021-2022","Nova Scotia","Nouvelle-Écosse","20 - 24","134",0.4417339707
+"2021-2022","Nova Scotia","Nouvelle-Écosse","25 - 29","221",0.7285313994
+"2021-2022","Nova Scotia","Nouvelle-Écosse","30 - 34","198",0.6527113895
+"2021-2022","Nova Scotia","Nouvelle-Écosse","35 - 39","178",0.5867809461
+"2021-2022","Nova Scotia","Nouvelle-Écosse","40 - 44","152",0.5010713697
+"2021-2022","Nova Scotia","Nouvelle-Écosse","45 - 49","127",0.4186583155
+"2021-2022","Nova Scotia","Nouvelle-Écosse","50 - 54","92",0.3032800396
+"2021-2022","Nova Scotia","Nouvelle-Écosse","55 - 59","65",0.214273941
+"2021-2022","Nova Scotia","Nouvelle-Écosse","60 - 64","43",0.1417504533
+"2021-2022","Nova Scotia","Nouvelle-Écosse",">=65","19",0.0626339212
+"2021-2022","New Brunswick","Nouveau-Brunswick","N/A","1",0.0032965222
+"2021-2022","New Brunswick","Nouveau-Brunswick","<20","3",0.0098895665
+"2021-2022","New Brunswick","Nouveau-Brunswick","20 - 24","157",0.5175539806
+"2021-2022","New Brunswick","Nouveau-Brunswick","25 - 29","193",0.6362287786
+"2021-2022","New Brunswick","Nouveau-Brunswick","30 - 34","175",0.5768913796
+"2021-2022","New Brunswick","Nouveau-Brunswick","35 - 39","170",0.5604087687
+"2021-2022","New Brunswick","Nouveau-Brunswick","40 - 44","163",0.5373331136
+"2021-2022","New Brunswick","Nouveau-Brunswick","45 - 49","128",0.4219548376
+"2021-2022","New Brunswick","Nouveau-Brunswick","50 - 54","95",0.3131696061
+"2021-2022","New Brunswick","Nouveau-Brunswick","55 - 59","80",0.2637217735
+"2021-2022","New Brunswick","Nouveau-Brunswick","60 - 64","38",0.1252678424
+"2021-2022","New Brunswick","Nouveau-Brunswick",">=65","13",0.0428547882
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","<20","14",0.0461513104
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","20 - 24","341",1.1241140597
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","25 - 29","669",2.2053733311
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","30 - 34","580",1.9119828581
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","35 - 39","575",1.8955002472
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","40 - 44","589",1.9416515576
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","45 - 49","387",1.2757540794
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","50 - 54","264",0.8702818526
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","55 - 59","171",0.5637052909
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)","60 - 64","72",0.2373495962
+"2021-2022","Quebec  (except NCR)","Québec (sauf la RCN)",">=65","34",0.1120817537
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","N/A","1",0.0032965222
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","<20","76",0.2505356849
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","20 - 24","2704",8.9137959453
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","25 - 29","3144",10.3642657
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","30 - 34","2049",6.7545739245
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","35 - 39","1520",5.010713697
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","40 - 44","1191",3.9261579034
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","45 - 49","875",2.884456898
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","50 - 54","623",2.0537333114
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","55 - 59","486",1.6021097742
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)","60 - 64","322",1.0614801385
+"2021-2022","National Capital Region (NCR)","Région de la capitale nationale (RCN)",">=65","202",0.6658974782
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","<20","14",0.0461513104
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","20 - 24","549",1.8097906708
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","25 - 29","819",2.6998516565
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","30 - 34","663",2.1855941981
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","35 - 39","536",1.7669358826
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","40 - 44","388",1.2790506016
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","45 - 49","310",1.0219218724
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","50 - 54","198",0.6527113895
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","55 - 59","164",0.5406296357
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)","60 - 64","97",0.3197626504
+"2021-2022","Ontario (except NCR)","Ontario (sauf la RCN)",">=65","48",0.1582330641
+"2021-2022","Manitoba","Manitoba","<20","3",0.0098895665
+"2021-2022","Manitoba","Manitoba","20 - 24","114",0.3758035273
+"2021-2022","Manitoba","Manitoba","25 - 29","208",0.6856766112
+"2021-2022","Manitoba","Manitoba","30 - 34","144",0.4746991924
+"2021-2022","Manitoba","Manitoba","35 - 39","136",0.448327015
+"2021-2022","Manitoba","Manitoba","40 - 44","124",0.408768749
+"2021-2022","Manitoba","Manitoba","45 - 49","76",0.2505356849
+"2021-2022","Manitoba","Manitoba","50 - 54","50",0.1648261085
+"2021-2022","Manitoba","Manitoba","55 - 59","49",0.1615295863
+"2021-2022","Manitoba","Manitoba","60 - 64","31",0.1021921872
+"2021-2022","Manitoba","Manitoba",">=65","12",0.039558266
+"2021-2022","Saskatchewan","Saskatchewan","<20","1",0.0032965222
+"2021-2022","Saskatchewan","Saskatchewan","20 - 24","69",0.2274600297
+"2021-2022","Saskatchewan","Saskatchewan","25 - 29","134",0.4417339707
+"2021-2022","Saskatchewan","Saskatchewan","30 - 34","111",0.3659139608
+"2021-2022","Saskatchewan","Saskatchewan","35 - 39","88",0.2900939509
+"2021-2022","Saskatchewan","Saskatchewan","40 - 44","80",0.2637217735
+"2021-2022","Saskatchewan","Saskatchewan","45 - 49","53",0.174715675
+"2021-2022","Saskatchewan","Saskatchewan","50 - 54","47",0.1549365419
+"2021-2022","Saskatchewan","Saskatchewan","55 - 59","30",0.0988956651
+"2021-2022","Saskatchewan","Saskatchewan","60 - 64","20",0.0659304434
+"2021-2022","Saskatchewan","Saskatchewan",">=65","6",0.019779133
+"2021-2022","Alberta","Alberta","<20","8",0.0263721774
+"2021-2022","Alberta","Alberta","20 - 24","200",0.6593044338
+"2021-2022","Alberta","Alberta","25 - 29","306",1.0087357837
+"2021-2022","Alberta","Alberta","30 - 34","297",0.9790670842
+"2021-2022","Alberta","Alberta","35 - 39","260",0.857095764
+"2021-2022","Alberta","Alberta","40 - 44","246",0.8109444536
+"2021-2022","Alberta","Alberta","45 - 49","166",0.5472226801
+"2021-2022","Alberta","Alberta","50 - 54","154",0.507664414
+"2021-2022","Alberta","Alberta","55 - 59","108",0.3560243943
+"2021-2022","Alberta","Alberta","60 - 64","46",0.1516400198
+"2021-2022","Alberta","Alberta",">=65","13",0.0428547882
+"2021-2022","British Columbia","Colombie-Britannique","<20","12",0.039558266
+"2021-2022","British Columbia","Colombie-Britannique","20 - 24","369",1.2164166804
+"2021-2022","British Columbia","Colombie-Britannique","25 - 29","575",1.8955002472
+"2021-2022","British Columbia","Colombie-Britannique","30 - 34","348",1.1471897149
+"2021-2022","British Columbia","Colombie-Britannique","35 - 39","303",0.9988462172
+"2021-2022","British Columbia","Colombie-Britannique","40 - 44","246",0.8109444536
+"2021-2022","British Columbia","Colombie-Britannique","45 - 49","179",0.5900774683
+"2021-2022","British Columbia","Colombie-Britannique","50 - 54","146",0.4812922367
+"2021-2022","British Columbia","Colombie-Britannique","55 - 59","105",0.3461348278
+"2021-2022","British Columbia","Colombie-Britannique","60 - 64","60",0.1977913301
+"2021-2022","British Columbia","Colombie-Britannique",">=65","31",0.1021921872
+"2021-2022","Yukon","Yukon","20 - 24","4",0.0131860887
+"2021-2022","Yukon","Yukon","25 - 29","18",0.059337399
+"2021-2022","Yukon","Yukon","30 - 34","10",0.0329652217
+"2021-2022","Yukon","Yukon","35 - 39","11",0.0362617439
+"2021-2022","Yukon","Yukon","40 - 44","8",0.0263721774
+"2021-2022","Yukon","Yukon","45 - 49","1",0.0032965222
+"2021-2022","Yukon","Yukon","50 - 54","2",0.0065930443
+"2021-2022","Yukon","Yukon","55 - 59","2",0.0065930443
+"2021-2022","Yukon","Yukon","60 - 64","1",0.0032965222
+"2021-2022","Yukon","Yukon",">=65","1",0.0032965222
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","20 - 24","6",0.019779133
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","25 - 29","13",0.0428547882
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","30 - 34","13",0.0428547882
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","35 - 39","10",0.0329652217
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","40 - 44","5",0.0164826108
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","45 - 49","4",0.0131860887
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","50 - 54","4",0.0131860887
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest","55 - 59","2",0.0065930443
+"2021-2022","Northwest Territories","Territoires du Nord-Ouest",">=65","2",0.0065930443
+"2021-2022","Nunavut","Nunavut","20 - 24","18",0.059337399
+"2021-2022","Nunavut","Nunavut","25 - 29","13",0.0428547882
+"2021-2022","Nunavut","Nunavut","30 - 34","15",0.0494478325
+"2021-2022","Nunavut","Nunavut","35 - 39","10",0.0329652217
+"2021-2022","Nunavut","Nunavut","40 - 44","5",0.0164826108
+"2021-2022","Nunavut","Nunavut","45 - 49","5",0.0164826108
+"2021-2022","Nunavut","Nunavut","50 - 54","4",0.0131860887
+"2021-2022","Nunavut","Nunavut","55 - 59","1",0.0032965222
+"2021-2022","Outside Canada","Extérieur du Canada","35 - 39","1",0.0032965222
+"2021-2022","Outside Canada","Extérieur du Canada","55 - 59","1",0.0032965222
+"2021-2022","Unknown","Inconnu","<20","44",0.1450469754
+"2021-2022","Unknown","Inconnu","20 - 24","68",0.2241635075
+"2021-2022","Unknown","Inconnu","25 - 29","90",0.2966869952
+"2021-2022","Unknown","Inconnu","30 - 34","76",0.2505356849
+"2021-2022","Unknown","Inconnu","35 - 39","48",0.1582330641
+"2021-2022","Unknown","Inconnu","40 - 44","41",0.1351574089
+"2021-2022","Unknown","Inconnu","45 - 49","22",0.0725234877
+"2021-2022","Unknown","Inconnu","50 - 54","17",0.0560408769
+"2021-2022","Unknown","Inconnu","55 - 59","8",0.0263721774
+"2021-2022","Unknown","Inconnu","60 - 64","18",0.059337399
+"2021-2022","Unknown","Inconnu",">=65","11",0.0362617439
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","<20","2",0.0057532434
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","20 - 24","54",0.1553375716
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","25 - 29","96",0.2761556828
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","30 - 34","78",0.2243764922
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","35 - 39","64",0.1841037885
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","40 - 44","71",0.2042401404
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","45 - 49","59",0.16972068
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","50 - 54","51",0.1467077065
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","55 - 59","23",0.066162299
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador","60 - 64","14",0.0402727037
+"2022-2023","Newfoundland and Labrador","Terre-Neuve-et-Labrador",">=65","7",0.0201363519
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","<20","2",0.0057532434
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","20 - 24","24",0.0690389207
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","25 - 29","26",0.0747921641
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","30 - 34","44",0.1265713546
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","35 - 39","34",0.0978051376
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","40 - 44","37",0.1064350027
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","45 - 49","23",0.066162299
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","50 - 54","22",0.0632856773
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","55 - 59","15",0.0431493254
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard","60 - 64","6",0.0172597302
+"2022-2023","Prince Edward Island","Île-du-Prince-Édouard",">=65","5",0.0143831085
+"2022-2023","Nova Scotia","Nouvelle-Écosse","<20","49",0.1409544631
+"2022-2023","Nova Scotia","Nouvelle-Écosse","20 - 24","156",0.4487529845
+"2022-2023","Nova Scotia","Nouvelle-Écosse","25 - 29","246",0.7076489371
+"2022-2023","Nova Scotia","Nouvelle-Écosse","30 - 34","237",0.6817593418
+"2022-2023","Nova Scotia","Nouvelle-Écosse","35 - 39","207",0.595460691
+"2022-2023","Nova Scotia","Nouvelle-Écosse","40 - 44","181",0.5206685269
+"2022-2023","Nova Scotia","Nouvelle-Écosse","45 - 49","136",0.3912205506
+"2022-2023","Nova Scotia","Nouvelle-Écosse","50 - 54","105",0.302045278
+"2022-2023","Nova Scotia","Nouvelle-Écosse","55 - 59","100",0.2876621695
+"2022-2023","Nova Scotia","Nouvelle-Écosse","60 - 64","57",0.1639674366
+"2022-2023","Nova Scotia","Nouvelle-Écosse",">=65","26",0.0747921641
+"2022-2023","New Brunswick","Nouveau-Brunswick","<20","6",0.0172597302
+"2022-2023","New Brunswick","Nouveau-Brunswick","20 - 24","184",0.529298392
+"2022-2023","New Brunswick","Nouveau-Brunswick","25 - 29","270",0.7766878578
+"2022-2023","New Brunswick","Nouveau-Brunswick","30 - 34","212",0.6098437994
+"2022-2023","New Brunswick","Nouveau-Brunswick","35 - 39","212",0.6098437994
+"2022-2023","New Brunswick","Nouveau-Brunswick","40 - 44","186",0.5350516354
+"2022-2023","New Brunswick","Nouveau-Brunswick","45 - 49","171",0.4919023099
+"2022-2023","New Brunswick","Nouveau-Brunswick","50 - 54","129",0.3710841987
+"2022-2023","New Brunswick","Nouveau-Brunswick","55 - 59","75",0.2157466272
+"2022-2023","New Brunswick","Nouveau-Brunswick","60 - 64","41",0.1179414895
+"2022-2023","New Brunswick","Nouveau-Brunswick",">=65","22",0.0632856773
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","<20","17",0.0489025688
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","20 - 24","411",1.1822915168
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","25 - 29","774",2.2265051923
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","30 - 34","739",2.125823433
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","35 - 39","698",2.0078819434
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","40 - 44","675",1.9417196444
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","45 - 49","501",1.4411874694
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","50 - 54","297",0.8543566436
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","55 - 59","179",0.5149152835
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)","60 - 64","90",0.2588959526
+"2022-2023","Quebec  (except NCR)","Québec (sauf la RCN)",">=65","35",0.1006817593
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","<20","92",0.264649196
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","20 - 24","2941",8.4601444064
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","25 - 29","3268",9.4007997008
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","30 - 34","2415",6.9470413946
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","35 - 39","1846",5.3102436499
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","40 - 44","1420",4.0848028076
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","45 - 49","1072",3.0837384576
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","50 - 54","731",2.1028104594
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","55 - 59","486",1.398038144
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)","60 - 64","364",1.0470902972
+"2022-2023","National Capital Region (NCR)","Région de la capitale nationale (RCN)",">=65","241",0.6932658286
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","<20","18",0.0517791905
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","20 - 24","663",1.9072001841
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","25 - 29","1108",3.1872968386
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","30 - 34","890",2.560193309
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","35 - 39","677",1.9474728878
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","40 - 44","493",1.4181744959
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","45 - 49","359",1.0327071887
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","50 - 54","286",0.8227138049
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","55 - 59","182",0.5235451486
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)","60 - 64","100",0.2876621695
+"2022-2023","Ontario (except NCR)","Ontario (sauf la RCN)",">=65","48",0.1380778414
+"2022-2023","Manitoba","Manitoba","<20","11",0.0316428387
+"2022-2023","Manitoba","Manitoba","20 - 24","170",0.4890256882
+"2022-2023","Manitoba","Manitoba","25 - 29","221",0.6357333947
+"2022-2023","Manitoba","Manitoba","30 - 34","198",0.5695710957
+"2022-2023","Manitoba","Manitoba","35 - 39","168",0.4832724448
+"2022-2023","Manitoba","Manitoba","40 - 44","136",0.3912205506
+"2022-2023","Manitoba","Manitoba","45 - 49","118",0.3394413601
+"2022-2023","Manitoba","Manitoba","50 - 54","63",0.1812271668
+"2022-2023","Manitoba","Manitoba","55 - 59","34",0.0978051376
+"2022-2023","Manitoba","Manitoba","60 - 64","17",0.0489025688
+"2022-2023","Manitoba","Manitoba",">=65","4",0.0115064868
+"2022-2023","Saskatchewan","Saskatchewan","<20","4",0.0115064868
+"2022-2023","Saskatchewan","Saskatchewan","20 - 24","68",0.1956102753
+"2022-2023","Saskatchewan","Saskatchewan","25 - 29","122",0.3509478468
+"2022-2023","Saskatchewan","Saskatchewan","30 - 34","127",0.3653309553
+"2022-2023","Saskatchewan","Saskatchewan","35 - 39","126",0.3624543336
+"2022-2023","Saskatchewan","Saskatchewan","40 - 44","93",0.2675258177
+"2022-2023","Saskatchewan","Saskatchewan","45 - 49","59",0.16972068
+"2022-2023","Saskatchewan","Saskatchewan","50 - 54","43",0.1236947329
+"2022-2023","Saskatchewan","Saskatchewan","55 - 59","33",0.094928516
+"2022-2023","Saskatchewan","Saskatchewan","60 - 64","16",0.0460259471
+"2022-2023","Saskatchewan","Saskatchewan",">=65","7",0.0201363519
+"2022-2023","Alberta","Alberta","<20","13",0.037396082
+"2022-2023","Alberta","Alberta","20 - 24","219",0.6299801513
+"2022-2023","Alberta","Alberta","25 - 29","340",0.9780513765
+"2022-2023","Alberta","Alberta","30 - 34","324",0.9320254293
+"2022-2023","Alberta","Alberta","35 - 39","284",0.8169605615
+"2022-2023","Alberta","Alberta","40 - 44","247",0.7105255588
+"2022-2023","Alberta","Alberta","45 - 49","170",0.4890256882
+"2022-2023","Alberta","Alberta","50 - 54","156",0.4487529845
+"2022-2023","Alberta","Alberta","55 - 59","66",0.1898570319
+"2022-2023","Alberta","Alberta","60 - 64","45",0.1294479763
+"2022-2023","Alberta","Alberta",">=65","13",0.037396082
+"2022-2023","British Columbia","Colombie-Britannique","<20","13",0.037396082
+"2022-2023","British Columbia","Colombie-Britannique","20 - 24","395",1.1362655697
+"2022-2023","British Columbia","Colombie-Britannique","25 - 29","697",2.0050053218
+"2022-2023","British Columbia","Colombie-Britannique","30 - 34","477",1.3721485487
+"2022-2023","British Columbia","Colombie-Britannique","35 - 39","320",0.9205189426
+"2022-2023","British Columbia","Colombie-Britannique","40 - 44","269",0.7738112361
+"2022-2023","British Columbia","Colombie-Britannique","45 - 49","192",0.5523113655
+"2022-2023","British Columbia","Colombie-Britannique","50 - 54","159",0.4573828496
+"2022-2023","British Columbia","Colombie-Britannique","55 - 59","125",0.3595777119
+"2022-2023","British Columbia","Colombie-Britannique","60 - 64","60",0.1725973017
+"2022-2023","British Columbia","Colombie-Britannique",">=65","31",0.0891752726
+"2022-2023","Yukon","Yukon","<20","1",0.0028766217
+"2022-2023","Yukon","Yukon","20 - 24","10",0.028766217
+"2022-2023","Yukon","Yukon","25 - 29","22",0.0632856773
+"2022-2023","Yukon","Yukon","30 - 34","14",0.0402727037
+"2022-2023","Yukon","Yukon","35 - 39","8",0.0230129736
+"2022-2023","Yukon","Yukon","40 - 44","6",0.0172597302
+"2022-2023","Yukon","Yukon","45 - 49","7",0.0201363519
+"2022-2023","Yukon","Yukon","50 - 54","5",0.0143831085
+"2022-2023","Yukon","Yukon","55 - 59","5",0.0143831085
+"2022-2023","Yukon","Yukon","60 - 64","1",0.0028766217
+"2022-2023","Yukon","Yukon",">=65","1",0.0028766217
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","20 - 24","10",0.028766217
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","25 - 29","13",0.037396082
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","30 - 34","17",0.0489025688
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","35 - 39","11",0.0316428387
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","40 - 44","8",0.0230129736
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","45 - 49","6",0.0172597302
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","50 - 54","3",0.0086298651
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","55 - 59","1",0.0028766217
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest","60 - 64","3",0.0086298651
+"2022-2023","Northwest Territories","Territoires du Nord-Ouest",">=65","1",0.0028766217
+"2022-2023","Nunavut","Nunavut","20 - 24","17",0.0489025688
+"2022-2023","Nunavut","Nunavut","25 - 29","12",0.0345194603
+"2022-2023","Nunavut","Nunavut","30 - 34","5",0.0143831085
+"2022-2023","Nunavut","Nunavut","35 - 39","11",0.0316428387
+"2022-2023","Nunavut","Nunavut","40 - 44","5",0.0143831085
+"2022-2023","Nunavut","Nunavut","45 - 49","2",0.0057532434
+"2022-2023","Nunavut","Nunavut","50 - 54","3",0.0086298651
+"2022-2023","Nunavut","Nunavut",">=65","2",0.0057532434
+"2022-2023","Outside Canada","Extérieur du Canada","25 - 29","1",0.0028766217
+"2022-2023","Unknown","Inconnu","<20","3",0.0086298651
+"2022-2023","Unknown","Inconnu","20 - 24","37",0.1064350027
+"2022-2023","Unknown","Inconnu","25 - 29","29",0.0834220292
+"2022-2023","Unknown","Inconnu","30 - 34","42",0.1208181112
+"2022-2023","Unknown","Inconnu","35 - 39","34",0.0978051376
+"2022-2023","Unknown","Inconnu","40 - 44","27",0.0776687858
+"2022-2023","Unknown","Inconnu","45 - 49","18",0.0517791905
+"2022-2023","Unknown","Inconnu","50 - 54","7",0.0201363519
+"2022-2023","Unknown","Inconnu","55 - 59","8",0.0230129736
+"2022-2023","Unknown","Inconnu","60 - 64","8",0.0230129736
+"2022-2023","Unknown","Inconnu",">=65","5",0.0143831085
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","<20","2",0.0065528652
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","20 - 24","32",0.1048458438
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","25 - 29","70",0.2293502834
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","30 - 34","57",0.1867566593
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","35 - 39","55",0.1802037941
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","40 - 44","50",0.163821631
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","45 - 49","39",0.1277808722
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","50 - 54","35",0.1146751417
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","55 - 59","22",0.0720815176
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador","60 - 64","17",0.0556993545
+"2023-2024","Newfoundland and Labrador","Terre-Neuve-et-Labrador",">=65","10",0.0327643262
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","<20","3",0.0098292979
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","20 - 24","48",0.1572687658
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","25 - 29","73",0.2391795813
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","30 - 34","53",0.1736509289
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","35 - 39","38",0.1245044396
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","40 - 44","28",0.0917401134
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","45 - 49","25",0.0819108155
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","50 - 54","15",0.0491464893
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","55 - 59","16",0.0524229219
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard","60 - 64","6",0.0196585957
+"2023-2024","Prince Edward Island","Île-du-Prince-Édouard",">=65","8",0.026211461
+"2023-2024","Nova Scotia","Nouvelle-Écosse","<20","56",0.1834802267
+"2023-2024","Nova Scotia","Nouvelle-Écosse","20 - 24","168",0.5504406802
+"2023-2024","Nova Scotia","Nouvelle-Écosse","25 - 29","196",0.6421807936
+"2023-2024","Nova Scotia","Nouvelle-Écosse","30 - 34","223",0.7306444743
+"2023-2024","Nova Scotia","Nouvelle-Écosse","35 - 39","157",0.5143999214
+"2023-2024","Nova Scotia","Nouvelle-Écosse","40 - 44","130",0.4259362406
+"2023-2024","Nova Scotia","Nouvelle-Écosse","45 - 49","111",0.3636840208
+"2023-2024","Nova Scotia","Nouvelle-Écosse","50 - 54","125",0.4095540775
+"2023-2024","Nova Scotia","Nouvelle-Écosse","55 - 59","95",0.3112610989
+"2023-2024","Nova Scotia","Nouvelle-Écosse","60 - 64","73",0.2391795813
+"2023-2024","Nova Scotia","Nouvelle-Écosse",">=65","57",0.1867566593
+"2023-2024","New Brunswick","Nouveau-Brunswick","<20","12",0.0393171914
+"2023-2024","New Brunswick","Nouveau-Brunswick","20 - 24","213",0.6978801481
+"2023-2024","New Brunswick","Nouveau-Brunswick","25 - 29","230",0.7535795026
+"2023-2024","New Brunswick","Nouveau-Brunswick","30 - 34","231",0.7568559353
+"2023-2024","New Brunswick","Nouveau-Brunswick","35 - 39","199",0.6520100914
+"2023-2024","New Brunswick","Nouveau-Brunswick","40 - 44","220",0.7208151764
+"2023-2024","New Brunswick","Nouveau-Brunswick","45 - 49","173",0.5668228433
+"2023-2024","New Brunswick","Nouveau-Brunswick","50 - 54","134",0.4390419711
+"2023-2024","New Brunswick","Nouveau-Brunswick","55 - 59","109",0.3571311556
+"2023-2024","New Brunswick","Nouveau-Brunswick","60 - 64","43",0.1408866027
+"2023-2024","New Brunswick","Nouveau-Brunswick",">=65","16",0.0524229219
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","<20","24",0.0786343829
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","20 - 24","332",1.0877756299
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","25 - 29","611",2.0019003309
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","30 - 34","514",1.6840863668
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","35 - 39","449",1.4711182465
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","40 - 44","437",1.431801055
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","45 - 49","327",1.0713934668
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","50 - 54","211",0.6913272829
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","55 - 59","140",0.4587005668
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)","60 - 64","128",0.4193833754
+"2023-2024","Quebec  (except NCR)","Québec (sauf la RCN)",">=65","101",0.3309196946
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","N/A","1",0.0032764326
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","<20","80",0.2621146096
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","20 - 24","2567",8.410602536
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","25 - 29","2760",9.0429540317
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","30 - 34","1894",6.2055633826
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","35 - 39","1401",4.5902821008
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","40 - 44","1114",3.6499459389
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","45 - 49","826",2.7063333443
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","50 - 54","560",1.8348022673
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","55 - 59","452",1.4809475443
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)","60 - 64","339",1.1107106582
+"2023-2024","National Capital Region (NCR)","Région de la capitale nationale (RCN)",">=65","240",0.7863438288
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","<20","17",0.0556993545
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","20 - 24","614",2.0117296288
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","25 - 29","878",2.8767078405
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","30 - 34","726",2.3786900822
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","35 - 39","582",1.9068837849
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","40 - 44","436",1.4285246224
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","45 - 49","363",1.1893450411
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","50 - 54","302",0.9894826513
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","55 - 59","222",0.7273680417
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)","60 - 64","160",0.5242292192
+"2023-2024","Ontario (except NCR)","Ontario (sauf la RCN)",">=65","126",0.4128305101
+"2023-2024","Manitoba","Manitoba","N/A","1",0.0032764326
+"2023-2024","Manitoba","Manitoba","<20","7",0.0229350283
+"2023-2024","Manitoba","Manitoba","20 - 24","109",0.3571311556
+"2023-2024","Manitoba","Manitoba","25 - 29","208",0.681497985
+"2023-2024","Manitoba","Manitoba","30 - 34","157",0.5143999214
+"2023-2024","Manitoba","Manitoba","35 - 39","157",0.5143999214
+"2023-2024","Manitoba","Manitoba","40 - 44","159",0.5209527866
+"2023-2024","Manitoba","Manitoba","45 - 49","122",0.3997247797
+"2023-2024","Manitoba","Manitoba","50 - 54","78",0.2555617444
+"2023-2024","Manitoba","Manitoba","55 - 59","66",0.2162445529
+"2023-2024","Manitoba","Manitoba","60 - 64","62",0.2031388225
+"2023-2024","Manitoba","Manitoba",">=65","42",0.13761017
+"2023-2024","Saskatchewan","Saskatchewan","<20","7",0.0229350283
+"2023-2024","Saskatchewan","Saskatchewan","20 - 24","82",0.2686674749
+"2023-2024","Saskatchewan","Saskatchewan","25 - 29","122",0.3997247797
+"2023-2024","Saskatchewan","Saskatchewan","30 - 34","120",0.3931719144
+"2023-2024","Saskatchewan","Saskatchewan","35 - 39","147",0.4816355952
+"2023-2024","Saskatchewan","Saskatchewan","40 - 44","110",0.3604075882
+"2023-2024","Saskatchewan","Saskatchewan","45 - 49","65",0.2129681203
+"2023-2024","Saskatchewan","Saskatchewan","50 - 54","43",0.1408866027
+"2023-2024","Saskatchewan","Saskatchewan","55 - 59","29",0.095016546
+"2023-2024","Saskatchewan","Saskatchewan","60 - 64","19",0.0622522198
+"2023-2024","Saskatchewan","Saskatchewan",">=65","9",0.0294878936
+"2023-2024","Alberta","Alberta","<20","17",0.0556993545
+"2023-2024","Alberta","Alberta","20 - 24","206",0.6749451198
+"2023-2024","Alberta","Alberta","25 - 29","307",1.0058648144
+"2023-2024","Alberta","Alberta","30 - 34","285",0.9337832967
+"2023-2024","Alberta","Alberta","35 - 39","272",0.8911896727
+"2023-2024","Alberta","Alberta","40 - 44","254",0.8322138855
+"2023-2024","Alberta","Alberta","45 - 49","177",0.5799285738
+"2023-2024","Alberta","Alberta","50 - 54","161",0.5275056518
+"2023-2024","Alberta","Alberta","55 - 59","109",0.3571311556
+"2023-2024","Alberta","Alberta","60 - 64","86",0.2817732053
+"2023-2024","Alberta","Alberta",">=65","52",0.1703744962
+"2023-2024","British Columbia","Colombie-Britannique","<20","14",0.0458700567
+"2023-2024","British Columbia","Colombie-Britannique","20 - 24","355",1.1631335802
+"2023-2024","British Columbia","Colombie-Britannique","25 - 29","576",1.8872251892
+"2023-2024","British Columbia","Colombie-Britannique","30 - 34","408",1.336784509
+"2023-2024","British Columbia","Colombie-Britannique","35 - 39","298",0.9763769208
+"2023-2024","British Columbia","Colombie-Britannique","40 - 44","275",0.9010189705
+"2023-2024","British Columbia","Colombie-Britannique","45 - 49","188",0.6159693326
+"2023-2024","British Columbia","Colombie-Britannique","50 - 54","142",0.4652534321
+"2023-2024","British Columbia","Colombie-Britannique","55 - 59","111",0.3636840208
+"2023-2024","British Columbia","Colombie-Britannique","60 - 64","76",0.2490088791
+"2023-2024","British Columbia","Colombie-Britannique",">=65","61",0.1998623898
+"2023-2024","Yukon","Yukon","20 - 24","10",0.0327643262
+"2023-2024","Yukon","Yukon","25 - 29","20",0.0655286524
+"2023-2024","Yukon","Yukon","30 - 34","10",0.0327643262
+"2023-2024","Yukon","Yukon","35 - 39","11",0.0360407588
+"2023-2024","Yukon","Yukon","40 - 44","10",0.0327643262
+"2023-2024","Yukon","Yukon","45 - 49","6",0.0196585957
+"2023-2024","Yukon","Yukon","50 - 54","1",0.0032764326
+"2023-2024","Yukon","Yukon","55 - 59","3",0.0098292979
+"2023-2024","Yukon","Yukon","60 - 64","5",0.0163821631
+"2023-2024","Yukon","Yukon",">=65","5",0.0163821631
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","<20","2",0.0065528652
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","20 - 24","6",0.0196585957
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","25 - 29","15",0.0491464893
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","30 - 34","15",0.0491464893
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","35 - 39","8",0.026211461
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","40 - 44","20",0.0655286524
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","45 - 49","9",0.0294878936
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","50 - 54","12",0.0393171914
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","55 - 59","3",0.0098292979
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest","60 - 64","3",0.0098292979
+"2023-2024","Northwest Territories","Territoires du Nord-Ouest",">=65","2",0.0065528652
+"2023-2024","Nunavut","Nunavut","20 - 24","9",0.0294878936
+"2023-2024","Nunavut","Nunavut","25 - 29","17",0.0556993545
+"2023-2024","Nunavut","Nunavut","30 - 34","14",0.0458700567
+"2023-2024","Nunavut","Nunavut","35 - 39","3",0.0098292979
+"2023-2024","Nunavut","Nunavut","40 - 44","7",0.0229350283
+"2023-2024","Nunavut","Nunavut","45 - 49","5",0.0163821631
+"2023-2024","Nunavut","Nunavut","50 - 54","3",0.0098292979
+"2023-2024","Nunavut","Nunavut","55 - 59","1",0.0032764326
+"2023-2024","Nunavut","Nunavut","60 - 64","3",0.0098292979
+"2023-2024","Nunavut","Nunavut",">=65","3",0.0098292979
+"2023-2024","Outside Canada","Extérieur du Canada","25 - 29","1",0.0032764326
+"2023-2024","Unknown","Inconnu","<20","4",0.0131057305
+"2023-2024","Unknown","Inconnu","20 - 24","40",0.1310573048
+"2023-2024","Unknown","Inconnu","25 - 29","64",0.2096916877
+"2023-2024","Unknown","Inconnu","30 - 34","37",0.1212280069
+"2023-2024","Unknown","Inconnu","35 - 39","45",0.1474394679
+"2023-2024","Unknown","Inconnu","40 - 44","28",0.0917401134
+"2023-2024","Unknown","Inconnu","45 - 49","25",0.0819108155
+"2023-2024","Unknown","Inconnu","50 - 54","21",0.068805085
+"2023-2024","Unknown","Inconnu","55 - 59","28",0.0917401134
+"2023-2024","Unknown","Inconnu","60 - 64","17",0.0556993545
+"2023-2024","Unknown","Inconnu",">=65","12",0.0393171914
