@@ -1,0 +1,1058 @@
+{
+ "method": "A cell is \"*\" when either official-language file published by the Treasury Board of Canada Secretariat suppresses it. No number is changed.",
+ "tables": {
+  "by-department-and-sex": {
+   "cellsSuppressedInEnglishCopy": 2,
+   "cellsSuppressedInFrenchCopy": 0
+  },
+  "by-department-and-first-official-language": {
+   "cellsSuppressedInEnglishCopy": 1,
+   "cellsSuppressedInFrenchCopy": 2
+  },
+  "by-department-and-age-band": {
+   "cellsSuppressedInEnglishCopy": 5,
+   "cellsSuppressedInFrenchCopy": 5
+  }
+ },
+ "organizationNamesPairedByValues": {
+  "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la Gendarmerie royale du Canada": "Civilian Review and Complaints Commission for the RCMP",
+  "Gendarmerie royale du Canada": "Royal Canadian Mounted Police"
+ },
+ "frenchNames": {
+  "by-department-and-sex": {
+   "Northern Pipeline Agency": [
+    "Administration du pipe-line du Nord Canada"
+   ],
+   "Global Affairs Canada": [
+    "Affaires mondiales Canada"
+   ],
+   "Canadian Food Inspection Agency": [
+    "Agence canadienne d'inspection des aliments"
+   ],
+   "Canadian Northern Economic Development Agency": [
+    "Agence canadienne de d\u00e9veloppement \u00e9conomique du Nord"
+   ],
+   "Impact Assessment Agency of Canada": [
+    "Agence d'\u00e9valuation d'impact du Canada"
+   ],
+   "Financial Consumer Agency of Canada": [
+    "Agence de la consommation en mati\u00e8re financi\u00e8re du Canada"
+   ],
+   "Public Health Agency of Canada": [
+    "Agence de la sant\u00e9 publique du Canada"
+   ],
+   "Atlantic Canada Opportunities Agency": [
+    "Agence de promotion \u00e9conomique du Canada atlantique"
+   ],
+   "Canada Border Services Agency": [
+    "Agence des services frontaliers du Canada"
+   ],
+   "Canada Revenue Agency": [
+    "Agence du revenu du Canada"
+   ],
+   "Federal Economic Development Agency for Northern Ontario": [
+    "Agence f\u00e9d\u00e9rale de d\u00e9veloppement \u00e9conomique pour le Nord de l\u2019Ontario"
+   ],
+   "Federal Economic Development Agency for Southern Ontario": [
+    "Agence f\u00e9d\u00e9rale de d\u00e9veloppement \u00e9conomique pour le Sud de l'Ontario"
+   ],
+   "Canadian Space Agency": [
+    "Agence spatiale canadienne"
+   ],
+   "Agriculture and Agri-Food Canada": [
+    "Agriculture et Agroalimentaire Canada"
+   ],
+   "Veterans Affairs Canada": [
+    "Anciens Combattants Canada"
+   ],
+   "Library and Archives Canada": [
+    "Biblioth\u00e8que et Archives Canada"
+   ],
+   "Competition Bureau Canada": [
+    "Bureau de la concurrence Canada"
+   ],
+   "Transportation Safety Board of Canada": [
+    "Bureau de la s\u00e9curit\u00e9 des transports du Canada"
+   ],
+   "Privy Council Office": [
+    "Bureau du Conseil priv\u00e9"
+   ],
+   "Office of the Intelligence Commissioner": [
+    "Bureau du commissaire au renseignement"
+   ],
+   "Office of the Secretary to the Governor General": [
+    "Bureau du secr\u00e9taire du gouverneur g\u00e9n\u00e9ral"
+   ],
+   "Office of the Superintendent of Financial Institutions Canada": [
+    "Bureau du surintendant des institutions financi\u00e8res Canada"
+   ],
+   "Office of the Auditor General of Canada": [
+    "Bureau du v\u00e9rificateur g\u00e9n\u00e9ral du Canada"
+   ],
+   "Office of the Prime Minister": [
+    "Cabinet du Premier ministre (employ\u00e9s)"
+   ],
+   "Financial Transactions and Reports Analysis Centre of Canada": [
+    "Centre d'analyse des op\u00e9rations et d\u00e9clarations financi\u00e8res du Canada"
+   ],
+   "Communications Security Establishment": [
+    "Centre de la s\u00e9curit\u00e9 des t\u00e9l\u00e9communications"
+   ],
+   "Security Intelligence Review Committee": [
+    "Comit\u00e9 de surveillance des activit\u00e9s de renseignements de s\u00e9curit\u00e9"
+   ],
+   "RCMP External Review Committee": [
+    "Comit\u00e9 externe d'examen de la GRC"
+   ],
+   "Military Grievances External Review Committee": [
+    "Comit\u00e9 externe d\u2019examen des griefs militaires"
+   ],
+   "Office of the Commissioner of Lobbying of Canada": [
+    "Commissariat au lobbying du Canada"
+   ],
+   "Office of the Commissioner of Official Languages": [
+    "Commissariat aux langues officielles"
+   ],
+   "Office of the Public Sector Integrity Commissioner of Canada": [
+    "Commissariat \u00e0 l'int\u00e9grit\u00e9 du secteur public du Canada"
+   ],
+   "Office of the Commissioner for Federal Judicial Affairs Canada": [
+    "Commissariat \u00e0 la magistrature f\u00e9d\u00e9rale Canada"
+   ],
+   "Offices of the Information and Privacy Commissioners of Canada": [
+    "Commissariats \u00e0 l'information et \u00e0 la protection de la vie priv\u00e9e du Canada"
+   ],
+   "Canadian Nuclear Safety Commission": [
+    "Commission canadienne de s\u00fbret\u00e9 nucl\u00e9aire"
+   ],
+   "Canadian Polar Commission": [
+    "Commission canadienne des affaires polaires"
+   ],
+   "Canadian Human Rights Commission": [
+    "Commission canadienne des droits de la personne"
+   ],
+   "Canadian Grain Commission": [
+    "Commission canadienne des grains"
+   ],
+   "Canadian Dairy Commission": [
+    "Commission canadienne du lait"
+   ],
+   "Civilian Review and Complaints Commission for the RCMP": [
+    "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la GRC",
+    "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la Gendarmerie royale du Canada"
+   ],
+   "Military Police Complaints Commission of Canada": [
+    "Commission d'examen des plaintes concernant la police militaire du Canada"
+   ],
+   "Immigration and Refugee Board of Canada": [
+    "Commission de l'immigration et du statut de r\u00e9fugi\u00e9 du Canada"
+   ],
+   "Public Service Commission of Canada": [
+    "Commission de la fonction publique du Canada"
+   ],
+   "Indian Residential Schools Truth and Reconciliation Commission": [
+    "Commission de v\u00e9rit\u00e9 et de r\u00e9conciliation relative aux pensionnats indiens"
+   ],
+   "Parole Board of Canada": [
+    "Commission des lib\u00e9rations conditionnelles du Canada"
+   ],
+   "Public Service Labour Relations Board": [
+    "Commission des relations de travail dans la fonction publique"
+   ],
+   "Copyright Board Canada": [
+    "Commission du droit d'auteur Canada"
+   ],
+   "Law Commission of Canada": [
+    "Commission du droit du Canada"
+   ],
+   "International Joint Commission": [
+    "Commission mixte internationale"
+   ],
+   "Canada Industrial Relations Board": [
+    "Conseil canadien des relations industrielles"
+   ],
+   "Patented Medicine Prices Review Board Canada": [
+    "Conseil d'examen du prix des m\u00e9dicaments brevet\u00e9s Canada"
+   ],
+   "Hazardous Materials Information Review Commission Canada": [
+    "Conseil de contr\u00f4le des renseignements relatifs aux mati\u00e8res dangereuses Canada"
+   ],
+   "Canadian Radio-television and Telecommunications Commission": [
+    "Conseil de la radiodiffusion et des t\u00e9l\u00e9communications canadiennes"
+   ],
+   "Social Sciences and Humanities Research Council of Canada": [
+    "Conseil de recherches en sciences humaines du Canada"
+   ],
+   "Natural Sciences and Engineering Research Canada": [
+    "Conseil de recherches en sciences naturelles et en g\u00e9nie du Canada"
+   ],
+   "Farm Products Council of Canada": [
+    "Conseil des produits agricoles du Canada"
+   ],
+   "National Research Council Canada": [
+    "Conseil national de recherches Canada"
+   ],
+   "Western Economic Diversification Canada": [
+    "Diversification de l'\u00e9conomie de l'Ouest Canada"
+   ],
+   "National Defence": [
+    "D\u00e9fense nationale"
+   ],
+   "Canada Economic Development for Quebec Regions": [
+    "D\u00e9veloppement \u00e9conomique Canada pour les r\u00e9gions du Qu\u00e9bec"
+   ],
+   "Employment and Social Development Canada": [
+    "Emploi et D\u00e9veloppement social Canada"
+   ],
+   "Environment and Climate Change Canada": [
+    "Environnement et Changement climatique Canada"
+   ],
+   "Women and Gender Equality Canada": [
+    "Femmes et \u00c9galit\u00e9 des genres Canada"
+   ],
+   "Registry of the Specific Claims Tribunal of Canada": [
+    "Greffe du Tribunal des revendications particuli\u00e8res du Canada"
+   ],
+   "Immigration, Refugees and Citizenship Canada": [
+    "Immigration, R\u00e9fugi\u00e9s et Citoyennet\u00e9 Canada"
+   ],
+   "Innovation, Science and Economic Development Canada": [
+    "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada"
+   ],
+   "Canadian Institutes of Health Research": [
+    "Instituts de recherche en sant\u00e9 du Canada"
+   ],
+   "Federal Judges not part of any department": [
+    "Juges f\u00e9d\u00e9raux ne faisant pas partie d'un minist\u00e8re"
+   ],
+   "The Correctional Investigator Canada": [
+    "L'Enqu\u00eateur correctionnel Canada"
+   ],
+   "Housing, Infrastructure and Communities Canada": [
+    "Logement, Infrastructures et Collectivit\u00e9s Canada"
+   ],
+   "Department of Justice Canada": [
+    "Minist\u00e8re de la Justice Canada"
+   ],
+   "Department of Finance Canada": [
+    "Minist\u00e8re des Finances Canada"
+   ],
+   "Accessibility Standards Canada": [
+    "Normes d'accessibilit\u00e9 Canada"
+   ],
+   "National Security and Intelligence Review Agency": [
+    "Office de surveillance des activit\u00e9s en mati\u00e8re de s\u00e9curit\u00e9 nationale et de renseignement"
+   ],
+   "Canadian Transportation Agency": [
+    "Office des transports du Canada"
+   ],
+   "National Film Board": [
+    "Office national du film"
+   ],
+   "Statistical Survey Operations": [
+    "Op\u00e9rations des enqu\u00eates statistiques"
+   ],
+   "Parks Canada": [
+    "Parcs Canada"
+   ],
+   "Passport Canada": [
+    "Passeport Canada"
+   ],
+   "Canadian Heritage": [
+    "Patrimoine canadien"
+   ],
+   "Assisted Human Reproduction Canada": [
+    "Procr\u00e9ation assist\u00e9e Canada"
+   ],
+   "Indian Oil and Gas Canada": [
+    "P\u00e9trole et gaz des Indiens Canada"
+   ],
+   "Fisheries and Oceans Canada": [
+    "P\u00eaches et Oc\u00e9ans Canada"
+   ],
+   "Registrar of the Supreme Court of Canada": [
+    "Registraire de la Cour supr\u00eame du Canada"
+   ],
+   "Crown-Indigenous Relations and Northern Affairs Canada": [
+    "Relations Couronne-Autochtones et Affaires du Nord Canada"
+   ],
+   "Natural Resources Canada": [
+    "Ressources naturelles Canada"
+   ],
+   "Canada Energy Regulator": [
+    "R\u00e9gie de l'\u00e9nergie du Canada"
+   ],
+   "Health Canada": [
+    "Sant\u00e9 Canada"
+   ],
+   "Polar Knowledge Canada": [
+    "Savoir polaire Canada"
+   ],
+   "NAFTA Secretariat": [
+    "Secr\u00e9tariat de l'AL\u00c9NA - Section canadienne"
+   ],
+   "Canadian Intergovernmental Conference Secretariat": [
+    "Secr\u00e9tariat des conf\u00e9rences intergouvernementales canadiennes"
+   ],
+   "Secretariat of the National Security and Intelligence Committee of Parliamentarians": [
+    "Secr\u00e9tariat du Comit\u00e9 des parlementaires sur la s\u00e9curit\u00e9 nationale et le renseignement"
+   ],
+   "Treasury Board of Canada Secretariat": [
+    "Secr\u00e9tariat du Conseil du Tr\u00e9sor du Canada"
+   ],
+   "Courts Administration Service": [
+    "Service administratif des tribunaux judiciaires"
+   ],
+   "Administrative Tribunals Support Service of Canada": [
+    "Service canadien d'appui aux tribunaux administratifs"
+   ],
+   "Correctional Service Canada": [
+    "Service correctionnel Canada"
+   ],
+   "Public Prosecution Service of Canada": [
+    "Service des poursuites p\u00e9nales du Canada"
+   ],
+   "Indigenous Services Canada": [
+    "Services aux Autochtones Canada"
+   ],
+   "Shared Services Canada": [
+    "Services partag\u00e9s Canada"
+   ],
+   "Public Services and Procurement Canada": [
+    "Services publics et Approvisionnement Canada"
+   ],
+   "Statistics Canada": [
+    "Statistique Canada"
+   ],
+   "Public Safety Canada": [
+    "S\u00e9curit\u00e9 publique Canada"
+   ],
+   "National Round Table on the Environment and the Economy": [
+    "Table ronde nationale sur l'environnement et l'\u00e9conomie"
+   ],
+   "Transport Canada": [
+    "Transports Canada"
+   ],
+   "Canadian Artists and Producers Professional Relations Tribunal": [
+    "Tribunal canadien des relations professionnelles artistes-producteurs"
+   ],
+   "Canadian International Trade Tribunal": [
+    "Tribunal canadien du commerce ext\u00e9rieur"
+   ],
+   "Transportation Appeal Tribunal of Canada": [
+    "Tribunal d'appel des transports du Canada"
+   ],
+   "Public Service Staffing Tribunal": [
+    "Tribunal de la dotation de la fonction publique"
+   ],
+   "Public Servants Disclosure Protection Tribunal Canada": [
+    "Tribunal de la protection des fonctionnaires divulgateurs Canada"
+   ],
+   "Veterans Review and Appeal Board": [
+    "Tribunal des anciens combattants (r\u00e9vision et appel)"
+   ],
+   "Human Rights Tribunal of Canada": [
+    "Tribunal des droits de la personne du Canada"
+   ],
+   "Canada School of Public Service": [
+    "\u00c9cole de la fonction publique du Canada"
+   ],
+   "Elections Canada": [
+    "\u00c9lections Canada"
+   ],
+   "Royal Canadian Mounted Police": [
+    "Gendarmerie royale du Canada"
+   ]
+  },
+  "by-department-and-first-official-language": {
+   "Northern Pipeline Agency": [
+    "Administration du pipe-line du Nord Canada"
+   ],
+   "Global Affairs Canada": [
+    "Affaires mondiales Canada"
+   ],
+   "Canadian Food Inspection Agency": [
+    "Agence canadienne d'inspection des aliments"
+   ],
+   "Canadian Northern Economic Development Agency": [
+    "Agence canadienne de d\u00e9veloppement \u00e9conomique du Nord"
+   ],
+   "Impact Assessment Agency of Canada": [
+    "Agence d'\u00e9valuation d'impact du Canada"
+   ],
+   "Financial Consumer Agency of Canada": [
+    "Agence de la consommation en mati\u00e8re financi\u00e8re du Canada"
+   ],
+   "Public Health Agency of Canada": [
+    "Agence de la sant\u00e9 publique du Canada"
+   ],
+   "Atlantic Canada Opportunities Agency": [
+    "Agence de promotion \u00e9conomique du Canada atlantique"
+   ],
+   "Canada Border Services Agency": [
+    "Agence des services frontaliers du Canada"
+   ],
+   "Canada Revenue Agency": [
+    "Agence du revenu du Canada"
+   ],
+   "Federal Economic Development Agency for Northern Ontario": [
+    "Agence f\u00e9d\u00e9rale de d\u00e9veloppement \u00e9conomique pour le Nord de l\u2019Ontario"
+   ],
+   "Federal Economic Development Agency for Southern Ontario": [
+    "Agence f\u00e9d\u00e9rale de d\u00e9veloppement \u00e9conomique pour le Sud de l'Ontario"
+   ],
+   "Canadian Space Agency": [
+    "Agence spatiale canadienne"
+   ],
+   "Agriculture and Agri-Food Canada": [
+    "Agriculture et Agroalimentaire Canada"
+   ],
+   "Veterans Affairs Canada": [
+    "Anciens Combattants Canada"
+   ],
+   "Library and Archives Canada": [
+    "Biblioth\u00e8que et Archives Canada"
+   ],
+   "Competition Bureau Canada": [
+    "Bureau de la concurrence Canada"
+   ],
+   "Transportation Safety Board of Canada": [
+    "Bureau de la s\u00e9curit\u00e9 des transports du Canada"
+   ],
+   "Privy Council Office": [
+    "Bureau du Conseil priv\u00e9"
+   ],
+   "Office of the Intelligence Commissioner": [
+    "Bureau du commissaire au renseignement"
+   ],
+   "Office of the Secretary to the Governor General": [
+    "Bureau du secr\u00e9taire du gouverneur g\u00e9n\u00e9ral"
+   ],
+   "Office of the Superintendent of Financial Institutions Canada": [
+    "Bureau du surintendant des institutions financi\u00e8res Canada"
+   ],
+   "Office of the Auditor General of Canada": [
+    "Bureau du v\u00e9rificateur g\u00e9n\u00e9ral du Canada"
+   ],
+   "Office of the Prime Minister": [
+    "Cabinet du Premier ministre (employ\u00e9s)"
+   ],
+   "Financial Transactions and Reports Analysis Centre of Canada": [
+    "Centre d'analyse des op\u00e9rations et d\u00e9clarations financi\u00e8res du Canada"
+   ],
+   "Communications Security Establishment": [
+    "Centre de la s\u00e9curit\u00e9 des t\u00e9l\u00e9communications"
+   ],
+   "Security Intelligence Review Committee": [
+    "Comit\u00e9 de surveillance des activit\u00e9s de renseignements de s\u00e9curit\u00e9"
+   ],
+   "RCMP External Review Committee": [
+    "Comit\u00e9 externe d'examen de la GRC"
+   ],
+   "Military Grievances External Review Committee": [
+    "Comit\u00e9 externe d\u2019examen des griefs militaires"
+   ],
+   "Office of the Commissioner of Lobbying of Canada": [
+    "Commissariat au lobbying du Canada"
+   ],
+   "Office of the Commissioner of Official Languages": [
+    "Commissariat aux langues officielles"
+   ],
+   "Office of the Public Sector Integrity Commissioner of Canada": [
+    "Commissariat \u00e0 l'int\u00e9grit\u00e9 du secteur public du Canada"
+   ],
+   "Office of the Commissioner for Federal Judicial Affairs Canada": [
+    "Commissariat \u00e0 la magistrature f\u00e9d\u00e9rale Canada"
+   ],
+   "Offices of the Information and Privacy Commissioners of Canada": [
+    "Commissariats \u00e0 l'information et \u00e0 la protection de la vie priv\u00e9e du Canada"
+   ],
+   "Canadian Nuclear Safety Commission": [
+    "Commission canadienne de s\u00fbret\u00e9 nucl\u00e9aire"
+   ],
+   "Canadian Polar Commission": [
+    "Commission canadienne des affaires polaires"
+   ],
+   "Canadian Human Rights Commission": [
+    "Commission canadienne des droits de la personne"
+   ],
+   "Canadian Grain Commission": [
+    "Commission canadienne des grains"
+   ],
+   "Canadian Dairy Commission": [
+    "Commission canadienne du lait"
+   ],
+   "Civilian Review and Complaints Commission for the RCMP": [
+    "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la GRC",
+    "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la Gendarmerie royale du Canada"
+   ],
+   "Military Police Complaints Commission of Canada": [
+    "Commission d'examen des plaintes concernant la police militaire du Canada"
+   ],
+   "Immigration and Refugee Board of Canada": [
+    "Commission de l'immigration et du statut de r\u00e9fugi\u00e9 du Canada"
+   ],
+   "Public Service Commission of Canada": [
+    "Commission de la fonction publique du Canada"
+   ],
+   "Indian Residential Schools Truth and Reconciliation Commission": [
+    "Commission de v\u00e9rit\u00e9 et de r\u00e9conciliation relative aux pensionnats indiens"
+   ],
+   "Parole Board of Canada": [
+    "Commission des lib\u00e9rations conditionnelles du Canada"
+   ],
+   "Public Service Labour Relations Board": [
+    "Commission des relations de travail dans la fonction publique"
+   ],
+   "Copyright Board Canada": [
+    "Commission du droit d'auteur Canada"
+   ],
+   "Law Commission of Canada": [
+    "Commission du droit du Canada"
+   ],
+   "International Joint Commission": [
+    "Commission mixte internationale"
+   ],
+   "Canada Industrial Relations Board": [
+    "Conseil canadien des relations industrielles"
+   ],
+   "Patented Medicine Prices Review Board Canada": [
+    "Conseil d'examen du prix des m\u00e9dicaments brevet\u00e9s Canada"
+   ],
+   "Hazardous Materials Information Review Commission Canada": [
+    "Conseil de contr\u00f4le des renseignements relatifs aux mati\u00e8res dangereuses Canada"
+   ],
+   "Canadian Radio-television and Telecommunications Commission": [
+    "Conseil de la radiodiffusion et des t\u00e9l\u00e9communications canadiennes"
+   ],
+   "Social Sciences and Humanities Research Council of Canada": [
+    "Conseil de recherches en sciences humaines du Canada"
+   ],
+   "Natural Sciences and Engineering Research Canada": [
+    "Conseil de recherches en sciences naturelles et en g\u00e9nie du Canada"
+   ],
+   "Farm Products Council of Canada": [
+    "Conseil des produits agricoles du Canada"
+   ],
+   "National Research Council Canada": [
+    "Conseil national de recherches Canada"
+   ],
+   "Western Economic Diversification Canada": [
+    "Diversification de l'\u00e9conomie de l'Ouest Canada"
+   ],
+   "National Defence": [
+    "D\u00e9fense nationale"
+   ],
+   "Canada Economic Development for Quebec Regions": [
+    "D\u00e9veloppement \u00e9conomique Canada pour les r\u00e9gions du Qu\u00e9bec"
+   ],
+   "Employment and Social Development Canada": [
+    "Emploi et D\u00e9veloppement social Canada"
+   ],
+   "Environment and Climate Change Canada": [
+    "Environnement et Changement climatique Canada"
+   ],
+   "Women and Gender Equality Canada": [
+    "Femmes et \u00c9galit\u00e9 des genres Canada"
+   ],
+   "Registry of the Specific Claims Tribunal of Canada": [
+    "Greffe du Tribunal des revendications particuli\u00e8res du Canada"
+   ],
+   "Immigration, Refugees and Citizenship Canada": [
+    "Immigration, R\u00e9fugi\u00e9s et Citoyennet\u00e9 Canada"
+   ],
+   "Innovation, Science and Economic Development Canada": [
+    "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada"
+   ],
+   "Canadian Institutes of Health Research": [
+    "Instituts de recherche en sant\u00e9 du Canada"
+   ],
+   "Federal Judges not part of any department": [
+    "Juges f\u00e9d\u00e9raux ne faisant pas partie d'un minist\u00e8re"
+   ],
+   "The Correctional Investigator Canada": [
+    "L'Enqu\u00eateur correctionnel Canada"
+   ],
+   "Housing, Infrastructure and Communities Canada": [
+    "Logement, Infrastructures et Collectivit\u00e9s Canada"
+   ],
+   "Department of Justice Canada": [
+    "Minist\u00e8re de la Justice Canada"
+   ],
+   "Department of Finance Canada": [
+    "Minist\u00e8re des Finances Canada"
+   ],
+   "Accessibility Standards Canada": [
+    "Normes d'accessibilit\u00e9 Canada"
+   ],
+   "National Security and Intelligence Review Agency": [
+    "Office de surveillance des activit\u00e9s en mati\u00e8re de s\u00e9curit\u00e9 nationale et de renseignement"
+   ],
+   "Canadian Transportation Agency": [
+    "Office des transports du Canada"
+   ],
+   "National Film Board": [
+    "Office national du film"
+   ],
+   "Statistical Survey Operations": [
+    "Op\u00e9rations des enqu\u00eates statistiques"
+   ],
+   "Parks Canada": [
+    "Parcs Canada"
+   ],
+   "Passport Canada": [
+    "Passeport Canada"
+   ],
+   "Canadian Heritage": [
+    "Patrimoine canadien"
+   ],
+   "Assisted Human Reproduction Canada": [
+    "Procr\u00e9ation assist\u00e9e Canada"
+   ],
+   "Indian Oil and Gas Canada": [
+    "P\u00e9trole et gaz des Indiens Canada"
+   ],
+   "Fisheries and Oceans Canada": [
+    "P\u00eaches et Oc\u00e9ans Canada"
+   ],
+   "Registrar of the Supreme Court of Canada": [
+    "Registraire de la Cour supr\u00eame du Canada"
+   ],
+   "Crown-Indigenous Relations and Northern Affairs Canada": [
+    "Relations Couronne-Autochtones et Affaires du Nord Canada"
+   ],
+   "Natural Resources Canada": [
+    "Ressources naturelles Canada"
+   ],
+   "Canada Energy Regulator": [
+    "R\u00e9gie de l'\u00e9nergie du Canada"
+   ],
+   "Health Canada": [
+    "Sant\u00e9 Canada"
+   ],
+   "Polar Knowledge Canada": [
+    "Savoir polaire Canada"
+   ],
+   "NAFTA Secretariat": [
+    "Secr\u00e9tariat de l'AL\u00c9NA - Section canadienne"
+   ],
+   "Canadian Intergovernmental Conference Secretariat": [
+    "Secr\u00e9tariat des conf\u00e9rences intergouvernementales canadiennes"
+   ],
+   "Secretariat of the National Security and Intelligence Committee of Parliamentarians": [
+    "Secr\u00e9tariat du Comit\u00e9 des parlementaires sur la s\u00e9curit\u00e9 nationale et le renseignement"
+   ],
+   "Treasury Board of Canada Secretariat": [
+    "Secr\u00e9tariat du Conseil du Tr\u00e9sor du Canada"
+   ],
+   "Courts Administration Service": [
+    "Service administratif des tribunaux judiciaires"
+   ],
+   "Administrative Tribunals Support Service of Canada": [
+    "Service canadien d'appui aux tribunaux administratifs"
+   ],
+   "Correctional Service Canada": [
+    "Service correctionnel Canada"
+   ],
+   "Public Prosecution Service of Canada": [
+    "Service des poursuites p\u00e9nales du Canada"
+   ],
+   "Indigenous Services Canada": [
+    "Services aux Autochtones Canada"
+   ],
+   "Shared Services Canada": [
+    "Services partag\u00e9s Canada"
+   ],
+   "Public Services and Procurement Canada": [
+    "Services publics et Approvisionnement Canada"
+   ],
+   "Statistics Canada": [
+    "Statistique Canada"
+   ],
+   "Public Safety Canada": [
+    "S\u00e9curit\u00e9 publique Canada"
+   ],
+   "National Round Table on the Environment and the Economy": [
+    "Table ronde nationale sur l'environnement et l'\u00e9conomie"
+   ],
+   "Transport Canada": [
+    "Transports Canada"
+   ],
+   "Canadian Artists and Producers Professional Relations Tribunal": [
+    "Tribunal canadien des relations professionnelles artistes-producteurs"
+   ],
+   "Canadian International Trade Tribunal": [
+    "Tribunal canadien du commerce ext\u00e9rieur"
+   ],
+   "Transportation Appeal Tribunal of Canada": [
+    "Tribunal d'appel des transports du Canada"
+   ],
+   "Public Service Staffing Tribunal": [
+    "Tribunal de la dotation de la fonction publique"
+   ],
+   "Public Servants Disclosure Protection Tribunal Canada": [
+    "Tribunal de la protection des fonctionnaires divulgateurs Canada"
+   ],
+   "Veterans Review and Appeal Board": [
+    "Tribunal des anciens combattants (r\u00e9vision et appel)"
+   ],
+   "Human Rights Tribunal of Canada": [
+    "Tribunal des droits de la personne du Canada"
+   ],
+   "Canada School of Public Service": [
+    "\u00c9cole de la fonction publique du Canada"
+   ],
+   "Elections Canada": [
+    "\u00c9lections Canada"
+   ],
+   "Royal Canadian Mounted Police": [
+    "Gendarmerie royale du Canada"
+   ]
+  },
+  "by-department-and-age-band": {
+   "Northern Pipeline Agency": [
+    "Administration du pipe-line du Nord Canada"
+   ],
+   "Global Affairs Canada": [
+    "Affaires mondiales Canada"
+   ],
+   "Canadian Food Inspection Agency": [
+    "Agence canadienne d'inspection des aliments"
+   ],
+   "Canadian Northern Economic Development Agency": [
+    "Agence canadienne de d\u00e9veloppement \u00e9conomique du Nord"
+   ],
+   "Impact Assessment Agency of Canada": [
+    "Agence d'\u00e9valuation d'impact du Canada"
+   ],
+   "Financial Consumer Agency of Canada": [
+    "Agence de la consommation en mati\u00e8re financi\u00e8re du Canada"
+   ],
+   "Public Health Agency of Canada": [
+    "Agence de la sant\u00e9 publique du Canada"
+   ],
+   "Atlantic Canada Opportunities Agency": [
+    "Agence de promotion \u00e9conomique du Canada atlantique"
+   ],
+   "Canada Border Services Agency": [
+    "Agence des services frontaliers du Canada"
+   ],
+   "Canada Revenue Agency": [
+    "Agence du revenu du Canada"
+   ],
+   "Federal Economic Development Agency for Northern Ontario": [
+    "Agence f\u00e9d\u00e9rale de d\u00e9veloppement \u00e9conomique pour le Nord de l\u2019Ontario"
+   ],
+   "Federal Economic Development Agency for Southern Ontario": [
+    "Agence f\u00e9d\u00e9rale de d\u00e9veloppement \u00e9conomique pour le Sud de l'Ontario"
+   ],
+   "Canadian Space Agency": [
+    "Agence spatiale canadienne"
+   ],
+   "Agriculture and Agri-Food Canada": [
+    "Agriculture et Agroalimentaire Canada"
+   ],
+   "Veterans Affairs Canada": [
+    "Anciens Combattants Canada"
+   ],
+   "Library and Archives Canada": [
+    "Biblioth\u00e8que et Archives Canada"
+   ],
+   "Competition Bureau Canada": [
+    "Bureau de la concurrence Canada"
+   ],
+   "Transportation Safety Board of Canada": [
+    "Bureau de la s\u00e9curit\u00e9 des transports du Canada"
+   ],
+   "Privy Council Office": [
+    "Bureau du Conseil priv\u00e9"
+   ],
+   "Office of the Intelligence Commissioner": [
+    "Bureau du commissaire au renseignement"
+   ],
+   "Office of the Secretary to the Governor General": [
+    "Bureau du secr\u00e9taire du gouverneur g\u00e9n\u00e9ral"
+   ],
+   "Office of the Superintendent of Financial Institutions Canada": [
+    "Bureau du surintendant des institutions financi\u00e8res Canada"
+   ],
+   "Office of the Auditor General of Canada": [
+    "Bureau du v\u00e9rificateur g\u00e9n\u00e9ral du Canada"
+   ],
+   "Office of the Prime Minister": [
+    "Cabinet du Premier ministre (employ\u00e9s)"
+   ],
+   "Financial Transactions and Reports Analysis Centre of Canada": [
+    "Centre d'analyse des op\u00e9rations et d\u00e9clarations financi\u00e8res du Canada"
+   ],
+   "Communications Security Establishment": [
+    "Centre de la s\u00e9curit\u00e9 des t\u00e9l\u00e9communications"
+   ],
+   "Security Intelligence Review Committee": [
+    "Comit\u00e9 de surveillance des activit\u00e9s de renseignements de s\u00e9curit\u00e9"
+   ],
+   "RCMP External Review Committee": [
+    "Comit\u00e9 externe d'examen de la GRC"
+   ],
+   "Military Grievances External Review Committee": [
+    "Comit\u00e9 externe d\u2019examen des griefs militaires"
+   ],
+   "Office of the Commissioner of Lobbying of Canada": [
+    "Commissariat au lobbying du Canada"
+   ],
+   "Office of the Commissioner of Official Languages": [
+    "Commissariat aux langues officielles"
+   ],
+   "Office of the Public Sector Integrity Commissioner of Canada": [
+    "Commissariat \u00e0 l'int\u00e9grit\u00e9 du secteur public du Canada"
+   ],
+   "Office of the Commissioner for Federal Judicial Affairs Canada": [
+    "Commissariat \u00e0 la magistrature f\u00e9d\u00e9rale Canada"
+   ],
+   "Offices of the Information and Privacy Commissioners of Canada": [
+    "Commissariats \u00e0 l'information et \u00e0 la protection de la vie priv\u00e9e du Canada"
+   ],
+   "Canadian Nuclear Safety Commission": [
+    "Commission canadienne de s\u00fbret\u00e9 nucl\u00e9aire"
+   ],
+   "Canadian Polar Commission": [
+    "Commission canadienne des affaires polaires"
+   ],
+   "Canadian Human Rights Commission": [
+    "Commission canadienne des droits de la personne"
+   ],
+   "Canadian Grain Commission": [
+    "Commission canadienne des grains"
+   ],
+   "Canadian Dairy Commission": [
+    "Commission canadienne du lait"
+   ],
+   "Civilian Review and Complaints Commission for the RCMP": [
+    "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la GRC",
+    "Commission civile d\u2019examen et de traitement des plaintes relatives \u00e0 la Gendarmerie royale du Canada"
+   ],
+   "Military Police Complaints Commission of Canada": [
+    "Commission d'examen des plaintes concernant la police militaire du Canada"
+   ],
+   "Immigration and Refugee Board of Canada": [
+    "Commission de l'immigration et du statut de r\u00e9fugi\u00e9 du Canada"
+   ],
+   "Public Service Commission of Canada": [
+    "Commission de la fonction publique du Canada"
+   ],
+   "Indian Residential Schools Truth and Reconciliation Commission": [
+    "Commission de v\u00e9rit\u00e9 et de r\u00e9conciliation relative aux pensionnats indiens"
+   ],
+   "Parole Board of Canada": [
+    "Commission des lib\u00e9rations conditionnelles du Canada"
+   ],
+   "Public Service Labour Relations Board": [
+    "Commission des relations de travail dans la fonction publique"
+   ],
+   "Copyright Board Canada": [
+    "Commission du droit d'auteur Canada"
+   ],
+   "Law Commission of Canada": [
+    "Commission du droit du Canada"
+   ],
+   "International Joint Commission": [
+    "Commission mixte internationale"
+   ],
+   "Canada Industrial Relations Board": [
+    "Conseil canadien des relations industrielles"
+   ],
+   "Patented Medicine Prices Review Board Canada": [
+    "Conseil d'examen du prix des m\u00e9dicaments brevet\u00e9s Canada"
+   ],
+   "Hazardous Materials Information Review Commission Canada": [
+    "Conseil de contr\u00f4le des renseignements relatifs aux mati\u00e8res dangereuses Canada"
+   ],
+   "Canadian Radio-television and Telecommunications Commission": [
+    "Conseil de la radiodiffusion et des t\u00e9l\u00e9communications canadiennes"
+   ],
+   "Social Sciences and Humanities Research Council of Canada": [
+    "Conseil de recherches en sciences humaines du Canada"
+   ],
+   "Natural Sciences and Engineering Research Canada": [
+    "Conseil de recherches en sciences naturelles et en g\u00e9nie du Canada"
+   ],
+   "Farm Products Council of Canada": [
+    "Conseil des produits agricoles du Canada"
+   ],
+   "National Research Council Canada": [
+    "Conseil national de recherches Canada"
+   ],
+   "Western Economic Diversification Canada": [
+    "Diversification de l'\u00e9conomie de l'Ouest Canada"
+   ],
+   "National Defence": [
+    "D\u00e9fense nationale"
+   ],
+   "Canada Economic Development for Quebec Regions": [
+    "D\u00e9veloppement \u00e9conomique Canada pour les r\u00e9gions du Qu\u00e9bec"
+   ],
+   "Employment and Social Development Canada": [
+    "Emploi et D\u00e9veloppement social Canada"
+   ],
+   "Environment and Climate Change Canada": [
+    "Environnement et Changement climatique Canada"
+   ],
+   "Women and Gender Equality Canada": [
+    "Femmes et \u00c9galit\u00e9 des genres Canada"
+   ],
+   "Registry of the Specific Claims Tribunal of Canada": [
+    "Greffe du Tribunal des revendications particuli\u00e8res du Canada"
+   ],
+   "Immigration, Refugees and Citizenship Canada": [
+    "Immigration, R\u00e9fugi\u00e9s et Citoyennet\u00e9 Canada"
+   ],
+   "Innovation, Science and Economic Development Canada": [
+    "Innovation, Sciences et D\u00e9veloppement \u00e9conomique Canada"
+   ],
+   "Canadian Institutes of Health Research": [
+    "Instituts de recherche en sant\u00e9 du Canada"
+   ],
+   "Federal Judges not part of any department": [
+    "Juges f\u00e9d\u00e9raux ne faisant pas partie d'un minist\u00e8re"
+   ],
+   "The Correctional Investigator Canada": [
+    "L'Enqu\u00eateur correctionnel Canada"
+   ],
+   "Housing, Infrastructure and Communities Canada": [
+    "Logement, Infrastructures et Collectivit\u00e9s Canada"
+   ],
+   "Department of Justice Canada": [
+    "Minist\u00e8re de la Justice Canada"
+   ],
+   "Department of Finance Canada": [
+    "Minist\u00e8re des Finances Canada"
+   ],
+   "Accessibility Standards Canada": [
+    "Normes d'accessibilit\u00e9 Canada"
+   ],
+   "National Security and Intelligence Review Agency": [
+    "Office de surveillance des activit\u00e9s en mati\u00e8re de s\u00e9curit\u00e9 nationale et de renseignement"
+   ],
+   "Canadian Transportation Agency": [
+    "Office des transports du Canada"
+   ],
+   "National Film Board": [
+    "Office national du film"
+   ],
+   "Statistical Survey Operations": [
+    "Op\u00e9rations des enqu\u00eates statistiques"
+   ],
+   "Parks Canada": [
+    "Parcs Canada"
+   ],
+   "Passport Canada": [
+    "Passeport Canada"
+   ],
+   "Canadian Heritage": [
+    "Patrimoine canadien"
+   ],
+   "Assisted Human Reproduction Canada": [
+    "Procr\u00e9ation assist\u00e9e Canada"
+   ],
+   "Indian Oil and Gas Canada": [
+    "P\u00e9trole et gaz des Indiens Canada"
+   ],
+   "Fisheries and Oceans Canada": [
+    "P\u00eaches et Oc\u00e9ans Canada"
+   ],
+   "Registrar of the Supreme Court of Canada": [
+    "Registraire de la Cour supr\u00eame du Canada"
+   ],
+   "Crown-Indigenous Relations and Northern Affairs Canada": [
+    "Relations Couronne-Autochtones et Affaires du Nord Canada"
+   ],
+   "Natural Resources Canada": [
+    "Ressources naturelles Canada"
+   ],
+   "Canada Energy Regulator": [
+    "R\u00e9gie de l'\u00e9nergie du Canada"
+   ],
+   "Health Canada": [
+    "Sant\u00e9 Canada"
+   ],
+   "Polar Knowledge Canada": [
+    "Savoir polaire Canada"
+   ],
+   "NAFTA Secretariat": [
+    "Secr\u00e9tariat de l'AL\u00c9NA - Section canadienne"
+   ],
+   "Canadian Intergovernmental Conference Secretariat": [
+    "Secr\u00e9tariat des conf\u00e9rences intergouvernementales canadiennes"
+   ],
+   "Secretariat of the National Security and Intelligence Committee of Parliamentarians": [
+    "Secr\u00e9tariat du Comit\u00e9 des parlementaires sur la s\u00e9curit\u00e9 nationale et le renseignement"
+   ],
+   "Treasury Board of Canada Secretariat": [
+    "Secr\u00e9tariat du Conseil du Tr\u00e9sor du Canada"
+   ],
+   "Courts Administration Service": [
+    "Service administratif des tribunaux judiciaires"
+   ],
+   "Administrative Tribunals Support Service of Canada": [
+    "Service canadien d'appui aux tribunaux administratifs"
+   ],
+   "Correctional Service Canada": [
+    "Service correctionnel Canada"
+   ],
+   "Public Prosecution Service of Canada": [
+    "Service des poursuites p\u00e9nales du Canada"
+   ],
+   "Indigenous Services Canada": [
+    "Services aux Autochtones Canada"
+   ],
+   "Shared Services Canada": [
+    "Services partag\u00e9s Canada"
+   ],
+   "Public Services and Procurement Canada": [
+    "Services publics et Approvisionnement Canada"
+   ],
+   "Statistics Canada": [
+    "Statistique Canada"
+   ],
+   "Public Safety Canada": [
+    "S\u00e9curit\u00e9 publique Canada"
+   ],
+   "National Round Table on the Environment and the Economy": [
+    "Table ronde nationale sur l'environnement et l'\u00e9conomie"
+   ],
+   "Transport Canada": [
+    "Transports Canada"
+   ],
+   "Canadian Artists and Producers Professional Relations Tribunal": [
+    "Tribunal canadien des relations professionnelles artistes-producteurs"
+   ],
+   "Canadian International Trade Tribunal": [
+    "Tribunal canadien du commerce ext\u00e9rieur"
+   ],
+   "Transportation Appeal Tribunal of Canada": [
+    "Tribunal d'appel des transports du Canada"
+   ],
+   "Public Service Staffing Tribunal": [
+    "Tribunal de la dotation de la fonction publique"
+   ],
+   "Public Servants Disclosure Protection Tribunal Canada": [
+    "Tribunal de la protection des fonctionnaires divulgateurs Canada"
+   ],
+   "Veterans Review and Appeal Board": [
+    "Tribunal des anciens combattants (r\u00e9vision et appel)"
+   ],
+   "Human Rights Tribunal of Canada": [
+    "Tribunal des droits de la personne du Canada"
+   ],
+   "Canada School of Public Service": [
+    "\u00c9cole de la fonction publique du Canada"
+   ],
+   "Elections Canada": [
+    "\u00c9lections Canada"
+   ],
+   "Royal Canadian Mounted Police": [
+    "Gendarmerie royale du Canada"
+   ]
+  }
+ }
+}

@@ -48,7 +48,7 @@ function saveCsv(head,rows,name){
  a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
 }
 function sourceLine(publisher,path,url){
- return '<p class="gce-source">'+esc(L('Published by ','Publié par ')+L(publisher[0],publisher[1]))+'. <a href="'+esc(path)+'" download>'+esc(L('Download the file as published','Télécharger le fichier tel que publié'))+'</a>. <a href="'+esc(url)+'">'+esc(L('Dataset page on open.canada.ca','Page du jeu de données sur ouvert.canada.ca'))+'</a>.</p>';
+ return '<p class="gce-source">'+esc(L('Published by ','Publié par ')+L(publisher[0],publisher[1]))+'. '+(path?'<a href="'+esc(path)+'" download>'+esc(L('Download the file as published','Télécharger le fichier tel que publié'))+'</a>. ':'')+'<a href="'+esc(url)+'">'+esc(L('Dataset page on open.canada.ca','Page du jeu de données sur ouvert.canada.ca'))+'</a>.</p>';
 }
 /* Draw one paged table. head and rows are shown as given; nothing is reformatted. */
 function drawTable(box,caption,head,rows,exportName,exportHead,exportRows){
@@ -98,16 +98,16 @@ function orgTable(t,org){
  return lazy(tableTitle(t),async box=>{
   const side=fr()?t.fr:t.en,rows=await load(side.path),head=rows[0].map(h=>h.trim()),at=head.indexOf(side.field);
   if(at<0)throw Error('organization column missing: '+side.field);
-  const wanted=new Set((fr()?org.fr:[org.en]).map(norm));
+  const wanted=new Set((fr()&&org.fr.length?org.fr:[org.en]).map(norm));
+  const names=r=>{const c=String(r[at]||'');return wanted.has(norm(c))||(/ Total$/.test(c)&&wanted.has(norm(c.slice(0,-6))));};
   const hidden=new Set([at]);
-  if(t.asPublished)[t.en.field,t.fr.field].forEach(f=>{const i=head.indexOf(f);if(i>=0)hidden.add(i);});
   const keep=head.map((_,i)=>i).filter(i=>!hidden.has(i));
-  const match=rows.slice(1).filter(r=>wanted.has(norm(r[at])));
+  const match=rows.slice(1).filter(names);
   const holder=document.createElement('div');
-  box.innerHTML=t.asPublished?'<p class="gce-explain">'+esc(L('Column names are shown as published. Their definitions are on the dataset page.','Les noms des colonnes sont présentés tels que publiés. Leurs définitions se trouvent sur la page du jeu de données.'))+'</p>':'';
+  box.innerHTML=t.note?'<p class="gce-explain">'+esc(L(t.note[0],t.note[1]))+'</p>':'';
   box.append(holder);
   drawTable(holder,tableTitle(t)+': '+L(org.en,org.fr[0]||org.en),keep.map(i=>head[i]),match.map(r=>keep.map(i=>r[i])),'GC-Equity-'+t.id+'-selected-organization.csv',head,match);
-  box.insertAdjacentHTML('beforeend',sourceLine(t.publisher,side.path,t.url));
+  box.insertAdjacentHTML('beforeend',sourceLine(t.publisher,t.noDownload?'':side.path,t.url));
  });
 }
 /* Files published by one employer keep their own layout. A first row with a single
