@@ -1,0 +1,79 @@
+{
+  "dataset_id": "7f625e97-9d02-4c12-a756-1ddebb50e69f",
+  "dataset_title": "2024 Public Service Employee Survey Results",
+  "dataset_title_translated": {
+    "en": "2024 Public Service Employee Survey Results",
+    "fr": "Résultats du Sondage auprès des fonctionnaires fédéraux de 2024"
+  },
+  "dataset_metadata_modified": "2026-10-02T15:34:10.721115",
+  "resource": {
+    "cache_last_updated": null,
+    "cache_url": null,
+    "character_set": "",
+    "created": "2025-07-04T13:10:52.497570",
+    "data_quality": [],
+    "datastore_active": true,
+    "datastore_contains_all_records_of_source_file": true,
+    "date_published": "2025-07-04",
+    "description": null,
+    "format": "CSV",
+    "hash": "3a449ef904ab560a4170c4bcb2cc77d5",
+    "id": "fa2dc381-0d55-44d8-8d1d-3fb2f7f2b9f8",
+    "ignore_hash": true,
+    "language": [
+      "en",
+      "fr"
+    ],
+    "last_modified": null,
+    "metadata_modified": "2026-10-02T14:57:04.710794",
+    "mimetype": null,
+    "mimetype_inner": null,
+    "name": "2024 PSES Employment Equity Derived Variable Dataset",
+    "name_translated": {
+      "en": "2024 PSES Employment Equity Derived Variable Dataset",
+      "fr": "SAFF 2024 Ensemble de données variables dérivées sur l'équité en matière d'emploi"
+    },
+    "original_url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+    "package_id": "7f625e97-9d02-4c12-a756-1ddebb50e69f",
+    "position": 8,
+    "resource_id": "fa2dc381-0d55-44d8-8d1d-3fb2f7f2b9f8",
+    "resource_type": "dataset",
+    "set_url_type": false,
+    "state": "active",
+    "task_created": "2026-10-02 10:12:15.400150",
+    "unique_identifier": "",
+    "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+    "url_type": "",
+    "validation_status": "success",
+    "validation_timestamp": "2025-07-04T13:16:00.284133"
+  },
+  "retrieved_utc": "2026-11-17T06:18:20.455312+00:00",
+  "filter": {
+    "LEVEL1ID": [
+      "05",
+      "5"
+    ],
+    "LEVEL2ID": "0",
+    "LEVEL3ID": "0",
+    "LEVEL4ID": "0",
+    "LEVEL5ID": "0"
+  },
+  "note": "Official department-level results, no aggregation. Resource title explicitly identifies 2024 PSES despite ses-2025 directory name. Values 9999 and other source suppression flags must not be interpreted as zero.",
+  "extraction_method": "Open Government CKAN datastore_search API, resource_id fa2dc381-0d55-44d8-8d1d-3fb2f7f2b9f8, filters LEVEL1ID=05 and LEVEL2ID=LEVEL3ID=LEVEL4ID=LEVEL5ID=0, all pages of 1000 records.",
+  "row_count": 34155,
+  "years": [
+    "2024"
+  ],
+  "sha256": "f70750bf8ba58f2830c3ccd4ae0efefc5aac371ad48a92b70a6dd947a7a3ece0",
+  "encoding": "Lossless column dictionaries in gzip/base64. Reconstructed records were compared cell-for-cell with the source extract; no suppressed cells were filled.",
+  "suppression_note": "X and null indicate suppressed/unavailable;9999 indicates not applicable metric. Do not turn into zero or infer zero respondents.",
+  "source_filter_verified": "LEVEL1ID=05; LEVEL2ID=LEVEL3ID=LEVEL4ID=LEVEL5ID=0; SURVEYR=2024",
+  "department_rows": 34155,
+  "coverage": {
+    "review_date": "2026-11-17",
+    "source_files": 136,
+    "records": 467472,
+    "employee_groups": 165,
+    "repository_base_commit": "1b0bd6f852c4d7dffb0a061901cab0e6989893cb"
+  }
+}

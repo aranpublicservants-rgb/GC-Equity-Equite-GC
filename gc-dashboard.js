@@ -565,7 +565,8 @@ function renderOrg(){
  const s=sCard('org-coverage',L('Published data coverage for the selected organization','Données publiées disponibles pour l’organisme sélectionné'),
  L('Only records explicitly attributed to this organization are included here. Each source may use a different workforce population and reporting period. Public service-wide figures appear only in the separate equity section when no organization is selected.','Seules les données explicitement attribuées à cet organisme figurent ici. Les sources peuvent utiliser des populations et périodes de référence différentes. Les chiffres visant l’ensemble de la fonction publique sont affichés dans la section générale lorsqu’aucun organisme n’est sélectionné.'),
  statusTable(name),L('Federal government department and agency directory','Répertoire des ministères et organismes fédéraux'),'https://www.canada.ca/en/government/dept.html');
- out.innerHTML=meta+s+representation(name)+womenRepresentationForDept(name)+trendTables(name)+subgroupTables(name)+
+ const dfoProfile=name==='Fisheries and Oceans Canada'?'<p class="gce-explain"><a href="dfo/?lang='+(lang()?'fr':'en')+'">'+L('DFO evidence profile: workforce, employee experience, commitments and all DFO source files','Profil du MPO : effectif, expérience des employés, engagements et tous les fichiers sources du MPO')+'</a></p>':'';
+ out.innerHTML=meta+dfoProfile+s+representation(name)+womenRepresentationForDept(name)+trendTables(name)+subgroupTables(name)+
  (selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+
  psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+
  ctaTables(name)+ctaComparisonOrg(name)+plansTable(name);
