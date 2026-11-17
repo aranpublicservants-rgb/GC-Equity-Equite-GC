@@ -99,9 +99,17 @@ for path,en,fr,topics,details,gs,view in [
 branch=json.loads(re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',(R/'explorer.html').read_text(),re.S)[1])
 e=add('explorer.html','2024 employee survey by organization, branch and employee group','Sondage de 2024 par organisme, direction et groupe',source='branch-equity.html',period='2024',topics=['experience'],details=['harassment','discrimination','accommodation','barriers'],groups=['w','i','d','v','b','man','lgbt'],view='org-branches',kind='summary',scan=False)
 e['scopes']=['org'];e['organizations']=[d['en'] for d in branch['departments']];e['preview']='dashboard'
+source_entries={f['originalName']:seen[f.get('path') or 'partitioned:'+f['originalName']] for f in rest['files'] if (f.get('path') or 'partitioned:'+f['originalName']) in seen}
 for f in J('dfo/data/catalogue.json')['files']:
- topics={'accessibility':['experience'],'representation':['representation'],'workforce':['workforce'],'staffing':['staffing'],'survey':['experience'],'pses':['experience'],'snps':['experience','staffing'],'plans':['plans'],'commitments':['commitments']}.get(f.get('topic'))
- e=add('dfo/'+f['path'],f['en'],f['fr'],source=f.get('source') or 'dfo/',scope='Fisheries and Oceans Canada',topics=topics,view='org-survey',kind='extract',scan=False)
+ original=seen.get(f['sourceFile']) or source_entries.get(f['sourceFile'])
+ en,fr=f['en'],f['fr'];period=original.get('period') if original else None
+ topics={'accessibility':['experience','plans'],'recourse':['experience'],'representation':['representation'],'workforce':['workforce'],'staffing':['staffing'],'survey':['experience'],'surveys':['experience'],'pses':['experience'],'snps':['experience','staffing'],'plans':['plans'],'commitments':['commitments']}.get(f.get('topic'))
+ if f.get('topic') in ['survey','surveys'] and re.search('snps|staffing',f['sourceFile']+' '+en,re.I):topics=['experience','staffing']
+ if original:
+  topics=original['topics'];en,fr=original['en'],original['fr']
+ elif re.search(r'snps-(20\d\d)',f['sourceFile']):
+  year=re.search(r'snps-(20\d\d)',f['sourceFile'])[1];en=year+' staffing survey: '+en;fr='Sondage sur la dotation de '+year+' : '+fr;period=year
+ e=add('dfo/'+f['path'],en,fr,source=f.get('source') or 'dfo/',period=period,scope='Fisheries and Oceans Canada',topics=topics,details=original['details'] if original else None,groups=original['groups'] if original else None,view='org-survey',kind='extract',scan=False)
  e['population']=['DFO-specific records in the published source collection','Dossiers propres au MPO dans la collection de sources publiées']
 result={'schema':1,'generated':'2026-11-17','organizations':sorted(orgs.values(),key=lambda o:o['en']),'aliases':[{'en':n,'names':sorted(v)} for n,v in sorted(aliases.items())],'datasets':entries}
 out=json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n';target=R/'assets/assistant-catalogue.json';compressed=R/'assets/assistant-catalogue.json.gz'
