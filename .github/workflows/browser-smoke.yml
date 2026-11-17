@@ -56,6 +56,7 @@ jobs:
                 if(/Browse below|Open the second page|your instructions/i.test(await page.locator('body').innerText()))throw Error('Instructional text in page');
                 if(!await page.locator('#public-representation table').count()||!await page.locator('#public-data-library').count())throw Error('Public service-wide tables missing');
                 if(!await page.locator('#public-topic-picker option').count()||!await page.locator('#org-topic-picker option').count())throw Error('Topic selectors missing');
+                if(!await page.locator('#public-organization-comparison table').count())throw Error('Department comparisons must be available on the main page');
                 await page.locator('#understand-data summary').click();
                 if(!await page.locator('#understand-data table').isVisible())throw Error('The introductory source guide must open without leaving the page');
                 if(!/Staffing and Non-Partisanship Survey/.test(await page.locator('#understand-data').innerText()))throw Error('Survey abbreviations must be explained');

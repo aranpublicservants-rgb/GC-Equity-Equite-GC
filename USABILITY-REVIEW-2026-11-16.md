@@ -13,7 +13,7 @@ The review followed a first-time public servant through the homepage, a departme
 | Clearing a department can leave the national tables empty. | Restored the public-service view when the selection is cleared. |
 | Group and topic selections disappear on reload or sharing. | Added validated query parameters and included dashboard filters in saved views. Browser history restores those selections. |
 | Topic filtering omits relevant staffing or added-source content. | Corrected classifications, allowed relevant tables under more than one topic, and filtered additional source collections by topic. |
-| Longer comparisons are difficult to search and reorder. | Added table search, numeric and text sorting, accessible sort state and downloads of matching rows. |
+| Longer comparisons are difficult to search and reorder. | Added a direct organization comparison on the main page, table search, numeric and text sorting, accessible sort state and downloads of matching rows. |
 | Research tools are difficult to discover. | Added a shared tools menu and direct saving of displayed dashboard rows into existing evidence and briefing tools. |
 | Supporting pages do not share consistent return paths. | Added breadcrumbs, shared navigation on the organization directory, repaired its resource anchor and linked branch guidance directly to the main departmental view. |
 | Source information describes an earlier inventory as if it were the whole current collection. | Clarified the inventory's scope and linked directly to restored and additional collections. |

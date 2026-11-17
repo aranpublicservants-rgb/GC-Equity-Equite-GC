@@ -584,6 +584,22 @@ function renderOrg(){
  history.replaceState(null,'',url.pathname+url.search+url.hash);
  applyTopics('org');
 }
+function publicOrganizationComparison(){
+ const current=selectGroup('public'),names=Object.keys(D.series.orgs).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
+ const supported=current==='all'||groups.some(g=>g[0]===current);
+ if(!supported)return sCard('public-organization-comparison',L('Compare departments and agencies','Comparer les ministères et organismes'),L('This workforce series does not publish a comparison for the selected group. Use employee surveys for groups available only among respondents.','Cette série sur l’effectif ne publie pas de comparaison pour le groupe choisi. Consultez les sondages pour les groupes disponibles uniquement parmi les répondants.'),'<p class="gce-unavailable">'+escape(L('No published workforce comparison for this group.','Aucune comparaison publiée de l’effectif pour ce groupe.'))+'</p>');
+ const heads=current==='all'?[L('Organization','Organisme'),L('Workforce, 2025','Effectif, 2025'),...groups.map(g=>rowsTitle(g)+' (%)')]:[L('Organization','Organisme'),L('Published group count','Nombre publié du groupe'),L('Workforce share (%)','Part de l’effectif (%)'),L('Workforce availability (%)','Disponibilité (%)')];
+ const value=(name,key)=>{
+  const rec=findEntry(D.series.orgs,name),row=D.model.DEPTS.find(d=>norm(d[0])===norm(name));
+  if(key==='w')return [null,row?.[2]??null,findEntry(D.model.DEPT_WFA_2025,name)?.w??null];
+  const x=rec?.[key]?.['2025']||[];return [x[1]??null,x[2]??null,x[3]??null];
+ };
+ const rows=names.map(name=>{
+  if(current==='all'){const row=D.model.DEPTS.find(d=>norm(d[0])===norm(name));return [deptName(name),N(row?.[1]),...groups.map(g=>P(value(name,g[0])[1]))];}
+  const v=value(name,current);return [deptName(name),N(v[0]),P(v[1]),current==='b'?L('Not established','Non établie'):P(v[2])];
+ });
+ return sCard('public-organization-comparison',L('Compare departments and agencies, 2025','Comparer les ministères et organismes, 2025'),L('Organizations in the Treasury Board core-public-administration representation series. Select an employee group for its published availability benchmark, where available. Search the table for an organization or sort a column. Populations and job mixes differ; a difference is a reason to investigate further.','Organismes de la série du Conseil du Trésor sur la représentation dans l’administration publique centrale. Choisissez un groupe pour consulter sa disponibilité publiée, lorsqu’elle existe. Recherchez un organisme dans le tableau ou triez une colonne. Les populations et les emplois varient; un écart est une raison d’examiner la situation de plus près.'),table(L('Workforce representation by organization, March 31, 2025','Représentation de l’effectif par organisme, 31 mars 2025'),heads,rows,'organization-comparisons-2025'),L('Treasury Board representation and workforce availability tables','Tableaux du Conseil du Trésor sur la représentation et la disponibilité'),source.tbs);
+}
 function publicTables(){
  dropTables('public-output');
  const m=D.model;let out='';
@@ -608,6 +624,7 @@ function publicTables(){
   L('Treasury Board representation data for the core public administration. Other respondent groups do not necessarily have a corresponding published workforce series. Groups overlap.','Données du Conseil du Trésor sur la représentation dans l’administration publique centrale. Les autres groupes de répondants n’ont pas nécessairement de série correspondante sur l’effectif. Les groupes se chevauchent.'),
   table(L('Published workforce representation','Représentation publiée au sein de l’effectif'),repHead,repRows,'public-workforce-representation'),
   L('Treasury Board Secretariat annual equity statistics','Statistiques annuelles sur l’équité du Conseil du Trésor'),source.tbs);
+ out+=publicOrganizationComparison();
  // 1998–2025 long historical series not represented by the annual file.
  const historical=m.HIST;
  const historicalKeys=current==='all'?['w','i','d','v']:['w','i','d','v'].includes(current)?[current]:[];
