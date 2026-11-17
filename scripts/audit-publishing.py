@@ -37,7 +37,7 @@ class HTMLAudit(HTMLParser):
         if tag in ('a','script','link'):
             dest = a.get('href') or a.get('src')
             if dest:self.attrs.append((tag,dest))
-        if tag == 'script' and a.get('src'):self.scripts.append(a['src'])
+        if tag == 'script' and a.get('src'):self.scripts.append(unquote(urlsplit(a['src']).path))
     def handle_data(self, text):
         if self.current_h1:self.h1.append(text)
     def handle_endtag(self, tag):
