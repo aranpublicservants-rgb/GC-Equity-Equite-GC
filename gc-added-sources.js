@@ -155,6 +155,8 @@ function packageFile(f,pack){
 }
 function packageBlock(pack){
  const d=document.createElement('details');d.className='gce-added';
+ const title=pack.titleEn||'';
+ d.dataset.gceTopics='sources '+(/survey|harassment|violence/i.test(title)?'experience ': '')+(/staffing|hiring|applications|advertisements|referrals|priority/i.test(title)?'staffing ': '')+(/population|availability|executive/i.test(title)?'workforce':'');
  d.innerHTML='<summary>'+esc(L(pack.titleEn,pack.titleFr)+' ('+L(pack.periodText[0],pack.periodText[1])+')')+'</summary><div class="gce-added-body">'+sourceLine(pack.publisher,'',pack.url)+'</div>';
  const body=d.querySelector('.gce-added-body'),links=[];
  if(pack.note)body.insertAdjacentHTML('beforeend','<p class="gce-explain">'+esc(L(pack.note[0],pack.note[1]))+'</p>');
@@ -175,7 +177,8 @@ async function renderOrg(name){
  try{
   const m=await manifest();
   if(id!==orgRequest||!host.isConnected)return;
-  const key=norm(name),org=m.organizations[key],employer=m.employers.find(e=>e.names.some(n=>norm(n)===key));
+  const key=norm(name),same=n=>window.GCEOrganizationKey?window.GCEOrganizationKey(n)===window.GCEOrganizationKey(name):norm(n)===key;
+  const org=m.organizations[key]||Object.values(m.organizations).find(o=>same(o.en)),employer=m.employers.find(e=>e.names.some(same));
   const tables=org?m.tables.filter(t=>t.scope==='org'&&org.t[t.id]):[];
   if(!tables.length&&!employer){
    host.innerHTML=title+'<p class="gce-explain">'+esc(L('None of the files added in November 2026 names this organization.','Aucun des fichiers ajoutés en novembre 2026 ne nomme cet organisme.'))+'</p>';
@@ -203,13 +206,13 @@ async function renderPublic(){
  if(!host){host=document.createElement('section');host.className='gce-data-block';host.id='public-added-sources';}
  anchor.after(host);
  const id=++publicRequest;
- const title=heading(L('Federal public service population, March 2010 to March 2026','Effectif de la fonction publique fédérale, mars 2010 à mars 2026'));
+ const title=heading(L('More published workforce and survey tables','Autres tableaux publiés sur l’effectif et les sondages'));
  host.innerHTML=title+'<p role="status">'+esc(L('Loading the list of tables…','Chargement de la liste des tableaux…'))+'</p>';
  try{
   const m=await manifest();
   if(id!==publicRequest||!host.isConnected)return;
   host.innerHTML=title+'<p class="gce-explain">'+esc(L('Treasury Board of Canada Secretariat tables for the whole federal public service. CPA is the core public administration. SA is separate agencies. Tables by department or agency appear under Departments and agencies once an organization is chosen.','Tableaux du Secrétariat du Conseil du Trésor du Canada pour l’ensemble de la fonction publique fédérale. APC désigne l’administration publique centrale. OD désigne les organismes distincts. Les tableaux par ministère ou organisme se trouvent sous Ministères et organismes, une fois un organisme choisi.'))+'</p>';
-  m.tables.filter(t=>t.scope==='all').forEach(t=>host.append(fullTable(t)));
+  m.tables.filter(t=>t.scope==='all').forEach(t=>{const el=fullTable(t);el.dataset.gceTopics='workforce sources';host.append(el);});
   if((m.packages||[]).length){
    host.insertAdjacentHTML('beforeend','<h4>'+esc(L('Staffing, survey, workforce availability and executive files','Fichiers sur la dotation, les sondages, la disponibilité au sein de la population active et les cadres supérieurs'))+'</h4><p class="gce-explain">'+esc(L('Files from federal publishers that cover the public service or its organizations generally. Each file keeps its own population and reporting period.','Fichiers d’éditeurs fédéraux qui portent sur l’ensemble de la fonction publique ou de ses organismes. Chaque fichier conserve sa propre population et sa propre période de référence.'))+'</p>');
    m.packages.forEach(pack=>host.append(packageBlock(pack)));
@@ -219,7 +222,7 @@ async function renderPublic(){
    if(r.ok&&id===publicRequest&&host.isConnected){
     const lang=fr()?'fr':'en',docs=(await r.json()).documents.filter(d=>d.lang===lang||d.lang==='both');
     if(docs.length){
-     const d=document.createElement('details');d.className='gce-added';
+     const d=document.createElement('details');d.className='gce-added';d.dataset.gceTopics='sources';
      d.innerHTML='<summary>'+esc(L('Federal public service documents','Documents sur la fonction publique fédérale')+' ('+docs.length+')')+'</summary><div class="gce-added-body"><p class="gce-explain">'+esc(L('Each link opens the copy held by the publisher. No document is stored on this site.','Chaque lien ouvre l’exemplaire conservé par l’éditeur. Aucun document n’est conservé sur ce site.'))+'</p><ul class="gce-added-files">'+docs.map(x=>'<li><a href="'+esc(x.url)+'">'+esc(x.title)+'</a>. '+esc(x.publisher+(x.year?', '+x.year:'')+' ('+x.format+')')+'</li>').join('')+'</ul></div>';
      host.append(d);
     }

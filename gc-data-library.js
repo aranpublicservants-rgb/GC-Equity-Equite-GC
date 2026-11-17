@@ -8,7 +8,8 @@ const fr=()=>document.documentElement.lang.startsWith('fr');
 const T=(en,frs)=>fr()?frs:en;
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
-let coverage=null,pscIndex=null,restored=null,cache=new Map(),request=0,active=null;
+let coverage=null,pscIndex=null,restored=null,cache=new Map(),request=0,active=null,viewerObserver=null;
+let selection={kind:'psc',file:'',search:'',allCols:false};
 const SIZE=18;
 function parseCSV(s){
  let rows=[],row=[],v='',quoted=false;
@@ -138,9 +139,10 @@ function setState(message){const el=$('gce-raw-status');if(el)el.textContent=mes
 function mount(){
  const host=$('public-data-library');if(!host)return;
  if(!coverage||!pscIndex)return;
+ request++;active=null;
  const data=entries();
  const cats=[
- ['psc',T('PSC data across the public service','Données de la CFP dans l’ensemble de la fonction publique')],
+ ['psc',T('Public Service Commission data across the public service','Données de la Commission de la fonction publique pour l’ensemble de la fonction publique')],
  ['women',T('Women and intersectional data','Données sur les femmes et l’intersectionnalité')],
  ['tbs',T('Workforce source tables','Tableaux sources sur l’effectif')],
  ['derived',T('Independent salary estimates','Estimations salariales indépendantes')],
@@ -158,20 +160,28 @@ function mount(){
  '<div class="gce-pager" id="gce-raw-pager" hidden><button type="button" id="gce-raw-prev">'+E(T('Previous','Précédent'))+'</button><span id="gce-raw-count" role="status" aria-live="polite"></span><button type="button" id="gce-raw-next">'+E(T('Next','Suivant'))+'</button></div>'+
  '<p class="gce-source" id="gce-raw-source"></p>';
  const kind=$('gce-raw-kind'),file=$('gce-raw-file'),search=$('gce-raw-search'),allCols=$('gce-raw-allcols'),button=$('gce-raw-export');
+ if(viewerObserver)viewerObserver.disconnect();
+ let started=false;
+ const requested=new URL(location.href).searchParams.get('dataset');
+ const saved=data.find(x=>x.path===(requested||selection.file));
+ kind.value=saved?.category||selection.kind;
  function setFiles(){
   const choices=data.filter(x=>x.category===kind.value).sort((a,b)=>heading(a).localeCompare(heading(b),fr()?'fr':'en'));
   file.innerHTML=choices.map(x=>'<option value="'+E(x.path)+'">'+E(heading(x))+'</option>').join('');
-  setEntry();
+  if(choices.some(x=>x.path===(requested||selection.file)))file.value=requested||selection.file;
+  if(started)setEntry();
  }
- function setEntry(){
+ function setEntry(share=true){
   const e=data.find(x=>x.path===file.value),id=++request;
   if(!e)return;
+  started=true;selection.kind=kind.value;selection.file=file.value;
+  if(share){const url=new URL(location.href);url.searchParams.set('dataset',e.path);history.replaceState(history.state,'',url.pathname+url.search+url.hash);}
   active={...e,data:null,filtered:[],page:0};
   search.value='';allCols.checked=false;button.disabled=true;
   $('gce-raw-table').innerHTML='';$('gce-raw-pager').hidden=true;
   setState(T('Loading the selected source table…','Chargement du tableau source sélectionné…'));
   loadEntry(e).then(result=>{
-   if(id!==request)return;
+   if(id!==request||!host.isConnected)return;
    active.data=result;button.disabled=false;
    setState(T('Showing records from this source only.','Données provenant uniquement de cette source.'));
    redraw(true);
@@ -200,14 +210,17 @@ function mount(){
   source.textContent=title+(active.sourceScope?T('Published population or source category: ','Population publiée ou catégorie de source : ')+active.sourceScope+'. ':'')+T(active.category==='derived'?'Independent estimates; not official published TBS values.':'Reporting period and measures retain the original source definitions.',active.category==='derived'?'Estimations indépendantes, non officielles du Conseil du Trésor.':'La période et les indicateurs conservent les définitions de la source originale.');
   if(active.publisherUrl){const a=document.createElement('a');a.href=active.publisherUrl;a.target='_blank';a.rel='noopener noreferrer';a.textContent=T('Original source','Source originale');source.append(' ');source.append(a);}
  }
- kind.addEventListener('change',setFiles);
- file.addEventListener('change',setEntry);
+ kind.addEventListener('change',()=>{started=true;selection.file='';setFiles();});
+ file.addEventListener('change',()=>setEntry());
  let debounce=0;search.addEventListener('input',()=>{clearTimeout(debounce);debounce=setTimeout(()=>redraw(true),160);});
  allCols.addEventListener('change',()=>redraw(false));
  $('gce-raw-prev').addEventListener('click',()=>{if(active?.page>0){active.page--;redraw(false);}});
  $('gce-raw-next').addEventListener('click',()=>{if(active&&(active.page+1)*SIZE<active.filtered.length){active.page++;redraw(false);}});
  button.addEventListener('click',()=>{if(active?.data)exportCSV(active,active.filtered);});
  setFiles();
+ setState(T('Choose a source table to read or download.','Choisissez un tableau source à consulter ou à télécharger.'));
+ if(typeof IntersectionObserver==='undefined')setEntry(false);
+ else{viewerObserver=new IntersectionObserver(entries=>{if(entries.some(x=>x.isIntersecting)){viewerObserver.disconnect();if(!started)setEntry(false);}},{rootMargin:'150px'});viewerObserver.observe(host);}
 }
 async function render(){
  const host=$('public-data-library');if(!host)return;

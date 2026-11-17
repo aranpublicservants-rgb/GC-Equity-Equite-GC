@@ -7,6 +7,7 @@ exclude:
   - data/source-dates.json
   - AGENTS.md
   - QUALITY-REVIEW-2026-11.md
+  - USABILITY-REVIEW-2026-11-16.md
   - assets/data-coverage-audit.json
   - archive-source
   - scripts

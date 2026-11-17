@@ -6,7 +6,7 @@ const $=id=>document.getElementById(id);
 const fr=()=>document.documentElement.lang.startsWith('fr');
 const L=(e,f)=>fr()?f:e;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
-const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+const norm=s=>window.GCEOrganizationKey?window.GCEOrganizationKey(s):String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
 const PAGE=18;
 function sourceTitle(file){
  const cycle=String(file.dataset||'').match(/(?:2023|2025) Staffing and Non-Partisanship Survey/);

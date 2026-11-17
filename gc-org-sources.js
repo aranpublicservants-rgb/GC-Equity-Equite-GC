@@ -4,7 +4,7 @@
 (function(){
 'use strict';
 const L=(en,fr)=>document.documentElement.lang.toLowerCase().startsWith('fr')?fr:en;
-const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');
+const norm=s=>window.GCEOrganizationKey?window.GCEOrganizationKey(s):String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const headerName={
  fiscal_year:['Fiscal year','Exercice'],Fiscal_Year:['Fiscal year','Exercice'],quarter:['Quarter','Trimestre'],

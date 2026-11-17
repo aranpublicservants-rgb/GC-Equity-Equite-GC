@@ -12,8 +12,9 @@ header{border-bottom:1px solid var(--line);background:#fff}main,header>div,foote
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:10px;background:#fff;color:var(--ink);padding:10px;z-index:10}footer{margin-top:3rem;background:#fff;border-top:1px solid var(--line)}@media(max-width:720px){.controls{grid-template-columns:1fr}th{position:static}.table-wrap{max-width:100%}.desktop{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <script src="organizations.js" defer></script>
+<link rel="stylesheet" href="gc-workspace.css"><script src="gc-workspace.js" defer></script>
 </head>
-<body>
+<body class="gcw-integrated-organizations">
 <a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
 <header><div><a class="brand" href="index.html">GC Equity <span lang="fr">Équité-GC</span></a><nav aria-label="Site"><a href="index.html" data-i18n="home">Home</a><a href="explorer.html#departments" data-i18n="data">Equity data</a><a href="staffing.html" data-i18n="staffing">Staffing</a><a href="sources.html" data-i18n="sources">Sources</a><button id="lang" type="button">Français</button></nav></div></header>
 <main id="main">
@@ -30,7 +31,7 @@ header{border-bottom:1px solid var(--line);background:#fff}main,header>div,foote
 <div id="details" class="detail" aria-live="polite"></div>
 <div class="table-wrap"><table><caption class="sr-only" data-i18n="caption">Federal organizations and available published datasets</caption><thead><tr><th scope="col" data-i18n="organization">Organization</th><th scope="col" data-i18n="coverage">Published coverage</th><th scope="col" data-i18n="action">Details</th></tr></thead><tbody id="rows"></tbody></table></div>
 <p class="small" data-i18n="notes">Reporting years and populations differ. Inclusion in the directory does not imply an employment relationship with the Treasury Board. For the definitive current roster consult the official Government of Canada list.</p>
-<div class="actions"><a class="button primary" href="explorer.html#data" data-i18n="compare">Explore published equity statistics</a><a class="button" href="index.html#related-sites" data-i18n="related">Other federal public service resources</a></div>
+<div class="actions"><a class="button primary" href="index.html#equity-data" data-i18n="compare">Explore published equity statistics</a><a class="button" href="index.html#related-public-resources" data-i18n="related">Other federal public service resources</a></div>
 </main>
 <footer><div><p data-i18n="footer">Independent research resource. Figures and links come from the identified published sources, not from estimates made by this website.</p><p><a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/">https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/</a></p></div></footer>
 </body></html>

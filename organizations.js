@@ -74,6 +74,7 @@ function renderLang(){
  $('q').placeholder=lang==='fr'?'p. ex. CSTC ou Centre de la sécurité des télécommunications':'e.g., CSE or Communications Security Establishment';
  render();
 }
+window.gcSetLang=next=>{lang=next==='fr'?'fr':'en';renderLang();};
 const label=r=>lang==='fr'&&r.fr?r.fr:r.name;
 const any=r=>Object.values(r.flags).some(Boolean);
 function render(){

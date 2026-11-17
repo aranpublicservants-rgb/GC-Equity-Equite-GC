@@ -10,7 +10,10 @@ const escape=s=>String(s===null||s===undefined?'':s).replace(/[&<>"']/g,c=>({'&'
 const number=v=>v===null||v===undefined||v===''||!Number.isFinite(Number(v))?null:Number(v);
 const N=v=>number(v)===null?L('Not published','Non publié'):Number(v).toLocaleString(lang()?'fr-CA':'en-CA',{maximumFractionDigits:2});
 const P=v=>number(v)===null?L('Not published','Non publié'):Number(v).toLocaleString(lang()?'fr-CA':'en-CA',{maximumFractionDigits:2})+(lang()?' %':'%');
-const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');
+const rawNorm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');
+const organizationAliases=new Map();
+const norm=s=>organizationAliases.get(rawNorm(s))||rawNorm(s);
+window.GCEOrganizationKey=norm;
 const link=(href,label)=>'<a href="'+escape(href)+'"'+(/^https?:/.test(href)?' target="_blank" rel="noopener noreferrer"':'')+'>'+escape(label)+'</a>';
 const groups=[['w','Women','Femmes','women','woman'],['i','Indigenous employees','Employés autochtones','indigenous_peoples','ind'],['d','Employees with disabilities','Employés en situation de handicap','persons_with_disabilities','pwd'],['v','Racialized employees','Employés racisés','members_of_visible_minorities','rac'],['b','Black employees','Employés noirs',null,'black']];
 const surveyGroups=[['all','All respondents','Tous les répondants'],['woman','Women','Femmes'],['man','Men','Hommes'],['pwd','Persons with disabilities','Personnes en situation de handicap'],['nopwd','Persons without disabilities','Personnes sans handicap'],['ind','Indigenous respondents','Répondants autochtones'],['nonind','Non-Indigenous respondents','Répondants non autochtones'],['rac','Racialized respondents','Répondants racisés'],['nonrac','Non-racialized respondents','Répondants non racisés'],['black','Black respondents','Répondants noirs']];
@@ -21,7 +24,7 @@ const source={
  plans:'https://www.canada.ca/en/treasury-board-secretariat/services/reporting-government-spending/plans-priorities.html',
  catalogue:'sources.html'
 };
-let D=null,selected='',tableSequence=0;
+let D=null,selected='',tableSequence=0,organizationNames=[];
 const tableStore=new Map();
 const PAGE_ROWS=18;
 const GROUP_OPTIONS=[['all','All employees / respondents','Tous les employés / répondants'],['w','Women','Femmes'],['man','Men','Hommes'],['i','Indigenous employees','Employés autochtones'],['nonind','Non-Indigenous employees','Employés non autochtones'],['d','Employees with disabilities','Employés en situation de handicap'],['nopwd','Employees without disabilities','Employés sans handicap'],['v','Racialized employees','Employés racisés'],['nonrac','Non-racialized employees','Employés non racisés'],['b','Black employees','Employés noirs'],['lgbt','2SLGBTQIA+ employees','Employés 2ELGBTQIA+']];
@@ -35,10 +38,10 @@ function sCard(id,title,description,body,srcLabel,srcUrl){
 function table(caption,heads,rows,filename){
  if(!rows||!rows.length)return '<p class="gce-unavailable">'+escape(L('No published result for this selection.','Aucun résultat publié pour cette sélection.'))+'</p>';
  const id='gce-table-'+(++tableSequence);
- tableStore.set(id,{caption,heads,rows,filename:filename||'gc-equity-data',page:0});
+ tableStore.set(id,{caption,heads,allRows:rows,rows,filename:filename||'gc-equity-data',page:0,sort:-1,direction:1});
  const body=tableRows(rows,0);
- return '<div class="gce-table-actions"><button type="button" class="gce-download" data-table="'+id+'" data-file="'+escape(filename||'gc-equity-data')+'">'+escape(L('Download full table (CSV)','Télécharger le tableau complet (CSV)'))+'</button></div>'+
- '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(caption)+'"><table id="'+id+'" data-gcw-ready="yes"><caption>'+escape(caption)+'</caption><thead><tr>'+heads.map(h=>'<th scope="col">'+escape(h)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>'+
+ return '<div class="gce-table-actions">'+(rows.length>PAGE_ROWS?'<label class="gce-table-search-label" for="'+id+'-search">'+escape(L('Find in this table','Rechercher dans ce tableau'))+'<input type="search" class="gce-table-search" id="'+id+'-search" data-table="'+id+'"></label>':'')+'<span class="gcw-capture gce-save-table" data-table="'+id+'"><button type="button" class="gcw-btn gcw-btn-small" data-gcw="capture-table">'+escape(L('Save displayed rows','Retenir les lignes affichées'))+'</button></span><button type="button" class="gce-download" data-table="'+id+'" data-file="'+escape(filename||'gc-equity-data')+'">'+escape(L('Download full table (CSV)','Télécharger le tableau complet (CSV)'))+'</button></div>'+
+ '<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+escape(caption)+'"><table id="'+id+'" data-gcw-ready="yes"><caption>'+escape(caption)+'</caption><thead><tr>'+heads.map((h,i)=>'<th scope="col" aria-sort="none"><button type="button" class="gce-sort" data-table="'+id+'" data-col="'+i+'" aria-label="'+escape(L('Sort by ','Trier par ')+h)+'">'+escape(h)+'<span aria-hidden="true"> ↕</span></button></th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>'+
  (rows.length>PAGE_ROWS?'<div class="gce-pager" data-for="'+id+'"><button type="button" class="gce-page-prev" disabled>'+escape(L('Previous','Précédent'))+'</button><span class="gce-page-count" role="status" aria-live="polite">'+escape(pageText(0,rows.length))+'</span><button type="button" class="gce-page-next">'+escape(L('Next','Suivant'))+'</button></div>':'');
 }
 function dropTables(containerId){
@@ -62,6 +65,24 @@ function paginate(btn,delta){
  controls.querySelector('.gce-page-count').textContent=pageText(entry.page,entry.rows.length);
  controls.querySelector('.gce-page-prev').disabled=entry.page===0;
  controls.querySelector('.gce-page-next').disabled=(entry.page+1)*PAGE_ROWS>=entry.rows.length;
+}
+function refreshTable(id){
+ const entry=tableStore.get(id),target=$(id);if(!entry||!target)return;
+ target.tBodies[0].innerHTML=entry.rows.length?tableRows(entry.rows,entry.page):'<tr><td colspan="'+entry.heads.length+'">'+escape(L('No rows match your search.','Aucune ligne ne correspond à votre recherche.'))+'</td></tr>';
+ const controls=root.querySelector('.gce-pager[data-for="'+id+'"]');
+ if(controls){controls.querySelector('.gce-page-count').textContent=entry.rows.length?pageText(entry.page,entry.rows.length):L('0 matching rows','0 ligne correspondante');controls.querySelector('.gce-page-prev').disabled=entry.page===0;controls.querySelector('.gce-page-next').disabled=(entry.page+1)*PAGE_ROWS>=entry.rows.length;}
+ const button=root.querySelector('.gce-download[data-table="'+id+'"]');
+ if(button){button.textContent=entry.rows.length===entry.allRows.length?L('Download full table (CSV)','Télécharger le tableau complet (CSV)'):L('Download matching rows (CSV)','Télécharger les lignes correspondantes (CSV)');button.disabled=!entry.rows.length;}
+}
+function sortTable(button){
+ const entry=tableStore.get(button.dataset.table),target=$(button.dataset.table);if(!entry||!target)return;
+ const col=Number(button.dataset.col);entry.direction=entry.sort===col?-entry.direction:1;entry.sort=col;
+ const collator=new Intl.Collator(lang()?'fr-CA':'en-CA',{numeric:true,sensitivity:'base'});
+ const numeric=v=>{let s=String(v).replace(/[\s%$]/g,'');s=lang()?s.replace(',','.'):s.replaceAll(',','');return /^-?\d+(?:\.\d+)?$/.test(s)?Number(s):null;};
+ entry.rows=entry.rows.slice().sort((a,b)=>{const x=numeric(a[col]),y=numeric(b[col]);return (x!==null&&y!==null?x-y:collator.compare(String(a[col]),String(b[col])))*entry.direction;});entry.page=0;
+ [...target.tHead.rows[0].cells].forEach((cell,i)=>cell.setAttribute('aria-sort',i===col?(entry.direction===1?'ascending':'descending'):'none'));
+ [...target.tHead.rows[0].cells].forEach((cell,i)=>{const marker=cell.querySelector('[aria-hidden]');if(marker)marker.textContent=i===col?(entry.direction===1?' ↑':' ↓'):' ↕';});
+ refreshTable(button.dataset.table);
 }
 function updateGroupLabels(){
  for(const area of ['org','public']){
@@ -102,11 +123,13 @@ async function load(){
   ['salary','data/october-2026/DI_medians_salary_by_group_2017-2025.csv','csv'],
   ['di','data/october-2026/DI_di_disproportionality_index_2017-2025.csv','csv']
   ];
- const results=await Promise.all(files.map(async ([k,path,type])=>{
+ const results=await Promise.allSettled(files.map(async ([k,path,type])=>{
   const res=await fetch(path);if(!res.ok)throw Error(path+': HTTP '+res.status);
   return [k,type==='json'?await res.json():csvParse(await res.text())];
  }));
- return Object.fromEntries(results);
+ const failed=results.flatMap((r,i)=>r.status==='rejected'?[files[i][1]]:[]);
+ if(failed.length)throw Error('Unavailable source files: '+failed.join(', '));
+ return Object.fromEntries(results.map(r=>r.value));
 }
 function findKey(keys,name){const n=norm(name);return keys.find(x=>norm(x)===n)||null;}
 function findEntry(obj,name){if(!obj)return null;const k=findKey(Object.keys(obj),name);return k?obj[k]:null;}
@@ -236,7 +259,7 @@ function hiringTable(name){
  const rows=Object.keys(obj.years).sort().map(year=>{
   const v=obj.years[year];return [year,...v.map(x=>x==='x'?L('Suppressed','Supprimé'):N(x))];
  });
- return sCard('org-appointments',L('4. Appointments by equity self-identification','4. Nominations selon l’auto-identification aux fins de l’équité'),
+ return sCard('org-appointments',L('Appointments by equity self-identification','Nominations selon l’auto-identification aux fins de l’équité'),
  L('The Commission publishes appointment counts for people who self-identified as belonging to at least one employment equity group and those who did not. It does not identify the specific groups in this table. Suppressed counts are not zero.','La Commission publie le nombre de nominations de personnes s’étant auto-identifiées comme membres d’au moins un groupe visé par l’équité et de celles ne l’ayant pas fait. Ce tableau ne précise pas les groupes. Les nombres supprimés ne sont pas des zéros.'),
  table(L('Appointments by fiscal year: ','Nominations selon l’exercice : ')+deptName(name),
  [L('Fiscal year','Exercice'),L('Self-identified as a member of an equity group','Auto-identification à un groupe visé'),L('Did not self-identify','Sans auto-identification')],rows,'org-psc-appointments'),
@@ -259,7 +282,7 @@ function ctaTables(name){
  const goalRows=Object.entries(assessment?.goals||{}).map(([k,v])=>[L(...(goalNames[k]||[k,k])),v.status==='set'?L('Goal reported as set','Objectif déclaré comme fixé'):v.status==='underway'?L('Work underway','Travaux en cours'):L('No goal stated','Aucun objectif indiqué'),v.text||missing()]);
  const progress=(assessment?.progress||[]).map((v,i)=>[String(i+1),v]);
  const barriers=(assessment?.barriers||[]).map((v,i)=>[String(i+1),v]);
- return sCard('org-cta',L('5. Call to Action commitments and self-assessment','5. Engagements liés à l’appel à l’action et autoévaluation'),
+ return sCard('org-cta',L('Call to Action commitments and self-assessment','Engagements liés à l’appel à l’action et autoévaluation'),
  L('These are organization-wide summaries of what was reported in 2021 and 2024, not group-specific measurements or independently verified achievements. The original letters and assessments are linked below.','Il s’agit de résumés concernant l’ensemble de l’organisme déclarés en 2021 et 2024, et non de mesures propres au groupe choisi ni de réalisations vérifiées de façon indépendante. Les documents originaux sont accessibles ci-dessous.'),
  table(L('2021 stated commitments: ','Engagements déclarés en 2021 : ')+deptName(name),[L('Item','Élément'),L('Published commitment summary','Résumé de l’engagement publié')],letters.map((x,i)=>[String(i+1),x]),'org-call-to-action-commitments')+
  (targets.length?table(L('Targets stated in the 2021 letter','Objectifs de la lettre de 2021'),[L('Item','Élément'),L('Target','Objectif')],targets.map((x,i)=>[String(i+1),String(x)]),'org-cta-targets'):'')+
@@ -389,7 +412,7 @@ function plansTable(name){
  ['Anti-racism','Antiracisme'],['Employment equity','Équité en matière d’emploi'],['Inclusion','Inclusion'],['Diversity','Diversité'],['Accessibility','Accessibilité'],['Reconciliation','Réconciliation']
  ];
  const rows=p?terms.map((g,i)=>[L(g[0],g[1]),N(p.t?.[i]),N(p.i?.[i])]):[];
- return sCard('org-plans',L('6. Terms in the 2026–27 departmental plan','6. Termes dans le plan ministériel de 2026-2027'),
+ return sCard('org-plans',L('Terms in the 2026–27 departmental plan','Termes dans le plan ministériel de 2026-2027'),
  L('These counts are organization-wide mentions of six topics in the complete plan and its Internal Services section, not measurements for the selected employee group. A mention is not proof of action or results.','Ces nombres sont les mentions de six thèmes dans le plan entier et sa section Services internes, sans ventilation selon le groupe d’employés choisi. Une mention ne prouve ni une action ni un résultat.'),
  table(L('2026–27 departmental plan term counts: ','Mentions dans le plan ministériel de 2026-2027 : ')+deptName(name),
  [L('Topic','Thème'),L('Whole plan: mentions','Plan entier : mentions'),L('Internal Services: mentions','Services internes : mentions')],rows,'org-departmental-plan'),
@@ -494,6 +517,7 @@ async function renderBranches(name){
   const dept=meta.departments.find(d=>norm(d.en)===norm(name)||norm(d.fr)===norm(name));
   if(!dept){host.innerHTML='';return;}
   let data=branchDataCache.get(dept.id);
+  if(data){branchDataCache.delete(dept.id);branchDataCache.set(dept.id,data);}
   if(!data){
    if(typeof DecompressionStream==='undefined')throw Error('Browser gzip support unavailable');
    const response=await fetch('data/pses-2024-branches/'+encodeURIComponent(dept.id)+'.json.gz');
@@ -501,6 +525,7 @@ async function renderBranches(name){
    data=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
    if(!Array.isArray(data))throw Error('Branch rows not in expected list');
    branchDataCache.set(dept.id,data);
+   while(branchDataCache.size>3)branchDataCache.delete(branchDataCache.keys().next().value);
   }
   if(id!==branchRequest)return;
   host.innerHTML='<h3>'+escape(L('2024 Public Service Employee Survey by branch','Sondage auprès des fonctionnaires fédéraux de 2024 selon la direction'))+'</h3>'+
@@ -530,6 +555,8 @@ function renderOrg(){
   out.innerHTML='';
   const url=new URL(location.href);url.searchParams.delete('org');
   history.replaceState(null,'',url.pathname+url.search+url.hash);
+  applyTopics('org');
+  if(!$('public-output').children.length)publicTables();
   return;
  }
  const name=selected;const p=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
@@ -756,14 +783,44 @@ function publicTables(){
  applyTopics('public');
 }
 function populatePicker(){
- const names=[...new Set([...(D.orglist.organizations||[]),...Object.keys(D.series.orgs||{}),...Object.keys(D.model.PSES_DEPT||{}).filter(x=>x!=='Public Service'),...D.model.plans.map(x=>x.name),...D.cta.organizations.map(x=>x.name_en),...D.pscOrgIndex.files.flatMap(f=>Object.keys(f.organizations||{}))])].filter(n=>!/^(?:Public Service\s*[-–]\s*(?:Total|Average)|(?:Micro|Small|Medium|Large)\s*[-–]\s*Average)$/i.test(n)).sort((a,b)=>a.localeCompare(b,lang()?'fr':'en'));
+ const candidates=[...Object.keys(D.series.orgs||{}),...Object.keys(D.model.PSES_DEPT||{}),...D.model.plans.map(x=>x.name),...D.cta.organizations.map(x=>x.name_en),...D.pscOrgIndex.files.flatMap(f=>Object.keys(f.organizations||{})),...(D.orglist.organizations||[])];
+ // Alternate labels are joined only when the existing source crosswalk explicitly
+ // identifies the same organization. Source populations and figures stay separate.
+ organizationAliases.clear();
+ const owners=new Map();
+ for(const record of D.cta.organizations){for(const name of [record.site_name,record.pses_name,record.plan_name,record.snps_name,record.name_en].filter(Boolean)){const key=rawNorm(name);if(!owners.has(key))owners.set(key,new Set());owners.get(key).add(rawNorm(record.name_en));}}
+ for(const record of D.cta.organizations){
+  const names=[record.site_name,record.pses_name,record.plan_name,record.snps_name,record.name_en].filter(n=>n&&owners.get(rawNorm(n)).size===1);
+  if(!names.length)continue;
+  const preferred=Object.keys(D.series.orgs||{}).find(n=>names.some(a=>rawNorm(a)===rawNorm(n)))||record.name_en;
+  for(const name of names)organizationAliases.set(rawNorm(name),rawNorm(preferred));
+ }
+ const unique=new Map();
+ for(const name of candidates){
+  if(/^(?:Public Service|Federal Public Service|Micro-organizations combined|Public Service\s*[-–]\s*(?:Total|Average)|(?:Micro|Small|Medium|Large)\s*[-–]\s*Average)$/i.test(name))continue;
+  const key=norm(name),canonical=D.cta.organizations.find(o=>rawNorm(o.name_en)===key)?.name_en;
+  if(!unique.has(key))unique.set(key,canonical||name);
+ }
+ const names=[...unique.values()].sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
+ organizationNames=names;
  const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
- if(names.includes(old)){picker.value=old;selected=old;}
+ const match=names.find(n=>norm(n)===norm(old));
+ if(match){picker.value=match;selected=match;}
+ filterOrganizations();
+}
+function filterOrganizations(){
+ const input=$('org-search'),picker=$('org-picker');if(!input||!picker)return;
+ const q=rawNorm(input.value),current=picker.value;
+ const matches=organizationNames.filter(n=>!q||rawNorm(n+' '+deptName(n)+' '+(recordFor(n)?.name_fr||'')).includes(q));
+ const names=current&&!matches.includes(current)?[current,...matches]:matches;
+ picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
+ picker.value=current;
+ $('org-search-status').textContent=q?(matches.length?L('Matching organizations: ','Organismes correspondants : ')+matches.length:L('No matching organization. Try part of its full name.','Aucun organisme correspondant. Essayez une partie de son nom complet.')):'';
 }
 function tableCategory(id,scope){
  if(scope==='org'){
-  if(/^(org-coverage|org-complete-sources)$/.test(id))return 'sources';
+  if(/^(org-coverage|org-complete-sources|org-added-sources)$/.test(id))return 'sources';
   if(/(?:org-branches|org-survey|org-staffing)/.test(id))return 'experience';
   if(id==='org-restored-surveys')return 'experience';
   if(/(?:org-cta|org-cta-outcomes|org-cta-coding)/.test(id))return 'commitments';
@@ -771,7 +828,7 @@ function tableCategory(id,scope){
   if(/(?:mobility|appointments|org-psc-mobility)/.test(id))return 'staffing';
   return 'workforce';
  }
- if(/^(?:public-source-inventory|public-data-library)$/.test(id))return 'sources';
+ if(/^(?:public-source-inventory|public-data-library|public-added-sources)$/.test(id))return 'sources';
  if(/(?:public-survey|public-staffing-survey)/.test(id))return 'experience';
  if(/(?:public-cta|public-plans)/.test(id))return 'commitments';
  if(/(?:public-pay|public-salary)/.test(id))return 'pay';
@@ -783,16 +840,47 @@ function applyTopics(scope){
  const targets=scope==='org'?[...wrapper.children].filter(el=>el.id||el.classList.contains('gce-data-block')):[...wrapper.children].filter(el=>el.classList.contains('gce-data-block'));
  for(const el of targets){
   if(!el.id||el.classList.contains('gce-summary'))continue;
-  const cat=el.id==='org-additional-psc'?'workforce':tableCategory(el.id,scope);
-  el.hidden=value!=='all'&&cat!==value;
+  const categories=el.id==='public-added-sources'?['workforce','experience','staffing','sources']:el.id==='org-added-sources'?['workforce','sources']:el.id==='org-additional-psc'?['workforce','staffing']:el.id==='org-staffing'?['experience','staffing']:el.id==='public-staffing-survey'?['experience','staffing']:el.id==='public-workforce-flow'?['workforce','staffing']:tableCategory(el.id,scope)==='sources'?['sources']: [tableCategory(el.id,scope)];
+  el.hidden=value!=='all'&&!categories.includes(value);
+  el.querySelectorAll('[data-gce-topics]').forEach(child=>{child.hidden=value!=='all'&&!child.dataset.gceTopics.split(' ').includes(value);});
  }
  if(scope==='public'){const related=$('related-public-resources');if(related)related.hidden=!!selected||(value!=='all'&&value!=='sources');}
  const status=$(scope+'-topic-status');
  if(status){
   const total=targets.filter(el=>el.querySelector('table')||el.querySelector('h3')||el.id==='org-branches'||el.id==='org-complete-sources').length;
   const shown=targets.filter(el=>!el.hidden&&(el.querySelector('table')||el.querySelector('h3')||el.id==='org-branches'||el.id==='org-complete-sources')).length;
-  status.textContent=L('Visible topics: ','Sujets visibles : ')+shown+' / '+total;
+  const message=scope==='org'&&!selected?'':L('Showing ','Affichage de ')+shown+L(' of ',' sur ')+total+L(' data sections.',' sections de données.');
+  if(status.textContent!==message)status.textContent=message;
  }
+ updateSectionIndex(scope,targets);
+ if((selected?'org':'public')===scope)syncSelectionURL();
+}
+function updateSectionIndex(scope,targets){
+ const host=$(scope+'-section-index');if(!host)return;
+ const sections=targets.filter(el=>!el.hidden&&el.id&&el.querySelector('h3'));
+ const signature=(lang()?'fr':'en')+'|'+sections.map(el=>el.id+'|'+el.querySelector('h3').textContent).join('|');
+ if(host.dataset.signature===signature)return;
+ const opened=host.querySelector('details')?.open??true;
+ host.dataset.signature=signature;host.hidden=!sections.length;
+ host.innerHTML=sections.length?'<details'+(opened?' open':'')+'><summary>'+escape(L('On this page','Sur cette page'))+'</summary><nav aria-label="'+escape(L('Data sections','Sections de données'))+'"><ul>'+sections.map(el=>'<li><a href="#'+el.id+'">'+escape(el.querySelector('h3').textContent)+'</a></li>').join('')+'</ul></nav></details>':'';
+}
+function syncSelectionURL(){
+ const scope=selected?'org':'public',url=new URL(location.href);
+ const group=selectGroup(scope),topic=$(scope+'-topic-picker')?.value||'all';
+ for(const [key,value] of [['group',group],['topic',topic]]){if(value==='all')url.searchParams.delete(key);else url.searchParams.set(key,value);}
+ history.replaceState(history.state,'',url.pathname+url.search+url.hash);
+}
+function restoreSelectionURL(){
+ const p=new URL(location.href).searchParams,scope=selected?'org':'public';
+ for(const [suffix,key] of [['group-picker','group'],['topic-picker','topic']]){const el=$(scope+'-'+suffix),v=p.get(key)||'all';if(el&&[...el.options].some(o=>o.value===v))el.value=v;}
+}
+function restoreNavigation(){
+ if(!D)return;
+ const url=new URL(location.href),requested=url.searchParams.get('org')||'',name=organizationNames.find(n=>norm(n)===norm(requested))||'';
+ $('org-search').value='';filterOrganizations();$('org-picker').value=name;selected=name;
+ restoreSelectionURL();renderOrg();if(!selected)publicTables();
+ const target=$(url.hash.slice(1));
+ if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView({block:'start'});}
 }
 function updateStatic(){
  document.querySelectorAll('[data-gce-en]').forEach(el=>{const value=lang()?el.dataset.gceFr:el.dataset.gceEn;if(el.tagName==='INPUT')el.placeholder=value;else el.textContent=value;});
@@ -806,7 +894,8 @@ function downloadTable(btn){
  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=u;a.download=(entry.filename||'gc-equity')+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
 }
-root.addEventListener('click',e=>{const btn=e.target.closest('.gce-download');if(btn)downloadTable(btn);const n=e.target.closest('.gce-page-next');if(n)paginate(n,1);const p=e.target.closest('.gce-page-prev');if(p)paginate(p,-1);});
+root.addEventListener('click',e=>{const btn=e.target.closest('.gce-download');if(btn)downloadTable(btn);const n=e.target.closest('.gce-page-next');if(n)paginate(n,1);const p=e.target.closest('.gce-page-prev');if(p)paginate(p,-1);const sort=e.target.closest('.gce-sort');if(sort)sortTable(sort);});
+root.addEventListener('input',e=>{if(e.target.id==='org-search')return filterOrganizations();if(!e.target.classList.contains('gce-table-search'))return;const id=e.target.dataset.table,entry=tableStore.get(id);if(!entry)return;const term=rawNorm(e.target.value);entry.rows=term?entry.allRows.filter(row=>rawNorm(row.join(' ')).includes(term)):entry.allRows;entry.page=0;entry.sort=-1;[...$(id).tHead.rows[0].cells].forEach(cell=>{cell.setAttribute('aria-sort','none');cell.querySelector('[aria-hidden]').textContent=' ↕';});refreshTable(id);});
 document.addEventListener('click',e=>{
  const a=e.target.closest('a[href]');if(!a||!D)return;
  let next;try{next=new URL(a.getAttribute('href'),location.href);}catch{return;}
@@ -814,6 +903,8 @@ document.addEventListener('click',e=>{
   next.pathname.replace(/\/index\.html$/,'/')===location.pathname.replace(/\/index\.html$/,'/');
  if(!same)return;
  const hash=next.hash;
+ if(!hash)return;
+ if(a.classList.contains('gce-primary-choice')){const area=hash==='#department-data'?'org':'public';$(area+'-topic-picker').value='all';applyTopics(area);}
  if(selected&&/^#(?:equity-data|public-|related-public-resources)/.test(hash)){
   const picker=$('org-picker');if(picker){picker.value='';renderOrg();}
   if(!$('public-output').children.length)publicTables();
@@ -823,7 +914,10 @@ document.addEventListener('click',e=>{
   const picker=$(scope+'-topic-picker');
   if(picker){picker.value=topic;applyTopics(scope);}
  }
+ const target=document.getElementById(hash.slice(1));
+ if(target){e.preventDefault();if(target.tagName==='DETAILS')target.open=true;const url=new URL(location.href);url.hash=hash;history.pushState(null,'',url.pathname+url.search+url.hash);target.scrollIntoView({block:'start'});const focus=target.querySelector('h2,h3')||target;focus.setAttribute('tabindex','-1');focus.focus({preventScroll:true});}
 });
+window.addEventListener('popstate',restoreNavigation);
 $('org-picker')?.addEventListener('change',()=>renderOrg());
 $('org-group-picker')?.addEventListener('change',()=>renderOrg());
 $('public-group-picker')?.addEventListener('change',()=>publicTables());
@@ -833,6 +927,9 @@ let rerenderTimer;
 const update=()=>{if(!D)return;updateStatic();updateGroupLabels();populatePicker();renderOrg();if(!selected)publicTables();};
 new MutationObserver(()=>{clearTimeout(rerenderTimer);rerenderTimer=setTimeout(update,50);}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 (async()=>{try{
- updateStatic();D=await load();updateGroupLabels();populatePicker();renderOrg();if(!selected)publicTables();$('gce-loading').hidden=true;
+ updateStatic();D=await load();updateGroupLabels();populatePicker();restoreSelectionURL();renderOrg();$('gce-loading').hidden=true;
+ let indexTimer;
+ new MutationObserver(()=>{clearTimeout(indexTimer);indexTimer=setTimeout(()=>{applyTopics(selected?'org':'public');},90);}).observe(root,{childList:true,subtree:true});
+ const hash=location.hash.slice(1),target=$(hash);if(target?.tagName==='DETAILS'){target.open=true;target.scrollIntoView({block:'start'});}else if(target&&/^public-/.test(hash)){$('public-topic-picker').value=tableCategory(hash,'public');applyTopics('public');target.scrollIntoView({block:'start'});}
 }catch(e){const status=$('gce-loading');if(status)status.textContent=L('The published data could not be loaded. Please reload the page.','Impossible de charger les données publiées. Veuillez recharger la page.');console.error('GC Equity data tables:',e);}})();
 })();
