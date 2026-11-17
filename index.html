@@ -13,13 +13,16 @@
 <script>(function(){try{var theme=localStorage.getItem('gcEquityTheme');if(theme==='dark'||theme==='contrast')document.documentElement.dataset.theme=theme;var p=new URLSearchParams(location.search).get('lang');document.documentElement.lang=p==='fr'||p==='en'?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}})();</script>
 <link rel="stylesheet" href="gc-workspace.css?v=20261116-2">
 <link rel="stylesheet" href="gc-dashboard.css?v=20261116-2">
+<link rel="stylesheet" href="gc-data-assistant.css?v=20261117-1">
 <script src="gc-ai.js" defer></script>
-<script src="gc-workspace.js?v=20261116-2" defer></script>
+<script src="gc-workspace.js?v=20261117-1" defer></script>
 <script src="gc-data-library.js?v=20261116-2" defer></script>
 <script src="gc-org-sources.js?v=20261116-2" defer></script>
 <script src="gc-restored-sources.js?v=20261116-2" defer></script>
 <script src="gc-added-sources.js?v=20261116-2" defer></script>
 <script src="gc-dashboard.js?v=20261116-3" defer></script>
+<script src="gc-data-assistant-flow.js?v=20261117-1" defer></script>
+<script src="gc-data-assistant.js?v=20261117-1" defer></script>
 </head>
 <body class="gcw-page">
 <main id="gcw-home" class="gcw-frame gcw-landing">
@@ -29,6 +32,7 @@
 <h1 data-gce-en="Equity data in the federal public service" data-gce-fr="Données sur l’équité dans la fonction publique fédérale">Equity data in the federal public service</h1>
 <p class="gcw-lede" data-gce-en="Find out who works in the federal public service, what employees report about their workplace, and what organizations have committed to change." data-gce-fr="Découvrez qui travaille dans la fonction publique fédérale, ce que les employés disent de leur milieu de travail et les changements auxquels les organismes se sont engagés.">Find out who works in the federal public service, what employees report about their workplace, and what organizations have committed to change.</p>
 <p class="gce-intro-note" data-gce-en="An independent resource based on published Government of Canada data. Each table identifies its source and reporting period." data-gce-fr="Une ressource indépendante fondée sur des données publiées du gouvernement du Canada. Chaque tableau indique sa source et sa période de référence.">An independent resource based on published Government of Canada data. Each table identifies its source and reporting period.</p>
+<p><a href="#data-assistant" class="gca-intro-entry" data-gce-en="Help me find the right data" data-gce-fr="Aidez-moi à trouver les bonnes données">Help me find the right data</a></p>
 </header>
 <nav class="gce-two-choices" aria-label="Main data areas" data-gce-aria-en="Main data areas" data-gce-aria-fr="Principaux domaines de données">
 <article class="gce-choice">
@@ -55,6 +59,7 @@
 </ul>
 </article>
 </nav>
+<section id="data-assistant" aria-labelledby="gca-title"><h2 id="gca-title">GC Equity data assistant / Assistant de données Équité-GC</h2><p>Enable JavaScript to use the guided dataset finder. The data tables below remain available. / Activez JavaScript pour utiliser la recherche guidée. Les tableaux ci-dessous restent disponibles.</p></section>
 <details id="understand-data" class="gce-primer">
 <summary data-gce-en="New to these data? Choose the right source" data-gce-fr="Vous découvrez ces données? Choisissez la bonne source">New to these data? Choose the right source</summary>
 <div class="gce-primer-body">
