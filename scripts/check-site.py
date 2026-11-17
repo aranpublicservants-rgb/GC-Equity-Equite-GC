@@ -208,3 +208,7 @@ for name in ['gc-workspace.js','gc-workspace.css','gc-dashboard.css','gc-dashboa
 subprocess.run(['node','scripts/check-workspace.mjs'],cwd=ROOT,check=True)
 subprocess.run(['node','scripts/check-findings.js'],cwd=ROOT,check=True)
 print(f'PASS: all published pages, local assets, JavaScript, published-data checksums, {meta["totalRows"]:,} branch rows, {len(index["docs"])} search entries, {len(orgs)} Call to Action records with {len(findings)} findings checked against the data, {len(pcat['files'])} Public Service Commission files, and snapshot provenance')
+
+# The assistant must index the source files shipped in this revision.
+subprocess.run(["python3","scripts/build-assistant-catalogue.py","--check"],cwd=ROOT,check=True)
+subprocess.run(["node","--test","tests/data-assistant.test.cjs"],cwd=ROOT,check=True)
