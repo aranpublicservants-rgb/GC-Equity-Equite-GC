@@ -92,9 +92,47 @@ text = (DFO / 'index.html').read_text()
 page.feed(text)
 assert len(page.ids) == len(set(page.ids))
 assert all(anchor in page.ids for anchor in page.anchors)
-assert page.sections == 30 and page.tables == page.captions
+assert page.sections == 32 and page.tables == page.captions
 assert not re.search(r'kakyze|Coast Guard scopeily|35 respondents|few dozen', text, re.I)
-for name in ['app.js', 'site.css', 'action-tracker-en.csv', 'action-tracker-fr.csv']:
+for name in ['app.js', 'explore.js', 'guide-model.js', 'site.css', 'action-tracker-en.csv', 'action-tracker-fr.csv']:
     assert (DFO / name).is_file()
-subprocess.run(['node', '--check', str(DFO / 'app.js')], check=True)
+for script in ['app.js', 'explore.js', 'guide-model.js']:
+    subprocess.run(['node', '--check', str(DFO / script)], check=True)
+subprocess.run(['node', str(ROOT / 'scripts/check-dfo-guide.cjs')], check=True)
 print(f'PASS: {len(catalogue["files"])} DFO source files, {total:,} records, all source hashes, employer isolation, official summary cells, suppression, bilingual sections, anchors and captions')
+
+# Visuals must use source values and preserve population distinctions.
+visuals = json.loads((DFO / 'data/visuals.json').read_text())
+assert len(visuals['representation']) == 5
+assert visuals['representation'][1]['values'] == [7.8, 7.6, 9.0, 9.8, 12.4]
+assert visuals['representation'][1]['wfa'] == 15.3
+assert visuals['representation'][4]['wfa'] is None
+assert visuals['representation'][4]['counts'][-1] == 188
+assert [x['total'] for x in visuals['fte']] == [14880, 11230, 6892]
+assert all(sum(v for v in x['values'] if v is not None) == x['total'] for x in visuals['fte'])
+assert visuals['fte'][-1]['values'][2:4] == [None, None]
+assert text.count('class="evidence-chart"') == 12
+assert text.count('class="data-guide"') == 2
+assert 'aria-controls="accessibility-panel"' in text
+assert all('href="'+visuals['sources'][key][lang]+'"' in text for key in ['act','commitment','snapshot','transition'] for lang in ['en','fr'])
+print('PASS: chart values, FTE scope, direct bilingual sources, accessibility controls and click-through guide')
+
+# Cross-check the chart view against retained official department series.
+canonical = json.loads((ROOT / 'data/tbs-departmental-representation-2017-2025.json').read_text())['orgs']['Fisheries and Oceans Canada']
+for group in visuals['representation']:
+    key = {'ind': 'i', 'pwd': 'd', 'rac': 'v', 'black': 'b'}.get(group['id'])
+    if key:
+        assert group['values'] == [canonical[key][str(year)][2] for year in visuals['years']]
+        assert group['counts'] == [canonical[key][str(year)][1] for year in visuals['years']]
+        if group['wfa'] is not None:
+            assert group['wfa'] == canonical[key]['2025'][3]
+with gzip.open(ROOT / 'data/open-canada-2026-11/pses-2024/subset-1-sous-ensemble-1.csv.gz', 'rt', encoding='cp1252', newline='') as stream:
+    expected = {}
+    for row in csv.DictReader(stream):
+        if row['SURVEYR'] == '2024' and row['LEVEL1ID'].lstrip('0') == '5' and all(row[k] == '0' for k in ['LEVEL2ID','LEVEL3ID','LEVEL4ID','LEVEL5ID']) and not row['BYCOND'] and row['QUESTION'] in summary['definitions']:
+            question = row['QUESTION']
+            expected[question] = {'value': row[summary['definitions'][question]['field']], 'n': row['ANSCOUNT']}
+assert visuals['overall'] == expected
+staffing = json.loads((ROOT / 'data/snps-2025-by-organization.json').read_text())['orgs']['Fisheries and Oceans Canada']
+assert visuals['staffing']['values'] == {key: value for key, value in staffing.items() if key != 'fr'}
+print('PASS: chart series match retained TBS, overall PSES and staffing-source values')
