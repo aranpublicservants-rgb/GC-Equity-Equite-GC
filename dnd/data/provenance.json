@@ -1,0 +1,52 @@
+{
+  "reviewed": "2026-11-18",
+  "sourceFamilies": [
+    {
+      "family": "dnd-library",
+      "files": 154,
+      "rows": 584629
+    },
+    {
+      "family": "dnd-culture",
+      "files": 234,
+      "rows": 21703
+    },
+    {
+      "family": "dnd-workforce-data",
+      "files": 50,
+      "rows": 747
+    },
+    {
+      "family": "dnd-experience-extra",
+      "files": 284,
+      "rows": 2350
+    }
+  ],
+  "sourceFiles": 806,
+  "sourceRows": 609697,
+  "civilianEmployerId": "3",
+  "branchUnits": 25,
+  "branchSourceRows": 91701,
+  "employeeGroups": 167,
+  "intentionalExclusions": [],
+  "cultureCoverage": {
+    "pages": 40,
+    "tables": 234,
+    "sourceAmbiguitiesRetained": true
+  },
+  "experienceReviewLimits": [
+    "SSMCAF2022 detailed HTML table1 returned HTTP403 in this session; the main article chart tables and linked official full report remain retained.",
+    "No private respondent-level records were requested or reconstructed.",
+    "Service-client measures, military-college students, CAF populations and civilian public servants are separate populations."
+  ],
+  "populationRules": [
+    "Civilian, CAF, departmental, public-opinion and program records retain separate source populations.",
+    "Language versions and historical editions can overlap. File counts are not counts of independent studies.",
+    "Missing or suppressed figures are not zero. No headcounts are calculated from rounded percentages.",
+    "Private Drive documents are not published. Official public originals and public source records are used."
+  ],
+  "referenceIndex": {
+    "source": "https://www.canada.ca/en/department-national-defence/services/conduct-and-culture/conduct-and-culture-data-centre/list-refernce-reports-datasource-conduct-culture-datacentre.html",
+    "description": "Source references are not counted as separate datasets; network-only references are excluded from the public register."
+  }
+}
