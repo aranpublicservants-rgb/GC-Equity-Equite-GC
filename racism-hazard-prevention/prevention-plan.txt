@@ -65,3 +65,13 @@ Day 90: effectiveness, unresolved risks and reporting.
 Respect legal timelines, including reviews triggered before regular cycles.
 
 Do not enter a diagnosis or unnecessary personal information in this template.
+
+
+CHECKS TO RECORD
+- Five-question test: condition, people exposed, foreseeable harm, corroborating and contradictory evidence, decision and interim protection.
+- Suggested priority (1, 2 or 3), reasons and separate legal deadlines. Act immediately in an emergency.
+- Section 19.5 order: eliminate, reduce/isolate, personal protection, administrative procedures. Record reasons for options not used.
+- Exclude protected EEA self-identification source records and derived person-level extracts. GBA Plus does not authorize reuse.
+- Access, suppression, source, denominator, period and steward for each dataset.
+- Prescribed committee participation, recommendation response and escalation of disagreement.
+- Suggested closure: practice examined, controls in operation, side effects checked, reduced exposure, decision-maker and follow-up.

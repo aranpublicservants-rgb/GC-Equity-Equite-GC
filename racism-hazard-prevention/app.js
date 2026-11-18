@@ -8,11 +8,14 @@ function updateChecks(){var n=checks.filter(function(c){return c.checked;}).leng
 checks.forEach(function(c){c.addEventListener("change",updateChecks);});
 document.querySelectorAll("[data-print]").forEach(function(b){b.hidden=false;b.addEventListener("click",function(){window.print();});});
 var reset=document.querySelector("[data-reset-checks]");
-if(reset){reset.hidden=false;reset.addEventListener("click",function(){checks.forEach(function(c){c.checked=false;});updateChecks();});}
+if(reset){reset.hidden=false;reset.addEventListener("click",function(){checks.forEach(function(c){c.checked=false;});var notes=document.getElementById("check-notes");if(notes)notes.value="";updateChecks();});}
+updateChecks();
 var form=document.getElementById("hazard-form"),status=document.getElementById("form-status");
 function getRows(){return Array.from(form.querySelectorAll("input,textarea")).map(function(el){return [form.querySelector('label[for="'+el.id+'"]').textContent,el.value];});}
 function saveFile(content,type,name){var url=URL.createObjectURL(new Blob([content],{type:type}));var a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},5000);status.textContent=fr?"Téléchargement demandé. Vérifiez les téléchargements de votre navigateur.":"Download requested. Check your browser’s downloads.";}
 function csvCell(value){var text=String(value);if(/^[\s]*[=+@-]/.test(text))text="'"+text;return '"'+text.replace(/"/g,'""')+'"';}
+var checklistButton=document.getElementById("download-checklists");
+if(checklistButton){checklistButton.hidden=false;checklistButton.addEventListener("click",function(){var title=fr?"Vérification des mesures et des données":"Measure and data review";var rows=checks.map(function(c){return (c.checked?"[x] ":"[ ] ")+c.parentElement.querySelector("span").textContent;});var notes=document.getElementById("check-notes");saveFile(title+"\n\n"+rows.join("\n")+"\n\n"+(fr?"Notes et suivi":"Notes and follow-up")+"\n"+(notes?notes.value:""),"text/plain;charset=utf-8",fr?"listes-verification-prevention.txt":"prevention-review-checklists.txt");});}
 var txtButton=document.getElementById("download-record"),csvButton=document.getElementById("download-csv");
 txtButton.hidden=false;csvButton.hidden=false;
 txtButton.addEventListener("click",function(){var title=fr?"Fiche de prévention des risques":"Hazard prevention record";saveFile(title+"\n\n"+getRows().map(function(r){return r[0]+"\n"+r[1];}).join("\n\n"),"text/plain;charset=utf-8",fr?"fiche-prevention.txt":"hazard-prevention-record.txt");});
