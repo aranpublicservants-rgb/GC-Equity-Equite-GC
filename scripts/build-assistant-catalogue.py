@@ -95,6 +95,11 @@ for path,en,fr,topics,details,gs,view in [
  if 'representation-2017' in path:e['organizations']=list(J(path)['orgs'])
  if 'snps-2025' in path:e['organizations']=list(J(path)['orgs'])
  if 'call-to-action-letters' in path:e['organizations']=[o.get('site_name') or o.get('plan_name') or o['name_en'] for o in J(path)['organizations']]
+# The 27-question department-level survey reading profiles use original cells.
+profile=J('assets/department-profile-index.json')
+e=add('assets/department-profile-index.json','2024 employee experience: accommodation, mental health, harassment and discrimination','Expérience des employés en 2024 : adaptation, santé mentale, harcèlement et discrimination',source=profile['sources']['groups'],period='2024',partitions={n:v['path'] for n,v in profile['organizations'].items()},topics=['experience'],details=['harassment','discrimination','accommodation','barriers'],groups=['w','i','d','v','b','man','lgbt'],view='org-profile-surveys',kind='summary',scan=False)
+e['scopes']=['org'];e['organizations']=list(profile['organizations']);e['preview']='dashboard'
+for name,record in profile['organizations'].items():org(name,record['fr'])
 # Branch-level survey and the separately verified DFO source collection.
 branch=json.loads(re.search(r'<script type="application/json" id="eq-branch-meta">(.*?)</script>',(R/'explorer.html').read_text(),re.S)[1])
 e=add('explorer.html','2024 employee survey by organization, branch and employee group','Sondage de 2024 par organisme, direction et groupe',source='branch-equity.html',period='2024',topics=['experience'],details=['harassment','discrimination','accommodation','barriers'],groups=['w','i','d','v','b','man','lgbt'],view='org-branches',kind='summary',scan=False)

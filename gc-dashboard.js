@@ -113,6 +113,9 @@ async function load(){
   ['pscTenure','data/psc/ar2a.csv','csv'],
   ['pscOfficialLanguage','data/psc/demo_fol.csv','csv'],
   ['orglist','assets/federal-organizations-2026-10-15.json','json'],
+  ['profileIndex','assets/department-profile-index.json','json'],
+  ['publications','assets/department-publication-links.json','json'],
+  ['departmentExecutives','data/restored/16c75ddc-475b-4e62-b883-d5517181c9cf.csv','csv'],
   ['series','data/tbs-departmental-representation-2017-2025.json','json'],
   ['snps','data/snps-2025-by-organization.json','json'],
   ['cta','data/call-to-action-letters.json','json'],
@@ -141,6 +144,9 @@ function statusTable(name){
  const coverage=[
  [L('Treasury Board workforce representation, 2017–2025','Représentation de l’effectif du Conseil du Trésor, 2017-2025'),!!findEntry(D.series.orgs,name),L('Core public administration','Administration publique centrale')],
  [L('2024 employee survey, organization','Sondage de 2024 auprès des employés, par organisme'),!!findEntry(D.model.PSES_DEPT,name),L('Survey respondents','Répondants au sondage')],
+ [L('2024 detailed survey: accommodation, mental health and workplace experiences','Sondage détaillé de 2024 : adaptation, santé mentale et expériences au travail'),!!findEntry(D.profileIndex.organizations,name),L('27 questions; published department-level response counts','27 questions; nombres de réponses publiés au niveau ministériel')],
+ [L('2024 detailed employee-group survey results','Résultats détaillés du sondage de 2024 selon le groupe'),(findEntry(D.profileIndex.organizations,name)?.groups||0)>0,L('Published respondent groups, including identities and intersections','Groupes de répondants publiés, y compris identités et intersections')],
+ [L('Original organization-specific staffing source files','Fichiers sources originaux de dotation propres à l’organisme'),D.pscOrgIndex.files.some(f=>Object.keys(f.organizations||{}).some(n=>norm(n)===norm(name))),L('Only rows explicitly naming this organization','Lignes nommant explicitement cet organisme seulement')],
  [L('2025 staffing experiences by group','Expérience de la dotation de 2025 selon le groupe'),!!findEntry(D.snps.orgs,name),L('Staffing survey respondents','Répondants au sondage sur la dotation')],
  [L('PSEA workforce by organization','Effectif selon la LEFP par organisme'),D.pscPopulation.some(x=>norm(x.organization_e)===norm(name)),L('PSEA workforce','Effectif assujetti à la LEFP')],
  [L('Appointments by first official language','Nominations selon la première langue officielle'),D.pscOfficialLanguage.some(x=>norm(x.department_e)===norm(name)),L('Appointees in staffing data','Personnes nommées dans les données de dotation')],
@@ -549,6 +555,7 @@ function renderOrg(){
  if(related)related.hidden=showDepartment;
  if(showDepartment){dropTables('public-output');$('public-output').innerHTML='';}
  if(!selected){
+  window.GCEDepartmentProfile?.cancel();
   const announce=$('org-view-status');if(announce)announce.textContent=L('No department is selected.','Aucun ministère n’est sélectionné.');
   extraOrgRequest++;branchRequest++;
   window.GCEOrgSources?.render(null);
@@ -561,15 +568,21 @@ function renderOrg(){
  }
  const name=selected;const p=D.model.DEPTS.find(z=>norm(z[0])===norm(name));
  const announce=$('org-view-status');if(announce)announce.textContent=L('Showing published data for ','Affichage des données publiées pour ')+deptName(name)+'.';
- const meta='<p class="gce-summary">'+escape(deptName(name))+(p?' · '+L('Published workforce 2025','Effectif publié en 2025')+': '+N(p[1]):'')+'</p>';
+ const profile=window.GCEDepartmentProfile;
+ const context={name,displayName:deptName(name),group:selectGroup('org'),groupLabel:groupWord(selectGroup('org')),D,findEntry,norm,record:recordFor(name),plan:planFor(name),table,sCard,source,dropTables};
+ const meta=profile?profile.header(context):'<p class="gce-summary">'+escape(deptName(name))+'</p>';
  const s=sCard('org-coverage',L('Published data coverage for the selected organization','Données publiées disponibles pour l’organisme sélectionné'),
  L('Only records explicitly attributed to this organization are included here. Each source may use a different workforce population and reporting period. Public service-wide figures appear only in the separate equity section when no organization is selected.','Seules les données explicitement attribuées à cet organisme figurent ici. Les sources peuvent utiliser des populations et périodes de référence différentes. Les chiffres visant l’ensemble de la fonction publique sont affichés dans la section générale lorsqu’aucun organisme n’est sélectionné.'),
  statusTable(name),L('Federal government department and agency directory','Répertoire des ministères et organismes fédéraux'),'https://www.canada.ca/en/government/dept.html');
- const dfoProfile=name==='Fisheries and Oceans Canada'?'<p class="gce-explain"><a href="dfo/?lang='+(lang()?'fr':'en')+'">'+L('DFO evidence profile: workforce, employee experience, commitments and all DFO source files','Profil du MPO : effectif, expérience des employés, engagements et tous les fichiers sources du MPO')+'</a></p>':'';
- out.innerHTML=meta+dfoProfile+s+representation(name)+womenRepresentationForDept(name)+trendTables(name)+subgroupTables(name)+
+ const dedicated=norm(name)===norm('Fisheries and Oceans Canada')?['dfo/','DFO / MPO']:norm(name)===norm('National Defence')?['dnd/','DND / MDN']:null;
+ const dedicatedLink=dedicated?'<p class="gce-profile-dedicated"><a href="'+dedicated[0]+'?lang='+(lang()?'fr':'en')+'">'+escape(L('Additional '+dedicated[1]+' publications and specialized datasets','Publications et jeux de données spécialisés supplémentaires du '+dedicated[1]))+'</a></p>':'';
+ const empty=(id,en,fr)=>sCard(id,L(en,fr),L('No corresponding result is indexed for this organization in the selected source collection. See the source register for coverage.','Aucun résultat correspondant n’est indexé pour cet organisme dans les sources retenues. Consultez le registre des sources pour la couverture.'),'<p class="gce-unavailable">'+escape(missing())+'</p>');
+ const surveyProfile='<section id="org-profile-surveys" class="gce-data-block" data-gce-topics="experience"><h3>'+escape(L('Employee experience in detail, 2024','Expérience des employés en détail, 2024'))+'</h3><p role="status">'+escape(L('Loading this organization’s survey results…','Chargement des résultats du sondage pour cet organisme…'))+'</p></section>';
+ out.innerHTML=meta+dedicatedLink+(profile?'<section id="org-profile-findings" class="gce-data-block" data-gce-always="true"></section>':'')+
+ (representation(name)||empty('org-representation','Workforce representation','Représentation au sein de l’effectif'))+womenRepresentationForDept(name)+trendTables(name)+subgroupTables(name)+(profile?profile.executives(context):'')+
  (selectGroup('org')==='all'?pscPopulationOrg(name)+pscLanguageOrg(name):'')+
- psesTables(name)+staffingTables(name)+(selectGroup('org')==='all'?hiringTable(name):'')+
- ctaTables(name)+ctaComparisonOrg(name)+plansTable(name);
+ (profile?surveyProfile:'')+psesTables(name)+(staffingTables(name)||empty('org-staffing','Hiring and advancement','Embauche et avancement'))+(selectGroup('org')==='all'?hiringTable(name):'')+
+ (ctaTables(name)||empty('org-cta','Commitments and employee voices','Engagements et voix des employés'))+ctaComparisonOrg(name)+(profile?profile.reports(context):'')+plansTable(name);
  if(selectGroup('org')==='all'){
   const extra=document.createElement('div');extra.id='org-additional-psc';out.append(extra);renderAdditionalOrgData(name);
  }else extraOrgRequest++;
@@ -580,6 +593,8 @@ function renderOrg(){
  const restoredWorkforce=document.createElement('div');restoredWorkforce.id='org-restored-workforce';out.append(restoredWorkforce);
  const restoredSurveys=document.createElement('div');restoredSurveys.id='org-restored-surveys';out.append(restoredSurveys);
  window.GCERestoredSources?.render(name,deptName(name),selectGroup('org'));
+ out.insertAdjacentHTML('beforeend',s+(profile?profile.action(context):''));
+ profile?.mount(context);
  const url=new URL(location.href);url.searchParams.set('org',name);
  if(/^#(?:equity-data|public-|related-public-resources)/.test(url.hash))url.hash='department-data';
  history.replaceState(null,'',url.pathname+url.search+url.hash);
@@ -838,6 +853,8 @@ function filterOrganizations(){
 }
 function tableCategory(id,scope){
  if(scope==='org'){
+  if(id==='org-profile-surveys')return 'experience';
+  if(id==='org-profile-reports')return 'plans';
   if(/^(org-coverage|org-complete-sources|org-added-sources)$/.test(id))return 'sources';
   if(/(?:org-branches|org-survey|org-staffing)/.test(id))return 'experience';
   if(id==='org-restored-surveys')return 'experience';
@@ -858,7 +875,8 @@ function applyTopics(scope){
  const targets=scope==='org'?[...wrapper.children].filter(el=>el.id||el.classList.contains('gce-data-block')):[...wrapper.children].filter(el=>el.classList.contains('gce-data-block'));
  for(const el of targets){
   if(!el.id||el.classList.contains('gce-summary'))continue;
-  const categories=el.id==='public-added-sources'?['workforce','experience','staffing','sources']:el.id==='org-added-sources'?['workforce','sources']:el.id==='org-additional-psc'?['workforce','staffing']:el.id==='org-staffing'?['experience','staffing']:el.id==='public-staffing-survey'?['experience','staffing']:el.id==='public-workforce-flow'?['workforce','staffing']:tableCategory(el.id,scope)==='sources'?['sources']: [tableCategory(el.id,scope)];
+  if(el.dataset.gceAlways==='true'){el.hidden=false;continue;}
+  const categories=el.dataset.gceTopics?el.dataset.gceTopics.split(' '):el.id==='org-profile-action'?['workforce','experience','staffing','commitments','plans','sources']:el.id==='public-added-sources'?['workforce','experience','staffing','sources']:el.id==='org-added-sources'?['workforce','sources']:el.id==='org-additional-psc'?['workforce','staffing']:el.id==='org-staffing'?['experience','staffing']:el.id==='public-staffing-survey'?['experience','staffing']:el.id==='public-workforce-flow'?['workforce','staffing']:tableCategory(el.id,scope)==='sources'?['sources']: [tableCategory(el.id,scope)];
   el.hidden=value!=='all'&&!categories.includes(value);
   el.querySelectorAll('[data-gce-topics]').forEach(child=>{child.hidden=value!=='all'&&!child.dataset.gceTopics.split(' ').includes(value);});
  }
@@ -875,12 +893,12 @@ function applyTopics(scope){
 }
 function updateSectionIndex(scope,targets){
  const host=$(scope+'-section-index');if(!host)return;
- const sections=targets.filter(el=>!el.hidden&&el.id&&el.querySelector('h3'));
+ const sections=targets.filter(el=>!el.hidden&&el.id&&el.querySelector('h3')&&!el.classList.contains('gce-profile-hero'));
  const signature=(lang()?'fr':'en')+'|'+sections.map(el=>el.id+'|'+el.querySelector('h3').textContent).join('|');
  if(host.dataset.signature===signature)return;
- const opened=host.querySelector('details')?.open??true;
+ const opened=host.querySelector('details')?.open??(scope!=='org');
  host.dataset.signature=signature;host.hidden=!sections.length;
- host.innerHTML=sections.length?'<details'+(opened?' open':'')+'><summary>'+escape(L('On this page','Sur cette page'))+'</summary><nav aria-label="'+escape(L('Data sections','Sections de données'))+'"><ul>'+sections.map(el=>'<li><a href="#'+el.id+'">'+escape(el.querySelector('h3').textContent)+'</a></li>').join('')+'</ul></nav></details>':'';
+ host.innerHTML=sections.length?'<details'+(opened?' open':'')+'><summary>'+escape(scope==='org'?L('Detailed table index','Index détaillé des tableaux'):L('On this page','Sur cette page'))+'</summary><nav aria-label="'+escape(L('Data sections','Sections de données'))+'"><ul>'+sections.map(el=>'<li><a href="#'+el.id+'">'+escape(el.querySelector('h3').textContent)+'</a></li>').join('')+'</ul></nav></details>':'';
 }
 function syncSelectionURL(){
  const scope=selected?'org':'public',url=new URL(location.href);

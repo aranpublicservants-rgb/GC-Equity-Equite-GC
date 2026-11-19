@@ -213,3 +213,5 @@ print(f'PASS: all published pages, local assets, JavaScript, published-data chec
 # The assistant must index the source files shipped in this revision.
 subprocess.run(["python3","scripts/build-assistant-catalogue.py","--check"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/data-assistant.test.cjs"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-department-profiles.py"],cwd=ROOT,check=True)
+subprocess.run(["node","tests/department-profile.test.cjs"],cwd=ROOT,check=True)

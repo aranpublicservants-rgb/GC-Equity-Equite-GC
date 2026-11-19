@@ -1,0 +1,887 @@
+{
+  "schema": 1,
+  "period": "2024",
+  "definitions": {
+    "Q12": {
+      "en": "Question 12. Overall, I feel valued at work.",
+      "fr": "Question 12. Dans l'ensemble, je me sens valorisé(e) au travail.",
+      "field": "POSITIVE"
+    },
+    "Q24": {
+      "en": "Question 24. In my work unit, I would feel safe to speak about racism in the workplace without fear of reprisal or negative impact on my career.",
+      "fr": "Question 24. Dans mon unité de travail, je me sentirais à l’aise de parler de racisme en milieu de travail sans crainte de représailles ou d’impact négatif sur ma carrière.",
+      "field": "POSITIVE"
+    },
+    "Q25": {
+      "en": "Question 25. In my work unit, I would feel safe to speak about racism in the workplace without negative impact on my mental health.",
+      "fr": "Question 25. Dans mon unité de travail, je me sentirais à l’aise de parler de racisme en milieu de travail sans impact négatif sur ma santé mentale.",
+      "field": "POSITIVE"
+    },
+    "Q42": {
+      "en": "Question 42. I feel I can initiate a formal recourse process (e.g., grievance, complaint, appeal) without fear of reprisal.",
+      "fr": "Question 42. J'estime pouvoir amorcer un processus de recours officiel (p. ex. grief, plainte, droit d'appel) sans crainte de représailles.",
+      "field": "POSITIVE"
+    },
+    "Q43": {
+      "en": "Question 43. My department or agency does a good job of supporting employee career development.",
+      "fr": "Question 43. Mon ministère ou organisme met tout en œuvre pour appuyer ses employé(e)s dans leur perfectionnement professionnel.",
+      "field": "POSITIVE"
+    },
+    "Q44e": {
+      "en": "Question 44e. To what extent have the following adversely affected your career progress in the federal public service over the last 12 months? Accommodation issues",
+      "fr": "Question 44e. Dans quelle mesure estimez-vous que les éléments suivants ont nui à la progression de votre carrière au sein de la fonction publique fédérale au cours des 12 derniers mois? Problèmes d'adaptation",
+      "field": "NEGATIVE"
+    },
+    "Q45": {
+      "en": "Question 45. I believe I have opportunities for promotion within my department or agency, given my education, skills and experience.",
+      "fr": "Question 45. J'estime avoir des possibilités d'obtenir une promotion au sein de mon ministère ou organisme, compte tenu de ma scolarité, de mes compétences et de mon expérience.",
+      "field": "POSITIVE"
+    },
+    "Q47": {
+      "en": "Question 47. I think that my department or agency respects individual differences (e.g., culture, work styles, ideas, abilities).",
+      "fr": "Question 47. Je crois que mon ministère ou organisme respecte les différences individuelles (p. ex. la culture, les méthodes de travail, les idées, les habiletés).",
+      "field": "POSITIVE"
+    },
+    "Q49": {
+      "en": "Question 49. My department or agency implements initiatives that promote anti-racism in the workplace.",
+      "fr": "Question 49. Mon ministère ou organisme met en œuvre des initiatives qui favorisent la lutte contre le racisme dans le milieu de travail.",
+      "field": "POSITIVE"
+    },
+    "Q51": {
+      "en": "Question 51. I feel that racism in my department or agency has had an adverse or negative impact on my mental health.",
+      "fr": "Question 51. J’estime que le racisme dans mon ministère ou organisme a eu une incidence négative sur ma santé mentale.",
+      "field": "NEGATIVE"
+    },
+    "Q52": {
+      "en": "Question 52. I feel that the Call to Action on Anti-Racism, Equity and Inclusion has had a positive impact in my department or agency, since it launched in January 2021.",
+      "fr": "Question 52. J’estime que l’Appel à l’action en faveur de la lutte contre le racisme, de l’équité et de l’inclusion a eu un impact positif au sein de mon ministère ou organisme depuis son lancement, en janvier 2021.",
+      "field": "POSITIVE"
+    },
+    "Q53": {
+      "en": "Question 53. Overall, my department or agency treats me with respect.",
+      "fr": "Question 53. Dans l'ensemble, mon ministère ou organisme me traite avec respect.",
+      "field": "POSITIVE"
+    },
+    "Q58": {
+      "en": "Question 58. Having carefully read the definition of harassment above, have you been the victim of harassment on the job in the past 12 months?",
+      "fr": "Question 58. Après avoir lu attentivement la définition du harcèlement ci-dessus, au cours des 12 derniers mois, avez-vous été victime de harcèlement au travail?",
+      "field": "ANSWER1"
+    },
+    "Q63": {
+      "en": "Question 63. I am satisfied with how matters related to harassment are resolved in my department or agency.",
+      "fr": "Question 63. Je suis satisfait(e) de la manière dont les problèmes de harcèlement sont réglés dans mon ministère ou organisme.",
+      "field": "POSITIVE"
+    },
+    "Q65": {
+      "en": "Question 65. Having carefully read the definition of discrimination above, have you been the victim of discrimination on the job in the past 12 months?",
+      "fr": "Question 65. Après avoir lu attentivement la définition de la discrimination ci-dessus, au cours des 12 derniers mois, avez-vous été victime de discrimination au travail?",
+      "field": "ANSWER1"
+    },
+    "Q70": {
+      "en": "Question 70. I am satisfied with how matters related to discrimination are resolved in my department or agency.",
+      "fr": "Question 70. Je suis satisfait(e) de la manière dont les problèmes de discrimination sont réglés dans mon ministère ou organisme.",
+      "field": "POSITIVE"
+    },
+    "Q72": {
+      "en": "Question 72. I am satisfied with how concerns or complaints about racism in the workplace are resolved in my department or agency.",
+      "fr": "Question 72. Je suis satisfait(e) de la façon dont les préoccupations ou les plaintes au sujet du racisme en milieu de travail sont réglées par mon ministère ou organisme.",
+      "field": "POSITIVE"
+    },
+    "Q73p": {
+      "en": "Question 73p. Overall, to what extent do the following factors cause you work-related stress? Accommodation issues",
+      "fr": "Question 73p. Dans l'ensemble, dans quelle mesure les facteurs suivants vous causent-ils du stress au travail? Problèmes d'adaptation",
+      "field": "NEGATIVE"
+    },
+    "Q73q": {
+      "en": "Question 73q. Overall, to what extent do the following factors cause you work-related stress? Harassment or discrimination",
+      "fr": "Question 73q. Dans l'ensemble, dans quelle mesure les facteurs suivants vous causent-ils du stress au travail? Harcèlement ou discrimination",
+      "field": "NEGATIVE"
+    },
+    "Q77": {
+      "en": "Question 77. In general, how is your mental health?",
+      "fr": "Question 77. En général, comment est votre santé mentale?",
+      "field": "POSITIVE"
+    },
+    "Q78": {
+      "en": "Question 78. My immediate supervisor supports my mental health and well-being.",
+      "fr": "Question 78. Mon (ma) superviseur(e) immédiat(e) soutient ma santé mentale et mon bien-être.",
+      "field": "POSITIVE"
+    },
+    "Q81": {
+      "en": "Question 81. I would describe my workplace as being psychologically healthy.",
+      "fr": "Question 81. Je dirais que mon milieu de travail est sain sur le plan psychologique.",
+      "field": "POSITIVE"
+    },
+    "Q84": {
+      "en": "Question 84. Having carefully read the definition of duty to accommodate, have you requested workplace accommodation measures in the last two years?",
+      "fr": "Question 84. Après avoir lu attentivement la définition de l'obligation de prendre des mesures d'adaptation, au cours des deux dernières années, avez-vous demandé des mesures d'adaptation en milieu de travail?",
+      "field": "ANSWER1"
+    },
+    "Q85": {
+      "en": "Question 85. Were the requests for workplace accommodation measures related to a disability?",
+      "fr": "Question 85. Les mesures d'adaptation en milieu de travail qui ont fait l'objet d'une demande étaient-elles liées à une incapacité?",
+      "field": "ANSWER1"
+    },
+    "Q86": {
+      "en": "Question 86. Were any workplace accommodation measures implemented?",
+      "fr": "Question 86. Est-ce que des mesures d'adaptation quelconques ont été prises?",
+      "field": "ANSWER1"
+    },
+    "Q87": {
+      "en": "Question 87. I am satisfied with the workplace accommodation measures that were implemented.",
+      "fr": "Question 87. Je suis satisfait(e) par les mesures d'adaptation en milieu de travail qui ont été prises.",
+      "field": "POSITIVE"
+    },
+    "Q88": {
+      "en": "Question 88. I would feel comfortable requesting workplace accommodation measures from my immediate supervisor.",
+      "fr": "Question 88. Je me sentirais à l'aise de demander des mesures d'adaptation en milieu de travail auprès de mon (ma) superviseur(e) immédiat(e).",
+      "field": "POSITIVE"
+    }
+  },
+  "sources": {
+    "groups": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+    "overall": "data/open-canada-2026-11/pses-2024/subset-1-sous-ensemble-1.csv.gz",
+    "groupsSha256": "5eb2f3f4c12eea2eeaaa146c221202b5020513999cbebd037d7d467d45477f6b",
+    "overallSha256": "114d0a238786cfa4fd0923c21aef069d802f6bcdeb71e8fc7d321649991b91a9",
+    "overallPublisherUrl": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv"
+  },
+  "method": "Exact department-level 2024 source cells for 27 reading questions. Values and question response counts are retained as strings. Missing/suppressed values are never calculated. Groups overlap. These extracts do not reconcile the separate historical PSES assembly.",
+  "organizations": {
+    "Accessibility Standards Canada": {
+      "fr": "Normes d'accessibilité Canada",
+      "path": "data/department-profiles/accessibility-standards-canada-2f85390e.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "3d520994dc06303defd3f4ff303ab0b574bc58460499c118370411e85747c183"
+    },
+    "Administrative Tribunals Support Service of Canada": {
+      "fr": "Service canadien d'appui aux tribunaux administratifs",
+      "path": "data/department-profiles/administrative-tribunals-support-service-of-canada-7014b3d9.json.gz.b64",
+      "groups": 152,
+      "overallQuestions": 27,
+      "groupCells": 4104,
+      "sha256": "f5fd1ca2a7acc34b3d79add98fd9185133813aaa26350da080f8000ae6e50036"
+    },
+    "Agriculture and Agri-Food Canada": {
+      "fr": "Agriculture et Agroalimentaire Canada",
+      "path": "data/department-profiles/agriculture-and-agri-food-canada-0e7daf18.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "8a5a31878e9e9caecc0b36f2c6c93796c3102b099c65c961a2a90b42b654081a"
+    },
+    "Atlantic Canada Opportunities Agency": {
+      "fr": "Agence de promotion économique du Canada atlantique",
+      "path": "data/department-profiles/atlantic-canada-opportunities-agency-7b5c3ff8.json.gz.b64",
+      "groups": 148,
+      "overallQuestions": 27,
+      "groupCells": 3996,
+      "sha256": "beeb3e65999a0a7b42d4e90ed7314174bf059d189b1e88af5275cfe689f47c83"
+    },
+    "Canada Border Services Agency": {
+      "fr": "Agence des services frontaliers du Canada",
+      "path": "data/department-profiles/canada-border-services-agency-09a9c4e0.json.gz.b64",
+      "groups": 166,
+      "overallQuestions": 27,
+      "groupCells": 4482,
+      "sha256": "4288f1a8c052137f76fdcd366da721472b4a73d32e81c27bb21bcef509ab2f24"
+    },
+    "Canada Economic Development for Quebec Regions": {
+      "fr": "Développement économique Canada pour les régions du Québec",
+      "path": "data/department-profiles/canada-economic-development-for-quebec-regions-1bc1d590.json.gz.b64",
+      "groups": 151,
+      "overallQuestions": 27,
+      "groupCells": 4077,
+      "sha256": "faec446e478c36ae2558a40fc15139b59027810979f7f3976069d411bfaed22f"
+    },
+    "Canada Energy Regulator": {
+      "fr": "Régie de l’énergie du Canada",
+      "path": "data/department-profiles/canada-energy-regulator-5e722c04.json.gz.b64",
+      "groups": 144,
+      "overallQuestions": 27,
+      "groupCells": 3888,
+      "sha256": "eba50153412b41b943b0bbdb09385e818956b630ff70b2257231be2b2d3ec233"
+    },
+    "Canada Revenue Agency": {
+      "fr": "Agence du revenu du Canada",
+      "path": "data/department-profiles/canada-revenue-agency-90877950.json.gz.b64",
+      "groups": 168,
+      "overallQuestions": 27,
+      "groupCells": 4536,
+      "sha256": "ef845c4fcfe743fc26db2150743b1ab4c1fc399c715c4a3c18e3016716add949"
+    },
+    "Canada School of Public Service": {
+      "fr": "École de la fonction publique du Canada",
+      "path": "data/department-profiles/canada-school-of-public-service-bb70de34.json.gz.b64",
+      "groups": 152,
+      "overallQuestions": 27,
+      "groupCells": 4104,
+      "sha256": "b7f1ce507b65c1334934333277df43af992d34bb76876165d277b979cb336c7d"
+    },
+    "Canada Water Agency": {
+      "fr": "Agence de l'eau du Canada",
+      "path": "data/department-profiles/canada-water-agency-43826091.json.gz.b64",
+      "groups": 136,
+      "overallQuestions": 27,
+      "groupCells": 3672,
+      "sha256": "258bd3a27bc06dfbf0e1fe70872b6d715094ec0f1cdff8e601189550e04532c0"
+    },
+    "Canadian Dairy Commission": {
+      "fr": "Commission canadienne du lait",
+      "path": "data/department-profiles/canadian-dairy-commission-a4f62a07.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "93a9f65931313520985250c3404f663bbe22b641a02b4268231b9dfcd472600d"
+    },
+    "Canadian Food Inspection Agency": {
+      "fr": "Agence canadienne d'inspection des aliments",
+      "path": "data/department-profiles/canadian-food-inspection-agency-ba51d299.json.gz.b64",
+      "groups": 167,
+      "overallQuestions": 27,
+      "groupCells": 4509,
+      "sha256": "93a35283d05957b50c782483fc070d9eae8f5214ea25cfad60be14bc2c14b792"
+    },
+    "Canadian Grain Commission": {
+      "fr": "Commission canadienne des grains",
+      "path": "data/department-profiles/canadian-grain-commission-bb8c450a.json.gz.b64",
+      "groups": 147,
+      "overallQuestions": 27,
+      "groupCells": 3969,
+      "sha256": "b54611a5c04e2bd3541d6db5facaac7716e19a79dc3d2d7751365fffee7c7423"
+    },
+    "Canadian Heritage": {
+      "fr": "Patrimoine canadien",
+      "path": "data/department-profiles/canadian-heritage-f3f2492a.json.gz.b64",
+      "groups": 159,
+      "overallQuestions": 27,
+      "groupCells": 4293,
+      "sha256": "76d2c85314fdc6c02bc96e6d2736f07f416898303982a4d054a5d88b5eaa6088"
+    },
+    "Canadian Human Rights Commission": {
+      "fr": "Commission canadienne des droits de la personne",
+      "path": "data/department-profiles/canadian-human-rights-commission-129969f9.json.gz.b64",
+      "groups": 147,
+      "overallQuestions": 27,
+      "groupCells": 3969,
+      "sha256": "7af19cf7e169ad0350afb7f4370fbf2e7a160f024a0c297050213ac959536f1f"
+    },
+    "Canadian Institutes of Health Research": {
+      "fr": "Instituts de recherche en santé du Canada",
+      "path": "data/department-profiles/canadian-institutes-of-health-research-1a0fe73e.json.gz.b64",
+      "groups": 154,
+      "overallQuestions": 27,
+      "groupCells": 4158,
+      "sha256": "11ec747150910da19f651f47d98637e3e0582a098c7ee6aef0a91153e48f0424"
+    },
+    "Canadian Intergovernmental Conference Secretariat": {
+      "fr": "Secrétariat des conférences intergouvernementales canadiennes",
+      "path": "data/department-profiles/canadian-intergovernmental-conference-secretariat-3a77acdb.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "ac56f7e611d9b52181e49e0950c20e9b8ae6532b45b1909c799ec3f3f945b80b"
+    },
+    "Canadian Northern Economic Development Agency": {
+      "fr": "Agence canadienne de développement économique du Nord",
+      "path": "data/department-profiles/canadian-northern-economic-development-agency-3ecbae8f.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "674a4b73a1916a354b31cef278833f189aadad7d46d7c43d4b982183909a2e64"
+    },
+    "Canadian Nuclear Safety Commission": {
+      "fr": "Commission canadienne de sûreté nucléaire",
+      "path": "data/department-profiles/canadian-nuclear-safety-commission-7b7fee84.json.gz.b64",
+      "groups": 156,
+      "overallQuestions": 27,
+      "groupCells": 4212,
+      "sha256": "514828954abe3209ee3068e0c2832351e732980e1f53155c4d104c4a60f030ca"
+    },
+    "Canadian Radio-television and Telecommunications Commission": {
+      "fr": "Conseil de la radiodiffusion et des télécommunications canadiennes",
+      "path": "data/department-profiles/canadian-radio-television-and-telecommunications-commission-4d31fbe4.json.gz.b64",
+      "groups": 153,
+      "overallQuestions": 27,
+      "groupCells": 4131,
+      "sha256": "acfc101f774692390da54f709cbf64b27c23286df07e49380e9b2baaf0130041"
+    },
+    "Canadian Space Agency": {
+      "fr": "Agence spatiale canadienne",
+      "path": "data/department-profiles/canadian-space-agency-c6196d5a.json.gz.b64",
+      "groups": 159,
+      "overallQuestions": 27,
+      "groupCells": 4293,
+      "sha256": "2550d875ff62b12c8f4b646462345ab126f0d533db3d991a25789d4e36a0a456"
+    },
+    "Canadian Transportation Agency": {
+      "fr": "Office des transports du Canada",
+      "path": "data/department-profiles/canadian-transportation-agency-9483dc22.json.gz.b64",
+      "groups": 149,
+      "overallQuestions": 27,
+      "groupCells": 4023,
+      "sha256": "fa6ec9c49389677c968e2bcaa3503173d4093cb9dd9dc4a1b98765882b4ebcea"
+    },
+    "Civilian Review and Complaints Commission for the RCMP": {
+      "fr": "Commission civile d'examen et de traitement des plaintes relatives à la GRC",
+      "path": "data/department-profiles/civilian-review-and-complaints-commission-for-the-rcmp-a46a75dd.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "0faa1f1603991b81408c5b2a4576888725a8dbb2b76d6e0c1f684a4ef720c1d0"
+    },
+    "Communications Security Establishment Canada": {
+      "fr": "Centre de la sécurité des télécommunications Canada",
+      "path": "data/department-profiles/communications-security-establishment-canada-ddf23a6b.json.gz.b64",
+      "groups": 159,
+      "overallQuestions": 27,
+      "groupCells": 4293,
+      "sha256": "915578a97291859fd423750749809c5b870a31ab46beda0d7118584cdc47470a"
+    },
+    "Copyright Board Canada": {
+      "fr": "Commission du droit d'auteur Canada",
+      "path": "data/department-profiles/copyright-board-canada-610a17e1.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "0d701bef9acff4e07ccee76f699bd90ee8578a5774d17f3eaa5c287e7cc30f27"
+    },
+    "Correctional Service Canada": {
+      "fr": "Service correctionnel Canada",
+      "path": "data/department-profiles/correctional-service-canada-47fce6be.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "a3cb75d816d3c33e895ff8a1fbf29455e7b8aaaf27ec92edbebac7cb3cef47f7"
+    },
+    "Courts Administration Service": {
+      "fr": "Service administratif des tribunaux judiciaires",
+      "path": "data/department-profiles/courts-administration-service-eb2c5f90.json.gz.b64",
+      "groups": 157,
+      "overallQuestions": 27,
+      "groupCells": 4239,
+      "sha256": "5240ae53149da29b431f7094a911666a38d88c8218e54675eba310dc00eac15d"
+    },
+    "Crown-Indigenous Relations and Northern Affairs Canada": {
+      "fr": "Relations Couronne-Autochtones et Affaires du Nord Canada",
+      "path": "data/department-profiles/crown-indigenous-relations-and-northern-affairs-canada-4a52c79e.json.gz.b64",
+      "groups": 162,
+      "overallQuestions": 27,
+      "groupCells": 4374,
+      "sha256": "78884dfb1f1f3cd3017b5d5815ac35f560fa24b2b7d4f17521f8e293cff939dd"
+    },
+    "Department of Finance Canada": {
+      "fr": "Ministère des Finances Canada",
+      "path": "data/department-profiles/department-of-finance-canada-0b72c88a.json.gz.b64",
+      "groups": 150,
+      "overallQuestions": 27,
+      "groupCells": 4050,
+      "sha256": "26434756fea868dcc1f217bae29bb334a2a0cacfb20393898b247f74db4ea4e5"
+    },
+    "Department of Justice Canada": {
+      "fr": "Ministère de la Justice Canada",
+      "path": "data/department-profiles/department-of-justice-canada-ae4ca637.json.gz.b64",
+      "groups": 164,
+      "overallQuestions": 27,
+      "groupCells": 4428,
+      "sha256": "c581d222a43d33014f77f9db6da53c59495ce06e657db1ab826bf5d7b8538bd8"
+    },
+    "Employment and Social Development Canada": {
+      "fr": "Emploi et Développement social Canada",
+      "path": "data/department-profiles/employment-and-social-development-canada-45ea94bc.json.gz.b64",
+      "groups": 168,
+      "overallQuestions": 27,
+      "groupCells": 4536,
+      "sha256": "4c7db73988eab08d7c36d4fea8187b89b57c2f0f24d9af3dcba71d424a532aa9"
+    },
+    "Environment and Climate Change Canada": {
+      "fr": "Environnement et Changement climatique Canada",
+      "path": "data/department-profiles/environment-and-climate-change-canada-24afb6d0.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "3d40a1c6cc03df68b5d0f95b4df24720bc27963400e74bedc3837cec3f50bf28"
+    },
+    "Farm Products Council of Canada": {
+      "fr": "Conseil des produits agricoles du Canada",
+      "path": "data/department-profiles/farm-products-council-of-canada-9e64278e.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "65ac30ac861a9a4e62885ee7a23fa333f8238db048e8f0c40d9c52a54470bc81"
+    },
+    "Federal Economic Development Agency for Northern Ontario": {
+      "fr": "Agence fédérale de développement économique pour le Nord de l'Ontario",
+      "path": "data/department-profiles/federal-economic-development-agency-for-northern-ontario-842845ed.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "c4e8a11a86edda68e2a20d866a25d64c7ee7ba1cb5d4f7a5f9fa80bbed2f732e"
+    },
+    "Federal Economic Development Agency for Southern Ontario": {
+      "fr": "Agence fédérale de développement économique pour le Sud de l'Ontario",
+      "path": "data/department-profiles/federal-economic-development-agency-for-southern-ontario-c8716bfa.json.gz.b64",
+      "groups": 139,
+      "overallQuestions": 27,
+      "groupCells": 3753,
+      "sha256": "1a96d3bab268a2d2e4916288074ae808305245d85e7e9087bd6e6c439d5828b5"
+    },
+    "Financial Consumer Agency of Canada": {
+      "fr": "Agence de la consommation en matière financière du Canada",
+      "path": "data/department-profiles/financial-consumer-agency-of-canada-1696e153.json.gz.b64",
+      "groups": 145,
+      "overallQuestions": 27,
+      "groupCells": 3915,
+      "sha256": "44669ca030adc9db54de3b1e142a73f75549e0c16e2a1de657c4cb26fcb7c8b9"
+    },
+    "Financial Transactions and Reports Analysis Centre of Canada": {
+      "fr": "Centre d'analyse des opérations et déclarations financières du Canada",
+      "path": "data/department-profiles/financial-transactions-and-reports-analysis-centre-of-canada-d93dc41a.json.gz.b64",
+      "groups": 133,
+      "overallQuestions": 27,
+      "groupCells": 3591,
+      "sha256": "202a101e3566dc441447c5e614a57f6c8f0592011795993054aa9afd5ddd3952"
+    },
+    "Fisheries and Oceans Canada": {
+      "fr": "Pêches et Océans Canada",
+      "path": "data/department-profiles/fisheries-and-oceans-canada-c386b9ea.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "d1aa7a1b355503bbe1eaa70dc313d2bf5478c4e68a86a7465fa0f5d936162ac7"
+    },
+    "Global Affairs Canada": {
+      "fr": "Affaires mondiales Canada",
+      "path": "data/department-profiles/global-affairs-canada-b5a297f8.json.gz.b64",
+      "groups": 163,
+      "overallQuestions": 27,
+      "groupCells": 4401,
+      "sha256": "a39a5fab77eaf0991d24bc9a3c60190310e87049f4cdb5ad181bb69e5bf0cf29"
+    },
+    "Health Canada": {
+      "fr": "Santé Canada",
+      "path": "data/department-profiles/health-canada-c8529746.json.gz.b64",
+      "groups": 166,
+      "overallQuestions": 27,
+      "groupCells": 4482,
+      "sha256": "fcde2ea52bfe4357a0dc6905ab9757b8e62be465394787fd42dbd978e2dfc351"
+    },
+    "Housing, Infrastructure and Communities Canada": {
+      "fr": "Logement, Infrastructures et Collectivités Canada",
+      "path": "data/department-profiles/housing-infrastructure-and-communities-canada-12899f0f.json.gz.b64",
+      "groups": 160,
+      "overallQuestions": 27,
+      "groupCells": 4320,
+      "sha256": "4a21b2afe53d13df348ffe3bcf032dc7dd494a6af14a6578982c6616c931afb5"
+    },
+    "Immigration and Refugee Board of Canada": {
+      "fr": "Commission de l'immigration et du statut de réfugié du Canada",
+      "path": "data/department-profiles/immigration-and-refugee-board-of-canada-dcfeca9b.json.gz.b64",
+      "groups": 164,
+      "overallQuestions": 27,
+      "groupCells": 4428,
+      "sha256": "5e719b501cbf85254315713eb85f4abdd0434ea1de0c4fbbe18a32524a67c0a8"
+    },
+    "Immigration, Refugees and Citizenship Canada": {
+      "fr": "Immigration, Réfugiés et Citoyenneté Canada",
+      "path": "data/department-profiles/immigration-refugees-and-citizenship-canada-64743839.json.gz.b64",
+      "groups": 167,
+      "overallQuestions": 27,
+      "groupCells": 4509,
+      "sha256": "262a806d02a99ca6cfb93762a77b230ceb9b9888e73c70cdfe4805c693aa5503"
+    },
+    "Impact Assessment Agency of Canada": {
+      "fr": "Agence d'évaluation d'impact du Canada",
+      "path": "data/department-profiles/impact-assessment-agency-of-canada-f8de8a35.json.gz.b64",
+      "groups": 157,
+      "overallQuestions": 27,
+      "groupCells": 4239,
+      "sha256": "ca68430b11d65198528b5552330e5bb6a2fd4310ca9fb185b2e078b246647fd8"
+    },
+    "Indian Oil and Gas Canada": {
+      "fr": "Pétrole et gaz des Indiens du Canada",
+      "path": "data/department-profiles/indian-oil-and-gas-canada-9756887f.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "d915f789d589005f45adbc17cda451709a91a9d4da72adee3c1fc6006746033e"
+    },
+    "Indigenous Services Canada": {
+      "fr": "Services aux Autochtones Canada",
+      "path": "data/department-profiles/indigenous-services-canada-fb6c30d1.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "9d1c322ec5c23fe8523dfa464b624587401ca898e87251a970436debf0a7a30e"
+    },
+    "Innovation, Science and Economic Development Canada": {
+      "fr": "Innovation, Sciences et Développement économique Canada",
+      "path": "data/department-profiles/innovation-science-and-economic-development-canada-93fd0a30.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "de936a80764735d6907d596c73345882401865e6e0c5f3a2d5ef21b2345281f3"
+    },
+    "International Joint Commission": {
+      "fr": "Commission mixte internationale",
+      "path": "data/department-profiles/international-joint-commission-e61e34ba.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "27f842b60d42314385496bc54020f465863876c14f567359d4902a88cd0f04cf"
+    },
+    "Invest in Canada": {
+      "fr": "Investir au Canada",
+      "path": "data/department-profiles/invest-in-canada-b197ffd0.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "ad321f354ec56b6b0797b70f053e83127d324eb83573a90fee85a46a38862f04"
+    },
+    "Library and Archives Canada": {
+      "fr": "Bibliothèque et Archives Canada",
+      "path": "data/department-profiles/library-and-archives-canada-9e77646e.json.gz.b64",
+      "groups": 154,
+      "overallQuestions": 27,
+      "groupCells": 4158,
+      "sha256": "40f543f017c88f581a840d4ae3434134988a42a23d2eb489f061b0af03e98e78"
+    },
+    "Military Grievances External Review Committee": {
+      "fr": "Comité externe d'examen des griefs militaires",
+      "path": "data/department-profiles/military-grievances-external-review-committee-0387ca7d.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "2cabaf930ddbefda87498a09c1bb275808cf513bc19f8676e3d281ed676d7983"
+    },
+    "Military Police Complaints Commission of Canada": {
+      "fr": "Commission d’examen des plaintes concernant la police militaire du Canada",
+      "path": "data/department-profiles/military-police-complaints-commission-of-canada-7b703333.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "32a03900a642191c2af4949ee3a9b4c1bfd11b8064c62129a63abe602bdbf132"
+    },
+    "National Defence": {
+      "fr": "Défense nationale",
+      "path": "data/department-profiles/national-defence-c5fb3c0b.json.gz.b64",
+      "groups": 167,
+      "overallQuestions": 27,
+      "groupCells": 4509,
+      "sha256": "92df6b0d2c49e1186e644459c387de2d5acfbf3136ab1f981a73188e851edc85"
+    },
+    "National Film Board of Canada": {
+      "fr": "Office national du film du Canada",
+      "path": "data/department-profiles/national-film-board-of-canada-6d804cfb.json.gz.b64",
+      "groups": 138,
+      "overallQuestions": 27,
+      "groupCells": 3726,
+      "sha256": "41ea9904e597031dbc0ce784598c574629221a44850ca18732b212e6ed96219d"
+    },
+    "National Research Council Canada": {
+      "fr": "Conseil national de recherches Canada",
+      "path": "data/department-profiles/national-research-council-canada-c36ff9d0.json.gz.b64",
+      "groups": 164,
+      "overallQuestions": 27,
+      "groupCells": 4428,
+      "sha256": "271901608ceb8fc833778f2fb3141c2f7b86092b40ba1ceba1e76d0ffb84c3a1"
+    },
+    "National Security and Intelligence Review Agency": {
+      "fr": "Office de surveillance des activités en matière de sécurité nationale et de renseignement",
+      "path": "data/department-profiles/national-security-and-intelligence-review-agency-d574e8ef.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "bc450038c6a7c378ae6b8dd513369a55b022f1495764ab6fe50c3f05c666ccb2"
+    },
+    "Natural Resources Canada": {
+      "fr": "Ressources naturelles Canada",
+      "path": "data/department-profiles/natural-resources-canada-04214f01.json.gz.b64",
+      "groups": 168,
+      "overallQuestions": 27,
+      "groupCells": 4536,
+      "sha256": "61f9a765e573de194e817bc097ec08b5108eb5cbd1eb2f6fb15f5277fca849d6"
+    },
+    "Natural Sciences and Engineering Research Council of Canada": {
+      "fr": "Conseil de recherches en sciences naturelles et en génie du Canada",
+      "path": "data/department-profiles/natural-sciences-and-engineering-research-council-of-canada-a5fd1c05.json.gz.b64",
+      "groups": 153,
+      "overallQuestions": 27,
+      "groupCells": 4131,
+      "sha256": "4dc16573790fee2690131b51da1c376c11aa5ba3456d0ecde1112f4b8cdf3786"
+    },
+    "Office of the Auditor General of Canada": {
+      "fr": "Bureau du vérificateur général du Canada",
+      "path": "data/department-profiles/office-of-the-auditor-general-of-canada-2c0dda96.json.gz.b64",
+      "groups": 160,
+      "overallQuestions": 27,
+      "groupCells": 4320,
+      "sha256": "2f9dbeff69bcf77d3ca2ff7ebe6ab9c42a26e307ea5704fe35292f6c4950258b"
+    },
+    "Office of the Chief Electoral Officer": {
+      "fr": "Bureau du directeur général des élections",
+      "path": "data/department-profiles/office-of-the-chief-electoral-officer-5a419450.json.gz.b64",
+      "groups": 155,
+      "overallQuestions": 27,
+      "groupCells": 4185,
+      "sha256": "6b0551ffe48a0c43e3f398868308a4fa42d607729b245cdb48185010ae872fac"
+    },
+    "Office of the Commissioner for Federal Judicial Affairs Canada": {
+      "fr": "Commissariat à la magistrature fédérale Canada",
+      "path": "data/department-profiles/office-of-the-commissioner-for-federal-judicial-affairs-canada-32d5f096.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "f860622c64fda5de7400677daa36043a95315e6878b34a9d97569759c3a729a3"
+    },
+    "Office of the Commissioner of Lobbying of Canada": {
+      "fr": "Commissariat au lobbying du Canada",
+      "path": "data/department-profiles/office-of-the-commissioner-of-lobbying-of-canada-cc7036ca.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "907b5906ba4f4ac9af5d44e86d378d1c8d09593c38ca4951053309a7cf4aa5e2"
+    },
+    "Office of the Commissioner of Official Languages": {
+      "fr": "Commissariat aux langues officielles",
+      "path": "data/department-profiles/office-of-the-commissioner-of-official-languages-126b52d3.json.gz.b64",
+      "groups": 126,
+      "overallQuestions": 27,
+      "groupCells": 3402,
+      "sha256": "3a4b874d737bd76c7fd32f6e5bee0094969f6b97b0110f7a2b73e926a42f40d5"
+    },
+    "Office of the Information Commissioner of Canada": {
+      "fr": "Commissariat à l'information du Canada",
+      "path": "data/department-profiles/office-of-the-information-commissioner-of-canada-4ead38fb.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "383012f4e85d1933eaaabea63d89dd13b91af51d729822cc083f942f83a78798"
+    },
+    "Office of the Privacy Commissioner of Canada": {
+      "fr": "Commissariat à la protection de la vie privée du Canada",
+      "path": "data/department-profiles/office-of-the-privacy-commissioner-of-canada-db0bdcdd.json.gz.b64",
+      "groups": 138,
+      "overallQuestions": 27,
+      "groupCells": 3726,
+      "sha256": "e7a73d7a422aff29fe058a2a6f8422ffef0fbd54d04f650280e51fada7f641a0"
+    },
+    "Office of the Public Sector Integrity Commissioner of Canada": {
+      "fr": "Commissariat à l'intégrité du secteur public du Canada",
+      "path": "data/department-profiles/office-of-the-public-sector-integrity-commissioner-of-canada-84a91437.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "10188d6ca9b61f13881b20a787a3db69f1f597b01fa75046525f47632aa5e2af"
+    },
+    "Office of the Secretary to the Governor General": {
+      "fr": "Bureau du secrétaire du gouverneur général",
+      "path": "data/department-profiles/office-of-the-secretary-to-the-governor-general-5b97a9b2.json.gz.b64",
+      "groups": 130,
+      "overallQuestions": 27,
+      "groupCells": 3510,
+      "sha256": "fc750b781b176e5abfa16f6e59bb24d3b0956a6cebc16725ae3459202250541b"
+    },
+    "Pacific Economic Development Canada": {
+      "fr": "Développement économique Canada pour le Pacifique",
+      "path": "data/department-profiles/pacific-economic-development-canada-a42d0745.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "561d5ba2d3adcde304fb0f865d4aefec16d09b4e22b1eb83b95d3be0ba3d9070"
+    },
+    "Parks Canada": {
+      "fr": "Parcs Canada",
+      "path": "data/department-profiles/parks-canada-7f8d114c.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "3a746f969301c748cf344e81cb277af4aed924e2c9448c658d6c5072c392a964"
+    },
+    "Parole Board of Canada": {
+      "fr": "Commission des libérations conditionnelles du Canada",
+      "path": "data/department-profiles/parole-board-of-canada-e31f9544.json.gz.b64",
+      "groups": 148,
+      "overallQuestions": 27,
+      "groupCells": 3996,
+      "sha256": "b8f83c9a07bb85f721061d0c74d64e6bae0b16f4e7cea736c4025184c33b7e0d"
+    },
+    "Patented Medicine Prices Review Board Canada": {
+      "fr": "Conseil d'examen du prix des médicaments brevetés Canada",
+      "path": "data/department-profiles/patented-medicine-prices-review-board-canada-c6a57087.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "36a0358198b9475ddb59d69ed6eb93e9579d567a920c58d2dc0573c621ffedb6"
+    },
+    "Polar Knowledge Canada": {
+      "fr": "Savoir polaire Canada",
+      "path": "data/department-profiles/polar-knowledge-canada-60929a08.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "5f5058e61156344097db6c33d3bdb9815862fe68a1778f244d476348e2f8c5af"
+    },
+    "Prairies Economic Development Canada": {
+      "fr": "Développement économique Canada pour les Prairies",
+      "path": "data/department-profiles/prairies-economic-development-canada-4b031476.json.gz.b64",
+      "groups": 150,
+      "overallQuestions": 27,
+      "groupCells": 4050,
+      "sha256": "fb7c333aee8158b9b8a942b2d3cde27fff337293d24bd24f6915f436562e531d"
+    },
+    "Privy Council Office": {
+      "fr": "Bureau du Conseil privé",
+      "path": "data/department-profiles/privy-council-office-bdaad01f.json.gz.b64",
+      "groups": 159,
+      "overallQuestions": 27,
+      "groupCells": 4293,
+      "sha256": "31da41e08834cf4309ea99287a9ba6d6262aa0737378f5764d6a9531ffc4c01d"
+    },
+    "Public Health Agency of Canada": {
+      "fr": "Agence de la santé publique du Canada",
+      "path": "data/department-profiles/public-health-agency-of-canada-b9641959.json.gz.b64",
+      "groups": 164,
+      "overallQuestions": 27,
+      "groupCells": 4428,
+      "sha256": "3961f9c69de073adbb78baddc68c8f9c35099b9e90cef88e188a5ddebcddba7d"
+    },
+    "Public Prosecution Service of Canada": {
+      "fr": "Service des poursuites pénales du Canada",
+      "path": "data/department-profiles/public-prosecution-service-of-canada-e336a82f.json.gz.b64",
+      "groups": 156,
+      "overallQuestions": 27,
+      "groupCells": 4212,
+      "sha256": "f2c3eb03842e4381df8d8cb5f9975533b68d02b0efa8bb7fa6532d61ad08ea66"
+    },
+    "Public Safety Canada": {
+      "fr": "Sécurité publique Canada",
+      "path": "data/department-profiles/public-safety-canada-debb33da.json.gz.b64",
+      "groups": 162,
+      "overallQuestions": 27,
+      "groupCells": 4374,
+      "sha256": "6406aba44ff06da3436e298987ec6895e47d02c6a5b07bf4fd870eef2a7ba756"
+    },
+    "Public Service Commission of Canada": {
+      "fr": "Commission de la fonction publique du Canada",
+      "path": "data/department-profiles/public-service-commission-of-canada-dc1d69a0.json.gz.b64",
+      "groups": 156,
+      "overallQuestions": 27,
+      "groupCells": 4212,
+      "sha256": "1ccde434ce359d151ef164138f984618ab464d2549178e7ff6fdfa8686e1cd1e"
+    },
+    "Public Services and Procurement Canada": {
+      "fr": "Services publics et Approvisionnement Canada",
+      "path": "data/department-profiles/public-services-and-procurement-canada-71adddc8.json.gz.b64",
+      "groups": 167,
+      "overallQuestions": 27,
+      "groupCells": 4509,
+      "sha256": "88da319534559fac0f5c0284605e38e58f001db22dad8a0fe5698733d5d7eefb"
+    },
+    "RCMP External Review Committee": {
+      "fr": "Comité externe d'examen de la GRC",
+      "path": "data/department-profiles/rcmp-external-review-committee-4eb92713.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "15080e6777e1a30e98e167975f91cfcd6c004c610e9d6c725bd0eb6ffc086775"
+    },
+    "Royal Canadian Mounted Police": {
+      "fr": "Gendarmerie royale du Canada",
+      "path": "data/department-profiles/royal-canadian-mounted-police-6f986169.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "f146f1091ff434585060cb6b68ef78010e303fe039be66aa07fbe5f3df9f2c40"
+    },
+    "Shared Services Canada": {
+      "fr": "Services partagés Canada",
+      "path": "data/department-profiles/shared-services-canada-04f4378b.json.gz.b64",
+      "groups": 167,
+      "overallQuestions": 27,
+      "groupCells": 4509,
+      "sha256": "3b79be0889d6273bc69695dfb99bd7d3ce2882d9f070c61edfdf2c07a5890286"
+    },
+    "Social Sciences and Humanities Research Council of Canada": {
+      "fr": "Conseil de recherches en sciences humaines du Canada",
+      "path": "data/department-profiles/social-sciences-and-humanities-research-council-of-canada-e7731d69.json.gz.b64",
+      "groups": 150,
+      "overallQuestions": 27,
+      "groupCells": 4050,
+      "sha256": "492944ce0f169fed35c45c3efdf9557f17a095e8d90ea8c222369b41adb765b9"
+    },
+    "Statistics Canada": {
+      "fr": "Statistique Canada",
+      "path": "data/department-profiles/statistics-canada-d6aa8b39.json.gz.b64",
+      "groups": 168,
+      "overallQuestions": 27,
+      "groupCells": 4536,
+      "sha256": "e4e615e4efd3ff8114a5697584bbc3bc87141689b046d3e7e459ad8be30710b5"
+    },
+    "Supreme Court of Canada": {
+      "fr": "Cour suprême du Canada",
+      "path": "data/department-profiles/supreme-court-of-canada-eab6ffae.json.gz.b64",
+      "groups": 131,
+      "overallQuestions": 27,
+      "groupCells": 3537,
+      "sha256": "353d346f658565876f53c8ab2c9f260f0104072eb67d70fddcf4268b58934ebd"
+    },
+    "The Correctional Investigator Canada": {
+      "fr": "L'Enquêteur correctionnel Canada",
+      "path": "data/department-profiles/the-correctional-investigator-canada-d520d614.json.gz.b64",
+      "groups": 0,
+      "overallQuestions": 27,
+      "groupCells": 0,
+      "sha256": "0fb5dd694150c6ed33ed301c6057b9d26715204497650efdcdc55552f7effb3c"
+    },
+    "Transport Canada": {
+      "fr": "Transports Canada",
+      "path": "data/department-profiles/transport-canada-6584c7b9.json.gz.b64",
+      "groups": 165,
+      "overallQuestions": 27,
+      "groupCells": 4455,
+      "sha256": "5ab86c80f414d05a3131031983aa0dbc8b914b091ecabff5169d04ca6c1fb60a"
+    },
+    "Transportation Safety Board of Canada": {
+      "fr": "Bureau de la sécurité des transports du Canada",
+      "path": "data/department-profiles/transportation-safety-board-of-canada-ee425f37.json.gz.b64",
+      "groups": 138,
+      "overallQuestions": 27,
+      "groupCells": 3726,
+      "sha256": "07e88e6ca1930909fcbc39827df407243727d55a74895c24a0bb89ac1b36a5b6"
+    },
+    "Treasury Board of Canada Secretariat": {
+      "fr": "Secrétariat du Conseil du Trésor du Canada",
+      "path": "data/department-profiles/treasury-board-of-canada-secretariat-edf3a0f1.json.gz.b64",
+      "groups": 163,
+      "overallQuestions": 27,
+      "groupCells": 4401,
+      "sha256": "e8c89465e58a19201312bf037519ed4ab3c2afa668dc1f881325f96599c1a71f"
+    },
+    "Veterans Affairs Canada": {
+      "fr": "Anciens Combattants Canada",
+      "path": "data/department-profiles/veterans-affairs-canada-105da7f9.json.gz.b64",
+      "groups": 163,
+      "overallQuestions": 27,
+      "groupCells": 4401,
+      "sha256": "7879e02bd0b2ab62a18885a92eb78ce13c3cb490b9a8ff9063a5e1900f6e3530"
+    },
+    "Veterans Review and Appeal Board": {
+      "fr": "Tribunal des anciens combattants (révision et appel)",
+      "path": "data/department-profiles/veterans-review-and-appeal-board-232c64f5.json.gz.b64",
+      "groups": 123,
+      "overallQuestions": 27,
+      "groupCells": 3321,
+      "sha256": "e1c8e13bc57686f2ade83ca33985e731f334074414809c38fab8cec1804e6b51"
+    },
+    "Women and Gender Equality Canada": {
+      "fr": "Femmes et Égalité des genres Canada",
+      "path": "data/department-profiles/women-and-gender-equality-canada-6ba70f99.json.gz.b64",
+      "groups": 152,
+      "overallQuestions": 27,
+      "groupCells": 4104,
+      "sha256": "224224114dc4920e9131aaed321b20d6e07effba247161ddf7512a397899b50f"
+    }
+  }
+}

@@ -19,6 +19,44 @@ New files:
 
 ## Pages
 
+### Shared departmental reading profiles
+
+Every organization selected on the homepage uses `gc-department-profile.js` for
+its overview, headline measures, charts, guided questions, detailed PSES reading
+sections, report links and suggested evidence-to-action record. The existing
+organization-only source viewers remain available on the same page. Topic and
+employee-group filters continue to apply. DFO and DND specialized collections
+are linked only from their own selections.
+
+`assets/department-profile-index.json` indexes 92 organization-specific extracts
+of the 2024 PSES. The files in `data/department-profiles/` retain 2,484 overall
+question cells and 289,359 employee-group question cells for the same 27 reading
+questions as the dedicated DFO/DND profiles. Each cell preserves the original
+response percentage and ANSCOUNT as strings, including `X` and `9999`. The
+overall cells come from the retained official subset-1 CSV; employee-group cells
+come directly from the official EEINFODV.csv. No branch averages are used. Named
+micro-organizations retain their own published rows; the combined micro group
+and public-service aggregates are excluded. This does not reconcile the separate
+historical PSES assembly.
+
+Reproduce the extracts with `python scripts/build-department-profiles.py --groups
+/absolute/path/to/EEINFODV.csv`. The index retains the source URLs and original
+SHA-256 values. `scripts/check-department-profiles.py` checks every overall cell,
+the independent DFO/DND extracts, employer identity, suppression and zero. Its
+optional `--groups` argument checks every group cell against the publisher file.
+The chart helper tests check all organization series and prevent fallback to a
+different group or organization.
+
+`assets/department-publication-links.json` is a bounded register of additional
+links present in organizations' official plans, restricted to their own
+departmental namespaces and screened for report relevance. It is not an
+exhaustive departmental publication inventory. Missing reports are identified
+as a collection gap, not as evidence that the publications do not exist. The
+homepage also displays each organization's existing original plan and Call to
+Action links. The executive/non-executive section reads only that employer's
+rows from the retained Treasury Board source through 2026; its population remains
+distinct from the employment-equity workforce snapshot.
+
 - `organizations.html` / `organizations.js`: bilingual searchable catalogue based on the official Canada.ca directory, updated October 15, 2026 (215 entries in `assets/federal-organizations-2026-10-15.json`). It overlays published source coverage from the Treasury Board core-public-administration tables, 2024 Public Service Employee Survey, Call to Action responses, 2025 Staffing and Non-Partisanship Survey and 2026–27 departmental plans. These source populations are not interchangeable. CSE is included in the official directory and 2024 survey, and its separate 2025–26 annual-report employment-equity figures are identified as a different reporting series. Do not manufacture missing core-public-administration data for CSE or other separate entities.
 - Public-service-wide related sites are linked through their original `github.io` addresses and grouped by user task. ISC-only sites and the personal professional profile do not appear in the GC Equity directory. A modest ARAN attribution appears only in the shared footer. No owner email address or volunteer form appears on GC Equity.
 
