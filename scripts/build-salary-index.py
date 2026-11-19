@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Apply documented corrections to the independent salary-index transcription.
 
-The received index is retained in archive-source. Counts and imputation estimates
+The received index is retained in data/october-2026/inputs. Counts and imputation estimates
 are inputs from the independent project and are never altered or reconstructed.
 Only the 2021 band shares/ratios and the documented band labels are corrected.
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = ROOT / 'data/october-2026'
 NAME = 'DI_di_disproportionality_index_2017-2025.csv'
-ORIGINAL = ROOT / 'archive-source/salary-index-as-received-2026-11-18.csv'
+ORIGINAL = FOLDER / 'inputs/salary-index-as-received-2026-11-18.csv'
 GROUPS = {'all': 'all', 'black': 'black', 'vm': 'vm', 'non_vm': 'nvm',
           'indigenous': 'ind', 'pwd': 'dis'}
 

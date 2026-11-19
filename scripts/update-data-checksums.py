@@ -12,7 +12,6 @@ FOLDERS = ['data', 'assets', 'dfo/data', 'dnd/data', 'women-femmes/data',
 
 def manifest():
     files = {p for folder in FOLDERS for p in (ROOT / folder).rglob('*') if p.is_file() and p != OUT}
-    files.add(ROOT / 'archive-source/salary-index-as-received-2026-11-18.csv')
     return ''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(ROOT).as_posix()+'\n'
                    for p in sorted(files))
 

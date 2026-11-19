@@ -20,6 +20,12 @@ assert 'id="c_sal" value="143271"' in page
 inventory = list(csv.DictReader((ROOT / 'data/october-2026/public-source-inventory.csv').open(newline='')))
 assert sum(r['Type'] == 'Data table' for r in inventory) == 126
 assert 'id="tables">126<' in (ROOT / 'sources.html').read_text()
+# A file that exists in Git can still be excluded from the GitHub Pages build.
+excluded = [line.strip()[2:] for line in (ROOT / '_config.yml').read_text().splitlines() if line.strip().startswith('- ')]
+for target in ['data/checksums.sha256', 'data/october-2026/inputs/salary-index-as-received-2026-11-18.csv']:
+    assert target in (ROOT / 'sources.html').read_text()
+    assert (ROOT / target).is_file()
+    assert not any(target == item or target.startswith(item.rstrip('/')+'/') for item in excluded), f'download excluded from publication: {target}'
 for name in ['TBS_Indigenous_subgroups_by_department_2025.csv', 'TBS_disability_subgroups_by_department_2024.csv']:
     rows = list(csv.DictReader((ROOT / 'data/october-2026' / name).open(newline='')))
     assert not any(r['department_or_agency'].startswith('SOURCE:') for r in rows)

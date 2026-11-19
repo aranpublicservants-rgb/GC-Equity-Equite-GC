@@ -20,7 +20,7 @@
     },
     "DI_di_disproportionality_index_2017-2025.csv": {
       "population": "Independent Disproportionality Index project, using TBS salary-band data and project imputation estimates. Not an official TBS product.",
-      "original": "../../archive-source/salary-index-as-received-2026-11-18.csv",
+      "original": "inputs/salary-index-as-received-2026-11-18.csv",
       "countsInput": "DI_cleaned_imputed_salary_counts_2017-2025.csv",
       "corrections": [
         "2021 shares and ratios recalculated from the existing project counts.",
