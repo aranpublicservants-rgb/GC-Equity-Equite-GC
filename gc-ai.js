@@ -9,7 +9,7 @@
 const BOTS=[
  {id:'chatgpt',name:'ChatGPT',owner:'OpenAI',link:q=>'https://chatgpt.com/?q='+encodeURIComponent(q)},
  {id:'claude',name:'Claude',owner:'Anthropic',link:q=>'https://claude.ai/new?q='+encodeURIComponent(q)},
- {id:'copilot',name:'Copilot',owner:'Microsoft',link:q=>'https://copilot.microsoft.com/?q='+encodeURIComponent(q)},
+ {id:'copilot',name:'Copilot',owner:'Microsoft',link:q=>'https://copilot.com/?q='+encodeURIComponent(q)},
  {id:'gemini',name:'Gemini',owner:'Google',link:()=>'https://gemini.google.com/app',pasteOnly:true}
 ];
 const isFr=()=>String(document.documentElement.getAttribute('lang')||'en').toLowerCase().indexOf('fr')===0;

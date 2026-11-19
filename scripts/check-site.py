@@ -11,6 +11,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 
 ROOT=pathlib.Path(__file__).resolve().parent.parent
+subprocess.run(['python3', str(ROOT/'scripts/check-audit-fixes.py')], check=True)
 class Page(HTMLParser):
     def __init__(self):
         super().__init__(); self.ids=[]; self.assets=[]; self.scripts=[]; self.in_script=False; self.script=[]

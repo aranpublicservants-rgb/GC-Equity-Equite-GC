@@ -9,7 +9,8 @@
   "The adjusted difference accounts for organization size (logarithm of employees) and, for changes, the starting value.",
   "Moderate evidence: the difference holds in each size group, p is below 0.05 and the adjusted difference is at least twice its standard error. Limited evidence: one or more of these is not met.",
   "The scan compares each kind of action, in the letters, in the self-assessments and in either document, and each goal, with each published measure, accounting for size, wherever at least 5 organizations are on each side and 12 in all. It counts the comparisons where the adjusted difference is at least 1.96 times its standard error, the usual 5% threshold, and the number that chance alone would produce.",
-  "Organizations that share one row of the Treasury Board tables are left out of representation results."
+  "Organizations that share one row of the Treasury Board tables are left out of representation results.",
+  "Comparisons require a published employee count for the size adjustment. Records with an outcome but no matched size are listed in excluded_missing_size and are not included in n1 or n0."
  ],
  "method_fr": [
   "Chaque organisation compte une fois. Les mesures sont repérées par mots-clés dans les résumés des engagements des lettres de 2021 et des progrès déclarés dans les autoévaluations de 2024, présentés sur la page de l’appel à l’action.",
@@ -19,7 +20,8 @@
   "L’écart ajusté tient compte de la taille des organisations (logarithme du nombre d’employés) et, pour les variations, de la valeur de départ.",
   "Niveau de preuve moyen : l’écart se maintient dans chaque groupe de taille, p est inférieur à 0,05 et l’écart ajusté vaut au moins deux fois son erreur type. Niveau de preuve faible : au moins une de ces conditions n’est pas remplie.",
   "Le balayage compare chaque type de mesure, dans les lettres, dans les autoévaluations et dans l’un ou l’autre document, et chaque objectif, avec chaque mesure publiée, en tenant compte de la taille, partout où au moins 5 organisations se trouvent de chaque côté et 12 au total. Il compte les comparaisons où l’écart ajusté vaut au moins 1,96 fois son erreur type, le seuil habituel de 5 %, et le nombre que le hasard seul produirait.",
-  "Les organisations qui partagent une même ligne dans les tableaux du Conseil du Trésor sont exclues des résultats sur la représentation."
+  "Les organisations qui partagent une même ligne dans les tableaux du Conseil du Trésor sont exclues des résultats sur la représentation.",
+  "Les comparaisons exigent un effectif publié pour l’ajustement selon la taille. Les dossiers ayant un résultat mais aucun effectif apparié figurent dans excluded_missing_size et ne sont pas inclus dans n1 ou n0."
  ],
  "size_groups": [
   {
@@ -570,6 +572,7 @@
    "adjusted": 1.943,
    "adjusted_t": 2.53,
    "level": "moderate",
+   "excluded_missing_size": [],
    "baseline1": 6.65,
    "baseline0": 5.772
   },
@@ -607,7 +610,10 @@
    ],
    "adjusted": -6.314,
    "adjusted_t": -3.17,
-   "level": "moderate"
+   "level": "moderate",
+   "excluded_missing_size": [
+    "office-superintendent-financial-institutions-canada"
+   ]
   },
   {
    "feature": "L_leadership_dev",
@@ -644,6 +650,11 @@
    "adjusted": -4.967,
    "adjusted_t": -2.32,
    "level": "moderate",
+   "excluded_missing_size": [
+    "communications-security-establishment",
+    "farm-products-council-canada",
+    "financial-consumer-agency-canada"
+   ],
    "baseline1": 51.8,
    "baseline0": 49.596
   },
@@ -681,7 +692,11 @@
    ],
    "adjusted": 4.165,
    "adjusted_t": 2.46,
-   "level": "moderate"
+   "level": "moderate",
+   "excluded_missing_size": [
+    "communications-security-establishment",
+    "financial-consumer-agency-canada"
+   ]
   },
   {
    "feature": "E_esr",
@@ -717,7 +732,13 @@
    ],
    "adjusted": 5.76,
    "adjusted_t": 2.25,
-   "level": "moderate"
+   "level": "moderate",
+   "excluded_missing_size": [
+    "communications-security-establishment",
+    "farm-products-council-canada",
+    "financial-consumer-agency-canada",
+    "invest-canada"
+   ]
   },
   {
    "feature": "G_indigenous_recruitment",
@@ -754,6 +775,7 @@
    "adjusted": 0.477,
    "adjusted_t": 1.29,
    "level": "limited",
+   "excluded_missing_size": [],
    "baseline1": 5.381,
    "baseline0": 4.514
   },
@@ -792,6 +814,7 @@
    "adjusted": 0.603,
    "adjusted_t": 0.77,
    "level": "limited",
+   "excluded_missing_size": [],
    "baseline1": 21.765,
    "baseline0": 19.227
   },
@@ -830,6 +853,7 @@
    "adjusted": 0.111,
    "adjusted_t": 0.4,
    "level": "limited",
+   "excluded_missing_size": [],
    "baseline1": 4.926,
    "baseline0": 4.776
   },
@@ -868,6 +892,7 @@
    "adjusted": 0.501,
    "adjusted_t": 0.74,
    "level": "limited",
+   "excluded_missing_size": [],
    "baseline1": 19.232,
    "baseline0": 18.346
   },
@@ -906,6 +931,7 @@
    "adjusted": 0.582,
    "adjusted_t": 0.49,
    "level": "limited",
+   "excluded_missing_size": [],
    "baseline1": 27.785,
    "baseline0": 28.408
   },
@@ -943,7 +969,11 @@
    ],
    "adjusted": 1.26,
    "adjusted_t": 0.78,
-   "level": "limited"
+   "level": "limited",
+   "excluded_missing_size": [
+    "communications-security-establishment",
+    "financial-consumer-agency-canada"
+   ]
   },
   {
    "feature": "E_sponsorship",
@@ -979,7 +1009,10 @@
    ],
    "adjusted": 3.969,
    "adjusted_t": 1.4,
-   "level": "limited"
+   "level": "limited",
+   "excluded_missing_size": [
+    "communications-security-establishment"
+   ]
   },
   {
    "feature": "E_black",
@@ -1015,7 +1048,13 @@
    ],
    "adjusted": 5.262,
    "adjusted_t": 2.19,
-   "level": "moderate"
+   "level": "moderate",
+   "excluded_missing_size": [
+    "communications-security-establishment",
+    "farm-products-council-canada",
+    "financial-consumer-agency-canada",
+    "invest-canada"
+   ]
   },
   {
    "feature": "E_black",
@@ -1051,7 +1090,10 @@
    ],
    "adjusted": -5.133,
    "adjusted_t": -1.29,
-   "level": "limited"
+   "level": "limited",
+   "excluded_missing_size": [
+    "communications-security-establishment"
+   ]
   },
   {
    "feature": "E_exec_accountability",
@@ -1087,7 +1129,13 @@
    ],
    "adjusted": 3.584,
    "adjusted_t": 1.59,
-   "level": "limited"
+   "level": "limited",
+   "excluded_missing_size": [
+    "communications-security-establishment",
+    "farm-products-council-canada",
+    "financial-consumer-agency-canada",
+    "invest-canada"
+   ]
   }
  ],
  "scan": {
@@ -2545,7 +2593,7 @@
   {
    "id": "canadian-centre-substance-abuse-addiction",
    "name_en": "Canadian Centre on Substance Use and Addiction",
-   "name_fr": null,
+   "name_fr": "Centre canadien sur les dépendances et l’usage de substances",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": null,
@@ -4052,7 +4100,7 @@
   {
    "id": "canadian-security-intelligence-service",
    "name_en": "Canadian Security Intelligence Service",
-   "name_fr": null,
+   "name_fr": "Service canadien du renseignement de sécurité",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": true,
@@ -4593,7 +4641,7 @@
   {
    "id": "communications-security-establishment",
    "name_en": "Communications Security Establishment",
-   "name_fr": null,
+   "name_fr": "Centre de la sécurité des télécommunications",
    "shared_row": false,
    "L_sponsorship": true,
    "S_sponsorship": true,
@@ -6347,7 +6395,7 @@
   {
    "id": "farm-products-council-canada",
    "name_en": "Farm Products Council of Canada",
-   "name_fr": null,
+   "name_fr": "Conseil des produits agricoles du Canada",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": null,
@@ -6747,7 +6795,7 @@
   {
    "id": "financial-consumer-agency-canada",
    "name_en": "Financial Consumer Agency of Canada",
-   "name_fr": null,
+   "name_fr": "Agence de la consommation en matière financière du Canada",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": false,
@@ -9252,7 +9300,7 @@
   {
    "id": "national-gallery-canada",
    "name_en": "National Gallery of Canada",
-   "name_fr": null,
+   "name_fr": "Musée des beaux-arts du Canada",
    "shared_row": false,
    "L_sponsorship": null,
    "S_sponsorship": false,
@@ -10671,7 +10719,7 @@
   {
    "id": "office-national-defence-canadian-armed-forces-ombudsman",
    "name_en": "Office of the National Defence and Canadian Armed Forces Ombudsman",
-   "name_fr": null,
+   "name_fr": "Bureau de l’ombudsman de la Défense nationale et des Forces armées canadiennes",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": false,
@@ -10863,7 +10911,7 @@
   {
    "id": "office-procurement-ombudsman",
    "name_en": "Office of the Procurement Ombudsman",
-   "name_fr": null,
+   "name_fr": "Bureau de l’Ombudsman de l’approvisionnement",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": false,
@@ -11224,7 +11272,7 @@
   {
    "id": "office-superintendent-financial-institutions-canada",
    "name_en": "Office of the Superintendent of Financial Institutions Canada",
-   "name_fr": null,
+   "name_fr": "Bureau du surintendant des institutions financières Canada",
    "shared_row": false,
    "L_sponsorship": false,
    "S_sponsorship": true,
@@ -14062,7 +14110,7 @@
   {
    "id": "telefilm-canada",
    "name_en": "Telefilm Canada",
-   "name_fr": null,
+   "name_fr": "Téléfilm Canada",
    "shared_row": false,
    "L_sponsorship": null,
    "S_sponsorship": false,

@@ -27,14 +27,16 @@
    "title": "TBS: employees by subgroup and department, members of visible minorities",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
-   "checked": "2026-06-24"
+   "checked": "2026-06-24",
+   "localFile": null,
+   "usage": "Reference page. The workspace subgroup table uses the PSC source; this TBS table has not been transcribed into a local CSV."
   },
   {
    "id": "tbs-dept-wfa-women",
    "title": "TBS: representation of women by department, with departmental workforce availability",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-women-department-agency-departmental-workforce-availability-estimates.html",
-   "checked": null
+   "checked": "2026-11-18"
   },
   {
    "id": "tbs-dept-wfa-indigenous",
@@ -62,14 +64,14 @@
    "title": "TBS: population of the federal public service by executive level",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/population-federal-public-service-executive-level.html",
-   "checked": null
+   "checked": "2026-11-18"
   },
   {
    "id": "tbs-diversity-statistics",
    "title": "TBS: diversity and inclusion statistics (list of tables)",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html",
-   "checked": null
+   "checked": "2026-11-18"
   },
   {
    "id": "pco-cta-letters",
@@ -83,7 +85,7 @@
    "title": "PCO: responses to the self-assessment on the forward direction of the Call to Action (2024)",
    "kind": "canada-page",
    "url": "https://www.canada.ca/en/privy-council/corporate/about-call-action/self-assessment-forward-direction.html",
-   "checked": null
+   "checked": "2026-11-18"
   },
   {
    "id": "pses-2024-second-level",

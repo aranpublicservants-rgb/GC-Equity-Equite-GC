@@ -313,6 +313,7 @@ def compare(rows, f, o, base=None, perms=PERMUTATIONS):
            'mean0': r3(mean([v for v, s in zip(y, x) if not s])), 'difference': r3(mean([v for v, s in zip(y, x) if s])-mean([v for v, s in zip(y, x) if not s])),
            'within_size_groups': r3(obs), 'p': round(p, 4), 'holds_in_each_size_group': holds, 'bands': bands,
            'adjusted': r3(adj[0]) if adj else None, 'adjusted_t': round(adj[1], 2) if adj and adj[1] is not None else None, 'level': level}
+    out['excluded_missing_size'] = [r['id'] for r in rows if r.get(f) is not None and r.get(o) is not None and r.get('band') is None]
     if base:
         out['baseline1'] = r3(mean([float(r[base]) for r in d if r[f]])); out['baseline0'] = r3(mean([float(r[base]) for r in d if not r[f]]))
     return out
@@ -360,7 +361,8 @@ def build():
                    'The adjusted difference accounts for organization size (logarithm of employees) and, for changes, the starting value.',
                    'Moderate evidence: the difference holds in each size group, p is below 0.05 and the adjusted difference is at least twice its standard error. Limited evidence: one or more of these is not met.',
                    'The scan compares each kind of action, in the letters, in the self-assessments and in either document, and each goal, with each published measure, accounting for size, wherever at least 5 organizations are on each side and 12 in all. It counts the comparisons where the adjusted difference is at least 1.96 times its standard error, the usual 5% threshold, and the number that chance alone would produce.',
-                   SHARED_NOTE],
+                   SHARED_NOTE,
+                   'Comparisons require a published employee count for the size adjustment. Records with an outcome but no matched size are listed in excluded_missing_size and are not included in n1 or n0.'],
         'method_fr': ['Chaque organisation compte une fois. Les mesures sont repérées par mots-clés dans les résumés des engagements des lettres de 2021 et des progrès déclarés dans les autoévaluations de 2024, présentés sur la page de l’appel à l’action.',
                       'Les groupes de taille utilisent le nombre d’employés au 31 mars 2026, tiré des statistiques sur la population du Conseil du Trésor, ou le nombre de 2025 du Conseil du Trésor sur l’équité en matière d’emploi lorsqu’il manque.',
                       'Un écart se maintient dans chaque groupe de taille lorsqu’il va dans le même sens dans chaque groupe de taille comptant au moins deux organisations de chaque côté.',
@@ -368,7 +370,8 @@ def build():
                       'L’écart ajusté tient compte de la taille des organisations (logarithme du nombre d’employés) et, pour les variations, de la valeur de départ.',
                       'Niveau de preuve moyen\u00a0: l’écart se maintient dans chaque groupe de taille, p est inférieur à 0,05 et l’écart ajusté vaut au moins deux fois son erreur type. Niveau de preuve faible\u00a0: au moins une de ces conditions n’est pas remplie.',
                       'Le balayage compare chaque type de mesure, dans les lettres, dans les autoévaluations et dans l’un ou l’autre document, et chaque objectif, avec chaque mesure publiée, en tenant compte de la taille, partout où au moins 5 organisations se trouvent de chaque côté et 12 au total. Il compte les comparaisons où l’écart ajusté vaut au moins 1,96 fois son erreur type, le seuil habituel de 5\u00a0%, et le nombre que le hasard seul produirait.',
-                      'Les organisations qui partagent une même ligne dans les tableaux du Conseil du Trésor sont exclues des résultats sur la représentation.'],
+                      'Les organisations qui partagent une même ligne dans les tableaux du Conseil du Trésor sont exclues des résultats sur la représentation.',
+                      'Les comparaisons exigent un effectif publié pour l’ajustement selon la taille. Les dossiers ayant un résultat mais aucun effectif apparié figurent dans excluded_missing_size et ne sont pas inclus dans n1 ou n0.'],
         'size_groups': [{'from': a, 'to': None if b == 10**9 else b-1, 'en': l[0], 'fr': l[1]} for (a, b), l in zip(BANDS, BAND_LABELS)],
         'categories': {k: {'keywords': rx, 'en': en, 'fr': fr} for k, (rx, en, fr) in CATS.items()},
         'outcomes': names,

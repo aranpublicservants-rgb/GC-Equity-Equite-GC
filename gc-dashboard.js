@@ -19,9 +19,9 @@ const groups=[['w','Women','Femmes','women','woman'],['i','Indigenous employees'
 const surveyGroups=[['all','All respondents','Tous les répondants'],['woman','Women','Femmes'],['man','Men','Hommes'],['pwd','Persons with disabilities','Personnes en situation de handicap'],['nopwd','Persons without disabilities','Personnes sans handicap'],['ind','Indigenous respondents','Répondants autochtones'],['nonind','Non-Indigenous respondents','Répondants non autochtones'],['rac','Racialized respondents','Répondants racisés'],['nonrac','Non-racialized respondents','Répondants non racisés'],['black','Black respondents','Répondants noirs']];
 const source={
  tbs:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html',
- pses:'https://www.canada.ca/en/treasury-board-secretariat/services/values-ethics/public-service-employee-survey.html',
+ pses:'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey.html',
  psc:'https://www.canada.ca/en/public-service-commission.html',
- plans:'https://www.canada.ca/en/treasury-board-secretariat/services/reporting-government-spending/plans-priorities.html',
+ plans:'https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/reports-plans-priorities.html',
  catalogue:'sources.html'
 };
 let D=null,selected='',tableSequence=0,organizationNames=[];
@@ -531,7 +531,7 @@ async function renderBranches(name){
   host.innerHTML='<h3>'+escape(L('2024 Public Service Employee Survey by branch','Sondage auprès des fonctionnaires fédéraux de 2024 selon la direction'))+'</h3>'+
    '<p class="gce-explain">'+escape(L('These are second-level organizational units from the original published survey. Each question and respondent group has its own response percentages. The data are not a survey of all employees in the unit.','Il s’agit des unités organisationnelles de deuxième niveau du sondage publié. Chaque question et groupe de répondants a ses propres pourcentages. Les données ne constituent pas un recensement de tous les employés de l’unité.'))+'</p>'+
    '<div id="gce-branch-full"></div>'+
-   '<p class="gce-source">'+L('Source','Source')+': '+link(meta.sourceCsv||meta.source||'https://open.canada.ca/',L('2024 Public Service Employee Survey, second organizational level','Sondage auprès des fonctionnaires fédéraux de 2024, deuxième niveau organisationnel'))+'.</p>';
+   '<p class="gce-source">'+L('Source','Source')+': '+link(meta.sourceCsv||meta.source||'https://open.canada.ca/en',L('2024 Public Service Employee Survey, second organizational level','Sondage auprès des fonctionnaires fédéraux de 2024, deuxième niveau organisationnel'))+'.</p>';
   branchFullTable($('gce-branch-full'),data,meta,dept,id);
  }catch(error){
   if(id!==branchRequest)return;
@@ -586,7 +586,7 @@ function renderOrg(){
  applyTopics('org');
 }
 function publicOrganizationComparison(){
- const current=selectGroup('public'),names=Object.keys(D.series.orgs).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
+ const current=selectGroup('public'),names=Object.keys(D.series.orgs).filter(name=>name!=='Public Service').sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
  const supported=current==='all'||groups.some(g=>g[0]===current);
  if(!supported)return sCard('public-organization-comparison',L('Compare departments and agencies','Comparer les ministères et organismes'),L('This workforce series does not publish a comparison for the selected group. Use employee surveys for groups available only among respondents.','Cette série sur l’effectif ne publie pas de comparaison pour le groupe choisi. Consultez les sondages pour les groupes disponibles uniquement parmi les répondants.'),'<p class="gce-unavailable">'+escape(L('No published workforce comparison for this group.','Aucune comparaison publiée de l’effectif pour ce groupe.'))+'</p>');
  const heads=current==='all'?[L('Organization','Organisme'),L('Workforce, 2025','Effectif, 2025'),...groups.map(g=>rowsTitle(g)+' (%)')]:[L('Organization','Organisme'),L('Published group count','Nombre publié du groupe'),L('Workforce share (%)','Part de l’effectif (%)'),L('Workforce availability (%)','Disponibilité (%)')];
@@ -728,7 +728,7 @@ function publicTables(){
  if(sexYear&&(current==='all'||['i','v','d'].includes(current))){
   const keys=current==='all'?['i','d','v']:[current];
   out+=sCard('public-appointment-sex',L('Appointments within equity groups by sex','Nominations au sein des groupes visés par l’équité selon le sexe'),
-   L('Women’s and men’s percentages within each listed equity group of appointees; these figures are not the sex distribution of the entire public service.','Pourcentages de femmes et d’hommes parmi les personnes nommées au sein de chaque groupe indiqué; ils ne représentent pas la répartition par sexe de l’ensemble de la fonction publique.'),
+   L('Women’s and men’s percentages within each listed equity group of appointees; these figures are not the sex distribution of the entire public service. These published shares do not always total 100%; the source does not identify the remainder.','Pourcentages de femmes et d’hommes parmi les personnes nommées au sein de chaque groupe indiqué; ils ne représentent pas la répartition par sexe de l’ensemble de la fonction publique. Ces parts publiées ne totalisent pas toujours 100 %; la source ne précise pas le reste.'),
    table(L('Appointments by sex and group, ','Nominations selon le sexe et le groupe, ')+sexYear,
    [L('Equity group','Groupe visé par l’équité'),L('Women (%)','Femmes (%)'),L('Men (%)','Hommes (%)')],
    keys.map(k=>[groupWord(k),P(sex[k]?.women),P(sex[k]?.men)]),'public-appointments-by-sex'),
