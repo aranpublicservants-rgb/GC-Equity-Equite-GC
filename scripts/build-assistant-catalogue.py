@@ -116,6 +116,10 @@ for f in J('dfo/data/catalogue.json')['files']:
   year=re.search(r'snps-(20\d\d)',f['sourceFile'])[1];en=year+' staffing survey: '+en;fr='Sondage sur la dotation de '+year+' : '+fr;period=year
  e=add('dfo/'+f['path'],en,fr,source=f.get('source') or 'dfo/',period=period,scope='Fisheries and Oceans Canada',topics=topics,details=original['details'] if original else None,groups=original['groups'] if original else None,view='org-survey',kind='extract',scan=False)
  e['population']=['DFO-specific records in the published source collection','Dossiers propres au MPO dans la collection de sources publiées']
+native=J('data/tbs-women-departmental-2025.json')
+e=add('data/tbs-women-departmental-2025.json','Women: published departmental counts, representation and availability, 2025','Femmes : effectifs, représentation et disponibilité ministériels publiés, 2025',source=native['source'],period='2025',topics=['representation','workforce'],details=['availability'],groups=['w'],view='org-representation',kind='summary',scan=False)
+e['scopes']=['org'];e['organizations']=list(native['orgs']);e['preview']='dashboard'
+for n in native['orgs']:org(n)
 result={'schema':1,'generated':'2026-11-17','organizations':sorted(orgs.values(),key=lambda o:o['en']),'aliases':[{'en':n,'names':sorted(v)} for n,v in sorted(aliases.items())],'datasets':entries}
 out=json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n';target=R/'assets/assistant-catalogue.json';compressed=R/'assets/assistant-catalogue.json.gz'
 if '--check' in sys.argv:assert target.read_text()==out and gzip.decompress(compressed.read_bytes()).decode()==out,'Assistant catalogue is stale'

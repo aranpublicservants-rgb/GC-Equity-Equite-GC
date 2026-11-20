@@ -113,6 +113,7 @@ async function load(){
   ['pscTenure','data/psc/ar2a.csv','csv'],
   ['pscOfficialLanguage','data/psc/demo_fol.csv','csv'],
   ['orglist','assets/federal-organizations-2026-10-15.json','json'],
+  ['departmentPages','assets/department-pages.json','json'],
   ['profileIndex','assets/department-profile-index.json','json'],
   ['publications','assets/department-publication-links.json','json'],
   ['departmentExecutives','data/restored/16c75ddc-475b-4e62-b883-d5517181c9cf.csv','csv'],
@@ -139,7 +140,7 @@ function findEntry(obj,name){if(!obj)return null;const k=findKey(Object.keys(obj
 function findRow(rows,name){return (rows||[]).find(r=>norm(r.department_or_agency)===norm(name))||null;}
 function recordFor(name){return D.cta.organizations.find(o=>[o.site_name,o.pses_name,o.plan_name,o.snps_name,o.name_en].some(n=>norm(n)===norm(name)))||null;}
 function planFor(name){return D.model.plans.find(p=>norm(p.name)===norm(name))||null;}
-function deptName(name){if(!lang())return name;return D.model.DEPT_FR[name]||D.model.planOrgs[name]?.nameFr||recordFor(name)?.name_fr||name;}
+function deptName(name){const page=D.departmentPages?.organizations.find(o=>o.en===name||o.aliases.some(a=>norm(a)===norm(name)));if(page)return page[lang()?'fr':'en'];if(!lang())return name;return D.model.DEPT_FR[name]||D.model.planOrgs[name]?.nameFr||recordFor(name)?.name_fr||name;}
 function statusTable(name){
  const coverage=[
  [L('Treasury Board workforce representation, 2017–2025','Représentation de l’effectif du Conseil du Trésor, 2017-2025'),!!findEntry(D.series.orgs,name),L('Core public administration','Administration publique centrale')],
@@ -549,6 +550,7 @@ function renderOrg(){
  if(!D)return;const out=$('org-output');if(!out)return;
  dropTables('org-output');
  selected=$('org-picker')?.value||'';
+ if(selected&&D.departmentPages&&new URL(location.href).searchParams.get('view')!=='table'){const page=D.departmentPages.organizations.find(o=>o.en===selected||o.aliases.some(a=>norm(a)===norm(selected)));if(page){const target=new URL(page.path,location.href);target.searchParams.set('lang',lang()?'fr':'en');const g=selectGroup('org');if(g!=='all')target.searchParams.set('group',g);location.assign(target.href);return;}}
  const showDepartment=!!selected;
  const global=document.getElementById('equity-data'),related=document.getElementById('related-public-resources');
  if(global)global.hidden=showDepartment;
@@ -574,8 +576,9 @@ function renderOrg(){
  const s=sCard('org-coverage',L('Published data coverage for the selected organization','Données publiées disponibles pour l’organisme sélectionné'),
  L('Only records explicitly attributed to this organization are included here. Each source may use a different workforce population and reporting period. Public service-wide figures appear only in the separate equity section when no organization is selected.','Seules les données explicitement attribuées à cet organisme figurent ici. Les sources peuvent utiliser des populations et périodes de référence différentes. Les chiffres visant l’ensemble de la fonction publique sont affichés dans la section générale lorsqu’aucun organisme n’est sélectionné.'),
  statusTable(name),L('Federal government department and agency directory','Répertoire des ministères et organismes fédéraux'),'https://www.canada.ca/en/government/dept.html');
- const dedicated=norm(name)===norm('Fisheries and Oceans Canada')?['dfo/','DFO / MPO']:norm(name)===norm('National Defence')?['dnd/','DND / MDN']:null;
- const dedicatedLink=dedicated?'<p class="gce-profile-dedicated"><a href="'+dedicated[0]+'?lang='+(lang()?'fr':'en')+'">'+escape(L('Additional '+dedicated[1]+' publications and specialized datasets','Publications et jeux de données spécialisés supplémentaires du '+dedicated[1]))+'</a></p>':'';
+ const profilePage=D.departmentPages?.organizations.find(o=>o.en===name||o.aliases.some(a=>norm(a)===norm(name)));
+ const dedicated=profilePage?[profilePage.path,deptName(name)]:null;
+ const dedicatedLink=dedicated?'<p class="gce-profile-dedicated"><a href="'+dedicated[0]+'?lang='+(lang()?'fr':'en')+'">'+escape(L('Open the full department profile','Ouvrir le profil ministériel complet'))+'</a></p>':'';
  const empty=(id,en,fr)=>sCard(id,L(en,fr),L('No corresponding result is indexed for this organization in the selected source collection. See the source register for coverage.','Aucun résultat correspondant n’est indexé pour cet organisme dans les sources retenues. Consultez le registre des sources pour la couverture.'),'<p class="gce-unavailable">'+escape(missing())+'</p>');
  const surveyProfile='<section id="org-profile-surveys" class="gce-data-block" data-gce-topics="experience"><h3>'+escape(L('Employee experience in detail, 2024','Expérience des employés en détail, 2024'))+'</h3><p role="status">'+escape(L('Loading this organization’s survey results…','Chargement des résultats du sondage pour cet organisme…'))+'</p></section>';
  out.innerHTML=meta+dedicatedLink+(profile?'<section id="org-profile-findings" class="gce-data-block" data-gce-always="true"></section>':'')+
@@ -834,7 +837,7 @@ function populatePicker(){
   const key=norm(name),canonical=D.cta.organizations.find(o=>rawNorm(o.name_en)===key)?.name_en;
   if(!unique.has(key))unique.set(key,canonical||name);
  }
- const names=[...unique.values()].sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
+ const names=(D.departmentPages?.organizations.map(o=>o.en)||[...unique.values()]).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
  organizationNames=names;
  const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');

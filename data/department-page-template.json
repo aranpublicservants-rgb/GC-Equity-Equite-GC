@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "sections": [
+    {
+      "id": "at-a-glance",
+      "en": "Overview",
+      "fr": "Aperçu"
+    },
+    {
+      "id": "data-guide",
+      "en": "Ask about {dept} data",
+      "fr": "Trouver des données sur {dept}"
+    },
+    {
+      "id": "who-works",
+      "en": "Who works at {dept}",
+      "fr": "L’effectif de {dept}"
+    },
+    {
+      "id": "identities",
+      "en": "Employee groups and identities",
+      "fr": "Groupes et identités"
+    },
+    {
+      "id": "experience",
+      "en": "Employee experience",
+      "fr": "Expérience des employés"
+    },
+    {
+      "id": "harassment",
+      "en": "Harassment and discrimination",
+      "fr": "Harcèlement et discrimination"
+    },
+    {
+      "id": "accommodation",
+      "en": "Workplace accommodation",
+      "fr": "Mesures d’adaptation"
+    },
+    {
+      "id": "hiring",
+      "en": "Hiring and advancement",
+      "fr": "Embauche et avancement"
+    },
+    {
+      "id": "branches",
+      "en": "Organizational units",
+      "fr": "Unités organisationnelles"
+    },
+    {
+      "id": "caf",
+      "en": "Canadian Armed Forces",
+      "fr": "Forces armées canadiennes"
+    },
+    {
+      "id": "conduct",
+      "en": "Conduct and workplace culture",
+      "fr": "Conduite et culture au travail"
+    },
+    {
+      "id": "promised",
+      "en": "Commitments and employee networks",
+      "fr": "Engagements et réseaux d’employés"
+    },
+    {
+      "id": "planned",
+      "en": "Plans and reported results",
+      "fr": "Plans et résultats déclarés"
+    },
+    {
+      "id": "accessibility-plan",
+      "en": "Accessibility plan",
+      "fr": "Plan d’accessibilité"
+    },
+    {
+      "id": "recourse",
+      "en": "Recourse and decisions",
+      "fr": "Recours et décisions"
+    },
+    {
+      "id": "coast-guard",
+      "en": "Coast Guard transfer",
+      "fr": "Transfert de la Garde côtière"
+    },
+    {
+      "id": "missing",
+      "en": "Evidence gaps",
+      "fr": "Lacunes dans les données"
+    },
+    {
+      "id": "data-library",
+      "en": "All {dept} datasets",
+      "fr": "Tous les jeux de données de {dept}"
+    },
+    {
+      "id": "publications",
+      "en": "Official publications and surveys",
+      "fr": "Publications et sondages officiels"
+    },
+    {
+      "id": "requests",
+      "en": "Request or compare data",
+      "fr": "Demander ou comparer des données"
+    },
+    {
+      "id": "actions",
+      "en": "Turn evidence into action",
+      "fr": "Passer des données à l’action"
+    },
+    {
+      "id": "sources",
+      "en": "Sources and definitions",
+      "fr": "Sources et définitions"
+    }
+  ],
+  "departmentExceptions": {
+    "dnd": [
+      "who-works",
+      "experience"
+    ]
+  },
+  "nonApplicable": {
+    "dfo": [
+      "identities",
+      "caf",
+      "conduct"
+    ],
+    "isc": [
+      "identities",
+      "caf",
+      "conduct",
+      "coast-guard"
+    ]
+  },
+  "reviewBeforePublication": false
+}

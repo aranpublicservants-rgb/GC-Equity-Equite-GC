@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'data/checksums.sha256'
-FOLDERS = ['data', 'assets', 'dfo/data', 'dnd/data', 'women-femmes/data',
+FOLDERS = ['data', 'assets', 'dfo/data', 'dnd/data', 'isc/data', 'women-femmes/data',
            'women-femmes/assets', 'racism-hazard-prevention/data']
 
 

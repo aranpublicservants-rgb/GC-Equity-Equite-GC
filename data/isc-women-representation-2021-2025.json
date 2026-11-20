@@ -1,0 +1,37 @@
+{
+  "source": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-women-department-agency-departmental-workforce-availability-estimates.html",
+  "organization": "Indigenous Services Canada",
+  "retrieved": "2026-11-19",
+  "years": {
+    "2025": {
+      "population": 8389,
+      "count": 5890,
+      "representation": 70.2,
+      "wfa": 66.0
+    },
+    "2024": {
+      "population": 8148,
+      "count": 5705,
+      "representation": 70.0,
+      "wfa": 66.3
+    },
+    "2023": {
+      "population": 7252,
+      "count": 5026,
+      "representation": 69.3,
+      "wfa": 65.4
+    },
+    "2022": {
+      "population": 6661,
+      "count": 4537,
+      "representation": 68.1,
+      "wfa": 65.5
+    },
+    "2021": {
+      "population": 6273,
+      "count": 4299,
+      "representation": 68.5,
+      "wfa": 66.0
+    }
+  }
+}

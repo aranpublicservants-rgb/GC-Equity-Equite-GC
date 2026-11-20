@@ -4,8 +4,8 @@ const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelecto
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const matches=(hay,q)=>norm(q).split(/\s+/).filter(Boolean).every(t=>norm(hay).includes(t));
 const norm=s=>String(s??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const en=["at-a-glance", "data-guide", "who-works", "identities", "experience", "harassment", "accommodation", "hiring", "branches", "caf", "conduct", "promised", "planned", "context", "missing", "data-library", "publications", "requests", "actions", "sources"];
-const fr=["apercu", "guide-donnees", "effectif-civil", "identites", "experience-fr", "harcelement", "mesures-adaptation", "embauche", "secteurs", "fac", "conduite", "engagements", "plans", "contexte", "lacunes", "bibliotheque", "publications-fr", "demandes", "agir", "sources-fr"];
+const en=["at-a-glance", "data-guide", "who-works", "identities", "experience", "harassment", "accommodation", "hiring", "branches", "caf", "conduct", "promised", "planned", "accessibility-plan", "recourse", "coast-guard", "missing", "data-library", "publications", "requests", "actions", "sources"];
+const fr=["apercu", "guide-donnees", "effectif-civil", "identites", "experience-fr", "harcelement", "mesures-adaptation", "embauche", "secteurs", "fac", "conduite", "engagements", "plans", "plan-accessibilite", "recours", "garde-cotiere", "lacunes", "bibliotheque", "publications-fr", "demandes", "agir", "sources-fr"];
 let lang=new URL(location.href).searchParams.get('lang')==='fr'?'fr':'en';
 const L=(a,b,l=lang)=>l==='fr'?b:a;
 const money=v=>String(v??'');

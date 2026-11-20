@@ -1,0 +1,349 @@
+{
+  "reviewed": "2026-11-19",
+  "organization": "Indigenous Services Canada",
+  "population": 8389,
+  "representation": {
+    "i": {
+      "2021": [
+        6273,
+        1790,
+        28.5,
+        5.5
+      ],
+      "2022": [
+        6661,
+        1878,
+        28.2,
+        5.2
+      ],
+      "2023": [
+        7252,
+        2065,
+        28.5,
+        5.3
+      ],
+      "2024": [
+        8148,
+        2232,
+        27.4,
+        5.7
+      ],
+      "2025": [
+        8389,
+        2253,
+        26.9,
+        5.6
+      ]
+    },
+    "d": {
+      "2021": [
+        6273,
+        373,
+        5.9,
+        8.9
+      ],
+      "2022": [
+        6661,
+        424,
+        6.4,
+        9.1
+      ],
+      "2023": [
+        7252,
+        510,
+        7.0,
+        9.1
+      ],
+      "2024": [
+        8148,
+        657,
+        8.1,
+        12.0
+      ],
+      "2025": [
+        8389,
+        750,
+        8.9,
+        12.0
+      ]
+    },
+    "v": {
+      "2021": [
+        6273,
+        1107,
+        17.6,
+        16.2
+      ],
+      "2022": [
+        6661,
+        1224,
+        18.4,
+        17.9
+      ],
+      "2023": [
+        7252,
+        1363,
+        18.8,
+        18.0
+      ],
+      "2024": [
+        8148,
+        1635,
+        20.1,
+        22.8
+      ],
+      "2025": [
+        8389,
+        1759,
+        21.0,
+        22.9
+      ]
+    },
+    "b": {
+      "2021": [
+        6273,
+        235,
+        3.7
+      ],
+      "2022": [
+        6661,
+        264,
+        4.0
+      ],
+      "2023": [
+        7252,
+        292,
+        4.0
+      ],
+      "2024": [
+        8148,
+        340,
+        4.2
+      ],
+      "2025": [
+        8389,
+        380,
+        4.5
+      ]
+    }
+  },
+  "women2025": 70.2,
+  "womenCount2025": 5890,
+  "womenWfa2025": 66,
+  "overall": {
+    "Q12": [
+      "66",
+      "4415"
+    ],
+    "Q24": [
+      "71",
+      "4415"
+    ],
+    "Q25": [
+      "68",
+      "4415"
+    ],
+    "Q42": [
+      "46",
+      "4410"
+    ],
+    "Q43": [
+      "53",
+      "4420"
+    ],
+    "Q44e": [
+      "40",
+      "4415"
+    ],
+    "Q45": [
+      "51",
+      "4415"
+    ],
+    "Q47": [
+      "68",
+      "4415"
+    ],
+    "Q49": [
+      "58",
+      "4415"
+    ],
+    "Q51": [
+      "23",
+      "4390"
+    ],
+    "Q52": [
+      "41",
+      "4410"
+    ],
+    "Q53": [
+      "76",
+      "4420"
+    ],
+    "Q58": [
+      "16",
+      "4415"
+    ],
+    "Q63": [
+      "44",
+      "4410"
+    ],
+    "Q65": [
+      "10",
+      "4410"
+    ],
+    "Q70": [
+      "47",
+      "4415"
+    ],
+    "Q72": [
+      "11",
+      "205"
+    ],
+    "Q73p": [
+      "43",
+      "4405"
+    ],
+    "Q73q": [
+      "29",
+      "4410"
+    ],
+    "Q77": [
+      "32",
+      "4415"
+    ],
+    "Q78": [
+      "81",
+      "4415"
+    ],
+    "Q81": [
+      "54",
+      "4415"
+    ],
+    "Q84": [
+      "21",
+      "4415"
+    ],
+    "Q85": [
+      "66",
+      "980"
+    ],
+    "Q86": [
+      "64",
+      "980"
+    ],
+    "Q87": [
+      "70",
+      "625"
+    ],
+    "Q88": [
+      "77",
+      "4415"
+    ]
+  },
+  "staffing": {
+    "fr": "Services aux Autochtones Canada",
+    "all": {
+      "STA_01A": 67,
+      "STA_01E": 75,
+      "STA_01F": 70,
+      "STA_04": 24,
+      "STA_09C": 21,
+      "STA_13": 41,
+      "STA_14A": 14
+    },
+    "woman": {
+      "STA_01A": 66,
+      "STA_01E": 74,
+      "STA_01F": 69,
+      "STA_04": 25,
+      "STA_09C": 22,
+      "STA_13": 40,
+      "STA_14A": 13
+    },
+    "man": {
+      "STA_01A": 75,
+      "STA_01E": 82,
+      "STA_01F": 78,
+      "STA_04": 22,
+      "STA_09C": 20,
+      "STA_13": 47,
+      "STA_14A": 14
+    },
+    "pwd": {
+      "STA_01A": 62,
+      "STA_01E": 69,
+      "STA_01F": 65,
+      "STA_04": 26,
+      "STA_09C": 20,
+      "STA_13": 31,
+      "STA_14A": 18
+    },
+    "nopwd": {
+      "STA_01A": 70,
+      "STA_01E": 80,
+      "STA_01F": 75,
+      "STA_04": 23,
+      "STA_09C": 22,
+      "STA_13": 47,
+      "STA_14A": 10
+    },
+    "rac": {
+      "STA_01A": 68,
+      "STA_01E": 73,
+      "STA_01F": 70,
+      "STA_04": 23,
+      "STA_09C": 17,
+      "STA_13": 39,
+      "STA_14A": 17
+    },
+    "nonrac": {
+      "STA_01A": 67,
+      "STA_01E": 77,
+      "STA_01F": 71,
+      "STA_04": 25,
+      "STA_09C": 23,
+      "STA_13": 42,
+      "STA_14A": 13
+    },
+    "ind": {
+      "STA_01A": 69,
+      "STA_01E": 76,
+      "STA_01F": 70,
+      "STA_04": 23,
+      "STA_09C": 21,
+      "STA_13": 39,
+      "STA_14A": 14
+    },
+    "nonind": {
+      "STA_01A": 68,
+      "STA_01E": 77,
+      "STA_01F": 72,
+      "STA_04": 25,
+      "STA_09C": 21,
+      "STA_13": 42,
+      "STA_14A": 14
+    },
+    "black": {
+      "STA_01A": 62,
+      "STA_01E": 65,
+      "STA_01F": 64,
+      "STA_04": 19,
+      "STA_09C": 12,
+      "STA_13": 33,
+      "STA_14A": 26
+    }
+  },
+  "sources": {
+    "pses": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+    "overall": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv",
+    "tbs": "https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/employment-equity-annual-reports/employment-equity-public-service-canada-2024-2025.html",
+    "staffing": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+    "plan": "https://www.sac-isc.gc.ca/eng/1767990598033/1773090600238",
+    "results": "https://www.sac-isc.gc.ca/eng/1752155698379/1752155722243",
+    "access": "https://www.sac-isc.gc.ca/eng/1766002791478/1766002810081",
+    "progress": "https://www.sac-isc.gc.ca/eng/1734628941512/1734629096495",
+    "misconduct": "https://www.sac-isc.gc.ca/eng/1763483505015/1763484078770",
+    "assessment": "https://www.canada.ca/en/privy-council/corporate/about-call-action/self-assessment-forward-direction/5/indigenous-services-canada.html",
+    "letter": "https://www.canada.ca/en/privy-council/corporate/clerk/call-to-action-anti-racism-equity-inclusion-federal-public-service/letters-implementation/3/indigenous-services-canada.html"
+  }
+}

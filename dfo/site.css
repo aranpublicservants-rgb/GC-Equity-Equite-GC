@@ -23,3 +23,8 @@
 @media(max-width:480px){.bar-line{grid-template-columns:minmax(0,1fr) 3.8rem;gap:.35rem}.bar-series{grid-column:1/-1;font-size:.8rem}.bar-track{grid-row:2;min-width:0}.bar-value{grid-column:2;grid-row:2}.chart-group,.chart-group select,.chart-views{max-width:100%;min-width:0}.header-row .brand{min-width:0}.header-actions{flex:1 1 auto}}
 /* Long source names and email addresses must reflow at narrow widths and enlarged text. */
 body{overflow-wrap:anywhere}select{min-width:0;max-width:100%}button{max-width:100%;white-space:normal;overflow-wrap:anywhere}.chart-views{flex-wrap:wrap}.chart-views button{min-width:0;flex:1 1 5rem}.brand>span{min-width:0}.choice-chips button{min-width:0}
+
+/* Shared department contents and form behavior. */
+.contents{position:sticky;top:1rem;max-height:calc(100dvh - 2rem);overflow-y:auto}.contents a[aria-current="location"]{background:#e8f3ef;border-left-color:#00796b}.page-grid{grid-template-columns:236px minmax(0,1fr)}.request-draft{width:100%;font:inherit;min-height:10rem}@media(max-width:799px){.contents{display:none}.page-grid{display:block}}@media print{.contents{display:none}.page-grid{display:block}}
+
+[hidden]{display:none!important}.page-heading a,.page-heading a:visited{color:#fff;text-decoration:underline;text-underline-offset:.18em}

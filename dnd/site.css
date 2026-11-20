@@ -28,3 +28,8 @@ body{overflow-wrap:anywhere}select{min-width:0;max-width:100%}button{max-width:1
 @media print{.branch-controls,.branch-download,.branch-full,.request-builder fieldset,.request-builder>label,.request-builder .data-toolbar,.gap-calculator{display:none!important}.request-output{max-height:none;overflow:visible;border:0;padding:0}.branch-explorer,.request-builder{background:#fff;border:0;padding:0}.branch-results .table-scroll{overflow:visible}}
 @media(max-width:480px){.header-row{flex-direction:column;align-items:stretch;gap:.75rem}.header-actions{width:100%;max-width:none;flex-wrap:wrap;justify-content:space-between}.header-actions button{flex:1 1 8rem;font-size:.8rem}.brand{font-size:1rem}.page-heading h1{font-size:clamp(1.45rem,7vw,1.9rem);line-height:1.3}.page-heading{padding-block:1.6rem}.page-heading .eyebrow{letter-spacing:.05em}}
 @media(max-width:400px){.stat-card{display:block}.stat-card .stat{display:block}.answer-facts li{grid-template-columns:minmax(0,1fr);gap:.35rem}}
+
+/* Shared department contents and form behavior. */
+.contents{position:sticky;top:1rem;max-height:calc(100dvh - 2rem);overflow-y:auto}.contents a[aria-current="location"]{background:#e8f3ef;border-left-color:#00796b}.page-grid{grid-template-columns:236px minmax(0,1fr)}.request-draft{width:100%;font:inherit;min-height:10rem}@media(max-width:799px){.contents{display:none}.page-grid{display:block}}@media print{.contents{display:none}.page-grid{display:block}}
+
+[hidden]{display:none!important}.page-heading a,.page-heading a:visited{color:#fff;text-decoration:underline;text-underline-offset:.18em}

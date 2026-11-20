@@ -28,7 +28,8 @@ jobs:
           const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.csv':'text/csv; charset=utf-8','.json':'application/json','.css':'text/css'};
           const root=process.cwd();
           const server=http.createServer((req,res)=>{
-            const filepath=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
+            let filepath=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
+            if(filepath.endsWith(path.sep)||fs.existsSync(filepath)&&fs.statSync(filepath).isDirectory())filepath=path.join(filepath,'index.html');
             if(!filepath.startsWith(root+path.sep)&&filepath!==root){res.writeHead(403);res.end();return;}
             fs.readFile(filepath,(err,bytes)=>{
               if(err){res.writeHead(404);res.end();return;}
@@ -44,7 +45,7 @@ jobs:
                 const ctx=await browser.newContext(mode.opts,{acceptDownloads:true});
                 const page=await ctx.newPage(), errors=[];
                 page.on('pageerror',e=>errors.push(e.message));
-                await page.goto(addr+'index.html?lang=en');
+                await page.goto(addr+'index.html?lang=en&view=table');
                 const choices=await page.$$eval('.gce-primary-choice',els=>els.map(a=>a.getAttribute('href')));
                 if(JSON.stringify(choices)!==JSON.stringify(['#department-data','#equity-data']))throw Error('The two choices must stay on this page: '+choices);
                 await page.waitForFunction(()=>document.querySelectorAll('#public-output table').length>=10,null,{timeout:120000});
@@ -138,7 +139,7 @@ jobs:
                 await page.waitForFunction(()=>document.querySelectorAll('#org-profile-surveys table').length===4,null,{timeout:30000});
                 if(await page.locator('#org-profile-title').innerText()!=='Canada Revenue Agency')throw Error('Department profile uses the wrong employer');
                 if(!await page.locator('#org-profile-accommodation table').count()||!await page.locator('#org-profile-health table').count())throw Error('Readable accommodation and mental-health tables missing');
-                if(await page.locator('#org-output .gce-profile-dedicated').count())throw Error('Another department’s specialized profile leaked into CRA');
+                if(!await page.locator('#org-output .gce-profile-dedicated a[href^="cra/"]').count())throw Error('CRA full-profile link missing');
                 if(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+3))throw Error('Selected department profile overflows viewport: '+mode.name);
                 await page.locator('[data-profile-question="accommodation"]').click();
                 if(!/Q84/.test(await page.locator('#org-profile-answer').innerText()))throw Error('Guided departmental accommodation answer missing');
@@ -209,6 +210,19 @@ jobs:
                 await page.waitForFunction(()=>document.documentElement.lang==='fr'&&/Données sur l’équité/.test(document.querySelector('h1').textContent));
                 if(!/Ministères et organismes/.test(await page.locator('#department-data h2').innerText()))throw Error('French section title absent');
                 if(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+3))throw Error('Main page overflows viewport: '+mode.name);
+                // Default selection opens the full profile on desktop and phone.
+                await page.goto(addr+'index.html?lang=en');
+                await page.waitForFunction(()=>document.querySelectorAll('#org-picker option').length===248,null,{timeout:60000});
+                await page.selectOption('#org-picker','Canada Revenue Agency');
+                await page.waitForURL('**/cra/?lang=en');
+                await page.waitForFunction(()=>document.querySelectorAll('#lang-en .dp-group option').length>100,null,{timeout:30000});
+                await page.selectOption('#lang-en .dp-group','Black');
+                if(await page.locator('#lang-en .dp-survey').first().locator('thead th').count()!==4)throw Error('Selected group profile must show own-employer comparison');
+                await page.locator('#lang-en [data-guide-topic="accommodation"]').click();
+                if(!/Q86/.test(await page.locator('#lang-en .dp-guide-answer').innerText()))throw Error('Department guide missing accommodation evidence');
+                await page.locator('#language').click();
+                if(await page.locator('html').getAttribute('lang')!=='fr')throw Error('Department language switch failed');
+                if(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+3))throw Error('Full profile overflows viewport: '+mode.name);
                 if(errors.length)throw Error('Browser script errors: '+errors.join(' / '));
                 fs.mkdirSync('qa-screenshots',{recursive:true});
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-dashboard.png',fullPage:false});

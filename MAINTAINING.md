@@ -1,5 +1,17 @@
 # Maintaining GC Equity / Équité-GC
 
+## Dedicated department pages, November 19, 2026
+
+All 255 labels from the department selector now resolve to 247 distinct bilingual profiles. Eight reordered or alternate labels are consolidated through explicit identity aliases. DFO, DND and ISC keep their reviewed specialist content. Other pages use the same contents layout, ordered section contract, charts, guided questions, source browser, CSV exports and aggregate request builder. Sections without corresponding evidence are omitted and recorded in Evidence gaps.
+
+`data/department-identity-crosswalk.json` preserves exact labels for each source and the official bilingual organization names. Combined Information/Privacy Commissioner and Western Economic Diversification populations remain separate from each office or successor. RCMP, civilian, military, Coast Guard and predecessor populations retain their source definitions. No national or other-employer value fills a missing departmental cell.
+
+Build the shared pages with `python scripts/build-department-pages.py`. The 2024 reading extracts cover 92 employers and 27 questions; the staffing summary covers 75 selected entities, representation covers 71, and the plan index covers 90. Source coverage differs by employer. The source library also exposes matched retained historical, staffing, population and branch files. The native 2025 women counts are copied from the official TBS department table, not inferred from rounded percentages.
+
+Selecting a department opens its full profile. `index.html?org=NAME&view=table` retains the existing comparison workspace. The full-profile route and comparison link preserve language and group selections where supported. Rebuild ISC with `python scripts/build-isc-page.py`; each exported ISC reading row names its overall or employee-group source, and the source browser cites both original files.
+
+Run `python scripts/check-site.py`, `python scripts/check-dfo.py` and `python dnd/scripts/check-site.py` before publication. The repository check includes `scripts/check-all-department-pages.py`, which checks every identity, page, menu, source population and retained reading cell. The browser workflow checks desktop and phone layouts. These are functional checks, not formal accessibility certification. Ali authorized direct GitHub publication of all department conversions on November 19.
+
 This file describes the site as it is now. It is kept in the repository and is not published on the site (see `_config.yml`).
 
 ## November 2026 publication-quality redesign and coverage audit

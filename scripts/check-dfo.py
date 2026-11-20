@@ -92,7 +92,7 @@ text = (DFO / 'index.html').read_text()
 page.feed(text)
 assert len(page.ids) == len(set(page.ids))
 assert all(anchor in page.ids for anchor in page.anchors)
-assert page.sections == 32 and page.tables == page.captions
+assert page.sections == 38 and page.tables == page.captions
 assert not re.search(r'kakyze|Coast Guard scopeily|35 respondents|few dozen', text, re.I)
 for name in ['app.js', 'explore.js', 'guide-model.js', 'site.css', 'action-tracker-en.csv', 'action-tracker-fr.csv']:
     assert (DFO / name).is_file()

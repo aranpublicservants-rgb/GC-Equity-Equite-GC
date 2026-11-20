@@ -50,7 +50,7 @@ class Page(HTMLParser):
   if tag=='script' and a.get('src'):self.assets.append(a['src'])
   if tag=='link' and a.get('rel')=='stylesheet':self.assets.append(a['href'])
   if tag=='section':self.sections+=1
-html=(R/'index.html').read_text();page=Page();page.feed(html);assert len(page.ids)==len(set(page.ids)) and page.sections==40
+html=(R/'index.html').read_text();page=Page();page.feed(html);assert len(page.ids)==len(set(page.ids)) and page.sections==44
 for link in page.links:
  if link.startswith('#'):assert link[1:] in page.ids,link
  elif link and not link.startswith(('https:','http:','mailto:')):assert (R/link.split('?')[0]).exists(),link
@@ -59,4 +59,4 @@ for p in list(R.glob('*.js'))+[R/'index.html']:
  text=p.read_text();assert not any(x in text for x in ['Indigenous Services Canada','ISC overall','SAC','13,924','8,389','kakyze','—']),p.name
  for anchor in ['qui-travaille','promesses','manquant']:assert ('#'+anchor) not in text,p.name+' stale anchor'
 subprocess.run(['node',str(R/'scripts/check-models.cjs')],cwd=R,check=True)
-print(f'PASS: {len(ids)} assets, {total:,} rows, {checked:,} direct department-group cells and {bchecked:,} branch cells; 40 bilingual sections.')
+print(f'PASS: {len(ids)} assets, {total:,} rows, {checked:,} direct department-group cells and {bchecked:,} branch cells; 44 bilingual sections.')

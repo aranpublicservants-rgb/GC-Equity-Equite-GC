@@ -214,4 +214,6 @@ print(f'PASS: all published pages, local assets, JavaScript, published-data chec
 subprocess.run(["python3","scripts/build-assistant-catalogue.py","--check"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/data-assistant.test.cjs"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/check-department-profiles.py"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-dedicated-departments.py"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-all-department-pages.py"],cwd=ROOT,check=True)
 subprocess.run(["node","tests/department-profile.test.cjs"],cwd=ROOT,check=True)
