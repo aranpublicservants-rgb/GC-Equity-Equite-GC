@@ -14,7 +14,7 @@ e689276952a2cbb6852a0d51f91258d79b4e928aa24dd6a1e66996b9463ab5da  assets/departm
 60c690de73b970399ba88ea8a77c2dc9c2315c75e9050d27f2b56c4f327eab1f  assets/department-requests.js
 672c081241f66185d1ab05811ceb9ceca12788270d4c9d69e6f32b5f3baa603b  assets/equity-reports.css
 6a5e44e5bf142034505fc6d7523ad496258d91f2e3f1a5d5428ae336489c5ae5  assets/equity-reports.js
-283bb4219c6b931c40764491cb7d4e325dea348df1f62a8cbf8bbf1748f72e57  assets/equity-reports.json
+b8c87a259daf44239c0212762f4e33c37a2e57e5487579960cb6dbe24d76330b  assets/equity-reports.json
 8d5f4349b038eb0e35588c77498f128f8678925f84570809ff2127c4ddf84fcb  assets/federal-organizations-2026-10-15.json
 817ee296318da45d1ae2f5a940617cd6e1c1e63b8efa11ad57dd8bbc84d57896  assets/hosted-datasets.json
 b537bb81cbeec1347c2962c1f210ca505200da47d162305849225146e9caca42  assets/library-documents.json
@@ -131,6 +131,7 @@ f0fcffd99a68f1249417821ef11e319f51c1f9bc527d60a245d47c91b7cbf851  data/ee-report
 2fe4252e22f36c48cb934d2c92f6bbd565dd235a98b1ac8540f0fa2840c7f0f2  data/ee-reports/psc-promotion-rate-study-original-fr.docx
 526de3d7de25b035c8cdbfab27b8c001feceaee601b6aec2f318b578434c3111  data/ee-reports/psc-promotion-rate-study-three-year-update-2022-en.docx
 2ef5f633102a4d236bbcdb2157ad35d8a307f2ee631d5267cd41c9608cca3e25  data/ee-reports/psc-promotion-rate-study-three-year-update-2022-fr.docx
+3c38e2c0cf25009e4345742f0ab6a729a9e96b51b8b74ff507c3af78b4f5cf63  data/ee-reports/pses2022-23-supporting-documentation.xlsx
 b6bf69ac83a1293b7f9bd714aa7d203475e844b931b2b216618f22555540fad0  data/isc-women-representation-2021-2025.json
 2a362f4c3cb2807e25193b00ba88b2b45bcc2df33c8eec21132049cc9481c453  data/october-2026/DI_cleaned_imputed_salary_counts_2017-2025.csv
 254dbd19bba003c8da7330a056db8ed306da2f08e3ef5fd5054a8642b149f6e2  data/october-2026/DI_di_disproportionality_index_2017-2025.csv
@@ -205,7 +206,6 @@ a8b70ebe4082266696caf139a452278574d1070e63e0bfd6ea5509e869fa513f  data/open-cana
 d3fcf2721e72c147049ded58b3d9c5d1479eb4a11ef6887c329596e9dd767b75  data/open-canada-2026-11/pses-2020/pses2020-diversity-inclusion-tables.xlsx
 3fd3ef08b23fb9a5c197266ec79b275558485ba55cb78f3db600c345a119aaae  data/open-canada-2026-11/pses-2020/subset-1-sous-ensemble-1.csv.gz
 6fab8aba7f205307d3f0ba9dcbbbc5c30ce0b72919e1ea7ff60d4fb1e11b8097  data/open-canada-2026-11/pses-2022-2023/large-files.json
-3c38e2c0cf25009e4345742f0ab6a729a9e96b51b8b74ff507c3af78b4f5cf63  data/open-canada-2026-11/pses-2022-2023/pses2022-23-supporting-documentation.xlsx
 3a8aa5b5f891e9da0d618afce10a32158d5e4b2e59d7c6a8a0cb26f794247505  data/open-canada-2026-11/pses-2022-2023/subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv.gz
 bb6323655e151cb2013adb4c4d0f596cb1c08a2ceda871d25e8374b27a23bf64  data/open-canada-2026-11/pses-2024/large-files.json
 114d0a238786cfa4fd0923c21aef069d802f6bcdeb71e8fc7d321649991b91a9  data/open-canada-2026-11/pses-2024/subset-1-sous-ensemble-1.csv.gz
