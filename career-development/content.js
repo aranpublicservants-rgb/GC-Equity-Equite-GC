@@ -157,10 +157,11 @@ const ui={
  plannerTitle:p('Make room for your next step','Prévoir votre prochaine étape'),
  plannerBody:p('A clear goal. A practical action. A date to check in.','Un objectif clair. Une action concrète. Une date de suivi.'),
  evidenceEmpty:p('No example written yet.','Aucun exemple rédigé.'),
- sourceDate:p('Reviewed 2026-11-20','Examiné le 2026-11-20')
+ sourceDate:p('Reviewed 2026-11-20','Examiné le 2026-11-20'),
+ upload:p('File a career document','Classer un document de carrière')
 };
 const sections=[
- ['guide','guide'],['pathways','planning'],['mobility','mobility'],['applications','applications'],['languages','languages'],['connections','connections'],['templates','templates'],['plan','plan'],['resources','resources']
+ ['guide','guide'],['pathways','planning'],['mobility','mobility'],['applications','applications'],['languages','languages'],['connections','connections'],['templates','templates'],['plan','plan'],['upload','upload'],['resources','resources']
 ];
 const goals=[
  {id:'learn',title:p('Build my skills','Développer mes compétences'),desc:p('Learning, stretch work and a development plan','Apprentissage, mandats et plan de perfectionnement'),icon:'book',section:'pathways',sources:['pma','catalogue','qualifications'],steps:[p('Choose one skill you want to use more often.','Choisissez une compétence que vous souhaitez utiliser davantage.'),p('Find a work task that lets you practise it.','Trouvez une tâche qui permet de la mettre en pratique.'),p('Discuss learning time and feedback in your development plan.','Discutez du temps de formation et de la rétroaction dans votre plan de perfectionnement.')]},

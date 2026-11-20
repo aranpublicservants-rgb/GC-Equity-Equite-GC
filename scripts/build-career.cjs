@@ -24,11 +24,15 @@ for(const lang of ['en','fr']){
 <meta name="theme-color" content="#102938">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="tools.css">
 <script src="content.js" defer></script>
 <script src="sources.js" defer></script>
 <script src="model.js" defer></script>
 <script src="view.js" defer></script>
 <script src="app.js" defer></script>
+<script src="vendor/jszip.min.js" defer></script>
+<script src="tools-model.js" defer></script>
+<script src="tools.js" defer></script>
 </head><body id="top">
 <noscript><div class="container note">${nojs}</div></noscript>
 <div id="app">${V.page(state)}</div>

@@ -40,7 +40,7 @@ function persist(){
 }
 function updateSaveState(){if($('save-state'))$('save-state').textContent=t(storageError?'storageFailed':state.saveWork?'saved':'unsaved');}
 function setAppearance(){document.documentElement.lang=state.lang;document.documentElement.classList.toggle('large-text',state.large);document.documentElement.classList.toggle('high-contrast',state.contrast);document.title=t('title');document.querySelector('meta[name=description]').content=t('heroBody');const og=document.querySelector('meta[property="og:title"]');if(og)og.content=t('title');}
-function render(){setAppearance();$('app').innerHTML=V.page(state);updateSaveState();updateCompletion();updateScroll();}
+function render(){setAppearance();$('app').innerHTML=V.page(state);updateSaveState();updateCompletion();updateScroll();document.dispatchEvent(new CustomEvent('career:render'));}
 function updateCompletion(){const count=state.plan.actions.filter(a=>a.status==='done').length,total=state.plan.actions.length;$('plan-completion').innerHTML='<span>'+count+' / '+total+' '+V.esc(t('completeCount'))+'</span><progress value="'+count+'" max="'+(total||1)+'" aria-label="'+V.esc(t('completeCount'))+'">'+count+' / '+total+'</progress>';}
 function updateScroll(){
  const header=document.querySelector('.site-header'),offset=getComputedStyle(header).position==='sticky'?header.getBoundingClientRect().height+22:20,sections=[...document.querySelectorAll('[data-section]')];
@@ -50,7 +50,7 @@ function updateScroll(){
  const max=document.documentElement.scrollHeight-innerHeight;
  if(max>0&&scrollY>=max-3)current='resources';
  document.querySelectorAll('[data-nav]').forEach(a=>{if(a.dataset.nav===current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
- const chosen=C.sections.find(([id])=>id===current);if($('mobile-current')&&chosen)$('mobile-current').textContent=t(chosen[1]);
+ const chosen=C.sections.find(([id])=>id===current);if($('section-jump')&&document.activeElement!==$('section-jump'))$('section-jump').value=current;if($('mobile-current')&&chosen)$('mobile-current').textContent=t(chosen[1]);
  if($('reading-progress'))$('reading-progress').value=max>0?Math.min(100,Math.max(0,scrollY/max*100)):100;
 }
 function updateGuide(focusGoal){$('guide-tool').innerHTML=V.guide(state);if(focusGoal)document.querySelector('[data-goal="'+focusGoal+'"]')?.focus({preventScroll:true});persist();}

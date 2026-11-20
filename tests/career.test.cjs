@@ -1,6 +1,26 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const C=require('../career-development/content.js'),M=require('../career-development/model.js'),V=require('../career-development/view.js'),R=require('../career-development/sources.js');
+const D=require('../career-development/tools-model.js');
+test('document matching distinguishes the verified filing categories and uncertain input',()=>{
+ assert.equal(D.classify('language-training.docx','Second language evaluation, French and English practice','').index,5);
+ assert.equal(D.classify('mentorat.txt','Mentorat et réseaux de communautés','').index,3);
+ assert.equal(D.classify('detachement.docx','Affectation temporaire et détachement','').index,4);
+ assert.equal(D.classify('pma.txt','Talent management and performance agreement','').index,2);
+ assert.equal(D.classify('notes.txt','','').index,6);
+ assert.equal(D.classify('notes.pdf','','Language training').metadataOnly,true);
+ assert.equal(new Set(D.headings.map(h=>h.id)).size,7);
+});
+test('Trello handoff has a fixed destination, no tokens and no document body in the URL',()=>{
+ const u=new URL(D.trelloUrl(5,'Résumé <test>'));
+ assert.equal(u.origin,'https://trello.com');assert.equal(u.pathname,'/add-card');assert.equal(u.searchParams.get('idBoard'),D.board.id);assert.equal(u.searchParams.get('idList'),D.headings[5].id);assert.equal(u.searchParams.get('name'),'Résumé <test>');assert(!u.searchParams.has('desc'));assert(!u.searchParams.has('token'));assert.throws(()=>D.trelloUrl(90,'title'));
+ const d=D.cardDescription('sample.txt','Exact source text.','User note.','fr');assert(d.includes('Exact source text.'));assert(d.includes('User note.'));assert(d.includes('Fichier source : sample.txt'));
+ assert.throws(()=>D.xmlText('<!DOCTYPE document [<!ENTITY x SYSTEM "file:///etc/passwd">]>',null));
+});
+test('every English and French chat choice resolves to published career guidance',()=>{
+ for(const goal of C.goals)for(const lang of ['en','fr']){const text=M.t(goal.title,lang),context=D.contextFor(text,lang,C,R,M);assert(context.topic,text);assert(context.context.length,text);assert(context.sources.length,text);for(const r of context.sources)assert(R.includes(r));}
+ assert.equal(D.topicFor('What is tomorrow’s weather?'),null);
+});
 test('casual workers, students and external candidates get application steps for a move',()=>{
  for(const status of ['casual','student','external']){
   const result=M.guide('move',status);
