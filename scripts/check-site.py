@@ -219,3 +219,4 @@ subprocess.run(["python3","scripts/check-department-profiles.py"],cwd=ROOT,check
 subprocess.run(["python3","scripts/check-dedicated-departments.py"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/check-all-department-pages.py"],cwd=ROOT,check=True)
 subprocess.run(["node","tests/department-profile.test.cjs"],cwd=ROOT,check=True)
+subprocess.run(["node","--test","tests/career.test.cjs"],cwd=ROOT,check=True)

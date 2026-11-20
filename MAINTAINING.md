@@ -1,5 +1,13 @@
 # Maintaining GC Equity / Équité-GC
 
+## Career development resource
+
+`career-development/` is a standalone bilingual career page, linked from the hiring and careers area of the shared resource directory. It covers learning plans, classifications, mobility, applications, official languages, mentoring, conversation drafts and personal planning. Its 26 source records contain English and French publisher URLs checked on November 20, 2026. Source links next to the guidance identify its basis. The page is an independent ARAN resource, with no official accessibility certification claim.
+
+The career guide uses fixed rules and published resources. It does not use a generative model. Its mobility suggestions distinguish employees, students, casual workers, external candidates and separate-agency employees. The writing tools assemble visitor-supplied text and editable scripts. The action planner calculates calendar dates, records progress and exports text, CSV and a print layout. No form data leave the browser. Device saving is optional and uses a page-specific storage key; display preferences are saved separately. There are no remote scripts, fonts, analytics or paid services.
+
+Edit `career-development/content.js`, `sources.js`, `model.js`, `view.js`, `app.js` and `styles.css`, then run `node scripts/build-career.cjs` to regenerate the English and French HTML pages. Published guidance and the full resource library remain readable without JavaScript. Interactive controls require JavaScript. `node --test tests/career.test.cjs` is included in the repository check. It verifies eligibility boundaries, calendar arithmetic, formula-safe CSV exports, French search, escaped visitor text and both static pages.
+
 ## Dedicated department pages, November 19, 2026
 
 All 255 labels from the department selector now resolve to 247 distinct bilingual profiles. Eight reordered or alternate labels are consolidated through explicit identity aliases. DFO, DND and ISC keep their reviewed specialist content. Other pages use the same contents layout, ordered section contract, charts, guided questions, source browser, CSV exports and aggregate request builder. Sections without corresponding evidence are omitted and recorded in Evidence gaps.
