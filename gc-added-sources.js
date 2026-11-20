@@ -74,6 +74,7 @@ function drawTable(box,caption,head,rows,exportName,exportHead,exportRows){
   body.innerHTML=rows.slice(page*PER_PAGE,(page+1)*PER_PAGE).map(r=>'<tr>'+head.map((_,j)=>j===0?'<th scope="row">'+esc(r[j]??'')+'</th>':'<td>'+esc(r[j]??'')+'</td>').join('')+'</tr>').join('');
   status.textContent=rows.length?L('Rows ','Lignes ')+(page*PER_PAGE+1)+'–'+Math.min((page+1)*PER_PAGE,rows.length)+' / '+rows.length:L('No rows.','Aucune ligne.');
   prev.disabled=page===0;next.disabled=(page+1)*PER_PAGE>=rows.length;
+  const vt=body.closest('table');vt._gceVisualData={headers:head,rows,title:caption,scope:'filtered',lang:document.documentElement.lang};window.GCEquityVisuals?.update(vt);
  };
  prev.addEventListener('click',()=>{if(page>0){page--;show();}});
  next.addEventListener('click',()=>{if((page+1)*PER_PAGE<rows.length){page++;show();}});

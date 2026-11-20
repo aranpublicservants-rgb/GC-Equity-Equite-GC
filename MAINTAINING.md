@@ -180,3 +180,14 @@ Not added:
 - The other lists in the library (groups and communities, research and reports, training, non-federal strategies, and the additional documents) are not specific to the federal public service or have not been reviewed one by one.
 - The 2013-14 employment equity annual report tables (38 Excel files recovered from the Wayback Machine), the priority administration file from the staffing dashboard package, and the employee survey Excel tables for years other than 2020.
 - Out of scope for this site: the federally regulated private sector file and the Canadian Armed Forces file.
+
+
+## Shared graphical data views
+
+`assets/data-visuals.js` and its stylesheet provide Table / Chart / Both, bars, dots, compatible heatmaps and period trends. The standard page entry scripts load this component without an external service. Existing DFO and DND prepared charts offer the same three view choices.
+
+Source browsers attach `_gceVisualData` to their table with full filtered rows and complete headers before pagination or hiding columns. Use `{headers, rawHeaders, rows, title, lang, sources, scope: "filtered"}` and call `GCEquityVisuals.update(table)` after updates. The dashboard exposes the equivalent `GCEChartTableData` accessor. Keep the original CSV exports.
+
+Every plotted mark remains a source cell. Counts and percentages have separate scales; suppressed and missing values stay distinct; no repeated cells are summed or averaged. Trends require unique periods. A stacked distribution requires all five labelled response shares and a complete published distribution. Unrecognized textual or identifier-only tables retain their table view. Chart filters and row limits are explicit; exports identify the supporting page.
+
+Run `node --test scripts/test-data-visuals.cjs` and `python scripts/check-site.py`. Browser CI checks table/chart/both, keyboard details, heatmaps, valid PNG export and narrow layouts.

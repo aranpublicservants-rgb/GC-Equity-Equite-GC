@@ -26,6 +26,7 @@ const source={
 };
 let D=null,selected='',tableSequence=0,organizationNames=[];
 const tableStore=new Map();
+window.GCEChartTableData=table=>{const e=tableStore.get(table.id);return e?{headers:e.heads,rows:e.rows,title:e.caption,lang:lang()?'fr':'en',scope:'filtered'}:null;};
 const PAGE_ROWS=18;
 const GROUP_OPTIONS=[['all','All employees / respondents','Tous les employés / répondants'],['w','Women','Femmes'],['man','Men','Hommes'],['i','Indigenous employees','Employés autochtones'],['nonind','Non-Indigenous employees','Employés non autochtones'],['d','Employees with disabilities','Employés en situation de handicap'],['nopwd','Employees without disabilities','Employés sans handicap'],['v','Racialized employees','Employés racisés'],['nonrac','Non-racialized employees','Employés non racisés'],['b','Black employees','Employés noirs'],['lgbt','2SLGBTQIA+ employees','Employés 2ELGBTQIA+']];
 const selectGroup=where=>$(where+'-group-picker')?.value||'all';
@@ -507,6 +508,7 @@ function branchFullTable(host,rows,meta,dept,request){
     ['MOSTPOS','MOSTNEG','AGREE','SCORE100','ANSCOUNT'].map(k=>'<td>'+escape(branchValue(r[indices[k]]))+'</td>').join('')+'</tr>';
   }).join('');
   status.textContent=current.length?pageText(page,current.length):L('No published rows match these selections.','Aucune ligne publiée ne correspond à ces choix.');
+  const vt=tbody.closest('table');vt._gceVisualData={headers:[L('Branch','Unité'),L('Employee group','Groupe'),L('Question','Question'),'MOSTPOS','MOSTNEG','AGREE','SCORE100','ANSCOUNT'],rows:current.map(r=>{const a=branchRow(r,meta,dept);return [a.branch,a.group,a.question,...['MOSTPOS','MOSTNEG','AGREE','SCORE100','ANSCOUNT'].map(k=>branchValue(r[indices[k]]))];}),title:vt.caption?.textContent||L('Organizational units','Unités organisationnelles'),scope:'filtered',lang:lang()?'fr':'en'};window.GCEquityVisuals?.update(vt);
   $('gce-branch-prev').disabled=page===0;
   $('gce-branch-next').disabled=(page+1)*PAGE_ROWS>=current.length;
  }

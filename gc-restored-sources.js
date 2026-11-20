@@ -99,6 +99,7 @@ function attach(host,kind,files,name,frenchName,requestId){
     body.innerHTML=filtered.slice(page*PAGE,(page+1)*PAGE).map(r=>'<tr>'+r.slice(0,cols).map((v,i)=>i===0?'<th scope="row">'+esc(v)+'</th>':'<td>'+esc(v)+'</td>').join('')+'</tr>').join('');
     count.textContent=filtered.length?L('Rows ','Lignes ')+(page*PAGE+1)+'–'+Math.min((page+1)*PAGE,filtered.length)+' / '+filtered.length:L('No matching rows','Aucune ligne correspondante');
     prev.disabled=page===0;next.disabled=(page+1)*PAGE>=filtered.length;
+    const vt=body.closest('table');vt._gceVisualData={headers,rows:filtered,title:sourceTitle(file),scope:'filtered',lang:document.documentElement.lang,sources:[file.publisherUrl||file.source].filter(Boolean)};window.GCEquityVisuals?.update(vt);
    }
    area.querySelector('.gce-download').onclick=()=>download(file,headers,filtered);
    prev.onclick=()=>{if(page>0){page--;draw(false);}};

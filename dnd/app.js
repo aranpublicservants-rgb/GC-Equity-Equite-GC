@@ -1,3 +1,5 @@
+/* Shared graphical views use the same published cells as the tables. */
+(()=>{const current=document.currentScript;if(current?.src&&typeof document.querySelector==='function'&&!document.querySelector('script[data-gce-visuals]')){const script=document.createElement('script');script.src=new URL('../assets/data-visuals.js',current.src).href;script.dataset.gceVisuals='true';script.defer=true;document.head.append(script);}})();
 /* DND evidence: direct published records, with source-specific populations. */
 (()=>{'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -98,7 +100,7 @@ $$('.library').forEach(lib=>{
     if(sortIndex>=0)filtered=[...filtered].sort((a,b)=>String(a[sortIndex]??'').localeCompare(String(b[sortIndex]??''),l,{numeric:true})*sortDirection);
     const cols=[...selected].sort((a,b)=>a-b);thead.innerHTML='<tr>'+cols.map(i=>'<th scope="col"'+(sortIndex===i?' aria-sort="'+(sortDirection===1?'ascending':'descending')+'"':'')+'><button type="button" data-column="'+i+'">'+esc(label((file.displayHeaders||headers)[i],l))+(sortIndex===i?(sortDirection===1?' ↑':' ↓'):'')+'</button></th>').join('')+'</tr>';
     tbody.innerHTML=filtered.slice(page*20,page*20+20).map(r=>'<tr>'+cols.map((i,j)=>{const v=r[i],display=v===null||v===undefined||v===''?L('Unavailable','Non disponible',l):v==='9999'?L('Not applicable (9999)','Sans objet (9999)',l):v==='X'?L('Suppressed (X)','Supprimé (X)',l):v;return(j===0?'<th scope="row">':'<td>')+esc(display)+(j===0?'</th>':'</td>');}).join('')+'</tr>').join('')||'<tr><td colspan="'+cols.length+'">'+L('No matching records','Aucune ligne correspondante',l)+'</td></tr>';
-    count.textContent=filtered.length?L('Rows ','Lignes ',l)+(page*20+1)+'–'+Math.min(page*20+20,filtered.length)+' / '+filtered.length.toLocaleString(l):L('No matching records','Aucune ligne correspondante',l);prev.disabled=page===0;next.disabled=(page+1)*20>=filtered.length;
+    count.textContent=filtered.length?L('Rows ','Lignes ',l)+(page*20+1)+'–'+Math.min(page*20+20,filtered.length)+' / '+filtered.length.toLocaleString(l):L('No matching records','Aucune ligne correspondante',l);prev.disabled=page===0;next.disabled=(page+1)*20>=filtered.length;const vt=$('table',box);vt._gceVisualData={headers:headers.map(h=>label(h,l)),rawHeaders:headers,rows:filtered,title:file[l],lang:l,scope:'filtered',sources:file.sources||[file.source]};window.GCEquityVisuals?.update(vt);
    }
    thead.addEventListener('click',e=>{const b=e.target.closest('[data-column]');if(!b)return;const ix=Number(b.dataset.column);sortDirection=sortIndex===ix?-sortDirection:1;sortIndex=ix;page=0;draw(false);});
    query.addEventListener('input',()=>draw(true));prev.addEventListener('click',()=>{if(page>0){page--;draw(false);}});next.addEventListener('click',()=>{if((page+1)*20<filtered.length){page++;draw(false);}});

@@ -202,6 +202,7 @@ function mount(){
    return j===0?'<th scope="row">'+E(val)+'</th>':'<td>'+E(val)+'</td>';
   }).join('')+'</tr>').join('');
   $('gce-raw-table').innerHTML='<div class="gce-table-wrap" role="region" tabindex="0" aria-label="'+E(heading(active))+'"><table data-gcw-ready="yes"><caption>'+E(heading(active))+'</caption><thead><tr>'+visible.map(x=>'<th scope="col">'+E(x.label)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>';
+  const vt=$('gce-raw-table').querySelector('table');vt._gceVisualData={headers:active.data.head.map((h,i)=>cols.find(c=>c.col===i)?.label||h),rawHeaders:active.data.head,rows:active.filtered,title:heading(active),scope:'filtered',lang:document.documentElement.lang,sources:[active.publisherUrl].filter(Boolean)};window.GCEquityVisuals?.update(vt);
   $('gce-raw-count').textContent=max?T('Rows ','Lignes ')+(page*SIZE+1)+'–'+Math.min((page+1)*SIZE,max)+' / '+max:T('No matching data.','Aucune donnée correspondante.');
   $('gce-raw-pager').hidden=max<=SIZE;
   $('gce-raw-prev').disabled=page===0;

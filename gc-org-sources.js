@@ -131,6 +131,7 @@ function buildTable(card,file,selectedOriginal,raw,source,group){
   }).join('')+'</tr>').join('');
   status.textContent=filtered.length?L('Rows ','Lignes ')+(page*PER_PAGE+1)+'–'+Math.min((page+1)*PER_PAGE,filtered.length)+' / '+filtered.length:
    L('No records for this period.','Aucune donnée pour cette période.');
+  const vt=body.closest('table');vt._gceVisualData={headers:cols.map(c=>c.name),rows:filtered.map(r=>cols.map(c=>c.french>=0&&document.documentElement.lang.startsWith('fr')?(r[c.french]||r[c.index]):r[c.index])),title:heading,scope:'filtered',lang:document.documentElement.lang};window.GCEquityVisuals?.update(vt);
   prev.disabled=page===0;
   next.disabled=(page+1)*PER_PAGE>=filtered.length;
  }

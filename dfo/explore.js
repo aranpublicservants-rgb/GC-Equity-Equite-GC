@@ -18,8 +18,8 @@ $$('.evidence-chart').forEach(box=>{
  const l=box.dataset.lang,kind=box.dataset.chart,controls=$('.chart-controls',box),plot=$('.chart-plot',box),tab=$('.chart-table',box),downloads=$('.chart-download',box),heading=$('h3',box);heading.id='chart-'+kind+'-'+l;box.setAttribute('aria-labelledby',heading.id);
  let selected=kind==='trend'?'rac':'all',view=null,headers=[],rows=[],facts,survey,paint=null;
  const views=document.createElement('div');views.className='chart-views';views.setAttribute('role','group');views.setAttribute('aria-label',L('Display for ','Affichage pour ',l)+heading.textContent);
- const buttons=['chart','table'].map(v=>{const b=document.createElement('button');b.type='button';b.textContent=v==='chart'?L('Chart','Graphique',l):L('Table','Tableau',l);b.addEventListener('click',()=>{view=v;display();});views.append(b);return b;});
- function display(){const current=view||(prefs.tables?'table':'chart');plot.hidden=current!=='chart';tab.hidden=current!=='table';buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(current===(i===0?'chart':'table'))));if(current==='chart')paint?.();}
+ const buttons=['table','chart','both'].map(v=>{const b=document.createElement('button');b.type='button';b.textContent=L({table:'Table',chart:'Chart',both:'Both'}[v],{table:'Tableau',chart:'Graphique',both:'Les deux'}[v],l);b.addEventListener('click',()=>{view=v;try{localStorage.setItem('gc-equity-visual-view-v1',JSON.stringify({view:v}));}catch(e){}display();});views.append(b);return b;});
+ function display(){let preferred='chart';try{const saved=JSON.parse(localStorage.getItem('gc-equity-visual-view-v1')||'null');if(['table','chart','both'].includes(saved?.view))preferred=saved.view;}catch(e){}const current=view||(prefs.tables?'table':preferred);plot.hidden=current==='table';tab.hidden=current==='chart';buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(current===['table','chart','both'][i])));if(current!=='table')paint?.();}
  document.addEventListener('dfo:displaychange',()=>{view=null;display();});
  function render(){let markup='';paint=null;headers=[];rows=[];
   if(kind==='trend'){
