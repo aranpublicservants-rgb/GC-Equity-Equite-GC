@@ -1,5 +1,5 @@
 {
-  "method": "Links read from each organization’s official 2026–27 plan. Same departmental namespace only. A link listing is not a substantive review or an exhaustive publication inventory. Links were screened for departmental workforce relevance and mismatched report/plan labels; older dated reports were excluded.",
+  "method": "Links read from each organization’s official 2026–27 plan. Same departmental namespace only. A link listing is not a substantive review or an exhaustive publication inventory. Links were screened for departmental workforce relevance and mismatched report/plan labels; older dated reports were excluded. Employment-equity reports were added from official publisher pages and Open Government records on November 20, 2026. Their editions and source populations are retained.",
   "organizations": {
     "Accessibility Standards Canada": {
       "plan": "https://accessible.canada.ca/reports/departmental-plan-2026-2027",
@@ -38,7 +38,24 @@
     },
     "Canada Revenue Agency": {
       "plan": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/departmental-plan/2026-27-cra-departmental-plan.html",
-      "publications": []
+      "publications": [
+        {
+          "title": "CRA employment equity, diversity and inclusion annual report 2024-2025",
+          "titleFr": "Rapport annuel de l’ARC sur l’équité en matière d’emploi, la diversité et l’inclusion 2024-2025",
+          "url": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra/employment-equity-diversity-inclusion/employment-equity-diversity-inclusion-cra.html",
+          "source": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra/employment-equity-diversity-inclusion/employment-equity-diversity-inclusion-cra.html",
+          "lang": "en",
+          "urlFr": "https://www.canada.ca/fr/agence-revenu/organisation/carrieres-a-arc/equite-matiere-emploi-diversite-inclusion/equite-matiere-emplo-diversite-inclusion-arc.html"
+        },
+        {
+          "title": "Hosted report downloads and source notes",
+          "titleFr": "Téléchargements des rapports et notes sur les sources",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?q=CRA",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr&q=ARC",
+          "source": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html",
+          "lang": "en"
+        }
+      ]
     },
     "Canada School of Public Service": {
       "plan": "https://www.csps-efpc.gc.ca/about_us/currentreport/dp-pm2026-27/index-eng.aspx",
@@ -296,7 +313,72 @@
     },
     "National Research Council of Canada": {
       "plan": "https://nrc.canada.ca/en/corporate/planning-reporting/national-research-council-canadas-2026-27-departmental-plan",
-      "publications": []
+      "publications": [
+        {
+          "title": "NRC employment equity annual report 2024-2025",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2024-2025",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025"
+        },
+        {
+          "title": "NRC employment equity annual report 2023-2024",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2023-2024",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2023-2024",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2023-2024",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024"
+        },
+        {
+          "title": "NRC employment equity annual report 2022-2023",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2022-2023",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2022-2023",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2022-2023",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023"
+        },
+        {
+          "title": "NRC employment equity annual report 2021-2022",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2021-2022",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2021-2022",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2021-2022",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022"
+        },
+        {
+          "title": "NRC employment equity annual report 2020-2021",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2020-2021",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021"
+        },
+        {
+          "title": "NRC employment equity annual report 2019-2020",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2019-2020",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2019-2020",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2019-2020",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2019-2020"
+        },
+        {
+          "title": "NRC employment equity annual report 2018-2019",
+          "titleFr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2018-2019",
+          "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2018-2019",
+          "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2018-2019",
+          "lang": "en",
+          "urlFr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-exercice-2018-2019"
+        },
+        {
+          "title": "Hosted report downloads and source notes",
+          "titleFr": "Téléchargements des rapports et notes sur les sources",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?q=NRC",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr&q=CNRC",
+          "source": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html",
+          "lang": "en"
+        }
+      ]
     },
     "National Security and Intelligence Review Agency": {
       "plan": "https://nsira-ossnr.gc.ca/en/secretariat/secretariat-operations/departmental-plan-2026-2027/",
@@ -378,7 +460,64 @@
     },
     "Parks Canada": {
       "plan": "https://parks.canada.ca/agence-agency/bib-lib/plans/dp/plan-ministeriel-2026-2027-departmental-plan",
-      "publications": []
+      "publications": [
+        {
+          "title": "Parks Canada employment equity annual report 2024-2025",
+          "titleFr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2024-2025",
+          "url": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2024-2025-equity",
+          "source": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2024-2025-equity",
+          "lang": "en",
+          "urlFr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2024-2025-equity"
+        },
+        {
+          "title": "Parks Canada employment equity annual report 2023-2024",
+          "titleFr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2023-2024",
+          "url": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2023-2024-equity",
+          "source": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2023-2024-equity",
+          "lang": "en",
+          "urlFr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2023-2024-equity"
+        },
+        {
+          "title": "Parks Canada employment equity annual report 2022-2023",
+          "titleFr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2022-2023",
+          "url": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2022-2023-equity",
+          "source": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2022-2023-equity",
+          "lang": "en",
+          "urlFr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2022-2023-equity"
+        },
+        {
+          "title": "Parks Canada employment equity annual report 2021-2022",
+          "titleFr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2021-2022",
+          "url": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2021-2022-equity",
+          "source": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2021-2022-equity",
+          "lang": "en",
+          "urlFr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2021-2022-equity"
+        },
+        {
+          "title": "Parks Canada employment equity annual report 2020-2021",
+          "titleFr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2020-2021",
+          "url": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2020-2021-equity",
+          "source": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2020-2021-equity",
+          "lang": "en",
+          "urlFr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2020-2021-equity"
+        },
+        {
+          "title": "Parks Canada employment equity annual report 2019-2020",
+          "titleFr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2019-2020",
+          "url": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2019-2020-equity",
+          "source": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2019-2020-equity",
+          "lang": "en",
+          "urlFr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2019-2020-equity"
+        },
+        {
+          "title": "Hosted report downloads and source notes",
+          "titleFr": "Téléchargements des rapports et notes sur les sources",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?q=Parks",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr&q=Parcs",
+          "source": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html",
+          "lang": "en"
+        }
+      ]
     },
     "Parole Board of Canada": {
       "plan": "https://www.canada.ca/en/parole-board/corporate/transparency/reporting-to-canadians/report-on-plans-and-priorities/2026-27-departmental-plan.html",
@@ -461,7 +600,16 @@
     },
     "Shared Services Canada": {
       "plan": "https://www.canada.ca/en/shared-services/corporate/about-us/transparency/departmental-plan/2026-27/shared-services-canada-2026-27-departmental-plan.html",
-      "publications": []
+      "publications": [
+        {
+          "title": "Employment equity source tables, 2015-2016 to 2025-2026",
+          "titleFr": "Tableaux sources sur l’équité en matière d’emploi, de 2015-2016 à 2025-2026",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html#ssc",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr#ssc",
+          "source": "https://open.canada.ca/data/en/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182",
+          "lang": "en"
+        }
+      ]
     },
     "Social Sciences and Humanities Research Council of Canada": {
       "plan": "https://sshrc-crsh.canada.ca/en/about-sshrc/planning-and-performance-reporting/corporate-reports/departmental-plans/2026-2027/full-plan.aspx",

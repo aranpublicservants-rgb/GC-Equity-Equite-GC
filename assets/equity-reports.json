@@ -1,0 +1,699 @@
+{
+  "schema": 1,
+  "reviewed": "2026-11-20",
+  "reports": [
+    {
+      "id": "psc-original",
+      "title": {
+        "en": "Employment equity promotion-rate study: original study",
+        "fr": "Étude des taux de promotion des groupes visés par l’équité en matière d’emploi : étude originale"
+      },
+      "publisher": {
+        "en": "Public Service Commission",
+        "fr": "Commission de la fonction publique"
+      },
+      "organization": "Public Service Commission of Canada",
+      "scope": "public",
+      "period": {
+        "en": "1991-2018",
+        "fr": "1991-2018"
+      },
+      "population": {
+        "en": "Indeterminate employees in organizations subject to the Public Service Employment Act, within each study’s inclusion rules. Modelled promotion rates are different from the share of promotions.",
+        "fr": "Personnel nommé pour une période indéterminée dans les organismes assujettis à la Loi sur l’emploi dans la fonction publique, selon les règles de chaque étude. Les taux modélisés diffèrent de la part des promotions."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/public-service-commission/services/publications/employment-equity-promotion-rate-study-open-info.html",
+        "fr": "https://www.canada.ca/fr/commission-fonction-publique/services/publications/etude-taux-promotion-groupes-designes-equite-matiere-demploi-open-info.html"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/psc-promotion-rate-study-original-en.docx",
+          "source": "https://open.canada.ca/data/dataset/7974d7e0-4014-4a4a-800d-513bcf4ba985/resource/2b05f8e4-0b5b-4f3f-bab4-2fcdae14b529/download/ee-promotion-rate-accessible-version-en.docx",
+          "lang": "en",
+          "format": "DOCX",
+          "bytes": 29188,
+          "sha256": "f0fcffd99a68f1249417821ef11e319f51c1f9bc527d60a245d47c91b7cbf851"
+        },
+        {
+          "path": "data/ee-reports/psc-promotion-rate-study-original-fr.docx",
+          "source": "https://open.canada.ca/data/dataset/7974d7e0-4014-4a4a-800d-513bcf4ba985/resource/1dfc540f-7d20-47e9-a941-532cd7cdba6f/download/ee-promotion-rate-accessible-version-fr.docx",
+          "lang": "fr",
+          "format": "DOCX",
+          "bytes": 36706,
+          "sha256": "2fe4252e22f36c48cb934d2c92f6bbd565dd235a98b1ac8540f0fa2840c7f0f2"
+        }
+      ]
+    },
+    {
+      "id": "psc-three-year-update-2022",
+      "title": {
+        "en": "Employment equity promotion-rate study: three-year update (2022)",
+        "fr": "Étude des taux de promotion des groupes visés par l’équité en matière d’emploi : mise à jour triennale (2022)"
+      },
+      "publisher": {
+        "en": "Public Service Commission",
+        "fr": "Commission de la fonction publique"
+      },
+      "organization": "Public Service Commission of Canada",
+      "scope": "public",
+      "period": {
+        "en": "1991-2021",
+        "fr": "1991-2021"
+      },
+      "population": {
+        "en": "Indeterminate employees in organizations subject to the Public Service Employment Act, within each study’s inclusion rules. Modelled promotion rates are different from the share of promotions.",
+        "fr": "Personnel nommé pour une période indéterminée dans les organismes assujettis à la Loi sur l’emploi dans la fonction publique, selon les règles de chaque étude. Les taux modélisés diffèrent de la part des promotions."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/public-service-commission/services/publications/open-info/ee-promotion-rate-study-3-year-update.html",
+        "fr": "https://www.canada.ca/fr/commission-fonction-publique/services/publications/open-info/etudes-taux-promotions-ee-mise-a-jour-3-ans.html"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/psc-promotion-rate-study-three-year-update-2022-en.docx",
+          "source": "https://open.canada.ca/data/dataset/7e69c275-8407-4489-a27c-017e20d2da9d/resource/09c8b9b5-dd1d-4cd6-bc8b-7893eaed1742/download/employment-equity-promotion-rate-study-three-year-update-en-2022.docx",
+          "lang": "en",
+          "format": "DOCX",
+          "bytes": 171750,
+          "sha256": "526de3d7de25b035c8cdbfab27b8c001feceaee601b6aec2f318b578434c3111"
+        },
+        {
+          "path": "data/ee-reports/psc-promotion-rate-study-three-year-update-2022-fr.docx",
+          "source": "https://open.canada.ca/data/dataset/7e69c275-8407-4489-a27c-017e20d2da9d/resource/ab1d1b75-65e4-44cd-829f-bbeaecd1e72c/download/employment-equity-promotion-rate-study-three-year-update-fr-2022.docx",
+          "lang": "fr",
+          "format": "DOCX",
+          "bytes": 192539,
+          "sha256": "2ef5f633102a4d236bbcdb2157ad35d8a307f2ee631d5267cd41c9608cca3e25"
+        }
+      ]
+    },
+    {
+      "id": "psc-five-year-update-2024",
+      "title": {
+        "en": "Employment equity promotion-rate study: five-year update (2024)",
+        "fr": "Étude des taux de promotion des groupes visés par l’équité en matière d’emploi : mise à jour quinquennale (2024)"
+      },
+      "publisher": {
+        "en": "Public Service Commission",
+        "fr": "Commission de la fonction publique"
+      },
+      "organization": "Public Service Commission of Canada",
+      "scope": "public",
+      "period": {
+        "en": "1991-2023",
+        "fr": "1991-2023"
+      },
+      "population": {
+        "en": "Indeterminate employees in organizations subject to the Public Service Employment Act, within each study’s inclusion rules. Modelled promotion rates are different from the share of promotions.",
+        "fr": "Personnel nommé pour une période indéterminée dans les organismes assujettis à la Loi sur l’emploi dans la fonction publique, selon les règles de chaque étude. Les taux modélisés diffèrent de la part des promotions."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/public-service-commission/services/publications/open-info/employment-equity-promotion-rate-study-five-year-update-2024.html",
+        "fr": "https://www.canada.ca/fr/commission-fonction-publique/services/publications/open-info/etude-taux-promotion-groupes-vises-equite-matiere-emploi-mise-a-jour-quinquennale-2024.html"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/psc-promotion-rate-study-five-year-update-2024-en.docx",
+          "source": "https://open.canada.ca/data/dataset/e18d23d4-231d-4d31-8834-c73e57466009/resource/a7243058-3b15-43e6-8dca-dccf21aba1fa/download/employment-equity-promotion-rate-study-five-year-update-2024-en-1.docx",
+          "lang": "en",
+          "format": "DOCX",
+          "bytes": 205921,
+          "sha256": "30dc8d1426ddc5693b1c4eadd2d401a8453999382c887183eb8d7de3abd0b667"
+        },
+        {
+          "path": "data/ee-reports/psc-promotion-rate-study-five-year-update-2024-fr.docx",
+          "source": "https://open.canada.ca/data/dataset/e18d23d4-231d-4d31-8834-c73e57466009/resource/5c50dc7f-8512-44d0-b563-3cf3b771268f/download/employment-equity-promotion-rate-study-five-year-update-2024-fr.docx",
+          "lang": "fr",
+          "format": "DOCX",
+          "bytes": 217738,
+          "sha256": "b45cfa0677ffb75a2c2fe50e8099aead11ce6ba902eeed810451bbca04fe5831"
+        }
+      ]
+    },
+    {
+      "id": "cra-2024-2025",
+      "title": {
+        "en": "CRA employment equity, diversity and inclusion annual report 2024-2025",
+        "fr": "Rapport annuel de l’ARC sur l’équité en matière d’emploi, la diversité et l’inclusion 2024-2025"
+      },
+      "publisher": {
+        "en": "Canada Revenue Agency",
+        "fr": "Agence du revenu du Canada"
+      },
+      "organization": "Canada Revenue Agency",
+      "scope": "agency",
+      "period": {
+        "en": "2024-2025; workforce snapshot March 31, 2025",
+        "fr": "2024-2025; effectif au 31 mars 2025"
+      },
+      "population": {
+        "en": "CRA employees under the report’s employment-equity inclusion rules. CRA is a separate employer.",
+        "fr": "Personnel de l’ARC selon les règles d’inclusion du rapport sur l’équité en emploi. L’ARC est un employeur distinct."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra/employment-equity-diversity-inclusion/employment-equity-diversity-inclusion-cra.html",
+        "fr": "https://www.canada.ca/fr/agence-revenu/organisation/carrieres-a-arc/equite-matiere-emploi-diversite-inclusion/equite-matiere-emplo-diversite-inclusion-arc.html"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/cra-eedi-annual-report-2024-25.pdf",
+          "source": "https://www.canada.ca/content/dam/cra-arc/annualreports/eedi-annual-report-2024-25.pdf",
+          "lang": "en",
+          "format": "PDF",
+          "bytes": 938620,
+          "sha256": "878b5f739dc5ed340031477c0432670a6aba392062c49f2cd64dfa92f1f1af18",
+          "provenance": {
+            "en": "The supplied archive copy was checked against the live publisher PDF on November 20, 2026. The bytes match.",
+            "fr": "La copie d’archive fournie a été comparée au PDF actuel de l’éditeur le 20 novembre 2026. Les octets sont identiques."
+          }
+        }
+      ],
+      "note": {
+        "en": "Availability benchmarks changed for this edition. Check the report’s definitions before comparing with earlier years.",
+        "fr": "Les références de disponibilité ont changé pour cette édition. Vérifiez les définitions avant de comparer les années."
+      }
+    },
+    {
+      "id": "nrc-2024-2025",
+      "title": {
+        "en": "NRC employment equity annual report 2024-2025",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2024-2025"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2024-2025",
+        "fr": "2024-2025"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025"
+      },
+      "files": [],
+      "note": {
+        "en": "The 2024-2025 edition uses updated availability benchmarks. Earlier editions keep their own benchmarks and suppression symbols.",
+        "fr": "L’édition 2024-2025 utilise de nouvelles références de disponibilité. Les éditions précédentes conservent leurs propres références et symboles de suppression."
+      }
+    },
+    {
+      "id": "nrc-2023-2024",
+      "title": {
+        "en": "NRC employment equity annual report 2023-2024",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2023-2024"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2023-2024",
+        "fr": "2023-2024"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2023-2024",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/nrc-ee-annual-report-2023-24.pdf",
+          "source": "https://nrc-digital-repository.canada.ca/eng/view/accepted/?id=b95a9007-30ad-4436-9d33-d691c060c7e5",
+          "lang": "en",
+          "format": "PDF",
+          "bytes": 770288,
+          "sha256": "429f45c55c87eeb3bc0268cc353972576338e6f3cda6f439a948724f63f32ac4",
+          "provenance": {
+            "en": "PDF supplied from an August 17, 2025 web-archive capture of the NRC repository download. It is a print rendering. The publisher’s live HTML versions are linked above.",
+            "fr": "PDF fourni à partir d’une capture du 17 août 2025 du téléchargement du dépôt du CNRC. Il s’agit d’un rendu imprimé. Les versions HTML actuelles de l’éditeur sont accessibles ci-dessus."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nrc-2022-2023",
+      "title": {
+        "en": "NRC employment equity annual report 2022-2023",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2022-2023"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2022-2023",
+        "fr": "2022-2023"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2022-2023",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023"
+      },
+      "files": []
+    },
+    {
+      "id": "nrc-2021-2022",
+      "title": {
+        "en": "NRC employment equity annual report 2021-2022",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2021-2022"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2021-2022",
+        "fr": "2021-2022"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2021-2022",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022"
+      },
+      "files": []
+    },
+    {
+      "id": "nrc-2020-2021",
+      "title": {
+        "en": "NRC employment equity annual report 2020-2021",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2020-2021"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2020-2021",
+        "fr": "2020-2021"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021"
+      },
+      "files": []
+    },
+    {
+      "id": "nrc-2019-2020",
+      "title": {
+        "en": "NRC employment equity annual report 2019-2020",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2019-2020"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2019-2020",
+        "fr": "2019-2020"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2019-2020",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2019-2020"
+      },
+      "files": []
+    },
+    {
+      "id": "nrc-2018-2019",
+      "title": {
+        "en": "NRC employment equity annual report 2018-2019",
+        "fr": "Rapport annuel du CNRC sur l’équité en matière d’emploi 2018-2019"
+      },
+      "publisher": {
+        "en": "National Research Council Canada",
+        "fr": "Conseil national de recherches Canada"
+      },
+      "organization": "National Research Council Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2018-2019",
+        "fr": "2018-2019"
+      },
+      "population": {
+        "en": "NRC workforce under each edition’s inclusion rules. Occupational groups, geography, salary ranges, hires, promotions and terminations are reported separately.",
+        "fr": "Effectif du CNRC selon les règles de chaque édition. Les groupes professionnels, régions, tranches salariales, embauches, promotions et cessations d’emploi sont présentés séparément."
+      },
+      "sources": {
+        "en": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2018-2019",
+        "fr": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-exercice-2018-2019"
+      },
+      "files": []
+    },
+    {
+      "id": "parks-2024-2025",
+      "title": {
+        "en": "Parks Canada employment equity annual report 2024-2025",
+        "fr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2024-2025"
+      },
+      "publisher": {
+        "en": "Parks Canada",
+        "fr": "Parcs Canada"
+      },
+      "organization": "Parks Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2024-2025",
+        "fr": "2024-2025"
+      },
+      "population": {
+        "en": "Parks Canada employees under the report’s inclusion rules, including seasonal employment where specified.",
+        "fr": "Personnel de Parcs Canada selon les règles du rapport, y compris les emplois saisonniers lorsque précisé."
+      },
+      "sources": {
+        "en": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2024-2025-equity",
+        "fr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2024-2025-equity"
+      },
+      "files": []
+    },
+    {
+      "id": "parks-2023-2024",
+      "title": {
+        "en": "Parks Canada employment equity annual report 2023-2024",
+        "fr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2023-2024"
+      },
+      "publisher": {
+        "en": "Parks Canada",
+        "fr": "Parcs Canada"
+      },
+      "organization": "Parks Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2023-2024",
+        "fr": "2023-2024"
+      },
+      "population": {
+        "en": "Parks Canada employees under the report’s inclusion rules, including seasonal employment where specified.",
+        "fr": "Personnel de Parcs Canada selon les règles du rapport, y compris les emplois saisonniers lorsque précisé."
+      },
+      "sources": {
+        "en": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2023-2024-equity",
+        "fr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2023-2024-equity"
+      },
+      "files": []
+    },
+    {
+      "id": "parks-2022-2023",
+      "title": {
+        "en": "Parks Canada employment equity annual report 2022-2023",
+        "fr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2022-2023"
+      },
+      "publisher": {
+        "en": "Parks Canada",
+        "fr": "Parcs Canada"
+      },
+      "organization": "Parks Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2022-2023",
+        "fr": "2022-2023"
+      },
+      "population": {
+        "en": "Parks Canada employees under the report’s inclusion rules, including seasonal employment where specified.",
+        "fr": "Personnel de Parcs Canada selon les règles du rapport, y compris les emplois saisonniers lorsque précisé."
+      },
+      "sources": {
+        "en": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2022-2023-equity",
+        "fr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2022-2023-equity"
+      },
+      "files": []
+    },
+    {
+      "id": "parks-2021-2022",
+      "title": {
+        "en": "Parks Canada employment equity annual report 2021-2022",
+        "fr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2021-2022"
+      },
+      "publisher": {
+        "en": "Parks Canada",
+        "fr": "Parcs Canada"
+      },
+      "organization": "Parks Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2021-2022",
+        "fr": "2021-2022"
+      },
+      "population": {
+        "en": "Parks Canada employees under the report’s inclusion rules, including seasonal employment where specified.",
+        "fr": "Personnel de Parcs Canada selon les règles du rapport, y compris les emplois saisonniers lorsque précisé."
+      },
+      "sources": {
+        "en": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2021-2022-equity",
+        "fr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2021-2022-equity"
+      },
+      "files": []
+    },
+    {
+      "id": "parks-2020-2021",
+      "title": {
+        "en": "Parks Canada employment equity annual report 2020-2021",
+        "fr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2020-2021"
+      },
+      "publisher": {
+        "en": "Parks Canada",
+        "fr": "Parcs Canada"
+      },
+      "organization": "Parks Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2020-2021",
+        "fr": "2020-2021"
+      },
+      "population": {
+        "en": "Parks Canada employees under the report’s inclusion rules, including seasonal employment where specified.",
+        "fr": "Personnel de Parcs Canada selon les règles du rapport, y compris les emplois saisonniers lorsque précisé."
+      },
+      "sources": {
+        "en": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2020-2021-equity",
+        "fr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2020-2021-equity"
+      },
+      "files": []
+    },
+    {
+      "id": "parks-2019-2020",
+      "title": {
+        "en": "Parks Canada employment equity annual report 2019-2020",
+        "fr": "Rapport annuel de Parcs Canada sur l’équité en matière d’emploi 2019-2020"
+      },
+      "publisher": {
+        "en": "Parks Canada",
+        "fr": "Parcs Canada"
+      },
+      "organization": "Parks Canada",
+      "scope": "agency",
+      "period": {
+        "en": "2019-2020",
+        "fr": "2019-2020"
+      },
+      "population": {
+        "en": "Parks Canada employees under the report’s inclusion rules, including seasonal employment where specified.",
+        "fr": "Personnel de Parcs Canada selon les règles du rapport, y compris les emplois saisonniers lorsque précisé."
+      },
+      "sources": {
+        "en": "https://parks.canada.ca/agence-agency/dp-pd/ee/equite-2019-2020-equity",
+        "fr": "https://parcs.canada.ca/agence-agency/dp-pd/ee/equite-2019-2020-equity"
+      },
+      "files": []
+    },
+    {
+      "id": "tbs-2023-2024",
+      "title": {
+        "en": "Employment equity in the public service of Canada 2023-2024",
+        "fr": "L’équité en matière d’emploi dans la fonction publique du Canada 2023-2024"
+      },
+      "publisher": {
+        "en": "Treasury Board of Canada Secretariat",
+        "fr": "Secrétariat du Conseil du Trésor du Canada"
+      },
+      "organization": "",
+      "scope": "public",
+      "period": {
+        "en": "2023-2024",
+        "fr": "2023-2024"
+      },
+      "population": {
+        "en": "Core public administration. Separate agencies and CAF members are outside this report’s population.",
+        "fr": "Administration publique centrale. Les organismes distincts et les militaires des FAC sont hors de la population de ce rapport."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/employment-equity-annual-reports/employment-equity-public-service-canada-2023-2024.html",
+        "fr": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/equite-emploi-rapports-annuel/equite-emploi-fonction-publique-canada-2023-2024.html"
+      },
+      "files": []
+    },
+    {
+      "id": "private-sector-2025",
+      "title": {
+        "en": "Employment Equity Act annual report 2025",
+        "fr": "Rapport annuel 2025 sur la Loi sur l’équité en matière d’emploi"
+      },
+      "publisher": {
+        "en": "Employment and Social Development Canada",
+        "fr": "Emploi et Développement social Canada"
+      },
+      "organization": "",
+      "scope": "private",
+      "period": {
+        "en": "2025 edition; employer data for 2024",
+        "fr": "Édition 2025; données des employeurs pour 2024"
+      },
+      "population": {
+        "en": "Federally regulated private-sector employers covered by the report, including Crown corporations in its reporting population. This is not ESDC’s departmental workforce.",
+        "fr": "Employeurs du secteur privé sous réglementation fédérale visés par le rapport, y compris les sociétés d’État dans sa population. Il ne s’agit pas de l’effectif ministériel d’EDSC."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/employment-social-development/corporate/portfolio/labour/programs/employment-equity/reports/2025-annual.html",
+        "fr": "https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/travail/programmes/equite-emploi/rapports/2025-annuel.html"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/esdc-federally-regulated-ee-annual-report-2025-en.pdf",
+          "source": "https://www.canada.ca/content/dam/esdc-edsc/documents/corporate/portfolio/labour/programs/employment-equity/reports/2025-annual/2025-Employment-Equity-Act-Annual-Report.pdf",
+          "lang": "en",
+          "format": "PDF",
+          "bytes": 3624551,
+          "sha256": "a465864507e32575a8894943e718d5e29a5819504813cb793a9c1fcdc3c86441"
+        }
+      ]
+    },
+    {
+      "id": "private-sector-2024",
+      "title": {
+        "en": "Employment Equity Act annual report 2024",
+        "fr": "Rapport annuel 2024 sur la Loi sur l’équité en matière d’emploi"
+      },
+      "publisher": {
+        "en": "Employment and Social Development Canada",
+        "fr": "Emploi et Développement social Canada"
+      },
+      "organization": "",
+      "scope": "private",
+      "period": {
+        "en": "2024 edition; employer data for 2023",
+        "fr": "Édition 2024; données des employeurs pour 2023"
+      },
+      "population": {
+        "en": "Federally regulated private-sector employers covered by the report, including Crown corporations in its reporting population. This is not ESDC’s departmental workforce.",
+        "fr": "Employeurs du secteur privé sous réglementation fédérale visés par le rapport, y compris les sociétés d’État dans sa population. Il ne s’agit pas de l’effectif ministériel d’EDSC."
+      },
+      "sources": {
+        "en": "https://www.canada.ca/en/employment-social-development/corporate/portfolio/labour/programs/employment-equity/reports/2024-annual.html",
+        "fr": "https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/travail/programmes/equite-emploi/rapports/2024-annuel.html"
+      },
+      "files": [
+        {
+          "path": "data/ee-reports/esdc-federally-regulated-ee-annual-report-2024-en.pdf",
+          "source": "https://publications.gc.ca/collections/collection_2026/edsc-esdc/Em5-2-2024-eng.pdf",
+          "lang": "en",
+          "format": "PDF",
+          "bytes": 2362734,
+          "sha256": "0f2cad1fbc733a3f05d621a4ee63ba49b4f1d45f0e51a8af2d3679038e9cbaf6"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "id": "ssc",
+      "title": {
+        "en": "Shared Services Canada employment equity, 2015-2016 to 2025-2026",
+        "fr": "Équité en matière d’emploi à Services partagés Canada, de 2015-2016 à 2025-2026"
+      },
+      "population": {
+        "en": "Shared Services Canada only. Source group spelling is preserved in downloads.",
+        "fr": "Services partagés Canada seulement. L’orthographe des groupes dans la source est conservée dans les téléchargements."
+      },
+      "links": [
+        {
+          "lang": "en",
+          "path": "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv",
+          "format": "CSV"
+        },
+        {
+          "lang": "fr",
+          "path": "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
+          "format": "CSV"
+        }
+      ],
+      "source": "https://open.canada.ca/data/en/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182"
+    },
+    {
+      "id": "caf",
+      "title": {
+        "en": "Canadian Armed Forces employment-equity statistics, 2021 and 2022",
+        "fr": "Statistiques des Forces armées canadiennes sur l’équité en matière d’emploi, 2021 et 2022"
+      },
+      "population": {
+        "en": "CAF members. The Open Government Portal flags both source files as “Invalid data”, checked November 20, 2026. The files remain downloadable. Check their definitions and validation status before reuse.",
+        "fr": "Militaires des FAC. Le Portail du gouvernement ouvert signale les deux fichiers sources comme « Données non valides », vérifié le 20 novembre 2026. Les fichiers restent téléchargeables. Vérifiez leurs définitions et leur état de validation avant réutilisation."
+      },
+      "links": [
+        {
+          "lang": "both",
+          "path": "dnd/#sources",
+          "format": "HTML"
+        }
+      ],
+      "source": "https://open.canada.ca/data/en/dataset/8fd0f79b-2165-4206-aeda-d1477a97bfbe"
+    },
+    {
+      "id": "pses-2022-2023",
+      "title": {
+        "en": "Public Service Employee Survey 2022-2023: main subset and documentation",
+        "fr": "Sondage auprès des fonctionnaires fédéraux 2022-2023 : sous-ensemble principal et documentation"
+      },
+      "population": {
+        "en": "Survey respondents. This subset does not provide every survey breakdown. Survey responses are different from employee headcounts.",
+        "fr": "Personnes répondantes au sondage. Ce sous-ensemble ne fournit pas toutes les ventilations. Les réponses diffèrent des effectifs."
+      },
+      "links": [
+        {
+          "lang": "both",
+          "path": "data/open-canada-2026-11/pses-2022-2023/subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv.gz",
+          "format": "CSV.GZ"
+        },
+        {
+          "lang": "both",
+          "path": "data/open-canada-2026-11/pses-2022-2023/pses2022-23-supporting-documentation.xlsx",
+          "format": "XLSX"
+        }
+      ],
+      "source": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+      "documentationSource": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/2022-2023%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202022-2023.xlsx"
+    }
+  ]
+}

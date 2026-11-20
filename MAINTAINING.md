@@ -205,3 +205,13 @@ Source browsers attach `_gceVisualData` to their table with full filtered rows a
 Every plotted mark remains a source cell. Counts and percentages have separate scales; suppressed and missing values stay distinct; no repeated cells are summed or averaged. Trends require unique periods. A stacked distribution requires all five labelled response shares and a complete published distribution. Unrecognized textual or identifier-only tables retain their table view. Chart filters and row limits are explicit; exports identify the supporting page.
 
 Run `node --test scripts/test-data-visuals.cjs` and `python scripts/check-site.py`. Browser CI checks table/chart/both, keyboard details, heatmaps, valid PNG export and narrow layouts.
+
+## Employment equity report directory, November 20, 2026
+
+`assets/equity-reports.json` records 20 report editions and their English and French publisher URLs. Ten original report files are retained in `data/ee-reports/`; the source register records their sizes, SHA-256 digests and archive provenance. The supplied CRA PDF matches the live publisher bytes. The NRC 2023-2024 mirror is a print rendering obtained from the archived repository download.
+
+Run `python scripts/build-equity-reports.py` after editing the report registry. This renders `reports.html`, its download register and its shared search entries. Keep `assets/library-documents.json` and the relevant entries in `assets/department-publication-links.json` consistent when adding editions. The ARAN repository links to this directory rather than duplicating the report files.
+
+The 2024 and 2025 Employment Equity Act reports cover the federally regulated private-sector reporting population. They are kept outside the public-service document list and departmental workforce comparisons. The existing SSC CSVs and PSES 2022-2023 subset are reused. Supporting PSES documentation is retained next to that subset. The CAF source matrices retain their source values; the catalogue and DND source section record the portal validation failure.
+
+Run `python scripts/update-data-checksums.py`, then `python scripts/check-site.py`. Browser checks cover report search, population filters, reset, French display, and ARAN resource search and saving.

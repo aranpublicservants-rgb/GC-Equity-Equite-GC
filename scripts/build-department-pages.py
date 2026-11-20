@@ -253,7 +253,7 @@ def content(s,d,l,sections):
   if d['cta']:
    for k,en,fr in [('letter','Original Call to Action letter, 2021','Lettre originale liée à l’Appel à l’action, 2021'),('self_assessment','Original Call to Action self-assessment, 2024','Autoévaluation originale liée à l’Appel à l’action, 2024')]:
     if d['cta'].get(k):links.append((d['cta'][k]['url'],B(en,fr)))
-  links.extend((p['url'],p['title']) for p in d['publications'])
+  links.extend((p.get('urlFr',p['url']) if l=='fr' else p['url'],p.get('titleFr',p['title']) if l=='fr' else p['title']) for p in d['publications'])
   if d['overall']:links.append((source['overall'],B('PSES 2024 overall source (CSV)','Source globale du SAFF 2024 (CSV)')))
   if d['psesEntry']:links.append((source['pses'],B('PSES 2024 employee-group source (CSV)','Source du SAFF 2024 par groupe (CSV)')))
   if d['staffing']:links.append((source['staffing'],B('Staffing survey 2025 and methodology','Sondage sur la dotation de 2025 et méthodes')))
