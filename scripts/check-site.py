@@ -53,6 +53,7 @@ assert 'gc-data-library.js' in home_html, 'public service-wide dataset browser m
 assert 'id="org-topic-picker"' in home_html and 'id="public-topic-picker"' in home_html, 'topic controls missing'
 assert 'href="#department-data"' in home_html and 'href="#equity-data"' in home_html, 'homepage two-area navigation broken'
 assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
+assert home_html.count('systemic-change/')==1, 'the home page keeps one link to the systemic change tools'
 
 for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-added-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
@@ -220,3 +221,5 @@ subprocess.run(["python3","scripts/check-dedicated-departments.py"],cwd=ROOT,che
 subprocess.run(["python3","scripts/check-all-department-pages.py"],cwd=ROOT,check=True)
 subprocess.run(["node","tests/department-profile.test.cjs"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/career.test.cjs"],cwd=ROOT,check=True)
+# Systemic change tools: shared content, page shells, redirects from retired addresses and visitor text.
+subprocess.run(["node","scripts/check-systemic-change.cjs"],cwd=ROOT,check=True)

@@ -28,6 +28,22 @@ Run `python scripts/check-site.py`, `python scripts/check-dfo.py` and `python dn
 
 This file describes the site as it is now. It is kept in the repository and is not published on the site (see `_config.yml`).
 
+## Systemic change tools, November 22, 2026
+
+`systemic-change/` holds six tools for the federal public service. They replaced 21 earlier pages on November 22, 2026.
+
+The department evidence explorer (`department-evidence-explorer/`) runs on `department-evidence.js`. It opens with the main findings for one department or agency: representation against workforce availability in 2025, the largest less favourable 2024 Public Service Employee Survey results by group, the 2025 staffing survey results, the change in headcount from March 2025 to March 2026 and the regions with the most employees. Each finding links to its source. The topics add the tables behind the findings, workforce change by employment type, regions, salary ranges, careers, commitments and sources. The organization list shows the 109 organizations whose profile in `assets/department-pages.json` has workforce or survey sections.
+
+The HR process review toolkit, the Manager’s Equity Toolkit, the decision equity check, the commitments and accountability tracker and the Invisible Work Project share one renderer. `tools.js` reads `tools-content.js` and draws the page named by `data-tool` on the `<html>` element. Edit text, items, sources and job posting rules in `tools-content.js`. Each item needs English and French text, and each source key must exist in the `S` list.
+
+The History site (GC-Equity-History) loads `department-evidence.js`, `assistant-enhancements.js`, `evidence-meaning.js` and `investigation-paths.js` from this site and calls `window.GCEEvidenceWorkspace`. Keep that interface. Evidence rows separate the parts of a label with " · " and show "Not published" or "Non publié" for a missing value. The History scripts read both.
+
+The 19 retired addresses redirect to the tool that replaced them and keep the language, department and comparison choices. The global comparison page was removed because the site covers the federal public service only; its address opens the tools page.
+
+Salary ranges, and hires, promotions and separations by group, are national figures typed into `department-evidence.js` from Treasury Board reports: Employment Equity Demographic Snapshot 2024–2025, Figure 2, and Employment Equity in the Public Service of Canada 2024–2025, Tables 5 to 7. Update them when Treasury Board publishes a new year.
+
+`node scripts/check-systemic-change.cjs`, run by `scripts/check-site.py`, checks the shared content, page shells, redirects, sources, em dashes and the History interface. `tests/systemic-change-browser.cjs`, run by the browser workflow, opens the tools page, the explorer and the five other tools in English and French at desktop and phone widths. It selects Indigenous Services Canada, runs the job posting check, downloads a record, follows retired addresses and runs the axe-core WCAG 2.1 A and AA rules. These are functional checks, not formal accessibility certification.
+
 ## November 2026 publication-quality redesign and coverage audit
 
 The GC Equity homepage has **exactly two** primary in-page choices. Each data area offers an employee-group selector and a topic selector. The two/three selectors share a responsive horizontal control bar. The smaller “What's inside” links use `data-gce-scope`/`data-gce-topic` to select their relevant area directly. Top navigation clears a chosen department when entering the public service-wide area; only one area's data tables are retained in the DOM at a time.
@@ -133,7 +149,7 @@ distinct from the employment-equity workforce snapshot.
 ## Checks
 
 - `.github/workflows/site-validate.yml` (pull requests and changes to `main`): runs `python scripts/check-site.py`, which checks the seven pages, script syntax, linked assets, page size, data checksums, the branch data files, the workspace snapshot, the links between the Call to Action records and the other data, the Public Service Commission files and their derived JSON (through `scripts/build-psc-data.py --check`), and wording rules (no internal wording, credentials or em dashes). It also rebuilds `data/call-to-action-comparisons.json` (through `scripts/build-cta-comparisons.py --check`), checks every figure, evidence level and order of the Call to Action findings against that file, and fails if one no longer matches; update the wording of the finding when the data change. `scripts/check-findings.js` checks that each finding states the same figures in English and French and that its evidence sentences match its level.
-- `.github/workflows/browser-smoke.yml`: on desktop and phone, checks the two homepage choices, placement of departmental plans and the Clerk’s Call to Action, bilingual navigation, footer attribution, research tools, organization and group data, downloads and other linked pages.
+- `.github/workflows/browser-smoke.yml`: on desktop and phone, checks the two homepage choices, placement of departmental plans and the Clerk’s Call to Action, bilingual navigation, footer attribution, research tools, organization and group data, downloads and other linked pages, then runs `tests/systemic-change-browser.cjs` for the systemic change tools.
 - `.github/workflows/source-check.yml` (Mondays, or run by hand): compares the "date modified" of each official source with `data/source-dates.json` and opens or updates one issue when a source shows a later date. After reviewing the change and updating the site if needed, record the new date in `data/source-dates.json`. The check asks Canada.ca over HTTP/1.1 without compression, the settings Canada.ca accepted from GitHub's servers in November 2026, and reads the date from either Canada.ca page template. A page that does not answer is listed as "not reached"; check it by hand when Treasury Board or the Privy Council Office announces new material. Open Government datasets and the Disproportionality Index project are checked automatically.
 
 

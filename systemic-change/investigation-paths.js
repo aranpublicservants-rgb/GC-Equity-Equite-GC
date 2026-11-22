@@ -201,7 +201,7 @@ g.GCESystemicPaths={
 ["career","Q45","Review career opportunity cost of additional contributions.","Examiner le coût d’opportunité professionnelle des contributions supplémentaires."],
 ["career","STA_04","Review whether employees can access acting opportunities.","Examiner l’accès des employés aux intérims."],
 ["culture","Q24","Review speaking-up and advocacy workload.","Examiner charge liée à la prise de parole et au plaidoyer."],
-["safety","Q42","Review informal navigation support and boundaries.","Examiner soutien informel à la navigation et limites."],
+["safety","Q42","Review informal guidance given to colleagues and its limits.","Examiner l’aide informelle offerte aux collègues et ses limites."],
 ["health","Q78","Review supervisor support for additional responsibilities.","Examiner le soutien des superviseurs aux responsabilités supplémentaires."],
 ["health","Q81","Review sustainable workload and psychological health.","Examiner charge durable et santé psychologique."],
 ["health","Q73q","Review emotional support demands without collecting case details.","Examiner demandes de soutien émotionnel sans détails de dossiers."],

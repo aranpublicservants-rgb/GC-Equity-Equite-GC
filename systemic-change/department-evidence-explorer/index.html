@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Department evidence explorer | GC Equity</title>
+<meta name="description" content="Main findings for a federal department or agency, then representation, survey results by group, staffing, workforce change, regions and commitments, with sources.">
+<link rel="stylesheet" href="../tools.css?v=20261122">
+</head>
+<body>
+<a class="skip" id="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<nav aria-label="Site" id="site-nav"><a id="nav-home" href="../../">GC Equity</a><a id="nav-hub" href="../">Systemic change tools</a><button type="button" class="lang" id="switch" lang="fr">Français</button></nav>
+<p class="note" id="note">Independent resource of the Anti-Racism Ambassadors Network (ARAN). Not an official Government of Canada website.</p>
+<h1 id="title">Department evidence explorer</h1>
+<p class="intro" id="intro">Main findings for a federal department or agency, then representation, survey results by group, staffing, workforce change, regions and commitments, with sources.</p>
+</header>
+<main id="main" tabindex="-1"><noscript><p>This tool needs JavaScript to run. Cet outil a besoin de JavaScript pour fonctionner.</p></noscript></main>
+<footer class="site-footer"><p id="foot">Independent resource using published Government of Canada sources. Each figure stays within its own organization, source, population and year. Missing or suppressed values are not zero.</p><p><a id="foot-home" href="../../">GC Equity home</a></p></footer>
+<script>
+/* Page language for the explorer: the evidence workspace below follows the lang attribute of this page. */
+(function () {
+  var T = {
+    en: { skip: "Skip to main content", home: "GC Equity", hub: "Systemic change tools", btn: "Français", btnLang: "fr", nav: "Site",
+      note: "Independent resource of the Anti-Racism Ambassadors Network (ARAN). Not an official Government of Canada website.",
+      title: "Department evidence explorer",
+      intro: "Main findings for a federal department or agency, then representation, survey results by group, staffing, workforce change, regions and commitments, with sources.",
+      foot: "Independent resource using published Government of Canada sources. Each figure stays within its own organization, source, population and year. Missing or suppressed values are not zero.",
+      footHome: "GC Equity home", doc: "Department evidence explorer | GC Equity" },
+    fr: { skip: "Passer au contenu principal", home: "Équité-GC", hub: "Outils de changement systémique", btn: "English", btnLang: "en", nav: "Site",
+      note: "Ressource indépendante du Réseau des ambassadeurs anti-racisme (RAAR). Ce n’est pas un site officiel du gouvernement du Canada.",
+      title: "Explorateur des données ministérielles",
+      intro: "Principaux constats pour un ministère ou un organisme fédéral, puis la représentation, les résultats de sondage par groupe, la dotation, l’évolution de l’effectif, les régions et les engagements, avec les sources.",
+      foot: "Ressource indépendante fondée sur des sources publiées du gouvernement du Canada. Chaque chiffre demeure rattaché à son organisme, à sa source, à sa population et à son année. Les valeurs manquantes ou supprimées ne valent pas zéro.",
+      footHome: "Accueil d’Équité-GC", doc: "Explorateur des données ministérielles | Équité-GC" }
+  };
+  var lang = new URLSearchParams(location.search).get("lang") === "fr" ? "fr" : "en";
+  function withLang(a) {
+    var u = new URL(a.getAttribute("href"), location.href);
+    u.searchParams.set("lang", lang);
+    var org = new URLSearchParams(location.search).get("org");
+    if (org) u.searchParams.set("org", org); else u.searchParams.delete("org");
+    a.href = u.href;
+  }
+  function apply() {
+    var t = T[lang];
+    document.documentElement.lang = lang;
+    document.title = t.doc;
+    document.getElementById("skip").textContent = t.skip;
+    document.getElementById("nav-home").textContent = t.home;
+    document.getElementById("nav-hub").textContent = t.hub;
+    document.getElementById("site-nav").setAttribute("aria-label", t.nav);
+    var b = document.getElementById("switch");
+    b.textContent = t.btn;
+    b.setAttribute("lang", t.btnLang);
+    document.getElementById("note").textContent = t.note;
+    document.getElementById("title").textContent = t.title;
+    document.getElementById("intro").textContent = t.intro;
+    document.getElementById("foot").textContent = t.foot;
+    document.getElementById("foot-home").textContent = t.footHome;
+    ["nav-home", "nav-hub", "foot-home"].forEach(function (id) { withLang(document.getElementById(id)); });
+  }
+  apply();
+  document.getElementById("switch").addEventListener("click", function () {
+    lang = lang === "en" ? "fr" : "en";
+    var u = new URL(location.href);
+    u.searchParams.set("lang", lang);
+    history.replaceState(null, "", u.pathname + u.search + u.hash);
+    apply();
+    document.getElementById("switch").focus();
+  });
+})();
+</script>
+<script src="../department-evidence.js?v=20261122-7"></script>
+</body>
+</html>
