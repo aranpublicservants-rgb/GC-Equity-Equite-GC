@@ -25,8 +25,10 @@ const negative=new Set(["Q58","Q65","Q51","Q44e","Q73p","Q73q"]),neutral=new Set
 function direction(q){return negative.has(q)?"lower":neutral.has(q)?"context":"higher"}
 function gap(q,v,overall){if(!valid(v)||!valid(overall))return null;const n=Math.round((Number(v)-Number(overall))*100)/100;return {n,less:direction(q)==="context"?false:direction(q)==="lower"?n>0:n<0,better:direction(q)==="context"?false:direction(q)==="lower"?n<0:n>0}}
 const els=document.createElement("section");els.id="gce-depth-root";els.className="gce-depth";els.setAttribute("aria-labelledby","gce-depth-title");els.innerHTML='<h2 id="gce-depth-title">Departmental evidence cross-check / Vérification des données ministérielles</h2><p>Review 2024 survey groups, staffing evidence, and source-linked recourse decisions / Examiner les groupes du SAFF 2024, la dotation et les décisions sourcées</p><button type="button" id="gce-depth-load">Explore linked evidence / Explorer les données liées</button><div id="gce-depth-content"></div>';
-const anchor=document.querySelector("#recourse,#recours,#data-library,#bibliotheque")||document.querySelector("main")||document.body;
-if(anchor.id==="recourse"||anchor.id==="data-library"||anchor.id==="recours"||anchor.id==="bibliotheque")anchor.before(els);else anchor.append(els);
+/* Append outside #lang-en / #lang-fr so French switching never hides this module. */
+const main=document.querySelector("main")||document.body;main.append(els);
+const actions=document.querySelector(".header-actions");
+if(actions&&!document.getElementById("gce-depth-jump")){const a=document.createElement("a");a.id="gce-depth-jump";a.href="#gce-depth-root";actions.append(a);const refresh=()=>{a.textContent=fr()?"Comparer les données par groupe":"Review group-level evidence"};refresh();new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]})}
 const byId=id=>document.getElementById("gce-depth-"+id);
 function controls(){const groups=Object.keys(profile?.groups||{});if(!groups.includes(group))group=groups.includes("Black")?"Black":groups.includes("Indigenous")?"Indigenous":groups[0]||"";
 const qs=Object.keys(model?.definitions||{});if(!qs.includes(question))question=qs.includes("Q65")?"Q65":qs[0];
