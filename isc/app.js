@@ -114,3 +114,6 @@ window.addEventListener('beforeprint',beforePrint);window.addEventListener('afte
 $$('.print-section').forEach(b=>b.addEventListener('click',()=>{document.body.classList.add('print-single');b.closest('section').classList.add('print-target');window.print();}));
 tableExports();setLanguage(lang,false);expandAnchor();$$('.survey-widget select').forEach(s=>s.dispatchEvent(new Event('change')));
 })();
+
+/* Direct contextual links to the systemic-change resources. */
+(()=>{const root=document.querySelector('.header-actions');if(!root||document.getElementById('systemic-change-link'))return;const a=document.createElement('a');a.id='systemic-change-link';root.prepend(a);const org='isc',base=new URL('../',location.href);if(!org)return;const refresh=()=>{const fr=document.documentElement.lang.startsWith('fr');a.textContent=fr?'Agir sur les obstacles':'Act on departmental barriers';const u=new URL('systemic-change/',base);u.searchParams.set('org',org);u.searchParams.set('lang',fr?'fr':'en');a.href=u.href};refresh();new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});})();
