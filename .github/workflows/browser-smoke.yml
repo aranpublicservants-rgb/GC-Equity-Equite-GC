@@ -262,6 +262,17 @@ jobs:
                   if(!await page.locator('#gce-depth-root').isVisible())throw Error(route+' shared evidence hidden in French');
                   if(!/Vérification/.test(await page.locator('#gce-depth-root h2').innerText()))throw Error(route+' evidence heading not translated');
                 }
+                // Agencies without employer-level PSES data must still provide a usable
+                // evidence request and must not impute a zero or block recourse.
+                await page.goto(addr+'assisted-human-reproduction-agency-of-canada/index.html?lang=en',{waitUntil:'domcontentloaded'});
+                await page.locator('#gce-depth-load').click();
+                await page.locator('.gce-depth-method').waitFor({timeout:30000});
+                const smallAgency=await page.locator('.gce-depth-method').innerText();
+                if(!/No employer-level PSES extract/.test(smallAgency))throw Error('Missing-PSES agency needs explicit source-coverage message: '+smallAgency.slice(0,250));
+                await page.locator('[data-depth-tab="requests"]').click();
+                if(!await page.locator('#gce-depth-request').count())throw Error('Missing-PSES agency cannot prepare evidence requests');
+                await page.locator('[data-depth-tab="recourse"]').click();
+                if(!await page.locator('a[href*="/recourse/cases/"]').count())throw Error('Missing-PSES agency cannot open recourse library');
                 if(errors.length)throw Error('Browser script errors: '+errors.join(' / '));
                 fs.mkdirSync('qa-screenshots',{recursive:true});
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-dashboard.png',fullPage:false});
