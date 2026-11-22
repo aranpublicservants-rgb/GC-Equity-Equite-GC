@@ -16,7 +16,7 @@ const src=(u,label)=>{try{const z=new URL(u,base);return ["http:","https:"].incl
 const paths={registry:"assets/department-pages.json",index:"assets/department-profile-index.json",model:"assets/department-page-model.json",snps:"data/snps-2025-by-organization.json",psc:"data/psc/psc-equity.json"};
 const lazy=new Map;function load(path){if(!lazy.has(path))lazy.set(path,fetch(new URL(paths[path]||path,base)).then(r=>{if(!r.ok)throw Error(r.status+" "+path);return r.json()}).catch(e=>{lazy.delete(path);throw e}));return lazy.get(path)}
 async function loadCompressed(path){const r=await fetch(new URL(path,base));if(!r.ok)throw Error("Survey extract "+r.status);const s=(await r.text()).trim();if(!("DecompressionStream"in window))throw Error(t("This browser does not support gzip decoding","Ce navigateur ne prend pas en charge la décompression gzip"));const data=Uint8Array.from(atob(s),ch=>ch.charCodeAt(0));return new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream("gzip"))).json()}
-const key=norm;
+const key=nm;
 let org=null,reg=null,idx=null,model=null,profile=null,snps=null,psc=null,cases=null,view="insights",group="Black",question="Q65",loaded=false,loading=false,errors=[],open=false;
 function matchingName(set,names){for(const n of names)if(set[n])return set[n];const normNames=new Set(names.map(key));const found=Object.entries(set).filter(([k])=>normNames.has(key(k)));return found.length===1?found[0][1]:null}
 function selectedProfile(){return profile?.groups?.[group]||null}
