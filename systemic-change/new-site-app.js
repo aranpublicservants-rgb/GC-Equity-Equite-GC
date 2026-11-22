@@ -6,7 +6,7 @@ if(!config||!D||!modules?.[slug]){document.getElementById("site-app").textConten
 const params=new URLSearchParams(location.search),state={key:slug,lang:params.get("lang")==="fr"?"fr":"en",year1:"2025",year2:"2026",org:null,registry:null,fields:{},entries:[],question:-1,briefNote:"",briefOwner:"",briefDue:"",briefMetric:"",briefStatus:"proposed",selectedActions:new Set(),actionsInitialized:false,result:null,loading:false,version:0},root=document.getElementById("site-app");
 const t=v=>Array.isArray(v)?v[state.lang==="fr"?1:0]:String(v??""),E=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const txt=(en,fr)=>state.lang==="fr"?fr:en;
-const link=(u,label)=>/^https?:\/\//i.test(String(u||""))?'<a href="'+E(u)+'" target="_blank" rel="noopener noreferrer">'+E(label)+'</a>':"";
+const link=(u,label)=>{try{const target=new URL(String(u||""),location.href);if(!["https:","http:"].includes(target.protocol))return "";return '<a href="'+E(target.href)+'" target="_blank" rel="noopener noreferrer">'+E(label)+'</a>'}catch{return ""}};
 const opts=(arr,selected)=>arr.map(([id,label])=>'<option value="'+E(id)+'" '+(String(id)===String(selected)?"selected":"")+'>'+E(label)+'</option>').join("");
 const years=Array.from({length:17},(_,i)=>String(2026-i));
 const needsOrg=slug!=="global-public-service-equity"&&slug!=="job-posting-barrier-scanner";
