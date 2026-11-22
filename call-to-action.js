@@ -275,29 +275,32 @@ function csv(){
 }
 
 /* One organization. */
-function list(items){return items&&items.length?'<ul class="cta-list">'+items.map(x=>'<li lang="en">'+esc(x)+'</li>').join('')+'</ul>':'';}
-function frNote(){return fr()?'<p class="cta-langnote">'+esc('Les résumés des lettres et des autoévaluations sont offerts en anglais seulement. Les documents originaux sont publiés dans les deux langues officielles sur Canada.ca.')+'</p>':'';}
+/* French summaries are used when every item has one; otherwise the English summaries are shown and marked as English. */
+function pickFr(en,frArr){return fr()&&Array.isArray(frArr)&&frArr.length===(en||[]).length&&frArr.every(Boolean)?{arr:frArr,en:false}:{arr:en||[],en:fr()};}
+function list(items,frItems){const p=pickFr(items,frItems);return p.arr.length?'<ul class="cta-list"'+(p.en?' lang="en"':'')+'>'+p.arr.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'';}
+function goalText(v){return v&&v.text?(fr()&&v.text_fr?'<p>'+esc(v.text_fr)+'</p>':'<p lang="en">'+esc(v.text)+'</p>'):'';}
+function frNote(){return fr()?'<p class="cta-langnote">'+esc('Les résumés en français ont été traduits des résumés anglais pour ce site. Ce ne sont pas des traductions officielles. Les lettres et autoévaluations originales sont publiées dans les deux langues officielles sur Canada.ca.')+'</p>':'';}
 function letterCard(o){
  const le=o.letter;
  if(!le)return '<div class="cta-card"><h3>'+esc(tr('2021 letter','Lettre de 2021'))+'</h3><p>'+esc(tr('No 2021 letter for this organization appears in the Privy Council Office collection.','Aucune lettre de 2021 de cette organisation ne figure dans la collection du Bureau du Conseil privé.'))+'</p></div>';
  return '<div class="cta-card"><h3>'+esc(tr('2021 letter','Lettre de 2021'))+'</h3>'+(le.author?'<p>'+esc(tr('Signed by: ','Signée par'+NB+': '))+'<span lang="en">'+esc(le.author)+'</span></p>':'')+
   (le.author_note?'<p class="cta-small">'+esc(tr(le.author_note[0],le.author_note[1]))+'</p>':'')+
-  '<h4>'+esc(tr('Commitments described in the letter','Engagements décrits dans la lettre'))+'</h4>'+(le.commitments.length?list(le.commitments):'<p>'+esc(le.source_note?tr(le.source_note[0],le.source_note[1]):tr('The letter lists no commitments.','La lettre n’énumère aucun engagement.'))+'</p>')+
-  (le.targets.length?'<h4>'+esc(tr('Numbers and targets stated in the letter','Chiffres et cibles indiqués dans la lettre'))+'</h4>'+list(le.targets):'<p class="cta-small">'+esc(tr('The letter states no numeric representation target.','La lettre n’indique aucune cible chiffrée de représentation.'))+'</p>')+
+  '<h4>'+esc(tr('Commitments described in the letter','Engagements décrits dans la lettre'))+'</h4>'+(le.commitments.length?list(le.commitments,le.commitments_fr):'<p>'+esc(le.source_note?tr(le.source_note[0],le.source_note[1]):tr('The letter lists no commitments.','La lettre n’énumère aucun engagement.'))+'</p>')+
+  (le.targets.length?'<h4>'+esc(tr('Numbers and targets stated in the letter','Chiffres et cibles indiqués dans la lettre'))+'</h4>'+list(le.targets,le.targets_fr):'<p class="cta-small">'+esc(tr('The letter states no numeric representation target.','La lettre n’indique aucune cible chiffrée de représentation.'))+'</p>')+
   '<p><a href="'+esc(le.url)+'" target="_blank" rel="noopener noreferrer">'+esc(tr('Read the full letter on Canada.ca','Lire la lettre complète sur Canada.ca'))+'</a></p></div>';
 }
 function saCard(o){
  const sa=o.self_assessment;
  if(!sa)return '<div class="cta-card"><h3>'+esc(tr('2024 self-assessment','Autoévaluation de 2024'))+'</h3><p>'+esc(tr('No 2024 self-assessment for this organization appears in the Privy Council Office collection.','Aucune autoévaluation de 2024 de cette organisation ne figure dans la collection du Bureau du Conseil privé.'))+'</p></div>';
  const rows=GROUPS.filter(g=>g.goal).map(g=>{
-  const c=k=>{const v=sa.goals[g.goal+'_'+k];return '<td>'+statusBadge(v.status)+(v.text?'<p lang="en">'+esc(v.text)+'</p>':'')+'</td>';};
+  const c=k=>{const v=sa.goals[g.goal+'_'+k];return '<td>'+statusBadge(v.status)+goalText(v)+'</td>';};
   return '<tr><th scope="row">'+esc(gName(g,true))+'</th>'+c('recruitment')+c('promotion')+'</tr>';}).join('');
  const inc=sa.goals.inclusion;
  return '<div class="cta-card"><h3>'+esc(tr('2024 self-assessment','Autoévaluation de 2024'))+'</h3>'+
   '<div class="cta-scroll table-scroll" tabindex="0" role="region" aria-label="'+esc(tr('Goals reported in the self-assessment','Objectifs déclarés dans l’autoévaluation'))+'"><table class="cta-goals"><caption>'+esc(tr('Recruitment and promotion goals reported in the self-assessment','Objectifs de recrutement et de promotion déclarés dans l’autoévaluation'))+'</caption><thead><tr><th scope="col">'+esc(tr('Group','Groupe'))+'</th><th scope="col">'+esc(tr('Recruitment','Recrutement'))+'</th><th scope="col">'+esc(tr('Promotion','Promotion'))+'</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-  '<h4>'+esc(tr('Inclusion goals','Objectifs d’inclusion'))+'</h4><p>'+statusBadge(inc.status)+'</p>'+(inc.text?'<p lang="en">'+esc(inc.text)+'</p>':'')+
-  (sa.progress.length?'<h4>'+esc(tr('Progress reported','Progrès déclarés'))+'</h4>'+list(sa.progress):'')+
-  (sa.barriers.length?'<h4>'+esc(tr('Barriers named','Obstacles nommés'))+'</h4>'+list(sa.barriers):'')+
+  '<h4>'+esc(tr('Inclusion goals','Objectifs d’inclusion'))+'</h4><p>'+statusBadge(inc.status)+'</p>'+goalText(inc)+
+  (sa.progress.length?'<h4>'+esc(tr('Progress reported','Progrès déclarés'))+'</h4>'+list(sa.progress,sa.progress_fr):'')+
+  (sa.barriers.length?'<h4>'+esc(tr('Barriers named','Obstacles nommés'))+'</h4>'+list(sa.barriers,sa.barriers_fr):'')+
   '<p><a href="'+esc(sa.url)+'" target="_blank" rel="noopener noreferrer">'+esc(tr('Read the full self-assessment on Canada.ca','Lire l’autoévaluation complète sur Canada.ca'))+'</a></p></div>';
 }
 function repTable(o){

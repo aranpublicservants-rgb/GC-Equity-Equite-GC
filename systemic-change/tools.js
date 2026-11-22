@@ -178,7 +178,7 @@
         list(L("Progress reported in 2024", "Progrès déclarés en 2024"), pick(S1.progress, S1.progress_fr), S1.url, L("2024 self-assessment", "Autoévaluation de 2024")) +
         list(L("Barriers reported in 2024", "Obstacles déclarés en 2024"), pick(S1.barriers, S1.barriers_fr), S1.url, L("2024 self-assessment", "Autoévaluation de 2024"));
       if (!L1.commitments && !S1.progress && !S1.barriers) out += '<p class="notice">' + esc(L("No letter or self-assessment summary is on file for this organization.", "Aucun résumé de lettre ou d’autoévaluation n’est consigné pour cet organisme.")) + "</p>";
-      out += '<p class="small">' + esc(L("Short summaries of the published documents. A reported action is not evidence that it was carried out or that it worked.", "Brefs résumés des documents publiés. Une mesure déclarée ne prouve pas qu’elle a été réalisée ni qu’elle a donné des résultats.")) + "</p>";
+      out += '<p class="small">' + esc(L("Short summaries of the published documents. A reported action is not evidence that it was carried out or that it worked.", "Brefs résumés des documents publiés, traduits des résumés anglais pour ce site; ce ne sont pas des traductions officielles. Une mesure déclarée ne prouve pas qu’elle a été réalisée ni qu’elle a donné des résultats.")) + "</p>";
     }
     return out + "</div></section>";
   }

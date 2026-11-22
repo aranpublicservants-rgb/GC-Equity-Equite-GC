@@ -790,7 +790,7 @@
   }
   return '<p>' + e(L(
    "Short summaries of the published letters and self-assessments. A reported goal or action is not evidence that it was achieved.",
-   "Brefs résumés des lettres et autoévaluations publiées. Un objectif ou une mesure déclarés ne prouvent pas qu’ils ont été réalisés."
+   "Brefs résumés des lettres et autoévaluations publiées, traduits des résumés anglais pour ce site; ce ne sont pas des traductions officielles. Un objectif ou une mesure déclarés ne prouvent pas qu’ils ont été réalisés."
    )) + '</p>' + out
  }
 
