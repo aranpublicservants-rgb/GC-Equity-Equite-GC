@@ -19,7 +19,15 @@ def manifest():
 if __name__ == '__main__':
     contents = manifest()
     if '--check' in sys.argv:
-        assert OUT.read_text() == contents, 'Hosted data checksum coverage is stale. Run scripts/update-data-checksums.py.'
+        old = OUT.read_text().splitlines()
+        new = contents.splitlines()
+        if old != new:
+            import difflib
+            differences = list(difflib.unified_diff(old, new, fromfile='committed checksums', tofile='computed checksums', n=0))
+            print('Hosted data checksum manifest requires updating. First changed lines:', file=sys.stderr)
+            for line in differences[:32]:
+                print(line.rstrip(), file=sys.stderr)
+            raise SystemExit('Hosted data checksum coverage is stale. Run scripts/update-data-checksums.py.')
         print(f'PASS: all {len(contents.splitlines()):,} hosted data and catalogue checksums match')
     else:
         OUT.write_text(contents)
