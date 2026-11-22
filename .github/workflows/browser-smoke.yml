@@ -240,6 +240,28 @@ jobs:
                 await page.locator('#language').click();
                 if(await page.locator('html').getAttribute('lang')!=='fr')throw Error('Department language switch failed');
                 if(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+3))throw Error('Full profile overflows viewport: '+mode.name);
+                // Source-level audit of dedicated and shared departmental routes.
+                // Check decoded, department-specific PSES Q86/Q87 against visible 2024 figures.
+                for(const [route,q86,q87] of [['isc','64','70'],['dnd','73','78'],['dfo','67','77'],['cra',null,null],['esdc',null,null]]){
+                  await page.goto(addr+route+'/index.html?lang=en',{waitUntil:'domcontentloaded'});
+                  await page.locator('#gce-depth-load').waitFor({timeout:30000});
+                  await page.locator('#gce-depth-load').click();
+                  await page.locator('#gce-depth-group').waitFor({timeout:45000});
+                  const check=await page.locator('.gce-depth-method').innerText();
+                  if(q86&&!check.includes(q86+'%'))throw Error(route+' Q86 source cut mismatch: '+check.slice(0,240));
+                  if(q87&&!check.includes(q87+'%'))throw Error(route+' Q87 source cut mismatch: '+check.slice(0,240));
+                  await page.locator('[data-depth-tab="survey"]').click();
+                  const count=await page.locator('#gce-depth-panel tbody tr').count();
+                  if(count!==27)throw Error(route+' has '+count+' PSES questions; expected 27');
+                  await page.locator('[data-depth-tab="staffing"]').click();
+                  if(await page.locator('#gce-depth-panel tbody tr').count()!==7)throw Error(route+' staffing indicator depth missing');
+                  await page.locator('[data-depth-tab="requests"]').click();
+                  if(!/applicant|Applicant|candidature/i.test(await page.locator('#gce-depth-request').inputValue()))throw Error(route+' missing actionable staffing evidence request');
+                  await page.locator('#language').click();
+                  if(await page.locator('html').getAttribute('lang')!=='fr')throw Error(route+' French toggle broken');
+                  if(!await page.locator('#gce-depth-root').isVisible())throw Error(route+' shared evidence hidden in French');
+                  if(!/Vérification/.test(await page.locator('#gce-depth-root h2').innerText()))throw Error(route+' evidence heading not translated');
+                }
                 if(errors.length)throw Error('Browser script errors: '+errors.join(' / '));
                 fs.mkdirSync('qa-screenshots',{recursive:true});
                 await page.screenshot({path:'qa-screenshots/'+mode.name+'-dashboard.png',fullPage:false});
