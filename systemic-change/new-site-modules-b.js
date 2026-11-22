@@ -2,7 +2,7 @@
 (function(g){
 "use strict";
 const D=g.GCEExtraData,H=g.GCEExtraModuleHelper,fs={},e=H.e;
-const L=(c,a,b)=>H.L(c,a,b),fmt=(c,v)=>H.fmt(c,v),pct=(c,v)=>H.pct(c,v);
+const L=(c,a,b)=>H.L(c,a,b),fmt=(c,v)=>H.fmt(c,v),pct=(c,v)=>H.pct(c,v),year=(c,v)=>String(v||c.year2);
 const link=(url,name)=>H.srcLink(url,name),fact=(...args)=>H.fact(...args),box=(...args)=>H.box(...args);
 const warn=c=>'<p class="warning">'+e(L(c,"Missing, withheld or suppressed data are not zero. Use the specific evidence request in your report.","Les données manquantes, non communiquées ou supprimées ne valent pas zéro. Utiliser la demande précise dans votre rapport."))+'</p>';
 const byName=(d,c)=>d?.organizations?.find(x=>x.id===c.org.id||x.name_en===c.org.en||x.name_fr===c.org.fr||D.normalize(x.site_name)===D.normalize(c.org.en));
