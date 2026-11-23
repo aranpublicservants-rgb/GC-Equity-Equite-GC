@@ -1003,8 +1003,31 @@
      NEGATIVE: "neg",
      ANSWER1: "a1"
     },
-    out = [];
-   let pairs = 0;
+    out = [],
+    earlier = new Map();
+   rows.forEach(r => {
+    if (r.y !== last) {
+     const k = r.v + "|" + r.c + "|" + r.q,
+      cur = earlier.get(k);
+     if (!cur || r.y < cur.y) earlier.set(k, r)
+    }
+   });
+   let pairs = 0,
+    both = 0,
+    wider = 0,
+    narrower = 0;
+   const before = r => {
+    const p = earlier.get(r.v + "|" + r.c + "|" + r.q);
+    if (!p) return null;
+    const v = gnum(p[key[trend.questions[r.q].field]]),
+     n = gnum(p.n),
+     all = orgTrend[r.q]?.[p.y]?.[0] ?? null;
+    return v === null || n === null || n < FEW || all === null ? null : {
+     y: p.y,
+     v,
+     all
+    }
+   };
    for (const r of rows) {
     if (r.y !== last) continue;
     const v = gnum(r[key[trend.questions[r.q].field]]),
@@ -1012,8 +1035,16 @@
      all = orgTrend[r.q]?.[last]?.[0] ?? null;
     if (v === null || n === null || n < FEW || all === null) continue;
     pairs++;
-    const adverse = (v - all) * trend.direction[r.q];
+    const adverse = (v - all) * trend.direction[r.q],
+     b = before(r);
+    if (b) {
+     both++;
+     const change = adverse - (b.v - b.all) * trend.direction[r.q];
+     if (change <= -LIMIT) wider++;
+     else if (change >= LIMIT) narrower++
+    }
     if (adverse <= -LIMIT) out.push({
+     b,
      r,
      v,
      n,
@@ -1031,12 +1062,13 @@
     }).slice(0, 7),
     gl = r => fr() ? r.gf || r.ge : r.ge,
     qn = q => QTEXT[q] ? L(QTEXT[q][0], QTEXT[q][1]) : L(trend.questions[q].en, trend.questions[q].fr),
-    li = x => "<li>" + e(gl(x.r) + COL() + qn(x.r.q) + ", " + pct(x.v) + " " + L("compared with", "contre") + " " + pct(x.all) + " " + L("for all respondents", "pour tous les répondants") + " (" + x.n.toLocaleString(loc()) + " " + L("responses", "réponses") + ").") + "</li>";
+    li = x => "<li>" + e(gl(x.r) + COL() + qn(x.r.q) + ", " + pct(x.v) + " " + L("compared with", "contre") + " " + pct(x.all) + " " + L("for all respondents", "pour tous les répondants") + " (" + x.n.toLocaleString(loc()) + " " + L("responses", "réponses") + ")." + (x.b ? " " + L("In " + x.b.y + " it was " + pct(x.b.v) + " compared with " + pct(x.b.all) + ".", "En " + x.b.y + ", c’était " + pct(x.b.v) + " contre " + pct(x.b.all) + ".") : "")) + "</li>";
    const head = L("In " + last + ", " + out.length + " of " + pairs + " group and question pairs with at least " + FEW + " responses were " + LIMIT + " points or more toward less favourable results than all respondents.",
     "En " + last + ", " + out.length + " paires groupe-question sur " + pairs + " ayant au moins " + FEW + " réponses étaient de " + LIMIT + " points ou plus vers des résultats moins favorables que ceux de tous les répondants.");
-   box.innerHTML = '<section class="dew-box"><h3>' + e(L("Where results differ most between groups", "Où les résultats diffèrent le plus entre les groupes")) + '</h3><p class="dew-lead">' + e(head) + '</p>' + (top.length ? "<ul>" + top.map(li).join("") + "</ul>" : "") +
-    '<p class="dew-small">' + e(L("Groups are employees with a disability, Indigenous employees, racialized employees, women, men, employees of another gender and 2SLGBTQIA+ employees, from the survey subsets. They overlap, and a gap shows where to look, not why. Suppressed values and groups under 100 responses are left out. Choose “Results by group” for every group and question.",
-     "Les groupes sont les employés en situation de handicap, les employés autochtones, les employés racisés, les femmes, les hommes, les employés d’un autre genre et les employés 2ELGBTQIA+, selon les sous-ensembles du sondage. Ils se chevauchent, et un écart indique où regarder, non pourquoi. Les valeurs supprimées et les groupes de moins de 100 réponses sont exclus. Choisir « Résultats par groupe » pour tous les groupes et toutes les questions.")) + '</p></section>'
+   box.innerHTML = '<section class="dew-box"><h3>' + e(L("Where results differ most between groups", "Où les résultats diffèrent le plus entre les groupes")) + '</h3><p class="dew-lead">' + e(head) + '</p>' + (both ? '<p>' + e(L("Of " + both + " pairs with results in both an earlier year and " + last + ", the gap toward less favourable results grew by " + LIMIT + " points or more in " + wider + " and shrank by " + LIMIT + " points or more in " + narrower + ". The earlier year is shown with each result below where it was published.",
+    "Sur " + both + " paires avec des résultats pour une année antérieure et pour " + last + ", l’écart vers des résultats moins favorables a augmenté de " + LIMIT + " points ou plus dans " + wider + " cas et diminué de " + LIMIT + " points ou plus dans " + narrower + ". L’année antérieure est indiquée avec chaque résultat ci-dessous lorsqu’elle a été publiée.")) + '</p>' : "") + (top.length ? "<ul>" + top.map(li).join("") + "</ul>" : "") +
+    '<p class="dew-small">' + e(L("Groups are employees with a disability, Indigenous employees, racialized employees, women, men, employees of another gender and 2SLGBTQIA+ employees, from the survey subsets. Responses are the number of employees in the group who answered the question, so a group with fewer responses gives a less certain result. They overlap, and a gap shows where to look, not why. Suppressed values and groups under 100 responses are left out. Choose “Results by group” for every group and question.",
+     "Les groupes sont les employés en situation de handicap, les employés autochtones, les employés racisés, les femmes, les hommes, les employés d’un autre genre et les employés 2ELGBTQIA+, selon les sous-ensembles du sondage. Les réponses sont le nombre d’employés du groupe qui ont répondu à la question; un groupe comptant moins de réponses donne un résultat moins sûr. Les groupes se chevauchent, et un écart indique où regarder, non pourquoi. Les valeurs supprimées et les groupes de moins de 100 réponses sont exclus. Choisir « Résultats par groupe » pour tous les groupes et toutes les questions.")) + '</p></section>'
   } catch (x) {}
  }
 
