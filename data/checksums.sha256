@@ -10,13 +10,15 @@ d6a588986d900b25aacb54d4af8029981fc38c34a7102da6a7ae015a14520164  assets/departm
 a75acd1b41d9520d31beb7b3734d09fafea47591904acea1e4bf23f8f32f639f  assets/department-page-model.json
 637fce21e615109e46461906a845be27e7ed957eb33d6c2d00e31cf59a37ba63  assets/department-page.css
 21e29ce0c8385834aacd5fbe3daabd321f03d70129ef10df3606ae574f6358d4  assets/department-page.js
-ba03cc6f9f69636e5ce583c9e6b38e2b8ebc091332161c0244551b1d7b012387  assets/department-pages.json
+dc89efd7db28ee661f8a9001eea5026648842c0a866851c6b1579011759d43b9  assets/department-pages.json
 e689276952a2cbb6852a0d51f91258d79b4e928aa24dd6a1e66996b9463ab5da  assets/department-profile-index.json
 629db7cc3655916bee9af733c05d982d3f861238db9c6c3cb506498e333ff13d  assets/department-publication-links.json
 60c690de73b970399ba88ea8a77c2dc9c2315c75e9050d27f2b56c4f327eab1f  assets/department-requests.js
 672c081241f66185d1ab05811ceb9ceca12788270d4c9d69e6f32b5f3baa603b  assets/equity-reports.css
 6a5e44e5bf142034505fc6d7523ad496258d91f2e3f1a5d5428ae336489c5ae5  assets/equity-reports.js
 b8c87a259daf44239c0212762f4e33c37a2e57e5487579960cb6dbe24d76330b  assets/equity-reports.json
+6f733ff9229ff4b97457db02ee1ff74bb7bea1f3b277fc438340a37748415ea0  assets/evidence-review.css
+7ba357b4cee96f21923cf86b7f165a28f0b3e4cfc70b12324be52d5700615fda  assets/evidence-review.js
 8d5f4349b038eb0e35588c77498f128f8678925f84570809ff2127c4ddf84fcb  assets/federal-organizations-2026-10-15.json
 817ee296318da45d1ae2f5a940617cd6e1c1e63b8efa11ad57dd8bbc84d57896  assets/hosted-datasets.json
 b537bb81cbeec1347c2962c1f210ca505200da47d162305849225146e9caca42  assets/library-documents.json
@@ -28,6 +30,7 @@ a3069cfc2925cb6d926e7e1c81187e42d57b7fd01ce5a32a7c8327cd89be6803  assets/psc-org
 153ae3f4078125e5d85e6482518f4dae10937cbd980a09e962865c7a68a594c1  assets/workspace-manifest.json
 6cfc9cc9196a4c406031ade8c6802e8d541e5883bed8413e78e1cde0e621a767  data/call-to-action-comparisons.json
 1410ce2469bed9600bd6dd261b94c577477d777a0f9ed81a470f63e4ba4ed267  data/call-to-action-letters.json
+b30a74108e226a271ee707af01d48513b84c7d29243b0953fe2b7003554324e8  data/department-duplicate-routes.json
 af530b6cd74c9e5e181b8bfa4fb69eaa8fafa6d03a2c55d378caf3a6d1be35b5  data/department-identity-crosswalk.json
 c035937d9368911a1788356d17cb35b54526679a762e49ab39b8aa0501a6630b  data/department-page-template.json
 66e2cf5dcfb9ab818ea5006ac9fa04817b7e2df4db32ed28d5b3f68d8942813b  data/department-profiles/accessibility-standards-canada-2f85390e.json.gz.b64
@@ -134,6 +137,7 @@ f0fcffd99a68f1249417821ef11e319f51c1f9bc527d60a245d47c91b7cbf851  data/ee-report
 526de3d7de25b035c8cdbfab27b8c001feceaee601b6aec2f318b578434c3111  data/ee-reports/psc-promotion-rate-study-three-year-update-2022-en.docx
 2ef5f633102a4d236bbcdb2157ad35d8a307f2ee631d5267cd41c9608cca3e25  data/ee-reports/psc-promotion-rate-study-three-year-update-2022-fr.docx
 3c38e2c0cf25009e4345742f0ab6a729a9e96b51b8b74ff507c3af78b4f5cf63  data/ee-reports/pses2022-23-supporting-documentation.xlsx
+11a8a41862a915d07fe204ffe73d3dfbe1cc3b269ded36daf0886bdd8fdab991  data/evidence-review-50.json
 b6bf69ac83a1293b7f9bd714aa7d203475e844b931b2b216618f22555540fad0  data/isc-women-representation-2021-2025.json
 2a362f4c3cb2807e25193b00ba88b2b45bcc2df33c8eec21132049cc9481c453  data/october-2026/DI_cleaned_imputed_salary_counts_2017-2025.csv
 254dbd19bba003c8da7330a056db8ed306da2f08e3ef5fd5054a8642b149f6e2  data/october-2026/DI_di_disproportionality_index_2017-2025.csv
@@ -252,6 +256,13 @@ e9ca1e6cdfc46671ce91cc0f9b774374dd748d7b67df57dc20f271971a21b0ca  data/open-cana
 b5c021eba994ef1d6cf90a7a2c3f03c95ed0a48259692401683dca2007f56296  data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv
 e3ad5c5634fc11b07e02b8770e1a2a06666c6a9424cd1560b3239f31d47e1acf  data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv
 54c7261f24b96dcd700f8680d72fd8eef3121f30385995add8c058e1ecfff2df  data/open-canada-2026-11/tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx
+ebc7f65a4a7ef776cdb97d66ed5c28f3f12f91f06d345d1c103cbc181e0f9a9c  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/README.json
+4f966af72a500bd9ccf3240ead196cd061383efe5e94de5d5c27a3a664614654  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv
+004b61676479810ed25c9a9c2a1c7041e2ba1145118c36dea8b1db2cf682e774  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-fr.csv
+380a00ec01ae5f4cff2cb6212c0551326eecbb2b00921d3757ce647dc8345304  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv
+4221b67be044c0d55fd611f501f9e1eab7cb35c755a03fee8d360d326d354ff9  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-fr.csv
+44f2661bfb14708e180feb88b7174d13c1780bee29e021ad9c2ed263f76c74fe  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv
+14bc71a0563f9df7a8fe790e45b619ed7d0367ecdbc011c08680e026af2d0a74  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-fr.csv
 598a34d4582f18fa92b609db3f5864f9fad153bbbb8f43dd494a8bff0d09992f  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv
 c4dd99103394e44fbe68b1ab1af12f10e43784875d7efa66444a42bb8b868eb6  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv
 9c713eeaeb3250221fce7140bc1ba6c993b95fb1ad0bab72748aea206bdad2ef  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv
@@ -274,13 +285,6 @@ b013b3c9225a5f37c26ce28a16e4def45f27fd26cc96cbae13bb688197f2b441  data/open-cana
 e0b3fe1c54bbaad02d5582b41698dcd55c3c4b44511385a24b40be87daa82b9a  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-march-2026-fr.csv
 cb214be36edba8d65d09740968f2ba5886336a6c39be68ad881fab22ee1cf4d9  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv
 9890db9453f7ba071700c9137c756394141cbbefc7544f1ead7107b82fca3f00  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv
-ebc7f65a4a7ef776cdb97d66ed5c28f3f12f91f06d345d1c103cbc181e0f9a9c  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/README.json
-4f966af72a500bd9ccf3240ead196cd061383efe5e94de5d5c27a3a664614654  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv
-004b61676479810ed25c9a9c2a1c7041e2ba1145118c36dea8b1db2cf682e774  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-fr.csv
-380a00ec01ae5f4cff2cb6212c0551326eecbb2b00921d3757ce647dc8345304  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv
-4221b67be044c0d55fd611f501f9e1eab7cb35c755a03fee8d360d326d354ff9  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-fr.csv
-44f2661bfb14708e180feb88b7174d13c1780bee29e021ad9c2ed263f76c74fe  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv
-14bc71a0563f9df7a8fe790e45b619ed7d0367ecdbc011c08680e026af2d0a74  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-fr.csv
 32358ae80152c1558027ddb61312b9b0ccdcfd73d31fae06ec4cc936f9073fe7  data/psc/CFPPSC_AR1CC.csv
 871aff9aa75472194a0716c8b5b835e98c66275a0322672a293ed7b25fe76d96  data/psc/CFPPSC_AR1D.csv
 9747933ccdac3187dad1bdc021b0828cac2e06020b31e18c3883b21818641f88  data/psc/CFPPSC_AR1E.csv
@@ -4433,4 +4437,3 @@ bb79a83d6d0597e61ccdc658fa2a1ead1d7f8e7fc69400f81889273219e4a49b  women-femmes/d
 44be27cf78a1df319a48e764794c7f34a011ecb15bcc08ca61527e3c5817fe1b  women-femmes/data/csv/women-representation-2017-2025.csv
 f16a0dddeb34e8c315bfa75fb22a5f0cf7309b6cdcc4b301a356c15623460226  women-femmes/data/csv/women-share-of-salary-ranges-2025.csv
 df840c7326fbb055e6dbe8e86dce045db462ce9c37160d9a312e2ae2f32df82f  women-femmes/data/orgs.json
-b30a74108e226a271ee707af01d48513b84c7d29243b0953fe2b7003554324e8  data/department-duplicate-routes.json
