@@ -186,6 +186,7 @@ f149400fc22a68951d976eafbb2d7dc5985bf2967dc82f095ec75b23c7727bb8  data/employer-
 11a8a41862a915d07fe204ffe73d3dfbe1cc3b269ded36daf0886bdd8fdab991  data/evidence-review-50.json
 0594e9762521110d7f36f35b82e83d31b3f2a68b72a98a10a5549ef840740601  data/executive-levels-2025-national.json
 b6bf69ac83a1293b7f9bd714aa7d203475e844b931b2b216618f22555540fad0  data/isc-women-representation-2021-2025.json
+dd4b1a965d74031a563a2efe1edbb1c9420e64e52fd291a6d92011cbe851fedd  data/large-sources-inventory.json
 2a362f4c3cb2807e25193b00ba88b2b45bcc2df33c8eec21132049cc9481c453  data/october-2026/DI_cleaned_imputed_salary_counts_2017-2025.csv
 254dbd19bba003c8da7330a056db8ed306da2f08e3ef5fd5054a8642b149f6e2  data/october-2026/DI_di_disproportionality_index_2017-2025.csv
 546fbbe2b873ee01042b27b125cb1750e1b6ebb4926aa3b4aa7c6cb06dae1cb5  data/october-2026/DI_imputation_estimates_NOT_TBS_PUBLISHED.csv
@@ -242,8 +243,9 @@ acc1d0ca6385be35cbe88c8efba78cda890b715bc183c55df2b121ecd8e917fc  data/open-cana
 2ca07f0634432bad249f846444a496ae0d6f9c7f6026859a417dd2bfa2dbd289  data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i1-days-to-complete-external-staffing.csv
 50a9ed4f5a9856152d11b9fe45aa99f1ce947a78db871f94edc22998d9883e11  data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i11-new-hires-outside-ncr.csv
 56e561194c4a585ec4beafa7ffc9e0c62bb92d8ff36384abd69efc2b6082adf6  data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i9-new-hires-under-35.csv
+3c56b7550b530674cd5ac0800c2aa79dfa8b1193b597d08ae37c9e27afa18781  data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv.gz
 9814439e5f95a9e56b09a619fe3ad46cab5c5204d38d1b3b00191ea693a1f6c7  data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-october-2-2026-single-tab.csv.gz
-5e0f0e21921f53d912d49241768a168d4cb7375f9aa0e71f8816ad6375903582  data/open-canada-2026-11/psc-fswep-referrals/large-files.json
+065d4264a3bb0b25737ffc9cd1ba97205fc8c04889847abdbfdfa304b7ae0ae1  data/open-canada-2026-11/psc-fswep-referrals/large-files.json
 af13891f6f78dd13b60bb907e02706c2b5a5cd48916a2f87b2ac20aa82933049  data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv
 85348a891b1da6b1c564df1e59f3d3ca6c4a562186b74c593b9af091f584f780  data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv
 d3c0e842f692bb464145e4066f15bf4e42a9c44dd30ff35896ec62130d5713be  data/open-canada-2026-11/psc-population-ar2/psc-ar2b-indeterminate-employees-under-35-share-by-year.csv
