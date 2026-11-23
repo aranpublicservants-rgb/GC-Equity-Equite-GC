@@ -14,7 +14,29 @@ function organizations(){const native=[...($('org-picker')?.options||[])].filter
 function q(){return s.edit?F.questions(s.answers).find(q=>q.id===s.edit):s.stopped?null:F.next(s.answers);}
 function closeViewer(){s.run++;s.viewer=null;if($('gca-viewer')){$('gca-viewer').replaceChildren();$('gca-viewer').hidden=true;}}
 function choose(id,value){s.answers=F.set(s.answers,id,value);s.edit=null;s.stopped=false;s.limit=10;s.query='';$('gca-result-search').value='';closeViewer();render(true);}
-function renderOrganizations(){const root=$('gca-choices');root.replaceChildren();const term=F.normalize(s.orgQuery),choices=organizations().filter(o=>!term||F.normalize(o.en+' '+o.label).includes(term));for(const o of choices.slice(0,s.orgLimit)){const b=btn(o.label,root,()=>choose('organization',o.en),'gca-choice');b.dataset.organization=o.en;b.setAttribute('aria-pressed',String(s.answers.organization===o.en));}$('gca-org-count').textContent=T(`${choices.length} matching ${choices.length===1?'organization':'organizations'}`,`${choices.length} ${choices.length===1?'organisme correspondant':'organismes correspondants'}`);if(!choices.length)el('p',T('No match. Try part of the full organization name.','Aucun résultat. Essayez une partie du nom complet de l’organisme.'),root,'gca-note');if(choices.length>s.orgLimit)btn(T('Show more organizations','Afficher plus d’organismes'),root,()=>{s.orgLimit+=12;renderOrganizations();});}
+function renderOrganizations(){
+ const root=$('gca-choices');root.replaceChildren();
+ const all=organizations(),term=F.normalize(s.orgQuery);
+ const matches=term?all.filter(o=>F.normalize(o.en+' '+o.label).includes(term)):all;
+ const common=['indigenous services canada','national defence','fisheries and oceans canada','canada revenue agency','employment and social development canada','treasury board of canada secretariat','health canada','immigration refugees and citizenship canada'];
+ const quick=common.map(n=>all.find(o=>F.normalize(o.en)===F.normalize(n)||F.normalize(o.label)===F.normalize(n))).filter(Boolean);
+ const displayed=term?matches.slice(0,12):(quick.length?quick:all.slice(0,8));
+ const label=el('label',T('Choose from matching departments and agencies','Choisir parmi les ministères et organismes correspondants'),root);
+ label.htmlFor='gca-org-select';
+ const select=el('select',null,root,'gca-org-select');select.id='gca-org-select';
+ const placeholder=el('option',term?T('Choose a result','Choisir un résultat'):T('Choose a common organization or search above','Choisir un organisme courant ou rechercher ci-dessus'),select);
+ placeholder.value='';
+ for(const o of displayed){const option=el('option',o.label,select);option.value=o.en;}
+ select.value='';
+ select.disabled=!displayed.length;
+ select.addEventListener('change',()=>{if(select.value)choose('organization',select.value);});
+ const result=$('gca-org-count');
+ result.textContent=!matches.length?T('No matching organization. Try a shorter name.','Aucun organisme correspondant. Essayez un nom plus court.'):
+ term?T(matches.length+' matching organizations. '+displayed.length+' shown in the dropdown'+(matches.length>displayed.length?'; type more letters to narrow the results.':'.'),matches.length+' organismes correspondants. '+displayed.length+' dans le menu'+(matches.length>displayed.length?'; saisissez d’autres lettres pour affiner.':'.')):
+ T('Choose a common organization in the compact menu, or search all organizations by name.','Choisissez un organisme courant dans le menu compact, ou recherchez tous les organismes par leur nom.');
+ const quickPath=el('p',T('Prefer to browse? Use the department selector in the data tables instead.','Vous préférez parcourir les données? Utilisez le sélecteur des tableaux ministériels.'),root,'gca-note');
+ link(T('Go to departmental tables','Accéder aux tableaux ministériels'),'#department-data',quickPath);
+}
 function renderQuestion(move=false){const question=q(),title=$('gca-question'),root=$('gca-choices');root.replaceChildren();$('gca-org-search-area').hidden=true;const order=F.questions(s.answers),i=question?order.findIndex(x=>x.id===question.id):-1;$('gca-stop').hidden=!question;$('gca-back').hidden=!question;$('gca-skip').hidden=!question||['scope','organization'].includes(question.id);$('gca-back').disabled=i<=0;
  if(!s.catalogue){title.textContent=T('Loading the dataset catalogue…','Chargement du répertoire de données…');return;}
  if(!question){title.textContent=T('Your datasets are ready.','Vos jeux de données sont prêts.');$('gca-progress').textContent=T('YOUR MATCHING DATA','VOS DONNÉES CORRESPONDANTES');$('gca-question-help').textContent=T('See the complete matching list below. You can refine your answers or start another search.','Consultez la liste complète des résultats ci-dessous. Vous pouvez préciser vos réponses ou lancer une autre recherche.');if(F.next(s.answers))btn(T('Keep answering questions','Continuer les questions'),root,()=>{s.stopped=false;s.edit=null;renderQuestion(true);},'gca-choice');btn(T('Review or change my answers','Revoir ou modifier mes réponses'),root,()=>{if($('gca-answers').hidden){s.stopped=false;renderQuestion(true);return;}$('gca-answers').open=true;focus($('gca-answer-list').querySelector('button'));},'gca-choice');btn(T('Show all datasets for this scope','Voir tous les jeux de données pour cette portée'),root,()=>{s.answers={scope:s.answers.scope,organization:s.answers.organization};s.stopped=true;s.limit=10;closeViewer();render();showResults();},'gca-choice');
