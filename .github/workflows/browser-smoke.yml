@@ -2,7 +2,7 @@ name: GC Equity desktop and mobile smoke
 on:
   push:
     branches: [main]
-    paths: ['**.html', '**.js', '**.css', 'assets/**', 'data/**', 'tests/systemic-change-browser.cjs', '.github/workflows/browser-smoke.yml']
+    paths: ['**.html', '**.js', '**.css', 'assets/**', 'data/**', 'tests/systemic-change-browser.cjs', 'tests/evidence-review-browser.cjs', 'tests/evidence-review.test.cjs', '.github/workflows/browser-smoke.yml']
   pull_request:
     paths: ['**.html', '**.js', '**.css', 'assets/**', 'data/**', 'tests/systemic-change-browser.cjs', '.github/workflows/browser-smoke.yml']
 permissions:
@@ -284,6 +284,8 @@ jobs:
           JS
       - name: Check the systemic change tools in English and French
         run: node tests/systemic-change-browser.cjs
+      - name: Check evidence review on desktop and mobile
+        run: node tests/evidence-review-browser.cjs
       - name: Save preview images
         if: always()
         uses: actions/upload-artifact@v4
