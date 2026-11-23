@@ -341,7 +341,7 @@ for rec in cross['organizations']:
  body+='</main><footer class="site-footer"><div class="container"><p data-label-en="Independent ARAN resource using published sources. Not a Government of Canada publication." data-label-fr="Ressource indépendante du RAAR utilisant des sources publiées. Il ne s’agit pas d’une publication du gouvernement du Canada.">Independent ARAN resource using published sources. Not a Government of Canada publication.</p></div></footer><div id="notice" class="visually-hidden" role="status"></div><script id="dp-data" type="application/json">'+json.dumps(d,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+'</script></body></html>\n'
  assert '\u2014' not in body,(name,'em dash in visitor content')
  (folder/'index.html').write_text(body)
-registry={'schema':1,'generated':'2026-11-19','selectorLabels':cross.get('selectorLabels',[]),'identityAliases':cross.get('identityAliases',[]),'organizations':registry,'coverage':counts,'method':'All organizations in the existing selector have a dedicated bilingual route. Source-specific labels and combined populations are preserved. Missing sources are described in Evidence gaps.'}
+registry={'schema':1,'generated':'2026-11-19','redirects':redirects,'selectorLabels':cross.get('selectorLabels',[]),'identityAliases':cross.get('identityAliases',[]),'organizations':registry,'coverage':counts,'method':'All organizations in the existing selector have a dedicated bilingual route. Source-specific labels and combined populations are preserved. Missing sources are described in Evidence gaps.'}
 (R/'assets/department-pages.json').write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')
 sitemap=R/'sitemap.xml';text=sitemap.read_text()
 for entry in registry['organizations']:
