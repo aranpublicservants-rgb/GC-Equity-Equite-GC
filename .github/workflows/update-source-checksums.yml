@@ -1,0 +1,47 @@
+name: Refresh hosted source checksums
+
+on:
+  push:
+    paths:
+      - 'data/**'
+      - 'assets/**'
+      - 'dfo/data/**'
+      - 'dnd/data/**'
+      - 'isc/data/**'
+      - 'women-femmes/data/**'
+      - 'women-femmes/assets/**'
+      - 'racism-hazard-prevention/data/**'
+      - '.github/workflows/update-source-checksums.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gc-equity-source-checksums
+  cancel-in-progress: false
+
+jobs:
+  update-source-checksums:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate source hash register deterministically
+        run: python scripts/update-data-checksums.py
+      - name: Commit register only when hashes changed
+        run: |
+          if git diff --quiet -- data/checksums.sha256; then
+            echo "No checksum updates needed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/checksums.sha256
+          git commit -m "Synchronize hosted source checksums after data changes"
+          git push origin HEAD:main
