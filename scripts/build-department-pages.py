@@ -184,6 +184,78 @@ scope_reasons={
   'La Garde côtière canadienne a été transférée de Pêches et Océans Canada à la Défense nationale le 2 septembre 2025. Les chiffres ministériels d’avant et d’après cette date peuvent couvrir des populations différentes. Ne remplacez pas un résultat propre à la Garde côtière par un total ministériel; consultez la période pertinente du MPO ou du MDN.')
 }
 
+# Explicit title matches from the ARAN public recourse library (prepared 2026-11-18).
+# These are cross-references, not a comprehensive employer case census.
+recourse_cases={
+ "Canada Revenue Agency": [
+  [
+   "A.B. v. Canada Revenue Agency",
+   "2019 FPSLREB 53",
+   "https://publications.gc.ca/collections/collection_2021/crtefp-pslreb/SV1-4-2020-eng.pdf"
+  ],
+  [
+   "Tibilla v. Canada Revenue Agency",
+   "2026 CHRT 8",
+   "https://www.canlii.org/en/ca/chrt/doc/2026/2026chrt8/2026chrt8.html"
+  ],
+  [
+   "Babb v. Canada Revenue Agency",
+   "2020 FPSLREB 42",
+   "https://www.canlii.org/en/ca/fpslreb/doc/2020/2020fpslreb42/2020fpslreb42.html"
+  ]
+ ],
+ "Employment and Social Development Canada": [],
+ "Correctional Service Canada": [
+  [
+   "Harkness v. Deputy Head (Correctional Service of Canada)",
+   "2025 FPSLREB 7",
+   "https://decisions.fpslreb-crtespf.gc.ca/fpslreb-crtespf/d/en/item/521334/index.do"
+  ],
+  [
+   "Samson v. Deputy Head (Correctional Service Canada)",
+   "2024 FPSLREB 177",
+   "https://www.fpslreb-crtespf.gc.ca/en/about-us/annual-reports/2024-2025/fpslreb-ar-2024-2025.html"
+  ],
+  [
+   "Bayrock v. Correctional Service Canada",
+   "2025 CHRT 9",
+   "https://www.canlii.org/en/ca/chrt/doc/2025/2025chrt9/2025chrt9.html"
+  ]
+ ],
+ "Canada Border Services Agency": [
+  [
+   "Paynter v. Deputy Head (Canada Border Services Agency)",
+   "2024 FPSLREB 116",
+   "https://www.canlii.org/en/ca/fpslreb/doc/2024/2024fpslreb116/2024fpslreb116.html"
+  ],
+  [
+   "Gueye v. Treasury Board (Canada Border Services Agency)",
+   "2022 FPSLREB 41",
+   "https://www.canlii.org/en/ca/fpslreb/doc/2022/2022fpslreb41/2022fpslreb41.html"
+  ],
+  [
+   "Matos v. Deputy Head (Canada Border Services Agency)",
+   "2023 FPSLREB 77",
+   "https://www.canlii.org/en/ca/fpslreb/doc/2023/2023fpslreb77/2023fpslreb77.html"
+  ],
+  [
+   "Raymond v. Deputy Head (Canada Border Services Agency)",
+   "2025 FPSLREB 173",
+   "https://www.canlii.org/en/ca/fpslreb/doc/2025/2025fpslreb173/2025fpslreb173.html"
+  ]
+ ]
+}
+recourse_library='https://aranpublicservants-rgb.github.io/aran-raar/recourse/cases/'
+def recourse_additions(d,l):
+ found=recourse_cases.get(d['en'],[])
+ title=L(l,'Related entries in the ARAN decision library','Entrées connexes dans la bibliothèque des décisions du RAAR')
+ intro=L(l,'Independent, non-exhaustive index prepared 2026-11-18. These entries match the organization in their title and concern federal public service employment. Source links may lead to summaries rather than full decisions. Verify the legal issue and result.','Répertoire indépendant non exhaustif préparé le 18 novembre 2026. Ces entrées portent le nom de l’organisme dans leur titre et concernent l’emploi dans la fonction publique fédérale. Certains liens mènent à des résumés plutôt qu’aux décisions intégrales. Vérifiez la question juridique et le résultat.')
+ if found:
+  items='<ul>'+''.join('<li>'+link(url,citation+' : '+name,rel='noopener noreferrer')+'</li>' for name,citation,url in found)+'</ul>'
+ else:
+  items='<p>'+L(l,'No employment-related match by organization title is indexed here. This does not prove that no relevant decisions exist.','Aucune correspondance liée à l’emploi n’est indexée ici selon le titre de l’organisme. Cela ne prouve pas l’absence de décisions pertinentes.')+'</p>'
+ return '<div class="recourse-cross-reference"><h3>'+E(title)+'</h3><p>'+E(intro)+'</p>'+items+sources(l,recourse_library+('?lang=fr' if l=='fr' else ''))+'</div>'
+
 def content(s,d,l,sections):
  B=lambda en,fr:L(l,en,fr);key=s['id'];ids=lambda x:frids[x] if l=='fr' else x
  if key=='at-a-glance':
@@ -259,7 +331,7 @@ def content(s,d,l,sections):
   pubs=[p for p in d['publications'] if re.search('accessib',p['title'],re.I)]
   return '<p>'+B('These official accessibility links were indexed from the organization’s own plan. A link register is not a substantive review of every commitment or a finding that the plan was implemented.','Ces liens officiels ont été indexés à partir du plan de l’organisme. Un registre de liens n’est pas un examen de chaque engagement ni un constat de mise en œuvre.')+'</p><ul>'+''.join('<li>'+link(p['url'],p['title'],lang=p.get('lang','en'))+'</li>' for p in pubs)+'</ul><p>'+B('Use the original plan and progress report to check dates, responsible offices, consultation findings, waiting times, interim support and unmet needs. Compare them with the accommodation questions where available.','Utilisez le plan et le rapport d’étape pour vérifier les dates, les responsables, les consultations, les délais, le soutien provisoire et les besoins non satisfaits. Comparez-les aux questions sur l’adaptation disponibles.')+'</p>'
  if key=='recourse':
-  return '<p>'+B('This page does not provide a department-specific inventory of court or tribunal decisions. The linked guide helps identify the process that applies to the person’s employment status and concern. An administrative report, a grievance and an adjudicated finding are different records.','Cette page ne fournit pas de répertoire ministériel des décisions judiciaires ou des tribunaux. Le guide aide à trouver le processus applicable au statut d’emploi et à la préoccupation de la personne. Un rapport administratif, un grief et une conclusion d’un tribunal sont des dossiers différents.')+'</p><p>'+link(source['recourse']+('?lang=fr' if l=='fr' else ''),B('Recourse guide and union finder','Guide des recours et recherche du syndicat'))+'</p><p>'+B('Confirm the applicable process and deadline with the responsible office or a representative. Informal discussions do not automatically extend formal deadlines.','Vérifiez le processus et le délai applicables auprès du bureau responsable ou d’un représentant. Les discussions informelles ne prolongent pas automatiquement les délais officiels.')+'</p>'+sources(l,source['recourse'])
+  return '<p>'+B('This page does not provide a department-specific inventory of court or tribunal decisions. The linked guide helps identify the process that applies to the person’s employment status and concern. An administrative report, a grievance and an adjudicated finding are different records.','Cette page ne fournit pas de répertoire ministériel des décisions judiciaires ou des tribunaux. Le guide aide à trouver le processus applicable au statut d’emploi et à la préoccupation de la personne. Un rapport administratif, un grief et une conclusion d’un tribunal sont des dossiers différents.')+'</p><p>'+link(source['recourse']+('?lang=fr' if l=='fr' else ''),B('Recourse guide and union finder','Guide des recours et recherche du syndicat'))+'</p><p>'+B('Confirm the applicable process and deadline with the responsible office or a representative. Informal discussions do not automatically extend formal deadlines.','Vérifiez le processus et le délai applicables auprès du bureau responsable ou d’un représentant. Les discussions informelles ne prolongent pas automatiquement les délais officiels.')+'</p>'+sources(l,source['recourse'])+recourse_additions(d,l)
  if key=='missing':
   present={x['id'] for x in sections};rows=[]
   for item in template:
