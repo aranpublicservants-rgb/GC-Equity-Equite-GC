@@ -2,9 +2,9 @@ name: GC Equity site validation
 on:
   push:
     branches: [main]
-    paths: ['**.html', '**.js', '**.mjs', '**.css', 'assets/**', 'data/**', 'scripts/**', '_config.yml', '.github/workflows/site-validate.yml']
+    paths: ['**.html', '**.js', '**.mjs', '**.css', 'assets/**', 'data/**', 'scripts/**', 'tests/**', '_config.yml', '.github/workflows/site-validate.yml']
   pull_request:
-    paths: ['**.html', '**.js', '**.mjs', '**.css', 'assets/**', 'data/**', 'scripts/**', '_config.yml', '.github/workflows/site-validate.yml']
+    paths: ['**.html', '**.js', '**.mjs', '**.css', 'assets/**', 'data/**', 'scripts/**', 'tests/**', '_config.yml', '.github/workflows/site-validate.yml']
 permissions:
   contents: read
 jobs:
