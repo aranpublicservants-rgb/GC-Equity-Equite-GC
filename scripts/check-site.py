@@ -231,3 +231,6 @@ subprocess.run(['python3','scripts/check-nov22-department-fixes.py'],cwd=ROOT,ch
 # Bilingual source-linked review catalogue, privacy and formula-safe exports.
 subprocess.run(["node","--check","assets/evidence-review.js"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/evidence-review.test.cjs"],cwd=ROOT,check=True)
+# New supplementary official employer datasets: publisher scope, publication and local files.
+subprocess.run(["node","--check","assets/employer-equity-csv-viewer.js"],cwd=ROOT,check=True)
+subprocess.run(["node","--test","tests/employer-equity-sources.test.cjs"],cwd=ROOT,check=True)
