@@ -1120,6 +1120,210 @@
           "format": "CSV"
         }
       ]
+    },
+    {
+      "id": "tbs-2013-2014-historical-tables",
+      "title": {
+        "en": "Treasury Board employment equity annual report 2013–2014: all 19 original tables",
+        "fr": "Rapport annuel du Conseil du Trésor sur l’équité en matière d’emploi 2013-2014 : les 19 tableaux originaux"
+      },
+      "population": {
+        "en": "Federal public-service historical reporting population for fiscal 2013–2014. All 19 English and 19 French source workbooks are preserved without calculation. Original links are no longer accessible; copies were recovered from archived June 2022 snapshots. These historical categories and workforce-availability benchmarks must not be merged with current departmental figures.",
+        "fr": "Population historique de la fonction publique fédérale pour l’exercice 2013-2014. Les 19 classeurs anglais et 19 classeurs français sont conservés sans calcul. Les liens originaux ne sont plus accessibles; les copies proviennent d’archives de juin 2022. Ne pas fusionner ces catégories historiques ni les références de disponibilité avec les données ministérielles actuelles."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/896e90b8-5e4e-4a90-8655-91ba53e1709a",
+      "links": [
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "en",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+          "format": "XLS"
+        },
+        {
+          "lang": "fr",
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+          "format": "XLS"
+        }
+      ]
     }
   ]
 }
