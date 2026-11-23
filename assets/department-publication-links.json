@@ -59,7 +59,16 @@
     },
     "Canada School of Public Service": {
       "plan": "https://www.csps-efpc.gc.ca/about_us/currentreport/dp-pm2026-27/index-eng.aspx",
-      "publications": []
+      "publications": [
+        {
+          "title": "Canada School of Public Service employment equity, 2018–2025",
+          "titleFr": "Équité en matière d’emploi à l’École de la fonction publique du Canada, 2018-2025",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html#csps-ee-2018-2025-original",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr#csps-ee-2018-2025-original",
+          "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
+          "lang": "en"
+        }
+      ]
     },
     "Canada Water Agency": {
       "plan": "https://www.canada.ca/en/canada-water-agency/corporate/transparency/priorities/departmental-plans/2026-2027.html",
@@ -305,7 +314,16 @@
     },
     "National Defence and the Canadian Armed Forces": {
       "plan": "https://www.canada.ca/en/department-national-defence/corporate/reports-publications/departmental-plans/departmental-plan-2026-27.html",
-      "publications": []
+      "publications": [
+        {
+          "title": "DND civilian workforce representation source tables, 2019–2022",
+          "titleFr": "Tableaux sources sur la représentation du personnel civil de la Défense nationale, 2019-2022",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html#dnd-civilian-representation-original",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr#dnd-civilian-representation-original",
+          "source": "https://open.canada.ca/data/en/dataset/79ec0e13-2a2c-44a2-9723-bf9c706a72ff",
+          "lang": "en"
+        }
+      ]
     },
     "National Film Board": {
       "plan": "https://www.canada.ca/en/national-film-board/corporate/publications/plans-reports/departmental-plans/2026-2027/departmental-plan-2026-2027.html",
@@ -645,7 +663,16 @@
     },
     "Veterans Affairs Canada": {
       "plan": "https://veterans.gc.ca/en/about-vac/reports-policies-and-legislation/departmental-reports/departmental-plans",
-      "publications": []
+      "publications": [
+        {
+          "title": "Veterans Affairs employment equity source tables, 2018–2019",
+          "titleFr": "Tableaux sources sur l’équité en matière d’emploi d’Anciens Combattants Canada, 2018-2019",
+          "url": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html#vac-ee-historical-original",
+          "urlFr": "https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/reports.html?lang=fr#vac-ee-historical-original",
+          "source": "https://open.canada.ca/data/en/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e",
+          "lang": "en"
+        }
+      ]
     },
     "Veterans Review and Appeal Board": {
       "plan": "https://vrab-tacra.gc.ca/en/about-us/plans-and-reports/departmental-plans/2026-27-departmental-plan",
