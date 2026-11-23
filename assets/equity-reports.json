@@ -730,6 +730,11 @@
           "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv",
           "lang": "both",
           "format": "CSV"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2009-2024.xlsx"
         }
       ]
     },
@@ -975,6 +980,16 @@
           "path": "data/employer-equity-sources-2026-11/vac/vac-ee-notes-2018-12-31.csv",
           "lang": "both",
           "format": "CSV"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-representation-by-occ-category-2019-03-31.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-representation-by-occ-category-2018-12-31.xlsx"
         }
       ]
     },
@@ -1024,6 +1039,46 @@
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
           "lang": "both",
           "format": "CSV"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-data-dictionary-2021-present.xlsx"
         }
       ]
     },
@@ -1322,6 +1377,63 @@
           "lang": "fr",
           "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
           "format": "XLS"
+        }
+      ]
+    },
+    {
+      "id": "dnd-civilian-women-2019-2025",
+      "title": {
+        "en": "DND civilians who self-identify as women, source workbook",
+        "fr": "Personnel civil du MDN s’identifiant comme femmes, classeur source"
+      },
+      "population": {
+        "en": "DND civilian employees only. Historical departmental results-framework workbook; not the Canadian Armed Forces. The workbook's source date range and definitions control its interpretation.",
+        "fr": "Personnel civil du MDN seulement, et non Forces armées canadiennes. Classeur historique du Cadre ministériel des résultats; les dates et définitions sources déterminent son interprétation."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/148911d8-a1e0-4942-a1fa-0cecd9958bc4",
+      "links": [
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx"
+        }
+      ]
+    },
+    {
+      "id": "dnd-civilian-visible-minorities-2019-2025",
+      "title": {
+        "en": "DND civilian visible-minority representation, source workbook",
+        "fr": "Représentation des minorités visibles du personnel civil du MDN, classeur source"
+      },
+      "population": {
+        "en": "DND civilian employees only. Historical departmental results-framework workbook; not the Canadian Armed Forces. The workbook's source date range and definitions control its interpretation.",
+        "fr": "Personnel civil du MDN seulement, et non Forces armées canadiennes. Classeur historique du Cadre ministériel des résultats; les dates et définitions sources déterminent son interprétation."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/d5ff6db3-831b-488d-8f10-64b690386fe0",
+      "links": [
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx"
+        }
+      ]
+    },
+    {
+      "id": "dnd-civilian-indigenous-2019-2025",
+      "title": {
+        "en": "DND civilian Indigenous representation, source workbook",
+        "fr": "Représentation des Autochtones du personnel civil du MDN, classeur source"
+      },
+      "population": {
+        "en": "DND civilian employees only. Historical departmental results-framework workbook; not the Canadian Armed Forces. The workbook's source date range and definitions control its interpretation.",
+        "fr": "Personnel civil du MDN seulement, et non Forces armées canadiennes. Classeur historique du Cadre ministériel des résultats; les dates et définitions sources déterminent son interprétation."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/4a0db3f7-f57e-44d8-b0c7-00f38c212ad7",
+      "links": [
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx"
         }
       ]
     }
