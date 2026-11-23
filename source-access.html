@@ -110,6 +110,23 @@ fetch('data/large-sources-inventory.json').then(r=>r.ok?r.json():null).then(data
  }
  window._applyLang(document.documentElement.lang);
 }).catch(()=>{});
+// A source file is offered as hosted only when the archive workflow has
+// written and verified its own file-level manifest.
+fetch('data/open-canada-2026-11/pses-supporting-documentation/manifest.json').then(r=>r.ok?r.json():null).then(data=>{
+ if(!data||!Array.isArray(data.files))return;
+ for(const item of data.files){
+  if(item.status!=='hosted'||!/^data\/open-canada-2026-11\/pses-supporting-documentation\/pses20(?:18|19|20)-supporting-documentation\.xlsx$/.test(item.path))continue;
+  const li=all.find(n=>n.querySelector('strong')?.dataset.en===''+item.year+' PSES supporting documentation');
+  if(!li)continue;
+  const a=document.createElement('a');
+  a.href=item.path;a.download='';
+  a.dataset.en='Download verified hosted workbook';
+  a.dataset.fr='Télécharger le classeur hébergé et vérifié';
+  a.textContent=a.dataset.en;
+  const p=document.createElement('p');p.append(a);li.append(p);
+ }
+ window._applyLang(document.documentElement.lang);
+}).catch(()=>{});
 input.addEventListener('input',update);
 document.getElementById('source-clear').addEventListener('click',()=>{input.value='';update();input.focus();});
 })();
