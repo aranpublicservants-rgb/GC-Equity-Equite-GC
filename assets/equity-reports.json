@@ -1026,6 +1026,100 @@
           "format": "CSV"
         }
       ]
+    },
+    {
+      "id": "snps-2018-department-complete",
+      "title": {
+        "en": "2018 Staffing and Non-Partisanship Survey by department, complete 27,316 source rows",
+        "fr": "Sondage sur la dotation et l’impartialité politique de 2018 par ministère, 27 316 lignes sources complètes"
+      },
+      "population": {
+        "en": "Survey results by department, not personnel files or staffing administration counts. All published source records are preserved across 16 CSV parts. Question wording, denominators and suppression must be consulted before comparisons.",
+        "fr": "Résultats de sondage par ministère, et non dossiers du personnel ni nombres administratifs de dotation. Toutes les lignes publiées sont préservées dans 16 fichiers CSV. Vérifier les questions, dénominateurs et suppressions avant toute comparaison."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+      "links": [
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-01.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-02.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-03.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-04.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-05.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-06.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-07.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-08.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-09.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-10.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-11.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-12.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-13.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-14.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-15.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018-by-department-parts/part-16.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
     }
   ]
 }
