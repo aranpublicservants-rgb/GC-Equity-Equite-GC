@@ -245,6 +245,18 @@
   request
  });
  const actions = [
+  A("austerity","au1",["Require an equity impact assessment before workforce reductions","Exiger une évaluation des effets sur l’équité avant toute réduction de l’effectif"],[
+    "Identify affected positions by branch, occupation, level, region and tenure; compare privacy-safe results by equity group and intersecting barriers. Record alternatives, decision reasons and mitigation before final selection.",
+    "Identifier les postes touchés par direction générale, profession, niveau, région et type d’emploi; comparer des résultats respectueux de la vie privée selon les groupes d’équité et les obstacles croisés. Consigner les solutions de rechange, motifs et mesures d’atténuation avant la sélection finale."
+  ],["Workforce planning / staffing / employment equity / delegated decision makers","Planification de l’effectif / dotation / équité en emploi / décideurs délégués"],[
+    "Disaggregated selection-stage results, risk controls and documented mitigation.","Résultats ventilés par étape de sélection, mesures de maîtrise des risques et atténuation consignée."
+  ],["Approved change proposals, affected positions, anonymized group-by-level counts and impact review; no personal case files.","Propositions approuvées, postes touchés, effectifs anonymisés par groupe et niveau, analyse des effets; aucun dossier personnel."]),
+  A("austerity","au2",["Preserve accommodation and fair access to mobility","Préserver les mesures d’adaptation et l’accès équitable à la mobilité"],[
+    "Verify accommodation continuity, language training and accessible redeployment options before job changes; consult employee representatives while options can still change, then review results quarterly.",
+    "Vérifier la continuité des mesures d’adaptation, la formation linguistique et les options de réaffectation accessibles avant les changements; consulter les représentants des employés tant que les options demeurent ouvertes, puis examiner les résultats chaque trimestre."
+  ],["Accessibility lead / labour relations / learning / managers","Responsable de l’accessibilité / relations de travail / apprentissage / gestionnaires"],[
+    "Time to transfer support, mobility access, training take-up and mitigation follow-up.","Délai de transfert du soutien, accès à la mobilité, participation à la formation et suivi des mesures d’atténuation."
+  ],["Published or anonymized accommodation continuity standards, placement process, transfer procedures and implementation review.","Normes publiées ou anonymisées de continuité des adaptations, processus de placement, procédures de transfert et bilan de mise en œuvre."]),
   A("rep", "r1", ["Review workforce availability gaps", "Examiner les écarts de disponibilité"], [
    "Identify job families and levels contributing to the gap; review essential criteria and departure patterns before choosing a recruitment or retention intervention.",
    "Repérer les familles d’emplois et niveaux contribuant à l’écart; examiner critères essentiels et départs avant de choisir une intervention."
@@ -1123,7 +1135,7 @@
    }),
    tname = austType === "all" ? "" : tl(austType).toLowerCase();
   out += '<h4>' + e(L("Scenario: a hypothetical reduction", "Scénario : une réduction hypothétique")) + '</h4><label for="dew-reduction">' + e(L(
-   "Reduction to test (%, 0 to 50)", "Réduction à tester (%, de 0 à 50)")) + '</label><input id="dew-reduction" type="number" min="0" max="50" step="0.5" value="' +
+   "Reduction to test (%, 0 to 50)", "Réduction à tester (%, de 0 à 50)")) + '</label><input id="dew-reduction" type="number" min="0" max="50" step="0.01" value="' +
    e(String(reduction)) + '"><label for="dew-type">' + e(L("Apply the reduction to", "Appliquer la réduction à")) + '</label><select id="dew-type"><option value="all"' + (austType === "all" ? " selected" : "") + '>' +
    e(L("All employees", "Tous les employés")) + '</option>' + typeOpts.map(tp => '<option value="' + e(tp) + '"' + (tp === austType ? " selected" : "") + '>' + e(tl(tp)) + '</option>').join("") + '</select>' +
    (left === null ? '<p>' + e(base === null && austType !== "all" ? L("No published headcount for this employment type.", "Aucun effectif publié pour ce type d’emploi.") : L("No published headcount for this year.", "Aucun effectif publié pour cette année.")) + '</p>' :
@@ -1198,7 +1210,7 @@
   };
   if (cut) cut.onchange = () => {
    const v = Number(cut.value);
-   reduction = Number.isFinite(v) ? Math.min(50, Math.max(0, Math.round(v * 2) / 2)) : 5;
+   reduction = Number.isFinite(v) ? Math.min(50, Math.max(0, Math.round(v * 100) / 100)) : 5;
    redo("reduction")
   }
  }
