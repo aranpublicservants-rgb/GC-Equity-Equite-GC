@@ -142,6 +142,7 @@
   culture: ["Inclusion, respect and recognition", "Inclusion, respect et reconnaissance"],
   language: ["Official languages", "Langues officielles"],
   cta: ["Commitments and accountability", "Engagements et responsabilisation"],
+  austerity: ["Scenario and safeguards", "Scénario et mesures de protection"],
   workforce: ["Workforce change", "Évolution de l’effectif"],
   regions: ["Where employees work", "Lieux de travail"],
   pay: ["Salary ranges (public service)", "Échelles salariales (fonction publique)"],
@@ -149,6 +150,8 @@
   all: ["All evidence", "Toutes les données"]
  };
  const EXPLORER = slug === "department-evidence-explorer",
+  AUSTERITY = slug === "equity-under-austerity",
+  STANDALONE = EXPLORER || AUSTERITY,
   HISTORY = location.pathname.includes("GC-Equity-History");
  const focus = {
   "barrier-breaker": ["rep", "staff", "career", "accom", "safety", "language", "culture", "cta", "health", "sources"],
@@ -162,6 +165,7 @@
   "from-commitment-to-action": ["cta", "rep", "career", "staff", "culture", "safety", "accom", "health", "language", "sources"],
   "invisible-work-project": ["culture", "career", "health", "safety", "cta", "staff", "sources"],
   "managers-equity-toolkit": ["staff", "accom", "career", "safety", "health", "culture", "language", "rep", "cta", "sources"],
+  "equity-under-austerity": ["austerity", "workforce", "rep", "accom", "career", "cta", "sources"],
   "department-evidence-explorer": ["overview", "rep", "safety", "accom", "career", "staff", "culture", "health", "language", "workforce", "regions", "pay", "cta",
    "sources"
   ]
@@ -436,7 +440,7 @@
  const before = document.getElementById("main") || document.querySelector("main");
  if (!before) return;
  if (HISTORY) before.after(host);
- else if (EXPLORER) before.append(host);
+ else if (STANDALONE) before.append(host);
  else before.before(host);
  if (location.pathname.includes("GC-Equity-History")) {
   host.style.setProperty("--text", "var(--ink, #172b36)");
@@ -447,13 +451,16 @@
  }
  const css = document.createElement("style");
  css.textContent =
-  "#dept-evidence-workspace{max-width:1100px;margin:auto;padding:1rem;color:var(--text)}#dept-evidence-workspace .dew-box{background:var(--panel);border:1px solid var(--line);padding:1rem;border-radius:.65rem;margin:.8rem 0}#dept-evidence-workspace .dew-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem}#dept-evidence-workspace .dew-scroll{overflow:auto;max-height:40rem}#dept-evidence-workspace th{position:sticky;top:0;background:var(--panel)}#dept-evidence-workspace .dew-tabs{display:flex;flex-wrap:wrap;gap:.4rem}#dept-evidence-workspace .dew-tabs button[aria-pressed=true]{background:#005b64;color:white}#dept-evidence-workspace .dew-bar{display:block;height:.5rem;background:var(--accent);border-radius:.25rem;margin:.2rem 0}#dept-evidence-workspace .dew-small{font-size:.9rem;color:var(--muted)}#dept-evidence-workspace .dew-actions label{display:flex;align-items:flex-start;gap:.5rem}#dept-evidence-workspace .dew-actions input[type=checkbox]{width:auto;margin-top:.4rem}#dept-evidence-workspace textarea{width:100%;min-height:6rem}#dept-evidence-workspace .dew-sticky{scroll-margin-top:1rem}#dept-evidence-workspace caption{text-align:left;font-weight:650;padding:.4rem 0}#dept-evidence-workspace .dew-findings{border-left:4px solid var(--accent)}#dept-evidence-workspace .dew-findings li{margin:.35rem 0}#dept-evidence-workspace .dew-tabs button{font:inherit;padding:.45rem .7rem;border:1px solid var(--line);border-radius:.35rem;background:var(--panel);color:var(--text);cursor:pointer}#dept-evidence-workspace select{max-width:100%}#dept-evidence-workspace details>summary{cursor:pointer;font-weight:650}";
+  "#dept-evidence-workspace{max-width:1100px;margin:auto;padding:1rem;color:var(--text)}#dept-evidence-workspace .dew-box{background:var(--panel);border:1px solid var(--line);padding:1rem;border-radius:.65rem;margin:.8rem 0}#dept-evidence-workspace .dew-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem}#dept-evidence-workspace .dew-scroll{overflow:auto;max-height:40rem}#dept-evidence-workspace th{position:sticky;top:0;background:var(--panel)}#dept-evidence-workspace .dew-tabs{display:flex;flex-wrap:wrap;gap:.4rem}#dept-evidence-workspace .dew-tabs button[aria-pressed=true]{background:#005b64;color:white}#dept-evidence-workspace .dew-bar{display:block;height:.5rem;background:var(--accent);border-radius:.25rem;margin:.2rem 0}#dept-evidence-workspace .dew-small{font-size:.9rem;color:var(--muted)}#dept-evidence-workspace .dew-actions label{display:flex;align-items:flex-start;gap:.5rem}#dept-evidence-workspace .dew-actions input[type=checkbox]{width:auto;margin-top:.4rem}#dept-evidence-workspace textarea{width:100%;min-height:6rem}#dept-evidence-workspace .dew-sticky{scroll-margin-top:1rem}#dept-evidence-workspace caption{text-align:left;font-weight:650;padding:.4rem 0}#dept-evidence-workspace .dew-findings{border-left:4px solid var(--accent)}#dept-evidence-workspace .dew-findings li{margin:.35rem 0}#dept-evidence-workspace .dew-tabs button{font:inherit;padding:.45rem .7rem;border:1px solid var(--line);border-radius:.35rem;background:var(--panel);color:var(--text);cursor:pointer}#dept-evidence-workspace select{max-width:100%}#dept-evidence-workspace .dew-big{font-size:1.6rem;font-weight:700;margin:.4rem 0}#dept-evidence-workspace #dew-reduction{display:block;width:8rem;min-height:44px;font:inherit;padding:.4rem;margin:.25rem 0 .5rem}#dept-evidence-workspace .dew-questions li{margin:.45rem 0}#dept-evidence-workspace details>summary{cursor:pointer;font-weight:650}";
  document.head.append(css);
  let dir, org = "",
   peer = "",
   lens = (focus[slug] || [location.pathname.includes("GC-Equity-History") ? "cta" : "rep"])[0],
   group = "all",
   pg = "all",
+  austY1 = "",
+  austY2 = "",
+  reduction = 5,
   year = "all",
   query = "",
   chosen = new Set(),
@@ -974,6 +981,146 @@
   return out + sourceNote(POP_PAGE(), L("TBS, population of the federal public service (open data)", "SCT, population de la fonction publique fédérale (données ouvertes)"))
  }
 
+ /* Equity under austerity. Published headcounts for two chosen years, an explicitly hypothetical uniform reduction,
+    the 2025 representation figures to protect and the change in employment types. The scenario is arithmetic only. */
+ const AUST_QUESTIONS = [
+  ["How much did departmental headcount change?", "De combien l’effectif ministériel a-t-il changé?",
+   "The headcount series shows net changes, not layoffs or their causes. Check transfers and changes in employment type before linking a reduction to austerity.",
+   "La série d’effectifs indique des variations nettes, non des licenciements ni leurs causes. Vérifier les mutations et les changements de type d’emploi avant de lier une réduction à l’austérité."],
+  ["Do published representation shares show an equity risk?", "Les proportions publiées révèlent-elles un risque pour l’équité?",
+   "Representation shares show existing gaps, not who would be selected for a reduction. Ask for the affected jobs by occupation and level before estimating any impact.",
+   "Les proportions de représentation montrent des écarts existants, non les personnes visées par une réduction. Demander les postes touchés par profession et par niveau avant d’estimer un effet."],
+  ["Which job groups would a proposed change affect?", "Quels groupes professionnels un changement proposé toucherait-il?",
+   "A change may fall mainly on some occupations or units. Ask for job-level plans and check which employees have real access to alternatives.",
+   "Un changement peut toucher surtout certaines professions ou unités. Demander les plans par poste et vérifier quels employés ont réellement accès à d’autres options."],
+  ["What would a hypothetical reduction mean in numbers?", "Que représenterait une réduction hypothétique en chiffres?",
+   "The scenario applies one percentage to the whole headcount. It does not model a decision, departures, effects on groups or redeployment.",
+   "Le scénario applique un seul pourcentage à l’ensemble de l’effectif. Il ne modélise ni une décision, ni des départs, ni des effets sur les groupes, ni des réaffectations."],
+  ["How will accommodation continuity be protected?", "Comment la continuité des mesures d’adaptation sera-t-elle protégée?",
+   "Before carrying out a change, require continuity of accommodations, accessibility checks and a named support process for affected roles.",
+   "Avant de mettre en œuvre un changement, exiger la continuité des mesures d’adaptation, des vérifications d’accessibilité et un processus de soutien désigné pour les postes touchés."],
+  ["Could career opportunities shrink unevenly?", "Les possibilités de carrière pourraient-elles diminuer inégalement?",
+   "Acting roles, language training and development can change even when overall representation stays the same. Ask how they were shared out before and after the decision.",
+   "Les intérims, la formation linguistique et le perfectionnement peuvent changer même si la représentation globale reste la même. Demander leur répartition avant et après la décision."],
+  ["What should leaders measure before deciding?", "Que doivent mesurer les dirigeants avant de décider?",
+   "Decision owners should record the baseline, the affected population, the options, a privacy-safe impact assessment, the consultation and when results will be reviewed.",
+   "Les responsables de la décision devraient consigner la situation de départ, la population touchée, les options, une évaluation des effets respectueuse de la vie privée, la consultation et la date d’examen des résultats."],
+  ["How will employees and networks be consulted?", "Comment les employés et les réseaux seront-ils consultés?",
+   "Consult employee representatives while the decision can still change. Record the concerns raised, the responses and the mitigation chosen, not only the number of meetings.",
+   "Consulter les représentants des employés tant que la décision peut encore changer. Consigner les préoccupations soulevées, les réponses et les mesures d’atténuation retenues, pas seulement le nombre de réunions."]
+ ];
+
+ function austerity(pop, ten, rep, o) {
+  const rows = popRows(pop, o).map(r => [Number(r.Year), val(r["Number of employees"])]).filter(r => r[1] !== null).sort((a, b) => b[0] - a[0]);
+  if (!rows.length) return missing();
+  const yrs = rows.map(r => r[0]);
+  if (!yrs.includes(Number(austY2))) austY2 = String(yrs[0]);
+  if (!yrs.includes(Number(austY1)) || Number(austY1) >= Number(austY2)) austY1 = String(yrs.find(y => y < Number(austY2)) ?? yrs[yrs.length - 1]);
+  const n1 = rows.find(r => r[0] === Number(austY1))?.[1] ?? null,
+   n2 = rows.find(r => r[0] === Number(austY2))?.[1] ?? null,
+   change = n1 !== null && n2 !== null ? n2 - n1 : null,
+   rel = change !== null && n1 ? Math.round(change / n1 * 1000) / 10 : null,
+   opts = sel => yrs.map(y => '<option value="' + y + '"' + (String(y) === sel ? " selected" : "") + '>' + y + '</option>').join("");
+  let out = '<div class="dew-columns"><div><label for="dew-y1">' + e(L("From (March)", "De (mars)")) + '</label><select id="dew-y1">' + opts(austY1) +
+   '</select></div><div><label for="dew-y2">' + e(L("To (March)", "À (mars)")) + '</label><select id="dew-y2">' + opts(austY2) + '</select></div></div>';
+  out += '<h4>' + e(L("Observed workforce change, not separations", "Variation observée de l’effectif, non le nombre de départs")) + '</h4><p>' + e(L(
+   name(o) + " had " + num(n1) + " employees in March " + austY1 + " and " + num(n2) + " in March " + austY2 + (change === null ? "." : ", a net change of " + signed(
+    change, 0) + (rel === null ? "" : " (" + signed(rel) + "%)") + "."),
+   name(o) + " comptait " + num(n1) + " employés en mars " + austY1 + " et " + num(n2) + " en mars " + austY2 + (change === null ? "." : ", soit une variation nette de " +
+    signed(change, 0) + (rel === null ? "" : " (" + signed(rel) + " %)") + "."))) + '</p><p class="dew-small">' + e(L(
+   "Net change combines hiring, departures, transfers and reorganizations. This series does not show which equity groups were affected or why the number changed.",
+   "La variation nette combine les embauches, les départs, les mutations et les réorganisations. Cette série n’indique ni les groupes d’équité touchés ni la raison du changement."
+   )) + '</p>';
+  addEvidence("TBS population", austY1 + "–" + austY2, L("Employees", "Employés"), "", num(n2), num(n1), change === null ? NA() : signed(change, 0), "", POP_PAGE(), {
+   kind: "headcount-range",
+   organization: name(o)
+  });
+  const left = n2 === null ? null : Math.round(n2 * (1 - reduction / 100)),
+   cut = reduction.toLocaleString(loc(), {
+    maximumFractionDigits: 1
+   });
+  out += '<h4>' + e(L("Scenario: a hypothetical reduction", "Scénario : une réduction hypothétique")) + '</h4><label for="dew-reduction">' + e(L(
+   "Reduction to test (%, 0 to 50)", "Réduction à tester (%, de 0 à 50)")) + '</label><input id="dew-reduction" type="number" min="0" max="50" step="0.5" value="' +
+   e(String(reduction)) + '">' + (left === null ? '<p>' + e(L("No published headcount for this year.", "Aucun effectif publié pour cette année.")) + '</p>' :
+    '<p class="dew-big">' + e(num(left)) + '</p><p>' + e(L("Employees left if " + cut + "% of the March " + austY2 + " headcount were removed evenly. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
+     "Employés restants si " + cut + " % de l’effectif de mars " + austY2 + " étaient retranchés uniformément. Il s’agit d’un calcul pour la discussion. Ce n’est ni une prévision, ni une réduction prévue, ni un choix d’employés."
+     )) + '</p>');
+  if (left !== null) addEvidence(L("Hypothetical scenario", "Scénario hypothétique"), austY2, L("Employees left after a hypothetical " + cut + "% reduction",
+   "Employés restants après une réduction hypothétique de " + cut + " %"), "", num(left), num(n2), "", "", POP_PAGE(), {
+   kind: "scenario",
+   organization: name(o)
+  });
+  const a = match(rep?.orgs, o),
+   prot = ["i", "v", "b", "d"].map(k => {
+    const x = a?.[k]?.["2025"];
+    if (!x) return null;
+    const g = diff(x[2], x[3]);
+    addEvidence("TBS representation", "2025", t(groups[k]), "", pct(x[2]), pct(x[3]), pp(g), num(x[0]), url(SRC.rep), {
+     kind: "rep-protect",
+     organization: name(o)
+    });
+    return [t(groups[k]), pct(x[2]), pct(x[3]), pp(g)]
+   }).filter(Boolean);
+  out += '<h4>' + e(L("2025 representation to protect during a change", "Représentation en 2025 à protéger lors d’un changement")) + '</h4>' + (prot.length ? table([L(
+    "Group", "Groupe"), L("Representation", "Représentation"), L("Workforce availability", "Disponibilité au sein de la population active"), L("Difference",
+    "Écart")], prot, L("Representation and workforce availability, March 2025", "Représentation et disponibilité au sein de la population active, mars 2025")) +
+   '<p class="dew-small">' + e(L("These are the published 2025 figures. They are not estimates of who a reduction would affect.",
+    "Il s’agit des chiffres publiés de 2025. Ce ne sont pas des estimations des personnes qu’une réduction toucherait.")) + '</p>' : missing());
+  const tenure = popRows(ten, o),
+   tl = x => ({
+    Indeterminate: L("Indeterminate", "Durée indéterminée"),
+    Term: L("Term", "Durée déterminée"),
+    Casual: L("Casual", "Occasionnel"),
+    Student: L("Student", "Étudiant"),
+    Unknown: L("Unknown", "Inconnu")
+   } [x] || x),
+   tv = (y, tp) => val(tenure.find(r => String(r.Year) === String(y) && r.Tenure === tp)?.["Number of employees"]),
+   types = [...new Set(tenure.filter(r => [austY1, austY2].includes(String(r.Year))).map(r => r.Tenure))].sort();
+  if (types.length) out += '<h4>' + e(L("Change in employment type", "Variation par type d’emploi")) + '</h4>' + table([L("Employment type", "Type d’emploi"), austY1, austY2,
+   L("Net difference", "Différence nette")], types.map(tp => {
+    const x = tv(austY1, tp),
+     y = tv(austY2, tp);
+    return [tl(tp), num(x), num(y), x !== null && y !== null ? signed(y - x, 0) : NA()]
+   }), L("Employees by employment type, March " + austY1 + " and " + austY2, "Employés par type d’emploi, mars " + austY1 + " et " + austY2)) +
+   '<p class="dew-small">' + e(L("Counts include people who joined and left; the same people are not followed over time.",
+    "Les nombres comprennent les arrivées et les départs; on ne suit pas les mêmes personnes dans le temps.")) + '</p>';
+  out += '<h4>' + e(L("Questions to settle before a decision", "Questions à régler avant une décision")) + '</h4><ol class="dew-questions">' + AUST_QUESTIONS.map(q =>
+   '<li><strong>' + e(L(q[0], q[1])) + '</strong> ' + e(L(q[2], q[3])) + '</li>').join("") + '</ol>';
+  out += '<h4>' + e(L("Steps for decision owners", "Étapes pour les responsables de la décision")) + '</h4><ul>' + [
+   ["Get classified headcounts, staffing plans and the occupations affected before any reduction.",
+    "Obtenir les effectifs par classification, les plans de dotation et les professions touchées avant toute réduction."],
+   ["Test the effects on careers, accessibility and equity with the responsible authorities and with employees.",
+    "Vérifier les effets sur les carrières, l’accessibilité et l’équité avec les autorités responsables et avec les employés."],
+   ["Publish the baseline, the mitigation decision and a quarterly review of actual results.",
+    "Publier la situation de départ, la décision d’atténuation et un examen trimestriel des résultats réels."]
+  ].map(x => '<li>' + e(L(x[0], x[1])) + '</li>').join("") + '</ul>';
+  return out
+ }
+
+ function bindScenario() {
+  const y1 = $("y1"),
+   y2 = $("y2"),
+   cut = $("reduction");
+  const redo = async id => {
+   sync();
+   await renderData();
+   $(id)?.focus()
+  };
+  if (y1) y1.onchange = () => {
+   austY1 = y1.value;
+   redo("y1")
+  };
+  if (y2) y2.onchange = () => {
+   austY2 = y2.value;
+   redo("y2")
+  };
+  if (cut) cut.onchange = () => {
+   const v = Number(cut.value);
+   reduction = Number.isFinite(v) ? Math.min(50, Math.max(0, Math.round(v * 2) / 2)) : 5;
+   redo("reduction")
+  }
+ }
+
  function regions(prov, pop, o) {
   const rows = popRows(prov, o);
   if (!rows.length) return missing();
@@ -1353,7 +1500,10 @@
     lens,
     sg: group,
     pg,
-    year
+    year,
+    from: AUSTERITY ? austY1 : "",
+    to: AUSTERITY ? austY2 : "",
+    cut: AUSTERITY && reduction !== 5 ? String(reduction) : ""
    })) {
    if (v && v !== "all") u.searchParams.set(k, v);
    else u.searchParams.delete(k)
@@ -1381,19 +1531,20 @@
   $("result").innerHTML = '<p role="status">' + e(L("Loading this organization’s data…", "Chargement des données de l’organisme…")) + '</p>';
   const ov = lens === "overview",
    needRep = ["all", "rep", "career", "cta", "overview"].includes(lens),
+   needRepData = needRep || lens === "austerity",
    needSurvey = (qsets[lens]?.length || lens === "all"),
    needStaff = (sqsets[lens]?.length || lens === "all"),
    needCta = ["all", "cta", "language", "culture"].includes(lens),
    needInventory = ["all", "sources", "language"].includes(lens),
    needHiring = ["all", "career", "staff"].includes(lens),
    needEx = ["all", "career", "rep"].includes(lens),
-   needPop = ["all", "overview", "workforce", "regions"].includes(lens),
-   needTenure = ["all", "workforce"].includes(lens),
+   needPop = ["all", "overview", "workforce", "regions", "austerity"].includes(lens),
+   needTenure = ["all", "workforce", "austerity"].includes(lens),
    needProvince = ["all", "regions"].includes(lens);
-  sourceRequests = [...(needRep ? ["rep", "women"] : []), ...(needSurvey ? ["pses"] : []), ...(needStaff ? ["snps"] : []), ...(needCta ? ["cta"] : []), ...(
+  sourceRequests = [...(needRep ? ["rep", "women"] : needRepData ? ["rep"] : []), ...(needSurvey ? ["pses"] : []), ...(needStaff ? ["snps"] : []), ...(needCta ? ["cta"] : []), ...(
    needInventory ? ["pubs", "psc", "cat", "added"] : []), ...(needHiring ? ["hiring"] : []), ...(needEx ? ["ex"] : []), ...(["language", "all"].includes(
    lens) ? ["firstLanguage"] : []), ...(needPop ? ["pop"] : []), ...(needTenure ? ["tenure"] : []), ...(needProvince ? ["province"] : [])];
-  const [rep, w, index, snps, cta, pubs, psc, cat, added, hi, ex, fol, pop, ten, prov] = await Promise.all([needRep ? guard("rep") : null, needRep ? guard(
+  const [rep, w, index, snps, cta, pubs, psc, cat, added, hi, ex, fol, pop, ten, prov] = await Promise.all([needRepData ? guard("rep") : null, needRep ? guard(
     "women") : null, needSurvey ? guard("pses") : null, needStaff ? guard("snps") : null, needCta ? guard("cta") : null, needInventory ? guard("pubs") : null,
    needInventory ? guard("psc") : null, needInventory ? guard("cat") : null, needInventory ? guard("added") : null, needHiring ? guard("hiring") : null,
    needEx ? guard("ex") : null, ["language", "all"].includes(lens) ? guard(
@@ -1436,6 +1587,7 @@
    if (["all", "workforce"].includes(lens)) out += sec(t(lenses.workforce), workforce(pop, ten, o));
    if (["all", "regions"].includes(lens)) out += sec(t(lenses.regions), regions(prov, pop, o));
   } else if (ov) workforce(pop, null, o);
+  if (lens === "austerity") out = sec(t(lenses.austerity), austerity(pop, ten, rep, o)) + out;
   if (lens === "pay" || lens === "all") out += sec(t(lenses.pay), pay());
   if (needCta) out += sec(t(lenses.cta), commitments(cta, o, p));
   if (["language", "all"].includes(lens)) out += sec(L("Employees by first official language", "Employés selon la première langue officielle"), languages(fol, o,
@@ -1451,6 +1603,7 @@
   else out = findings + out;
   $("result").innerHTML = out + (ov ? "" : indicatorPanel()) + actionPanel();
   bindActions();
+  bindScenario();
   dataReady = true;
   notify("ready");
  }
@@ -1568,13 +1721,16 @@
     ["", L("Choose a department or agency", "Choisir un ministère ou organisme")], ...dir.organizations.filter(x => withData(x) || x.id === org || x.id ===
      peer).map(x => [x.id, name(x)]).sort((a, b) => a[1].localeCompare(b[1], loc()))
    ];
-  const lensesHere = [...new Set([...(focus[slug] || Object.keys(lenses).filter(k => k !== "all" && k !== "overview")), lens, ...(EXPLORER ? [] : ["all"])])];
-  const intro = EXPLORER ? L(
+  const lensesHere = [...new Set([...(focus[slug] || Object.keys(lenses).filter(k => k !== "all" && k !== "overview" && k !== "austerity")), lens, ...(STANDALONE ? [] : ["all"])])];
+  const intro = AUSTERITY ? L(
+   "Choose a department or agency. The first topic compares its published headcount between two years and lets you test an explicitly hypothetical reduction. The other topics show the published figures to protect during a workforce change.",
+   "Choisir un ministère ou un organisme. Le premier thème compare son effectif publié entre deux années et permet de tester une réduction explicitement hypothétique. Les autres thèmes présentent les chiffres publiés à protéger lors d’un changement d’effectif."
+   ) : EXPLORER ? L(
    "Choose a department or agency. The page starts with its main findings, then each topic shows the published figures, their source and the processes to review.",
    "Choisir un ministère ou un organisme. La page commence par ses principaux constats; chaque thème présente ensuite les chiffres publiés, leur source et les processus à examiner."
    ) : L("Choose a department or agency to see its published results next to the timeline.",
    "Choisir un ministère ou un organisme pour voir ses résultats publiés à côté de la chronologie.");
-  host.innerHTML = '<h2 id="dew-title">' + e(EXPLORER ? L("Choose an organization", "Choisir un organisme") : L("Your department’s evidence",
+  host.innerHTML = '<h2 id="dew-title">' + e(STANDALONE ? L("Choose an organization", "Choisir un organisme") : L("Your department’s evidence",
     "Les données de votre organisme")) + '</h2><p>' + e(intro) + '</p><div class="dew-box"><div class="dew-columns"><div><label for="dew-org">' + e(L(
     "Department or agency", "Ministère ou organisme")) + '</label><select id="dew-org">' + options(choices, org) + '</select></div><div><label for="dew-peer">' +
    e(L("Comparison organization (optional)", "Organisme de comparaison (facultatif)")) + '</label><select id="dew-peer">' + options([
@@ -1648,6 +1804,12 @@
   if (sg[params.get("sg")]) group = params.get("sg");
   pg = params.get("pg") || "all";
   year = /^20(?:1[7-9]|2[0-5])$/.test(params.get("year") || "") ? params.get("year") : "all";
+  if (AUSTERITY) {
+   austY1 = /^20\d\d$/.test(params.get("from") || "") ? params.get("from") : "";
+   austY2 = /^20\d\d$/.test(params.get("to") || "") ? params.get("to") : "";
+   const c = Number(params.get("cut"));
+   if (params.get("cut") && Number.isFinite(c)) reduction = Math.min(50, Math.max(0, c))
+  }
   render();
   if (HISTORY) loadAssistant();
   new MutationObserver(() => {

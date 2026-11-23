@@ -2910,3 +2910,112 @@ window.GCE_TOOLS = {
       ["State the work location expectations and the accommodation process that applies.", "Préciser les attentes relatives au lieu de travail et le processus d’adaptation applicable."], ["dta"])
   ];
 })();
+
+/* Equity under austerity and the global public service equity observatory, restored on November 22, 2026. */
+(function (T) {
+  "use strict";
+  T.tools["equity-under-austerity"] = {
+    href: "equity-under-austerity/",
+    title: ["Equity under austerity", "L’équité en période d’austérité"],
+    intro: ["Compare a department’s published headcount between two years, test an explicitly hypothetical reduction and review the figures to protect before a workforce decision.",
+      "Comparer l’effectif publié d’un ministère entre deux années, tester une réduction explicitement hypothétique et examiner les chiffres à protéger avant une décision sur l’effectif."]
+  };
+  T.tools["global-public-service-equity"] = {
+    href: "global-public-service-equity/",
+    title: ["Global public service equity observatory", "Observatoire mondial de l’équité dans la fonction publique"],
+    intro: ["Published workforce figures from the public services of Canada, the United Kingdom, Australia, New Zealand and the United States, each with its own definitions and source.",
+      "Chiffres publiés sur les effectifs des fonctions publiques du Canada, du Royaume-Uni, de l’Australie, de la Nouvelle-Zélande et des États-Unis, chacun avec ses propres définitions et sa source."]
+  };
+  T.order.splice(T.order.indexOf("department-evidence-explorer") + 1, 0, "equity-under-austerity");
+  T.order.splice(T.order.indexOf("history"), 0, "global-public-service-equity");
+  const hub = T.pages.hub.sections.find(s => s.type === "hub");
+  hub.groups[0].tools.push("equity-under-austerity");
+  hub.groups.splice(hub.groups.length - 1, 0, { title: ["Compare with other countries", "Comparer avec d’autres pays"], tools: ["global-public-service-equity"] });
+
+  const SNAP = ["https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html",
+    "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html"];
+  T.pages["global-public-service-equity"] = {
+    title: ["Global public service equity observatory", "Observatoire mondial de l’équité dans la fonction publique"],
+    intro: ["Explore official workforce figures from other public services without treating unlike definitions as equivalent. Compare within each country, then record a practice worth testing in Canada and what would have to be checked first.",
+      "Explorer les chiffres officiels d’autres fonctions publiques sans traiter comme équivalentes des définitions différentes. Comparer à l’intérieur de chaque pays, puis consigner une pratique à mettre à l’essai au Canada et ce qu’il faudrait vérifier d’abord."],
+    limits: ["Each figure keeps its own country, population, year and definition. Do not rank or average figures from different countries. Verify the current source before citing a figure.",
+      "Chaque chiffre conserve son pays, sa population, son année et sa définition. Ne pas classer ni faire la moyenne de chiffres de pays différents. Vérifier la source à jour avant de citer un chiffre."],
+    sections: [{
+      type: "global",
+      id: "compare",
+      title: ["Published figures by country", "Chiffres publiés par pays"],
+      intro: ["Choose a country and an evidence dimension. Each card shows one published measure with its source. The percentages use different populations, denominators and identity definitions.",
+        "Choisir un pays et une dimension. Chaque fiche présente un indicateur publié et sa source. Les pourcentages reposent sur des populations, des dénominateurs et des définitions identitaires différents."],
+      oecd: "https://www.oecd.org/en/data/datasets/oecd-government-at-a-glance-database.html",
+      topics: [["all", ["All published dimensions", "Toutes les dimensions publiées"]], ["women", ["Women", "Femmes"]], ["indigenous", ["Indigenous Peoples or Māori", "Autochtones ou Māori"]],
+        ["disability", ["Disability", "Handicap"]], ["ethnicity", ["Ethnicity", "Origine ethnique"]], ["language", ["Language background", "Parcours linguistique"]]],
+      countries: [
+        { id: "ca", name: ["Canada, federal core public administration", "Canada, administration publique centrale fédérale"], year: 2025, source: SNAP,
+          scope: ["Self-identification under Canadian employment equity legislation; core public administration, March 31, 2025.", "Auto-identification selon la législation canadienne sur l’équité en matière d’emploi; administration publique centrale au 31 mars 2025."],
+          indicators: [
+            { id: "disability", l: ["Persons with disabilities", "Personnes en situation de handicap"], value: 9, comparator: 12, cl: ["Workforce availability", "Disponibilité au sein de la population active"],
+              note: ["Representation was 3.0 percentage points below the published availability benchmark.", "La représentation était inférieure de 3,0 points à la disponibilité publiée."] },
+            { id: "women", l: ["Women", "Femmes"], value: 56.8,
+              note: ["This is the published overall share. It does not show access to leadership or pay.", "Il s’agit de la part globale publiée. Elle n’indique ni l’accès aux postes de direction ni la rémunération."] },
+            { id: "indigenous", l: ["Indigenous Peoples", "Autochtones"], value: 5.5,
+              note: ["Canadian definition and voluntary self-identification; not interchangeable with other countries’ Indigenous categories.", "Définition canadienne et auto-identification volontaire; non interchangeable avec les catégories autochtones d’autres pays."] }
+          ] },
+        { id: "uk", name: ["United Kingdom, Civil Service", "Royaume-Uni, fonction publique (Civil Service)"], year: 2026,
+          source: ["https://www.gov.uk/government/statistics/civil-service-statistics-2026/statistical-bulletin-civil-service-statistics-2026", "https://www.gov.uk/government/statistics/civil-service-statistics-2026/statistical-bulletin-civil-service-statistics-2026"],
+          scope: ["Civil Service Statistics as at March 31, 2026; ethnicity figures cover employees whose ethnicity is known.", "Statistiques de la fonction publique au 31 mars 2026; les chiffres sur l’origine ethnique portent sur les employés dont l’origine est connue."],
+          indicators: [
+            { id: "ethnicity", l: ["Ethnic minority share, known ethnicity", "Part des minorités ethniques, origine connue"], value: 19.2, comparator: 10.6, cl: ["Share at Senior Civil Service (SCS) level, a measure that includes some staff outside the SCS", "Part au niveau de la haute fonction publique (SCS), une mesure qui comprend certains employés hors de ce groupe"],
+              note: ["The difference between all grades and senior grades is 8.6 percentage points; declaration rates and grade composition affect it.", "L’écart entre l’ensemble des niveaux et les niveaux supérieurs est de 8,6 points; les taux de déclaration et la composition par niveau l’influencent."] },
+            { id: "disability", l: ["Disabled employees, by declaration", "Employés handicapés, selon la déclaration"], value: 18.4,
+              note: ["Based on declarations; not directly equivalent to the Canadian or Australian measure.", "Fondé sur les déclarations; non directement équivalent aux mesures canadienne ou australienne."] }
+          ] },
+        { id: "au", name: ["Australia, Australian Public Service", "Australie, fonction publique australienne (APS)"], year: 2025,
+          source: ["https://www.apsc.gov.au/sites/default/files/2025-11/APSC%20State%20of%20the%20Service%20Report%202024%E2%80%9325.pdf", "https://www.apsc.gov.au/sites/default/files/2025-11/APSC%20State%20of%20the%20Service%20Report%202024%E2%80%9325.pdf"],
+          scope: ["APS employment data (APSED) at June 30, 2025; not a count of the whole Australian public sector.", "Données d’emploi de l’APS (APSED) au 30 juin 2025; ce n’est pas un dénombrement de l’ensemble du secteur public australien."],
+          indicators: [
+            { id: "disability", l: ["Employees with disability, APSED", "Employés handicapés, APSED"], value: 5.8,
+              note: ["Administrative disclosure can differ from anonymous employee census answers. Do not rank it against other countries’ measures.", "La déclaration administrative peut différer des réponses à un recensement anonyme des employés. Ne pas la classer par rapport aux mesures d’autres pays."] },
+            { id: "language", l: ["First language not only English", "Première langue autre que l’anglais seulement"], value: 26.8,
+              note: ["A language background measure; not a bilingual qualification or a racialized employment equity category.", "Indicateur du parcours linguistique; ce n’est ni une compétence bilingue ni une catégorie d’employés racisés au sens de l’équité en emploi."] }
+          ] },
+        { id: "nz", name: ["New Zealand, Public Service", "Nouvelle-Zélande, fonction publique"], year: 2025,
+          source: ["https://www.publicservice.govt.nz/assets/Census/Public-Service-Census-System-Report.pdf", "https://www.publicservice.govt.nz/assets/Census/Public-Service-Census-System-Report.pdf"],
+          scope: ["Public Service workforce data in the 2025 census system report; people can identify with more than one ethnicity.", "Données sur l’effectif de la fonction publique dans le rapport de recensement de 2025; une personne peut déclarer plus d’une origine ethnique."],
+          indicators: [
+            { id: "indigenous", l: ["Māori share of the workforce", "Part de l’effectif māori"], value: 16.6,
+              note: ["Māori identity in New Zealand data does not share a definition or denominator with Indigenous Peoples in Canada’s public service.", "L’identité māorie dans les données néo-zélandaises n’a ni la même définition ni le même dénominateur que les Autochtones de la fonction publique canadienne."] }
+          ] },
+        { id: "us", name: ["United States, federal executive branch", "États-Unis, pouvoir exécutif fédéral"], year: 2025,
+          source: ["https://www.opm.gov/about-us/reports-publications/agency-reports/fy25-federal-equal-opportunity-recruitment-program-feorp-annual-report.pdf", "https://www.opm.gov/about-us/reports-publications/agency-reports/fy25-federal-equal-opportunity-recruitment-program-feorp-annual-report.pdf"],
+          scope: ["FY2025 FEORP report, using United States federal reporting categories and the civilian labour force as its benchmark.", "Rapport FEORP de l’exercice 2025, selon les catégories fédérales américaines et avec la population active civile comme point de référence."],
+          indicators: [
+            { id: "ethnicity", l: ["Black or African American federal employees", "Employés fédéraux noirs ou afro-américains"], value: 18.3, comparator: 13.1, cl: ["United States civilian labour force", "Population active civile des États-Unis"],
+              note: ["A 5.2 percentage-point difference within the United States reporting system. Race was not declared for 11.4% of federal employees.", "Écart de 5,2 points dans le système de déclaration américain. La race n’était pas déclarée pour 11,4 % des employés fédéraux."] },
+            { id: "ethnicity", l: ["Hispanic or Latino federal employees", "Employés fédéraux hispaniques ou latino-américains"], value: 11.3, comparator: 20.2, cl: ["United States civilian labour force", "Population active civile des États-Unis"],
+              note: ["8.9 percentage points below the civilian labour force. Hispanic ethnicity and race are separate reporting concepts.", "8,9 points sous la population active civile. L’origine hispanique et la race sont des concepts de déclaration distincts."] },
+            { id: "disability", l: ["Federal employees reporting a disability", "Employés fédéraux déclarant un handicap"], value: 12.5, comparator: 5.1, cl: ["United States civilian labour force", "Population active civile des États-Unis"],
+              note: ["The United States definition differs from other countries’ disability data.", "La définition américaine diffère de celle des données sur le handicap d’autres pays."] }
+          ] }
+      ],
+      questions: [
+        [["Are ethnic minorities represented in senior grades?", "Les minorités ethniques sont-elles représentées aux niveaux supérieurs?"], ["The United Kingdom figures show a gap between all grades and senior grades. That points to a question about how people are distributed across grades, not to a category that matches Canada’s.", "Les chiffres du Royaume-Uni montrent un écart entre l’ensemble des niveaux et les niveaux supérieurs. Ils soulèvent une question sur la répartition entre les niveaux, non une catégorie équivalente à celle du Canada."]],
+        [["Are Indigenous Peoples represented in leadership?", "Les Autochtones sont-ils représentés à la direction?"], ["Canada and Aotearoa New Zealand publish different Indigenous identity categories. Look at leadership figures within each system and ask for comparable levels before judging access.", "Le Canada et Aotearoa Nouvelle-Zélande publient des catégories autochtones différentes. Examiner les chiffres sur la direction propres à chaque système et demander des niveaux comparables avant de juger de l’accès."]],
+        [["How is disability measured?", "Comment le handicap est-il mesuré?"], ["Disability figures come from administrative declarations or from employee surveys. Compare the two within one country, not across countries as if they shared a definition.", "Les chiffres sur le handicap proviennent de déclarations administratives ou de sondages auprès des employés. Les comparer à l’intérieur d’un même pays, non d’un pays à l’autre comme s’ils avaient une définition commune."]],
+        [["What reduces gender pay gaps?", "Qu’est-ce qui réduit les écarts salariaux entre les genres?"], ["These cards show representation, not pay gaps. Use each country’s official pay gap series and separate raw differences from comparisons of the same work.", "Ces fiches portent sur la représentation, non sur les écarts salariaux. Utiliser les séries officielles de chaque pays sur les écarts salariaux et distinguer les écarts bruts des comparaisons d’un même travail."]],
+        [["Can access to hiring and promotion be compared?", "Peut-on comparer l’accès à l’embauche et aux promotions?"], ["Overall representation does not show success rates at each stage. Ask for applicants, qualified candidates and appointments at each stage.", "La représentation globale n’indique pas les taux de réussite à chaque étape. Demander les candidatures, les candidats qualifiés et les nominations à chaque étape."]],
+        [["What do employee surveys measure?", "Que mesurent les sondages auprès des employés?"], ["Countries use different surveys and question wording. Compare themes and methods first; do not average percentages from different surveys.", "Les pays utilisent des sondages et des formulations différents. Comparer d’abord les thèmes et les méthodes; ne pas faire la moyenne de pourcentages tirés de sondages différents."]],
+        [["Which indicators can be compared across countries?", "Quels indicateurs peut-on comparer d’un pays à l’autre?"], ["Compare only where population, period, numerator and definition match. OECD harmonized indicators are a safer starting point than rankings by identity group.", "Comparer seulement lorsque la population, la période, le numérateur et la définition correspondent. Les indicateurs harmonisés de l’OCDE sont un point de départ plus sûr que les classements par groupe identitaire."]],
+        [["Which practice could Canada test?", "Quelle pratique le Canada pourrait-il mettre à l’essai?"], ["Before recommending a practice, record what it is, the law and resources behind it, the Canadian barrier it would address and an outcome that can be measured here.", "Avant de recommander une pratique, consigner ce qu’elle est, la loi et les ressources qui la soutiennent, l’obstacle canadien qu’elle viserait et un résultat mesurable ici."]]
+      ],
+      actions: [
+        ["Choose a practice from one country, document its legal and workforce context, then define a Canadian outcome to measure.", "Choisir une pratique d’un pays, documenter son contexte juridique et professionnel, puis définir un résultat canadien à mesurer."],
+        ["Use OECD harmonized definitions for any comparison across countries; do not rank national ethnicity or disability measures directly.", "Utiliser les définitions harmonisées de l’OCDE pour toute comparaison entre pays; ne pas classer directement les mesures nationales d’origine ethnique ou de handicap."]
+      ]
+    }, {
+      type: "record",
+      id: "record",
+      title: ["Create a record", "Produire une fiche"],
+      intro: ["The record lists the country and figures you looked at, then your notes on the practice to test and what Canada would have to verify.", "La fiche présente le pays et les chiffres consultés, puis vos notes sur la pratique à mettre à l’essai et sur ce que le Canada devrait vérifier."]
+    }]
+  };
+})(window.GCE_TOOLS);

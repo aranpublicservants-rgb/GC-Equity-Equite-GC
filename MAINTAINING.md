@@ -30,7 +30,7 @@ This file describes the site as it is now. It is kept in the repository and is n
 
 ## Systemic change tools, November 22, 2026
 
-`systemic-change/` holds six tools for the federal public service. They replaced 21 earlier pages on November 22, 2026.
+`systemic-change/` holds eight tools. Six replaced 19 earlier pages on November 22, 2026; equity under austerity and the global public service equity observatory were kept as their own tools at Ali’s request the same day.
 
 The department evidence explorer (`department-evidence-explorer/`) runs on `department-evidence.js`. It opens with the main findings for one department or agency: representation against workforce availability in 2025, the largest less favourable 2024 Public Service Employee Survey results by group, the 2025 staffing survey results, the change in headcount from March 2025 to March 2026 and the regions with the most employees. Each finding links to its source. The topics add the tables behind the findings, workforce change by employment type, regions, salary ranges, careers, commitments and sources. The organization list shows the 109 organizations whose profile in `assets/department-pages.json` has workforce or survey sections.
 
@@ -38,11 +38,15 @@ The HR process review toolkit, the Manager’s Equity Toolkit, the decision equi
 
 The History site (GC-Equity-History) loads `department-evidence.js`, `assistant-enhancements.js`, `evidence-meaning.js` and `investigation-paths.js` from this site and calls `window.GCEEvidenceWorkspace`. Keep that interface. Evidence rows separate the parts of a label with " · " and show "Not published" or "Non publié" for a missing value. The History scripts read both.
 
-The 19 retired addresses redirect to the tool that replaced them and keep the language, department and comparison choices. The global comparison page was removed because the site covers the federal public service only; its address opens the tools page.
+The 17 retired addresses redirect to the tool that replaced them and keep the language, department and comparison choices.
+
+Equity under austerity (`equity-under-austerity/`) also runs on `department-evidence.js`. Its first topic compares published headcounts for two chosen years, applies an explicitly hypothetical uniform reduction (0 to 50%, arithmetic only), lists the 2025 representation figures to protect and the change in employment types, and sets out the questions to settle before a decision. The years and the percentage are kept in the page address (`from`, `to`, `cut`).
+
+The global public service equity observatory (`global-public-service-equity/`) is drawn by `tools.js` from the `global` section in `tools-content.js`. Each figure keeps its own country, population, year, definition and source; the page says not to rank or average them and points to OECD Government at a Glance for harmonized indicators. The figures were checked against their sources on November 22, 2026: the Treasury Board Employment Equity Demographic Snapshot 2024-2025, the UK Civil Service Statistics 2026 bulletin, the APSC State of the Service Report 2024-25, the New Zealand Public Service census system report and the US FY2025 FEORP report. Update them when a country publishes a new year.
 
 Salary ranges, and hires, promotions and separations by group, are national figures typed into `department-evidence.js` from Treasury Board reports: Employment Equity Demographic Snapshot 2024–2025, Figure 2, and Employment Equity in the Public Service of Canada 2024–2025, Tables 5 to 7. Update them when Treasury Board publishes a new year.
 
-`node scripts/check-systemic-change.cjs`, run by `scripts/check-site.py`, checks the shared content, page shells, redirects, sources, em dashes and the History interface. `tests/systemic-change-browser.cjs`, run by the browser workflow, opens the tools page, the explorer and the five other tools in English and French at desktop and phone widths. It selects Indigenous Services Canada, runs the job posting check, downloads a record, follows retired addresses and runs the axe-core WCAG 2.1 A and AA rules. These are functional checks, not formal accessibility certification.
+`node scripts/check-systemic-change.cjs`, run by `scripts/check-site.py`, checks the shared content, page shells, redirects, sources, em dashes and the History interface. `tests/systemic-change-browser.cjs`, run by the browser workflow, opens the tools page, the explorer, the austerity tool and the six other tools in English and French at desktop and phone widths. It selects Indigenous Services Canada, runs the job posting check, downloads a record, follows retired addresses and runs the axe-core WCAG 2.1 A and AA rules. These are functional checks, not formal accessibility certification.
 
 ## November 2026 publication-quality redesign and coverage audit
 

@@ -26,7 +26,8 @@
     picked: new Set(), status: {}, evidence: {}, hours: {}, query: {},
     notes: "", owner: "", due: "", measure: "", record: "",
     posting: "", flags: null, log: [], logDraft: { rec: "", fn: "", date: "", status: "0", ev: "" },
-    ctaOrg: "", ctaData: null, ctaDir: null, ctaError: false
+    ctaOrg: "", ctaData: null, ctaDir: null, ctaError: false,
+    country: (params.get("country") || "ca").replace(/[^a-z]/g, ""), topic: (params.get("topic") || "all").replace(/[^a-z]/g, "")
   };
 
   /* Address of another tool or page, keeping the language and the chosen department. */
@@ -63,8 +64,8 @@
 
   function hub(sec) {
     let out = "";
-    if (org) out += '<p class="notice">' + esc(L("The department you chose will be selected when you open the department evidence explorer and the commitments tracker.",
-      "Le ministère choisi sera sélectionné à l’ouverture de l’explorateur des données ministérielles et du suivi des engagements.")) + ' <a href="' + esc(new URL("./?lang=" + lang, root).href) + '">' +
+    if (org) out += '<p class="notice">' + esc(L("The department you chose will be selected when you open the department evidence explorer, the equity under austerity tool and the commitments tracker.",
+      "Le ministère choisi sera sélectionné à l’ouverture de l’explorateur des données ministérielles, de l’outil sur l’équité en période d’austérité et du suivi des engagements.")) + ' <a href="' + esc(new URL("./?lang=" + lang, root).href) + '">' +
       esc(L("Clear the department", "Retirer le ministère")) + "</a></p>";
     for (const g of sec.groups) {
       out += "<h2>" + esc(tr(g.title)) + '</h2><div class="cards">' + g.tools.map(k => {
@@ -158,6 +159,37 @@
       if (m.length) found.push({ rule, matches: m });
     }
     st.flags = found;
+  }
+
+  /* ---------- Published figures from other public services ---------- */
+  const loc = () => (lang === "fr" ? "fr-CA" : "en-CA");
+  const pctF = v => v.toLocaleString(loc(), { maximumFractionDigits: 1 }) + (lang === "fr" ? " %" : "%");
+  const ptsF = d => {
+    const x = Math.round(d * 10) / 10, a = Math.abs(x);
+    return (x > 0 ? "+" : x < 0 ? "−" : "") + a.toLocaleString(loc(), { maximumFractionDigits: 1 }) + " " + (lang === "fr" ? (a < 2 ? "point" : "points") : (a === 1 ? "point" : "points"));
+  };
+  const country = sec => sec.countries.find(c => c.id === st.country) || sec.countries[0];
+  const shown = sec => { const c = country(sec); return c.indicators.filter(x => st.topic === "all" || x.id === st.topic); };
+  function globalCompare(sec) {
+    const c = country(sec), list = shown(sec), src = tr(c.source);
+    let out = '<section id="' + esc(sec.id) + '" aria-labelledby="' + esc(sec.id) + '-title"><h2 id="' + esc(sec.id) + '-title">' + esc(tr(sec.title)) + "</h2><p>" + esc(tr(sec.intro)) + '</p><div class="panel"><div class="pair">' +
+      '<div><label for="gl-country">' + esc(L("Country", "Pays")) + '</label><select id="gl-country">' + sec.countries.map(x => '<option value="' + esc(x.id) + '"' + (x.id === c.id ? " selected" : "") + ">" + esc(tr(x.name)) + "</option>").join("") + "</select></div>" +
+      '<div><label for="gl-topic">' + esc(L("Evidence dimension", "Dimension des données")) + '</label><select id="gl-topic">' + sec.topics.map(([k, v]) => '<option value="' + esc(k) + '"' + (k === st.topic ? " selected" : "") + ">" + esc(tr(v)) + "</option>").join("") + "</select></div></div>" +
+      '<p class="small">' + esc(tr(c.scope)) + "</p>";
+    out += list.length ? list.map(x => '<article class="item"><h3>' + esc(tr(x.l)) + '</h3><p class="big">' + esc(pctF(x.value)) + "</p>" +
+      (x.comparator != null ? "<p>" + esc(tr(x.cl)) + COL() + "<strong>" + esc(pctF(x.comparator)) + "</strong> (" + esc(ptsF(x.value - x.comparator)) + ")</p>" : "") +
+      "<p>" + esc(tr(x.note)) + '</p><p class="sources"><a href="' + esc(src) + '">' + esc(L("Official source", "Source officielle")) + " (" + esc(String(c.year)) + ")</a></p></article>").join("") :
+      '<p class="notice">' + esc(L("This source publishes no figure for this dimension in the selected evidence. Do not read the absence as zero or borrow another country’s definition.", "Cette source ne publie aucun chiffre pour cette dimension dans les données retenues. Ne pas interpréter l’absence comme un zéro ni emprunter la définition d’un autre pays.")) + "</p>";
+    const all = sec.countries.flatMap(x => x.indicators.map(k => [tr(x.name) + " (" + x.year + ")", tr(k.l), pctF(k.value)]));
+    const table = (caption, head, rows) => '<div class="table-wrap" tabindex="0" role="region" aria-label="' + esc(caption) + '"><table><caption>' + esc(caption) + "</caption><thead><tr>" + head.map(h => '<th scope="col">' + esc(h) + "</th>").join("") + "</tr></thead><tbody>" + rows.map(r => "<tr>" + r.map((v, i) => i ? "<td>" + v + "</td>" : '<th scope="row">' + v + "</th>").join("") + "</tr>").join("") + "</tbody></table></div>";
+    out += "<details><summary>" + esc(L("All published figures and how each country reports them", "Tous les chiffres publiés et la façon dont chaque pays les déclare")) + "</summary>" +
+      table(L("Published figures by country, not a ranking", "Chiffres publiés par pays, pas un classement"), [L("Country and year", "Pays et année"), L("Published measure", "Indicateur publié"), L("Value", "Valeur")], all.map(r => r.map(esc))) +
+      '<p class="notice">' + esc(L("These percentages use different denominators, disclosure practices and identity definitions. Do not rank or average them. Use OECD data where a harmonized comparison exists.", "Ces pourcentages reposent sur des dénominateurs, des pratiques de déclaration et des définitions identitaires différents. Ne pas les classer ni en faire la moyenne. Utiliser les données de l’OCDE lorsqu’une comparaison harmonisée existe.")) + "</p>" +
+      table(L("How each country reports these topics", "Façon dont chaque pays déclare ces sujets"), [L("Country", "Pays"), L("Reporting system", "Système de déclaration"), L("Source", "Source")], sec.countries.map(x => [esc(tr(x.name)), esc(tr(x.scope)), '<a href="' + esc(tr(x.source)) + '">' + esc(L("Official source", "Source officielle")) + "</a>"])) +
+      '<p class="sources"><a href="' + esc(sec.oecd) + '">' + esc(L("OECD Government at a Glance: harmonized international indicators", "OCDE, Panorama des administrations publiques : indicateurs internationaux harmonisés")) + "</a></p></details>";
+    out += "<h3>" + esc(L("Questions to check before adapting a practice", "Questions à vérifier avant d’adapter une pratique")) + '</h3><ol class="steps">' + sec.questions.map(q => "<li><strong>" + esc(tr(q[0])) + "</strong> " + esc(tr(q[1])) + "</li>").join("") + "</ol>";
+    out += "<h3>" + esc(L("Next steps", "Prochaines étapes")) + "</h3><ul>" + sec.actions.map(a => "<li>" + esc(tr(a)) + "</li>").join("") + "</ul>";
+    return out + "</div></section>";
   }
 
   /* ---------- Department commitments ---------- */
@@ -282,6 +314,11 @@
             for (const f of it.fields.slice(1)) lines.push(tr(f.l) + COL() + tr(f.v));
           }
         }
+      } else if (sec.type === "global") {
+        const c = country(sec);
+        lines.push("", tr(sec.title), L("Country", "Pays") + COL() + tr(c.name) + " (" + c.year + ")", tr(c.scope));
+        for (const x of shown(sec)) lines.push("- " + tr(x.l) + COL() + pctF(x.value) + (x.comparator != null ? "; " + tr(x.cl) + COL() + pctF(x.comparator) : "") + ". " + tr(x.note));
+        lines.push(L("Source", "Source") + COL() + tr(c.source));
       } else if (sec.type === "scanner" && st.flags) {
         lines.push("", tr(sec.title), L("Wordings to review: ", "Formulations à examiner\u00a0: ") + st.flags.length);
         for (const f of st.flags) lines.push("- " + tr(f.rule.title) + " (" + f.matches.join("; ") + "): " + tr(f.rule.change));
@@ -321,6 +358,7 @@
       else if (sec.type === "library") main += library(sec);
       else if (sec.type === "scanner") main += scanner(sec);
       else if (sec.type === "cta") main += cta(sec);
+      else if (sec.type === "global") main += globalCompare(sec);
       else if (sec.type === "log") main += log(sec);
       else if (sec.type === "explorer") main += explorerLink(sec);
       else if (sec.type === "record") main += record(sec);
@@ -405,6 +443,15 @@
     else if (el.id === "rec-due") st.due = el.value;
     else if (el.id === "log-date") st.logDraft.date = el.value;
     else if (el.id === "log-status") st.logDraft.status = el.value;
+    else if (el.id === "gl-country" || el.id === "gl-topic") {
+      if (el.id === "gl-country") st.country = el.value; else st.topic = el.value;
+      const u = new URL(location.href);
+      u.searchParams.set("country", st.country);
+      if (st.topic === "all") u.searchParams.delete("topic"); else u.searchParams.set("topic", st.topic);
+      history.replaceState(null, "", u.pathname + u.search + u.hash);
+      render(false);
+      $(el.id).focus();
+    }
     else if (el.id === "cta-org") {
       st.ctaOrg = el.value;
       render(false);

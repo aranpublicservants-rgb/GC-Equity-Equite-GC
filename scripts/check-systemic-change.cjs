@@ -55,7 +55,8 @@ for (const [key, tool] of Object.entries(T.tools)) {
   if (tool.external) continue;
   assert.ok(fs.existsSync(path.join(dir, tool.href, 'index.html')), 'hub links to a missing tool: ' + key);
 }
-assert.ok(!JSON.stringify(T.tools).includes('global-public-service-equity'), 'the global page is outside the scope of this site');
+for (const k of ['equity-under-austerity', 'global-public-service-equity']) assert.ok(T.tools[k] && T.order.includes(k), 'tool missing from the tools page: ' + k);
+assert.ok(read(path.join(dir, 'equity-under-austerity', 'index.html')).includes('department-evidence.js'), 'the austerity page runs on department-evidence.js');
 for (const r of T.scanRules) {
   assert.equal(Object.prototype.toString.call(r.rx), '[object RegExp]', 'posting rule without a pattern');
   pair(r.title, 'rule'); pair(r.why, 'rule ' + r.title[0]); pair(r.change, 'rule ' + r.title[0]);

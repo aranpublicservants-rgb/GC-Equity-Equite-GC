@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
 
 const EM_DASH = String.fromCharCode(8212);
 const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
-const TOOLS = ['hr-process-toolkit/', 'managers-equity-toolkit/', 'decision-equity-check/', 'commitments-tracker/', 'invisible-work-project/'];
+const TOOLS = ['hr-process-toolkit/', 'managers-equity-toolkit/', 'decision-equity-check/', 'commitments-tracker/', 'invisible-work-project/', 'global-public-service-equity/'];
 /* Old addresses must keep working: each one opens the tool that replaced it. */
 const REDIRECTS = [
   ['barrier-breaker/', 'hr-process-toolkit/', '#barriers'],
@@ -27,8 +27,7 @@ const REDIRECTS = [
   ['equity-impact-simulator/', 'decision-equity-check/', '#decision'],
   ['what-worked/', 'commitments-tracker/', '#practices'],
   ['federal-glass-ceiling/', 'department-evidence-explorer/', 'lens=career'],
-  ['public-service-pay-gap-atlas/', 'department-evidence-explorer/', 'lens=pay'],
-  ['global-public-service-equity/', 'systemic-change/', '']
+  ['public-service-pay-gap-atlas/', 'department-evidence-explorer/', 'lens=pay']
 ];
 
 async function audit(page, label) {
@@ -64,8 +63,7 @@ async function common(page, label, lang, errors) {
         /* Hub: one link to each tool, in the page language. */
         await page.goto(base + '?lang=' + lang);
         await page.locator('#app h1').waitFor();
-        for (const t of ['department-evidence-explorer/', ...TOOLS]) assert.ok(await page.locator('#app a[href*="' + t + '"]').count() >= 1, 'Hub link missing: ' + t);
-        assert.equal(await page.locator('#app a[href*="global-public-service-equity"]').count(), 0, 'Hub must not link to the removed global page');
+        for (const t of ['department-evidence-explorer/', 'equity-under-austerity/', ...TOOLS]) assert.ok(await page.locator('#app a[href*="' + t + '"]').count() >= 1, 'Hub link missing: ' + t);
         await common(page, where('hub'), lang, errors);
 
         /* Department evidence explorer: findings for one department, three topics and a brief. */
@@ -92,7 +90,18 @@ async function common(page, label, lang, errors) {
         await page.waitForFunction(l => document.documentElement.lang === l, lang === 'fr' ? 'en' : 'fr');
         assert.match(page.url(), new RegExp('lang=' + (lang === 'fr' ? 'en' : 'fr')), 'Language switch must update the address');
 
-        /* The four process tools and the hours tool. */
+        /* Equity under austerity: published headcounts for two years and an explicitly hypothetical reduction. */
+        await page.goto(base + 'equity-under-austerity/?lang=' + lang + '&org=isc');
+        await page.locator('#dew-reduction').waitFor({ timeout: 120000 });
+        await page.fill('#dew-reduction', '10');
+        await page.locator('#dew-reduction').press('Enter');
+        await page.locator('#dew-reduction').dispatchEvent('change');
+        await page.waitForFunction(() => /10/.test(new URL(location.href).searchParams.get('cut') || ''), null, { timeout: 30000 });
+        assert.match(await page.locator('#dew-result').innerText(), lang === 'fr' ? /explicitement|hypoth/ : /hypothetical/);
+        assert.ok(await page.locator('#dew-result table caption').count() >= 2, 'Austerity tables missing');
+        await common(page, where('equity under austerity'), lang, errors);
+
+        /* The process tools, the hours tool and the global observatory. */
         for (const t of TOOLS) {
           await page.goto(base + t + '?lang=' + lang);
           await page.locator('#app h1').waitFor();
@@ -103,6 +112,12 @@ async function common(page, label, lang, errors) {
             await page.click('#scan-run');
             await page.locator('#scan-out .flag').first().waitFor();
             assert.ok(await page.locator('#scan-out .flag').count() >= 2, 'Posting check found too few wordings');
+          }
+          if (t === 'global-public-service-equity/') {
+            await page.selectOption('#gl-country', 'uk');
+            await page.selectOption('#gl-topic', 'disability');
+            await page.locator('#compare article.item').first().waitFor();
+            assert.equal(await page.locator('#compare article.item').count(), 1, 'Global observatory should show one United Kingdom disability figure');
           }
           if (t === 'commitments-tracker/') {
             await page.locator('#cta-org option[value="indigenous-services-canada"]').waitFor({ state: 'attached', timeout: 60000 });
