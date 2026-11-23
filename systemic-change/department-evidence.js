@@ -988,11 +988,13 @@
   try {
    const trend = await guard("trend"),
     orgTrend = trend ? match(trend.organizations, o) : null,
-    fam = GFAM.find(f => f.k === "equity");
-   if (!orgTrend) return;
-   const data = await groupRows(o, fam);
-   if (data.error || !$("gp-find")) return;
-   const rows = data.rows.filter(r => r.c === "1" && trend.questions[r.q] && trend.direction[r.q]),
+    sets = await Promise.all(["equity", "gender"].map(k => groupRows(o, GFAM.find(f => f.k === k)).catch(() => ({
+     error: "load"
+    }))));
+   if (!orgTrend || !$("gp-find")) return;
+   const all0 = sets.filter(d => !d.error).flatMap(d => d.rows);
+   if (!all0.length) return;
+   const rows = all0.filter(r => r.c === "1" && trend.questions[r.q] && trend.direction[r.q]),
     last = rows.map(r => r.y).sort().pop(),
     FEW = 100,
     LIMIT = 5,
@@ -1020,15 +1022,21 @@
     })
    }
    out.sort((a, b) => b.size - a.size);
-   const top = out.slice(0, 5),
+   const seen = new Set(),
+    top = out.filter(x => {
+     const g = x.r.v + x.r.c;
+     if (seen.has(g)) return false;
+     seen.add(g);
+     return true
+    }).slice(0, 7),
     gl = r => fr() ? r.gf || r.ge : r.ge,
     qn = q => QTEXT[q] ? L(QTEXT[q][0], QTEXT[q][1]) : L(trend.questions[q].en, trend.questions[q].fr),
     li = x => "<li>" + e(gl(x.r) + COL() + qn(x.r.q) + ", " + pct(x.v) + " " + L("compared with", "contre") + " " + pct(x.all) + " " + L("for all respondents", "pour tous les répondants") + " (" + x.n.toLocaleString(loc()) + " " + L("responses", "réponses") + ").") + "</li>";
    const head = L("In " + last + ", " + out.length + " of " + pairs + " group and question pairs with at least " + FEW + " responses were " + LIMIT + " points or more toward less favourable results than all respondents.",
     "En " + last + ", " + out.length + " paires groupe-question sur " + pairs + " ayant au moins " + FEW + " réponses étaient de " + LIMIT + " points ou plus vers des résultats moins favorables que ceux de tous les répondants.");
    box.innerHTML = '<section class="dew-box"><h3>' + e(L("Where results differ most between groups", "Où les résultats diffèrent le plus entre les groupes")) + '</h3><p class="dew-lead">' + e(head) + '</p>' + (top.length ? "<ul>" + top.map(li).join("") + "</ul>" : "") +
-    '<p class="dew-small">' + e(L("Groups are employees with a disability, Indigenous employees and racialized employees, from the survey subsets. They overlap, and a gap shows where to look, not why. Suppressed values and groups under 100 responses are left out. Choose “Results by group” for every group and question.",
-     "Les groupes sont les employés en situation de handicap, les employés autochtones et les employés racisés, selon les sous-ensembles du sondage. Ils se chevauchent, et un écart indique où regarder, non pourquoi. Les valeurs supprimées et les groupes de moins de 100 réponses sont exclus. Choisir « Résultats par groupe » pour tous les groupes et toutes les questions.")) + '</p></section>'
+    '<p class="dew-small">' + e(L("Groups are employees with a disability, Indigenous employees, racialized employees, women, men, employees of another gender and 2SLGBTQIA+ employees, from the survey subsets. They overlap, and a gap shows where to look, not why. Suppressed values and groups under 100 responses are left out. Choose “Results by group” for every group and question.",
+     "Les groupes sont les employés en situation de handicap, les employés autochtones, les employés racisés, les femmes, les hommes, les employés d’un autre genre et les employés 2ELGBTQIA+, selon les sous-ensembles du sondage. Ils se chevauchent, et un écart indique où regarder, non pourquoi. Les valeurs supprimées et les groupes de moins de 100 réponses sont exclus. Choisir « Résultats par groupe » pour tous les groupes et toutes les questions.")) + '</p></section>'
   } catch (x) {}
  }
 
