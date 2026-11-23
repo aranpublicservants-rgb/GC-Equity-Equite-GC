@@ -48,6 +48,8 @@
   women: "women-femmes/data/csv/women-by-organization-2025.csv",
   pses: "assets/department-profile-index.json",
   trend: "data/pses-trend-2019-2024.json",
+  l1: "data/pses-level1-map.json",
+  partsManifest: "data/pses-large-manifest.json",
   snps: "data/snps-2025-by-organization.json",
   cta: "data/call-to-action-letters.json",
   pubs: "assets/department-publication-links.json",
@@ -135,6 +137,7 @@
  const lenses = {
   overview: ["Main findings", "Principaux constats"],
   trend: ["Change over time", "Évolution dans le temps"],
+  groups: ["Results by group", "Résultats par groupe"],
   rep: ["Representation and availability", "Représentation et disponibilité"],
   career: ["Career development and access", "Perfectionnement et accès à la carrière"],
   staff: ["Staffing experiences", "Expériences de dotation"],
@@ -168,7 +171,7 @@
   "invisible-work-project": ["culture", "career", "health", "safety", "cta", "staff", "sources"],
   "managers-equity-toolkit": ["staff", "accom", "career", "safety", "health", "culture", "language", "rep", "cta", "sources"],
   "equity-under-austerity": ["austerity", "workforce", "rep", "accom", "career", "cta", "sources"],
-  "department-evidence-explorer": ["overview", "trend", "rep", "safety", "accom", "career", "staff", "culture", "health", "language", "workforce", "regions", "pay", "cta",
+  "department-evidence-explorer": ["overview", "trend", "groups", "rep", "safety", "accom", "career", "staff", "culture", "health", "language", "workforce", "regions", "pay", "cta",
    "sources"
   ]
  };
@@ -684,6 +687,281 @@
    '<p class="dew-small">' + e(L("How to read this. Each year is a separate survey with different respondents, so a change shows where to look. It does not show why. For questions about harassment, discrimination, career harm, racism harm and stress, a higher share is less favourable. The " + LIMIT + "-point line is a reading aid used on this page. It is not a statistical test. Results with fewer than " + FEW + " responses are marked. Years published in the file: " + yearsText + ".",
     "Comment lire. Chaque année est un sondage distinct auprès de répondants différents; une variation indique où regarder, non pourquoi. Pour les questions sur le harcèlement, la discrimination, le tort à la carrière, le tort causé par le racisme et le stress, une part plus élevée est moins favorable. Le seuil de " + LIMIT + " points est une aide à la lecture utilisée sur cette page, non un test statistique. Les résultats comptant moins de " + FEW + " réponses sont signalés. Années publiées dans le fichier\u00a0: " + yearsText + ".")) + '</p>' +
    sourceNote(d.source, L("2024 Public Service Employee Survey open dataset (includes 2019, 2020 and 2022)", "Ensemble de données ouvertes du sondage auprès des fonctionnaires fédéraux de 2024 (comprend 2019, 2020 et 2022)")) + sourceNote(SRC.trend, L("Trend data used on this page", "Données d’évolution utilisées sur cette page"))
+ }
+
+ /* Results by group. The survey subsets are split into small gzip parts, one set per organization, and read in the visitor's browser.
+    Values are shown as published. Suppressed cells stay suppressed and nothing is added across groups. */
+ const PS_BASES = ["https://cdn.jsdelivr.net/gh/aranpublicservants-rgb/gc-equity-equite-gc@pses-data/pses/", "https://raw.githubusercontent.com/aranpublicservants-rgb/gc-equity-equite-gc/pses-data/pses/"];
+ const GFAM = [{
+   k: "equity",
+   en: "Disability, Indigenous identity and racialized employees",
+   fr: "Incapacité, identité autochtone et employés racisés",
+   dir: "subset-3-sous-ensemble-3",
+   vars: ["D112", "D113", "D114"]
+  }, {
+   k: "disability",
+   en: "Types of disability",
+   fr: "Types d’incapacité",
+   dir: "subset-3-sous-ensemble-3",
+   vars: ["D112A", "D112B", "D112C", "D112D", "D112E", "D112F", "D112G", "D112H", "D112I", "D112J", "D112K", "D112L", "D112M", "D112N", "D112O"]
+  }, {
+   k: "identity",
+   en: "Indigenous and racialized groups in more detail",
+   fr: "Groupes autochtones et racisés en détail",
+   dir: "subset-3-sous-ensemble-3",
+   vars: ["D113A", "D113B", "D113C", "D114A", "D114B", "D114C", "D114D", "D114E", "D114F", "D114G", "D114H", "D114I"]
+  }, {
+   k: "gender",
+   en: "Gender and 2SLGBTQIA+ employees (2024 only)",
+   fr: "Genre et employés 2ELGBTQIA+ (2024 seulement)",
+   dir: "EEINFODV",
+   vars: ["D111A", "D111B", "D111C", "D117"]
+  }, {
+   k: "role",
+   en: "Supervisors, age and years of service",
+   fr: "Superviseurs, âge et années de service",
+   dir: "subset-2-sous-ensemble-2",
+   vars: ["Q82", "Q110", "D104", "D105"]
+  }, {
+   k: "work",
+   en: "Work arrangement and employment type",
+   fr: "Modalités de travail et type d’emploi",
+   dir: "subset-5-sous-ensemble-5",
+   vars: ["Q96", "Q97", "Q98", "Q99"]
+  }, {
+   k: "language",
+   en: "Language and region",
+   fr: "Langue et région",
+   dir: "subset-6-sous-ensemble-6",
+   vars: ["Q102", "Q106", "Q108"]
+  }, {
+   k: "occ",
+   en: "Occupational group and level (2024 only)",
+   fr: "Groupe et niveau professionnels (2024 seulement)",
+   dir: "subset-4-sous-ensemble-4",
+   vars: null
+  }],
+  gstate = {
+   fam: "equity",
+   q: ""
+  },
+  gcache = new Map();
+
+ function csvLine(s) {
+  const out = [];
+  let i = 0;
+  while (i <= s.length) {
+   if (s[i] === '"') {
+    let v = "";
+    i++;
+    for (;;) {
+     const j = s.indexOf('"', i);
+     if (j < 0) {
+      v += s.slice(i);
+      i = s.length;
+      break
+     }
+     v += s.slice(i, j);
+     if (s[j + 1] === '"') {
+      v += '"';
+      i = j + 2
+     } else {
+      i = j + 1;
+      break
+     }
+    }
+    out.push(v);
+    i++
+   } else {
+    const j = s.indexOf(",", i);
+    if (j < 0) {
+     out.push(s.slice(i));
+     break
+    }
+    out.push(s.slice(i, j));
+    i = j + 1
+   }
+  }
+  return out
+ }
+ async function fetchPart(path) {
+  let last;
+  for (const b of PS_BASES) {
+   try {
+    const r = await fetch(b + path);
+    if (r.ok) return r;
+    last = Error("HTTP " + r.status)
+   } catch (x) {
+    last = x
+   }
+  }
+  throw last
+ }
+ /* Reads one gzip part and returns the department-level rows of the chosen variables. */
+ async function readPart(path, vars) {
+  const res = await fetchPart(path),
+   reader = res.body.pipeThrough(new DecompressionStream("gzip")).getReader(),
+   dec = new TextDecoder("windows-1252"),
+   rows = [];
+  let buf = "",
+   head = null,
+   pend = "";
+  const take = line => {
+   pend += (pend ? "\n" : "") + line;
+   if ((pend.split('"').length - 1) % 2) return;
+   const text = pend;
+   pend = "";
+   if (!text) return;
+   const f = csvLine(text);
+   if (!head) {
+    head = Object.fromEntries(f.map((h, i) => [h.replace(/^﻿/, ""), i]));
+    return
+   }
+   if (head.LEVEL2ID !== undefined && ["LEVEL2ID", "LEVEL3ID", "LEVEL4ID", "LEVEL5ID"].some(k => (f[head[k]] || "").replace(/0/g, ""))) return;
+   const v = (f[head.BYCOND] || "").split("=")[0].trim();
+   if (vars && !vars.includes(v)) return;
+   rows.push({
+    v,
+    ge: f[head.DESCRIP_E],
+    gf: f[head.DESCRIP_F],
+    y: f[head.SURVEYR],
+    q: f[head.QUESTION],
+    te: f[head.TITLE_E],
+    tf: f[head.TITLE_F],
+    pos: f[head.POSITIVE],
+    neg: f[head.NEGATIVE],
+    a1: f[head.ANSWER1],
+    n: f[head.ANSCOUNT]
+   })
+  };
+  for (;;) {
+   const {
+    done,
+    value
+   } = await reader.read();
+   buf += dec.decode(value || new Uint8Array(), {
+    stream: !done
+   });
+   const lines = buf.split("\n");
+   buf = done ? "" : lines.pop();
+   for (const l of lines) take(l.replace(/\r$/, ""));
+   if (done) break
+  }
+  if (buf) take(buf.replace(/\r$/, ""));
+  return rows
+ }
+ async function groupRows(o, fam) {
+  const map = await guard("l1"),
+   man = await guard("partsManifest"),
+   code = map?.[o.en];
+  if (!code) return {
+   error: "nocode"
+  };
+  const src = (man?.datasets || []).filter(d => d.folder === "pses-2024").flatMap(d => d.sources).find(s => s.directory.endsWith("/" + fam.dir));
+  const parts = (src?.parts || []).filter(p => p.file.startsWith(code + "-"));
+  if (!parts.length) return {
+   error: "noparts"
+  };
+  const k = o.en + "|" + fam.k;
+  if (!gcache.has(k)) gcache.set(k, Promise.all(parts.map(p => readPart("pses-2024/" + fam.dir + "/" + p.file, fam.vars))).then(a => ({
+   rows: a.flat()
+  })));
+  return gcache.get(k)
+ }
+ const gnum = x => {
+  const s = String(x ?? "").trim();
+  return s === "" || s === "9999" || !Number.isFinite(Number(s)) ? null : Number(s)
+ };
+
+ function groupsShell(o) {
+  const code = "";
+  return '<p>' + e(L("Choose a type of group and a survey question to see how results differ between groups in this organization. The figures come from the survey subsets published with the 2024 Public Service Employee Survey open dataset.",
+    "Choisir un type de groupe et une question du sondage pour voir comment les résultats diffèrent entre les groupes de cet organisme. Les chiffres proviennent des sous-ensembles publiés avec l’ensemble de données ouvertes du sondage auprès des fonctionnaires fédéraux de 2024.")) + '</p>' +
+   '<div class="dew-controls"><label>' + e(L("Type of group", "Type de groupe")) + ' <select id="dew-gp-fam">' + options(GFAM.map(f => [f.k, L(f.en, f.fr)]), gstate.fam) + '</select></label> ' +
+   '<label>' + e(L("Survey question", "Question du sondage")) + ' <select id="dew-gp-q"></select></label></div><div id="dew-gp-out" role="status" aria-live="polite"><p>' + e(L("Loading the survey subset…", "Chargement du sous-ensemble du sondage…")) + '</p></div>' + code
+ }
+ async function mountGroups(o) {
+  const out = $("gp-out"),
+   famSel = $("gp-fam"),
+   qSel = $("gp-q");
+  if (!out || !famSel || !qSel) return;
+  const fam = GFAM.find(f => f.k === gstate.fam) || GFAM[0],
+   trend = await guard("trend").catch(() => null),
+   orgTrend = trend ? match(trend.organizations, o) : null;
+  let data;
+  try {
+   data = await groupRows(o, fam)
+  } catch (x) {
+   out.innerHTML = '<p class="notice">' + e(L("The survey subset could not be loaded. Check the connection and try again.", "Le sous-ensemble du sondage n’a pas pu être chargé. Vérifier la connexion et réessayer.")) + '</p>';
+   return
+  }
+  if (!$("gp-out")) return;
+  if (data.error) {
+   out.innerHTML = '<p class="notice">' + e(data.error === "nocode" ? L("This organization is not listed separately in the 2024 survey subsets.", "Cet organisme n’est pas présenté séparément dans les sous-ensembles du sondage de 2024.") : L("No rows for this organization in this survey subset.", "Aucune ligne pour cet organisme dans ce sous-ensemble du sondage.")) + '</p>';
+   qSel.innerHTML = "";
+   return
+  }
+  const rows = data.rows,
+   questions = new Map();
+  rows.forEach(r => {
+   if (!questions.has(r.q)) questions.set(r.q, [r.te, r.tf])
+  });
+  if (!rows.length) {
+   out.innerHTML = missing();
+   return
+  }
+  const main = trend ? Object.keys(trend.questions).filter(q => questions.has(q)) : [],
+   rest = [...questions.keys()].filter(q => !main.includes(q)).sort(),
+   qname = q => (fr() ? questions.get(q)[1] || questions.get(q)[0] : questions.get(q)[0]) || q;
+  if (!questions.has(gstate.q)) gstate.q = main[0] || rest[0];
+  const grp = (title, list) => list.length ? '<optgroup label="' + e(title) + '">' + options(list.map(q => [q, qname(q)]), gstate.q) + '</optgroup>' : "";
+  qSel.innerHTML = grp(L("Questions used in the main findings", "Questions utilisées dans les principaux constats"), main) + grp(L("All other questions in this subset", "Toutes les autres questions de ce sous-ensemble"), rest);
+  const q = gstate.q,
+   field = trend?.questions?.[q]?.field || (rows.some(r => r.q === q && gnum(r.pos) !== null) ? "pos" : "a1"),
+   fkey = {
+    POSITIVE: "pos",
+    NEGATIVE: "neg",
+    ANSWER1: "a1",
+    pos: "pos",
+    a1: "a1"
+   } [field],
+   fname = {
+    pos: L("Positive answers", "Réponses positives"),
+    neg: L("Negative answers", "Réponses négatives"),
+    a1: L("First answer option", "Première option de réponse")
+   } [fkey],
+   mine = rows.filter(r => r.q === q),
+   years = [...new Set(mine.map(r => r.y))].sort(),
+   last = years[years.length - 1],
+   first = years[0],
+   byG = new Map();
+  mine.forEach(r => {
+   const k = r.v + "|" + r.ge;
+   if (!byG.has(k)) byG.set(k, {
+    label: fr() ? r.gf || r.ge : r.ge,
+    y: {}
+   });
+   byG.get(k).y[r.y] = [gnum(r[fkey]), gnum(r.n)]
+  });
+  const FEW = 100,
+   all = orgTrend?.[q]?.[last]?.[0] ?? null,
+   list = [...byG.values()].filter(g => g.y[last]),
+   judged = list.filter(g => g.y[last][0] !== null && g.y[last][1] !== null && g.y[last][1] >= FEW).sort((a, b) => a.y[last][0] - b.y[last][0]),
+   body = list.map(g => {
+    const c = g.y[last],
+     b = first !== last ? g.y[first] : null;
+    return [g.label, c[1] === null ? L("Suppressed", "Supprimé") : c[1].toLocaleString(loc()), c[0] === null ? L("Suppressed", "Supprimé") : pct(c[0]) + (c[1] !== null && c[1] < FEW ? " (" + L("few responses", "peu de réponses") + ")" : ""),
+     ...(first !== last ? [b ? (b[0] === null ? L("Suppressed", "Supprimé") : pct(b[0])) : NA()] : []),
+     all !== null && c[0] !== null ? pp(Math.round((c[0] - all) * 10) / 10) : NA()]
+   }),
+   headers = [L("Group", "Groupe"), L("Responses in " + last, "Réponses en " + last), fname + " (" + last + ")", ...(first !== last ? [fname + " (" + first + ")"] : []), L("Gap to all respondents in " + last, "Écart avec tous les répondants en " + last)];
+  const lead = judged.length > 1 ? L("In " + last + ", among " + judged.length + " groups with at least " + FEW + " responses, " + fname.toLowerCase() + " were lowest for " + judged[0].label + " (" + pct(judged[0].y[last][0]) + ") and highest for " + judged[judged.length - 1].label + " (" + pct(judged[judged.length - 1].y[last][0]) + ").",
+    "En " + last + ", parmi " + judged.length + " groupes ayant au moins " + FEW + " réponses, la part de « " + fname.toLowerCase() + " » était la plus faible pour " + judged[0].label + " (" + pct(judged[0].y[last][0]) + ") et la plus élevée pour " + judged[judged.length - 1].label + " (" + pct(judged[judged.length - 1].y[last][0]) + ").") : L("No group has at least " + FEW + " responses with a published value for this question.", "Aucun groupe n’a au moins " + FEW + " réponses avec une valeur publiée pour cette question.");
+  const dsUrl = L("https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f", "https://ouvert.canada.ca/data/fr/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f");
+  out.innerHTML = '<p class="dew-lead">' + e(lead) + '</p>' + (list.length ? table(headers, body, L("Results by group, " + name(o), "Résultats par groupe, " + name(o))) : missing()) +
+   '<p class="dew-small">' + e(L("How to read this. A person can belong to more than one group, so groups overlap and their counts must not be added. Values the survey suppresses to protect privacy stay suppressed. A gap shows where to look. It does not show why. For questions about harassment, discrimination, career harm or racism, read results alongside the department’s own plans.",
+    "Comment lire. Une personne peut appartenir à plus d’un groupe; les groupes se chevauchent et leurs effectifs ne doivent pas être additionnés. Les valeurs que le sondage supprime pour protéger la vie privée restent supprimées. Un écart indique où regarder, non pourquoi. Pour les questions sur le harcèlement, la discrimination, le tort à la carrière ou le racisme, lire les résultats avec les plans du ministère.")) + '</p>' +
+   sourceNote(dsUrl, L("2024 Public Service Employee Survey open dataset, survey subsets (includes 2019, 2020 and 2022 where published)", "Ensemble de données ouvertes du sondage auprès des fonctionnaires fédéraux de 2024, sous-ensembles (comprend 2019, 2020 et 2022 lorsque publiés)"))
  }
 
  function survey(index, p1, p2, o, p) {
@@ -1708,6 +1986,7 @@
      ], pg) : "")
   }
   let out = "";
+  if (lens === "groups") out += sec(t(lenses.groups), groupsShell(o));
   if (lens === "trend") out += sec(t(lenses.trend), trendView(trendD, o));
   else if (ov && trendD) trendView(trendD, o);
   if (needRep) out += sec(t(lenses.rep), repr(rep, w ? csv(w) : [], o, p));
@@ -1723,7 +2002,7 @@
    if (["all", "workforce"].includes(lens)) out += sec(t(lenses.workforce), workforce(pop, ten, o));
    if (["all", "regions"].includes(lens)) out += sec(t(lenses.regions), regions(prov, pop, o));
   } else if (ov) workforce(pop, null, o);
-  if (lens === "austerity") out = sec(t(lenses.austerity), austerity(pop, ten, rep, o, w)) + out;
+  if (lens === "austerity") out = sec(t(lenses.austerity), austerity(pop, ten, rep, o, w ? csv(w) : [])) + out;
   if (lens === "pay" || lens === "all") out += sec(t(lenses.pay), pay());
   if (needCta) out += sec(t(lenses.cta), commitments(cta, o, p));
   if (["language", "all"].includes(lens)) out += sec(L("Employees by first official language", "Employés selon la première langue officielle"), languages(fol, o,
@@ -1740,6 +2019,19 @@
   $("result").innerHTML = out + (ov ? "" : indicatorPanel()) + actionPanel();
   bindActions();
   bindScenario();
+  if (lens === "groups") {
+   const mount = () => mountGroups(o);
+   $("gp-fam").onchange = ev => {
+    gstate.fam = ev.target.value;
+    $("gp-out").innerHTML = "<p>" + e(L("Loading the survey subset…", "Chargement du sous-ensemble du sondage…")) + "</p>";
+    mount()
+   };
+   $("gp-q").onchange = ev => {
+    gstate.q = ev.target.value;
+    mount()
+   };
+   mount()
+  }
   dataReady = true;
   notify("ready");
  }
