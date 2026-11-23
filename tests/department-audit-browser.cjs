@@ -26,6 +26,11 @@ const server=http.createServer((req,res)=>{
    page.on('pageerror',e=>errors.push(e.message));
    await page.goto(base+slug+'/?lang=en',{waitUntil:'domcontentloaded'});
    await page.locator('#lang-en h2').first().waitFor({timeout:30000});
+   if(slug==='canada-post'){
+    await page.locator('#lang-en .dp-coverage-gap').first().waitFor({timeout:15000});
+    assert.equal(await page.locator('#lang-en .dp-coverage-gap').count(),10,'thin page shows ten transparent missing-source areas');
+    assert.equal(await page.locator('#lang-fr .dp-coverage-gap').count(),10,'French thin page source status');
+   }
    assert.ok(await page.locator('#lang-en h2').count()>=8,slug+': section coverage');
    const ids=await page.locator('#lang-en h2[id]').evaluateAll(els=>els.map(e=>e.id));
    const nav=await page.locator('#lang-en .contents a[href^="#"]').evaluateAll(els=>els.map(e=>e.getAttribute('href').slice(1)));
