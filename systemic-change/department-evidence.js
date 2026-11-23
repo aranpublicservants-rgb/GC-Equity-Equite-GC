@@ -968,14 +968,35 @@
     const c = g.y[last],
      b = first !== last ? g.y[first] : null;
     return [g.label, c[1] === null ? L("Suppressed", "Supprimé") : c[1].toLocaleString(loc()), c[0] === null ? L("Suppressed", "Supprimé") : pct(c[0]) + (c[1] !== null && c[1] < FEW ? " (" + L("few responses", "peu de réponses") + ")" : ""),
-     ...(first !== last ? [b ? (b[0] === null ? L("Suppressed", "Supprimé") : pct(b[0])) : NA()] : []),
+     ...(first !== last ? [b ? (b[0] === null ? L("Suppressed", "Supprimé") : pct(b[0])) : NA(), b && b[0] !== null && c[0] !== null ? pp(Math.round((c[0] - b[0]) * 10) / 10) : NA()] : []),
      all !== null && c[0] !== null ? pp(Math.round((c[0] - all) * 10) / 10) : NA()]
    }),
-   headers = [L("Group", "Groupe"), L("Responses in " + last, "Réponses en " + last), fname + " (" + last + ")", ...(first !== last ? [fname + " (" + first + ")"] : []), L("Gap to all respondents in " + last, "Écart avec tous les répondants en " + last)];
+   headers = [L("Group", "Groupe"), L("Responses in " + last, "Réponses en " + last), fname + " (" + last + ")", ...(first !== last ? [fname + " (" + first + ")", L("Change since " + first, "Évolution depuis " + first)] : []), L("Gap to all respondents in " + last, "Écart avec tous les répondants en " + last)];
   const lead = judged.length > 1 ? L("In " + last + ", among " + judged.length + " groups with at least " + FEW + " responses, " + fname.toLowerCase() + " were lowest for " + judged[0].label + " (" + pct(judged[0].y[last][0]) + ") and highest for " + judged[judged.length - 1].label + " (" + pct(judged[judged.length - 1].y[last][0]) + ").",
     "En " + last + ", parmi " + judged.length + " groupes ayant au moins " + FEW + " réponses, la part de « " + fname.toLowerCase() + " » était la plus faible pour " + judged[0].label + " (" + pct(judged[0].y[last][0]) + ") et la plus élevée pour " + judged[judged.length - 1].label + " (" + pct(judged[judged.length - 1].y[last][0]) + ").") : L("No group has at least " + FEW + " responses with a published value for this question.", "Aucun groupe n’a au moins " + FEW + " réponses avec une valeur publiée pour cette question.");
-  const dsUrl = L("https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f", "https://ouvert.canada.ca/data/fr/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f");
-  out.innerHTML = '<p class="dew-lead">' + e(lead) + '</p>' + (list.length ? table(headers, body, L("Results by group, " + name(o), "Résultats par groupe, " + name(o))) : missing()) +
+  const dsUrl0 = L("https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f", "https://ouvert.canada.ca/data/fr/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f");
+  const dsUrl = dsUrl0,
+   ex = judged.length ? judged[0] : null,
+   example = ex ? '<details><summary>' + e(L("How to read one row, with an example", "Comment lire une ligne, avec un exemple")) + '</summary><p>' + e(L(
+    "Take the row for " + ex.label + ". " + ex.y[last][1].toLocaleString(loc()) + " employees in this group answered the question in " + last + ". " + pct(ex.y[last][0]) + " of them gave the answer counted in the column “" + fname + "”." + (all !== null ? " For all respondents the figure was " + pct(all) + ", so the gap column shows " + pp(Math.round((ex.y[last][0] - all) * 10) / 10) + "." : "") + (first !== last && ex.y[first] && ex.y[first][0] !== null ? " In " + first + " the figure for this group was " + pct(ex.y[first][0]) + ", which gives the change column." : "") + " A higher figure is not always better: for questions about harassment, discrimination or harm, a higher share is the less favourable result. Check the wording of the question before reading a gap.",
+    "Prenons la ligne " + ex.label + ". " + ex.y[last][1].toLocaleString(loc()) + " employés de ce groupe ont répondu à la question en " + last + ". " + pct(ex.y[last][0]) + " d’entre eux ont donné la réponse comptée dans la colonne « " + fname + " »." + (all !== null ? " Pour tous les répondants, le chiffre était de " + pct(all) + "; la colonne d’écart indique donc " + pp(Math.round((ex.y[last][0] - all) * 10) / 10) + "." : "") + (first !== last && ex.y[first] && ex.y[first][0] !== null ? " En " + first + ", le chiffre de ce groupe était de " + pct(ex.y[first][0]) + ", ce qui donne la colonne d’évolution." : "") + " Un chiffre plus élevé n’est pas toujours meilleur : pour les questions sur le harcèlement, la discrimination ou le tort subi, une part plus élevée est le résultat moins favorable. Vérifier le libellé de la question avant de lire un écart.")) + '</p></details>' : "";
+  evidence = evidence.filter((r, j) => rowInfo[j]?.kind !== "groups");
+  rowInfo = rowInfo.filter(m => m?.kind !== "groups");
+  list.forEach(g => {
+   const c = g.y[last];
+   if (c[0] === null) return;
+   addEvidence(L("PSES, by group", "SPFF, par groupe"), last, q + " " + qname(q), g.label, pct(c[0]), all !== null ? pct(all) : NA(), all !== null ? pp(Math.round((c[0] - all) * 10) / 10) : NA(), c[1] === null ? NA() : num(c[1]), dsUrl, {
+    kind: "groups",
+    code: q,
+    year: last,
+    value: c[0],
+    reference: all,
+    organization: name(o)
+   })
+  });
+  $("ind-wrap") && ($("ind-wrap").innerHTML = indicatorPanel(), bindIndicator());
+  notify("ready");
+  out.innerHTML = '<p class="dew-lead">' + e(lead) + '</p>' + (list.length ? table(headers, body, L("Results by group, " + name(o), "Résultats par groupe, " + name(o))) : missing()) + example +
    '<p class="dew-small">' + e(L("How to read this. A person can belong to more than one group, so groups overlap and their counts must not be added. Values the survey suppresses to protect privacy stay suppressed. A gap shows where to look. It does not show why. For questions about harassment, discrimination, career harm or racism, read results alongside the department’s own plans.",
     "Comment lire. Une personne peut appartenir à plus d’un groupe; les groupes se chevauchent et leurs effectifs ne doivent pas être additionnés. Les valeurs que le sondage supprime pour protéger la vie privée restent supprimées. Un écart indique où regarder, non pourquoi. Pour les questions sur le harcèlement, la discrimination, le tort à la carrière ou le racisme, lire les résultats avec les plans du ministère.")) + '</p>' +
    sourceNote(dsUrl, L("2024 Public Service Employee Survey open dataset, survey subsets (includes 2019, 2020 and 2022 where published)", "Ensemble de données ouvertes du sondage auprès des fonctionnaires fédéraux de 2024, sous-ensembles (comprend 2019, 2020 et 2022 lorsque publiés)"))
@@ -1982,7 +2003,7 @@
   return report
  }
 
- function bindActions() {
+ function bindIndicator() {
   if ($("indicator")) {
    $("indicator").onchange = () => {
     selectedIndicator = Number($("indicator").value);
@@ -1990,6 +2011,10 @@
    };
    showIndicator()
   }
+ }
+
+ function bindActions() {
+  bindIndicator();
   host.querySelectorAll("[data-action]").forEach(el => el.onchange = () => {
    el.checked ? chosen.add(el.dataset.action) : chosen.delete(el.dataset.action);
    notify("actions")
@@ -2124,7 +2149,7 @@
   if (ov) out = findings + '<div id="dew-gp-find"></div>' + (findings ? "" : missing()) + '<details class="dew-box"><summary>' + e(L("Tables behind these findings",
    "Tableaux à l’appui de ces constats")) + '</summary>' + out + '</details>';
   else out = findings + out;
-  $("result").innerHTML = out + (ov ? "" : indicatorPanel()) + actionPanel();
+  $("result").innerHTML = out + '<div id="dew-ind-wrap">' + (ov ? "" : indicatorPanel()) + "</div>" + actionPanel();
   bindActions();
   bindScenario();
   if (ov) mountGroupFindings(o);

@@ -113,6 +113,8 @@ async function common(page, label, lang, errors) {
         await page.locator('#dew-gp-out table').waitFor({ timeout: 120000 });
         assert.ok(await page.locator('#dew-gp-out tbody tr').count() >= 3, 'Results by group table is too short');
         assert.match(await page.locator('#dew-gp-out .dew-lead').innerText(), /2024/, 'Results by group summary missing');
+        await page.locator('#dew-indicator').waitFor({ timeout: 30000 });
+        assert.ok(await page.locator('#dew-gp-out details').count() === 1, 'Worked example is missing');
         await page.selectOption('#dew-gp-fam', 'gender');
         await page.waitForFunction(() => /2SLGBTQIA|2ELGBTQIA/.test(document.querySelector('#dew-gp-out')?.innerText || ''), null, { timeout: 120000 });
         await page.selectOption('#dew-gp-fam', 'units');
