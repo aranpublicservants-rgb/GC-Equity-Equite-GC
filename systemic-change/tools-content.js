@@ -148,8 +148,8 @@ window.GCE_TOOLS = {
     "Explorateur des données ministérielles"
    ],
    "intro": [
-    "Main findings for a department or agency, then representation, survey results by group, staffing, workforce change, regions and commitments, with sources.",
-    "Principaux constats pour un ministère ou un organisme, puis la représentation, les résultats de sondage par groupe, la dotation, l’évolution de l’effectif, les régions et les engagements, avec les sources."
+    "Main findings for a department or agency, then how survey results have changed since 2019, representation, survey results by group, staffing, workforce change, regions and commitments, with sources.",
+    "Principaux constats pour un ministère ou un organisme, puis l’évolution des résultats de sondage depuis 2019, la représentation, les résultats de sondage par groupe, la dotation, l’évolution de l’effectif, les régions et les engagements, avec les sources."
    ]
   },
   "hr-process-toolkit": {

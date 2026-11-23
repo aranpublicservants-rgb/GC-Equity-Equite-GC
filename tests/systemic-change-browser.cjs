@@ -89,6 +89,17 @@ async function common(page, label, lang, errors) {
         await page.waitForFunction(l => document.documentElement.lang === l, lang === 'fr' ? 'en' : 'fr');
         assert.match(page.url(), new RegExp('lang=' + (lang === 'fr' ? 'en' : 'fr')), 'Language switch must update the address');
 
+        /* Change over time: the same survey questions across the years in the 2024 file. */
+        await page.goto(base + 'department-evidence-explorer/?lang=' + lang + '&org=isc&lens=trend');
+        await page.locator('#dew-result .dew-lead').waitFor({ timeout: 120000 });
+        assert.ok(await page.locator('#dew-result table tbody tr').count() >= 10, 'Change over time table is too short');
+        assert.match(await page.locator('#dew-result .dew-lead').innerText(), /5/, 'Change over time summary missing');
+        assert.ok((await page.locator('#dew-result table thead').innerText()).includes('2019'), 'Change over time table should list 2019');
+        await common(page, where('change over time'), lang, errors);
+        await page.goto(base + 'department-evidence-explorer/?lang=' + lang + '&org=isc');
+        await page.locator('.dew-findings').waitFor({ timeout: 120000 });
+        assert.match(await page.locator('.dew-findings').innerText(), lang === 'fr' ? /depuis la première année/ : /since the first year/, 'Main findings should include the change over time finding');
+
         /* Equity under austerity: published headcounts for two years and an explicitly hypothetical reduction. */
         await page.goto(base + 'equity-under-austerity/?lang=' + lang + '&org=isc');
         await page.locator('#dew-reduction').waitFor({ timeout: 120000 });

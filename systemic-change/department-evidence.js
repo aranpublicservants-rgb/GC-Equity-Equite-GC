@@ -47,6 +47,7 @@
   rep: "data/tbs-departmental-representation-2017-2025.json",
   women: "women-femmes/data/csv/women-by-organization-2025.csv",
   pses: "assets/department-profile-index.json",
+  trend: "data/pses-trend-2019-2024.json",
   snps: "data/snps-2025-by-organization.json",
   cta: "data/call-to-action-letters.json",
   pubs: "assets/department-publication-links.json",
@@ -133,6 +134,7 @@
  };
  const lenses = {
   overview: ["Main findings", "Principaux constats"],
+  trend: ["Change over time", "Évolution dans le temps"],
   rep: ["Representation and availability", "Représentation et disponibilité"],
   career: ["Career development and access", "Perfectionnement et accès à la carrière"],
   staff: ["Staffing experiences", "Expériences de dotation"],
@@ -166,7 +168,7 @@
   "invisible-work-project": ["culture", "career", "health", "safety", "cta", "staff", "sources"],
   "managers-equity-toolkit": ["staff", "accom", "career", "safety", "health", "culture", "language", "rep", "cta", "sources"],
   "equity-under-austerity": ["austerity", "workforce", "rep", "accom", "career", "cta", "sources"],
-  "department-evidence-explorer": ["overview", "rep", "safety", "accom", "career", "staff", "culture", "health", "language", "workforce", "regions", "pay", "cta",
+  "department-evidence-explorer": ["overview", "trend", "rep", "safety", "accom", "career", "staff", "culture", "health", "language", "workforce", "regions", "pay", "cta",
    "sources"
   ]
  };
@@ -451,7 +453,7 @@
  }
  const css = document.createElement("style");
  css.textContent =
-  "#dept-evidence-workspace{max-width:1100px;margin:auto;padding:1rem;color:var(--text)}#dept-evidence-workspace .dew-box{background:var(--panel);border:1px solid var(--line);padding:1rem;border-radius:.65rem;margin:.8rem 0}#dept-evidence-workspace .dew-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem}#dept-evidence-workspace .dew-scroll{overflow:auto;max-height:40rem}#dept-evidence-workspace th{position:sticky;top:0;background:var(--panel)}#dept-evidence-workspace .dew-tabs{display:flex;flex-wrap:wrap;gap:.4rem}#dept-evidence-workspace .dew-tabs button[aria-pressed=true]{background:#005b64;color:white}#dept-evidence-workspace .dew-bar{display:block;height:.5rem;background:var(--accent);border-radius:.25rem;margin:.2rem 0}#dept-evidence-workspace .dew-small{font-size:.9rem;color:var(--muted)}#dept-evidence-workspace .dew-actions label{display:flex;align-items:flex-start;gap:.5rem}#dept-evidence-workspace .dew-actions input[type=checkbox]{width:auto;margin-top:.4rem}#dept-evidence-workspace textarea{width:100%;min-height:6rem}#dept-evidence-workspace .dew-sticky{scroll-margin-top:1rem}#dept-evidence-workspace caption{text-align:left;font-weight:650;padding:.4rem 0}#dept-evidence-workspace .dew-findings{border-left:4px solid var(--accent)}#dept-evidence-workspace .dew-findings li{margin:.35rem 0}#dept-evidence-workspace .dew-tabs button{font:inherit;padding:.45rem .7rem;border:1px solid var(--line);border-radius:.35rem;background:var(--panel);color:var(--text);cursor:pointer}#dept-evidence-workspace select{max-width:100%}#dept-evidence-workspace .dew-big{font-size:1.6rem;font-weight:700;margin:.4rem 0}#dept-evidence-workspace #dew-reduction{display:block;width:8rem;min-height:44px;font:inherit;padding:.4rem;margin:.25rem 0 .5rem}#dept-evidence-workspace .dew-questions li{margin:.45rem 0}#dept-evidence-workspace details>summary{cursor:pointer;font-weight:650}";
+  "#dept-evidence-workspace{max-width:1100px;margin:auto;padding:1rem;color:var(--text)}#dept-evidence-workspace .dew-lead{font-size:1.1rem;font-weight:600;line-height:1.5}#dept-evidence-workspace .dew-box{background:var(--panel);border:1px solid var(--line);padding:1rem;border-radius:.65rem;margin:.8rem 0}#dept-evidence-workspace .dew-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem}#dept-evidence-workspace .dew-scroll{overflow:auto;max-height:40rem}#dept-evidence-workspace th{position:sticky;top:0;background:var(--panel)}#dept-evidence-workspace .dew-tabs{display:flex;flex-wrap:wrap;gap:.4rem}#dept-evidence-workspace .dew-tabs button[aria-pressed=true]{background:#005b64;color:white}#dept-evidence-workspace .dew-bar{display:block;height:.5rem;background:var(--accent);border-radius:.25rem;margin:.2rem 0}#dept-evidence-workspace .dew-small{font-size:.9rem;color:var(--muted)}#dept-evidence-workspace .dew-actions label{display:flex;align-items:flex-start;gap:.5rem}#dept-evidence-workspace .dew-actions input[type=checkbox]{width:auto;margin-top:.4rem}#dept-evidence-workspace textarea{width:100%;min-height:6rem}#dept-evidence-workspace .dew-sticky{scroll-margin-top:1rem}#dept-evidence-workspace caption{text-align:left;font-weight:650;padding:.4rem 0}#dept-evidence-workspace .dew-findings{border-left:4px solid var(--accent)}#dept-evidence-workspace .dew-findings li{margin:.35rem 0}#dept-evidence-workspace .dew-tabs button{font:inherit;padding:.45rem .7rem;border:1px solid var(--line);border-radius:.35rem;background:var(--panel);color:var(--text);cursor:pointer}#dept-evidence-workspace select{max-width:100%}#dept-evidence-workspace .dew-big{font-size:1.6rem;font-weight:700;margin:.4rem 0}#dept-evidence-workspace #dew-reduction{display:block;width:8rem;min-height:44px;font:inherit;padding:.4rem;margin:.25rem 0 .5rem}#dept-evidence-workspace .dew-questions li{margin:.45rem 0}#dept-evidence-workspace details>summary{cursor:pointer;font-weight:650}";
  document.head.append(css);
  let dir, org = "",
   peer = "",
@@ -606,6 +608,70 @@
    )) + '</p>' + renderBars(rows.map(r => [r[0] + SEP + r[1], r[3]]), 0, 1, L("Show representation as bars",
    "Afficher la représentation en barres")) + table(headers, rows, L("Representation and workforce availability by year", "Représentation et disponibilité par année")) + sourceNote(SRC.rep, L("TBS representation and workforce availability by department",
    "SCT, représentation et disponibilité par ministère")) + sourceNote(SRC.women, L("Women by organization (2025)", "Femmes selon l’organisme (2025)")) : missing()
+ }
+
+ /* Change over time: the same published survey question, all respondents, 2019 to 2024. */
+ function trendView(d, o) {
+  const orgData = match(d?.organizations, o),
+   ps = d?.organizations?.["Public Service"];
+  if (!d || !orgData) return '<p class="notice">' + e(L("This organization has no published survey results for earlier years in the 2024 survey file. Small organizations are combined in earlier years. Missing or suppressed data are not zero.",
+   "Cet organisme n’a pas de résultats publiés pour les années antérieures dans le fichier du sondage de 2024. Les petits organismes sont regroupés pour les années antérieures. Les données manquantes ou supprimées ne valent pas zéro.")) + '</p>';
+  const years = d.years, last = years[years.length - 1], LIMIT = 5, FEW = 100;
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+  const rows = [];
+  for (const q of Object.keys(d.questions)) {
+   const yy = orgData[q] || {},
+    first = years.find(y => yy[y]?.[0] !== null && yy[y]?.[0] !== undefined),
+    v1 = first ? yy[first][0] : null,
+    v2 = yy[last]?.[0] ?? null;
+   if (!first || first === last || v1 === null || v2 === null || !QTEXT[q]) continue;
+   const dirn = d.direction[q], change = v2 - v1,
+    state = dirn === 0 ? "none" : Math.abs(change) < LIMIT ? "same" : change * dirn > 0 ? "better" : "worse",
+    gapPs = ps?.[q]?.[last]?.[0] ?? null;
+   rows.push({
+    q, first, v1, v2, change, state, n: yy[last]?.[1] ?? null, yy,
+    gap: gapPs === null ? null : v2 - gapPs
+   });
+  }
+  if (!rows.length) return missing();
+  const order = {
+    worse: 0,
+    same: 1,
+    better: 2,
+    none: 3
+   },
+   label = {
+    worse: L("Less favourable", "Moins favorable"),
+    same: L("About the same", "À peu près pareil"),
+    better: L("More favourable", "Plus favorable"),
+    none: L("No better or worse reading", "Pas de lecture meilleure ou pire")
+   };
+  rows.sort((a, b) => order[a.state] - order[b.state] || (a.state === "worse" || a.state === "better" ? Math.abs(b.change) - Math.abs(a.change) : 0));
+  const count = k => rows.filter(r => r.state === k).length,
+   judged = rows.filter(r => r.state !== "none").length,
+   worst = rows.find(r => r.state === "worse");
+  rows.forEach(r => addEvidence("PSES" + SEP + L("change", "évolution"), r.first + "–" + last, r.q + " " + L(d.questions[r.q].en, d.questions[r.q].fr), L("All respondents", "Tous les répondants"), pct(r.v2), pct(r.v1), pp(r.change), num(r.n), d.source, {
+   kind: "trend",
+   organization: name(o),
+   code: r.q,
+   value: r.v2,
+   reference: r.v1,
+   count: val(r.n),
+   field: d.questions[r.q].field,
+   group: "all"
+  }));
+  const yearsText = years.join(", ");
+  const summary = L(count("worse") + " of " + judged + " questions moved toward less favourable results by " + LIMIT + " points or more between the first year published and " + last + ". " + count("better") + " moved toward more favourable results by " + LIMIT + " points or more. " + count("same") + " changed by less than " + LIMIT + " points." +
+   (worst ? " The largest move toward less favourable results: " + QTEXT[worst.q][0] + " (" + pct(worst.v1) + " in " + worst.first + ", " + pct(worst.v2) + " in " + last + ")." : ""),
+   count("worse") + " questions sur " + judged + " ont évolué vers des résultats moins favorables de " + LIMIT + " points ou plus entre la première année publiée et " + last + ". " + count("better") + " ont évolué vers des résultats plus favorables de " + LIMIT + " points ou plus. " + count("same") + " ont changé de moins de " + LIMIT + " points." +
+   (worst ? " Le recul le plus marqué\u00a0: " + QTEXT[worst.q][1] + " (" + pct(worst.v1) + " en " + worst.first + ", " + pct(worst.v2) + " en " + last + ")." : ""));
+  const headers = [L("Question", "Question"), ...years, L("Change", "Variation"), L("Reading", "Lecture"), L("Gap to the public service in " + last, "Écart avec la fonction publique en " + last), L("Responses in " + last, "Réponses en " + last)];
+  const body = rows.map(r => [cap(L(QTEXT[r.q][0], QTEXT[r.q][1])) + SEP + r.q, ...years.map(y => pct(r.yy[y]?.[0])), pp(r.change), label[r.state] + (r.n !== null && r.n < FEW ? " (" + L("few responses", "peu de réponses") + ")" : ""), r.gap === null ? NA() : pp(r.gap), num(r.n)]);
+  return '<p class="dew-lead">' + e(summary) + '</p><p>' + e(L("Questions are listed with the largest move toward less favourable results first. Use the first rows as the places to ask questions.", "Les questions sont classées en commençant par le recul le plus marqué. Les premières lignes indiquent où poser des questions.")) + '</p>' +
+   table(headers, body, L("Share of respondents, all respondents, by survey year", "Part des répondants, tous les répondants, par année de sondage")) +
+   '<p class="dew-small">' + e(L("How to read this. Each year is a separate survey with different respondents, so a change shows where to look. It does not show why. For questions about harassment, discrimination, career harm, racism harm and stress, a higher share is less favourable. The " + LIMIT + "-point line is a reading aid used on this page. It is not a statistical test. Results with fewer than " + FEW + " responses are marked. Years published in the file: " + yearsText + ".",
+    "Comment lire. Chaque année est un sondage distinct auprès de répondants différents; une variation indique où regarder, non pourquoi. Pour les questions sur le harcèlement, la discrimination, le tort à la carrière, le tort causé par le racisme et le stress, une part plus élevée est moins favorable. Le seuil de " + LIMIT + " points est une aide à la lecture utilisée sur cette page, non un test statistique. Les résultats comptant moins de " + FEW + " réponses sont signalés. Années publiées dans le fichier\u00a0: " + yearsText + ".")) + '</p>' +
+   sourceNote(d.source, L("2024 Public Service Employee Survey open dataset (includes 2019, 2020 and 2022)", "Ensemble de données ouvertes du sondage auprès des fonctionnaires fédéraux de 2024 (comprend 2019, 2020 et 2022)")) + sourceNote(SRC.trend, L("Trend data used on this page", "Données d’évolution utilisées sur cette page"))
  }
 
  function survey(index, p1, p2, o, p) {
@@ -1288,6 +1354,24 @@
     }))
    })
   }
+  const trend = mine.filter(([m]) => m.kind === "trend" && m.value !== null && m.reference !== null && direction(m.code) && QTEXT[m.code]);
+  if (trend.length) {
+   const worse = trend.map(([m, r]) => [m, r, direction(m.code) === "up" ? m.value - m.reference : m.reference - m.value]).filter(x => x[2] >= 5).sort((a, b) => b[2] - a[2]).slice(0, 4);
+   out.push({
+    title: L("Have survey results changed since the first year published?", "Les résultats du sondage ont-ils changé depuis la première année publiée?"),
+    items: worse.length ? worse.map(([m, r, d]) => {
+     const y0 = r[1].split("–")[0], y1 = r[1].split("–")[1];
+     return {
+      text: L(pct(m.reference) + " in " + y0 + " and " + pct(m.value) + " in " + y1 + " " + QTEXT[m.code][0] + " (" + num(d) + " " + ptWord(d) + " less favourable; question " + m.code.slice(1) + ").",
+       pct(m.reference) + " en " + y0 + " et " + pct(m.value) + " en " + y1 + " " + QTEXT[m.code][1] + " (écart défavorable de " + num(d) + " " + ptWord(d) + "; question " + m.code.slice(1) + ")."),
+      source: r[8]
+     }
+    }) : [{
+     text: L("No question moved toward less favourable results by 5 points or more. See the change over time topic for every question.", "Aucune question n’a évolué vers des résultats moins favorables de 5 points ou plus. Voir le sujet Évolution dans le temps pour toutes les questions."),
+     source: trend[0][1][8]
+    }]
+   })
+  }
   const hc = mine.find(([m]) => m.kind === "headcount");
   if (hc) {
    const [m, r] = hc,
@@ -1557,10 +1641,11 @@
    needEx = ["all", "career", "rep"].includes(lens),
    needPop = ["all", "overview", "workforce", "regions", "austerity"].includes(lens),
    needTenure = ["all", "workforce", "austerity"].includes(lens),
-   needProvince = ["all", "regions"].includes(lens);
+   needProvince = ["all", "regions"].includes(lens),
+   needTrend = lens === "trend" || ov;
   sourceRequests = [...(needRep ? ["rep", "women"] : needRepData ? ["rep"] : []), ...(needSurvey ? ["pses"] : []), ...(needStaff ? ["snps"] : []), ...(needCta ? ["cta"] : []), ...(
    needInventory ? ["pubs", "psc", "cat", "added"] : []), ...(needHiring ? ["hiring"] : []), ...(needEx ? ["ex"] : []), ...(["language", "all"].includes(
-   lens) ? ["firstLanguage"] : []), ...(needPop ? ["pop"] : []), ...(needTenure ? ["tenure"] : []), ...(needProvince ? ["province"] : [])];
+   lens) ? ["firstLanguage"] : []), ...(needPop ? ["pop"] : []), ...(needTenure ? ["tenure"] : []), ...(needProvince ? ["province"] : []), ...(needTrend ? ["trend"] : [])];
   const [rep, w, index, snps, cta, pubs, psc, cat, added, hi, ex, fol, pop, ten, prov] = await Promise.all([needRepData ? guard("rep") : null, needRep ? guard(
     "women") : null, needSurvey ? guard("pses") : null, needStaff ? guard("snps") : null, needCta ? guard("cta") : null, needInventory ? guard("pubs") : null,
    needInventory ? guard("psc") : null, needInventory ? guard("cat") : null, needInventory ? guard("added") : null, needHiring ? guard("hiring") : null,
@@ -1568,6 +1653,7 @@
     "data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv"
     ) : null, needPop ? guard("pop") : null, needTenure ? guard("tenure") : null, needProvince ? guard("province") : null
   ]);
+  const trendD = needTrend ? await guard("trend") : null;
   const [p1, p2] = index ? await Promise.all([getProfile(index, o), p ? getProfile(index, p) : null]) : [null, null];
   if (key !== ticket) return;
   if (needSurvey && index) sourceStatus.profile = p1 ? "ok" : "unavailable";
@@ -1591,6 +1677,8 @@
      ], pg) : "")
   }
   let out = "";
+  if (lens === "trend") out += sec(t(lenses.trend), trendView(trendD, o));
+  else if (ov && trendD) trendView(trendD, o);
   if (needRep) out += sec(t(lenses.rep), repr(rep, w ? csv(w) : [], o, p));
   if (needSurvey) out += sec(L("2024 Public Service Employee Survey: selected questions", "Sondage auprès des fonctionnaires fédéraux de 2024\u00a0: questions choisies"), survey(
    index, p1, p2, o, p));
