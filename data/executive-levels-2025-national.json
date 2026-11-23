@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asOf": "2025-03-31",
+  "population": "Core public administration executives, EX plus LC, as defined in the source; not department-specific",
+  "population_fr": "Cadres de l’administration publique centrale, EX et LC, selon la source; données non ventilées par ministère",
+  "source": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-executive-employees.html",
+  "fields": [
+    "executive_total",
+    "women_count",
+    "women_pct",
+    "indigenous_count",
+    "indigenous_pct",
+    "disability_count",
+    "disability_pct",
+    "visible_minority_count",
+    "visible_minority_pct"
+  ],
+  "rows": [
+    {
+      "level": "EX-01",
+      "values": [
+        3992,
+        2346,
+        58.8,
+        243,
+        6.1,
+        452,
+        11.3,
+        724,
+        18.1
+      ]
+    },
+    {
+      "level": "EX-02",
+      "values": [
+        2093,
+        1100,
+        52.6,
+        106,
+        5.1,
+        220,
+        10.5,
+        362,
+        17.3
+      ]
+    },
+    {
+      "level": "EX-03",
+      "values": [
+        1413,
+        751,
+        53.1,
+        73,
+        5.2,
+        146,
+        10.3,
+        214,
+        15.1
+      ]
+    },
+    {
+      "level": "EX-04",
+      "values": [
+        286,
+        162,
+        56.6,
+        15,
+        5.2,
+        23,
+        8,
+        48,
+        16.8
+      ]
+    },
+    {
+      "level": "EX-05",
+      "values": [
+        142,
+        73,
+        51.4,
+        8,
+        5.6,
+        21,
+        14.8,
+        23,
+        16.2
+      ]
+    },
+    {
+      "level": "EX and LC total",
+      "values": [
+        7926,
+        4432,
+        55.9,
+        445,
+        5.6,
+        862,
+        10.9,
+        1371,
+        17.3
+      ]
+    }
+  ],
+  "overallExecutiveAvailability": {
+    "women": 41.8,
+    "indigenous": 3.9,
+    "disability": 5.3,
+    "visibleMinorities": 15.6
+  },
+  "warnings": [
+    "Groups overlap; shares do not sum to 100%.",
+    "No EX-level WFA is published; these availability estimates apply to executives overall only.",
+    "LC is included in the executive total, but not distributed separately in the EX-01 to EX-05 rows.",
+    "Do not interpret these public-service values as departmental equity-group representation."
+  ]
+}
