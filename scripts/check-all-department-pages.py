@@ -14,6 +14,7 @@ R=Path(__file__).resolve().parents[1]
 J=lambda p:json.loads((R/p).read_text())
 N=lambda x:re.sub('[^a-z0-9]','',unicodedata.normalize('NFD',str(x)).encode('ascii','ignore').decode().lower())
 registry=J('assets/department-pages.json');cross=J('data/department-identity-crosswalk.json')
+redirects=J('data/department-duplicate-routes.json')['routes']
 profiles=J('assets/department-profile-index.json');series=J('data/tbs-departmental-representation-2017-2025.json')['orgs'];staffing=J('data/snps-2025-by-organization.json')['orgs'];women=J('data/tbs-women-departmental-2025.json')['orgs']
 template=[s['id'] for s in J('data/department-page-template.json')['sections']]
 
@@ -53,6 +54,14 @@ for label in registry['selectorLabels']:
 cellcount=0;generated=0;seen={}
 for o in registry['organizations']:
  p=R/o['path']/'index.html';assert p.is_file(),o['path'];text=p.read_text()
+ if o['id'] in redirects:
+  target=redirects[o['id']]
+  canonical='https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/'+target+'/'
+  assert target!=o['id'] and (R/target/'index.html').is_file(),(o['id'],'missing canonical route')
+  assert '<link rel="canonical" href="'+canonical+'">' in text,(o['id'],'canonical link missing')
+  assert 'location.search+location.hash' in text and 'location.replace(' in text,(o['id'],'redirect loses filters')
+  assert 'dp-data' not in text,(o['id'],'duplicate profile still live')
+  continue
  assert '<loc>https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/'+o['path']+'</loc>' in (R/'sitemap.xml').read_text(),o['path']
  if o['specialized']:continue
  generated+=1;page=Page();page.feed(text)
