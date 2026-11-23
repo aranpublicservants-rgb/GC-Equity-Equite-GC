@@ -45,6 +45,7 @@ for p in sorted(BASE.rglob('*')):
 
 # 1. Tables with one row per published record -------------------------------
 tables, orgs = [], {}
+held_back = []
 POP = BASE / 'tbs-fps-population-2010-2026'
 PREFIX = 'population-of-the-federal-public-service-'
 for en in sorted(POP.glob('*-en.csv')):
@@ -56,8 +57,10 @@ for en in sorted(POP.glob('*-en.csv')):
         errors.append('English and French files differ in shape: ' + en.name); continue
     # A table is indexed only when both language files hold the same year and value on
     # every row. Where they differ, one file can show a count the other suppresses.
-    if any(a[0] != b[0] or a[-1] != b[-1] for a, b in zip(re_, rf)):
-        errors.append('English and French rows differ, table not indexed: ' + en.name); continue
+    # The French file is sorted by French names, so rows are compared as sets of (year, value) pairs.
+    if sorted((a[0], a[-1]) for a in re_) != sorted((b[0], b[-1]) for b in rf):
+        held_back.append({'files': [rel(en), rel(fr)], 'reason': 'The English and French files publish different values or suppression for some cells, so the table is stored unchanged and not indexed.'})
+        print('NOTE: held back, English and French differ: ' + en.name); continue
     tid = en.name[len(PREFIX):-7] or 'total'
     drop = {he[0], he[-1], 'Universe'}
     dims_en = [h for h in he if h not in drop]
@@ -200,14 +203,20 @@ for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
                      **({'note': NOTES[folder]} if folder in NOTES else {})})
 
 listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / 'README.json')} | {f['path'] for p in packages for f in p['files']} | {rel(q) for q in BASE.glob('*/large-files.json')}
+# Folders that carry their own manifest.json (split parts, supporting documents) are described there.
+manifest_dirs = {str(Path(f['path']).parent) for f in files if f['path'].endswith('/manifest.json')}
 for f in files:
+    if str(Path(f['path']).parent) in manifest_dirs:
+        continue
+    if any(f['path'] in h['files'] for h in held_back):
+        continue
     if f['path'] not in listed:
         errors.append('File is stored but not indexed: ' + f['path'])
 
 out = {
     'version': '2026-11-14',
     'note': 'Files downloaded from open.canada.ca and stored unchanged. Row counts count published rows; no value is recalculated.',
-    'tables': tables, 'employers': employers, 'packages': packages, 'organizations': orgs, 'files': files,
+    'heldBack': held_back, 'tables': tables, 'employers': employers, 'packages': packages, 'organizations': orgs, 'files': files,
 }
 # Keep data/checksums.sha256 in step with this folder.
 sums = ROOT / 'data/checksums.sha256'
