@@ -97,7 +97,7 @@ var list=[
 ];
 var labels={all:['All purposes','Tous les objectifs'],evidence:['Find and compare evidence','Rechercher et comparer des données'],action:['Change a process or decision','Changer un processus ou une décision'],support:['Rights, support and learning','Droits, soutien et apprentissage'],none:['No input needed','Aucun renseignement'],choose:['Just select an option','Choisir une option'],write:['Enter your own information','Saisir vos renseignements'],data:['Published evidence','Données publiées'],scenario:['Published data + hypothetical scenario','Données publiées et scénario hypothétique'],mixed:['Evidence + optional notes','Données et notes facultatives'],guide:['Guidance or navigation','Guide ou orientation'],worksheet:['User-entered worksheet','Fiche remplie par l’utilisateur']};
 function label(k){return (labels[k]||[k,k])[fr?1:0];}
-function link(u){if(fr&&u.slice(0,2)==='../'){return u+(u.indexOf('?')===-1?'?':'&')+'lang=fr';}if(fr&&u.indexOf(base)===0){return u+(u.indexOf('?')===-1?'?':'&')+'lang=fr';}return u;}
+function link(u){if(!fr)return u;try{var parsed=new URL(u,location.href);if(parsed.origin===location.origin||u.indexOf(base)===0){parsed.searchParams.set('lang','fr');return parsed.href;}}catch(e){}return u;}
 var home=document.getElementById('home');home.href=link('../');
 document.getElementById('lang-switch').textContent=fr?'English':'Français';
 document.getElementById('lang-switch').addEventListener('click',function(){location.search='?lang='+(fr?'en':'fr');});
