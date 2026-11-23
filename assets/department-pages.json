@@ -7435,5 +7435,18 @@
     "plans": 90,
     "noReadingFigures": 151
   },
-  "method": "All organizations in the existing selector have a dedicated bilingual route. Source-specific labels and combined populations are preserved. Missing sources are described in Evidence gaps."
+  "method": "All organizations in the existing selector have a dedicated bilingual route. Source-specific labels and combined populations are preserved. Missing sources are described in Evidence gaps.",
+  "redirects": {
+    "correctional-investigator-canada-the": "office-of-the-correctional-investigator",
+    "correctional-investigator-office-of-the": "office-of-the-correctional-investigator",
+    "commissioner-of-lobbying-of-canada-office-of-the": "office-of-the-commissioner-of-lobbying-of-canada",
+    "civilian-review-and-complaints-commission-for-the-rcmp-royal-canadian-mounted-police": "civilian-review-and-complaints-commission-for-the-rcmp",
+    "commissioner-for-federal-judicial-affairs-canada-office-of-the": "office-of-the-commissioner-for-federal-judicial-affairs-canada",
+    "commissioner-of-official-languages-office-of-the": "office-of-the-commissioner-of-official-languages",
+    "public-sector-integrity-commissioner-of-canada-office-of-the": "office-of-the-public-sector-integrity-commissioner-of-canada",
+    "superintendent-of-financial-institutions-canada-office-of-the": "office-of-the-superintendent-of-financial-institutions-canada",
+    "intelligence-commissioner-office-of-the": "office-of-the-intelligence-commissioner",
+    "procurement-ombud-office-of-the": "office-of-the-procurement-ombudsman",
+    "national-battlefields-commission": "the-national-battlefields-commission"
+  }
 }
