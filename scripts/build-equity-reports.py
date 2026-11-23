@@ -49,6 +49,8 @@ for d in catalog['datasets']:
     for f in d['links']:
         assert (R/f['path'].split('#')[0]).exists()
         title={'en':'English','fr':'Français','both':'English and French / Anglais et français'}[f['lang']]+' ('+f['format']+')'
+        if f['path'].startswith('data/employer-equity-sources-2026-11/'):
+            title += ': ' + f['path'].rsplit('/', 1)[-1]
         body+='<li><a href="'+E(f['path'])+'">'+E(title)+'</a></li>'
     body+='</ul></article>'
 body+='</section><section>'+label('h2','Source copies and methods','Copies des sources et méthodes')+label('p','Hosted copies preserve the supplied files. The NRC 2023-2024 PDF’s archive origin is recorded beside its download. Use each report’s tables and methodology for its detailed breakdowns.','Les copies hébergées conservent les fichiers fournis. L’origine d’archive du PDF du CNRC de 2023-2024 est indiquée à côté du téléchargement. Consultez les tableaux et la méthode de chaque rapport pour ses ventilations détaillées.')+'<p>'+label('a','Download the file register with source URLs and SHA-256 checksums (CSV)','Télécharger le registre des fichiers avec leurs URL sources et sommes SHA-256 (CSV)','href="data/ee-reports/manifest.csv" download')+' · '+label('a','Sources and methods','Sources et méthodes','href="sources.html"')+'</p></section></main></body></html>\n'
