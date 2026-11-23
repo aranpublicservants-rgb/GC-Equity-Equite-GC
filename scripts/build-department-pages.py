@@ -29,6 +29,7 @@ def read_csv(path):
  return list(csv.DictReader(io.StringIO(text)))
 
 cross=J('data/department-identity-crosswalk.json')
+redirects=J('data/department-duplicate-routes.json')['routes']
 model=J('assets/workspace-data.json')
 series=J('data/tbs-departmental-representation-2017-2025.json')
 pses=J('assets/department-profile-index.json')
@@ -299,6 +300,14 @@ for rec in cross['organizations']:
  for k,flag in [('representation',bool(d['representation'])),('surveys',bool(d['overall'])),('staffing',bool(d['staffing'])),('plans',bool(d['plan'])),('noReadingFigures',not(d['overall'] or d['representation']))]:counts[k]+=int(flag)
  if name in special:continue
  folder=R/slug;folder.mkdir(exist_ok=True)
+ if slug in redirects:
+  target=redirects[slug]
+  assert target!=slug and (R/target/'index.html').is_file(),('invalid duplicate target',slug,target)
+  destination='../'+target+'/'
+  canonical='https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/'+target+'/'
+  moved='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>'+E(name)+'</title><link rel="canonical" href="'+E(canonical)+'"><meta http-equiv="refresh" content="0;url='+E(destination)+'"></head><body><main><h1>Department page moved / Page de l’organisme déplacée</h1><p>'+link(destination,'View the consolidated organization profile / Voir le profil consolidé de l’organisme')+'</p></main><script>location.replace(new URL('+json.dumps(destination)+'+location.search+location.hash,location.href));</script></body></html>\\n'
+  (folder/'index.html').write_text(moved)
+  continue
  h=header.replace('Equity at DFO | Équité au MPO',E('Equity at '+name+' | GC Equity')).replace('Independent bilingual DFO equity evidence: representation, staffing, employee surveys, accommodation, commitments, results and downloadable source data.',E('Published equity evidence for '+name+': workforce, employee experiences, staffing and source records.'))
  body=h+'<main id="main" tabindex="-1">'
  for l in ['en','fr']:
@@ -316,8 +325,11 @@ registry={'schema':1,'generated':'2026-11-19','selectorLabels':cross.get('select
 (R/'assets/department-pages.json').write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')
 sitemap=R/'sitemap.xml';text=sitemap.read_text()
 for entry in registry['organizations']:
+ if entry['id'] in redirects:continue
  url='https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/'+entry['path']
  if '<loc>'+url+'</loc>' not in text:text=text.replace('</urlset>','<url><loc>'+url+'</loc></url>\n</urlset>')
+for oldslug in redirects:
+ text=text.replace('<url><loc>https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/'+oldslug+'/</loc></url>\\n','')
 for alias in cross.get('identityAliases',[]):
  oldslug=re.sub('[^a-z0-9]+','-',unicodedata.normalize('NFKD',alias['alias']).encode('ascii','ignore').decode().lower()).strip('-')[:100]
  target=next(x for x in registry['organizations'] if x['en']==alias['canonical'])['path']
