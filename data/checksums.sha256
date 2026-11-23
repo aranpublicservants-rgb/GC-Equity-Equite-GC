@@ -258,13 +258,6 @@ e9ca1e6cdfc46671ce91cc0f9b774374dd748d7b67df57dc20f271971a21b0ca  data/open-cana
 b5c021eba994ef1d6cf90a7a2c3f03c95ed0a48259692401683dca2007f56296  data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv
 e3ad5c5634fc11b07e02b8770e1a2a06666c6a9424cd1560b3239f31d47e1acf  data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv
 54c7261f24b96dcd700f8680d72fd8eef3121f30385995add8c058e1ecfff2df  data/open-canada-2026-11/tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx
-ebc7f65a4a7ef776cdb97d66ed5c28f3f12f91f06d345d1c103cbc181e0f9a9c  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/README.json
-4f966af72a500bd9ccf3240ead196cd061383efe5e94de5d5c27a3a664614654  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv
-004b61676479810ed25c9a9c2a1c7041e2ba1145118c36dea8b1db2cf682e774  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-fr.csv
-380a00ec01ae5f4cff2cb6212c0551326eecbb2b00921d3757ce647dc8345304  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv
-4221b67be044c0d55fd611f501f9e1eab7cb35c755a03fee8d360d326d354ff9  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-fr.csv
-44f2661bfb14708e180feb88b7174d13c1780bee29e021ad9c2ed263f76c74fe  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv
-14bc71a0563f9df7a8fe790e45b619ed7d0367ecdbc011c08680e026af2d0a74  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-fr.csv
 598a34d4582f18fa92b609db3f5864f9fad153bbbb8f43dd494a8bff0d09992f  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv
 c4dd99103394e44fbe68b1ab1af12f10e43784875d7efa66444a42bb8b868eb6  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv
 9c713eeaeb3250221fce7140bc1ba6c993b95fb1ad0bab72748aea206bdad2ef  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv
@@ -287,6 +280,13 @@ b013b3c9225a5f37c26ce28a16e4def45f27fd26cc96cbae13bb688197f2b441  data/open-cana
 e0b3fe1c54bbaad02d5582b41698dcd55c3c4b44511385a24b40be87daa82b9a  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-march-2026-fr.csv
 cb214be36edba8d65d09740968f2ba5886336a6c39be68ad881fab22ee1cf4d9  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv
 9890db9453f7ba071700c9137c756394141cbbefc7544f1ead7107b82fca3f00  data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv
+ebc7f65a4a7ef776cdb97d66ed5c28f3f12f91f06d345d1c103cbc181e0f9a9c  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/README.json
+4f966af72a500bd9ccf3240ead196cd061383efe5e94de5d5c27a3a664614654  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv
+004b61676479810ed25c9a9c2a1c7041e2ba1145118c36dea8b1db2cf682e774  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-fr.csv
+380a00ec01ae5f4cff2cb6212c0551326eecbb2b00921d3757ce647dc8345304  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv
+4221b67be044c0d55fd611f501f9e1eab7cb35c755a03fee8d360d326d354ff9  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-fr.csv
+44f2661bfb14708e180feb88b7174d13c1780bee29e021ad9c2ed263f76c74fe  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv
+14bc71a0563f9df7a8fe790e45b619ed7d0367ecdbc011c08680e026af2d0a74  data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-sex-march-2026-fr.csv
 32358ae80152c1558027ddb61312b9b0ccdcfd73d31fae06ec4cc936f9073fe7  data/psc/CFPPSC_AR1CC.csv
 871aff9aa75472194a0716c8b5b835e98c66275a0322672a293ed7b25fe76d96  data/psc/CFPPSC_AR1D.csv
 9747933ccdac3187dad1bdc021b0828cac2e06020b31e18c3883b21818641f88  data/psc/CFPPSC_AR1E.csv
