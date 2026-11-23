@@ -34,7 +34,7 @@ class Page(HTMLParser):
         if tag=='script' and self.in_script:
             self.scripts.append(''.join(self.script));self.in_script=False
 
-for name in ['index.html','equity.html','branch-equity.html','explorer.html','sources.html','reports.html','source-access.html','call-to-action.html','staffing.html','departmental-plans-2026-27/index.html','women-femmes/index.html']:
+for name in ['index.html','equity.html','branch-equity.html','explorer.html','sources.html','reports.html','source-access.html','fswep-browser.html','call-to-action.html','staffing.html','departmental-plans-2026-27/index.html','women-femmes/index.html']:
     p=ROOT/name;html=p.read_text();page=Page();page.feed(html)
     assert len(page.ids)==len(set(page.ids)),f'duplicate static IDs: {name}'
     assert 'gc-workspace.js' in html and 'gc-workspace.css' in html,f'shared tools missing: {name}'
@@ -59,7 +59,7 @@ assert 'href="#department-data"' in home_html and 'href="#equity-data"' in home_
 assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
 assert home_html.count('systemic-change/')==1, 'the home page keeps one link to the systemic change tools'
 
-for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-added-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
+for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-added-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','assets/fswep-browser.js','call-to-action.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
 for line in (ROOT/'data/checksums.sha256').read_text().splitlines():
     if line.strip():
