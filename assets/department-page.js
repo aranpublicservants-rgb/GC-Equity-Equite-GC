@@ -87,3 +87,6 @@ tableExports();setLanguage(lang,false);anchor();
 
 /* Shared deep evidence across department pages; loaded only once. */
 (()=>{if(document.querySelector('script[data-gce-depth]'))return;const here=document.currentScript;const base=here?.src?new URL('.',here.src):new URL('../assets/',location.href);const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('department-depth.css?v=20261122-1',base).href;document.head.append(css);const s=document.createElement('script');s.src=new URL('department-depth.js?v=20261122-1',base).href;s.dataset.gceDepth='true';s.defer=true;document.head.append(s)})();
+
+/* The generated page template keeps full evidence areas visible when no source is matched. */
+(()=>{if(document.querySelector('script[data-gce-coverage]'))return;const here=document.currentScript;const base=here?.src?new URL('.',here.src):new URL('../assets/',location.href);const el=document.createElement('script');el.src=new URL('department-completeness.js?v=20261122-2',base).href;el.dataset.gceCoverage='true';el.defer=true;document.head.append(el)})();
