@@ -1,5 +1,13 @@
 # Maintaining GC Equity / Équité-GC
 
+## Fifty-point evidence quality review, November 22, 2026
+
+`evidence-review.html` and `assets/evidence-review.js` render `data/evidence-review-50.json`: exactly 50 bilingual checks in five groups (source/scope, workforce/representation, employee surveys, staffing/career movement, and commitments/outcomes/recourse). Each check has English and French question and action text plus a relative link to an already published evidence area. These are *questions for readers*, not grades, automated findings, source replacements or an assertion that any employer has passed or failed.
+
+The tool can search text, filter the five groups and review states, record short notes, display review progress, copy a plain-text summary, print, and export a spreadsheet-safe CSV. Review statuses and notes are ephemeral in page memory and are **not** saved to localStorage, sent to a server or used for analytics. The page clearly warns visitors not to enter personal or case information. Display language follows the site or `?lang=fr`. It supports high contrast, dark mode, keyboard focus, narrow screens, reduced motion and printable review cards. A static source-inventory fallback is available if JavaScript is disabled. The site header and homepage source guide link to it.
+
+The dashboard CSV exports now prefix potentially executable spreadsheet formulas with a text marker (while leaving regular negative numeric data unchanged). The existing full-source data library already has a similar export guard. Regression tests check the 50 entries, bilingual completeness, links and export safety; they do not constitute independent source verification or formal accessibility certification. Run `node --test tests/evidence-review.test.cjs`, `node --check assets/evidence-review.js` and `python scripts/check-site.py`.
+
 ## Career development resource
 
 `career-development/` is a standalone bilingual career page, linked from the hiring and careers area of the shared resource directory. It covers learning plans, classifications, mobility, applications, official languages, mentoring, conversation drafts and personal planning. Its 26 source records contain English and French publisher URLs checked on November 20, 2026. Source links next to the guidance identify its basis. The page is an independent ARAN resource, with no official accessibility certification claim.
