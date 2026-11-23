@@ -452,7 +452,7 @@ function branchCsv(rows,meta,dept){
  const cols=[L('Branch or second-level unit','Direction ou unité de deuxième niveau'),L('Respondent group','Groupe de répondants'),L('Survey question','Question du sondage'),...meta.schema.map(x=>x)];
  const lines=[cols];
  rows.forEach(r=>{const a=branchRow(r,meta,dept);lines.push([a.branch,a.group,a.question,...a.values.map(branchValue)]);});
- const quoted=v=>'"'+String(v===null?'':v).replace(/"/g,'""')+'"';
+ const quoted=v=>{let x=String(v===null?'':v);if(/^\s*[=+@]/.test(x)||/^\s*-(?!\d+(?:[.,]\d+)?\s*$)/.test(x))x="'"+x;return '"'+x.replace(/"/g,'""')+'"';};
  const blob=new Blob(['\ufeff'+lines.map(row=>row.map(quoted).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'});
  const href=URL.createObjectURL(blob),el=document.createElement('a');
  el.href=href;el.download='GC-Equity-2024-branch-results.csv';document.body.append(el);el.click();el.remove();setTimeout(()=>URL.revokeObjectURL(href),3000);
@@ -929,7 +929,7 @@ function updateStatic(){
 }
 function downloadTable(btn){
  const entry=tableStore.get(btn.dataset.table);if(!entry)return;
- const clean=s=>String(s??'').replace(/\s+/g,' ').trim(),quote=s=>'"'+clean(s).replace(/"/g,'""')+'"';
+ const clean=s=>String(s??'').replace(/\s+/g,' ').trim(),quote=v=>{let x=clean(v);if(/^[=+@]/.test(x)||/^-(?!\d+(?:[.,]\d+)?$)/.test(x))x="'"+x;return '"'+x.replace(/"/g,'""')+'"';};
  const lines=[[entry.caption],entry.heads,...entry.rows];
  const csv='\ufeff'+lines.map(row=>row.map(quote).join(',')).join('\r\n');
  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');
