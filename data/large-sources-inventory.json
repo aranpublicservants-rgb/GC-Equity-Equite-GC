@@ -1,0 +1,436 @@
+{
+ "files": [
+  {
+   "folder": "pses-2018",
+   "dataset": "https://open.canada.ca/data/en/dataset/a2f9e2ca-237b-4dda-ba19-d52c84844b54",
+   "title": {
+    "fr": "Sous-ensemble 2 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2018 - avec étiquettes ",
+    "en": "Subset 2 - 2018 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2.csv",
+   "bytes": 535804010,
+   "lines": 1022932,
+   "sha256": "cf462953ffe53de9065fed6931a979e664e09712e4c1c9cb2921888d2e2488c7"
+  },
+  {
+   "folder": "pses-2018",
+   "dataset": "https://open.canada.ca/data/en/dataset/a2f9e2ca-237b-4dda-ba19-d52c84844b54",
+   "title": {
+    "fr": "Sous-ensemble 3 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2018 - avec étiquettes ",
+    "en": "Subset 3 - 2018 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-3_Sous-ensemble-3.csv",
+   "bytes": 853838440,
+   "lines": 1813873,
+   "sha256": "1ce96abb30cfc866ddcfe74d7544c5f81615bae78cae9062fe8056072b8679a4"
+  },
+  {
+   "folder": "pses-2018",
+   "dataset": "https://open.canada.ca/data/en/dataset/a2f9e2ca-237b-4dda-ba19-d52c84844b54",
+   "title": {
+    "fr": "Sous-ensemble 4 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2018 - avec étiquettes ",
+    "en": "Subset 4 - 2018 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-4_Sous-ensemble-4.csv",
+   "bytes": 324920251,
+   "lines": 638344,
+   "sha256": "212ef80a03832f2b663a94e3635b8bea3d8c5caf8de2c3a513f9abb8732dce25"
+  },
+  {
+   "folder": "pses-2019",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "title": {
+    "fr": "Sous-ensemble 2 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2019 - avec étiquettes",
+    "en": "Subset 2 - 2019 Public Service Employee Survey open dataset - with labels "
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_2.csv",
+   "bytes": 1052012444,
+   "lines": 1888192,
+   "sha256": "f6455457c5d7dbabadf1c6e3495e1d38237c363cb3dbd81f6c7be0373b503fed"
+  },
+  {
+   "folder": "pses-2019",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "title": {
+    "fr": "Sous-ensemble 3 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2019 - avec étiquettes ",
+    "en": "Subset 3 - 2019 Public Service Employee Survey open dataset - with labels "
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+   "bytes": 1541113365,
+   "lines": 3177826,
+   "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c"
+  },
+  {
+   "folder": "pses-2019",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "title": {
+    "fr": "Sous-ensemble 4 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2019 - avec étiquettes",
+    "en": "Subset 4 - 2019 Public Service Employee Survey open dataset - with labels "
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_4.csv",
+   "bytes": 967163672,
+   "lines": 1804845,
+   "sha256": "843191e2e7cc6c0ea5dd70bd722fc712d77fc22c2eabc92ddb61580ae5997707"
+  },
+  {
+   "folder": "pses-2019",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "title": {
+    "fr": "Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2019",
+    "en": "2019 Public Service Employee Survey open dataset"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019%20Public%20Service%20Employee%20Survey%20open%20dataset_Ensemble%20de%20donn%C3%83%C2%A9es%20ouvertes%20du%20Sondage%20aupr%C3%83%C2%A8s%20des%20fonctionnaires%20f%C3%83%C2%A9d%C3%83%C2%A9raux%20de%202019.csv",
+   "bytes": 258988633,
+   "lines": 3270235,
+   "sha256": "8d641819de1369305a5a162ceb3aa5d08261a22b29ccbe219609b6d985593173"
+  },
+  {
+   "folder": "pses-2019",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "title": {
+    "fr": "Sous-ensemble 5 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2019",
+    "en": "Subset 5 - 2019 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+   "bytes": 294706859,
+   "lines": 493689,
+   "sha256": "ac70dab5352b4c6a4f585d6676e4bd0fb0f913c02f553e4abc507e6a9d649701"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Sous-ensemble 2 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 2 - 2020 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/12d848dd-568d-41b6-8a78-09d898541f07/download/subset-2-sous-ensemble-2.csv",
+   "bytes": 389208456,
+   "lines": 703196,
+   "sha256": "0ae40fe2225c13fde537f94a3d3cded88e74f04e4f566a52f12b9c721ff07bf0"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Sous-ensemble 3 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 3 - 2020 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/63f972a8-8bf2-4584-a735-e5d0c07a9eb6/download/subset-3-sous-ensemble-3.csv",
+   "bytes": 874749173,
+   "lines": 1405580,
+   "sha256": "6bcc33c3ad5a736c8643228d366c4bac715321391135aac84ee64392ac62ac35"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Sous-ensemble 4 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 4 - 2020 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+   "bytes": 1885496202,
+   "lines": 3835368,
+   "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Sous-ensemble 5 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 5 - 2020 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/56d0ebe0-4353-493f-889a-b9ab36259751/download/subset-5-sous-ensemble-5.csv",
+   "bytes": 820232802,
+   "lines": 1511451,
+   "sha256": "c4978be846bfd96dc5da5c1cc8cc9ec5bccf8e7cb21267eaa92924d84ec29ade"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Sous-ensemble 6 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 6 - 2020 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/b9363aab-8906-45b3-91b5-c91cae5a9327/download/subset-6-sous-ensemble-6.csv",
+   "bytes": 328431638,
+   "lines": 583629,
+   "sha256": "200e021a3db6d8bb0db60af50da80b6c962fc53cd6288df90f75446f1ac087df"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020",
+    "en": "2020 Public Service Employee Survey open dataset"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/8bf75d4b-a80d-4828-839a-bf8c0b76af51/download/2020-public-service-employee-survey-open-dataset-ensemble-de-donnees-ouvertes-du-sondage-aupres-.csv",
+   "bytes": 296559376,
+   "lines": 3325180,
+   "sha256": "33818de8fb277830c8857e7b7dab89d947a8586fd055bef041766541e485cd2f"
+  },
+  {
+   "folder": "pses-2020",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "title": {
+    "fr": "Sous-ensemble 7 - Ensemble de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2020 - avec étiquettes",
+    "en": "Subset 7 - 2020 Public Service Employee Survey open dataset - with labels"
+   },
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/6e430653-54ee-4e96-8af3-a44c9c2cfea1/download/subset-7-sous-ensemble-7-1.csv",
+   "bytes": 447424342,
+   "lines": 744337,
+   "sha256": "e93b2e540b73ad0738b8ffb070a9179bfe212db4259b681dff5ab860ba5ed587"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Ensemble de données principale du Sondage auprès des fonctionnaires fédéraux de 2022-2023",
+    "en": "Main Dataset 2022/2023 Public Service Employee Survey open dataset"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Main%20Subset%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%20principal%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 802582200,
+   "lines": 11367364,
+   "sha256": "8140a01d56e6f13bfaf21311bd068fe10dbabc135f1719d680eca8b5276e8e5a"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 2 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 2 - 2022_2023 PSES open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%202%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%202%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 522021910,
+   "lines": 960423,
+   "sha256": "ca63b4fa2822e288c5c2883b9afafdc3b37233dcb7933870d8f1d73daec53a1f"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 3 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 3 - 2022_2023 PSES open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%203%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%203%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 912371555,
+   "lines": 1630642,
+   "sha256": "3c136afdcee300acffddc38607228acd247b279ed6e4fa9005ab5854e665fecf"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 4 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 4 - 2022_2023 PSES open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 733980251,
+   "lines": 1472749,
+   "sha256": "695b7e3055251b500df400c1c471b48430de76bebfd7eb3b016765f0be12ba13"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 4 - Ensemble de données historique ouvertes du SAFF de 2022_23",
+    "en": "Subset 4 - 2022_2023 PSES Historical open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 1635997249,
+   "lines": 3496441,
+   "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 5 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 5 - 2022_2023 PSES open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%205%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%205%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 997376725,
+   "lines": 1925828,
+   "sha256": "ea74c7dcc7b9eb41b48766e783852bbbbfd2b26b47704c13caf6b41bbf5dd5e5"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 6 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 6 - 2022_2023 PSES open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%206%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%206%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 534645868,
+   "lines": 954923,
+   "sha256": "7bafae6838ffed3464021d87a01fe728a8ffb152478f977cb03358a6da343bff"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "Sous-ensemble 7 - Ensemble de données ouvertes du SAFF de 2022_23",
+    "en": "Subset 7- 2022_2023 PSES open dataset - with labels"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%207%20-%202022_2023%20PSES%20open%20dataset%20-%20with%20labels_Sous-ensemble%207%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20du%20SAFF%20de%202022_23.csv",
+   "bytes": 532225333,
+   "lines": 880453,
+   "sha256": "b2796cedbfaed6cdd8237a8a698a477dad97a693611fed87c8397efe84c25760"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "SAFF 2022_2023 Ensemble de données variables dérivées sur l'équité en matière d'emploi (Dept 0-35_",
+    "en": "2022_2023 PSES Employment Equity Derived Variable Dataset (Dept 0-35)"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/2022_2023_PSES_EEinfoDV_LEVEL1ID_0_to_35_SAFF_2022_2023_EEinfoDV_LEVELID_0_a_35.csv",
+   "bytes": 515963832,
+   "lines": 890375,
+   "sha256": "bf9b2e7eec60e75cb1211743de659f599895e6e06776095f7bfc41d17c06f596"
+  },
+  {
+   "folder": "pses-2022-2023",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "title": {
+    "fr": "SAFF 2022 Ensemble de données variables dérivées sur l'équité en matière d'emploi (Dept 0, 36 a 95)",
+    "en": "2022 PSES Employment Equity Derived Variable Dataset (Dept 0, 36 to 95)"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/2022_2023_PSES_EEinfoDV_LEVEL1I_0_36_to_95_SAFF_2022_2023__EEinfoDV_LEVEL1I_Dept_0_et_36-95.csv",
+   "bytes": 435061903,
+   "lines": 746140,
+   "sha256": "cec8ecad0ee871b27472faa8d0a70f7d11ecd7a116d8aa51cca266aeee835381"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 2 - 2024 PSES open dataset - with labels",
+    "fr": "Sous-ensemble 2 - Ensemble de données ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-2-sous-ensemble-2.csv",
+   "bytes": 567122256,
+   "lines": 1027432,
+   "sha256": "19dc6606f3e360442a428454b9b82fa0e609ec57299455950863e200a4244431"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 3 - 2024 PSES open dataset - with labels",
+    "fr": "Sous-ensemble 3 - Ensemble de données ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-3-sous-ensemble-3.csv",
+   "bytes": 1055619170,
+   "lines": 1942833,
+   "sha256": "c01db1ba4081c46d704b39fa1b898fb348383705c7b428417e3a1ca98db6881e"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 4 - 2024 PSES open dataset - with labels",
+    "fr": "Sous-ensemble 4 - Ensemble de données ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-4-sous-ensemble-4.csv",
+   "bytes": 727834064,
+   "lines": 1459765,
+   "sha256": "13a22e257e2d48ee0b69ed4f6db56be20b88c5524ab056c38506c8ee71a4e3b4"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 4 - 2024 PSES Historical open dataset - with labels",
+    "fr": "Sous-ensemble 4 - Ensemble de données historique ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-4-sous-ensemble-4_hist.csv",
+   "bytes": 1764970504,
+   "lines": 3695524,
+   "sha256": "a0a5395929c573dea5055f031f8b514fb89349bf6fc72eb1045cc6249941a360"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 5 - 2024 PSES open dataset - with labels",
+    "fr": "Sous-ensemble 5 - Ensemble de données ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-5-sous-ensemble-5.csv",
+   "bytes": 1071506850,
+   "lines": 2036153,
+   "sha256": "51eb5a5f2f0894270427d95472bf7f47705a6ce06c4bd02565ea040b938f5077"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 6 - 2024 PSES open dataset - with labels",
+    "fr": "Sous-ensemble 6 - Ensemble de données ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-6-sous-ensemble-6.csv",
+   "bytes": 615339095,
+   "lines": 1083232,
+   "sha256": "540cf22bebd029b983e356729b427cb24c538b04a8cf5c307f1fa982da19e7f2"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "2024 PSES Employment Equity Derived Variable Dataset",
+    "fr": "SAFF 2024 Ensemble de données variables dérivées sur l'équité en matière d'emploi"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+   "bytes": 1251517011,
+   "lines": 2286316,
+   "sha256": "5eb2f3f4c12eea2eeaaa146c221202b5020513999cbebd037d7d467d45477f6b"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Subset 7- 2024 PSES open dataset - with labels",
+    "fr": "Sous-ensemble 7 - Ensemble de données ouvertes du SAFF de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-7-sous-ensemble-7.csv",
+   "bytes": 529256466,
+   "lines": 885961,
+   "sha256": "ff51008607e7a5346b5acb29c0b47ea5c1786f5fd908baaf4f503d47ee300497"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "Main Dataset 2024 Public Service Employee Survey open dataset",
+    "fr": "Ensemble de données principale du Sondage auprès des fonctionnaires fédéraux de 2024"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/main-principal.csv",
+   "bytes": 912355173,
+   "lines": 12179346,
+   "sha256": "0102a38b289bcc6d329adf25b07baa2dcaf729b1beb60e2365585a7131b7d973"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "2024 PSES First Official Language Derived Variable Dataset",
+    "fr": "SAFF 2024 Ensemble de données variables dérivées des langues officielles   "
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/FOLDV.csv",
+   "bytes": 1380025990,
+   "lines": 2436391,
+   "sha256": "64b59eb32d500514e4993fbf1b06857c23a9c6934f7813878d0de2d145b44053"
+  },
+  {
+   "folder": "pses-2024",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "title": {
+    "en": "2024 PSES Employee Groups by LEVEL2ID Derived Variable Dataset",
+    "fr": "SAFF 2024 Ensemble de données variables dérivées des groupes d’employés selon LEVEL2ID"
+   },
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/EELEVEL2ID.csv",
+   "bytes": 1151526222,
+   "lines": 2011834,
+   "sha256": "8910acc4f18963bd6d602cf75466cfb908358bb7f459657785941aac297e98aa"
+  }
+ ]
+}
