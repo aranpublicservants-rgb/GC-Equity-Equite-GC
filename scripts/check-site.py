@@ -223,6 +223,8 @@ subprocess.run(["node","tests/department-profile.test.cjs"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/career.test.cjs"],cwd=ROOT,check=True)
 # Systemic change tools: shared content, page shells, redirects from retired addresses and visitor text.
 subprocess.run(["node","scripts/check-systemic-change.cjs"],cwd=ROOT,check=True)
+# Published departmental audit fixes and their reproducible source boundaries.
+subprocess.run(['python3','scripts/check-nov22-department-fixes.py'],cwd=ROOT,check=True)
 # Bilingual source-linked review catalogue, privacy and formula-safe exports.
 subprocess.run(["node","--check","assets/evidence-review.js"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/evidence-review.test.cjs"],cwd=ROOT,check=True)
