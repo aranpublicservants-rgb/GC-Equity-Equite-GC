@@ -164,6 +164,26 @@ def title(s,d,l):
  if s['id']=='data-library':return L(l,'All '+d['en']+' datasets','Tous les jeux de données de cet organisme')
  return s[l].replace('{dept}',d[l])
 
+# Employer-specific scope reasons for thin pages; never fill a missing employer cell
+# with figures for the core public administration or a parent department.
+scope_reasons={
+ 'Canada Post':(
+  'Canada Post is a Crown corporation outside the core public administration. The Treasury Board core-public-administration workforce tables and the Public Service Employee Survey do not provide a separate Canada Post result in this collection. Consult Canada Post\'s own published employment and annual reports.',
+  'Postes Canada est une société d’État qui ne fait pas partie de l’administration publique centrale. Les tableaux d’effectifs de cette dernière et le Sondage auprès des fonctionnaires fédéraux ne fournissent pas ici de résultats distincts pour Postes Canada. Consultez les rapports annuels et d’emploi publiés par Postes Canada.'),
+ 'Bank of Canada':(
+  'The Bank of Canada is outside the core public administration. Core-public-administration workforce figures and the Public Service Employee Survey are not a substitute for the Bank\'s own employment reports. See the Bank\'s official publications.',
+  'La Banque du Canada ne fait pas partie de l’administration publique centrale. Les chiffres d’effectifs de cette dernière et le Sondage auprès des fonctionnaires fédéraux ne remplacent pas les rapports d’emploi de la Banque. Consultez ses publications officielles.'),
+ 'Canada Infrastructure Bank':(
+  'Canada Infrastructure Bank is a federal Crown corporation, not a core-public-administration department. The tables in this collection do not give a separate employer-specific PSES or Treasury Board workforce result for it. Consult the Bank\'s annual reports.',
+  'La Banque de l’infrastructure du Canada est une société d’État fédérale et non un ministère de l’administration publique centrale. Les tableaux de cette collection ne fournissent pas de résultat propre à cet employeur dans le SAFF ou les tableaux d’effectifs du Conseil du Trésor. Consultez ses rapports annuels.'),
+ 'Service Canada':(
+  'Service Canada is part of Employment and Social Development Canada (ESDC), not a separate employer in the core-public-administration tables used here. ESDC totals must not be labelled as a standalone Service Canada workforce figure. See ESDC\'s department profile.',
+  'Service Canada fait partie d’Emploi et Développement social Canada (EDSC) et ne constitue pas un employeur distinct dans les tableaux de l’administration publique centrale utilisés ici. Les totaux d’EDSC ne doivent pas être présentés comme les effectifs de Service Canada. Consultez le profil d’EDSC.'),
+ 'Canadian Coast Guard':(
+  'The Canadian Coast Guard transferred from Fisheries and Oceans Canada to National Defence on September 2, 2025. Before and after that date, departmental figures may cover different Coast Guard populations. Do not substitute a present-day departmental total for a separate Coast Guard result; consult the relevant DFO or DND period.',
+  'La Garde côtière canadienne a été transférée de Pêches et Océans Canada à la Défense nationale le 2 septembre 2025. Les chiffres ministériels d’avant et d’après cette date peuvent couvrir des populations différentes. Ne remplacez pas un résultat propre à la Garde côtière par un total ministériel; consultez la période pertinente du MPO ou du MDN.')
+}
+
 def content(s,d,l,sections):
  B=lambda en,fr:L(l,en,fr);key=s['id'];ids=lambda x:frids[x] if l=='fr' else x
  if key=='at-a-glance':
@@ -243,7 +263,7 @@ def content(s,d,l,sections):
  if key=='missing':
   present={x['id'] for x in sections};rows=[]
   for item in template:
-   if item['id'] not in present:rows.append([E(title(item,d,l)),B('No matching source in this reading collection. Check the issuing organization’s original records.','Aucune source correspondante dans cette collection de lecture. Consultez les documents originaux de l’organisme.')])
+   if item['id'] not in present:rows.append([E(title(item,d,l)),E(scope_reasons[d['en']][0 if l=='en' else 1]) if d['en'] in scope_reasons else B('No matching source in this reading collection. Check the issuing organization’s original records.','Aucune source correspondante dans cette collection de lecture. Consultez les documents originaux de l’organisme.')])
   rows.extend([[B('Executive equity cross-tabs','Ventilations de l’équité chez les cadres'),B('An executive total does not establish equity-group representation by level or occupation. Request a dated, privacy-safe cross-tab.','Un effectif de cadres n’établit pas leur représentation par groupe, niveau ou profession. Demandez une ventilation datée respectant la vie privée.')],[B('Accessibility outcomes and decisions','Résultats de l’accessibilité et décisions'),B('A complete departmental commitment tracker, accommodation timeliness series and case inventory have not been established by this page.','Cette page n’établit pas un suivi complet des engagements, une série des délais d’adaptation ou un répertoire des décisions ministérielles.')],[B('Population and suppressed cells','Population et cellules supprimées'),B('National, combined-department and predecessor populations cannot replace this organization’s missing cells. Suppressed counts are never reconstructed.','Les populations nationales, regroupées ou des prédécesseurs ne remplacent pas les cellules manquantes de cet organisme. Les effectifs supprimés ne sont jamais reconstitués.')]])
   return '<p>'+B('These are limits of the reviewed collection, not proof that records do not exist. Military and Coast Guard sections are kept on the specialist pages where those populations apply. Employee subgroups are included in the workforce and survey sections when published.','Il s’agit des limites de la collection examinée, et non de preuves que des documents n’existent pas. Les sections militaires et de la Garde côtière restent sur les pages spécialisées où ces populations s’appliquent. Les sous-groupes figurent dans les sections sur l’effectif et les sondages lorsqu’ils sont publiés.')+'</p>'+table(l,B('Evidence to obtain or clarify','Données à obtenir ou à préciser'),[B('Topic','Sujet'),B('Evidence gap','Lacune')],rows,[d['directoryUrl']])
  if key=='data-library':
