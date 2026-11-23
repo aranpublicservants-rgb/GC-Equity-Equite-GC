@@ -108,6 +108,7 @@
   function item(sec, it) {
     return '<article class="item" id="' + esc(it.id) + '"><h3>' + esc(tr(it.title)) + (it.badge ? '<span class="badge">' + esc(tr(it.badge)) + "</span>" : "") + "</h3><dl>" +
       it.fields.map(field).join("") + "</dl>" + (it.sources && it.sources.length ? '<p class="sources">' + esc(L("Sources: ", "Sources\u00a0: ")) + it.sources.map(source).join(" · ") + "</p>" : "") +
+      (it.links && it.links.length ? '<p class="sources">' + esc(L("Published evidence for a department: ", "Données publiées pour un ministère\u00a0: ")) + it.links.map(k => '<a href="' + esc(href(k.href)) + '">' + esc(tr(k.l)) + "</a>").join(" · ") + "</p>" : "") +
       control(sec, it) + "</article>";
   }
 

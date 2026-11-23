@@ -3029,7 +3029,14 @@ window.GCE_TOOLS = {
 (function (T) {
   const check = T.pages["decision-equity-check"].sections.find(x => x.id === "check");
   const group = check.groups.find(g => g.id === "decision");
-  const items = group.items.map(it => Object.assign({}, it, { id: "sim-" + it.id.replace(/^decision-/, "") }));
+  const E = "department-evidence-explorer/?lens=";
+  const LINKS = {
+    "workforce-reductions-or-restructuring": [{ href: "equity-under-austerity/", l: ["Headcount change and the austerity scenario", "Variation de l’effectif et scénario d’austérité"] }, { href: E + "workforce", l: ["Workforce by employment type and region", "Effectif par type d’emploi et région"] }],
+    "work-location-or-schedule": [{ href: E + "regions", l: ["Employees by region", "Employés par région"] }, { href: E + "accom", l: ["Accessibility and accommodation results", "Résultats sur l’accessibilité et l’adaptation"] }],
+    "staffing-process-redesign": [{ href: E + "staff", l: ["Staffing survey results", "Résultats du sondage sur la dotation"] }],
+    "training-budget-change": [{ href: E + "career", l: ["Career and promotion figures", "Données sur la carrière et les promotions"] }]
+  };
+  const items = group.items.map(it => { const k = it.id.replace(/^decision-/, ""); return Object.assign({}, it, { id: "sim-" + k, links: LINKS[k] }); });
   T.tools["equity-impact-simulator"] = {
     href: "equity-impact-simulator/",
     title: ["Equity impact simulator", "Simulateur d’impact sur l’équité"],

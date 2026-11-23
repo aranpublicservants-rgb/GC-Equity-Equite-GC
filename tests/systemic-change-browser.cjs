@@ -131,6 +131,7 @@ async function common(page, label, lang, errors) {
           }
           if (t === 'equity-impact-simulator/') {
             assert.equal(await page.locator('#scenarios select').count(), 8, 'Simulator should rate two options for four scenarios');
+            assert.ok(await page.locator('#scenarios a[href*="department-evidence-explorer/?lens="]').count() >= 3, 'Simulator scenarios should link to the explorer');
             await page.fill('#opt-a', 'Option A test');
             await page.selectOption('#sa-sim-workforce-reductions-or-restructuring', '3');
             await page.selectOption('#sb-sim-workforce-reductions-or-restructuring', '1');
