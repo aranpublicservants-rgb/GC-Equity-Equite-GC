@@ -80,3 +80,19 @@ test('PSES aggregate results and supporting documents are linked separately from
     for(const l of d.links){assert.ok(fs.existsSync(path.join(ROOT,l.path)));assert.ok(html.includes('href="'+l.path+'"'));}
   }
 });
+
+test('2018 departmental SNPS chunks match source row count and appear in public catalogue', () => {
+  const folder='data/open-canada-2026-11/snps-2018-by-department-parts/';
+  const m=JSON.parse(fs.readFileSync(path.join(ROOT,folder,'manifest.json'),'utf8'));
+  assert.equal(m.parts.length,16);
+  assert.equal(m.originalDataRows,27316);
+  let total=0;
+  for(const part of m.parts){
+    const file=path.join(ROOT,folder,part.filename);
+    const lines=fs.readFileSync(file,'utf8').split(/\r?\n/).filter(Boolean);
+    assert.equal(lines.length-1,part.rows);
+    assert.ok(html.includes('href="'+folder+part.filename+'"'));
+    total+=part.rows;
+  }
+  assert.equal(total,m.originalDataRows);
+});
