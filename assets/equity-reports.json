@@ -1436,6 +1436,68 @@
           "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx"
         }
       ]
+    },
+    {
+      "id": "pses-2019-ee-results",
+      "title": {
+        "en": "2019 Public Service Employee Survey: equity and diversity tables",
+        "fr": "Sondage auprès des fonctionnaires fédéraux de 2019 : tableaux sur l’équité et la diversité"
+      },
+      "population": {
+        "en": "Original government survey aggregate results or supporting methodology, not raw employee records. Response bases, question definitions, population and disclosure rules differ by survey year. Do not treat different questions as comparable trends.",
+        "fr": "Résultats agrégés originaux de sondages gouvernementaux ou documents méthodologiques, et non dossiers individuels. Les répondants, les définitions des questions, les populations et les règles de divulgation diffèrent selon l’année. Ne pas assimiler des questions différentes à des tendances comparables."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+      "links": [
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/open-canada-2026-11/pses-2019/pses2019-diversity-inclusion-tables.xlsx"
+        }
+      ]
+    },
+    {
+      "id": "pses-2022-2023-ee-results",
+      "title": {
+        "en": "2022–2023 Public Service Employee Survey: results tables",
+        "fr": "Sondage auprès des fonctionnaires fédéraux de 2022-2023 : tableaux des résultats"
+      },
+      "population": {
+        "en": "Original government survey aggregate results or supporting methodology, not raw employee records. Response bases, question definitions, population and disclosure rules differ by survey year. Do not treat different questions as comparable trends.",
+        "fr": "Résultats agrégés originaux de sondages gouvernementaux ou documents méthodologiques, et non dossiers individuels. Les répondants, les définitions des questions, les populations et les règles de divulgation diffèrent selon l’année. Ne pas assimiler des questions différentes à des tendances comparables."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+      "links": [
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/open-canada-2026-11/pses-2022-2023/pses2022-23-results-tables.xlsx"
+        }
+      ]
+    },
+    {
+      "id": "pses-2024-ee-results",
+      "title": {
+        "en": "2024 Public Service Employee Survey: employment-equity results and methods",
+        "fr": "Sondage auprès des fonctionnaires fédéraux de 2024 : résultats et méthodes relatifs à l’équité en matière d’emploi"
+      },
+      "population": {
+        "en": "Original government survey aggregate results or supporting methodology, not raw employee records. Response bases, question definitions, population and disclosure rules differ by survey year. Do not treat different questions as comparable trends.",
+        "fr": "Résultats agrégés originaux de sondages gouvernementaux ou documents méthodologiques, et non dossiers individuels. Les répondants, les définitions des questions, les populations et les règles de divulgation diffèrent selon l’année. Ne pas assimiler des questions différentes à des tendances comparables."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+      "links": [
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/open-canada-2026-11/pses-2024/pses2024-ee-results-tables.xlsx"
+        },
+        {
+          "lang": "both",
+          "format": "XLSX",
+          "path": "data/open-canada-2026-11/pses-2024/pses2024-supporting-documentation.xlsx"
+        }
+      ]
     }
   ]
 }
