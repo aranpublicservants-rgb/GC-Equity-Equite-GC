@@ -902,7 +902,7 @@
  function executives(raw, o, p) {
   if (!raw) return missing();
   const list = csv(raw);
-  const rows = list.filter(r => [o, p].filter(Boolean).some(x => names(x).includes(norm(r["Department or agency"])))).sort((a, b) => String(b.Year).localeCompare(String(a.Year))).map(r => {
+  const rows = list.filter(r => (year === "all" || String(r.Year) === year) && [o, p].filter(Boolean).some(x => names(x).includes(norm(r["Department or agency"])))).sort((a, b) => String(b.Year).localeCompare(String(a.Year))).map(r => {
    addEvidence("TBS executive population", r.Year, r.Executives, r["Department or agency"], num(r["Number of employees"]), "", "", "", url(SRC.ex), {
     kind: "count",
     organization: r["Department or agency"]
@@ -1089,7 +1089,7 @@
    "Consulter les représentants des employés tant que la décision peut encore changer. Consigner les préoccupations soulevées, les réponses et les mesures d’atténuation retenues, pas seulement le nombre de réunions."]
  ];
 
- function austerity(pop, ten, rep, o) {
+ function austerity(pop, ten, rep, o, women) {
   const rows = popRows(pop, o).map(r => [Number(r.Year), val(r["Number of employees"])]).filter(r => r[1] !== null).sort((a, b) => b[0] - a[0]);
   if (!rows.length) return missing();
   const yrs = rows.map(r => r[0]);
@@ -1131,7 +1131,7 @@
    left = n2 === null || removed === null ? null : n2 - removed,
    leftType = base === null ? null : base - (removed ?? 0),
    cut = reduction.toLocaleString(loc(), {
-    maximumFractionDigits: 1
+    maximumFractionDigits: 2
    }),
    tname = austType === "all" ? "" : tl(austType).toLowerCase();
   out += '<h4>' + e(L("Scenario: a hypothetical reduction", "Scénario : une réduction hypothétique")) + '</h4><label for="dew-reduction">' + e(L(
@@ -1139,7 +1139,10 @@
    e(String(reduction)) + '"><label for="dew-type">' + e(L("Apply the reduction to", "Appliquer la réduction à")) + '</label><select id="dew-type"><option value="all"' + (austType === "all" ? " selected" : "") + '>' +
    e(L("All employees", "Tous les employés")) + '</option>' + typeOpts.map(tp => '<option value="' + e(tp) + '"' + (tp === austType ? " selected" : "") + '>' + e(tl(tp)) + '</option>').join("") + '</select>' +
    (left === null ? '<p>' + e(base === null && austType !== "all" ? L("No published headcount for this employment type.", "Aucun effectif publié pour ce type d’emploi.") : L("No published headcount for this year.", "Aucun effectif publié pour cette année.")) + '</p>' :
-    '<p class="dew-big">' + e(num(left)) + '</p><p>' + e(austType === "all" ? L("Employees left if " + cut + "% of the March " + austY2 + " headcount were removed evenly. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
+    '<p class="dew-big">' + e(num(left)) + '</p><p class="dew-small">' + e(L(
+     "Calculation (March " + austY2 + "): round(" + num(base) + " × " + cut + " ÷ 100) = " + num(removed) + " hypothetically removed; " + num(left) + " employees left overall." + (austType === "all" ? "" : " The percentage applies to " + tname + " employees only."),
+     "Calcul (mars " + austY2 + ") : arrondir (" + num(base) + " × " + cut + " ÷ 100) = " + num(removed) + " personnes retranchées hypothétiquement; " + num(left) + " personnes restantes au total." + (austType === "all" ? "" : " Le pourcentage ne s’applique qu’aux employés " + tname + ".")
+    )) + '</p><p>' + e(austType === "all" ? L("Employees left if " + cut + "% of the March " + austY2 + " headcount were removed evenly. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
      "Employés restants si " + cut + " % de l’effectif de mars " + austY2 + " étaient retranchés uniformément. Il s’agit d’un calcul pour la discussion. Ce n’est ni une prévision, ni une réduction prévue, ni un choix d’employés."
      ) : L("Employees left overall if " + cut + "% of the March " + austY2 + " headcount of " + tname + " employees (" + num(base) + ") were removed evenly. That group would have " + num(leftType) + " employees. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
      "Employés restants au total si " + cut + " % de l’effectif de mars " + austY2 + " des employés " + tname + " (" + num(base) + ") étaient retranchés uniformément. Ce groupe compterait " + num(leftType) + " employés. Il s’agit d’un calcul pour la discussion. Ce n’est ni une prévision, ni une réduction prévue, ni un choix d’employés."
@@ -1150,16 +1153,28 @@
    organization: name(o)
   });
   const a = match(rep?.orgs, o),
-   prot = ["i", "v", "b", "d"].map(k => {
-    const x = a?.[k]?.["2025"];
-    if (!x) return null;
-    const g = diff(x[2], x[3]);
-    addEvidence("TBS representation", "2025", t(groups[k]), "", pct(x[2]), pct(x[3]), pp(g), num(x[0]), url(SRC.rep), {
-     kind: "rep-protect",
-     organization: name(o)
-    });
-    return [t(groups[k]), pct(x[2]), pct(x[3]), pp(g)]
-   }).filter(Boolean);
+   wa = findRow(women || [], o, "Organization"),
+   womenShare = val(wa?.["Women (%)"]),
+   womenAvailability = val(wa?.["Departmental workforce availability for women (%)"]),
+   prot = [];
+  if (womenShare !== null || womenAvailability !== null) {
+   const gap = diff(womenShare, womenAvailability);
+   addEvidence("TBS representation", "2025", t(groups.w), "", pct(womenShare), pct(womenAvailability), pp(gap), "", WOMEN_PAGE(), {
+    kind: "rep-protect",
+    organization: name(o)
+   });
+   prot.push([t(groups.w), pct(womenShare), pct(womenAvailability), pp(gap)]);
+  }
+  ["i", "v", "b", "d"].forEach(k => {
+   const x = a?.[k]?.["2025"];
+   if (!x) return;
+   const g = diff(x[2], x[3]);
+   addEvidence("TBS representation", "2025", t(groups[k]), "", pct(x[2]), pct(x[3]), pp(g), num(x[0]), url(SRC.rep), {
+    kind: "rep-protect",
+    organization: name(o)
+   });
+   prot.push([t(groups[k]), pct(x[2]), pct(x[3]), pp(g)]);
+  });
   out += '<h4>' + e(L("2025 representation to protect during a change", "Représentation en 2025 à protéger lors d’un changement")) + '</h4>' + (prot.length ? table([L(
     "Group", "Groupe"), L("Representation", "Représentation"), L("Workforce availability", "Disponibilité au sein de la population active"), L("Difference",
     "Écart")], prot, L("Representation and workforce availability, March 2025", "Représentation et disponibilité au sein de la population active, mars 2025")) +
@@ -1648,6 +1663,7 @@
   const ov = lens === "overview",
    needRep = ["all", "rep", "career", "cta", "overview"].includes(lens),
    needRepData = needRep || lens === "austerity",
+   needWomen = needRep || lens === "austerity",
    needSurvey = (qsets[lens]?.length || lens === "all"),
    needStaff = (sqsets[lens]?.length || lens === "all"),
    needCta = ["all", "cta", "language", "culture"].includes(lens),
@@ -1658,10 +1674,10 @@
    needTenure = ["all", "workforce", "austerity"].includes(lens),
    needProvince = ["all", "regions"].includes(lens),
    needTrend = lens === "trend" || ov;
-  sourceRequests = [...(needRep ? ["rep", "women"] : needRepData ? ["rep"] : []), ...(needSurvey ? ["pses"] : []), ...(needStaff ? ["snps"] : []), ...(needCta ? ["cta"] : []), ...(
+  sourceRequests = [...(needRepData ? (needWomen ? ["rep", "women"] : ["rep"]) : []), ...(needSurvey ? ["pses"] : []), ...(needStaff ? ["snps"] : []), ...(needCta ? ["cta"] : []), ...(
    needInventory ? ["pubs", "psc", "cat", "added"] : []), ...(needHiring ? ["hiring"] : []), ...(needEx ? ["ex"] : []), ...(["language", "all"].includes(
    lens) ? ["firstLanguage"] : []), ...(needPop ? ["pop"] : []), ...(needTenure ? ["tenure"] : []), ...(needProvince ? ["province"] : []), ...(needTrend ? ["trend"] : [])];
-  const [rep, w, index, snps, cta, pubs, psc, cat, added, hi, ex, fol, pop, ten, prov] = await Promise.all([needRepData ? guard("rep") : null, needRep ? guard(
+  const [rep, w, index, snps, cta, pubs, psc, cat, added, hi, ex, fol, pop, ten, prov] = await Promise.all([needRepData ? guard("rep") : null, needWomen ? guard(
     "women") : null, needSurvey ? guard("pses") : null, needStaff ? guard("snps") : null, needCta ? guard("cta") : null, needInventory ? guard("pubs") : null,
    needInventory ? guard("psc") : null, needInventory ? guard("cat") : null, needInventory ? guard("added") : null, needHiring ? guard("hiring") : null,
    needEx ? guard("ex") : null, ["language", "all"].includes(lens) ? guard(
@@ -1707,7 +1723,7 @@
    if (["all", "workforce"].includes(lens)) out += sec(t(lenses.workforce), workforce(pop, ten, o));
    if (["all", "regions"].includes(lens)) out += sec(t(lenses.regions), regions(prov, pop, o));
   } else if (ov) workforce(pop, null, o);
-  if (lens === "austerity") out = sec(t(lenses.austerity), austerity(pop, ten, rep, o)) + out;
+  if (lens === "austerity") out = sec(t(lenses.austerity), austerity(pop, ten, rep, o, w)) + out;
   if (lens === "pay" || lens === "all") out += sec(t(lenses.pay), pay());
   if (needCta) out += sec(t(lenses.cta), commitments(cta, o, p));
   if (["language", "all"].includes(lens)) out += sec(L("Employees by first official language", "Employés selon la première langue officielle"), languages(fol, o,
