@@ -740,6 +740,13 @@
    fr: "Groupe et niveau professionnels (2024 seulement)",
    dir: "subset-4-sous-ensemble-4",
    vars: null
+  }, {
+   k: "units",
+   en: "Branches, regions and other units (2024 only)",
+   fr: "Secteurs, régions et autres unités (2024 seulement)",
+   dir: "subset-7-sous-ensemble-7",
+   vars: null,
+   units: true
   }],
   gstate = {
    fam: "equity",
@@ -798,7 +805,7 @@
   throw last
  }
  /* Reads one gzip part and returns the department-level rows of the chosen variables. */
- async function readPart(path, vars) {
+ async function readPart(path, vars, units) {
   const res = await fetchPart(path),
    reader = res.body.pipeThrough(new DecompressionStream("gzip")).getReader(),
    dec = new TextDecoder("windows-1252"),
@@ -817,11 +824,17 @@
     head = Object.fromEntries(f.map((h, i) => [h.replace(/^﻿/, ""), i]));
     return
    }
-   if (head.LEVEL2ID !== undefined && ["LEVEL2ID", "LEVEL3ID", "LEVEL4ID", "LEVEL5ID"].some(k => (f[head[k]] || "").replace(/0/g, ""))) return;
-   const v = (f[head.BYCOND] || "").split("=")[0].trim();
+   const lv = ["LEVEL2ID", "LEVEL3ID", "LEVEL4ID", "LEVEL5ID"].map(k => head[k] === undefined ? "" : (f[head[k]] || "").trim()),
+    isUnit = lv.some(x => x.replace(/0/g, ""));
+   if (isUnit && !units) return;
+   const cond = (f[head.BYCOND] || "").split("="),
+    v = cond[0].trim();
    if (vars && !vars.includes(v)) return;
    rows.push({
     v,
+    c: (cond[1] || "").trim(),
+    l: lv.join("-"),
+    dept: !isUnit,
     ge: f[head.DESCRIP_E],
     gf: f[head.DESCRIP_F],
     y: f[head.SURVEYR],
@@ -863,7 +876,7 @@
    error: "noparts"
   };
   const k = o.en + "|" + fam.k;
-  if (!gcache.has(k)) gcache.set(k, Promise.all(parts.map(p => readPart("pses-2024/" + fam.dir + "/" + p.file, fam.vars))).then(a => ({
+  if (!gcache.has(k)) gcache.set(k, Promise.all(parts.map(p => readPart("pses-2024/" + fam.dir + "/" + p.file, fam.vars, fam.units))).then(a => ({
    rows: a.flat()
   })));
   return gcache.get(k)
@@ -935,8 +948,12 @@
    last = years[years.length - 1],
    first = years[0],
    byG = new Map();
-  mine.forEach(r => {
-   const k = r.v + "|" + r.ge;
+  const deptRow = {};
+  if (fam.units) mine.filter(r => r.dept).forEach(r => {
+   deptRow[r.y] = gnum(r[fkey])
+  });
+  mine.filter(r => !fam.units || !r.dept).forEach(r => {
+   const k = fam.units ? r.l : r.v + "|" + r.ge;
    if (!byG.has(k)) byG.set(k, {
     label: fr() ? r.gf || r.ge : r.ge,
     y: {}
@@ -944,7 +961,7 @@
    byG.get(k).y[r.y] = [gnum(r[fkey]), gnum(r.n)]
   });
   const FEW = 100,
-   all = orgTrend?.[q]?.[last]?.[0] ?? null,
+   all = fam.units ? deptRow[last] ?? null : orgTrend?.[q]?.[last]?.[0] ?? null,
    list = [...byG.values()].filter(g => g.y[last]),
    judged = list.filter(g => g.y[last][0] !== null && g.y[last][1] !== null && g.y[last][1] >= FEW).sort((a, b) => a.y[last][0] - b.y[last][0]),
    body = list.map(g => {
@@ -962,6 +979,57 @@
    '<p class="dew-small">' + e(L("How to read this. A person can belong to more than one group, so groups overlap and their counts must not be added. Values the survey suppresses to protect privacy stay suppressed. A gap shows where to look. It does not show why. For questions about harassment, discrimination, career harm or racism, read results alongside the department’s own plans.",
     "Comment lire. Une personne peut appartenir à plus d’un groupe; les groupes se chevauchent et leurs effectifs ne doivent pas être additionnés. Les valeurs que le sondage supprime pour protéger la vie privée restent supprimées. Un écart indique où regarder, non pourquoi. Pour les questions sur le harcèlement, la discrimination, le tort à la carrière ou le racisme, lire les résultats avec les plans du ministère.")) + '</p>' +
    sourceNote(dsUrl, L("2024 Public Service Employee Survey open dataset, survey subsets (includes 2019, 2020 and 2022 where published)", "Ensemble de données ouvertes du sondage auprès des fonctionnaires fédéraux de 2024, sous-ensembles (comprend 2019, 2020 et 2022 lorsque publiés)"))
+ }
+
+ /* Main findings: where survey results differ most between designated groups and all respondents (latest year, questions with a reading direction). */
+ async function mountGroupFindings(o) {
+  const box = $("gp-find");
+  if (!box) return;
+  try {
+   const trend = await guard("trend"),
+    orgTrend = trend ? match(trend.organizations, o) : null,
+    fam = GFAM.find(f => f.k === "equity");
+   if (!orgTrend) return;
+   const data = await groupRows(o, fam);
+   if (data.error || !$("gp-find")) return;
+   const rows = data.rows.filter(r => r.c === "1" && trend.questions[r.q] && trend.direction[r.q]),
+    last = rows.map(r => r.y).sort().pop(),
+    FEW = 100,
+    LIMIT = 5,
+    key = {
+     POSITIVE: "pos",
+     NEGATIVE: "neg",
+     ANSWER1: "a1"
+    },
+    out = [];
+   let pairs = 0;
+   for (const r of rows) {
+    if (r.y !== last) continue;
+    const v = gnum(r[key[trend.questions[r.q].field]]),
+     n = gnum(r.n),
+     all = orgTrend[r.q]?.[last]?.[0] ?? null;
+    if (v === null || n === null || n < FEW || all === null) continue;
+    pairs++;
+    const adverse = (v - all) * trend.direction[r.q];
+    if (adverse <= -LIMIT) out.push({
+     r,
+     v,
+     n,
+     all,
+     size: -adverse
+    })
+   }
+   out.sort((a, b) => b.size - a.size);
+   const top = out.slice(0, 5),
+    gl = r => fr() ? r.gf || r.ge : r.ge,
+    qn = q => QTEXT[q] ? L(QTEXT[q][0], QTEXT[q][1]) : L(trend.questions[q].en, trend.questions[q].fr),
+    li = x => "<li>" + e(gl(x.r) + COL() + qn(x.r.q) + ", " + pct(x.v) + " " + L("compared with", "contre") + " " + pct(x.all) + " " + L("for all respondents", "pour tous les répondants") + " (" + x.n.toLocaleString(loc()) + " " + L("responses", "réponses") + ").") + "</li>";
+   const head = L("In " + last + ", " + out.length + " of " + pairs + " group and question pairs with at least " + FEW + " responses were " + LIMIT + " points or more toward less favourable results than all respondents.",
+    "En " + last + ", " + out.length + " paires groupe-question sur " + pairs + " ayant au moins " + FEW + " réponses étaient de " + LIMIT + " points ou plus vers des résultats moins favorables que ceux de tous les répondants.");
+   box.innerHTML = '<section class="dew-box"><h3>' + e(L("Where results differ most between groups", "Où les résultats diffèrent le plus entre les groupes")) + '</h3><p class="dew-lead">' + e(head) + '</p>' + (top.length ? "<ul>" + top.map(li).join("") + "</ul>" : "") +
+    '<p class="dew-small">' + e(L("Groups are employees with a disability, Indigenous employees and racialized employees, from the survey subsets. They overlap, and a gap shows where to look, not why. Suppressed values and groups under 100 responses are left out. Choose “Results by group” for every group and question.",
+     "Les groupes sont les employés en situation de handicap, les employés autochtones et les employés racisés, selon les sous-ensembles du sondage. Ils se chevauchent, et un écart indique où regarder, non pourquoi. Les valeurs supprimées et les groupes de moins de 100 réponses sont exclus. Choisir « Résultats par groupe » pour tous les groupes et toutes les questions.")) + '</p></section>'
+  } catch (x) {}
  }
 
  function survey(index, p1, p2, o, p) {
@@ -2013,12 +2081,13 @@
    "Ces sources ne publient pas de données ministérielles sur les approbations de formation linguistique, les délais ou les résultats en langue seconde. Les résultats ci-dessous donnent seulement du contexte."
    )) + '</p>' + out;
   const findings = findingsPanel();
-  if (ov) out = findings + (findings ? "" : missing()) + '<details class="dew-box"><summary>' + e(L("Tables behind these findings",
+  if (ov) out = findings + '<div id="dew-gp-find"></div>' + (findings ? "" : missing()) + '<details class="dew-box"><summary>' + e(L("Tables behind these findings",
    "Tableaux à l’appui de ces constats")) + '</summary>' + out + '</details>';
   else out = findings + out;
   $("result").innerHTML = out + (ov ? "" : indicatorPanel()) + actionPanel();
   bindActions();
   bindScenario();
+  if (ov) mountGroupFindings(o);
   if (lens === "groups") {
    const mount = () => mountGroups(o);
    $("gp-fam").onchange = ev => {

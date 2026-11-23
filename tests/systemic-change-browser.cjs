@@ -100,11 +100,11 @@ async function common(page, label, lang, errors) {
         await page.locator('.dew-findings').waitFor({ timeout: 120000 });
         assert.match(await page.locator('.dew-findings').innerText(), lang === 'fr' ? /depuis la première année/ : /since the first year/, 'Main findings should include the change over time finding');
 
-        /* Results by group: split survey subsets read from the pses-data branch (GCE_PSES_FROM_GIT=1 reads a local fetch of that branch). */
+        /* Results by group: split survey subsets read from the pses-data branch (GCE_PSES_FROM_GIT=1 reads the local origin/pses-data ref). */
         if (process.env.GCE_PSES_FROM_GIT) {
           await page.route(/cdn\.jsdelivr\.net|raw\.githubusercontent\.com/, route => {
             try {
-              const body = require('child_process').execFileSync('git', ['show', 'FETCH_HEAD:' + route.request().url().split('pses-data/')[1]], { maxBuffer: 1 << 28 });
+              const body = require('child_process').execFileSync('git', ['show', 'origin/pses-data:' + route.request().url().split('pses-data/')[1]], { maxBuffer: 1 << 28 });
               route.fulfill({ status: 200, body, headers: { 'access-control-allow-origin': '*' } });
             } catch (x) { route.fulfill({ status: 404, body: '' }); }
           });
@@ -115,7 +115,12 @@ async function common(page, label, lang, errors) {
         assert.match(await page.locator('#dew-gp-out .dew-lead').innerText(), /2024/, 'Results by group summary missing');
         await page.selectOption('#dew-gp-fam', 'gender');
         await page.waitForFunction(() => /2SLGBTQIA|2ELGBTQIA/.test(document.querySelector('#dew-gp-out')?.innerText || ''), null, { timeout: 120000 });
+        await page.selectOption('#dew-gp-fam', 'units');
+        await page.waitForFunction(() => /Service Canada|Services? ?Canada|Secteur|Region|Région/.test(document.querySelector('#dew-gp-out')?.innerText || ''), null, { timeout: 120000 });
         await common(page, where('results by group'), lang, errors);
+        await page.goto(base + 'department-evidence-explorer/?lang=' + lang + '&org=isc');
+        await page.locator('#dew-gp-find section').waitFor({ timeout: 120000 });
+        assert.match(await page.locator('#dew-gp-find').innerText(), /2024/, 'Group differences should appear in the main findings');
 
         /* Equity under austerity: published headcounts for two years and an explicitly hypothetical reduction. */
         await page.goto(base + 'equity-under-austerity/?lang=' + lang + '&org=isc');
