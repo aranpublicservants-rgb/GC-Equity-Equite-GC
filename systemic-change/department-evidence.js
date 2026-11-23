@@ -1599,8 +1599,11 @@
   $("build").onclick = build;
   $("export").onclick = () => download("departmental-equity-action-" + org + ".txt", build());
   $("csv").onclick = () => download("departmental-evidence-" + org + ".csv", [
-   [L("Dataset", "Jeu"), L("Period", "Période"), L("Measure", "Indicateur"), L("Group", "Groupe"), L("Published value", "Valeur publiée"), L(
-    "Reference value", "Valeur de référence"), L("Difference", "Écart"), L("Count / responses", "Nombre / réponses"), L("Source", "Source")], ...evidence
+   [L("Dataset", "Jeu"), L("Period", "Période"), L("Measure", "Indicateur"), L("Group", "Groupe"), L("Value (source or hypothetical)", "Valeur (source ou hypothétique)"), L(
+    "Reference value", "Valeur de référence"), L("Difference", "Écart"), L("Count / responses", "Nombre / réponses"), L("Source", "Source"), L("Data status", "Statut des données")],
+   ...evidence.map((r, i) => [...r, rowInfo[i]?.kind === "scenario" || rowInfo[i]?.hypothetical
+    ? L("Hypothetical calculation; not published or predicted", "Calcul hypothétique; ni publié ni prévu")
+    : L("Source-based figure or summary; inspect method", "Chiffre ou résumé fondé sur une source; vérifier la méthode")])
   ], true)
  }
 
