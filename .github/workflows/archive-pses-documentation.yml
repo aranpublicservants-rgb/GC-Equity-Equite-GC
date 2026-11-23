@@ -1,0 +1,35 @@
+name: Archive original PSES supporting workbooks
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/archive-pses-documentation.py
+      - .github/workflows/archive-pses-documentation.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: gc-equity-pses-supporting-workbooks
+  cancel-in-progress: false
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and verify published Excel originals
+        run: python scripts/archive-pses-documentation.py
+      - name: Update data checksums
+        run: python scripts/update-data-checksums.py
+      - name: Commit verified source workbooks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/open-canada-2026-11/pses-supporting-documentation/ data/checksums.sha256
+          if git diff --cached --quiet; then echo "No new source copies"; exit 0; fi
+          git commit -m "Archive verified 2018-2020 PSES supporting workbooks"
+          git pull --rebase origin main
+          git push origin HEAD:main
