@@ -18,6 +18,7 @@ const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLo
 const make=(tag,cls,text,parent)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=text;if(parent)parent.appendChild(el);return el;};
 const status=id=>selected.get(id)||'unreviewed';
 const note=id=>notes.get(id)||'';
+const printText=c=>S[lang()].review+': '+S[lang()].statusNames[STATES.indexOf(status(c.id))]+(note(c.id)?' · '+S[lang()].notes+': '+note(c.id):'');
 function localHref(path){const url=new URL(path,location.href);if(url.origin!==location.origin||!url.pathname.startsWith(new URL('.',location.href).pathname))return 'sources.html';url.searchParams.set('lang',lang());return url.pathname+url.search+url.hash;}
 function labels(){
  document.querySelectorAll('[data-en][data-fr]').forEach(el=>{el.textContent=el.dataset[lang()];});
@@ -37,6 +38,7 @@ function statusSelect(check){
   if(input.value==='unreviewed')selected.delete(check.id);else selected.set(check.id,input.value);
   wrapper.closest('.review-item').dataset.status=input.value;
   count();
+  const print=wrapper.closest('.review-item').querySelector('.print-status');if(print)print.textContent=printText(check);
   if($('review-status-filter').value!=='all'){render();$('review-status-filter').focus();}
  });
  return wrapper;
@@ -44,7 +46,7 @@ function statusSelect(check){
 function noteField(check){
  const wrapper=make('div','',null),label=make('label','',S[lang()].notes,wrapper),area=make('textarea','review-note',null,label);
  area.id='note-'+check.id;label.htmlFor=area.id;area.maxLength=280;area.rows=2;area.value=note(check.id);area.placeholder=S[lang()].notePlaceholder;
- area.addEventListener('input',()=>{if(area.value.trim())notes.set(check.id,area.value.slice(0,280));else notes.delete(check.id);});
+ area.addEventListener('input',()=>{if(area.value.trim())notes.set(check.id,area.value.slice(0,280));else notes.delete(check.id);const print=wrapper.closest('.review-item').querySelector('.print-status');if(print)print.textContent=printText(check);});
  return wrapper;
 }
 function card(check){
@@ -60,6 +62,7 @@ function card(check){
  link.href=localHref(check.url);
  const fields=make('div','item-fields',null,entry);
  fields.append(statusSelect(check),noteField(check));
+ make('p','print-status',printText(check),entry);
  return entry;
 }
 function matches(c){
