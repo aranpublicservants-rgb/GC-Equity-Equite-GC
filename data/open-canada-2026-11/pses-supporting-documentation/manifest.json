@@ -1,0 +1,33 @@
+{
+  "source": "Treasury Board of Canada Secretariat via Open Government Portal",
+  "files": [
+    {
+      "year": 2020,
+      "status": "hosted",
+      "resource_id": "25076d6a-84c0-48d0-97a9-f9d20ec2a10d",
+      "path": "data/open-canada-2026-11/pses-supporting-documentation/pses2020-supporting-documentation.xlsx",
+      "publisher_url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/25076d6a-84c0-48d0-97a9-f9d20ec2a10d/download/2020-pses-supporting-documentation_document-de-reference-du-saff-2020.xlsx",
+      "bytes": 6204842,
+      "sha256": "9d8f32fbab2bf77ca37c020cc7c6b2001ae2170b4189645057ea23ddcca7384e",
+      "size_matches_drive_inventory": true,
+      "note": "Original public survey supporting workbook; not raw respondent records"
+    }
+  ],
+  "not_verified": [
+    {
+      "year": 2018,
+      "resource_id": "f93d3fc3-94b7-4902-bbc1-21ebed7f0744",
+      "status": "unverified",
+      "reason": "The read operation timed out"
+    },
+    {
+      "year": 2019,
+      "resource_id": "cd371005-0746-459c-8a8a-cec36b006343",
+      "status": "unverified",
+      "reason": "The read operation timed out"
+    }
+  ],
+  "total_attempted": 3,
+  "confirmed_hosted": 1,
+  "complete": false
+}
