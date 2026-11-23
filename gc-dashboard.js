@@ -843,14 +843,17 @@ function populatePicker(){
  organizationNames=names;
  const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
- const match=names.find(n=>norm(n)===norm(old));
+ const oldRecord=D.departmentPages?.organizations.find(o=>norm(o.en)===norm(old));
+ const canonicalId=oldRecord&&D.departmentPages?.redirects?.[oldRecord.id];
+ const canonicalName=canonicalId?D.departmentPages.organizations.find(o=>o.id===canonicalId)?.en:old;
+ const match=names.find(n=>norm(n)===norm(canonicalName));
  if(match){picker.value=match;selected=match;}
  filterOrganizations();
 }
 function filterOrganizations(){
  const input=$('org-search'),picker=$('org-picker');if(!input||!picker)return;
  const q=rawNorm(input.value),current=picker.value;
- const matches=organizationNames.filter(n=>!q||rawNorm(n+' '+deptName(n)+' '+(recordFor(n)?.name_fr||'')).includes(q));
+ const matches=organizationNames.filter(n=>{const profile=D.departmentPages?.organizations.find(o=>o.en===n),formerly=Object.entries(D.departmentPages?.redirects||{}).filter(([,to])=>to===profile?.id).map(([from])=>D.departmentPages.organizations.find(o=>o.id===from)?.en||from);return !q||rawNorm([n,deptName(n),recordFor(n)?.name_fr||'',...(profile?.aliases||[]),...formerly].join(' ')).includes(q);});
  const names=current&&!matches.includes(current)?[current,...matches]:matches;
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
  picker.value=current;
