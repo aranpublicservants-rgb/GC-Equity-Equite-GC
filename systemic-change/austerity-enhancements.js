@@ -112,8 +112,11 @@
     const n=val(region.find(x=>x['Number of employees']!==undefined)?.['Number of employees']);
     if(n===null){para(panel,L('No comparable published headcount is available for this organization and year.','Aucun effectif publié comparable n’est disponible pour cet organisme et cette année.'));return}
     const removed=Math.round(n*rate/100),left=n-removed;
+    const onlyAll=(document.getElementById('dew-type')?.value||'all')==='all';
     title(panel,L('Main findings: source dates and example arithmetic','Principaux constats : dates sources et calcul illustratif'));
-    para(panel,L('March '+year+': '+num(n)+' published employees. At '+rate+'%, '+num(removed)+' would be removed hypothetically and '+num(left)+' would remain. Formula: round('+num(n)+' × '+rate+' ÷ 100) = '+num(removed)+'.',
+    if(!onlyAll)para(panel,L('The reduction above is applied to one employment type only. The group, region and comparison views below apply one percentage to all employees, so they are not shown for a single employment type. Choose “All employees” to see them.',
+      'La réduction ci-dessus ne vise qu’un type d’emploi. Les vues par groupe, par région et de comparaison appliquent un pourcentage à tous les employés; elles ne sont donc pas présentées pour un seul type d’emploi. Choisissez « Tous les employés » pour les voir.'));
+    else para(panel,L('March '+year+': '+num(n)+' published employees. At '+rate+'%, '+num(removed)+' would be removed hypothetically and '+num(left)+' would remain. Formula: round('+num(n)+' × '+rate+' ÷ 100) = '+num(removed)+'.',
       'Mars '+year+' : '+num(n)+' employés publiés. À '+rate+' %, '+num(removed)+' seraient retranchés hypothétiquement et '+num(left)+' demeureraient. Formule : arrondir ('+num(n)+' × '+rate+' ÷ 100) = '+num(removed)+'.'));
     para(panel,L('This figure is not a staffing plan, projected layoffs, a compliance finding or a forecast. Real decisions rarely affect every role evenly. All unassessed impacts remain unknown.',
       'Il ne s’agit ni d’un plan de dotation, ni de mises à pied prévues, ni d’une conclusion de conformité, ni d’une prévision. Les décisions réelles touchent rarement chaque poste de manière uniforme. Les effets non évalués demeurent inconnus.'));
@@ -125,7 +128,7 @@
       'Le budget de 2025 prévoyait environ 40 000 postes de moins dans la fonction publique (10 %) que le sommet de 2023-2024 d’ici 2028-2029, soit quelque 330 000. La valeur initiale de 5 % dans cet outil est un choix illustratif, non la cible budgétaire. Les ETP du DPB, les effectifs de mars du SCT et les populations d’équité en emploi n’ont pas les mêmes définitions et ne doivent pas être soustraits les uns des autres.'));
     source(panel,'https://www.pbo-dpb.ca/en/publications/NT-2627-011-S--pbo-releases-federal-employment-tracking-tool--bdpb-lance-outil-suivi-emploi-federal',L('PBO Federal Employment Tracking Tool, September 15, 2026','Outil de suivi de l’emploi fédéral du DPB, 15 septembre 2026'));
     source(panel,L('https://www.budget.canada.ca/2025/report-rapport/chap5-en.html','https://www.budget.canada.ca/2025/report-rapport/chap5-fr.html'),L('Budget 2025, Chapter 5','Budget de 2025, chapitre 5'));
-    if(peer){
+    if(peer&&onlyAll){
       const pn=val(pop.find(r=>r.Year===year&&matches(r,peer,'Department or agency'))?.['Number of employees']);
       title(panel,L('Comparison organization, same hypothetical percentage','Organisme de comparaison, même pourcentage hypothétique'));
       if(pn===null)para(panel,L('No matching published count for this comparison.','Aucun effectif publié correspondant pour cette comparaison.'));
@@ -133,6 +136,7 @@
         [L('Organization','Organisme'),L('Published headcount','Effectif publié'),L('Removed, hypothetical','Retranchés, hypothétiques'),L('Left, hypothetical','Restants, hypothétiques')],
         [[o.en,num(n),num(removed),num(left)],[peer.en,num(pn),num(Math.round(pn*rate/100)),num(pn-Math.round(pn*rate/100))]]);
     }
+    if(onlyAll){
     title(panel,L('Employment equity: separate March 2025 population','Équité en matière d’emploi : population distincte de mars 2025'));
     const a=groupRecord(representation,o),w=women.find(r=>matches(r,o,'Organization'));
     const groups=Object.keys(labels).map(k=>{
@@ -160,6 +164,7 @@
     else para(panel,L('No matching regional table for this organization and year.','Aucun tableau régional correspondant pour cet organisme et cette année.'));
     para(panel,L('Regional rounded estimates may not add exactly to the overall hypothetical result. Published suppression is preserved; no suppressed regional count is reconstructed. Net workforce changes may reflect transfers and restructuring, not necessarily employment growth or layoffs.',
       'Les estimations régionales arrondies peuvent différer du résultat global hypothétique. Les données supprimées demeurent supprimées; aucun effectif régional n’est reconstitué. Les variations nettes de l’effectif peuvent découler de mutations ou de réorganisations, et non nécessairement de croissance ou de mises à pied.'));
+    }
     title(panel,L('Decision checklist: what must be verified before changes','Liste de vérification : ce qu’il faut confirmer avant les changements'));
     const prompts=[
       [L('Who is affected?','Qui est touché?'),L('Request affected occupations, locations, classifications and tenure; do not treat an organization-wide rate as the actual selection method.','Demander les professions, lieux, classifications et types d’emploi touchés; ne pas assimiler un taux général aux critères réels de sélection.')],

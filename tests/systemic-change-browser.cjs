@@ -116,6 +116,13 @@ async function common(page, label, lang, errors) {
         await page.selectOption('#dew-type', oneType);
         await page.waitForFunction(v => new URL(location.href).searchParams.get('type') === v, oneType, { timeout: 30000 });
         assert.match(await page.locator('#dew-result').innerText(), lang === 'fr' ? /des employés/ : /headcount of/);
+        /* Group, region and comparison views apply one percentage to all employees, so a single employment type hides them. */
+        await page.locator('#dew-austerity-extra').waitFor({ timeout: 60000 });
+        await page.waitForFunction(() => /one employment type|un type d’emploi/.test(document.querySelector('#dew-austerity-extra')?.innerText || ''), null, { timeout: 60000 });
+        assert.equal(await page.locator('#dew-austerity-extra table').count(), 1, 'Only the PBO table should remain for one employment type');
+        await page.selectOption('#dew-type', 'all');
+        await page.waitForFunction(() => document.querySelectorAll('#dew-austerity-extra table').length >= 3, null, { timeout: 60000 });
+        assert.match(await page.locator('#dew-austerity-extra').innerText(), lang === 'fr' ? /Formule/ : /Formula/);
         await common(page, where('equity under austerity'), lang, errors);
 
         /* The process tools, the hours tool and the global observatory. */
