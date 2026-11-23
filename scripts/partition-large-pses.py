@@ -12,7 +12,7 @@ manifest.json records the source link, size, SHA-256 and row count, plus each
 part's rows and SHA-256. The script stops with an error unless the part rows add
 up to the source rows. Runs in GitHub Actions, where open.canada.ca can be reached.
 """
-import gzip, hashlib, json, os, re, sys, urllib.request
+import gzip, hashlib, json, os, re, sys, urllib.parse, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +20,7 @@ CONFIG = json.loads((ROOT / 'scripts/large-sources.json').read_text(encoding='ut
 API = 'https://open.canada.ca/data/api/action/package_show?id='
 AGENT = {'User-Agent': 'GC-Equity-Equite-GC site maintenance (github.com/aranpublicservants-rgb/GC-Equity-Equite-GC)'}
 PART_BYTES = 40_000_000
-get = lambda url, t=120: urllib.request.urlopen(urllib.request.Request(url, headers=AGENT), timeout=t)
+get = lambda url, t=120: urllib.request.urlopen(urllib.request.Request(urllib.parse.quote(url, safe=":/?&=%#+@~!$'()*,;"), headers=AGENT), timeout=t)
 
 def records(resp):
     """Yield complete CSV records as bytes, joining lines while a quote is open."""
@@ -52,6 +52,8 @@ for res in package.get('resources', []):
     if str(res.get('format', '')).upper() != 'CSV':
         continue
     url = res['url']
+    if not urllib.parse.unquote(url).lower().split('?')[0].endswith('.csv'):
+        continue  # labelled CSV in the catalogue but not a CSV file
     stem = re.sub(r'[^A-Za-z0-9._-]+', '-', url.rstrip('/').split('/')[-1]).removesuffix('.csv').removesuffix('.CSV')
     directory = outdir / folder / stem
     directory.mkdir(parents=True, exist_ok=True)
