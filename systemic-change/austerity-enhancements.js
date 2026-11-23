@@ -18,6 +18,18 @@
   };
   const fr = () => document.documentElement.lang.startsWith('fr');
   const L = (en, french) => fr() ? french : en;
+  const orgName = o => o ? L(o.en, o.fr || o.en) : '';
+  const frenchRegions = {
+    'Alberta':'Alberta','British Columbia':'Colombie-Britannique','Manitoba':'Manitoba',
+    'National Capital Region (NCR)':'Région de la capitale nationale (RCN)',
+    'New Brunswick':'Nouveau-Brunswick','Newfoundland and Labrador':'Terre-Neuve-et-Labrador',
+    'Northwest Territories':'Territoires du Nord-Ouest','Nova Scotia':'Nouvelle-Écosse',
+    'Nunavut':'Nunavut','Ontario (minus the NCR)':'Ontario (hors RCN)',
+    'Outside of Canada':'À l’extérieur du Canada','Prince Edward Island':'Île-du-Prince-Édouard',
+    'Quebec (minus the NCR)':'Québec (hors RCN)','Saskatchewan':'Saskatchewan',
+    'Unknown':'Inconnu','Yukon':'Yukon'
+  };
+  const regionName = name => fr() ? (frenchRegions[name] || name) : name;
   const norm = x => String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   const num = x => x==null ? L('Not published','Non publié') : Number(x).toLocaleString(fr()?'fr-CA':'en-CA',{maximumFractionDigits:2});
   const val = x => {
@@ -123,7 +135,7 @@
     activateInputs(panel,n,removed,n);
     title(panel,L('PBO quarterly FTE context and Budget 2025 target','Contexte trimestriel des ETP du DPB et cible du budget de 2025'));
     table(panel,L('PBO federal full-time equivalents, not departmental headcounts','Équivalents temps plein fédéraux du DPB, non effectifs ministériels'),
-      [L('Period','Période'),L('PBO federal FTEs, approximately','ETP fédéraux du DPB, environ')],[['June 2024','367,000'],['June 2026','342,000']]);
+      [L('Period','Période'),L('PBO federal FTEs, approximately','ETP fédéraux du DPB, environ')],[[L('June 2024','Juin 2024'),num(367000)],[L('June 2026','Juin 2026'),num(342000)]]);
     para(panel,L('Budget 2025 expected about 40,000 fewer public-service positions (10%) than the 2023–24 peak by 2028–29, to roughly 330,000. The default 5% in this tool is an illustrative choice, not the Budget target. PBO FTEs, TBS March headcounts and employment-equity populations have different definitions and cannot be subtracted from one another.',
       'Le budget de 2025 prévoyait environ 40 000 postes de moins dans la fonction publique (10 %) que le sommet de 2023-2024 d’ici 2028-2029, soit quelque 330 000. La valeur initiale de 5 % dans cet outil est un choix illustratif, non la cible budgétaire. Les ETP du DPB, les effectifs de mars du SCT et les populations d’équité en emploi n’ont pas les mêmes définitions et ne doivent pas être soustraits les uns des autres.'));
     source(panel,'https://www.pbo-dpb.ca/en/publications/NT-2627-011-S--pbo-releases-federal-employment-tracking-tool--bdpb-lance-outil-suivi-emploi-federal',L('PBO Federal Employment Tracking Tool, September 15, 2026','Outil de suivi de l’emploi fédéral du DPB, 15 septembre 2026'));
@@ -134,7 +146,7 @@
       if(pn===null)para(panel,L('No matching published count for this comparison.','Aucun effectif publié correspondant pour cette comparaison.'));
       else table(panel,L('Same scenario applied separately to two March headcounts','Même scénario appliqué séparément à deux effectifs de mars'),
         [L('Organization','Organisme'),L('Published headcount','Effectif publié'),L('Removed, hypothetical','Retranchés, hypothétiques'),L('Left, hypothetical','Restants, hypothétiques')],
-        [[o.en,num(n),num(removed),num(left)],[peer.en,num(pn),num(Math.round(pn*rate/100)),num(pn-Math.round(pn*rate/100))]]);
+        [[orgName(o),num(n),num(removed),num(left)],[orgName(peer),num(pn),num(Math.round(pn*rate/100)),num(pn-Math.round(pn*rate/100))]]);
     }
     if(onlyAll){
     title(panel,L('Employment equity: separate March 2025 population','Équité en matière d’emploi : population distincte de mars 2025'));
@@ -146,7 +158,7 @@
       const avail=k==='w'?val(w?.['Departmental workforce availability for women (%)']):val(x?.[3]);
       if(count===null&&share===null)return null;
       const gone=count===null?null:Math.round(count*rate/100);
-      return [L(...labels[k]),num(count),num(gone),num(count===null?null:count-gone),share===null?num(null):share+'%',avail===null?num(null):avail+'%'];
+      return [L(...labels[k]),num(count),num(gone),num(count===null?null:count-gone),share===null?num(null):num(share)+(fr()?' %':'%'),avail===null?num(null):num(avail)+(fr()?' %':'%')];
     }).filter(Boolean);
     if(groups.length)table(panel,L('March 2025 group values; example counts only where exact counts are published','Valeurs par groupe de mars 2025; nombres illustratifs seulement si un effectif exact est publié'),
       [L('Group','Groupe'),L('Published count','Effectif publié'),L('Hypothetical removed','Retranchés hypothétiques'),L('Hypothetical left','Restants hypothétiques'),L('Representation','Représentation'),L('Availability','Disponibilité')],groups);
@@ -157,7 +169,7 @@
     title(panel,L('Region-of-work illustration','Illustration selon la région de travail'));
     const rows=provinces.filter(r=>r.Year===year&&matches(r,o,'Department or agency')).map(r=>{
       const v=val(r['Number of employees']);
-      return [r['Province or territory of work'],num(v),num(v===null?null:Math.round(v*rate/100)),num(v===null?null:v-Math.round(v*rate/100))];
+      return [regionName(r['Province or territory of work']),num(v),num(v===null?null:Math.round(v*rate/100)),num(v===null?null:v-Math.round(v*rate/100))];
     });
     if(rows.length)table(panel,L('March '+year+' regional population: hypothetical uniform rate applied independently','Effectifs régionaux de mars '+year+' : taux hypothétique uniforme appliqué séparément'),
       [L('Province or territory of work','Province ou territoire de travail'),L('Published employees','Employés publiés'),L('Hypothetical removed','Retranchés hypothétiques'),L('Hypothetical left','Restants hypothétiques')],rows);
@@ -174,6 +186,34 @@
       [L('How will results be assessed?','Comment évaluer les résultats?'),L('Require documented accountable owners, disaggregated privacy-safe monitoring and review dates.','Exiger des responsables désignés, un suivi ventilé respectueux de la vie privée et des dates de révision.')]
     ];
     prompts.forEach(([q,a])=>{const d=el('details'),s=el('summary',q);d.append(s,el('p',a));panel.append(d)});
+    const supplementTables = Array.from(panel.querySelectorAll('table'));
+    if(supplementTables.length){
+      const exportButton = el('button',L('Download supplementary scenario tables (.csv)','Télécharger les tableaux complémentaires du scénario (.csv)'));
+      exportButton.type='button';
+      const status = el('p',L('This download includes the additional tables above. The main evidence download separately covers the primary workspace.','Ce téléchargement contient les tableaux complémentaires ci-dessus. Le téléchargement principal couvre séparément les données de l’outil de base.'));
+      exportButton.addEventListener('click',()=>{
+        const rows=[[L('Table','Tableau'),L('Row','Ligne'),L('Measure','Mesure'),L('Displayed value','Valeur affichée'),L('Data status','Statut des données'),L('Method note','Note de méthode')]];
+        supplementTables.forEach(t=>{
+          const caption=t.querySelector('caption')?.textContent||'';
+          const heads=Array.from(t.querySelectorAll('thead th'),h=>h.textContent);
+          const records=Array.from(t.querySelectorAll('tbody tr'));
+          records.forEach(tr=>{
+            const cells=Array.from(tr.children,x=>x.textContent);
+            for(let i=1;i<cells.length;i++){
+              const metric=heads[i]||'';
+              const isHyp=/hypothetical|hypothétique|retranchés|restants/i.test(metric);
+              const missing=/^(Not published|Non publié)$/.test(cells[i]);
+              rows.push([caption,cells[0],metric,cells[i],
+                missing?L('Unavailable','Non disponible'):isHyp?L('Hypothetical','Hypothétique'):L('Published source or contextual figure','Source publiée ou chiffre contextuel'),
+                isHyp?L('Uniform percentage; independently rounded; not a forecast','Pourcentage uniforme; arrondi séparément; aucune prévision'):L('Check the table title, period and cited source','Vérifier le titre, la période et la source du tableau')]);
+            }
+          });
+        });
+        api.download('equity-under-austerity-supplement-'+orgId+'-'+year+'.csv',rows,true);
+        status.textContent=L('Download requested. Check your browser downloads.','Téléchargement demandé. Vérifiez les téléchargements de votre navigateur.');
+      });
+      panel.append(exportButton,status);
+    }
     para(panel,L('Source review: November 23, 2026. Historical representation and newer FTE data should be updated when an equivalent published source is available.',
       'Sources vérifiées le 23 novembre 2026. La représentation historique et les nouvelles données sur les ETP doivent être actualisées lorsqu’une source comparable est publiée.'));
   }
