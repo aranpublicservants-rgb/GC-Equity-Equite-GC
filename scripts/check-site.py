@@ -12,6 +12,9 @@ from urllib.parse import urlsplit, unquote
 
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 subprocess.run(['python3', str(ROOT/'scripts/check-audit-fixes.py')], check=True)
+subprocess.run(['node', '--check', str(ROOT/'assets/department-depth.js')], check=True)
+subprocess.run(['node', '--check', str(ROOT/'assets/department-completeness.js')], check=True)
+subprocess.run(['node', '--test', str(ROOT/'tests/department-depth.test.cjs')], check=True)
 subprocess.run(['node','--check',str(ROOT/'assets/data-visuals.js')],check=True)
 subprocess.run(['node','--test',str(ROOT/'scripts/test-data-visuals.cjs')],check=True)
 class Page(HTMLParser):
