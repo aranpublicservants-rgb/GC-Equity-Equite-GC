@@ -1,5 +1,20 @@
 # Maintaining GC Equity / Équité-GC
 
+## November 22, 2026 departmental audit follow-up
+
+This publication batch follows the uploaded wider-department audit instructions. The audit reviewed a sample of pages and was a text/source audit, not an independent browser certification. Applied changes include:
+
+- Eleven former same-office routes are canonical redirects, preserved by `data/department-duplicate-routes.json` and the department page generator. Legacy query filters and hash fragments are retained when JavaScript is available. The public sitemap omits the retired routes, the homepage selector omits duplicate choices, and alias searches and old URLs resolve to the canonical selection. The Truth and Reconciliation Commission versus its Secretariat, as well as predecessor or combined Western Economic Diversification populations, were **not** merged.
+- Canada Post, Bank of Canada, Canada Infrastructure Bank, Service Canada and Canadian Coast Guard now have organization-specific scope explanations in both languages. The generator retains those reasons on rebuild.
+- DND has four additional PSES all-respondent accommodation items (Q84, Q85, Q44e, Q73p), and DFO has Q44e and Q73p. Sources and question-specific respondent bases are shown. Small Black Q87 respondent bases (DFO 15, ISC 20) are flagged. Original suppressed cells were not imputed.
+- Recourse sections for CRA, ESDC, Correctional Service Canada, CBSA, DND, DFO and ISC cross-reference the **independent ARAN decision library prepared November 18, 2026**. Title matches and employment scope are described explicitly; program-service cases are not used as workplace precedents. The index is not exhaustive, and some source links are summaries rather than full decisions. The generator retains cross-reference logic for generated pages.
+- DFO's 2025 staffing comparison now preserves selected one-decimal values and differentiates overall and process-participant bases. Additional material covers GBA Plus demand, Coast Guard College groups, Fleet reporting gaps, and Annex F accessibility narratives. The two disputed 2023 STA_57 Black and Indigenous values were deliberately withheld pending direct-source reconciliation rather than choosing between conflicting extracts.
+- Sampled full profiles now describe the missing current executive-by-group/level table and incomplete hiring-stage-by-group data as **unverified in this collection**, with a dated qualifier. They do not infer results from a headcount, a survey answer, or a national total.
+- `scripts/check-nov22-department-fixes.py` tests the changed pages and source boundaries. `scripts/check-site.py` invokes it, and the GitHub browser workflow runs the whole site checker and dedicated-department checker before browser smoke tests.
+
+**Known work still open:** the audit requested the PSC equity-group hiring/acting/promotion tables across all eligible full pages, verified 2025 executive group-by-level source tables (where published), broader case-law mapping, completeness upgrades for thin organizations, some departmental accessibility-plan content, and full live-browser checks of charts, language toggles and request builders. These are not represented as completed. No current employer figures were inferred for missing sources. Run the repository validation scripts and review the CI run before treating deployment or accessibility as verified.
+
+
 ## Fifty-point evidence quality review, November 22, 2026
 
 `evidence-review.html` and `assets/evidence-review.js` render `data/evidence-review-50.json`: exactly 50 bilingual checks in five groups (source/scope, workforce/representation, employee surveys, staffing/career movement, and commitments/outcomes/recourse). Each check has English and French question and action text plus a relative link to an already published evidence area. These are *questions for readers*, not grades, automated findings, source replacements or an assertion that any employer has passed or failed.
