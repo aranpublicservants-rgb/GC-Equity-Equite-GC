@@ -11,6 +11,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 
 ROOT=pathlib.Path(__file__).resolve().parent.parent
+subprocess.run(['python3', str(ROOT/'scripts/check-full-source-access.py')], check=True)
 subprocess.run(['python3', str(ROOT/'scripts/check-audit-fixes.py')], check=True)
 subprocess.run(['node', '--check', str(ROOT/'assets/department-depth.js')], check=True)
 subprocess.run(['node', '--check', str(ROOT/'assets/department-completeness.js')], check=True)
@@ -33,7 +34,7 @@ class Page(HTMLParser):
         if tag=='script' and self.in_script:
             self.scripts.append(''.join(self.script));self.in_script=False
 
-for name in ['index.html','equity.html','branch-equity.html','explorer.html','sources.html','reports.html','call-to-action.html','staffing.html','departmental-plans-2026-27/index.html','women-femmes/index.html']:
+for name in ['index.html','equity.html','branch-equity.html','explorer.html','sources.html','reports.html','source-access.html','call-to-action.html','staffing.html','departmental-plans-2026-27/index.html','women-femmes/index.html']:
     p=ROOT/name;html=p.read_text();page=Page();page.feed(html)
     assert len(page.ids)==len(set(page.ids)),f'duplicate static IDs: {name}'
     assert 'gc-workspace.js' in html and 'gc-workspace.css' in html,f'shared tools missing: {name}'
