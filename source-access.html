@@ -59,7 +59,7 @@ a{color:var(--gc-link,#145aa0)} a:focus-visible{outline:3px solid #d59612;outlin
 </ul></section>
 <section aria-labelledby="fswep-title"><h2 id="fswep-title" data-en="Public Service Commission student referral requests" data-fr="Demandes de présentation d’étudiants de la Commission de la fonction publique">Public Service Commission student referral requests</h2>
 <p class="small" data-en="November 5, 2026 public release, distinct from the October 2 snapshot already in the archive. These requests are not appointments, hires or equity outcomes." data-fr="Diffusion publique du 5 novembre 2026, distincte de la version du 2 octobre déjà archivée. Ces demandes ne sont ni des nominations, ni des embauches, ni des résultats en équité.">November 5, 2026 public release, distinct from the October 2 snapshot already in the archive. These requests are not appointments, hires or equity outcomes.</p>
-<ul class="sources"><li><strong data-en="FSWEP departmental requests for referrals, November 5, 2026" data-fr="PFETÉ, demandes de présentation par ministère, 5 novembre 2026">FSWEP departmental requests for referrals, November 5, 2026</strong><div><span class="format">CSV</span> <a href="https://open.canada.ca/data/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5/resource/51e8f1c1-7f2b-4245-900a-2304342410c0/download/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv" target="_blank" rel="noopener noreferrer" data-en="Open official source" data-fr="Consulter la source officielle">Open official source</a></div></li></ul></section>
+<ul class="sources"><li><strong data-en="FSWEP departmental requests for referrals, November 5, 2026" data-fr="PFETÉ, demandes de présentation par ministère, 5 novembre 2026">FSWEP departmental requests for referrals, November 5, 2026</strong><div><span class="format">CSV</span> <a href="https://open.canada.ca/data/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5/resource/51e8f1c1-7f2b-4245-900a-2304342410c0/download/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv" target="_blank" rel="noopener noreferrer" data-en="Open official source" data-fr="Consulter la source officielle">Open official source</a></div></li></ul><p class="small"><a href="data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv.gz" download data-en="Download the verified GC Equity archive (GZIP CSV)" data-fr="Télécharger la copie vérifiée d’Équité-GC (CSV GZIP)">Download the verified GC Equity archive (GZIP CSV)</a> <span data-en="The source contains 72,822 rows and was verified against the published 30,887,309-byte file." data-fr="La source contient 72 822 lignes et a été vérifiée à partir du fichier publié de 30 887 309 octets.">The source contains 72,822 rows and was verified against the published 30,887,309-byte file.</span></p></section>
 <p class="small" data-en="Source access reviewed November 23, 2026. The publisher may revise a download after this date. A working link alone does not establish matching contents or completeness within GC Equity." data-fr="Accès aux sources vérifié le 23 novembre 2026. L’éditeur peut réviser un téléchargement après cette date. Un lien fonctionnel ne prouve pas à lui seul que le contenu correspond ou qu’Équité-GC est complet.">Source access reviewed November 23, 2026. The publisher may revise a download after this date. A working link alone does not establish matching contents or completeness within GC Equity.</p>
 </main>
 <script>
@@ -90,6 +90,26 @@ window._applyLang=lang=>{
 let preferred=new URLSearchParams(location.search).get('lang');
 try{preferred=preferred||localStorage.getItem('gcEquityLang');}catch{}
 window._applyLang(preferred==='fr'?'fr':'en');
+// The source inventory contains original publisher hashes, not a claim of
+// complete local integration. Enrich only matching official URLs.
+fetch('data/large-sources-inventory.json').then(r=>r.ok?r.json():null).then(data=>{
+ if(!data||!Array.isArray(data.files))return;
+ const sourceMap=new Map(data.files.filter(f=>f.url&&f.sha256).map(f=>[f.url,f]));
+ for(const li of all){
+  const link=li.querySelector('a[href^="https://"]');
+  const item=link&&sourceMap.get(link.href);
+  if(!item)continue;
+  const details=document.createElement('details');
+  const summary=document.createElement('summary');
+  summary.dataset.en='Publisher-source checksum recorded';
+  summary.dataset.fr='Somme de contrôle de la source officielle consignée';
+  const body=document.createElement('p');
+  body.textContent='SHA-256: '+item.sha256+' | '+Number(item.bytes).toLocaleString('en-CA')+' bytes';
+  details.append(summary,body);
+  li.append(details);
+ }
+ window._applyLang(document.documentElement.lang);
+}).catch(()=>{});
 input.addEventListener('input',update);
 document.getElementById('source-clear').addEventListener('click',()=>{input.value='';update();input.focus();});
 })();
