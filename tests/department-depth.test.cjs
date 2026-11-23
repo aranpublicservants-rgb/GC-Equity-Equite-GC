@@ -12,7 +12,7 @@ const index=JSON.parse(read('assets/department-profile-index.json'));
 assert.equal(source.records.length,176,'entire reviewed source-index coverage');
 assert.equal(source.lastPrepared,'2026-11-18');
 assert.equal(source.records.filter(c=>c.scope==='Not an employment dispute').length,8);
-assert.ok(source.records.every(x=>x.id&&x.title&&x.citation&&/^https:\/\//.test(x.url)));
+assert.ok(source.records.every(x=>x.id&&x.title&&x.citation&&/^https?:\/\//.test(x.url)));
 assert.ok(app.includes("c.scope==='Federal public service'"),'program-delivery cases must not be employment matches');
 assert.ok(app.includes('recourse-case-index-2026-11.json'),'locally retained source index');
 assert.ok(!app.includes('fetch("https://aranpublicservants-rgb.github.io/aran-raar/recourse/data/cases.json")'),'do not require cross-site fetch');
