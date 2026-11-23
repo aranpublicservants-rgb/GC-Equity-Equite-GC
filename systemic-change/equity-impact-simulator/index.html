@@ -1,27 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-tool="equity-impact-simulator">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Moved | GC Equity</title>
-<link rel="canonical" href="../decision-equity-check/">
-<meta http-equiv="refresh" content="0; url=../decision-equity-check/#decision">
-<script>
-/* This tool was combined into another one. Keep the language and department of the visitor when redirecting. */
-(function () {
-  var from = new URLSearchParams(location.search), u = new URL("../decision-equity-check/", location.href);
-  ["lang", "org", "peer"].forEach(function (k) { if (from.get(k)) u.searchParams.set(k, from.get(k)); });
-  u.hash = "#decision" || location.hash;
-  location.replace(u.href);
-})();
-</script>
+<meta name="color-scheme" content="light dark">
+<title>Equity impact simulator | GC Equity</title>
+<meta name="description" content="Rate two options for a proposed decision side by side across four scenarios, and record the mitigation.">
+<link rel="stylesheet" href="../tools.css?v=20261122-2">
+<script>if(new URLSearchParams(location.search).get("lang")==="fr")document.documentElement.lang="fr";</script>
 </head>
 <body>
-<main>
-<h1>This page has moved</h1>
-<p>This tool is now part of the <a href="../decision-equity-check/#decision">Decision equity check</a>.</p>
-<p lang="fr">Cet outil fait maintenant partie de la page <a href="../decision-equity-check/#decision">Vérification de l’équité des décisions</a>.</p>
-</main>
+<div id="app">
+<header class="site-header"><p><a href="../../">GC Equity / Équité-GC</a></p><h1>Equity impact simulator</h1><p class="intro">Simulateur d’impact sur l’équité</p></header>
+<main id="main"><noscript><p>This tool needs JavaScript to run. Cet outil a besoin de JavaScript pour fonctionner.</p></noscript><p>Rate two options for a proposed decision side by side across four scenarios, and record the mitigation.</p></main>
+</div>
+<script src="../tools-content.js?v=20261122-4"></script>
+<script src="../tools.js?v=20261122-4"></script>
 </body>
 </html>

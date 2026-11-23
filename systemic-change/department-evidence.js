@@ -461,6 +461,7 @@
   austY1 = "",
   austY2 = "",
   reduction = 5,
+  austType = "all",
   year = "all",
   query = "",
   chosen = new Set(),
@@ -1035,18 +1036,38 @@
    kind: "headcount-range",
    organization: name(o)
   });
-  const left = n2 === null ? null : Math.round(n2 * (1 - reduction / 100)),
+  const tenure = popRows(ten, o),
+   tl = x => ({
+    Indeterminate: L("Indeterminate", "Durée indéterminée"),
+    Term: L("Term", "Durée déterminée"),
+    Casual: L("Casual", "Occasionnel"),
+    Student: L("Student", "Étudiant"),
+    Unknown: L("Unknown", "Inconnu")
+   } [x] || x),
+   tv = (y, tp) => val(tenure.find(r => String(r.Year) === String(y) && r.Tenure === tp)?.["Number of employees"]),
+   types = [...new Set(tenure.filter(r => [austY1, austY2].includes(String(r.Year))).map(r => r.Tenure))].sort();
+  const typeOpts = types.filter(tp => tv(austY2, tp) !== null);
+  if (!typeOpts.includes(austType)) austType = "all";
+  const base = austType === "all" ? n2 : tv(austY2, austType),
+   removed = base === null ? null : Math.round(base * reduction / 100),
+   left = n2 === null || removed === null ? null : n2 - removed,
+   leftType = base === null ? null : base - (removed ?? 0),
    cut = reduction.toLocaleString(loc(), {
     maximumFractionDigits: 1
-   });
+   }),
+   tname = austType === "all" ? "" : tl(austType).toLowerCase();
   out += '<h4>' + e(L("Scenario: a hypothetical reduction", "Scénario : une réduction hypothétique")) + '</h4><label for="dew-reduction">' + e(L(
    "Reduction to test (%, 0 to 50)", "Réduction à tester (%, de 0 à 50)")) + '</label><input id="dew-reduction" type="number" min="0" max="50" step="0.5" value="' +
-   e(String(reduction)) + '">' + (left === null ? '<p>' + e(L("No published headcount for this year.", "Aucun effectif publié pour cette année.")) + '</p>' :
-    '<p class="dew-big">' + e(num(left)) + '</p><p>' + e(L("Employees left if " + cut + "% of the March " + austY2 + " headcount were removed evenly. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
+   e(String(reduction)) + '"><label for="dew-type">' + e(L("Apply the reduction to", "Appliquer la réduction à")) + '</label><select id="dew-type"><option value="all"' + (austType === "all" ? " selected" : "") + '>' +
+   e(L("All employees", "Tous les employés")) + '</option>' + typeOpts.map(tp => '<option value="' + e(tp) + '"' + (tp === austType ? " selected" : "") + '>' + e(tl(tp)) + '</option>').join("") + '</select>' +
+   (left === null ? '<p>' + e(base === null && austType !== "all" ? L("No published headcount for this employment type.", "Aucun effectif publié pour ce type d’emploi.") : L("No published headcount for this year.", "Aucun effectif publié pour cette année.")) + '</p>' :
+    '<p class="dew-big">' + e(num(left)) + '</p><p>' + e(austType === "all" ? L("Employees left if " + cut + "% of the March " + austY2 + " headcount were removed evenly. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
      "Employés restants si " + cut + " % de l’effectif de mars " + austY2 + " étaient retranchés uniformément. Il s’agit d’un calcul pour la discussion. Ce n’est ni une prévision, ni une réduction prévue, ni un choix d’employés."
+     ) : L("Employees left overall if " + cut + "% of the March " + austY2 + " headcount of " + tname + " employees (" + num(base) + ") were removed evenly. That group would have " + num(leftType) + " employees. This is arithmetic for discussion. It is not a forecast, a planned reduction or a choice of employees.",
+     "Employés restants au total si " + cut + " % de l’effectif de mars " + austY2 + " des employés " + tname + " (" + num(base) + ") étaient retranchés uniformément. Ce groupe compterait " + num(leftType) + " employés. Il s’agit d’un calcul pour la discussion. Ce n’est ni une prévision, ni une réduction prévue, ni un choix d’employés."
      )) + '</p>');
-  if (left !== null) addEvidence(L("Hypothetical scenario", "Scénario hypothétique"), austY2, L("Employees left after a hypothetical " + cut + "% reduction",
-   "Employés restants après une réduction hypothétique de " + cut + " %"), "", num(left), num(n2), "", "", POP_PAGE(), {
+  if (left !== null) addEvidence(L("Hypothetical scenario", "Scénario hypothétique"), austY2, L("Employees left after a hypothetical " + cut + "% reduction" + (tname ? " of " + tname + " employees" : ""),
+   "Employés restants après une réduction hypothétique de " + cut + " %" + (tname ? " des employés " + tname : "")), "", num(left), num(n2), "", "", POP_PAGE(), {
    kind: "scenario",
    organization: name(o)
   });
@@ -1066,16 +1087,6 @@
     "Écart")], prot, L("Representation and workforce availability, March 2025", "Représentation et disponibilité au sein de la population active, mars 2025")) +
    '<p class="dew-small">' + e(L("These are the published 2025 figures. They are not estimates of who a reduction would affect.",
     "Il s’agit des chiffres publiés de 2025. Ce ne sont pas des estimations des personnes qu’une réduction toucherait.")) + '</p>' : missing());
-  const tenure = popRows(ten, o),
-   tl = x => ({
-    Indeterminate: L("Indeterminate", "Durée indéterminée"),
-    Term: L("Term", "Durée déterminée"),
-    Casual: L("Casual", "Occasionnel"),
-    Student: L("Student", "Étudiant"),
-    Unknown: L("Unknown", "Inconnu")
-   } [x] || x),
-   tv = (y, tp) => val(tenure.find(r => String(r.Year) === String(y) && r.Tenure === tp)?.["Number of employees"]),
-   types = [...new Set(tenure.filter(r => [austY1, austY2].includes(String(r.Year))).map(r => r.Tenure))].sort();
   if (types.length) out += '<h4>' + e(L("Change in employment type", "Variation par type d’emploi")) + '</h4>' + table([L("Employment type", "Type d’emploi"), austY1, austY2,
    L("Net difference", "Différence nette")], types.map(tp => {
     const x = tv(austY1, tp),
@@ -1100,7 +1111,8 @@
  function bindScenario() {
   const y1 = $("y1"),
    y2 = $("y2"),
-   cut = $("reduction");
+   cut = $("reduction"),
+   typ = $("type");
   const redo = async id => {
    sync();
    await renderData();
@@ -1113,6 +1125,10 @@
   if (y2) y2.onchange = () => {
    austY2 = y2.value;
    redo("y2")
+  };
+  if (typ) typ.onchange = () => {
+   austType = typ.value;
+   redo("type")
   };
   if (cut) cut.onchange = () => {
    const v = Number(cut.value);
@@ -1503,7 +1519,8 @@
     year,
     from: AUSTERITY ? austY1 : "",
     to: AUSTERITY ? austY2 : "",
-    cut: AUSTERITY && reduction !== 5 ? String(reduction) : ""
+    cut: AUSTERITY && reduction !== 5 ? String(reduction) : "",
+    type: AUSTERITY && austType !== "all" ? austType : ""
    })) {
    if (v && v !== "all") u.searchParams.set(k, v);
    else u.searchParams.delete(k)
@@ -1808,7 +1825,8 @@
    austY1 = /^20\d\d$/.test(params.get("from") || "") ? params.get("from") : "";
    austY2 = /^20\d\d$/.test(params.get("to") || "") ? params.get("to") : "";
    const c = Number(params.get("cut"));
-   if (params.get("cut") && Number.isFinite(c)) reduction = Math.min(50, Math.max(0, c))
+   if (params.get("cut") && Number.isFinite(c)) reduction = Math.min(50, Math.max(0, c));
+   if (/^[A-Za-z]{3,20}$/.test(params.get("type") || "")) austType = params.get("type")
   }
   render();
   if (HISTORY) loadAssistant();

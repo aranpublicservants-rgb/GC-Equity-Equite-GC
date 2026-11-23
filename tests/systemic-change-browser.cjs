@@ -19,12 +19,11 @@ const server = http.createServer((req, res) => {
 
 const EM_DASH = String.fromCharCode(8212);
 const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
-const TOOLS = ['hr-process-toolkit/', 'managers-equity-toolkit/', 'decision-equity-check/', 'commitments-tracker/', 'invisible-work-project/', 'global-public-service-equity/'];
+const TOOLS = ['hr-process-toolkit/', 'managers-equity-toolkit/', 'decision-equity-check/', 'equity-impact-simulator/', 'commitments-tracker/', 'invisible-work-project/', 'global-public-service-equity/'];
 /* Old addresses must keep working: each one opens the tool that replaced it. */
 const REDIRECTS = [
   ['barrier-breaker/', 'hr-process-toolkit/', '#barriers'],
   ['job-posting-barrier-scanner/', 'hr-process-toolkit/', '#posting'],
-  ['equity-impact-simulator/', 'decision-equity-check/', '#decision'],
   ['what-worked/', 'commitments-tracker/', '#practices'],
   ['federal-glass-ceiling/', 'department-evidence-explorer/', 'lens=career'],
   ['public-service-pay-gap-atlas/', 'department-evidence-explorer/', 'lens=pay']
@@ -99,6 +98,13 @@ async function common(page, label, lang, errors) {
         await page.waitForFunction(() => /10/.test(new URL(location.href).searchParams.get('cut') || ''), null, { timeout: 30000 });
         assert.match(await page.locator('#dew-result').innerText(), lang === 'fr' ? /explicitement|hypoth/ : /hypothetical/);
         assert.ok(await page.locator('#dew-result table caption').count() >= 2, 'Austerity tables missing');
+        /* The reduction can apply to one employment type only. */
+        const typeValues = await page.locator('#dew-type option').evaluateAll(o => o.map(x => x.value));
+        assert.ok(typeValues.includes('all') && typeValues.length >= 2, 'Employment type choices missing');
+        const oneType = typeValues.find(v => v !== 'all');
+        await page.selectOption('#dew-type', oneType);
+        await page.waitForFunction(v => new URL(location.href).searchParams.get('type') === v, oneType, { timeout: 30000 });
+        assert.match(await page.locator('#dew-result').innerText(), lang === 'fr' ? /des employés/ : /headcount of/);
         await common(page, where('equity under austerity'), lang, errors);
 
         /* The process tools, the hours tool and the global observatory. */
@@ -118,6 +124,19 @@ async function common(page, label, lang, errors) {
             await page.selectOption('#gl-topic', 'disability');
             await page.locator('#compare article.item').first().waitFor();
             assert.equal(await page.locator('#compare article.item').count(), 1, 'Global observatory should show one United Kingdom disability figure');
+            await page.selectOption('#gl-country', 'ca');
+            await page.selectOption('#gl-topic', 'women');
+            assert.equal(await page.locator('#compare article.item').count(), 2, 'Women dimension should show the country figure and the OECD average');
+            assert.match(await page.locator('#compare').innerText(), lang === 'fr' ? /41,1/ : /41\.1%/);
+          }
+          if (t === 'equity-impact-simulator/') {
+            assert.equal(await page.locator('#scenarios select').count(), 8, 'Simulator should rate two options for four scenarios');
+            await page.fill('#opt-a', 'Option A test');
+            await page.selectOption('#sa-sim-workforce-reductions-or-restructuring', '3');
+            await page.selectOption('#sb-sim-workforce-reductions-or-restructuring', '1');
+            await page.click('#rec-build');
+            const text = await page.locator('#rec-out').innerText();
+            assert.ok(text.includes('Option A test') && text.includes('Option B'), 'Record should name both options');
           }
           if (t === 'commitments-tracker/') {
             await page.locator('#cta-org option[value="indigenous-services-canada"]').waitFor({ state: 'attached', timeout: 60000 });

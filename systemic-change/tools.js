@@ -23,7 +23,7 @@
   const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
 
   const st = {
-    picked: new Set(), status: {}, evidence: {}, hours: {}, query: {},
+    picked: new Set(), status: {}, statusB: {}, optA: "", optB: "", evidence: {}, hours: {}, query: {},
     notes: "", owner: "", due: "", measure: "", record: "",
     posting: "", flags: null, log: [], logDraft: { rec: "", fn: "", date: "", status: "0", ev: "" },
     ctaOrg: "", ctaData: null, ctaDir: null, ctaError: false,
@@ -82,6 +82,11 @@
   function control(sec, it) {
     const id = esc(it.id);
     if (sec.mode === "pick") return '<label class="check"><input type="checkbox" data-pick="' + id + '" ' + (st.picked.has(it.id) ? "checked" : "") + "> " + esc(L("Include in my record", "Inclure dans ma fiche")) + "</label>";
+    if (sec.mode === "compare") {
+      const mk = (key, store, label) => '<div><label for="' + key + "-" + id + '">' + esc(label) + '</label><select id="' + key + "-" + id + '" data-' + (key === "sa" ? "status" : "statusb") + '="' + id + '">' +
+        tr(sec.statuses).map((s, k) => '<option value="' + k + '" ' + (Number(store[it.id] || 0) === k ? "selected" : "") + ">" + esc(s) + "</option>").join("") + "</select></div>";
+      return '<div class="grid">' + mk("sa", st.status, (st.optA || L("Option A", "Option A")) + ": " + tr(sec.statusLabel)) + mk("sb", st.statusB, (st.optB || L("Option B", "Option B")) + ": " + tr(sec.statusLabel)) + "</div>";
+    }
     if (sec.mode === "status" || sec.mode === "tracking") {
       const opts = tr(sec.statuses).map((s, k) => '<option value="' + k + '" ' + (Number(st.status[it.id] || 0) === k ? "selected" : "") + ">" + esc(s) + "</option>").join("");
       let h = '<label for="status-' + id + '">' + esc(tr(sec.statusLabel)) + '</label><select id="status-' + id + '" data-status="' + id + '">' + opts + "</select>";
@@ -109,6 +114,8 @@
   function library(sec) {
     const all = sec.groups.flatMap(g => g.items);
     let out = '<section id="' + esc(sec.id) + '" aria-labelledby="' + esc(sec.id) + '-title"><h2 id="' + esc(sec.id) + '-title">' + esc(tr(sec.title)) + "</h2>" + (sec.intro ? "<p>" + esc(tr(sec.intro)) + "</p>" : "");
+    if (sec.mode === "compare") out += '<div class="grid no-print"><div><label for="opt-a">' + esc(L("Name of option A (no personal information)", "Nom de l’option A (sans renseignements personnels)")) + '</label><input type="text" id="opt-a" value="' + esc(st.optA) + '" maxlength="80"></div>' +
+      '<div><label for="opt-b">' + esc(L("Name of option B (no personal information)", "Nom de l’option B (sans renseignements personnels)")) + '</label><input type="text" id="opt-b" value="' + esc(st.optB) + '" maxlength="80"></div></div>';
     if (all.length > 6) out += '<div class="no-print"><label for="q-' + esc(sec.id) + '">' + esc(L("Search these topics", "Rechercher dans ces sujets")) + '</label><input type="search" id="q-' + esc(sec.id) + '" data-search="' + esc(sec.id) + '" value="' + esc(st.query[sec.id] || "") + '"><p class="small" role="status" id="qs-' + esc(sec.id) + '"></p></div>';
     for (const g of sec.groups) {
       out += '<div data-group="' + esc(g.id || "") + '"' + (g.id ? ' id="' + esc(g.id) + '"' : "") + ">" + (g.title ? "<h3 class=\"group-title\">" + esc(tr(g.title)) + "</h3>" : "") + (g.intro ? "<p>" + esc(tr(g.intro)) + "</p>" : "") +
@@ -176,11 +183,15 @@
       '<div><label for="gl-country">' + esc(L("Country", "Pays")) + '</label><select id="gl-country">' + sec.countries.map(x => '<option value="' + esc(x.id) + '"' + (x.id === c.id ? " selected" : "") + ">" + esc(tr(x.name)) + "</option>").join("") + "</select></div>" +
       '<div><label for="gl-topic">' + esc(L("Evidence dimension", "Dimension des données")) + '</label><select id="gl-topic">' + sec.topics.map(([k, v]) => '<option value="' + esc(k) + '"' + (k === st.topic ? " selected" : "") + ">" + esc(tr(v)) + "</option>").join("") + "</select></div></div>" +
       '<p class="small">' + esc(tr(c.scope)) + "</p>";
+    const ref = sec.oecdRef && (st.topic === "all" || st.topic === sec.oecdRef.id) ? sec.oecdRef : null;
+    if (ref) out += '<article class="item"><h3>' + esc(tr(ref.l)) + '</h3><p class="big">' + esc(pctF(ref.value)) + "</p><p>" + esc(tr(ref.note)) +
+      '</p><p class="sources"><a href="' + esc(ref.source) + '">' + esc(L("OECD, Government at a Glance 2025", "OCDE, Panorama des administrations publiques 2025")) + " (" + esc(String(ref.year)) + ")</a></p></article>";
     out += list.length ? list.map(x => '<article class="item"><h3>' + esc(tr(x.l)) + '</h3><p class="big">' + esc(pctF(x.value)) + "</p>" +
       (x.comparator != null ? "<p>" + esc(tr(x.cl)) + COL() + "<strong>" + esc(pctF(x.comparator)) + "</strong> (" + esc(ptsF(x.value - x.comparator)) + ")</p>" : "") +
       "<p>" + esc(tr(x.note)) + '</p><p class="sources"><a href="' + esc(src) + '">' + esc(L("Official source", "Source officielle")) + " (" + esc(String(c.year)) + ")</a></p></article>").join("") :
       '<p class="notice">' + esc(L("This source publishes no figure for this dimension in the selected evidence. Do not read the absence as zero or borrow another country’s definition.", "Cette source ne publie aucun chiffre pour cette dimension dans les données retenues. Ne pas interpréter l’absence comme un zéro ni emprunter la définition d’un autre pays.")) + "</p>";
     const all = sec.countries.flatMap(x => x.indicators.map(k => [tr(x.name) + " (" + x.year + ")", tr(k.l), pctF(k.value)]));
+    if (sec.oecdRef) all.push([L("OECD average (2023)", "Moyenne de l’OCDE (2023)"), tr(sec.oecdRef.l), pctF(sec.oecdRef.value)]);
     const table = (caption, head, rows) => '<div class="table-wrap" tabindex="0" role="region" aria-label="' + esc(caption) + '"><table><caption>' + esc(caption) + "</caption><thead><tr>" + head.map(h => '<th scope="col">' + esc(h) + "</th>").join("") + "</tr></thead><tbody>" + rows.map(r => "<tr>" + r.map((v, i) => i ? "<td>" + v + "</td>" : '<th scope="row">' + v + "</th>").join("") + "</tr>").join("") + "</tbody></table></div>";
     out += "<details><summary>" + esc(L("All published figures and how each country reports them", "Tous les chiffres publiés et la façon dont chaque pays les déclare")) + "</summary>" +
       table(L("Published figures by country, not a ranking", "Chiffres publiés par pays, pas un classement"), [L("Country and year", "Pays et année"), L("Published measure", "Indicateur publié"), L("Value", "Valeur")], all.map(r => r.map(esc))) +
@@ -290,6 +301,14 @@
             lines.push("", tr(it.title));
             for (const f of it.fields) lines.push(tr(f.l) + COL() + tr(f.v));
             if (it.sources && it.sources.length) lines.push(L("Sources", "Sources") + COL() + it.sources.map(sourceText).join("; "));
+          }
+        } else if (sec.mode === "compare") {
+          const statuses = tr(sec.statuses), nA = st.optA || L("Option A", "Option A"), nB = st.optB || L("Option B", "Option B");
+          lines.push("", tr(sec.title));
+          for (const g of sec.groups) for (const it of g.items) {
+            const a = Number(st.status[it.id] || 0), b = Number(st.statusB[it.id] || 0);
+            lines.push("- " + tr(it.title), "  " + nA + COL() + statuses[a], "  " + nB + COL() + statuses[b]);
+            if (a > 0 || b > 0) for (const f of it.fields.slice(1)) lines.push("  " + tr(f.l) + COL() + tr(f.v));
           }
         } else if (sec.mode === "status" || sec.mode === "tracking") {
           const statuses = tr(sec.statuses);
@@ -422,6 +441,8 @@
     const el = ev.target;
     if (el.dataset.search) { st.query[el.dataset.search] = el.value; filter(el.dataset.search); }
     else if (el.dataset.evidence) st.evidence[el.dataset.evidence] = el.value;
+    else if (el.id === "opt-a") st.optA = el.value;
+    else if (el.id === "opt-b") st.optB = el.value;
     else if (el.dataset.hours) {
       const h = st.hours[el.dataset.hours] || (st.hours[el.dataset.hours] = { w: "", n: "" });
       h[el.dataset.part] = el.value;
@@ -440,6 +461,7 @@
     const el = ev.target;
     if (el.dataset.pick) { el.checked ? st.picked.add(el.dataset.pick) : st.picked.delete(el.dataset.pick); }
     else if (el.dataset.status) st.status[el.dataset.status] = Number(el.value);
+    else if (el.dataset.statusb) st.statusB[el.dataset.statusb] = Number(el.value);
     else if (el.id === "rec-due") st.due = el.value;
     else if (el.id === "log-date") st.logDraft.date = el.value;
     else if (el.id === "log-status") st.logDraft.status = el.value;

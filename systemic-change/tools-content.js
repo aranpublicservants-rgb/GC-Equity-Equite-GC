@@ -239,8 +239,8 @@ window.GCE_TOOLS = {
     "Outils de changement systémique"
    ],
    "intro": [
-    "Six tools for finding barriers in published data, reviewing HR processes and decisions, and following commitments in the federal public service.",
-    "Six outils pour repérer les obstacles dans les données publiées, examiner les processus et les décisions de RH, et suivre les engagements dans la fonction publique fédérale."
+    "Nine tools for finding barriers in published data, reviewing HR processes and decisions, comparing with other countries, and following commitments in the federal public service.",
+    "Neuf outils pour repérer les obstacles dans les données publiées, examiner les processus et les décisions de RH, comparer avec d’autres pays et suivre les engagements dans la fonction publique fédérale."
    ],
    "sections": [
     {
@@ -2947,6 +2947,11 @@ window.GCE_TOOLS = {
       intro: ["Choose a country and an evidence dimension. Each card shows one published measure with its source. The percentages use different populations, denominators and identity definitions.",
         "Choisir un pays et une dimension. Chaque fiche présente un indicateur publié et sa source. Les pourcentages reposent sur des populations, des dénominateurs et des définitions identitaires différents."],
       oecd: "https://www.oecd.org/en/data/datasets/oecd-government-at-a-glance-database.html",
+      oecdRef: { id: "women", year: 2023, value: 41.1,
+        source: "https://www.oecd.org/en/publications/government-at-a-glance-2025_0efd0bcd-en/full-report/gender-parity-in-central-administrations_e178593c.html",
+        l: ["Women in senior managerial positions, OECD average", "Femmes aux postes de gestion supérieure, moyenne de l’OCDE"],
+        note: ["Average across OECD countries for central administrations, 2023 data, from the OECD survey on the composition of the workforce in central and federal governments. The OECD reports that this is 16.6 percentage points below women’s overall share of central administration employment. This is a harmonized OECD measure of senior managers. It is not the same as the national figures on the other cards, which use each country’s own definitions. The OECD publishes a value for each country in Figure 13.10 of the source; use it to compare countries.",
+          "Moyenne des pays de l’OCDE pour les administrations centrales, données de 2023, tirée de l’enquête de l’OCDE sur la composition des effectifs des administrations centrales et fédérales. L’OCDE indique que cette part est inférieure de 16,6 points à la part globale des femmes dans l’emploi des administrations centrales. Il s’agit d’une mesure harmonisée de l’OCDE pour les cadres supérieurs. Elle diffère des chiffres nationaux des autres fiches, qui reposent sur les définitions propres à chaque pays. L’OCDE publie une valeur pour chaque pays de la figure 13.10 de la source; l’utiliser pour comparer les pays."] },
       topics: [["all", ["All published dimensions", "Toutes les dimensions publiées"]], ["women", ["Women", "Femmes"]], ["indigenous", ["Indigenous Peoples or Māori", "Autochtones ou Māori"]],
         ["disability", ["Disability", "Handicap"]], ["ethnicity", ["Ethnicity", "Origine ethnique"]], ["language", ["Language background", "Parcours linguistique"]]],
       countries: [
@@ -3017,5 +3022,55 @@ window.GCE_TOOLS = {
       title: ["Create a record", "Produire une fiche"],
       intro: ["The record lists the country and figures you looked at, then your notes on the practice to test and what Canada would have to verify.", "La fiche présente le pays et les chiffres consultés, puis vos notes sur la pratique à mettre à l’essai et sur ce que le Canada devrait vérifier."]
     }]
+  };
+})(window.GCE_TOOLS);
+
+/* Equity impact simulator: the four proposed-decision scenarios, with two options rated side by side. The scenarios are copied from the decision equity check so that the text stays in one place. */
+(function (T) {
+  const check = T.pages["decision-equity-check"].sections.find(x => x.id === "check");
+  const group = check.groups.find(g => g.id === "decision");
+  const items = group.items.map(it => Object.assign({}, it, { id: "sim-" + it.id.replace(/^decision-/, "") }));
+  T.tools["equity-impact-simulator"] = {
+    href: "equity-impact-simulator/",
+    title: ["Equity impact simulator", "Simulateur d’impact sur l’équité"],
+    intro: [
+      "Rate two options for a proposed decision side by side across four scenarios, and record the mitigation. It is a qualitative scenario assessment, not a prediction or a validated risk score.",
+      "Évaluer côte à côte deux options pour une décision proposée selon quatre scénarios, et consigner l’atténuation. C’est une évaluation qualitative de scénarios, non une prévision ni un score de risque validé."
+    ]
+  };
+  const at = T.order.indexOf("decision-equity-check") + 1;
+  T.order.splice(at, 0, "equity-impact-simulator");
+  const hub = T.pages.hub.sections.find(x => x.type === "hub");
+  for (const g of hub.groups) {
+    const k = g.tools.indexOf("decision-equity-check");
+    if (k >= 0) g.tools.splice(k + 1, 0, "equity-impact-simulator");
+  }
+  T.pages["equity-impact-simulator"] = {
+    title: T.tools["equity-impact-simulator"].title,
+    intro: T.tools["equity-impact-simulator"].intro,
+    sections: [{
+      type: "library",
+      id: "scenarios",
+      mode: "compare",
+      title: ["Scenarios to rate", "Scénarios à évaluer"],
+      intro: [
+        "Name the two options, then choose a rating for each scenario that applies. Scenarios you leave as not assessed remain unknown. Use the decision equity check for a broader review of an existing system.",
+        "Nommez les deux options, puis choisissez une évaluation pour chaque scénario pertinent. Les scénarios non évalués demeurent inconnus. Utilisez la vérification de l’équité des décisions pour un examen plus large d’un système existant."
+      ],
+      statusLabel: ["Evidence and level of concern", "Preuves et niveau de préoccupation"],
+      statuses: check.statuses,
+      groups: [{ id: "scenarios-list", items }]
+    }, {
+      type: "record",
+      title: ["Create a record", "Produire une fiche"],
+      intro: [
+        "The record lists each scenario with the rating of each option, and the mitigation for scenarios you assessed.",
+        "La fiche présente chaque scénario avec l’évaluation de chaque option, et l’atténuation pour les scénarios évalués."
+      ]
+    }],
+    limits: [
+      "A rating is a judgment for discussion. It is not an audit, a compliance finding or a prediction. Verify current requirements and delegated authority before acting.",
+      "Une évaluation est un jugement pour discussion. Ce n’est ni un audit, ni un constat de conformité, ni une prévision. Vérifiez les exigences en vigueur et la délégation de pouvoirs avant d’agir."
+    ]
   };
 })(window.GCE_TOOLS);
