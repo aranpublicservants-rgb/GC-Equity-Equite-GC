@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "reviewed": "2026-11-20",
+  "reviewed": "2026-11-23",
   "reports": [
     {
       "id": "psc-original",
@@ -694,6 +694,338 @@
       ],
       "source": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
       "documentationSource": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/2022-2023%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202022-2023.xlsx"
+    },
+    {
+      "id": "dnd-civilian-representation-original",
+      "title": {
+        "en": "DND civilian workplace representation, 2019–2022",
+        "fr": "Représentation de l’effectif civil de la Défense nationale, 2019 à 2022"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/79ec0e13-2a2c-44a2-9723-bf9c706a72ff",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "dnd-civilian-gender-original",
+      "title": {
+        "en": "DND civilian gender distribution, 2021–2024",
+        "fr": "Répartition selon le genre du personnel civil de la Défense nationale, 2021 à 2024"
+      },
+      "population": {
+        "en": "This is a civilian workforce gender distribution, not an equity-group hiring or promotion measure.",
+        "fr": "Il s’agit d’une répartition selon le genre de l’effectif civil, et non d’une mesure des embauches ou promotions par groupe visé par l’équité."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/881a781c-8247-4990-b7e7-1d99317bd4b2",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "cse-ee-2024-2025-original",
+      "title": {
+        "en": "CSE employment equity and first official language, 2024–2025",
+        "fr": "Équité en emploi et première langue officielle au CST, 2024-2025"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/112ed90e-da6c-49d7-8bd5-81964bcab466",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2024-2025.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "cse-ee-2022-2023-original",
+      "title": {
+        "en": "CSE employment equity and first official language, 2022–2023",
+        "fr": "Équité en emploi et première langue officielle au CST, 2022-2023"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/f6afd910-e246-4676-90dd-51c0ea6f6ff3",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2022-2023.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "cse-workforce-2022-original",
+      "title": {
+        "en": "CSE workforce representation, June 2022",
+        "fr": "Représentation de l’effectif du CST, juin 2022"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/3fb07d1b-8521-4c9a-b7de-6695f46b0d80",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-en.csv",
+          "lang": "en",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv",
+          "lang": "fr",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "cse-ee-2020-original",
+      "title": {
+        "en": "CSE employment equity series, 2020 edition",
+        "fr": "Série de l’équité en emploi au CST, édition de 2020"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/945948ff-ab9c-4461-b7de-225bfd2a02db",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "cse-ee-2019-original",
+      "title": {
+        "en": "CSE employment equity series, 2019 edition",
+        "fr": "Série de l’équité en emploi au CST, édition de 2019"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/55c43516-3470-4245-a4a2-db3fa453d7bb",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "cse-ee-2018-original",
+      "title": {
+        "en": "CSE employment equity series, 2018 edition",
+        "fr": "Série de l’équité en emploi au CST, édition de 2018"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/396cb8b1-8b7c-4c95-9943-b6788a26db6b",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "csis-ee-2020-original",
+      "title": {
+        "en": "CSIS employment equity time series",
+        "fr": "Série historique d’équité en matière d’emploi du SCRS"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/d77a24fe-eb38-4d02-8e00-32148a708b11",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "csis-age-2017-2018-original",
+      "title": {
+        "en": "CSIS designated groups by age, 2017–2018",
+        "fr": "Groupes désignés du SCRS selon l’âge, 2017-2018"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/f3b563cc-e1cb-4889-88a1-30e93d38cd68",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2017-2018.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "csis-age-2018-2019-original",
+      "title": {
+        "en": "CSIS designated groups by age, 2018–2019",
+        "fr": "Groupes désignés du SCRS selon l’âge, 2018-2019"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/479112da-a42a-4bf7-91bc-f40f810050a9",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "vac-ee-historical-original",
+      "title": {
+        "en": "Veterans Affairs Canada designated-group representation, 2018–2019",
+        "fr": "Représentation des groupes désignés à Anciens Combattants Canada, 2018-2019"
+      },
+      "population": {
+        "en": "Eleven original CSVs include representation, source notes and occupational-category definitions. Historical snapshots only.",
+        "fr": "Onze fichiers CSV comprennent la représentation, les notes des sources et les définitions des catégories professionnelles. Il s’agit uniquement de données historiques."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-women-2019-03-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-women-2018-12-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-visible-minorities-2019-03-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-visible-minorities-2018-12-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-persons-with-disabilities-2019-03-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-persons-with-disabilities-2018-12-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-aboriginal-peoples-2019-03-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-aboriginal-peoples-2018-12-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-occupational-categories.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-notes-2019-03-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/vac/vac-ee-notes-2018-12-31.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "csps-ee-2018-2025-original",
+      "title": {
+        "en": "Canada School of Public Service employment equity, 2018–2025",
+        "fr": "Équité en matière d’emploi à l’École de la fonction publique du Canada, 2018 à 2025"
+      },
+      "population": {
+        "en": "These records concern the named employer or population only. Historical reporting periods must not be treated as current or used to fill gaps for a different employer.",
+        "fr": "Ces données concernent uniquement l’employeur ou la population indiqués. Les périodes antérieures ne doivent pas être considérées comme actuelles ni utilisées pour combler les lacunes d’un autre employeur."
+      },
+      "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
+      "links": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
+          "lang": "both",
+          "format": "CSV"
+        },
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
+          "lang": "both",
+          "format": "CSV"
+        }
+      ]
     }
   ]
 }
