@@ -23,6 +23,10 @@ const TEXT={
  meta:['Sources: Treasury Board workforce data to March 31, 2025; Public Service Employee Survey, 2019 to 2024; Staffing and Non-Partisanship Survey, 2025; Public Service Commission staffing data. The comparisons are calculated by this site from the published figures. They are not Government of Canada statistics.',
   'Sources : données du Conseil du Trésor sur l’effectif jusqu’au 31 mars 2025; Sondage auprès des fonctionnaires fédéraux, de 2019 à 2024; Sondage sur la dotation et l’impartialité politique de 2025; données de dotation de la Commission de la fonction publique. Les comparaisons sont calculées par ce site à partir des chiffres publiés. Il ne s’agit pas de statistiques du gouvernement du Canada.'],
  jumpStart:['Start here','Pour commencer'],
+ jumpCompare:['Compare two organizations','Comparer deux organisations'],
+ compareTitle:['Compare two organizations','Comparer deux organisations'],
+ compareIntro:['Choose two organizations to see the same results side by side.','Choisissez deux organisations pour voir les mêmes résultats côte à côte.'],
+ cmpA:['First organization','Première organisation'], cmpB:['Second organization','Deuxième organisation'],
  jumpOrg:['One organization','Une organisation'],
  orgTitle:['Everything for one organization','Tout sur une organisation'],
  orgIntro:['Choose an organization, or select an organization name in any table above. This brings together every result on this page for that organization. A blank means the result was not published, usually because too few people answered.','Choisissez une organisation, ou sélectionnez le nom d’une organisation dans l’un des tableaux ci-dessus. Cette section réunit tous les résultats de cette page pour l’organisation. Une case vide signifie que le résultat n’a pas été publié, généralement parce que trop peu de personnes ont répondu.'],
@@ -104,7 +108,7 @@ const LINKS={
 const link=k=>{const s=LINKS[k],internal=!/^https?:/.test(s[2]);const href=internal?(/\.html/.test(s[2])?local(s[2]):s[2]):(fr()&&s[3]?s[3]:s[2]);return '<a href="'+esc(href)+'"'+(internal?'':' target="_blank" rel="noopener noreferrer"')+'>'+esc(tr(s[0],s[1]))+'</a>';};
 
 let D=null;
-const state={org:'',sg:'woman',sq:'STA_01E',ssort:'change',sdir:1,agree:'black',gg:'ind',gq:'Q65',show:'all',sort:'change',dir:-1,lg:'all',ls:'clear'};
+const state={org:'',ca:'',cb:'',sg:'woman',sq:'STA_01E',ssort:'change',sdir:1,agree:'black',gg:'ind',gq:'Q65',show:'all',sort:'change',dir:-1,lg:'all',ls:'clear'};
 
 function mlabel(k){const m=D.measures[k];return m?tr(m.en,m.fr):k;}
 function orgName(k){const n=D.trends.names[k];return n?(fr()?n[0]:n[1]):k;}
@@ -268,16 +272,11 @@ const inView=p=>{if(state.lg==='all')return true;const [a,b]=p;return D.measures
 
 /* ---------------- method and sources ---------------- */
 /* ---------------- one organization ---------------- */
-const ORGSRC={tbs:['Treasury Board workforce data','Données du Conseil du Trésor sur l’effectif'],pses:['2024 Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux de 2024'],snps:['2025 Staffing and Non-Partisanship Survey','Sondage sur la dotation et l’impartialité politique de 2025'],trends:['survey gaps over time','écarts dans le temps'],staffing:['staffing results, 2018 to 2025','résultats en dotation, 2018 à 2025']};
+const ORGSRC={sos:['2011 to 2013 Survey of Staffing','Sondage sur la dotation de 2011 à 2013'],tbs:['Treasury Board workforce data','Données du Conseil du Trésor sur l’effectif'],pses:['2024 Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux de 2024'],snps:['2025 Staffing and Non-Partisanship Survey','Sondage sur la dotation et l’impartialité politique de 2025'],trends:['survey gaps over time','écarts dans le temps'],staffing:['staffing results, 2018 to 2025','résultats en dotation, 2018 à 2025']};
 const orgByEn=()=>{const m={};(D.orgs||[]).forEach(o=>{m[o.en]=o;});return m;};
 const tk2en=()=>{const m={};(D.orgs||[]).forEach(o=>{if(o.tk)m[o.tk]=o.en;});return m;};
 const orgA=(en,label)=>en&&orgByEn()[en]?'<a href="#org-title" data-org="'+esc(en)+'">'+esc(label)+'</a>':esc(label);
-function renderOrg(){
- const sel=$('wda-org-select');if(!sel||!D.orgs)return;
- const list=D.orgs.slice().sort((a,b)=>(fr()?a.fr:a.en).localeCompare(fr()?b.fr:b.en,fr()?'fr':'en'));
- sel.innerHTML='<option value="">'+esc(tr('Choose an organization','Choisissez une organisation'))+'</option>'+list.map(o=>'<option value="'+esc(o.en)+'"'+(o.en===state.org?' selected':'')+'>'+esc(fr()?o.fr:o.en)+'</option>').join('');
- const out=$('wda-org-out'),o=orgByEn()[state.org];
- if(!o){out.innerHTML='<p class="wda-sub">'+esc(tr(D.orgs.length+' organizations are listed, including those with few published results.',D.orgs.length+' organisations sont présentées, y compris celles qui ont peu de résultats publiés.'))+'</p>';return;}
+function orgHtml(o){
  const srcs=o.has||[];
  let h='<h3>'+esc(fr()?o.fr:o.en)+'</h3><p>'+esc(tr('Results on this page: ','Résultats de cette page : ')+(srcs.length?srcs.map(k=>tr(ORGSRC[k][0],ORGSRC[k][1])).join('; '):tr('none published','aucun publié'))+'.')+(o.id?' <a href="'+esc(local('call-to-action.html?org='+encodeURIComponent(o.id)+'#record'))+'">'+esc(tr('Full record, with commitments and plans','Dossier complet, avec engagements et plans'))+'</a>':'')+'</p>';
  // both surveys
@@ -290,9 +289,27 @@ function renderOrg(){
  // staffing
  const q='STA_01E';const srows=SGROUPS.map(g=>{const c=((D.staffing_trend.groups[g]||{})[o.en]||{})[q];return c&&(c[0]!==null||c[2]!==null||c[4]!==null)?'<tr><th scope="row">'+esc(G(g))+'</th><td class="num">'+(has(c[4])?esc(pct(c[4])):'')+'</td><td class="num">'+(has(c[0])?esc(pct(c[0])):'')+'</td><td class="num">'+(has(c[2])?esc(pct(c[2])):'')+'</td><td class="num">'+(has(c[3])?esc(signed(c[3])):'')+'</td></tr>':'';}).join('');
  if(srows)h+='<h4>'+esc(tr('Staffing fairness: selection in the work unit is fair','Équité en dotation : la sélection dans l’unité de travail est équitable'))+'</h4><div class="wda-scroll"><table><caption>'+esc(tr('Staffing fairness, 2018 to 2025: '+(fr()?o.fr:o.en),'Équité en dotation, de 2018 à 2025 : '+(fr()?o.fr:o.en)))+'</caption><thead><tr><th scope="col">'+esc(tr('Group','Groupe'))+'</th><th scope="col" class="num">'+esc(tr('2018 (%), five-point scale','2018 (%), échelle à cinq points'))+'</th><th scope="col" class="num">2021 (%)</th><th scope="col" class="num">2025 (%)</th><th scope="col" class="num">'+esc(tr('Change 2021 to 2025','Variation de 2021 à 2025'))+'</th></tr></thead><tbody>'+srows+'</tbody></table></div><p class="wda-sub">'+esc(tr('The 2018 survey used a different answer scale, so 2018 is not comparable with 2021 and 2025.','Le sondage de 2018 utilisait une autre échelle de réponse; 2018 n’est donc pas comparable à 2021 et à 2025.'))+'</p>';
+ const sos=(D.staffing_trend.sos||{})[o.en];
+ if(sos){const yrs=['2011','2012','2013'],sq=D.staffing_trend.sos_questions;h+='<h4>'+esc(tr('Earlier staffing survey, all employees (2011 to 2013)','Ancien sondage sur la dotation, tous les employés (de 2011 à 2013)'))+'</h4><div class="wda-scroll"><table><caption>'+esc(tr('Share who agree, 2011 to 2013: '+(fr()?o.fr:o.en),'Part des répondants d’accord, de 2011 à 2013 : '+(fr()?o.fr:o.en)))+'</caption><thead><tr><th scope="col">'+esc(tr('Statement','Énoncé'))+'</th>'+yrs.map(y=>'<th scope="col" class="num">'+y+' (%)</th>').join('')+'</tr></thead><tbody>'+['selection','transparent','barriers'].filter(k=>sos[k]).map(k=>'<tr><th scope="row">'+esc(tr(sq[k].en,sq[k].fr))+'</th>'+yrs.map(y=>'<td class="num">'+(has(sos[k][y])?esc(pct(sos[k][y])):'')+'</td>').join('')+'</tr>').join('')+'</tbody></table></div><p class="wda-sub">'+esc(tr('This older survey reports all employees only, with no results by group. Its answers are the share who agree.','Cet ancien sondage ne présente que les résultats de tous les employés, sans résultats par groupe. Les réponses sont la part des répondants d’accord.'))+'</p>';}
  const ren=(D.staffing_trend.renamed||[]).filter(r=>r[1]===o.en||r[1]===(o.en||'').replace(/ of Canada$/,''));
  if(ren.length)h+='<p class="wda-sub">'+esc(tr('Older staffing results listed under '+ren.map(r=>'“'+r[0]+'”').join(', ')+' are shown under this name.','Les anciens résultats de dotation inscrits sous '+ren.map(r=>'« '+r[0]+' »').join(', ')+' sont présentés sous ce nom.'))+'</p>';
- out.innerHTML=h;
+ return h;
+}
+function renderOrg(){
+ const sel=$('wda-org-select');if(!sel||!D.orgs)return;
+ const list=D.orgs.slice().sort((a,b)=>(fr()?a.fr:a.en).localeCompare(fr()?b.fr:b.en,fr()?'fr':'en'));
+ sel.innerHTML='<option value="">'+esc(tr('Choose an organization','Choisissez une organisation'))+'</option>'+list.map(o=>'<option value="'+esc(o.en)+'"'+(o.en===state.org?' selected':'')+'>'+esc(fr()?o.fr:o.en)+'</option>').join('');
+ const out=$('wda-org-out'),o=orgByEn()[state.org];
+ if(!o){out.innerHTML='<p class="wda-sub">'+esc(tr(D.orgs.length+' organizations are listed, including those with few published results.',D.orgs.length+' organisations sont présentées, y compris celles qui ont peu de résultats publiés.'))+'</p>';return;}
+ out.innerHTML=orgHtml(o)+'<p><button type="button" class="gcw-btn" id="wda-org-compare">'+esc(tr('Compare with another organization','Comparer avec une autre organisation'))+'</button></p>';
+}
+function renderCompare(){
+ const A=$('wda-cmp-a'),B=$('wda-cmp-b');if(!A||!D.orgs)return;
+ const list=D.orgs.slice().sort((a,b)=>(fr()?a.fr:a.en).localeCompare(fr()?b.fr:b.en,fr()?'fr':'en'));
+ const opts=cur=>'<option value="">'+esc(tr('Choose an organization','Choisissez une organisation'))+'</option>'+list.map(o=>'<option value="'+esc(o.en)+'"'+(o.en===cur?' selected':'')+'>'+esc(fr()?o.fr:o.en)+'</option>').join('');
+ A.innerHTML=opts(state.ca);B.innerHTML=opts(state.cb);
+ const oa=orgByEn()[state.ca],ob=orgByEn()[state.cb];
+ $('wda-cmp-out').innerHTML=(oa||ob)?[oa,ob].map(o=>'<div class="wda-cmpcol">'+(o?orgHtml(o):'<p class="wda-sub">'+esc(tr('Choose a second organization.','Choisissez une deuxième organisation.'))+'</p>')+'</div>').join(''):'';
 }
 const has2=v=>Array.isArray(v)&&has(v[4]);
 function renderStart(){
@@ -351,17 +368,29 @@ function renderStaffing(){
 }
 
 /* ---------------- one-page brief ---------------- */
+function watchList(g){
+ const sigs={both:tr('top third on both surveys','tiers supérieur des deux sondages'),gap:tr('discrimination gap grew','écart de discrimination creusé'),staff:tr('selection fairness fell 5+ points since 2021','équité de la sélection en baisse de 5 points ou plus depuis 2021')};
+ const per={};
+ const add=(en,k)=>{(per[en]=per[en]||[]).push(k);};
+ (D.agree[g]?D.agree[g].orgs:[]).forEach(a=>add(a.en,'both'));
+ if(TGROUPS.includes(g))(D.orgs||[]).forEach(o=>{const it=o.tk&&((D.trends.orgs[o.tk]||{})[g]||{}).Q65;if(it&&it.label==='grew')add(o.en,'gap');});
+ if(SGROUPS.includes(g)){const rows=D.staffing_trend.groups[g]||{};Object.keys(rows).forEach(k=>{if(k==='Public Service')return;const c=(rows[k]||{}).STA_01E;if(c&&has(c[3])&&c[3]<=-5)add(k,'staff');});}
+ const by=orgByEn();
+ return Object.keys(per).filter(en=>per[en].length>=2&&by[en]).map(en=>({o:by[en],s:per[en].map(k=>sigs[k])})).sort((a,b)=>b.s.length-a.s.length||a.o.en.localeCompare(b.o.en)).slice(0,6);
+}
 function briefHtml(){
  const g=$('wda-start-group').value,gs=G(g,'s'),rule=D.rules.clear_q,nm=o=>fr()?o.fr:o.en;
- const a=D.agree[g],top=a.orgs.slice(0,8);
+ const a=D.agree[g],top=a.orgs.slice(0,6);
  const gq='Q65',c={grew:0,shrank:0,same:0,unsure:0};
  if(TGROUPS.includes(g))Object.keys(D.trends.orgs).forEach(k=>{if(k==='Public Service')return;const it=((D.trends.orgs[k]||{})[g]||{})[gq];if(it&&it.y&&it.y['2024']&&has(it.y['2024'][4])&&it.label)c[it.label]++;});
  const ps=TGROUPS.includes(g)?((D.trends.orgs['Public Service']||{})[g]||{})[gq]:null;
- const links=D.scan.pairs.filter(p=>p[5]<rule&&(D.measures[p[0]].group===g||D.measures[p[1]].group===g)).slice(0,6);
+ const links=D.scan.pairs.filter(p=>p[5]<rule&&(D.measures[p[0]].group===g||D.measures[p[1]].group===g)).slice(0,4);
  const st=(D.staffing_trend.groups[g]||{})['Public Service'];
  let h='<h2>'+esc(tr('Brief: '+gs,'Note : '+gs))+'</h2><p class="wda-sub">'+esc(tr('From “Where the data agree”, GC Equity. All figures are published results or are calculated from them.','Tiré de « Là où les données concordent », Équité GC. Tous les chiffres sont des résultats publiés ou calculés à partir de ceux-ci.'))+'</p>';
- h+='<h3>'+esc(tr('Organizations in the top third on both surveys','Organisations dans le tiers supérieur des deux sondages'))+'</h3><p>'+esc(tr(a.orgs.length+' of '+a.orgs_with_both+' organizations with both results. Up to eight shown. Discrimination at work (2024 survey), then bias or barriers in staffing (2025 survey).',a.orgs.length+' sur '+a.orgs_with_both+' organisations qui ont les deux résultats. Jusqu’à huit sont présentées. Discrimination au travail (sondage de 2024), puis préjugés ou obstacles en dotation (sondage de 2025).'))+'</p><ul>'+top.map(o=>'<li>'+esc(nm(o)+(fr()?' : ':': ')+pct(o.pses)+' / '+pct(o.snps))+'</li>').join('')+'</ul>';
+ h+='<h3>'+esc(tr('Organizations in the top third on both surveys','Organisations dans le tiers supérieur des deux sondages'))+'</h3><p>'+esc(tr(a.orgs.length+' of '+a.orgs_with_both+' organizations with both results. Up to six shown. Discrimination at work (2024 survey), then bias or barriers in staffing (2025 survey).',a.orgs.length+' sur '+a.orgs_with_both+' organisations qui ont les deux résultats. Jusqu’à six sont présentées. Discrimination au travail (sondage de 2024), puis préjugés ou obstacles en dotation (sondage de 2025).'))+'</p><ul>'+top.map(o=>'<li>'+esc(nm(o)+(fr()?' : ':': ')+pct(o.pses)+' / '+pct(o.snps))+'</li>').join('')+'</ul>';
  if(TGROUPS.includes(g)){const qs=tr(QSHORT[gq][0],QSHORT[gq][1]);h+='<h3>'+esc(tr('Is the gap growing?','L’écart se creuse-t-il?'))+'</h3><p>'+esc(tr('For “'+qs+'”, the gap between '+gs+' and '+GROUP[g].c[0]+' grew in '+c.grew+' organizations, shrank in '+c.shrank+' and stayed about the same in '+c.same+'.'+(ps&&ps.from?' Across the public service the gap was '+signed(ps.y[ps.from][4])+' points in '+ps.from+' and '+signed(ps.y['2024'][4])+' in 2024.':''),'Pour « '+qs+' », l’écart entre les '+GROUP[g].s[1]+' et les '+GROUP[g].c[1]+' s’est creusé dans '+c.grew+' organisations, s’est réduit dans '+c.shrank+' et est resté à peu près le même dans '+c.same+'.'+(ps&&ps.from?' Dans l’ensemble de la fonction publique, l’écart était de '+signed(ps.y[ps.from][4])+' points en '+ps.from+' et de '+signed(ps.y['2024'][4])+' en 2024.':'')))+'</p>';}
+ const wl=watchList(g);
+ h+='<h3>'+esc(tr('Watch list','Liste de surveillance'))+'</h3><p>'+esc(wl.length?tr('Organizations flagged on two or more of: top third on both surveys, discrimination gap grew, selection fairness fell 5 points or more since 2021. A flag is a place to look, not a finding.','Organisations signalées sur au moins deux des points suivants : tiers supérieur des deux sondages, écart de discrimination creusé, équité de la sélection en baisse de 5 points ou plus depuis 2021. Un signalement indique où regarder; ce n’est pas une conclusion.'):tr('No organization is flagged on two or more of the checks for this group.','Aucune organisation n’est signalée sur au moins deux des contrôles pour ce groupe.'))+'</p>'+(wl.length?'<ul>'+wl.map(w=>'<li>'+esc((fr()?w.o.fr:w.o.en)+' : '+w.s.join('; '))+'</li>').join('')+'</ul>':'');
  if(links.length)h+='<h3>'+esc(tr('Links between sources that are clear after allowing for chance','Liens entre sources clairs une fois le hasard pris en compte'))+'</h3><ul>'+links.map(p=>'<li>'+esc(cap(mlabel(p[0]))+(fr()?' et ':' and ')+mlabel(p[1])+' ('+S(p[3])+', '+int(p[2])+' '+tr('organizations','organisations')+')')+'</li>').join('')+'</ul>';
  if(st&&st.STA_01E&&has(st.STA_01E[2]))h+='<h3>'+esc(tr('Staffing fairness since 2021','L’équité en dotation depuis 2021'))+'</h3><p>'+esc(tr('Across the public service, '+st.STA_01E[0]+'% of '+gs+' said selection in their work unit is fair in 2021, and '+st.STA_01E[2]+'% in 2025.','Dans l’ensemble de la fonction publique, '+st.STA_01E[0]+' % des '+gs+' ont dit que la sélection dans leur unité de travail est équitable en 2021, et '+st.STA_01E[2]+' % en 2025.'))+'</p>';
  h+='<p class="wda-sub">'+esc(tr('A link is not proof. It shows where to look. It does not show what happened to any one person, or why. Source and full tables: ','Un lien n’est pas une preuve. Il montre où regarder. Il ne montre pas ce qui est arrivé à une personne en particulier, ni pourquoi. Source et tableaux complets : ')+location.origin+location.pathname)+'</p>';
@@ -405,6 +434,9 @@ function bind(){
  $('wda-start-list').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)goStart(b.dataset.go);});
  $('wda-start-group').addEventListener('change',()=>renderStart());
  $('wda-start-list').addEventListener('click',e=>{if(e.target.closest('#wda-brief-btn'))printBrief();});
+ $('wda-cmp-a').addEventListener('change',e=>{state.ca=e.target.value;renderCompare();syncURL();});
+ $('wda-cmp-b').addEventListener('change',e=>{state.cb=e.target.value;renderCompare();syncURL();});
+ document.addEventListener('click',e=>{if(!e.target.closest('#wda-org-compare'))return;state.ca=state.org;if(state.cb===state.ca)state.cb='';renderCompare();syncURL();const h=$('compare-title');h.setAttribute('tabindex','-1');h.scrollIntoView({behavior:'smooth',block:'start'});h.focus({preventScroll:true});$('wda-cmp-b').focus();});
  $('wda-org-select').addEventListener('change',e=>{state.org=e.target.value;renderOrg();syncURL();});
  document.addEventListener('click',e=>{const a=e.target.closest('a[data-org]');if(!a)return;e.preventDefault();state.org=a.dataset.org;renderOrg();syncURL();const h=$('org-title');h.setAttribute('tabindex','-1');h.scrollIntoView({behavior:'smooth',block:'start'});h.focus({preventScroll:true});});
  $('wda-staff-group').addEventListener('change',e=>{state.sg=e.target.value;renderStaffing();});
@@ -423,13 +455,13 @@ function bind(){
   save('where-data-agree-gaps-'+g+'-'+q+'.csv',[head].concat(gapItems().map(r=>{const it=r.it,row=[r.k==='Public Service'?tr('Public service as a whole','Ensemble de la fonction publique'):orgName(r.k)];years.forEach(y=>{const v=it.y[y]||[];row.push(...[0,1,2,3,4].map(i=>v[i]??''));});row.push(it.change??'',it.label?tr(LABEL[it.label][0],LABEL[it.label][1]):'');return row;})));});
  $('wda-link-csv').addEventListener('click',()=>{save('where-data-agree-every-link.csv',[[tr('Result','Résultat'),tr('Source','Source'),tr('Compared with','Comparé à'),tr('Source','Source'),tr('Organizations','Organisations'),tr('Rank correlation, adjusted for size','Corrélation de rangs, ajustée selon la taille'),'p',tr('False discovery rate (q)','Taux de fausses découvertes (q)'),tr('How strong','Force du lien'),tr('Could it be chance?','Hasard possible?')]].concat(D.scan.pairs.map(([a,b,n,r,p,q])=>[cap(mlabel(a)),tr(SRCNAME[D.measures[a].src][0],SRCNAME[D.measures[a].src][1]),cap(mlabel(b)),tr(SRCNAME[D.measures[b].src][0],SRCNAME[D.measures[b].src][1]),n,r,p,q,cap(S(r)),chanceScan(p,q)])));});
 }
-function syncURL(){const u=new URL(location.href);u.searchParams.set('group',state.gg);u.searchParams.set('q',state.gq);u.searchParams.set('both',state.agree);if(state.org)u.searchParams.set('org',state.org);else u.searchParams.delete('org');history.replaceState(history.state,'',u.href);}
+function syncURL(){const u=new URL(location.href);u.searchParams.set('group',state.gg);u.searchParams.set('q',state.gq);u.searchParams.set('both',state.agree);if(state.org)u.searchParams.set('org',state.org);else u.searchParams.delete('org');if(state.ca)u.searchParams.set('ca',state.ca);else u.searchParams.delete('ca');if(state.cb)u.searchParams.set('cb',state.cb);else u.searchParams.delete('cb');history.replaceState(history.state,'',u.href);}
 function render(){
  document.querySelectorAll('[data-i18n]').forEach(el=>{const t=TEXT[el.dataset.i18n];if(t)el.textContent=tr(t[0],t[1]);});
  document.querySelectorAll('[data-i18n-label]').forEach(el=>{const t=TEXT[el.dataset.i18nLabel];if(t)el.setAttribute('aria-label',tr(t[0],t[1]));});
  document.title=tr('Where the data agree | GC Equity','Là où les données concordent | Équité GC');
  if(!D)return;
- renderStart();renderStats();renderFindings();renderAgree();renderGaps();renderStaffing();renderOrg();renderLinks();renderMethod();renderSources();
+ renderStart();renderStats();renderFindings();renderAgree();renderGaps();renderStaffing();renderOrg();renderCompare();renderLinks();renderMethod();renderSources();
 }
 window._applyLang=function(){render();};
 async function load(){
@@ -441,6 +473,8 @@ async function load(){
  if(QSHORT[p.get('q')])state.gq=p.get('q');
  if(D.agree[p.get('both')])state.agree=p.get('both');
  if(D.orgs&&D.orgs.some(o=>o.en===p.get('org')))state.org=p.get('org');
+ if(D.orgs&&D.orgs.some(o=>o.en===p.get('ca')))state.ca=p.get('ca');
+ if(D.orgs&&D.orgs.some(o=>o.en===p.get('cb')))state.cb=p.get('cb');
  $('wda-loading').hidden=true;
  render();bind();
 }

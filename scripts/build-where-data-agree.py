@@ -573,6 +573,41 @@ for g in S21_FILES:
             if c[0] is not None and c[2] is not None:
                 c[3] = c[2] - c[0]
     staffing_trend['groups'][g] = rows
+# Survey of Staffing, cycles 2011 to 2013 (published in 2017): all employees only, no equity groups.
+SOS_PATH = ROOT / 'data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv'
+SOS_Q = {'20': 'selection', '22': 'transparent', '5': 'barriers'}
+SOS_NAMES = {   # names in the 2011 to 2013 file that differ from today's
+    'Environment Canada': 'Environment and Climate Change Canada', 'Industry Canada': 'Innovation, Science and Economic Development Canada',
+    'Citizenship and Immigration Canada': 'Immigration, Refugees and Citizenship Canada',
+    'Public Works and Government Services Canada': 'Public Services and Procurement Canada',
+    'Foreign Affairs, Trade and Development Canada': 'Global Affairs Canada', 'National Energy Board': 'Canada Energy Regulator'}
+sos, sos_unmatched, sos_renamed = {}, set(), {}
+sos_questions = {}
+for r in csv.DictReader(open(SOS_PATH, encoding='utf-8-sig', newline='')):
+    qn = r['question_e'].split('.')[0].strip()
+    if qn not in SOS_Q or r['answer_choice_e'] != 'Agree' or r['n_type_e'] != 'percentage':
+        continue
+    sos_questions[SOS_Q[qn]] = {'en': r['question_e'].split('.', 1)[1].strip(), 'fr': r['question_f'].split('.', 1)[1].strip()}
+    dept = r['organization_e']
+    if dept.startswith('Average'):
+        continue
+    if dept == 'Public Service of Canada':
+        key = 'Public Service'
+    else:
+        rec = BY_CANON.get(canon(SOS_NAMES.get(dept, dept)))
+        if not rec:
+            sos_unmatched.add(dept); continue
+        key = rec['name_en']
+        if dept in SOS_NAMES:
+            sos_renamed[dept] = rec['name_en']
+    try:
+        sos.setdefault(key, {}).setdefault(SOS_Q[qn], {})[r['survey_cycle']] = int(float(r['n']))
+    except ValueError:
+        pass
+staffing_trend['sos'] = sos
+staffing_trend['sos_questions'] = sos_questions
+staffing_trend['sos_renamed'] = sorted(sos_renamed.items())
+staffing_trend['sos_unmatched'] = sorted(sos_unmatched)
 staffing_trend['names'] = {r['name_en']: [r['name_fr'], r['name_en']] for r in ORGS}
 staffing_trend['renamed'] = [[old, new, how] for old, (new, how) in sorted(USED_OLD.items())]
 staffing_trend['unmatched'] = {y: sorted(v - {'Department not specified'}) for y, v in UNMATCHED.items()}
@@ -594,7 +629,7 @@ def _has(rec, prefixes):
 staffing_orgs = {k for rows in staffing_trend['groups'].values() for k in rows}
 doc['orgs'] = [{'id': r['id'], 'en': r['name_en'], 'fr': r['name_fr'],
                 'has': [k for k, ok in (('tbs', _has(r, ('rep_',)) and not r.get('shared_row')), ('pses', _has(r, ('p_',))), ('snps', _has(r, ('s_',))),
-                                         ('staffing', r['name_en'] in staffing_orgs)) if ok]} for r in sorted(ORGS, key=lambda r: r['name_en'])]
+                                         ('staffing', r['name_en'] in staffing_orgs), ('sos', r['name_en'] in staffing_trend['sos'])) if ok]} for r in sorted(ORGS, key=lambda r: r['name_en'])]
 old = json.loads(OUT.read_text(encoding='utf-8')) if OUT.exists() else None
 if args.pses:
     doc['trends'] = build_trends(args.pses)

@@ -65,6 +65,18 @@ async function download(page, click, what) {
       assert.match(page.url(), /[?&]org=/, 'organization is kept in the page address');
       ok(mode.name + ': organization view (' + orgs.length + ' organizations)');
 
+      // Compare two organizations, from the picker and from the organization view.
+      await page.selectOption('#wda-cmp-a', 'Health Canada');
+      await page.selectOption('#wda-cmp-b', 'Public Safety Canada');
+      assert.equal(await page.locator('#wda-cmp-out h3').count(), 2, mode.name + ' two organizations side by side');
+      assert.deepEqual(errors, [], 'no script errors in the comparison');
+      await page.selectOption('#wda-org-select', 'Canada Energy Regulator');
+      await page.click('#wda-org-compare');
+      assert.equal(await page.inputValue('#wda-cmp-a'), 'Canada Energy Regulator', mode.name + ' compare button fills the first organization');
+      assert.match(page.url(), /[?&]ca=/, 'comparison is kept in the page address');
+      assert.match(await page.locator('#wda-org-out').innerText(), /2011/, 'earlier staffing survey shown for an organization that has it');
+      ok(mode.name + ': compare two organizations');
+
       // Staffing fairness since 2021: choices, rows, sort and download.
       await page.selectOption('#wda-staff-group', 'ind');
       await page.selectOption('#wda-staff-q', 'STA_01A');
@@ -86,7 +98,8 @@ async function download(page, click, what) {
       await page.click('#wda-brief-btn');
       assert.equal(await page.evaluate(() => window.__printed), 1, 'print was requested once');
       const brief = await page.locator('#wda-brief').innerText().catch(() => '');
-      assert.ok(await page.locator('#wda-brief h3').count() >= 3, 'brief has its sections');
+      assert.ok(await page.locator('#wda-brief h3').count() >= 4, 'brief has its sections');
+      assert.match(brief, /Watch list/, 'brief has a watch list');
       assert.ok(!/undefined|NaN|\[object/.test(await page.evaluate(() => document.getElementById('wda-brief').textContent)), 'brief has no unformatted values');
       assert.ok(!String.fromCharCode(8212).split('').some(c => brief.includes(c)), 'no em dash in brief');
       ok(mode.name + ': one-page brief');
