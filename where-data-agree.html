@@ -61,7 +61,8 @@
 .wda tr.wda-ps th,.wda tr.wda-ps td{background:var(--gw-soft)}
 .wda tr.wda-ps th{font-weight:700}
 @media (max-width:820px){.wda-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.wda-controls{grid-template-columns:minmax(0,1fr)}.wda-finding{padding:14px}.wda-mini{min-width:0}}
-@media print{.wda-controls,.wda-btnrow,#gcw-header,.gcw-context{display:none!important}.wda-scroll{overflow:visible;border:0}.wda-finding{break-inside:avoid}}
+.wda-brief{display:none}
+@media print{body.wda-print-brief>*:not(#wda-brief){display:none!important}body.wda-print-brief #wda-brief{display:block!important;font-size:11pt;color:#000;background:#fff;padding:0;max-width:none}body.wda-print-brief #wda-brief h2{font-size:16pt;margin:0 0 4pt}body.wda-print-brief #wda-brief h3{font-size:12pt;margin:10pt 0 2pt}body.wda-print-brief #wda-brief ul{margin:2pt 0;padding-left:16pt}.wda-controls,.wda-btnrow,#gcw-header,.gcw-context{display:none!important}.wda-scroll{overflow:visible;border:0}.wda-finding{break-inside:avoid}}
 </style>
 </head>
 <body class="gcw-page">
@@ -75,6 +76,7 @@
 <li><a href="#findings" data-i18n="jumpFindings">What stands out</a></li>
 <li><a href="#agree" data-i18n="jumpAgree">Where both surveys agree</a></li>
 <li><a href="#gaps" data-i18n="jumpGaps">Is the gap growing?</a></li>
+<li><a href="#staffing" data-i18n="jumpStaffing">Staffing fairness since 2021</a></li>
 <li><a href="#links" data-i18n="jumpLinks">Every link we checked</a></li>
 <li><a href="#method" data-i18n="jumpMethod">How to read this page</a></li>
 <li><a href="#sources" data-i18n="jumpSources">Sources and data files</a></li>
@@ -122,6 +124,21 @@
 </div>
 <div class="note" id="wda-gap-note"></div>
 <div class="wda-btnrow"><button type="button" class="gcw-btn" id="wda-gap-csv" data-i18n="download">Download this table (CSV)</button></div>
+</section>
+
+<section id="staffing" class="wda-section" aria-labelledby="staffing-title">
+<h2 id="staffing-title" data-i18n="staffingTitle">Has staffing fairness changed since 2021?</h2>
+<p data-i18n="staffingIntro">Choose a group and a question.</p>
+<div class="wda-controls">
+<div><label for="wda-staff-group" data-i18n="sgroupLabel">Employee group</label><select id="wda-staff-group"></select></div>
+<div><label for="wda-staff-q" data-i18n="sqLabel">Question</label><select id="wda-staff-q"></select></div>
+</div>
+<p id="wda-staff-status" class="wda-status" role="status" aria-live="polite"></p>
+<div class="wda-scroll" tabindex="0" role="region" aria-labelledby="wda-staff-caption">
+<table id="wda-staff-table" data-gcw-ready="yes"><caption id="wda-staff-caption"></caption><thead id="wda-staff-head"></thead><tbody id="wda-staff-body"></tbody></table>
+</div>
+<div class="note" id="wda-staff-note"></div>
+<div class="wda-btnrow"><button type="button" class="gcw-btn" id="wda-staff-csv" data-i18n="download">Download this table (CSV)</button></div>
 </section>
 
 <section id="links" class="wda-section" aria-labelledby="links-title">

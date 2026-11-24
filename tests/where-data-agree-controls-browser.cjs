@@ -48,6 +48,36 @@ async function download(page, click, what) {
       assert.ok(/Most certain link/.test(linkText), 'link summary names the most certain link');
       ok(mode.name + ': Start here');
 
+      // Staffing fairness since 2021: choices, rows, sort and download.
+      await page.selectOption('#wda-staff-group', 'ind');
+      await page.selectOption('#wda-staff-q', 'STA_01A');
+      assert.ok(await page.locator('#wda-staff-body tr').count() > 10, mode.name + ' staffing rows');
+      assert.match(await page.locator('#wda-staff-status').innerText(), /public service/, 'staffing summary names the public service');
+      await page.click('#wda-staff-head [data-ssort="name"]');
+      const sc = await download(page, () => page.click('#wda-staff-csv'), 'staffing CSV');
+      assert.ok(sc.text.split('\n').length > 10, 'staffing CSV rows');
+      await page.selectOption('#wda-start-group', 'black');
+      assert.equal(await page.locator('#wda-start-list [data-go="staffing"]').count(), 0, 'no staffing question for Black employees (not in the 2021 files)');
+      await page.selectOption('#wda-start-group', 'rac');
+      await page.click('#wda-start-list [data-go="staffing"]');
+      assert.equal(await page.inputValue('#wda-staff-group'), 'rac', mode.name + ' start: staffing group');
+      ok(mode.name + ': staffing section');
+
+      // One-page brief: builds the print copy for the chosen group (printing itself is stubbed).
+      await page.evaluate(() => { window.__printed = 0; window.print = () => { window.__printed++; }; });
+      await page.selectOption('#wda-start-group', 'pwd');
+      await page.click('#wda-brief-btn');
+      assert.equal(await page.evaluate(() => window.__printed), 1, 'print was requested once');
+      const brief = await page.locator('#wda-brief').innerText().catch(() => '');
+      assert.ok(await page.locator('#wda-brief h3').count() >= 3, 'brief has its sections');
+      assert.ok(!/undefined|NaN|\[object/.test(await page.evaluate(() => document.getElementById('wda-brief').textContent)), 'brief has no unformatted values');
+      assert.ok(!String.fromCharCode(8212).split('').some(c => brief.includes(c)), 'no em dash in brief');
+      ok(mode.name + ': one-page brief');
+
+      // Link summary mentions possible links when only clear links are shown.
+      await page.selectOption('#wda-link-group', 'all'); await page.selectOption('#wda-link-show', 'clear');
+      assert.match(await page.locator('#wda-link-status').innerText(), /more are possible links/, 'possible links are pointed out');
+
       // Theme: each choice sets the theme on the page.
       for (const [value, expect] of [['dark', 'dark'], ['contrast', 'contrast']]) {
         await page.selectOption('.gcw-theme, #gcw-theme, select[id*=theme]', value);

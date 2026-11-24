@@ -475,6 +475,60 @@ ap.add_argument('--pses', help='checkout of the pses-data branch, needed for the
 ap.add_argument('--check', action='store_true', help='recalculate and fail if the published file differs')
 args = ap.parse_args()
 
+# ---------------------------------------------------------------- part 3: staffing survey, 2021 to 2025
+SNPS21 = ROOT / 'data/open-canada-2026-11/snps-2021'
+S21_FILES = {'woman': ('CFPPSC_SNPS02.csv.gz', 'Female'), 'pwd': ('CFPPSC_SNPS03.csv.gz', 'Yes, has at least one disability'),
+             'rac': ('CFPPSC_SNPS04.csv.gz', 'Visible minority'), 'ind': ('CFPPSC_SNPS05.csv.gz', 'Indigenous identity')}
+# 2021 question -> 2025 question with the same meaning, matched by wording.
+S21_Q = {'sta_10g': 'STA_01E', 'sta_10a': 'STA_01A'}
+def snps21(path, label):
+    """Share (whole %) answering moderate or great extent, from weighted counts; blank when the Commission did not publish."""
+    cells = {}
+    with gzip.open(path, 'rt', encoding='utf-8-sig', newline='') as fh:
+        rd = csv.DictReader(fh)
+        gkey = rd.fieldnames[3]
+        for r in rd:
+            if r['question'] in S21_Q and r[gkey] == label:
+                cells.setdefault((r['dept_e'], r['question']), {})[r['question_value_e']] = r['total_w_resp']
+    out = {}
+    for (dept, q), v in cells.items():
+        try:
+            base, mod, great = (float(v[k]) for k in ('All respondents', 'To a moderate extent', 'To a great extent'))
+        except (KeyError, ValueError):
+            continue
+        if base > 0:
+            out[(dept, q)] = (round(100 * (mod + great) / base), int(base))
+    return out
+staffing_trend = {'questions': {}, 'groups': {}}
+for q21, q25 in S21_Q.items():
+    qd = snps['questions'][q25]
+    staffing_trend['questions'][q25] = {'en': qd['en'], 'fr': qd['fr']}
+for g, (fname, label) in S21_FILES.items():
+    r21 = snps21(SNPS21 / fname, label)
+    rows = {}
+    for (dept, q21), (v21, n21) in r21.items():
+        q25 = S21_Q[q21]
+        if dept == 'Federal public service':
+            key, v25 = 'Public Service', None
+        else:
+            rec = BY_CANON.get(canon(dept))
+            if not rec:
+                continue
+            key, v25 = rec['name_en'], num(rec.get(f's_{g}_{q25}'))
+        rows.setdefault(key, {})[q25] = [v21, n21, v25, None if v25 is None else v25 - v21]
+    staffing_trend['groups'][g] = rows
+# the public service row for 2025 comes from the published whole-service figure when the file carries one
+for org, d in snps['orgs'].items():
+    if org == 'Federal Public Service':
+        for g, rows in staffing_trend['groups'].items():
+            for q25, cell_ in rows.get('Public Service', {}).items():
+                v = num((d.get(g) or {}).get(q25))
+                if v is not None:
+                    cell_[2], cell_[3] = v, v - cell_[0]
+staffing_trend['names'] = {r['name_en']: [r['name_fr'], r['name_en']] for r in ORGS}
+staffing_trend['note_en'] = ('2021 results are calculated from the Commission\'s weighted counts (moderate or great extent, as a share of all respondents who answered, '
+                             '"don\'t know" included). 2025 results are the Commission\'s published figures. The 2021 survey covered March 2020 to March 2021.')
+
 doc = {
     'schema': 1,
     'inputs': {'call_to_action_comparisons': sha(CTA_PATH), 'snps_2025': sha(SNPS_PATH),
@@ -486,6 +540,7 @@ doc = {
     'checks': checks,
     'agree': agree,
 }
+doc['staffing_trend'] = staffing_trend
 old = json.loads(OUT.read_text(encoding='utf-8')) if OUT.exists() else None
 if args.pses:
     doc['trends'] = build_trends(args.pses)
