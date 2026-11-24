@@ -902,11 +902,22 @@
    trend = await guard("trend").catch(() => null),
    orgTrend = trend ? match(trend.organizations, o) : null;
   let data;
+  const slow = setTimeout(() => {
+   const m = $("gp-out");
+   if (m && /…$/.test(m.innerText.trim())) m.innerHTML = "<p>" + e(L("Still loading. Large departments have large survey files, and the first load can take a few seconds.", "Chargement en cours. Les grands ministères ont de gros fichiers de sondage, et le premier chargement peut prendre quelques secondes.")) + "</p>"
+  }, 8000);
   try {
    data = await groupRows(o, fam)
   } catch (x) {
-   out.innerHTML = '<p class="notice">' + e(L("The survey subset could not be loaded. Check the connection and try again.", "Le sous-ensemble du sondage n’a pas pu être chargé. Vérifier la connexion et réessayer.")) + '</p>';
+   gcache.delete(o.en + "|" + fam.k);
+   out.innerHTML = '<p class="notice">' + e(L("The survey subset could not be loaded. Check the connection and try again.", "Le sous-ensemble du sondage n’a pas pu être chargé. Vérifier la connexion et réessayer.")) + '</p><button type="button" id="dew-gp-retry">' + e(L("Try again", "Réessayer")) + "</button>";
+   $("gp-retry").onclick = () => {
+    out.innerHTML = "<p>" + e(L("Loading the survey subset…", "Chargement du sous-ensemble du sondage…")) + "</p>";
+    mountGroups(o)
+   };
    return
+  } finally {
+   clearTimeout(slow)
   }
   if (!$("gp-out")) return;
   if (data.error) {
