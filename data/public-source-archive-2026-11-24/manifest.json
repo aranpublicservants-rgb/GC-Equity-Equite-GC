@@ -50,6 +50,46 @@
       "headerRows": 2,
       "gitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
       "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0360",
+      "path": "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv",
+      "bytes": 708134,
+      "rows": 13966,
+      "gitBlob": "f7d050576e0a4328ecea37fb544eb7f67e239285",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0370",
+      "path": "data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx",
+      "bytes": 14343,
+      "rows": 37,
+      "gitBlob": "c354026ed5793fae3eee6386635f4e34321ddd1e",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0406",
+      "path": "data/public-source-archive-2026-11-24/csps-ee-representation-2017-2018.xlsx",
+      "bytes": 9897,
+      "rows": 4,
+      "gitBlob": "22a6b9e27235ce56d8cc49149a9e3311961df522",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0514",
+      "path": "data/public-source-archive-2026-11-24/fett-publicdata.xlsx",
+      "bytes": 2104357,
+      "rows": 18095,
+      "gitBlob": "7648f0f94ea986d03fe0009166284664d8b96e9a",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0515",
+      "path": "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx",
+      "bytes": 606291,
+      "rows": 2368,
+      "gitBlob": "ee549833d85870618fc3cfeb37db6e10c258b25b",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
     }
   ]
 }
