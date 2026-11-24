@@ -92,6 +92,34 @@
       "rows": 2368,
       "gitBlob": "ee549833d85870618fc3cfeb37db6e10c258b25b",
       "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0005",
+      "path": "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls",
+      "bytes": 1041408,
+      "rows": 4615,
+      "gitBlob": "b2b4a49df322bc2bd2951610cf40e8c07475eb68",
+      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0366",
+      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv",
+      "bytes": 1585668,
+      "rows": 4894,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "abdc5a3a7d815f76b907f2040a329a2dbcaf4fef",
+      "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0367",
+      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv",
+      "bytes": 1910229,
+      "rows": 4894,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "c357b92a0dbe184e813fdb633923a52e7ad1b441",
+      "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
     }
   ]
 }
