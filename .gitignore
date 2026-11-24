@@ -1,5 +1,0 @@
-dist/
-.openai/
-qa-screenshots/
-node_modules/
-*.log
