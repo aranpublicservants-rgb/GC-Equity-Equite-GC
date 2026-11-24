@@ -3,28 +3,28 @@
   "basis": "Exact ID and URL reconciliation of three repository manifests against original register. Does not establish independent checksum verification, Drive availability, deployed browser coverage or completeness of all repository paths. Nonmatches may be held elsewhere.",
   "manifestBlobs": {
     "data/public-source-register-2026-11-24.json": "6e62818e937138812f151bce60c090f1afa66637",
-    "data/public-source-archive-2026-11-24/manifest.json": "8755d7dd3e799b0c53ff1572ad8a538b060aaa09",
+    "data/public-source-archive-2026-11-24/manifest.json": "47d48c2bf551d485051af20f89cb5d3900f4c7b0",
     "assets/restored-datasets.json": "ffe82b22ee3548ffb4f4bb8f14caabfb3f070ab3",
     "data/large-sources-inventory.json": "8aae6c2d81d54198a769bd44cd497719d19f75df"
   },
   "counts": {
-    "no-match-in-three-manifests": 344,
-    "archive-manifest-match": 10,
+    "no-match-in-three-manifests": 339,
+    "archive-manifest-match": 15,
     "excluded-or-not-approved": 148,
     "large-inventory-exact-url-match": 36
   },
   "batch": {
+    "batch-2": {
+      "no-match-in-three-manifests": 19,
+      "archive-manifest-match": 14,
+      "large-inventory-exact-url-match": 1,
+      "excluded-or-not-approved": 38
+    },
     "batch-1": {
       "large-inventory-exact-url-match": 25,
       "no-match-in-three-manifests": 10,
       "archive-manifest-match": 1,
       "excluded-or-not-approved": 2
-    },
-    "batch-2": {
-      "no-match-in-three-manifests": 24,
-      "archive-manifest-match": 9,
-      "large-inventory-exact-url-match": 1,
-      "excluded-or-not-approved": 38
     }
   },
   "entries": [
@@ -85,10 +85,16 @@
       "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/456e7b80-be19-4971-84bc-9456e71f4386/download/pses-saff2011_dept.xls",
       "reportedBytes": 2476544,
       "reportedRows": 9085,
-      "archive": null,
+      "archive": {
+        "path": "data/public-source-archive-2026-11-24/pses2011-dept.xls",
+        "bytes": 2476544,
+        "rows": 9085,
+        "gitBlob": "cb8e5873b870b76d6c9b49ea9d65d13ed8602909",
+        "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+      },
       "restored": null,
       "largeInventory": null,
-      "assessment": "no-match-in-three-manifests"
+      "assessment": "archive-manifest-match"
     },
     {
       "id": "GC-0005",
@@ -99,10 +105,16 @@
       "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/8413ff87-b68c-4d91-88bb-0352338c6ba4/download/pses2011_documentation.xls",
       "reportedBytes": 1041408,
       "reportedRows": 4615,
-      "archive": null,
+      "archive": {
+        "path": "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls",
+        "bytes": 1041408,
+        "rows": 4615,
+        "gitBlob": "b2b4a49df322bc2bd2951610cf40e8c07475eb68",
+        "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+      },
       "restored": null,
       "largeInventory": null,
-      "assessment": "no-match-in-three-manifests"
+      "assessment": "archive-manifest-match"
     },
     {
       "id": "GC-0006",
@@ -379,10 +391,16 @@
       "source": "https://www.canada.ca/content/dam/tbs-sct/images/modernizing-modernisation/pses-saff/2017-pses-supporting-saff-reference.xls",
       "reportedBytes": 339456,
       "reportedRows": 1258,
-      "archive": null,
+      "archive": {
+        "path": "data/public-source-archive-2026-11-24/pseas2017-supporting-documentation.xls",
+        "bytes": 339456,
+        "rows": 1258,
+        "gitBlob": "f582720c8e0bf5c374e8ff52f01071a191f3f5e3",
+        "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+      },
       "restored": null,
       "largeInventory": null,
-      "assessment": "no-match-in-three-manifests"
+      "assessment": "archive-manifest-match"
     },
     {
       "id": "GC-0026",
@@ -5279,10 +5297,16 @@
       "source": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/02929919-d9ab-494e-8fce-012119b479ff/download/rbpo_rppo_en.csv",
       "reportedBytes": 1585668,
       "reportedRows": 4894,
-      "archive": null,
+      "archive": {
+        "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv",
+        "bytes": 1585668,
+        "rows": 4894,
+        "gitBlob": "abdc5a3a7d815f76b907f2040a329a2dbcaf4fef",
+        "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
+      },
       "restored": null,
       "largeInventory": null,
-      "assessment": "no-match-in-three-manifests"
+      "assessment": "archive-manifest-match"
     },
     {
       "id": "GC-0367",
@@ -5293,10 +5317,16 @@
       "source": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/19aba95f-3db9-4d20-a0f4-43d88a7e67cf/download/rbpo_rppo_fr.csv",
       "reportedBytes": 1910229,
       "reportedRows": 4894,
-      "archive": null,
+      "archive": {
+        "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv",
+        "bytes": 1910229,
+        "rows": 4894,
+        "gitBlob": "c357b92a0dbe184e813fdb633923a52e7ad1b441",
+        "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
+      },
       "restored": null,
       "largeInventory": null,
-      "assessment": "no-match-in-three-manifests"
+      "assessment": "archive-manifest-match"
     },
     {
       "id": "GC-0368",
