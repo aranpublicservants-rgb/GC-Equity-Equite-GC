@@ -22,6 +22,7 @@ const TEXT={
   'Les sources gouvernementales mesurent l’équité de différentes façons : qui travaille où, ce que disent les employés dans deux sondages distincts, et qui est embauché. Cette page les place côte à côte pour chaque organisation fédérale afin de repérer des tendances qu’aucune source ne montre à elle seule. Une tendance indique où regarder en premier. Elle ne prouve pas la discrimination et ne dit pas ce qui est arrivé à une personne en particulier.'],
  meta:['Sources: Treasury Board workforce data to March 31, 2025; Public Service Employee Survey, 2019 to 2024; Staffing and Non-Partisanship Survey, 2025; Public Service Commission staffing data. The comparisons are calculated by this site from the published figures. They are not Government of Canada statistics.',
   'Sources : données du Conseil du Trésor sur l’effectif jusqu’au 31 mars 2025; Sondage auprès des fonctionnaires fédéraux, de 2019 à 2024; Sondage sur la dotation et l’impartialité politique de 2025; données de dotation de la Commission de la fonction publique. Les comparaisons sont calculées par ce site à partir des chiffres publiés. Il ne s’agit pas de statistiques du gouvernement du Canada.'],
+ guideLink:['New here? Read the five-minute guide.','Première visite? Lisez le guide de cinq minutes.'],
  jumpStart:['Start here','Pour commencer'],
  jumpCompare:['Compare two organizations','Comparer deux organisations'],
  compareTitle:['Compare two organizations','Comparer deux organisations'],
@@ -455,7 +456,7 @@ function bind(){
   save('where-data-agree-gaps-'+g+'-'+q+'.csv',[head].concat(gapItems().map(r=>{const it=r.it,row=[r.k==='Public Service'?tr('Public service as a whole','Ensemble de la fonction publique'):orgName(r.k)];years.forEach(y=>{const v=it.y[y]||[];row.push(...[0,1,2,3,4].map(i=>v[i]??''));});row.push(it.change??'',it.label?tr(LABEL[it.label][0],LABEL[it.label][1]):'');return row;})));});
  $('wda-link-csv').addEventListener('click',()=>{save('where-data-agree-every-link.csv',[[tr('Result','Résultat'),tr('Source','Source'),tr('Compared with','Comparé à'),tr('Source','Source'),tr('Organizations','Organisations'),tr('Rank correlation, adjusted for size','Corrélation de rangs, ajustée selon la taille'),'p',tr('False discovery rate (q)','Taux de fausses découvertes (q)'),tr('How strong','Force du lien'),tr('Could it be chance?','Hasard possible?')]].concat(D.scan.pairs.map(([a,b,n,r,p,q])=>[cap(mlabel(a)),tr(SRCNAME[D.measures[a].src][0],SRCNAME[D.measures[a].src][1]),cap(mlabel(b)),tr(SRCNAME[D.measures[b].src][0],SRCNAME[D.measures[b].src][1]),n,r,p,q,cap(S(r)),chanceScan(p,q)])));});
 }
-function syncURL(){const u=new URL(location.href);u.searchParams.set('group',state.gg);u.searchParams.set('q',state.gq);u.searchParams.set('both',state.agree);if(state.org)u.searchParams.set('org',state.org);else u.searchParams.delete('org');if(state.ca)u.searchParams.set('ca',state.ca);else u.searchParams.delete('ca');if(state.cb)u.searchParams.set('cb',state.cb);else u.searchParams.delete('cb');history.replaceState(history.state,'',u.href);}
+function syncURL(){const u=new URL(location.href);u.searchParams.set('group',state.gg);u.searchParams.set('q',state.gq);u.searchParams.set('both',state.agree);u.searchParams.set('sg',state.sg);if(state.org)u.searchParams.set('org',state.org);else u.searchParams.delete('org');if(state.ca)u.searchParams.set('ca',state.ca);else u.searchParams.delete('ca');if(state.cb)u.searchParams.set('cb',state.cb);else u.searchParams.delete('cb');history.replaceState(history.state,'',u.href);}
 function render(){
  document.querySelectorAll('[data-i18n]').forEach(el=>{const t=TEXT[el.dataset.i18n];if(t)el.textContent=tr(t[0],t[1]);});
  document.querySelectorAll('[data-i18n-label]').forEach(el=>{const t=TEXT[el.dataset.i18nLabel];if(t)el.setAttribute('aria-label',tr(t[0],t[1]));});
@@ -472,11 +473,13 @@ async function load(){
  if(TGROUPS.includes(p.get('group')))state.gg=p.get('group');
  if(QSHORT[p.get('q')])state.gq=p.get('q');
  if(D.agree[p.get('both')])state.agree=p.get('both');
+ if(SGROUPS.includes(p.get('sg')))state.sg=p.get('sg');
  if(D.orgs&&D.orgs.some(o=>o.en===p.get('org')))state.org=p.get('org');
  if(D.orgs&&D.orgs.some(o=>o.en===p.get('ca')))state.ca=p.get('ca');
  if(D.orgs&&D.orgs.some(o=>o.en===p.get('cb')))state.cb=p.get('cb');
  $('wda-loading').hidden=true;
  render();bind();
+ if(location.hash.length>1){const t=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t)t.scrollIntoView();}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',load,{once:true});else load();
 })();

@@ -94,6 +94,7 @@ function quickLinks(){
  ['https://aranpublicservants-rgb.github.io/pses-2024-branch.html/','Departments by branch','Ministères par direction'],
  ['departmental-plans-2026-27/','Departmental plans','Plans ministériels'],
  ['where-data-agree.html','Where the data agree','Là où les données concordent'],
+ ['where-data-agree-guide.html','How to use Where the data agree','Comment utiliser « Là où les données concordent »'],
  ['call-to-action.html','Call to Action results','Résultats de l’appel à l’action'],
  ['https://aranpublicservants-rgb.github.io/Accessibility-and-Inclusion-Accessibilit-et-inclusion/duty-to-accommodate/','Duty to accommodate','Obligation d’adaptation'],
  ['https://aranpublicservants-rgb.github.io/aran-raar/recourse/','Employee recourse','Recours des employés']
