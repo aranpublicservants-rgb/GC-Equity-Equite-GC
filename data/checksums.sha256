@@ -530,6 +530,13 @@ f494f48a5687d23b5bb1f26c9255201be227a8755863f92cb01b5520469bf3fe  data/pses-2024
 e846a606f44826b0a49926ff91c780dd5deb1881e24d9a289d69be0a1931e759  data/pses-large-manifest.json
 edea51b659b4833ad5d3aabe9683022216487303ccc4fc98f0ee9e39f2094f2a  data/pses-level1-map.json
 739ccef3d024664749796999a9bbcba43eb9c95bf5b70d2887e80f142fd56aeb  data/pses-trend-2019-2024.json
+a1f00a494bbf7b6570ed6029ff1f151a518ec4c29eb97523f092492dd9ecea51  data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv
+628183b9f6516897be9b1b4b85c7036ff6d5027cac48a26bd82a9cdf3fcba8b2  data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv
+7270dbdd43c3eb8f0a52eb7c32612a71315668c0d0c5bcce5bfdc78cf82a18e5  data/public-source-archive-2026-11-24/manifest.json
+0fa627832828feaf1a6a15c276d6162cf6f9df6d36b913d362f8b1c6ef8ace04  data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv
+91e2a990e670bf6b77a5c99b09cdeb63f86e242719a67f89c7f183830e2538d4  data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv
+fa418a834355dbaad096cabf1b7e96a6c2a39441df13e673bea65c0715e0f235  data/public-source-archive-2026-11-24/pses2011-overall.csv
+6ea92df7f553144366a291bd2242553eb7505309633b1615b1edce275e6ba7ba  data/public-source-register-2026-11-24.json
 ed5defd4d91bd719605ca9134da7f1146bd77e3864f8926ae15df35429fe29f1  data/recourse-case-index-2026-11.json
 d7b843fbe94f3fcb03ef457fbf980044a293cdd386f33040387edfdf5cf7225f  data/restored/06890686-ef92-41f2-877b-d481bccef120.csv
 57af2f7ded83be1b9b0a8cdba3dd464710e5bf77e4d0ec7f5040050113882f5b  data/restored/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f.csv
