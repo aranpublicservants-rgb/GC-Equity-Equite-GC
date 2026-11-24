@@ -93,6 +93,7 @@ function quickLinks(){
  ['explorer.html#depts','Departmental comparisons','Comparaisons ministérielles'],
  ['https://aranpublicservants-rgb.github.io/pses-2024-branch.html/','Departments by branch','Ministères par direction'],
  ['departmental-plans-2026-27/','Departmental plans','Plans ministériels'],
+ ['where-data-agree.html','Where the data agree','Là où les données concordent'],
  ['call-to-action.html','Call to Action results','Résultats de l’appel à l’action'],
  ['https://aranpublicservants-rgb.github.io/Accessibility-and-Inclusion-Accessibilit-et-inclusion/duty-to-accommodate/','Duty to accommodate','Obligation d’adaptation'],
  ['https://aranpublicservants-rgb.github.io/aran-raar/recourse/','Employee recourse','Recours des employés']
@@ -259,6 +260,7 @@ function renderHome(){
  ]),
  S('department-experience','Employee experience, harassment and discrimination','Expérience des employés, harcèlement et discrimination','Survey results depend on the survey year, question, employee group and organizational level.','Les résultats varient selon l’année du sondage, la question, le groupe d’employés et le niveau organisationnel.',[
  L('explorer.html#depts','Employee survey comparisons by department','Comparaisons des sondages par ministère','Review published results across organizations and employment equity groups.','Examinez les résultats publiés selon l’organisme et le groupe visé par l’équité.'),
+ L('where-data-agree.html','Where the data agree','Là où les données concordent','See where separate sources point to the same organizations, and whether survey gaps grew or shrank between survey years.','Voyez où des sources distinctes désignent les mêmes organisations, et si les écarts des sondages se sont creusés ou réduits d’une année de sondage à l’autre.'),
  L('branch-equity.html','2024 Public Service Employee Survey: branches and units','SAFF 2024 : directions et unités','Read the branch table guide before opening the complete results.','Lisez le guide des tableaux par direction avant d’ouvrir les résultats complets.'),
  L('sources.html','Survey source files and methods','Fichiers sources et méthodes des sondages','Find the source inventory and check exactly what was measured.','Trouvez l’inventaire des sources et vérifiez ce qui a été mesuré.')
  ]),

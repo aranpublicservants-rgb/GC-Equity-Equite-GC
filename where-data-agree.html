@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where the data agree | GC Equity</title>
+<meta name="description" content="Published workforce, survey and staffing results for every federal organization, side by side, to find patterns no single source shows. | Les résultats publiés sur l’effectif, les sondages et la dotation de chaque organisation fédérale, côte à côte, pour repérer des tendances qu’aucune source ne montre seule.">
+<script>
+(function(){try{var t=localStorage.getItem('gcEquityTheme');if(t==='dark'||t==='contrast')document.documentElement.dataset.theme=t;var p=new URLSearchParams(location.search).get('lang');document.documentElement.lang=(p==='fr'||p==='en')?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="gc-workspace.css?v=20261116-2">
+<style>
+.wda{max-width:1224px}
+.wda h1{font-family:var(--gw-serif);font-size:clamp(30px,3.8vw,48px);line-height:1.14;font-weight:600;margin:8px 0 18px;max-width:900px}
+.wda h2{font-family:var(--gw-serif);font-size:clamp(24px,2.6vw,31px);margin:0 0 12px;line-height:1.2}
+.wda h3{font-size:19px;margin:4px 0 10px;line-height:1.3}
+.wda p,.wda li{max-width:88ch}
+.wda-meta{font-size:14px;color:var(--gw-muted);margin:0 0 18px}
+.wda-jump{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;padding:0;margin:0 0 22px}
+.wda-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 8px;padding:0;list-style:none}
+.wda-stats li{background:var(--gw-card);border:1px solid var(--gw-line);border-radius:8px;padding:14px 16px;max-width:none}
+.wda-stats b{display:block;font-size:26px;line-height:1.1;font-family:var(--gw-serif)}
+.wda-section{margin-top:40px;padding-top:6px}
+.wda-findings{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.wda-finding{background:var(--gw-card);border:1px solid var(--gw-line);border-left:5px solid var(--gw-teal);border-radius:10px;padding:16px 20px;max-width:none;min-width:0}
+.wda-finding p{margin:0 0 10px}
+.wda-finding p:last-child{margin-bottom:0}
+.wda-why{font-size:14.5px;border-top:1px solid var(--gw-line);padding-top:10px}
+.wda-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 16px;margin:14px 0}
+.wda-controls>*{min-width:0}
+.wda-controls label{display:block;font-size:14px;font-weight:700;margin-bottom:5px}
+.wda-controls select{width:100%;min-height:44px;border:1px solid #8a9daa;border-radius:6px;padding:8px 10px;background:var(--gw-card);color:var(--gw-ink)}
+.wda-scroll{position:relative;overflow-x:auto;border:1px solid var(--gw-line);border-radius:8px;background:var(--gw-card);margin:10px 0}
+.wda-scroll:focus-visible{outline:3px solid var(--gw-focus);outline-offset:2px}
+.wda table{border-collapse:collapse;width:100%;font-size:14px}
+.wda caption{text-align:left;font-weight:700;padding:12px 14px 8px;font-size:15px}
+.wda th,.wda td{padding:8px 10px;border-bottom:1px solid var(--gw-line);vertical-align:top;text-align:left}
+.wda thead th{background:var(--gw-soft);font-size:13px;line-height:1.35}
+.wda td.num,.wda th.num{text-align:right;font-variant-numeric:tabular-nums}
+.wda td.num{white-space:nowrap}
+.wda tbody th{font-weight:600;min-width:200px}
+.wda-sub{display:block;font-size:12.5px;color:var(--gw-muted);font-weight:400}
+.wda-sort{font:inherit;font-weight:700;background:none;border:0;padding:0;color:inherit;text-align:inherit;cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+.wda-tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:12.5px;font-weight:650;border:1px solid var(--gw-line);white-space:nowrap}
+.wda-tag.grew{border-color:#9c0006;color:#9c0006}
+.wda-tag.shrank{border-style:solid;border-color:var(--gw-teal)}
+.wda-tag.unsure{border-style:dashed;color:var(--gw-muted)}
+:root[data-theme=dark] .wda-tag.grew{color:#ff9d93;border-color:#ff9d93}
+.wda-na{color:var(--gw-muted)}
+.wda-status{font-size:14.5px;margin:8px 0}
+.wda .note,.wda-small{font-size:13.5px;color:var(--gw-muted)}
+.wda-btnrow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.wda-mini{width:auto;min-width:420px;margin:6px 0 12px}
+.wda details>summary{cursor:pointer;font-weight:700;font-size:16px;padding:6px 0}
+.wda-list{padding-left:22px;margin:8px 0 0}
+.wda-list li{margin:0 0 8px}
+.wda tr.wda-ps th,.wda tr.wda-ps td{background:var(--gw-soft)}
+.wda tr.wda-ps th{font-weight:700}
+@media (max-width:820px){.wda-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.wda-controls{grid-template-columns:minmax(0,1fr)}.wda-finding{padding:14px}.wda-mini{min-width:0}}
+@media print{.wda-controls,.wda-btnrow,#gcw-header,.gcw-context{display:none!important}.wda-scroll{overflow:visible;border:0}.wda-finding{break-inside:avoid}}
+</style>
+</head>
+<body class="gcw-page">
+<main id="main" class="gcw-frame wda">
+<p class="gcw-eyebrow" data-i18n="eyebrow">Equity across the public service</p>
+<h1 data-i18n="title">Where the data agree</h1>
+<p class="gcw-lede" data-i18n="lede">Government sources measure equity in different ways: who works where, what employees say in two separate surveys, and who gets hired. This page puts them side by side for every federal organization to find patterns that no single source shows. A pattern tells you where to look first. It does not prove discrimination, and it does not tell you what happened to any one person.</p>
+<p class="wda-meta" data-i18n="meta">Sources: Treasury Board workforce data to March 31, 2025; Public Service Employee Survey, 2019 to 2024; Staffing and Non-Partisanship Survey, 2025; Public Service Commission staffing data. The comparisons are calculated by this site from the published figures. They are not Government of Canada statistics.</p>
+<ul class="wda-jump">
+<li><a href="#findings" data-i18n="jumpFindings">What stands out</a></li>
+<li><a href="#agree" data-i18n="jumpAgree">Where both surveys agree</a></li>
+<li><a href="#gaps" data-i18n="jumpGaps">Is the gap growing?</a></li>
+<li><a href="#links" data-i18n="jumpLinks">Every link we checked</a></li>
+<li><a href="#method" data-i18n="jumpMethod">How to read this page</a></li>
+<li><a href="#sources" data-i18n="jumpSources">Sources and data files</a></li>
+</ul>
+<ul class="wda-stats" id="wda-stats" data-i18n-label="statsLabel" aria-label="Summary"></ul>
+<p id="wda-loading" role="status" data-i18n="loading">Loading the data…</p>
+<noscript><p>This page needs JavaScript to read its data file. The file is listed under Sources. / Cette page a besoin de JavaScript pour lire son fichier de données. Le fichier est indiqué sous Sources.</p></noscript>
+
+<section id="findings" class="wda-section" aria-labelledby="findings-title">
+<h2 id="findings-title" data-i18n="findingsTitle">What stands out</h2>
+<p data-i18n="findingsIntro">These patterns come from comparing results across federal organizations. Each one says how many organizations it covers, how strong it is and whether it could be chance.</p>
+<ol class="wda-findings" id="wda-findings" role="list"></ol>
+</section>
+
+<section id="agree" class="wda-section" aria-labelledby="agree-title">
+<h2 id="agree-title" data-i18n="agreeTitle">Where both surveys point to the same organizations</h2>
+<p data-i18n="agreeIntro">Choose a group. The table lists the organizations in the top third on two results for that group: the share who said they had been discriminated against at work in the past 12 months (2024 Public Service Employee Survey), and the share who said they faced bias or barriers in a staffing process they took part in (2025 Staffing and Non-Partisanship Survey). The change in the group’s representation from 2023 to 2025 is shown where Treasury Board publishes it.</p>
+<div class="wda-controls"><div><label for="wda-agree-group" data-i18n="groupLabel">Employee group</label><select id="wda-agree-group"></select></div></div>
+<p id="wda-agree-status" class="wda-status" role="status" aria-live="polite"></p>
+<div class="wda-scroll" tabindex="0" role="region" aria-labelledby="wda-agree-caption">
+<table id="wda-agree-table" data-gcw-ready="yes"><caption id="wda-agree-caption"></caption><thead id="wda-agree-head"></thead><tbody id="wda-agree-body"></tbody></table>
+</div>
+<p class="note" id="wda-agree-note"></p>
+<div class="wda-btnrow"><button type="button" class="gcw-btn" id="wda-agree-csv" data-i18n="download">Download this table (CSV)</button></div>
+</section>
+
+<section id="gaps" class="wda-section" aria-labelledby="gaps-title">
+<h2 id="gaps-title" data-i18n="gapsTitle">Is the gap growing?</h2>
+<p data-i18n="gapsIntro">A gap is how many percentage points worse a group’s result is than the result of a comparison group in the same organization. A positive gap means the group is worse off. Choose a group and a question to see where the gap grew, shrank or stayed about the same.</p>
+<div class="wda-controls">
+<div><label for="wda-gap-group" data-i18n="groupLabel">Employee group</label><select id="wda-gap-group"></select></div>
+<div><label for="wda-gap-q" data-i18n="questionLabel">Survey question</label><select id="wda-gap-q"></select></div>
+<div><label for="wda-gap-show" data-i18n="showLabel">Show</label><select id="wda-gap-show"></select></div>
+</div>
+<p id="wda-gap-status" class="wda-status" role="status" aria-live="polite"></p>
+<div class="wda-scroll" tabindex="0" role="region" aria-labelledby="wda-gap-caption">
+<table id="wda-gap-table" data-gcw-ready="yes"><caption id="wda-gap-caption"></caption><thead id="wda-gap-head"></thead><tbody id="wda-gap-body"></tbody></table>
+</div>
+<div class="note" id="wda-gap-note"></div>
+<div class="wda-btnrow"><button type="button" class="gcw-btn" id="wda-gap-csv" data-i18n="download">Download this table (CSV)</button></div>
+</section>
+
+<section id="links" class="wda-section" aria-labelledby="links-title">
+<h2 id="links-title" data-i18n="linksTitle">Every link we checked</h2>
+<p data-i18n="linksIntro">Every pair of results that come from two different sources, compared across organizations. Choose a group to see the results about that group, or show every link, including the ones that could be chance.</p>
+<div class="wda-controls">
+<div><label for="wda-link-group" data-i18n="aboutLabel">Results about</label><select id="wda-link-group"></select></div>
+<div><label for="wda-link-show" data-i18n="showLabel">Show</label><select id="wda-link-show"></select></div>
+</div>
+<p id="wda-link-status" class="wda-status" role="status" aria-live="polite"></p>
+<div class="wda-scroll" tabindex="0" role="region" aria-labelledby="wda-link-caption">
+<table id="wda-link-table" data-gcw-ready="yes"><caption id="wda-link-caption"></caption><thead id="wda-link-head"></thead><tbody id="wda-link-body"></tbody></table>
+</div>
+<div class="wda-btnrow"><button type="button" class="gcw-btn" id="wda-link-csv" data-i18n="downloadAll">Download every link with its numbers (CSV)</button></div>
+</section>
+
+<section id="method" class="wda-section" aria-labelledby="method-title">
+<h2 id="method-title" data-i18n="methodTitle">How to read this page</h2>
+<div id="wda-method"></div>
+</section>
+
+<section id="sources" class="wda-section" aria-labelledby="sources-title">
+<h2 id="sources-title" data-i18n="sourcesTitle">Sources and data files</h2>
+<div id="wda-sources"></div>
+</section>
+</main>
+<script src="where-data-agree.js"></script>
+<script src="gc-workspace.js?v=20261117-1"></script>
+</body>
+</html>
