@@ -292,6 +292,8 @@ jobs:
         run: node tests/evidence-review-browser.cjs
       - name: Check the where-the-data-agree page in English and French
         run: node tests/where-data-agree-browser.cjs
+      - name: Check the where-the-data-agree search, theme, table buttons and charts
+        run: node tests/where-data-agree-controls-browser.cjs
       - name: Check department pages in English and French, desktop and mobile
         run: node tests/department-audit-browser.cjs
       - name: Save preview images
