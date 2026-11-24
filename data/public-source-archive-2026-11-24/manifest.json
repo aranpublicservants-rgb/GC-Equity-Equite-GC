@@ -57,7 +57,9 @@
       "bytes": 708134,
       "rows": 13966,
       "gitBlob": "f7d050576e0a4328ecea37fb544eb7f67e239285",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+      "verification": "Drive original bytes, size and CSV row count matched; publisher byte equivalence not established",
+      "encoding": "utf-8",
+      "headerRows": 1
     },
     {
       "id": "GC-0370",
