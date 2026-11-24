@@ -152,10 +152,16 @@ async function download(page, click, what) {
         const type = page.getByLabel('Chart type').first();
         await type.waitFor({ state: 'attached', timeout: 5000 });
         {
-          const options = await type.locator('option').allTextContents();
+          // A chart type that does not fit the table is a disabled option. Visitors cannot choose it,
+          // and Playwright 1.65.1, which the workflow installs, refuses to select it, so only the enabled types are tried.
+          // assets/data-visuals.js disables only Trend over time, when the rows are not one per period.
+          const options = await type.locator('option:not([disabled])').allTextContents();
+          const unavailable = await type.locator('option[disabled]').allTextContents();
+          assert.ok(options.length > 0, 'at least one chart type is available');
+          assert.ok(unavailable.every(o => o === 'Trend over time'), 'only Trend over time can be unavailable: ' + unavailable.join(', '));
           for (const o of options) { await type.selectOption({ label: o }); await page.waitForTimeout(150); assert.ok(await page.locator('svg.dv-svg').count() + await page.locator('.dv-note, .dv-empty').count() > 0, 'chart type ' + o); }
           await type.selectOption({ index: 0 });
-          ok(mode.name + ': chart types ' + options.join(', '));
+          ok(mode.name + ': chart types ' + options.join(', ') + (unavailable.length ? '; not offered for this table: ' + unavailable.join(', ') : ''));
         }
         const svg = await download(page, () => page.getByRole('button', { name: /SVG/ }).first().click(), 'SVG');
         assert.ok(svg.text.includes('<svg'), 'SVG download');
