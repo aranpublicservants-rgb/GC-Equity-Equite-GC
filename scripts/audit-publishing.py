@@ -93,19 +93,36 @@ for path in json_files:
     try:json.loads(path.read_text(encoding='utf-8-sig'))
     except Exception as e:errors.append('Invalid JSON: '+str(path.relative_to(ROOT))+' :: '+str(e))
 
+archive_manifest = ROOT/'data/public-source-archive-2026-11-24/manifest.json'
+archive_encodings = {}
+if archive_manifest.exists():
+    for item in json.loads(archive_manifest.read_text(encoding='utf-8'))['files']:
+        if item.get('encoding') in ('windows-1252', 'utf-8'):
+            archive_encodings[item['path']] = item
+
 csv_columns={}
 for path in csv_files:
     try:
         # Files in data/open-canada-2026-11 are stored byte for byte as published.
         # Several are Windows-1252, not UTF-8, so they are read with that fallback.
         as_published='data/open-canada-2026-11/' in path.as_posix()
-        try:path.read_bytes().decode('utf-8-sig');enc='utf-8-sig'
-        except UnicodeDecodeError:
-            if not as_published:raise
-            enc='cp1252'
+        archived = archive_encodings.get(path.relative_to(ROOT).as_posix())
+        if archived:
+            enc = 'cp1252' if archived['encoding']=='windows-1252' else 'utf-8-sig'
+            if path.stat().st_size != archived['bytes']:
+                errors.append('Archived original size mismatch: '+archived['path'])
+        else:
+            try:path.read_bytes().decode('utf-8-sig');enc='utf-8-sig'
+            except UnicodeDecodeError:
+                if not as_published:raise
+                enc='cp1252'
         with path.open(newline='',encoding=enc) as f:
             reader=csv.reader(f)
+            if archived:
+                for _ in range(archived['headerRows']-1): next(reader,[])
             cols=next(reader,[])
+            if archived and sum(1 for _ in reader) != archived['rows']:
+                errors.append('Archived original row count mismatch: '+archived['path'])
             if len(cols)<2:warnings.append('CSV has fewer than two columns: '+str(path.relative_to(ROOT)))
             if len(cols)!=len(set(cols)):
                 warnings.append('CSV duplicate header names: '+str(path.relative_to(ROOT)))
