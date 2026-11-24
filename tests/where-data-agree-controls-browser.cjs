@@ -48,6 +48,23 @@ async function download(page, click, what) {
       assert.ok(/Most certain link/.test(linkText), 'link summary names the most certain link');
       ok(mode.name + ': Start here');
 
+      // One organization: every organization in the data renders, and names in tables open it.
+      const orgs = await page.evaluate(() => [...document.querySelectorAll('#wda-org-select option')].map(o => o.value).filter(Boolean));
+      const DATA = JSON.parse(fs.readFileSync(path.join(root, 'data/where-data-agree.json'), 'utf8'));
+      assert.equal(orgs.length, DATA.orgs.length, mode.name + ' every organization is listed');
+      assert.ok(DATA.orgs.length >= 100, 'at least 100 organizations');
+      for (const o of orgs) {
+        await page.selectOption('#wda-org-select', o);
+        const txt = await page.locator('#wda-org-out').innerText();
+        assert.deepEqual(errors, [], 'script errors for ' + o);
+        assert.ok(await page.locator('#wda-org-out h3').count() === 1 && txt.length > 120 && !/undefined|NaN|\[object|null/.test(txt), 'organization view for ' + o);
+      }
+      await page.locator('#wda-agree-body a[data-org]').first().click();
+      assert.notEqual(await page.inputValue('#wda-org-select'), '', mode.name + ' a name in the table opens the organization view');
+      assert.ok(await page.evaluate(() => document.activeElement && document.activeElement.id === 'org-title'), 'focus moves to the organization heading');
+      assert.match(page.url(), /[?&]org=/, 'organization is kept in the page address');
+      ok(mode.name + ': organization view (' + orgs.length + ' organizations)');
+
       // Staffing fairness since 2021: choices, rows, sort and download.
       await page.selectOption('#wda-staff-group', 'ind');
       await page.selectOption('#wda-staff-q', 'STA_01A');

@@ -23,6 +23,10 @@ const TEXT={
  meta:['Sources: Treasury Board workforce data to March 31, 2025; Public Service Employee Survey, 2019 to 2024; Staffing and Non-Partisanship Survey, 2025; Public Service Commission staffing data. The comparisons are calculated by this site from the published figures. They are not Government of Canada statistics.',
   'Sources : données du Conseil du Trésor sur l’effectif jusqu’au 31 mars 2025; Sondage auprès des fonctionnaires fédéraux, de 2019 à 2024; Sondage sur la dotation et l’impartialité politique de 2025; données de dotation de la Commission de la fonction publique. Les comparaisons sont calculées par ce site à partir des chiffres publiés. Il ne s’agit pas de statistiques du gouvernement du Canada.'],
  jumpStart:['Start here','Pour commencer'],
+ jumpOrg:['One organization','Une organisation'],
+ orgTitle:['Everything for one organization','Tout sur une organisation'],
+ orgIntro:['Choose an organization, or select an organization name in any table above. This brings together every result on this page for that organization. A blank means the result was not published, usually because too few people answered.','Choisissez une organisation, ou sélectionnez le nom d’une organisation dans l’un des tableaux ci-dessus. Cette section réunit tous les résultats de cette page pour l’organisation. Une case vide signifie que le résultat n’a pas été publié, généralement parce que trop peu de personnes ont répondu.'],
+ orgLabel:['Organization','Organisation'],
  jumpStaffing:['Staffing fairness since 2021','L’équité en dotation depuis 2021'],
  staffingTitle:['Has staffing fairness changed since 2021?','L’équité en dotation a-t-elle changé depuis 2021?'],
  staffingIntro:['The Public Service Commission asked employees in 2021 and again in 2025 whether staffing in their work unit is fair and open. Choose a group and a question to see each organization’s result in both years. The 2021 survey has no question matching the 2025 question on bias or barriers, so these two matched questions are the closest comparison.','La Commission de la fonction publique a demandé aux employés, en 2021 puis en 2025, si la dotation dans leur unité de travail est équitable et transparente. Choisissez un groupe et une question pour voir le résultat de chaque organisation pour les deux années. Le sondage de 2021 ne comporte aucune question correspondant à celle de 2025 sur les préjugés ou les obstacles; ces deux questions appariées sont donc la comparaison la plus proche.'],
@@ -100,7 +104,7 @@ const LINKS={
 const link=k=>{const s=LINKS[k],internal=!/^https?:/.test(s[2]);const href=internal?(/\.html/.test(s[2])?local(s[2]):s[2]):(fr()&&s[3]?s[3]:s[2]);return '<a href="'+esc(href)+'"'+(internal?'':' target="_blank" rel="noopener noreferrer"')+'>'+esc(tr(s[0],s[1]))+'</a>';};
 
 let D=null;
-const state={sg:'woman',sq:'STA_01E',ssort:'change',sdir:1,agree:'black',gg:'ind',gq:'Q65',show:'all',sort:'change',dir:-1,lg:'all',ls:'clear'};
+const state={org:'',sg:'woman',sq:'STA_01E',ssort:'change',sdir:1,agree:'black',gg:'ind',gq:'Q65',show:'all',sort:'change',dir:-1,lg:'all',ls:'clear'};
 
 function mlabel(k){const m=D.measures[k];return m?tr(m.en,m.fr):k;}
 function orgName(k){const n=D.trends.names[k];return n?(fr()?n[0]:n[1]):k;}
@@ -188,7 +192,7 @@ function renderFindings(){
 
 /* ---------------- where both surveys agree ---------------- */
 function fillSelect(el,opts,val){el.innerHTML=opts.map(([v,t])=>'<option value="'+esc(v)+'"'+(v===val?' selected':'')+'>'+esc(t)+'</option>').join('');}
-function agreeRows(){const a=D.agree[state.agree];return a.orgs.map(o=>[fr()?o.fr:o.en,o.pses,o.pses_n,o.snps,o.rep_change,o.id]);}
+function agreeRows(){const a=D.agree[state.agree];return a.orgs.map(o=>[fr()?o.fr:o.en,o.pses,o.pses_n,o.snps,o.rep_change,o.id,o.en]);}
 function renderAgree(){
  fillSelect($('wda-agree-group'),Object.keys(D.agree).map(g=>[g,G(g)]),state.agree);
  const a=D.agree[state.agree],g=state.agree;
@@ -197,7 +201,7 @@ function renderAgree(){
  $('wda-agree-caption').textContent=tr('Organizations in the top third on both surveys: '+G(g,'s'),'Organisations dans le tiers supérieur des deux sondages : '+G(g,'s'));
  const hasRep=g!=='woman';
  $('wda-agree-head').innerHTML='<tr><th scope="col">'+esc(tr('Organization','Organisation'))+'</th><th scope="col" class="num">'+esc(tr('Discriminated against at work, 2024 (%)','Victimes de discrimination au travail, 2024 (%)'))+'</th><th scope="col" class="num">'+esc(tr('People who answered, 2024','Personnes ayant répondu, 2024'))+'</th><th scope="col" class="num">'+esc(tr('Faced bias or barriers in staffing, 2025 (%)','Préjugés ou obstacles en dotation, 2025 (%)'))+'</th>'+(hasRep?'<th scope="col" class="num">'+esc(tr('Change in representation, 2023 to 2025 (points)','Variation de la représentation, de 2023 à 2025 (points)'))+'</th>':'')+'</tr>';
- $('wda-agree-body').innerHTML=agreeRows().map(r=>'<tr><th scope="row"><a href="'+esc(local('call-to-action.html?org='+encodeURIComponent(r[5])+'#record'))+'">'+esc(r[0])+'</a></th><td class="num">'+esc(pct(r[1]))+'</td><td class="num">'+esc(has(r[2])?int(r[2]):'')+'</td><td class="num">'+esc(pct(r[3]))+'</td>'+(hasRep?'<td class="num">'+(has(r[4])?esc(signed(Number(r[4].toFixed(1)))):'<span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span>')+'</td>':'')+'</tr>').join('')||'<tr><td colspan="5">'+esc(tr('No organization is in the top third on both.','Aucune organisation ne se classe dans le tiers supérieur pour les deux.'))+'</td></tr>';
+ $('wda-agree-body').innerHTML=agreeRows().map(r=>'<tr><th scope="row">'+orgA(r[6],r[0])+'</th><td class="num">'+esc(pct(r[1]))+'</td><td class="num">'+esc(has(r[2])?int(r[2]):'')+'</td><td class="num">'+esc(pct(r[3]))+'</td>'+(hasRep?'<td class="num">'+(has(r[4])?esc(signed(Number(r[4].toFixed(1)))):'<span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span>')+'</td>':'')+'</tr>').join('')||'<tr><td colspan="5">'+esc(tr('No organization is in the top third on both.','Aucune organisation ne se classe dans le tiers supérieur pour les deux.'))+'</td></tr>';
  $('wda-agree-note').textContent=tr('Survey results for small groups can change a lot from year to year, so read them with the number of people who answered the 2024 survey. The 2025 staffing survey does not publish the number of people who answered for each group, and its question was asked only of people who took part in an advertised staffing process.'+(hasRep?'':' Treasury Board does not publish representation of women in the departmental series used here.')+' Each organization name opens its Call to Action record.',
   'Les résultats des petits groupes peuvent beaucoup varier d’une année à l’autre; lisez-les avec le nombre de personnes ayant répondu au sondage de 2024. Le sondage de dotation de 2025 ne publie pas le nombre de répondants de chaque groupe, et sa question n’a été posée qu’aux personnes ayant participé à un processus de dotation annoncé.'+(hasRep?'':' Le Conseil du Trésor ne publie pas la représentation des femmes dans la série ministérielle utilisée ici.')+' Le nom de chaque organisation ouvre son dossier sur l’appel à l’action.');
 }
@@ -229,7 +233,7 @@ function renderGaps(){
  const cellOf=v=>{if(!v)return '<td class="num"><span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span></td>';const [av,,cv,,gap]=v;
   return '<td class="num">'+(has(gap)?esc(signed(gap)):'<span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span>')+'<span class="wda-sub">'+esc((has(av)?pct(av):'..')+' / '+(has(cv)?pct(cv):'..'))+'</span></td>';};
  $('wda-gap-body').innerHTML=rows.map(r=>{const it=r.it,isPS=r.k==='Public Service';
-  return '<tr'+(isPS?' class="wda-ps"':'')+'><th scope="row">'+esc(isPS?tr('Public service as a whole','Ensemble de la fonction publique'):orgName(r.k))+'</th>'+years.map(y=>cellOf(it.y[y])).join('')+
+  return '<tr'+(isPS?' class="wda-ps"':'')+'><th scope="row">'+(isPS?esc(tr('Public service as a whole','Ensemble de la fonction publique')):orgA(tk2en()[r.k],orgName(r.k)))+'</th>'+years.map(y=>cellOf(it.y[y])).join('')+
    '<td class="num">'+(has(it.change)?esc(signed(it.change)):'<span class="wda-na">'+esc(tr('Not available','Non disponible'))+'</span>')+'</td><td>'+(it.label?'<span class="wda-tag '+it.label+'">'+esc(tr(LABEL[it.label][0],LABEL[it.label][1]))+'</span>':'')+'</td></tr>';}).join('')||'<tr><td colspan="'+(years.length+3)+'">'+esc(tr('No organization matches this choice.','Aucune organisation ne correspond à ce choix.'))+'</td></tr>';
  const qm=D.trends.question_match_2022,qfull=D.trends.questions[q],early=years[0];
  const notes=[tr('Each cell shows the gap in points, with the group’s result and the comparison group’s result below it. A positive gap means the group’s result is worse. “..” means the result was not published, usually because fewer than 10 people answered. Full question: '+qfull.en,'Chaque cellule présente l’écart en points, avec le résultat du groupe et celui du groupe de comparaison en dessous. Un écart positif signifie que le résultat du groupe est moins favorable. « .. » signifie que le résultat n’a pas été publié, généralement parce que moins de 10 personnes ont répondu. Question complète : '+qfull.fr)];
@@ -263,6 +267,34 @@ const inView=p=>{if(state.lg==='all')return true;const [a,b]=p;return D.measures
 }
 
 /* ---------------- method and sources ---------------- */
+/* ---------------- one organization ---------------- */
+const ORGSRC={tbs:['Treasury Board workforce data','Données du Conseil du Trésor sur l’effectif'],pses:['2024 Public Service Employee Survey','Sondage auprès des fonctionnaires fédéraux de 2024'],snps:['2025 Staffing and Non-Partisanship Survey','Sondage sur la dotation et l’impartialité politique de 2025'],trends:['survey gaps over time','écarts dans le temps'],staffing:['staffing results, 2018 to 2025','résultats en dotation, 2018 à 2025']};
+const orgByEn=()=>{const m={};(D.orgs||[]).forEach(o=>{m[o.en]=o;});return m;};
+const tk2en=()=>{const m={};(D.orgs||[]).forEach(o=>{if(o.tk)m[o.tk]=o.en;});return m;};
+const orgA=(en,label)=>en&&orgByEn()[en]?'<a href="#org-title" data-org="'+esc(en)+'">'+esc(label)+'</a>':esc(label);
+function renderOrg(){
+ const sel=$('wda-org-select');if(!sel||!D.orgs)return;
+ const list=D.orgs.slice().sort((a,b)=>(fr()?a.fr:a.en).localeCompare(fr()?b.fr:b.en,fr()?'fr':'en'));
+ sel.innerHTML='<option value="">'+esc(tr('Choose an organization','Choisissez une organisation'))+'</option>'+list.map(o=>'<option value="'+esc(o.en)+'"'+(o.en===state.org?' selected':'')+'>'+esc(fr()?o.fr:o.en)+'</option>').join('');
+ const out=$('wda-org-out'),o=orgByEn()[state.org];
+ if(!o){out.innerHTML='<p class="wda-sub">'+esc(tr(D.orgs.length+' organizations are listed, including those with few published results.',D.orgs.length+' organisations sont présentées, y compris celles qui ont peu de résultats publiés.'))+'</p>';return;}
+ const srcs=o.has||[];
+ let h='<h3>'+esc(fr()?o.fr:o.en)+'</h3><p>'+esc(tr('Results on this page: ','Résultats de cette page : ')+(srcs.length?srcs.map(k=>tr(ORGSRC[k][0],ORGSRC[k][1])).join('; '):tr('none published','aucun publié'))+'.')+(o.id?' <a href="'+esc(local('call-to-action.html?org='+encodeURIComponent(o.id)+'#record'))+'">'+esc(tr('Full record, with commitments and plans','Dossier complet, avec engagements et plans'))+'</a>':'')+'</p>';
+ // both surveys
+ h+='<h4>'+esc(tr('Top third on both surveys','Tiers supérieur des deux sondages'))+'</h4><div class="wda-scroll"><table><caption>'+esc(tr('Top third on both surveys: '+(fr()?o.fr:o.en),'Tiers supérieur des deux sondages : '+(fr()?o.fr:o.en)))+'</caption><thead><tr><th scope="col">'+esc(tr('Group','Groupe'))+'</th><th scope="col" class="num">'+esc(tr('Discriminated against at work, 2024 (%)','Victimes de discrimination au travail, 2024 (%)'))+'</th><th scope="col" class="num">'+esc(tr('Faced bias or barriers in staffing, 2025 (%)','Préjugés ou obstacles en dotation, 2025 (%)'))+'</th><th scope="col">'+esc(tr('In the top third on both?','Dans le tiers supérieur des deux?'))+'</th></tr></thead><tbody>'+
+  Object.keys(D.agree).map(g=>{const a=D.agree[g].orgs.find(x=>x.en===o.en);return '<tr><th scope="row">'+esc(G(g))+'</th><td class="num">'+(a?esc(pct(a.pses)):'')+'</td><td class="num">'+(a?esc(pct(a.snps)):'')+'</td><td>'+esc(a?tr('Yes','Oui'):tr('No, or one result not published','Non, ou un résultat non publié'))+'</td></tr>';}).join('')+'</tbody></table></div>';
+ // gaps over time, headline question
+ const t=o.tk&&D.trends.orgs[o.tk];
+ if(t){const q='Q65';h+='<h4>'+esc(tr('Gap over time: ','Écart dans le temps : ')+tr(QSHORT[q][0],QSHORT[q][1]))+'</h4><div class="wda-scroll"><table><caption>'+esc(tr('Gap over time on discrimination at work: '+(fr()?o.fr:o.en),'Écart dans le temps sur la discrimination au travail : '+(fr()?o.fr:o.en)))+'</caption><thead><tr><th scope="col">'+esc(tr('Group compared with','Groupe comparé à'))+'</th><th scope="col">'+esc(tr('Gap in points, by year (group result / comparison result)','Écart en points, par année (résultat du groupe / de la comparaison)'))+'</th><th scope="col">'+esc(tr('What changed','Ce qui a changé'))+'</th></tr></thead><tbody>'+
+  TGROUPS.map(g=>{const it=(t[g]||{})[q];if(!it||!it.y)return '';const ys=Object.keys(it.y).sort();return '<tr><th scope="row">'+esc(tr(GROUP[g].t[0]+' compared with '+GROUP[g].c[0],GROUP[g].t[1]+' par rapport aux '+GROUP[g].c[1]))+'</th><td>'+ys.map(y=>{const v=it.y[y];return esc(y+' : '+(has2(v)?signed(v[4])+' ('+(has(v[0])?pct(v[0]):'..')+' / '+(has(v[2])?pct(v[2]):'..')+')':tr('not published','non publié')));}).join('<br>')+'</td><td>'+(it.label?esc(tr(LABEL[it.label][0],LABEL[it.label][1])):'')+'</td></tr>';}).join('')+'</tbody></table></div><p class="wda-sub">'+esc(tr('Other questions are in the gap table above.','Les autres questions figurent dans le tableau des écarts ci-dessus.'))+'</p>';}
+ // staffing
+ const q='STA_01E';const srows=SGROUPS.map(g=>{const c=((D.staffing_trend.groups[g]||{})[o.en]||{})[q];return c&&(c[0]!==null||c[2]!==null||c[4]!==null)?'<tr><th scope="row">'+esc(G(g))+'</th><td class="num">'+(has(c[4])?esc(pct(c[4])):'')+'</td><td class="num">'+(has(c[0])?esc(pct(c[0])):'')+'</td><td class="num">'+(has(c[2])?esc(pct(c[2])):'')+'</td><td class="num">'+(has(c[3])?esc(signed(c[3])):'')+'</td></tr>':'';}).join('');
+ if(srows)h+='<h4>'+esc(tr('Staffing fairness: selection in the work unit is fair','Équité en dotation : la sélection dans l’unité de travail est équitable'))+'</h4><div class="wda-scroll"><table><caption>'+esc(tr('Staffing fairness, 2018 to 2025: '+(fr()?o.fr:o.en),'Équité en dotation, de 2018 à 2025 : '+(fr()?o.fr:o.en)))+'</caption><thead><tr><th scope="col">'+esc(tr('Group','Groupe'))+'</th><th scope="col" class="num">'+esc(tr('2018 (%), five-point scale','2018 (%), échelle à cinq points'))+'</th><th scope="col" class="num">2021 (%)</th><th scope="col" class="num">2025 (%)</th><th scope="col" class="num">'+esc(tr('Change 2021 to 2025','Variation de 2021 à 2025'))+'</th></tr></thead><tbody>'+srows+'</tbody></table></div><p class="wda-sub">'+esc(tr('The 2018 survey used a different answer scale, so 2018 is not comparable with 2021 and 2025.','Le sondage de 2018 utilisait une autre échelle de réponse; 2018 n’est donc pas comparable à 2021 et à 2025.'))+'</p>';
+ const ren=(D.staffing_trend.renamed||[]).filter(r=>r[1]===o.en||r[1]===(o.en||'').replace(/ of Canada$/,''));
+ if(ren.length)h+='<p class="wda-sub">'+esc(tr('Older staffing results listed under '+ren.map(r=>'“'+r[0]+'”').join(', ')+' are shown under this name.','Les anciens résultats de dotation inscrits sous '+ren.map(r=>'« '+r[0]+' »').join(', ')+' sont présentés sous ce nom.'))+'</p>';
+ out.innerHTML=h;
+}
+const has2=v=>Array.isArray(v)&&has(v[4]);
 function renderStart(){
  const sel=$('wda-start-group');if(!sel)return;
  const cur=sel.value||state.agree||'black';
@@ -288,7 +320,7 @@ function goStart(target){
 const SGROUPS=['woman','pwd','rac','ind'];
 function staffingRows(){
  const g=state.sg,q=state.sq,T=D.staffing_trend,rows=[];
- Object.keys(T.groups[g]||{}).forEach(k=>{const c=T.groups[g][k][q];if(c&&c[0]!==null)rows.push({k,c});});
+ Object.keys(T.groups[g]||{}).forEach(k=>{const c=T.groups[g][k][q];if(c&&(c[0]!==null||c[2]!==null||c[4]!==null))rows.push({k,c});});
  return rows;
 }
 function renderStaffing(){
@@ -299,19 +331,21 @@ function renderStaffing(){
  const all=staffingRows(),ps=all.find(r=>r.k==='Public Service'),orgs=all.filter(r=>r.k!=='Public Service'&&has(r.c[3]));
  const fell=orgs.filter(r=>r.c[3]<=-5).length,rose=orgs.filter(r=>r.c[3]>=5).length;
  let sum=tr('Of '+orgs.length+' organizations with both results, the result fell by 5 points or more in '+fell+' and rose by 5 points or more in '+rose+'.','Sur les '+orgs.length+' organisations qui ont les deux résultats, le résultat a baissé de 5 points ou plus dans '+fell+' et a augmenté de 5 points ou plus dans '+rose+'.');
- if(ps&&has(ps.c[2]))sum+=' '+tr('Across the public service, the result went from '+ps.c[0]+'% in 2021 to '+ps.c[2]+'% in 2025 for '+G(g,'s')+'.','Dans l’ensemble de la fonction publique, le résultat est passé de '+ps.c[0]+' % en 2021 à '+ps.c[2]+' % en 2025 pour les '+G(g,'s')+'.');
+ if(ps&&has(ps.c[0])&&has(ps.c[2]))sum+=' '+tr('Across the public service, the result went from '+ps.c[0]+'% in 2021 to '+ps.c[2]+'% in 2025 for '+G(g,'s')+'.','Dans l’ensemble de la fonction publique, le résultat est passé de '+ps.c[0]+' % en 2021 à '+ps.c[2]+' % en 2025 pour les '+G(g,'s')+'.');
  $('wda-staff-status').textContent=sum;
  $('wda-staff-caption').textContent=tr('Staffing results, 2021 and 2025: '+G(g,'s'),'Résultats en dotation, 2021 et 2025 : '+G(g,'s'));
  const sb=(k,label)=>'<button type="button" class="wda-sort" data-ssort="'+k+'">'+esc(label)+(state.ssort===k?(state.sdir<0?' ▼':' ▲'):'')+'</button>';
- $('wda-staff-head').innerHTML='<tr><th scope="col">'+sb('name',tr('Organization','Organisation'))+'</th><th scope="col" class="num">'+esc(tr('2021 (%)','2021 (%)'))+'</th><th scope="col" class="num">'+esc(tr('People covered, 2021','Personnes visées, 2021'))+'</th><th scope="col" class="num">'+esc(tr('2025 (%)','2025 (%)'))+'</th><th scope="col" class="num">'+sb('change',tr('Change (points)','Variation (points)'))+'</th></tr>';
+ $('wda-staff-head').innerHTML='<tr><th scope="col">'+sb('name',tr('Organization','Organisation'))+'</th><th scope="col" class="num">'+esc(tr('2018 (%), five-point scale','2018 (%), échelle à cinq points'))+'</th><th scope="col" class="num">'+esc(tr('2021 (%)','2021 (%)'))+'</th><th scope="col" class="num">'+esc(tr('People covered, 2021','Personnes visées, 2021'))+'</th><th scope="col" class="num">'+esc(tr('2025 (%)','2025 (%)'))+'</th><th scope="col" class="num">'+sb('change',tr('Change (points)','Variation (points)'))+'</th></tr>';
  const nm=k=>k==='Public Service'?tr('Public service as a whole','Ensemble de la fonction publique'):(T.names[k]?(fr()?T.names[k][0]:T.names[k][1]):k);
  orgs.sort((a,b)=>state.ssort==='name'?state.sdir*nm(a.k).localeCompare(nm(b.k),fr()?'fr':'en'):state.sdir*(a.c[3]-b.c[3])||nm(a.k).localeCompare(nm(b.k)));
  const noChange=all.filter(r=>r.k!=='Public Service'&&!has(r.c[3]));
- const line=r=>'<tr'+(r.k==='Public Service'?' class="wda-ps"':'')+'><th scope="row">'+esc(nm(r.k))+'</th><td class="num">'+esc(pct(r.c[0]))+'</td><td class="num">'+esc(int(r.c[1]))+'</td><td class="num">'+(has(r.c[2])?esc(pct(r.c[2])):'<span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span>')+'</td><td class="num">'+(has(r.c[3])?esc(signed(r.c[3])):'<span class="wda-na">'+esc(tr('Not available','Non disponible'))+'</span>')+'</td></tr>';
+ const line=r=>'<tr'+(r.k==='Public Service'?' class="wda-ps"':'')+'><th scope="row">'+(r.k==='Public Service'?esc(nm(r.k)):orgA(r.k,nm(r.k)))+'</th><td class="num">'+(has(r.c[4])?esc(pct(r.c[4])):'')+'</td><td class="num">'+(has(r.c[0])?esc(pct(r.c[0])):'<span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span>')+'</td><td class="num">'+(has(r.c[1])?esc(int(r.c[1])):'')+'</td><td class="num">'+(has(r.c[2])?esc(pct(r.c[2])):'<span class="wda-na">'+esc(tr('Not published','Non publié'))+'</span>')+'</td><td class="num">'+(has(r.c[3])?esc(signed(r.c[3])):'<span class="wda-na">'+esc(tr('Not available','Non disponible'))+'</span>')+'</td></tr>';
  $('wda-staff-body').innerHTML=(ps?line(ps):'')+orgs.map(line).join('')+noChange.map(line).join('');
  const notes=[tr('Full question, 2025: '+qd.en+'. The 2021 question was matched to it by wording.','Question complète, 2025 : '+qd.fr+'. La question de 2021 lui a été appariée selon le libellé.'),
   tr('Each result is the share who answered “to a moderate extent” or “to a great extent”, with “don’t know” answers kept in the total. 2021 results are calculated here from the Commission’s weighted counts. 2025 results are the Commission’s published figures.','Chaque résultat est la part des réponses « dans une mesure modérée » ou « dans une grande mesure », les réponses « ne sais pas » restant dans le total. Les résultats de 2021 sont calculés ici à partir des nombres pondérés de la Commission. Ceux de 2025 sont les chiffres publiés par la Commission.'),
   tr('“People covered” is the Commission’s weighted count for 2021. The 2025 file does not give the number of people who answered each group, so a large change in a small group can be chance. Read big swings with that count in mind.','« Personnes visées » est le nombre pondéré de la Commission pour 2021. Le fichier de 2025 n’indique pas le nombre de répondants de chaque groupe; une forte variation dans un petit groupe peut donc être due au hasard. Lisez les grandes variations en tenant compte de ce nombre.'),
+  tr('2018 uses the Commission’s five-point agreement scale (strongly or somewhat agree), not the “extent” scale used in 2021 and 2025. Its results are much lower for that reason, so 2018 is shown for reference only and is not compared with the later years. The 2018 question wording matches the 2021 wording for these two questions.','Les résultats de 2018 utilisent l’échelle d’accord à cinq points de la Commission (tout à fait ou plutôt d’accord), et non l’échelle « dans quelle mesure » de 2021 et de 2025. Ils sont donc beaucoup plus bas; 2018 est présenté à titre de référence seulement et n’est pas comparé aux années suivantes. Le libellé des questions de 2018 correspond à celui de 2021 pour ces deux questions.'),
+  tr('Some organizations have been renamed or replaced. Results for the Canada Energy Regulator (National Energy Board), the Impact Assessment Agency of Canada (Canadian Environmental Assessment Agency) and Women and Gender Equality Canada (Status of Women Canada) are shown under the current name. Indigenous and Northern Affairs Canada and Western Economic Diversification Canada were later split into more than one organization, so their older results are not shown.','Certaines organisations ont été renommées ou remplacées. Les résultats de la Régie de l’énergie du Canada (Office national de l’énergie), de l’Agence d’évaluation d’impact du Canada (Agence canadienne d’évaluation environnementale) et de Femmes et Égalité des genres Canada (Condition féminine Canada) sont présentés sous le nom actuel. Affaires autochtones et du Nord Canada et Diversification de l’économie de l’Ouest Canada ont ensuite été scindés en plusieurs organisations; leurs anciens résultats ne sont donc pas présentés.'),
   tr('The 2021 survey covered staffing from March 2020 to March 2021, during the COVID-19 pandemic. The 2021 files have no results for Black employees, so that group is not shown here.','Le sondage de 2021 portait sur la dotation de mars 2020 à mars 2021, pendant la pandémie de COVID-19. Les fichiers de 2021 ne contiennent pas de résultats pour les employés noirs; ce groupe n’est donc pas présenté ici.')];
  $('wda-staff-note').innerHTML='<ul class="wda-list">'+notes.map(n=>'<li>'+esc(n)+'</li>').join('')+'</ul>';
 }
@@ -371,10 +405,12 @@ function bind(){
  $('wda-start-list').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)goStart(b.dataset.go);});
  $('wda-start-group').addEventListener('change',()=>renderStart());
  $('wda-start-list').addEventListener('click',e=>{if(e.target.closest('#wda-brief-btn'))printBrief();});
+ $('wda-org-select').addEventListener('change',e=>{state.org=e.target.value;renderOrg();syncURL();});
+ document.addEventListener('click',e=>{const a=e.target.closest('a[data-org]');if(!a)return;e.preventDefault();state.org=a.dataset.org;renderOrg();syncURL();const h=$('org-title');h.setAttribute('tabindex','-1');h.scrollIntoView({behavior:'smooth',block:'start'});h.focus({preventScroll:true});});
  $('wda-staff-group').addEventListener('change',e=>{state.sg=e.target.value;renderStaffing();});
  $('wda-staff-q').addEventListener('change',e=>{state.sq=e.target.value;renderStaffing();});
  $('wda-staff-head').addEventListener('click',e=>{const b=e.target.closest('[data-ssort]');if(!b)return;const k=b.dataset.ssort;if(state.ssort===k)state.sdir*=-1;else{state.ssort=k;state.sdir=1;}renderStaffing();const nb=document.querySelector('#wda-staff-head [data-ssort="'+k+'"]');if(nb)nb.focus();});
- $('wda-staff-csv').addEventListener('click',()=>{const T=D.staffing_trend,g=state.sg,q=state.sq;save('where-data-agree-staffing-'+g+'-'+q+'.csv',[[tr('Organization','Organisation'),tr('2021 (%)','2021 (%)'),tr('People covered, 2021 (weighted)','Personnes visées, 2021 (pondéré)'),tr('2025 (%)','2025 (%)'),tr('Change (points)','Variation (points)')]].concat(staffingRows().map(r=>[r.k==='Public Service'?tr('Public service as a whole','Ensemble de la fonction publique'):(T.names[r.k]?(fr()?T.names[r.k][0]:T.names[r.k][1]):r.k),r.c[0],r.c[1],r.c[2]===null?'':r.c[2],r.c[3]===null?'':r.c[3]])));});
+ $('wda-staff-csv').addEventListener('click',()=>{const T=D.staffing_trend,g=state.sg,q=state.sq;save('where-data-agree-staffing-'+g+'-'+q+'.csv',[[tr('Organization','Organisation'),tr('2018 (%), five-point scale','2018 (%), échelle à cinq points'),tr('2021 (%)','2021 (%)'),tr('People covered, 2021 (weighted)','Personnes visées, 2021 (pondéré)'),tr('2025 (%)','2025 (%)'),tr('Change (points)','Variation (points)')]].concat(staffingRows().map(r=>[r.k==='Public Service'?tr('Public service as a whole','Ensemble de la fonction publique'):(T.names[r.k]?(fr()?T.names[r.k][0]:T.names[r.k][1]):r.k),r.c[4]===null?'':r.c[4],r.c[0]===null?'':r.c[0],r.c[1]===null?'':r.c[1],r.c[2]===null?'':r.c[2],r.c[3]===null?'':r.c[3]])));});
  $('wda-agree-group').addEventListener('change',e=>{state.agree=e.target.value;renderAgree();syncURL();});
  $('wda-gap-group').addEventListener('change',e=>{state.gg=e.target.value;renderGaps();syncURL();});
  $('wda-gap-q').addEventListener('change',e=>{state.gq=e.target.value;renderGaps();syncURL();});
@@ -387,13 +423,13 @@ function bind(){
   save('where-data-agree-gaps-'+g+'-'+q+'.csv',[head].concat(gapItems().map(r=>{const it=r.it,row=[r.k==='Public Service'?tr('Public service as a whole','Ensemble de la fonction publique'):orgName(r.k)];years.forEach(y=>{const v=it.y[y]||[];row.push(...[0,1,2,3,4].map(i=>v[i]??''));});row.push(it.change??'',it.label?tr(LABEL[it.label][0],LABEL[it.label][1]):'');return row;})));});
  $('wda-link-csv').addEventListener('click',()=>{save('where-data-agree-every-link.csv',[[tr('Result','Résultat'),tr('Source','Source'),tr('Compared with','Comparé à'),tr('Source','Source'),tr('Organizations','Organisations'),tr('Rank correlation, adjusted for size','Corrélation de rangs, ajustée selon la taille'),'p',tr('False discovery rate (q)','Taux de fausses découvertes (q)'),tr('How strong','Force du lien'),tr('Could it be chance?','Hasard possible?')]].concat(D.scan.pairs.map(([a,b,n,r,p,q])=>[cap(mlabel(a)),tr(SRCNAME[D.measures[a].src][0],SRCNAME[D.measures[a].src][1]),cap(mlabel(b)),tr(SRCNAME[D.measures[b].src][0],SRCNAME[D.measures[b].src][1]),n,r,p,q,cap(S(r)),chanceScan(p,q)])));});
 }
-function syncURL(){const u=new URL(location.href);u.searchParams.set('group',state.gg);u.searchParams.set('q',state.gq);u.searchParams.set('both',state.agree);history.replaceState(history.state,'',u.href);}
+function syncURL(){const u=new URL(location.href);u.searchParams.set('group',state.gg);u.searchParams.set('q',state.gq);u.searchParams.set('both',state.agree);if(state.org)u.searchParams.set('org',state.org);else u.searchParams.delete('org');history.replaceState(history.state,'',u.href);}
 function render(){
  document.querySelectorAll('[data-i18n]').forEach(el=>{const t=TEXT[el.dataset.i18n];if(t)el.textContent=tr(t[0],t[1]);});
  document.querySelectorAll('[data-i18n-label]').forEach(el=>{const t=TEXT[el.dataset.i18nLabel];if(t)el.setAttribute('aria-label',tr(t[0],t[1]));});
  document.title=tr('Where the data agree | GC Equity','Là où les données concordent | Équité GC');
  if(!D)return;
- renderStart();renderStats();renderFindings();renderAgree();renderGaps();renderStaffing();renderLinks();renderMethod();renderSources();
+ renderStart();renderStats();renderFindings();renderAgree();renderGaps();renderStaffing();renderOrg();renderLinks();renderMethod();renderSources();
 }
 window._applyLang=function(){render();};
 async function load(){
@@ -404,6 +440,7 @@ async function load(){
  if(TGROUPS.includes(p.get('group')))state.gg=p.get('group');
  if(QSHORT[p.get('q')])state.gq=p.get('q');
  if(D.agree[p.get('both')])state.agree=p.get('both');
+ if(D.orgs&&D.orgs.some(o=>o.en===p.get('org')))state.org=p.get('org');
  $('wda-loading').hidden=true;
  render();bind();
 }

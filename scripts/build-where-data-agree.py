@@ -53,6 +53,8 @@ for o in cw['organizations']:
 for a in cw.get('identityAliases', []):
     if a.get('alias') and a.get('canonical'):
         CANON[norm(a['alias'])] = CANON.get(norm(a['canonical']), a['canonical'])
+# The 2022 employment equity survey file lists this organization under a shorter name.
+CANON.setdefault(norm('Natural Sciences and Engineering Research Council'), 'Natural Sciences and Engineering Research Council of Canada')
 def canon(name):
     return CANON.get(norm(name), (name or '').strip())
 
@@ -475,59 +477,105 @@ ap.add_argument('--pses', help='checkout of the pses-data branch, needed for the
 ap.add_argument('--check', action='store_true', help='recalculate and fail if the published file differs')
 args = ap.parse_args()
 
-# ---------------------------------------------------------------- part 3: staffing survey, 2021 to 2025
+# ---------------------------------------------------------------- part 3: staffing survey, 2018, 2021 and 2025
 SNPS21 = ROOT / 'data/open-canada-2026-11/snps-2021'
+SNPS18 = ROOT / 'data/open-canada-2026-11/snps-2018'
 S21_FILES = {'woman': ('CFPPSC_SNPS02.csv.gz', 'Female'), 'pwd': ('CFPPSC_SNPS03.csv.gz', 'Yes, has at least one disability'),
              'rac': ('CFPPSC_SNPS04.csv.gz', 'Visible minority'), 'ind': ('CFPPSC_SNPS05.csv.gz', 'Indigenous identity')}
-# 2021 question -> 2025 question with the same meaning, matched by wording.
+S18_FILES = {'woman': ('CFPPSC_SNPS02.csv.gz', 'Female'), 'pwd': ('CFPPSC_SNPS03.csv.gz', 'Yes'),
+             'rac': ('CFPPSC_SNPS04.csv.gz', 'Yes'), 'ind': ('CFPPSC_SNPS05.csv.gz', 'Yes')}
+# 2021 and 2018 questions -> the 2025 question with the same meaning, matched by wording.
 S21_Q = {'sta_10g': 'STA_01E', 'sta_10a': 'STA_01A'}
-def snps21(path, label):
-    """Share (whole %) answering moderate or great extent, from weighted counts; blank when the Commission did not publish."""
+S18_Q = {'ALL_05D': 'STA_01E', 'ALL_05A': 'STA_01A'}
+UNMATCHED = {'2018': set(), '2021': set()}
+# Names used in the older survey files for an organization that has since been renamed, or whose name the file cut short.
+OLD_NAMES = {
+    'National Energy Board': ('Canada Energy Regulator', 'successor'),
+    'Canadian Environmental Assessment Agency': ('Impact Assessment Agency of Canada', 'successor'),
+    'Status of Women Canada': ('Women and Gender Equality Canada', 'renamed'),
+    'Office of the Commissioner for Federal Judicial Affairs Can.': ('Office of the Commissioner for Federal Judicial Affairs', 'cut short'),
+    'Office of the Superintendent of Financial Institutions Can': ('Office of the Superintendent of Financial Institutions Canada', 'cut short'),
+    'Military Police Complaints Commission': ('Military Police Complaints Commission of Canada', 'cut short'),
+    'Patented Medicine Prices Review Board of Canada': ('Patented Medicine Prices Review Board', 'cut short'),
+}
+USED_OLD = {}
+def snps_old(path, label, qmap, year):
+    """Whole-number share and weighted base per department. 2021: moderate or great extent. 2018: strongly or somewhat agree
+    (a five-point agreement scale, so 2018 is not directly comparable with 2021 and 2025). Blank when not published."""
     cells = {}
     with gzip.open(path, 'rt', encoding='utf-8-sig', newline='') as fh:
         rd = csv.DictReader(fh)
-        gkey = rd.fieldnames[3]
+        low = {k.lower(): k for k in rd.fieldnames}
+        gkey, qkey, dkey = rd.fieldnames[3], low['question' if year == '2021' else 'variable_name'], low['dept_e']
+        vkey = low['question_value_e']; tkey = low['total_w_resp' if year == '2021' else 'total_w_resp_e']
         for r in rd:
-            if r['question'] in S21_Q and r[gkey] == label:
-                cells.setdefault((r['dept_e'], r['question']), {})[r['question_value_e']] = r['total_w_resp']
+            if r[qkey] in qmap and r[gkey] == label:
+                cells.setdefault((r[dkey], r[qkey]), {})[r[vkey]] = r[tkey]
     out = {}
     for (dept, q), v in cells.items():
         try:
-            base, mod, great = (float(v[k]) for k in ('All respondents', 'To a moderate extent', 'To a great extent'))
+            if year == '2021':
+                base, hit = float(v['All respondents']), float(v['To a moderate extent']) + float(v['To a great extent'])
+            else:
+                base = float(v['All respondants'])
+                hit = float(v['Strongly agree']) + float(v['Somewhat agree'])
         except (KeyError, ValueError):
             continue
         if base > 0:
-            out[(dept, q)] = (round(100 * (mod + great) / base), int(base))
+            out[(dept, q)] = (round(100 * hit / base), int(base))
     return out
 staffing_trend = {'questions': {}, 'groups': {}}
-for q21, q25 in S21_Q.items():
+for q25 in S21_Q.values():
     qd = snps['questions'][q25]
     staffing_trend['questions'][q25] = {'en': qd['en'], 'fr': qd['fr']}
-for g, (fname, label) in S21_FILES.items():
-    r21 = snps21(SNPS21 / fname, label)
+PS_NAMES = ('Federal public service',)
+for g in S21_FILES:
+    r21 = snps_old(SNPS21 / S21_FILES[g][0], S21_FILES[g][1], S21_Q, '2021')
+    r18 = snps_old(SNPS18 / S18_FILES[g][0], S18_FILES[g][1], S18_Q, '2018')
     rows = {}
-    for (dept, q21), (v21, n21) in r21.items():
+    def slot(key, q25):
+        return rows.setdefault(key, {}).setdefault(q25, [None, None, None, None, None, None])   # 2021, base, 2025, change, 2018, base
+    for rec in ORGS:
+        for q25 in S21_Q.values():
+            v25 = num(rec.get(f's_{g}_{q25}'))
+            if v25 is not None:
+                slot(rec['name_en'], q25)[2] = v25
+    for (dept, q21), (v, n) in r21.items():
         q25 = S21_Q[q21]
-        if dept == 'Federal public service':
-            key, v25 = 'Public Service', None
+        if dept in PS_NAMES:
+            slot('Public Service', q25)[0:2] = [v, n]; continue
+        rec = BY_CANON.get(canon(OLD_NAMES.get(dept, (dept,))[0]))
+        if rec and dept in OLD_NAMES:
+            USED_OLD[dept] = OLD_NAMES[dept]
+        if rec:
+            slot(rec['name_en'], q25)[0:2] = [v, n]
         else:
-            rec = BY_CANON.get(canon(dept))
-            if not rec:
-                continue
-            key, v25 = rec['name_en'], num(rec.get(f's_{g}_{q25}'))
-        rows.setdefault(key, {})[q25] = [v21, n21, v25, None if v25 is None else v25 - v21]
-    staffing_trend['groups'][g] = rows
-# the public service row for 2025 comes from the published whole-service figure when the file carries one
-for org, d in snps['orgs'].items():
-    if org == 'Federal Public Service':
-        for g, rows in staffing_trend['groups'].items():
-            for q25, cell_ in rows.get('Public Service', {}).items():
+            UNMATCHED['2021'].add(dept)
+    for (dept, q18), (v, n) in r18.items():
+        q25 = S18_Q[q18]
+        if dept in PS_NAMES:
+            slot('Public Service', q25)[4:6] = [v, n]; continue
+        rec = BY_CANON.get(canon(OLD_NAMES.get(dept, (dept,))[0]))
+        if rec and dept in OLD_NAMES:
+            USED_OLD[dept] = OLD_NAMES[dept]
+        if rec:
+            slot(rec['name_en'], q25)[4:6] = [v, n]
+        else:
+            UNMATCHED['2018'].add(dept)
+    for org, d in snps['orgs'].items():
+        if org == 'Federal Public Service':
+            for q25 in S21_Q.values():
                 v = num((d.get(g) or {}).get(q25))
                 if v is not None:
-                    cell_[2], cell_[3] = v, v - cell_[0]
+                    slot('Public Service', q25)[2] = v
+    for key, qs in rows.items():
+        for c in qs.values():
+            if c[0] is not None and c[2] is not None:
+                c[3] = c[2] - c[0]
+    staffing_trend['groups'][g] = rows
 staffing_trend['names'] = {r['name_en']: [r['name_fr'], r['name_en']] for r in ORGS}
-staffing_trend['note_en'] = ('2021 results are calculated from the Commission\'s weighted counts (moderate or great extent, as a share of all respondents who answered, '
-                             '"don\'t know" included). 2025 results are the Commission\'s published figures. The 2021 survey covered March 2020 to March 2021.')
+staffing_trend['renamed'] = [[old, new, how] for old, (new, how) in sorted(USED_OLD.items())]
+staffing_trend['unmatched'] = {y: sorted(v - {'Department not specified'}) for y, v in UNMATCHED.items()}
 
 doc = {
     'schema': 1,
@@ -541,6 +589,12 @@ doc = {
     'agree': agree,
 }
 doc['staffing_trend'] = staffing_trend
+def _has(rec, prefixes):
+    return any(k.startswith(prefixes) and rec[k] is not None for k in rec)
+staffing_orgs = {k for rows in staffing_trend['groups'].values() for k in rows}
+doc['orgs'] = [{'id': r['id'], 'en': r['name_en'], 'fr': r['name_fr'],
+                'has': [k for k, ok in (('tbs', _has(r, ('rep_',)) and not r.get('shared_row')), ('pses', _has(r, ('p_',))), ('snps', _has(r, ('s_',))),
+                                         ('staffing', r['name_en'] in staffing_orgs)) if ok]} for r in sorted(ORGS, key=lambda r: r['name_en'])]
 old = json.loads(OUT.read_text(encoding='utf-8')) if OUT.exists() else None
 if args.pses:
     doc['trends'] = build_trends(args.pses)
@@ -548,6 +602,21 @@ elif old and 'trends' in old:
     doc['trends'] = old['trends']
 else:
     raise SystemExit('the survey gaps over time need --pses DIR the first time')
+_tk = {canon(k): k for k in doc['trends']['orgs'] if k != 'Public Service'}
+_tk_alias = {'Natural Sciences and Engineering Research Council': 'Natural Sciences and Engineering Research Council of Canada'}
+for k, full in _tk_alias.items():
+    if k in doc['trends']['orgs']:
+        _tk[canon(full)] = k
+for o in doc['orgs']:
+    k = o['en'] if o['en'] in doc['trends']['orgs'] else _tk.get(canon(o['en']))
+    if k:
+        o['tk'] = k
+        o['has'].append('trends')
+# organizations with survey results but no Call to Action record are listed too, so none is missing from the page
+for k in sorted(set(_tk.values()) - {o.get('tk') for o in doc['orgs']}):
+    nm = doc['trends']['names'].get(k, [k, k])
+    doc['orgs'].append({'id': None, 'en': k, 'fr': nm[0], 'has': ['trends'], 'tk': k})
+doc['orgs'].sort(key=lambda o: o['en'])
 text = json.dumps(doc, ensure_ascii=False, separators=(',', ':'), sort_keys=False)
 if args.check:
     if old is None or json.dumps(old, ensure_ascii=False, separators=(',', ':')) != text:
