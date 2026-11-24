@@ -7637,11 +7637,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0425",
@@ -7655,11 +7656,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0426",
@@ -7673,11 +7675,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0427",
@@ -7691,11 +7694,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0428",
@@ -7709,11 +7713,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0429",
@@ -7727,11 +7732,12 @@
    "rows": 144,
    "inventoryStatus": "out-of-scope",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0430",
@@ -7925,11 +7931,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0441",
@@ -8015,11 +8022,12 @@
    "rows": 1349,
    "inventoryStatus": "batch-1",
    "scope": "consultation",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0446",
@@ -8033,11 +8041,12 @@
    "rows": 1349,
    "inventoryStatus": "batch-1",
    "scope": "consultation",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0447",
@@ -8051,11 +8060,12 @@
    "rows": 4,
    "inventoryStatus": "held",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0448",
@@ -8069,11 +8079,12 @@
    "rows": 4,
    "inventoryStatus": "held",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0449",
@@ -8087,11 +8098,12 @@
    "rows": 64,
    "inventoryStatus": "held",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0450",
@@ -8105,11 +8117,12 @@
    "rows": 64,
    "inventoryStatus": "held",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0451",
@@ -8123,11 +8136,12 @@
    "rows": 8,
    "inventoryStatus": "held",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0452",
@@ -8141,11 +8155,12 @@
    "rows": 8,
    "inventoryStatus": "held",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded pending verified federal-public-service-only extract; mixed population"
   },
   {
    "id": "GC-0453",
@@ -8159,11 +8174,12 @@
    "rows": null,
    "inventoryStatus": "out-of-scope",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0454",
@@ -8177,11 +8193,12 @@
    "rows": null,
    "inventoryStatus": "out-of-scope",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0455",
@@ -8195,11 +8212,12 @@
    "rows": null,
    "inventoryStatus": "out-of-scope",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0456",
@@ -8213,11 +8231,12 @@
    "rows": null,
    "inventoryStatus": "out-of-scope",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0457",
@@ -8447,11 +8466,12 @@
    "rows": 6098004,
    "inventoryStatus": "held",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0470",
@@ -8465,11 +8485,12 @@
    "rows": 160,
    "inventoryStatus": "held",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0471",
@@ -8483,11 +8504,12 @@
    "rows": 172260,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0472",
@@ -8501,11 +8523,12 @@
    "rows": 78,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0473",
@@ -8519,11 +8542,12 @@
    "rows": 1090980,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0474",
@@ -8537,11 +8561,12 @@
    "rows": 99,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0475",
@@ -8555,11 +8580,12 @@
    "rows": 138,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0476",
@@ -8573,11 +8599,12 @@
    "rows": 76995,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0477",
@@ -8591,11 +8618,12 @@
    "rows": 74340,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0478",
@@ -8609,11 +8637,12 @@
    "rows": 137,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0479",
@@ -8627,11 +8656,12 @@
    "rows": 683397,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0480",
@@ -8645,11 +8675,12 @@
    "rows": 145,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0481",
@@ -8663,11 +8694,12 @@
    "rows": 220077,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0482",
@@ -8681,11 +8713,12 @@
    "rows": 92,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0483",
@@ -8699,11 +8732,12 @@
    "rows": 400950,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0484",
@@ -8717,11 +8751,12 @@
    "rows": 80,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0485",
@@ -8735,11 +8770,12 @@
    "rows": 542619,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0486",
@@ -8753,11 +8789,12 @@
    "rows": 101,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0487",
@@ -8771,11 +8808,12 @@
    "rows": 8555,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0488",
@@ -8789,11 +8827,12 @@
    "rows": 128,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0489",
@@ -8807,11 +8846,12 @@
    "rows": 9135,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0490",
@@ -8825,11 +8865,12 @@
    "rows": 85,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0491",
@@ -8843,11 +8884,12 @@
    "rows": 1980,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0492",
@@ -8861,11 +8903,12 @@
    "rows": 59,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0493",
@@ -8879,11 +8922,12 @@
    "rows": 911196,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0494",
@@ -8897,11 +8941,12 @@
    "rows": 152,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0495",
@@ -8915,11 +8960,12 @@
    "rows": 759330,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0496",
@@ -8933,11 +8979,12 @@
    "rows": 149,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0497",
@@ -8951,11 +8998,12 @@
    "rows": 876096,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0498",
@@ -8969,11 +9017,12 @@
    "rows": 104,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0499",
@@ -8987,11 +9036,12 @@
    "rows": 730080,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0500",
@@ -9005,11 +9055,12 @@
    "rows": 101,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0501",
@@ -9023,11 +9074,12 @@
    "rows": 1145529,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0502",
@@ -9041,11 +9093,12 @@
    "rows": 102,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0503",
@@ -9059,11 +9112,12 @@
    "rows": 248160,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0504",
@@ -9077,11 +9131,12 @@
    "rows": 99,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0505",
@@ -9095,11 +9150,12 @@
    "rows": 75240,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0506",
@@ -9113,11 +9169,12 @@
    "rows": 95,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0507",
@@ -9131,11 +9188,12 @@
    "rows": 94734,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0508",
@@ -9149,11 +9207,12 @@
    "rows": 76,
    "inventoryStatus": "batch-2",
    "scope": "benchmark",
-   "approved": true,
+   "approved": false,
    "kind": "file",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0509",
@@ -9171,7 +9230,8 @@
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0510",
@@ -9189,7 +9249,8 @@
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0511",
@@ -9207,7 +9268,8 @@
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0512",
@@ -9225,7 +9287,8 @@
    "kind": "context",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0513",
@@ -9243,7 +9306,8 @@
    "kind": "not-found",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded: non-federal-public-service benchmark"
   },
   {
    "id": "GC-0514",
@@ -9455,11 +9519,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0526",
@@ -9473,11 +9538,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0527",
@@ -9491,11 +9557,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0528",
@@ -9509,11 +9576,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0529",
@@ -9527,11 +9595,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0530",
@@ -9545,11 +9614,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0531",
@@ -9563,11 +9633,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0532",
@@ -9581,11 +9652,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0533",
@@ -9599,11 +9671,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0534",
@@ -9653,11 +9726,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0537",
@@ -9671,11 +9745,12 @@
    "rows": null,
    "inventoryStatus": "web-only",
    "scope": "source-specific",
-   "approved": true,
+   "approved": false,
    "kind": "document",
    "quality": null,
    "hosted": "unverified",
-   "analysis": "unverified"
+   "analysis": "unverified",
+   "scopeDecision": "excluded from dataset catalogue pending verified federal-public-service-specific content; policy references may remain separately"
   },
   {
    "id": "GC-0538",
@@ -9695,5 +9770,14 @@
    "hosted": "unverified",
    "analysis": "unverified"
   }
- ]
+ ],
+ "scopePolicy": {
+  "date": "2026-11-24",
+  "rule": "Only Canadian federal public-service-specific evidence. General labour-market and federally regulated private-sector benchmarks are excluded. Mixed-population originals remain audit-only; publish only verified federal public-service cuts. Preserve inventory statuses, source links and provenance for internal reconciliation. Institutional federal official-language context is distinct from employee outcomes.",
+  "newlyExcluded": {
+   "benchmark": 45,
+   "mixed": 8,
+   "wider": 17
+  }
+ }
 }
