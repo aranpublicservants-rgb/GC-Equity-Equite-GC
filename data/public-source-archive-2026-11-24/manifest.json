@@ -120,6 +120,22 @@
       "headerRows": 1,
       "gitBlob": "c357b92a0dbe184e813fdb633923a52e7ad1b441",
       "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0004",
+      "path": "data/public-source-archive-2026-11-24/pses2011-dept.xls",
+      "bytes": 2476544,
+      "rows": 9085,
+      "gitBlob": "cb8e5873b870b76d6c9b49ea9d65d13ed8602909",
+      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0025",
+      "path": "data/public-source-archive-2026-11-24/pseas2017-supporting-documentation.xls",
+      "bytes": 339456,
+      "rows": 1258,
+      "gitBlob": "f582720c8e0bf5c374e8ff52f01071a191f3f5e3",
+      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
     }
   ]
 }
