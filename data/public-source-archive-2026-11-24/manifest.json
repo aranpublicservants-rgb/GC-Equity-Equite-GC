@@ -136,6 +136,39 @@
       "rows": 1258,
       "gitBlob": "f582720c8e0bf5c374e8ff52f01071a191f3f5e3",
       "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0358",
+      "path": "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-en.csv",
+      "bytes": 1511627,
+      "rows": 1154,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "33e1b69f5530482f50061946a143c88ab626ee71",
+      "sha256": "18e06d3dcab69d90cc770dc8f18d1fee2558dd1c39d6af31495863cc2174c2c8",
+      "verification": "Drive original bytes, local CSV row and byte counts, SHA-256 and Git blob matched; publisher equivalence not established; row count includes one trailing empty record"
+    },
+    {
+      "id": "GC-0359",
+      "path": "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-fr.csv",
+      "bytes": 1579254,
+      "rows": 1154,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "5d268b8a9812d6ed99dc9472c42ded8c348a8b6e",
+      "sha256": "76619920e61743228d5c0bba1cc4393dd6f2e7f29b5347c161e72cb76e734e05",
+      "verification": "Drive original bytes, local CSV row and byte counts, SHA-256 and Git blob matched; publisher equivalence not established; row count includes one trailing empty record"
+    },
+    {
+      "id": "GC-0361",
+      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv",
+      "bytes": 2992912,
+      "rows": 7168,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "81046fee2bf586b1b7f49c760a4608eaba66e722",
+      "sha256": "510188c50020a52f2cac81f122fe2ad460a505939d426b53c8754fcd9d0fd3fc",
+      "verification": "Drive original bytes, local CSV row and byte counts, SHA-256 and Git blob matched; publisher equivalence not established"
     }
   ]
 }
