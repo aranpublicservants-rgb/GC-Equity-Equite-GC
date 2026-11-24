@@ -1,0 +1,55 @@
+{
+  "asOf": "2026-11-24",
+  "files": [
+    {
+      "id": "GC-0003",
+      "path": "data/public-source-archive-2026-11-24/pses2011-overall.csv",
+      "bytes": 33442,
+      "rows": 101,
+      "encoding": "windows-1252",
+      "headerRows": 1,
+      "gitBlob": "f13311e47f1fac9320af3f9e04dc32533a862027",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0295",
+      "path": "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv",
+      "bytes": 366950,
+      "rows": 7050,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "c033757e51c2dd938fbc69369850c0cdc1b68834",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0296",
+      "path": "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv",
+      "bytes": 405055,
+      "rows": 7050,
+      "encoding": "windows-1252",
+      "headerRows": 1,
+      "gitBlob": "0d76b26d55b841dec4fac29b2efd953da606e138",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0393",
+      "path": "data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv",
+      "bytes": 1299,
+      "rows": 10,
+      "encoding": "windows-1252",
+      "headerRows": 3,
+      "gitBlob": "687ddc4561baa95bc9233238d735f032b2d762b1",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0423",
+      "path": "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv",
+      "bytes": 851,
+      "rows": 11,
+      "encoding": "windows-1252",
+      "headerRows": 2,
+      "gitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    }
+  ]
+}
