@@ -49,6 +49,10 @@
 .wda-na{color:var(--gw-muted)}
 .wda-status{font-size:14.5px;margin:8px 0}
 .wda .note,.wda-small{font-size:13.5px;color:var(--gw-muted)}
+.wda-startbox{background:var(--gcw-soft,#f1f7f8);border:1px solid var(--gcw-line,#c9d8dc);border-radius:8px;padding:14px 18px;margin:0 0 24px}
+.wda-startlist{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:12px}
+.wda-startlist li{display:grid;gap:4px;justify-items:start}
+.wda-start-btn{text-align:left;white-space:normal;max-width:100%}
 .wda-btnrow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
 .wda-mini{width:auto;min-width:420px;margin:6px 0 12px}
 .wda details>summary{cursor:pointer;font-weight:700;font-size:16px;padding:6px 0}
@@ -67,6 +71,7 @@
 <p class="gcw-lede" data-i18n="lede">Government sources measure equity in different ways: who works where, what employees say in two separate surveys, and who gets hired. This page puts them side by side for every federal organization to find patterns that no single source shows. A pattern tells you where to look first. It does not prove discrimination, and it does not tell you what happened to any one person.</p>
 <p class="wda-meta" data-i18n="meta">Sources: Treasury Board workforce data to March 31, 2025; Public Service Employee Survey, 2019 to 2024; Staffing and Non-Partisanship Survey, 2025; Public Service Commission staffing data. The comparisons are calculated by this site from the published figures. They are not Government of Canada statistics.</p>
 <ul class="wda-jump">
+<li><a href="#start" data-i18n="jumpStart">Start here</a></li>
 <li><a href="#findings" data-i18n="jumpFindings">What stands out</a></li>
 <li><a href="#agree" data-i18n="jumpAgree">Where both surveys agree</a></li>
 <li><a href="#gaps" data-i18n="jumpGaps">Is the gap growing?</a></li>
@@ -77,6 +82,13 @@
 <ul class="wda-stats" id="wda-stats" data-i18n-label="statsLabel" aria-label="Summary"></ul>
 <p id="wda-loading" role="status" data-i18n="loading">Loading the data…</p>
 <noscript><p>This page needs JavaScript to read its data file. The file is listed under Sources. / Cette page a besoin de JavaScript pour lire son fichier de données. Le fichier est indiqué sous Sources.</p></noscript>
+
+<section id="start" class="wda-section wda-startbox" aria-labelledby="start-title">
+<h2 id="start-title" data-i18n="startTitle">Start here</h2>
+<p data-i18n="startIntro">Pick the group you want to look at, then pick a question.</p>
+<div class="wda-controls"><div><label for="wda-start-group" data-i18n="startGroup">Employee group</label><select id="wda-start-group"></select></div></div>
+<ul class="wda-startlist" id="wda-start-list" role="list"></ul>
+</section>
 
 <section id="findings" class="wda-section" aria-labelledby="findings-title">
 <h2 id="findings-title" data-i18n="findingsTitle">What stands out</h2>

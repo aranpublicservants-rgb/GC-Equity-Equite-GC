@@ -22,6 +22,10 @@ const TEXT={
   'Les sources gouvernementales mesurent l’équité de différentes façons : qui travaille où, ce que disent les employés dans deux sondages distincts, et qui est embauché. Cette page les place côte à côte pour chaque organisation fédérale afin de repérer des tendances qu’aucune source ne montre à elle seule. Une tendance indique où regarder en premier. Elle ne prouve pas la discrimination et ne dit pas ce qui est arrivé à une personne en particulier.'],
  meta:['Sources: Treasury Board workforce data to March 31, 2025; Public Service Employee Survey, 2019 to 2024; Staffing and Non-Partisanship Survey, 2025; Public Service Commission staffing data. The comparisons are calculated by this site from the published figures. They are not Government of Canada statistics.',
   'Sources : données du Conseil du Trésor sur l’effectif jusqu’au 31 mars 2025; Sondage auprès des fonctionnaires fédéraux, de 2019 à 2024; Sondage sur la dotation et l’impartialité politique de 2025; données de dotation de la Commission de la fonction publique. Les comparaisons sont calculées par ce site à partir des chiffres publiés. Il ne s’agit pas de statistiques du gouvernement du Canada.'],
+ jumpStart:['Start here','Pour commencer'],
+ startTitle:['Start here','Pour commencer'],
+ startIntro:['Pick the group you want to look at, then pick a question. Each question takes you to the table that answers it, already set to that group.','Choisissez le groupe qui vous intéresse, puis une question. Chaque question vous mène au tableau qui y répond, déjà réglé sur ce groupe.'],
+ startGroup:['Employee group','Groupe d’employés'],
  jumpFindings:['What stands out','Ce qui ressort'], jumpAgree:['Where both surveys agree','Là où les deux sondages concordent'],
  jumpGaps:['Is the gap growing?','L’écart se creuse-t-il?'], jumpLinks:['Every link we checked','Tous les liens vérifiés'],
  jumpMethod:['How to read this page','Comment lire cette page'], jumpSources:['Sources and data files','Sources et fichiers de données'],
@@ -81,6 +85,8 @@ const LINKS={
  snps:['Public Service Commission: 2025 Staffing and Non-Partisanship Survey open data','Commission de la fonction publique : données ouvertes du Sondage sur la dotation et l’impartialité politique de 2025','https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22','https://ouvert.canada.ca/data/fr/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22'],
  staffing:['This site: hiring and staffing data','Ce site : données sur l’embauche et la dotation','staffing.html',''],
  cta:['This site: Call to Action commitments and results','Ce site : engagements et résultats liés à l’appel à l’action','call-to-action.html',''],
+ tbsind:['This site’s copy of the Treasury Board table: Indigenous employees by First Nations, Métis and Inuit, by organization, 2025 (CSV)','Copie sur ce site du tableau du Conseil du Trésor : employés autochtones selon les Premières Nations, les Métis et les Inuits, par organisation, 2025 (CSV)','data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv',''],
+ tbsdis:['This site’s copy of the Treasury Board table: persons with disabilities by type of disability, by organization, 2024 (CSV)','Copie sur ce site du tableau du Conseil du Trésor : personnes en situation de handicap selon le type d’incapacité, par organisation, 2024 (CSV)','data/october-2026/TBS_disability_subgroups_by_department_2024.csv',''],
  file:['This page’s data file, with every comparison (JSON)','Fichier de données de cette page, avec chaque comparaison (JSON)','data/where-data-agree.json',''],
  inputs:['The organization results it starts from (JSON)','Les résultats par organisation utilisés au départ (JSON)','data/call-to-action-comparisons.json',''],
  snpsfile:['2025 staffing survey results by organization and group (JSON)','Résultats du sondage de dotation de 2025 par organisation et par groupe (JSON)','data/snps-2025-by-organization.json',''],
@@ -241,7 +247,8 @@ function renderLinks(){
  fillSelect($('wda-link-group'),[['all',tr('All results','Tous les résultats')],['black',G('black')],['rac',G('rac')],['ind',G('ind')],['pwd',G('pwd')]],state.lg);
  fillSelect($('wda-link-show'),[['clear',tr('Clear links only','Liens clairs seulement')],['possible',tr('Clear and possible links','Liens clairs et possibles')],['every',tr('Every comparison','Toutes les comparaisons')]],state.ls);
  const rows=linkRows();
- $('wda-link-status').textContent=tr(rows.length+' shown, of '+D.scan.tests+' comparisons.',rows.length+' affichés, sur '+D.scan.tests+' comparaisons.');
+ const top=rows[0],dirTxt=r=>r>0?tr('same direction','même sens'):tr('opposite directions','sens opposés');
+ $('wda-link-status').textContent=tr(rows.length+' shown, of '+D.scan.tests+' comparisons.',rows.length+' affichés, sur '+D.scan.tests+' comparaisons.')+(top?' '+tr('Most certain link in this view: “'+cap(mlabel(top[0]))+'” and “'+mlabel(top[1])+'” ('+S(top[3])+', '+dirTxt(top[3])+', '+int(top[2])+' organizations).','Lien le plus certain dans cet affichage : « '+cap(mlabel(top[0]))+' » et « '+mlabel(top[1])+' » ('+S(top[3])+', '+dirTxt(top[3])+', '+int(top[2])+' organisations).'):'');
  $('wda-link-caption').textContent=tr('Links between results from different sources','Liens entre des résultats de sources différentes');
  $('wda-link-head').innerHTML='<tr><th scope="col">'+esc(tr('Result','Résultat'))+'</th><th scope="col">'+esc(tr('Compared with','Comparé à'))+'</th><th scope="col" class="num">'+esc(tr('Organizations','Organisations'))+'</th><th scope="col">'+esc(tr('How strong','Force du lien'))+'</th><th scope="col">'+esc(tr('Direction','Sens'))+'</th><th scope="col">'+esc(tr('Could it be chance?','Hasard possible?'))+'</th></tr>';
  const src=k=>tr(SRCNAME[D.measures[k].src][0],SRCNAME[D.measures[k].src][1]);
@@ -249,6 +256,25 @@ function renderLinks(){
 }
 
 /* ---------------- method and sources ---------------- */
+function renderStart(){
+ const sel=$('wda-start-group');if(!sel)return;
+ const cur=sel.value||state.agree||'black';
+ fillSelect(sel,['black','rac','ind','pwd','woman'].map(g=>[g,G(g)]),cur);
+ const g=sel.value,gs=G(g,'s');
+ const qs=[
+  ['agree',tr('Which organizations stand out on both surveys for '+gs+'?','Quelles organisations ressortent dans les deux sondages pour les '+gs+'?'),tr('Shows where the 2024 discrimination result and the 2025 staffing-barrier result are both in the top third.','Montre où le résultat de 2024 sur la discrimination et celui de 2025 sur les obstacles en dotation sont tous deux dans le tiers supérieur.')],
+  ['gaps',tr('Is the gap for '+gs+' getting bigger?','L’écart pour les '+gs+' s’accroît-il?'),tr('Shows where the gap with the comparison group grew, shrank or stayed the same.','Montre où l’écart avec le groupe de comparaison s’est creusé, réduit ou est resté le même.')],
+  ['links',tr('What else moves together with the results for '+gs+'?','Qu’est-ce qui varie en même temps que les résultats des '+gs+'?'),tr('Shows the links between sources that are clear after allowing for chance.','Montre les liens entre les sources qui sont clairs une fois le hasard pris en compte.')]];
+ $('wda-start-list').innerHTML=qs.map(q=>'<li><button type="button" class="gcw-btn wda-start-btn" data-go="'+q[0]+'">'+esc(q[1])+'</button><span class="wda-sub">'+esc(q[2])+'</span></li>').join('');
+}
+function goStart(target){
+ const g=$('wda-start-group').value;
+ if(target==='agree'){state.agree=g;renderAgree();}
+ else if(target==='gaps'){state.gg=g;state.show='all';renderGaps();}
+ else{state.lg=g==='woman'?'all':g;state.ls='clear';renderLinks();}
+ syncURL();
+ const h=$(target+'-title');h.setAttribute('tabindex','-1');h.scrollIntoView({behavior:'smooth',block:'start'});h.focus({preventScroll:true});
+}
 function renderMethod(){
  const items=[
   ['Each comparison looks across federal organizations. It asks: where one result is higher, is the other result usually higher too, or lower?','Chaque comparaison porte sur l’ensemble des organisations fédérales. Elle pose la question suivante : là où un résultat est plus élevé, l’autre est-il habituellement plus élevé lui aussi, ou plus bas?'],
@@ -261,13 +287,14 @@ function renderMethod(){
   ['Gap: the group’s result compared with the comparison group’s result, turned so that a positive number always means the group is worse off. For example, if 14% of Indigenous employees and 9% of non-Indigenous employees said they were discriminated against, the gap is 5 points.','Écart : le résultat du groupe comparé à celui du groupe de comparaison, présenté de sorte qu’un nombre positif signifie toujours que le groupe est désavantagé. Par exemple, si 14 % des employés autochtones et 9 % des employés non autochtones ont dit avoir été victimes de discrimination, l’écart est de 5 points.'],
   ['What changed: a change of '+D.rules.change_points+' points or more, the same reading rule used elsewhere on this site, is labelled as growing or shrinking when it is unlikely to be chance given how many people answered in each year. This is an approximate check. Smaller changes are labelled about the same.','Ce qui a changé : une variation de '+D.rules.change_points+' points ou plus, la même règle de lecture qu’ailleurs sur ce site, est présentée comme un écart qui se creuse ou se réduit lorsqu’elle est peu susceptible d’être due au hasard compte tenu du nombre de personnes ayant répondu chaque année. Il s’agit d’une vérification approximative. Les variations plus petites sont présentées comme à peu près pareilles.'],
   ['Charts: under each table, Chart shows the same rows as bars, dots, a heatmap or a trend over time. Choose Compare with to plot two results side by side. Each mark is one published row. Select a mark to see its exact value and source row. Blank or suppressed cells are not plotted as zero.','Graphiques : sous chaque tableau, Graphique affiche les mêmes lignes en barres, en points, en carte thermique ou en évolution dans le temps. Choisissez Comparer avec pour afficher deux résultats côte à côte. Chaque marque correspond à une ligne publiée. Sélectionnez une marque pour voir sa valeur exacte et sa ligne source. Les cellules vides ou supprimées ne sont pas affichées comme des zéros.'],
+  ['Types of workforce share: besides the overall shares, the comparisons include Treasury Board’s published shares of First Nations and Métis employees (2025) and of employees by type of disability (2024): mobility, deaf or hard of hearing, blind or visually impaired, and other. Inuit employees are left out because most organizations have too few to compare. These shares are measured against all employees, so a higher share means more employees of that type, not a better or worse result.','Types de part de l’effectif : en plus des parts globales, les comparaisons incluent les parts publiées par le Conseil du Trésor pour les employés des Premières Nations et métis (2025) et pour les employés selon le type d’incapacité (2024) : mobilité, surdité ou malentendance, cécité ou déficience visuelle, et autre. Les employés inuits sont exclus parce que la plupart des organisations en comptent trop peu pour une comparaison. Ces parts sont calculées par rapport à l’ensemble des employés : une part plus élevée signifie plus d’employés de ce type, et non un meilleur ou un moins bon résultat.'],
   ['Missing values: results that were not published, usually because fewer than 10 people answered, stay blank. Nothing is estimated or filled in.','Valeurs manquantes : les résultats non publiés, généralement parce que moins de 10 personnes ont répondu, restent vides. Rien n’est estimé ni ajouté.'],
   ['Every comparison is calculated by this site from the published figures in the files below, by a script that anyone can run again. They are not Government of Canada statistics.','Chaque comparaison est calculée par ce site à partir des chiffres publiés dans les fichiers ci-dessous, au moyen d’un script que tout le monde peut exécuter de nouveau. Il ne s’agit pas de statistiques du gouvernement du Canada.'],
  ];
  $('wda-method').innerHTML='<ul class="wda-list">'+items.map(i=>'<li>'+esc(tr(i[0],i[1]))+'</li>').join('')+'</ul>';
 }
 function renderSources(){
- $('wda-sources').innerHTML='<h3>'+esc(tr('Published sources','Sources publiées'))+'</h3><ul class="wda-list">'+['rep','pses','pses24','pses22','snps'].map(k=>'<li>'+link(k)+'</li>').join('')+'</ul>'+
+ $('wda-sources').innerHTML='<h3>'+esc(tr('Published sources','Sources publiées'))+'</h3><ul class="wda-list">'+['rep','tbsind','tbsdis','pses','pses24','pses22','snps'].map(k=>'<li>'+link(k)+'</li>').join('')+'</ul>'+
   '<h3>'+esc(tr('On this site','Sur ce site'))+'</h3><ul class="wda-list">'+['file','inputs','snpsfile','script','cta','staffing'].map(k=>'<li>'+link(k)+'</li>').join('')+'</ul>';
 }
 
@@ -275,6 +302,8 @@ function renderSources(){
 function csvText(rows){return '﻿'+rows.map(r=>r.map(v=>{const s=v===null||v===undefined?'':String(v);return /[",\n;]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;}).join(',')).join('\r\n');}
 function save(name,rows){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csvText(rows)],{type:'text/csv;charset=utf-8'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
 function bind(){
+ $('wda-start-list').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)goStart(b.dataset.go);});
+ $('wda-start-group').addEventListener('change',()=>renderStart());
  $('wda-agree-group').addEventListener('change',e=>{state.agree=e.target.value;renderAgree();syncURL();});
  $('wda-gap-group').addEventListener('change',e=>{state.gg=e.target.value;renderGaps();syncURL();});
  $('wda-gap-q').addEventListener('change',e=>{state.gq=e.target.value;renderGaps();syncURL();});
@@ -293,7 +322,7 @@ function render(){
  document.querySelectorAll('[data-i18n-label]').forEach(el=>{const t=TEXT[el.dataset.i18nLabel];if(t)el.setAttribute('aria-label',tr(t[0],t[1]));});
  document.title=tr('Where the data agree | GC Equity','Là où les données concordent | Équité GC');
  if(!D)return;
- renderStats();renderFindings();renderAgree();renderGaps();renderLinks();renderMethod();renderSources();
+ renderStart();renderStats();renderFindings();renderAgree();renderGaps();renderLinks();renderMethod();renderSources();
 }
 window._applyLang=function(){render();};
 async function load(){

@@ -180,6 +180,37 @@ for org, d in snps['orgs'].items():
             for q, v in qs.items():
                 rec[f's_{g}_{q}'] = v
 
+# TBS subgroup tables by department (published counts and shares of all employees; "suppressed" cells stay blank).
+SUBGROUP_FILES = [
+    ('data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv', 2025, 'ind', [
+        ('first_nations_pct', 'rep_fn_2025', 'First Nations employees as a share of the workforce, March 31, 2025 (%)',
+         'Part des employés des Premières Nations dans l’effectif, au 31 mars 2025 (%)'),
+        ('metis_pct', 'rep_mt_2025', 'Métis employees as a share of the workforce, March 31, 2025 (%)',
+         'Part des employés métis dans l’effectif, au 31 mars 2025 (%)')]),
+    ('data/october-2026/TBS_disability_subgroups_by_department_2024.csv', 2024, 'pwd', [
+        ('mobility_pct', 'rep_dmo_2024', 'Employees with a mobility disability as a share of the workforce, March 31, 2024 (%)',
+         'Part des employés ayant une incapacité liée à la mobilité dans l’effectif, au 31 mars 2024 (%)'),
+        ('deaf_hard_of_hearing_pct', 'rep_ddh_2024', 'Deaf or hard of hearing employees as a share of the workforce, March 31, 2024 (%)',
+         'Part des employés sourds ou malentendants dans l’effectif, au 31 mars 2024 (%)'),
+        ('blind_visual_impairment_pct', 'rep_dbv_2024', 'Blind or visually impaired employees as a share of the workforce, March 31, 2024 (%)',
+         'Part des employés aveugles ou ayant une déficience visuelle dans l’effectif, au 31 mars 2024 (%)'),
+        ('other_disability_pct', 'rep_dot_2024', 'Employees with an other disability as a share of the workforce, March 31, 2024 (%)',
+         'Part des employés ayant une autre incapacité dans l’effectif, au 31 mars 2024 (%)')]),
+]
+SUBGROUP_MEASURES, SUBGROUP_GROUP = {}, {}
+for rel, yr, grp, cols in SUBGROUP_FILES:
+    for r in csv.DictReader(open(ROOT / rel, encoding='utf-8-sig', newline='')):
+        rec = BY_CANON.get(canon(re.sub(r'\s*\([^)]*\)', '', r['department_or_agency'])))
+        if not rec:
+            continue
+        for src_col, key, en, fr in cols:
+            try:
+                rec[key] = float(r[src_col])
+            except (TypeError, ValueError):
+                pass   # suppressed or blank: stays blank
+            SUBGROUP_MEASURES[key] = {'en': en, 'fr': fr}
+            SUBGROUP_GROUP[key] = grp
+
 def col(key, rows=None):
     rows = ORGS if rows is None else rows
     tbs = key.startswith(('rep_', 'chg_', 'chg2325_', 'ratio_'))
@@ -196,6 +227,8 @@ def source_of(k):
 
 def group_of(k):
     """The employee group a measure describes, for the filter on the page."""
+    if k in SUBGROUP_GROUP:
+        return SUBGROUP_GROUP[k]
     if 'black' in k:
         return 'black'
     for tag, g in (('_rac_', 'rac'), ('_ind_', 'ind'), ('_pwd_', 'pwd')):
@@ -217,6 +250,7 @@ MEASURES.update({
     'rep_b_2025': {'en': 'Black employees as a share of the workforce, March 31, 2025 (%)',
                    'fr': 'part des employés noirs dans l’effectif, au 31 mars 2025 (%)'},
 })
+MEASURES.update(SUBGROUP_MEASURES)
 for k, m in MEASURES.items():
     m['src'] = source_of(k); m['group'] = group_of(k)
 
@@ -444,6 +478,7 @@ args = ap.parse_args()
 doc = {
     'schema': 1,
     'inputs': {'call_to_action_comparisons': sha(CTA_PATH), 'snps_2025': sha(SNPS_PATH),
+               'tbs_subgroups': hashlib.sha256(b''.join(sha(ROOT / f[0]).encode() for f in SUBGROUP_FILES)).hexdigest(),
                'department_profiles': hashlib.sha256(b''.join(sha(p).encode() for p in profile_files)).hexdigest()},
     'rules': {'min_orgs': MIN_ORGS, 'clear_q': CLEAR_Q, 'change_points': CHANGE_POINTS, 'z': Z95},
     'measures': MEASURES,

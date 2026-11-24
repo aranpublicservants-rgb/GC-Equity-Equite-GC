@@ -30,6 +30,24 @@ async function download(page, click, what) {
       await page.goto(base, { waitUntil: 'networkidle' });
       await page.waitForSelector('#wda-findings .wda-finding');
 
+      // Start here: each question sets the matching table to the chosen group and moves to it.
+      await page.selectOption('#wda-start-group', 'pwd');
+      await page.click('#wda-start-list [data-go="agree"]');
+      assert.equal(await page.inputValue('#wda-agree-group'), 'pwd', mode.name + ' start: survey table group');
+      await page.click('#wda-start-list [data-go="gaps"]');
+      assert.equal(await page.inputValue('#wda-gap-group'), 'pwd', mode.name + ' start: gap group');
+      await page.selectOption('#wda-start-group', 'woman');
+      await page.click('#wda-start-list [data-go="links"]');
+      assert.equal(await page.inputValue('#wda-link-group'), 'all', mode.name + ' start: links for a group with no group filter');
+      await page.selectOption('#wda-start-group', 'ind');
+      await page.click('#wda-start-list [data-go="links"]');
+      assert.equal(await page.inputValue('#wda-link-group'), 'ind', mode.name + ' start: links group');
+      assert.equal(await page.inputValue('#wda-link-show'), 'clear', mode.name + ' start: clear links');
+      assert.ok(await page.evaluate(() => document.activeElement && document.activeElement.id === 'links-title'), 'focus moves to the section heading');
+      const linkText = await page.locator('#wda-link-status').innerText();
+      assert.ok(/Most certain link/.test(linkText), 'link summary names the most certain link');
+      ok(mode.name + ': Start here');
+
       // Theme: each choice sets the theme on the page.
       for (const [value, expect] of [['dark', 'dark'], ['contrast', 'contrast']]) {
         await page.selectOption('.gcw-theme, #gcw-theme, select[id*=theme]', value);
@@ -66,8 +84,9 @@ async function download(page, click, what) {
           const legend = texts.slice(0, 2);
           assert.equal(legend.length, 2);
           for (const s of legend) assert.ok(!/…|undefined|NaN/.test(s) || s.length < 90, 'legend text is whole: ' + s);
-          const ys = await page.locator('svg.dv-svg').first().locator('text').evaluateAll(n => n.slice(0, 2).map(e => e.getBBox().y));
-          assert.ok(ys[1] > ys[0], 'two long legend titles sit on separate lines');
+          const boxes = await page.locator('svg.dv-svg').first().locator('text').evaluateAll(n => n.slice(0, 2).map(e => { const b = e.getBBox(); return { x: b.x, y: b.y, w: b.width, h: b.height }; }));
+          const [a, b] = boxes, apart = a.x + a.w <= b.x || b.x + b.w <= a.x || a.y + a.h <= b.y || b.y + b.h <= a.y;
+          assert.ok(apart, 'the two legend titles do not overlap');
           ok(mode.name + ': two-measure legend does not overlap');
         }
         const type = page.getByLabel('Chart type').first();
