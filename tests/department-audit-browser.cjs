@@ -22,6 +22,14 @@ const server=http.createServer((req,res)=>{
  try{
   for(const width of [390,1366]){
    const ctx=await browser.newContext({viewport:{width,height:850}});const page=await ctx.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+   await page.goto(base+'data-catalogue.html?lang=en',{waitUntil:'domcontentloaded'});
+   await page.waitForFunction(()=>!document.getElementById('access').disabled&&document.getElementById('records').rows.length>0);
+   await page.locator('#access').selectOption('local');
+   await page.locator('#q').fill('PSES 2024');
+   await page.waitForFunction(()=>document.querySelector('#records a[href*="survey-file-browser.html"]'));
+   await page.locator('#reset').click();
+   await page.locator('#q').fill('SNPS 2025');
+   await page.waitForFunction(()=>document.querySelector('#records details summary')?.textContent.includes('Choose an organization'));
    await page.goto(base+'source-access.html?lang=fr&dataset=pses-2024%2Fsubset-2-sous-ensemble-2',{waitUntil:'domcontentloaded'});
    const details=page.locator('details[data-partition-directory="pses-2024/subset-2-sous-ensemble-2"]');
    await details.locator('a').first().waitFor();assert.equal(await details.locator('a').count(),71);
