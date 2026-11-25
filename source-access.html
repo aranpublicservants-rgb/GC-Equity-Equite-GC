@@ -116,7 +116,8 @@ function update(){
  let shown=0;
  all.forEach(li=>{
   const name=li.querySelector('strong');
-  const text=(name.dataset.en+' '+name.dataset.fr).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const aliases=li.querySelector('[data-partition-directory]')?' PSES SAFF ':'';
+  const text=(name.dataset.en+' '+name.dataset.fr+aliases).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   li.hidden=!!q&&!q.split(/\s+/).every(token=>text.includes(token));
   if(!li.hidden) shown++;
  });
