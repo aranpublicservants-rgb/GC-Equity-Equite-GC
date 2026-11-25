@@ -437,3 +437,8 @@ for alias in cross.get('identityAliases',[]):
  text=text.replace('<url><loc>'+oldurl+'</loc></url>\n','')
 sitemap.write_text(text)
 print(json.dumps({'pages':len(registry['organizations']),'generated':len(registry['organizations'])-3,'coverage':counts},ensure_ascii=False))
+
+# Keep direct publication routes and compact evidence gaps in future generated pages.
+import subprocess
+import sys
+subprocess.run([sys.executable, str(R/"scripts/refresh-profile-publications.py")], check=True)
