@@ -55,7 +55,7 @@
     const onHub = slug === "hub";
     return '<a class="skip" href="#main">' + esc(L("Skip to main content", "Passer au contenu principal")) + "</a>" +
       '<header class="site-header"><nav aria-label="' + esc(L("Site", "Site")) + '"><a href="' + esc(href(site.href)) + '">' + esc(L("GC Equity", "Équité-GC")) + "</a>" +
-      (onHub ? "" : '<a href="' + esc(href("./")) + '">' + esc(L("Systemic change tools", "Outils de changement systémique")) + "</a>") +
+      (onHub ? "" : '<a href="' + esc(href("./")) + '">' + esc(L("Tools to make workplaces fairer", "Outils pour rendre les milieux de travail plus équitables")) + "</a>") +
       '<button type="button" class="lang" id="switch" lang="' + (lang === "en" ? "fr" : "en") + '">' + (lang === "en" ? "Français" : "English") + "</button></nav>" +
       '<p class="note">' + esc(L("Independent resource of the Anti-Racism Ambassadors Network (ARAN). Not an official Government of Canada website.",
         "Ressource indépendante du Réseau des ambassadeurs anti-racisme (RAAR). Ce n’est pas un site officiel du gouvernement du Canada.")) + "</p>" +
@@ -64,10 +64,10 @@
 
   function hub(sec) {
     let out = "";
-    out += '<section class="notice"><h2>' + esc(L("Find every companion site in one place", "Tous les sites complémentaires au même endroit")) + '</h2><p>' +
+    out += '<section class="notice"><h2>' + esc(L("Find all websites and tools", "Trouver tous les sites et outils")) + '</h2><p>' +
       esc(L("The complete directory describes distinct sites, their outputs and how much input they need. Older tools that were combined are identified there too.",
       "Le répertoire complet décrit les sites distincts, leurs résultats et les renseignements nécessaires. Il indique aussi les outils qui ont été regroupés.")) +
-      ' <a href="' + esc(href("../companion-sites/")) + '">' + esc(L("Open the companion directory", "Ouvrir le répertoire des sites complémentaires")) + '</a>.</p></section>';
+      ' <a href="' + esc(href("../companion-sites/")) + '">' + esc(L("See all websites and what they do", "Voir tous les sites et leur utilité")) + '</a>.</p></section>';
     if (org) out += '<p class="notice">' + esc(L("The department you chose will be selected when you open the department evidence explorer, the equity under austerity tool and the commitments tracker.",
       "Le ministère choisi sera sélectionné à l’ouverture de l’explorateur des données ministérielles, de l’outil sur l’équité en période d’austérité et du suivi des engagements.")) + ' <a href="' + esc(new URL("./?lang=" + lang, root).href) + '">' +
       esc(L("Clear the department", "Retirer le ministère")) + "</a></p>";
