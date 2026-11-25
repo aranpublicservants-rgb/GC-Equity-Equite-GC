@@ -71,18 +71,15 @@
     if (org) out += '<p class="notice">' + esc(L("The department you chose will be selected when you open the department evidence explorer, the equity under austerity tool and the commitments tracker.",
       "Le ministère choisi sera sélectionné à l’ouverture de l’explorateur des données ministérielles, de l’outil sur l’équité en période d’austérité et du suivi des engagements.")) + ' <a href="' + esc(new URL("./?lang=" + lang, root).href) + '">' +
       esc(L("Clear the department", "Retirer le ministère")) + "</a></p>";
+    const seenTools = new Set();
     for (const g of sec.groups) {
-      out += "<h2>" + esc(tr(g.title)) + '</h2><div class="cards">' + g.tools.map(k => {
+      const uniqueTools = g.tools.filter(k => { if (seenTools.has(k)) return false; seenTools.add(k); return true; });
+      if (!uniqueTools.length) continue;
+      out += "<h2>" + esc(tr(g.title)) + '</h2><div class="cards">' + uniqueTools.map(k => {
         const t = C.tools[k];
         return '<article class="card"><h3><a href="' + esc(t.external ? tr(t.href) : href(t.href)) + '">' + esc(tr(t.title)) + "</a></h3><p>" + esc(tr(t.intro)) + "</p></article>";
       }).join("") + "</div>";
     }
-    out += '<h2>' + esc(L("Other distinct tools", "Autres outils distincts")) + '</h2><div class="cards">' +
-      [
-        ["equity-under-austerity/", L("Equity under austerity", "L’équité en période d’austérité"), L("Review published department headcount changes and a clearly hypothetical reduction scenario.", "Examiner les variations publiées de l’effectif ministériel et un scénario de réduction explicitement hypothétique.")],
-        ["equity-impact-simulator/", L("Equity impact simulator", "Simulateur d’impact sur l’équité"), L("Compare two options using your own ratings. This is a decision worksheet, not a statistical prediction.", "Comparer deux options à partir de vos notes. Il s’agit d’une fiche de décision, non d’une prévision statistique.")],
-        ["global-public-service-equity/", L("Global public service equity observatory", "Observatoire mondial de l’équité dans la fonction publique"), L("Examine published public-service workforce figures from several countries without assuming that definitions are equivalent.", "Examiner les effectifs publiés de plusieurs fonctions publiques sans supposer que les définitions sont équivalentes.")]
-      ].map(t => '<article class="card"><h3><a href="' + esc(href(t[0])) + '">' + esc(t[1]) + '</a></h3><p>' + esc(t[2]) + '</p></article>').join("") + '</div>';
     return out;
   }
 
