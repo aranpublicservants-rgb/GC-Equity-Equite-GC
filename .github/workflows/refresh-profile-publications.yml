@@ -1,0 +1,41 @@
+name: Refresh employer publication routes
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-profile-publications.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: profile-publication-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Regenerate static profile publication routes
+        run: |
+          python scripts/refresh-profile-publications.py
+          python scripts/refresh-profile-publications.py --check
+          python scripts/check-all-department-pages.py
+      - name: Commit validated profile pages
+        run: |
+          git diff --stat
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          registry=json.loads(Path('assets/department-pages.json').read_text())
+          allowed={r['path']+'index.html' for r in registry['organizations'] if not r.get('specialized') and r['id'] not in registry.get('redirects',{})}
+          actual=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          assert actual <= allowed, actual-allowed
+          PY
+          if git diff --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -u
+          git commit -m 'Publish compact bilingual employer source routes across generated profiles'
+          git push origin HEAD:main
