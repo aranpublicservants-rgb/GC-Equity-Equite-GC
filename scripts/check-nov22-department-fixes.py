@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Regression checks for the November 2026 source-scoped departmental fixes."""
+import csv
+import gzip
 import json
+import re
+from decimal import Decimal
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,8 +68,28 @@ assert '65% male and 35% female' in dfo
 assert '58% male and 41% female' in dfo
 assert 'Fleet Operational Capability' in dfo
 assert 'Indigenous Gathering Space' in dfo
-assert 'Under source verification' in dfo and 'Vérification de la source en cours' in dfo
-assert '<td>16.2%</td>' not in dfo and '<td>21.8%</td>' not in dfo
+# Reconcile the two formerly contested cells against the original PSC 2023
+# source partition, retaining the published weighted percentage and base.
+catalogue = json.loads(read('dfo/data/catalogue.json'))['files']
+for original, group_field, group, expected, base, en_label, fr_label in [
+    ('1c3e883f-b5c4-4ac8-96f0-f9757139bd13_cfppsc_snps21.csv', 'pg_05_e',
+     'Black', Decimal('16.2'), '138', 'Black', 'Personnes noires'),
+    ('77c9c20e-691b-4c13-8243-9cf9cf81c8dc_cfppsc_snps05.csv', 'iidflag_e',
+     'Indigenous identity', Decimal('21.8'), '396', 'Indigenous', 'Autochtones'),
+]:
+    entry = next(x for x in catalogue if x['sourceFile'] == original)
+    with gzip.open(ROOT / 'dfo' / entry['path'], 'rt', encoding='utf-8-sig', newline='') as stream:
+        rows = [r for r in csv.DictReader(stream) if r['dept_e'] == 'Fisheries and Oceans Canada'
+                and r[group_field] == group and r['question'].lower() == 'sta_57']
+    yes = next(r for r in rows if r['question_value_e'] == 'Yes')
+    total = next(r for r in rows if r['question_value_e'] == 'All respondents')
+    assert Decimal(yes['shr_w_resp']) * 100 == expected, (group, yes)
+    assert total['total_w_resp'] == base, (group, total)
+    for label, formatted in [(en_label, str(expected)+'%'), (fr_label, str(expected).replace('.', ',')+' %')]:
+        assert re.search(r'<tr><th scope="row">' + re.escape(label) +
+                         r'</th><td>[^<]+</td><td>' + re.escape(formatted) + r'</td>', dfo), label
+assert 'published weighted total 138' in dfo and 'published weighted total 396' in dfo
+assert 'Under source verification' not in dfo and 'Vérification de la source en cours' not in dfo
 
 generator=read('scripts/build-department-pages.py')
 dashboard=read('gc-dashboard.js')
@@ -75,4 +99,4 @@ assert "recourse_additions(d,l)" in generator
 assert "redirects':redirects" in generator
 assert 'redirects?.[o.id]' in dashboard
 assert 'canonicalName' in dashboard
-print('PASS: 11 canonical routes, 5 scope-specific thin pages, 6 accommodation measures, 7 recourse cross-references, 2 small-base cautions, detailed DFO findings, contested-value cautions and rebuild protections')
+print('PASS: 11 canonical routes, 5 scope-specific thin pages, 6 accommodation measures, 7 recourse cross-references, 2 small-base cautions, detailed DFO findings, original weighted staffing cells and rebuild protections')
