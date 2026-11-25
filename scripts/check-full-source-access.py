@@ -61,6 +61,9 @@ assert 'source-access.html' in sitemap
 assert 'href="source-access.html"' in reports
 assert 'href="source-access.html"' in builder
 assert 'subset-4-sous-ensemble-4_hist.csv' in page
+assert "get('dataset')" in page, "Direct links to individual download groups"
+catalogue_page = (ROOT / "data-catalogue.html").read_text(encoding="utf-8")
+assert "source-access.html?lang=" in catalogue_page and "partitions.get(r.source)" in catalogue_page, "Catalogue must link to matching hosted partitions"
 assert 'fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv' in page
 assert 'source version mismatch' in (ROOT/'scripts/refresh-fswep-2026-11.py').read_text().lower()
 print(f"SOURCE ACCESS: {len(official)} official publisher URLs and {len(hosted)} repository links; bilingual provenance and navigation checks passed")

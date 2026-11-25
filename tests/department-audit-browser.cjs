@@ -20,6 +20,17 @@ const server=http.createServer((req,res)=>{
  const base='http://127.0.0.1:'+server.address().port+'/';
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  try{
+  for(const width of [390,1366]){
+   const ctx=await browser.newContext({viewport:{width,height:850}});const page=await ctx.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+   await page.goto(base+'source-access.html?lang=fr&dataset=pses-2024%2Fsubset-2-sous-ensemble-2',{waitUntil:'domcontentloaded'});
+   const details=page.locator('details[data-partition-directory="pses-2024/subset-2-sous-ensemble-2"]');
+   await details.locator('a').first().waitFor();assert.equal(await details.locator('a').count(),71);
+   assert.match(await details.locator('a').first().innerText(),/lignes/);
+   await page.locator('#source-filter').fill('SAFF 2024');assert.ok(await page.locator('ul.sources li:visible').count()>=11);
+   await page.locator('#source-clear').click();assert.equal(await page.locator('details[data-partition-directory]:visible').count(),37);
+   assert.equal(await page.locator('#fswep-title').isVisible(),true);
+   assert.deepEqual(errors,[]);await ctx.close();
+  }
   for(const slug of pages){
    const ctx=await browser.newContext({viewport:{width:1350,height:850}});
    const page=await ctx.newPage(),errors=[];

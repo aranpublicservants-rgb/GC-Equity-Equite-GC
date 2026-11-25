@@ -56,7 +56,7 @@ for folder,count in [('dfo',19),('dnd',22),('isc',18)]:
  css=(ROOT/folder/'site.css').read_text()
  assert '236px' in css and 'position:sticky' in css and 'overflow-y:auto' in css,(folder,'contents layout')
  if folder=='dnd':
-  for key in ['Commitments and employee networks','Evidence gaps','All National Defence datasets','Sources and definitions']:
+  for key in ['Commitments and employee networks','What data are missing','All National Defence datasets','Sources and definitions']:
    assert key in [t for _,t in heads[:count]],key
   assert 'id="coast-guard"' in text and 'id="context"' not in text
 
