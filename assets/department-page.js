@@ -90,3 +90,21 @@ tableExports();setLanguage(lang,false);anchor();
 
 /* The generated page template keeps full evidence areas visible when no source is matched. */
 (()=>{if(document.querySelector('script[data-gce-coverage]'))return;const here=document.currentScript;const base=here?.src?new URL('.',here.src):new URL('../assets/',location.href);const el=document.createElement('script');el.src=new URL('department-completeness.js?v=20261122-2',base).href;el.dataset.gceCoverage='true';el.defer=true;document.head.append(el)})();
+
+/* First-visit shortcuts shared by full bilingual department profiles. Links appear only when the corresponding section exists. */
+(()=>{'use strict';
+ if(!document.getElementById('dp-data'))return;
+ const groups={en:{title:'Start with your question',description:'Employee counts tell you who works here. Survey results tell you what respondents report. A commitment is a promise, not proof that a problem has been resolved.',links:[['who-works','Who works here?'],['experience','What do employees say about their workplace?'],['harassment','What about discrimination or harassment?'],['hiring','How do people move ahead in their careers?'],['accommodation','What about workplace adjustments?'],['recourse','How can I get help?']]},fr:{title:'Commencez par votre question',description:'Les effectifs indiquent qui travaille ici. Les sondages présentent les réponses des participants. Un engagement est une promesse, non la preuve qu’un problème est réglé.',links:[['qui-travaille','Qui travaille ici?'],['experience-fr','Que disent les employés de leur milieu de travail?'],['harcelement','Qu’en est-il de la discrimination ou du harcèlement?'],['embauche','Comment les employés progressent-ils dans leur carrière?'],['mesures-adaptation','Qu’en est-il des mesures d’adaptation au travail?'],['recours','Comment obtenir de l’aide?']]}};
+ for(const [lang,info] of Object.entries(groups)){
+  const root=document.getElementById('lang-'+lang),article=root?.querySelector('article');
+  if(!article||root.querySelector('.gce-department-first-visit'))continue;
+  const choices=info.links.filter(([id])=>{const target=document.getElementById(id);return target&&root.contains(target);});
+  if(!choices.length)continue;
+  const box=document.createElement('section');box.className='gce-department-first-visit';box.setAttribute('aria-label',info.title);
+  const title=document.createElement('h2');title.textContent=info.title;const p=document.createElement('p');p.textContent=info.description;const ul=document.createElement('ul');
+  for(const [id,label] of choices){const li=document.createElement('li'),a=document.createElement('a');a.href='#'+id;a.textContent=label;li.append(a);ul.append(li);}
+  box.append(title,p,ul);article.prepend(box);
+ }
+ if(!document.querySelector('.gce-department-first-visit'))return;
+ const style=document.createElement('style');style.textContent='.gce-department-first-visit{border:1px solid currentColor;border-radius:.5rem;padding:1rem;margin:0 0 1rem}.gce-department-first-visit h2{margin-top:0;font-size:1.2em}.gce-department-first-visit ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:.4rem;padding:0;list-style:none}.gce-department-first-visit a{display:block;padding:.5rem;border:1px solid currentColor;border-radius:.3rem}.gce-department-first-visit a:focus-visible{outline:3px solid currentColor;outline-offset:3px}';document.head.append(style);
+})();
