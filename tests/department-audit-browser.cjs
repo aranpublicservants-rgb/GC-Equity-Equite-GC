@@ -29,6 +29,12 @@ const server=http.createServer((req,res)=>{
    await page.locator('#source-filter').fill('SAFF 2024');assert.ok(await page.locator('ul.sources li:visible').count()>=11);
    await page.locator('#source-clear').click();assert.equal(await page.locator('details[data-partition-directory]:visible').count(),37);
    assert.equal(await page.locator('#fswep-title').isVisible(),true);
+   await page.route('https://raw.githubusercontent.com/**/pses/pses-2024/subset-2-sous-ensemble-2/*',r=>r.fulfill({status:200,headers:{'access-control-allow-origin':'*','content-type':'application/gzip'},body:require('node:zlib').gzipSync('QUESTION,TITLE_E,POSITIVE,ANSCOUNT\nQ1,"Test, quoted",50,10\nQ2,"Other",9999,20\n')}));
+   await page.goto(base+'survey-file-browser.html?lang=fr&dataset=pses-2024%2Fsubset-2-sous-ensemble-2',{waitUntil:'domcontentloaded'});
+   await page.locator('#load').waitFor();await page.waitForFunction(()=>!document.getElementById('load').disabled);
+   await page.locator('#query').fill('Q1');await page.locator('#load').click();
+   await page.locator('#results').waitFor();assert.equal(await page.locator('#rows tr').count(),1);assert.match(await page.locator('#rows').innerText(),/Test, quoted/);
+   assert.match(await page.locator('#status').innerText(),/1 lignes correspondantes/);
    assert.deepEqual(errors,[]);await ctx.close();
   }
   for(const slug of pages){
