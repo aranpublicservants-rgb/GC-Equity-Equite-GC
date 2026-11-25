@@ -379,6 +379,26 @@
   const csvCell = v => { let x = String(v ?? ""); if (/^\s*[=+@-]/.test(x)) x = "'" + x; return '"' + x.replace(/"/g, '""') + '"'; };
 
   /* ---------- Render and events ---------- */
+  // First-time visitors start from an everyday goal, then choose an existing section.
+  function firstVisit() {
+    const guide = {
+      "hr-process-toolkit": ["Check a job posting, hiring stage or language requirement for unnecessary barriers. You can read examples without entering any information.", "Vérifiez si une offre d’emploi, une étape de dotation ou une exigence linguistique crée des obstacles inutiles. Vous pouvez lire les exemples sans saisir de renseignements."],
+      "decision-equity-check": ["Before making or reviewing a decision, check who may be affected, what you know and what still needs evidence. This is a discussion aid, not a compliance verdict.", "Avant de prendre ou d’examiner une décision, vérifiez qui pourrait être touché, ce que vous savez et quelles preuves manquent. Il s’agit d’une aide à la discussion, non d’un constat de conformité."],
+      "commitments-tracker": ["Find out what an organization promised to do and what evidence of progress is available. A commitment is not proof of a result.", "Découvrez ce qu’un organisme s’est engagé à faire et les preuves de progrès disponibles. Un engagement ne prouve pas un résultat."],
+      "equity-impact-simulator": ["Compare two possible decisions and write down how each could affect employees. You supply the judgments; this tool does not predict outcomes.", "Comparez deux décisions possibles et notez leurs effets éventuels sur les employés. Vous fournissez les jugements; l’outil ne prédit pas les résultats."],
+      "managers-equity-toolkit": ["Choose a workplace situation that resembles yours and read a practical way to respond. You do not need to complete a form.", "Choisissez une situation de travail qui ressemble à la vôtre et consultez une façon concrète d’y répondre. Aucun formulaire à remplir."],
+      "invisible-work-project": ["Record work such as supporting colleagues or employee networks that may not appear in your job duties. Estimates come from your own inputs.", "Consignez le travail, comme le soutien aux collègues ou aux réseaux d’employés, qui ne figure pas toujours dans vos tâches. Les estimations proviennent de vos propres renseignements."],
+      "global-public-service-equity": ["Choose a country and read its published workforce figures. Definitions may differ; do not treat unlike measures as a ranking.", "Choisissez un pays et consultez les chiffres publiés sur son effectif. Les définitions peuvent différer; ne classez pas les pays à partir de mesures différentes."]
+    };
+    if (slug === "hub") return "";
+    const msg = guide[slug];
+    if (!msg) return "";
+    const valid = new Set(["library","scanner","cta","global","log","explorer","record"]);
+    const links = P.sections.filter(s => valid.has(s.type) && (s.id || s.type === "record")).map(s =>
+      '<li><a href="#' + esc(s.type === "record" ? "record" : s.id) + '">' + esc(tr(s.title || ["Create a record", "Produire une fiche"])) + '</a></li>').join("");
+    return '<section class="notice" aria-label="' + esc(L("Start here","Par où commencer")) + '"><h2>' + esc(L("What you can do here","Ce que vous pouvez faire ici")) + '</h2><p>' + esc(tr(msg)) + '</p>' + (links ? '<ul>' + links + '</ul>' : '') + '<p><a href="' + esc(href("../companion-sites/")) + '">' + esc(L("Find another tool by what you need","Trouver un autre outil selon vos besoins")) + '</a></p></section>';
+  }
+
   function render(focusSwitch) {
     document.documentElement.lang = lang;
     document.title = tr(P.title) + " | " + L("GC Equity", "Équité-GC");
@@ -394,7 +414,7 @@
       else if (sec.type === "record") main += record(sec);
       else if (sec.type === "text") main += '<section aria-labelledby="' + esc(sec.id) + '-title"><h2 id="' + esc(sec.id) + '-title">' + esc(tr(sec.title)) + "</h2>" + tr(sec.paragraphs).map(p => "<p>" + esc(p) + "</p>").join("") + "</section>";
     }
-    app.innerHTML = header() + '<main id="main" tabindex="-1">' + main + related() + "</main>" + footer();
+    app.innerHTML = header() + '<main id="main" tabindex="-1">' + firstVisit() + main + related() + "</main>" + footer();
     for (const sec of P.sections) if (sec.type === "library" && st.query[sec.id]) filter(sec.id);
     if (focusSwitch) $("switch").focus();
   }
