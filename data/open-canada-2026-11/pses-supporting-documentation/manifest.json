@@ -15,6 +15,18 @@
   ],
   "not_verified": [
     {
+      "year": 2014,
+      "resource_id": "GC-0014",
+      "status": "unverified",
+      "reason": "The read operation timed out"
+    },
+    {
+      "year": 2017,
+      "resource_id": "GC-0023",
+      "status": "unverified",
+      "reason": "The read operation timed out"
+    },
+    {
       "year": 2018,
       "resource_id": "f93d3fc3-94b7-4902-bbc1-21ebed7f0744",
       "status": "unverified",
@@ -27,7 +39,7 @@
       "reason": "The read operation timed out"
     }
   ],
-  "total_attempted": 3,
+  "total_attempted": 5,
   "confirmed_hosted": 1,
   "complete": false
 }
