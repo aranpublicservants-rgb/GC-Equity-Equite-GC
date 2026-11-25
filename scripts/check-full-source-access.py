@@ -18,12 +18,28 @@ class Links(HTMLParser):
             self.links.append(dict(attrs).get("href", ""))
 p = Links()
 p.feed(page)
-official = [url for url in p.links if url.startswith("https://")]
-assert len(official) == 15, f"Expected 15 distinct official sources, got {len(official)}"
-assert len(set(official)) == len(official), "Duplicate official sources"
-assert all(urlparse(u).hostname in ("www.canada.ca", "open.canada.ca") for u in official)
-assert not any("drive.google.com" in u for u in official)
-assert all("data-en=" in card and "data-fr=" in card for card in re.findall(r"<li>.*?</li>", page, re.S))
+# The original 15 publisher URLs remain required. Historical partitions add
+# three original publisher URLs and repository-hosted, source-versioned files.
+external = [url for url in p.links if url.startswith("https://")]
+official = [u for u in external if urlparse(u).hostname in ("www.canada.ca", "open.canada.ca")]
+hosted = [u for u in external if u not in official]
+assert len(set(external)) == len(external), "Duplicate source or partition link"
+for section_id, count in (("pses-title", 11), ("documentation-title", 3), ("fswep-title", 1)):
+    section = re.search(r'<section aria-labelledby="' + section_id + r'">.*?</section>', page, re.S)
+    assert section, section_id
+    links = Links()
+    links.feed(section.group())
+    urls = [u for u in links.links if u.startswith("https://")]
+    assert len(urls) == count, (section_id, len(urls))
+    assert all(u in official for u in urls), section_id
+assert len(official) >= 18, "Original publishers or historical source URLs missing"
+prefixes = (
+    "https://github.com/aranpublicservants-rgb/GC-Equity-Equite-GC/tree/pses-data/pses/",
+    "https://raw.githubusercontent.com/aranpublicservants-rgb/GC-Equity-Equite-GC/pses-data/pses/",
+)
+assert hosted and all(u.startswith(prefixes) for u in hosted), "Unexpected external host or partition route"
+assert not any("drive.google.com" in u for u in external)
+assert all("data-en=" in card and "data-fr=" in card for card in re.findall(r"<li\\b[^>]*>.*?</li>", page, re.S))
 assert page.count('role="status"') >= 1
 assert 'id="source-filter"' in page and 'id="source-clear"' in page
 assert 'source-access.html' in sitemap
@@ -32,4 +48,4 @@ assert 'href="source-access.html"' in builder
 assert 'subset-4-sous-ensemble-4_hist.csv' in page
 assert 'fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv' in page
 assert 'source version mismatch' in (ROOT/'scripts/refresh-fswep-2026-11.py').read_text().lower()
-print("SOURCE ACCESS: bilingual page, 15 distinct official publisher URLs, provenance and navigation checks passed")
+print(f"SOURCE ACCESS: {len(official)} official publisher URLs and {len(hosted)} repository links; bilingual provenance and navigation checks passed")
