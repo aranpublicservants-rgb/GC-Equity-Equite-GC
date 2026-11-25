@@ -12,6 +12,7 @@ from urllib.parse import urlsplit, unquote
 
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 subprocess.run(['python3', str(ROOT/'scripts/check-full-source-access.py')], check=True)
+subprocess.run(['python3', str(ROOT/'scripts/check-barrier-source-cells.py')], check=True)
 subprocess.run(['python3', str(ROOT/'scripts/check-audit-fixes.py')], check=True)
 subprocess.run(['node', '--check', str(ROOT/'assets/department-depth.js')], check=True)
 subprocess.run(['node', '--check', str(ROOT/'assets/department-completeness.js')], check=True)
