@@ -144,8 +144,8 @@ window.GCE_TOOLS = {
   "department-evidence-explorer": {
    "href": "department-evidence-explorer/",
    "title": [
-    "Department evidence explorer",
-    "Explorateur des données ministérielles"
+    "Explore data about your department",
+    "Explorer les données de votre ministère"
    ],
    "intro": [
     "Main findings for a department or agency, then how survey results have changed since 2019, representation, survey results by group, staffing, workforce change, regions and commitments, with sources.",
@@ -155,8 +155,8 @@ window.GCE_TOOLS = {
   "hr-process-toolkit": {
    "href": "hr-process-toolkit/",
    "title": [
-    "HR process review toolkit",
-    "Trousse d’examen des processus de RH"
+    "Make hiring and workplace processes fairer",
+    "Rendre les processus d’embauche et de travail plus équitables"
    ],
    "intro": [
     "Review a staffing process stage by stage, examine common barriers with the rules that apply, and check a job posting before it is published.",
@@ -166,8 +166,8 @@ window.GCE_TOOLS = {
   "managers-equity-toolkit": {
    "href": "managers-equity-toolkit/",
    "title": [
-    "The Manager’s Equity Toolkit",
-    "Trousse d’équité pour les gestionnaires"
+    "Help managers remove barriers",
+    "Aider les gestionnaires à éliminer les obstacles"
    ],
    "intro": [
     "Eight workplace situations, each with the shortcut to avoid, a fairer response and what to record.",
@@ -177,8 +177,8 @@ window.GCE_TOOLS = {
   "decision-equity-check": {
    "href": "decision-equity-check/",
    "title": [
-    "Decision equity check",
-    "Vérification de l’équité des décisions"
+    "Check whether a decision is fair",
+    "Vérifier si une décision est équitable"
    ],
    "intro": [
     "A self-assessment for a proposed decision or an existing system: rate the evidence in each area and record the follow-up.",
@@ -188,8 +188,8 @@ window.GCE_TOOLS = {
   "commitments-tracker": {
    "href": "commitments-tracker/",
    "title": [
-    "Commitments and accountability tracker",
-    "Suivi des engagements et de la responsabilisation"
+    "Track promised changes and results",
+    "Suivre les changements promis et les résultats"
    ],
    "intro": [
     "A department’s published Call to Action commitments, the areas to verify locally, practices with published information, and a list of recommendations and responses.",
@@ -235,8 +235,8 @@ window.GCE_TOOLS = {
  "pages": {
   "hub": {
    "title": [
-    "Systemic change tools",
-    "Outils de changement systémique"
+    "Tools to make workplaces fairer",
+    "Outils pour rendre les milieux de travail plus équitables"
    ],
    "intro": [
     "Nine tools for finding barriers in published data, reviewing HR processes and decisions, comparing with other countries, and following commitments in the federal public service.",
@@ -299,8 +299,8 @@ window.GCE_TOOLS = {
   },
   "hr-process-toolkit": {
    "title": [
-    "HR process review toolkit",
-    "Trousse d’examen des processus de RH"
+    "Make hiring and workplace processes fairer",
+    "Rendre les processus d’embauche et de travail plus équitables"
    ],
    "intro": [
     "Use this before a staffing or development process runs. Each topic sets out the barrier to look for, the rule that applies where there is one, what can change within delegated authority and how to check the result.",
@@ -998,8 +998,8 @@ window.GCE_TOOLS = {
   },
   "managers-equity-toolkit": {
    "title": [
-    "The Manager’s Equity Toolkit",
-    "Trousse d’équité pour les gestionnaires"
+    "Help managers remove barriers",
+    "Aider les gestionnaires à éliminer les obstacles"
    ],
    "intro": [
     "Eight situations managers face, each with the shortcut to avoid, a fairer response and what to record. Verify your delegations and get specialist advice where needed.",
@@ -1402,8 +1402,8 @@ window.GCE_TOOLS = {
   },
   "decision-equity-check": {
    "title": [
-    "Decision equity check",
-    "Vérification de l’équité des décisions"
+    "Check whether a decision is fair",
+    "Vérifier si une décision est équitable"
    ],
    "intro": [
     "Rate the evidence for each area of a proposed decision or an existing system, and record the follow-up. The result is a record for discussion. It is not an audit, a compliance finding or a prediction.",
@@ -1927,8 +1927,8 @@ window.GCE_TOOLS = {
   },
   "commitments-tracker": {
    "title": [
-    "Commitments and accountability tracker",
-    "Suivi des engagements et de la responsabilisation"
+    "Track promised changes and results",
+    "Suivre les changements promis et les résultats"
    ],
    "intro": [
     "Follow a department’s Call to Action commitments from the 2021 letter to the 2024 self-assessment, record what you can verify locally, and keep a list of recommendations and responses.",
@@ -2922,7 +2922,7 @@ window.GCE_TOOLS = {
   };
   T.tools["global-public-service-equity"] = {
     href: "global-public-service-equity/",
-    title: ["Global public service equity observatory", "Observatoire mondial de l’équité dans la fonction publique"],
+    title: ["Compare public services in other countries", "Comparer les fonctions publiques d’autres pays"],
     intro: ["Published workforce figures from the public services of Canada, the United Kingdom, Australia, New Zealand and the United States, each with its own definitions and source.",
       "Chiffres publiés sur les effectifs des fonctions publiques du Canada, du Royaume-Uni, de l’Australie, de la Nouvelle-Zélande et des États-Unis, chacun avec ses propres définitions et sa source."]
   };
@@ -2935,7 +2935,7 @@ window.GCE_TOOLS = {
   const SNAP = ["https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html",
     "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html"];
   T.pages["global-public-service-equity"] = {
-    title: ["Global public service equity observatory", "Observatoire mondial de l’équité dans la fonction publique"],
+    title: ["Compare public services in other countries", "Comparer les fonctions publiques d’autres pays"],
     intro: ["Explore official workforce figures from other public services without treating unlike definitions as equivalent. Compare within each country, then record a practice worth testing in Canada and what would have to be checked first.",
       "Explorer les chiffres officiels d’autres fonctions publiques sans traiter comme équivalentes des définitions différentes. Comparer à l’intérieur de chaque pays, puis consigner une pratique à mettre à l’essai au Canada et ce qu’il faudrait vérifier d’abord."],
     limits: ["Each figure keeps its own country, population, year and definition. Do not rank or average figures from different countries. Verify the current source before citing a figure.",
@@ -3039,7 +3039,7 @@ window.GCE_TOOLS = {
   const items = group.items.map(it => { const k = it.id.replace(/^decision-/, ""); return Object.assign({}, it, { id: "sim-" + k, links: LINKS[k] }); });
   T.tools["equity-impact-simulator"] = {
     href: "equity-impact-simulator/",
-    title: ["Equity impact simulator", "Simulateur d’impact sur l’équité"],
+    title: ["Compare the possible effects of decisions", "Comparer les effets possibles des décisions"],
     intro: [
       "Rate two options for a proposed decision side by side across four scenarios, and record the mitigation. It is a qualitative scenario assessment, not a prediction or a validated risk score.",
       "Évaluer côte à côte deux options pour une décision proposée selon quatre scénarios, et consigner l’atténuation. C’est une évaluation qualitative de scénarios, non une prévision ni un score de risque validé."

@@ -37,6 +37,12 @@ const server=http.createServer((req,res)=>{
    assert.deepEqual(nav,ids,slug+': section menu must follow headings');
    assert.ok(await page.locator('#lang-en .contents').isVisible(),slug+': desktop menu');
    assert.ok(await page.locator('#lang-fr').count(),slug+': French sections missing');
+   if(slug==='cra'){
+    const search=page.locator('#dp-org-search-en');await search.waitFor();await search.fill('Health Canada');
+    await page.waitForFunction(()=>document.querySelector('#lang-en .dp-organization option[value="health-canada"]'));
+    assert.ok(await page.locator('#lang-en .dp-organization option').count()<10,'Search narrows the organization list');
+    await search.fill('');assert.ok(await page.locator('#lang-en .dp-organization option').count()>100,'Clearing search restores organizations');
+   }
    await page.locator('#language').click();
    await page.waitForFunction(()=>document.documentElement.lang==='fr'&&!document.querySelector('#lang-fr').hidden,{timeout:10000});
    assert.ok(await page.locator('#lang-fr h2').count()>=8,slug+': French sections');
