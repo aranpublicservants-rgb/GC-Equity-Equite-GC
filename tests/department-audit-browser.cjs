@@ -43,6 +43,11 @@ const server=http.createServer((req,res)=>{
    await page.locator('#query').fill('Q1');await page.locator('#load').click();
    await page.locator('#results').waitFor();assert.equal(await page.locator('#rows tr').count(),1);assert.match(await page.locator('#rows').innerText(),/Test, quoted/);
    assert.match(await page.locator('#status').innerText(),/1 lignes correspondantes/);
+   await page.goto(base+'survey-file-browser.html?lang=en&restored=GC-0223',{waitUntil:'domcontentloaded'});
+   await page.waitForFunction(()=>!document.getElementById('load').disabled);
+   await page.locator('#load').click();await page.locator('#results').waitFor();
+   assert.ok(await page.locator('#rows tr').count()>0,'Restored CSV is readable');
+   assert.match(await page.locator('#download').getAttribute('href'),/data\/restored\//);
    assert.deepEqual(errors,[]);await ctx.close();
   }
   for(const slug of pages){
