@@ -39,7 +39,7 @@ prefixes = (
 )
 assert hosted and all(u.startswith(prefixes) for u in hosted), "Unexpected external host or partition route"
 assert not any("drive.google.com" in u for u in external)
-assert all("data-en=" in card and "data-fr=" in card for card in re.findall(r"<li\\b[^>]*>.*?</li>", page, re.S))
+assert all("data-en=" in card and "data-fr=" in card for card in re.findall(r"<li\b[^>]*>.*?</li>", page, re.S))
 assert page.count('role="status"') >= 1
 assert 'id="source-filter"' in page and 'id="source-clear"' in page
 assert 'source-access.html' in sitemap
