@@ -152,9 +152,19 @@ async function download(page, click, what) {
         const type = page.getByLabel('Chart type').first();
         await type.waitFor({ state: 'attached', timeout: 5000 });
         {
-          const options = await type.locator('option').allTextContents();
-          for (const o of options) { await type.selectOption({ label: o }); await page.waitForTimeout(150); assert.ok(await page.locator('svg.dv-svg').count() + await page.locator('.dv-note, .dv-empty').count() > 0, 'chart type ' + o); }
-          await type.selectOption({ index: 0 });
+          const options = await type.locator('option:enabled').allTextContents();
+          assert.ok(options.length>0,'at least one compatible chart type');
+          for (const o of options) {
+            // The visualizer intentionally disables incompatible chart types for the selected source columns.
+            // Test every enabled option, without forcing disabled combinations.
+            const compatible=await type.locator('option').evaluateAll((nodes,label)=>nodes.some(n=>n.textContent===label&&!n.disabled),o);
+            if(!compatible)continue;
+            await type.selectOption({ label: o });
+            await page.waitForTimeout(150);
+            assert.ok(await page.locator('svg.dv-svg').count() + await page.locator('.dv-note, .dv-empty').count() > 0, 'chart type ' + o);
+          }
+          const firstEnabled=await type.locator('option:enabled').first().getAttribute('value');
+          await type.selectOption(firstEnabled);
           ok(mode.name + ': chart types ' + options.join(', '));
         }
         const svg = await download(page, () => page.getByRole('button', { name: /SVG/ }).first().click(), 'SVG');
