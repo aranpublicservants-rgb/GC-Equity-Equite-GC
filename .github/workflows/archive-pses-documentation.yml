@@ -30,6 +30,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/open-canada-2026-11/pses-supporting-documentation/ data/checksums.sha256
           if git diff --cached --quiet; then echo "No new source copies"; exit 0; fi
-          git commit -m "Archive verified 2018-2020 PSES supporting workbooks"
+          git commit -m "Archive verified historical PSES supporting workbooks"
           git pull --rebase origin main
           git push origin HEAD:main

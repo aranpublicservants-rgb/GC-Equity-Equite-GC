@@ -19,6 +19,10 @@ DEST = ROOT / "data/open-canada-2026-11/pses-supporting-documentation"
 AGENT = {"User-Agent": "GC-Equity-Equite-GC/1.0 (public-source-archive)"}
 RESOURCE_API = "https://open.canada.ca/data/api/action/resource_show?id="
 RESOURCES = [
+    {"year": 2014, "id": "GC-0014", "drive_size": 6316838,
+     "url": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-documentation.xlsx"},
+    {"year": 2017, "id": "GC-0023", "drive_size": 6351299,
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_Supporting_Documentation_Document_reference_SAFF_2017.xlsx"},
     {"year": 2018, "id": "f93d3fc3-94b7-4902-bbc1-21ebed7f0744", "drive_size": 6354406,
      "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_Supporting_Documentation_Document_de_r%C3%A9f%C3%A9rence_du_SAFF_2018.xlsx"},
     {"year": 2019, "id": "cd371005-0746-459c-8a8a-cec36b006343", "drive_size": 6400633,
@@ -69,6 +73,8 @@ def archive(resource):
         with zipfile.ZipFile(temporary) as z:
             if "xl/workbook.xml" not in z.namelist():
                 raise ValueError("Office Open XML workbook marker not found")
+        if size != resource["drive_size"]:
+            raise ValueError("Publisher byte size differs from source inventory")
         filename = f"pses{year}-supporting-documentation.xlsx"
         os.replace(temporary, DEST / filename)
         return {
@@ -87,12 +93,21 @@ def main():
     DEST.mkdir(parents=True, exist_ok=True)
     present = []
     missing = []
+    prior_path = DEST / "manifest.json"
+    prior = {x["year"]: x for x in json.loads(prior_path.read_text(encoding="utf-8")).get("files", [])} if prior_path.exists() else {}
     for resource in RESOURCES:
         try:
             record = archive(resource)
             present.append(record)
             print(f"ARCHIVED {record['year']}: {record['bytes']} bytes; SHA256 {record['sha256']}")
         except Exception as error:
+            previous = prior.get(resource["year"])
+            if previous:
+                path = ROOT / previous["path"]
+                if path.is_file() and path.stat().st_size == resource["drive_size"] and hashlib.sha256(path.read_bytes()).hexdigest() == previous["sha256"]:
+                    present.append(previous)
+                    print(f"RETAINED {resource['year']}: previously verified workbook")
+                    continue
             missing.append({"year": resource["year"], "resource_id": resource["id"],
                             "status": "unverified", "reason": str(error)[:220]})
             print(f"NOT HOSTED {resource['year']}: {error}")
