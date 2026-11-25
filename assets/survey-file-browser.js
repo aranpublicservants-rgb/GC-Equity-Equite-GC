@@ -8,7 +8,7 @@ const path=(s,p)=>s.directory.split('/').map(encodeURIComponent).join('/')+'/'+e
 function label(p){const m=p.file.match(/^(\d+)-\d+\.csv\.gz$/),code=m&&m[1].padStart(2,'0');return (source.directory.startsWith('pses-2024/')&&code&&names[code]?names[code][lang==='fr'?1:0]+' · ':code==='00'&&source.directory.startsWith('pses-2024/')?t('Public service total','Total de la fonction publique')+' · ':'')+p.file+' ('+number(p.rows)+' '+t('rows','lignes')+')'}
 function fillSources(){const old=source?.directory||params.get('dataset');$('dataset').replaceChildren(...sources.map(s=>new Option(s.title[lang].trim(),s.directory)));if(sources.some(s=>s.directory===old))$('dataset').value=old;source=sources.find(s=>s.directory===$('dataset').value)||null;}
 function fillParts(preferred){$('part').replaceChildren(...(source?.parts||[]).map(p=>new Option(label(p),p.file)));if(source?.parts.some(p=>p.file===preferred))$('part').value=preferred;selectPart();}
-function selectPart(){part=source?.parts.find(p=>p.file===$('part').value)||null;$('load').disabled=!part||!window.DecompressionStream;$('part-info').textContent=part?number(part.rows)+' '+t('published rows; compressed file: ','lignes publiées; fichier compressé : ')+(part.bytes/1e6).toLocaleString(lang,{maximumFractionDigits:2})+' MB':'';$('download').hidden=!part;$('publisher').hidden=!source;if(part)$('download').href=root+path(source,part);if(source)$('publisher').href=source.url;const u=new URL(location.href);u.searchParams.set('lang',lang);if(source)u.searchParams.set('dataset',source.directory);if(part)u.searchParams.set('part',part.file);history.replaceState(null,'',u);}
+function selectPart(){part=source?.parts.find(p=>p.file===$('part').value)||null;$('load').disabled=stage==='reading'||!part||!window.DecompressionStream;$('part-info').textContent=part?number(part.rows)+' '+t('published rows; compressed file: ','lignes publiées; fichier compressé : ')+(part.bytes/1e6).toLocaleString(lang,{maximumFractionDigits:2})+' MB':'';$('download').hidden=!part;$('publisher').hidden=!source;if(part)$('download').href=root+path(source,part);if(source)$('publisher').href=source.url;const u=new URL(location.href);u.searchParams.set('lang',lang);if(source)u.searchParams.set('dataset',source.directory);if(part)u.searchParams.set('part',part.file);history.replaceState(null,'',u);}
 function status(){const x=$('status');x.textContent=stage==='loading'?t('Loading available survey files…','Chargement des fichiers de sondage disponibles…'):stage==='reading'?t('Reading the chosen file…','Lecture du fichier choisi…'):stage==='error'?t('Could not read the file. Use the download link or try again.','Impossible de lire le fichier. Utilisez le lien de téléchargement ou réessayez.'):stage==='unsupported'?t('This browser cannot open compressed files. Use the download link.','Ce navigateur ne peut pas ouvrir les fichiers compressés. Utilisez le lien de téléchargement.'):stage==='cancelled'?t('Loading stopped.','Chargement arrêté.'):stage==='done'?t(number(rows.length)+' matching rows shown; '+number(scanned)+' published rows read.'+(limited?' Search stopped at the 200-row limit.':''),number(rows.length)+' lignes correspondantes affichées; '+number(scanned)+' lignes publiées lues.'+(limited?' Recherche arrêtée à la limite de 200 lignes.':'')):t('Choose a file to start.','Choisissez un fichier pour commencer.');}
 function language(){document.documentElement.lang=lang;document.title=t('Read and search employee survey files | GC Equity','Lire et rechercher les fichiers des sondages | Équité-GC');document.querySelectorAll('[data-en][data-fr]').forEach(n=>n.textContent=n.dataset[lang]);$('language').textContent=t('Français','English');$('language').lang=t('fr','en');$('home').href='index.html?lang='+lang;$('back').href='source-access.html?lang='+lang;const old=part?.file;fillSources();fillParts(old);status();if(!$('results').hidden)draw();}
 function reset(){run++;controller?.abort();controller=null;$('cancel').disabled=true;$('results').hidden=true;rows=[];header=[];scanned=0;limited=false;page=0;stage=window.DecompressionStream?'ready':'unsupported';status();}
@@ -16,9 +16,9 @@ function draw(){const h=$('head'),b=$('rows');h.replaceChildren();b.replaceChild
 /* Streaming CSV parser, retaining only matching rows. Quoted commas, embedded newlines and escaped quotes are preserved. */
 async function readFile(response,terms,signal){
  const reader=response.body.pipeThrough(new DecompressionStream('gzip')).pipeThrough(new TextDecoderStream()).getReader();
- let field='',record=[],quoted=false,afterQuote=false,skipLF=false,first=true;
+ let field='',record=[],quoted=false,afterQuote=false,skipLF=false,first=true;const result={header:[],rows:[],scanned:0,limited:false};
  const push=()=>{record.push(field);field='';};
- const emit=()=>{push();const r=record;record=[];if(first){header=r;first=false;return false;}if(r.length===1&&!r[0])return false;scanned++;if(!terms.length||terms.every(q=>norm(r.join(' ')).includes(q)))rows.push(r);return rows.length>=200;};
+ const emit=()=>{push();const r=record;record=[];if(first){result.header=r;first=false;return false;}if(r.length===1&&!r[0])return false;result.scanned++;const text=terms.length?norm(r.join(' ')):'';if(!terms.length||terms.every(q=>text.includes(q)))result.rows.push(r);return result.rows.length>=200;};
  try{for(;;){if(signal.aborted)throw Error('cancelled');const {value,done}=await reader.read();if(done)break;
   for(const c of value){
    if(skipLF){skipLF=false;if(c==='\n')continue;}
@@ -26,13 +26,13 @@ async function readFile(response,terms,signal){
    if(quoted){if(c==='"')afterQuote=true;else field+=c;continue;}
    if(c==='"'&&field===''){quoted=true;continue;}
    if(c===','){push();continue;}
-   if(c==='\n'||c==='\r'){if(c==='\r')skipLF=true;if(emit()){limited=true;await reader.cancel();return;}continue;}
+   if(c==='\n'||c==='\r'){if(c==='\r')skipLF=true;if(emit()){result.limited=true;await reader.cancel();return result;}continue;}
    field+=c;if(field.length>1000000)throw Error('oversized field');
   }
- }if(field||record.length)emit();}finally{reader.releaseLock();}
+ }if(field||record.length)emit();return result;}finally{reader.releaseLock();}
 }
-$('search').addEventListener('submit',async e=>{e.preventDefault();if(!part||!window.DecompressionStream)return;reset();const token=run;controller=new AbortController();const signal=controller.signal;stage='reading';status();$('cancel').disabled=false;$('load').disabled=true;
- try{const response=await fetch(root+path(source,part),{signal});if(!response.ok||!response.body)throw Error('download');await readFile(response,norm($('query').value).trim().split(/\s+/).filter(Boolean),signal);if(token!==run)return;stage='done';$('results').hidden=false;draw();}
+$('search').addEventListener('submit',async e=>{e.preventDefault();if(!part||!window.DecompressionStream||stage==='reading')return;reset();const token=run;controller=new AbortController();const signal=controller.signal;stage='reading';status();$('cancel').disabled=false;$('load').disabled=true;
+ try{const response=await fetch(root+path(source,part),{signal});if(!response.ok||!response.body)throw Error('download');const result=await readFile(response,norm($('query').value).trim().split(/\s+/).filter(Boolean),signal);if(token!==run)return;({header,rows,scanned,limited}=result);stage='done';$('results').hidden=false;draw();}
  catch(e){if(token!==run)return;stage=signal.aborted?'cancelled':'error';}
  finally{if(token===run){$('cancel').disabled=true;$('load').disabled=false;status();}}
 });
