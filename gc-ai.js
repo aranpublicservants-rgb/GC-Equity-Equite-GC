@@ -1,15 +1,15 @@
 /* GC Equity: ask an AI chatbot about the data.
  * The visitor types a question and picks a chatbot. The question is copied to the clipboard and the
- * chatbot opens in a new tab, with the question filled in where that chatbot accepts it from a link.
- * Nothing is sent anywhere until the visitor picks a chatbot, and no account or key is stored here.
+ * chatbot opens in a new tab without prompt text in the URL. The visitor chooses whether to paste.
+ * No account or API key is stored here; no prompt is transmitted by this site.
  * Usage: GCAI.render(container, {question: lang => '...', about: () => '...', heading: false})
  */
 (function(){
 'use strict';
 const BOTS=[
- {id:'chatgpt',name:'ChatGPT',owner:'OpenAI',link:q=>'https://chatgpt.com/?q='+encodeURIComponent(q)},
- {id:'claude',name:'Claude',owner:'Anthropic',link:q=>'https://claude.ai/new?q='+encodeURIComponent(q)},
- {id:'copilot',name:'Copilot',owner:'Microsoft',link:q=>'https://copilot.com/?q='+encodeURIComponent(q)},
+ {id:'chatgpt',name:'ChatGPT',owner:'OpenAI',link:()=>'https://chatgpt.com/',pasteOnly:true},
+ {id:'claude',name:'Claude',owner:'Anthropic',link:()=>'https://claude.ai/new',pasteOnly:true},
+ {id:'copilot',name:'Copilot',owner:'Microsoft',link:()=>'https://copilot.com/',pasteOnly:true},
  {id:'gemini',name:'Gemini',owner:'Google',link:()=>'https://gemini.google.com/app',pasteOnly:true}
 ];
 const isFr=()=>String(document.documentElement.getAttribute('lang')||'en').toLowerCase().indexOf('fr')===0;
@@ -22,8 +22,8 @@ function siteAddress(){
 }
 function fullPrompt(question,about){
  const site=siteAddress();
- if(isFr())return question+'\n\nContexte : j’utilise Équité-GC'+(site?' ('+site+')':'')+', un site indépendant qui présente des données publiées du gouvernement du Canada sur l’équité en matière d’emploi dans la fonction publique fédérale.'+(about?' La page que je consulte porte sur : '+about+'.':'')+' Répondez à l’aide de sources officielles publiées, comme les statistiques du Secrétariat du Conseil du Trésor du Canada et le Sondage auprès des fonctionnaires fédéraux. Citez vos sources et indiquez quand l’information n’est pas publiée. Un écart entre des groupes ne prouve pas à lui seul une discrimination.';
- return question+'\n\nContext: I am using GC Equity'+(site?' ('+site+')':'')+', an independent website that presents published Government of Canada data on employment equity in the federal public service.'+(about?' The page I am viewing covers: '+about+'.':'')+' Please answer using official published sources, such as Treasury Board of Canada Secretariat statistics and the Public Service Employee Survey. Cite your sources and say when information is not published. A difference between groups is not, on its own, proof of discrimination.';
+ if(isFr())return question+'\n\nContexte : j’utilise Équité-GC'+(site?' ('+site+')':'')+', un site indépendant qui présente des données publiées du gouvernement du Canada sur l’équité en matière d’emploi dans la fonction publique fédérale.'+(about?' La page que je consulte porte sur : '+about+'.':'')+' Répondez à l’aide de sources officielles publiées, comme les statistiques du Secrétariat du Conseil du Trésor du Canada et le Sondage auprès des fonctionnaires fédéraux. Citez vos sources et indiquez quand l’information n’est pas publiée. Un écart entre des groupes ne prouve pas à lui seul une discrimination ni une signification statistique. Ne traitez jamais les valeurs manquantes ou supprimées comme nulles et ne les reconstituez pas. La part des nominations ne représente pas une probabilité d’embauche. Les engagements ne sont pas des résultats vérifiés. Indiquez la période et la population exactes.';
+ return question+'\n\nContext: I am using GC Equity'+(site?' ('+site+')':'')+', an independent website that presents published Government of Canada data on employment equity in the federal public service.'+(about?' The page I am viewing covers: '+about+'.':'')+' Please answer using official published sources, such as Treasury Board of Canada Secretariat statistics and the Public Service Employee Survey. Cite your sources and say when information is not published. A difference between groups is not, on its own, proof of discrimination or statistical significance. Never treat missing or suppressed values as zero, or reconstruct suppressed results. Appointment share is not hiring probability. Commitments are not verified outcomes. State the exact source period and population.';
 }
 function copyText(text){
  if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(text).then(()=>true,()=>legacyCopy(text));}
@@ -57,7 +57,7 @@ function addStyles(){
 function texts(){
  return {
   label:tr('Your question','Votre question'),
-  note:tr('The chatbot opens in a new tab. Your question goes to the company that runs it (OpenAI, Anthropic, Microsoft or Google), and you may need to sign in. Do not include personal or confidential information. Check answers against the data on this site.','L’agent conversationnel s’ouvre dans un nouvel onglet. Votre question est transmise à l’entreprise qui l’exploite (OpenAI, Anthropic, Microsoft ou Google), et une connexion peut être demandée. N’indiquez aucun renseignement personnel ou confidentiel. Vérifiez les réponses à l’aide des données de ce site.'),
+  note:tr('The question is copied on your device. The selected service opens without the question in its URL. Paste only published public information into an organization-approved tool, if permitted. Never include personal, protected, classified or confidential information. Check every answer against the original sources.','La question est copiée sur votre appareil. Le service choisi s’ouvre sans la question dans son adresse URL. Collez uniquement des renseignements publics publiés dans un outil autorisé par votre organisme, si permis. N’incluez jamais de renseignements personnels, protégés, classifiés ou confidentiels. Vérifiez chaque réponse dans les sources originales.'),
   lead:tr('Ask:','Demander à :'),
   newTab:tr(' (opens in a new tab)',' (s’ouvre dans un nouvel onglet)'),
   empty:tr('Type a question first.','Tapez d’abord une question.'),
@@ -83,7 +83,7 @@ function render(container,opts){
   const question=box.q.value.trim();
   if(!question){e.preventDefault();box.status.textContent=t.empty;box.q.focus();return;}
   const text=fullPrompt(question,typeof box.opts.about==='function'?box.opts.about():box.opts.about);
-  a.href=bot.link(text);
+  a.href=bot.link();
   copyText(text).then(ok=>{box.status.textContent=ok?t.copied(bot):t.notCopied(bot);});
  }));
  boxes.push(box);
@@ -92,9 +92,7 @@ function render(container,opts){
 }
 function defaultQuestion(box){const q=box.opts.question;return typeof q==='function'?(q()||''):(q||'');}
 function update(box){
- const question=box.q.value.trim();
- const text=question?fullPrompt(question,typeof box.opts.about==='function'?box.opts.about():box.opts.about):'';
- box.el.querySelectorAll('.gcai-bot').forEach(a=>{const bot=BOTS.find(b=>b.id===a.dataset.bot);a.href=bot.link(text);});
+ box.el.querySelectorAll('.gcai-bot').forEach(a=>{const bot=BOTS.find(b=>b.id===a.dataset.bot);a.href=bot.link();});
 }
 function refreshBox(box){
  const t=texts();
