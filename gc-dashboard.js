@@ -524,7 +524,7 @@ async function renderBranches(name){
  try{
   const meta=await branchMeta();if(id!==branchRequest)return;
   const dept=meta.departments.find(d=>norm(d.en)===norm(name)||norm(d.fr)===norm(name));
-  if(!dept){host.innerHTML='';return;}
+  if(!dept){host.innerHTML='<h3>'+escape(L('2024 employee survey by branch','Sondage de 2024 selon la direction'))+'</h3><p>'+escape(L('No separate branch-level results are indexed for this organization. See its other published survey results.','Aucun résultat distinct par direction n’est répertorié pour cet organisme. Consultez ses autres résultats de sondage publiés.'))+'</p>';return;}
   let data=branchDataCache.get(dept.id);
   if(data){branchDataCache.delete(dept.id);branchDataCache.set(dept.id,data);}
   if(!data){
@@ -552,7 +552,20 @@ function renderOrg(){
  if(!D)return;const out=$('org-output');if(!out)return;
  dropTables('org-output');
  selected=$('org-picker')?.value||'';
- if(selected&&D.departmentPages&&new URL(location.href).searchParams.get('view')!=='table'){const page=D.departmentPages.organizations.find(o=>o.en===selected||o.aliases.some(a=>norm(a)===norm(selected)));if(page){const target=new URL(page.path,location.href);target.searchParams.set('lang',lang()?'fr':'en');const g=selectGroup('org');if(g!=='all')target.searchParams.set('group',g);location.assign(target.href);return;}}
+ if(selected&&D.departmentPages&&new URL(location.href).searchParams.get('view')!=='table'){
+  const page=D.departmentPages.organizations.find(o=>o.en===selected||o.aliases.some(a=>norm(a)===norm(selected)));
+  if(page){
+   const target=new URL(page.path,location.href),french=lang(),g=selectGroup('org'),topic=$('org-topic-picker')?.value||'all';
+   target.searchParams.set('lang',french?'fr':'en');
+   if(g!=='all')target.searchParams.set('group',g);
+   const topics={workforce:'who-works',experience:'experience',branches:'branches',staffing:'hiring',commitments:'promised',plans:'planned',sources:'data-library'};
+   let section=topics[topic];
+   if(section&&Array.isArray(page.sections)&&!page.sections.includes(section))section=page.sections.includes('missing')?'missing':null;
+   const frenchIDs={'who-works':page.id==='dnd'?'effectif-civil':'qui-travaille',experience:'experience-fr',branches:page.id==='dnd'?'secteurs':'unites',hiring:'embauche',promised:['isc','dfo'].includes(page.id)?'promesses':'engagements',planned:'plans','data-library':'bibliotheque',missing:['isc','dfo'].includes(page.id)?'manquant':'lacunes'};
+   if(section)target.hash=french?frenchIDs[section]:section;
+   location.assign(target.href);return;
+  }
+ }
  const showDepartment=!!selected;
  const global=document.getElementById('equity-data'),related=document.getElementById('related-public-resources');
  if(global)global.hidden=showDepartment;
@@ -864,7 +877,8 @@ function tableCategory(id,scope){
   if(id==='org-profile-surveys')return 'experience';
   if(id==='org-profile-reports')return 'plans';
   if(/^(org-coverage|org-complete-sources|org-added-sources)$/.test(id))return 'sources';
-  if(/(?:org-branches|org-survey|org-staffing)/.test(id))return 'experience';
+  if(id==='org-branches')return 'branches';
+  if(/(?:org-survey|org-staffing)/.test(id))return 'experience';
   if(id==='org-restored-surveys')return 'experience';
   if(/(?:org-cta|org-cta-outcomes|org-cta-coding)/.test(id))return 'commitments';
   if(id==='org-plans')return 'plans';
@@ -884,7 +898,7 @@ function applyTopics(scope){
  for(const el of targets){
   if(!el.id||el.classList.contains('gce-summary'))continue;
   if(el.dataset.gceAlways==='true'){el.hidden=false;continue;}
-  const categories=el.dataset.gceTopics?el.dataset.gceTopics.split(' '):el.id==='org-profile-action'?['workforce','experience','staffing','commitments','plans','sources']:el.id==='public-added-sources'?['workforce','experience','staffing','sources']:el.id==='org-added-sources'?['workforce','sources']:el.id==='org-additional-psc'?['workforce','staffing']:el.id==='org-staffing'?['experience','staffing']:el.id==='public-staffing-survey'?['experience','staffing']:el.id==='public-workforce-flow'?['workforce','staffing']:tableCategory(el.id,scope)==='sources'?['sources']: [tableCategory(el.id,scope)];
+  const categories=el.dataset.gceTopics?el.dataset.gceTopics.split(' '):el.id==='org-profile-action'?['workforce','experience','staffing','commitments','plans','sources']:el.id==='public-added-sources'?['workforce','experience','staffing','sources']:el.id==='org-added-sources'?['workforce','sources']:el.id==='org-additional-psc'?['workforce','staffing']:el.id==='org-branches'?['experience','branches']:el.id==='org-staffing'?['experience','staffing']:el.id==='public-staffing-survey'?['experience','staffing']:el.id==='public-workforce-flow'?['workforce','staffing']:tableCategory(el.id,scope)==='sources'?['sources']: [tableCategory(el.id,scope)];
   el.hidden=value!=='all'&&!categories.includes(value);
   el.querySelectorAll('[data-gce-topics]').forEach(child=>{child.hidden=value!=='all'&&!child.dataset.gceTopics.split(' ').includes(value);});
  }
