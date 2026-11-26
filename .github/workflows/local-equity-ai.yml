@@ -21,8 +21,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -71,14 +71,38 @@ jobs:
             git push origin HEAD:main
             gh api -X POST repos/${{ github.repository }}/pages/builds || true
           fi
-      - name: Generate optional multilingual neural vectors
-        run: |
-          npm install --no-save --no-package-lock @huggingface/transformers@3.8.1
-          node scripts/build-local-equity-ai.mjs --vectors-only
-      - name: Publish optional neural index
+  neural:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      ONNXRUNTIME_NODE_INSTALL_CUDA: skip
+      TRANSFORMERS_CACHE: ${{ runner.temp }}/gce-transformers-cache
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            assets
+            scripts/build-local-equity-ai.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/gce-transformers-cache
+          key: gce-multilingual-e5-small-q8-transformers-3.8.1
+      - name: Install CPU inference dependencies (no CUDA download)
+        run: npm install --no-save --no-package-lock --no-audit --no-fund @huggingface/transformers@3.8.1
+      - name: Generate and validate optional multilingual neural vectors
+        run: node scripts/build-local-equity-ai.mjs --vectors-only
+      - name: Publish validated optional neural index
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/semantic-vectors.json
           if ! git diff --cached --quiet; then
             git commit -m "Refresh optional multilingual neural search vectors"
