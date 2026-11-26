@@ -16,8 +16,8 @@ function language(){document.documentElement.lang=lang;document.title=t('Read an
 function reset(){run++;controller?.abort();controller=null;$('cancel').disabled=true;$('results').hidden=true;rows=[];header=[];scanned=0;limited=false;page=0;stage=canRead(part)?'ready':'unsupported';status();}
 function draw(){const h=$('head'),b=$('rows');h.replaceChildren();b.replaceChildren();const tr=document.createElement('tr');for(const title of header){const th=document.createElement('th');th.scope='col';th.textContent=title;tr.append(th)}h.append(tr);for(const row of rows.slice(page*20,(page+1)*20)){const tr=document.createElement('tr');for(let i=0;i<header.length;i++){const td=document.createElement('td');td.textContent=row[i]??'';tr.append(td)}b.append(tr)}$('caption').textContent=source.title[lang]+' · '+(part.organization||part.file);const table=h.closest('table');const chartData={headers:header,rows,title:$('caption').textContent,lang,scope:'filtered',sources:[source.url]};table._gceVisualData=chartData;window.GCEquityVisuals?.update(table,chartData);$('page').textContent=t('Page ','Page ')+(page+1)+' / '+Math.max(1,Math.ceil(rows.length/20));$('prev').disabled=page===0;$('next').disabled=(page+1)*20>=rows.length;}
 /* Streaming CSV parser, retaining only matching rows. Quoted commas, embedded newlines and escaped quotes are preserved. */
-async function readFile(response,terms,signal,compressed){
- const stream=compressed?response.body.pipeThrough(new DecompressionStream('gzip')):response.body;const reader=stream.pipeThrough(new TextDecoderStream()).getReader();
+async function readFile(response,terms,signal,compressed,encoding='utf-8'){
+ const stream=compressed?response.body.pipeThrough(new DecompressionStream('gzip')):response.body;const reader=stream.pipeThrough(new TextDecoderStream(encoding)).getReader();
  let field='',record=[],quoted=false,afterQuote=false,skipLF=false,first=true;const result={header:[],rows:[],scanned:0,limited:false};
  const push=()=>{record.push(field);field='';};
  const emit=()=>{push();const r=record;record=[];if(first){result.header=r;first=false;return false;}if(r.length===1&&!r[0])return false;result.scanned++;const text=terms.length?norm(r.join(' ')):'';if(!terms.length||terms.every(q=>text.includes(q)))result.rows.push(r);return result.rows.length>=200;};
@@ -34,7 +34,7 @@ async function readFile(response,terms,signal,compressed){
  }if(field||record.length)emit();return result;}finally{reader.releaseLock();}
 }
 $('search').addEventListener('submit',async e=>{e.preventDefault();if(!canRead(part)||stage==='reading')return;reset();const token=run;controller=new AbortController();const signal=controller.signal;stage='reading';status();$('cancel').disabled=false;$('load').disabled=true;
- try{const url=fileURL(source,part);const response=await fetch(url,{signal});if(!response.ok||!response.body)throw Error('download');const result=await readFile(response,norm($('query').value).trim().split(/\s+/).filter(Boolean),signal,url.endsWith('.gz'));if(token!==run)return;({header,rows,scanned,limited}=result);stage='done';$('results').hidden=false;draw();}
+ try{const url=fileURL(source,part);const response=await fetch(url,{signal});if(!response.ok||!response.body)throw Error('download');const result=await readFile(response,norm($('query').value).trim().split(/\s+/).filter(Boolean),signal,url.endsWith('.gz'),part.encoding||'utf-8');if(token!==run)return;({header,rows,scanned,limited}=result);stage='done';$('results').hidden=false;draw();}
  catch(e){if(token!==run)return;stage=signal.aborted?'cancelled':'error';}
  finally{if(token===run){$('cancel').disabled=true;$('load').disabled=false;status();}}
 });
@@ -56,7 +56,7 @@ const initial=restoredMode?Promise.all([get('assets/restored-datasets.json'),get
   const usable=parts.filter(p=>safePath(p.localPath));if(!usable.length)continue;
   output.push({directory:e.id,title:{en:e.name,fr:e.name+' (titre de la source en anglais)'},url:x.publisherUrl,parts:usable});
  }
- const hr=register.entries.find(e=>e.id==='GC-0080'&&e.approved===true);const hrfile=added.packages?.find(p=>p.id==='pses-2024')?.files.find(f=>f.sourceUrl===hr?.source&&f.originalBytes===hr.bytes&&f.path==='data/open-canada-2026-11/pses-2024/HRINFO.csv.gz');if(hrfile)output.push({directory:hr.id,title:{en:hrfile.titleEn,fr:hrfile.titleFr},url:hrfile.sourceUrl,parts:[{file:hrfile.name,localPath:hrfile.path,organization:'Entire file',rows:hrfile.rows,bytes:hrfile.bytes}]});
+ const hr=register.entries.find(e=>e.id==='GC-0080'&&e.approved===true);const hrfile=added.packages?.find(p=>p.id==='pses-2024')?.files.find(f=>f.sourceUrl===hr?.source&&f.originalBytes===hr.bytes&&f.path==='data/open-canada-2026-11/pses-2024/HRINFO.csv.gz');if(hrfile)output.push({directory:hr.id,title:{en:hrfile.titleEn,fr:hrfile.titleFr},url:hrfile.sourceUrl,parts:[{file:hrfile.name,localPath:hrfile.path,organization:'Entire file',rows:hrfile.rows,bytes:hrfile.bytes,encoding:'windows-1252'}]});
  if(window.GCEquityHistoricalStaffing)for(const [id,f] of window.GCEquityHistoricalStaffing(register,added)){if(output.some(x=>x.directory===id))continue;const e=register.entries.find(x=>x.id===id);output.push({directory:id,title:{en:e.name,fr:f.titleFr||e.name+' (titre de la source en anglais)'},url:f.sourceUrl,parts:[{file:f.name,localPath:f.path,organization:'Entire file',rows:f.rows,bytes:f.bytes}]});}
  return output;
 }):get('data/pses-large-manifest.json').then(m=>m.datasets.flatMap(d=>d.sources).filter(s=>/^pses-[0-9-]+\/[A-Za-z0-9_.-]+$/.test(s.directory)&&Array.isArray(s.parts)&&s.parts.every(p=>/^[A-Za-z0-9_.-]+\.csv\.gz$/.test(p.file))));

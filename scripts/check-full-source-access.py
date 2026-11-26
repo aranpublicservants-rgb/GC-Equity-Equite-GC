@@ -67,3 +67,12 @@ assert "source-access.html?lang=" in catalogue_page and "partitions.get(r.source
 assert 'fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv' in page
 assert 'source version mismatch' in (ROOT/'scripts/refresh-fswep-2026-11.py').read_text().lower()
 print(f"SOURCE ACCESS: {len(official)} official publisher URLs and {len(hosted)} repository links; bilingual provenance and navigation checks passed")
+
+# Public population scope and recovered-source regression guards.
+assert 'value="private"' not in reports
+assert all(r.get("scope") != "private" for r in json.loads((ROOT/"assets/equity-reports.json").read_text())["reports"])
+added = json.loads((ROOT/"assets/added-sources.json").read_text())
+assert not any(p["id"] in {"esdc-wfa-benchmarks", "harassment-violence-occurrences"} for p in added["packages"])
+assert "restored=GC-0080" in page and "workbook-browser.html?id=GC-0516" in page
+assert "8,750 offices" in page and "not employee language proficiency" in page
+assert "encoding:'windows-1252'" in (ROOT/"assets/survey-file-browser.js").read_text()

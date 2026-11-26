@@ -50,6 +50,13 @@ const server=http.createServer((req,res)=>{
    assert.match(await page.locator('#download').getAttribute('href'),/data\/restored\//);
    await page.goto(base+'survey-file-browser.html?lang=fr&restored=GC-0102',{waitUntil:'domcontentloaded'});
    await page.waitForFunction(()=>!document.getElementById('load').disabled);await page.locator('#load').click();await page.locator('#results').waitFor();assert.ok(await page.locator('#rows tr').count()>0);
+   await page.goto(base+'survey-file-browser.html?lang=fr&restored=GC-0080',{waitUntil:'domcontentloaded'});
+   await page.waitForFunction(()=>!document.getElementById('load').disabled);
+   await page.locator('#load').click();await page.locator('#results').waitFor();
+   assert.ok(await page.locator('#rows tr').count()>0,'HRINFO source is readable');
+   assert.match(await page.locator('#download').getAttribute('href'),/HRINFO\.csv\.gz$/);
+   await page.goto(base+'reports.html?lang=fr',{waitUntil:'domcontentloaded'});
+   assert.equal(await page.locator('#report-scope option[value="private"]').count(),0);
    assert.deepEqual(errors,[]);await ctx.close();
   }
   for(const slug of pages){
