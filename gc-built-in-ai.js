@@ -75,10 +75,11 @@ const count=x=>x!==null&&x!==undefined&&String(x).trim()!==''&&!['9999','-1','X'
 const getJSON=p=>fetch(local(p)).then(r=>{if(!r.ok)throw Error(r.status);return r.json()});
 async function keyFindingData(slug){
  // Generated evidence is optional. Read the retained exact source if a build is not yet available.
- try{const data=await getJSON('assets/department-key-findings.json');const org=data.organizations[slug];if(org)return {org,definitions:data.definitions,sources:data.sources,period:data.period};}catch{}
+ try{const data=await getJSON('assets/department-key-findings.json');const meta=data.organizations[slug];if(meta){const org=meta.shard?(await getJSON(meta.shard)).organizations[slug]:meta;if(org&&org.groups)return {org,definitions:data.definitions,sources:data.sources,period:data.period};}}catch{}
  const [reg,idx]=await Promise.all([getJSON('assets/department-pages.json'),getJSON('assets/department-profile-index.json')]);const record=reg.organizations.find(x=>x.id===slug);if(!record)return null;
- const org={en:record.en,fr:record.fr,status:'not-indexed',groups:{}},entry=idx.organizations[record.en];
- if(entry?.path){const r=await fetch(local(entry.path));if(!r.ok)throw Error(r.status);const bytes=Uint8Array.from(atob((await r.text()).trim()),x=>x.charCodeAt(0));const profile=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();if(profile.organization!==record.en)throw Error('Organization mismatch');org.status='indexed';
+ const nameKey=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');const names=new Set([record.en,record.fr,...(record.aliases||[])].map(nameKey));const matches=Object.entries(idx.organizations).filter(([k,v])=>names.has(nameKey(k))||names.has(nameKey(v.fr)));const sourceName=idx.organizations[record.en]?record.en:matches.length===1?matches[0][0]:null;
+ const org={en:record.en,fr:record.fr,status:'not-indexed',groups:{}},entry=idx.organizations[sourceName];
+ if(entry?.path){const r=await fetch(local(entry.path));if(!r.ok)throw Error(r.status);const bytes=Uint8Array.from(atob((await r.text()).trim()),x=>x.charCodeAt(0));const profile=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();if(profile.organization!==sourceName)throw Error('Organization mismatch');org.status='indexed';
  for(const [key,g] of Object.entries(profile.groups||{})){const rows=[];for(const [q,cell] of Object.entries(g.questions||{})){const other=profile.overall?.[q],v=percent(cell?.[0]),o=percent(other?.[0]);if(!idx.definitions[q]||v===null||o===null)continue;rows.push({q,v,o,n:count(cell?.[1]),overallN:count(other?.[1]),gap:Math.round((v-o)*100)/100})}org.groups[key]={fr:g.fr||key,rows:rows.sort((a,b)=>Math.abs(b.gap)-Math.abs(a.gap)||a.q.localeCompare(b.q)).slice(0,3),comparable:rows.length}}}
  return {org,definitions:idx.definitions,sources:idx.sources,period:idx.period}
 }
