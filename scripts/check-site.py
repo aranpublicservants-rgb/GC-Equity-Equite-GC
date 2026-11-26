@@ -58,7 +58,7 @@ assert 'gc-data-library.js' in home_html, 'public service-wide dataset browser m
 assert 'id="org-topic-picker"' in home_html and 'id="public-topic-picker"' in home_html, 'topic controls missing'
 assert 'href="#department-data"' in home_html and 'href="#equity-data"' in home_html, 'homepage two-area navigation broken'
 assert 'Browse below' not in home_html and 'Open the second page' not in home_html, 'navigation instructions leaked onto visitor page'
-assert home_html.count('systemic-change/')==1, 'the home page keeps one link to the systemic change tools'
+assert home_html.count('href="systemic-change/"')==1, 'the home page keeps one link to the systemic change tools'
 
 for name in ['gc-workspace.js','gc-dashboard.js','gc-org-sources.js','gc-added-sources.js','gc-data-library.js','gc-ai.js','gc-equity-additions.js','gc-tools.js','assets/fswep-browser.js','call-to-action.js','where-data-agree.js','staffing.js','women-femmes/assets/site.js','lib/pptxgen.bundle.js']:
     subprocess.run(['node','--check',str(ROOT/name)],check=True,capture_output=True)
