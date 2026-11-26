@@ -934,6 +934,8 @@ function syncSelectionURL(){
 }
 function restoreSelectionURL(){
  const p=new URL(location.href).searchParams,scope=selected?'org':'public';
+ const orgTopic=p.get('orgTopic'),orgPicker=$('org-topic-picker');
+ if(orgTopic&&orgPicker&&[...orgPicker.options].some(o=>o.value===orgTopic))orgPicker.value=orgTopic;
  for(const [suffix,key] of [['group-picker','group'],['topic-picker','topic']]){const el=$(scope+'-'+suffix),v=p.get(key)||'all';if(el&&[...el.options].some(o=>o.value===v))el.value=v;}
 }
 function restoreNavigation(){
@@ -983,7 +985,7 @@ window.addEventListener('popstate',restoreNavigation);
 $('org-picker')?.addEventListener('change',()=>renderOrg());
 $('org-group-picker')?.addEventListener('change',()=>renderOrg());
 $('public-group-picker')?.addEventListener('change',()=>publicTables());
-$('org-topic-picker')?.addEventListener('change',()=>applyTopics('org'));
+$('org-topic-picker')?.addEventListener('change',()=>{const u=new URL(location.href);u.searchParams.delete('orgTopic');history.replaceState(history.state,'',u);applyTopics('org');});
 $('public-topic-picker')?.addEventListener('change',()=>applyTopics('public'));
 let rerenderTimer;
 const update=()=>{if(!D)return;updateStatic();updateGroupLabels();populatePicker();renderOrg();if(!selected)publicTables();};
