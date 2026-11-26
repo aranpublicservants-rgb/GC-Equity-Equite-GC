@@ -77,7 +77,6 @@ jobs:
     timeout-minutes: 60
     env:
       ONNXRUNTIME_NODE_INSTALL_CUDA: skip
-      TRANSFORMERS_CACHE: ${{ runner.temp }}/gce-transformers-cache
     steps:
       - uses: actions/checkout@v4
         with:
@@ -96,6 +95,8 @@ jobs:
       - name: Install CPU inference dependencies (no CUDA download)
         run: npm install --no-save --no-package-lock --no-audit --no-fund @huggingface/transformers@3.8.1
       - name: Generate and validate optional multilingual neural vectors
+        env:
+          TRANSFORMERS_CACHE: ${{ runner.temp }}/gce-transformers-cache
         run: node scripts/build-local-equity-ai.mjs --vectors-only
       - name: Publish validated optional neural index
         env:
