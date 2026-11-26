@@ -8,6 +8,11 @@ on:
       - 'gc-workspace.js'
       - 'assets/department-depth.js'
       - 'assets/department-branch-widget.js'
+      - 'assets/branch-q65-gaps.js'
+      - 'assets/branch-q65-gaps.json'
+      - 'assets/branch-q65-gaps/**'
+      - 'branch-equity.html'
+      - 'tests/branch-q65-gaps.test.cjs'
       - 'assets/department-key-findings.json'
       - 'assets/department-key-findings/**'
       - 'assets/local-search-pages.json'
@@ -38,7 +43,7 @@ jobs:
         with:
           node-version: '22'
       - name: Verify exact source cells and bilingual routing
-        run: node --test tests/local-equity-ai.test.cjs
+        run: node --test tests/local-equity-ai.test.cjs tests/branch-q65-gaps.test.cjs
       - name: Install browser test dependencies
         run: |
           npm install --no-save --no-package-lock playwright@1.55.0
