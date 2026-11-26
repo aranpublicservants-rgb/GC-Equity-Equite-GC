@@ -1,0 +1,47 @@
+name: Built-in equity tools regression tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'gc-built-in-ai.js'
+      - 'gc-workspace.js'
+      - 'assets/department-depth.js'
+      - 'assets/department-branch-widget.js'
+      - 'assets/department-key-findings.json'
+      - 'assets/department-key-findings/**'
+      - 'assets/local-search-pages.json'
+      - 'assets/department-pages.json'
+      - 'assets/department-profile-index.json'
+      - 'data/department-profiles/**'
+      - 'accessibility-inclusion/index.html'
+      - 'scripts/equity-findings-core.js'
+      - 'tests/local-equity-ai*'
+      - '.github/workflows/local-equity-ai-tests.yml'
+  pull_request:
+    paths:
+      - 'gc-built-in-ai.js'
+      - 'assets/department-*.js'
+      - 'tests/local-equity-ai*'
+permissions:
+  contents: read
+concurrency:
+  group: equity-tools-tests-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact source cells and bilingual routing
+        run: node --test tests/local-equity-ai.test.cjs
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test desktop and mobile browser controls
+        run: node tests/local-equity-ai-browser.cjs
