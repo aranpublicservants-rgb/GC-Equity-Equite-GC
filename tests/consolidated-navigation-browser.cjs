@@ -33,6 +33,23 @@ async function cellText(box,rowLocator,label){
  return cells.length===headers.length?cells[col]:cells[col-1];
 }
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port+'/';const browser=await chromium.launch({headless:true,args:['--no-sandbox']});try{
+ // Selecting a topic before a department must open the requested section in the current language.
+ for(const [name,slug,language,topic,anchor,width] of [
+  ['Indigenous Services Canada','isc','en','branches','branches',1366],
+  ['National Defence','dnd','fr','branches','secteurs',390],
+  ['Fisheries and Oceans Canada','dfo','fr','commitments','promesses',390],
+  ['Accessibility Standards Canada','accessibility-standards-canada','en','branches','missing',1366],
+  ['Health Canada','health-canada','en','staffing','hiring',1366]
+ ]){
+  const context=await browser.newContext({viewport:{width,height:850}}),page=await context.newPage();
+  await page.goto(base+'?lang='+language,{waitUntil:'domcontentloaded'});
+  await page.waitForFunction(name=>Array.from(document.querySelector('#org-picker').options).some(o=>o.value===name),name,{timeout:60000});
+  await page.locator('#org-topic-picker').selectOption(topic);
+  await Promise.all([page.waitForURL(u=>u.pathname==='/'+slug+'/'&&u.hash==='#'+anchor,{timeout:30000}),page.locator('#org-picker').selectOption(name)]);
+  await page.locator('#'+anchor).waitFor({state:'visible',timeout:30000});
+  assert.equal(new URL(page.url()).searchParams.get('lang'),language,slug+' topic navigation language');
+  await context.close();
+ }
  for(const [slug,lang,width] of [['isc','en',1366],['cra','fr',390],['agriculture-and-agri-food-canada','en',390]]){
   const context=await browser.newContext({viewport:{width,height:850}}),page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(String(e)));
   await page.goto(base+slug+'/?lang='+lang,{waitUntil:'domcontentloaded'});const box=page.locator('#branch-results');
