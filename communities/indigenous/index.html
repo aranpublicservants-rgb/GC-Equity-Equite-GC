@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indigenous Federal Public Servants: Representation and Workplace Experience</title>
+<meta name="description" content="An independent data tool on the representation and 2024 workplace-survey experience of Indigenous employees in the Canadian federal public service, with First Nations, Métis and Inuit breakdowns by organization.">
+<meta property="og:title" content="Indigenous Federal Public Servants: Representation and Workplace Experience">
+<meta property="og:description" content="Representation against workforce availability and 2024 Public Service Employee Survey results for Indigenous employees, by organization, with First Nations, Métis and Inuit detail.">
+<meta property="og:type" content="website">
+<style>
+
+:root{
+  --ink:#1B2A41; --ink-soft:#44546A; --paper:#F7F7F4; --card:#FFFFFF; --line:#DCDFD9;
+  --teal:#0E7C7B; --teal-soft:#DCEFEE; --rust:#B3401E; --rust-soft:#F7E4DC;
+  --ok:#2E6E4E; --ok-soft:#E2EFE6; --bench:#5B6B7F; --gold:#8A6D1D; --gold-soft:#F5EDD6;
+  --mono:ui-monospace,"SF Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{font:16px/1.55 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3,.display{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;letter-spacing:.1px}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.site{background:var(--ink);color:#fff;padding:34px 0 26px;border-bottom:6px solid var(--teal)}
+header.site .eyebrow{font:600 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#9FC6C5;margin-bottom:12px}
+header.site h1{font-size:clamp(26px,4vw,40px);font-weight:700;max-width:840px}
+header.site p.sub{margin-top:12px;max-width:760px;color:#C9D2DD;font-size:15px}
+header.site p.sub strong{color:#fff}
+nav.tabs{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);z-index:50;box-shadow:0 1px 4px rgba(27,42,65,.06)}
+nav.tabs .wrap{display:flex;flex-wrap:wrap;gap:4px;padding-top:7px;padding-bottom:7px;align-items:center}
+.navgroup{position:relative}
+.navgroup>button,.navsolo{appearance:none;border:0;background:none;font:600 13.5px/1 inherit;color:var(--ink-soft);padding:11px 13px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.navgroup>button:hover,.navsolo:hover{background:var(--teal-soft);color:var(--ink)}
+.navgroup>button[aria-expanded="true"]{background:var(--teal-soft);color:var(--ink)}
+.navgroup.active-group>button,.navsolo[aria-current="true"]{background:var(--ink);color:#fff}
+.navgroup>button .caret{font-size:9px;opacity:.7}
+.navpanel{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 8px 24px rgba(27,42,65,.16);padding:6px;z-index:60;display:none}
+.navpanel.open{display:block}
+.navpanel button{display:block;width:100%;text-align:left;appearance:none;border:0;background:none;font:500 13.5px/1.3 inherit;color:var(--ink);padding:10px 12px;border-radius:6px;cursor:pointer}
+.navpanel button:hover{background:var(--teal-soft)}
+.navpanel button[aria-current="true"]{background:var(--ink);color:#fff;font-weight:600}
+@media(max-width:600px){
+  nav.tabs .wrap{gap:2px}
+  .navgroup>button,.navsolo{padding:10px 10px;font-size:13px}
+  .navpanel{min-width:200px}
+}
+main{padding:30px 0 60px}
+section.view{display:none}
+section.view.active{display:block}
+.lede{max-width:820px;font-size:17px;color:var(--ink-soft);margin-bottom:22px}
+.lede strong{color:var(--ink)}
+h2{font-size:26px;margin:6px 0 6px}
+h3{font-size:19px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:18px}
+.card h3{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.howto{font-size:13.5px;color:var(--ink-soft);background:var(--gold-soft);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0 16px;max-width:860px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:880px){.grid2,.grid3{grid-template-columns:1fr}}
+/* gap bars: the signature element */
+.gbar{margin:8px 0 16px}
+.gbar .lab{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;margin-bottom:19px}
+.gbar .lab .nm{font-weight:600}
+.gbar .lab .vals{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+.gbar .track{position:relative;height:22px;background:#ECEEE9;border-radius:4px;overflow:visible}
+.gbar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px 0 0 4px;background:var(--teal)}
+.gbar .fill.below{background:var(--rust)}
+.gbar .tick{position:absolute;top:-5px;bottom:-5px;width:3px;background:var(--bench);border-radius:2px}
+.gbar .tick::after{content:attr(data-lab);position:absolute;top:-16px;left:50%;transform:translateX(-50%);font:600 10px/1 var(--mono);color:var(--bench);white-space:nowrap}
+.verdict{font-size:12.5px;margin-top:4px}
+.verdict.ok{color:var(--ok)} .verdict.bad{color:var(--rust)} .verdict.na{color:var(--ink-soft)}
+.flag{display:inline-block;font:600 11.5px/1 var(--mono);padding:4px 8px;border-radius:20px;margin:2px 4px 2px 0}
+.flag.bad{background:var(--rust-soft);color:var(--rust)}
+.flag.ok{background:var(--ok-soft);color:var(--ok)}
+.flag.note{background:#EAECEF;color:var(--ink-soft)}
+/* tables */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--card)}
+caption{text-align:left;font:600 13px/1.4 inherit;color:var(--ink-soft);padding:10px 12px;background:#F1F2EE;border-bottom:1px solid var(--line)}
+th,td{padding:8px 11px;border-bottom:1px solid #ECEEE9;text-align:left;vertical-align:top}
+th{background:#F1F2EE;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);position:sticky;top:0;z-index:2}
+.scopebar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#EDF3F2;border:1px solid #CFE0DE;border-radius:8px;padding:9px 14px;margin:0 0 18px;font-size:13px}
+.scopebar .sl{font:700 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-right:4px}
+.scopebar .here{background:var(--ink);color:#fff;font-weight:600;padding:5px 12px;border-radius:16px}
+.scopebar a{background:#fff;border:1.5px solid var(--teal);color:var(--teal);font-weight:600;text-decoration:none;padding:4px 12px;border-radius:16px}
+.scopebar a:hover{background:var(--teal);color:#fff}
+.scopebar .why{flex-basis:100%;font-size:12px;color:var(--ink-soft)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:12.8px;white-space:nowrap}
+tr:hover td{background:#FAFBF8}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--ink)}
+th .arrow{font-size:10px}
+td .mini{display:inline-block;height:9px;background:var(--teal);border-radius:2px;vertical-align:middle;margin-left:6px}
+td .mini.below{background:var(--rust)}
+.supp{color:var(--ink-soft);font-style:italic}
+.below-mark{color:var(--rust);font-weight:700}
+.above-mark{color:var(--ok);font-weight:700}
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin:14px 0 18px}
+.ctl label{display:block;font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:5px}
+select,input[type=search]{font:14px/1.3 inherit;padding:9px 12px;border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);min-width:200px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.chips button{appearance:none;border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);font:600 13px/1 inherit;padding:8px 14px;border-radius:20px;cursor:pointer}
+.chips button:hover{border-color:var(--teal);color:var(--teal)}
+.chips button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:16px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .v{font-family:var(--mono);font-size:24px;font-weight:700}
+.kpi .l{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+/* sparkline */
+.spark{display:block}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-soft);margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.srclink{display:inline-block;font-size:12.5px;margin-top:6px}
+.src-card{border-left:5px solid var(--teal)}
+.src-card .meta{font:600 11.5px/1.5 var(--mono);color:var(--ink-soft);margin:6px 0}
+.src-card .embedded{border-left-color:var(--ok)}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-soft);font-size:13px}
+.hero-bars{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:18px 20px 8px;margin-top:20px;max-width:760px}
+.hero-bars .gbar .lab .nm,.hero-bars .gbar .lab .vals{color:#E5EAF0}
+.hero-bars .gbar .track{background:rgba(255,255,255,.14)}
+.hero-bars .gbar .tick{background:#C8B36A}
+.hero-bars .gbar .tick::after{color:#C8B36A}
+.hero-bars .verdict.ok{color:#9FD8B5}.hero-bars .verdict.bad{color:#F0A285}
+.hero-note{font-size:12px;color:#9AA8B8;margin:6px 0 10px}
+details{margin:8px 0}
+summary{cursor:pointer;font-weight:600;color:var(--teal)}
+.two-col{columns:2;column-gap:30px;max-width:980px}
+@media(max-width:760px){.two-col{columns:1}}
+dt{font-weight:700;margin-top:10px}
+dd{margin-left:0;color:var(--ink-soft);font-size:14.5px}
+.banner{background:var(--gold-soft);border:1px solid #E4D9B4;border-radius:8px;padding:12px 16px;font-size:13.5px;margin:0 0 20px;max-width:980px}
+/* export toolbar on tables */
+.tbltools{display:flex;justify-content:flex-end;gap:8px;margin:-2px 0 6px}
+.tbltools button{appearance:none;border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);font:600 11.5px/1 inherit;padding:6px 11px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.tbltools button:hover{border-color:var(--teal);color:var(--teal)}
+.tbltools .copied{border-color:var(--ok);color:var(--ok)}
+/* page-level action bar */
+.actionbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end;margin:0 0 14px}
+.actionbar button{appearance:none;border:1.5px solid var(--teal);background:#fff;color:var(--teal);font:600 12.5px/1 inherit;padding:8px 14px;border-radius:7px;cursor:pointer}
+.actionbar button:hover{background:var(--teal);color:#fff}
+.actionbar .muted{margin-right:auto;font-size:12px;color:var(--ink-soft)}
+/* tooltip for defined terms */
+.def{border-bottom:1px dotted var(--ink-soft);cursor:help;position:relative}
+.def:hover .tip,.def:focus .tip{display:block}
+.def .tip{display:none;position:absolute;bottom:130%;left:0;z-index:60;background:var(--ink);color:#fff;font:400 12.5px/1.45 -apple-system,"Segoe UI",sans-serif;padding:9px 12px;border-radius:7px;width:280px;box-shadow:0 4px 14px rgba(27,42,65,.25);text-transform:none;letter-spacing:normal}
+.def .tip::after{content:"";position:absolute;top:100%;left:18px;border:6px solid transparent;border-top-color:var(--ink)}
+@media print{
+  @page{margin:1.5cm}
+  nav.tabs,.actionbar,.tbltools,.scopebar,.skip,.chips,footer .wrap a{display:none!important}
+  header.site{background:#fff!important;color:#000!important;border-bottom:2px solid #000;padding:0 0 10px}
+  header.site .eyebrow{color:#000!important}
+  header.site h1{font-size:22px}
+  header.site .sub,.hero-note{color:#222!important}
+  .hero-bars{background:#fff!important;border:1px solid #999}
+  .hero-bars .gbar .lab .nm,.hero-bars .gbar .lab .vals{color:#000!important}
+  .hero-bars .gbar .track{background:#eee!important}
+  section.view{display:none!important}
+  section.view.printing{display:block!important}
+  .card{break-inside:avoid;border:1px solid #999;box-shadow:none}
+  body{background:#fff;font-size:11pt;color:#000}
+  a{color:#000;text-decoration:none}
+  .tblwrap{overflow:visible!important;max-height:none!important;border:1px solid #999}
+  table{font-size:9.5pt}
+  th{position:static}
+  .flag{border:1px solid #999}
+  .lede{color:#000}
+  .print-only{display:block!important}
+}
+.print-only{display:none}
+/* department profile + confidence + signal styling */
+.profile-strip{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.profile-strip>div{flex:1;min-width:150px;background:#F1F2EE;border-radius:8px;padding:10px 13px}
+.profile-strip .pl{display:block;font:600 10.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:3px}
+.profile-strip .pv{font-size:17px;font-weight:700;color:var(--ink)}
+.signal-note{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:0 7px 7px 0;padding:9px 13px;font-size:12.5px;color:#5a4a16;margin:10px 0}
+.request-box{background:#EDF3F2;border:1px solid #CFE0DE;border-radius:9px;padding:12px 15px;margin:14px 0;font-size:13.5px}
+.conf{display:inline-block;font:600 10px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:11px;vertical-align:middle}
+.conf-official{background:#E2EFE6;color:#2E6E4E}
+.conf-computed{background:#E6EBF2;color:#3a527d}
+.conf-entered{background:#F5EDD6;color:#8A6D1D}
+.conf-interp{background:#F1E6E0;color:#9a4a28}
+/* task-based entry cards */
+.entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 20px}
+.entry-card{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:18px 18px;transition:border-color .15s,transform .15s}
+.entry-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.entry-card .ico{font-size:22px;display:block;margin-bottom:6px}
+.entry-card h3{margin:0 0 5px;font-size:17px}
+.entry-card p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.45}
+@media(max-width:700px){.entry-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  body{font-size:15px}
+  .wrap{padding:0 14px}
+  .card{padding:14px 15px}
+  th,td{padding:6px 8px;font-size:12.5px}
+  td.num,th.num{font-size:12px}
+  th{font-size:11px}
+  .howto{font-size:12.5px;padding:9px 11px}
+  caption{font-size:12px;padding:8px 10px}
+  h2{font-size:22px}
+  h3{font-size:17px}
+  .kpis{gap:10px}
+  .kpi .v{font-size:21px}
+}
+
+
+ul.tight{margin:6px 0 0;padding-left:20px}
+ul.tight li{margin:5px 0;line-height:1.5;font-size:13.7px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+footer.site-foot{border-top:1px solid var(--line);margin-top:32px;padding:18px 0;background:var(--card)}
+footer.site-foot p{font-size:12px;color:var(--ink-soft);margin:0}
+header.site{background:linear-gradient(180deg,#1B2A41,#24344f);color:#fff;padding:22px 0}
+header.site h1{color:#fff;margin:0 0 4px;font-size:24px}
+header.site .tag{color:#cdd6e4;margin:0;font-size:14px}
+.istat-row{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0}
+.istat-row .istat{flex:1;min-width:230px;background:var(--bg,#f6f7f9);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.istat-num{font:700 26px/1.15 var(--mono);color:var(--ink)}
+.istat-num.below{color:#9C0006}
+.istat-lab{font-size:12.6px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
+.ctl input[type=text]{font:14px/1.3 inherit;padding:8px 12px;border:1.5px solid var(--line);border-radius:7px}
+
+</style>
+<link rel="canonical" href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/communities/indigenous/">
+<style id="first-visit-style">.first-visit{max-width:1100px;margin:1rem auto;padding:1rem;border:1px solid currentColor;border-radius:.55rem;box-sizing:border-box;line-height:1.55}.first-visit h2{font-size:1.2em;margin:0 0 .45rem}.first-visit p{margin:.4rem 0}.first-visit ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:.4rem .8rem;list-style:none;margin:.65rem 0 0;padding:0}.first-visit a{display:block;padding:.55rem .7rem;border:1px solid currentColor;border-radius:.3rem;text-decoration:underline;overflow-wrap:anywhere}.first-visit a:focus-visible{outline:3px solid currentColor;outline-offset:3px}.first-visit [lang="fr"]{display:none}html[lang^="fr"] .first-visit [lang="en"]{display:none}html[lang^="fr"] .first-visit [lang="fr"]{display:revert}</style><noscript><style>.view{display:block!important}</style></noscript><script>if(new URLSearchParams(location.search).get('lang')==='fr'){location.replace(new URL('fr.html',location.href));}</script></head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <h1>Indigenous Federal Public Servants</h1>
+    <p class="tag">Representation and workplace experience, by organization. An independent reading of public Government of Canada data.</p>
+  </div>
+</header>
+<nav class="tabs" aria-label="Sections"><div class="wrap" id="tabbar"></div></nav>
+<main id="main" class="wrap"><p><a href="fr.html" lang="fr">Français — données, tableaux et analyse des obstacles</a></p>
+
+<!-- INTRO -->
+<section class="view" id="view-intro"><section id="static-indigenous-data" style="max-width:70rem;margin:1rem auto;padding:1rem"><h2>Published survey evidence / Données publiées du sondage</h2><p>ISC source check: the 2024 Indigenous respondent results for Q24 (70%), Q42 (46%), Q45 (55%) and Q65 (14%) agree with the <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/isc/equity-explorer/">standalone ISC profile</a> (rounded response bases: 970 each). For overall ISC results, accommodation question bases and comparisons with other departments, use <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/isc/">GC Equity’s ISC profile</a>. / <span lang="fr">Vérification SAC : les résultats de 2024 des répondants autochtones pour les Q24 (70 %), Q42 (46 %), Q45 (55 %) et Q65 (14 %) concordent avec le <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/isc/equity-explorer/?lang=fr">profil SAC distinct</a> (970 réponses arrondies pour chaque question). Pour les résultats globaux, les bases des questions sur les mesures d’adaptation et les comparaisons ministérielles, consultez le <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/isc/?lang=fr">profil SAC d’Équité-GC</a>.</span></p><p>2024 PSES, Indigenous respondents compared with all respondents in the public service. / SAFF 2024, répondants autochtones comparés à l’ensemble des répondants de la fonction publique.</p><table><caption>Public service / Fonction publique</caption><thead><tr><th scope="col">Question</th><th scope="col">Indigenous / Autochtones</th><th scope="col">All / Ensemble</th></tr></thead><tbody><tr><th scope="row">Q65 — Were a victim of discrimination (past 12 months)</th><td>16%</td><td>9%</td></tr><tr><th scope="row">Q58 — Were a victim of harassment (past 12 months)</th><td>20%</td><td>12%</td></tr><tr><th scope="row">Q42 — Could start formal recourse without fear of reprisal</th><td>46%</td><td>51%</td></tr><tr><th scope="row">Q63 — Satisfied with how harassment is resolved</th><td>43%</td><td>50%</td></tr><tr><th scope="row">Q70 — Satisfied with how discrimination is resolved</th><td>46%</td><td>52%</td></tr><tr><th scope="row">Q72 — Satisfied with how racism complaints are resolved</th><td>8%</td><td>11%</td></tr><tr><th scope="row">Q45 — Believe they have opportunities for promotion</th><td>48%</td><td>51%</td></tr><tr><th scope="row">Q43 — Department supports career development</th><td>53%</td><td>55%</td></tr><tr><th scope="row">Q47 — Department respects individual differences</th><td>65%</td><td>69%</td></tr><tr><th scope="row">Q49 — Department implements anti-racism initiatives</th><td>60%</td><td>65%</td></tr><tr><th scope="row">Q24 — Would feel safe speaking about racism without reprisal</th><td>69%</td><td>72%</td></tr><tr><th scope="row">Q52 — Call to Action has had a positive impact</th><td>39%</td><td>43%</td></tr><tr><th scope="row">Q53 — Department treats me with respect</th><td>74%</td><td>78%</td></tr><tr><th scope="row">Q12 — Feel valued at work</th><td>62%</td><td>67%</td></tr></tbody></table><p><a href="#view-sources">Sources and methods / Sources et méthodes</a></p></section><p>For Indigenous employees, employee networks, managers and researchers. Independent ARAN evidence resource. <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/recourse/">Workplace recourse and deadlines</a>.</p><p lang="fr">Pour les fonctionnaires autochtones, les réseaux, les gestionnaires et les chercheurs. Ressource indépendante du RAAR. <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/recourse/?lang=fr">Recours et délais</a>.</p>
+  <section class="first-visit" aria-label="Start here / Par où commencer" data-first-visit="1"><div lang="en"><h2>Start here: what do you want to do?</h2><p>Choose a question. Representation means the share of employees in a group; a survey result describes what respondents said. They measure different things.</p><ul><li><a href="#" data-go="experience">How do Indigenous employees describe their workplace?</a></li><li><a href="#" data-go="representation">How many Indigenous employees work in each organization?</a></li><li><a href="#" data-go="subgroups">Compare First Nations, Inuit and Métis results</a></li><li><a href="#" data-go="organization">Look at one department</a></li><li><a href="#" data-go="staffing">Understand hiring and advancement</a></li></ul></div></section>
+<details class="first-visit" lang="fr" data-first-visit-fr="1"><summary>Guide de navigation en français</summary><p>Cette ressource indépendante présente les données fédérales publiées sur les fonctionnaires autochtones. Elle traite les Premières Nations, les Inuit et les Métis comme des peuples distincts. Une version française statique présente les données détaillées : <a href="fr.html">consulter les tableaux en français</a>.</p><p>La représentation indique la proportion des employés d’un groupe. Un résultat de sondage décrit les réponses des participants, et non l’ensemble du personnel.</p><ul><li><a href="#" data-go="experience">Expérience au travail</a></li><li><a href="#" data-go="representation">Représentation dans les organismes</a></li><li><a href="#" data-go="subgroups">Premières Nations, Inuit et Métis</a></li><li><a href="#" data-go="organization">Consulter un ministère</a></li><li><a href="#" data-go="staffing">Embauche et avancement</a></li></ul></details><h2>About this tool</h2>
+  <p class="lede">Indigenous Peoples bring knowledge, skills and perspectives that strengthen the federal public service. This tool looks honestly at how well the public service is living up to its commitment to welcome, respect, support and fully include First Nations, Métis and Inuit employees: how they are represented, what they reported in the 2024 Public Service Employee Survey, and where the experience still falls short of that commitment. Every figure is drawn from published Government of Canada data; nothing is estimated.</p>
+  <p style="font-size:14px;max-width:920px">It is organized around the five pillars of <strong>Many Voices, One Mind: A Pathway to Reconciliation</strong>, the whole-of-government strategy for Indigenous inclusion, so what you find here maps onto the framework departments already report against. This work is offered in the spirit of reconciliation, and with respect for First Nations, Métis and Inuit as distinct peoples rather than a single group.</p>
+  <div class="card" style="border-left:5px solid var(--teal)">
+    <h3>The five pillars of Many Voices, One Mind</h3>
+    <p class="howto">Many Voices, One Mind grew out of more than 2,100 responses from Indigenous employees gathered by the Interdepartmental Circles on Indigenous Representation, and is led by the Deputy Minister Champion for Federal Indigenous Employees. Its five pillars frame this page:</p>
+    <ul class="tight">
+      <li><strong>Creating a safe space.</strong> Psychological safety, freedom from discrimination and harassment, trust that concerns can be raised.</li>
+      <li><strong>Cultural competency.</strong> Anti-racism, respect for difference, a workplace that understands Indigenous realities.</li>
+      <li><strong>Training and development.</strong> Access to learning and support for growth.</li>
+      <li><strong>Talent management.</strong> Recognition, advancement, and a real path toward and within leadership.</li>
+      <li><strong>Recruitment and retention.</strong> Welcoming people in, and giving them reasons to stay.</li>
+    </ul>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>What you can find here</h3>
+      <ul class="tight">
+        <li><a href="#" data-go="experience">How Indigenous employees experience the workplace</a>, service-wide, against the public service as a whole.</li>
+        <li><a href="#" data-go="representation">Representation against workforce availability</a>, organization by organization.</li>
+        <li><a href="#" data-go="subgroups">First Nations, Métis and Inuit</a>, shown separately.</li>
+        <li><a href="#" data-go="compare">A comparison across organizations</a> on any survey question.</li>
+        <li><a href="#" data-go="organization">A single organization in depth</a>.</li>
+        <li><a href="#" data-go="scan">An automatic scan</a> for the largest gaps.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>How to read what you see</h3>
+      <ul class="tight">
+        <li><strong>Gap bars and benchmarks.</strong> A dashed line is a benchmark (workforce availability, or the public-service figure). A red bar falls on the unfavourable side of it.</li>
+        <li><strong>Direction.</strong> For the questions about experiencing discrimination, harassment, stress or racism's effect on mental health, a lower percentage is better. For every other question, higher is better. The colours handle this for you.</li>
+        <li><strong>Distinctions.</strong> Where the numbers allow, First Nations, Métis and Inuit are shown separately. Inuit results are published for far fewer organizations because the population is small, and the page says so wherever that is the case.</li>
+        <li><strong>Confidence.</strong> <span class="conf conf-official">official data</span> is transcribed directly from a Government of Canada source. <span class="conf conf-interp">interpretation</span> marks a reading laid on top of the data.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <h3>Reading these numbers with care</h3>
+    <p style="margin:0">These are screening signals, not conclusions. A gap shows where to look and ask; it does not by itself explain why. Numbers describe a workforce and cannot hold the fullness of anyone's experience; they are no substitute for listening to Indigenous employees directly, through sharing circles, networks and their own words. Where a group's count was too small to publish, the figure is left out rather than estimated; that silence reflects small numbers, not the absence of an issue, and the smallest communities are often the least visible in the data.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="view" id="view-experience">
+  <h2>The workplace experience, by pillar</h2>
+  <p class="lede">How Indigenous employees answered the 2024 survey, grouped under the five Many Voices, One Mind pillars, each result beside the public-service figure and the gap between them. This is the fullest single picture of where the Indigenous experience diverges from the workforce average, built to map onto pillar-based reporting.</p>
+  <div id="pillarBlocks"></div>
+  <div class="card">
+    <div class="actionbar"><button type="button" id="expCopy">Copy the full table</button><button type="button" id="expCsv">Download CSV</button></div>
+  </div>
+</section>
+
+<!-- REPRESENTATION -->
+<section class="view" id="view-representation">
+  <h2>Representation against workforce availability</h2>
+  <p class="lede">Indigenous workforce availability, the share of the workforce available to the federal government that is Indigenous, is <strong>4.0%</strong>. The bars show each organization's Indigenous representation against the common public-service-wide 4.0% benchmark, not each department’s own availability estimate. For ISC, its department-specific estimate is 5.6%; see the <a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/isc/">ISC profile</a>. Red is below availability.</p>
+  <div class="card">
+    <div class="controls">
+      <div class="ctl"><label for="repTier">Size band</label><select id="repTier"><option value="all">All organizations</option><option value="xl">Very large (10,000+)</option><option value="l">Large (5,000–9,999)</option><option value="m">Medium (1,000–4,999)</option><option value="s">Small (under 1,000)</option></select></div>
+      <div class="ctl"><label for="repSort">Order</label><select id="repSort"><option value="gap">Furthest below availability first</option><option value="rep">Highest representation first</option><option value="name">Organization (A–Z)</option></select></div>
+    </div>
+    <div id="repChart"></div>
+    <div id="repSummary" style="font-size:13px;color:var(--ink-soft);margin-top:6px"></div>
+    <div class="actionbar" style="margin-top:10px"><button type="button" id="repCsv">Download CSV</button></div>
+  </div>
+</section>
+
+<!-- RECRUITMENT & STAFFING -->
+<section class="view" id="view-staffing">
+  <h2>Recruitment and staffing</h2>
+  <p class="lede">Representation is the result of who gets in and who moves up. These are the staffing stages where Indigenous candidates are most often lost, drawn from the Public Service Commission's audits and its staffing dashboard. The figures below are public-service-wide; your organization's own staffing data is what turns a pattern into an action, and the last section shows how to request it.</p>
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <h3>The recruitment funnel: where Indigenous applicants are shed <span class="conf conf-official">official data</span></h3>
+    <p class="howto">The Public Service Commission's audit of recruitment tracks each designated group from application to appointment. The "survival ratio" is appointment-stage representation divided by application-stage representation: 1.00 means a group ends where it started; below 1.00 means the group made up a smaller share of appointments than of applicants; it is not an individual selection rate.</p>
+    <div class="istat-row">
+      <div class="istat"><div class="istat-num below">0.83</div><div class="istat-lab">Indigenous survival ratio through the recruitment funnel. Below 1.00: Indigenous applicants are lost between applying and being appointed.</div></div>
+      <div class="istat"><div class="istat-num">Interviews</div><div class="istat-lab">The audit found the interview stage drove the entire Indigenous drop; reference checks helped only women, and the appointment stage itself did not recover the loss.</div></div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:6px">Source: Public Service Commission, audit of employment equity representation in recruitment. The survival ratio compares the Indigenous share of applicants to the Indigenous share of those appointed.</p>
+  </div>
+  <div class="card">
+    <h3>Merit screening and automated pre-assessment</h3>
+    <p class="howto">How candidates are screened before assessment shapes who ever reaches an interview. The Commission's audit of pre-assessment found that automated and organizational screening reduced representation for intersectional candidates specifically, including Indigenous people with disabilities, and that only about half of organizations had the accountability mechanisms in place to catch it.</p>
+    <ul class="tight">
+      <li>Screening criteria, including how experience and education were judged and how citizenship status was treated, were identified as points where representation fell.</li>
+      <li>The losses compound for people who are Indigenous and also belong to another group, which a single-axis count can miss entirely.</li>
+      <li>The fix is local: examine your own organization's screening pass rates by Indigenous identity, and who sets and reviews the criteria.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Acting appointments: the untracked pipeline</h3>
+    <p class="howto">Acting appointments are the main feeder to promotion, and they are the one staffing flow not in any Treasury Board table. Only the Public Service Commission's staffing dashboard reports them by group, and the National Joint Council's equity committee flagged equity representation in acting appointments as a 2024-25 consultation item.</p>
+    <p style="margin:0 0 10px">If Indigenous representation is at availability overall but thinner in senior roles, the barrier has likely moved upstream into who gets acting opportunities, and at what level. That is testable: pull acting shares by Indigenous identity and subgroup for your organization.</p>
+    <p style="margin:0"><a href="https://www.canada.ca/en/public-service-commission/services/staffing-assessment-tools-resources/human-resources-specialists-hiring-managers/human-resources-toolbox/staffing-dashboards.html" target="_blank" rel="noopener">Public Service Commission staffing dashboards →</a></p>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="view" id="view-leadership">
+  <h2>Leadership</h2>
+  <p class="lede">Representation overall and representation in the executive ranks are different questions. Indigenous employees are at or above workforce availability in the public service as a whole, which makes the senior-level picture the one to watch: gains at entry mean little if they do not reach the tables where decisions are made.</p>
+  <div class="card">
+    <div class="istat-row">
+      <div class="istat"><div class="istat-num">5.5%</div><div class="istat-lab">Indigenous representation in the core public administration, above the 4.0% workforce-availability benchmark.</div></div>
+      <div class="istat"><div class="istat-num">4.0%</div><div class="istat-lab">Public-service-wide Indigenous workforce availability (not department-specific).</div></div>
+    </div>
+    <p class="howto" style="margin-top:12px">Overall representation above availability is real progress and worth stating plainly. The question it raises is distribution: whether that 5.5% is spread evenly across classifications and levels, or concentrated in junior and feeder groups while the executive cadre stays thinner. Acting appointments (previous section) are the mechanism that usually explains the difference.</p>
+    <p style="margin:0"><a href="https://hiring-embauche.psc-cfp.gc.ca/data-donnees/" target="_blank" rel="noopener">Verify your organization's executive representation by Indigenous identity (PSC data) →</a></p>
+  </div>
+</section>
+
+<!-- SUBGROUPS -->
+<section class="view" id="view-subgroups">
+  <h2>First Nations, Métis and Inuit</h2>
+  <p class="lede">The single "Indigenous" figure hides real differences between the three groups. This shows them separately, public-service-wide. Inuit results are published for far fewer organizations because the population is small, so read the Inuit figure with particular care.</p>
+  <div class="card">
+    <div class="ctl" style="margin-bottom:8px"><label for="subQ">Question</label><select id="subQ"></select></div>
+    <div id="subChart"></div>
+  </div>
+  <div class="card">
+    <h3>All questions, by subgroup</h3>
+    <div class="tblwrap"><table id="subTable"><caption>2024 PSES by Indigenous subgroup, whole public service. Em dash means not published (count too small). Source: Employment Equity derived-variable file.</caption><thead></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="view" id="view-compare">
+  <h2>Compare across organizations</h2>
+  <p class="lede">Pick a question to rank every organization by its Indigenous employees' result, with the Indigenous service-wide figure marked. Use it to find where the experience is hardest, and where it is strongest.</p>
+  <div class="card">
+    <div class="ctl" style="margin-bottom:8px"><label for="cmpQ">Question</label><select id="cmpQ"></select></div>
+    <div id="cmpChart"></div>
+    <label for="cmpFinding" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block;margin-top:12px">Paste-ready finding</label>
+    <textarea id="cmpFinding" rows="3" style="width:100%;font:13px/1.5 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:10px;margin-top:6px" readonly></textarea>
+    <p class="signal-note">Screening signal, not a finding. Indigenous samples in smaller organizations are small; weight the service-wide pattern and larger organizations more heavily.</p>
+  </div>
+</section>
+
+<!-- ORGANIZATION -->
+<section class="view" id="view-organization">
+  <h2>One organization in depth</h2>
+  <p class="lede">Everything the data holds on Indigenous employees in a single organization: representation against availability, the survey results next to both the Indigenous service-wide figure and the organization's own overall result, and the subgroups where published.</p>
+  <div class="card">
+    <div class="ctl" style="margin-bottom:8px"><label for="orgSel">Organization</label><select id="orgSel"></select></div>
+    <div id="orgCard"></div>
+  </div>
+</section>
+
+<!-- LINKAGES -->
+<section class="view" id="view-linkages">
+  <h2>Linkages</h2>
+  <p class="lede">Connections across the datasets that no single table shows, each one a question to test in your organization rather than a settled conclusion. The data trail is stated so you can follow it.</p>
+  <div class="card">
+    <div class="tblwrap"><table><caption>Cross-dataset linkages relevant to Indigenous employees. Each is a hypothesis to investigate, with the supporting data.</caption>
+    <thead><tr><th scope="col">Linkage</th><th scope="col">The data trail</th><th scope="col">The barrier hypothesis</th></tr></thead><tbody>
+    <tr><td><strong>The untracked acting pipeline</strong></td><td>Indigenous representation sits at 5.5% overall, above the 4.0% benchmark, yet thins toward senior levels. Acting appointments, the main feeder to promotion, appear in no Treasury Board table; only the PSC dashboard reports them, and the National Joint Council flagged acting equity for 2024-25 consultation.</td><td>The promotion barrier has likely moved upstream into who gets acting opportunities and at what level. Test: pull acting shares by Indigenous identity and subgroup for your organization.</td></tr>
+    <tr><td><strong>The interview wall</strong></td><td>Indigenous applicants survive the recruitment funnel at a ratio of 0.83, and the PSC audit found the interview stage drove the entire Indigenous drop, not application volume or screening alone.</td><td>The loss is concentrated at one assessable stage. Test: review interview board composition, questions and rating guides for Indigenous-relevant bias, and compare interview pass rates by Indigenous identity.</td></tr>
+    <tr><td><strong>The silencing of the most affected</strong></td><td>Indigenous employees report more discrimination (16% vs 9% overall) and harassment (20% vs 12%), yet sit below the public-service average on feeling safe to speak about racism without reprisal and on satisfaction with how complaints are resolved.</td><td>The people facing the most harm feel least safe reporting it, so formal complaint counts understate what is happening. Test: pair complaint volumes with the by-group "safe to speak" figure before reading a low count as low harm.</td></tr>
+    <tr><td><strong>Compounding barriers at intersections</strong></td><td>The PSC pre-assessment audit found automated screening cut representation for Indigenous people with disabilities specifically, a group a single-axis Indigenous count or a single-axis disability count can each miss.</td><td>Barriers compound at intersections that aggregate reporting hides. Test: where numbers allow, look at Indigenous employees who also report a disability separately, and protect small-cell confidentiality while doing so.</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- SCAN -->
+<section class="view" id="view-scan"><details open><summary>Static default barrier scan — top 10</summary><div class="scroll" role="region" tabindex="0" aria-label="Default barrier scan: 10 largest gaps (2024 PSES)"><table><caption>Default barrier scan: 10 largest gaps (2024 PSES)</caption><thead><tr><th scope="col">Organization</th><th scope="col">Question</th><th scope="col">Indigenous</th><th scope="col">Service-wide Indigenous</th><th scope="col">Gap (points)</th></tr></thead><tbody><tr><th scope="row">Canada Energy Regulator</th><td>Q45 — Believe they have opportunities for promotion</td><td>15%</td><td>48%</td><td>33</td></tr><tr><th scope="row">Prairies Economic Development Canada</th><td>Q52 — Call to Action has had a positive impact</td><td>13%</td><td>39%</td><td>26</td></tr><tr><th scope="row">Canada Border Services Agency</th><td>Q47 — Department respects individual differences</td><td>40%</td><td>65%</td><td>25</td></tr><tr><th scope="row">Canada Border Services Agency</th><td>Q53 — Department treats me with respect</td><td>50%</td><td>74%</td><td>24</td></tr><tr><th scope="row">Canada Energy Regulator</th><td>Q43 — Department supports career development</td><td>30%</td><td>53%</td><td>23</td></tr><tr><th scope="row">Correctional Service Canada</th><td>Q12 — Feel valued at work</td><td>41%</td><td>62%</td><td>21</td></tr><tr><th scope="row">Canada Border Services Agency</th><td>Q43 — Department supports career development</td><td>33%</td><td>53%</td><td>20</td></tr><tr><th scope="row">Public Prosecution Service of Canada</th><td>Q63 — Satisfied with how harassment is resolved</td><td>24%</td><td>43%</td><td>19</td></tr><tr><th scope="row">Prairies Economic Development Canada</th><td>Q45 — Believe they have opportunities for promotion</td><td>29%</td><td>48%</td><td>19</td></tr><tr><th scope="row">Canadian Food Inspection Agency</th><td>Q52 — Call to Action has had a positive impact</td><td>22%</td><td>39%</td><td>17</td></tr></tbody></table></div><p>Screening signals only. No suppressed cell is reconstructed.</p></details>
+  <h2>Automatic barrier scan</h2>
+  <p class="lede">This scans every organization and every question for Indigenous employees at once, and ranks the largest gaps, where Indigenous employees fare worse than Indigenous employees service-wide, or worse than the organization's own overall result. The fastest route to a shortlist of where to look.</p>
+  <div class="card" style="border-left:5px solid var(--rust)">
+    <div class="controls">
+      <div class="ctl"><label for="scanRef">Compared to</label><select id="scanRef"><option value="ps">Indigenous, service-wide</option><option value="dept">The organization's overall result</option></select></div>
+      <div class="ctl"><label for="scanMin">Minimum gap</label><select id="scanMin"><option value="10">10+</option><option value="7">7+</option><option value="5" selected>5+</option><option value="3">3+</option></select></div>
+    </div>
+    <div id="scanSummary" style="font-size:13.5px;margin:8px 0"></div>
+    <div class="tblwrap" style="max-height:460px;overflow:auto"><table id="scanTable"><caption>Largest gaps for Indigenous employees across the 2024 PSES, ranked. Source: Employment Equity derived-variable file.</caption><thead></thead><tbody></tbody></table></div>
+    <div class="actionbar" style="margin-top:10px"><span class="muted" id="scanCount"></span><button type="button" id="scanCopy">Copy these rows</button><button type="button" id="scanCsv">Download CSV</button></div>
+  </div>
+</section>
+
+<!-- REQUEST -->
+<section class="view" id="view-request">
+  <h2>Request the data</h2>
+  <p class="lede">The most important Indigenous-specific numbers are not on any public portal: acting appointments by Indigenous identity, interview and screening pass rates, accommodation outcomes, exit reasons. Your organization holds them. Tick what you need and this writes a formal internal data request, citing the instruments that oblige the organization to identify and remove barriers, and naming the systems the data lives in.</p>
+  <div class="card">
+    <div class="controls" style="margin-bottom:6px">
+      <div class="ctl"><label for="reqOrg">Organization</label><input type="text" id="reqOrg" placeholder="e.g. your department" style="min-width:220px"></div>
+      <div class="ctl"><label for="reqRole">Your role / table</label><input type="text" id="reqRole" placeholder="e.g. Indigenous employee network co-chair" style="min-width:220px"></div>
+    </div>
+    <div style="margin:6px 0"><strong style="font-size:12.5px">Data to request</strong> <span style="font-size:12px;color:var(--ink-soft)">(tick all that apply)</span></div>
+    <div id="reqItems" style="display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px"></div>
+    <label for="reqText" style="font:600 12px/1 inherit;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block">Generated request</label>
+    <textarea id="reqText" rows="16" style="width:100%;font:13px/1.55 var(--mono);border:1.5px solid var(--line);border-radius:7px;padding:12px;margin-top:6px"></textarea>
+    <div class="actionbar" style="margin-top:10px"><button type="button" id="reqCopy">Copy request</button></div>
+    <p class="signal-note">This is a template you control. Edit it freely, and always follow your organization's data-access and privacy rules; ask for figures with small-cell suppression so no individual can be identified.</p>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="view" id="view-sources">
+  <h2>Sources and method</h2>
+  <div class="card">
+    <h3>Where the numbers come from</h3>
+    <ul class="tight">
+      <li><strong>Workplace experience and subgroups.</strong> 2024 Public Service Employee Survey, Employment Equity derived-variable dataset (Treasury Board of Canada Secretariat / Statistics Canada), via Open Government. Indigenous identity and the First Nations, Métis and Inuit breakdowns are respondents' self-identification.</li>
+      <li><strong>Public-service-overall reference.</strong> 2024 PSES, organization-level results (subset 1).</li>
+      <li><strong>Representation and workforce availability.</strong> Treasury Board of Canada Secretariat employment-equity data; Indigenous workforce availability of 4.0% is the benchmark used in federal employment-equity reporting.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>How to read it, and its limits</h3>
+    <ul class="tight">
+      <li>For the two "experienced it" questions, lower is better; for the rest, higher is better. This is handled for you in the colours.</li>
+      <li>Comparisons across organizations rest on small Indigenous samples in smaller organizations; a single figure can move on a few responses.</li>
+      <li>Inuit results are published for only a handful of organizations; the page flags this wherever Inuit data is thin.</li>
+      <li>Suppressed cells are absence of published data, not absence of an issue.</li>
+      <li>These are screening signals to investigate, not findings or causal claims.</li>
+    </ul>
+  </div>
+  <p style="font-size:12.5px;color:var(--ink-soft);max-width:920px">Independent analytical tool. Not a Government of Canada publication and not affiliated with or endorsed by any federal organization. Built from public open data so that anyone can examine the same figures.</p>
+</section>
+
+</main>
+<footer class="site-foot"><div class="wrap"><p>Independent tool built from public Government of Canada data. 2024 Public Service Employee Survey and Treasury Board employment-equity data. Figures transcribed, not estimated.</p></div></footer>
+
+<script>
+const DATA={"QORDER":["Q65","Q58","Q42","Q63","Q70","Q72","Q45","Q43","Q47","Q49","Q24","Q52","Q53","Q12"],"QMETA":{"Q65":["neg","Were a victim of discrimination (past 12 months)"],"Q58":["neg","Were a victim of harassment (past 12 months)"],"Q42":["pos","Could start formal recourse without fear of reprisal"],"Q63":["pos","Satisfied with how harassment is resolved"],"Q70":["pos","Satisfied with how discrimination is resolved"],"Q72":["pos","Satisfied with how racism complaints are resolved"],"Q45":["pos","Believe they have opportunities for promotion"],"Q43":["pos","Department supports career development"],"Q47":["pos","Department respects individual differences"],"Q49":["pos","Department implements anti-racism initiatives"],"Q24":["pos","Would feel safe speaking about racism without reprisal"],"Q52":["pos","Call to Action has had a positive impact"],"Q53":["pos","Department treats me with respect"],"Q12":["pos","Feel valued at work"]},"WFA_I":4.0,"IND":{"Public Service":{"Q12":62,"Q24":69,"Q42":46,"Q43":53,"Q45":48,"Q47":65,"Q49":60,"Q52":39,"Q53":74,"Q58":20,"Q63":43,"Q65":16,"Q70":46,"Q72":8},"Canada Revenue Agency":{"Q12":61,"Q24":74,"Q42":50,"Q43":58,"Q45":51,"Q47":69,"Q49":69,"Q52":41,"Q53":75,"Q58":14,"Q63":53,"Q65":12,"Q70":54},"Employment and Social Development Canada":{"Q12":67,"Q24":72,"Q42":51,"Q43":60,"Q45":55,"Q47":70,"Q49":67,"Q52":51,"Q53":78,"Q58":16,"Q63":51,"Q65":12,"Q70":53},"National Defence":{"Q12":59,"Q24":67,"Q42":47,"Q43":50,"Q45":38,"Q47":61,"Q49":59,"Q52":33,"Q53":76,"Q58":22,"Q63":43,"Q65":20,"Q70":47,"Q72":8},"Correctional Service Canada":{"Q12":41,"Q24":56,"Q42":35,"Q43":40,"Q45":42,"Q47":49,"Q49":49,"Q52":26,"Q53":59,"Q58":36,"Q63":29,"Q65":29,"Q70":34},"Fisheries and Oceans Canada":{"Q12":69,"Q24":69,"Q42":45,"Q43":52,"Q45":50,"Q47":63,"Q49":56,"Q52":35,"Q53":75,"Q58":17,"Q63":42,"Q65":15,"Q70":49},"Health Canada":{"Q12":60,"Q24":74,"Q42":47,"Q43":53,"Q45":49,"Q47":66,"Q49":69,"Q52":41,"Q53":72,"Q58":18,"Q63":40,"Q65":17,"Q70":32,"Q72":9},"Public Services and Procurement Canada":{"Q12":68,"Q24":74,"Q42":50,"Q43":59,"Q45":52,"Q47":74,"Q49":69,"Q52":44,"Q53":78,"Q58":11,"Q63":50,"Q65":13,"Q70":51},"Statistics Canada":{"Q12":67,"Q24":76,"Q42":51,"Q43":49,"Q45":50,"Q47":68,"Q49":63,"Q52":30,"Q53":78,"Q58":13,"Q63":38,"Q65":9,"Q70":47},"Agriculture and Agri-Food Canada":{"Q12":72,"Q24":67,"Q42":50,"Q43":54,"Q45":41,"Q47":70,"Q49":63,"Q52":44,"Q53":86,"Q58":21,"Q63":51,"Q65":17,"Q70":55},"Innovation, Science and Economic Development Canada":{"Q12":70,"Q24":78,"Q42":46,"Q43":63,"Q45":54,"Q47":80,"Q49":71,"Q52":42,"Q53":78,"Q58":14,"Q63":46,"Q65":13,"Q70":53},"Environment and Climate Change Canada":{"Q12":62,"Q24":72,"Q42":52,"Q43":58,"Q45":44,"Q47":68,"Q49":61,"Q52":42,"Q53":75,"Q58":19,"Q63":42,"Q65":12,"Q70":48},"Transport Canada":{"Q12":56,"Q24":64,"Q42":48,"Q43":54,"Q45":48,"Q47":63,"Q49":72,"Q52":44,"Q53":69,"Q58":28,"Q63":46,"Q65":19,"Q70":50},"Immigration, Refugees and Citizenship Canada":{"Q12":63,"Q24":75,"Q42":49,"Q43":50,"Q45":48,"Q47":71,"Q49":67,"Q52":50,"Q53":76,"Q58":14,"Q63":56,"Q65":15,"Q70":54},"Global Affairs Canada":{"Q12":61,"Q24":70,"Q42":49,"Q43":45,"Q45":43,"Q47":63,"Q49":53,"Q52":56,"Q53":67,"Q58":31,"Q63":39,"Q65":13,"Q70":33},"Natural Resources Canada":{"Q12":73,"Q24":82,"Q42":55,"Q43":67,"Q45":48,"Q47":73,"Q49":54,"Q52":52,"Q53":83,"Q58":18,"Q63":47,"Q65":18,"Q70":42,"Q72":8},"Royal Canadian Mounted Police":{"Q12":70,"Q24":72,"Q42":48,"Q43":55,"Q45":47,"Q47":69,"Q49":60,"Q52":43,"Q53":79,"Q58":17,"Q63":50,"Q65":9,"Q70":58},"Indigenous Services Canada":{"Q12":65,"Q24":70,"Q42":46,"Q43":55,"Q45":55,"Q47":67,"Q49":57,"Q52":40,"Q53":76,"Q58":19,"Q63":45,"Q65":14,"Q70":45},"Veterans Affairs Canada":{"Q12":61,"Q24":82,"Q42":59,"Q43":56,"Q45":39,"Q47":66,"Q49":69,"Q52":54,"Q53":76,"Q58":12,"Q63":60,"Q70":64},"Department of Justice Canada":{"Q12":70,"Q24":64,"Q42":53,"Q43":63,"Q45":54,"Q47":71,"Q49":58,"Q52":40,"Q53":80,"Q58":18,"Q63":49,"Q65":15,"Q70":53},"Canadian Heritage":{"Q12":69,"Q24":76,"Q42":43,"Q43":59,"Q45":47,"Q47":76,"Q49":58,"Q52":40,"Q53":75,"Q65":19,"Q70":38},"Public Service Commission of Canada":{"Q12":67,"Q24":72,"Q42":43,"Q43":52,"Q45":39,"Q47":60,"Q49":64,"Q52":55,"Q53":71},"Crown-Indigenous Relations and Northern Affairs Canada":{"Q12":76,"Q24":70,"Q42":51,"Q43":59,"Q45":50,"Q47":69,"Q49":57,"Q52":48,"Q53":80,"Q58":16,"Q63":40,"Q65":14,"Q70":48,"Q72":0},"Immigration and Refugee Board of Canada":{"Q12":60,"Q24":68,"Q42":34,"Q43":51,"Q45":34,"Q47":62,"Q49":67,"Q52":23,"Q53":75,"Q63":36,"Q70":59},"Department of Finance Canada":{"Q12":52,"Q24":90,"Q42":47,"Q43":59,"Q45":59,"Q47":93,"Q49":69,"Q52":39,"Q53":100,"Q58":0,"Q65":0},"Canadian Grain Commission":{"Q12":69,"Q24":86,"Q42":41,"Q43":59,"Q45":50,"Q47":74,"Q49":59,"Q52":31,"Q53":74,"Q65":0},"Treasury Board of Canada Secretariat":{"Q12":73,"Q24":72,"Q42":56,"Q43":70,"Q45":58,"Q47":71,"Q49":72,"Q52":49,"Q53":79,"Q58":14,"Q63":49,"Q65":17,"Q70":53},"Privy Council Office":{"Q12":79,"Q24":84,"Q42":66,"Q43":71,"Q45":51,"Q47":82,"Q49":64,"Q52":55,"Q53":87},"Canadian Radio-television and Telecommunications Commission":{"Q12":84,"Q24":66,"Q42":40,"Q43":81,"Q45":34,"Q47":72,"Q49":64,"Q52":79,"Q53":90,"Q63":81},"Atlantic Canada Opportunities Agency":{"Q12":72,"Q24":100,"Q42":77,"Q43":64,"Q45":69,"Q47":91,"Q49":72,"Q52":85,"Q53":90,"Q58":0,"Q65":0},"Canadian Space Agency":{"Q12":84,"Q24":62,"Q42":42,"Q43":60,"Q45":50,"Q47":92,"Q49":77,"Q52":40,"Q53":74},"Shared Services Canada":{"Q12":64,"Q24":72,"Q42":51,"Q43":64,"Q45":50,"Q47":73,"Q49":59,"Q52":33,"Q53":76,"Q58":9,"Q63":52,"Q65":8,"Q70":54},"Office of the Chief Electoral Officer":{"Q12":74,"Q24":88,"Q42":61,"Q43":78,"Q45":38,"Q47":62,"Q49":71,"Q52":35,"Q53":78,"Q63":67,"Q70":53},"Public Prosecution Service of Canada":{"Q12":68,"Q24":55,"Q42":52,"Q43":61,"Q45":49,"Q47":77,"Q49":47,"Q52":35,"Q53":84,"Q63":24,"Q65":24},"Impact Assessment Agency of Canada":{"Q12":92,"Q24":78,"Q42":39,"Q43":61,"Q45":62,"Q47":71,"Q49":67,"Q52":68,"Q53":100},"National Research Council Canada":{"Q12":88,"Q24":69,"Q42":62,"Q43":59,"Q45":58,"Q47":71,"Q49":49,"Q52":49,"Q53":87,"Q70":44},"Public Safety Canada":{"Q12":78,"Q24":73,"Q42":54,"Q43":50,"Q45":43,"Q47":68,"Q49":55,"Q52":32,"Q53":93,"Q63":46,"Q65":15,"Q70":47},"Public Health Agency of Canada":{"Q12":60,"Q24":60,"Q42":42,"Q43":54,"Q45":36,"Q47":58,"Q49":60,"Q52":48,"Q53":74,"Q58":21,"Q63":34,"Q65":13,"Q70":43},"Library and Archives Canada":{"Q12":76,"Q24":84,"Q42":59,"Q43":57,"Q45":62,"Q47":77,"Q49":50,"Q52":50,"Q53":81,"Q70":50},"Canada Energy Regulator":{"Q12":63,"Q24":66,"Q42":41,"Q43":30,"Q45":15,"Q47":59,"Q49":65,"Q52":40,"Q53":71,"Q58":0},"Prairies Economic Development Canada":{"Q12":70,"Q24":67,"Q42":60,"Q43":85,"Q45":29,"Q47":85,"Q49":60,"Q52":13,"Q53":85},"Canada School of Public Service":{"Q12":70,"Q24":90,"Q42":38,"Q43":60,"Q45":45,"Q47":95,"Q49":80,"Q52":88,"Q53":85},"Natural Sciences and Engineering Research Council of Canada":{"Q12":85,"Q24":92,"Q42":73,"Q43":80,"Q45":74,"Q47":82,"Q49":73,"Q52":58,"Q53":100,"Q65":0},"Housing, Infrastructure and Communities Canada":{"Q12":58,"Q24":65,"Q42":41,"Q43":52,"Q45":44,"Q47":50,"Q49":65,"Q52":43,"Q53":73,"Q65":19},"Canada Border Services Agency":{"Q12":46,"Q24":64,"Q42":31,"Q43":33,"Q45":38,"Q47":40,"Q49":54,"Q52":28,"Q53":50,"Q58":31,"Q63":27,"Q65":28,"Q70":33,"Q72":0},"Canadian Food Inspection Agency":{"Q12":55,"Q24":70,"Q42":44,"Q43":37,"Q45":37,"Q47":63,"Q49":51,"Q52":22,"Q53":77,"Q58":24,"Q63":42,"Q65":13,"Q70":46},"Parks Canada":{"Q12":74,"Q24":69,"Q42":52,"Q43":58,"Q45":58,"Q47":72,"Q49":49,"Q52":41,"Q53":87,"Q58":20,"Q63":43,"Q65":19,"Q70":47},"Communications Security Establishment Canada":{"Q12":81,"Q24":76,"Q42":51,"Q43":73,"Q45":78,"Q47":80,"Q49":82,"Q52":43,"Q53":83,"Q63":63,"Q65":21,"Q70":59},"Micro-organizations combined":{"Q12":57,"Q24":57,"Q42":47,"Q43":53,"Q45":50,"Q47":72,"Q49":47,"Q52":29,"Q53":62,"Q58":30,"Q63":41,"Q65":18,"Q70":44}},"OVERALL":{"Public Service":{"Q12":67,"Q24":72,"Q42":51,"Q43":55,"Q45":51,"Q47":69,"Q49":65,"Q52":43,"Q53":78,"Q58":12,"Q63":50,"Q65":9,"Q70":52,"Q72":11},"Canada Revenue Agency":{"Q12":67,"Q24":69,"Q42":54,"Q43":58,"Q45":54,"Q47":72,"Q49":73,"Q52":47,"Q53":79,"Q58":8,"Q63":60,"Q65":7,"Q70":60,"Q72":13},"Employment and Social Development Canada":{"Q12":69,"Q24":71,"Q42":54,"Q43":61,"Q45":56,"Q47":72,"Q49":70,"Q52":52,"Q53":82,"Q58":10,"Q63":57,"Q65":9,"Q70":58,"Q72":17},"National Defence":{"Q12":67,"Q24":73,"Q42":56,"Q43":55,"Q45":46,"Q47":69,"Q49":65,"Q52":38,"Q53":81,"Q58":15,"Q63":50,"Q65":9,"Q70":54,"Q72":14},"Correctional Service Canada":{"Q12":45,"Q24":60,"Q42":37,"Q43":40,"Q45":48,"Q47":50,"Q49":53,"Q52":28,"Q53":58,"Q58":29,"Q63":30,"Q65":21,"Q70":34,"Q72":6},"Fisheries and Oceans Canada":{"Q12":65,"Q24":76,"Q42":47,"Q43":53,"Q45":50,"Q47":67,"Q49":58,"Q52":35,"Q53":76,"Q58":13,"Q63":44,"Q65":10,"Q70":47,"Q72":11},"Health Canada":{"Q12":67,"Q24":73,"Q42":47,"Q43":48,"Q45":42,"Q47":68,"Q49":63,"Q52":41,"Q53":74,"Q58":11,"Q63":49,"Q65":9,"Q70":49,"Q72":12},"Public Services and Procurement Canada":{"Q12":70,"Q24":75,"Q42":56,"Q43":63,"Q45":57,"Q47":74,"Q49":71,"Q52":49,"Q53":83,"Q58":9,"Q63":58,"Q65":8,"Q70":60,"Q72":16},"Statistics Canada":{"Q12":71,"Q24":74,"Q42":50,"Q43":53,"Q45":52,"Q47":72,"Q49":67,"Q52":41,"Q53":78,"Q58":8,"Q63":55,"Q65":7,"Q70":57,"Q72":14},"Agriculture and Agri-Food Canada":{"Q12":71,"Q24":76,"Q42":53,"Q43":52,"Q45":44,"Q47":70,"Q49":64,"Q52":42,"Q53":80,"Q58":14,"Q63":46,"Q65":9,"Q70":53,"Q72":11},"Innovation, Science and Economic Development Canada":{"Q12":70,"Q24":71,"Q42":51,"Q43":60,"Q45":53,"Q47":71,"Q49":66,"Q52":45,"Q53":81,"Q58":9,"Q63":53,"Q65":8,"Q70":54,"Q72":11},"Environment and Climate Change Canada":{"Q12":71,"Q24":78,"Q42":55,"Q43":55,"Q45":51,"Q47":72,"Q49":59,"Q52":40,"Q53":80,"Q58":9,"Q63":52,"Q65":7,"Q70":54,"Q72":12},"Transport Canada":{"Q12":67,"Q24":74,"Q42":52,"Q43":55,"Q45":50,"Q47":71,"Q49":69,"Q52":40,"Q53":78,"Q58":12,"Q63":52,"Q65":8,"Q70":56,"Q72":13},"Immigration, Refugees and Citizenship Canada":{"Q12":66,"Q24":71,"Q42":51,"Q43":54,"Q45":52,"Q47":71,"Q49":69,"Q52":51,"Q53":80,"Q58":10,"Q63":54,"Q65":9,"Q70":54,"Q72":17},"Global Affairs Canada":{"Q12":67,"Q24":71,"Q42":38,"Q43":38,"Q45":43,"Q47":59,"Q49":56,"Q52":49,"Q53":69,"Q58":13,"Q63":37,"Q65":12,"Q70":40,"Q72":4},"Natural Resources Canada":{"Q12":72,"Q24":76,"Q42":50,"Q43":56,"Q45":51,"Q47":73,"Q49":61,"Q52":44,"Q53":80,"Q58":12,"Q63":48,"Q65":10,"Q70":50,"Q72":13},"Royal Canadian Mounted Police":{"Q12":71,"Q24":78,"Q42":53,"Q43":60,"Q45":54,"Q47":72,"Q49":62,"Q52":40,"Q53":83,"Q58":15,"Q63":49,"Q65":8,"Q70":55,"Q72":18},"Indigenous Services Canada":{"Q12":66,"Q24":71,"Q42":46,"Q43":53,"Q45":51,"Q47":68,"Q49":58,"Q52":41,"Q53":76,"Q58":16,"Q63":44,"Q65":10,"Q70":47,"Q72":11},"Veterans Affairs Canada":{"Q12":71,"Q24":79,"Q42":53,"Q43":57,"Q45":53,"Q47":73,"Q49":68,"Q52":47,"Q53":80,"Q58":11,"Q63":55,"Q65":7,"Q70":58,"Q72":10},"Department of Justice Canada":{"Q12":72,"Q24":71,"Q42":46,"Q43":59,"Q45":49,"Q47":68,"Q49":66,"Q52":44,"Q53":80,"Q58":12,"Q63":47,"Q65":10,"Q70":50,"Q72":7},"Canadian Heritage":{"Q12":71,"Q24":75,"Q42":47,"Q43":52,"Q45":51,"Q47":73,"Q49":71,"Q52":53,"Q53":80,"Q58":10,"Q63":51,"Q65":9,"Q70":50,"Q72":9},"Public Service Commission of Canada":{"Q12":67,"Q24":76,"Q42":52,"Q43":51,"Q45":43,"Q47":70,"Q49":64,"Q52":49,"Q53":77,"Q58":11,"Q63":49,"Q65":8,"Q70":54,"Q72":9},"Crown-Indigenous Relations and Northern Affairs Canada":{"Q12":70,"Q24":74,"Q42":45,"Q43":52,"Q45":50,"Q47":69,"Q49":58,"Q52":44,"Q53":77,"Q58":14,"Q63":45,"Q65":9,"Q70":48,"Q72":3},"Immigration and Refugee Board of Canada":{"Q12":63,"Q24":68,"Q42":46,"Q43":47,"Q45":43,"Q47":65,"Q49":57,"Q52":40,"Q53":76,"Q58":10,"Q63":52,"Q65":8,"Q70":50,"Q72":3},"Department of Finance Canada":{"Q12":71,"Q24":75,"Q42":49,"Q43":63,"Q45":57,"Q47":70,"Q49":55,"Q52":40,"Q53":85,"Q58":6,"Q63":55,"Q65":6,"Q70":57,"Q72":0},"Canadian Grain Commission":{"Q12":72,"Q24":80,"Q42":62,"Q43":63,"Q45":49,"Q47":76,"Q49":72,"Q52":44,"Q53":85,"Q58":10,"Q63":57,"Q65":5,"Q70":62},"Treasury Board of Canada Secretariat":{"Q12":73,"Q24":75,"Q42":45,"Q43":60,"Q45":51,"Q47":71,"Q49":59,"Q52":44,"Q53":79,"Q58":12,"Q63":48,"Q65":9,"Q70":53,"Q72":14},"Privy Council Office":{"Q12":77,"Q24":74,"Q42":51,"Q43":56,"Q45":42,"Q47":72,"Q49":68,"Q52":56,"Q53":84,"Q58":12,"Q63":50,"Q65":8,"Q70":54,"Q72":3},"Courts Administration Service":{"Q12":64,"Q24":74,"Q42":50,"Q43":50,"Q45":40,"Q47":66,"Q49":61,"Q52":41,"Q53":82,"Q58":12,"Q63":56,"Q65":7,"Q70":56,"Q72":7},"Canadian Radio-television and Telecommunications Commission":{"Q12":72,"Q24":76,"Q42":45,"Q43":59,"Q45":50,"Q47":66,"Q49":63,"Q52":49,"Q53":74,"Q58":10,"Q63":48,"Q65":10,"Q70":50},"Atlantic Canada Opportunities Agency":{"Q12":80,"Q24":84,"Q42":56,"Q43":70,"Q45":50,"Q47":84,"Q49":78,"Q52":53,"Q53":91,"Q58":6,"Q63":55,"Q65":6,"Q70":63,"Q72":27},"Canadian Space Agency":{"Q12":73,"Q24":76,"Q42":51,"Q43":61,"Q45":51,"Q47":74,"Q49":68,"Q52":48,"Q53":83,"Q58":12,"Q63":44,"Q65":9,"Q70":57,"Q72":7},"Canada Economic Development for Quebec Regions":{"Q12":75,"Q24":76,"Q42":46,"Q43":65,"Q45":50,"Q47":78,"Q49":66,"Q52":50,"Q53":89,"Q58":11,"Q63":56,"Q65":9,"Q70":58},"Canadian Institutes of Health Research":{"Q12":74,"Q24":75,"Q42":48,"Q43":39,"Q45":39,"Q47":71,"Q49":56,"Q52":39,"Q53":82,"Q58":10,"Q63":48,"Q65":7,"Q70":54,"Q72":32},"Parole Board of Canada":{"Q12":70,"Q24":73,"Q42":55,"Q43":65,"Q45":49,"Q47":74,"Q49":67,"Q52":48,"Q53":83,"Q58":11,"Q63":51,"Q65":8,"Q70":57},"Shared Services Canada":{"Q12":71,"Q24":76,"Q42":54,"Q43":65,"Q45":53,"Q47":75,"Q49":70,"Q52":44,"Q53":82,"Q58":9,"Q63":55,"Q65":7,"Q70":55,"Q72":9},"Transportation Safety Board of Canada":{"Q12":78,"Q24":83,"Q42":59,"Q43":57,"Q45":30,"Q47":76,"Q49":61,"Q52":30,"Q53":85,"Q58":9,"Q63":46,"Q65":6,"Q70":55},"Office of the Chief Electoral Officer":{"Q12":77,"Q24":77,"Q42":63,"Q43":71,"Q45":58,"Q47":82,"Q49":68,"Q52":49,"Q53":89,"Q58":7,"Q63":63,"Q65":5,"Q70":67,"Q72":8},"Canadian Human Rights Commission":{"Q12":81,"Q24":84,"Q42":64,"Q43":70,"Q45":51,"Q47":85,"Q49":87,"Q52":75,"Q53":94,"Q58":6,"Q63":68,"Q65":4,"Q70":73},"Office of the Commissioner of Official Languages":{"Q12":81,"Q24":81,"Q42":58,"Q43":71,"Q45":49,"Q47":86,"Q49":51,"Q52":51,"Q53":92,"Q58":5,"Q63":74,"Q65":5,"Q70":80},"Supreme Court of Canada":{"Q12":80,"Q24":76,"Q42":62,"Q43":72,"Q45":48,"Q47":83,"Q49":65,"Q52":51,"Q53":92,"Q58":7,"Q63":72,"Q65":3,"Q70":76},"Public Prosecution Service of Canada":{"Q12":65,"Q24":64,"Q42":48,"Q43":54,"Q45":46,"Q47":67,"Q49":65,"Q52":46,"Q53":80,"Q58":14,"Q63":42,"Q65":12,"Q70":46,"Q72":5},"Impact Assessment Agency of Canada":{"Q12":76,"Q24":77,"Q42":53,"Q43":69,"Q45":57,"Q47":77,"Q49":64,"Q52":47,"Q53":89,"Q58":9,"Q63":46,"Q65":6,"Q70":54},"National Research Council Canada":{"Q12":74,"Q24":75,"Q42":57,"Q43":57,"Q45":50,"Q47":78,"Q49":65,"Q52":43,"Q53":86,"Q58":9,"Q63":58,"Q65":6,"Q70":60,"Q72":14},"Office of the Auditor General of Canada":{"Q12":57,"Q24":68,"Q42":39,"Q43":44,"Q45":38,"Q47":56,"Q49":49,"Q52":31,"Q53":68,"Q58":13,"Q63":41,"Q65":10,"Q70":39,"Q72":0},"Public Safety Canada":{"Q12":68,"Q24":72,"Q42":46,"Q43":54,"Q45":51,"Q47":71,"Q49":56,"Q52":38,"Q53":80,"Q58":12,"Q63":47,"Q65":10,"Q70":49,"Q72":6},"Canadian Transportation Agency":{"Q12":71,"Q24":74,"Q42":52,"Q43":57,"Q45":37,"Q47":79,"Q49":67,"Q52":36,"Q53":85,"Q58":6,"Q63":47,"Q65":6,"Q70":54},"Social Sciences and Humanities Research Council of Canada":{"Q12":78,"Q24":78,"Q42":58,"Q43":68,"Q45":60,"Q47":77,"Q49":66,"Q52":58,"Q53":91,"Q58":8,"Q63":54,"Q65":5,"Q70":55},"Financial Consumer Agency of Canada":{"Q12":75,"Q24":81,"Q42":57,"Q43":69,"Q45":54,"Q47":80,"Q49":77,"Q52":51,"Q53":91,"Q58":8,"Q63":58,"Q65":4,"Q70":67},"Canada Water Agency":{"Q12":83,"Q24":75,"Q42":64,"Q43":73,"Q45":59,"Q47":86,"Q49":61,"Q52":44,"Q53":83,"Q58":9,"Q65":7,"Q70":61},"Veterans Review and Appeal Board":{"Q12":85,"Q24":87,"Q42":72,"Q43":80,"Q45":73,"Q47":85,"Q49":75,"Q52":61,"Q53":93,"Q63":67,"Q70":75},"Canadian Nuclear Safety Commission":{"Q12":82,"Q24":79,"Q42":65,"Q43":72,"Q45":58,"Q47":82,"Q49":75,"Q52":52,"Q53":90,"Q58":8,"Q63":65,"Q65":5,"Q70":70},"Public Health Agency of Canada":{"Q12":66,"Q24":75,"Q42":47,"Q43":46,"Q45":37,"Q47":67,"Q49":57,"Q52":36,"Q53":73,"Q58":12,"Q63":42,"Q65":10,"Q70":44,"Q72":6},"Office of the Secretary to the Governor General":{"Q12":65,"Q24":73,"Q42":39,"Q43":42,"Q45":35,"Q47":61,"Q49":42,"Q52":30,"Q53":71,"Q58":17,"Q63":36,"Q65":9,"Q70":44},"Library and Archives Canada":{"Q12":71,"Q24":79,"Q42":55,"Q43":59,"Q45":51,"Q47":77,"Q49":59,"Q52":45,"Q53":86,"Q58":8,"Q63":56,"Q65":5,"Q70":55},"Canada Energy Regulator":{"Q12":71,"Q24":69,"Q42":49,"Q43":54,"Q45":42,"Q47":69,"Q49":69,"Q52":54,"Q53":82,"Q58":14,"Q63":51,"Q65":15,"Q70":51,"Q72":6},"Prairies Economic Development Canada":{"Q12":78,"Q24":81,"Q42":68,"Q43":73,"Q45":50,"Q47":80,"Q49":67,"Q52":51,"Q53":87,"Q58":9,"Q63":60,"Q65":3,"Q70":71},"Canada School of Public Service":{"Q12":71,"Q24":75,"Q42":50,"Q43":59,"Q45":48,"Q47":75,"Q49":67,"Q52":58,"Q53":81,"Q58":11,"Q63":53,"Q65":11,"Q70":55,"Q72":12},"Office of the Privacy Commissioner of Canada":{"Q12":74,"Q24":85,"Q42":67,"Q43":60,"Q45":46,"Q47":81,"Q49":62,"Q52":54,"Q53":89,"Q58":6,"Q63":64,"Q65":5,"Q70":65},"Natural Sciences and Engineering Research Council of Canada":{"Q12":83,"Q24":82,"Q42":64,"Q43":71,"Q45":61,"Q47":85,"Q49":73,"Q52":62,"Q53":93,"Q58":7,"Q63":63,"Q65":4,"Q70":66},"Housing, Infrastructure and Communities Canada":{"Q12":70,"Q24":76,"Q42":49,"Q43":58,"Q45":55,"Q47":72,"Q49":69,"Q52":50,"Q53":82,"Q58":9,"Q63":51,"Q65":8,"Q70":53,"Q72":9},"Canada Border Services Agency":{"Q12":52,"Q24":67,"Q42":39,"Q43":37,"Q45":43,"Q47":51,"Q49":55,"Q52":27,"Q53":62,"Q58":20,"Q63":33,"Q65":16,"Q70":36,"Q72":9},"Canadian Food Inspection Agency":{"Q12":65,"Q24":73,"Q42":50,"Q43":49,"Q45":45,"Q47":68,"Q49":67,"Q52":41,"Q53":77,"Q58":12,"Q63":48,"Q65":9,"Q70":51,"Q72":9},"Financial Transactions and Reports Analysis Centre of Canada":{"Q12":64,"Q24":79,"Q42":53,"Q43":48,"Q45":41,"Q47":72,"Q49":64,"Q52":48,"Q53":79,"Q58":10,"Q63":53,"Q65":6,"Q70":57},"Parks Canada":{"Q12":72,"Q24":79,"Q42":51,"Q43":56,"Q45":53,"Q47":75,"Q49":56,"Q52":41,"Q53":83,"Q58":16,"Q63":47,"Q65":9,"Q70":54,"Q72":12},"Communications Security Establishment Canada":{"Q12":79,"Q24":80,"Q42":64,"Q43":72,"Q45":73,"Q47":84,"Q49":83,"Q52":50,"Q53":88,"Q58":10,"Q63":56,"Q65":8,"Q70":62,"Q72":11},"Women and Gender Equality Canada":{"Q12":72,"Q24":79,"Q42":47,"Q43":52,"Q45":42,"Q47":75,"Q49":59,"Q52":40,"Q53":84,"Q58":10,"Q63":42,"Q65":8,"Q70":46},"Administrative Tribunals Support Service of Canada":{"Q12":76,"Q24":79,"Q42":52,"Q43":69,"Q45":45,"Q47":79,"Q49":62,"Q52":41,"Q53":88,"Q58":9,"Q63":60,"Q65":8,"Q70":57},"National Film Board of Canada":{"Q12":61,"Q24":78,"Q42":38,"Q43":31,"Q45":38,"Q47":60,"Q49":56,"Q52":44,"Q53":76,"Q58":12,"Q63":40,"Q65":7,"Q70":43},"Federal Economic Development Agency for Southern Ontario":{"Q12":68,"Q24":70,"Q42":53,"Q43":50,"Q45":29,"Q47":68,"Q49":64,"Q52":49,"Q53":75,"Q58":13,"Q63":57,"Q65":10,"Q70":53},"Micro-organizations combined":{"Q12":76,"Q24":77,"Q42":59,"Q43":66,"Q45":48,"Q47":82,"Q49":61,"Q52":45,"Q53":87,"Q58":11,"Q63":60,"Q65":6,"Q70":66,"Q72":8},"Military Police Complaints Commission of Canada":{"Q12":83,"Q24":77,"Q42":83,"Q43":89,"Q45":62,"Q47":89,"Q49":93,"Q52":55,"Q53":93,"Q63":85,"Q70":88},"Canadian Intergovernmental Conference Secretariat":{"Q12":83,"Q24":69,"Q42":45,"Q43":80,"Q45":63,"Q47":89,"Q49":74,"Q52":67,"Q53":88,"Q58":25,"Q63":73,"Q65":13,"Q70":78},"National Security and Intelligence Review Agency":{"Q12":65,"Q24":83,"Q42":64,"Q43":69,"Q45":50,"Q47":72,"Q49":52,"Q52":40,"Q53":79,"Q58":16,"Q63":58,"Q65":7,"Q70":57},"Copyright Board Canada":{"Q12":76,"Q24":89,"Q42":63,"Q43":75,"Q45":44,"Q47":72,"Q49":59,"Q52":44,"Q53":72,"Q63":46,"Q70":77},"International Joint Commission":{"Q12":89,"Q24":82,"Q42":75,"Q43":70,"Q45":35,"Q47":94,"Q49":71,"Q52":27,"Q53":96,"Q63":81,"Q65":0,"Q70":79},"Farm Products Council of Canada":{"Q12":83,"Q24":82,"Q42":55,"Q43":33,"Q45":25,"Q47":92,"Q49":71,"Q52":25,"Q53":92,"Q58":0,"Q65":0,"Q70":50},"Office of the Commissioner for Federal Judicial Affairs Canada":{"Q12":82,"Q24":85,"Q42":59,"Q43":67,"Q45":40,"Q47":93,"Q49":56,"Q52":41,"Q53":96,"Q63":80,"Q65":0,"Q70":76},"Patented Medicine Prices Review Board Canada":{"Q12":75,"Q24":77,"Q42":64,"Q43":70,"Q45":43,"Q47":76,"Q49":65,"Q52":47,"Q53":88,"Q58":8,"Q63":52,"Q70":72},"Civilian Review and Complaints Commission for the RCMP":{"Q12":71,"Q24":71,"Q42":58,"Q43":60,"Q45":49,"Q47":83,"Q49":72,"Q52":43,"Q53":93,"Q63":62,"Q70":65},"Invest in Canada":{"Q12":89,"Q24":91,"Q42":83,"Q43":78,"Q45":56,"Q47":90,"Q49":76,"Q52":77,"Q53":98,"Q58":0,"Q63":83,"Q70":84},"Federal Economic Development Agency for Northern Ontario":{"Q12":75,"Q24":73,"Q42":48,"Q43":71,"Q45":61,"Q47":79,"Q49":69,"Q52":39,"Q53":89,"Q58":10,"Q63":56,"Q70":69},"Military Grievances External Review Committee":{"Q12":80,"Q24":87,"Q42":73,"Q43":82,"Q45":49,"Q47":94,"Q49":75,"Q52":56,"Q53":96,"Q63":82,"Q65":0,"Q70":89},"Canadian Dairy Commission":{"Q12":86,"Q24":84,"Q42":58,"Q43":77,"Q45":51,"Q47":90,"Q49":67,"Q52":50,"Q53":96,"Q63":70,"Q70":76},"RCMP External Review Committee":{"Q12":89,"Q24":94,"Q42":71,"Q43":81,"Q45":42,"Q47":100,"Q49":93,"Q52":50,"Q53":100,"Q58":0,"Q63":85,"Q65":0,"Q70":81},"Office of the Commissioner of Lobbying of Canada":{"Q12":96,"Q24":100,"Q42":88,"Q43":82,"Q45":39,"Q47":93,"Q49":83,"Q52":92,"Q53":100,"Q63":92,"Q65":0,"Q70":91},"Office of the Public Sector Integrity Commissioner of Canada":{"Q12":67,"Q24":83,"Q42":74,"Q43":43,"Q45":36,"Q47":75,"Q49":71,"Q52":33,"Q53":84,"Q58":0,"Q63":100,"Q70":92},"Canadian Northern Economic Development Agency":{"Q12":79,"Q24":69,"Q42":55,"Q43":67,"Q45":51,"Q47":83,"Q49":45,"Q52":22,"Q53":82,"Q58":17,"Q63":53,"Q65":11,"Q70":55},"Polar Knowledge Canada":{"Q12":64,"Q24":60,"Q42":49,"Q43":49,"Q45":51,"Q47":72,"Q49":47,"Q52":37,"Q53":76,"Q58":22,"Q63":49,"Q65":16,"Q70":47},"The Correctional Investigator Canada":{"Q12":62,"Q24":81,"Q42":34,"Q43":51,"Q45":52,"Q47":69,"Q49":18,"Q52":20,"Q53":79,"Q58":21,"Q70":46},"Indian Oil and Gas Canada":{"Q12":56,"Q24":65,"Q42":45,"Q43":51,"Q45":39,"Q47":73,"Q49":58,"Q52":32,"Q53":70,"Q58":37,"Q63":36,"Q65":15,"Q70":51},"Office of the Information Commissioner of Canada":{"Q12":84,"Q24":77,"Q42":62,"Q43":71,"Q45":63,"Q47":82,"Q49":67,"Q52":53,"Q53":90,"Q63":59,"Q70":64},"Accessibility Standards Canada":{"Q12":68,"Q24":78,"Q42":43,"Q43":62,"Q45":32,"Q47":73,"Q49":65,"Q52":39,"Q53":81,"Q58":12,"Q65":11,"Q70":68},"Pacific Economic Development Canada":{"Q12":73,"Q24":78,"Q42":57,"Q43":55,"Q45":38,"Q47":80,"Q49":46,"Q52":49,"Q53":86,"Q58":7,"Q63":51,"Q70":62}},"REP":{"Employment and Social Development Canada":{"rep":4.2,"n":38334},"National Defence":{"rep":3.7,"n":28241},"Correctional Service Canada":{"rep":10.6,"n":18660},"Public Services and Procurement Canada":{"rep":3.9,"n":18381},"Canada Border Services Agency":{"rep":4.4,"n":16235},"Fisheries and Oceans Canada":{"rep":7.7,"n":13924},"Immigration, Refugees and Citizenship Canada":{"rep":2.9,"n":10974},"Royal Canadian Mounted Police (public service employees)":{"rep":5.2,"n":10822},"Health Canada":{"rep":3.1,"n":9173},"Shared Services Canada":{"rep":4.0,"n":8671},"Indigenous Services Canada":{"rep":26.9,"n":8389},"Environment and Climate Change Canada":{"rep":3.7,"n":8180},"Global Affairs Canada":{"rep":5.8,"n":7210},"Statistics Canada":{"rep":3.4,"n":6845},"Transport Canada":{"rep":4.3,"n":6361},"Innovation, Science and Economic Development Canada":{"rep":2.8,"n":6091},"Natural Resources Canada":{"rep":4.5,"n":5613},"Department of Justice Canada":{"rep":4.8,"n":5556},"Agriculture and Agri-Food Canada":{"rep":4.7,"n":5041},"Veterans Affairs Canada":{"rep":4.6,"n":3657},"Public Health Agency of Canada":{"rep":3.4,"n":3164},"Immigration and Refugee Board of Canada":{"rep":2.2,"n":2278},"Treasury Board of Canada Secretariat":{"rep":4.0,"n":2271},"Canadian Heritage":{"rep":6.2,"n":1814},"Crown-Indigenous Relations and Northern Affairs Canada":{"rep":18.6,"n":1808},"Public Safety Canada":{"rep":5.0,"n":1628},"Housing, Infrastructure and Communities Canada":{"rep":3.5,"n":1552},"Elections Canada":{"rep":3.0,"n":1308},"Public Prosecution Service of Canada":{"rep":7.1,"n":1136},"Privy Council Office":{"rep":4.1,"n":1130},"Library and Archives Canada":{"rep":4.3,"n":1108},"Department of Finance Canada":{"rep":2.9,"n":946},"Canadian Space Agency":{"rep":2.3,"n":900},"Courts Administration Service":{"rep":1.9,"n":823},"Public Service Commission of Canada":{"rep":4.0,"n":771},"Canadian Radio-television and Telecommunications Commission":{"rep":5.5,"n":689},"Administrative Tribunals Support Service of Canada":{"rep":2.6,"n":571},"Canada School of Public Service":{"rep":4.7,"n":571},"Atlantic Canada Opportunities Agency":{"rep":4.6,"n":564},"Impact Assessment Agency of Canada":{"rep":6.7,"n":550},"Western Economic Diversification Canada (incl. PacifiCan and PrairiesCan)":{"rep":4.8,"n":476},"Canadian Grain Commission":{"rep":4.7,"n":449},"Parole Board of Canada":{"rep":3.6,"n":448},"Women and Gender Equality Canada":{"rep":5.3,"n":376},"Canadian Transportation Agency":{"rep":3.0,"n":335},"Offices of the Information and Privacy Commissioners of Canada":{"rep":5.4,"n":333},"Canadian Human Rights Commission":{"rep":2.7,"n":264},"Federal Economic Development Agency for Southern Ontario":{"rep":3.8,"n":237},"Registrar of the Supreme Court of Canada":{"rep":3.1,"n":226},"Transportation Safety Board of Canada":{"rep":3.2,"n":216},"Canadian Northern Economic Development Agency":{"rep":27.4,"n":113},"Federal Economic Development Agency for Northern Ontario":{"rep":11.1,"n":99},"Office of the Commissioner for Federal Judicial Affairs Canada":{"rep":0.0,"n":63},"Copyright Board Canada":{"rep":0.0,"n":20},"Secretariat of the National Security and Intelligence Committee of Parliamentarians":{"rep":0.0,"n":8},"Law Commission of Canada":{"rep":0.0,"n":5}},"SUB":{"Public Service":{"fn":{"Q12":64,"Q24":70,"Q42":49,"Q43":56,"Q45":50,"Q47":66,"Q49":59,"Q52":41,"Q53":76,"Q58":20,"Q63":44,"Q65":16,"Q70":45,"Q72":8},"inuit":{"Q12":67,"Q24":58,"Q42":46,"Q43":57,"Q45":48,"Q47":68,"Q49":49,"Q52":41,"Q53":76,"Q58":17,"Q63":36,"Q65":13,"Q70":48},"metis":{"Q12":60,"Q24":70,"Q42":45,"Q43":52,"Q45":48,"Q47":64,"Q49":62,"Q52":38,"Q53":74,"Q58":19,"Q63":44,"Q65":16,"Q70":48,"Q72":10}},"Canada Revenue Agency":{"fn":{"Q12":61,"Q24":74,"Q42":47,"Q43":59,"Q45":48,"Q47":69,"Q49":71,"Q52":45,"Q53":76,"Q58":13,"Q63":55,"Q65":11,"Q70":55,"Q72":6},"metis":{"Q12":61,"Q24":72,"Q42":50,"Q43":57,"Q45":52,"Q47":68,"Q49":68,"Q52":37,"Q53":74,"Q58":16,"Q63":51,"Q65":12,"Q70":52}},"Employment and Social Development Canada":{"fn":{"Q12":69,"Q24":69,"Q42":52,"Q43":60,"Q45":57,"Q47":69,"Q49":65,"Q52":50,"Q53":79,"Q58":15,"Q63":48,"Q65":15,"Q70":48},"inuit":{"Q12":61,"Q24":81,"Q42":45,"Q43":49,"Q45":38,"Q47":63,"Q49":60,"Q52":62,"Q53":70,"Q58":17,"Q70":56},"metis":{"Q12":66,"Q24":77,"Q42":52,"Q43":63,"Q45":54,"Q47":72,"Q49":69,"Q52":53,"Q53":81,"Q58":18,"Q63":54,"Q65":8,"Q70":59}},"National Defence":{"fn":{"Q12":61,"Q24":73,"Q42":52,"Q43":50,"Q45":41,"Q47":62,"Q49":55,"Q52":36,"Q53":76,"Q58":24,"Q63":43,"Q65":18,"Q70":44,"Q72":7},"inuit":{"Q12":71,"Q24":82,"Q42":40,"Q43":71,"Q45":45,"Q47":73,"Q49":48,"Q52":13,"Q53":80,"Q70":42},"metis":{"Q12":60,"Q24":62,"Q42":46,"Q43":49,"Q45":37,"Q47":62,"Q49":63,"Q52":33,"Q53":79,"Q58":19,"Q63":46,"Q65":20,"Q70":50}},"Correctional Service Canada":{"fn":{"Q12":50,"Q24":58,"Q42":45,"Q43":50,"Q45":50,"Q47":58,"Q49":54,"Q52":34,"Q53":68,"Q58":36,"Q63":31,"Q65":25,"Q70":38},"metis":{"Q12":37,"Q24":53,"Q42":30,"Q43":36,"Q45":39,"Q47":46,"Q49":46,"Q52":22,"Q53":56,"Q58":36,"Q63":28,"Q65":30,"Q70":33}},"Fisheries and Oceans Canada":{"fn":{"Q12":66,"Q24":71,"Q42":45,"Q43":50,"Q45":50,"Q47":66,"Q49":54,"Q52":34,"Q53":77,"Q58":18,"Q63":38,"Q65":21,"Q70":41},"inuit":{"Q12":76,"Q24":45,"Q42":34,"Q43":45,"Q45":63,"Q47":43,"Q49":31,"Q52":44,"Q53":77,"Q58":16,"Q63":30,"Q65":18,"Q70":56},"metis":{"Q12":73,"Q24":73,"Q42":50,"Q43":58,"Q45":52,"Q47":68,"Q49":64,"Q52":36,"Q53":76,"Q58":14,"Q63":53,"Q65":10,"Q70":52}},"Health Canada":{"fn":{"Q12":63,"Q24":75,"Q42":49,"Q43":55,"Q45":51,"Q47":66,"Q49":69,"Q52":38,"Q53":72,"Q58":21,"Q63":44,"Q65":21},"metis":{"Q12":61,"Q24":80,"Q42":49,"Q43":58,"Q45":56,"Q47":67,"Q49":73,"Q52":44,"Q53":79,"Q58":14,"Q63":33,"Q65":15,"Q70":45}},"Public Services and Procurement Canada":{"fn":{"Q12":69,"Q24":78,"Q42":57,"Q43":59,"Q45":56,"Q47":75,"Q49":72,"Q52":52,"Q53":77,"Q58":8,"Q63":63,"Q65":11,"Q70":59},"metis":{"Q12":68,"Q24":72,"Q42":46,"Q43":60,"Q45":51,"Q47":74,"Q49":68,"Q52":36,"Q53":81,"Q58":11,"Q63":45,"Q65":12,"Q70":46}},"Statistics Canada":{"fn":{"Q12":66,"Q24":65,"Q42":48,"Q43":51,"Q45":42,"Q47":59,"Q49":57,"Q52":24,"Q53":73,"Q58":19,"Q63":29,"Q65":10,"Q70":37},"metis":{"Q12":69,"Q24":85,"Q42":51,"Q43":51,"Q45":58,"Q47":75,"Q49":66,"Q52":41,"Q53":85,"Q58":8,"Q63":50,"Q65":8,"Q70":63}},"Agriculture and Agri-Food Canada":{"fn":{"Q12":70,"Q24":60,"Q42":46,"Q43":51,"Q45":39,"Q47":74,"Q49":62,"Q52":53,"Q53":86,"Q58":23,"Q63":55,"Q65":20,"Q70":57},"metis":{"Q12":68,"Q24":70,"Q42":49,"Q43":51,"Q45":40,"Q47":61,"Q49":68,"Q52":28,"Q53":83,"Q58":20,"Q63":43,"Q65":16,"Q70":48}},"Innovation, Science and Economic Development Canada":{"fn":{"Q12":63,"Q24":72,"Q42":51,"Q43":67,"Q45":53,"Q47":73,"Q49":61,"Q52":36,"Q53":73},"metis":{"Q12":74,"Q24":86,"Q42":53,"Q43":63,"Q45":58,"Q47":90,"Q49":84,"Q52":56,"Q53":85,"Q63":57,"Q65":12,"Q70":55}},"Environment and Climate Change Canada":{"fn":{"Q12":65,"Q24":71,"Q42":54,"Q43":65,"Q45":40,"Q47":75,"Q49":56,"Q52":44,"Q53":77,"Q58":21,"Q63":34,"Q65":12},"metis":{"Q12":62,"Q24":79,"Q42":55,"Q43":54,"Q45":49,"Q47":66,"Q49":70,"Q52":40,"Q53":74,"Q58":17,"Q63":58,"Q65":11,"Q70":58}},"Transport Canada":{"fn":{"Q12":57,"Q24":69,"Q42":48,"Q43":58,"Q45":45,"Q47":64,"Q49":62,"Q52":32,"Q53":68,"Q58":25,"Q63":50,"Q65":21,"Q70":52},"metis":{"Q12":55,"Q24":64,"Q42":48,"Q43":54,"Q45":53,"Q47":66,"Q49":79,"Q52":54,"Q53":70,"Q58":29,"Q63":44,"Q65":16,"Q70":48}},"Immigration, Refugees and Citizenship Canada":{"fn":{"Q12":71,"Q24":77,"Q42":55,"Q43":51,"Q45":47,"Q47":69,"Q49":66,"Q52":61,"Q53":79,"Q58":20,"Q63":62,"Q65":14,"Q70":51},"metis":{"Q12":62,"Q24":76,"Q42":50,"Q43":54,"Q45":49,"Q47":74,"Q49":70,"Q52":47,"Q53":76,"Q58":10,"Q63":54,"Q65":14,"Q70":56}},"Global Affairs Canada":{"fn":{"Q12":57,"Q24":90,"Q42":47,"Q43":36,"Q45":29,"Q47":51,"Q49":41,"Q52":45,"Q53":67,"Q58":43},"metis":{"Q12":66,"Q24":61,"Q42":62,"Q43":47,"Q45":58,"Q47":69,"Q49":66,"Q52":73,"Q53":70,"Q58":19}},"Natural Resources Canada":{"fn":{"Q12":81,"Q24":87,"Q42":64,"Q43":74,"Q45":46,"Q47":72,"Q49":54,"Q52":56,"Q53":83,"Q58":10,"Q63":51},"metis":{"Q12":68,"Q24":82,"Q42":46,"Q43":56,"Q45":44,"Q47":72,"Q49":54,"Q52":55,"Q53":84,"Q58":25,"Q65":30}},"Royal Canadian Mounted Police":{"fn":{"Q12":69,"Q24":62,"Q42":49,"Q43":54,"Q45":54,"Q47":71,"Q49":45,"Q52":49,"Q53":75,"Q58":17,"Q63":44,"Q65":6,"Q70":50},"inuit":{"Q12":83,"Q24":72,"Q42":58,"Q43":43,"Q45":34,"Q47":75,"Q49":66,"Q52":41,"Q53":84,"Q65":0},"metis":{"Q12":71,"Q24":78,"Q42":47,"Q43":57,"Q45":45,"Q47":70,"Q49":70,"Q52":40,"Q53":82,"Q58":16,"Q63":51,"Q65":11,"Q70":59}},"Indigenous Services Canada":{"fn":{"Q12":66,"Q24":70,"Q42":48,"Q43":57,"Q45":56,"Q47":68,"Q49":57,"Q52":39,"Q53":78,"Q58":20,"Q63":46,"Q65":14,"Q70":44},"inuit":{"Q12":54,"Q24":41,"Q42":28,"Q43":59,"Q45":37,"Q47":67,"Q49":54,"Q52":46,"Q53":68,"Q63":14},"metis":{"Q12":63,"Q24":74,"Q42":44,"Q43":54,"Q45":59,"Q47":65,"Q49":60,"Q52":42,"Q53":76,"Q58":18,"Q63":49,"Q65":13,"Q70":52,"Q72":6}},"Veterans Affairs Canada":{"fn":{"Q12":74,"Q24":82,"Q42":71,"Q43":65,"Q45":34,"Q47":72,"Q49":75,"Q52":58,"Q53":81,"Q70":77},"metis":{"Q12":49,"Q24":81,"Q42":50,"Q43":46,"Q45":39,"Q47":60,"Q49":66,"Q52":54,"Q53":70,"Q58":19,"Q63":57,"Q70":53}},"Department of Justice Canada":{"fn":{"Q12":73,"Q24":59,"Q42":49,"Q43":68,"Q45":64,"Q47":71,"Q49":59,"Q52":42,"Q53":78,"Q58":21,"Q63":52,"Q65":15},"metis":{"Q12":75,"Q24":72,"Q42":63,"Q43":62,"Q45":54,"Q47":77,"Q49":59,"Q52":41,"Q53":86,"Q65":18,"Q70":72}},"Canadian Heritage":{"fn":{"Q12":84,"Q24":84,"Q42":53,"Q43":65,"Q45":59,"Q47":72,"Q49":71,"Q52":39,"Q53":83},"metis":{"Q12":57,"Q24":76,"Q42":36,"Q43":56,"Q45":39,"Q47":80,"Q49":52,"Q52":37,"Q53":71,"Q63":34,"Q70":36}},"Crown-Indigenous Relations and Northern Affairs Canada":{"fn":{"Q12":75,"Q24":74,"Q42":50,"Q43":62,"Q45":50,"Q47":72,"Q49":52,"Q52":46,"Q53":77,"Q58":16,"Q63":37,"Q65":14,"Q70":39},"inuit":{"Q12":77,"Q24":72,"Q42":85,"Q43":82,"Q45":57,"Q47":82,"Q49":60,"Q52":62,"Q53":94,"Q70":58},"metis":{"Q12":73,"Q24":64,"Q42":44,"Q43":47,"Q45":48,"Q47":61,"Q49":60,"Q52":39,"Q53":77,"Q58":20,"Q65":16,"Q70":53}},"Treasury Board of Canada Secretariat":{"fn":{"Q12":76,"Q24":58,"Q42":62,"Q43":76,"Q45":44,"Q47":71,"Q49":62,"Q52":38,"Q53":76},"metis":{"Q12":73,"Q24":82,"Q42":51,"Q43":66,"Q45":66,"Q47":67,"Q49":78,"Q52":59,"Q53":78}},"Shared Services Canada":{"fn":{"Q12":63,"Q24":84,"Q42":60,"Q43":62,"Q45":50,"Q47":75,"Q49":62,"Q52":34,"Q53":75,"Q58":9,"Q63":64,"Q70":61},"metis":{"Q12":65,"Q24":66,"Q42":47,"Q43":65,"Q45":51,"Q47":71,"Q49":58,"Q52":33,"Q53":76,"Q58":8,"Q63":49,"Q65":7,"Q70":53}},"National Research Council Canada":{"fn":{"Q12":78,"Q24":65,"Q42":55,"Q43":53,"Q45":53,"Q47":70,"Q49":52,"Q52":58,"Q53":83,"Q63":28},"metis":{"Q12":93,"Q24":59,"Q42":66,"Q43":54,"Q45":52,"Q47":66,"Q49":33,"Q52":48,"Q53":87,"Q70":50}},"Public Safety Canada":{"fn":{"Q12":75,"Q24":65,"Q42":73,"Q43":61,"Q45":45,"Q47":70,"Q49":72,"Q52":40,"Q53":100,"Q58":0},"metis":{"Q12":77,"Q24":83,"Q42":38,"Q43":36,"Q45":33,"Q47":63,"Q49":47,"Q52":22,"Q53":92}},"Public Health Agency of Canada":{"fn":{"Q12":49,"Q24":56,"Q42":33,"Q43":61,"Q45":47,"Q47":53,"Q49":64,"Q52":70,"Q53":75},"metis":{"Q12":63,"Q24":61,"Q42":44,"Q43":53,"Q45":34,"Q47":60,"Q49":57,"Q52":39,"Q53":75,"Q58":17,"Q63":36,"Q65":9,"Q70":44}},"Library and Archives Canada":{"fn":{"Q12":90,"Q24":93,"Q42":70,"Q43":68,"Q45":85,"Q47":84,"Q49":42,"Q52":54,"Q53":93,"Q58":0,"Q65":0},"metis":{"Q12":62,"Q24":76,"Q42":49,"Q43":46,"Q45":39,"Q47":70,"Q49":60,"Q52":46,"Q53":70}},"Housing, Infrastructure and Communities Canada":{"fn":{"Q12":56,"Q24":68,"Q42":45,"Q43":47,"Q45":30,"Q47":57,"Q49":59,"Q52":64,"Q53":84,"Q70":72},"metis":{"Q12":61,"Q24":59,"Q42":38,"Q43":56,"Q45":53,"Q47":47,"Q49":72,"Q52":35,"Q53":69,"Q63":15}},"Canada Border Services Agency":{"fn":{"Q12":49,"Q24":68,"Q42":35,"Q43":36,"Q45":38,"Q47":39,"Q49":60,"Q52":30,"Q53":52,"Q58":28,"Q63":29,"Q65":29,"Q70":39},"metis":{"Q12":40,"Q24":61,"Q42":30,"Q43":30,"Q45":36,"Q47":39,"Q49":51,"Q52":29,"Q53":46,"Q58":34,"Q63":26,"Q65":28,"Q70":26}},"Canadian Food Inspection Agency":{"fn":{"Q12":45,"Q24":66,"Q42":41,"Q43":32,"Q45":23,"Q47":59,"Q49":43,"Q52":34,"Q53":68,"Q58":36,"Q63":42,"Q65":18,"Q70":41},"metis":{"Q12":66,"Q24":75,"Q42":45,"Q43":38,"Q45":45,"Q47":65,"Q49":57,"Q52":9,"Q53":84,"Q58":14}},"Parks Canada":{"fn":{"Q12":73,"Q24":66,"Q42":58,"Q43":55,"Q45":54,"Q47":69,"Q49":44,"Q52":35,"Q53":89,"Q58":22,"Q63":43,"Q65":22,"Q70":42},"inuit":{"Q12":66,"Q24":50,"Q42":41,"Q43":74,"Q45":63,"Q47":71,"Q49":58,"Q52":33,"Q53":76,"Q58":19,"Q63":39,"Q65":23,"Q70":50},"metis":{"Q12":80,"Q24":78,"Q42":48,"Q43":60,"Q45":63,"Q47":77,"Q49":52,"Q52":51,"Q53":89,"Q58":15,"Q63":46,"Q65":13,"Q70":51}},"Micro-organizations combined":{"fn":{"Q12":58,"Q24":71,"Q42":59,"Q43":50,"Q45":58,"Q47":82,"Q49":53,"Q52":29,"Q53":63,"Q58":26,"Q70":43},"inuit":{"Q12":53,"Q24":43,"Q42":47,"Q43":51,"Q45":46,"Q47":60,"Q49":23,"Q52":21,"Q53":53,"Q58":44,"Q65":23},"metis":{"Q12":56,"Q24":56,"Q42":30,"Q43":52,"Q45":42,"Q47":74,"Q49":62,"Q52":29,"Q53":68,"Q58":25}},"Public Service Commission of Canada":{"metis":{"Q12":61,"Q24":62,"Q42":53,"Q43":39,"Q45":31,"Q47":67,"Q49":68,"Q52":45,"Q53":79,"Q65":0}},"Immigration and Refugee Board of Canada":{"metis":{"Q12":60,"Q24":53,"Q42":26,"Q43":51,"Q45":33,"Q47":61,"Q49":57,"Q52":20,"Q53":72,"Q63":24,"Q70":43}},"Canadian Grain Commission":{"metis":{"Q12":70,"Q24":91,"Q42":33,"Q43":57,"Q45":53,"Q47":70,"Q49":49,"Q52":28,"Q53":75,"Q65":0}},"Public Prosecution Service of Canada":{"metis":{"Q12":45,"Q24":65,"Q42":58,"Q43":63,"Q45":53,"Q47":57,"Q49":30,"Q52":18,"Q53":69,"Q63":18,"Q70":43}},"Communications Security Establishment Canada":{"metis":{"Q12":85,"Q24":79,"Q42":56,"Q43":72,"Q45":75,"Q47":83,"Q49":78,"Q52":46,"Q53":78,"Q65":20,"Q70":60}}},"SUBGROUPS":[["fn","First Nations"],["metis","Métis"],["inuit","Inuit"]]};
+const PROF={"PROFILE":{"ind":{"Q05":65,"Q09":60,"Q12":62,"Q14":62,"Q17":75,"Q21":71,"Q22":77,"Q23":76,"Q24":69,"Q28":75,"Q42":46,"Q43":53,"Q45":48,"Q47":65,"Q48":71,"Q49":60,"Q50":72,"Q51":24,"Q52":39,"Q53":74,"Q54":62,"Q55":62,"Q56":57,"Q58":20,"Q63":43,"Q64":61,"Q65":16,"Q70":46,"Q71":61,"Q72":8,"Q74":28,"Q77":31,"Q81":52,"Q87":75},"nonind":{"Q05":69,"Q09":65,"Q12":68,"Q14":66,"Q17":78,"Q21":79,"Q22":85,"Q23":82,"Q24":73,"Q28":79,"Q42":52,"Q43":56,"Q45":52,"Q47":70,"Q48":76,"Q49":66,"Q50":76,"Q51":15,"Q52":44,"Q53":79,"Q54":68,"Q55":67,"Q56":61,"Q58":11,"Q63":51,"Q64":69,"Q65":9,"Q70":54,"Q71":70,"Q72":12,"Q74":23,"Q77":36,"Q81":60,"Q87":77},"fn":{"Q05":67,"Q09":62,"Q12":64,"Q14":65,"Q17":76,"Q21":72,"Q22":78,"Q23":77,"Q24":70,"Q28":77,"Q42":49,"Q43":56,"Q45":50,"Q47":66,"Q48":71,"Q49":59,"Q50":73,"Q51":29,"Q52":41,"Q53":76,"Q54":64,"Q55":64,"Q56":59,"Q58":20,"Q63":44,"Q64":61,"Q65":16,"Q70":45,"Q71":61,"Q72":8,"Q74":26,"Q77":32,"Q81":54,"Q87":76},"inuit":{"Q05":66,"Q09":67,"Q12":67,"Q14":65,"Q17":73,"Q21":70,"Q22":75,"Q23":77,"Q24":58,"Q28":79,"Q42":46,"Q43":57,"Q45":48,"Q47":68,"Q48":66,"Q49":49,"Q50":68,"Q51":34,"Q52":41,"Q53":76,"Q54":63,"Q55":63,"Q56":62,"Q58":17,"Q63":36,"Q64":67,"Q65":13,"Q70":48,"Q71":65,"Q74":26,"Q77":28,"Q81":52,"Q87":80},"metis":{"Q05":64,"Q09":59,"Q12":60,"Q14":60,"Q17":75,"Q21":71,"Q22":78,"Q23":76,"Q24":70,"Q28":73,"Q42":45,"Q43":52,"Q45":48,"Q47":64,"Q48":72,"Q49":62,"Q50":73,"Q51":19,"Q52":38,"Q53":74,"Q54":62,"Q55":61,"Q56":55,"Q58":19,"Q63":44,"Q64":61,"Q65":16,"Q70":48,"Q71":62,"Q72":10,"Q74":29,"Q77":31,"Q81":52,"Q87":74},"overall":{"Q05":68,"Q09":64,"Q12":67,"Q14":65,"Q17":77,"Q21":78,"Q22":84,"Q23":81,"Q24":72,"Q28":78,"Q42":51,"Q43":55,"Q45":51,"Q47":69,"Q48":76,"Q49":65,"Q50":75,"Q51":16,"Q52":43,"Q53":78,"Q54":67,"Q55":66,"Q56":60,"Q58":12,"Q63":50,"Q64":68,"Q65":9,"Q70":52,"Q71":69,"Q72":11,"Q74":24,"Q77":35,"Q81":59,"Q87":77}},"META":{"Q65":{"m":"neg","p":"safe","s":"Experienced discrimination"},"Q58":{"m":"neg","p":"safe","s":"Experienced harassment"},"Q51":{"m":"neg","p":"safe","s":"Feels racism harmed their mental health"},"Q42":{"m":"pos","p":"safe","s":"Can use formal recourse without fear of reprisal"},"Q70":{"m":"pos","p":"safe","s":"Satisfied with how discrimination is resolved"},"Q63":{"m":"pos","p":"safe","s":"Satisfied with how harassment is resolved"},"Q72":{"m":"pos","p":"safe","s":"Satisfied with how racism complaints are resolved"},"Q24":{"m":"pos","p":"safe","s":"Feels safe to speak about racism (work unit)"},"Q50":{"m":"pos","p":"safe","s":"Comfortable sharing concerns about racism"},"Q21":{"m":"pos","p":"safe","s":"Accepted as an equal in their work unit"},"Q22":{"m":"pos","p":"safe","s":"Colleagues behave respectfully"},"Q53":{"m":"pos","p":"safe","s":"Treated with respect by the organization"},"Q49":{"m":"pos","p":"culture","s":"Organization implements anti-racism initiatives"},"Q48":{"m":"pos","p":"culture","s":"Organization supports diversity and inclusion"},"Q52":{"m":"pos","p":"culture","s":"Call to Action has had a positive impact"},"Q47":{"m":"pos","p":"culture","s":"Organization respects individual differences"},"Q64":{"m":"pos","p":"culture","s":"Organization works to prevent harassment"},"Q71":{"m":"pos","p":"culture","s":"Organization works to prevent discrimination"},"Q05":{"m":"pos","p":"training","s":"Gets the training they need"},"Q43":{"m":"pos","p":"training","s":"Organization supports career development"},"Q28":{"m":"pos","p":"training","s":"Supervisor supports their career goals"},"Q45":{"m":"pos","p":"talent","s":"Believes they have opportunities for promotion"},"Q09":{"m":"pos","p":"talent","s":"Receives meaningful recognition"},"Q23":{"m":"pos","p":"talent","s":"Their ideas and opinions are valued"},"Q14":{"m":"pos","p":"talent","s":"Has input into decisions affecting their work"},"Q12":{"m":"pos","p":"retention","s":"Feels valued at work"},"Q17":{"m":"pos","p":"retention","s":"Likes their job"},"Q55":{"m":"pos","p":"retention","s":"Satisfied with their organization"},"Q56":{"m":"pos","p":"retention","s":"Would prefer to remain with their organization"},"Q54":{"m":"pos","p":"retention","s":"Would recommend it as a great place to work"},"Q77":{"m":"pos","p":"retention","s":"Reports good or very good mental health"},"Q74":{"m":"neg","p":"retention","s":"Reports high work-related stress"},"Q81":{"m":"pos","p":"retention","s":"Describes the workplace as psychologically healthy"},"Q86":{"m":"pos","p":"retention","s":"Accommodation measures were implemented"},"Q87":{"m":"pos","p":"retention","s":"Satisfied with accommodation measures"}},"ORDER":["Q65","Q58","Q51","Q42","Q70","Q63","Q72","Q24","Q50","Q21","Q22","Q53","Q49","Q48","Q52","Q47","Q64","Q71","Q05","Q43","Q28","Q45","Q09","Q23","Q14","Q12","Q17","Q55","Q56","Q54","Q77","Q74","Q81","Q86","Q87"],"PILLARS":[["safe","Creating a safe space"],["culture","Cultural competency"],["training","Training and development"],["talent","Talent management"],["retention","Recruitment and retention"]]};
+const $=s=>document.querySelector(s);
+const QO=DATA.QORDER,QM=DATA.QMETA,WFA_I=DATA.WFA_I;
+const IND=DATA.IND,OVR=DATA.OVERALL,REP=DATA.REP,SUB=DATA.SUB,SUBS=DATA.SUBGROUPS;
+const indPS=IND["Public Service"]||{}, ovrPS=OVR["Public Service"]||{};
+function neg(q){return QM[q]&&QM[q][0]==="neg";}
+function pc(v){return v==null?"&mdash;":v+"%";}
+function norm(x){return (x||"").toLowerCase().split("(")[0].replace(/[^a-z0-9]+/g," ").trim();}
+function band(n){if(n==null)return null;if(n>=10000)return"xl";if(n>=5000)return"l";if(n>=1000)return"m";return"s";}
+function csvEsc(rows){return rows.map(r=>r.map(c=>{c=String(c);return /[",\n]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c;}).join(",")).join("\n");}
+function download(name,text){try{const b=new Blob([text],{type:"text/csv"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}catch(e){}}
+function safeCopy(text,btn){const done=()=>{if(btn){const t=btn.textContent;btn.textContent="Copied";setTimeout(()=>btn.textContent=t,1200);}};
+  try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,()=>fallback());return;}}catch(e){}
+  fallback();function fallback(){try{const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();done();}catch(e){}}}
+
+/* ---------- navigation ---------- */
+const SECTIONS=[["intro","About"],["experience","Workplace experience"],["representation","Representation"],["staffing","Recruitment & staffing"],["leadership","Leadership"],["subgroups","First Nations, Métis & Inuit"],["compare","Compare organizations"],["organization","One organization"],["linkages","Linkages"],["scan","Barrier scan"],["request","Request the data"],["sources","Sources"]];
+const tabbar=$("#tabbar");tabbar.setAttribute("role","tablist");
+SECTIONS.forEach(([id,label],i)=>{const b=document.createElement("button");b.textContent=label;b.dataset.tab=id;b.setAttribute("role","tab");b.id="tab-"+id;b.setAttribute("tabindex",i===0?"0":"-1");b.addEventListener("click",()=>go(id));tabbar.appendChild(b);});
+tabbar.addEventListener("keydown",e=>{const bs=[...tabbar.querySelectorAll("button")];let idx=bs.indexOf(document.activeElement);if(idx<0)return;let n=null;if(e.key==="ArrowRight"||e.key==="ArrowDown")n=(idx+1)%bs.length;else if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=(idx-1+bs.length)%bs.length;else if(e.key==="Home")n=0;else if(e.key==="End")n=bs.length-1;else return;e.preventDefault();bs.forEach(b=>b.setAttribute("tabindex","-1"));bs[n].setAttribute("tabindex","0");bs[n].focus();});
+function go(id){document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="view-"+id));tabbar.querySelectorAll("button").forEach(b=>{const cur=b.dataset.tab===id;b.setAttribute("aria-current",cur?"true":"false");b.setAttribute("tabindex",cur?"0":"-1");});try{window.scrollTo({top:0});}catch(e){}}
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){e.preventDefault();go(g.dataset.go);}});
+
+/* ---------- experience ---------- */
+(function(){
+  // pillar-organized blocks from the rich profile (PROF)
+  const PM=PROF.META,PORD=PROF.ORDER,PILL=PROF.PILLARS;
+  const pind=PROF.PROFILE.ind||{},pall=PROF.PROFILE.overall||{};
+  function pneg(q){return PM[q]&&PM[q].m==="neg";}
+  const wrap=$("#pillarBlocks");let allRows=[];
+  PILL.forEach(([pk,plabel])=>{
+    const qs=PORD.filter(q=>PM[q].p===pk&&pind[q]!=null);
+    if(!qs.length)return;
+    let rows=qs.map(q=>{const a=pind[q],b=pall[q],diff=(b!=null)?a-b:null;const worse=b!=null&&(pneg(q)?a>b:a<b);const cls=(diff!=null&&Math.abs(diff)>=3)?(worse?"below-mark":"above-mark"):"";
+      allRows.push([plabel,PM[q].s+" ("+q+")",a,b!=null?b:"",diff!=null?diff:""]);
+      return `<tr><td>${PM[q].s} <span style="font-size:11px;color:var(--ink-soft)">(${q}${pneg(q)?", lower=better":""})</span></td><td class="num ${cls}">${a}%</td><td class="num">${pc(b)}</td><td class="num ${cls}">${diff==null?"&mdash;":(diff>0?"+":"")+diff}</td></tr>`;}).join("");
+    const card=document.createElement("div");card.className="card";
+    card.innerHTML=`<h3>${plabel} <span class="conf conf-official">official data</span></h3>
+      <div class="tblwrap"><table><caption>Many Voices, One Mind pillar: ${plabel}. 2024 PSES, Indigenous employees vs the public service overall. Source: Employment Equity derived-variable file (Indigenous) and PSES subset 1 (overall).</caption>
+      <thead><tr><th scope="col">Question</th><th scope="col" class="num">Indigenous</th><th scope="col" class="num">Public service overall</th><th scope="col" class="num">Gap</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    wrap.appendChild(card);
+  });
+  // stark summary at the top
+  const stark=[];[["Q65","experiencing discrimination"],["Q58","experiencing harassment"],["Q51","feeling racism harmed their mental health"],["Q74","reporting high work-related stress"],["Q72","satisfaction that racism complaints are resolved"],["Q42","trust in recourse without reprisal"]].forEach(([q,lab])=>{if(pind[q]!=null&&pall[q]!=null){const d=pind[q]-pall[q];const bad=pneg(q)?d>=3:d<=-3;if(bad)stark.push(`${lab}: ${pind[q]}% vs ${pall[q]}% overall (${d>0?"+":""}${d})`);}});
+  if(stark.length){const c=document.createElement("div");c.className="card";c.style.borderLeft="5px solid var(--rust)";c.innerHTML='<h3>Where the gap is widest</h3><ul class="tight">'+stark.map(s=>"<li>"+s+"</li>").join("")+"</ul>";wrap.insertBefore(c,wrap.firstChild);}
+  function csvAll(){return [["Pillar","Question","Indigenous %","Public service overall %","Gap"]].concat(allRows);}
+  $("#expCopy").addEventListener("click",()=>safeCopy(csvEsc(csvAll()),$("#expCopy")));
+  $("#expCsv").addEventListener("click",()=>download("indigenous-experience-by-pillar.csv",csvEsc(csvAll())));
+})();
+
+/* ---------- representation ---------- */
+(function(){
+  const rows0=Object.keys(REP).map(o=>({name:o,rep:REP[o].rep,n:REP[o].n}));
+  function render(){const tier=$("#repTier").value,sort=$("#repSort").value;let rows=rows0.filter(o=>tier==="all"||band(o.n)===tier).slice();
+    if(sort==="gap")rows.sort((a,b)=>(a.rep-WFA_I)-(b.rep-WFA_I));else if(sort==="rep")rows.sort((a,b)=>b.rep-a.rep);else rows.sort((a,b)=>a.name.localeCompare(b.name));
+    const show=rows.slice(0,45),scaleMax=Math.max(8,...show.map(o=>o.rep))*1.05;
+    const W=720,rh=20,pl=250,pr=44,pt=18,h=pt+show.length*rh+6,bx=WFA_I/scaleMax*(W-pl-pr)+pl;
+    let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="Indigenous representation by organization against 4.0% workforce availability.">`;
+    svg+=`<line x1="${bx}" y1="${pt-4}" x2="${bx}" y2="${h-4}" stroke="#111" stroke-dasharray="3 3"/><text x="${bx}" y="${pt-7}" font-size="10" text-anchor="middle" fill="#111">availability 4.0%</text>`;
+    show.forEach((o,i)=>{const y=pt+i*rh,bw=(W-pl-pr)*(o.rep/scaleMax),below=o.rep<WFA_I;
+      svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="10.5" fill="#44546A">${o.name.length>38?o.name.slice(0,37)+"…":o.name}</text>`;
+      svg+=`<rect x="${pl}" y="${y+3}" width="${bw}" height="${rh-7}" fill="${below?"#9C0006":"#0E7C7B"}" rx="2"><title>${o.name}: ${o.rep}% (availability 4.0%)</title></rect>`;
+      svg+=`<text x="${pl+bw+4}" y="${y+rh/2+4}" font-size="10" font-family="monospace" fill="#444">${o.rep}%</text>`;});
+    svg+="</svg>";
+    $("#repChart").innerHTML=(rows.length>45?`<p style="font-size:12px;color:var(--ink-soft);margin:0 0 4px">Showing 45 of ${rows.length}.</p>`:"")+svg;
+    const below=rows.filter(o=>o.rep<WFA_I).length;$("#repSummary").textContent=`${below} of ${rows.length} organizations shown are below the 4.0% Indigenous workforce-availability benchmark.`;
+  }
+  ["repTier","repSort"].forEach(id=>$("#"+id).addEventListener("change",render));
+  $("#repCsv").addEventListener("click",()=>{const rows=[["Organization","Indigenous representation %","Employees","Gap vs 4.0% availability"]].concat(rows0.slice().sort((a,b)=>(a.rep-WFA_I)-(b.rep-WFA_I)).map(o=>[o.name,o.rep,o.n,(o.rep-WFA_I).toFixed(1)]));download("indigenous-representation.csv",csvEsc(rows));});
+  render();
+})();
+
+/* ---------- subgroups ---------- */
+(function(){
+  const subPS=SUB["Public Service"]||{};const subQ=$("#subQ");
+  QO.forEach(q=>{const o=document.createElement("option");o.value=q;o.textContent=q+" — "+QM[q][1];subQ.appendChild(o);});subQ.value="Q65";
+  $("#subTable thead").innerHTML="<tr><th scope='col'>Question</th>"+SUBS.map(([k,l])=>`<th scope="col" class="num">${l}</th>`).join("")+"<th scope='col' class='num'>Indigenous (all)</th></tr>";
+  $("#subTable tbody").innerHTML=QO.map(q=>`<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td>`+SUBS.map(([k,l])=>{const v=subPS[k]&&subPS[k][q];return `<td class="num">${pc(v)}</td>`;}).join("")+`<td class="num">${pc(indPS[q])}</td></tr>`).join("");
+  function chart(){const q=subQ.value,bars=[];SUBS.forEach(([k,l])=>{if(subPS[k]&&subPS[k][q]!=null)bars.push([l,subPS[k][q],k]);});if(indPS[q]!=null)bars.push(["Indigenous (all)",indPS[q],"all"]);
+    if(!bars.length){$("#subChart").innerHTML="";return;}const scaleMax=Math.max(100,...bars.map(b=>b[1]));const W=720,rh=28,pl=170,pr=44,pt=6,h=pt+bars.length*rh+6;const col={fn:"#1B2A41",metis:"#8A6D1D",inuit:"#B3401E",all:"#0E7C7B"};
+    let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="${QM[q][1]} by Indigenous subgroup.">`;
+    bars.forEach((b,i)=>{const y=pt+i*rh,bw=(W-pl-pr)*(b[1]/scaleMax);svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="11.5" fill="#44546A">${b[0]}</text><rect x="${pl}" y="${y+4}" width="${bw}" height="${rh-9}" fill="${col[b[2]]}" rx="2"><title>${b[0]}: ${b[1]}%</title></rect><text x="${pl+bw+5}" y="${y+rh/2+4}" font-size="11" font-family="monospace" fill="#333">${b[1]}%</text>`;});
+    svg+="</svg>";const note=(subPS.inuit&&subPS.inuit[q]!=null)?"":'<p style="font-size:12px;color:var(--ink-soft);margin:4px 0 0">Inuit not published for this question (count too small).</p>';$("#subChart").innerHTML=svg+note;}
+  subQ.addEventListener("change",chart);chart();
+})();
+
+/* ---------- compare across organizations ---------- */
+(function(){
+  const dq=$("#cmpQ");QO.forEach(q=>{const o=document.createElement("option");o.value=q;o.textContent=q+" — "+QM[q][1];dq.appendChild(o);});dq.value="Q42";
+  function render(){const q=dq.value,lower=neg(q),psv=indPS[q];const rows=[];Object.keys(IND).forEach(o=>{if(o==="Public Service")return;const v=IND[o][q];if(v!=null)rows.push([o,v]);});
+    if(!rows.length){$("#cmpChart").innerHTML="<p style='color:var(--ink-soft)'>Not published.</p>";$("#cmpFinding").value="";return;}
+    rows.sort((a,b)=>lower?b[1]-a[1]:a[1]-b[1]);const show=rows.slice(0,18),scaleMax=Math.max(100,...show.map(r=>r[1]));
+    const W=720,rh=22,pl=250,pr=40,pt=20,h=pt+show.length*rh+6;let svg=`<svg viewBox="0 0 ${W} ${h}" width="100%" role="img" aria-label="Indigenous employees on ${QM[q][1]} by organization.">`;
+    if(psv!=null){const x=pl+(W-pl-pr)*(psv/scaleMax);svg+=`<line x1="${x}" y1="${pt-4}" x2="${x}" y2="${h-4}" stroke="#111" stroke-dasharray="3 3"/><text x="${x}" y="${pt-7}" font-size="10" text-anchor="middle" fill="#111">Indigenous service-wide: ${psv}%</text>`;}
+    show.forEach((r,i)=>{const y=pt+i*rh,bw=(W-pl-pr)*(r[1]/scaleMax),worse=psv!=null&&(lower?r[1]>psv:r[1]<psv);svg+=`<text x="${pl-6}" y="${y+rh/2+4}" text-anchor="end" font-size="10.5" fill="#44546A">${r[0].length>38?r[0].slice(0,37)+"…":r[0]}</text><rect x="${pl}" y="${y+3}" width="${bw}" height="${rh-7}" fill="${worse?"#9C0006":"#0E7C7B"}" rx="2"><title>${r[0]}: ${r[1]}%</title></rect><text x="${pl+bw+4}" y="${y+rh/2+4}" font-size="10" font-family="monospace" fill="#444">${r[1]}%</text>`;});
+    svg+="</svg>";$("#cmpChart").innerHTML=(rows.length>18?`<p style="font-size:12px;color:var(--ink-soft);margin:0 0 4px">Showing the 18 furthest from the favourable end, of ${rows.length}.</p>`:"")+svg;
+    const w=rows[0];$("#cmpFinding").value=`2024 PSES, Indigenous employees, "${QM[q][1]}". Indigenous service-wide: ${psv!=null?psv+"%":"n/a"}; public service overall: ${ovrPS[q]!=null?ovrPS[q]+"%":"n/a"}. Of ${rows.length} organizations publishing this, ${w[0]} shows the ${lower?"highest":"lowest"} value at ${w[1]}%. Source: 2024 PSES Employment Equity derived-variable file. Screening signal.`;}
+  dq.addEventListener("change",render);render();
+})();
+
+/* ---------- one organization ---------- */
+(function(){
+  const sel=$("#orgSel");const orgs=Object.keys(IND).filter(o=>o!=="Public Service").sort();orgs.forEach(o=>{const op=document.createElement("option");op.value=o;op.textContent=o;sel.appendChild(op);});
+  sel.value=orgs.find(o=>/Indigenous Services/.test(o))||orgs[0];
+  function repFor(name){const k=Object.keys(REP).find(o=>norm(o)===norm(name));return k?REP[k].rep:null;}
+  function render(){const o=sel.value,ind=IND[o]||{},rep=repFor(o);const ovrK=Object.keys(OVR).find(k=>norm(k)===norm(o));const ovrd=ovrK?OVR[ovrK]:{};
+    let html='<div class="tblwrap"><table><caption>Indigenous employees in '+o.split(" (")[0]+', 2024 PSES, vs Indigenous service-wide and the organization overall.</caption><thead><tr><th scope="col">Question</th><th scope="col" class="num">This org (Indigenous)</th><th scope="col" class="num">Indigenous service-wide</th><th scope="col" class="num">Org overall</th></tr></thead><tbody>';
+    QO.forEach(q=>{const v=ind[q];if(v==null)return;const psv=indPS[q],ov=ovrd[q];let cls="";if(psv!=null&&Math.abs(v-psv)>=3){const worse=neg(q)?v>psv:v<psv;cls=worse?"below-mark":"above-mark";}html+=`<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td><td class="num ${cls}">${v}%</td><td class="num">${pc(psv)}</td><td class="num">${pc(ov)}</td></tr>`;});
+    html+="</tbody></table></div>";
+    const sk=Object.keys(SUB).find(k=>norm(k)===norm(o));const sd=sk?SUB[sk]:null;let sub="";
+    if(sd){const have=SUBS.filter(([k])=>sd[k]);if(have.length){const qs=QO.filter(q=>have.some(([k])=>sd[k][q]!=null));sub='<div class="tblwrap" style="margin-top:12px"><table><caption>By Indigenous subgroup in '+o.split(" (")[0]+' (where published).</caption><thead><tr><th scope="col">Question</th>'+have.map(([k,l])=>`<th scope="col" class="num">${l}</th>`).join("")+'</tr></thead><tbody>'+qs.map(q=>`<tr><td>${QM[q][1]} <span style="font-size:11px;color:var(--ink-soft)">(${q})</span></td>`+have.map(([k,l])=>{const v=sd[k][q];return `<td class="num">${pc(v)}</td>`;}).join("")+"</tr>").join("")+"</tbody></table></div>";}}
+    const repline=`<p style="font-size:13.5px;margin:0 0 10px"><strong>Indigenous representation:</strong> ${rep!=null?rep+"% ":"not available "}${rep!=null?(rep<WFA_I?'<span class="conf" style="background:#fde8e8;color:#9C0006">below the 4.0% availability benchmark</span>':'<span class="conf" style="background:#e6f4ea;color:#1e7a34">at or above the 4.0% benchmark</span>'):""}</p>`;
+    $("#orgCard").innerHTML=repline+html+sub;}
+  sel.addEventListener("change",render);render();
+})();
+
+/* ---------- barrier scan ---------- */
+(function(){
+  let results=[];
+  function run(){const ref=$("#scanRef").value,minGap=+$("#scanMin").value,out=[];
+    Object.keys(IND).forEach(o=>{if(o==="Public Service")return;const ind=IND[o];const ovrK=Object.keys(OVR).find(k=>norm(k)===norm(o));const ovrd=ovrK?OVR[ovrK]:null;
+      QO.forEach(q=>{const v=ind[q];if(v==null)return;let base,bl;if(ref==="ps"){base=indPS[q];bl="Indigenous service-wide";}else{base=ovrd&&ovrd[q];bl="org overall";}if(base==null)return;const worse=neg(q)?v>base:v<base,gap=Math.abs(v-base);if(worse&&gap>=minGap)out.push({o,q,v,base,gap,bl,lab:QM[q][1]});});});
+    out.sort((a,b)=>b.gap-a.gap);results=out;
+    $("#scanSummary").innerHTML=out.length?`<strong>${out.length} gaps</strong> meet this filter. Worst: ${out[0].o}, ${out[0].lab} (${out[0].v}% vs ${out[0].base}% ${out[0].bl}, ${out[0].gap} points).`:"No gaps meet this filter.";
+    $("#scanTable thead").innerHTML="<tr><th scope='col'>Organization</th><th scope='col'>Question</th><th scope='col' class='num'>Indigenous</th><th scope='col' class='num'>Baseline</th><th scope='col' class='num'>Gap</th></tr>";
+    $("#scanTable tbody").innerHTML=out.slice(0,200).map(r=>`<tr><td>${r.o}</td><td>${r.lab} <span style="font-size:11px;color:var(--ink-soft)">(${r.q})</span></td><td class="num">${r.v}%</td><td class="num">${r.base}% <span style="font-size:10px;color:var(--ink-soft)">${r.bl}</span></td><td class="num below-mark">${r.gap}</td></tr>`).join("");
+    $("#scanCount").textContent=(out.length>200?"Showing 200 of "+out.length+". ":out.length+" rows. ")+"Lower is better for the two experience questions.";}
+  function txt(){return results.slice(0,200).map(r=>`${r.o} — Indigenous: "${r.lab}" ${r.v}% vs ${r.base}% (${r.bl}); gap ${r.gap}. Source: 2024 PSES Employment Equity derived-variable file. Screening signal.`).join("\n");}
+  ["scanRef","scanMin"].forEach(id=>$("#"+id).addEventListener("change",run));
+  $("#scanCopy").addEventListener("click",()=>safeCopy(txt(),$("#scanCopy")));
+  $("#scanCsv").addEventListener("click",()=>{const rows=[["Organization","Question code","Question","Indigenous %","Baseline %","Baseline","Gap"]].concat(results.map(r=>[r.o,r.q,r.lab,r.v,r.base,r.bl,r.gap]));download("indigenous-barrier-scan.csv",csvEsc(rows));});
+  run();
+})();
+
+/* ---------- request generator ---------- */
+(function(){
+  const ITEMS=[
+    ["acting","Acting appointments by Indigenous identity and subgroup, with level (and feeder groups), last 3 fiscal years","the PSC staffing dashboard / your HR system (acting and assignment records)"],
+    ["interview","Recruitment outcomes by stage (application, screening, interview, appointment) by Indigenous identity for recent processes","PSEA staffing files and the assessment records for each process"],
+    ["screening","Screening and pre-assessment pass rates by Indigenous identity, including the criteria used and who set and reviewed them","the screening records and rating guides for each appointment process"],
+    ["promo","Promotion rates by Indigenous identity and subgroup, with substantive vs acting distinguished","the HR system (promotion and classification actions)"],
+    ["accom","Accommodation requests and implementation, count and average time to implement, for Indigenous employees","the duty-to-accommodate / DTA case records"],
+    ["complaints","Harassment, discrimination and reprisal complaints and informal cases involving Indigenous employees, with outcomes and time-to-resolution","the informal conflict management / ombuds and labour-relations case systems"],
+    ["exit","Departure rates and exit-interview reasons for Indigenous employees by subgroup","exit-interview and separation records"],
+    ["pses","This organization's 2024 PSES results by Indigenous identity for the equity questions where counts were suppressed publicly","the organization's full PSES data file from the survey provider"],
+  ];
+  const box=$("#reqItems");const state={};
+  ITEMS.forEach(([k,lab])=>{state[k]=["acting","interview","screening"].includes(k);
+    const l=document.createElement("label");l.style.cssText="display:flex;align-items:flex-start;gap:5px;font-size:12.7px;max-width:320px";
+    l.innerHTML=`<input type="checkbox" data-k="${k}" ${state[k]?"checked":""} style="margin-top:3px"> <span>${lab}</span>`;box.appendChild(l);});
+  function build(){
+    const org=($("#reqOrg").value||"[organization]").trim();
+    const role=($("#reqRole").value||"[your role]").trim();
+    const chosen=ITEMS.filter(([k])=>state[k]);
+    const lines=chosen.map(([k,lab,src],i)=>`   ${i+1}. ${lab}.\n      Source system: ${src}.`).join("\n");
+    const txt=
+`To: [Head of Human Resources / Employment Equity lead], ${org}
+From: ${role}
+Re: Request for disaggregated workforce data on Indigenous employees
+
+Purpose
+As part of identifying and removing employment barriers, I am requesting the following disaggregated data on Indigenous employees${org!=="[organization]"?" at "+org:""}. The aggregate representation figure does not show where Indigenous applicants and employees are lost in recruitment, advancement and retention; the items below are the staffing stages where that loss is documented in Public Service Commission audits.
+
+Data requested
+${lines||"   (select items above)"}
+
+Please disaggregate by First Nations, Métis and Inuit identity where counts allow, apply small-cell suppression so no individual can be identified, and provide the most recent three fiscal years for trend where applicable. CSV or spreadsheet format is preferred.
+
+Authority and rationale
+ - Employment Equity Act, section 5: the obligation to identify and eliminate employment barriers for Indigenous peoples.
+ - The Clerk's Call to Action on Anti-Racism, Equity and Inclusion: commitments to act on disaggregated data.
+ - Treasury Board direction on employment equity, diversity and inclusion, and the duty to accommodate.
+ - The Public Service Commission's recruitment and pre-assessment audits, which document where Indigenous candidates are shed (interview stage; automated and organizational screening, including for Indigenous people with disabilities).
+
+This request is to inform barrier identification and reporting, not to identify any individual. I am glad to discuss scope, suppression thresholds and timing.
+
+Thank you,
+${role}`;
+    $("#reqText").value=txt;
+  }
+  box.querySelectorAll("input").forEach(c=>c.addEventListener("change",e=>{state[e.target.dataset.k]=e.target.checked;build();}));
+  ["reqOrg","reqRole"].forEach(id=>$("#"+id).addEventListener("input",build));
+  $("#reqCopy").addEventListener("click",()=>safeCopy($("#reqText").value,$("#reqCopy")));
+  build();
+})();
+
+/* init */
+go("intro");
+</script>
+
+
+<aside id="equity-related-static" aria-label="Related resources / Ressources connexes" style="max-width:70rem;margin:2rem auto;padding:1rem;line-height:1.6;border-top:1px solid currentColor"><h2>Related resources <span lang="fr">/ Ressources connexes</span></h2><p>Independent resource created by ARAN. <span lang="fr">Ressource indépendante créée par le RAAR.</span></p><ul><li><a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/">GC Equity — federal comparisons / <span lang="fr">Équité-GC — comparaisons fédérales</span></a></li><li><a href="https://aranpublicservants-rgb.github.io/aran-raar/">ARAN — network and recourse / <span lang="fr">RAAR — réseau et recours</span></a></li><li><a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/accessibility-inclusion/">Accessibility and accommodation / <span lang="fr">Accessibilité et mesures d’adaptation</span></a></li><li><a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/equity-history/">Equity history / <span lang="fr">Histoire de l’équité</span></a></li><li><a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/communities/black/">Black public servants / <span lang="fr">Fonctionnaires noirs</span></a></li><li><a href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/communities/filipino/">Filipino public servants / <span lang="fr">Fonctionnaires philippins</span></a></li><li><a href="https://aranpublicservants-rgb.github.io/pses-2024-branch.html/">2024 employee survey by branch / <span lang="fr">Sondage de 2024 par secteur</span></a></li></ul></aside></body>
+</html>
