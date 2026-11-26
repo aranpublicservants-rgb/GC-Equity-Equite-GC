@@ -2,7 +2,7 @@ name: Consolidated navigation and branch browser checks
 on:
   push:
     branches: [main]
-    paths: ['assets/department-branch-*.js', 'assets/department-branch-*.json', 'assets/department-depth.js', 'website-directory/**', 'youth-and-students/**', 'tests/consolidated-navigation-browser.cjs', '.github/workflows/consolidated-navigation-check.yml']
+    paths: ['assets/department-branch-*.js', 'assets/department-branch-*.json', 'assets/department-depth.js', 'assets/data-visuals.js', 'branch-gaps/**', 'data/pses-2024-branch-gaps/**', 'scripts/build-branch-gaps.py', 'website-directory/**', 'youth-and-students/**', 'tests/consolidated-navigation-browser.cjs', 'tests/branch-gaps-browser.cjs', '.github/workflows/consolidated-navigation-check.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,3 +17,4 @@ jobs:
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
       - run: node tests/consolidated-navigation-browser.cjs
+      - run: node tests/branch-gaps-browser.cjs

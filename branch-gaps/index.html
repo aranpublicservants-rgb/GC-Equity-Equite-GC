@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Compare, branch by branch, the share of employees in two employee groups who said they were the victim of discrimination on the job, in the 2024 Public Service Employee Survey.">
+<title>Discrimination on the job: differences between employee groups in the same branch | GC Equity</title>
+<link rel="canonical" href="https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/branch-gaps/">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../gc-workspace.css?v=20261116-2">
+<script>(()=>{let l='en';try{const p=new URLSearchParams(location.search).get('lang');l=p==='fr'||p==='en'?p:(localStorage.getItem('gcEquityLang')==='fr'?'fr':'en');}catch(e){}document.documentElement.lang=l;})();</script>
+<style>
+.bg-wrap{max-width:1180px;margin:0 auto;padding:8px 24px 48px;box-sizing:border-box}
+.bg-wrap h1{font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.2;margin:18px 0 14px;max-width:34ch}
+.bg-wrap h2{font-size:1.55rem;line-height:1.25;margin:0 0 12px}
+.bg-wrap section{margin:40px 0}
+.bg-eyebrow{font-size:.9rem;font-weight:650;letter-spacing:.02em;color:var(--gw-muted);margin:16px 0 0}
+.bg-lede{font-size:1.1rem;max-width:80ch}
+.bg-question{margin:18px 0;padding:12px 16px;border-left:4px solid var(--gw-teal);background:var(--gw-soft);max-width:80ch}
+.bg-question p{margin:0}
+.bg-question .bg-small{margin-bottom:4px}
+.bg-small{font-size:.9rem;color:var(--gw-muted)}
+.bg-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:12px;margin:22px 0}
+.bg-stats div{padding:14px 16px;border:1px solid var(--gw-line);border-left:4px solid var(--gw-navy);background:var(--gw-card)}
+.bg-stats strong{display:block;font-size:1.6rem;line-height:1.15}
+.bg-jump{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;padding:0;margin:18px 0}
+.bg-filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:14px;padding:16px;border:1px solid var(--gw-line);background:var(--gw-card);margin:14px 0}
+.bg-filters label{display:block;font-weight:650;font-size:.92rem;margin-bottom:4px}
+.bg-filters select{display:block;width:100%;max-width:100%;min-height:44px;padding:8px;font:inherit;box-sizing:border-box}
+.bg-filters .bg-reset{align-self:end}
+.bg-wrap button{font:inherit;min-height:44px;padding:8px 14px;cursor:pointer}
+.bg-actions{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:14px 0}
+.table-scroll{overflow-x:auto;max-width:100%;border:1px solid var(--gw-line)}
+.table-scroll:focus-visible{outline:3px solid var(--gw-focus);outline-offset:2px}
+.bg-table{border-collapse:collapse;width:100%;min-width:40rem;background:var(--gw-card)}
+.bg-table th,.bg-table td{padding:9px 12px;border-bottom:1px solid var(--gw-line);text-align:left;vertical-align:top}
+.bg-table thead th{font-size:.92rem;background:var(--gw-soft)}
+.bg-table tbody th{font-weight:400;min-width:11rem;max-width:22rem}
+.bg-sticky{position:sticky;left:0;z-index:1;background:var(--gw-card);box-shadow:inset -1px 0 0 var(--gw-line)}
+.bg-table thead .bg-sticky{z-index:2;background:var(--gw-soft)}
+.bg-table .bg-num{white-space:nowrap}
+.bg-line{display:block}
+.bg-org{display:block;font-size:.88rem;color:var(--gw-muted);margin-top:2px}
+.bg-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.bg-source{font-size:.9rem;color:var(--gw-muted);max-width:90ch;margin-top:10px}
+.bg-method li{margin:.55rem 0;max-width:86ch}
+.bg-sources li{margin:.55rem 0}
+[hidden]{display:none!important}
+@media (min-width:900px){.bg-filters>div:first-of-type{grid-column:span 2}}
+@media (max-width:640px){.bg-wrap{padding:6px 14px 40px}.bg-table tbody th{min-width:8.5rem;width:9.5rem;max-width:9.5rem}}
+@media print{.bg-filters,.bg-actions,#gcw-header,.gcw-skip{display:none!important}.table-scroll{overflow:visible;border:0}.bg-table{min-width:0}}
+</style>
+</head>
+<body>
+<main id="main" class="bg-wrap">
+<p class="bg-eyebrow" data-en="2024 Public Service Employee Survey, question 65" data-fr="Sondage auprès des fonctionnaires fédéraux de 2024, question 65">2024 Public Service Employee Survey, question 65</p>
+<h1 data-en="Discrimination on the job: differences between employee groups in the same branch" data-fr="Discrimination au travail : écarts entre groupes d’employés d’une même direction">Discrimination on the job: differences between employee groups in the same branch</h1>
+<p class="bg-lede" data-en="Question 65 asked employees whether they had been the victim of discrimination on the job in the past 12 months. For each branch, this page compares the share who answered yes in two employee groups, such as racialized and non-racialized employees. It lists only branches where the survey published results for both groups." data-fr="La question 65 demandait aux employés s’ils avaient été victimes de discrimination au travail au cours des 12 derniers mois. Pour chaque direction, cette page compare la proportion de réponses « oui » de deux groupes d’employés, par exemple les employés racisés et non racisés. Elle présente seulement les directions où le sondage a publié les résultats des deux groupes.">Question 65 asked employees whether they had been the victim of discrimination on the job in the past 12 months. For each branch, this page compares the share who answered yes in two employee groups, such as racialized and non-racialized employees. It lists only branches where the survey published results for both groups.</p>
+<div class="bg-question"><p class="bg-small" data-en="Question as asked in the survey" data-fr="Question telle que posée dans le sondage">Question as asked in the survey</p><p id="question-text"></p></div>
+<div class="bg-stats" id="stats" aria-live="polite"></div>
+<ul class="bg-jump">
+<li><a href="#list" data-en="Largest differences" data-fr="Plus grands écarts">Largest differences</a></li>
+<li><a href="#overview" data-en="Overview by employee groups" data-fr="Aperçu par groupes d’employés">Overview by employee groups</a></li>
+<li><a href="#method" data-en="How to read these results" data-fr="Comment lire ces résultats">How to read these results</a></li>
+<li><a href="#sources" data-en="Sources" data-fr="Sources">Sources</a></li>
+</ul>
+
+<section id="list" aria-labelledby="list-title">
+<h2 id="list-title" data-en="Largest differences" data-fr="Plus grands écarts">Largest differences</h2>
+<p data-en="Each row compares two employee groups in one branch. The difference is in percentage points between the two shares of yes answers. Select a branch to open the same comparison on its organization’s page." data-fr="Chaque ligne compare deux groupes d’employés dans une direction. L’écart est exprimé en points de pourcentage entre les deux proportions de réponses « oui ». Sélectionnez une direction pour ouvrir la même comparaison sur la page de son organisation.">Each row compares two employee groups in one branch. The difference is in percentage points between the two shares of yes answers. Select a branch to open the same comparison on its organization’s page.</p>
+<form class="bg-filters" id="filters" aria-labelledby="filters-title" onsubmit="return false">
+<h3 id="filters-title" class="bg-sr" data-en="Filter the comparisons" data-fr="Filtrer les comparaisons">Filter the comparisons</h3>
+<div><label for="f-pair" data-en="Employee groups" data-fr="Groupes d’employés">Employee groups</label><select id="f-pair"></select></div>
+<div><label for="f-org" data-en="Organization" data-fr="Organisation">Organization</label><select id="f-org"></select></div>
+<div><label for="f-min" data-en="Minimum answers in each group" data-fr="Nombre minimal de réponses dans chaque groupe">Minimum answers in each group</label><select id="f-min"></select></div>
+<div><label for="f-higher" data-en="Group with the higher yes share" data-fr="Groupe dont la proportion de « oui » est plus élevée">Group with the higher yes share</label><select id="f-higher"></select></div>
+<div><label for="f-order" data-en="Order" data-fr="Ordre">Order</label><select id="f-order"></select></div>
+<div class="bg-reset"><button type="button" id="reset" data-en="Clear filters" data-fr="Effacer les filtres">Clear filters</button></div>
+</form>
+<p id="status" role="status"></p>
+<noscript><p>This list needs JavaScript. <a href="../data/pses-2024-branch-gaps/q65.csv">Download all comparisons (CSV)</a>. Cette liste nécessite JavaScript. <a href="../data/pses-2024-branch-gaps/q65.csv">Télécharger toutes les comparaisons (CSV)</a>.</p></noscript>
+<div class="table-scroll" id="list-region" role="region" tabindex="0" aria-labelledby="list-title" data-no-visual>
+<table class="bg-table" id="gaps-table">
+<caption class="bg-sr" id="gaps-caption"></caption>
+<thead><tr>
+<th scope="col" class="bg-sticky" data-en="Branch and organization" data-fr="Direction et organisation">Branch and organization</th>
+<th scope="col" data-en="First group" data-fr="Premier groupe">First group</th>
+<th scope="col" data-en="Second group" data-fr="Deuxième groupe">Second group</th>
+<th scope="col" data-en="Difference" data-fr="Écart">Difference</th>
+</tr></thead>
+<tbody id="gaps-body"></tbody>
+</table>
+</div>
+<div class="bg-actions">
+<button type="button" id="more" hidden></button>
+<button type="button" id="download" data-en="Download this selection (CSV)" data-fr="Télécharger cette sélection (CSV)">Download this selection (CSV)</button>
+<a href="../data/pses-2024-branch-gaps/q65.csv" download data-en="Download all comparisons (CSV)" data-fr="Télécharger toutes les comparaisons (CSV)">Download all comparisons (CSV)</a>
+</div>
+<p class="bg-source" data-en="Source: Treasury Board of Canada Secretariat, 2024 Public Service Employee Survey, file of results for employee groups by branch (EELEVEL2ID.csv), question 65. Yes is answer 1 for this question in the survey’s supporting documentation." data-fr="Source : Secrétariat du Conseil du Trésor du Canada, Sondage auprès des fonctionnaires fédéraux de 2024, fichier des résultats des groupes d’employés par direction (EELEVEL2ID.csv), question 65. « Oui » est la réponse 1 pour cette question selon la documentation de référence du sondage.">Source: Treasury Board of Canada Secretariat, 2024 Public Service Employee Survey, file of results for employee groups by branch (EELEVEL2ID.csv), question 65. Yes is answer 1 for this question in the survey’s supporting documentation.</p>
+</section>
+
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title" data-en="Overview by employee groups" data-fr="Aperçu par groupes d’employés">Overview by employee groups</h2>
+<p id="overview-intro"></p>
+<div class="table-scroll" role="region" tabindex="0" aria-labelledby="overview-title" data-no-visual>
+<table class="bg-table" id="overview-table">
+<caption class="bg-sr" id="overview-caption"></caption>
+<thead><tr>
+<th scope="col" class="bg-sticky" data-en="Employee groups" data-fr="Groupes d’employés">Employee groups</th>
+<th scope="col" data-en="Branches compared" data-fr="Directions comparées">Branches compared</th>
+<th scope="col" data-en="First group higher" data-fr="Premier groupe plus élevé">First group higher</th>
+<th scope="col" data-en="Second group higher" data-fr="Deuxième groupe plus élevé">Second group higher</th>
+<th scope="col" data-en="Same percentage" data-fr="Même pourcentage">Same percentage</th>
+</tr></thead>
+<tbody id="overview-body"></tbody>
+</table>
+</div>
+<p class="bg-source" data-en="These counts describe published results. They do not test whether a difference is statistically significant. Source: Treasury Board of Canada Secretariat, 2024 Public Service Employee Survey, EELEVEL2ID.csv, question 65." data-fr="Ces nombres décrivent des résultats publiés. Ils ne vérifient pas si un écart est statistiquement significatif. Source : Secrétariat du Conseil du Trésor du Canada, Sondage auprès des fonctionnaires fédéraux de 2024, EELEVEL2ID.csv, question 65.">These counts describe published results. They do not test whether a difference is statistically significant. Source: Treasury Board of Canada Secretariat, 2024 Public Service Employee Survey, EELEVEL2ID.csv, question 65.</p>
+</section>
+
+<section id="method" aria-labelledby="method-title">
+<h2 id="method-title" data-en="How to read these results" data-fr="Comment lire ces résultats">How to read these results</h2>
+<ul class="bg-method">
+<li data-en="Each percentage is the share of the group’s employees in the branch who answered yes to question 65, as published. The survey’s supporting documentation lists yes as answer 1 for this question and groups it as the negative answer." data-fr="Chaque pourcentage est la proportion des employés du groupe, dans la direction, qui ont répondu oui à la question 65, tel que publié. La documentation de référence du sondage indique que « oui » est la réponse 1 pour cette question et la regroupe comme réponse négative.">Each percentage is the share of the group’s employees in the branch who answered yes to question 65, as published. The survey’s supporting documentation lists yes as answer 1 for this question and groups it as the negative answer.</li>
+<li data-en="A comparison appears only when the survey published the yes share for both groups in the branch. Results the survey did not publish, which are blank or coded 9999 in the file, are left out and never counted as zero. A published result of 0% is shown as 0%." data-fr="Une comparaison n’apparaît que si le sondage a publié la proportion de « oui » des deux groupes dans la direction. Les résultats non publiés, vides ou codés 9999 dans le fichier, sont exclus et ne sont jamais comptés comme zéro. Un résultat publié de 0 % est affiché comme 0 %.">A comparison appears only when the survey published the yes share for both groups in the branch. Results the survey did not publish, which are blank or coded 9999 in the file, are left out and never counted as zero. A published result of 0% is shown as 0%.</li>
+<li data-en="Answers is the number of employees in the group who answered the question, as published. Every answer count in the file is a multiple of five. Use the minimum answers filter to focus on results based on more answers." data-fr="Le nombre de réponses est le nombre d’employés du groupe qui ont répondu à la question, tel que publié. Tous les nombres de réponses du fichier sont des multiples de cinq. Utilisez le filtre du nombre minimal de réponses pour vous concentrer sur les résultats fondés sur plus de réponses.">Answers is the number of employees in the group who answered the question, as published. Every answer count in the file is a multiple of five. Use the minimum answers filter to focus on results based on more answers.</li>
+<li data-en="Differences use the published percentages, which are whole numbers. A difference of one or two points can come from rounding." data-fr="Les écarts sont calculés à partir des pourcentages publiés, qui sont des nombres entiers. Un écart d’un ou deux points peut découler de l’arrondissement.">Differences use the published percentages, which are whole numbers. A difference of one or two points can come from rounding.</li>
+<li data-en="The file does not include margins of error, and this page does not test whether a difference is statistically significant. A difference does not show its cause." data-fr="Le fichier ne comprend pas de marges d’erreur, et cette page ne vérifie pas si un écart est statistiquement significatif. Un écart n’en indique pas la cause.">The file does not include margins of error, and this page does not test whether a difference is statistically significant. A difference does not show its cause.</li>
+<li data-en="An employee can belong to more than one group. Do not add or average percentages across branches, groups or questions." data-fr="Un employé peut appartenir à plus d’un groupe. N’additionnez pas les pourcentages et n’en faites pas la moyenne d’une direction, d’un groupe ou d’une question à l’autre.">An employee can belong to more than one group. Do not add or average percentages across branches, groups or questions.</li>
+<li id="coverage-note"></li>
+<li data-en="Organization, branch and group names are as published in the survey file." data-fr="Les noms des organisations, des directions et des groupes sont ceux du fichier du sondage.">Organization, branch and group names are as published in the survey file.</li>
+</ul>
+</section>
+
+<section id="sources" aria-labelledby="sources-title">
+<h2 id="sources-title" data-en="Sources" data-fr="Sources">Sources</h2>
+<ul class="bg-sources" id="source-list"></ul>
+</section>
+</main>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+const DATA_URL='../data/pses-2024-branch-gaps/q65.json';
+const PAGE=50,MINIMUMS=[0,20,50,100,500];
+let data=null,failed=false,limit=PAGE,lang=document.documentElement.lang.startsWith('fr')?'fr':'en';
+const state={pair:'',org:'',min:0,higher:'',order:''};
+const T={
+ en:{title:'Discrimination on the job: differences between employee groups in the same branch | GC Equity',allPairs:'All employee groups',allOrgs:'All organizations',anyMin:'Any published result',minN:n=>n+' or more',either:'Either group',firstPair:'First group in the pair',secondPair:'Second group in the pair',orderDiff:'Largest difference first',orderName:'Organization and branch, A to Z',
+  statRows:'branch comparisons with published results for both groups',statOrgs:(a,b)=>'of '+b+' organizations in the file have at least one comparison',statBranches:'branches with at least one comparison',
+  showing:(s,t)=>'Showing '+num(s)+' of '+num(t)+(t===1?' comparison.':' comparisons.'),none:'No comparison matches these filters. Choose fewer filters or a lower minimum number of answers.',loading:'Loading the comparisons…',failed:'The comparisons could not be loaded. No values have been estimated. Download the CSV file below or reload the page.',more:n=>'Show '+num(n)+' more',
+  yes:p=>'Yes: '+num(p)+'%',answers:n=>n===null?'Answer count unavailable':num(n)+(n===1?' answer':' answers'),points:d=>num(d)+(d===1?' point':' points'),higherFor:g=>'Higher for '+g,same:'Same percentage',
+  caption:'Differences between two employee groups in the same branch in the share who answered yes to question 65, 2024 Public Service Employee Survey',overviewCaption:'Branches where each group had the higher share of yes answers to question 65',
+  overviewIntro:'For each pair of groups, the number of branches where each group had the higher share of yes answers. Branches where both groups had the same published percentage are counted separately. This overview follows the organization and minimum answers chosen above.',
+  coverage:(n,w)=>'The file covers '+n+' organizations with results by branch.'+(w.length?' '+w.join(', ')+(w.length===1?' has':' have')+' no branch where both groups in a pair have published results for this question.':'')+' Organizations without branch results in the file are not shown. A missing organization or branch does not mean that no employee experienced discrimination.',
+  sources:s=>[['Treasury Board of Canada Secretariat, 2024 Public Service Employee Survey Results: 2024 PSES Employee Groups by LEVEL2ID Derived Variable Dataset (EELEVEL2ID.csv).',[['CSV file',s.file],['Dataset page',s.dataset.en]]],['Treasury Board of Canada Secretariat, 2024 Public Service Employee Survey open datasets supporting documentation. Answer options and answer groupings for question 65.',[['XLSX file',s.documentation],['Copy kept on this site','../'+s.documentationCopy]]],['Comparisons prepared for this page from the EELEVEL2ID.csv cells, without changing any published value.',[['JSON','../data/pses-2024-branch-gaps/q65.json'],['CSV','../data/pses-2024-branch-gaps/q65.csv']]]],
+  file:'pses-2024-q65-branch-differences-selection.csv',locale:'en-CA'},
+ fr:{title:'Discrimination au travail : écarts entre groupes d’employés d’une même direction | Équité-GC',allPairs:'Tous les groupes d’employés',allOrgs:'Toutes les organisations',anyMin:'Tout résultat publié',minN:n=>n+' ou plus',either:'L’un ou l’autre groupe',firstPair:'Premier groupe de la paire',secondPair:'Deuxième groupe de la paire',orderDiff:'Plus grand écart d’abord',orderName:'Organisation et direction, de A à Z',
+  statRows:'comparaisons par direction avec des résultats publiés pour les deux groupes',statOrgs:(a,b)=>'des '+b+' organisations du fichier ont au moins une comparaison',statBranches:'directions avec au moins une comparaison',
+  showing:(s,t)=>num(s)+' sur '+num(t)+(t<2?' comparaison affichée.':' comparaisons affichées.'),none:'Aucune comparaison ne correspond à ces filtres. Retirez un filtre ou choisissez un nombre minimal de réponses moins élevé.',loading:'Chargement des comparaisons…',failed:'Les comparaisons n’ont pas pu être chargées. Aucune valeur n’a été estimée. Téléchargez le fichier CSV ci-dessous ou rechargez la page.',more:n=>'Afficher '+num(n)+' de plus',
+  yes:p=>'Oui\u00a0: '+num(p)+'\u00a0%',answers:n=>n===null?'Nombre de réponses indisponible':num(n)+(n<2?' réponse':' réponses'),points:d=>num(d)+(d<2?' point':' points'),higherFor:g=>'Plus élevé : '+g,same:'Même pourcentage',
+  caption:'Écarts entre deux groupes d’employés d’une même direction dans la proportion de réponses « oui » à la question 65, Sondage auprès des fonctionnaires fédéraux de 2024',overviewCaption:'Directions où chaque groupe avait la proportion de réponses « oui » la plus élevée à la question 65',
+  overviewIntro:'Pour chaque paire de groupes, le nombre de directions où chaque groupe avait la proportion de réponses « oui » la plus élevée. Les directions où les deux groupes avaient le même pourcentage publié sont comptées à part. Cet aperçu suit l’organisation et le nombre minimal de réponses choisis ci-dessus.',
+  coverage:(n,w)=>'Le fichier couvre '+n+' organisations avec des résultats par direction.'+(w.length?' '+w.join(', ')+(w.length===1?' n’a':' n’ont')+' aucune direction où les deux groupes d’une paire ont des résultats publiés pour cette question.':'')+' Les organisations sans résultats par direction dans le fichier ne figurent pas ici. L’absence d’une organisation ou d’une direction ne signifie pas qu’aucun employé n’a vécu de discrimination.',
+  sources:s=>[['Secrétariat du Conseil du Trésor du Canada, résultats du Sondage auprès des fonctionnaires fédéraux de 2024 : ensemble de données des groupes d’employés par unité de deuxième niveau (EELEVEL2ID.csv).',[['Fichier CSV',s.file],['Page du jeu de données',s.dataset.fr]]],['Secrétariat du Conseil du Trésor du Canada, Documents de référence du SAFF 2024. Options de réponse et regroupements pour la question 65.',[['Fichier XLSX',s.documentation],['Copie conservée sur ce site','../'+s.documentationCopy]]],['Comparaisons préparées pour cette page à partir des cellules du fichier EELEVEL2ID.csv, sans modifier aucune valeur publiée.',[['JSON','../data/pses-2024-branch-gaps/q65.json'],['CSV','../data/pses-2024-branch-gaps/q65.csv']]]],
+  file:'saff-2024-q65-ecarts-par-direction-selection.csv',locale:'fr-CA'}
+};
+const text=()=>T[lang];
+const num=n=>Number(n).toLocaleString(text().locale);
+const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e;};
+const name=o=>o[lang]||o.en;
+const pairOf=r=>data.pairs[r[2]],orgOf=r=>data.organizations[r[0]],branchOf=r=>data.organizations[r[0]].branches[r[1]];
+const branchName=b=>lang==='fr'?b[2]||b[1]:b[1];
+const diff=r=>r[3]-r[5];
+
+function translate(){
+ document.documentElement.lang=lang;document.title=text().title;
+ document.querySelectorAll('[data-en][data-fr]').forEach(e=>e.textContent=e.dataset[lang]);
+}
+function readURL(){
+ const q=new URLSearchParams(location.search);
+ state.pair=q.get('pair')||'';state.org=q.get('org')||'';state.min=MINIMUMS.includes(Number(q.get('min')))?Number(q.get('min')):0;
+ state.higher=['first','second'].includes(q.get('higher'))?q.get('higher'):'';state.order=q.get('order')==='name'?'name':'';
+}
+function writeURL(){
+ try{const u=new URL(location.href);for(const [k,v] of [['pair',state.pair],['org',state.org],['min',state.min||''],['higher',state.higher],['order',state.order]]){if(v)u.searchParams.set(k,v);else u.searchParams.delete(k);}history.replaceState(history.state,'',u.href);}catch(e){}
+}
+function options(select,list,value){
+ select.replaceChildren(...list.map(([v,label])=>{const o=el('option','',label);o.value=String(v);return o;}));
+ select.value=String(value);if(select.value!==String(value))select.selectedIndex=0;
+}
+function controls(){
+ const t=text();
+ if(!data.pairs.some(p=>p.key===state.pair))state.pair='';
+ if(!data.organizations.some(o=>o.slug===state.org))state.org='';
+ options($('f-pair'),[['',t.allPairs],...data.pairs.map(p=>[p.key,p[lang]])],state.pair);
+ const orgs=[...data.organizations].sort((a,b)=>name(a).localeCompare(name(b),t.locale));
+ options($('f-org'),[['',t.allOrgs],...orgs.map(o=>[o.slug,name(o)])],state.org);
+ options($('f-min'),MINIMUMS.map(n=>[n,n?t.minN(num(n)):t.anyMin]),state.min);
+ const p=data.pairs.find(x=>x.key===state.pair);
+ options($('f-higher'),[['',t.either],['first',p?name(p.first):t.firstPair],['second',p?name(p.second):t.secondPair]],state.higher);
+ options($('f-order'),[['',t.orderDiff],['name',t.orderName]],state.order);
+}
+function base(){
+ return data.rows.filter(r=>(!state.org||orgOf(r).slug===state.org)&&(!state.min||(r[4]!==null&&r[6]!==null&&r[4]>=state.min&&r[6]>=state.min)));
+}
+function selected(){
+ const rows=base().filter(r=>(!state.pair||pairOf(r).key===state.pair)&&(state.higher!=='first'||diff(r)>0)&&(state.higher!=='second'||diff(r)<0));
+ const locale=text().locale,byName=(a,b)=>name(orgOf(a)).localeCompare(name(orgOf(b)),locale)||branchName(branchOf(a)).localeCompare(branchName(branchOf(b)),locale)||a[2]-b[2];
+ if(state.order==='name')rows.sort(byName);
+ else rows.sort((a,b)=>Math.abs(diff(b))-Math.abs(diff(a))||Math.min(b[4]??0,b[6]??0)-Math.min(a[4]??0,a[6]??0)||byName(a,b));
+ return rows;
+}
+function link(r){
+ const params=new URLSearchParams({'branch-question':data.question.id,'branch-group':pairOf(r).key,branch:branchOf(r)[0]});if(lang==='fr')params.set('lang','fr');
+ return '../'+encodeURIComponent(orgOf(r).slug)+'/?'+params.toString()+'#branch-results';
+}
+function groupCell(group,yes,answers){
+ const td=el('td','bg-num');td.append(el('span','bg-line',name(group)),el('strong','bg-line',text().yes(yes)),el('span','bg-line bg-small',text().answers(answers)));return td;
+}
+function stats(){
+ const t=text(),orgs=data.coverage.withComparisons,total=data.coverage.organizations,branches=new Set(data.rows.map(r=>r[0]+'|'+r[1])).size;
+ const items=[[num(data.rows.length),t.statRows],[num(orgs),t.statOrgs(orgs,num(total))],[num(branches),t.statBranches]];
+ $('stats').replaceChildren(...items.map(([n,l])=>{const d=el('div');d.append(el('strong','',n),el('span','',l));return d;}));
+}
+function list(){
+ const t=text(),rows=selected(),shown=rows.slice(0,limit),body=$('gaps-body');
+ $('gaps-caption').textContent=t.caption;
+ body.replaceChildren(...shown.map(r=>{
+  const tr=el('tr'),th=el('th','bg-sticky');th.scope='row';const a=el('a','',branchName(branchOf(r)));a.href=link(r);th.append(a,el('span','bg-org',name(orgOf(r))));tr.append(th);
+  const p=pairOf(r);tr.append(groupCell(p.first,r[3],r[4]),groupCell(p.second,r[5],r[6]));
+  const d=diff(r),td=el('td','bg-num');td.append(el('strong','bg-line',t.points(Math.abs(d))),el('span','bg-line bg-small',d>0?t.higherFor(name(p.first)):d<0?t.higherFor(name(p.second)):t.same));tr.append(td);
+  return tr;
+ }));
+ $('status').textContent=rows.length?t.showing(shown.length,rows.length):t.none;
+ const left=rows.length-shown.length,more=$('more');more.hidden=left<=0;more.textContent=t.more(Math.min(PAGE,left));
+ $('download').disabled=!rows.length;
+}
+function overview(){
+ const t=text(),rows=base();
+ $('overview-intro').textContent=t.overviewIntro;$('overview-caption').textContent=t.overviewCaption;
+ $('overview-body').replaceChildren(...data.pairs.map((p,i)=>{
+  const mine=rows.filter(r=>r[2]===i),first=mine.filter(r=>diff(r)>0).length,second=mine.filter(r=>diff(r)<0).length;
+  const tr=el('tr'),th=el('th','bg-sticky',p[lang]);th.scope='row';tr.append(th,el('td','bg-num',num(mine.length)),el('td','',name(p.first)+(lang==='fr'?'\u00a0: ':': ')+num(first)),el('td','',name(p.second)+(lang==='fr'?'\u00a0: ':': ')+num(second)),el('td','bg-num',num(mine.length-first-second)));return tr;
+ }));
+}
+function notes(){
+ const t=text(),s=data.sources;
+ $('question-text').textContent=data.question[lang];
+ $('coverage-note').textContent=t.coverage(num(data.coverage.organizations),data.coverage.without.map(name));
+ $('source-list').replaceChildren(...t.sources(s).map(([label,links])=>{const li=el('li','',label+' ');links.forEach(([l,href],i)=>{if(i)li.append(' · ');const a=el('a','',l);a.href=href;li.append(a);});return li;}));
+}
+function render(){
+ translate();
+ if(!data){$('status').textContent=failed?text().failed:text().loading;return;}
+ controls();stats();list();overview();notes();
+}
+function csvSelection(){
+ const q=v=>{const s=String(v??'');return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;};
+ const head=['organization_en','organization_fr','level1id','branch_en','branch_fr','level2id','groups_en','groups_fr','first_group_en','first_group_fr','first_group_condition','first_group_yes_percent','first_group_answers','second_group_en','second_group_fr','second_group_condition','second_group_yes_percent','second_group_answers','difference_points_first_minus_second','question'];
+ const lines=selected().map(r=>{const o=orgOf(r),b=branchOf(r),p=pairOf(r);return [o.en,o.fr,o.code,b[1],b[2],b[0],p.en,p.fr,p.first.en,p.first.fr,p.first.code,r[3],r[4],p.second.en,p.second.fr,p.second.code,r[5],r[6],diff(r),data.question.id];});
+ return '\ufeff'+[head,...lines].map(r=>r.map(q).join(',')).join('\r\n')+'\r\n';
+}
+function change(key,value){state[key]=key==='min'?Number(value):value;limit=PAGE;writeURL();controls();list();overview();}
+$('f-pair').addEventListener('change',e=>change('pair',e.target.value));
+$('f-org').addEventListener('change',e=>change('org',e.target.value));
+$('f-min').addEventListener('change',e=>change('min',e.target.value));
+$('f-higher').addEventListener('change',e=>change('higher',e.target.value));
+$('f-order').addEventListener('change',e=>change('order',e.target.value));
+$('reset').addEventListener('click',()=>{Object.assign(state,{pair:'',org:'',min:0,higher:'',order:''});limit=PAGE;writeURL();controls();list();overview();});
+$('more').addEventListener('click',()=>{const next=$('gaps-body').children.length;limit+=PAGE;list();$('gaps-body').children[next]?.querySelector('a')?.focus();});
+$('download').addEventListener('click',()=>{if(!data)return;const blob=new Blob([csvSelection()],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=text().file;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
+window._applyLang=next=>{lang=next==='fr'?'fr':'en';render();};
+readURL();render();
+fetch(DATA_URL).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(d=>{
+ if(!d||d.schema!==1||!Array.isArray(d.rows)||!Array.isArray(d.pairs)||!Array.isArray(d.organizations))throw Error('Unexpected format');
+ data=d;render();
+}).catch(()=>{failed=true;render();});
+})();
+</script>
+<script src="../gc-workspace.js?v=20261117-1"></script>
+</body>
+</html>

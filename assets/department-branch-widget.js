@@ -57,13 +57,18 @@ function hasComparison(p,q){
  for(const r of rows)if(String(r[2])===q&&p.members.includes(r[1])&&published(r)){const k=String(r[0]),seen=(found.get(k)||new Set()).add(r[1]);found.set(k,seen);if(seen.size===p.members.length)return true}
  return false;
 }
+/* A link can open one comparison: ?branch-question=Q65&branch-group=Racialized&branch=200#branch-results.
+   Values that do not exist for this organization are ignored and the usual defaults apply. */
 function chooseDefaults(){
  pairs=buildPairs();
- const qi=meta.questions.findIndex(q=>q.id===DEFAULT_QUESTION);
+ const want=new URLSearchParams(location.search);
+ const asked=meta.questions.findIndex(q=>q.id===want.get("branch-question"));
+ const qi=asked>=0?asked:meta.questions.findIndex(q=>q.id===DEFAULT_QUESTION);
  question=String(qi>=0?qi:Math.max(0,meta.questions.findIndex(q=>KEY_QUESTIONS.includes(q.id))));
  const preferred=pairs.find(p=>p.key===DEFAULT_PAIR)||pairs[0];
- const usable=[preferred,...pairs.filter(p=>p!==preferred)].find(p=>p&&hasComparison(p,question));
- pair=(usable||preferred).key;branch="";
+ const usable=pairs.find(p=>p.key===want.get("branch-group"))||[preferred,...pairs.filter(p=>p!==preferred)].find(p=>p&&hasComparison(p,question));
+ pair=(usable||preferred).key;
+ const unit=want.get("branch");branch=unit&&record.branches.some(b=>String(b.id)===unit)?unit:"";
 }
 function mount(){
  const h=document.getElementById(fr()?"unites":"branches")|| (fr()?document.getElementById("secteurs"):null);
@@ -132,7 +137,7 @@ function results(){
   table.append(body);
  }
  /* Charts read these complete rows, because the branch name spans both rows of each branch. Unavailable cells stay text and are never plotted. */
- table._gceVisualData={headers:[t("Branch","Direction"),t("Employee group","Groupe d’employés"),...columns.map(c=>t(c[1],c[2]))],rows:visual,title:table.caption.textContent,lang:fr()?"fr":"en",scope:"filtered"};
+ table._gceVisualData={headers:[t("Branch","Direction"),t("Employee group","Groupe d’employés"),...columns.map(c=>t(c[1],c[2]))],rows:visual,title:table.caption.textContent,lang:fr()?"fr":"en",scope:"filtered",chart:{kind:"heatmap",x:0,column:1,measure:2+Math.max(0,columns.findIndex(c=>c[0]===mainMeasure(columns))),limit:100}};
  const wrap=el("div");wrap.className="table-scroll";wrap.style.cssText="overflow-x:auto;max-width:100%";wrap.tabIndex=0;wrap.setAttribute("role","region");wrap.setAttribute("aria-label",t("Branch survey results table","Tableau des résultats par direction"));wrap.append(table);out.append(questionText,groupText,findings(p,chosen,lookup,columns,names),wrap);window.GCEquityVisuals?.update(table);
  const n=chosen.length,total=n*p.members.length;
  status.textContent=count?t(n+(n===1?" branch shown. ":" branches shown. ")+count+" of "+total+" group results are published.",n+(n===1?" direction affichée. ":" directions affichées. ")+count+" résultats de groupe publiés sur "+total+"."):t("No published values for this selection. Suppressed or missing results are shown as unavailable, not zero.","Aucune valeur publiée pour cette sélection. Les résultats supprimés ou manquants sont indiqués comme indisponibles, et non comme zéro.");
@@ -140,11 +145,12 @@ function results(){
 /* Descriptive findings for the selected question and groups: the range across branches for each group,
    and the largest gap between the two groups within one branch. Published values only; missing and
    suppressed values are excluded, never treated as zero. Not significance or causation findings. */
+/* The main measure for a question: positive answers on agreement scales, the most negative answers on yes/no and extent questions, as the survey groups them. */
+function mainMeasure(columns){const has=n=>columns.some(c=>c[0]===n);return has("NEUTRAL")&&has("MOSTPOS")?"MOSTPOS":["MOSTNEG","MOSTPOS","AGREE","SCORE100"].find(has)}
 function findings(p,chosen,lookup,columns,names){
  const box=el("section");box.append(el("h4",t("What stands out in this selection","Ce qui ressort de cette sélection")));
- const has=n=>columns.some(c=>c[0]===n);
  /* Agreement scales start from positive answers; yes/no and extent questions from the most negative answers, as the survey groups them. */
- const key=has("NEUTRAL")&&has("MOSTPOS")?"MOSTPOS":["MOSTNEG","MOSTPOS","AGREE","SCORE100"].find(has);
+ const key=mainMeasure(columns);
  const lines=[];
  if(key){
   const percent=key!=="SCORE100",i=field(key),n=field("ANSCOUNT");
@@ -170,6 +176,8 @@ function findings(p,chosen,lookup,columns,names){
  if(lines.length<2)box.append(el("p",t("No range or gap can be calculated from two distinct published values in this selection.","Aucune étendue ni aucun écart ne peut être calculé à partir de deux valeurs publiées distinctes dans cette sélection.")));
  else for(const line of lines)box.append(el("p",line));
  box.append(el("p",t("These are descriptive differences between published values, not significance or causation findings. Groups and branches may overlap; missing and suppressed values are excluded, never treated as zero.","Il s’agit d’écarts descriptifs entre des valeurs publiées, et non de résultats de signification ou de causalité. Les groupes et les directions peuvent se chevaucher; les valeurs manquantes ou supprimées sont exclues, jamais traitées comme nulles.")));
+ /* Question 65 has a page comparing the same groups in every branch of every organization in the file. */
+ if(meta.questions[Number(question)]?.id==="Q65"){const line=el("p"),a=el("a",t("Compare these groups on this question in the branches of all organizations","Comparer ces groupes pour cette question dans les directions de toutes les organisations"));const u=new URL("branch-gaps/",base);u.searchParams.set("pair",p.key);if(fr())u.searchParams.set("lang","fr");a.href=u.href;a.id="gce-branch-gaps-link";line.append(a);box.append(line)}
  return box;
 }
 function watch(){
@@ -179,7 +187,7 @@ function watch(){
  observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer?.disconnect();observer=null;load()}},{rootMargin:"200px 0px"});
  observer.observe(root);
 }
-async function load(){if(loading||rows||!record)return;observer?.disconnect();observer=null;loading=true;err=false;render();try{const [m,res]=await Promise.all([get("assets/department-branch-definitions.json"),fetch(new URL("data/pses-2024-branches/"+record.id+".json.gz",base))]);if(!res.ok)throw Error("Source unavailable");const bytes=await res.arrayBuffer();const view=new Uint8Array(bytes),gz=view[0]===31&&view[1]===139;if(gz&&typeof DecompressionStream!=="function")throw Error("Browser does not support gzip");const raw=gz?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);const data=JSON.parse(raw);if(!Array.isArray(data)||!data.every(r=>Array.isArray(r)&&r.length>=3+m.schema.length))throw Error("Unexpected source format");meta=m;rows=data;chooseDefaults()}catch(e){err=true;rows=undefined}finally{loading=false;render()}}
+async function load(){if(loading||rows||!record)return;observer?.disconnect();observer=null;loading=true;err=false;render();try{const [m,res]=await Promise.all([get("assets/department-branch-definitions.json"),fetch(new URL("data/pses-2024-branches/"+record.id+".json.gz",base))]);if(!res.ok)throw Error("Source unavailable");const bytes=await res.arrayBuffer();const view=new Uint8Array(bytes),gz=view[0]===31&&view[1]===139;if(gz&&typeof DecompressionStream!=="function")throw Error("Browser does not support gzip");const raw=gz?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);const data=JSON.parse(raw);if(!Array.isArray(data)||!data.every(r=>Array.isArray(r)&&r.length>=3+m.schema.length))throw Error("Unexpected source format");meta=m;rows=data;chooseDefaults()}catch(e){err=true;rows=undefined}finally{loading=false;render();if(rows&&location.hash==="#branch-results")root.scrollIntoView({block:"start"})}}
 window.addEventListener("hashchange",()=>{if(SECTION_IDS.includes(location.hash.slice(1)))load()});
 mount();render();get("assets/department-branch-index.json").then(d=>{record=d[slug];known=true;render()}).catch(()=>{known=true;root.replaceChildren(el("p",t("Branch coverage could not be checked. Reload the page to retry.","La couverture des données par direction n’a pas pu être vérifiée. Rechargez la page.")))});
 document.addEventListener("gce-department-coverage-updated",()=>{mount();render()});

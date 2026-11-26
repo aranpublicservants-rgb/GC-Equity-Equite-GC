@@ -65,3 +65,17 @@ test('raw source categories skip constant employers and repeated labels require 
  assert.equal(V.points(p,{x:1,measure:4,filters:{3:'Q12'}}).uniqueCategories,true);
  assert.equal(V.missingLabel('X'),'Suppressed');assert.equal(V.missingLabel('9999','fr'),'Sans objet');assert.equal(V.missingLabel('No formal benchmark in this source'),'No formal benchmark in this source');
 });
+
+test('a table can ask for a starting chart, and only values that fit the table are kept',()=>{
+ const rows=[['Branch A','Racialized',91,9,175],['Branch A','Non-racialized',94,6,445],['Branch B','Racialized','Unavailable','Unavailable','Unavailable'],['Branch B','Non-racialized',91,9,25]];
+ const p=V.profile(['Branch','Employee group','Most positive (%)','Most negative (%)','Answer count'],rows,{chart:{kind:'heatmap',x:0,column:1,measure:3,limit:100}});
+ assert.deepEqual(p.chart,{kind:'heatmap',x:0,column:1,measure:3,limit:100});
+ assert.deepEqual(p.dimensions.map(d=>d.index),[0,1]);
+ assert.ok(p.metrics.some(m=>m.index===3));
+ const pts=V.points(p,{x:0,measure:3,limit:100});
+ assert.equal(pts.uniqueCategories,false,'two groups per branch need heatmap columns');
+ const grid=V.pivot(p,pts,1);
+ assert.deepEqual(grid.labels,['Branch A','Branch B']);assert.deepEqual(grid.columns,['Racialized','Non-racialized']);
+ assert.equal(V.numeric(grid.cells.get(JSON.stringify(['Branch B','Racialized'])).raw[3]),null,'an unavailable cell is never plotted as zero');
+ assert.equal(V.profile(['A','B (%)'],[['x',1]]).chart,null);
+});

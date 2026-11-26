@@ -45,6 +45,17 @@ async function cellText(box,rowLocator,label){
   assert.equal(await box.locator('#gce-branch-unit').inputValue(),'',slug+' default branch');
   assert.equal(await box.locator('#gce-branch-output tbody').count(),rec.branches.length,slug+' one row group per branch');
   assert.equal(await box.locator('#gce-branch-output tbody tr').count(),rec.branches.length*m.length,slug+' two rows per branch');
+  /* The chart opens as a heatmap of branches by employee group, with no filtering first. */
+  await box.locator('#gce-branch-output table').scrollIntoViewIfNeeded();
+  const chartButton=box.getByRole('button',{name:lang==='fr'?'Graphique':'Chart',exact:true}).first();
+  await chartButton.waitFor({timeout:30000});await chartButton.click();
+  assert.equal(await box.getByLabel(lang==='fr'?'Type de graphique':'Chart type',{exact:true}).first().inputValue(),'heatmap',slug+' chart opens as a heatmap');
+  assert.equal(await box.getByLabel(lang==='fr'?'Colonnes de la carte thermique':'Heatmap columns',{exact:true}).first().inputValue(),'1',slug+' heatmap columns are employee groups');
+  assert.equal(await box.locator('svg [data-point]').count(),rec.branches.length*m.length,slug+' one heatmap cell per branch and group');
+  const blank=rows.find(r=>String(r[2])===q65&&m.includes(r[1])&&!ok(r[F('MOSTNEG')]));
+  if(blank){const name=rec.branches.find(b=>String(b.id)===String(blank[0]))[lang==='fr'?'fr':'en'];const cellLabels=await box.locator('svg [data-point]').evaluateAll(n=>n.map(x=>x.getAttribute('aria-label')));
+   assert.ok(cellLabels.some(t=>t.startsWith(name.trim())&&/(Unavailable|Indisponible|Suppressed|Supprimé)/.test(t.split(' · ')[1]||'')),slug+' unavailable heatmap cell is labelled, not zero');}
+  await box.getByRole('button',{name:lang==='fr'?'Tableau':'Table',exact:true}).first().click();
   const label=lang==='fr'?'Les plus négatives (%)':'Most negative (%)';
   const cell=rows.find(r=>String(r[2])===q65&&r[1]===m[0]&&ok(r[F('MOSTNEG')]));assert.ok(cell,slug);
   await box.locator('#gce-branch-unit').selectOption(String(cell[0]));

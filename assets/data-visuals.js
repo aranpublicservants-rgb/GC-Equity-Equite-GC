@@ -54,7 +54,7 @@
     if(isPeriod(raw[i]||headers[i])||values.some(v=>numeric(v,lang)===null&&!missing.test(norm(v))))dimensions.push({index:i,label:String(headers[i]),period:isPeriod(raw[i]||headers[i])});
    }
   }
-  return {headers,rawHeaders:raw,rows,lang,metrics,dimensions,title:opts.title||'',scope:opts.scope||'table',sources:(Array.isArray(opts.sources)?opts.sources:opts.sources?[opts.sources]:[]).map(s=>typeof s==='string'?{url:s,label:s}:s)};
+  return {headers,rawHeaders:raw,rows,lang,metrics,dimensions,title:opts.title||'',scope:opts.scope||'table',chart:opts.chart&&typeof opts.chart==='object'?opts.chart:null,sources:(Array.isArray(opts.sources)?opts.sources:opts.sources?[opts.sources]:[]).map(s=>typeof s==='string'?{url:s,label:s}:s)};
  }
  function points(p,settings={}){
   const x=Number(settings.x??p.dimensions[0]?.index??0),m=p.metrics.find(m=>m.index===Number(settings.measure))||p.metrics[0];
@@ -151,12 +151,14 @@
    return svg;
   }
   function save(name,blob){const url=URL.createObjectURL(blob),a=doc.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);}
+  /* A table may ask for a starting chart (type, categories, heatmap columns, measure, row limit). Only values that fit this table are used. */
+  function preferred(state,p){const c=p.chart;if(!c)return;const dim=i=>Number.isInteger(i)&&p.dimensions.some(d=>d.index===i);if(['bars','dots','heatmap'].includes(c.kind))state.kind=c.kind;if(dim(c.x))state.x=c.x;if(dim(c.column)&&c.column!==state.x)state.column=c.column;if(Number.isInteger(c.measure)&&p.metrics.some(m=>m.index===c.measure)){state.measure=c.measure;state.compare='';}if([20,40,100,250].includes(Number(c.limit)))state.limit=Number(c.limit);}
   function mount(table,p){
    const host=node('section','dv-widget');host.setAttribute('aria-label',L(p.lang,'Data view options','Options de visualisation'));const wrapper=table.closest('.table-scroll,.gce-table-wrap,.gcw-table-wrap,.tblwrap,.eq-table-scroll,.eq-native-table-wrap,.scroll')||table;const older=wrapper.previousElementSibling;if(older?.matches('.dp-bars,.isc-bars'))older.hidden=true;wrapper.before(host);
    const primary=p.metrics.find(m=>/representation/.test(norm(m.label)))||p.metrics.find(m=>m.kind==='percent'&&/published result|resultat publie|positive|agree/.test(norm(m.label)))||p.metrics[0];const benchmark=p.metrics.find(m=>m.kind===primary.kind&&m.index!==primary.index&&/availability|disponibilite|\bwfa\b|\bdpa\b|all respondents in this|tous les repondants de/.test(norm(m.label)));
    const state={view:'table',kind:'bars',measure:primary.index,compare:benchmark?.index??'',x:defaultDimension(p),column:'',search:'',limit:40,sort:'source',filters:{}};
    try{const saved=JSON.parse(win.localStorage.getItem('gc-equity-visual-view-v1')||'null');if(['table','chart','both'].includes(saved?.view))state.view=saved.view;}catch(e){}
-   if(doc.getElementById('prefer-tables')?.checked||doc.body.classList.contains('dp-tables-only')||doc.body.classList.contains('prefer-tables'))state.view='table';
+   if(doc.getElementById('prefer-tables')?.checked||doc.body.classList.contains('dp-tables-only')||doc.body.classList.contains('prefer-tables'))state.view='table';preferred(state,p);
    const w={table,host,wrapper,state,p,signature:'',controls:null,dirty:false};host._gceSourceTable=table;widgets.set(table,w);active.add(w);if(lazy)lazy.observe(host);build(w);return w;
   }
   function build(w){
@@ -200,7 +202,7 @@
    if(!table.isConnected||table.closest('.dv-widget,.gcw-dialog,.evidence-chart,[data-no-visual]'))return;
    const p=dataFor(table);if(!p)return;let w=widgets.get(table);if(w)w.dirty=false;
    if(!p.metrics.length||!p.dimensions.length){if(w){w.wrapper.removeAttribute('data-dv-hidden');w.host.remove();active.delete(w);widgets.delete(table);}return;}
-   if(!w)w=mount(table,p);else{const changed=w.p.headers.join('|')!==p.headers.join('|')||w.p.lang!==p.lang;w.p=p;if(changed)w.state.filters={};build(w);}
+   if(!w)w=mount(table,p);else{const changed=w.p.headers.join('|')!==p.headers.join('|')||w.p.lang!==p.lang;w.p=p;if(changed){w.state.filters={};preferred(w.state,p);}build(w);}
   }
   const queue=table=>{pending.add(table);clearTimeout(timer);timer=setTimeout(()=>{for(const t of pending){const w=widgets.get(t);if(w){if(nearby(w.host))enhance(t);else w.dirty=true;}else if(nearby(t))enhance(t);else watch(t);}pending.clear();for(const w of active)if(!w.table.isConnected){w.host.remove();active.delete(w);}},90);};
   api.update=(table,data)=>{if(data)table._gceVisualData=data;queue(table);};api.enhance=enhance;

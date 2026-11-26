@@ -78,6 +78,12 @@
     "group": "other"
   },
   {
+    "path": "branch-gaps/",
+    "en": "Discrimination on the job: differences between employee groups in the same branch",
+    "fr": "Discrimination au travail : écarts entre groupes d’employés d’une même direction",
+    "group": "departments"
+  },
+  {
     "path": "business-development-bank-of-canada/",
     "en": "Business Development Bank of Canada",
     "fr": "Banque de développement du Canada",

@@ -77,6 +77,6 @@ byId("load")?.addEventListener("click",init);
 new MutationObserver(()=>{if(loaded)render();else if(byId("load"))byId("load").textContent=t("Explore linked evidence","Explorer les données liées")}).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
 if(new URL(location.href).searchParams.get("depth")==="1")init();
 })();
-;(()=>{const here=document.currentScript;if(!here||document.querySelector('script[data-gce-branch-widget]'))return;const s=document.createElement('script');s.dataset.gceBranchWidget='true';s.src=new URL('department-branch-widget.js?v=20261126-2',here.src).href;s.defer=true;document.head.append(s)})();
+;(()=>{const here=document.currentScript;if(!here||document.querySelector('script[data-gce-branch-widget]'))return;const s=document.createElement('script');s.dataset.gceBranchWidget='true';s.src=new URL('department-branch-widget.js?v=20261126-4',here.src).href;s.defer=true;document.head.append(s)})();
 
 ;(()=>{const here=document.currentScript;if(!here||document.querySelector('script[data-gce-built-in]'))return;const s=document.createElement('script');s.dataset.gceBuiltIn='true';s.src=new URL('../gc-built-in-ai.js?v=20261126-2',here.src).href;s.defer=true;document.head.append(s)})();
