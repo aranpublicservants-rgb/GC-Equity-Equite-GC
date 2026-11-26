@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'sitemap.xml'
+      - '**/*.html'
       - 'assets/search-index.json'
       - 'assets/department-pages.json'
       - 'assets/department-profile-index.json'
@@ -25,20 +27,22 @@ jobs:
         with:
           sparse-checkout: |
             assets
+            sitemap.xml
+            *.html
             data/department-profiles
             scripts/build-local-equity-ai.mjs
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save --no-package-lock @huggingface/transformers@3.8.1
+      - run: npm install --no-save --no-package-lock @huggingface/transformers@3.8.1 cheerio@1.0.0
       - run: node --check scripts/build-local-equity-ai.mjs
       - run: node scripts/build-local-equity-ai.mjs
       - name: Commit generated public artifacts
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add assets/department-key-findings.json assets/semantic-vectors.json
+          git add assets/department-key-findings.json assets/semantic-vectors.json assets/local-search-pages.json
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
