@@ -1,31 +1,7 @@
 [
   {
-    "path": "accessibility-inclusion/duty-to-accommodate/accessibility.html",
-    "en": "accessibility",
-    "fr": null,
-    "group": "other"
-  },
-  {
-    "path": "accessibility-inclusion/duty-to-accommodate/evidence.html",
-    "en": "evidence",
-    "fr": null,
-    "group": "other"
-  },
-  {
-    "path": "accessibility-inclusion/duty-to-accommodate/get-help.html",
-    "en": "get help",
-    "fr": null,
-    "group": "other"
-  },
-  {
-    "path": "accessibility-inclusion/duty-to-accommodate/",
-    "en": "duty to accommodate",
-    "fr": null,
-    "group": "other"
-  },
-  {
     "path": "accessibility-inclusion/",
-    "en": "accessibility inclusion",
+    "en": "People with Disabilities in the Federal Public Service",
     "fr": null,
     "group": "other"
   },
@@ -72,12 +48,6 @@
     "group": "departments"
   },
   {
-    "path": "auditor-general-of-canada-office-of-the/",
-    "en": "auditor general of canada office of the",
-    "fr": null,
-    "group": "other"
-  },
-  {
     "path": "bank-of-canada-museum/",
     "en": "Bank of Canada Museum",
     "fr": "Musée de la Banque du Canada",
@@ -91,7 +61,7 @@
   },
   {
     "path": "barrier-comparisons/",
-    "en": "barrier comparisons",
+    "en": "Compare workplace barriers",
     "fr": null,
     "group": "other"
   },
@@ -103,7 +73,7 @@
   },
   {
     "path": "branch-equity.html",
-    "en": "branch equity",
+    "en": "2024 employee survey results by branch",
     "fr": null,
     "group": "other"
   },
@@ -115,7 +85,7 @@
   },
   {
     "path": "call-to-action.html",
-    "en": "call to action",
+    "en": "Call to Action: commitments and results by organization",
     "fr": null,
     "group": "other"
   },
@@ -166,12 +136,6 @@
     "en": "Canada Economic Development for Quebec Regions",
     "fr": "Développement économique Canada pour les régions du Québec",
     "group": "departments"
-  },
-  {
-    "path": "canada-economic-development-quebec-regions/",
-    "en": "canada economic development quebec regions",
-    "fr": null,
-    "group": "other"
   },
   {
     "path": "canada-employment-insurance-commission/",
@@ -499,13 +463,13 @@
   },
   {
     "path": "career-development/index-fr.html",
-    "en": "index fr",
+    "en": "Développement de carrière dans la fonction publique",
     "fr": null,
     "group": "rights"
   },
   {
     "path": "career-development/",
-    "en": "career development",
+    "en": "Career Development in the Public Service",
     "fr": null,
     "group": "rights"
   },
@@ -534,33 +498,9 @@
     "group": "departments"
   },
   {
-    "path": "civilian-review-and-complaints-commission-for-the-rcmp-royal-canadian-mounted-police/",
-    "en": "Civilian Review and Complaints Commission for the RCMP (Royal Canadian Mounted Police)",
-    "fr": "Commission civile d'examen et de traitement des plaintes relatives à la GRC",
-    "group": "departments"
-  },
-  {
     "path": "civilian-review-and-complaints-commission-for-the-rcmp/",
     "en": "Civilian Review and Complaints Commission for the RCMP",
     "fr": "Commission civile d'examen et de traitement des plaintes relatives à la GRC",
-    "group": "departments"
-  },
-  {
-    "path": "commissioner-for-federal-judicial-affairs-canada-office-of-the/",
-    "en": "Commissioner for Federal Judicial Affairs Canada (Office of the)",
-    "fr": "Commissariat à la magistrature fédérale Canada",
-    "group": "departments"
-  },
-  {
-    "path": "commissioner-of-lobbying-of-canada-office-of-the/",
-    "en": "Commissioner of Lobbying of Canada (Office of the)",
-    "fr": "Commissariat au lobbying du Canada",
-    "group": "departments"
-  },
-  {
-    "path": "commissioner-of-official-languages-office-of-the/",
-    "en": "Commissioner of Official Languages (Office of the)",
-    "fr": "Commissariat aux langues officielles",
     "group": "departments"
   },
   {
@@ -577,31 +517,31 @@
   },
   {
     "path": "communities/black/",
-    "en": "black",
+    "en": "Black employees in the federal public service",
     "fr": null,
     "group": "other"
   },
   {
     "path": "communities/filipino/",
-    "en": "filipino",
+    "en": "Filipino public servants in the federal public service",
     "fr": null,
     "group": "other"
   },
   {
     "path": "communities/indigenous/fr.html",
-    "en": "fr",
+    "en": "Fonctionnaires autochtones : données et obstacles",
     "fr": null,
     "group": "other"
   },
   {
     "path": "communities/indigenous/",
-    "en": "indigenous",
+    "en": "Indigenous Federal Public Servants: Representation and Workplace Experience",
     "fr": null,
     "group": "other"
   },
   {
     "path": "companion-sites/",
-    "en": "companion sites",
+    "en": "Websites and tools",
     "fr": null,
     "group": "other"
   },
@@ -636,18 +576,6 @@
     "group": "departments"
   },
   {
-    "path": "correctional-investigator-canada-the/",
-    "en": "Correctional Investigator Canada (The)",
-    "fr": "Enquêteur correctionnel Canada (L')",
-    "group": "departments"
-  },
-  {
-    "path": "correctional-investigator-office-of-the/",
-    "en": "Correctional Investigator (Office of the)",
-    "fr": "Bureau de l’enquêteur correctionnel",
-    "group": "departments"
-  },
-  {
     "path": "correctional-service-canada/",
     "en": "Correctional Service Canada",
     "fr": "Service correctionnel Canada",
@@ -673,7 +601,7 @@
   },
   {
     "path": "data-catalogue.html",
-    "en": "data catalogue",
+    "en": "Find and download public equity data",
     "fr": null,
     "group": "other"
   },
@@ -715,7 +643,7 @@
   },
   {
     "path": "departmental-plans-2026-27/",
-    "en": "departmental plans 2026 27",
+    "en": "Term mentions in departmental plans, 2026–27",
     "fr": null,
     "group": "other"
   },
@@ -724,12 +652,6 @@
     "en": "Destination Canada",
     "fr": "Destination Canada",
     "group": "departments"
-  },
-  {
-    "path": "dfo-equity.html",
-    "en": "dfo equity",
-    "fr": null,
-    "group": "other"
   },
   {
     "path": "dfo/",
@@ -751,25 +673,19 @@
   },
   {
     "path": "duty-to-accommodate/accessibility.html",
-    "en": "accessibility",
+    "en": "Accessibility and plain-language statement",
     "fr": null,
     "group": "rights"
   },
   {
     "path": "duty-to-accommodate/evidence.html",
-    "en": "evidence",
-    "fr": null,
-    "group": "rights"
-  },
-  {
-    "path": "duty-to-accommodate/get-help.html",
-    "en": "get help",
+    "en": "DTA Evidence Library",
     "fr": null,
     "group": "rights"
   },
   {
     "path": "duty-to-accommodate/",
-    "en": "duty to accommodate",
+    "en": "Workplace accommodation: evidence and employee guidance",
     "fr": null,
     "group": "rights"
   },
@@ -799,13 +715,13 @@
   },
   {
     "path": "equity-history/",
-    "en": "equity history",
+    "en": "From Exclusion to Accountability",
     "fr": null,
     "group": "other"
   },
   {
     "path": "equity.html",
-    "en": "equity",
+    "en": "Equity across the public service",
     "fr": null,
     "group": "other"
   },
@@ -817,13 +733,13 @@
   },
   {
     "path": "evidence-review.html",
-    "en": "evidence review",
+    "en": "Evidence quality review: 50 checks",
     "fr": null,
     "group": "other"
   },
   {
     "path": "explorer.html",
-    "en": "explorer",
+    "en": "Public Service Equity Data Explorer",
     "fr": null,
     "group": "other"
   },
@@ -882,12 +798,6 @@
     "group": "departments"
   },
   {
-    "path": "finance-canada-department-of/",
-    "en": "finance canada department of",
-    "fr": null,
-    "group": "other"
-  },
-  {
     "path": "financial-consumer-agency-of-canada/",
     "en": "Financial Consumer Agency of Canada",
     "fr": "Agence de la consommation en matière financière du Canada",
@@ -907,7 +817,7 @@
   },
   {
     "path": "fswep-browser.html",
-    "en": "fswep browser",
+    "en": "FSWEP public referral requests",
     "fr": null,
     "group": "other"
   },
@@ -1026,21 +936,9 @@
     "group": "departments"
   },
   {
-    "path": "information-commissioner-office-of-the/",
-    "en": "information commissioner office of the",
-    "fr": null,
-    "group": "other"
-  },
-  {
     "path": "innovation-science-and-economic-development-canada/",
     "en": "Innovation, Science and Economic Development Canada",
     "fr": "Innovation, Sciences et Développement économique Canada",
-    "group": "departments"
-  },
-  {
-    "path": "intelligence-commissioner-office-of-the/",
-    "en": "Intelligence Commissioner (Office of the)",
-    "fr": "Bureau du commissaire au renseignement",
     "group": "departments"
   },
   {
@@ -1056,12 +954,6 @@
     "group": "departments"
   },
   {
-    "path": "international-joint-commission-canadian-section/",
-    "en": "international joint commission canadian section",
-    "fr": null,
-    "group": "other"
-  },
-  {
     "path": "international-joint-commission/",
     "en": "International Joint Commission",
     "fr": "Commission mixte internationale",
@@ -1075,7 +967,7 @@
   },
   {
     "path": "isc/equity-explorer/",
-    "en": "equity explorer",
+    "en": "Equity at Indigenous Services Canada",
     "fr": null,
     "group": "departments"
   },
@@ -1087,7 +979,7 @@
   },
   {
     "path": "isc/racialized-employees/",
-    "en": "racialized employees",
+    "en": "Racialized employees at ISC",
     "fr": null,
     "group": "departments"
   },
@@ -1102,12 +994,6 @@
     "en": "Judicial Compensation and Benefits Commission",
     "fr": "Commission d'examen de la rémunération des juges",
     "group": "departments"
-  },
-  {
-    "path": "justice-canada-department-of/",
-    "en": "justice canada department of",
-    "fr": null,
-    "group": "other"
   },
   {
     "path": "labour-program/",
@@ -1176,12 +1062,6 @@
     "group": "departments"
   },
   {
-    "path": "national-battlefields-commission/",
-    "en": "National Battlefields Commission",
-    "fr": "Commission des champs de bataille nationaux",
-    "group": "departments"
-  },
-  {
     "path": "national-capital-commission/",
     "en": "National Capital Commission",
     "fr": "Commission de la capitale nationale",
@@ -1228,12 +1108,6 @@
     "en": "Natural Resources Canada",
     "fr": "Ressources naturelles Canada",
     "group": "departments"
-  },
-  {
-    "path": "natural-sciences-and-engineering-research-canada/",
-    "en": "natural sciences and engineering research canada",
-    "fr": null,
-    "group": "other"
   },
   {
     "path": "natural-sciences-and-engineering-research-council-of-canada/",
@@ -1345,7 +1219,7 @@
   },
   {
     "path": "official-employer-publications/",
-    "en": "official employer publications",
+    "en": "Official employer publications",
     "fr": null,
     "group": "other"
   },
@@ -1357,7 +1231,7 @@
   },
   {
     "path": "organizations.html",
-    "en": "organizations",
+    "en": "Federal organization directory",
     "fr": null,
     "group": "other"
   },
@@ -1428,21 +1302,9 @@
     "group": "departments"
   },
   {
-    "path": "privacy-commissioner-of-canada-office-of-the/",
-    "en": "privacy commissioner of canada office of the",
-    "fr": null,
-    "group": "other"
-  },
-  {
     "path": "privy-council-office/",
     "en": "Privy Council Office",
     "fr": "Bureau du Conseil privé",
-    "group": "departments"
-  },
-  {
-    "path": "procurement-ombud-office-of-the/",
-    "en": "Procurement Ombud (Office of the)",
-    "fr": "Bureau de l'ombud de l'approvisionnement",
     "group": "departments"
   },
   {
@@ -1461,12 +1323,6 @@
     "path": "public-safety-canada/",
     "en": "Public Safety Canada",
     "fr": "Sécurité publique Canada",
-    "group": "departments"
-  },
-  {
-    "path": "public-sector-integrity-commissioner-of-canada-office-of-the/",
-    "en": "Public Sector Integrity Commissioner of Canada (Office of the)",
-    "fr": "Commissariat à l'intégrité du secteur public du Canada",
     "group": "departments"
   },
   {
@@ -1501,19 +1357,19 @@
   },
   {
     "path": "racialized-executives/",
-    "en": "racialized executives",
+    "en": "Racialized Executives Network",
     "fr": null,
     "group": "other"
   },
   {
     "path": "racism-hazard-prevention/index-fr.html",
-    "en": "index fr",
+    "en": "Le racisme et la discrimination comme risques professionnels",
     "fr": null,
     "group": "other"
   },
   {
     "path": "racism-hazard-prevention/",
-    "en": "racism hazard prevention",
+    "en": "Racism and discrimination as workplace hazards",
     "fr": null,
     "group": "other"
   },
@@ -1531,31 +1387,25 @@
   },
   {
     "path": "recourse/cases/",
-    "en": "cases",
+    "en": "Decision library",
     "fr": null,
     "group": "rights"
   },
   {
     "path": "recourse/cases/static.html",
-    "en": "static",
+    "en": "Static decision library",
     "fr": null,
     "group": "rights"
   },
   {
     "path": "recourse/companion/",
-    "en": "companion",
-    "fr": null,
-    "group": "rights"
-  },
-  {
-    "path": "recourse/fr/",
-    "en": "fr",
+    "en": "Recourse Assistant",
     "fr": null,
     "group": "rights"
   },
   {
     "path": "recourse/",
-    "en": "recourse",
+    "en": "Public service recourse",
     "fr": null,
     "group": "rights"
   },
@@ -1579,13 +1429,13 @@
   },
   {
     "path": "reports.html",
-    "en": "reports",
+    "en": "Employment equity reports",
     "fr": null,
     "group": "other"
   },
   {
     "path": "resource-library/",
-    "en": "resource library",
+    "en": "Resource library",
     "fr": null,
     "group": "other"
   },
@@ -1645,25 +1495,25 @@
   },
   {
     "path": "source-access.html",
-    "en": "source access",
+    "en": "Download full public data files",
     "fr": null,
     "group": "other"
   },
   {
     "path": "source-table.html",
-    "en": "source table",
+    "en": "Public source table",
     "fr": null,
     "group": "other"
   },
   {
     "path": "sources.html",
-    "en": "sources",
+    "en": "GC Equity: data sources",
     "fr": null,
     "group": "other"
   },
   {
     "path": "staffing.html",
-    "en": "staffing",
+    "en": "Hiring and staffing data from the Public Service Commission",
     "fr": null,
     "group": "other"
   },
@@ -1692,170 +1542,68 @@
     "group": "departments"
   },
   {
-    "path": "superintendent-of-financial-institutions-canada-office-of-the/",
-    "en": "Superintendent of Financial Institutions Canada (Office of the)",
-    "fr": "Bureau du surintendant des institutions financières Canada",
-    "group": "departments"
-  },
-  {
     "path": "survey-file-browser.html",
-    "en": "survey file browser",
+    "en": "Read and search data files",
     "fr": null,
     "group": "other"
   },
   {
-    "path": "systemic-change/accommodation-delivery-observatory/",
-    "en": "accommodation delivery observatory",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/barrier-breaker/",
-    "en": "barrier breaker",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
     "path": "systemic-change/commitments-tracker/",
-    "en": "commitments tracker",
+    "en": "Commitments and accountability tracker",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/decision-equity-check/",
-    "en": "decision equity check",
+    "en": "Decision equity check",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/department-evidence-explorer/",
-    "en": "department evidence explorer",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/discretion-navigator/",
-    "en": "discretion navigator",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/equitable-staffing-lab/",
-    "en": "equitable staffing lab",
+    "en": "Department evidence explorer",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/equity-impact-simulator/",
-    "en": "equity impact simulator",
+    "en": "Equity impact simulator",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/equity-under-austerity/",
-    "en": "equity under austerity",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/federal-equity-audit/",
-    "en": "federal equity audit",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/federal-glass-ceiling/",
-    "en": "federal glass ceiling",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/follow-equity-money/",
-    "en": "follow equity money",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/from-commitment-to-action/",
-    "en": "from commitment to action",
+    "en": "Equity under austerity",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/global-public-service-equity/",
-    "en": "global public service equity",
+    "en": "Global public service equity observatory",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/hr-process-toolkit/",
-    "en": "hr process toolkit",
+    "en": "HR process review toolkit",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/",
-    "en": "systemic change",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/intersectionality-without-guesswork/",
-    "en": "intersectionality without guesswork",
+    "en": "Systemic change tools",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/invisible-work-project/",
-    "en": "invisible work project",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/job-posting-barrier-scanner/",
-    "en": "job posting barrier scanner",
+    "en": "The Invisible Work Project",
     "fr": null,
     "group": "systemic"
   },
   {
     "path": "systemic-change/managers-equity-toolkit/",
-    "en": "managers equity toolkit",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/official-languages-equity/",
-    "en": "official languages equity",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/public-service-pay-gap-atlas/",
-    "en": "public service pay gap atlas",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/regional-career-opportunity-atlas/",
-    "en": "regional career opportunity atlas",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/what-worked/",
-    "en": "what worked",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/who-gets-heard/",
-    "en": "who gets heard",
-    "fr": null,
-    "group": "systemic"
-  },
-  {
-    "path": "systemic-change/why-public-servants-leave/",
-    "en": "why public servants leave",
+    "en": "The Manager’s Equity Toolkit",
     "fr": null,
     "group": "systemic"
   },
@@ -1939,7 +1687,7 @@
   },
   {
     "path": "website-directory/",
-    "en": "website directory",
+    "en": "Find equity information and tools",
     "fr": null,
     "group": "other"
   },
@@ -1957,13 +1705,13 @@
   },
   {
     "path": "where-data-agree-guide.html",
-    "en": "where data agree guide",
+    "en": "How to use Where the data agree",
     "fr": null,
     "group": "other"
   },
   {
     "path": "where-data-agree.html",
-    "en": "where data agree",
+    "en": "Where the data agree",
     "fr": null,
     "group": "other"
   },
@@ -1981,19 +1729,19 @@
   },
   {
     "path": "women-femmes/",
-    "en": "women femmes",
+    "en": "Women in the federal public service: intersectional barriers",
     "fr": null,
     "group": "other"
   },
   {
     "path": "workbook-browser.html",
-    "en": "workbook browser",
+    "en": "Archived source workbook",
     "fr": null,
     "group": "other"
   },
   {
     "path": "youth-and-students/",
-    "en": "youth and students",
+    "en": "Youth and students",
     "fr": null,
     "group": "other"
   },

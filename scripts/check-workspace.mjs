@@ -5,8 +5,10 @@ const source=fs.readFileSync('gc-workspace.js','utf8');
 const stub={documentElement:{lang:'en'},currentScript:{src:'https://example.org/equity/gc-workspace.js'},readyState:'loading',addEventListener(){},getElementById(){return null;}};
 const context={URL,URLSearchParams,document:stub,window:{addEventListener(){}},location:{href:'https://example.org/equity/index.html',origin:'https://example.org',pathname:'/equity/index.html'},localStorage:{getItem(){return null;}},crypto:globalThis.crypto,setTimeout(){},clearTimeout(){},console};
 vm.createContext(context);
-const end=source.lastIndexOf('})();');
-vm.runInContext(source.slice(0,end)+'globalThis.tests={numeric,pct,pp,findOrgs,findGroups,questionCode,repFact,searchDocs,safeCSV,sanitizeFact};})();',context,{timeout:3000});
+// Test the main workspace module only; small loader snippets appended after it are not part of it.
+const loader=source.indexOf('\n;(()=>{const here=document.currentScript'),main=loader>=0?source.slice(0,loader):source;
+const end=main.lastIndexOf('})();');
+vm.runInContext(main.slice(0,end)+'globalThis.tests={numeric,pct,pp,findOrgs,findGroups,questionCode,repFact,searchDocs,safeCSV,sanitizeFact};})();',context,{timeout:3000});
 const t=context.tests,m=JSON.parse(fs.readFileSync('assets/workspace-data.json','utf8')),index=JSON.parse(fs.readFileSync('assets/search-index.json','utf8'));
 assert.equal(t.numeric(null),false);assert.equal(t.numeric(''),false);assert.equal(t.numeric(0),true);
 assert.equal(t.questionCode(m,'satisfaction with racism complaints'),'Q72');
