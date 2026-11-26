@@ -6,6 +6,8 @@ Do not introduce paid services, paid API calls, subscriptions or hosting charges
 
 Preserve published datasets, suppressed cells, source-specific populations and reporting periods. Never reconstruct suppressed counts. Do not derive headcounts from rounded percentages. Treat different data populations and availability benchmarks separately.
 
+Preserve all existing data assistants, including guided, search and department-specific assistants. Consolidate navigation rather than deleting tools. Do not remove any feature, dataset, source, analysis, interactive control or specialized resource unless an equivalent is already integrated elsewhere and verified in both languages. Preserve old public URLs or redirect them to the equivalent functionality; document and test any consolidation before retiring an interface.
+
 Keep visitor text factual, in plain English and French. Do not display development instructions, requests from conversations or implementation status on visitor pages. Use no em dashes in new visitor text.
 
 Run `python scripts/check-site.py` for changes to code or pages. Use the managed preview and the documented browser tools for interactive checks. Keep changes isolated from other repositories unless the user authorizes work there.
