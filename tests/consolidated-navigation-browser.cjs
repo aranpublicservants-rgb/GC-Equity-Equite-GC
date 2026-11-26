@@ -45,9 +45,16 @@ async function cellText(box,rowLocator,label){
   await page.goto(base+'?lang='+language,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(name=>Array.from(document.querySelector('#org-picker').options).some(o=>o.value===name),name,{timeout:60000});
   await page.locator('#org-topic-picker').selectOption(topic);
+  if(slug==='isc')await page.locator('#org-group-picker').selectOption('b');
   await Promise.all([page.waitForURL(u=>u.pathname==='/'+slug+'/'&&u.hash==='#'+anchor,{timeout:30000}),page.locator('#org-picker').selectOption(name)]);
   await page.locator('#'+anchor).waitFor({state:'visible',timeout:30000});
   assert.equal(new URL(page.url()).searchParams.get('lang'),language,slug+' topic navigation language');
+  if(slug==='isc'){
+   assert.equal(new URL(page.url()).searchParams.get('brpair'),'Black');
+   await page.locator('#branch-results').scrollIntoViewIfNeeded();
+   await page.locator('#gce-branch-output tbody tr').first().waitFor({timeout:60000});
+   assert.equal(await page.locator('#gce-branch-group').inputValue(),'Black','homepage employee group retained in branch widget');
+  }
   await context.close();
  }
  for(const [slug,lang,width] of [['isc','en',1366],['cra','fr',390],['agriculture-and-agri-food-canada','en',390]]){
