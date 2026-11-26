@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Regression checks for the November 2026 source-scoped departmental fixes."""
+import base64
 import csv
 import gzip
+import io
 import json
 import re
 from decimal import Decimal
@@ -60,7 +62,16 @@ for slug in ['cra', 'esdc', 'correctional-service-canada',
 
 assert '47.2%' in dfo and '44.8%' in dfo
 assert '15.4%' in dfo and '14.7%' in dfo
-assert '14,816' in dfo and '4,952' in dfo
+# Use actual response-profile counts, not weighted survey totals.
+profile = ROOT / 'dfo/data/source-b0688b3a3b0a.csv.gz.b64'
+profile_rows = list(csv.DictReader(io.StringIO(gzip.decompress(base64.b64decode(profile.read_bytes())).decode('utf-8-sig'))))
+profile_counts = {r['Respondents_E']: int(r['N']) for r in profile_rows
+                  if r['dept_e'] == 'Fisheries and Oceans Canada'}
+for label in ('Number of employees', 'Number of respondents'):
+    count = f"{profile_counts[label]:,}"
+    assert count in dfo and count.replace(',', ' ') in dfo
+assert 'Weighted totals are not actual respondent counts.' in dfo
+assert 'Les totaux pondérés ne sont pas des nombres réels de répondants.' in dfo
 for value in ('4.5%', '66.7%', '75.0%', '3.8%'):
     assert value in dfo
 assert '125% increase in demand' in dfo
