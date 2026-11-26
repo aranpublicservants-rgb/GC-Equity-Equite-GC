@@ -115,7 +115,7 @@ def L(l,en,fr):return fr if l=='fr' else en
 def link(url,label,**attrs):return '<a href="'+E(url)+'"'+''.join(' '+k+'="'+E(v)+'"' for k,v in attrs.items())+'>'+E(label)+'</a>'
 def published(v):return v is not None and str(v).strip() not in ['', 'X','x','*','-1','9999']
 def cell(v,l,percent=False):
- if str(v) in ['X','x','*','-1']:return L(l,'Suppressed','Supprimé')
+ if str(v).strip().lower() in ['x','*','-1','suppressed']:return L(l,'Suppressed','Supprimé')
  if not published(v):return L(l,'Not published / not applicable','Non publié / sans objet')
  if percent:return E(str(v).replace('.',',') if l=='fr' else v)+(' %' if l=='fr' else '%')
  return E(v)
