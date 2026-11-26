@@ -11,42 +11,78 @@ on:
       - 'assets/department-profile-index.json'
       - 'data/department-profiles/**'
       - 'scripts/build-local-equity-ai.mjs'
+      - 'scripts/equity-findings-core.js'
       - '.github/workflows/local-equity-ai.yml'
 permissions:
   contents: write
   pages: write
 concurrency:
   group: gc-equity-local-ai
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           sparse-checkout: |
             assets
             sitemap.xml
             *.html
             data/department-profiles
             scripts/build-local-equity-ai.mjs
+            scripts/equity-findings-core.js
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save --no-package-lock @huggingface/transformers@3.8.1 cheerio@1.0.0
-      - run: node --check scripts/build-local-equity-ai.mjs
-      - run: node scripts/build-local-equity-ai.mjs
-      - name: Commit generated public artifacts
+      - name: Generate verified findings without model or package dependencies
+        run: |
+          node --check scripts/build-local-equity-ai.mjs
+          node --check scripts/equity-findings-core.js
+          node scripts/build-local-equity-ai.mjs --findings-only
+      - name: Publish verified findings before optional AI work
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add assets/department-key-findings.json assets/semantic-vectors.json assets/local-search-pages.json
-          if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh public equity findings and semantic search vectors"
-          git pull --rebase origin main
-          git push origin HEAD:main
-          gh api -X POST repos/${{ github.repository }}/pages/builds || echo "Pages build request unavailable; check the site's existing deployment workflow."
+          git add assets/department-key-findings.json assets/department-key-findings/
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh verified departmental findings"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            gh api -X POST repos/${{ github.repository }}/pages/builds || true
+          fi
+      - name: Refresh page search independently
+        run: |
+          npm install --no-save --no-package-lock cheerio@1.0.0
+          node scripts/build-local-equity-ai.mjs --pages-only
+      - name: Publish ordinary page search
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add assets/local-search-pages.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh public page search index"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            gh api -X POST repos/${{ github.repository }}/pages/builds || true
+          fi
+      - name: Generate optional multilingual neural vectors
+        run: |
+          npm install --no-save --no-package-lock @huggingface/transformers@3.8.1
+          node scripts/build-local-equity-ai.mjs --vectors-only
+      - name: Publish optional neural index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add assets/semantic-vectors.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh optional multilingual neural search vectors"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            gh api -X POST repos/${{ github.repository }}/pages/builds || true
+          fi
