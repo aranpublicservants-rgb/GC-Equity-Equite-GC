@@ -49,7 +49,7 @@ template=[x for x in template if x['id'] not in ['identities','caf','conduct','c
 frids={'at-a-glance':'apercu','data-guide':'guide-donnees','who-works':'qui-travaille','experience':'experience-fr','harassment':'harcelement','accommodation':'mesures-adaptation','hiring':'embauche','branches':'unites','promised':'engagements','planned':'plans','accessibility-plan':'plan-accessibilite','recourse':'recours','missing':'lacunes','data-library':'bibliotheque','publications':'publications-fr','requests':'demandes','actions':'agir','sources':'sources-fr'}
 special={'Fisheries and Oceans Canada':'dfo','National Defence':'dnd','Indigenous Services Canada':'isc'}
 short={'Employment and Social Development Canada':'esdc','Canada Revenue Agency':'cra','Royal Canadian Mounted Police (public service employees)':'rcmp','Health Canada':'health-canada','Canadian Heritage':'canadian-heritage','Statistics Canada':'statistics-canada','Crown-Indigenous Relations and Northern Affairs Canada':'cirnac'}
-source={'tbs':'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html','women':'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-women-department-agency-departmental-workforce-availability-estimates.html','pses':pses['sources']['groups'],'overall':pses['sources']['overallPublisherUrl'],'staffing':snps['dataset'],'psc':'https://www.canada.ca/en/public-service-commission.html','directory':'https://www.canada.ca/en/government/dept.html','recourse':'https://aranpublicservants-rgb.github.io/aran-raar/recourse/'}
+source={'tbs':'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics.html','women':'https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-women-department-agency-departmental-workforce-availability-estimates.html','pses':pses['sources']['groups'],'overall':pses['sources']['overallPublisherUrl'],'staffing':snps['dataset'],'psc':'https://www.canada.ca/en/public-service-commission.html','directory':'https://www.canada.ca/en/government/dept.html','recourse':'https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/recourse/'}
 if not str(source['staffing']).startswith('https://'):raise ValueError('Staffing publisher URL missing')
 
 def same_names(rec,field):
@@ -245,7 +245,7 @@ recourse_cases={
   ]
  ]
 }
-recourse_library='https://aranpublicservants-rgb.github.io/aran-raar/recourse/cases/'
+recourse_library='https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/recourse/cases/'
 def recourse_additions(d,l):
  found=recourse_cases.get(d['en'],[])
  title=L(l,'Related entries in the ARAN decision library','Entrées connexes dans la bibliothèque des décisions du RAAR')

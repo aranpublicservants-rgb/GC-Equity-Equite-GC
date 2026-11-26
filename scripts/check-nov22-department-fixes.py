@@ -57,7 +57,7 @@ for slug in ['cra', 'esdc', 'correctional-service-canada',
              'canada-border-services-agency', 'dnd', 'dfo', 'isc']:
     html = read(f'{slug}/index.html')
     assert html.count('recourse-cross-reference') >= 2, slug
-    assert 'aran-raar/recourse/cases/' in html, slug
+    assert 'GC-Equity-Equite-GC/recourse/cases/' in html, slug
     assert 'non-exhaustive' in html, slug
 
 assert '47.2%' in dfo and '44.8%' in dfo
