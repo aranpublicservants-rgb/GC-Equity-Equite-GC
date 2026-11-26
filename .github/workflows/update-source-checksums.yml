@@ -2,6 +2,7 @@ name: Refresh hosted source checksums
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/**'
       - 'assets/**'
@@ -11,6 +12,7 @@ on:
       - 'women-femmes/data/**'
       - 'women-femmes/assets/**'
       - 'racism-hazard-prevention/data/**'
+      - 'scripts/build-assistant-catalogue.py'
       - '.github/workflows/update-source-checksums.yml'
   workflow_dispatch:
 
@@ -32,16 +34,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Regenerate source hash register deterministically
-        run: python scripts/update-data-checksums.py
-      - name: Commit register only when hashes changed
+      - name: Regenerate generated source indexes and hashes from current main
         run: |
-          if git diff --quiet -- data/checksums.sha256; then
-            echo "No checksum updates needed"
+          git fetch origin main
+          git checkout -B main origin/main
+          python scripts/build-assistant-catalogue.py
+          python scripts/build-assistant-catalogue.py --check
+          python scripts/update-data-checksums.py
+      - name: Commit generated indexes and register only when changed
+        run: |
+          if git diff --quiet -- assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256; then
+            echo "No generated index or checksum updates needed"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/checksums.sha256
-          git commit -m "Synchronize hosted source checksums after data changes"
+          git add assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256
+          git commit -m "Synchronize generated source catalogue and hosted checksums"
           git push origin HEAD:main
