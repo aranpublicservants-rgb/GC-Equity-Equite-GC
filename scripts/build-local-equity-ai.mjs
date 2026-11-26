@@ -70,6 +70,7 @@ for(const d of unique){const text=embedText(d),old=previous.get(d.id);if(old?.ur
 if(pending.length){
  const {pipeline,env}=await import('@huggingface/transformers');
  env.allowLocalModels=false;
+ if(process.env.TRANSFORMERS_CACHE)env.cacheDir=process.env.TRANSFORMERS_CACHE;
  const pipe=await pipeline('feature-extraction',model,{dtype,device:'cpu'});
  try{
   for(let i=0;i<pending.length;i+=4){
