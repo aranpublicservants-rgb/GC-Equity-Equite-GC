@@ -1,0 +1,47 @@
+name: Refresh built-in equity evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/search-index.json'
+      - 'assets/department-pages.json'
+      - 'assets/department-profile-index.json'
+      - 'data/department-profiles/**'
+      - 'scripts/build-local-equity-ai.mjs'
+      - '.github/workflows/local-equity-ai.yml'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: gc-equity-local-ai
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            assets
+            data/department-profiles
+            scripts/build-local-equity-ai.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --no-package-lock @huggingface/transformers@3.7.2
+      - run: node scripts/build-local-equity-ai.mjs
+      - name: Commit generated public artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add assets/department-key-findings.json assets/semantic-vectors.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh public equity findings and semantic search vectors"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          gh api -X POST repos/${{ github.repository }}/pages/builds || echo "Pages build request unavailable; check the site's existing deployment workflow."
