@@ -75,9 +75,28 @@ const server=http.createServer((req,res)=>{
     assert.ok(await page.locator('#lang-en .dp-organization option').count()<10,'Search narrows the organization list');
     await search.fill('');assert.ok(await page.locator('#lang-en .dp-organization option').count()>100,'Clearing search restores organizations');
    }
+   if(slug==='dfo'){
+    for(const lang of ['en','fr']){
+     assert.equal(await page.locator('#dfo-merge-staffing-2025-'+lang+' [data-dfo-merge-source]').count(),23);
+     assert.equal(await page.locator('#dfo-merge-staffing-2023-'+lang+' [data-dfo-merge-source]').count(),3);
+     assert.equal(await page.locator('#dfo-merge-representation-2023-'+lang+' table').count(),3);
+    }
+    await page.locator('#dfo-merge-staffing-2025-en summary').click();
+    const source=page.locator('#dfo-merge-staffing-2025-en [data-dfo-merge-source]').first();
+    const id=await source.getAttribute('data-dfo-merge-source');
+    await source.click();
+    await page.waitForFunction(id=>document.querySelector('#lang-en .dataset-picker')?.value===id&&document.querySelector('#lang-en .data-view h3')!==null,id,{timeout:30000});
+   }
    await page.locator('#language').click();
    await page.waitForFunction(()=>document.documentElement.lang==='fr'&&!document.querySelector('#lang-fr').hidden,{timeout:10000});
    assert.ok(await page.locator('#lang-fr h2').count()>=8,slug+': French sections');
+   if(slug==='dfo'){
+    await page.locator('#dfo-merge-staffing-2023-fr summary').click();
+    const source=page.locator('#dfo-merge-staffing-2023-fr [data-dfo-merge-source]').first();
+    const id=await source.getAttribute('data-dfo-merge-source');
+    await source.click();
+    await page.waitForFunction(id=>document.querySelector('#lang-fr .dataset-picker')?.value===id&&document.querySelector('#lang-fr .data-view h3')!==null,id,{timeout:30000});
+   }
    assert.deepEqual(errors,[],slug+': page script errors');
    await ctx.close();
    const mobile=await browser.newContext({...devices['Pixel 5']});
