@@ -34,6 +34,19 @@ function results(){const out=document.getElementById("gce-branch-output");if(!ou
  const names=new Map(record.branches.map(b=>[String(b.id),t(b.en,b.fr)]));
  const selected=rows.filter(r=>String(r[1])===group&&String(r[2])===question&&(!branch||String(r[0])===branch)).sort((a,b)=>(names.get(String(a[0]))||"").localeCompare(names.get(String(b[0]))||"",fr()?"fr":"en"));
  if(!selected.length){out.append(el("p",t("No published rows for this selection.","Aucune ligne publiée pour cette sélection.")));return}
+
+ // Compare only the same published measure, question and group across selected units.
+ const measures=[["MOSTPOS",t("Most positive (%)","Les plus positives (%)")],["MOSTNEG",t("Most negative (%)","Les plus négatives (%)")],["AGREE",t("Agree (%)","D’accord (%)")],["SCORE100",t("Score (0–100)","Score (0–100)")]];
+ const validPct=v=>v!==null&&v!==undefined&&String(v).trim()!==""&&Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)<=100;
+ const findings=el("section");findings.append(el("h4",t("What stands out in this selection","Ce qui ressort de cette sélection")));
+ let comparisons=0;
+ for(const [key,label] of measures){const i=3+meta.schema.indexOf(key),n=3+meta.schema.indexOf("ANSCOUNT");const list=selected.filter(r=>validPct(r[i])).sort((a,b)=>Number(a[i])-Number(b[i]));if(list.length<2)continue;const low=list[0],high=list.at(-1),diff=Math.round((Number(high[i])-Number(low[i]))*100)/100;if(!diff)continue;
+ const f=v=>Number(v).toLocaleString(fr()?"fr-CA":"en-CA",{maximumFractionDigits:2});const nc=v=>v!==null&&v!==undefined&&String(v).trim()!==""&&Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)!==9999?f(v):t("unavailable","indisponible");
+ const unit=key==="SCORE100"?t(" points"," points"):t(" percentage points"," points de pourcentage");
+ findings.append(el("p",label+": "+(names.get(String(low[0]))||String(low[0]))+" "+f(low[i])+" ("+t("responses: ","réponses : ")+nc(low[n])+") — "+(names.get(String(high[0]))||String(high[0]))+" "+f(high[i])+" ("+t("responses: ","réponses : ")+nc(high[n])+"). "+t("Range: ","Étendue : ")+f(diff)+unit+"."));if(++comparisons===2)break}
+ if(!comparisons)findings.append(el("p",t("No range can be calculated from two distinct published comparable values in this selection.","Aucune étendue ne peut être calculée à partir de deux valeurs comparables publiées distinctes dans cette sélection.")));
+ findings.append(el("p",t("These are descriptive differences for the selected group and question, not significance or causation findings. Units may overlap; missing values are excluded, never treated as zero.","Il s’agit d’écarts descriptifs pour le groupe et la question choisis, et non de résultats de signification ou de causalité. Les unités peuvent se chevaucher; les valeurs manquantes sont exclues, jamais traitées comme nulles.")));out.append(findings);
+
  const table=el("table");table.style.cssText="border-collapse:collapse;width:100%";const cap=el("caption",t("Published results for the selected employee group and question","Résultats publiés pour le groupe et la question choisis"));table.append(cap);
  const header=el("tr"),thead=el("thead");for(const label of [t("Branch","Direction"),t("Most positive (%)","Les plus positives (%)"),t("Neutral (%)","Neutres (%)"),t("Most negative (%)","Les plus négatives (%)"),t("Agree (%)","D’accord (%)"),t("Score (0–100)","Score (0–100)"),t("Answer count","Nombre de réponses")]){let th=el("th",label);th.scope="col";header.append(th)}thead.append(header);table.append(thead);
  const tbody=el("tbody");const format=(v,percent)=>{if(v===null||v===undefined||v===""||String(v)==="9999"||!Number.isFinite(Number(v))||Number(v)<0||(percent&&Number(v)>100))return t("Unavailable","Indisponible");return Number(v).toLocaleString(fr()?"fr-CA":"en-CA",{maximumFractionDigits:1})};
