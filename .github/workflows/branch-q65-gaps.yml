@@ -1,0 +1,54 @@
+name: Refresh published Q65 branch comparisons
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/department-branch-index.json'
+      - 'assets/department-branch-definitions.json'
+      - 'data/pses-2024-branches/**'
+      - 'scripts/build-branch-q65-gaps.mjs'
+      - 'scripts/branch-gap-core.js'
+      - 'tests/branch-q65-gaps.test.cjs'
+      - '.github/workflows/branch-q65-gaps.yml'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: branch-q65-gaps-main
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            assets
+            data/pses-2024-branches
+            scripts/build-branch-q65-gaps.mjs
+            scripts/branch-gap-core.js
+            tests/branch-q65-gaps.test.cjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and verify every published Q65 comparison
+        run: |
+          node scripts/build-branch-q65-gaps.mjs
+          node --test tests/branch-q65-gaps.test.cjs
+      - name: Publish validated index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/branch-q65-gaps.json assets/branch-q65-gaps/
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh verified Q65 branch group comparisons"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            gh api -X POST repos/${{ github.repository }}/pages/builds || true
+          fi
