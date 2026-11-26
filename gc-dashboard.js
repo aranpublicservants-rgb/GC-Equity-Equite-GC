@@ -581,7 +581,7 @@ function renderOrg(){
   extraOrgRequest++;branchRequest++;
   window.GCEOrgSources?.render(null);
   out.innerHTML='';
-  const url=new URL(location.href);url.searchParams.delete('org');
+  const url=new URL(location.href);url.searchParams.delete('org');url.searchParams.delete('dept');
   history.replaceState(null,'',url.pathname+url.search+url.hash);
   applyTopics('org');
   if(!$('public-output').children.length)publicTables();
@@ -617,7 +617,7 @@ function renderOrg(){
  window.GCERestoredSources?.render(name,deptName(name),selectGroup('org'));
  out.insertAdjacentHTML('beforeend',s+(profile?profile.action(context):''));
  profile?.mount(context);
- const url=new URL(location.href);url.searchParams.set('org',name);
+ const url=new URL(location.href);url.searchParams.set('org',name);url.searchParams.delete('dept');
  if(/^#(?:equity-data|public-|related-public-resources)/.test(url.hash))url.hash='department-data';
  history.replaceState(null,'',url.pathname+url.search+url.hash);
  applyTopics('org');
@@ -858,7 +858,7 @@ function populatePicker(){
  }
  const names=(D.departmentPages?.organizations.filter(o=>o.id!=="youth"&&!D.departmentPages?.redirects?.[o.id]).map(o=>o.en)||[...unique.values()]).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
  organizationNames=names;
- const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
+ const picker=$('org-picker'),params=new URL(location.href).searchParams;const requested=params.get('org')||params.get('dept')||'';const requestedPage=D.departmentPages?.organizations.find(o=>o.id===requested);const old=picker.value||selected||requestedPage?.en||requested;
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
  const oldRecord=D.departmentPages?.organizations.find(o=>norm(o.en)===norm(old));
  const canonicalId=oldRecord&&D.departmentPages?.redirects?.[oldRecord.id];
@@ -936,11 +936,11 @@ function restoreSelectionURL(){
  const p=new URL(location.href).searchParams,scope=selected?'org':'public';
  const orgTopic=p.get('orgTopic'),orgPicker=$('org-topic-picker');
  if(orgTopic&&orgPicker&&[...orgPicker.options].some(o=>o.value===orgTopic))orgPicker.value=orgTopic;
- for(const [suffix,key] of [['group-picker','group'],['topic-picker','topic']]){const el=$(scope+'-'+suffix),v=p.get(key)||'all';if(el&&[...el.options].some(o=>o.value===v))el.value=v;}
+ for(const [suffix,key] of [['group-picker','group'],['topic-picker','topic']]){const el=$(scope+'-'+suffix),raw=p.get(key)||'all',aliases={black:'b',indigenous:'i',racialized:'v',women:'w',disability:'d',pwd:'d',men:'man'},v=key==='group'?(aliases[raw]||raw):raw;if(el&&[...el.options].some(o=>o.value===v))el.value=v;}
 }
 function restoreNavigation(){
  if(!D)return;
- const url=new URL(location.href),requested=url.searchParams.get('org')||'',name=organizationNames.find(n=>norm(n)===norm(requested))||'';
+ const url=new URL(location.href),requested=url.searchParams.get('org')||url.searchParams.get('dept')||'',page=D.departmentPages?.organizations.find(o=>o.id===requested),name=organizationNames.find(n=>norm(n)===norm(page?.en||requested))||'';
  $('org-search').value='';filterOrganizations();$('org-picker').value=name;selected=name;
  restoreSelectionURL();renderOrg();if(!selected)publicTables();
  const target=$(url.hash.slice(1));
@@ -964,7 +964,7 @@ document.addEventListener('click',e=>{
  const a=e.target.closest('a[href]');if(!a||!D)return;
  let next;try{next=new URL(a.getAttribute('href'),location.href);}catch{return;}
  const same=next.origin===location.origin&&
-  next.pathname.replace(/\/index\.html$/,'/')===location.pathname.replace(/\/index\.html$/,'/');
+  next.pathname.replace(/\/index\.html$/,'/')===location.pathname.replace(/\/index\.html$/,'/')&&next.search===location.search;
  if(!same)return;
  const hash=next.hash;
  if(!hash)return;
