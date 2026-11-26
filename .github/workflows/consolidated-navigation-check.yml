@@ -2,18 +2,18 @@ name: Consolidated navigation and branch browser checks
 on:
   push:
     branches: [main]
-    paths: ['assets/department-branch-*.js', 'assets/department-branch-*.json', 'assets/department-depth.js', 'website-directory/**', 'youth-and-students/**', 'tests/consolidated-navigation-browser.cjs', '.github/workflows/consolidated-navigation-check.yml']
+    paths: ['index.html', 'gc-dashboard.js', 'assets/department-pages.json', 'assets/department-branch-*.js', 'assets/department-branch-*.json', 'assets/department-depth.js', 'website-directory/**', 'youth-and-students/**', 'tests/consolidated-navigation-browser.cjs', '.github/workflows/consolidated-navigation-check.yml']
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save playwright
+      - run: npm install --no-save playwright@1.55.0
       - run: npx playwright install --with-deps chromium
       - run: node tests/consolidated-navigation-browser.cjs
