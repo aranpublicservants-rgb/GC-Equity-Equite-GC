@@ -31,7 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save --no-package-lock @huggingface/transformers@3.7.2
+      - run: npm install --no-save --no-package-lock @huggingface/transformers@3.8.1
+      - run: node --check scripts/build-local-equity-ai.mjs
       - run: node scripts/build-local-equity-ai.mjs
       - name: Commit generated public artifacts
         env:
