@@ -36,7 +36,7 @@ const MEASURES=[
  ["ANSCOUNT","Answer count","Nombre de réponses",false]
 ];
 const SUMMARY=MEASURES.filter(m=>m[0]!=="ANSCOUNT");
-let record,known=false,meta,rows,pairs=[],loading=false,err=false,pair="",question="",branch="",observer=null;
+let record,known=false,meta,rows,pairs=[],loading=false,err=false,pair="",question="",branch="",view="table",observer=null;
 const valid=(v,percent)=>!(v===null||v===undefined||v===""||String(v)==="9999"||!Number.isFinite(Number(v))||Number(v)<0||(percent&&Number(v)>100));
 const format=(v,percent)=>valid(v,percent)?Number(v).toLocaleString(fr()?"fr-CA":"en-CA",{maximumFractionDigits:1}):t("Unavailable","Indisponible");
 const field=name=>3+meta.schema.indexOf(name);
@@ -63,7 +63,14 @@ function chooseDefaults(){
  question=String(qi>=0?qi:Math.max(0,meta.questions.findIndex(q=>KEY_QUESTIONS.includes(q.id))));
  const preferred=pairs.find(p=>p.key===DEFAULT_PAIR)||pairs[0];
  const usable=[preferred,...pairs.filter(p=>p!==preferred)].find(p=>p&&hasComparison(p,question));
- pair=(usable||preferred).key;branch="";
+ pair=(usable||preferred).key;branch="";view="table";
+ const params=new URL(location.href).searchParams;
+ if(params.get("brorg")===slug){
+  const q=meta.questions.findIndex(q=>q.id===params.get("brq"));if(q>=0)question=String(q);
+  if(pairs.some(p=>p.key===params.get("brpair")))pair=params.get("brpair");
+  if(record.branches.some(b=>String(b.id)===params.get("brunit")))branch=params.get("brunit");
+  if(params.get("brview")==="heatmap")view="heatmap";
+ }
 }
 function mount(){
  const h=document.getElementById(fr()?"unites":"branches")|| (fr()?document.getElementById("secteurs"):null);
@@ -90,10 +97,27 @@ function render(){
  },question,v=>question=v);
  select("gce-branch-group",t("Employee group","Groupe d’employés"),s=>{for(const p of pairs)s.append(opt(p.key,t(p.en,p.fr)))},pair,v=>pair=v);
  select("gce-branch-unit",t("Branch or unit","Direction ou unité"),s=>{s.append(opt("",t("All published branches","Toutes les directions publiées")));for(const b of record.branches)s.append(opt(b.id,t(b.en,b.fr)))},branch,v=>branch=v);
+ select("gce-branch-view",t("Display","Affichage"),s=>{s.append(opt("table",t("Detailed table","Tableau détaillé")),opt("heatmap",t("Branch-by-group heatmap","Carte thermique par direction et groupe")))},view,v=>view=v);
  root.append(controls);
+ const share=el("button",t("Copy link to this view","Copier le lien vers cette vue"));share.type="button";share.style.cssText="margin:.65rem 0;padding:.6rem;font:inherit";const shareStatus=el("p");shareStatus.setAttribute("role","status");share.onclick=()=>shareView(shareStatus);root.append(share,shareStatus);
  root.append(el("p",t("Suppressed and missing values are shown as unavailable, never as zero. Columns the survey does not publish for the selected question are hidden. Affirmative means agree, yes or option selected, as grouped by the survey. Do not combine branches or overlapping groups, or use answer counts to reconstruct suppressed cells.","Les valeurs supprimées ou manquantes sont indiquées comme indisponibles, jamais comme zéro. Les colonnes que le sondage ne publie pas pour la question choisie sont masquées. Une réponse affirmative signifie d’accord, oui ou option choisie, selon le regroupement du sondage. Ne combinez pas les directions ni les groupes qui se chevauchent et ne reconstituez pas les cellules supprimées à partir des nombres de réponses.")));
  const status=el("p");status.id="gce-branch-status";status.setAttribute("role","status");root.append(status);
  const output=el("div");output.id="gce-branch-output";root.append(output);results();
+}
+function shareURL(){const u=new URL(location.href);u.searchParams.set("lang",fr()?"fr":"en");u.searchParams.set("brorg",slug);u.searchParams.set("brq",meta.questions[Number(question)].id);u.searchParams.set("brpair",pair);u.searchParams.set("brview",view);if(branch)u.searchParams.set("brunit",branch);else u.searchParams.delete("brunit");u.hash="branch-results";return u.href}
+async function shareView(status){const link=shareURL();try{if(!navigator.clipboard?.writeText)throw Error();await navigator.clipboard.writeText(link);status.textContent=t("View link copied.","Lien vers la vue copié.")}catch{status.replaceChildren(el("span",t("Copy this link: ","Copiez ce lien : ")));const input=el("input");input.type="text";input.readOnly=true;input.value=link;input.setAttribute("aria-label",t("Shareable branch view link","Lien partageable vers les résultats par direction"));input.style.cssText="width:100%;max-width:100%;box-sizing:border-box";status.append(input);input.focus();input.select()}}
+function heatmap(p,chosen,lookup,columns,names,q){
+ const box=el("section");box.append(el("h4",t("Branch-by-group heatmap","Carte thermique par direction et groupe")));
+ const has=n=>columns.some(c=>c[0]===n);
+ const key=q.id==="Q65"&&has("AGREE")?"AGREE":has("NEUTRAL")&&has("MOSTPOS")?"MOSTPOS":["MOSTNEG","MOSTPOS","AGREE","SCORE100"].find(has);
+ if(!key){box.append(el("p",t("No comparable summary measure is published for this selection.","Aucune mesure sommaire comparable n’est publiée pour cette sélection.")));return box}
+ const col=columns.find(c=>c[0]===key),i=field(key),n=field("ANSCOUNT"),percent=key!=="SCORE100",label=q.id==="Q65"&&key==="AGREE"?t("Yes, reported discrimination in the past 12 months (%)","Oui, discrimination déclarée au cours des 12 derniers mois (%)"):t(col[1],col[2]);
+ box.append(el("p",label+". "+t("Darker blue means a larger value, not a better or worse workplace. The numbers and response counts are also shown. Missing or suppressed cells have no colour.","Un bleu plus foncé indique une valeur plus élevée, et non un meilleur ou un pire milieu de travail. Les valeurs et les nombres de réponses sont aussi affichés. Les cellules manquantes ou supprimées ne sont pas colorées.")));
+ const wrap=el("div");wrap.className="table-scroll";wrap.tabIndex=0;wrap.setAttribute("role","region");wrap.setAttribute("aria-label",t("Scrollable heatmap table","Tableau de la carte thermique avec défilement"));wrap.style.cssText="overflow-x:auto;max-width:100%";
+ const table=el("table");table.style.cssText="border-collapse:collapse;width:100%;min-width:27rem";table.append(el("caption",label));const head=el("thead"),hr=el("tr");for(const label of [t("Branch","Direction"),...p.members.map(m=>t(meta.demographics[m].en,meta.demographics[m].fr).trim())]){const th=el("th",label);th.scope="col";hr.append(th)}head.append(hr);table.append(head);const body=el("tbody");
+ for(const id of chosen){const tr=el("tr"),th=el("th",names.get(id)||id);th.scope="row";th.style.cssText="position:sticky;left:0;z-index:1;background:Canvas;color:CanvasText;min-width:9rem";tr.append(th);
+  for(const m of p.members){const row=lookup.get(id+"|"+m),v=row?.[i],ok=valid(v,true),td=el("td",ok?format(v,true)+(percent?t("%"," %"):" / 100"):t("Unavailable","Indisponible"));td.style.cssText="text-align:center;padding:.6rem;min-width:7rem";if(ok){const light=95-Math.max(0,Math.min(100,Number(v)))*.68;td.style.backgroundColor="hsl(212 55% "+light+"%)";td.style.color=light<53?"#fff":"#102438";const small=el("div",valid(row[n],false)?t("Responses: ","Réponses : ")+format(row[n],false):t("Count unavailable","Nombre indisponible"));small.style.fontSize=".82em";td.append(small)}tr.append(td)}body.append(tr)}
+ table.append(body);wrap.append(table);box.append(wrap);return box
 }
 function results(){
  const out=document.getElementById("gce-branch-output"),status=document.getElementById("gce-branch-status");if(!out||!status)return;out.replaceChildren();
@@ -133,7 +157,7 @@ function results(){
  }
  /* Charts read these complete rows, because the branch name spans both rows of each branch. Unavailable cells stay text and are never plotted. */
  table._gceVisualData={headers:[t("Branch","Direction"),t("Employee group","Groupe d’employés"),...columns.map(c=>t(c[1],c[2]))],rows:visual,title:table.caption.textContent,lang:fr()?"fr":"en",scope:"filtered"};
- const wrap=el("div");wrap.className="table-scroll";wrap.style.cssText="overflow-x:auto;max-width:100%";wrap.tabIndex=0;wrap.setAttribute("role","region");wrap.setAttribute("aria-label",t("Branch survey results table","Tableau des résultats par direction"));wrap.append(table);out.append(questionText,groupText,findings(p,chosen,lookup,columns,names),wrap);window.GCEquityVisuals?.update(table);
+ const wrap=el("div");wrap.className="table-scroll";wrap.style.cssText="overflow-x:auto;max-width:100%";wrap.tabIndex=0;wrap.setAttribute("role","region");wrap.setAttribute("aria-label",t("Branch survey results table","Tableau des résultats par direction"));wrap.append(table);out.append(questionText,groupText,findings(p,chosen,lookup,columns,names));if(view==="heatmap"){out.append(heatmap(p,chosen,lookup,columns,names,q));const detail=el("details");detail.append(el("summary",t("View detailed source table","Voir le tableau source détaillé")),wrap);out.append(detail)}else out.append(wrap);window.GCEquityVisuals?.update(table);
  const n=chosen.length,total=n*p.members.length;
  status.textContent=count?t(n+(n===1?" branch shown. ":" branches shown. ")+count+" of "+total+" group results are published.",n+(n===1?" direction affichée. ":" directions affichées. ")+count+" résultats de groupe publiés sur "+total+"."):t("No published values for this selection. Suppressed or missing results are shown as unavailable, not zero.","Aucune valeur publiée pour cette sélection. Les résultats supprimés ou manquants sont indiqués comme indisponibles, et non comme zéro.");
 }
