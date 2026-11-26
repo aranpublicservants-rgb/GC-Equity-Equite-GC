@@ -839,7 +839,7 @@ function populatePicker(){
   const key=norm(name),canonical=D.cta.organizations.find(o=>rawNorm(o.name_en)===key)?.name_en;
   if(!unique.has(key))unique.set(key,canonical||name);
  }
- const names=(D.departmentPages?.organizations.filter(o=>!D.departmentPages?.redirects?.[o.id]).map(o=>o.en)||[...unique.values()]).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
+ const names=(D.departmentPages?.organizations.filter(o=>o.id!=="youth"&&!D.departmentPages?.redirects?.[o.id]).map(o=>o.en)||[...unique.values()]).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
  organizationNames=names;
  const picker=$('org-picker');const old=picker.value||selected||new URL(location.href).searchParams.get('org')||'';
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');

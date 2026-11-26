@@ -1,0 +1,2084 @@
+[
+  {
+    "path": "accessibility-inclusion/duty-to-accommodate/accessibility.html",
+    "en": "accessibility",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "accessibility-inclusion/duty-to-accommodate/evidence.html",
+    "en": "evidence",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "accessibility-inclusion/duty-to-accommodate/get-help.html",
+    "en": "get help",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "accessibility-inclusion/duty-to-accommodate/",
+    "en": "duty to accommodate",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "accessibility-inclusion/",
+    "en": "accessibility inclusion",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "accessibility-standards-canada/",
+    "en": "Accessibility Standards Canada",
+    "fr": "Normes d'accessibilité Canada",
+    "group": "departments"
+  },
+  {
+    "path": "administrative-tribunals-support-service-of-canada/",
+    "en": "Administrative Tribunals Support Service of Canada",
+    "fr": "Service canadien d'appui aux tribunaux administratifs",
+    "group": "departments"
+  },
+  {
+    "path": "agriculture-and-agri-food-canada/",
+    "en": "Agriculture and Agri-Food Canada",
+    "fr": "Agriculture et Agroalimentaire Canada",
+    "group": "departments"
+  },
+  {
+    "path": "assisted-human-reproduction-agency-of-canada/",
+    "en": "Assisted Human Reproduction Agency of Canada",
+    "fr": "Agence Canadienne de contrôle de la procréation assistée",
+    "group": "departments"
+  },
+  {
+    "path": "atlantic-canada-opportunities-agency/",
+    "en": "Atlantic Canada Opportunities Agency",
+    "fr": "Agence de promotion économique du Canada atlantique",
+    "group": "departments"
+  },
+  {
+    "path": "atlantic-pilotage-authority-canada/",
+    "en": "Atlantic Pilotage Authority Canada",
+    "fr": "Administration de pilotage de l'Atlantique Canada",
+    "group": "departments"
+  },
+  {
+    "path": "atomic-energy-of-canada-limited/",
+    "en": "Atomic Energy of Canada Limited",
+    "fr": "Énergie atomique du Canada, Limitée",
+    "group": "departments"
+  },
+  {
+    "path": "auditor-general-of-canada-office-of-the/",
+    "en": "auditor general of canada office of the",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "bank-of-canada-museum/",
+    "en": "Bank of Canada Museum",
+    "fr": "Musée de la Banque du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "bank-of-canada/",
+    "en": "Bank of Canada",
+    "fr": "Banque du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "barrier-comparisons/",
+    "en": "barrier comparisons",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "blue-water-bridge-canada/",
+    "en": "Blue Water Bridge Canada",
+    "fr": "Pont Blue Water Canada",
+    "group": "departments"
+  },
+  {
+    "path": "branch-equity.html",
+    "en": "branch equity",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "business-development-bank-of-canada/",
+    "en": "Business Development Bank of Canada",
+    "fr": "Banque de développement du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "call-to-action.html",
+    "en": "call to action",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "canada-agricultural-review-tribunal/",
+    "en": "Canada Agricultural Review Tribunal",
+    "fr": "Commission de révision agricole du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-agriculture-and-food-museum/",
+    "en": "Canada Agriculture and Food Museum",
+    "fr": "Musée de l'agriculture et de l'alimentation du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-aviation-and-space-museum/",
+    "en": "Canada Aviation and Space Museum",
+    "fr": "Musée de l'aviation et de l'espace du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-border-services-agency/",
+    "en": "Canada Border Services Agency",
+    "fr": "Agence des services frontaliers du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-council-for-the-arts/",
+    "en": "Canada Council for the Arts",
+    "fr": "Conseil des arts du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-deposit-insurance-corporation/",
+    "en": "Canada Deposit Insurance Corporation",
+    "fr": "Société d'assurance-dépôts du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-development-investment-corporation/",
+    "en": "Canada Development Investment Corporation",
+    "fr": "Corporation de développement des investissements du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-economic-development-for-quebec-regions/",
+    "en": "Canada Economic Development for Quebec Regions",
+    "fr": "Développement économique Canada pour les régions du Québec",
+    "group": "departments"
+  },
+  {
+    "path": "canada-economic-development-quebec-regions/",
+    "en": "canada economic development quebec regions",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "canada-employment-insurance-commission/",
+    "en": "Canada Employment Insurance Commission",
+    "fr": "Commission de l'assurance-emploi du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-energy-regulator/",
+    "en": "Canada Energy Regulator",
+    "fr": "Régie de l’énergie du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-firearms-centre/",
+    "en": "Canada Firearms Centre",
+    "fr": "Centre des armes à feu Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-industrial-relations-board/",
+    "en": "Canada Industrial Relations Board",
+    "fr": "Conseil canadien des relations industrielles",
+    "group": "departments"
+  },
+  {
+    "path": "canada-infrastructure-bank/",
+    "en": "Canada Infrastructure Bank",
+    "fr": "Banque de L’infrastructure du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-lands-company-limited/",
+    "en": "Canada Lands Company Limited",
+    "fr": "Société immobilière du Canada Limitée",
+    "group": "departments"
+  },
+  {
+    "path": "canada-mortgage-and-housing-corporation/",
+    "en": "Canada Mortgage and Housing Corporation",
+    "fr": "Société canadienne d'hypothèques et de logement",
+    "group": "departments"
+  },
+  {
+    "path": "canada-pension-plan-investment-board/",
+    "en": "Canada Pension Plan Investment Board",
+    "fr": "Office d'investissement du régime de pensions du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-pension-plan/",
+    "en": "Canada Pension Plan",
+    "fr": "Régime de pensions du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-post/",
+    "en": "Canada Post",
+    "fr": "Postes Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-research-chairs/",
+    "en": "Canada Research Chairs",
+    "fr": "Chaires de recherche du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-school-of-public-service/",
+    "en": "Canada School of Public Service",
+    "fr": "École de la fonction publique du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-science-and-technology-museum/",
+    "en": "Canada Science and Technology Museum",
+    "fr": "Musée des sciences et de la technologie du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canada-water-agency/",
+    "en": "Canada Water Agency",
+    "fr": "Agence de l'eau du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-air-transport-security-authority/",
+    "en": "Canadian Air Transport Security Authority",
+    "fr": "Administration canadienne de la sûreté du transport aérien",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-army/",
+    "en": "Canadian Army",
+    "fr": "Armée canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-artists-and-producers-professional-relations-tribunal/",
+    "en": "Canadian Artists and Producers Professional Relations Tribunal",
+    "fr": "Tribunal canadien des relations professionnelles artistes-producteurs",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-centre-for-occupational-health-and-safety/",
+    "en": "Canadian Centre for Occupational Health and Safety",
+    "fr": "Centre canadien d’hygiène et de sécurité au travail",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-centre-on-substance-use-and-addiction/",
+    "en": "Canadian Centre on Substance Use and Addiction",
+    "fr": "Centre canadien sur les dépendances et l’usage de substances",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-coast-guard/",
+    "en": "Canadian Coast Guard",
+    "fr": "Garde côtière canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-commercial-corporation/",
+    "en": "Canadian Commercial Corporation",
+    "fr": "Corporation commerciale canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-conservation-institute/",
+    "en": "Canadian Conservation Institute",
+    "fr": "Institut canadien de conservation",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-cultural-property-export-review-board/",
+    "en": "Canadian Cultural Property Export Review Board",
+    "fr": "Commission canadienne d'examen des exportations de biens culturels",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-dairy-commission/",
+    "en": "Canadian Dairy Commission",
+    "fr": "Commission canadienne du lait",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-environmental-assessment-agency/",
+    "en": "Canadian Environmental Assessment Agency",
+    "fr": "Agence canadienne d'évaluation environnementale",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-food-inspection-agency/",
+    "en": "Canadian Food Inspection Agency",
+    "fr": "Agence canadienne d'inspection des aliments",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-forces-housing-agency/",
+    "en": "Canadian Forces Housing Agency",
+    "fr": "Agence de logement des Forces canadiennes",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-grain-commission/",
+    "en": "Canadian Grain Commission",
+    "fr": "Commission canadienne des grains",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-heritage-information-network/",
+    "en": "Canadian Heritage Information Network",
+    "fr": "Réseau canadien d'information sur le patrimoine",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-heritage/",
+    "en": "Canadian Heritage",
+    "fr": "Patrimoine canadien",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-human-rights-commission/",
+    "en": "Canadian Human Rights Commission",
+    "fr": "Commission canadienne des droits de la personne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-human-rights-tribunal/",
+    "en": "Canadian Human Rights Tribunal",
+    "fr": "Tribunal canadien des droits de la personne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-institutes-of-health-research/",
+    "en": "Canadian Institutes of Health Research",
+    "fr": "Instituts de recherche en santé du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-intellectual-property-office/",
+    "en": "Canadian Intellectual Property Office",
+    "fr": "Office de la propriété intellectuelle du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-intergovernmental-conference-secretariat/",
+    "en": "Canadian Intergovernmental Conference Secretariat",
+    "fr": "Secrétariat des conférences intergouvernementales canadiennes",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-international-development-agency/",
+    "en": "Canadian International Development Agency",
+    "fr": "Agence canadienne de développement international",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-international-trade-tribunal/",
+    "en": "Canadian International Trade Tribunal",
+    "fr": "Tribunal canadien du commerce extérieur",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-judicial-council/",
+    "en": "Canadian Judicial Council",
+    "fr": "Conseil canadien de la magistrature",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-museum-for-human-rights/",
+    "en": "Canadian Museum for Human Rights",
+    "fr": "Musée canadien pour les droits de la personne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-museum-of-history/",
+    "en": "Canadian Museum of History",
+    "fr": "Musée canadien de l'histoire",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-museum-of-immigration-at-pier-21/",
+    "en": "Canadian Museum of Immigration at Pier 21",
+    "fr": "Musée canadien de l'immigration du Quai 21",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-museum-of-nature/",
+    "en": "Canadian Museum of Nature",
+    "fr": "Musée canadien de la nature",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-northern-economic-development-agency/",
+    "en": "Canadian Northern Economic Development Agency",
+    "fr": "Agence canadienne de développement économique du Nord",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-nuclear-safety-commission/",
+    "en": "Canadian Nuclear Safety Commission",
+    "fr": "Commission canadienne de sûreté nucléaire",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-pari-mutuel-agency/",
+    "en": "Canadian Pari-Mutuel Agency",
+    "fr": "Agence canadienne du pari mutuel",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-police-college/",
+    "en": "Canadian Police College",
+    "fr": "Collège canadien de police",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-race-relations-foundation/",
+    "en": "Canadian Race Relations Foundation",
+    "fr": "Fondation canadienne des relations raciales",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-radio-television-and-telecommunications-commission/",
+    "en": "Canadian Radio-television and Telecommunications Commission",
+    "fr": "Conseil de la radiodiffusion et des télécommunications canadiennes",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-security-intelligence-service/",
+    "en": "Canadian Security Intelligence Service",
+    "fr": "Service canadien du renseignement de sécurité",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-space-agency/",
+    "en": "Canadian Space Agency",
+    "fr": "Agence spatiale canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-special-operations-forces-command/",
+    "en": "Canadian Special Operations Forces Command",
+    "fr": "Commandement des Forces d’opérations spéciales du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-trade-commissioner-service/",
+    "en": "Canadian Trade Commissioner Service",
+    "fr": "Service des délégués commerciaux du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-transportation-agency/",
+    "en": "Canadian Transportation Agency",
+    "fr": "Office des transports du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "canadian-war-museum/",
+    "en": "Canadian War Museum",
+    "fr": "Musée canadien de la guerre",
+    "group": "departments"
+  },
+  {
+    "path": "career-development/index-fr.html",
+    "en": "index fr",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "career-development/",
+    "en": "career development",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "cbc-radio-canada/",
+    "en": "CBC/Radio-Canada",
+    "fr": "Radio Canada",
+    "group": "departments"
+  },
+  {
+    "path": "chief-accessibility-officer-office-of-the/",
+    "en": "Chief Accessibility Officer (Office of the)",
+    "fr": "Bureau de la dirigeante principale de l’accessibilité",
+    "group": "departments"
+  },
+  {
+    "path": "chief-military-judge-office-of-the/",
+    "en": "Chief Military Judge (Office of the)",
+    "fr": "Le cabinet du juge militaire en chef",
+    "group": "departments"
+  },
+  {
+    "path": "cirnac/",
+    "en": "Crown-Indigenous Relations and Northern Affairs Canada",
+    "fr": "Relations Couronne-Autochtones et Affaires du Nord Canada",
+    "group": "departments"
+  },
+  {
+    "path": "civilian-review-and-complaints-commission-for-the-rcmp-royal-canadian-mounted-police/",
+    "en": "Civilian Review and Complaints Commission for the RCMP (Royal Canadian Mounted Police)",
+    "fr": "Commission civile d'examen et de traitement des plaintes relatives à la GRC",
+    "group": "departments"
+  },
+  {
+    "path": "civilian-review-and-complaints-commission-for-the-rcmp/",
+    "en": "Civilian Review and Complaints Commission for the RCMP",
+    "fr": "Commission civile d'examen et de traitement des plaintes relatives à la GRC",
+    "group": "departments"
+  },
+  {
+    "path": "commissioner-for-federal-judicial-affairs-canada-office-of-the/",
+    "en": "Commissioner for Federal Judicial Affairs Canada (Office of the)",
+    "fr": "Commissariat à la magistrature fédérale Canada",
+    "group": "departments"
+  },
+  {
+    "path": "commissioner-of-lobbying-of-canada-office-of-the/",
+    "en": "Commissioner of Lobbying of Canada (Office of the)",
+    "fr": "Commissariat au lobbying du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "commissioner-of-official-languages-office-of-the/",
+    "en": "Commissioner of Official Languages (Office of the)",
+    "fr": "Commissariat aux langues officielles",
+    "group": "departments"
+  },
+  {
+    "path": "communications-research-centre-canada/",
+    "en": "Communications Research Centre Canada",
+    "fr": "Centre de recherches sur les communications Canada",
+    "group": "departments"
+  },
+  {
+    "path": "communications-security-establishment/",
+    "en": "Communications Security Establishment",
+    "fr": "Centre de la sécurité des télécommunications Canada",
+    "group": "departments"
+  },
+  {
+    "path": "communities/black/",
+    "en": "black",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "communities/filipino/",
+    "en": "filipino",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "communities/indigenous/fr.html",
+    "en": "fr",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "communities/indigenous/",
+    "en": "indigenous",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "companion-sites/",
+    "en": "companion sites",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "competition-bureau-canada/",
+    "en": "Competition Bureau Canada",
+    "fr": "Bureau de la concurrence Canada",
+    "group": "departments"
+  },
+  {
+    "path": "competition-tribunal/",
+    "en": "Competition Tribunal",
+    "fr": "Tribunal de la concurrence",
+    "group": "departments"
+  },
+  {
+    "path": "conflict-of-interest-and-ethics-commissioner-office-of-the/",
+    "en": "Conflict of Interest and Ethics Commissioner (Office of the)",
+    "fr": "Commissariat aux conflits d'intérêts et à l'éthique",
+    "group": "departments"
+  },
+  {
+    "path": "copyright-board-canada/",
+    "en": "Copyright Board Canada",
+    "fr": "Commission du droit d'auteur Canada",
+    "group": "departments"
+  },
+  {
+    "path": "corcan/",
+    "en": "CORCAN",
+    "fr": "CORCAN",
+    "group": "departments"
+  },
+  {
+    "path": "correctional-investigator-canada-the/",
+    "en": "Correctional Investigator Canada (The)",
+    "fr": "Enquêteur correctionnel Canada (L')",
+    "group": "departments"
+  },
+  {
+    "path": "correctional-investigator-office-of-the/",
+    "en": "Correctional Investigator (Office of the)",
+    "fr": "Bureau de l’enquêteur correctionnel",
+    "group": "departments"
+  },
+  {
+    "path": "correctional-service-canada/",
+    "en": "Correctional Service Canada",
+    "fr": "Service correctionnel Canada",
+    "group": "departments"
+  },
+  {
+    "path": "court-martial-appeal-court-of-canada/",
+    "en": "Court Martial Appeal Court of Canada",
+    "fr": "Cour d'appel de la cour martiale du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "courts-administration-service/",
+    "en": "Courts Administration Service",
+    "fr": "Service administratif des tribunaux judiciaires",
+    "group": "departments"
+  },
+  {
+    "path": "cra/",
+    "en": "Canada Revenue Agency",
+    "fr": "Agence du revenu du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "data-catalogue.html",
+    "en": "data catalogue",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "defence-construction-canada/",
+    "en": "Defence Construction Canada",
+    "fr": "Construction de Défense Canada",
+    "group": "departments"
+  },
+  {
+    "path": "defence-investment-agency/",
+    "en": "Defence Investment Agency",
+    "fr": "Agence Investissement Défense",
+    "group": "departments"
+  },
+  {
+    "path": "defence-research-and-development-canada/",
+    "en": "Defence Research and Development Canada",
+    "fr": "Recherche et développement pour la Défense Canada",
+    "group": "departments"
+  },
+  {
+    "path": "democratic-institutions/",
+    "en": "Democratic Institutions",
+    "fr": "Institutions démocratiques",
+    "group": "departments"
+  },
+  {
+    "path": "department-of-finance-canada/",
+    "en": "Department of Finance Canada",
+    "fr": "Ministère des Finances Canada",
+    "group": "departments"
+  },
+  {
+    "path": "department-of-justice-canada/",
+    "en": "Department of Justice Canada",
+    "fr": "Ministère de la Justice Canada",
+    "group": "departments"
+  },
+  {
+    "path": "departmental-plans-2026-27/",
+    "en": "departmental plans 2026 27",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "destination-canada/",
+    "en": "Destination Canada",
+    "fr": "Destination Canada",
+    "group": "departments"
+  },
+  {
+    "path": "dfo-equity.html",
+    "en": "dfo equity",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "dfo/",
+    "en": "Fisheries and Oceans Canada",
+    "fr": "Pêches et Océans Canada",
+    "group": "departments"
+  },
+  {
+    "path": "digital-museums-canada/",
+    "en": "Digital Museums Canada",
+    "fr": "Musées numériques Canada",
+    "group": "departments"
+  },
+  {
+    "path": "dnd/",
+    "en": "National Defence",
+    "fr": "Défense nationale",
+    "group": "departments"
+  },
+  {
+    "path": "duty-to-accommodate/accessibility.html",
+    "en": "accessibility",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "duty-to-accommodate/evidence.html",
+    "en": "evidence",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "duty-to-accommodate/get-help.html",
+    "en": "get help",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "duty-to-accommodate/",
+    "en": "duty to accommodate",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "elections-canada/",
+    "en": "Elections Canada",
+    "fr": "Élections Canada",
+    "group": "departments"
+  },
+  {
+    "path": "environment-and-climate-change-canada/",
+    "en": "Environment and Climate Change Canada",
+    "fr": "Environnement et Changement climatique Canada",
+    "group": "departments"
+  },
+  {
+    "path": "environmental-protection-review-canada/",
+    "en": "Environmental Protection Review Canada",
+    "fr": "Révision de la protection de l'environnement Canada",
+    "group": "departments"
+  },
+  {
+    "path": "environmental-protection-tribunal-of-canada/",
+    "en": "Environmental Protection Tribunal of Canada",
+    "fr": "Tribunal de la protection de l’environnement du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "equity-history/",
+    "en": "equity history",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "equity.html",
+    "en": "equity",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "esdc/",
+    "en": "Employment and Social Development Canada",
+    "fr": "Emploi et Développement social Canada",
+    "group": "departments"
+  },
+  {
+    "path": "evidence-review.html",
+    "en": "evidence review",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "explorer.html",
+    "en": "explorer",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "export-development-canada/",
+    "en": "Export Development Canada",
+    "fr": "Exportation et développement Canada",
+    "group": "departments"
+  },
+  {
+    "path": "farm-credit-canada/",
+    "en": "Farm Credit Canada",
+    "fr": "Financement agricole Canada",
+    "group": "departments"
+  },
+  {
+    "path": "farm-products-council-of-canada/",
+    "en": "Farm Products Council of Canada",
+    "fr": "Conseil des produits agricoles du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "federal-bridge-corporation/",
+    "en": "Federal Bridge Corporation",
+    "fr": "Société des ponts fédéraux",
+    "group": "departments"
+  },
+  {
+    "path": "federal-court-of-appeal/",
+    "en": "Federal Court of Appeal",
+    "fr": "Cour d'appel fédérale",
+    "group": "departments"
+  },
+  {
+    "path": "federal-court-of-canada/",
+    "en": "Federal Court of Canada",
+    "fr": "Cour fédérale",
+    "group": "departments"
+  },
+  {
+    "path": "federal-economic-development-agency-for-northern-ontario/",
+    "en": "Federal Economic Development Agency for Northern Ontario",
+    "fr": "Agence fédérale de développement économique pour le Nord de l'Ontario",
+    "group": "departments"
+  },
+  {
+    "path": "federal-economic-development-agency-for-southern-ontario/",
+    "en": "Federal Economic Development Agency for Southern Ontario",
+    "fr": "Agence fédérale de développement économique pour le Sud de l'Ontario",
+    "group": "departments"
+  },
+  {
+    "path": "federal-ombudsperson-for-victims-of-crime-office-of-the/",
+    "en": "Federal Ombudsperson for Victims Of Crime (Office of the)",
+    "fr": "Bureau de l'ombudsman fédéral des victimes d'actes criminels",
+    "group": "departments"
+  },
+  {
+    "path": "finance-canada-department-of/",
+    "en": "finance canada department of",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "financial-consumer-agency-of-canada/",
+    "en": "Financial Consumer Agency of Canada",
+    "fr": "Agence de la consommation en matière financière du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "financial-transactions-and-reports-analysis-centre-of-canada/",
+    "en": "Financial Transactions and Reports Analysis Centre of Canada",
+    "fr": "Centre d'analyse des opérations et déclarations financières du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "freshwater-fish-marketing-corporation/",
+    "en": "Freshwater Fish Marketing Corporation",
+    "fr": "Office de commercialisation du poisson d'eau douce",
+    "group": "departments"
+  },
+  {
+    "path": "fswep-browser.html",
+    "en": "fswep browser",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "global-affairs-canada/",
+    "en": "Global Affairs Canada",
+    "fr": "Affaires mondiales Canada",
+    "group": "departments"
+  },
+  {
+    "path": "governor-general-of-canada/",
+    "en": "Governor General of Canada",
+    "fr": "Gouverneur général du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "great-lakes-pilotage-authority-canada/",
+    "en": "Great Lakes Pilotage Authority Canada",
+    "fr": "Administration de pilotage des Grands Lacs Canada",
+    "group": "departments"
+  },
+  {
+    "path": "hazardous-materials-information-review-commission/",
+    "en": "Hazardous Materials Information Review Commission",
+    "fr": "Conseil de contrôle des renseignements relatifs aux matières dangereuses",
+    "group": "departments"
+  },
+  {
+    "path": "health-canada/",
+    "en": "Health Canada",
+    "fr": "Santé Canada",
+    "group": "departments"
+  },
+  {
+    "path": "historic-sites-and-monuments-board-of-canada/",
+    "en": "Historic Sites and Monuments Board of Canada",
+    "fr": "Commission des lieux et monuments historiques du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "housing-infrastructure-and-communities-canada/",
+    "en": "Housing, Infrastructure and Communities Canada",
+    "fr": "Logement, Infrastructures et Collectivités Canada",
+    "group": "departments"
+  },
+  {
+    "path": "human-rights-tribunal-of-canada/",
+    "en": "Human Rights Tribunal of Canada",
+    "fr": "Tribunal des droits de la personne du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "immigration-and-refugee-board-of-canada/",
+    "en": "Immigration and Refugee Board of Canada",
+    "fr": "Commission de l'immigration et du statut de réfugié du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "immigration-refugees-and-citizenship-canada/",
+    "en": "Immigration, Refugees and Citizenship Canada",
+    "fr": "Immigration, Réfugiés et Citoyenneté Canada",
+    "group": "departments"
+  },
+  {
+    "path": "impact-assessment-agency-of-canada/",
+    "en": "Impact Assessment Agency of Canada",
+    "fr": "Agence d'évaluation d'impact du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "impact-canada/",
+    "en": "Impact Canada",
+    "fr": "Impact Canada",
+    "group": "departments"
+  },
+  {
+    "path": "independent-review-panel-for-defence-acquisition/",
+    "en": "Independent Review Panel for Defence Acquisition",
+    "fr": "Commission indépendante d’examen des acquisitions de la Défense",
+    "group": "departments"
+  },
+  {
+    "path": "./",
+    "en": ".",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "indian-oil-and-gas-canada/",
+    "en": "Indian Oil and Gas Canada",
+    "fr": "Pétrole et gaz des Indiens du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "indian-residential-schools-truth-and-reconciliation-commission-secretariat/",
+    "en": "Indian Residential Schools Truth and Reconciliation Commission Secretariat",
+    "fr": "Secrétariat de la Commission de vérité et de réconciliation relative aux pensionnats indiens",
+    "group": "departments"
+  },
+  {
+    "path": "indian-residential-schools-truth-and-reconciliation-commission/",
+    "en": "Indian Residential Schools Truth and Reconciliation Commission",
+    "fr": "Commission de vérité et de réconciliation relative aux pensionnats indiens",
+    "group": "departments"
+  },
+  {
+    "path": "indigenous-and-northern-affairs-canada/",
+    "en": "Indigenous and Northern Affairs Canada",
+    "fr": "Affaires autochtones et du Nord Canada",
+    "group": "departments"
+  },
+  {
+    "path": "industrial-technologies-office/",
+    "en": "Industrial Technologies Office",
+    "fr": "Office des technologies industrielles",
+    "group": "departments"
+  },
+  {
+    "path": "information-commissioner-office-of-the/",
+    "en": "information commissioner office of the",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "innovation-science-and-economic-development-canada/",
+    "en": "Innovation, Science and Economic Development Canada",
+    "fr": "Innovation, Sciences et Développement économique Canada",
+    "group": "departments"
+  },
+  {
+    "path": "intelligence-commissioner-office-of-the/",
+    "en": "Intelligence Commissioner (Office of the)",
+    "fr": "Bureau du commissaire au renseignement",
+    "group": "departments"
+  },
+  {
+    "path": "intergovernmental-affairs/",
+    "en": "Intergovernmental Affairs",
+    "fr": "Affaires intergouvernementales",
+    "group": "departments"
+  },
+  {
+    "path": "international-development-research-centre/",
+    "en": "International Development Research Centre",
+    "fr": "Centre de recherches pour le développement international",
+    "group": "departments"
+  },
+  {
+    "path": "international-joint-commission-canadian-section/",
+    "en": "international joint commission canadian section",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "international-joint-commission/",
+    "en": "International Joint Commission",
+    "fr": "Commission mixte internationale",
+    "group": "departments"
+  },
+  {
+    "path": "invest-in-canada/",
+    "en": "Invest in Canada",
+    "fr": "Investir au Canada",
+    "group": "departments"
+  },
+  {
+    "path": "isc/equity-explorer/",
+    "en": "equity explorer",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "isc/",
+    "en": "Indigenous Services Canada",
+    "fr": "Services aux Autochtones Canada",
+    "group": "departments"
+  },
+  {
+    "path": "isc/racialized-employees/",
+    "en": "racialized employees",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "jacques-cartier-and-champlain-bridges/",
+    "en": "Jacques Cartier and Champlain Bridges",
+    "fr": "Ponts Jacques-Cartier et Champlain",
+    "group": "departments"
+  },
+  {
+    "path": "judicial-compensation-and-benefits-commission/",
+    "en": "Judicial Compensation and Benefits Commission",
+    "fr": "Commission d'examen de la rémunération des juges",
+    "group": "departments"
+  },
+  {
+    "path": "justice-canada-department-of/",
+    "en": "justice canada department of",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "labour-program/",
+    "en": "Labour Program",
+    "fr": "Programme du travail",
+    "group": "departments"
+  },
+  {
+    "path": "laurentian-pilotage-authority-canada/",
+    "en": "Laurentian Pilotage Authority Canada",
+    "fr": "Administration de pilotage des Laurentides Canada",
+    "group": "departments"
+  },
+  {
+    "path": "law-commission-of-canada/",
+    "en": "Law Commission of Canada",
+    "fr": "Commission du droit du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "leader-of-the-government-in-the-house-of-commons/",
+    "en": "Leader of the Government in the House of Commons",
+    "fr": "Leader du gouvernement à la Chambre des communes",
+    "group": "departments"
+  },
+  {
+    "path": "library-and-archives-canada/",
+    "en": "Library and Archives Canada",
+    "fr": "Bibliothèque et Archives Canada",
+    "group": "departments"
+  },
+  {
+    "path": "management-advisory-board-for-the-rcmp-royal-canadian-mounted-police/",
+    "en": "Management Advisory Board for the RCMP (Royal Canadian Mounted Police)",
+    "fr": "Conseil consultatif de gestion pour la GRC",
+    "group": "departments"
+  },
+  {
+    "path": "marine-atlantic/",
+    "en": "Marine Atlantic",
+    "fr": "Marine Atlantique",
+    "group": "departments"
+  },
+  {
+    "path": "measurement-canada/",
+    "en": "Measurement Canada",
+    "fr": "Mesures Canada",
+    "group": "departments"
+  },
+  {
+    "path": "military-grievances-external-review-committee/",
+    "en": "Military Grievances External Review Committee",
+    "fr": "Comité externe d'examen des griefs militaires",
+    "group": "departments"
+  },
+  {
+    "path": "military-police-complaints-commission-of-canada/",
+    "en": "Military Police Complaints Commission of Canada",
+    "fr": "Commission d'examen des plaintes concernant la police militaire du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "national-arts-centre/",
+    "en": "National Arts Centre",
+    "fr": "Centre national des arts",
+    "group": "departments"
+  },
+  {
+    "path": "national-battlefields-commission/",
+    "en": "National Battlefields Commission",
+    "fr": "Commission des champs de bataille nationaux",
+    "group": "departments"
+  },
+  {
+    "path": "national-capital-commission/",
+    "en": "National Capital Commission",
+    "fr": "Commission de la capitale nationale",
+    "group": "departments"
+  },
+  {
+    "path": "national-energy-board/",
+    "en": "National Energy Board",
+    "fr": "Office national de l'énergie",
+    "group": "departments"
+  },
+  {
+    "path": "national-film-board-of-canada/",
+    "en": "National Film Board of Canada",
+    "fr": "Office national du film du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "national-gallery-of-canada/",
+    "en": "National Gallery of Canada",
+    "fr": "Musée des beaux-arts du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "national-research-council-of-canada/",
+    "en": "National Research Council of Canada",
+    "fr": "Conseil national de recherches Canada",
+    "group": "departments"
+  },
+  {
+    "path": "national-security-and-intelligence-review-agency/",
+    "en": "National Security and Intelligence Review Agency",
+    "fr": "Office de surveillance des activités en matière de sécurité nationale et de renseignement",
+    "group": "departments"
+  },
+  {
+    "path": "national-seniors-council/",
+    "en": "National Seniors Council",
+    "fr": "Conseil national des aînés",
+    "group": "departments"
+  },
+  {
+    "path": "natural-resources-canada/",
+    "en": "Natural Resources Canada",
+    "fr": "Ressources naturelles Canada",
+    "group": "departments"
+  },
+  {
+    "path": "natural-sciences-and-engineering-research-canada/",
+    "en": "natural sciences and engineering research canada",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "natural-sciences-and-engineering-research-council-of-canada/",
+    "en": "Natural Sciences and Engineering Research Council of Canada",
+    "fr": "Conseil de recherches en sciences naturelles et en génie du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "northern-pipeline-agency-canada/",
+    "en": "Northern Pipeline Agency Canada",
+    "fr": "Administration du pipe-line du Nord",
+    "group": "departments"
+  },
+  {
+    "path": "occupational-health-and-safety-tribunal-canada/",
+    "en": "Occupational Health and Safety Tribunal Canada",
+    "fr": "Tribunal de santé et sécurité au travail Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-auditor-general-of-canada/",
+    "en": "Office of the Auditor General of Canada",
+    "fr": "Bureau du vérificateur général du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-commissioner-for-federal-judicial-affairs-canada/",
+    "en": "Office of the Commissioner for Federal Judicial Affairs Canada",
+    "fr": "Commissariat à la magistrature fédérale Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-commissioner-of-lobbying-of-canada/",
+    "en": "Office of the Commissioner of Lobbying of Canada",
+    "fr": "Commissariat au lobbying du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-commissioner-of-official-languages/",
+    "en": "Office of the Commissioner of Official Languages",
+    "fr": "Commissariat aux langues officielles",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-correctional-investigator/",
+    "en": "Office of the Correctional Investigator",
+    "fr": "L'Enquêteur correctionnel Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-foreign-influence-commissioner-of-canada/",
+    "en": "Office of the Foreign Influence Commissioner of Canada",
+    "fr": "Commissariat à l'influence étrangère du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-information-commissioner-of-canada/",
+    "en": "Office of the Information Commissioner of Canada",
+    "fr": "Commissariat à l'information du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-intelligence-commissioner/",
+    "en": "Office of the Intelligence Commissioner",
+    "fr": "Bureau du commissaire au renseignement",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-national-defence-and-canadian-armed-forces-ombudsman/",
+    "en": "Office of the National Defence and Canadian Armed Forces Ombudsman",
+    "fr": "Bureau de l’ombudsman de la Défense nationale et des Forces armées canadiennes",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-privacy-commissioner-of-canada/",
+    "en": "Office of the Privacy Commissioner of Canada",
+    "fr": "Commissariat à la protection de la vie privée du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-procurement-ombudsman/",
+    "en": "Office of the Procurement Ombudsman",
+    "fr": "Bureau de l’Ombudsman de l’approvisionnement",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-public-sector-integrity-commissioner-of-canada/",
+    "en": "Office of the Public Sector Integrity Commissioner of Canada",
+    "fr": "Commissariat à l'intégrité du secteur public du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-secretary-to-the-governor-general/",
+    "en": "Office of the Secretary to the Governor General",
+    "fr": "Bureau du secrétaire du gouverneur général",
+    "group": "departments"
+  },
+  {
+    "path": "office-of-the-superintendent-of-financial-institutions-canada/",
+    "en": "Office of the Superintendent of Financial Institutions Canada",
+    "fr": "Bureau du surintendant des institutions financières",
+    "group": "departments"
+  },
+  {
+    "path": "offices-of-the-information-and-privacy-commissioners-of-canada/",
+    "en": "Offices of the Information and Privacy Commissioners of Canada",
+    "fr": "Commissariats à l'information et à la protection de la vie privée du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "official-employer-publications/",
+    "en": "official employer publications",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "ombudsman-for-the-department-of-national-defence-and-the-canadian-armed-forces-office-of-the/",
+    "en": "Ombudsman for the Department of National Defence and the Canadian Armed Forces (Office of the)",
+    "fr": "Bureau de l'ombudsman de la Défense nationale et des Forces armées canadiennes",
+    "group": "departments"
+  },
+  {
+    "path": "organizations.html",
+    "en": "organizations",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "pacific-economic-development-agency-of-canada/",
+    "en": "Pacific Economic Development Agency of Canada",
+    "fr": "Développement économique Canada pour le Pacifique",
+    "group": "departments"
+  },
+  {
+    "path": "pacific-pilotage-authority-canada/",
+    "en": "Pacific Pilotage Authority Canada",
+    "fr": "Administration de pilotage du Pacifique Canada",
+    "group": "departments"
+  },
+  {
+    "path": "parks-canada/",
+    "en": "Parks Canada",
+    "fr": "Parcs Canada",
+    "group": "departments"
+  },
+  {
+    "path": "parliament-of-canada/",
+    "en": "Parliament of Canada",
+    "fr": "Parlement du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "parole-board-of-canada/",
+    "en": "Parole Board of Canada",
+    "fr": "Commission des libérations conditionnelles du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "passport-canada/",
+    "en": "Passport Canada",
+    "fr": "Passeport Canada",
+    "group": "departments"
+  },
+  {
+    "path": "passport-program/",
+    "en": "Passport Program",
+    "fr": "Programme de passeport",
+    "group": "departments"
+  },
+  {
+    "path": "patented-medicine-prices-review-board-canada/",
+    "en": "Patented Medicine Prices Review Board Canada",
+    "fr": "Conseil d'examen du prix des médicaments brevetés Canada",
+    "group": "departments"
+  },
+  {
+    "path": "polar-knowledge-canada/",
+    "en": "Polar Knowledge Canada",
+    "fr": "Savoir polaire Canada",
+    "group": "departments"
+  },
+  {
+    "path": "prairies-economic-development-canada/",
+    "en": "Prairies Economic Development Canada",
+    "fr": "Développement économique Canada pour les Prairies",
+    "group": "departments"
+  },
+  {
+    "path": "prime-minister-of-canada/",
+    "en": "Prime Minister of Canada",
+    "fr": "Premier ministre du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "privacy-commissioner-of-canada-office-of-the/",
+    "en": "privacy commissioner of canada office of the",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "privy-council-office/",
+    "en": "Privy Council Office",
+    "fr": "Bureau du Conseil privé",
+    "group": "departments"
+  },
+  {
+    "path": "procurement-ombud-office-of-the/",
+    "en": "Procurement Ombud (Office of the)",
+    "fr": "Bureau de l'ombud de l'approvisionnement",
+    "group": "departments"
+  },
+  {
+    "path": "public-health-agency-of-canada/",
+    "en": "Public Health Agency of Canada",
+    "fr": "Agence de la santé publique du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "public-prosecution-service-of-canada/",
+    "en": "Public Prosecution Service of Canada",
+    "fr": "Service des poursuites pénales du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "public-safety-canada/",
+    "en": "Public Safety Canada",
+    "fr": "Sécurité publique Canada",
+    "group": "departments"
+  },
+  {
+    "path": "public-sector-integrity-commissioner-of-canada-office-of-the/",
+    "en": "Public Sector Integrity Commissioner of Canada (Office of the)",
+    "fr": "Commissariat à l'intégrité du secteur public du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "public-sector-pension-investment-board/",
+    "en": "Public Sector Pension Investment Board",
+    "fr": "Office d'investissement des régimes de pensions du secteur public",
+    "group": "departments"
+  },
+  {
+    "path": "public-servants-disclosure-protection-tribunal-canada/",
+    "en": "Public Servants Disclosure Protection Tribunal Canada",
+    "fr": "Tribunal de la protection des fonctionnaires divulgateurs Canada",
+    "group": "departments"
+  },
+  {
+    "path": "public-service-commission-of-canada/",
+    "en": "Public Service Commission of Canada",
+    "fr": "Commission de la fonction publique du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "public-service-labour-relations-and-employment-board/",
+    "en": "Public Service Labour Relations and Employment Board",
+    "fr": "Commission des relations de travail et de l'emploi dans la fonction publique",
+    "group": "departments"
+  },
+  {
+    "path": "public-services-and-procurement-canada/",
+    "en": "Public Services and Procurement Canada",
+    "fr": "Services publics et Approvisionnement Canada",
+    "group": "departments"
+  },
+  {
+    "path": "racialized-executives/",
+    "en": "racialized executives",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "racism-hazard-prevention/index-fr.html",
+    "en": "index fr",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "racism-hazard-prevention/",
+    "en": "racism hazard prevention",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "rcmp-external-review-committee/",
+    "en": "RCMP External Review Committee",
+    "fr": "Comité externe d'examen de la GRC",
+    "group": "departments"
+  },
+  {
+    "path": "rcmp/",
+    "en": "Royal Canadian Mounted Police (public service employees)",
+    "fr": "Gendarmerie royale du Canada (employés de la fonction publique)",
+    "group": "departments"
+  },
+  {
+    "path": "recourse/cases/",
+    "en": "cases",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "recourse/cases/static.html",
+    "en": "static",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "recourse/companion/",
+    "en": "companion",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "recourse/fr/",
+    "en": "fr",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "recourse/",
+    "en": "recourse",
+    "fr": null,
+    "group": "rights"
+  },
+  {
+    "path": "registrar-of-the-supreme-court-of-canada/",
+    "en": "Registrar of the Supreme Court of Canada",
+    "fr": "Bureau du registraire de la Cour suprême du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "registry-of-the-competition-tribunal/",
+    "en": "Registry of the Competition Tribunal",
+    "fr": "Greffe du Tribunal de la concurrence",
+    "group": "departments"
+  },
+  {
+    "path": "registry-of-the-specific-claims-tribunal-of-canada/",
+    "en": "Registry of the Specific Claims Tribunal of Canada",
+    "fr": "Greffe du Tribunal des revendications particulières du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "reports.html",
+    "en": "reports",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "resource-library/",
+    "en": "resource library",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "royal-canadian-air-force/",
+    "en": "Royal Canadian Air Force",
+    "fr": "Aviation royale canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "royal-canadian-mint/",
+    "en": "Royal Canadian Mint",
+    "fr": "Monnaie royale canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "royal-canadian-navy/",
+    "en": "Royal Canadian Navy",
+    "fr": "Marine royale canadienne",
+    "group": "departments"
+  },
+  {
+    "path": "royal-military-college-of-canada/",
+    "en": "Royal Military College of Canada",
+    "fr": "Collège militaire royal du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "secretariat-of-the-national-security-and-intelligence-committee-of-parliamentarians/",
+    "en": "Secretariat of the National Security and Intelligence Committee of Parliamentarians",
+    "fr": "Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement",
+    "group": "departments"
+  },
+  {
+    "path": "service-canada/",
+    "en": "Service Canada",
+    "fr": "Service Canada",
+    "group": "departments"
+  },
+  {
+    "path": "shared-services-canada/",
+    "en": "Shared Services Canada",
+    "fr": "Services partagés Canada",
+    "group": "departments"
+  },
+  {
+    "path": "social-sciences-and-humanities-research-council/",
+    "en": "Social Sciences and Humanities Research Council",
+    "fr": "Conseil de recherches en sciences humaines du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "social-security-tribunal-of-canada/",
+    "en": "Social Security Tribunal of Canada",
+    "fr": "Tribunal de la sécurité sociale du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "source-access.html",
+    "en": "source access",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "source-table.html",
+    "en": "source table",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "sources.html",
+    "en": "sources",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "staffing.html",
+    "en": "staffing",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "standards-council-of-canada/",
+    "en": "Standards Council of Canada",
+    "fr": "Conseil canadien des normes",
+    "group": "departments"
+  },
+  {
+    "path": "statistics-canada/",
+    "en": "Statistics Canada",
+    "fr": "Statistique Canada",
+    "group": "departments"
+  },
+  {
+    "path": "status-of-women-canada/",
+    "en": "Status of Women Canada",
+    "fr": "Condition féminine Canada",
+    "group": "departments"
+  },
+  {
+    "path": "superintendent-of-bankruptcy-canada-office-of-the/",
+    "en": "Superintendent of Bankruptcy Canada (Office of the)",
+    "fr": "Bureau du surintendant des faillites Canada",
+    "group": "departments"
+  },
+  {
+    "path": "superintendent-of-financial-institutions-canada-office-of-the/",
+    "en": "Superintendent of Financial Institutions Canada (Office of the)",
+    "fr": "Bureau du surintendant des institutions financières Canada",
+    "group": "departments"
+  },
+  {
+    "path": "survey-file-browser.html",
+    "en": "survey file browser",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "systemic-change/accommodation-delivery-observatory/",
+    "en": "accommodation delivery observatory",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/barrier-breaker/",
+    "en": "barrier breaker",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/commitments-tracker/",
+    "en": "commitments tracker",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/decision-equity-check/",
+    "en": "decision equity check",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/",
+    "en": "department evidence explorer",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/discretion-navigator/",
+    "en": "discretion navigator",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/equitable-staffing-lab/",
+    "en": "equitable staffing lab",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/equity-impact-simulator/",
+    "en": "equity impact simulator",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/equity-under-austerity/",
+    "en": "equity under austerity",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/federal-equity-audit/",
+    "en": "federal equity audit",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/federal-glass-ceiling/",
+    "en": "federal glass ceiling",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/follow-equity-money/",
+    "en": "follow equity money",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/from-commitment-to-action/",
+    "en": "from commitment to action",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/global-public-service-equity/",
+    "en": "global public service equity",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/hr-process-toolkit/",
+    "en": "hr process toolkit",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/",
+    "en": "systemic change",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/intersectionality-without-guesswork/",
+    "en": "intersectionality without guesswork",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/invisible-work-project/",
+    "en": "invisible work project",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/job-posting-barrier-scanner/",
+    "en": "job posting barrier scanner",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/managers-equity-toolkit/",
+    "en": "managers equity toolkit",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/official-languages-equity/",
+    "en": "official languages equity",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/public-service-pay-gap-atlas/",
+    "en": "public service pay gap atlas",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/regional-career-opportunity-atlas/",
+    "en": "regional career opportunity atlas",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/what-worked/",
+    "en": "what worked",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/who-gets-heard/",
+    "en": "who gets heard",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "systemic-change/why-public-servants-leave/",
+    "en": "why public servants leave",
+    "fr": null,
+    "group": "systemic"
+  },
+  {
+    "path": "tax-court-of-canada/",
+    "en": "Tax Court of Canada",
+    "fr": "Cour canadienne de l'impôt",
+    "group": "departments"
+  },
+  {
+    "path": "taxpayers-ombudsperson-office-of-the/",
+    "en": "Taxpayers' Ombudsperson (Office of the)",
+    "fr": "Bureau de l'ombudsman des contribuables",
+    "group": "departments"
+  },
+  {
+    "path": "telefilm-canada/",
+    "en": "Telefilm Canada",
+    "fr": "Téléfilm Canada",
+    "group": "departments"
+  },
+  {
+    "path": "the-national-battlefields-commission/",
+    "en": "The National Battlefields Commission",
+    "fr": "Commission des champs de bataille nationaux",
+    "group": "departments"
+  },
+  {
+    "path": "translation-bureau/",
+    "en": "Translation Bureau",
+    "fr": "Bureau de la traduction",
+    "group": "departments"
+  },
+  {
+    "path": "transport-canada/",
+    "en": "Transport Canada",
+    "fr": "Transports Canada",
+    "group": "departments"
+  },
+  {
+    "path": "transportation-appeal-tribunal-of-canada/",
+    "en": "Transportation Appeal Tribunal of Canada",
+    "fr": "Tribunal d'appel des transports du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "transportation-safety-board-of-canada/",
+    "en": "Transportation Safety Board of Canada",
+    "fr": "Bureau de la sécurité des transports du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "treasury-board-of-canada-secretariat/",
+    "en": "Treasury Board of Canada Secretariat",
+    "fr": "Secrétariat du Conseil du Trésor du Canada",
+    "group": "departments"
+  },
+  {
+    "path": "veterans-affairs-canada/",
+    "en": "Veterans Affairs Canada",
+    "fr": "Anciens Combattants Canada",
+    "group": "departments"
+  },
+  {
+    "path": "veterans-ombudsman-office-of-the/",
+    "en": "Veterans' Ombudsman (Office of the)",
+    "fr": "Ombudsman des vétérans",
+    "group": "departments"
+  },
+  {
+    "path": "veterans-review-and-appeal-board/",
+    "en": "Veterans Review and Appeal Board",
+    "fr": "Tribunal des anciens combattants (révision et appel)",
+    "group": "departments"
+  },
+  {
+    "path": "via-rail-canada/",
+    "en": "VIA Rail Canada",
+    "fr": "VIA Rail Canada",
+    "group": "departments"
+  },
+  {
+    "path": "website-directory/",
+    "en": "website directory",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "western-economic-diversification-canada-incl-pacifican-and-prairiescan/",
+    "en": "Western Economic Diversification Canada (incl. PacifiCan and PrairiesCan)",
+    "fr": "Diversification de l'économie de l'Ouest Canada (y compris PacifiCan et PrairiesCan)",
+    "group": "departments"
+  },
+  {
+    "path": "western-economic-diversification-canada/",
+    "en": "Western Economic Diversification Canada",
+    "fr": "Diversification de l'économie de l'Ouest Canada",
+    "group": "departments"
+  },
+  {
+    "path": "where-data-agree-guide.html",
+    "en": "where data agree guide",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "where-data-agree.html",
+    "en": "where data agree",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "windsor-detroit-bridge-authority/",
+    "en": "Windsor-Detroit Bridge Authority",
+    "fr": "Autorité du pont Windsor-Détroit",
+    "group": "departments"
+  },
+  {
+    "path": "women-and-gender-equality-canada/",
+    "en": "Women and Gender Equality Canada",
+    "fr": "Femmes et Égalité des genres Canada",
+    "group": "departments"
+  },
+  {
+    "path": "women-femmes/",
+    "en": "women femmes",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "workbook-browser.html",
+    "en": "workbook browser",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "youth-and-students/",
+    "en": "youth and students",
+    "fr": null,
+    "group": "other"
+  },
+  {
+    "path": "youth/",
+    "en": "Youth",
+    "fr": "Jeunesse",
+    "group": "departments"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/?lens=workforce",
+    "en": "How people are represented and leave the workforce",
+    "fr": "Représentation et départs",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/?lens=pay",
+    "en": "How pay compares",
+    "fr": "Comparaison de la rémunération",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/?lens=career",
+    "en": "Career advancement",
+    "fr": "Avancement professionnel",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/?lens=safety",
+    "en": "Experiences of safety and discrimination",
+    "fr": "Expériences de sécurité et de discrimination",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/?lens=accom",
+    "en": "Workplace accommodation",
+    "fr": "Adaptation en milieu de travail",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/department-evidence-explorer/?lens=regions",
+    "en": "Regional opportunities",
+    "fr": "Possibilités régionales",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/commitments-tracker/#practices",
+    "en": "Find examples of reported practices",
+    "fr": "Trouver des exemples de pratiques déclarées",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/commitments-tracker/#responses",
+    "en": "Review responses to recommendations",
+    "fr": "Examiner les réponses aux recommandations",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/hr-process-toolkit/#posting",
+    "en": "Review a job advertisement",
+    "fr": "Examiner une offre d’emploi",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/hr-process-toolkit/#stages",
+    "en": "Review hiring stages",
+    "fr": "Examiner les étapes d’embauche",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/hr-process-toolkit/#barriers",
+    "en": "Find barriers and options",
+    "fr": "Repérer les obstacles et les options",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/hr-process-toolkit/#language-profile",
+    "en": "Review language requirements",
+    "fr": "Examiner les exigences linguistiques",
+    "group": "views"
+  },
+  {
+    "path": "systemic-change/decision-equity-check/#system",
+    "en": "Review an existing system",
+    "fr": "Examiner un système existant",
+    "group": "views"
+  }
+]
