@@ -562,6 +562,10 @@ function renderOrg(){
    let section=topics[topic];
    if(section&&Array.isArray(page.sections)&&!page.sections.includes(section))section=page.sections.includes('missing')?'missing':null;
    const frenchIDs={'who-works':page.id==='dnd'?'effectif-civil':'qui-travaille',experience:'experience-fr',branches:page.id==='dnd'?'secteurs':'unites',hiring:'embauche',promised:['isc','dfo'].includes(page.id)?'promesses':'engagements',planned:'plans','data-library':'bibliotheque',missing:['isc','dfo'].includes(page.id)?'manquant':'lacunes'};
+   if(section==='branches'&&g!=='all'){
+    const branchPairs={w:'Woman',man:'Woman',i:'Indigenous',nonind:'Indigenous',d:'Persons with disability',nopwd:'Persons with disability',v:'Racialized',nonrac:'Racialized',b:'Black',lgbt:'2SLBGTQIA+'};
+    if(branchPairs[g]){target.searchParams.set('brorg',page.id);target.searchParams.set('brpair',branchPairs[g]);}
+   }
    if(section)target.hash=french?frenchIDs[section]:section;
    location.assign(target.href);return;
   }
