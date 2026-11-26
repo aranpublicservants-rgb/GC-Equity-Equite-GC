@@ -1,0 +1,44 @@
+name: Recover remaining approved publisher source files
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/recover-remaining-publisher-sources.py'
+      - '.github/workflows/recover-remaining-publisher-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: gc-equity-source-checksums
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover only approved publisher files and validate generated indexes
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+          python scripts/recover-remaining-publisher-sources.py
+          python scripts/build-assistant-catalogue.py
+          python scripts/build-assistant-catalogue.py --check
+          python scripts/update-data-checksums.py
+          python scripts/audit-publishing.py
+          python scripts/check-site.py
+      - name: Commit verified source files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/public-source-archive-2026-11-24 data/public-source-register-2026-11-24.json data/open-canada-2026-11/pses-2024 assets/added-sources.json assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256 docs/publisher-recovery-2026-11-25.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Recover verified approved publisher source files with provenance"
+            git push origin HEAD:main
+          fi

@@ -163,6 +163,7 @@ for folder, publisher, title_en, title_fr, uuid, span in PACKAGES:
         item = {'path': rel(p), 'bytes': size, 'format': p.suffix[1:].upper(), 'name': p.name}
         if p.name in large:
             item['originalBytes'] = large[p.name]['bytes']; item['originalSha256'] = large[p.name]['sha256']; item['sourceUrl'] = large[p.name]['url']
+            if 'rows' in large[p.name]: item['rows'] = large[p.name]['rows']
             title = large[p.name].get('title')
             if isinstance(title, dict) and title.get('en') and title.get('fr'):
                 item['titleEn'], item['titleFr'] = title['en'], title['fr']

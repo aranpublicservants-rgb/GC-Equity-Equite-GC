@@ -56,6 +56,7 @@ const initial=restoredMode?Promise.all([get('assets/restored-datasets.json'),get
   const usable=parts.filter(p=>safePath(p.localPath));if(!usable.length)continue;
   output.push({directory:e.id,title:{en:e.name,fr:e.name+' (titre de la source en anglais)'},url:x.publisherUrl,parts:usable});
  }
+ const hr=register.entries.find(e=>e.id==='GC-0080'&&e.approved===true);const hrfile=added.packages?.find(p=>p.id==='pses-2024')?.files.find(f=>f.sourceUrl===hr?.source&&f.originalBytes===hr.bytes&&f.path==='data/open-canada-2026-11/pses-2024/HRINFO.csv.gz');if(hrfile)output.push({directory:hr.id,title:{en:hrfile.titleEn,fr:hrfile.titleFr},url:hrfile.sourceUrl,parts:[{file:hrfile.name,localPath:hrfile.path,organization:'Entire file',rows:hrfile.rows,bytes:hrfile.bytes}]});
  if(window.GCEquityHistoricalStaffing)for(const [id,f] of window.GCEquityHistoricalStaffing(register,added)){if(output.some(x=>x.directory===id))continue;const e=register.entries.find(x=>x.id===id);output.push({directory:id,title:{en:e.name,fr:f.titleFr||e.name+' (titre de la source en anglais)'},url:f.sourceUrl,parts:[{file:f.name,localPath:f.path,organization:'Entire file',rows:f.rows,bytes:f.bytes}]});}
  return output;
 }):get('data/pses-large-manifest.json').then(m=>m.datasets.flatMap(d=>d.sources).filter(s=>/^pses-[0-9-]+\/[A-Za-z0-9_.-]+$/.test(s.directory)&&Array.isArray(s.parts)&&s.parts.every(p=>/^[A-Za-z0-9_.-]+\.csv\.gz$/.test(p.file))));
