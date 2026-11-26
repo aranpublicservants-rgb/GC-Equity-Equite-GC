@@ -2,8 +2,8 @@
   {
     "path": "accessibility-inclusion/",
     "en": "Accessibility and inclusion",
-    "fr": null,
-    "group": "other"
+    "fr": "Accessibilité et inclusion",
+    "group": "equity"
   },
   {
     "path": "accessibility-standards-canada/",
@@ -62,8 +62,8 @@
   {
     "path": "barrier-comparisons/",
     "en": "Compare workplace barriers",
-    "fr": null,
-    "group": "other"
+    "fr": "Comparer les obstacles au travail",
+    "group": "comparisons"
   },
   {
     "path": "blue-water-bridge-canada/",
@@ -74,8 +74,8 @@
   {
     "path": "branch-equity.html",
     "en": "2024 employee survey results by branch",
-    "fr": null,
-    "group": "other"
+    "fr": "Résultats du sondage de 2024 par direction",
+    "group": "comparisons"
   },
   {
     "path": "business-development-bank-of-canada/",
@@ -86,8 +86,8 @@
   {
     "path": "call-to-action.html",
     "en": "Call to Action: commitments and results by organization",
-    "fr": null,
-    "group": "other"
+    "fr": "Appel à l’action : engagements et résultats par organisme",
+    "group": "equity"
   },
   {
     "path": "canada-agricultural-review-tribunal/",
@@ -463,14 +463,14 @@
   },
   {
     "path": "career-development/index-fr.html",
-    "en": "Développement de carrière dans la fonction publique",
-    "fr": null,
+    "en": "Career development (French page)",
+    "fr": "Perfectionnement professionnel dans la fonction publique",
     "group": "rights"
   },
   {
     "path": "career-development/",
     "en": "Career Development in the Public Service",
-    "fr": null,
+    "fr": "Perfectionnement professionnel dans la fonction publique",
     "group": "rights"
   },
   {
@@ -518,32 +518,32 @@
   {
     "path": "communities/black/",
     "en": "Black employees in the federal public service",
-    "fr": null,
-    "group": "other"
+    "fr": "Employés noirs de la fonction publique fédérale",
+    "group": "equity"
   },
   {
     "path": "communities/filipino/",
     "en": "Filipino public servants in the federal public service",
-    "fr": null,
-    "group": "other"
+    "fr": "Fonctionnaires philippins de la fonction publique fédérale",
+    "group": "equity"
   },
   {
     "path": "communities/indigenous/fr.html",
-    "en": "Fonctionnaires autochtones : données et obstacles",
-    "fr": null,
-    "group": "other"
+    "en": "Indigenous public servants: data and barriers (French page)",
+    "fr": "Fonctionnaires autochtones : données et obstacles",
+    "group": "equity"
   },
   {
     "path": "communities/indigenous/",
     "en": "Indigenous Federal Public Servants: Representation and Workplace Experience",
-    "fr": null,
-    "group": "other"
+    "fr": "Fonctionnaires autochtones : représentation et expérience au travail",
+    "group": "equity"
   },
   {
     "path": "companion-sites/",
     "en": "Websites and tools",
-    "fr": null,
-    "group": "other"
+    "fr": "Sites Web et outils par thème",
+    "group": "resources"
   },
   {
     "path": "competition-bureau-canada/",
@@ -602,8 +602,8 @@
   {
     "path": "data-catalogue.html",
     "en": "Find and download public equity data",
-    "fr": null,
-    "group": "other"
+    "fr": "Trouver et télécharger les données publiques sur l’équité",
+    "group": "resources"
   },
   {
     "path": "defence-construction-canada/",
@@ -644,8 +644,8 @@
   {
     "path": "departmental-plans-2026-27/",
     "en": "Term mentions in departmental plans, 2026–27",
-    "fr": null,
-    "group": "other"
+    "fr": "Mentions de termes dans les plans ministériels de 2026-2027",
+    "group": "departments"
   },
   {
     "path": "destination-canada/",
@@ -674,19 +674,19 @@
   {
     "path": "duty-to-accommodate/accessibility.html",
     "en": "Accessibility and plain-language statement",
-    "fr": null,
+    "fr": "Déclaration sur l’accessibilité et le langage clair",
     "group": "rights"
   },
   {
     "path": "duty-to-accommodate/evidence.html",
     "en": "DTA Evidence Library",
-    "fr": null,
+    "fr": "Bibliothèque de données sur les mesures d’adaptation",
     "group": "rights"
   },
   {
     "path": "duty-to-accommodate/",
     "en": "Workplace accommodation: evidence and employee guidance",
-    "fr": null,
+    "fr": "Mesures d’adaptation au travail : données et conseils aux employés",
     "group": "rights"
   },
   {
@@ -716,14 +716,14 @@
   {
     "path": "equity-history/",
     "en": "From Exclusion to Accountability",
-    "fr": null,
-    "group": "other"
+    "fr": "Histoire de l’équité : de l’exclusion à la responsabilisation",
+    "group": "equity"
   },
   {
     "path": "equity.html",
     "en": "Equity across the public service",
-    "fr": null,
-    "group": "other"
+    "fr": "Équité dans l’ensemble de la fonction publique",
+    "group": "equity"
   },
   {
     "path": "esdc/",
@@ -734,14 +734,14 @@
   {
     "path": "evidence-review.html",
     "en": "Evidence quality review: 50 checks",
-    "fr": null,
-    "group": "other"
+    "fr": "Examen de la qualité des données : 50 vérifications",
+    "group": "resources"
   },
   {
     "path": "explorer.html",
     "en": "Public Service Equity Data Explorer",
-    "fr": null,
-    "group": "other"
+    "fr": "Explorateur des données sur l’équité dans la fonction publique",
+    "group": "comparisons"
   },
   {
     "path": "export-development-canada/",
@@ -818,8 +818,8 @@
   {
     "path": "fswep-browser.html",
     "en": "FSWEP public referral requests",
-    "fr": null,
-    "group": "other"
+    "fr": "Demandes de présentation de candidatures du PFETE",
+    "group": "equity"
   },
   {
     "path": "global-affairs-canada/",
@@ -968,7 +968,7 @@
   {
     "path": "isc/equity-explorer/",
     "en": "Equity at Indigenous Services Canada",
-    "fr": null,
+    "fr": "Équité à Services aux Autochtones Canada",
     "group": "departments"
   },
   {
@@ -980,7 +980,7 @@
   {
     "path": "isc/racialized-employees/",
     "en": "Racialized employees at ISC",
-    "fr": null,
+    "fr": "Employés racialisés à SAC",
     "group": "departments"
   },
   {
@@ -1220,8 +1220,8 @@
   {
     "path": "official-employer-publications/",
     "en": "Official employer publications",
-    "fr": null,
-    "group": "other"
+    "fr": "Publications officielles des employeurs",
+    "group": "resources"
   },
   {
     "path": "ombudsman-for-the-department-of-national-defence-and-the-canadian-armed-forces-office-of-the/",
@@ -1232,8 +1232,8 @@
   {
     "path": "organizations.html",
     "en": "Federal organization directory",
-    "fr": null,
-    "group": "other"
+    "fr": "Répertoire des organismes fédéraux",
+    "group": "departments"
   },
   {
     "path": "pacific-economic-development-agency-of-canada/",
@@ -1358,20 +1358,20 @@
   {
     "path": "racialized-executives/",
     "en": "Racialized Executives Network",
-    "fr": null,
-    "group": "other"
+    "fr": "Réseau des cadres racialisés",
+    "group": "networks"
   },
   {
     "path": "racism-hazard-prevention/index-fr.html",
-    "en": "Le racisme et la discrimination comme risques professionnels",
-    "fr": null,
-    "group": "other"
+    "en": "Racism and discrimination as workplace hazards (French page)",
+    "fr": "Le racisme et la discrimination comme risques professionnels",
+    "group": "rights"
   },
   {
     "path": "racism-hazard-prevention/",
     "en": "Racism and discrimination as workplace hazards",
-    "fr": null,
-    "group": "other"
+    "fr": "Le racisme et la discrimination comme risques au travail",
+    "group": "rights"
   },
   {
     "path": "rcmp-external-review-committee/",
@@ -1388,25 +1388,25 @@
   {
     "path": "recourse/cases/",
     "en": "Decision library",
-    "fr": null,
+    "fr": "Bibliothèque de décisions",
     "group": "rights"
   },
   {
     "path": "recourse/cases/static.html",
     "en": "Static decision library",
-    "fr": null,
+    "fr": "Bibliothèque de décisions (version statique)",
     "group": "rights"
   },
   {
     "path": "recourse/companion/",
     "en": "Recourse Assistant",
-    "fr": null,
+    "fr": "Assistant de recours",
     "group": "rights"
   },
   {
     "path": "recourse/",
     "en": "Public service recourse",
-    "fr": null,
+    "fr": "Recours dans la fonction publique",
     "group": "rights"
   },
   {
@@ -1430,14 +1430,14 @@
   {
     "path": "reports.html",
     "en": "Employment equity reports",
-    "fr": null,
-    "group": "other"
+    "fr": "Rapports sur l’équité en matière d’emploi",
+    "group": "equity"
   },
   {
     "path": "resource-library/",
     "en": "Resource library",
-    "fr": null,
-    "group": "other"
+    "fr": "Bibliothèque de ressources",
+    "group": "resources"
   },
   {
     "path": "royal-canadian-air-force/",
@@ -1496,26 +1496,26 @@
   {
     "path": "source-access.html",
     "en": "Download full public data files",
-    "fr": null,
-    "group": "other"
+    "fr": "Télécharger les fichiers de données publiques complets",
+    "group": "resources"
   },
   {
     "path": "source-table.html",
     "en": "Public source table",
-    "fr": null,
-    "group": "other"
+    "fr": "Tableau des données sources publiques",
+    "group": "resources"
   },
   {
     "path": "sources.html",
     "en": "GC Equity: data sources",
-    "fr": null,
-    "group": "other"
+    "fr": "Équité-GC : sources de données",
+    "group": "resources"
   },
   {
     "path": "staffing.html",
     "en": "Hiring and staffing data from the Public Service Commission",
-    "fr": null,
-    "group": "other"
+    "fr": "Données sur l’embauche et la dotation de la Commission de la fonction publique",
+    "group": "comparisons"
   },
   {
     "path": "standards-council-of-canada/",
@@ -1544,67 +1544,67 @@
   {
     "path": "survey-file-browser.html",
     "en": "Read and search data files",
-    "fr": null,
-    "group": "other"
+    "fr": "Lire et rechercher dans les fichiers de données",
+    "group": "resources"
   },
   {
     "path": "systemic-change/commitments-tracker/",
     "en": "Commitments and accountability tracker",
-    "fr": null,
+    "fr": "Suivi des engagements et de la responsabilisation",
     "group": "systemic"
   },
   {
     "path": "systemic-change/decision-equity-check/",
     "en": "Decision equity check",
-    "fr": null,
+    "fr": "Vérification de l’équité des décisions",
     "group": "systemic"
   },
   {
     "path": "systemic-change/department-evidence-explorer/",
     "en": "Department evidence explorer",
-    "fr": null,
+    "fr": "Explorateur des données ministérielles",
     "group": "systemic"
   },
   {
     "path": "systemic-change/equity-impact-simulator/",
     "en": "Equity impact simulator",
-    "fr": null,
+    "fr": "Simulateur des effets sur l’équité",
     "group": "systemic"
   },
   {
     "path": "systemic-change/equity-under-austerity/",
     "en": "Equity under austerity",
-    "fr": null,
+    "fr": "Équité en période d’austérité",
     "group": "systemic"
   },
   {
     "path": "systemic-change/global-public-service-equity/",
     "en": "Global public service equity observatory",
-    "fr": null,
+    "fr": "Observatoire international de l’équité dans les fonctions publiques",
     "group": "systemic"
   },
   {
     "path": "systemic-change/hr-process-toolkit/",
     "en": "HR process review toolkit",
-    "fr": null,
+    "fr": "Outils d’examen des processus de ressources humaines",
     "group": "systemic"
   },
   {
     "path": "systemic-change/",
     "en": "Systemic change tools",
-    "fr": null,
+    "fr": "Outils de changement systémique",
     "group": "systemic"
   },
   {
     "path": "systemic-change/invisible-work-project/",
     "en": "The Invisible Work Project",
-    "fr": null,
+    "fr": "Projet sur le travail invisible",
     "group": "systemic"
   },
   {
     "path": "systemic-change/managers-equity-toolkit/",
     "en": "The Manager’s Equity Toolkit",
-    "fr": null,
+    "fr": "Trousse d’équité pour les gestionnaires",
     "group": "systemic"
   },
   {
@@ -1688,8 +1688,8 @@
   {
     "path": "website-directory/",
     "en": "Find equity information and tools",
-    "fr": null,
-    "group": "other"
+    "fr": "Trouver les données et outils sur l’équité",
+    "group": "resources"
   },
   {
     "path": "western-economic-diversification-canada-incl-pacifican-and-prairiescan/",
@@ -1706,14 +1706,14 @@
   {
     "path": "where-data-agree-guide.html",
     "en": "How to use Where the data agree",
-    "fr": null,
-    "group": "other"
+    "fr": "Guide de l’outil Là où les données concordent",
+    "group": "comparisons"
   },
   {
     "path": "where-data-agree.html",
     "en": "Where the data agree",
-    "fr": null,
-    "group": "other"
+    "fr": "Là où les données concordent",
+    "group": "comparisons"
   },
   {
     "path": "windsor-detroit-bridge-authority/",
@@ -1730,26 +1730,26 @@
   {
     "path": "women-femmes/",
     "en": "Women in the federal public service: intersectional barriers",
-    "fr": null,
-    "group": "other"
+    "fr": "Femmes dans la fonction publique fédérale : obstacles intersectionnels",
+    "group": "equity"
   },
   {
     "path": "workbook-browser.html",
     "en": "Archived source workbook",
-    "fr": null,
-    "group": "other"
+    "fr": "Classeur de données sources archivé",
+    "group": "resources"
   },
   {
     "path": "youth-and-students/",
     "en": "Youth and students",
-    "fr": null,
-    "group": "other"
+    "fr": "Jeunes et étudiants",
+    "group": "equity"
   },
   {
     "path": "youth/",
     "en": "Youth (previous address)",
     "fr": "Jeunesse (ancienne adresse)",
-    "group": "other"
+    "group": "equity"
   },
   {
     "path": "systemic-change/department-evidence-explorer/?lens=workforce",
