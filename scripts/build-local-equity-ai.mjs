@@ -35,7 +35,9 @@ const {pipeline}=await import('@huggingface/transformers');
 const model='Xenova/multilingual-e5-small';
 const pipe=await pipeline('feature-extraction',model,{dtype:'q8',device:'cpu'});
 const index=await read('assets/search-index.json');
-const docs=index.docs.filter(d=>d.id&&d.url&&!/^(?:https?:)?\/\//i.test(d.url)&&!/(?:^|\/)(?:racialized-executives|communities\/filipino|youth)(?:\/|$)/i.test(d.url));
+const orgDoc=o=>({id:'org-local-'+o.id,url:o.path,en:o.en,fr:o.fr,text:'Departmental profile: representation, staffing, PSES, employee groups, branches and commitments.',textFr:'Profil ministériel : représentation, dotation, SAFF, groupes, directions et engagements.'});
+const base=new URL('https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/');
+const docs=[...registry.organizations.map(orgDoc),...index.docs].filter(d=>{try{const u=new URL(d.url,base);return d.id&&u.origin===base.origin&&u.pathname.startsWith(base.pathname)&&!(/\/(?:racialized-executives|communities\/filipino|youth)(?:\/|$)/i.test(u.pathname))}catch{return false}});
 const rows=[];
 for(let i=0;i<docs.length;i+=16){
  const batch=docs.slice(i,i+16),texts=batch.map(embedText);
