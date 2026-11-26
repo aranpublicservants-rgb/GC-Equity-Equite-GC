@@ -51,6 +51,7 @@ def french(title):
  return title
 
 def add(path,en,fr='',source='sources.html',period=None,publisher=None,field=None,coverage=None,partitions=None,scope=None,topics=None,details=None,groups=None,view=None,kind='source',scan=True,originalBytes=0):
+ if any(part in path for part in ('/esdc-wfa-benchmarks/', '/harassment-violence-occurrences/', '/esdc-federally-regulated-ee-annual-report-')):return None
  if path in seen:return seen[path]
  vals,head,sample=inspect(path) if scan else ({},[],'');field=field or next((x for x in fields if x in head),None);ts,ds,gs=tags(en,path,head,sample);covered=list(coverage or vals)
  for n in covered:org(n)

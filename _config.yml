@@ -13,3 +13,8 @@ exclude:
   - dist
   - node_modules
   - qa-screenshots
+  # Retain these historical originals for repository audit only; do not publish them in Pages.
+  - data/open-canada-2026-11/esdc-wfa-benchmarks
+  - data/open-canada-2026-11/harassment-violence-occurrences
+  - data/ee-reports/esdc-federally-regulated-ee-annual-report-2025-en.pdf
+  - data/ee-reports/esdc-federally-regulated-ee-annual-report-2024-en.pdf

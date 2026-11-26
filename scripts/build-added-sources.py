@@ -137,8 +137,6 @@ PACKAGES = [
  ('pses-2020', TBS, 'Public Service Employee Survey 2020', 'Sondage auprès des fonctionnaires fédéraux de 2020', '4301f4bb-1daa-4b50-afab-d1193b5d2284', ['2020', '2020']),
 
  ('psc-applicants-ar6', PSC, 'Applications to the Public Service', 'Demandes d’emploi à la fonction publique', '7f459f0c-979f-4d2f-b22b-8484571dc543', ['2012-2013 to 2024-2025', '2012-2013 à 2024-2025']),
- ('esdc-wfa-benchmarks', ESDC, 'Workforce availability by designated group, employment equity occupational group and National Occupational Classification unit group', 'Disponibilité au sein de la population active par groupe désigné, groupe professionnel de l’équité en matière d’emploi et groupe de base de la Classification nationale des professions', '07deee9b-4275-40ab-a0d3-9cd913feed47', ['2006, 2016 and 2021 Census', 'Recensements de 2006, de 2016 et de 2021']),
- ('harassment-violence-occurrences', ESDC, 'Harassment and Violence Occurrences in the Canadian Federal Jurisdiction', 'Incidents de harcèlement et de violence dans les secteurs de compétence fédérale au Canada', '340a348c-79b3-42b3-a3e5-ab8098ea7aed', ['2021 to 2024', '2021 à 2024']),
  ('psc-fswep-referrals', PSC, 'Federal Student Work Experience Program requests for referrals submitted by hiring departments', 'Programme fédéral d’expérience de travail étudiant : demandes de présentation soumises par les ministères d’embauche', '3fe41e48-850e-4df2-81db-9df16d3c56a5', ['2017 to 2026', '2017 à 2026']),
  ('pses-2018', TBS, 'Public Service Employee Survey 2018', 'Sondage auprès des fonctionnaires fédéraux de 2018', 'a2f9e2ca-237b-4dda-ba19-d52c84844b54', ['2018', '2018']),
  ('pses-2019', TBS, 'Public Service Employee Survey 2019', 'Sondage auprès des fonctionnaires fédéraux de 2019', '2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf', ['2019', '2019']),
@@ -146,8 +144,6 @@ PACKAGES = [
  ('pses-2024', TBS, 'Public Service Employee Survey 2024', 'Sondage auprès des fonctionnaires fédéraux de 2024', '7f625e97-9d02-4c12-a756-1ddebb50e69f', ['2024', '2024']),
 ]
 NOTES = {
- 'harassment-violence-occurrences': ['These tables cover federally regulated employers, public and private. They are not limited to the federal public service.', 'Ces tableaux portent sur les employeurs sous réglementation fédérale, publics et privés. Ils ne se limitent pas à la fonction publique fédérale.'],
- 'esdc-wfa-benchmarks': ['These files come from several Employment and Social Development Canada datasets. The link opens the 2021 Census dataset.', 'Ces fichiers proviennent de plusieurs jeux de données d’Emploi et Développement social Canada. Le lien ouvre le jeu de données du Recensement de 2021.'],
  'snps-2018': ['Only the smaller files of this survey are stored here.', 'Seuls les plus petits fichiers de ce sondage sont conservés ici.'],
  'snps-2021': ['Only the smaller files of this survey are stored here.', 'Seuls les plus petits fichiers de ce sondage sont conservés ici.'],
 }

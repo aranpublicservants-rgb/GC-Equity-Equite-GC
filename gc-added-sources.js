@@ -216,7 +216,7 @@ async function renderPublic(){
   m.tables.filter(t=>t.scope==='all').forEach(t=>{const el=fullTable(t);el.dataset.gceTopics='workforce sources';host.append(el);});
   if((m.packages||[]).length){
    host.insertAdjacentHTML('beforeend','<h4>'+esc(L('Staffing, survey, workforce availability and executive files','Fichiers sur la dotation, les sondages, la disponibilité au sein de la population active et les cadres supérieurs'))+'</h4><p class="gce-explain">'+esc(L('Files from federal publishers that cover the public service or its organizations generally. Each file keeps its own population and reporting period.','Fichiers d’éditeurs fédéraux qui portent sur l’ensemble de la fonction publique ou de ses organismes. Chaque fichier conserve sa propre population et sa propre période de référence.'))+'</p>');
-   m.packages.forEach(pack=>host.append(packageBlock(pack)));
+   m.packages.filter(pack=>!['esdc-wfa-benchmarks','harassment-violence-occurrences'].includes(pack.id)).forEach(pack=>host.append(packageBlock(pack)));
   }
   try{
    const r=await fetch('assets/library-documents.json');
