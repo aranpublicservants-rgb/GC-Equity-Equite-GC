@@ -33,6 +33,7 @@ for(const lang of ['en','fr']){
 <script src="vendor/jszip.min.js" defer></script>
 <script src="tools-model.js" defer></script>
 <script src="tools.js" defer></script>
+<script src="../gc-built-in-ai.js?v=20261126-3" defer data-gce-built-in="true"></script>
 </head><body id="top">
 <noscript><div class="container note">${nojs}</div></noscript>
 <div id="app">${V.page(state)}</div>
