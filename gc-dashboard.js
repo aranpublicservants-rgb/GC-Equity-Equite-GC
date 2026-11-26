@@ -12,6 +12,8 @@ const N=v=>number(v)===null?L('Not published','Non publié'):Number(v).toLocaleS
 const P=v=>number(v)===null?L('Not published','Non publié'):Number(v).toLocaleString(lang()?'fr-CA':'en-CA',{maximumFractionDigits:2})+(lang()?' %':'%');
 const rawNorm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');
 const organizationAliases=new Map();
+const departmentLinkAliases={"ircc":"immigration-refugees-and-citizenship-canada","cse":"communications-security-establishment","tbs":"treasury-board-of-canada-secretariat","psc":"public-service-commission-of-canada","cbsa":"canada-border-services-agency","phac":"public-health-agency-of-canada","gac":"global-affairs-canada","pspc":"public-services-and-procurement-canada","vac":"veterans-affairs-canada","pco":"privy-council-office","statcan":"statistics-canada","eccc":"environment-and-climate-change-canada","nrcan":"natural-resources-canada","pch":"canadian-heritage","arc":"cra","sac":"isc","mpo":"dfo","edsc":"esdc","mdn":"dnd","cst":"communications-security-establishment","sct":"treasury-board-of-canada-secretariat","cfp":"public-service-commission-of-canada","asfc":"canada-border-services-agency","grc":"rcmp","aspc":"public-health-agency-of-canada","amc":"global-affairs-canada","spac":"public-services-and-procurement-canada","acc":"veterans-affairs-canada","bcp":"privy-council-office"};
+const departmentLinkID=value=>departmentLinkAliases[String(value||'').toLowerCase()]||String(value||'').toLowerCase();
 const norm=s=>organizationAliases.get(rawNorm(s))||rawNorm(s);
 window.GCEOrganizationKey=norm;
 const link=(href,label)=>'<a href="'+escape(href)+'"'+(/^https?:/.test(href)?' target="_blank" rel="noopener noreferrer"':'')+'>'+escape(label)+'</a>';
@@ -858,7 +860,7 @@ function populatePicker(){
  }
  const names=(D.departmentPages?.organizations.filter(o=>o.id!=="youth"&&!D.departmentPages?.redirects?.[o.id]).map(o=>o.en)||[...unique.values()]).sort((a,b)=>deptName(a).localeCompare(deptName(b),lang()?'fr':'en'));
  organizationNames=names;
- const picker=$('org-picker'),params=new URL(location.href).searchParams;const requested=params.get('org')||params.get('dept')||'';const requestedPage=D.departmentPages?.organizations.find(o=>o.id===requested);const old=picker.value||selected||requestedPage?.en||requested;
+ const picker=$('org-picker'),params=new URL(location.href).searchParams;const requested=params.get('org')||params.get('dept')||'';const requestedPage=D.departmentPages?.organizations.find(o=>o.id===departmentLinkID(requested));const old=picker.value||selected||requestedPage?.en||requested;
  picker.innerHTML='<option value="">'+escape(L('Select a department or agency','Sélectionner un ministère ou organisme'))+'</option>'+names.map(n=>'<option value="'+escape(n)+'">'+escape(deptName(n))+'</option>').join('');
  const oldRecord=D.departmentPages?.organizations.find(o=>norm(o.en)===norm(old));
  const canonicalId=oldRecord&&D.departmentPages?.redirects?.[oldRecord.id];
@@ -940,7 +942,7 @@ function restoreSelectionURL(){
 }
 function restoreNavigation(){
  if(!D)return;
- const url=new URL(location.href),requested=url.searchParams.get('org')||url.searchParams.get('dept')||'',page=D.departmentPages?.organizations.find(o=>o.id===requested),name=organizationNames.find(n=>norm(n)===norm(page?.en||requested))||'';
+ const url=new URL(location.href),requested=url.searchParams.get('org')||url.searchParams.get('dept')||'',page=D.departmentPages?.organizations.find(o=>o.id===departmentLinkID(requested)),name=organizationNames.find(n=>norm(n)===norm(page?.en||requested))||'';
  $('org-search').value='';filterOrganizations();$('org-picker').value=name;selected=name;
  restoreSelectionURL();renderOrg();if(!selected)publicTables();
  const target=$(url.hash.slice(1));
