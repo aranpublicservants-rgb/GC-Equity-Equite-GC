@@ -78,3 +78,5 @@ new MutationObserver(()=>{if(loaded)render();else if(byId("load"))byId("load").t
 if(new URL(location.href).searchParams.get("depth")==="1")init();
 })();
 ;(()=>{const here=document.currentScript;if(!here||document.querySelector('script[data-gce-branch-widget]'))return;const s=document.createElement('script');s.dataset.gceBranchWidget='true';s.src=new URL('department-branch-widget.js?v=20261126-1',here.src).href;s.defer=true;document.head.append(s)})();
+
+;(()=>{const here=document.currentScript;if(!here||document.querySelector('script[data-gce-built-in]'))return;const s=document.createElement('script');s.dataset.gceBuiltIn='true';s.src=new URL('../gc-built-in-ai.js?v=20261126-1',here.src).href;s.defer=true;document.head.append(s)})();
