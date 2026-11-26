@@ -1,0 +1,498 @@
+{
+  "reviewed": "2026-11-16",
+  "summary": [
+    {
+      "type_en": "Employment, wrongful dismissal and labour relations",
+      "type_fr": "Emploi, congédiement injustifié et relations de travail",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "4878503",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Employment, wrongful dismissal and labour relations",
+      "type_fr": "Emploi, congédiement injustifié et relations de travail",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "1407393",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Grievance settlements and payments under Board decisions",
+      "type_fr": "Règlements de griefs et paiements en vertu de décisions de la Commission",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "4889713",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Grievance settlements and payments under Board decisions",
+      "type_fr": "Règlements de griefs et paiements en vertu de décisions de la Commission",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "5010104",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Other human rights claims",
+      "type_fr": "Autres réclamations en matière de droits de la personne",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "2171767",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Other human rights claims",
+      "type_fr": "Autres réclamations en matière de droits de la personne",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "51364",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Phoenix pay-system compensation",
+      "type_fr": "Indemnisation liée au système de paye Phénix",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "4826920",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Phoenix pay-system compensation",
+      "type_fr": "Indemnisation liée au système de paye Phénix",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "2594491",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Heyder–Beattie class action",
+      "type_fr": "Recours collectif Heyder–Beattie",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "52810000",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Heyder–Beattie class action",
+      "type_fr": "Recours collectif Heyder–Beattie",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "220000",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Claims labelled as publication-exempt",
+      "type_fr": "Réclamations portant la mention d’une exemption de publication",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "6126531",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Claims labelled as publication-exempt",
+      "type_fr": "Réclamations portant la mention d’une exemption de publication",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "65314802",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Workplace injury and other workplace damages",
+      "type_fr": "Blessures au travail et autres dommages en milieu de travail",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "140535",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Workplace injury and other workplace damages",
+      "type_fr": "Blessures au travail et autres dommages en milieu de travail",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "1020",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Pension transfers and pension administration",
+      "type_fr": "Transferts de pension et administration des pensions",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "159716",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Pension transfers and pension administration",
+      "type_fr": "Transferts de pension et administration des pensions",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "2896359",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Other pay, benefits and employee loss claims",
+      "type_fr": "Autres réclamations liées à la paye, aux avantages et aux pertes des employés",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "245603",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Other pay, benefits and employee loss claims",
+      "type_fr": "Autres réclamations liées à la paye, aux avantages et aux pertes des employés",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "0",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Selected rows by published description; part of the claims table.",
+      "portee_fr": "Lignes sélectionnées selon la description publiée; partie du tableau des réclamations.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Compensation payments",
+      "type_fr": "Paiements d’indemnisation",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "218836214",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Compensation payments",
+      "type_fr": "Paiements d’indemnisation",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "242558161",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Provincial-board administration",
+      "type_fr": "Administration des commissions provinciales",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "62650730",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Provincial-board administration",
+      "type_fr": "Administration des commissions provinciales",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "61778407",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Total before recoveries",
+      "type_fr": "Total avant recouvrements",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "281486944",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Total before recoveries",
+      "type_fr": "Total avant recouvrements",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "304336568",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Recoveries from employers and others",
+      "type_fr": "Recouvrements auprès des employeurs et autres",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "265344986",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Recoveries from employers and others",
+      "type_fr": "Recouvrements auprès des employeurs et autres",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "288452872",
+      "record_type_type_donnee": "payment or recovery",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Net expenditure after recoveries",
+      "type_fr": "Dépenses nettes après recouvrements",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "16141958",
+      "record_type_type_donnee": "net expenditure",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "Net expenditure after recoveries",
+      "type_fr": "Dépenses nettes après recouvrements",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "15883696",
+      "record_type_type_donnee": "net expenditure",
+      "scope_en": "Government employees, merchant seamen and legacy mining claims. Components and subtotals overlap.",
+      "portee_fr": "Employés de l’État, marins marchands et anciennes réclamations minières. Les composantes et sous-totaux se chevauchent.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s11/esd-eds-eng.html"
+    },
+    {
+      "type_en": "All claims against the Crown",
+      "type_fr": "Ensemble des réclamations contre l’État",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "1908063935",
+      "record_type_type_donnee": "payment",
+      "scope_en": "All government subject areas, not an employee-recourse total. Claims include the selected payment rows above.",
+      "portee_fr": "Tous les sujets de l’État, et non un total des recours des employés. Les réclamations comprennent les paiements sélectionnés ci-dessus.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "All claims against the Crown",
+      "type_fr": "Ensemble des réclamations contre l’État",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "1091533964",
+      "record_type_type_donnee": "payment",
+      "scope_en": "All government subject areas, not an employee-recourse total. Claims include the selected payment rows above.",
+      "portee_fr": "Tous les sujets de l’État, et non un total des recours des employés. Les réclamations comprennent les paiements sélectionnés ci-dessus.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Court awards paid",
+      "type_fr": "Montants adjugés par une cour et payés",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "72107861",
+      "record_type_type_donnee": "payment",
+      "scope_en": "All government subject areas, not an employee-recourse total. Claims include the selected payment rows above.",
+      "portee_fr": "Tous les sujets de l’État, et non un total des recours des employés. Les réclamations comprennent les paiements sélectionnés ci-dessus.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/mapuc-ca-eng.html"
+    },
+    {
+      "type_en": "Court awards paid",
+      "type_fr": "Montants adjugés par une cour et payés",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "1203904985",
+      "record_type_type_donnee": "payment",
+      "scope_en": "All government subject areas, not an employee-recourse total. Claims include the selected payment rows above.",
+      "portee_fr": "Tous les sujets de l’État, et non un total des recours des employés. Les réclamations comprennent les paiements sélectionnés ci-dessus.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/mapuc-ca-eng.html"
+    },
+    {
+      "type_en": "Discretionary ex gratia payments",
+      "type_fr": "Paiements discrétionnaires à titre gracieux",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "4133724",
+      "record_type_type_donnee": "payment",
+      "scope_en": "All government subject areas, not an employee-recourse total. Claims include the selected payment rows above.",
+      "portee_fr": "Tous les sujets de l’État, et non un total des recours des employés. Les réclamations comprennent les paiements sélectionnés ci-dessus.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/ptg-egp-eng.html"
+    },
+    {
+      "type_en": "Discretionary ex gratia payments",
+      "type_fr": "Paiements discrétionnaires à titre gracieux",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "2552286",
+      "record_type_type_donnee": "payment",
+      "scope_en": "All government subject areas, not an employee-recourse total. Claims include the selected payment rows above.",
+      "portee_fr": "Tous les sujets de l’État, et non un total des recours des employés. Les réclamations comprennent les paiements sélectionnés ci-dessus.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/ptg-egp-eng.html"
+    },
+    {
+      "type_en": "Manuge veterans’ benefits class action",
+      "type_fr": "Recours collectif Manuge sur les prestations aux anciens combattants",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "444153134",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Manuge veterans’ benefits class action",
+      "type_fr": "Recours collectif Manuge sur les prestations aux anciens combattants",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "118529820",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Federal Indian Day Schools class action",
+      "type_fr": "Recours collectif des externats indiens fédéraux",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "1070000000",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Federal Indian Day Schools class action",
+      "type_fr": "Recours collectif des externats indiens fédéraux",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "0",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Indian Boarding Homes class action",
+      "type_fr": "Recours collectif des foyers familiaux indiens",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "247000000",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Indian Boarding Homes class action",
+      "type_fr": "Recours collectif des foyers familiaux indiens",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "386112000",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Indian Hospitals class action",
+      "type_fr": "Recours collectif des hôpitaux indiens",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "0",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "Indian Hospitals class action",
+      "type_fr": "Recours collectif des hôpitaux indiens",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "155194807",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "National Defence environmental-damage compensation",
+      "type_fr": "Indemnisation des dommages environnementaux par la Défense nationale",
+      "fiscal_year_exercice": "2024-25",
+      "amount_cad_montant": "2660561",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "National Defence environmental-damage compensation",
+      "type_fr": "Indemnisation des dommages environnementaux par la Défense nationale",
+      "fiscal_year_exercice": "2025-26",
+      "amount_cad_montant": "303000000",
+      "record_type_type_donnee": "payment",
+      "scope_en": "Broader government claims, not an employee-recourse subtotal. Already within the all-claims total.",
+      "portee_fr": "Réclamations plus larges de l’État, et non un sous-total des recours des employés. Déjà comprises dans les réclamations contre l’État.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s8/prce-pcac-eng.html"
+    },
+    {
+      "type_en": "External investigation contract values, research sample",
+      "type_fr": "Valeurs de contrats d’enquête externe, échantillon de recherche",
+      "fiscal_year_exercice": "2025-03 to 2026-09 (contract dates)",
+      "amount_cad_montant": "1556893.25",
+      "record_type_type_donnee": "contract value, not confirmed spending",
+      "scope_en": "33 contracts, including workplace and wrongdoing investigations. Sample only.",
+      "portee_fr": "33 contrats, dont des enquêtes en milieu de travail et sur des actes répréhensibles. Échantillon seulement.",
+      "source": "https://search.open.canada.ca/contracts/"
+    },
+    {
+      "type_en": "Government-wide provision for contingent liabilities",
+      "type_fr": "Provision de l’État pour passifs éventuels",
+      "fiscal_year_exercice": "Balance at March 31, 2025",
+      "amount_cad_montant": "54721000000",
+      "record_type_type_donnee": "provision, not a payment",
+      "scope_en": "All government subjects. Accounting balance at year-end. Not an employee-recourse total.",
+      "portee_fr": "Tous les sujets de l’État. Solde comptable de fin d’exercice. Ne constitue pas un total des recours des employés.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol1/s2/efc-cfs-eng.html"
+    },
+    {
+      "type_en": "Government-wide provision for contingent liabilities",
+      "type_fr": "Provision de l’État pour passifs éventuels",
+      "fiscal_year_exercice": "Balance at March 31, 2026",
+      "amount_cad_montant": "49886000000",
+      "record_type_type_donnee": "provision, not a payment",
+      "scope_en": "All government subjects. Accounting balance at year-end. Not an employee-recourse total.",
+      "portee_fr": "Tous les sujets de l’État. Solde comptable de fin d’exercice. Ne constitue pas un total des recours des employés.",
+      "source": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol1/s2/efc-cfs-eng.html"
+    }
+  ],
+  "claim_category_precedence": [
+    "employment",
+    "grievances",
+    "human-rights",
+    "phoenix",
+    "heyder",
+    "exempt",
+    "workplace-injury",
+    "pension",
+    "other-employee"
+  ],
+  "claims_source_rows": 569,
+  "investigation_contract_sample": {
+    "records": 33,
+    "total_contract_value_cad": "1556893.25",
+    "direct_record_links_matched_in_current_portal_lists": 25,
+    "scope_en": "Investigation contract values collected in the supplied research, including workplace and wrongdoing investigations. Not actual spending or a government-wide total."
+  },
+  "compensation_sources": {
+    "2025": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2025/vol3/s11/esd-eds-eng.html",
+    "2026": "https://www.tpsgc-pwgsc.gc.ca/recgen/cpc-pac/2026/vol3/s11/esd-eds-eng.html"
+  },
+  "no_grand_total_due_to_different_scopes_and_overlapping_subtotals": true
+}

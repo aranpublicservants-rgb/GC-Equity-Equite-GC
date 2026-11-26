@@ -1,0 +1,85 @@
+{
+  "sources": [
+    {
+      "id": "snapshot",
+      "en": "TBS employment equity demographic snapshot",
+      "fr": "Portrait démographique de l’équité en emploi du SCT",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html",
+      "period": "2024–2025",
+      "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html"
+    },
+    {
+      "id": "executives",
+      "en": "TBS executive representation by level, with availability estimates",
+      "fr": "SCT : représentation des cadres par niveau et disponibilité",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-executive-employees.html",
+      "period": "2017–2025",
+      "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/distribution-fonction-publique-canada-cadres-employes.html"
+    },
+    {
+      "id": "promotion",
+      "en": "PSC employment equity promotion rate study, five-year update",
+      "fr": "CFP : étude des taux de promotion, mise à jour de cinq ans",
+      "url": "https://www.canada.ca/en/public-service-commission/services/publications/open-info/employment-equity-promotion-rate-study-five-year-update-2024.html",
+      "period": "2005–2018 / 2010–2023",
+      "urlFr": "https://www.canada.ca/fr/commission-fonction-publique/services/publications/open-info/etude-taux-promotion-groupes-vises-equite-matiere-emploi-mise-a-jour-quinquennale-2024.html"
+    },
+    {
+      "id": "pses",
+      "en": "2024 Public Service Employee Survey open data",
+      "fr": "Données ouvertes du SAFF de 2024",
+      "url": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+      "dataUrl": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+      "period": "2024",
+      "urlFr": "https://open.canada.ca/data/fr/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f"
+    },
+    {
+      "id": "pses-method",
+      "en": "PSES results and supporting documentation",
+      "fr": "Résultats du SAFF et documentation de référence",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2024-25.html",
+      "period": "2024",
+      "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/sondage-fonctionnaires-federaux/2024-25.html"
+    },
+    {
+      "id": "audit",
+      "en": "CHRC horizontal audit of racialized people in management and executive positions",
+      "fr": "Audit horizontal de la CCDP sur les personnes racisées dans les postes de gestion et de direction",
+      "url": "https://www.chrc-ccdp.gc.ca/node/1028",
+      "period": "2025",
+      "urlFr": "https://www.ccdp-chrc.gc.ca/resources/publications/verification-horizontale-emploi-des-personnes-racisees"
+    },
+    {
+      "id": "snps2025",
+      "en": "2025 Staffing and Non-Partisanship Survey",
+      "fr": "Sondage sur la dotation et l’impartialité politique de 2025",
+      "url": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+      "period": "2025",
+      "urlFr": "https://open.canada.ca/data/fr/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22"
+    },
+    {
+      "id": "snps2023",
+      "en": "2023 Staffing and Non-Partisanship Survey",
+      "fr": "Sondage sur la dotation et l’impartialité politique de 2023",
+      "url": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+      "period": "2023",
+      "urlFr": "https://open.canada.ca/data/fr/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039"
+    },
+    {
+      "id": "pses2022",
+      "en": "2022 PSES results for executives",
+      "fr": "Résultats du SAFF de 2022 pour les cadres",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/public-service-employee-survey/2022-23/2022-results-by-employee-groups/executives.html",
+      "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/sondage-fonctionnaires-federaux/2022-23/2022-resultats-presentes-selon-les-groupes-employes/cadres-superieurs.html",
+      "period": "2022"
+    }
+  ],
+  "methodology": {
+    "representationPopulation": "Core public administration; EX and LC; annual March 31 snapshots",
+    "surveyPopulation": "2024 PSES respondents; racialized and non-racialized executive groups",
+    "suppression": "Suppressed and unavailable values are not reconstructed",
+    "comparison": "Group differences are descriptive; no statistical significance test is applied",
+    "organizationComparisons": "11 questions; public service aggregate and 68 organizational result sets, including combined micro-organizations",
+    "barrierCounts": "CHRC 2025 report; audited employers and self-assessment respondents are separate samples"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "title": "Racialized Executives Network data catalogue",
+  "referenceDate": "2026-11-06",
+  "files": [
+    {
+      "file": "executive-representation-2017-2025.csv",
+      "en": "Executive representation by level",
+      "fr": "Représentation des cadres par niveau",
+      "descriptionEn": "2017–2025 · 54 rows · EX and LC",
+      "descriptionFr": "2017–2025 · 54 lignes · EX et LC",
+      "format": "CSV",
+      "rows": 54,
+      "bytes": 11793
+    },
+    {
+      "file": "executive-workforce-trends-2017-2025.csv",
+      "en": "Executive and workforce trends",
+      "fr": "Tendances des cadres et de l’effectif",
+      "descriptionEn": "2017–2025 · 9 annual comparisons",
+      "descriptionFr": "2017–2025 · 9 comparaisons annuelles",
+      "format": "CSV",
+      "rows": 9,
+      "bytes": 2598
+    },
+    {
+      "file": "racialized-executive-subgroups-2025.csv",
+      "en": "Racialized executive subgroups",
+      "fr": "Sous-groupes des cadres racisés",
+      "descriptionEn": "2025 · 11 subgroups and total",
+      "descriptionFr": "2025 · 11 sous-groupes et total",
+      "format": "CSV",
+      "rows": 12,
+      "bytes": 2966
+    },
+    {
+      "file": "black-executives-by-level-2025.csv",
+      "en": "Black executives by level",
+      "fr": "Cadres noirs par niveau",
+      "descriptionEn": "2025 · published and suppressed results",
+      "descriptionFr": "2025 · résultats publiés et supprimés",
+      "format": "CSV",
+      "rows": 6,
+      "bytes": 1347
+    },
+    {
+      "file": "availability-benchmarks-2025.csv",
+      "en": "Representation and availability benchmarks",
+      "fr": "Représentation et repères de disponibilité",
+      "descriptionEn": "2025 · workforce and labour market availability",
+      "descriptionFr": "2025 · disponibilité de la population active et du marché du travail",
+      "format": "CSV",
+      "rows": 2,
+      "bytes": 520
+    },
+    {
+      "file": "executive-movements-2024-2025.csv",
+      "en": "Executive staffing movements",
+      "fr": "Mouvements du personnel de direction",
+      "descriptionEn": "2024–2025 · hires, promotions and separations",
+      "descriptionFr": "2024–2025 · embauches, promotions et départs",
+      "format": "CSV",
+      "rows": 3,
+      "bytes": 730
+    },
+    {
+      "file": "psc-executive-promotion-study.csv",
+      "en": "PSC executive promotion study",
+      "fr": "Étude de la CFP sur les promotions des cadres",
+      "descriptionEn": "216 estimates · three career pathways",
+      "descriptionFr": "216 estimations · trois parcours professionnels",
+      "format": "CSV",
+      "rows": 216,
+      "bytes": 62212
+    },
+    {
+      "file": "pses-executives.csv",
+      "en": "Full 2024 PSES executive comparisons",
+      "fr": "Comparaisons complètes des cadres au SAFF de 2024",
+      "descriptionEn": "All retained questions and response measures",
+      "descriptionFr": "Toutes les questions et les mesures de réponse retenues",
+      "format": "CSV",
+      "rows": 27945,
+      "bytes": 13092349
+    },
+    {
+      "file": "pses-2024-executive-organization-comparisons.csv",
+      "en": "2024 PSES organization comparison tables",
+      "fr": "Tableaux de comparaison des organisations au SAFF de 2024",
+      "descriptionEn": "11 questions · aggregate and organizational results",
+      "descriptionFr": "11 questions · résultats globaux et organisationnels",
+      "format": "CSV",
+      "rows": 759,
+      "bytes": 414293
+    },
+    {
+      "file": "pses-racialized-executives-2022.csv",
+      "en": "Historical 2022 PSES results",
+      "fr": "Résultats historiques du SAFF de 2022",
+      "descriptionEn": "15 results · a different comparison population",
+      "descriptionFr": "15 résultats · une population de comparaison différente",
+      "format": "CSV",
+      "rows": 15,
+      "bytes": 4453
+    },
+    {
+      "file": "chrc-management-executive-barriers-2025.csv",
+      "en": "CHRC management and executive barriers",
+      "fr": "Obstacles de gestion et de direction selon la CCDP",
+      "descriptionEn": "2025 report · 19 employer-level observations",
+      "descriptionFr": "Rapport de 2025 · 19 observations au niveau des employeurs",
+      "format": "CSV",
+      "rows": 19,
+      "bytes": 2275
+    },
+    {
+      "file": "data.json",
+      "en": "Complete structured dataset",
+      "fr": "Ensemble complet de données structurées",
+      "descriptionEn": "All series, response definitions and official sources",
+      "descriptionFr": "Toutes les séries, les définitions des réponses et les sources officielles",
+      "format": "JSON",
+      "rows": null,
+      "bytes": null
+    },
+    {
+      "file": "sources.json",
+      "en": "Official sources and methodology",
+      "fr": "Sources officielles et méthodologie",
+      "descriptionEn": "Source links, populations and interpretation notes",
+      "descriptionFr": "Liens des sources, populations et notes d’interprétation",
+      "format": "JSON",
+      "rows": null,
+      "bytes": null
+    },
+    {
+      "file": "data-catalog.json",
+      "en": "Dataset index",
+      "fr": "Index des ensembles de données",
+      "descriptionEn": "File descriptions, row counts and reference periods",
+      "descriptionFr": "Descriptions des fichiers, nombres de lignes et périodes de référence",
+      "format": "JSON",
+      "rows": null,
+      "bytes": null
+    },
+    {
+      "file": "index.html",
+      "en": "Interactive HTML page",
+      "fr": "Page HTML interactive",
+      "descriptionEn": "Self-contained page for offline use",
+      "descriptionFr": "Page autonome utilisable hors ligne",
+      "format": "HTML",
+      "rows": null,
+      "bytes": null
+    }
+  ],
+  "notes": {
+    "availability": "Coverage varies by population, period, question and disclosure rules.",
+    "comparisons": "Derived comparisons retain missing and suppressed results; group differences do not establish their causes.",
+    "staffing": "Movement shares and promotion model estimates have different denominators."
+  }
+}

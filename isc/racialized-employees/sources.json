@@ -1,0 +1,147 @@
+{
+  "sources": [
+    {
+      "id": "tbs-representation",
+      "en": "TBS employment equity representation and departmental workforce availability",
+      "fr": "SCT : représentation et disponibilité au sein de la population active par ministère",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-members-visible-minority-group-department-agency-departmental-workforce-availability-estimates.html",
+      "period": "2021–2025",
+      "kind": "primary"
+    },
+    {
+      "id": "tbs-subgroups",
+      "en": "TBS racialized subgroups by department",
+      "fr": "SCT : sous-groupes racisés par ministère",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
+      "period": "2021–2025",
+      "kind": "primary"
+    },
+    {
+      "id": "psc-ee",
+      "en": "PSC representation, applicants, hires, promotions and acting appointments",
+      "fr": "CFP : représentation, candidatures, embauches, promotions et nominations intérimaires",
+      "url": "https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/index-en.html",
+      "dataUrl": "https://www5.psc-cfp.gc.ca/dsad-dsda/ee-by-org/static/data/ee_all.56901fce75d29e7f3ee5.csv",
+      "period": "2021–22 to 2025–26",
+      "kind": "primary"
+    },
+    {
+      "id": "pses",
+      "en": "2024 Public Service Employee Survey open data",
+      "fr": "Données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2024",
+      "url": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+      "period": "2024",
+      "kind": "primary",
+      "dataUrl": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv"
+    },
+    {
+      "id": "pses-branches",
+      "en": "2024 PSES employee groups by second organizational level",
+      "fr": "SAFF 2024 : groupes du personnel au deuxième niveau organisationnel",
+      "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/EELEVEL2ID.csv",
+      "period": "2024",
+      "kind": "primary"
+    },
+    {
+      "id": "snps-2025",
+      "en": "2025 Staffing and Non-Partisanship Survey open data",
+      "fr": "Données ouvertes du Sondage sur la dotation et l’impartialité politique de 2025",
+      "url": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+      "period": "2025",
+      "kind": "primary"
+    },
+    {
+      "id": "snps-2023",
+      "en": "2023 Staffing and Non-Partisanship Survey open data",
+      "fr": "Données ouvertes du Sondage sur la dotation et l’impartialité politique de 2023",
+      "url": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+      "period": "2023",
+      "kind": "primary"
+    },
+    {
+      "id": "snps-method",
+      "en": "2025 PSC survey report and methodology",
+      "fr": "Rapport et méthode du sondage de la CFP de 2025",
+      "url": "https://www.canada.ca/en/public-service-commission/services/publications/2025-staffing-non-partisanship-survey.html",
+      "period": "2025",
+      "kind": "primary"
+    },
+    {
+      "id": "pses-options",
+      "en": "TBS PSES 2024 supporting documentation and response definitions",
+      "fr": "SCT : documentation de référence du SAFF de 2024 et définitions des réponses",
+      "url": "https://open.canada.ca/data/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f/resource/6e005f62-530c-4bc1-babe-126d9cbab128",
+      "period": "2024",
+      "kind": "primary"
+    }
+  ],
+  "provenance": {
+    "assembled": "2026-11-06",
+    "repositories": [
+      {
+        "name": "GC-Equity-Equite-GC",
+        "url": "https://github.com/aranpublicservants-rgb/GC-Equity-Equite-GC",
+        "commit": "ce18195b01570891acd3c07925f46ab1dcc3ffee"
+      },
+      {
+        "name": "isc-sac-equity-equite",
+        "url": "https://github.com/aranpublicservants-rgb/isc-sac-equity-equite",
+        "commit": "a9ab31acd80265a6affb81d06b2fcb80f5a2e826"
+      },
+      {
+        "name": "Indigenous-GC---GC-Autochtone",
+        "url": "https://github.com/aranpublicservants-rgb/Indigenous-GC---GC-Autochtone",
+        "commit": "8f7bb441d98e6f8c2d6e475708967a2c42224f48"
+      },
+      {
+        "name": "Black-Public-Servants---Fonctionnaires-noirs",
+        "url": "https://github.com/aranpublicservants-rgb/Black-Public-Servants---Fonctionnaires-noirs",
+        "commit": "0d61001a9e0cb49a5fae24d48f3a1b6f52851ec4"
+      },
+      {
+        "name": "https-aranpublicservants-rgb.github.io-nadia-ferrara-ombuds-ombud-",
+        "url": "https://github.com/aranpublicservants-rgb/https-aranpublicservants-rgb.github.io-nadia-ferrara-ombuds-ombud-",
+        "commit": "062face02e2340a333d7159faec6111da667be8b"
+      },
+      {
+        "name": "aran-raar",
+        "url": "https://github.com/aranpublicservants-rgb/aran-raar",
+        "commit": "f1d966262743ead1aa51cdf95498d3e22bffd961"
+      },
+      {
+        "name": "GC-Equity-History-Histoire-de-l-equite-au-GC",
+        "url": "https://github.com/aranpublicservants-rgb/GC-Equity-History-Histoire-de-l-equite-au-GC",
+        "commit": "a915ce38cdc51596d65f7bdb80e35460d7ab2fc9"
+      },
+      {
+        "name": "Accessibility-and-Inclusion-Accessibilit-et-inclusion",
+        "url": "https://github.com/aranpublicservants-rgb/Accessibility-and-Inclusion-Accessibilit-et-inclusion",
+        "commit": "e768cf6e0e2a7251a1606ff7bf5b4c951b8309c0"
+      },
+      {
+        "name": "Filipino-Public-Servants-Fonctionnaires-Philippins",
+        "url": "https://github.com/aranpublicservants-rgb/Filipino-Public-Servants-Fonctionnaires-Philippins",
+        "commit": "fccc14e4ff9f420f4b11db242a8cec4a53f3d690"
+      },
+      {
+        "name": "pses-2024-branch.html",
+        "url": "https://github.com/aranpublicservants-rgb/pses-2024-branch.html",
+        "commit": "b00ceb563cd25708aaa491a0c082bf3f63217a2d"
+      }
+    ],
+    "archive": {
+      "title": "GC Equity assembled site and data assets",
+      "modified": "2026-10-27",
+      "sha256": "a7054f1f009254894304553861edb6a6d9af145757909c8f0390e334601bdc1f"
+    },
+    "processing": [
+      "ISC department filter applied before publication.",
+      "PSES department rows use Level 3/4/5 = 0.",
+      "Primary PSES rows kept; conflicting alternate rows excluded.",
+      "No suppressed cell is reconstructed.",
+      "PSC shares are supplied as fractions. Displayed percentages multiply by 100.",
+      "SNPS weighted response shares and weighted counts are not employee headcounts.",
+      "National-only salary and executive figures were not relabelled as ISC data."
+    ]
+  }
+}

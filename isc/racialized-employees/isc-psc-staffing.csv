@@ -1,0 +1,243 @@
+﻿year,typeEn,typeFr,en,fr,count,share,within,wfa,source
+2021-2022,Acting appointments,Nominations intérimaires,ALL,TOUT,131.0,0.1633416458852868,1.0,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Black,Noirs,28.0,0.034912718204488775,0.21374045801526717,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Chinese,Chinois,24.0,0.029925187032418952,0.183206106870229,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Filipino,Philippins,5.0,0.006234413965087282,0.03816793893129771,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Korean,Coréen,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Non-white Latin American,Latino américains non-blancs,6.0,0.007481296758104738,0.04580152671755725,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",9.0,0.011221945137157107,0.06870229007633588,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Other Visible Minority,Autre groupe de minorité visible,20.0,0.02493765586034913,0.15267175572519084,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Person of mixed origin,Personnes d'origine mixte,10.0,0.012468827930174564,0.07633587786259542,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,22.0,0.02743142144638404,0.16793893129770993,17.9,psc-ee
+2021-2022,Acting appointments,Nominations intérimaires,Southeast Asian,Asiatiques du Sud-est,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Applicants,Postulants,ALL,TOUT,3527.0,0.3188680951089413,1.0,17.9,psc-ee
+2021-2022,Applicants,Postulants,Black,Noirs,1046.0,0.09456649489196275,0.2965693223702864,17.9,psc-ee
+2021-2022,Applicants,Postulants,Chinese,Chinois,319.0,0.028840068709881567,0.09044513751063227,17.9,psc-ee
+2021-2022,Applicants,Postulants,Filipino,Philippins,127.0,0.011481782840611156,0.036007938758151406,17.9,psc-ee
+2021-2022,Applicants,Postulants,Japanese,Japonais,17.0,0.0015369315613416507,0.004819960306209243,17.9,psc-ee
+2021-2022,Applicants,Postulants,Korean,Coréen,50.0,0.004520386945122502,0.01417635384179189,17.9,psc-ee
+2021-2022,Applicants,Postulants,Non-white Latin American,Latino américains non-blancs,171.0,0.015459723352318959,0.04848313013892827,17.9,psc-ee
+2021-2022,Applicants,Postulants,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",450.0,0.04068348250610252,0.12758718457612703,17.9,psc-ee
+2021-2022,Applicants,Postulants,Other Visible Minority,Autre groupe de minorité visible,350.0,0.031642708615857516,0.09923447689254324,17.9,psc-ee
+2021-2022,Applicants,Postulants,Person of mixed origin,Personnes d'origine mixte,261.0,0.023596419853539462,0.07400056705415367,17.9,psc-ee
+2021-2022,Applicants,Postulants,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,927.0,0.0838079739625712,0.26282960022682167,17.9,psc-ee
+2021-2022,Applicants,Postulants,Southeast Asian,Asiatiques du Sud-est,99.0,0.008950366151342554,0.028069180606747946,17.9,psc-ee
+2021-2022,Employees,Employés,ALL,TOUT,1231.0,0.18313002082713478,1.0,17.9,psc-ee
+2021-2022,Employees,Employés,Black,Noirs,265.0,0.0394227908360607,0.21527213647441104,17.9,psc-ee
+2021-2022,Employees,Employés,Chinese,Chinois,192.0,0.02856292770008926,0.15597075548334688,17.9,psc-ee
+2021-2022,Employees,Employés,Filipino,Philippins,75.0,0.011157393632847366,0.060926076360682375,17.9,psc-ee
+2021-2022,Employees,Employés,Japanese,Japonais,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Employees,Employés,Korean,Coréen,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Employees,Employés,Non-white Latin American,Latino américains non-blancs,43.0,0.006396905682832491,0.034930950446791224,17.9,psc-ee
+2021-2022,Employees,Employés,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",97.0,0.014430229098482595,0.07879772542648253,17.9,psc-ee
+2021-2022,Employees,Employés,Other Visible Minority,Autre groupe de minorité visible,166.0,0.024695031240702173,0.1348497156783103,17.9,psc-ee
+2021-2022,Employees,Employés,Person of mixed origin,Personnes d'origine mixte,96.0,0.01428146385004463,0.07798537774167344,17.9,psc-ee
+2021-2022,Employees,Employés,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,228.0,0.03391847664385599,0.1852152721364744,17.9,psc-ee
+2021-2022,Employees,Employés,Southeast Asian,Asiatiques du Sud-est,53.0,0.00788455816721214,0.04305442729488221,17.9,psc-ee
+2021-2022,Hires,Embauches,ALL,TOUT,167.0,0.17523609653725078,1.0,17.9,psc-ee
+2021-2022,Hires,Embauches,Black,Noirs,42.0,0.04407135362014691,0.25149700598802394,17.9,psc-ee
+2021-2022,Hires,Embauches,Chinese,Chinois,20.0,0.02098635886673662,0.11976047904191617,17.9,psc-ee
+2021-2022,Hires,Embauches,Filipino,Philippins,13.0,0.013641133263378805,0.07784431137724551,17.9,psc-ee
+2021-2022,Hires,Embauches,Korean,Coréen,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Hires,Embauches,Non-white Latin American,Latino américains non-blancs,7.0,0.007345225603357817,0.041916167664670656,17.9,psc-ee
+2021-2022,Hires,Embauches,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",9.0,0.00944386149003148,0.05389221556886228,17.9,psc-ee
+2021-2022,Hires,Embauches,Other Visible Minority,Autre groupe de minorité visible,15.0,0.015739769150052464,0.08982035928143713,17.9,psc-ee
+2021-2022,Hires,Embauches,Person of mixed origin,Personnes d'origine mixte,18.0,0.01888772298006296,0.10778443113772455,17.9,psc-ee
+2021-2022,Hires,Embauches,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,38.0,0.03987408184679958,0.2275449101796407,17.9,psc-ee
+2021-2022,Hires,Embauches,Southeast Asian,Asiatiques du Sud-est,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Promotions,Promotions,ALL,TOUT,181.0,0.20591581342434584,1.0,17.9,psc-ee
+2021-2022,Promotions,Promotions,Black,Noirs,34.0,0.038680318543799774,0.1878453038674033,17.9,psc-ee
+2021-2022,Promotions,Promotions,Chinese,Chinois,31.0,0.03526734926052332,0.1712707182320442,17.9,psc-ee
+2021-2022,Promotions,Promotions,Filipino,Philippins,11.0,0.012514220705346985,0.06077348066298342,17.9,psc-ee
+2021-2022,Promotions,Promotions,Japanese,Japonais,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Promotions,Promotions,Korean,Coréen,-1.0,-1.0,-1.0,17.9,psc-ee
+2021-2022,Promotions,Promotions,Non-white Latin American,Latino américains non-blancs,7.0,0.007963594994311717,0.03867403314917127,17.9,psc-ee
+2021-2022,Promotions,Promotions,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",14.0,0.015927189988623434,0.07734806629834254,17.9,psc-ee
+2021-2022,Promotions,Promotions,Other Visible Minority,Autre groupe de minorité visible,25.0,0.02844141069397042,0.13812154696132597,17.9,psc-ee
+2021-2022,Promotions,Promotions,Person of mixed origin,Personnes d'origine mixte,10.0,0.011376564277588168,0.055248618784530384,17.9,psc-ee
+2021-2022,Promotions,Promotions,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,39.0,0.04436860068259386,0.2154696132596685,17.9,psc-ee
+2021-2022,Promotions,Promotions,Southeast Asian,Asiatiques du Sud-est,7.0,0.007963594994311717,0.03867403314917127,17.9,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,ALL,TOUT,174.0,0.18012422360248448,1.0,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Black,Noirs,37.0,0.038302277432712216,0.21264367816091953,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Chinese,Chinois,33.0,0.034161490683229816,0.1896551724137931,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Filipino,Philippins,12.0,0.012422360248447204,0.06896551724137931,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Japanese,Japonais,-1.0,-1.0,-1.0,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Korean,Coréen,-1.0,-1.0,-1.0,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Non-white Latin American,Latino américains non-blancs,6.0,0.006211180124223602,0.034482758620689655,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",14.0,0.014492753623188406,0.08045977011494253,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Other Visible Minority,Autre groupe de minorité visible,21.0,0.021739130434782608,0.1206896551724138,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Person of mixed origin,Personnes d'origine mixte,6.0,0.006211180124223602,0.034482758620689655,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,33.0,0.034161490683229816,0.1896551724137931,18.0,psc-ee
+2022-2023,Acting appointments,Nominations intérimaires,Southeast Asian,Asiatiques du Sud-est,7.0,0.007246376811594203,0.040229885057471264,18.0,psc-ee
+2022-2023,Applicants,Postulants,ALL,TOUT,5588.0,0.3504327103975919,1.0,18.0,psc-ee
+2022-2023,Applicants,Postulants,Black,Noirs,1666.0,0.1044776119402985,0.29813886900501074,18.0,psc-ee
+2022-2023,Applicants,Postulants,Chinese,Chinois,505.0,0.03166938417157908,0.09037222619899785,18.0,psc-ee
+2022-2023,Applicants,Postulants,Filipino,Philippins,261.0,0.016367741126301266,0.04670722977809592,18.0,psc-ee
+2022-2023,Applicants,Postulants,Japanese,Japonais,14.0,0.000877963125548727,0.0025053686471009306,18.0,psc-ee
+2022-2023,Applicants,Postulants,Korean,Coréen,61.0,0.0038254107613194532,0.010916249105225484,18.0,psc-ee
+2022-2023,Applicants,Postulants,Non-white Latin American,Latino américains non-blancs,233.0,0.014611814875203813,0.04169649248389406,18.0,psc-ee
+2022-2023,Applicants,Postulants,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",610.0,0.03825410761319453,0.10916249105225483,18.0,psc-ee
+2022-2023,Applicants,Postulants,Other Visible Minority,Autre groupe de minorité visible,475.0,0.029788034616831806,0.08500357909806729,18.0,psc-ee
+2022-2023,Applicants,Postulants,Person of mixed origin,Personnes d'origine mixte,320.0,0.020067728583970903,0.0572655690765927,18.0,psc-ee
+2022-2023,Applicants,Postulants,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,1650.0,0.10347422551109996,0.2952755905511811,18.0,psc-ee
+2022-2023,Applicants,Postulants,Southeast Asian,Asiatiques du Sud-est,152.0,0.009532171077386178,0.02720114531138153,18.0,psc-ee
+2022-2023,Employees,Employés,ALL,TOUT,1366.0,0.18681619256017507,1.0,18.0,psc-ee
+2022-2023,Employees,Employés,Black,Noirs,293.0,0.04007111597374179,0.2144948755490483,18.0,psc-ee
+2022-2023,Employees,Employés,Chinese,Chinois,200.0,0.02735229759299781,0.14641288433382138,18.0,psc-ee
+2022-2023,Employees,Employés,Filipino,Philippins,94.0,0.012855579868708972,0.06881405563689605,18.0,psc-ee
+2022-2023,Employees,Employés,Japanese,Japonais,-1.0,-1.0,-1.0,18.0,psc-ee
+2022-2023,Employees,Employés,Korean,Coréen,-1.0,-1.0,-1.0,18.0,psc-ee
+2022-2023,Employees,Employés,Non-white Latin American,Latino américains non-blancs,45.0,0.0061542669584245075,0.03294289897510981,18.0,psc-ee
+2022-2023,Employees,Employés,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",112.0,0.015317286652078774,0.08199121522693997,18.0,psc-ee
+2022-2023,Employees,Employés,Other Visible Minority,Autre groupe de minorité visible,169.0,0.023112691466083152,0.12371888726207907,18.0,psc-ee
+2022-2023,Employees,Employés,Person of mixed origin,Personnes d'origine mixte,115.0,0.01572757111597374,0.0841874084919473,18.0,psc-ee
+2022-2023,Employees,Employés,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,254.0,0.034737417943107224,0.18594436310395315,18.0,psc-ee
+2022-2023,Employees,Employés,Southeast Asian,Asiatiques du Sud-est,66.0,0.009026258205689279,0.048316251830161056,18.0,psc-ee
+2022-2023,Hires,Embauches,ALL,TOUT,192.0,0.18216318785578747,1.0,18.0,psc-ee
+2022-2023,Hires,Embauches,Black,Noirs,47.0,0.04459203036053131,0.24479166666666666,18.0,psc-ee
+2022-2023,Hires,Embauches,Chinese,Chinois,20.0,0.018975332068311195,0.10416666666666667,18.0,psc-ee
+2022-2023,Hires,Embauches,Filipino,Philippins,18.0,0.017077798861480076,0.09375,18.0,psc-ee
+2022-2023,Hires,Embauches,Non-white Latin American,Latino américains non-blancs,7.0,0.006641366223908918,0.036458333333333336,18.0,psc-ee
+2022-2023,Hires,Embauches,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",20.0,0.018975332068311195,0.10416666666666667,18.0,psc-ee
+2022-2023,Hires,Embauches,Other Visible Minority,Autre groupe de minorité visible,15.0,0.014231499051233396,0.078125,18.0,psc-ee
+2022-2023,Hires,Embauches,Person of mixed origin,Personnes d'origine mixte,21.0,0.019924098671726755,0.109375,18.0,psc-ee
+2022-2023,Hires,Embauches,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,36.0,0.03415559772296015,0.1875,18.0,psc-ee
+2022-2023,Hires,Embauches,Southeast Asian,Asiatiques du Sud-est,8.0,0.007590132827324478,0.041666666666666664,18.0,psc-ee
+2022-2023,Promotions,Promotions,ALL,TOUT,226.0,0.19201359388275277,1.0,18.0,psc-ee
+2022-2023,Promotions,Promotions,Black,Noirs,49.0,0.041631265930331354,0.2168141592920354,18.0,psc-ee
+2022-2023,Promotions,Promotions,Chinese,Chinois,31.0,0.026338147833474938,0.13716814159292035,18.0,psc-ee
+2022-2023,Promotions,Promotions,Filipino,Philippins,19.0,0.016142735768903994,0.084070796460177,18.0,psc-ee
+2022-2023,Promotions,Promotions,Korean,Coréen,6.0,0.005097706032285472,0.02654867256637168,18.0,psc-ee
+2022-2023,Promotions,Promotions,Non-white Latin American,Latino américains non-blancs,10.0,0.008496176720475786,0.04424778761061947,18.0,psc-ee
+2022-2023,Promotions,Promotions,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",13.0,0.011045029736618521,0.05752212389380531,18.0,psc-ee
+2022-2023,Promotions,Promotions,Other Visible Minority,Autre groupe de minorité visible,24.0,0.020390824129141887,0.10619469026548672,18.0,psc-ee
+2022-2023,Promotions,Promotions,Person of mixed origin,Personnes d'origine mixte,20.0,0.016992353440951572,0.08849557522123894,18.0,psc-ee
+2022-2023,Promotions,Promotions,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,45.0,0.038232795242141036,0.19911504424778761,18.0,psc-ee
+2022-2023,Promotions,Promotions,Southeast Asian,Asiatiques du Sud-est,9.0,0.0076465590484282074,0.03982300884955752,18.0,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,ALL,TOUT,197.0,0.2,1.0,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Black,Noirs,43.0,0.04365482233502538,0.2182741116751269,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Chinese,Chinois,29.0,0.029441624365482234,0.14720812182741116,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Filipino,Philippins,11.0,0.01116751269035533,0.05583756345177665,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Korean,Coréen,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Non-white Latin American,Latino américains non-blancs,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",21.0,0.02131979695431472,0.1065989847715736,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Other Visible Minority,Autre groupe de minorité visible,19.0,0.019289340101522844,0.09644670050761421,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Person of mixed origin,Personnes d'origine mixte,20.0,0.02030456852791878,0.10152284263959391,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,36.0,0.03654822335025381,0.18274111675126903,22.8,psc-ee
+2023-2024,Acting appointments,Nominations intérimaires,Southeast Asian,Asiatiques du Sud-est,13.0,0.013197969543147208,0.06598984771573604,22.8,psc-ee
+2023-2024,Applicants,Postulants,ALL,TOUT,6173.0,0.3740985394824556,1.0,22.8,psc-ee
+2023-2024,Applicants,Postulants,Black,Noirs,1970.0,0.11938670383613115,0.31913170257573303,22.8,psc-ee
+2023-2024,Applicants,Postulants,Chinese,Chinois,463.0,0.028058905520877524,0.07500404989470273,22.8,psc-ee
+2023-2024,Applicants,Postulants,Filipino,Philippins,262.0,0.015877825586328102,0.0424428964846914,22.8,psc-ee
+2023-2024,Applicants,Postulants,Japanese,Japonais,17.0,0.0010302405914793043,0.0027539283978616556,22.8,psc-ee
+2023-2024,Applicants,Postulants,Korean,Coréen,66.0,0.003999757590449063,0.010691722015227605,22.8,psc-ee
+2023-2024,Applicants,Postulants,Non-white Latin American,Latino américains non-blancs,242.0,0.014665777831646567,0.03920298072250122,22.8,psc-ee
+2023-2024,Applicants,Postulants,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",649.0,0.039330949639415795,0.10513526648307144,22.8,psc-ee
+2023-2024,Applicants,Postulants,Other Visible Minority,Autre groupe de minorité visible,543.0,0.03290709653960366,0.08796371294346347,22.8,psc-ee
+2023-2024,Applicants,Postulants,Person of mixed origin,Personnes d'origine mixte,319.0,0.019332161687170474,0.05167665640693342,22.8,psc-ee
+2023-2024,Applicants,Postulants,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,1898.0,0.11502333191927762,0.30746800583184836,22.8,psc-ee
+2023-2024,Applicants,Postulants,Southeast Asian,Asiatiques du Sud-est,159.0,0.009635779649718198,0.025757330309411956,22.8,psc-ee
+2023-2024,Employees,Employés,ALL,TOUT,1632.0,0.20031913587823738,1.0,22.8,psc-ee
+2023-2024,Employees,Employés,Black,Noirs,339.0,0.04161040873941328,0.20772058823529413,22.8,psc-ee
+2023-2024,Employees,Employés,Chinese,Chinois,231.0,0.028353995335706397,0.14154411764705882,22.8,psc-ee
+2023-2024,Employees,Employés,Filipino,Philippins,123.0,0.01509758193199951,0.07536764705882353,22.8,psc-ee
+2023-2024,Employees,Employés,Japanese,Japonais,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Employees,Employés,Korean,Coréen,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Employees,Employés,Non-white Latin American,Latino américains non-blancs,52.0,0.00638271756474776,0.031862745098039214,22.8,psc-ee
+2023-2024,Employees,Employés,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",141.0,0.017306984165950657,0.08639705882352941,22.8,psc-ee
+2023-2024,Employees,Employés,Other Visible Minority,Autre groupe de minorité visible,185.0,0.022707745182275686,0.1133578431372549,22.8,psc-ee
+2023-2024,Employees,Employés,Person of mixed origin,Personnes d'origine mixte,150.0,0.01841168528292623,0.09191176470588236,22.8,psc-ee
+2023-2024,Employees,Employés,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,311.0,0.03817356081993372,0.19056372549019607,22.8,psc-ee
+2023-2024,Employees,Employés,Southeast Asian,Asiatiques du Sud-est,83.0,0.010187799189885847,0.0508578431372549,22.8,psc-ee
+2023-2024,Hires,Embauches,ALL,TOUT,248.0,0.20563847429519072,1.0,22.8,psc-ee
+2023-2024,Hires,Embauches,Black,Noirs,52.0,0.04311774461028192,0.20967741935483872,22.8,psc-ee
+2023-2024,Hires,Embauches,Chinese,Chinois,21.0,0.017412935323383085,0.0846774193548387,22.8,psc-ee
+2023-2024,Hires,Embauches,Filipino,Philippins,19.0,0.015754560530679935,0.07661290322580645,22.8,psc-ee
+2023-2024,Hires,Embauches,Japanese,Japonais,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Hires,Embauches,Korean,Coréen,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Hires,Embauches,Non-white Latin American,Latino américains non-blancs,8.0,0.006633499170812604,0.03225806451612903,22.8,psc-ee
+2023-2024,Hires,Embauches,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",25.0,0.020729684908789386,0.10080645161290322,22.8,psc-ee
+2023-2024,Hires,Embauches,Other Visible Minority,Autre groupe de minorité visible,17.0,0.014096185737976783,0.06854838709677419,22.8,psc-ee
+2023-2024,Hires,Embauches,Person of mixed origin,Personnes d'origine mixte,30.0,0.024875621890547265,0.12096774193548387,22.8,psc-ee
+2023-2024,Hires,Embauches,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,60.0,0.04975124378109453,0.24193548387096775,22.8,psc-ee
+2023-2024,Hires,Embauches,Southeast Asian,Asiatiques du Sud-est,14.0,0.011608623548922056,0.056451612903225805,22.8,psc-ee
+2023-2024,Promotions,Promotions,ALL,TOUT,260.0,0.23029229406554472,1.0,22.8,psc-ee
+2023-2024,Promotions,Promotions,Black,Noirs,47.0,0.04162976085031001,0.18076923076923077,22.8,psc-ee
+2023-2024,Promotions,Promotions,Chinese,Chinois,35.0,0.03100088573959256,0.1346153846153846,22.8,psc-ee
+2023-2024,Promotions,Promotions,Filipino,Philippins,20.0,0.01771479185119575,0.07692307692307693,22.8,psc-ee
+2023-2024,Promotions,Promotions,Korean,Coréen,-1.0,-1.0,-1.0,22.8,psc-ee
+2023-2024,Promotions,Promotions,Non-white Latin American,Latino américains non-blancs,11.0,0.00974313551815766,0.04230769230769231,22.8,psc-ee
+2023-2024,Promotions,Promotions,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",35.0,0.03100088573959256,0.1346153846153846,22.8,psc-ee
+2023-2024,Promotions,Promotions,Other Visible Minority,Autre groupe de minorité visible,28.0,0.024800708591674048,0.1076923076923077,22.8,psc-ee
+2023-2024,Promotions,Promotions,Person of mixed origin,Personnes d'origine mixte,24.0,0.021257750221434897,0.09230769230769231,22.8,psc-ee
+2023-2024,Promotions,Promotions,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,48.0,0.042515500442869794,0.18461538461538463,22.8,psc-ee
+2023-2024,Promotions,Promotions,Southeast Asian,Asiatiques du Sud-est,-1.0,-1.0,-1.0,22.8,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,ALL,TOUT,160.0,0.18979833926453143,1.0,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Black,Noirs,23.0,0.027283511269276393,0.14375,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Chinese,Chinois,17.0,0.020166073546856466,0.10625,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Filipino,Philippins,10.0,0.011862396204033215,0.0625,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Korean,Coréen,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Non-white Latin American,Latino américains non-blancs,9.0,0.010676156583629894,0.05625,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",23.0,0.027283511269276393,0.14375,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Other Visible Minority,Autre groupe de minorité visible,22.0,0.02609727164887307,0.1375,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Person of mixed origin,Personnes d'origine mixte,17.0,0.020166073546856466,0.10625,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,30.0,0.03558718861209965,0.1875,22.9,psc-ee
+2024-2025,Acting appointments,Nominations intérimaires,Southeast Asian,Asiatiques du Sud-est,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Applicants,Postulants,ALL,TOUT,6260.0,0.43745632424877706,1.0,22.9,psc-ee
+2024-2025,Applicants,Postulants,Black,Noirs,2111.0,0.14751921733053808,0.337220447284345,22.9,psc-ee
+2024-2025,Applicants,Postulants,Chinese,Chinois,393.0,0.027463312368972745,0.06277955271565495,22.9,psc-ee
+2024-2025,Applicants,Postulants,Filipino,Philippins,258.0,0.018029350104821804,0.04121405750798722,22.9,psc-ee
+2024-2025,Applicants,Postulants,Japanese,Japonais,22.0,0.0015373864430468203,0.003514376996805112,22.9,psc-ee
+2024-2025,Applicants,Postulants,Korean,Coréen,60.0,0.0041928721174004195,0.009584664536741214,22.9,psc-ee
+2024-2025,Applicants,Postulants,Non-white Latin American,Latino américains non-blancs,235.0,0.01642208245981831,0.037539936102236424,22.9,psc-ee
+2024-2025,Applicants,Postulants,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",703.0,0.049126484975541576,0.11230031948881788,22.9,psc-ee
+2024-2025,Applicants,Postulants,Other Visible Minority,Autre groupe de minorité visible,428.0,0.029909154437456325,0.068370607028754,22.9,psc-ee
+2024-2025,Applicants,Postulants,Person of mixed origin,Personnes d'origine mixte,295.0,0.02061495457721873,0.04712460063897764,22.9,psc-ee
+2024-2025,Applicants,Postulants,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,2016.0,0.14088050314465408,0.32204472843450477,22.9,psc-ee
+2024-2025,Applicants,Postulants,Southeast Asian,Asiatiques du Sud-est,141.0,0.009853249475890986,0.02252396166134185,22.9,psc-ee
+2024-2025,Employees,Employés,ALL,TOUT,1758.0,0.20958512160228898,1.0,22.9,psc-ee
+2024-2025,Employees,Employés,Black,Noirs,379.0,0.04518359561278016,0.2155858930602958,22.9,psc-ee
+2024-2025,Employees,Employés,Chinese,Chinois,251.0,0.029923700524558894,0.1427758816837315,22.9,psc-ee
+2024-2025,Employees,Employés,Filipino,Philippins,141.0,0.016809728183118742,0.08020477815699659,22.9,psc-ee
+2024-2025,Employees,Employés,Japanese,Japonais,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Employees,Employés,Korean,Coréen,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Employees,Employés,Non-white Latin American,Latino américains non-blancs,64.0,0.007629947544110634,0.03640500568828214,22.9,psc-ee
+2024-2025,Employees,Employés,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",153.0,0.018240343347639486,0.08703071672354949,22.9,psc-ee
+2024-2025,Employees,Employés,Other Visible Minority,Autre groupe de minorité visible,215.0,0.025631855030996662,0.1222980659840728,22.9,psc-ee
+2024-2025,Employees,Employés,Person of mixed origin,Personnes d'origine mixte,140.0,0.016690510252742013,0.07963594994311718,22.9,psc-ee
+2024-2025,Employees,Employés,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,314.0,0.0374344301382928,0.17861205915813425,22.9,psc-ee
+2024-2025,Employees,Employés,Southeast Asian,Asiatiques du Sud-est,84.0,0.010014306151645207,0.04778156996587031,22.9,psc-ee
+2024-2025,Hires,Embauches,ALL,TOUT,180.0,0.22249690976514216,1.0,22.9,psc-ee
+2024-2025,Hires,Embauches,Black,Noirs,59.0,0.07292954264524104,0.3277777777777778,22.9,psc-ee
+2024-2025,Hires,Embauches,Chinese,Chinois,16.0,0.019777503090234856,0.08888888888888889,22.9,psc-ee
+2024-2025,Hires,Embauches,Filipino,Philippins,18.0,0.022249690976514216,0.1,22.9,psc-ee
+2024-2025,Hires,Embauches,Korean,Coréen,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Hires,Embauches,Non-white Latin American,Latino américains non-blancs,12.0,0.014833127317676144,0.06666666666666667,22.9,psc-ee
+2024-2025,Hires,Embauches,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",14.0,0.0173053152039555,0.07777777777777778,22.9,psc-ee
+2024-2025,Hires,Embauches,Other Visible Minority,Autre groupe de minorité visible,23.0,0.02843016069221261,0.12777777777777777,22.9,psc-ee
+2024-2025,Hires,Embauches,Person of mixed origin,Personnes d'origine mixte,9.0,0.011124845488257108,0.05,22.9,psc-ee
+2024-2025,Hires,Embauches,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,22.0,0.027194066749072928,0.12222222222222222,22.9,psc-ee
+2024-2025,Hires,Embauches,Southeast Asian,Asiatiques du Sud-est,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Promotions,Promotions,ALL,TOUT,241.0,0.24768756423432683,1.0,22.9,psc-ee
+2024-2025,Promotions,Promotions,Black,Noirs,52.0,0.05344295991778006,0.2157676348547718,22.9,psc-ee
+2024-2025,Promotions,Promotions,Chinese,Chinois,30.0,0.030832476875642344,0.12448132780082988,22.9,psc-ee
+2024-2025,Promotions,Promotions,Filipino,Philippins,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Promotions,Promotions,Japanese,Japonais,-1.0,-1.0,-1.0,22.9,psc-ee
+2024-2025,Promotions,Promotions,Non-white Latin American,Latino américains non-blancs,17.0,0.017471736896197326,0.07053941908713693,22.9,psc-ee
+2024-2025,Promotions,Promotions,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",25.0,0.025693730729701953,0.1037344398340249,22.9,psc-ee
+2024-2025,Promotions,Promotions,Other Visible Minority,Autre groupe de minorité visible,31.0,0.03186022610483042,0.12863070539419086,22.9,psc-ee
+2024-2025,Promotions,Promotions,Person of mixed origin,Personnes d'origine mixte,19.0,0.019527235354573486,0.07883817427385892,22.9,psc-ee
+2024-2025,Promotions,Promotions,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,37.0,0.03802672147995889,0.15352697095435686,22.9,psc-ee
+2024-2025,Promotions,Promotions,Southeast Asian,Asiatiques du Sud-est,15.0,0.015416238437821172,0.06224066390041494,22.9,psc-ee
+2025-2026,Applicants,Postulants,ALL,TOUT,3623.0,0.45197105788423153,1.0,,psc-ee
+2025-2026,Applicants,Postulants,Black,Noirs,1194.0,0.14895209580838323,0.3295611371791333,,psc-ee
+2025-2026,Applicants,Postulants,Chinese,Chinois,197.0,0.024575848303393214,0.05437482749102953,,psc-ee
+2025-2026,Applicants,Postulants,Filipino,Philippins,115.0,0.01434630738522954,0.03174165056582942,,psc-ee
+2025-2026,Applicants,Postulants,Japanese,Japonais,15.0,0.0018712574850299401,0.004140215291195142,,psc-ee
+2025-2026,Applicants,Postulants,Korean,Coréen,32.0,0.003992015968063872,0.00883245928788297,,psc-ee
+2025-2026,Applicants,Postulants,Non-white Latin American,Latino américains non-blancs,119.0,0.014845309381237525,0.0328457079768148,,psc-ee
+2025-2026,Applicants,Postulants,"Non-white West Asian, North African or Arab","Asiatique de l'Ouest non-blancs, Nord Africains ou Arabes",494.0,0.061626746506986026,0.13635109025669334,,psc-ee
+2025-2026,Applicants,Postulants,Other Visible Minority,Autre groupe de minorité visible,290.0,0.03617764471057884,0.08004416229643942,,psc-ee
+2025-2026,Applicants,Postulants,Person of mixed origin,Personnes d'origine mixte,163.0,0.02033433133732535,0.04499033949765388,,psc-ee
+2025-2026,Applicants,Postulants,South Asian / East Indian,Asiatiques du Sud / Indiens d'Asie,1200.0,0.1497005988023952,0.3312172232956114,,psc-ee
+2025-2026,Applicants,Postulants,Southeast Asian,Asiatiques du Sud-est,75.0,0.0093562874251497,0.02070107645597571,,psc-ee

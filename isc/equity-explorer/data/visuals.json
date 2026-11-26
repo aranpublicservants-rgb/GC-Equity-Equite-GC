@@ -1,0 +1,1116 @@
+{
+  "reviewed": "2026-11-17",
+  "employer": {
+    "id": "17",
+    "en": "Indigenous Services Canada",
+    "fr": "Services aux Autochtones Canada"
+  },
+  "population": 8389,
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "representation": [
+    {
+      "id": "ind",
+      "en": "Indigenous peoples",
+      "fr": "Peuples autochtones",
+      "values": [
+        28.5,
+        28.2,
+        28.5,
+        27.4,
+        26.9
+      ],
+      "counts": [
+        1790,
+        1878,
+        2065,
+        2232,
+        2253
+      ],
+      "wfa": 5.6,
+      "wfaByYear": [
+        5.5,
+        5.2,
+        5.3,
+        5.7,
+        5.6
+      ],
+      "source": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-indigenous-peoples-department-agency-departmental-workforce-availability-estimates.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-autochtones-fonction-publique-canada-ministere-organisme-estimations-disponibilite-sein-population-active.html"
+      },
+      "publishedExpectedCounts": [
+        348,
+        348,
+        382,
+        464,
+        471
+      ],
+      "publishedGapCounts": [
+        1442,
+        1530,
+        1683,
+        1768,
+        1782
+      ]
+    },
+    {
+      "id": "rac",
+      "en": "Racialized employees",
+      "fr": "Personnes racisées",
+      "values": [
+        17.6,
+        18.4,
+        18.8,
+        20.1,
+        21.0
+      ],
+      "counts": [
+        1107,
+        1224,
+        1363,
+        1635,
+        1759
+      ],
+      "wfa": 22.9,
+      "wfaByYear": [
+        16.2,
+        17.9,
+        18.0,
+        22.8,
+        22.9
+      ],
+      "source": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-members-visible-minority-group-department-agency-departmental-workforce-availability-estimates.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-membres-minorites-visibles-fonction-publique-canada-ministere-organisme-estimations-disponibilite-sein-population-active.html"
+      },
+      "publishedExpectedCounts": [
+        1019,
+        1192,
+        1305,
+        1862,
+        1919
+      ],
+      "publishedGapCounts": [
+        88,
+        32,
+        58,
+        -227,
+        -160
+      ]
+    },
+    {
+      "id": "pwd",
+      "en": "Persons with disabilities",
+      "fr": "Personnes en situation de handicap",
+      "values": [
+        5.9,
+        6.4,
+        7.0,
+        8.1,
+        8.9
+      ],
+      "counts": [
+        373,
+        424,
+        510,
+        657,
+        750
+      ],
+      "wfa": 12.0,
+      "wfaByYear": [
+        8.9,
+        9.1,
+        9.1,
+        12.0,
+        12.0
+      ],
+      "source": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-persons-disabilities-department-agency-departmental-workforce-availability-estimates.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-personnes-handicapees-fonction-publique-canada-ministere-organisme-estimations-disponibilite-sein-population-active.html"
+      },
+      "publishedExpectedCounts": [
+        561,
+        605,
+        659,
+        977,
+        1005
+      ],
+      "publishedGapCounts": [
+        -188,
+        -181,
+        -149,
+        -320,
+        -255
+      ]
+    },
+    {
+      "id": "woman",
+      "en": "Women",
+      "fr": "Femmes",
+      "values": [
+        68.5,
+        68.1,
+        69.3,
+        70.0,
+        70.2
+      ],
+      "counts": [
+        4299,
+        4537,
+        5026,
+        5705,
+        5890
+      ],
+      "wfa": 66.0,
+      "wfaByYear": [
+        66.0,
+        65.5,
+        65.4,
+        66.3,
+        66.0
+      ],
+      "source": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-public-service-representation-women-department-agency-departmental-workforce-availability-estimates.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/representation-femmes-fonction-publique-canada-ministere-organisme-estimations-disponibilite-sein-population-active.html"
+      },
+      "publishedExpectedCounts": [
+        4141,
+        4360,
+        4739,
+        5398,
+        5535
+      ],
+      "publishedGapCounts": [
+        158,
+        177,
+        287,
+        307,
+        355
+      ]
+    },
+    {
+      "id": "black",
+      "en": "Black employees",
+      "fr": "Personnes noires",
+      "values": [
+        3.7,
+        4.0,
+        4.0,
+        4.2,
+        4.5
+      ],
+      "counts": [
+        235,
+        264,
+        292,
+        340,
+        380
+      ],
+      "wfa": null,
+      "wfaByYear": null,
+      "source": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/repartition-employes-fonction-publique-canada-sous-groupe-designe-ministere-membres-minorites-visibles.html"
+      }
+    }
+  ],
+  "subgroups": {
+    "indigenous": [
+      {
+        "en": "Inuit",
+        "fr": "Inuit",
+        "count": 44,
+        "representation": 0.5
+      },
+      {
+        "en": "Métis",
+        "fr": "Métis",
+        "count": 609,
+        "representation": 7.3
+      },
+      {
+        "en": "First Nations",
+        "fr": "Premières Nations",
+        "count": 1545,
+        "representation": 18.4
+      },
+      {
+        "en": "Other",
+        "fr": "Autre",
+        "count": 55,
+        "representation": 0.7
+      }
+    ],
+    "visibleMinority": [
+      {
+        "en": "Black",
+        "fr": "Noir",
+        "count": 380,
+        "representation": 4.5,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Non-White Latin American",
+        "fr": "Latino-Américain non blanc",
+        "count": 64,
+        "representation": 0.8,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Person of Mixed Origin",
+        "fr": "Personne d’origine mixte",
+        "count": 140,
+        "representation": 1.7,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Chinese",
+        "fr": "Chinois",
+        "count": 251,
+        "representation": 3.0,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Japanese",
+        "fr": "Japonais",
+        "count": null,
+        "representation": null,
+        "suppressed": true,
+        "publishedMarker": "*"
+      },
+      {
+        "en": "Korean",
+        "fr": "Coréen",
+        "count": null,
+        "representation": null,
+        "suppressed": true,
+        "publishedMarker": "*"
+      },
+      {
+        "en": "Filipino",
+        "fr": "Philippin",
+        "count": 141,
+        "representation": 1.7,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "South Asian/East Indian",
+        "fr": "Asiatique du Sud/Indien de l’Est",
+        "count": 314,
+        "representation": 3.7,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Non-White West Asian, North African or Arab",
+        "fr": "Asiatique occidental, Nord-Africain ou Arabe non blanc",
+        "count": 153,
+        "representation": 1.8,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Southeast Asian",
+        "fr": "Asiatique du Sud-Est",
+        "count": 84,
+        "representation": 1.0,
+        "suppressed": false,
+        "publishedMarker": null
+      },
+      {
+        "en": "Other visible minority group",
+        "fr": "Autre groupe de minorité visible",
+        "count": 215,
+        "representation": 2.6,
+        "suppressed": false,
+        "publishedMarker": null
+      }
+    ]
+  },
+  "overall": {
+    "Q12": {
+      "value": "66",
+      "n": "4415"
+    },
+    "Q24": {
+      "value": "71",
+      "n": "4415"
+    },
+    "Q25": {
+      "value": "68",
+      "n": "4415"
+    },
+    "Q42": {
+      "value": "46",
+      "n": "4410"
+    },
+    "Q43": {
+      "value": "53",
+      "n": "4420"
+    },
+    "Q44e": {
+      "value": "40",
+      "n": "4415"
+    },
+    "Q45": {
+      "value": "51",
+      "n": "4415"
+    },
+    "Q47": {
+      "value": "68",
+      "n": "4415"
+    },
+    "Q49": {
+      "value": "58",
+      "n": "4415"
+    },
+    "Q51": {
+      "value": "23",
+      "n": "4390"
+    },
+    "Q52": {
+      "value": "41",
+      "n": "4410"
+    },
+    "Q53": {
+      "value": "76",
+      "n": "4420"
+    },
+    "Q58": {
+      "value": "16",
+      "n": "4415"
+    },
+    "Q63": {
+      "value": "44",
+      "n": "4410"
+    },
+    "Q65": {
+      "value": "10",
+      "n": "4410"
+    },
+    "Q70": {
+      "value": "47",
+      "n": "4415"
+    },
+    "Q72": {
+      "value": "11",
+      "n": "205"
+    },
+    "Q73p": {
+      "value": "43",
+      "n": "4405"
+    },
+    "Q73q": {
+      "value": "29",
+      "n": "4410"
+    },
+    "Q77": {
+      "value": "32",
+      "n": "4415"
+    },
+    "Q78": {
+      "value": "81",
+      "n": "4415"
+    },
+    "Q81": {
+      "value": "54",
+      "n": "4415"
+    },
+    "Q84": {
+      "value": "21",
+      "n": "4415"
+    },
+    "Q85": {
+      "value": "66",
+      "n": "980"
+    },
+    "Q86": {
+      "value": "64",
+      "n": "980"
+    },
+    "Q87": {
+      "value": "70",
+      "n": "625"
+    },
+    "Q88": {
+      "value": "77",
+      "n": "4415"
+    }
+  },
+  "history": {
+    "2019": {
+      "Q12": {
+        "value": "67",
+        "n": "2920"
+      },
+      "Q42": {
+        "value": "42",
+        "n": "2920"
+      },
+      "Q43": {
+        "value": "56",
+        "n": "2920"
+      },
+      "Q45": {
+        "value": "50",
+        "n": "2920"
+      },
+      "Q47": {
+        "value": "72",
+        "n": "2910"
+      },
+      "Q53": {
+        "value": "78",
+        "n": "2920"
+      },
+      "Q58": {
+        "value": "22",
+        "n": "2925"
+      },
+      "Q63": {
+        "value": "41",
+        "n": "2920"
+      },
+      "Q65": {
+        "value": "12",
+        "n": "2915"
+      },
+      "Q70": {
+        "value": "44",
+        "n": "2915"
+      },
+      "Q73q": {
+        "value": "9999",
+        "n": "2900"
+      },
+      "Q81": {
+        "value": "52",
+        "n": "2915"
+      },
+      "Q84": {
+        "value": "20",
+        "n": "2920"
+      },
+      "Q86": {
+        "value": "81",
+        "n": "590"
+      },
+      "Q87": {
+        "value": "80",
+        "n": "475"
+      }
+    },
+    "2020": {
+      "Q12": {
+        "value": "71",
+        "n": "3265"
+      },
+      "Q42": {
+        "value": "49",
+        "n": "3275"
+      },
+      "Q43": {
+        "value": "60",
+        "n": "3275"
+      },
+      "Q45": {
+        "value": "54",
+        "n": "3280"
+      },
+      "Q47": {
+        "value": "75",
+        "n": "3270"
+      },
+      "Q49": {
+        "value": "72",
+        "n": "3285"
+      },
+      "Q53": {
+        "value": "83",
+        "n": "3275"
+      },
+      "Q58": {
+        "value": "15",
+        "n": "3275"
+      },
+      "Q63": {
+        "value": "48",
+        "n": "3280"
+      },
+      "Q65": {
+        "value": "9",
+        "n": "3270"
+      },
+      "Q70": {
+        "value": "52",
+        "n": "3270"
+      },
+      "Q72": {
+        "value": "13",
+        "n": "135"
+      },
+      "Q73q": {
+        "value": "9999",
+        "n": "3265"
+      },
+      "Q78": {
+        "value": "78",
+        "n": "3260"
+      },
+      "Q81": {
+        "value": "65",
+        "n": "3280"
+      },
+      "Q84": {
+        "value": "14",
+        "n": "3270"
+      },
+      "Q85": {
+        "value": "51",
+        "n": "450"
+      },
+      "Q86": {
+        "value": "77",
+        "n": "450"
+      },
+      "Q87": {
+        "value": "84",
+        "n": "350"
+      },
+      "Q88": {
+        "value": "83",
+        "n": "3275"
+      }
+    },
+    "2022": {
+      "Q12": {
+        "value": "73",
+        "n": "3210"
+      },
+      "Q24": {
+        "value": "77",
+        "n": "3210"
+      },
+      "Q25": {
+        "value": "74",
+        "n": "3210"
+      },
+      "Q42": {
+        "value": "49",
+        "n": "3210"
+      },
+      "Q43": {
+        "value": "62",
+        "n": "3210"
+      },
+      "Q45": {
+        "value": "62",
+        "n": "3205"
+      },
+      "Q47": {
+        "value": "75",
+        "n": "3205"
+      },
+      "Q49": {
+        "value": "65",
+        "n": "3205"
+      },
+      "Q51": {
+        "value": "19",
+        "n": "3205"
+      },
+      "Q52": {
+        "value": "46",
+        "n": "3205"
+      },
+      "Q53": {
+        "value": "83",
+        "n": "3210"
+      },
+      "Q58": {
+        "value": "14",
+        "n": "3210"
+      },
+      "Q63": {
+        "value": "44",
+        "n": "3205"
+      },
+      "Q65": {
+        "value": "10",
+        "n": "3205"
+      },
+      "Q70": {
+        "value": "48",
+        "n": "3205"
+      },
+      "Q72": {
+        "value": "5",
+        "n": "135"
+      },
+      "Q73q": {
+        "value": "9999",
+        "n": "3200"
+      },
+      "Q77": {
+        "value": "36",
+        "n": "3205"
+      },
+      "Q78": {
+        "value": "83",
+        "n": "3205"
+      },
+      "Q81": {
+        "value": "65",
+        "n": "3205"
+      },
+      "Q84": {
+        "value": "13",
+        "n": "3205"
+      },
+      "Q85": {
+        "value": "58",
+        "n": "435"
+      },
+      "Q86": {
+        "value": "68",
+        "n": "435"
+      },
+      "Q87": {
+        "value": "80",
+        "n": "305"
+      },
+      "Q88": {
+        "value": "83",
+        "n": "3205"
+      }
+    },
+    "2024": {
+      "Q12": {
+        "value": "66",
+        "n": "4415"
+      },
+      "Q24": {
+        "value": "71",
+        "n": "4415"
+      },
+      "Q25": {
+        "value": "68",
+        "n": "4415"
+      },
+      "Q42": {
+        "value": "46",
+        "n": "4410"
+      },
+      "Q43": {
+        "value": "53",
+        "n": "4420"
+      },
+      "Q44e": {
+        "value": "40",
+        "n": "4415"
+      },
+      "Q45": {
+        "value": "51",
+        "n": "4415"
+      },
+      "Q47": {
+        "value": "68",
+        "n": "4415"
+      },
+      "Q49": {
+        "value": "58",
+        "n": "4415"
+      },
+      "Q51": {
+        "value": "23",
+        "n": "4390"
+      },
+      "Q52": {
+        "value": "41",
+        "n": "4410"
+      },
+      "Q53": {
+        "value": "76",
+        "n": "4420"
+      },
+      "Q58": {
+        "value": "16",
+        "n": "4415"
+      },
+      "Q63": {
+        "value": "44",
+        "n": "4410"
+      },
+      "Q65": {
+        "value": "10",
+        "n": "4410"
+      },
+      "Q70": {
+        "value": "47",
+        "n": "4415"
+      },
+      "Q72": {
+        "value": "11",
+        "n": "205"
+      },
+      "Q73p": {
+        "value": "43",
+        "n": "4405"
+      },
+      "Q73q": {
+        "value": "29",
+        "n": "4410"
+      },
+      "Q77": {
+        "value": "32",
+        "n": "4415"
+      },
+      "Q78": {
+        "value": "81",
+        "n": "4415"
+      },
+      "Q81": {
+        "value": "54",
+        "n": "4415"
+      },
+      "Q84": {
+        "value": "21",
+        "n": "4415"
+      },
+      "Q85": {
+        "value": "66",
+        "n": "980"
+      },
+      "Q86": {
+        "value": "64",
+        "n": "980"
+      },
+      "Q87": {
+        "value": "70",
+        "n": "625"
+      },
+      "Q88": {
+        "value": "77",
+        "n": "4415"
+      }
+    }
+  },
+  "overallSource": {
+    "en": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv",
+    "fr": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv"
+  },
+  "staffing": {
+    "questions": {
+      "STA_14A": {
+        "dir": "neg",
+        "en": "Experienced biases or barriers that disadvantaged them in a staffing process",
+        "fr": "Ont été confrontés à des préjugés ou à des obstacles qui les ont désavantagés dans un processus de dotation",
+        "base": "Respondents who took part in an advertised staffing process",
+        "base_fr": "Personnes ayant participé à un processus de dotation annoncé"
+      },
+      "STA_13": {
+        "dir": "pos",
+        "en": "Staffing processes in their organization reduce or eliminate biases and barriers",
+        "fr": "Les processus de dotation de leur organisation réduisent ou éliminent les préjugés et les obstacles",
+        "base": "All respondents",
+        "base_fr": "Tous les répondants"
+      },
+      "STA_01E": {
+        "dir": "pos",
+        "en": "Selection for a position in their work unit is done fairly",
+        "fr": "Dans leur unité de travail, la sélection d’une personne pour un poste est équitable",
+        "base": "All respondents who answered",
+        "base_fr": "Répondants qui ont répondu"
+      },
+      "STA_01F": {
+        "dir": "pos",
+        "en": "Non-advertised appointments in their work unit are done fairly",
+        "fr": "Dans leur unité de travail, les nominations non annoncées sont équitables",
+        "base": "All respondents who answered",
+        "base_fr": "Répondants qui ont répondu"
+      },
+      "STA_01A": {
+        "dir": "pos",
+        "en": "Staffing in their work unit is carried out in a transparent way",
+        "fr": "Dans leur unité de travail, la dotation est menée de manière transparente",
+        "base": "All respondents who answered",
+        "base_fr": "Répondants qui ont répondu"
+      },
+      "STA_09C": {
+        "dir": "pos",
+        "en": "Received an offer of appointment",
+        "fr": "Ont reçu une offre de nomination",
+        "base": "Respondents who took part in a staffing activity",
+        "base_fr": "Personnes ayant participé à une activité de dotation"
+      },
+      "STA_04": {
+        "dir": "pos",
+        "en": "Acted in a position for 4 months or longer",
+        "fr": "Ont occupé un poste par intérim pendant 4 mois ou plus",
+        "base": "All respondents",
+        "base_fr": "Tous les répondants"
+      }
+    },
+    "values": {
+      "all": {
+        "STA_14A": 14,
+        "STA_13": 41,
+        "STA_01E": 75,
+        "STA_01F": 70,
+        "STA_01A": 67,
+        "STA_09C": 21,
+        "STA_04": 24
+      },
+      "ind": {
+        "STA_14A": 14,
+        "STA_13": 39,
+        "STA_01E": 76,
+        "STA_01F": 70,
+        "STA_01A": 69,
+        "STA_09C": 21,
+        "STA_04": 23
+      },
+      "nonind": {
+        "STA_14A": 14,
+        "STA_13": 42,
+        "STA_01E": 77,
+        "STA_01F": 72,
+        "STA_01A": 68,
+        "STA_09C": 21,
+        "STA_04": 25
+      },
+      "pwd": {
+        "STA_14A": 18,
+        "STA_13": 31,
+        "STA_01E": 69,
+        "STA_01F": 65,
+        "STA_01A": 62,
+        "STA_09C": 20,
+        "STA_04": 26
+      },
+      "nopwd": {
+        "STA_14A": 10,
+        "STA_13": 47,
+        "STA_01E": 80,
+        "STA_01F": 75,
+        "STA_01A": 70,
+        "STA_09C": 22,
+        "STA_04": 23
+      },
+      "rac": {
+        "STA_14A": 17,
+        "STA_13": 39,
+        "STA_01E": 73,
+        "STA_01F": 70,
+        "STA_01A": 68,
+        "STA_09C": 17,
+        "STA_04": 23
+      },
+      "nonrac": {
+        "STA_14A": 13,
+        "STA_13": 42,
+        "STA_01E": 77,
+        "STA_01F": 71,
+        "STA_01A": 67,
+        "STA_09C": 23,
+        "STA_04": 25
+      },
+      "woman": {
+        "STA_14A": 13,
+        "STA_13": 40,
+        "STA_01E": 74,
+        "STA_01F": 69,
+        "STA_01A": 66,
+        "STA_09C": 22,
+        "STA_04": 25
+      },
+      "man": {
+        "STA_14A": 14,
+        "STA_13": 47,
+        "STA_01E": 82,
+        "STA_01F": 78,
+        "STA_01A": 75,
+        "STA_09C": 20,
+        "STA_04": 22
+      },
+      "black": {
+        "STA_14A": 26,
+        "STA_13": 33,
+        "STA_01E": 65,
+        "STA_01F": 64,
+        "STA_01A": 62,
+        "STA_09C": 12,
+        "STA_04": 19
+      }
+    },
+    "source": {
+      "en": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+      "fr": "https://ouvert.canada.ca/data/fr/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22"
+    },
+    "method": "Weighted results from the Public Service Commission open data, rounded to whole numbers. The Commission rounds weighted counts to whole numbers, so results for groups of fewer than 2,000 weighted respondents add the published percentages, and results for larger groups use the weighted counts. For agreement questions the result is the share answering “to a moderate extent” or “to a great extent”; for yes or no questions it is the share answering yes. “Don’t know” answers stay in the base, as in the Commission’s report. Results the Commission did not publish (fewer than 10 respondents) are absent, not zero.",
+    "method_fr": "Résultats pondérés tirés des données ouvertes de la Commission de la fonction publique, arrondis à l’unité. La Commission arrondit les nombres pondérés à l’unité; les résultats des groupes de moins de 2 000 répondants pondérés additionnent donc les pourcentages publiés, et ceux des groupes plus grands utilisent les nombres pondérés. Pour les questions d’accord, le résultat est la part des réponses « dans une mesure modérée » ou « dans une grande mesure »; pour les questions par oui ou non, la part des réponses oui. Les réponses « Ne sais pas » restent dans la base, comme dans le rapport de la Commission. Les résultats non publiés par la Commission (moins de 10 répondants) sont absents; ils ne valent pas zéro.",
+    "period": "Survey June 5 to August 14, 2025; staffing experiences from April 1, 2024, to March 31, 2025",
+    "period_fr": "Sondage du 5 juin au 14 août 2025; expériences de dotation du 1er avril 2024 au 31 mars 2025"
+  },
+  "fte": [
+    {
+      "year": "2024–25",
+      "en": "Actual · annual FTEs",
+      "fr": "Réel · ETP annuels",
+      "total": 8619,
+      "values": [
+        6528,
+        2091
+      ]
+    },
+    {
+      "year": "2025–26",
+      "en": "Actual · annual FTEs",
+      "fr": "Réel · ETP annuels",
+      "total": 8018,
+      "values": [
+        6097,
+        1921
+      ]
+    },
+    {
+      "year": "2026–27",
+      "en": "Planned · annual FTEs",
+      "fr": "Prévu · ETP annuels",
+      "total": 7567,
+      "values": [
+        5695,
+        1872
+      ]
+    }
+  ],
+  "responsibilities": [
+    [
+      "Core responsibility",
+      "Responsabilité essentielle"
+    ],
+    [
+      "Internal services",
+      "Services internes"
+    ]
+  ],
+  "headcount": [
+    {
+      "year": 2021,
+      "headcount": 6670,
+      "executives": 202
+    },
+    {
+      "year": 2022,
+      "headcount": 7030,
+      "executives": 213
+    },
+    {
+      "year": 2023,
+      "headcount": 7722,
+      "executives": 246
+    },
+    {
+      "year": 2024,
+      "headcount": 8637,
+      "executives": 249
+    },
+    {
+      "year": 2025,
+      "headcount": 8577,
+      "executives": 275
+    },
+    {
+      "year": 2026,
+      "headcount": 7992,
+      "executives": 263
+    }
+  ],
+  "sources": {
+    "snapshot": {
+      "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/employment-equity-demographic-snapshot-2024-2025.html",
+      "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/apercu-donnees-demographiques-equite-matiere-emploi-2024-2025.html"
+    },
+    "indigenousSubgroups": {
+      "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-indigenous-peoples.html",
+      "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/repartition-employes-fonction-publique-canada-sous-groupe-designe-ministere-peuples-autochtones.html"
+    },
+    "visibleMinoritySubgroups": {
+      "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
+      "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/repartition-employes-fonction-publique-canada-sous-groupe-designe-ministere-membres-minorites-visibles.html"
+    },
+    "drr2025": {
+      "en": "https://sac-isc.gc.ca/eng/1785853059320/1785853156485",
+      "fr": "https://www.sac-isc.gc.ca/fra/1785853059320/1785853156485"
+    },
+    "drr2024": {
+      "en": "https://www.sac-isc.gc.ca/eng/1752155698379/1752155722243",
+      "fr": "https://www.sac-isc.gc.ca/fra/1752155698379/1752155722243"
+    },
+    "plan2026": {
+      "en": "https://www.sac.gc.ca/eng/1767990598033/1773090600238",
+      "fr": "https://www.sac.gc.ca/fra/1767990598033/1773090600238"
+    },
+    "headcount": {
+      "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/population-federal-public-service-department.html",
+      "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/effectif-fonction-publique-federale-minstere.html"
+    },
+    "executiveHeadcount": {
+      "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/population-federal-public-service-executives-non-executives-department-agency.html",
+      "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/effectif-cadres-superieurs-non-cadres-superieurs-fonction-publique-federale-ministere-organisme.html"
+    },
+    "selfAssessment": {
+      "en": "https://www.canada.ca/en/privy-council/corporate/about-call-action/self-assessment-forward-direction/5/indigenous-services-canada.html",
+      "fr": "https://www.canada.ca/fr/conseil-prive/organisation/a-propos-appel-action/autoevaluation-orientations-suivre/5/services-autochtones-canada.html"
+    },
+    "accessibilityPlan": {
+      "en": "https://www.sac-isc.gc.ca/eng/1766002791478/1766002810081",
+      "fr": "https://www.sac-isc.gc.ca/fra/1766002791478/1766002810081"
+    },
+    "accessibilityProgress2024": {
+      "en": "https://www.sac-isc.gc.ca/eng/1734628941512/1734629096495",
+      "fr": "https://www.sac-isc.gc.ca/fra/1734628941512/1734629096495"
+    },
+    "pses": {
+      "en": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+      "fr": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv"
+    },
+    "subgroups": {
+      "ind": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-indigenous-peoples.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/repartition-employes-fonction-publique-canada-sous-groupe-designe-ministere-peuples-autochtones.html"
+      },
+      "rac": {
+        "en": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-employees-designated-sub-group-department-members-visible-minorities.html",
+        "fr": "https://www.canada.ca/fr/secretariat-conseil-tresor/services/innovation/statistiques-ressources-humaines/statistiques-diversite-inclusion/repartition-employes-fonction-publique-canada-sous-groupe-designe-ministere-membres-minorites-visibles.html"
+      }
+    },
+    "act": {
+      "en": "https://laws-lois.justice.gc.ca/eng/acts/E-5.401/FullText.html",
+      "fr": "https://laws-lois.justice.gc.ca/fra/lois/E-5.401/TexteComplet.html"
+    },
+    "commitment": {
+      "en": "https://www.canada.ca/en/employment-social-development/news/2023/12/minister-oregan-receives-task-force-report-on-employment-equity-act-modernization.html",
+      "fr": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2023/12/le-ministre-oregan-recoit-le-rapport-du-groupe-du-travail-sur-la-modernisation-de-la-loi-sur-lequite-en-matiere-demploi.html"
+    },
+    "accessibilityPlan2023": {
+      "en": "https://www.sac-isc.gc.ca/eng/1669992796447/1669992819201",
+      "fr": "https://www.sac-isc.gc.ca/fra/1669992796447/1669992819201"
+    }
+  },
+  "collection": {
+    "files": 116,
+    "records": 331442
+  }
+}

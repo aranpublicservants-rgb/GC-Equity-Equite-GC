@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="A supportive, equity-informed assistant to explore workplace concerns, understand recourse options and prepare a message to share." name="description"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="light" name="color-scheme"/>
+<title>Recourse Assistant / Assistant aux recours</title>
+<link href="./companion.css?v=20261116-5" rel="stylesheet"/>
+<script defer="" src="./conversation-flow.js?v=20261116-5"></script>
+<script defer="" src="./companion.js?v=20261118-ombuds-1"></script>
+<link href="../review.css?v=20261116-5" rel="stylesheet"/><script defer="" src="../shared.js?v=20261116-5"></script></head>
+<body class="companion-review recourse-shell">
+<a class="skip-link" data-en="Skip to the conversation" data-fr="Passer à la conversation" href="#conversation">Skip to the conversation</a>
+<header class="topbar"><div class="page-width top-row">
+<a aria-label="Recourse guide / Guide des recours" class="brand" href="../"><span aria-hidden="true" class="mark">R</span><span data-en="Recourse Assistant" data-fr="Assistant aux recours">Recourse Assistant</span></a>
+<div class="header-links"><button aria-label="Change language / Changer de langue" id="switch-language" lang="fr" type="button">Français</button></div>
+</div></header><nav aria-label="Recourse navigation / Navigation des recours" class="shared-nav"><div class="page-width"><a href="../"><span data-en="Guide" data-fr="Guide">Guide</span></a><a aria-current="page" href="../companion/"><span data-en="Guided support" data-fr="Soutien guidé">Guided support</span></a><a href="../cases/"><span data-en="Decision library" data-fr="Bibliothèque des décisions">Decision library</span></a><a href="../#deadlines"><span data-en="Deadlines" data-fr="Délais">Deadlines</span></a></div></nav>
+<main class="page-width">
+<section class="introduction">
+<p class="eyebrow" data-en="WORKPLACE SUPPORT" data-fr="SOUTIEN AU TRAVAIL">WORKPLACE SUPPORT</p>
+<h1 data-en="Let’s work through your concern." data-fr="Examinons votre préoccupation.">Let’s work through your concern.</h1>
+<p data-en="Choose an answer or write in your own words. We’ll ask relevant follow-up questions and build your guidance below the conversation." data-fr="Choisissez une réponse ou écrivez dans vos mots. Des questions de suivi vous aideront à préciser la situation. Vos démarches possibles s’afficheront sous la conversation.">Choose an answer or write in your own words. We’ll ask relevant follow-up questions and build your guidance below the conversation.</p>
+<p class="deadline-link"><span data-en="Check filing deadlines while you explore your options. Informal support does not automatically stop them." data-fr="Vérifiez les délais pendant que vous examinez vos options. Le soutien informel ne les suspend pas automatiquement.">Check filing deadlines while you explore your options. Informal support does not automatically stop them.</span> <a href="../#deadlines"><span data-en="Check the rules" data-fr="Vérifier les règles">Check the rules</span></a></p></section>
+<section aria-labelledby="conversation-heading" class="conversation" id="conversation">
+<div class="conversation-top"><h2 data-en="Your conversation" data-fr="Votre conversation" id="conversation-heading">Your conversation</h2><button class="text-button" data-en="Start over" data-fr="Recommencer" id="clear" type="button">Start over</button></div>
+<div aria-live="polite" aria-relevant="additions" class="conversation-log" id="conversation-log" role="log"></div>
+<div class="entry-area">
+<div aria-labelledby="question-heading" class="question-panel" id="question-panel">
+<p class="question-progress" id="question-progress"></p>
+<h3 id="question-heading" tabindex="-1"></h3>
+<p class="small-note" id="question-help"></p>
+<div aria-describedby="question-help" aria-labelledby="question-heading" class="suggestions" id="suggestions" role="group"></div>
+<div hidden="" id="date-answer"><label class="field-label" data-en="Date received or learned (optional)" data-fr="Date de réception ou de prise de connaissance (facultative)" for="decision-date">Date received or learned (optional)</label><div class="date-row"><input id="decision-date" type="date"/><button class="secondary-button" data-en="Use this date" data-fr="Utiliser cette date" id="use-date" type="button">Use this date</button></div></div>
+<div class="choice-actions"><button class="primary-button" data-en="Continue with these answers" data-fr="Continuer avec ces réponses" hidden="" id="continue-answer" type="button">Continue with these answers</button></div>
+<p class="small-note" id="question-source"></p>
+<div class="guide-controls"><button class="text-button" data-en="Back" data-fr="Retour" id="previous-question" type="button">Back</button><button class="text-button" data-en="Skip this question" data-fr="Passer cette question" id="skip-question" type="button">Skip this question</button><button class="text-button" data-en="See my guidance so far" data-fr="Voir mes démarches possibles" id="show-guidance" type="button">See my guidance so far</button></div>
+</div>
+<form id="message-form">
+<label class="field-label" data-en="Or add a response in your own words" data-fr="Ou répondez dans vos mots" for="user-message">Or add a response in your own words</label>
+<p class="privacy-near-input" data-en="Avoid including names, medical records or confidential documents. This assistant offers information and support, not a legal determination. Informal conversations do not stop filing deadlines." data-fr="Évitez d'inclure des noms, des dossiers médicaux ou des documents confidentiels. Cet assistant offre de l'information et du soutien, et non une conclusion juridique. Les échanges informels ne suspendent pas les délais." id="privacy-text">Avoid including names, medical records or confidential documents. This assistant offers information and support, not a legal determination. Informal conversations do not stop filing deadlines.</p><textarea aria-describedby="privacy-text" data-placeholder-en="Add a detail, answer the question or ask a follow-up…" data-placeholder-fr="Ajoutez un détail, répondez à la question ou posez une question de suivi…" id="user-message" maxlength="1600" rows="2"></textarea>
+<div class="send-row"><button class="secondary-button" data-en="Use my written response" data-fr="Utiliser ma réponse écrite" id="send" type="submit">Use my written response</button><span aria-live="polite" class="state-text" id="assistant-state" role="status"></span></div>
+</form>
+</div>
+</section>
+<section aria-labelledby="reference-heading" class="evidence" id="reference-section">
+<div class="section-heading"><div><p class="eyebrow" data-en="UPDATED AS YOU ANSWER" data-fr="MIS À JOUR AU FIL DE VOS RÉPONSES">UPDATED AS YOU ANSWER</p><h2 data-en="Your guidance" data-fr="Vos démarches possibles" id="reference-heading" tabindex="-1">Your guidance</h2></div><a class="inline-link" data-en="Back to the conversation" data-fr="Retour à la conversation" href="#conversation">Back to the conversation</a></div>
+<p class="small-note" id="plan-progress"></p>
+<details hidden="" id="answer-summary"><summary data-en="Review or change my answers" data-fr="Revoir ou modifier mes réponses">Review or change my answers</summary><div class="answer-list" id="answer-list"></div></details>
+<div class="route-results" id="route-results"></div>
+<div class="plan-actions" hidden="" id="plan-actions"><button class="secondary-button" data-en="Copy guidance" data-fr="Copier les démarches" id="copy-guidance" type="button">Copy guidance</button><button class="secondary-button" data-en="Download guidance" data-fr="Télécharger les démarches" id="download-guidance" type="button">Download guidance</button><button class="text-button" data-en="Print guidance" data-fr="Imprimer les démarches" id="print-guidance" type="button">Print guidance</button><span aria-live="polite" id="plan-status" role="status"></span></div><details class="optional-wording"><summary><span data-en="Optional help with wording" data-fr="Aide facultative à la rédaction">Optional help with wording</span></summary><p class="small-note"><span data-en="The guidance above works without a download. If your browser supports it, you can ask an on-device model to summarize those same sources. This may download a language model and take a few minutes. Your answers stay in this tab." data-fr="Les démarches ci-dessus fonctionnent sans téléchargement. Si votre navigateur le permet, un modèle exécuté sur votre appareil peut résumer ces mêmes sources. Le téléchargement peut prendre quelques minutes. Vos réponses restent dans cet onglet.">The guidance above works without a download. If your browser supports it, you can ask an on-device model to summarize those same sources. This may download a language model and take a few minutes. Your answers stay in this tab.</span></p><button class="secondary-button" id="enable-wording" type="button"><span data-en="Try wording assistance" data-fr="Essayer l’aide à la rédaction">Try wording assistance</span></button></details>
+<details id="cases-details"><summary data-en="Related decisions" data-fr="Décisions connexes">Related decisions</summary><p class="small-note" data-en="These decisions illustrate legal reasoning. They do not predict your outcome. Review the source, the employment context and any later decision." data-fr="Ces décisions illustrent le raisonnement juridique. Elles ne prédisent pas votre résultat. Consultez la source, le contexte d’emploi et toute décision ultérieure.">These decisions illustrate legal reasoning. They do not predict your outcome. Review the source, the employment context and any later decision.</p><div class="case-list" id="related-cases"></div><a class="inline-link" data-en="Search the explained decision library" data-fr="Rechercher les décisions expliquées" href="../cases/#find-decisions">Search the full decision library</a></details>
+
+</section>
+<section aria-labelledby="share-heading" class="share-panel" id="share-section">
+<div class="section-heading"><div><p class="eyebrow" data-en="WHEN YOU'RE READY" data-fr="QUAND VOUS SEREZ PRÊT">WHEN YOU'RE READY</p><h2 data-en="Put it into words for someone you trust" data-fr="Trouver les mots pour en parler à quelqu'un de confiance" id="share-heading">Put it into words for someone you trust</h2></div>
+<button class="secondary-button" data-en="Write a message I can share" data-fr="Rédiger un message à partager" id="prepare-message" type="button">Write a message I can share</button></div>
+<div hidden="" id="draft-panel">
+<label class="field-label" data-en="Who is this message for?" data-fr="À qui s'adresse le message?" for="audience">Who is this message for?</label>
+<select id="audience">
+<option data-en="Someone I trust" data-fr="Une personne de confiance" value="trusted">Someone I trust</option>
+<option data-en="A union representative" data-fr="Une personne représentante syndicale" value="union">A union representative</option>
+<option data-en="My manager or supervisor" data-fr="Mon gestionnaire ou superviseur" value="manager">My manager or supervisor</option>
+<option data-en="An ombuds or workplace adviser" data-fr="Un ombuds ou conseiller au travail" value="advisor">An ombuds or workplace adviser</option>
+</select>
+<label class="field-label" data-en="Your message (you can edit it)" data-fr="Votre message (modifiable)" for="draft-text">Your message (you can edit it)</label>
+<textarea id="draft-text" maxlength="3400" rows="9"></textarea>
+<div class="draft-actions"><button class="primary-button" data-en="Copy message" data-fr="Copier le message" id="copy-draft" type="button">Copy message</button><span aria-live="polite" id="draft-status" role="status"></span></div>
+<p class="small-note" data-en="You decide whether, when and with whom to share it. Review the text and remove personal details before sending." data-fr="Vous décidez si, quand et avec qui le partager. Relisez-le et retirez les renseignements personnels avant de l'envoyer.">You decide whether, when and with whom to share it. Review the text and remove personal details before sending.</p>
+</div>
+</section>
+<footer><a data-en="Full recourse guide" data-fr="Guide complet des recours" href="../">Full recourse guide</a><span aria-hidden="true"> · </span><a data-en="Decision library" data-fr="Bibliothèque des décisions" href="../cases/">Decision library</a></footer></main></body></html>

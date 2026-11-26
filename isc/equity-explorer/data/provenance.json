@@ -1,0 +1,144 @@
+{
+  "reviewed": "2026-11-17",
+  "organization": "Indigenous Services Canada",
+  "employerId": "17",
+  "catalogueFiles": 116,
+  "catalogueRows": 331442,
+  "sourceScope": "ISC-matched records in GC Equity and related public resource datasets, supplemented by direct official PSES department and group rows. No predecessor department or government-wide result substituted.",
+  "employeeGroupSource": {
+    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+    "retrieved": "2026-11-17",
+    "employer_id": "17",
+    "rows": 34155,
+    "groups": 165,
+    "sha256": "a24186110de49ad03dd0f8982cbd46037ef88fa78afb5f9e61565caf4d5b1a36"
+  },
+  "intentionalExclusions": [
+    {
+      "id": "source-8105d7e7fd25",
+      "sourceFile": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2017-2018.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-119963478d47",
+      "sourceFile": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2018-2019.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-7b85af5ea042",
+      "sourceFile": "data/psc/CFPPSC_AR1CC.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-db160da3b273",
+      "sourceFile": "data/psc/CFPPSC_AR2C.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-a2837b7b525c",
+      "sourceFile": "data/psc/CFPPSC_AR1U.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-580fdd86ce45",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS09.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-dca4779f653c",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS05.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-2ea7b9cf9a55",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS03.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-1e8be6573120",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS04.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-b70093a100de",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS02.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-09041c23b259",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS06.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-ae3a98a70308",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS08.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-f202e73d4209",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS07.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-d3783021c3f1",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS18.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-c18e8d3ed556",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS11.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-55083135c3dd",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS10.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-cf009529ede8",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS12.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-f17904473408",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS19.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-c5b585d0cf61",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14E.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-906fa0c6d176",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14F.csv.gz",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-b8f9a4134f4a",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/snps-2018-organization-level-report-dataset.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-5b0d87293c8c",
+      "sourceFile": "data/open-canada-2026-11/snps-2018/snps-2018-response-profile-data.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-bea0af57f80f",
+      "sourceFile": "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-479e36b63eb7",
+      "sourceFile": "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv",
+      "status": "no ISC rows in retained source"
+    },
+    {
+      "id": "source-f89b4263fc89",
+      "status": "Filipino website departmental table has seven selected departments and no ISC row; no government-wide result substituted"
+    }
+  ],
+  "branchMethod": "Direct source cells by branch and group. No averaging to create department totals.",
+  "suppression": "Original X, empty and 9999 cells retained; genuine zeroes remain zero."
+}
