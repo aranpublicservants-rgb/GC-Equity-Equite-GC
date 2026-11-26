@@ -58,16 +58,31 @@ await write('assets/local-search-pages.json',{schema:1,docs:publicPages});
 
 if(mode==='--pages-only')process.exit(0);
 }else{publicPages=(await read('assets/local-search-pages.json')).docs;}
-const {pipeline}=await import('@huggingface/transformers');
 const model='Xenova/multilingual-e5-small';
-const pipe=await pipeline('feature-extraction',model,{dtype:'q8',device:'cpu'});
+const dtype='q8',dimensions=384;
 const docs=[...registry.organizations.map(orgDoc),...index.docs,...publicPages].filter(d=>{try{const u=new URL(d.url,base);return d.id&&u.origin===base.origin&&u.pathname.startsWith(base.pathname)&&!(/\/(?:racialized-executives|communities\/filipino|youth)(?:\/|$)/i.test(u.pathname))}catch{return false}});
-const rows=[];
-for(let i=0;i<docs.length;i+=8){
- const batch=docs.slice(i,i+8),texts=batch.map(embedText);
- const out=await pipe(texts,{pooling:'mean',normalize:true});
- const size=out.dims.at(-1);
- for(let j=0;j<batch.length;j++)rows.push({id:batch[j].id,url:batch[j].url,text:texts[j],vector:Array.from(out.data.slice(j*size,(j+1)*size),x=>Math.round(x*100000)/100000)});
+const unique=[...new Map(docs.map(d=>[d.id,d])).values()];
+function validVector(v){return Array.isArray(v)&&v.length===dimensions&&v.every(Number.isFinite)&&Math.abs(Math.sqrt(v.reduce((s,x)=>s+x*x,0))-1)<0.02}
+let prior=null;try{prior=await read('assets/semantic-vectors.json')}catch{}
+const previous=new Map(prior?.model===model&&prior?.dtype===dtype&&prior?.schema===2?prior.rows.filter(r=>validVector(r.vector)).map(r=>[r.id,r]):[]);
+const rows=[],pending=[];
+for(const d of unique){const text=embedText(d),old=previous.get(d.id);if(old?.url===d.url&&old.text===text)rows.push(old);else pending.push({id:d.id,url:d.url,text})}
+if(pending.length){
+ const {pipeline,env}=await import('@huggingface/transformers');
+ env.allowLocalModels=false;
+ const pipe=await pipeline('feature-extraction',model,{dtype,device:'cpu'});
+ try{
+  for(let i=0;i<pending.length;i+=4){
+   const batch=pending.slice(i,i+4);
+   const out=await pipe(batch.map(x=>x.text),{pooling:'mean',normalize:true,truncation:true,max_length:512});
+   const size=out.dims.at(-1);
+   if(size!==dimensions||out.data.length!==batch.length*size)throw Error('Unexpected embedding dimensions');
+   for(let j=0;j<batch.length;j++){const vector=Array.from(out.data.slice(j*size,(j+1)*size),x=>Math.round(x*100000)/100000);if(!validVector(vector))throw Error('Invalid vector: '+batch[j].id);rows.push({...batch[j],vector})}
+   if(i%100===0)console.log('Embedded',Math.min(i+4,pending.length),'of',pending.length,'new records');
+  }
+ }finally{await pipe.dispose?.()}
 }
-await write('assets/semantic-vectors.json',{schema:1,model,rows});
-console.log('Built',rows.length,'semantic vectors');
+rows.sort((a,b)=>a.id.localeCompare(b.id));
+if(rows.length!==unique.length||rows.some(r=>!validVector(r.vector)))throw Error('Incomplete semantic index');
+await write('assets/semantic-vectors.json',{schema:2,model,dtype,dimensions,rows});
+console.log('Verified',rows.length,'semantic vectors;',rows.length-pending.length,'reused,',pending.length,'new');
