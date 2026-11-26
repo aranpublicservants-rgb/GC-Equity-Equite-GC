@@ -157,7 +157,7 @@ function results(){
   table.append(body);
  }
  /* Charts read these complete rows, because the branch name spans both rows of each branch. Unavailable cells stay text and are never plotted. */
- table._gceVisualData={headers:[t("Branch","Direction"),t("Employee group","Groupe d’employés"),...columns.map(c=>t(c[1],c[2]))],rows:visual,title:table.caption.textContent,lang:fr()?"fr":"en",scope:"filtered"};
+ table._gceVisualData={headers:[t("Branch","Direction"),t("Employee group","Groupe d’employés"),...columns.map(c=>t(c[1],c[2]))],rows:visual,title:table.caption.textContent,lang:fr()?"fr":"en",scope:"filtered",chart:{kind:"heatmap",x:0,column:1,measure:2+Math.max(0,columns.findIndex(c=>c[0]===mainMeasure(columns))),limit:100}};
  const wrap=el("div");wrap.className="table-scroll";wrap.style.cssText="overflow-x:auto;max-width:100%";wrap.tabIndex=0;wrap.setAttribute("role","region");wrap.setAttribute("aria-label",t("Branch survey results table","Tableau des résultats par direction"));wrap.append(table);out.append(questionText,groupText,findings(p,chosen,lookup,columns,names));if(view==="heatmap"){out.append(heatmap(p,chosen,lookup,columns,names,q));const detail=el("details");detail.append(el("summary",t("View detailed source table","Voir le tableau source détaillé")),wrap);out.append(detail)}else out.append(wrap);window.GCEquityVisuals?.update(table);
  const n=chosen.length,total=n*p.members.length;
  status.textContent=count?t(n+(n===1?" branch shown. ":" branches shown. ")+count+" of "+total+" group results are published.",n+(n===1?" direction affichée. ":" directions affichées. ")+count+" résultats de groupe publiés sur "+total+"."):t("No published values for this selection. Suppressed or missing results are shown as unavailable, not zero.","Aucune valeur publiée pour cette sélection. Les résultats supprimés ou manquants sont indiqués comme indisponibles, et non comme zéro.");
@@ -165,11 +165,12 @@ function results(){
 /* Descriptive findings for the selected question and groups: the range across branches for each group,
    and the largest gap between the two groups within one branch. Published values only; missing and
    suppressed values are excluded, never treated as zero. Not significance or causation findings. */
+/* The main measure for a question, shared by the findings and the starting chart. */
+function mainMeasure(columns){const has=n=>columns.some(c=>c[0]===n);return has("NEUTRAL")&&has("MOSTPOS")?"MOSTPOS":["MOSTNEG","MOSTPOS","AGREE","SCORE100"].find(has)}
 function findings(p,chosen,lookup,columns,names){
  const box=el("section");box.append(el("h4",t("What stands out in this selection","Ce qui ressort de cette sélection")));
- const has=n=>columns.some(c=>c[0]===n);
  /* Agreement scales start from positive answers; yes/no and extent questions from the most negative answers, as the survey groups them. */
- const key=has("NEUTRAL")&&has("MOSTPOS")?"MOSTPOS":["MOSTNEG","MOSTPOS","AGREE","SCORE100"].find(has);
+ const key=mainMeasure(columns);
  const lines=[];
  if(key){
   const percent=key!=="SCORE100",i=field(key),n=field("ANSCOUNT");
@@ -204,7 +205,7 @@ function watch(){
  observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer?.disconnect();observer=null;load()}},{rootMargin:"200px 0px"});
  observer.observe(root);
 }
-async function load(){if(loading||rows||!record)return;observer?.disconnect();observer=null;loading=true;err=false;render();try{const [m,res]=await Promise.all([get("assets/department-branch-definitions.json"),fetch(new URL("data/pses-2024-branches/"+record.id+".json.gz",base))]);if(!res.ok)throw Error("Source unavailable");const bytes=await res.arrayBuffer();const view=new Uint8Array(bytes),gz=view[0]===31&&view[1]===139;if(gz&&typeof DecompressionStream!=="function")throw Error("Browser does not support gzip");const raw=gz?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);const data=JSON.parse(raw);if(!Array.isArray(data)||!data.every(r=>Array.isArray(r)&&r.length>=3+m.schema.length))throw Error("Unexpected source format");meta=m;rows=data;chooseDefaults()}catch(e){err=true;rows=undefined}finally{loading=false;render()}}
+async function load(){if(loading||rows||!record)return;observer?.disconnect();observer=null;loading=true;err=false;render();try{const [m,res]=await Promise.all([get("assets/department-branch-definitions.json"),fetch(new URL("data/pses-2024-branches/"+record.id+".json.gz",base))]);if(!res.ok)throw Error("Source unavailable");const bytes=await res.arrayBuffer();const view=new Uint8Array(bytes),gz=view[0]===31&&view[1]===139;if(gz&&typeof DecompressionStream!=="function")throw Error("Browser does not support gzip");const raw=gz?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);const data=JSON.parse(raw);if(!Array.isArray(data)||!data.every(r=>Array.isArray(r)&&r.length>=3+m.schema.length))throw Error("Unexpected source format");meta=m;rows=data;chooseDefaults()}catch(e){err=true;rows=undefined}finally{loading=false;render();if(rows&&location.hash==="#branch-results")root.scrollIntoView({block:"start"})}}
 window.addEventListener("hashchange",()=>{if(SECTION_IDS.includes(location.hash.slice(1)))load()});
 mount();render();get("assets/department-branch-index.json").then(d=>{record=d[slug];known=true;render()}).catch(()=>{known=true;root.replaceChildren(el("p",t("Branch coverage could not be checked. Reload the page to retry.","La couverture des données par direction n’a pas pu être vérifiée. Rechargez la page.")))});
 document.addEventListener("gce-department-coverage-updated",()=>{mount();render()});

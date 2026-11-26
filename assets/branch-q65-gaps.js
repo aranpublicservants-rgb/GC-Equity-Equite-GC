@@ -6,10 +6,11 @@ const base=new URL('../',document.currentScript.src),fr=()=>document.documentEle
 const el=(tag,text,parent)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(parent)parent.append(e);return e};
 const get=async p=>{const r=await fetch(new URL(p,base));if(!r.ok)throw Error('HTTP '+r.status);return r.json()};
 const nf=v=>v==null?t('Unavailable','Indisponible'):Number(v).toLocaleString(fr()?'fr-CA':'en-CA',{maximumFractionDigits:2});
-let data,index,all=[],group='',org='',page=0,loading=false,failed=false,observer;
+let data,index,all=[],group='',org='',min=0,higher='',page=0,loading=false,failed=false,observer;
 const pageSize=25;
 function labelGroup(g){return g.members.map(m=>fr()?m.fr:m.en).join(t(' and ',' et '))}
-function filtered(){return all.filter(x=>(!group||x.group===group)&&(!org||x.slug===org)).sort((a,b)=>Math.abs(b.gap)-Math.abs(a.gap)||a.slug.localeCompare(b.slug)||a.branch.localeCompare(b.branch)||a.group.localeCompare(b.group))}
+/* Minimum responses apply to both groups; an unpublished count never passes a minimum. Group 1 or 2 higher means a positive or negative gap. */
+function filtered(){return all.filter(x=>(!group||x.group===group)&&(!org||x.slug===org)&&(!min||(x.na!=null&&x.nb!=null&&x.na>=min&&x.nb>=min))&&(!higher||(higher==='1'?x.gap>0:x.gap<0))).sort((a,b)=>Math.abs(b.gap)-Math.abs(a.gap)||a.slug.localeCompare(b.slug)||a.branch.localeCompare(b.branch)||a.group.localeCompare(b.group))}
 function viewURL(x){const u=new URL(x.slug+'/',base);u.searchParams.set('lang',fr()?'fr':'en');u.searchParams.set('brorg',x.slug);u.searchParams.set('brq','Q65');u.searchParams.set('brpair',x.group);u.searchParams.set('brunit',x.branch);u.searchParams.set('brview','table');u.hash='branch-results';return u.href}
 function name(x){const o=index[x.slug],b=o.branches.find(b=>String(b.id)===x.branch);return {org:fr()?o.fr:o.en,branch:fr()?b.fr:b.en}}
 function exportCSV(rows){const names=['Organization','Branch','Group 1','Group 2','Group 1 yes (%)','Group 2 yes (%)','Group 1 response count','Group 2 response count','Gap (group 1 minus group 2, percentage points)','Survey year','Question','Official source','Exact view link'];
@@ -29,6 +30,8 @@ function render(){
  function select(id,label,items,value,change){const wrap=el('div',undefined,controls),l=el('label',label,wrap),s=el('select',undefined,wrap);l.htmlFor=s.id=id;s.style.cssText='display:block;width:100%;max-width:100%;padding:.55rem;font:inherit';for(const [v,txt] of items){const o=el('option',txt,s);o.value=v}s.value=value;s.onchange=()=>{change(s.value);page=0;results()}}
  select('q65-gap-group',t('Employee group comparison','Comparaison des groupes d’employés'),[['',t('All group pairs','Toutes les paires de groupes')],...data.groups.map(g=>[g.key,labelGroup(g)])],group,v=>group=v);
  select('q65-gap-organization',t('Department or agency','Ministère ou organisme'),[['',t('All indexed organizations','Tous les organismes indexés')],...Object.entries(data.organizations).sort((a,b)=>(fr()?a[1].fr:a[1].en).localeCompare(fr()?b[1].fr:b[1].en,fr()?'fr':'en')).map(([id,o])=>[id,fr()?o.fr:o.en])],org,v=>org=v);
+ select('q65-gap-min',t('Minimum responses in each group','Nombre minimal de réponses dans chaque groupe'),[['0',t('Any published result','Tout résultat publié')],...[20,50,100,500].map(n=>[String(n),t(nf(n)+' or more',nf(n)+' ou plus')])],String(min),v=>min=Number(v));
+ select('q65-gap-higher',t('Higher share answering yes','Proportion de oui la plus élevée'),[['',t('Either group','L’un ou l’autre groupe')],['1',t('Group 1','Groupe 1')],['2',t('Group 2','Groupe 2')]],higher,v=>higher=v);
  const download=el('button',t('Download filtered comparisons (CSV)','Télécharger les comparaisons filtrées (CSV)'),root);download.className='gcw-btn';download.type='button';download.style.margin='1rem 0';download.onclick=()=>exportCSV(filtered());
  const status=el('p','',root);status.id='q65-gap-status';status.setAttribute('role','status');const out=el('div',undefined,root);out.id='q65-gap-output';results()
 }
