@@ -1,0 +1,57 @@
+{
+  "asOf": "2026-11-25",
+  "basis": "Publisher responses, bounded downloads, exact PBO Git blob and reported HRINFO size checks; no original Drive equivalence inferred. Institutional context is separate from employee outcomes.",
+  "results": [
+    {
+      "id": "GC-0080",
+      "status": "archived-publisher-source",
+      "path": "data/open-canada-2026-11/pses-2024/HRINFO.csv.gz",
+      "bytes": 54352081,
+      "rows": 90045,
+      "sha256": "571941638b6f76e8281f23010c858c68f8873ba59bedb09175c8a8901716a52a",
+      "publisherUrl": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/HRINFO.csv",
+      "encoding": "windows-1252",
+      "note": "Publisher response compressed losslessly. Earlier Drive original not independently compared."
+    },
+    {
+      "id": "GC-0516",
+      "status": "archived-publisher-source",
+      "path": "data/public-source-archive-2026-11-24/fett-monthly-20260915.xlsx",
+      "bytes": 4703868,
+      "sha256": "42f16ff59c93de74417fc9e8230f7e9ba7d3bad542e201d9f70d95aa0f08e643",
+      "publisherUrl": "https://raw.githubusercontent.com/pbo-dpb/FETT--OSEF/main/20260915.xlsx"
+    },
+    {
+      "id": "GC-0435",
+      "status": "not-acquired",
+      "reason": "unexpected redirect host"
+    },
+    {
+      "id": "GC-0403",
+      "status": "not-acquired",
+      "reason": "not a CSV source"
+    },
+    {
+      "id": "GC-0404",
+      "status": "not-acquired",
+      "reason": "File is not a zip file"
+    },
+    {
+      "id": "GC-0405",
+      "status": "not-acquired",
+      "reason": "not a CSV source"
+    },
+    {
+      "id": "GC-0466",
+      "status": "publisher-link-resolved-context-only",
+      "publisherUrl": "https://open.canada.ca/data/dataset/d7aae979-e1e3-4017-a77b-b83bf9ae5f34/resource/4a496dbb-d881-48a1-af19-2aca36ae36c3/download/cusersmlittledocumentsles-resultats-du-sondage-de-lamop-de-la-puadr.csv",
+      "note": "2018 implementation surveys on access to web services. No employee equity outcome is established; do not use as an equity outcome dataset."
+    },
+    {
+      "id": "GC-0467",
+      "status": "publisher-link-resolved-context-only",
+      "publisherUrl": "https://open.canada.ca/data/dataset/d7aae979-e1e3-4017-a77b-b83bf9ae5f34/resource/de9b01c1-0d69-482b-980c-e1764d574080/download/pandu-status-for-open-portal.csv",
+      "note": "2018 implementation surveys on access to web services. No employee equity outcome is established; do not use as an equity outcome dataset."
+    }
+  ]
+}

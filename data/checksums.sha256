@@ -1,6 +1,6 @@
-a40351ae286686dab75287ecdebb99bf0b3c1d9ed5b1c938c242f6fd47760eff  assets/added-sources.json
-e486f7ae7d7616b78e58b2344220336a78fbade76844f2b86ab7cdf9ce26f30b  assets/assistant-catalogue.json
-0a6e746b16613d604c74222d56c26258879f298dc91c9c59779280fef724923d  assets/assistant-catalogue.json.gz
+781a0ae481fd368b2edcd141a946c3be48daab14f56eff9fba76fc03d5486f9d  assets/added-sources.json
+bfeab60ef0f28db5fd145e464a421147f2149a963ec014fbbcc43040c96613b0  assets/assistant-catalogue.json
+d8a9d4014a0c0c7cb988bee870ceaa53c8df2fd08251e5cc89fd2870ae075826  assets/assistant-catalogue.json.gz
 7b8a5b7c086306483cd13be9e3f9bf51db59d906fa22c769f9903519357c1e20  assets/data-coverage-audit.json
 b136381cd73a29ef8c0f8c1adfb6552c5ef499157c5efb800ba518dcd059ad92  assets/data-visuals.css
 2bcdaeaa80297c35cce3a95371fd961b1d1914d50bd496cc1c8e0b4d76808d7c  assets/data-visuals.js
@@ -266,7 +266,8 @@ d3fcf2721e72c147049ded58b3d9c5d1479eb4a11ef6887c329596e9dd767b75  data/open-cana
 6fab8aba7f205307d3f0ba9dcbbbc5c30ce0b72919e1ea7ff60d4fb1e11b8097  data/open-canada-2026-11/pses-2022-2023/large-files.json
 abdeaabd253ef4e5fa0656b29b1b9ff658c55d18a035dcecf7a9fea501453282  data/open-canada-2026-11/pses-2022-2023/pses2022-23-results-tables.xlsx
 3a8aa5b5f891e9da0d618afce10a32158d5e4b2e59d7c6a8a0cb26f794247505  data/open-canada-2026-11/pses-2022-2023/subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv.gz
-bb6323655e151cb2013adb4c4d0f596cb1c08a2ceda871d25e8374b27a23bf64  data/open-canada-2026-11/pses-2024/large-files.json
+1c3096f53525cfa057bb08ebc7f0a4efc0bfbdeb64769611aee3519f04590c39  data/open-canada-2026-11/pses-2024/HRINFO.csv.gz
+8ddadcda02fc34da9d19d4d5d8a09e55e981480c170ba3269e6b11d9f3773593  data/open-canada-2026-11/pses-2024/large-files.json
 b985c8a150bb31a342367d08c9f6e8233e68d8c692be1a826ad40c76107e30f8  data/open-canada-2026-11/pses-2024/pses2024-ee-results-tables.xlsx
 793ed82c2c8b4ee2b2e7bd09bf57b92cc2b78bb632b1f605a503d1679186a3cd  data/open-canada-2026-11/pses-2024/pses2024-supporting-documentation.xlsx
 114d0a238786cfa4fd0923c21aef069d802f6bcdeb71e8fc7d321649991b91a9  data/open-canada-2026-11/pses-2024/subset-1-sous-ensemble-1.csv.gz
@@ -541,9 +542,10 @@ a1f00a494bbf7b6570ed6029ff1f151a518ec4c29eb97523f092492dd9ecea51  data/public-so
 18e06d3dcab69d90cc770dc8f18d1fee2558dd1c39d6af31495863cc2174c2c8  data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-en.csv
 76619920e61743228d5c0bba1cc4393dd6f2e7f29b5347c161e72cb76e734e05  data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-fr.csv
 7fbb5efec549069c75a759d10e4a7f8fb607d70b3dbafff93d6db0e7bbd04c8b  data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv
+42f16ff59c93de74417fc9e8230f7e9ba7d3bad542e201d9f70d95aa0f08e643  data/public-source-archive-2026-11-24/fett-monthly-20260915.xlsx
 0367a8d8dde23613129043a50f3baf0fc599b109aa8cda790286a25f7991fce5  data/public-source-archive-2026-11-24/fett-publicdata.xlsx
 af58176d8d6bbbf99eadc8af1924778b0a0f19f0f6453e5f2927d4cb46b79c5f  data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx
-1ca9299de3f50c1103cb8ac0b40ac5db27d77388c0b4d7ace3c47fb5d8836401  data/public-source-archive-2026-11-24/manifest.json
+f03dfa866811669bf2c98c50095b99f7e49d374523ab764c2fc207735b46e943  data/public-source-archive-2026-11-24/manifest.json
 8beb6f36606017fcb3e77875bc41ec911693ca70f6bc84eaf1d2197fb62ee66e  data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx
 0fa627832828feaf1a6a15c276d6162cf6f9df6d36b913d362f8b1c6ef8ace04  data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv
 91e2a990e670bf6b77a5c99b09cdeb63f86e242719a67f89c7f183830e2538d4  data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv
@@ -554,7 +556,7 @@ fa418a834355dbaad096cabf1b7e96a6c2a39441df13e673bea65c0715e0f235  data/public-so
 5249c979ca26b83c42df82a090d82bc1905d678ec6c79ff8b97a3645734273be  data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv
 713eb6a18aac1b851bad4b77df393698d09cf5fee3ab07aa3776a2a0d84846e0  data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv
 510188c50020a52f2cac81f122fe2ad460a505939d426b53c8754fcd9d0fd3fc  data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv
-1c4b0f04402829a1454c11b5ae2766c9a5b8ab485a782b069fa4cb8e8f655738  data/public-source-register-2026-11-24.json
+daf79e0a76f5c6684daaecfeb6b1228831b21bed5054f9c1fb56a513f97447df  data/public-source-register-2026-11-24.json
 ed5defd4d91bd719605ca9134da7f1146bd77e3864f8926ae15df35429fe29f1  data/recourse-case-index-2026-11.json
 d7b843fbe94f3fcb03ef457fbf980044a293cdd386f33040387edfdf5cf7225f  data/restored/06890686-ef92-41f2-877b-d481bccef120.csv
 57af2f7ded83be1b9b0a8cdba3dd464710e5bf77e4d0ec7f5040050113882f5b  data/restored/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f.csv

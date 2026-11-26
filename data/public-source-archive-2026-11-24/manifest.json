@@ -12,6 +12,30 @@
       "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
     },
     {
+      "id": "GC-0004",
+      "path": "data/public-source-archive-2026-11-24/pses2011-dept.xls",
+      "bytes": 2476544,
+      "rows": 9085,
+      "gitBlob": "cb8e5873b870b76d6c9b49ea9d65d13ed8602909",
+      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0005",
+      "path": "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls",
+      "bytes": 1041408,
+      "rows": 4615,
+      "gitBlob": "b2b4a49df322bc2bd2951610cf40e8c07475eb68",
+      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0025",
+      "path": "data/public-source-archive-2026-11-24/pseas2017-supporting-documentation.xls",
+      "bytes": 339456,
+      "rows": 1258,
+      "gitBlob": "f582720c8e0bf5c374e8ff52f01071a191f3f5e3",
+      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
+    },
+    {
       "id": "GC-0295",
       "path": "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv",
       "bytes": 366950,
@@ -30,112 +54,6 @@
       "headerRows": 1,
       "gitBlob": "0d76b26d55b841dec4fac29b2efd953da606e138",
       "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
-    },
-    {
-      "id": "GC-0393",
-      "path": "data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv",
-      "bytes": 1299,
-      "rows": 10,
-      "encoding": "windows-1252",
-      "headerRows": 3,
-      "gitBlob": "687ddc4561baa95bc9233238d735f032b2d762b1",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
-    },
-    {
-      "id": "GC-0423",
-      "path": "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv",
-      "bytes": 851,
-      "rows": 11,
-      "encoding": "windows-1252",
-      "headerRows": 2,
-      "gitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
-    },
-    {
-      "id": "GC-0360",
-      "path": "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv",
-      "bytes": 708134,
-      "rows": 13966,
-      "gitBlob": "f7d050576e0a4328ecea37fb544eb7f67e239285",
-      "verification": "Drive original bytes, size and CSV row count matched; publisher byte equivalence not established",
-      "encoding": "utf-8",
-      "headerRows": 1
-    },
-    {
-      "id": "GC-0370",
-      "path": "data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx",
-      "bytes": 14343,
-      "rows": 37,
-      "gitBlob": "c354026ed5793fae3eee6386635f4e34321ddd1e",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
-    },
-    {
-      "id": "GC-0406",
-      "path": "data/public-source-archive-2026-11-24/csps-ee-representation-2017-2018.xlsx",
-      "bytes": 9897,
-      "rows": 4,
-      "gitBlob": "22a6b9e27235ce56d8cc49149a9e3311961df522",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
-    },
-    {
-      "id": "GC-0514",
-      "path": "data/public-source-archive-2026-11-24/fett-publicdata.xlsx",
-      "bytes": 2104357,
-      "rows": 18095,
-      "gitBlob": "7648f0f94ea986d03fe0009166284664d8b96e9a",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
-    },
-    {
-      "id": "GC-0515",
-      "path": "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx",
-      "bytes": 606291,
-      "rows": 2368,
-      "gitBlob": "ee549833d85870618fc3cfeb37db6e10c258b25b",
-      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
-    },
-    {
-      "id": "GC-0005",
-      "path": "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls",
-      "bytes": 1041408,
-      "rows": 4615,
-      "gitBlob": "b2b4a49df322bc2bd2951610cf40e8c07475eb68",
-      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
-    },
-    {
-      "id": "GC-0366",
-      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv",
-      "bytes": 1585668,
-      "rows": 4894,
-      "encoding": "utf-8",
-      "headerRows": 1,
-      "gitBlob": "abdc5a3a7d815f76b907f2040a329a2dbcaf4fef",
-      "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
-    },
-    {
-      "id": "GC-0367",
-      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv",
-      "bytes": 1910229,
-      "rows": 4894,
-      "encoding": "utf-8",
-      "headerRows": 1,
-      "gitBlob": "c357b92a0dbe184e813fdb633923a52e7ad1b441",
-      "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
-    },
-    {
-      "id": "GC-0004",
-      "path": "data/public-source-archive-2026-11-24/pses2011-dept.xls",
-      "bytes": 2476544,
-      "rows": 9085,
-      "gitBlob": "cb8e5873b870b76d6c9b49ea9d65d13ed8602909",
-      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
-    },
-    {
-      "id": "GC-0025",
-      "path": "data/public-source-archive-2026-11-24/pseas2017-supporting-documentation.xls",
-      "bytes": 339456,
-      "rows": 1258,
-      "gitBlob": "f582720c8e0bf5c374e8ff52f01071a191f3f5e3",
-      "verification": "Drive original raw bytes, reported byte count matched; workbook row count as supplied by inventory; publisher equivalence not established"
     },
     {
       "id": "GC-0358",
@@ -160,6 +78,16 @@
       "verification": "Drive original bytes, local CSV row and byte counts, SHA-256 and Git blob matched; publisher equivalence not established; row count includes one trailing empty record"
     },
     {
+      "id": "GC-0360",
+      "path": "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv",
+      "bytes": 708134,
+      "rows": 13966,
+      "gitBlob": "f7d050576e0a4328ecea37fb544eb7f67e239285",
+      "verification": "Drive original bytes, size and CSV row count matched; publisher byte equivalence not established",
+      "encoding": "utf-8",
+      "headerRows": 1
+    },
+    {
       "id": "GC-0361",
       "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv",
       "bytes": 2992912,
@@ -169,6 +97,88 @@
       "gitBlob": "81046fee2bf586b1b7f49c760a4608eaba66e722",
       "sha256": "510188c50020a52f2cac81f122fe2ad460a505939d426b53c8754fcd9d0fd3fc",
       "verification": "Drive original bytes, local CSV row and byte counts, SHA-256 and Git blob matched; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0366",
+      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv",
+      "bytes": 1585668,
+      "rows": 4894,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "abdc5a3a7d815f76b907f2040a329a2dbcaf4fef",
+      "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0367",
+      "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv",
+      "bytes": 1910229,
+      "rows": 4894,
+      "encoding": "utf-8",
+      "headerRows": 1,
+      "gitBlob": "c357b92a0dbe184e813fdb633923a52e7ad1b441",
+      "verification": "Drive original raw bytes; local byte count, CSV row count and Git blob SHA matched; publisher equivalence not established"
+    },
+    {
+      "id": "GC-0370",
+      "path": "data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx",
+      "bytes": 14343,
+      "rows": 37,
+      "gitBlob": "c354026ed5793fae3eee6386635f4e34321ddd1e",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0393",
+      "path": "data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv",
+      "bytes": 1299,
+      "rows": 10,
+      "encoding": "windows-1252",
+      "headerRows": 3,
+      "gitBlob": "687ddc4561baa95bc9233238d735f032b2d762b1",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0406",
+      "path": "data/public-source-archive-2026-11-24/csps-ee-representation-2017-2018.xlsx",
+      "bytes": 9897,
+      "rows": 4,
+      "gitBlob": "22a6b9e27235ce56d8cc49149a9e3311961df522",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0423",
+      "path": "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv",
+      "bytes": 851,
+      "rows": 11,
+      "encoding": "windows-1252",
+      "headerRows": 2,
+      "gitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established"
+    },
+    {
+      "id": "GC-0514",
+      "path": "data/public-source-archive-2026-11-24/fett-publicdata.xlsx",
+      "bytes": 2104357,
+      "rows": 18095,
+      "gitBlob": "7648f0f94ea986d03fe0009166284664d8b96e9a",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0515",
+      "path": "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx",
+      "bytes": 606291,
+      "rows": 2368,
+      "gitBlob": "ee549833d85870618fc3cfeb37db6e10c258b25b",
+      "verification": "Drive original bytes, reported size matched; publisher byte equivalence not established; row count as supplied by inventory"
+    },
+    {
+      "id": "GC-0516",
+      "path": "data/public-source-archive-2026-11-24/fett-monthly-20260915.xlsx",
+      "bytes": 4703868,
+      "sha256": "42f16ff59c93de74417fc9e8230f7e9ba7d3bad542e201d9f70d95aa0f08e643",
+      "gitBlob": "57a78934316a49573afa37f5680fe776c64f0ec2",
+      "publisherUrl": "https://raw.githubusercontent.com/pbo-dpb/FETT--OSEF/main/20260915.xlsx",
+      "verification": "Publisher Git blob and byte count matched exactly; original publisher workbook preserved.",
+      "reportedRows": 44409
     }
   ]
 }
