@@ -16,8 +16,24 @@ def manifest():
                    for p in sorted(files))
 
 
+def assets_manifest():
+    """Refresh only the assets subtree in a sparse checkout; preserve every other row."""
+    rows = {}
+    for line in OUT.read_text().splitlines():
+        if line.strip():
+            digest, name = line.split(None, 1)
+            if not name.startswith('assets/'):
+                rows[name] = digest
+    for p in (ROOT / 'assets').rglob('*'):
+        if p.is_file():
+            rows[p.relative_to(ROOT).as_posix()] = hashlib.sha256(p.read_bytes()).hexdigest()
+    return ''.join(rows[name]+'  '+name+'\n' for name in sorted(rows, key=Path))
+
+
 if __name__ == '__main__':
-    contents = manifest()
+    if '--assets-only' in sys.argv and '--check' in sys.argv:
+        raise SystemExit('Use full checkout for checksum verification.')
+    contents = assets_manifest() if '--assets-only' in sys.argv else manifest()
     if '--check' in sys.argv:
         old = OUT.read_text().splitlines()
         new = contents.splitlines()
