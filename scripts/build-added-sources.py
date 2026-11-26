@@ -202,6 +202,9 @@ listed = {t[l]['path'] for t in tables for l in ('en', 'fr')} | {rel(ALIGNED / '
 # Folders that carry their own manifest.json (split parts, supporting documents) are described there.
 manifest_dirs = {str(Path(f['path']).parent) for f in files if f['path'].endswith('/manifest.json')}
 for f in files:
+    # Excluded population originals remain in the audit inventory, not the public packages.
+    if any(segment in f['path'] for segment in ('/esdc-wfa-benchmarks/', '/harassment-violence-occurrences/')):
+        continue
     if str(Path(f['path']).parent) in manifest_dirs:
         continue
     if any(f['path'] in h['files'] for h in held_back):
