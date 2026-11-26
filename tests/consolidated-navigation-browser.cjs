@@ -135,6 +135,21 @@ async function cellText(box,rowLocator,label){
  const context=await browser.newContext(),page=await context.newPage();await page.goto(base+'accessibility-standards-canada/?lang=en',{waitUntil:'domcontentloaded'});await page.locator('#branch-results').getByText(/No separate branch-level extract/).waitFor({timeout:30000});
  await page.goto(base+'website-directory/',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>Number(document.getElementById('route-count').textContent.split(' ')[0])>300);await page.locator('#route-query').fill('duty to accommodate');assert.ok(await page.locator('#route-list a').count()>0);
  assert.ok(!(await page.locator('main').innerText()).includes('—'),'no em dash in the directory');
+ // The master directory exposes all categories, retains French on internal links and opens the chosen topic.
+ const directoryRows=read('website-directory/routes.json');
+ assert.ok(directoryRows.every(r=>r.fr&&r.en),'every directory route has both language labels');
+ await page.locator('#route-query').fill('');
+ await page.locator('#route-group').selectOption('comparisons');
+ assert.ok(await page.locator('#route-list a').count()>0,'comparison category');
+ await page.locator('#lang').click();
+ assert.equal(await page.locator('html').getAttribute('lang'),'fr');
+ const branchEntry=page.locator('a[href*="orgTopic=branches"]').first();
+ assert.equal(new URL(await branchEntry.getAttribute('href')).searchParams.get('lang'),'fr');
+ await branchEntry.click();
+ await page.waitForURL(u=>u.searchParams.get('orgTopic')==='branches');
+ await page.waitForFunction(()=>document.querySelector('#org-picker').options.length>1);
+ assert.equal(await page.locator('#org-topic-picker').inputValue(),'branches');
+ await Promise.all([page.waitForURL(u=>u.pathname==='/isc/'&&u.hash==='#unites'),page.locator('#org-picker').selectOption('Indigenous Services Canada')]);
  await page.goto(base+'youth-and-students/',{waitUntil:'domcontentloaded'});assert.ok(await page.locator('a[href="../fswep-browser.html"]').count());
  await context.close();console.log('PASS: 66 source partitions, default comparison on open, heatmap chart on open, exact views brought into view, Q65 minimum-response and higher-group filters, exact and suppressed branch cells in three departments, English/French, desktop/mobile, missing coverage, directory and youth links');
  }finally{await browser.close();server.close()}})().catch(e=>{console.error(e);server.close();process.exit(1)});
