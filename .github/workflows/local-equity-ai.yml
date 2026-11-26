@@ -29,6 +29,8 @@ jobs:
           ref: main
           sparse-checkout: |
             assets
+            data/checksums.sha256
+            scripts/update-data-checksums.py
             sitemap.xml
             *.html
             data/department-profiles
@@ -49,7 +51,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/department-key-findings.json assets/department-key-findings/
+          python3 scripts/update-data-checksums.py --assets-only
+          git add assets/department-key-findings.json assets/department-key-findings/ data/checksums.sha256
           if ! git diff --cached --quiet; then
             git commit -m "Refresh verified departmental findings"
             git pull --rebase origin main
@@ -64,7 +67,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add assets/local-search-pages.json
+          python3 scripts/update-data-checksums.py --assets-only
+          git add assets/local-search-pages.json data/checksums.sha256
           if ! git diff --cached --quiet; then
             git commit -m "Refresh public page search index"
             git pull --rebase origin main
@@ -83,6 +87,8 @@ jobs:
           ref: main
           sparse-checkout: |
             assets
+            data/checksums.sha256
+            scripts/update-data-checksums.py
             scripts/build-local-equity-ai.mjs
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
@@ -104,7 +110,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/semantic-vectors.json
+          python3 scripts/update-data-checksums.py --assets-only
+          git add assets/semantic-vectors.json data/checksums.sha256
           if ! git diff --cached --quiet; then
             git commit -m "Refresh optional multilingual neural search vectors"
             git pull --rebase origin main
