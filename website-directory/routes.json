@@ -991,8 +991,8 @@
   },
   {
     "path": "./",
-    "en": ".",
-    "fr": null,
+    "en": "GC Equity home",
+    "fr": "Accueil Équité-GC",
     "group": "other"
   },
   {
@@ -1077,7 +1077,7 @@
     "path": "isc/equity-explorer/",
     "en": "equity explorer",
     "fr": null,
-    "group": "other"
+    "group": "departments"
   },
   {
     "path": "isc/",
@@ -1089,7 +1089,7 @@
     "path": "isc/racialized-employees/",
     "en": "racialized employees",
     "fr": null,
-    "group": "other"
+    "group": "departments"
   },
   {
     "path": "jacques-cartier-and-champlain-bridges/",
@@ -1999,9 +1999,9 @@
   },
   {
     "path": "youth/",
-    "en": "Youth",
-    "fr": "Jeunesse",
-    "group": "departments"
+    "en": "Youth (previous address)",
+    "fr": "Jeunesse (ancienne adresse)",
+    "group": "other"
   },
   {
     "path": "systemic-change/department-evidence-explorer/?lens=workforce",

@@ -51,7 +51,7 @@ const getKey=s=>namesFix[norm(s)]||norm(s);
 const load=p=>fetch(p,{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(p+': '+r.status);return r.json()});
 let models=[],rows=[],extras=[],entries=new Map(),byKey=new Map(),visible=[],selected=null;
 function add(name,langName,flag,url,extraMeta){
- if(!name||['Public Service','Micro-organizations combined','Total','Public Service (Canada)'].includes(name))return;
+ if(!name||['Public Service','Micro-organizations combined','Total','Public Service (Canada)','Youth'].includes(name))return;
  const key=getKey(name);let rec=byKey.get(key);
  if(!rec){rec={name,fr:langName||'',official:false,flags:{},links:{},meta:{}};byKey.set(key,rec);extras.push(rec);}
  if(langName&&!rec.fr)rec.fr=langName;
@@ -118,7 +118,7 @@ async function init(){
  try{
   const [m,d,c,s]=await Promise.all([load('assets/workspace-data.json'),load('assets/federal-organizations-2026-10-15.json'),load('data/call-to-action-comparisons.json'),load('data/snps-2025-by-organization.json')]);
   models=[m,d,c,s];
-  for(const name of d.organizations){const rec={name,fr:m.DEPT_FR?.[name]||'',official:true,flags:{},links:{},meta:{}};rows.push(rec);byKey.set(getKey(name),rec);}
+  for(const name of d.organizations){if(name==='Youth')continue;const rec={name,fr:m.DEPT_FR?.[name]||'',official:true,flags:{},links:{},meta:{}};rows.push(rec);byKey.set(getKey(name),rec);}
   m.DEPTS.forEach(x=>add(x[0],m.DEPT_FR?.[x[0]],'rep',urlFor('rep',m)));
   Object.keys(m.PSES_DEPT||{}).forEach(name=>add(name,m.DEPT_FR?.[name],'pses',urlFor('pses',m)));
   for(const item of c.organizations||[])add(item.name_en,item.name_fr,'cta',urlFor('cta',m,item));

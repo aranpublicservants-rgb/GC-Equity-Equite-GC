@@ -1,0 +1,32 @@
+name: Refresh master website directory
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'scripts/build-website-directory.py', '.github/workflows/refresh-website-directory.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: gc-equity-directory
+  cancel-in-progress: false
+jobs:
+  directory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update direct links without replacing other work
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/build-website-directory.py
+            git add website-directory/routes.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Refresh complete website directory'
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
