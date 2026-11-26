@@ -1,0 +1,30 @@
+name: Consolidate equity sites
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/consolidate-equity-sites.yml'
+      - 'scripts/consolidate-equity-sites.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: consolidate-equity-sites
+  cancel-in-progress: false
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Copy complete existing public portals and preserve their assets
+        run: python scripts/consolidate-equity-sites.py
+      - name: Commit consolidated pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- accessibility-inclusion isc/equity-explorer isc/racialized-employees recourse racialized-executives website-directory resource-library index.html companion-sites/index.html isc/index.html sitemap.xml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Consolidate complete equity portals and datasets within GC Equity'
+          git push origin HEAD:main
