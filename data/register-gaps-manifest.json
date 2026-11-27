@@ -3,6 +3,33 @@
  "register": "data/public-source-register-2026-11-24.json",
  "entries": [
   {
+   "id": "GC-0001",
+   "name": "PSES 2011",
+   "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/621e1d95-7287-404a-9eac-b57c6bc92437/download/2011_results-resultats.csv",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/621e1d95-7287-404a-9eac-b57c6bc92437/download/2011_results-resultats.csv",
+     "title": "PSES 2011",
+     "bytes": 90285372,
+     "sha256": "39d9395b181f526c944a9978d536f7c48ae461d56600b6109d13772e6ec457e7",
+     "retrieved": "2026-11-27T10:51:06Z",
+     "rows": 1069188,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-f4206e48213e4cf0",
+     "parts": [
+      {
+       "file": "2011_results-resultats-001.csv.gz",
+       "rows": 1069188,
+       "bytes": 14876099,
+       "sha256": "4ea91be7d6d760d8e77dd24460086879ceaa0ad89b2f8624444e267ddf3a8af4"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
    "id": "GC-0002",
    "name": "PSES 2008",
    "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/b9d7675c-9450-4cb9-9c04-77213fc836af/download/2008_results-resultats.csv",
@@ -15,6 +42,87 @@
      "retrieved": "2026-11-27T09:42:19Z",
      "rows": 467241,
      "path": "data/register-gaps-2026-11/u-60de0d1d997e7577/2008_results-resultats.csv.gz",
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0010",
+   "name": "PSES 2014",
+   "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats.csv",
+     "title": "PSES 2014",
+     "bytes": 140283325,
+     "sha256": "beff4ed4bc17e0fa59b45415e067065b13e924c3f2fe7e8c3504d9fd2e730335",
+     "retrieved": "2026-11-27T10:51:39Z",
+     "rows": 1509724,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-a62010940867c1b2",
+     "parts": [
+      {
+       "file": "2014-results-resultats-001.csv.gz",
+       "rows": 1509724,
+       "bytes": 23206424,
+       "sha256": "ba9d6ea049fa290e27922feee0e59e878273c3e54d7cfd88f408c5c81a129189"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0011",
+   "name": "PSES 2014",
+   "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-demo.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-demo.csv",
+     "title": "PSES 2014",
+     "bytes": 456682474,
+     "sha256": "cd047c2d9b82c11a34c9fa4d17c7e34db70c168f84dc78f03c3a66f88d781bd8",
+     "retrieved": "2026-11-27T10:51:57Z",
+     "rows": 1022817,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-23d686adcc6dd13a",
+     "parts": [
+      {
+       "file": "2014-results-resultats-demo-001.csv.gz",
+       "rows": 1022817,
+       "bytes": 26777416,
+       "sha256": "043780ee668add14be8f3f728d0b7f368f6bf3346c42852438be2c4aea76ecae"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0012",
+   "name": "PSES 2014",
+   "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-group.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-group.csv",
+     "title": "PSES 2014",
+     "bytes": 186699275,
+     "sha256": "792700714e347673e55e0ccb1087a4838cd50664a0794df27effe52d6b4a3031",
+     "retrieved": "2026-11-27T10:52:23Z",
+     "rows": 486907,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-1482696fddf9dd8f",
+     "parts": [
+      {
+       "file": "2014-results-resultats-group-001.csv.gz",
+       "rows": 486907,
+       "bytes": 11818249,
+       "sha256": "d151a4a07066d99fdb07c78120f0b0449c370e24f6a0f027e4c74c2b5fad9e98"
+      }
+     ],
      "stored": true
     }
    ],
