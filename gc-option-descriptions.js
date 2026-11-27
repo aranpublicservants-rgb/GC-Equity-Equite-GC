@@ -50,7 +50,7 @@ function codeLabel(s,o){
 function annotate(s){
  if(!s.isConnected||s.multiple||s.size>1)return;
  const question=isQuestion(s);
- for(const o of s.options){const text=question?codeLabel(s,o):optionText(o);if(question&&o.dataset.gceQuestionCode&&optionText(o)!==text)o.textContent=text;if(text&&o.title!==text)o.title=text;}
+ for(const o of s.options){const text=question?codeLabel(s,o):optionText(o);if(question&&o.dataset.gceQuestionCode&&optionText(o)!==text){const value=o.value;o.value=value;o.textContent=text;}if(text&&o.title!==text)o.title=text;}
  if(!question||s.closest('.gce-question-reader'))return;
  let m=managed.get(s);
  if(!m){
