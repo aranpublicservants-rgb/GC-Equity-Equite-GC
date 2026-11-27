@@ -86,3 +86,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 /* Lazy department-specific employee survey explorer. Original evidence sections remain intact. */
 (()=>{const current=document.currentScript;if(!current?.src)return;const init=()=>{if(!document.querySelector('#experience,#experience-fr')||document.querySelector('script[data-gce-pses-explorer]'))return;const script=document.createElement('script');script.src=new URL('assets/pses-explorer.js?v=20261127-1',current.src).href;script.dataset.gcePsesExplorer='1';script.defer=true;document.head.append(script);};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();})();
+
+/* Readable native options and full keyboard/touch question menus, plus consolidated staffing evidence. */
+(()=>{const current=document.currentScript;if(!current?.src)return;for(const file of ['gc-option-descriptions.js','gc-staffing-explorer.js']){if(document.querySelector('script[data-gce-extension="'+file+'"]'))continue;const script=document.createElement('script');script.src=new URL(file+'?v=20261127-1',current.src).href;script.dataset.gceExtension=file;script.defer=true;document.head.append(script);}})();
