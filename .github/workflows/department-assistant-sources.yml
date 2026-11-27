@@ -1,0 +1,23 @@
+name: Department assistants against original survey rows
+# Confirms every department guide and key finding against the original PSES 2024 rows.
+on:
+  push:
+    branches: [main]
+    paths: ['data/department-profiles/**', 'assets/department-profile-index.json', 'assets/department-key-findings/**', 'assets/department-pages.json', 'data/pses-large-manifest.json', 'scripts/check-department-assistants.py', '.github/workflows/department-assistant-sources.yml']
+  schedule:
+    - cron: '23 9 * * 3'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: pses-data
+          path: pses-data
+          sparse-checkout: pses/pses-2024/EEINFODV
+      - run: python3 scripts/check-department-assistants.py pses-data/pses/pses-2024/EEINFODV

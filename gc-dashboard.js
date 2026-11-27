@@ -10,11 +10,13 @@ const escape=s=>String(s===null||s===undefined?'':s).replace(/[&<>"']/g,c=>({'&'
 const number=v=>v===null||v===undefined||v===''||!Number.isFinite(Number(v))?null:Number(v);
 const N=v=>number(v)===null?L('Not published','Non publié'):Number(v).toLocaleString(lang()?'fr-CA':'en-CA',{maximumFractionDigits:2});
 const P=v=>number(v)===null?L('Not published','Non publié'):Number(v).toLocaleString(lang()?'fr-CA':'en-CA',{maximumFractionDigits:2})+(lang()?' %':'%');
-const rawNorm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');
+// Organization names are compared thousands of times while tables load; cache each normalized form.
+const rawNormCache=new Map();
+const rawNorm=s=>{const key=String(s||'');let v=rawNormCache.get(key);if(v===undefined){v=key.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'').replace(/civilianstaffonly|publicserviceemployees/g,'');if(rawNormCache.size<20000)rawNormCache.set(key,v);}return v;};
 const organizationAliases=new Map();
 const departmentLinkAliases={"ircc":"immigration-refugees-and-citizenship-canada","cse":"communications-security-establishment","tbs":"treasury-board-of-canada-secretariat","psc":"public-service-commission-of-canada","cbsa":"canada-border-services-agency","phac":"public-health-agency-of-canada","gac":"global-affairs-canada","pspc":"public-services-and-procurement-canada","vac":"veterans-affairs-canada","pco":"privy-council-office","statcan":"statistics-canada","eccc":"environment-and-climate-change-canada","nrcan":"natural-resources-canada","pch":"canadian-heritage","arc":"cra","sac":"isc","mpo":"dfo","edsc":"esdc","mdn":"dnd","cst":"communications-security-establishment","sct":"treasury-board-of-canada-secretariat","cfp":"public-service-commission-of-canada","asfc":"canada-border-services-agency","grc":"rcmp","aspc":"public-health-agency-of-canada","amc":"global-affairs-canada","spac":"public-services-and-procurement-canada","acc":"veterans-affairs-canada","bcp":"privy-council-office"};
 const departmentLinkID=value=>departmentLinkAliases[String(value||'').toLowerCase()]||String(value||'').toLowerCase();
-const norm=s=>organizationAliases.get(rawNorm(s))||rawNorm(s);
+const norm=s=>{const r=rawNorm(s);return organizationAliases.get(r)||r;};
 window.GCEOrganizationKey=norm;
 const link=(href,label)=>'<a href="'+escape(href)+'"'+(/^https?:/.test(href)?' target="_blank" rel="noopener noreferrer"':'')+'>'+escape(label)+'</a>';
 const groups=[['w','Women','Femmes','women','woman'],['i','Indigenous employees','Employés autochtones','indigenous_peoples','ind'],['d','Employees with disabilities','Employés en situation de handicap','persons_with_disabilities','pwd'],['v','Racialized employees','Employés racisés','members_of_visible_minorities','rac'],['b','Black employees','Employés noirs',null,'black']];

@@ -67,7 +67,7 @@ data.history=[
 const docs=[];
 function add(d){d.id='s'+docs.length;docs.push(d);}
 const sections=[...explorer.matchAll(/<section\b[^>]*id="view-([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)];
-for(const [,id,html] of sections){const heading=html.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/);if(!heading)continue;const translated=html.match(/<h[1-4][^>]*data-fr="([^"]+)"/);add({site:'GC Equity',kind:'section',en:strip(heading[1]),fr:strip(translated?.[1]||heading[1]),text:strip(html).slice(0,1100),textFr:[...html.matchAll(/data-fr="([^"]+)"/g)].map(m=>strip(m[1])).join(' ').slice(0,1100),url:'explorer.html#'+id});}
+for(const [,id,html] of sections){const heading=html.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/);if(!heading)continue;const translated=heading[0].match(/data-fr="([^"]+)"/);add({site:'GC Equity',kind:'section',en:strip(heading[1]),fr:strip(translated?.[1]||heading[1]),text:strip(html).slice(0,1100),textFr:[...html.matchAll(/data-fr="([^"]+)"/g)].map(m=>strip(m[1])).join(' ').slice(0,1100),url:'explorer.html#'+id});}
 const women=read('women-femmes/index.html');
 for(const [,id,html] of women.matchAll(/<section\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)){const title=html.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/);if(title)add({site:'Women / Femmes',kind:'section',en:strip(title[1]),fr:strip(title[1]),text:strip(html).slice(0,1300),url:'women-femmes/index.html#'+id});}
 const branchMeta=JSON.parse(explorer.match(/<script type="application\/json" id="eq-branch-meta">([\s\S]*?)<\/script>/)[1]);
@@ -85,7 +85,7 @@ for(const [repo,label] of repos){const dir=path.join(relatedRoot,repo);if(!fs.ex
  data.related.push({repo,label,url,commit});
  add({site:label,kind:'site',en:strip(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||label),fr:label,text:([...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>strip(m[1])).filter(t=>t.length>70&&!/javascript|cookie/i.test(t)).slice(0,6).join(' ')||strip(html)).slice(0,1700),url});
  const blocks=[...html.matchAll(/<(section|article)\b([^>]*)>([\s\S]*?)<\/\1>/gi)];
- for(const [,tag,attrs,body] of blocks){const id=attrs.match(/\bid="([^"]+)"/)?.[1];const h=body.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/);if(!h||!id)continue;const hfr=body.match(/<h[1-4][^>]*data-fr="([^"]+)"/);const text=strip(body);if(text.length<40)continue;add({site:label,kind:'section',en:strip(h[1]),fr:strip(hfr?.[1]||h[1]),text:text.slice(0,1300),textFr:[...body.matchAll(/data-fr="([^"]+)"/g)].map(m=>strip(m[1])).join(' ').slice(0,1300),url:url+'#'+id});}
+ for(const [,tag,attrs,body] of blocks){const id=attrs.match(/\bid="([^"]+)"/)?.[1];const h=body.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/);if(!h||!id)continue;const hfr=h[0].match(/data-fr="([^"]+)"/);const text=strip(body);if(text.length<40)continue;add({site:label,kind:'section',en:strip(h[1]),fr:strip(hfr?.[1]||h[1]),text:text.slice(0,1300),textFr:[...body.matchAll(/data-fr="([^"]+)"/g)].map(m=>strip(m[1])).join(' ').slice(0,1300),url:url+'#'+id});}
  if(repo.includes('History')){for(const e of literal(html,'ENTRIES')){if(!e.src?.url)continue;add({site:label,kind:'history',en:e.y+' · '+e.t.en,fr:e.y+' · '+e.t.fr,text:e.s?.en||'',textFr:e.s?.fr||'',url:url+'#e-'+e.id,source:e.src.url});}}
 }
 // Pages built from their own data files. They are added last so the identifiers of earlier entries do not change.

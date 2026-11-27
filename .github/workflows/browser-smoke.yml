@@ -298,6 +298,8 @@ jobs:
         run: node tests/where-data-agree-guide-browser.cjs
       - name: Check department pages in English and French, desktop and mobile
         run: node tests/department-audit-browser.cjs
+      - name: Briefing notes on organization pages
+        run: node tests/department-briefing-browser.cjs
       - name: Save preview images
         if: always()
         uses: actions/upload-artifact@v4

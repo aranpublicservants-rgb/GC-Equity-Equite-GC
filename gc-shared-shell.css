@@ -15,3 +15,5 @@ html[data-theme=contrast] .gce-global-shell,html.high-contrast .gce-global-shell
 
 /* Long identifiers such as checksums and URLs wrap instead of widening the page on phones. */
 main p,main li,main dd,main figcaption{overflow-wrap:break-word}
+
+.gce-source-date{font-size:.92em;opacity:.85}

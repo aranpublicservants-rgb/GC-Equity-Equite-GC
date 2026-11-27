@@ -243,3 +243,4 @@ subprocess.run(["python3","scripts/build-data-coverage.py","--check"],cwd=ROOT,c
 subprocess.run(["python3","scripts/check-internal-links.py"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/check-design-standard.py"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/apply-shared-shell.py","--check"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-bilingual.py"],cwd=ROOT,check=True)

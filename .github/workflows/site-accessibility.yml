@@ -1,0 +1,31 @@
+name: Site-wide accessibility check
+# axe-core WCAG 2.1 A and AA rules on every published page: English on a desktop and
+# French on a phone, plus horizontal overflow. Free GitHub Actions only.
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', '**.css', 'gc-shared-shell.js', 'tests/site-accessibility-browser.cjs', '.github/workflows/site-accessibility.yml']
+  schedule:
+    - cron: '7 8 * * 4'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+      - run: node tests/site-accessibility-browser.cjs a11y-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: accessibility-report
+          path: a11y-report.json
+          retention-days: 14

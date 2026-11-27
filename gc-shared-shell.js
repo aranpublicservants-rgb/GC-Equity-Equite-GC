@@ -42,6 +42,28 @@ function mount(){
  new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
  window.addEventListener('hashchange',refresh);
 }
+// Source lines under tables: show the date modified recorded for the official source
+// (data/source-dates.json, refreshed by the weekly source check).
+let sourceDates=null;
+function annotateSources(root){
+ if(!sourceDates)return;
+ root.querySelectorAll('.source a[href], .source-line a[href], .factsource a[href], .smallsource a[href]').forEach(a=>{
+  if(a.dataset.gceDated)return;const key=a.href.split('#')[0].replace(/\/$/,'');const date=sourceDates[key];a.dataset.gceDated='1';if(!date)return;
+  const s=document.createElement('span');s.className='gce-source-date';s.dataset.gceDate=date;
+  const set=()=>{s.textContent=fr()?' (date de modification à la source : '+date+')':' (date modified at source: '+date+')';};set();
+  new MutationObserver(set).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});a.after(s);});
+}
+let datesRequested=false;
+function loadSourceDates(){
+ if(datesRequested)return;
+ if(!document.querySelector('.source a[href], .source-line a[href], .factsource a[href], .smallsource a[href]'))return;
+ datesRequested=true;
+ fetch(new URL('data/source-dates.json',base)).then(r=>r.ok?r.json():null).then(d=>{if(!d)return;sourceDates={};for(const x of d.sources||[])if(x.url&&x.checked)sourceDates[x.url.replace(/\/$/,'')]=x.checked;annotateSources(document);
+  new MutationObserver(m=>{for(const r of m)for(const n of r.addedNodes)if(n.nodeType===1)annotateSources(n);}).observe(document.body,{childList:true,subtree:true});}).catch(()=>{});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(loadSourceDates,0),{once:true});else setTimeout(loadSourceDates,0);
+let sourceWatch=new MutationObserver(()=>{if(!sourceDates&&document.querySelector('.source a[href]')){sourceWatch.disconnect();loadSourceDates();}});
+if(document.documentElement)sourceWatch.observe(document.documentElement,{childList:true,subtree:true});
 // Carry the chosen organization and employee group to the tools that accept them.
 const CARRY=/(?:^|\/)(?:index\.html|where-data-agree\.html)?$/;
 function carry(event){

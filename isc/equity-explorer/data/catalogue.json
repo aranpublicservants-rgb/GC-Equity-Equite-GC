@@ -1287,7 +1287,7 @@
     {
       "id": "source-a44e4afdbd2f",
       "en": "2023 Staffing and Non-Partisanship Survey · List of departments",
-      "fr": "List of departments",
+      "fr": "Sondage sur la dotation et l’impartialité politique de 2023 · Liste des organismes",
       "topic": "surveys",
       "source": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/dca15e16-3a29-4fc6-84e7-73032062a239/download/cfppsc_snps15.csv",
       "sourceFile": "data/restored/dca15e16-3a29-4fc6-84e7-73032062a239.csv",
@@ -1308,7 +1308,7 @@
     {
       "id": "source-07a54719f946",
       "en": "2023 Staffing and Non-Partisanship Survey · Response profile data",
-      "fr": "Response profile data",
+      "fr": "Sondage sur la dotation et l’impartialité politique de 2023 · Profil des répondants",
       "topic": "surveys",
       "source": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f/download/cfppsc_snps13.csv",
       "sourceFile": "data/restored/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f.csv",
@@ -1899,7 +1899,7 @@
     {
       "id": "source-26da59f4a502",
       "en": "2025 Staffing and Non-Partisanship Survey · List of departments",
-      "fr": "List of departments",
+      "fr": "Sondage sur la dotation et l’impartialité politique de 2025 · Liste des organismes",
       "topic": "surveys",
       "source": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/408590d0-05dd-4467-bc23-b425f9681e3f/download/cfppsc_snps15-1.csv",
       "sourceFile": "data/restored/408590d0-05dd-4467-bc23-b425f9681e3f.csv",
@@ -1921,7 +1921,7 @@
     {
       "id": "source-b0688b3a3b0a",
       "en": "2025 Staffing and Non-Partisanship Survey · Response profile data",
-      "fr": "Response profile data",
+      "fr": "Sondage sur la dotation et l’impartialité politique de 2025 · Profil des répondants",
       "topic": "surveys",
       "source": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/7725a05d-6c06-486e-b707-d845fef9a688/download/cfppsc_snps13-1.csv",
       "sourceFile": "data/restored/7725a05d-6c06-486e-b707-d845fef9a688.csv",
