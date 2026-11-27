@@ -5,6 +5,16 @@ name: Fetch public source register gaps
 # replaces outside that folder. Free GitHub Actions only.
 on:
   workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Most entries to take in this run (0 = all still missing)'
+        default: '25'
+      max_bytes:
+        description: 'Skip entries larger than this many bytes (0 = no limit)'
+        default: '0'
+      ids:
+        description: 'Only these register entries, comma-separated (optional)'
+        default: ''
 permissions:
   contents: write
 concurrency:
@@ -22,7 +32,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download, store and split
-        run: python scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps"
+        run: python scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}"
       - name: Publish large parts to the pses-data branch
         run: |
           set -e
@@ -36,7 +46,7 @@ jobs:
             cp -r "$RUNNER_TEMP/gaps/branch/register-gaps/." register-gaps/
             git add register-gaps
             git commit -m "Add split copies of large public source register files" || echo "nothing new"
-            git push origin pses-data
+            for i in 1 2 3; do git push origin pses-data && break; git pull --rebase origin pses-data; done
           fi
       - name: Record copies and refresh status on main
         run: |
@@ -49,5 +59,4 @@ jobs:
           git add data/register-gaps-2026-11 data/register-gaps-manifest.json data/source-register-status.json data-coverage.html data/checksums.sha256
           if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
           git commit -m "Add copies of public source register entries and refresh register status"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done

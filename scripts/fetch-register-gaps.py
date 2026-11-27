@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Download public source register entries that have no copy in this repository.
 
-Usage: fetch-register-gaps.py <work directory> [--plan]
+Usage: fetch-register-gaps.py <work directory> [--plan] [--limit N] [--max-bytes B] [--ids GC-0001,GC-0002]
+  --limit N      take at most N entries in this run (smaller runs finish within the
+                 GitHub time limit; later runs continue with what is still missing)
+  --max-bytes B  skip entries whose register size is larger than B bytes
+  --ids          take only the listed register entries
+Entries already recorded in data/register-gaps-manifest.json are kept and merged.
 
 Targets are the in-scope entries of data/public-source-register-2026-11-24.json that
 data/source-register-status.json marks as not hosted, minus entries with no publisher
@@ -54,9 +59,9 @@ def targets():
     return out
 
 
-def curl(url, dest=None, max_time=3600):
+def curl(url, dest=None, max_time=2400):
     """Fetch with curl (Canada.ca refuses some other clients from GitHub servers)."""
-    cmd = ['curl', '-sSL', '--fail', '--http1.1', '--retry', '3', '--retry-delay', '10',
+    cmd = ['curl', '-sSL', '--fail', '--http1.1', '--retry', '2', '--retry-delay', '10', '--speed-limit', '20000', '--speed-time', '120',
            '--connect-timeout', '30', '--max-time', str(max_time), '-A', UA,
            '-H', 'Accept-Language: en-CA,en;q=0.8']
     if dest:
@@ -168,16 +173,38 @@ def take_file(url, entry_id, work, label=None, fmt=None):
     return rec
 
 
+def opt(name, default=None):
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+
+
 def main():
     work = Path(sys.argv[1])
     plan = '--plan' in sys.argv
+    limit = int(opt('--limit', '0') or 0)
+    max_bytes = int(opt('--max-bytes', '0') or 0)
+    only = {x.strip() for x in (opt('--ids', '') or '').split(',') if x.strip()}
     work.mkdir(parents=True, exist_ok=True)
     manifest = {'note': ('Copies of public source register entries that had no copy in this repository. '
                          'Originals are stored unchanged, gzip-compressed; very large CSV files are split into '
                          'parts on the pses-data branch, each starting with the published header. SHA-256 and '
                          'bytes describe the original file as downloaded.'),
                 'register': 'data/public-source-register-2026-11-24.json', 'entries': []}
+    previous = ROOT / 'data/register-gaps-manifest.json'
+    kept = []
+    if previous.exists():
+        kept = json.loads(previous.read_text(encoding='utf-8')).get('entries', [])
+    chosen = []
     for e in targets():
+        if only and e['id'] not in only:
+            continue
+        if max_bytes and (e.get('bytes') or 0) > max_bytes:
+            continue
+        chosen.append(e)
+    if limit:
+        chosen = chosen[:limit]
+    done_ids = {e['id'] for e in chosen}
+    manifest['entries'] = [k for k in kept if k['id'] not in done_ids]
+    for e in chosen:
         url = e['source']
         item = {'id': e['id'], 'name': e['name'], 'source': url, 'files': [], 'failures': []}
         print('TARGET', e['id'], e['kind'], url)
@@ -212,7 +239,7 @@ def main():
                 rec['stored'] = True
                 item['files'].append(rec)
             else:
-                html = curl(url, max_time=300)
+                html = curl(url, max_time=120)
                 d = work / 'main/data/register-gaps-2026-11' / e['id']
                 d.mkdir(parents=True, exist_ok=True)
                 target = d / 'page-snapshot.html.gz'
@@ -226,6 +253,7 @@ def main():
             item['failures'].append({'url': url, 'error': str(err)[:300]})
         print('  stored', sum(1 for f in item['files'] if f.get('stored')), 'failures', len(item['failures']))
         manifest['entries'].append(item)
+    manifest['entries'].sort(key=lambda x: x['id'])
     out = work / 'main/data/register-gaps-manifest.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
