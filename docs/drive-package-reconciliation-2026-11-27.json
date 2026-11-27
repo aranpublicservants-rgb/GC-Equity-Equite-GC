@@ -78,8 +78,22 @@
       "bytes": 21479,
       "period": "2019-01-04 to 2025-03-31",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0410",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification",
+      "directRepoCheck": {
+        "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx",
+        "bytes": 21479,
+        "comparison": "size match"
+      }
     },
     {
       "title": "Percentage of civilians in the Defence team who self-identify as an Indigenous Person",
@@ -90,8 +104,22 @@
       "bytes": 21503,
       "period": "2019-01-04 to 2025-03-31",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0410",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification",
+      "directRepoCheck": {
+        "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+        "bytes": 21503,
+        "comparison": "size match"
+      }
     },
     {
       "title": "Canadian Armed Forces Employment Equity (EE) Statistics",
@@ -362,8 +390,22 @@
       "bytes": 450,
       "period": "Series March 2010 to March 2018",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0384",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification",
+      "directRepoCheck": {
+        "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+        "bytes": 454,
+        "comparison": "size differs; compare original and analytical copy"
+      }
     },
     {
       "title": "2019 Employment Equity for the Communications Security Establishment",
@@ -374,8 +416,22 @@
       "bytes": 483,
       "period": "Series to March 2019",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0384",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification",
+      "directRepoCheck": {
+        "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+        "bytes": 490,
+        "comparison": "size differs; compare original and analytical copy"
+      }
     },
     {
       "title": "Workforce Representation by Designated Groups, Employment Equity Occupational Groups and National Occupational Classification Unit Groups",
@@ -818,8 +874,59 @@
       "bytes": 2065522164,
       "period": "Fielded August 20 to October 5, 2018; includes historical 2017/2014/2011/2008 for repeated questions",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0026",
+          "hosted": [
+            "data/open-canada-2026-11/pses-2018/2018_PSES_SAFF_Subset-1_Sous-ensemble-1.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0027",
+          "hosted": [
+            "pses-data:pses/pses-2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0028",
+          "hosted": [
+            "pses-data:pses/pses-2018/2018_PSES_SAFF_Subset-3_Sous-ensemble-3"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0029",
+          "hosted": [
+            "pses-data:pses/pses-2018/2018_PSES_SAFF_Subset-4_Sous-ensemble-4"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0030",
+          "hosted": [
+            "pses-data:register-gaps/u-a265121493deea01"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0031",
+          "hosted": [
+            "pses-data:pses/pses-2018/2018_PSES_open_dataset_Ensemble_de_donn-es_ouvertes_du_SAFF_2018"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0032",
+          "hosted": [
+            "data/open-canada-2026-11/pses-supporting-documentation/pses2018-supporting-documentation.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification"
     },
     {
       "title": "Public Service Employee Survey 2019",
@@ -830,8 +937,66 @@
       "bytes": 3888121804,
       "period": "Fielded July 22 to September 6, 2019; historical to 2008",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0033",
+          "hosted": [
+            "data/open-canada-2026-11/pses-2019/2019_PSES_SAFF_-20subset-1_Sous-ensemble-1.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0034",
+          "hosted": [
+            "pses-data:pses/pses-2019/Main_9.12.03.b_subset_2"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0035",
+          "hosted": [
+            "pses-data:pses/pses-2019/Main_9.12.03.b_subset_3"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0036",
+          "hosted": [
+            "pses-data:pses/pses-2019/Main_9.12.03.b_subset_4"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0037",
+          "hosted": [
+            "pses-data:pses/pses-2019/2019_PSES_SAFF_Subset-5_Sous-ensemble-5"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0038",
+          "hosted": [
+            "pses-data:pses/pses-2019/2019-20Public-20Service-20Employee-20Survey-20open-20dataset_Ensemble-20de-20donn-C3-83-C2-A9es-20ouvertes-20du-20Sondage-20aupr-C3-83-C2-A8s-20des-20fonctionnaires-20f-C3-83-C2-A9d-C3-83-C2-A9raux-20de-202019"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0039",
+          "hosted": [
+            "data/open-canada-2026-11/pses-supporting-documentation/pses2019-supporting-documentation.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0040",
+          "hosted": [
+            "data/open-canada-2026-11/pses-2019/pses2019-diversity-inclusion-tables.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification"
     },
     {
       "title": "Public Service Employee Survey 2020",
@@ -2105,8 +2270,17 @@
       "bytes": 560,
       "period": "2017-2018",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0390",
+          "hosted": [
+            "data/register-gaps-2026-11/u-8e3153d0ba4b43bd/distribution-designated-groups_age.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification"
     },
     {
       "title": "DND Civilian Employee Gender Distribution",
@@ -2466,8 +2640,59 @@
       "bytes": 1703855498,
       "period": "2017",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0017",
+          "hosted": [
+            "pses-data:register-gaps/u-8a335b1ba4b61fca"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0018",
+          "hosted": [
+            "data/register-gaps-2026-11/u-dda73ba98ab67f4d/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0019",
+          "hosted": [
+            "pses-data:register-gaps/u-aa90ad4c0b8adfe8"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0020",
+          "hosted": [
+            "pses-data:register-gaps/u-8f0713ce7e04e35e"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0021",
+          "hosted": [
+            "pses-data:register-gaps/u-2d295b18c4a7b20e"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0022",
+          "hosted": [
+            "pses-data:register-gaps/u-3c610efaa01774df"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0023",
+          "hosted": [
+            "data/open-canada-2026-11/pses-supporting-documentation/pses2017-supporting-documentation.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification"
     },
     {
       "title": "Public Service Employee Annual Survey 2017",
@@ -2478,8 +2703,24 @@
       "bytes": 89668551,
       "period": "2017",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0024",
+          "hosted": [
+            "pses-data:register-gaps/u-6cdb621fd5256357"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0025",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/pseas2017-supporting-documentation.xls"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification"
     },
     {
       "title": "Public Service Employee Survey 2014",
@@ -2490,8 +2731,55 @@
       "bytes": 914376794,
       "period": "2014",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0010",
+          "hosted": [
+            "pses-data:register-gaps/u-a62010940867c1b2"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0011",
+          "hosted": [
+            "pses-data:register-gaps/u-23d686adcc6dd13a"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0012",
+          "hosted": [
+            "pses-data:register-gaps/u-1482696fddf9dd8f"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0013",
+          "hosted": [
+            "pses-data:register-gaps/u-ca96a743cc92c9bd"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0014",
+          "hosted": [
+            "data/open-canada-2026-11/pses-supporting-documentation/pses2014-supporting-documentation.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0015",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0016",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification"
     },
     {
       "title": "Public Service Employee Survey 2011 (and 2008 results)",
@@ -2656,8 +2944,22 @@
       "bytes": 606291,
       "period": "FY2006-07 to 2024-25",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0515",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification",
+      "directRepoCheck": {
+        "path": "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx",
+        "bytes": 606291,
+        "comparison": "size match"
+      }
     },
     {
       "title": "PBO Federal Employment Tracking Tool public data",
@@ -2668,8 +2970,36 @@
       "bytes": 2104357,
       "period": "2015Q2-",
       "scope": "candidate",
-      "register": [],
-      "coverage": "no-dataset-url-match"
+      "register": [
+        {
+          "id": "GC-0514",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/fett-publicdata.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0516",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/fett-monthly-20260915.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "related-register-entry-hosted",
+      "matchMethod": "explicit period and source-family review; not original byte verification",
+      "directRepoCheck": {
+        "path": "data/public-source-archive-2026-11-24/fett-publicdata.xlsx",
+        "bytes": null,
+        "comparison": "not verified"
+      }
     }
-  ]
+  ],
+  "summary": {
+    "candidate / at-least-one-register-entry-hosted": 37,
+    "candidate / related-register-entry-hosted": 12,
+    "excluded-or-separate-scope-review / at-least-one-register-entry-hosted": 2,
+    "excluded-or-separate-scope-review / no-dataset-url-match": 11,
+    "excluded-or-separate-scope-review / registered-no-hosted-match": 3
+  }
 }
