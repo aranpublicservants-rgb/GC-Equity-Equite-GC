@@ -131,7 +131,8 @@ async function download(page, click, what) {
       // Chart views, Measure/Compare with, chart types and chart downloads.
       await page.locator('#wda-agree-body').scrollIntoViewIfNeeded();
       await page.waitForTimeout(400);
-      const localChart=page.locator('#wda-agree-body .dv-local-options').first();
+      // The shared widget is a sibling of the table, not a descendant of its tbody.
+      const localChart=page.locator('#agree .dv-local-options').first();
       await localChart.waitFor({state:'attached',timeout:15000});
       if(!await localChart.evaluate(e=>e.open))await localChart.locator('summary').click();
       const chartBtn = localChart.getByRole('button', { name: 'Chart', exact: true });
