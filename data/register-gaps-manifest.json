@@ -2392,6 +2392,144 @@
    }
   },
   {
+   "id": "GC-0154",
+   "name": "SNPS 2025 - Data Visualization Dataset (Dataset A)",
+   "source": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/9ed3ae74-9458-47ec-882d-e3d785e34389/download/cfppsc_snps12_a.csv",
+     "title": {
+      "en": "Data Visualization Dataset (dataset A)",
+      "fr": "Ensemble de données pour la visualisation de données (Ensemble de données A)"
+     },
+     "bytes": 546715782,
+     "sha256": "f8260a251b0e5f1f4ca0c9454b20252f081e13ba4f5e90769da6dfb643f75ce2",
+     "retrieved": "2026-11-27T11:19:49Z",
+     "rows": 738821,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-8ee1c786e566dd0d",
+     "parts": [
+      {
+       "file": "cfppsc_snps12_a-001.csv.gz",
+       "rows": 738821,
+       "bytes": 32388666,
+       "sha256": "14813056269b10f7f6c7d150256264f4f8ad4a6c8e1b0de88327debb0e353a77"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/74bfd99f-b71b-44ab-9c5f-174f1eb4c602/download/cfppsc_snps12_b.csv",
+     "title": {
+      "en": "Data Visualization Dataset (Dataset B)",
+      "fr": "Ensemble de données pour la visualisation de données (Ensemble de données B)"
+     },
+     "bytes": 413273290,
+     "sha256": "330a3346c6bec2166dd62613ddc00122a99f643dc5caf682abff7c22ff8dfc97",
+     "retrieved": "2026-11-27T11:20:05Z",
+     "rows": 559075,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-0913bd6cd4a291a9",
+     "parts": [
+      {
+       "file": "cfppsc_snps12_b-001.csv.gz",
+       "rows": 559075,
+       "bytes": 24436448,
+       "sha256": "46ceefed65d5cbfa35d719d0f9906ebf2c13d93a264d07b9b781e9cbbc6015be"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2025 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2025"
+   }
+  },
+  {
+   "id": "GC-0155",
+   "name": "SNPS 2025 - Data Visualization Dataset (Dataset B)",
+   "source": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/9ed3ae74-9458-47ec-882d-e3d785e34389/download/cfppsc_snps12_a.csv",
+     "title": {
+      "en": "Data Visualization Dataset (dataset A)",
+      "fr": "Ensemble de données pour la visualisation de données (Ensemble de données A)"
+     },
+     "bytes": 546715782,
+     "sha256": "f8260a251b0e5f1f4ca0c9454b20252f081e13ba4f5e90769da6dfb643f75ce2",
+     "retrieved": "2026-11-27T11:19:49Z",
+     "rows": 738821,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-8ee1c786e566dd0d",
+     "parts": [
+      {
+       "file": "cfppsc_snps12_a-001.csv.gz",
+       "rows": 738821,
+       "bytes": 32388666,
+       "sha256": "14813056269b10f7f6c7d150256264f4f8ad4a6c8e1b0de88327debb0e353a77"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0155"
+     ]
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/74bfd99f-b71b-44ab-9c5f-174f1eb4c602/download/cfppsc_snps12_b.csv",
+     "title": {
+      "en": "Data Visualization Dataset (Dataset B)",
+      "fr": "Ensemble de données pour la visualisation de données (Ensemble de données B)"
+     },
+     "bytes": 413273290,
+     "sha256": "330a3346c6bec2166dd62613ddc00122a99f643dc5caf682abff7c22ff8dfc97",
+     "retrieved": "2026-11-27T11:20:05Z",
+     "rows": 559075,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-0913bd6cd4a291a9",
+     "parts": [
+      {
+       "file": "cfppsc_snps12_b-001.csv.gz",
+       "rows": 559075,
+       "bytes": 24436448,
+       "sha256": "46ceefed65d5cbfa35d719d0f9906ebf2c13d93a264d07b9b781e9cbbc6015be"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0155"
+     ]
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2025 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2025"
+   }
+  },
+  {
    "id": "GC-0156",
    "name": "SNPS 2025 - Response profile data",
    "source": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
@@ -3187,6 +3325,159 @@
       "fr"
      ],
      "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   }
+  },
+  {
+   "id": "GC-0189",
+   "name": "AR1 - New indeterminate employees (ar1f.csv)",
+   "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/952ee162-1ef9-4c28-9bfd-20e8b02e7f4b/download/ar1c.csv",
+     "title": {
+      "en": "Indeterminate staffing activities to the public service under the Public Service Employment Act, contributing to movement of indeterminate employees, by fiscal year ",
+      "fr": "Activités de dotation en vertu de la Loi sur l’emploi dans la fonction publique : nominations à un poste pour une période indéterminée à la fonction publique et au sein de celle-ci ayant contribué aux mouvements de fonctionnaires nommés à un poste pour une période indéterminée par exercice financier"
+     },
+     "bytes": 4789,
+     "sha256": "b046d8de81ef575615e1af8685fb210c1d539dc11d741ac1b0c7ac899f9a7a00",
+     "retrieved": "2026-11-27T11:20:11Z",
+     "rows": 24,
+     "path": "data/register-gaps-2026-11/u-5b97c3a864831355/ar1c.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1D.csv",
+     "title": {
+      "fr": "Activités de dotation en vertu de la Loi sur l’emploi dans la fonction publique : nominations à un poste pour une période indéterminée à la fonction publique et au sein de celle-ci ayant contribué aux mouvements de fonctionnaires nommés à un poste pour une période indéterminée par exercice financier (Valable jusqu'en mars 2018)",
+      "en": "Indeterminate staffing activities within the public service under the Public Service Employment Act, contributing to movement of indeterminate employees, by fiscal year (Valid until March 2018)"
+     },
+     "bytes": 2660,
+     "sha256": "871aff9aa75472194a0716c8b5b835e98c66275a0322672a293ed7b25fe76d96",
+     "retrieved": "2026-11-27T11:20:14Z",
+     "rows": 15,
+     "path": "data/register-gaps-2026-11/u-b9bd8aedfa64e8b3/CFPPSC_AR1D.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1E.csv",
+     "title": {
+      "fr": "Activités de dotation en vertu de la Loi sur l’emploi dans la fonction publique : départs ayant contribué aux mouvements de fonctionnaires nommés à un poste pour une période indéterminée par exercice financier (Valable jusqu'en mars 2018)",
+      "en": "Indeterminate separations under the Public Service Employment Act, contributing to movement of indeterminate employees, by fiscal year (Valid until March 2018)"
+     },
+     "bytes": 834,
+     "sha256": "9747933ccdac3187dad1bdc021b0828cac2e06020b31e18c3883b21818641f88",
+     "retrieved": "2026-11-27T11:20:18Z",
+     "rows": 10,
+     "path": "data/register-gaps-2026-11/u-646ec0a4a1199277/CFPPSC_AR1E.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/31f1217b-506e-4746-a38c-5385a0bf40e9/download/ar1f.csv",
+     "title": {
+      "en": "Appointments under the Public Service Employment Act of new indeterminate employees, by fiscal year",
+      "fr": "Nominations de nouveaux fonctionnaires à des postes pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon l'exercice financier"
+     },
+     "bytes": 3089,
+     "sha256": "8596f164815051ab4e7c131a5dcca1735b2875420d65b676559e37334471b725",
+     "retrieved": "2026-11-27T11:20:18Z",
+     "rows": 29,
+     "path": "data/register-gaps-2026-11/u-4743294e9bf582df/ar1f.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv",
+     "title": {
+      "en": "Internal staffing activities of indeterminate employees under the Public Service Employment Act, by type and fiscal year",
+      "fr": "Activités de dotation internes liées aux nominations pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon le type et l'exercice financier"
+     },
+     "bytes": 6251,
+     "sha256": "70194733bb948b35628faa8028039dccd6c4210b28dfd13a64e304fa5a0dfd54",
+     "retrieved": "2026-11-27T11:20:19Z",
+     "rows": 36,
+     "path": "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f560a4ad-edc9-4bc8-a0ed-2e174bb88d23/download/ar1h.csv",
+     "title": {
+      "en": "Staffing activities of new indeterminate executive employees under the Public Service Employment Act, by source and fiscal year",
+      "fr": "Activités de dotation relatives aux nouvelles nominations pour une période indéterminée au groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon la source et l'exercice financier"
+     },
+     "bytes": 9263,
+     "sha256": "67a8f80ee1d11436faaf6cbd7d03fc47a35e798039fa52e2b402f193a8109b16",
+     "retrieved": "2026-11-27T11:20:20Z",
+     "rows": 41,
+     "path": "data/register-gaps-2026-11/u-f1f6d0bf2db57fe2/ar1h.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   }
+  },
+  {
+   "id": "GC-0190",
+   "name": "AR1 - Internal staffing by activity (ar1g.csv)",
+   "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/f7324346-53c4-4205-910a-0b70521c7ee2/download/ar1g.csv",
+     "title": {
+      "en": "Internal staffing activities of indeterminate employees under the Public Service Employment Act, by type and fiscal year",
+      "fr": "Activités de dotation internes liées aux nominations pour une période indéterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon le type et l'exercice financier"
+     },
+     "bytes": 6251,
+     "sha256": "70194733bb948b35628faa8028039dccd6c4210b28dfd13a64e304fa5a0dfd54",
+     "retrieved": "2026-11-27T11:20:19Z",
+     "rows": 36,
+     "path": "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0190"
+     ]
     }
    ],
    "failures": [],
