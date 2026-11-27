@@ -4,14 +4,14 @@
  "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 307,
-  "hosted": 326,
+  "verified": 311,
+  "hosted": 330,
   "downloadable": 251,
   "searchable": 173,
   "departmental": 171,
   "analysis": 112,
   "excluded": 155,
-  "noEvidence": 19
+  "noEvidence": 15
  },
  "rows": [
   {
@@ -245,8 +245,10 @@
    "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-organization.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": false,
-   "hosted": [],
+   "verified": "sha256-recorded-at-download",
+   "hosted": [
+    "pses-data:register-gaps/u-ca96a743cc92c9bd"
+   ],
    "downloadable": false,
    "searchable": false,
    "departmental": 0,
@@ -317,8 +319,10 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Open_dataset_Ensemble_donnees_ouvertes.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": false,
-   "hosted": [],
+   "verified": "sha256-recorded-at-download",
+   "hosted": [
+    "pses-data:register-gaps/u-8a335b1ba4b61fca"
+   ],
    "downloadable": false,
    "searchable": false,
    "departmental": 0,
@@ -353,8 +357,10 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-2_Sous-ensemble-2.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": false,
-   "hosted": [],
+   "verified": "sha256-recorded-at-download",
+   "hosted": [
+    "pses-data:register-gaps/u-aa90ad4c0b8adfe8"
+   ],
    "downloadable": false,
    "searchable": false,
    "departmental": 0,
@@ -370,8 +376,10 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-3_Sous-ensemble-3.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": false,
-   "hosted": [],
+   "verified": "sha256-recorded-at-download",
+   "hosted": [
+    "pses-data:register-gaps/u-8f0713ce7e04e35e"
+   ],
    "downloadable": false,
    "searchable": false,
    "departmental": 0,
