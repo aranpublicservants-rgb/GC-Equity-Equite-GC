@@ -1,6 +1,6 @@
 781a0ae481fd368b2edcd141a946c3be48daab14f56eff9fba76fc03d5486f9d  assets/added-sources.json
 020732b86cf1127ab3b95959c915c1ad05dbec5927d216f9706246ee6e3abb43  assets/assistant-catalogue.json
-928287838ab00ff8d031b493852505e861f9d511d4f698b2d874175bf5bc3274  assets/assistant-catalogue.json.gz
+c3124f7210f4e80200644e60b945251c8088db2c1e2d19d61e0057fcad1c38f8  assets/assistant-catalogue.json.gz
 bd9d899cd3c321770851416ccab3a12ff84392f63423075459b63bcbb9352b0e  assets/branch-q65-gaps/part-00.json
 8171155883fd855b7bbdbc71fbc9578c70b2618136b6c75b39fa7072c387c6f1  assets/branch-q65-gaps/part-01.json
 0bdaffd423f9e1e8c70069c00506e1d8a154baccdf83a755961e6ea588add46e  assets/branch-q65-gaps/part-02.json
@@ -724,7 +724,7 @@ fa418a834355dbaad096cabf1b7e96a6c2a39441df13e673bea65c0715e0f235  data/public-so
 713eb6a18aac1b851bad4b77df393698d09cf5fee3ab07aa3776a2a0d84846e0  data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv
 510188c50020a52f2cac81f122fe2ad460a505939d426b53c8754fcd9d0fd3fc  data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv
 daf79e0a76f5c6684daaecfeb6b1228831b21bed5054f9c1fb56a513f97447df  data/public-source-register-2026-11-24.json
-1c5af42071abed982deec0326fed537a29b68ddc1a3b3c38a6a4d4df6b798121  data/qa/fswep-browser.json
+e8f3aed231e7e110f4dd006511a5b30252e834817e706b475bb0bb03e699da91  data/qa/fswep-browser.json
 ed5defd4d91bd719605ca9134da7f1146bd77e3864f8926ae15df35429fe29f1  data/recourse-case-index-2026-11.json
 d7b843fbe94f3fcb03ef457fbf980044a293cdd386f33040387edfdf5cf7225f  data/restored/06890686-ef92-41f2-877b-d481bccef120.csv
 57af2f7ded83be1b9b0a8cdba3dd464710e5bf77e4d0ec7f5040050113882f5b  data/restored/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f.csv
