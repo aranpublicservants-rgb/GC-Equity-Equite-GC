@@ -34,7 +34,43 @@
         'Une question n’est suivie dans le temps que si son libellé publié est identique. Les anciens numéros de question figurent après le nombre de réponses lorsqu’ils diffèrent. Les nombres de réponses sont arrondis par l’éditeur. Les écarts entre les cycles ne font pas l’objet d’un test de signification statistique.') +
         (gaps.length ? ' ' + L(l, 'Not compared because the wording changed: ', 'Non comparées, car le libellé a changé : ') + gaps.join(', ') + '.' : '')) + '</p></div>';
   }
-  fetch(new URL('department-survey-trends/' + org + '.json', base)).then(r => r.ok ? r.json() : null).then(T => {
+  const parts = (me.dataset.parts || 'overall,groups').split(',');
+  function groupBlock(G, g, rows, l) {
+    const head = [L(l, 'Question (2024 wording)', 'Question (libellé de 2024)'), ...G.cycles.map(c => cycleName(c, l))];
+    const labelRow = '<tr><th scope="row">' + esc(L(l, 'Group as published in each cycle', 'Groupe tel que publié à chaque cycle')) + '</th>' +
+      G.cycles.map(c => '<td>' + esc(g.published[c] ? g.published[c][l === 'fr' ? 1 : 0] : L(l, 'Not published', 'Non publié')) + '</td>').join('') + '</tr>';
+    const body = rows.map(r => '<tr><th scope="row">' + esc(r[l]) + '</th>' + G.cycles.map(c => {
+      const v = r.values[c];
+      if (!v) return '<td>' + esc(L(l, 'Not published', 'Non publié')) + '</td>';
+      const n = Number(v[1]).toLocaleString(l === 'fr' ? 'fr-CA' : 'en-CA');
+      return '<td>' + esc(pct(v[0], l) + ' (' + L(l, 'n=', 'n = ') + n + (v[2] !== r.q ? (l === 'fr' ? ' ; ' : '; ') + v[2] : '') + ')') + '</td>';
+    }).join('') + '</tr>').join('');
+    const name = l === 'fr' ? g.fr : g.group === 'Woman' ? 'Women' : g.group === 'Person with a disability' ? 'Persons with a disability' : g.group === 'Black' ? 'Black employees' : g.group === 'Racialized' ? 'Racialized employees' : 'Indigenous employees';
+    const caption = L(l, 'PSES 2018 to 2024, ', 'SAFF de 2018 à 2024, ') + name;
+    const links = G.cycles.filter(c => G.sources[c]).map(c => '<a href="' + esc(G.sources[c].url) + '">' + esc(L(l, 'PSES ', 'SAFF ') + cycleName(c, l)) + '</a>').join(' · ');
+    return '<details class="dp-group-trend"><summary>' + esc(name) + '</summary><div class="table-scroll" role="region" tabindex="0" aria-label="' + esc(caption) + '"><table><caption>' + esc(caption) +
+      '</caption><thead><tr>' + head.map(h => '<th scope="col">' + esc(h) + '</th>').join('') + '</tr></thead><tbody>' + labelRow + body + '</tbody></table></div><p class="source">' + esc(L(l, 'Source: ', 'Source : ')) + links + '</p></details>';
+  }
+  function renderGroups(G) {
+    if (!G) return;
+    for (const s of SECTIONS) for (const l of ['en', 'fr']) {
+      const heading = document.getElementById(s[l]);
+      const section = heading && heading.closest('section');
+      if (!section || section.querySelector('.dp-group-trends')) continue;
+      const html = G.groups.map(g => [g, g.rows.filter(r => s.qs.includes(r.q))]).filter(([, rows]) => rows.length).map(([g, rows]) => groupBlock(G, g, rows, l)).join('');
+      if (!html) continue;
+      const wrap = document.createElement('div');
+      wrap.className = 'dp-group-trends';
+      wrap.innerHTML = '<h3>' + esc(L(l, 'Results over time by employee group', 'Résultats au fil du temps par groupe d’employés')) + '</h3>' + html +
+        '<p class="small dp-trend-note">' + esc(L(l, 'Group definitions changed between cycles. Earlier cycles asked about sex or gender with different wording, used the terms Aboriginal and visible minority, and asked different disability questions. In 2022-23 the racialized group excludes Indigenous respondents. The label each cycle published is shown in the first row. Treat differences between cycles with care. Suppressed results are not shown, and a group is followed only where at least two cycles were published.',
+          'Les définitions des groupes ont changé d’un cycle à l’autre. Les premiers cycles posaient la question sur le sexe ou le genre autrement, employaient les termes Autochtone et minorité visible, et posaient d’autres questions sur le handicap. En 2022-2023, le groupe racisé exclut les répondants autochtones. La première ligne indique le libellé publié à chaque cycle. Interprétez les écarts entre les cycles avec prudence. Les résultats supprimés ne sont pas présentés, et un groupe n’est suivi que si au moins deux cycles ont été publiés.')) + '</p>';
+      const tools = section.querySelector('.section-tools');
+      (tools ? tools.before.bind(tools) : section.append.bind(section))(wrap);
+    }
+  }
+  const loadGroups = () => { if (parts.includes('groups')) fetch(new URL('department-group-trends/' + org + '.json', base)).then(r => r.ok ? r.json() : null).then(renderGroups).catch(() => {}); };
+  if (!parts.includes('overall')) loadGroups();
+  else fetch(new URL('department-survey-trends/' + org + '.json', base)).then(r => r.ok ? r.json() : null).then(T => {
     if (!T) return;
     for (const s of SECTIONS) for (const l of ['en', 'fr']) {
       const heading = document.getElementById(s[l]);
@@ -47,5 +83,5 @@
       const tools = section.querySelector('.section-tools');
       (tools ? tools.before.bind(tools) : section.append.bind(section))(wrap.firstChild);
     }
-  }).catch(() => {});
+  }).catch(() => {}).finally(loadGroups);
 })();

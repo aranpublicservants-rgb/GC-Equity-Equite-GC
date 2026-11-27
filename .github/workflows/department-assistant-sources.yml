@@ -3,7 +3,7 @@ name: Department assistants against original survey rows
 on:
   push:
     branches: [main]
-    paths: ['data/department-profiles/**', 'assets/department-profile-index.json', 'assets/department-key-findings/**', 'assets/department-pages.json', 'data/pses-large-manifest.json', 'scripts/check-department-assistants.py', '.github/workflows/department-assistant-sources.yml']
+    paths: ['assets/department-group-trends/**', 'scripts/build-department-group-trends.py', 'data/department-profiles/**', 'assets/department-profile-index.json', 'assets/department-key-findings/**', 'assets/department-pages.json', 'data/pses-large-manifest.json', 'scripts/check-department-assistants.py', '.github/workflows/department-assistant-sources.yml']
   schedule:
     - cron: '23 9 * * 3'
   workflow_dispatch:
@@ -19,5 +19,12 @@ jobs:
         with:
           ref: pses-data
           path: pses-data
-          sparse-checkout: pses/pses-2024/EEINFODV
+          sparse-checkout: |
+            pses/pses-2024/EEINFODV
+            pses/pses-2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2
+            pses/pses-2019/Main_9.12.03.b_subset_2
+            pses/pses-2020/subset-3-sous-ensemble-3
+            pses/pses-2022-2023/Subset-203-20--202022_2023-20PSES-20open-20dataset-20--20with-20labels_Sous-ensemble-203-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20du-20SAFF-20de-202022_23
       - run: python3 scripts/check-department-assistants.py pses-data/pses/pses-2024/EEINFODV
+      - name: Employee group results over time match the original rows
+        run: python3 scripts/build-department-group-trends.py pses-data --check

@@ -9,7 +9,7 @@
   "downloadable": 222,
   "searchable": 175,
   "departmental": 171,
-  "analysis": 108,
+  "analysis": 111,
   "excluded": 155,
   "noEvidence": 80
  },
@@ -492,7 +492,9 @@
    "downloadable": true,
    "searchable": false,
    "departmental": 0,
-   "analysis": [],
+   "analysis": [
+    "scripts/build-department-group-trends.py"
+   ],
    "excluded": null
   },
   {
@@ -625,7 +627,9 @@
    "downloadable": true,
    "searchable": false,
    "departmental": 0,
-   "analysis": [],
+   "analysis": [
+    "scripts/build-department-group-trends.py"
+   ],
    "excluded": null
   },
   {
@@ -805,6 +809,7 @@
    "searchable": false,
    "departmental": 0,
    "analysis": [
+    "scripts/build-department-group-trends.py",
     "systemic-change/department-evidence.js"
    ],
    "excluded": null
@@ -1040,7 +1045,9 @@
    "downloadable": true,
    "searchable": false,
    "departmental": 0,
-   "analysis": [],
+   "analysis": [
+    "scripts/build-department-group-trends.py"
+   ],
    "excluded": null
   },
   {
@@ -1294,6 +1301,7 @@
    "searchable": false,
    "departmental": 0,
    "analysis": [
+    "scripts/build-department-group-trends.py",
     "systemic-change/department-evidence.js"
    ],
    "excluded": null

@@ -21,6 +21,7 @@ try{for(const [l,topicLabel,kind] of [['en','experience','txt'],['fr','experienc
  const plain=text.replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&');
  for(const row of await guide.locator('.dp-guide-answer tbody tr th').allTextContents())assert.ok(plain.includes(row.trim()),'measure repeated: '+row);
  assert.ok(await page.locator('.dp-trend:visible').count()>0,'results over time shown');
+ assert.ok(await page.locator('.dp-group-trend:visible').count()>0,'results over time by employee group shown');
  if(topicLabel==='workforce')assert.ok(await guide.locator('.gce-source-date').count()>0,'source date shown under the table');
  assert.equal(errors.length,0,errors.join('; '));
  console.log('PASS briefing note',l,topicLabel,kind,shown.length,'rows');await ctx.close();}
