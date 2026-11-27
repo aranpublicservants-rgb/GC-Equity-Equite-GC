@@ -6313,6 +6313,342 @@
    }
   },
   {
+   "id": "GC-0204",
+   "name": "AR1 - Staffing by organization and appointment type (CFPPSC_AR1U.csv)",
+   "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1U.csv",
+     "title": {
+      "fr": "Activités de dotation, selon le type de nomination et l’organisation (Valable jusqu'en mars 2018)",
+      "en": "Staffing activities by type and organization (Valid until March 2018)"
+     },
+     "bytes": 234706,
+     "sha256": "539cd075421b35189ee5c4e775dd811f49a3661bf2e538262ee3960735abfa58",
+     "retrieved": "2026-11-27T11:30:49Z",
+     "rows": 819,
+     "path": "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1X.csv",
+     "title": {
+      "fr": "Activités de dotation à des postes pour une période indéterminée ou des postes de durée déterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste, le type de nomination et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position, type of appointment and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 10776,
+     "sha256": "06e182695b6822ca2e6d6761a13c951e1e7f883e2cb6b6683b1cd1d06f521e3a",
+     "retrieved": "2026-11-27T11:30:52Z",
+     "rows": 36,
+     "path": "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1CC.csv",
+     "title": {
+      "fr": "Activités de dotation, selon le type de nomination, la région géographique et l’organisation (Valable jusqu'en mars 2018)",
+      "en": "Staffing activities by type, geographic area and organization (Valid until March 2018)"
+     },
+     "bytes": 982069,
+     "sha256": "32358ae80152c1558027ddb61312b9b0ccdcfd73d31fae06ec4cc936f9073fe7",
+     "retrieved": "2026-11-27T11:30:55Z",
+     "rows": 4279,
+     "path": "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db/resource/ed783874-8549-42e6-9d4e-ac223c16617e/download/ar1gg.csv",
+     "title": {
+      "en": "Staffing activities by type, organization and geographic area",
+      "fr": "Activités de dotation, selon le type de nomination, l’organisation et la région géographique"
+     },
+     "bytes": 4899434,
+     "sha256": "98c7ff8b08ca312b437c73ac83ee0df90759afb3e2b673859258c95e71216c0b",
+     "retrieved": "2026-11-27T11:30:56Z",
+     "rows": 15216,
+     "path": "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   }
+  },
+  {
+   "id": "GC-0205",
+   "name": "AR1 - Executive staffing language requirements (CFPPSC_AR1V.csv)",
+   "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv",
+     "title": {
+      "fr": "Nominations à un poste pour une période indéterminée et activités de dotation pour tous les postes bilingues (incluant le groupe de la direction) en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate appointments and staffing activities to all bilingual positions (including the Executive Group) under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 6805,
+     "sha256": "899d7963133938c89f6c1c0a058d02cd857ba26513365839e7f2df943a77c605",
+     "retrieved": "2026-11-27T11:30:59Z",
+     "rows": 19,
+     "path": "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1V.csv",
+     "title": {
+      "fr": "Activités de dotation à des postes pour une période indéterminée ou des postes de durée déterminée visant le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Executive indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 3866,
+     "sha256": "0d0e0b6e69e7db35714770906215f52f6fd36bdb1c4159d1101eee2741f2ebbc",
+     "retrieved": "2026-11-27T11:31:01Z",
+     "rows": 16,
+     "path": "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv",
+     "title": {
+      "fr": "Nominations à des postes pour une période indéterminée et activités de dotation  pour des postes bilingues dans le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate appointments and staffing activities to Executive bilingual positions under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 6704,
+     "sha256": "2d97aee97418bff1915f19cddba874d4909013463a2ac450b58199d04064ed02",
+     "retrieved": "2026-11-27T11:31:02Z",
+     "rows": 18,
+     "path": "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   }
+  },
+  {
+   "id": "GC-0206",
+   "name": "AR1 - Executive indeterminate staffing requirements (CFPPSC_AR1W.csv)",
+   "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv",
+     "title": {
+      "fr": "Nominations à un poste pour une période indéterminée et activités de dotation pour tous les postes bilingues (incluant le groupe de la direction) en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate appointments and staffing activities to all bilingual positions (including the Executive Group) under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 6805,
+     "sha256": "899d7963133938c89f6c1c0a058d02cd857ba26513365839e7f2df943a77c605",
+     "retrieved": "2026-11-27T11:30:59Z",
+     "rows": 19,
+     "path": "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0206"
+     ]
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1V.csv",
+     "title": {
+      "fr": "Activités de dotation à des postes pour une période indéterminée ou des postes de durée déterminée visant le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Executive indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 3866,
+     "sha256": "0d0e0b6e69e7db35714770906215f52f6fd36bdb1c4159d1101eee2741f2ebbc",
+     "retrieved": "2026-11-27T11:31:01Z",
+     "rows": 16,
+     "path": "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0206"
+     ]
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv",
+     "title": {
+      "fr": "Nominations à des postes pour une période indéterminée et activités de dotation  pour des postes bilingues dans le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate appointments and staffing activities to Executive bilingual positions under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 6704,
+     "sha256": "2d97aee97418bff1915f19cddba874d4909013463a2ac450b58199d04064ed02",
+     "retrieved": "2026-11-27T11:31:02Z",
+     "rows": 18,
+     "path": "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0206"
+     ]
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   }
+  },
+  {
+   "id": "GC-0207",
+   "name": "AR1 - Appointments by type and language requirements (CFPPSC_AR1X.csv)",
+   "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1J.csv",
+     "title": {
+      "fr": "Nominations à un poste pour une période indéterminée et activités de dotation pour tous les postes bilingues (incluant le groupe de la direction) en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate appointments and staffing activities to all bilingual positions (including the Executive Group) under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 6805,
+     "sha256": "899d7963133938c89f6c1c0a058d02cd857ba26513365839e7f2df943a77c605",
+     "retrieved": "2026-11-27T11:30:59Z",
+     "rows": 19,
+     "path": "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0207"
+     ]
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1S.csv",
+     "title": {
+      "fr": "Activités de dotation, selon le type de nomination, la première langue officielle et les exigences linguistiques du poste (Valable jusqu'en mars 2017)",
+      "en": "Staffing activities by type, first official language group and language requirements of position (Valid until March 2017)"
+     },
+     "bytes": 14996,
+     "sha256": "f5692f8d0d33f6358c8d0bff2aca7996f29fb94d27b10917694374049ba213e1",
+     "retrieved": "2026-11-27T11:31:05Z",
+     "rows": 76,
+     "path": "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1W.csv",
+     "title": {
+      "fr": "Nominations à des postes pour une période indéterminée et activités de dotation  pour des postes bilingues dans le groupe de la direction en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate appointments and staffing activities to Executive bilingual positions under the Public Service Employment Act, by language requirements of position and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 6704,
+     "sha256": "2d97aee97418bff1915f19cddba874d4909013463a2ac450b58199d04064ed02",
+     "retrieved": "2026-11-27T11:31:02Z",
+     "rows": 18,
+     "path": "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0207"
+     ]
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1X.csv",
+     "title": {
+      "fr": "Activités de dotation à des postes pour une période indéterminée ou des postes de durée déterminée en vertu de la Loi sur l’emploi dans la fonction publique, selon les exigences linguistiques du poste, le type de nomination et l'exercice financier (Valable jusqu'en mars 2017)",
+      "en": "Indeterminate and term staffing activities under the Public Service Employment Act, by language requirements of position, type of appointment and fiscal year (Valid until March 2017)"
+     },
+     "bytes": 10776,
+     "sha256": "06e182695b6822ca2e6d6761a13c951e1e7f883e2cb6b6683b1cd1d06f521e3a",
+     "retrieved": "2026-11-27T11:30:52Z",
+     "rows": 36,
+     "path": "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true,
+     "sharedWith": [
+      "GC-0207"
+     ]
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1EE.csv",
+     "title": {
+      "fr": "Activités de dotation, selon le type de nomination, la première langue officielle, les exigences linguistiques du poste et la région géographique  (Valable jusqu'en mars 2017)",
+      "en": "Staffing activities by type, first official language group, language requirements of position and geographic area (Valid until March 2017)"
+     },
+     "bytes": 130703,
+     "sha256": "b71303c0733b2320f02410b14521888cbe2b6a0b85733c45bd7d50e779882a79",
+     "retrieved": "2026-11-27T11:31:07Z",
+     "rows": 567,
+     "path": "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "fr": "Embauche et dotation à la fonction publique en vertu de la Loi sur l'emploi dans la fonction publique",
+    "en": "Public Service Hiring and Staffing Activities under the Public Service Employment Act"
+   }
+  },
+  {
    "id": "GC-0218",
    "name": "AR1 - Recruitment program appointments (ar1ii.csv)",
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
