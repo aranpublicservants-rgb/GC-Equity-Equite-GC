@@ -280,6 +280,26 @@ def main():
                         continue
                     fmt = str(res.get('format', '')).upper()
                     lang = res.get('language')
+                    if fmt.startswith('PDF'):
+                        fmt = 'PDF'  # includes PDF/UA, the accessible PDF format
+                    if fmt in ('HTML', 'HTM', 'WEB PAGE') and res.get('url', '').startswith('http'):
+                        # A report published only as a web page: keep a snapshot of its HTML for reference.
+                        try:
+                            if res['url'] not in MEMO:
+                                page = curl(res['url'], max_time=120)
+                                d = work / 'main/data/register-gaps-2026-11' / folder_for(res['url'])
+                                d.mkdir(parents=True, exist_ok=True)
+                                target = d / 'page-snapshot.html.gz'
+                                with gzip.GzipFile(filename='page-snapshot.html', mode='wb', fileobj=open(target, 'wb'), compresslevel=9, mtime=0) as gz:
+                                    gz.write(page)
+                                MEMO[res['url']] = {'url': res['url'], 'kind': 'page-snapshot', 'stored': True, 'language': lang,
+                                                    'path': target.relative_to(work / 'main').as_posix(), 'bytes': len(page),
+                                                    'sha256': hashlib.sha256(page).hexdigest(),
+                                                    'retrieved': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+                            item['files'].append(dict(MEMO[res['url']]))
+                        except Exception as err:
+                            item['failures'].append({'url': res.get('url'), 'error': str(err)[:300]})
+                        continue
                     if fmt not in KEEP_FORMATS:
                         item['files'].append({'url': res.get('url'), 'format': fmt, 'language': lang, 'stored': False,
                                               'reason': 'web page or format not stored'})
