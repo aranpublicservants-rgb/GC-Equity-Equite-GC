@@ -15,8 +15,12 @@ on:
       ids:
         description: 'Only these register entries, comma-separated (optional)'
         default: ''
+      budget:
+        description: 'Minutes of downloading per run before saving and starting the next run'
+        default: '80'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: fetch-register-gaps
   cancel-in-progress: false
@@ -32,7 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download, store and split
-        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}"
+        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}" --budget "${{ inputs.budget || '80' }}"
       - name: Publish large parts to the pses-data branch
         run: |
           set -e
@@ -60,3 +64,12 @@ jobs:
           if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
           git commit -m "Add copies of public source register entries and refresh register status"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done
+      - name: Start the next run while entries remain
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          left=$(cat "$RUNNER_TEMP/gaps/remaining.txt" 2>/dev/null || echo 0)
+          echo "Entries remaining: $left"
+          if [ "$left" -gt 0 ] && [ -z "${{ inputs.ids }}" ]; then
+            gh workflow run fetch-register-gaps.yml --ref main -f limit="${{ inputs.limit }}" -f max_bytes="${{ inputs.max_bytes }}" -f ids= -f budget="${{ inputs.budget || '80' }}"
+          fi

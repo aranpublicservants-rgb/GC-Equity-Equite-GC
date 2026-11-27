@@ -6,6 +6,8 @@ Usage: fetch-register-gaps.py <work directory> [--plan] [--limit N] [--max-bytes
                  GitHub time limit; later runs continue with what is still missing)
   --max-bytes B  skip entries whose register size is larger than B bytes
   --ids          take only the listed register entries
+  --budget M     stop starting new entries after M minutes, save what was stored and
+                 print REMAINING <n> so the workflow can start the next run
 Entries already recorded in data/register-gaps-manifest.json are kept and merged.
 
 Targets are the in-scope entries of data/public-source-register-2026-11-24.json that
@@ -207,6 +209,8 @@ def main():
     only = {x.strip() for x in (opt('--ids', '') or '').split(',') if x.strip()}
     global MAX_SIZE
     MAX_SIZE = max_bytes or None
+    budget = float(opt('--budget', '0') or 0) * 60
+    started = time.time()
     work.mkdir(parents=True, exist_ok=True)
     manifest = {'note': ('Copies of public source register entries that had no copy in this repository. '
                          'Originals are stored unchanged, gzip-compressed; very large CSV files are split into '
@@ -217,10 +221,14 @@ def main():
     kept = []
     if previous.exists():
         kept = json.loads(previous.read_text(encoding='utf-8')).get('entries', [])
+    attempted = {k['id'] for k in kept}
+    retry = '--retry-failed' in sys.argv
     chosen = []
     for e in targets():
         if only and e['id'] not in only:
             continue
+        if e['id'] in attempted and not only and not retry:
+            continue  # tried before and recorded with its failure; rerun with --ids or --retry-failed
         if max_bytes and (e.get('bytes') or 0) > max_bytes:
             continue
         chosen.append(e)
@@ -231,7 +239,11 @@ def main():
     for e in targets():
         shared[e['source']] = shared.get(e['source'], 0) + 1
     manifest['entries'] = [k for k in kept if k['id'] not in done_ids]
+    remaining = 0
     for e in chosen:
+        if budget and time.time() - started > budget:
+            remaining += 1
+            continue
         url = e['source']
         item = {'id': e['id'], 'name': e['name'], 'source': url, 'files': [], 'failures': []}
         print('TARGET', e['id'], e['kind'], url)
@@ -259,6 +271,9 @@ def main():
                     else:
                         item['datasetLevel'] = True
                 for res in resources:
+                    if budget and time.time() - started > budget * 1.25:
+                        item['failures'].append({'url': res.get('url'), 'error': 'not attempted: run time budget reached'})
+                        continue
                     fmt = str(res.get('format', '')).upper()
                     lang = res.get('language')
                     if fmt not in KEEP_FORMATS:
@@ -300,11 +315,19 @@ def main():
             item['failures'].append({'url': url, 'error': str(err)[:300]})
         print('  stored', sum(1 for f in item['files'] if f.get('stored')), 'failures', len(item['failures']))
         manifest['entries'].append(item)
+    processed = {x['id'] for x in manifest['entries']}
+    manifest['entries'] += [k for k in kept if k['id'] in done_ids and k['id'] not in processed]
     manifest['entries'].sort(key=lambda x: x['id'])
     out = work / 'main/data/register-gaps-manifest.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print('ENTRIES', len(manifest['entries']))
+    # Entries left by the time budget, plus any still missing beyond --limit.
+    eligible = [e for e in targets() if (not only or e['id'] in only) and (not max_bytes or (e.get('bytes') or 0) <= max_bytes)
+                and (only or retry or e['id'] not in attempted)]
+    left = remaining + max(0, len(eligible) - len(chosen))
+    print('REMAINING', left)
+    (work / 'remaining.txt').write_text(str(left))
 
 
 if __name__ == '__main__':
