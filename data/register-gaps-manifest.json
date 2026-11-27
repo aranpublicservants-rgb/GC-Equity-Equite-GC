@@ -1880,6 +1880,42 @@
    }
   },
   {
+   "id": "GC-0139",
+   "name": "SNPS 2023 - By department and by religion",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/5daa5fd7-6597-4edf-93b5-ea2b43854df4/download/cfppsc_snps20.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
+   "id": "GC-0140",
+   "name": "SNPS 2023 - By department and by visible minority subgroup",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/download/cfppsc_snps21.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
    "id": "GC-0141",
    "name": "SNPS 2023 - By department and by Indigenous subgroup",
    "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
@@ -1901,6 +1937,24 @@
       "fr"
      ],
      "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
+   "id": "GC-0142",
+   "name": "SNPS 2023 - By department and by type of disability",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/download/cfppsc_snps23.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
     }
    ],
    "failures": [],
@@ -2105,6 +2159,45 @@
      "retrieved": "2026-11-27T10:41:23Z",
      "rows": 199494,
      "path": "data/register-gaps-2026-11/u-507c208ddd7fd708/cfppsc_snps07-1.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2025 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2025"
+   }
+  },
+  {
+   "id": "GC-0150",
+   "name": "SNPS 2025 - By department and by Occupational group",
+   "source": "https://open.canada.ca/data/en/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/8766bf91-d14c-423b-a5d1-ac47f5b4dd22/resource/16e1bab4-ef46-4857-8ac6-67ee9c99fa53/download/cfppsc_snps08-1.csv",
+     "title": {
+      "en": "By department and by Occupational group ",
+      "fr": "Par ministère et par groupe professionnel "
+     },
+     "bytes": 91558678,
+     "sha256": "f90dd24acec6c4f6de06904c5aa221577b46d396ab4a4394a7db7efbe141bb05",
+     "retrieved": "2026-11-27T11:17:56Z",
+     "rows": 716895,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-85bd0df4dd552d12",
+     "parts": [
+      {
+       "file": "cfppsc_snps08-1-001.csv.gz",
+       "rows": 716895,
+       "bytes": 7284921,
+       "sha256": "c1870bc972137c341d9fe764777ed7fec57244b962040c7fc7e272e448209e9a"
+      }
+     ],
      "format": "CSV",
      "language": [
       "en",
