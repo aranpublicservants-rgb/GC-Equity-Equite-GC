@@ -92,7 +92,10 @@
       "directRepoCheck": {
         "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx",
         "bytes": 21479,
-        "comparison": "size match"
+        "comparison": "Git blob hash computed from materialized Drive bytes matches GitHub blob hash",
+        "driveBytes": 21479,
+        "gitBlobSha": "0f709d6c6506637bd7cf9183801deb25e9d0bac9",
+        "manifestBytes": 21479
       }
     },
     {
@@ -404,7 +407,8 @@
       "directRepoCheck": {
         "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
         "bytes": 454,
-        "comparison": "size differs; compare original and analytical copy"
+        "comparison": "All numeric rows and dates match; original file uses legacy character encoding; GitHub UTF-8 encoding increases byte count. Original bytes differ.",
+        "driveSha256": "84c9b6dbeae074b96da5692d9d212cb585cb770d65355149c28ddac45fac36a9"
       }
     },
     {
@@ -430,7 +434,8 @@
       "directRepoCheck": {
         "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
         "bytes": 490,
-        "comparison": "size differs; compare original and analytical copy"
+        "comparison": "All numeric rows and dates match; original file uses legacy character encoding; GitHub UTF-8 encoding increases byte count. Original bytes differ.",
+        "driveSha256": "478a8183f2f080447750c71cef5ad950dafabc9dbc6bd6ada705006d7ea39a29"
       }
     },
     {
