@@ -111,3 +111,12 @@ test('shared chart settings preserve only supported public selections',()=>{
  assert.equal(safe.view,'both');assert.equal(safe.kind,'dots');assert.equal(safe.measure,2);assert.equal(safe.compare,'');assert.deepEqual(safe.filters,{1:'2024'});assert.equal(safe.search,undefined);
  assert.deepEqual(V.publicChartSettings(p,{measure:999,kind:'invalid',filters:{1:'unknown',99:'arbitrary'}}).filters,{});
 });
+
+test('representation gaps only use compatible explicit source-row workforce benchmarks',()=>{
+ const p=V.profile(['Group','Share of workforce (%)','Workforce availability (%)'],[['A','12.4%','10.2%'],['B','X','9%'],['C','0%','1%'],['D','5%','Not established']],{title:'Representation',sources:'https://example.org/rep'});
+ const g=V.representationGap(p);assert.ok(g);assert.deepEqual(g.rows.map(r=>r[3]),['2.2','','-1','']);assert.deepEqual(V.points(g,{measure:3,x:0}).rows.map(r=>r.values[0]),[2.2,null,-1,null]);assert.deepEqual(g.sources,p.sources);
+ assert.equal(V.representationGap(V.profile(['Group','Representation (%)','Peer average (%)'],[['A',10,20]],{sources:'https://example.org/rep'})),null);
+ assert.equal(V.representationGap(V.profile(p.headers,p.rows)),null);
+ const f=V.profile(['Groupe','Part de l’effectif (%)','Disponibilité (%)'],[['A','5,1 %','7,3 %']],{lang:'fr',sources:'https://example.org/rep'});
+ assert.equal(V.representationGap(f).rows[0][3],'-2,2');
+});
