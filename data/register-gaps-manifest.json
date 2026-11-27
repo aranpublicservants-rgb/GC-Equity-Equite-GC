@@ -396,6 +396,40 @@
    "failures": []
   },
   {
+   "id": "GC-0074",
+   "name": "PSES 2024",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/2024%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202024.xlsx",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/2024%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202024.xlsx",
+     "title": "PSES 2024",
+     "bytes": 483682,
+     "sha256": "793ed82c2c8b4ee2b2e7bd09bf57b92cc2b78bb632b1f605a503d1679186a3cd",
+     "retrieved": "2026-11-27T11:16:23Z",
+     "path": "data/register-gaps-2026-11/u-3bf8325676eabc46/2024-PSES-Supporting-Documentation-Documents-de-r-f-rence-du-SAFF-2024.xlsx.gz",
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0075",
+   "name": "PSES 2024",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2024/PSES_Employment%20Equity%20Results%20Tables%202024%20-%20Tableaux%20des%20r%C3%A9sultats%20de%20l%E2%80%99%C3%A9quit%C3%A9%20en%20mati%C3%A8re%20d%E2%80%99emploi%20du%20SAFF%202024.xlsx",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2024/PSES_Employment%20Equity%20Results%20Tables%202024%20-%20Tableaux%20des%20r%C3%A9sultats%20de%20l%E2%80%99%C3%A9quit%C3%A9%20en%20mati%C3%A8re%20d%E2%80%99emploi%20du%20SAFF%202024.xlsx",
+     "title": "PSES 2024",
+     "bytes": 2519548,
+     "sha256": "b985c8a150bb31a342367d08c9f6e8233e68d8c692be1a826ad40c76107e30f8",
+     "retrieved": "2026-11-27T11:16:26Z",
+     "path": "data/register-gaps-2026-11/u-4f94d5d1bcb8a375/PSES_Employment-Equity-Results-Tables-2024---Tableaux-des-r-sultats-de-l-quit-en-mati-re-d-emploi-du-SAFF-2024.xlsx.gz",
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
    "id": "GC-0079",
    "name": "PSES 2024",
    "source": "https://open.canada.ca/data/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
@@ -1771,6 +1805,42 @@
       "fr"
      ],
      "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
+   "id": "GC-0136",
+   "name": "SNPS 2023 - By department and by diploma",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/05442d31-89b6-4b97-a40f-7ee8f1cf756e/download/cfppsc_snps16.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
+   "id": "GC-0137",
+   "name": "SNPS 2023 - By department and by marital status",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/bf726802-12f3-4337-a5a0-facd70299a28/download/cfppsc_snps17.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
     }
    ],
    "failures": [],
