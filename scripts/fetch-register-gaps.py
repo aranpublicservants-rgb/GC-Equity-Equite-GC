@@ -59,14 +59,16 @@ def targets():
     return out
 
 
-def curl(url, dest=None, max_time=2400):
+def curl(url, dest=None, max_time=900, max_size=None):
     """Fetch with curl (Canada.ca refuses some other clients from GitHub servers)."""
-    cmd = ['curl', '-sSL', '--fail', '--http1.1', '--retry', '2', '--retry-delay', '10', '--speed-limit', '20000', '--speed-time', '120',
+    cmd = ['curl', '-sSL', '--fail', '--http1.1', '--retry', '1', '--retry-delay', '10', '--speed-limit', '100000', '--speed-time', '60',
            '--connect-timeout', '30', '--max-time', str(max_time), '-A', UA,
            '-H', 'Accept-Language: en-CA,en;q=0.8']
     if dest:
         cmd += ['-o', str(dest)]
-    out = subprocess.run(cmd + [url], capture_output=True, timeout=max_time + 60)
+    if max_size:
+        cmd += ['--max-filesize', str(int(max_size))]
+    out = subprocess.run(cmd + [url], capture_output=True, timeout=2 * max_time + 90)
     if out.returncode != 0:
         raise RuntimeError(f'curl exit {out.returncode}: {out.stderr.decode(errors="replace")[:200]}')
     return out.stdout
@@ -164,11 +166,15 @@ def take_file(url, entry_id, work, label=None, fmt=None):
     return rec
 
 
+MAX_SIZE = None  # set from --max-bytes; also caps files taken from dataset pages
+
+
 def _take_file(url, entry_id, work, label=None, fmt=None):
     tmp = work / 'download.tmp'
     if tmp.exists():
         tmp.unlink()
-    curl(url, tmp)
+    big = MAX_SIZE is None or MAX_SIZE > SMALL_MAX
+    curl(url, tmp, max_time=3000 if big else 900, max_size=MAX_SIZE or None)
     digest, size = sha_and_size(tmp)
     name = safe_name(url)
     is_csv = (fmt or '').upper() == 'CSV' or name.lower().endswith('.csv')
@@ -199,6 +205,8 @@ def main():
     limit = int(opt('--limit', '0') or 0)
     max_bytes = int(opt('--max-bytes', '0') or 0)
     only = {x.strip() for x in (opt('--ids', '') or '').split(',') if x.strip()}
+    global MAX_SIZE
+    MAX_SIZE = max_bytes or None
     work.mkdir(parents=True, exist_ok=True)
     manifest = {'note': ('Copies of public source register entries that had no copy in this repository. '
                          'Originals are stored unchanged, gzip-compressed; very large CSV files are split into '
