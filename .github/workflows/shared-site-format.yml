@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['**/*.html', '*.html', 'gc-shared-shell.*', 'scripts/apply-shared-shell.py', '.github/workflows/shared-site-format.yml']
+    paths: ['**/*.html', '*.html', 'gc-shared-shell.*', 'scripts/apply-shared-shell.py', 'tests/shared-site-format-browser.cjs', '.github/workflows/shared-site-format.yml']
 permissions:
   contents: write
   pages: write
@@ -43,3 +43,11 @@ jobs:
             python3 scripts/apply-shared-shell.py --check
           done
           exit 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify shared navigation on desktop and mobile
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+          node tests/shared-site-format-browser.cjs
