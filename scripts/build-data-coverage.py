@@ -89,7 +89,7 @@ T = {
         'A commitment in a plan or report is shown as a commitment, not as a result.',
         'Matching between the register and this repository uses publisher addresses, resource identifiers, file names and checksums. A match confirms that a copy exists here. It does not confirm that every row has been analysed.',
         'Only evidence specific to the Canadian federal public service is included. General labour market benchmarks are excluded.'],
-  files='Data files used for this page', dl='Download the full register status (JSON)'),
+  files='Data files used for this page', dl='Download the full register status (JSON)', copies='Copies of register entries downloaded for this site'),
  'fr': dict(
   title='Couverture des données et limites', lang='English', langhref='?lang=en', hl='en',
   intro=f'Cette page indique les types de données que contient chacune des {n(total,"fr")} pages d’organisme et ce que ce site conserve pour chaque entrée du registre public des sources. Elle est produite à partir des fichiers de données du site.',
@@ -114,7 +114,7 @@ T = {
         'Un engagement figurant dans un plan ou un rapport est présenté comme un engagement, et non comme un résultat.',
         'Le rapprochement entre le registre et ce dépôt repose sur les adresses des éditeurs, les identifiants de ressources, les noms de fichiers et les sommes de contrôle. Une correspondance confirme qu’une copie existe ici. Elle ne confirme pas que chaque ligne a été analysée.',
         'Seules les données propres à la fonction publique fédérale du Canada sont incluses. Les repères généraux du marché du travail sont exclus.'],
-  files='Fichiers de données utilisés pour cette page', dl='Télécharger l’état complet du registre (JSON)'),
+  files='Fichiers de données utilisés pour cette page', dl='Télécharger l’état complet du registre (JSON)', copies='Copies des entrées du registre téléchargées pour ce site'),
 }
 
 
@@ -149,7 +149,7 @@ def block(lang):
         name = FAMILY.get(fam, (fam, fam))[0 if lang == 'en' else 1]
         o.append(f'<tr><th scope="row">{e(name)}</th>' + ''.join(f'<td>{n(c[k], lang)}</td>' for k, _ in cols) + '</tr>')
     o.append(f'</tbody><tfoot><tr><th scope="row">{e(t["total"])}</th>' + ''.join(f'<td>{n(tot[k], lang)}</td>' for k, _ in cols) + '</tr></tfoot></table></div>')
-    o.append(f'<p class="cov-source"><a href="data/source-register-status.json" download>{e(t["dl"])}</a> · <a href="{e(status["register"])}">{e(status["register"])}</a></p>')
+    o.append(f'<p class="cov-source"><a href="data/source-register-status.json" download>{e(t["dl"])}</a> · <a href="register-copies.html">{e(t["copies"])}</a> · <a href="{e(status["register"])}">{e(status["register"])}</a></p>')
     o.append(f'<h2>{e(t["h_lim"])}</h2><ul>' + ''.join(f'<li>{e(x)}</li>' for x in t['lims']) + '</ul></div>')
     return '\n'.join(o)
 

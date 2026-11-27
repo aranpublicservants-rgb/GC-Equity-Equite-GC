@@ -246,3 +246,4 @@ subprocess.run(["python3","scripts/apply-shared-shell.py","--check"],cwd=ROOT,ch
 subprocess.run(["python3","scripts/check-bilingual.py"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/build-department-survey-trends.py","--check"],cwd=ROOT,check=True)
 subprocess.run(["node","--check","assets/department-trends.js"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/build-register-copies.py","--check"],cwd=ROOT,check=True)

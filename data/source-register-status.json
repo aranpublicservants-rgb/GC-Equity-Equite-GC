@@ -6,7 +6,7 @@
  "counts": {
   "verified": 311,
   "hosted": 330,
-  "downloadable": 251,
+  "downloadable": 315,
   "searchable": 173,
   "departmental": 171,
   "analysis": 112,
@@ -27,7 +27,7 @@
    "hosted": [
     "pses-data:register-gaps/u-f4206e48213e4cf0"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -46,7 +46,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-60de0d1d997e7577/2008_results-resultats.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -192,7 +192,7 @@
    "hosted": [
     "pses-data:register-gaps/u-a62010940867c1b2"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -211,7 +211,7 @@
    "hosted": [
     "pses-data:register-gaps/u-23d686adcc6dd13a"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -230,7 +230,7 @@
    "hosted": [
     "pses-data:register-gaps/u-1482696fddf9dd8f"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -249,7 +249,7 @@
    "hosted": [
     "pses-data:register-gaps/u-ca96a743cc92c9bd"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -323,7 +323,7 @@
    "hosted": [
     "pses-data:register-gaps/u-8a335b1ba4b61fca"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -342,7 +342,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-dda73ba98ab67f4d/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -361,7 +361,7 @@
    "hosted": [
     "pses-data:register-gaps/u-aa90ad4c0b8adfe8"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -380,7 +380,7 @@
    "hosted": [
     "pses-data:register-gaps/u-8f0713ce7e04e35e"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -3552,7 +3552,7 @@
     "data/register-gaps-2026-11/u-cfdc7ebb5c6d7397/2021-snps-ee-thematic-report-fr.docx.gz",
     "data/register-gaps-2026-11/u-f0663a2ca6c5c1c6/2021-snps-ee-thematic-report-en.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -3572,7 +3572,7 @@
     "data/register-gaps-2026-11/u-1b98bad6e48288cd/2021-snps-pwd-fra.docx.gz",
     "data/register-gaps-2026-11/u-d7de6a9df0d90226/2021-snps-pwd-eng.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -3594,7 +3594,7 @@
     "data/register-gaps-2026-11/u-d2b9d3cf013697d4/accessible-22007-2021-snps-presentation-fr.pptx.gz",
     "data/register-gaps-2026-11/u-efdb754b08d49e9a/accessible-22007-2021-snps-presentation-en.pptx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -3633,7 +3633,7 @@
     "data/register-gaps-2026-11/u-9c80187843d436e2/accessible-23001-ssd-questionnaire-results-2022-en-opengov.pptx.gz",
     "data/register-gaps-2026-11/u-f3981847652537a3/accessible-23001-ssd-questionnaire-results-2022-fr-opengov.pptx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5871,7 +5871,7 @@
    "hosted": [
     "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5890,7 +5890,7 @@
    "hosted": [
     "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5910,7 +5910,7 @@
     "data/register-gaps-2026-11/u-34e2d91ff058e7c4/d-i-package-spring-2024-ee-separation-trends-dsad7106-fr-1.docx.gz",
     "data/register-gaps-2026-11/u-ef32657e34ff6fcd/d-i-package-spring-2024-ee-separation-trends-dsad7106-en-1.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5930,7 +5930,7 @@
     "data/register-gaps-2026-11/u-3109e12246ea48d3/separation-trends-for-emloyment-equity-designated-groups-psea-organisatiosn-2020-2021-fr.docx.gz",
     "data/register-gaps-2026-11/u-6d3a207ec5ca5547/separation-trends-for-emloyment-equity-designated-groups-psea-organisations-2020-2021-en.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5952,7 +5952,7 @@
     "data/register-gaps-2026-11/u-81218c9689f775eb/ee-promotion-rate-study-deck-en-.docx.pptx.gz",
     "data/register-gaps-2026-11/u-af04fb001cd721ec/ee-promotion-rate-accessible-version-en.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5972,7 +5972,7 @@
     "data/register-gaps-2026-11/u-5ecbdf180b0ce6c3/employment-equity-promotion-rate-study-three-year-update-fr-2022.docx.gz",
     "data/register-gaps-2026-11/u-a68440d313c2d0b0/employment-equity-promotion-rate-study-three-year-update-en-2022.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -5992,7 +5992,7 @@
     "data/register-gaps-2026-11/u-18d24b67f4cc2ba1/employment-equity-promotion-rate-study-five-year-update-2024-fr.docx.gz",
     "data/register-gaps-2026-11/u-4863d2acd0ba3616/employment-equity-promotion-rate-study-five-year-update-2024-en-1.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6012,7 +6012,7 @@
     "data/register-gaps-2026-11/u-786953b8f8e0be82/non-advertised-appointments-by-employment-equity-designated-group-2020-2021_fr.docx.gz",
     "data/register-gaps-2026-11/u-fcb850c75593d3da/non-advertised-appointments-by-employment-equity-designated-group-2020-2021_en.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6032,7 +6032,7 @@
     "data/register-gaps-2026-11/u-67bba186c8e0aa20/non-advertised-appointments-by-ee-group-2013-14-to-2022-23_en.docx.gz",
     "data/register-gaps-2026-11/u-87e1bf1b22244616/non-advertised-appointments-by-ee-group-2013-14-to-2022-23_fr.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6054,7 +6054,7 @@
     "data/register-gaps-2026-11/u-46e8611fabe8b87e/dsad-6002-analysis-part-3-fra1.pdf.gz",
     "data/register-gaps-2026-11/u-86aa41c81fa58f98/dsad-6002-analysis-part-3-eng1.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6074,7 +6074,7 @@
     "data/register-gaps-2026-11/u-625410902b4071ea/audit-ee-fra.pdf.gz",
     "data/register-gaps-2026-11/u-c046910e862b9bba/audit-ee-eng.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6094,7 +6094,7 @@
     "data/register-gaps-2026-11/u-4fd159d573f41aec/ee-representation-in-acting-appointments-en.docx.gz",
     "data/register-gaps-2026-11/u-d7e50a4fba74d8e2/ee-representation-in-acting-appointments-fr-1.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6114,7 +6114,7 @@
     "data/register-gaps-2026-11/u-714b3285affd6e53/barrier-indigenous-recruitment-consultation-results-recommendations-fra.docx.gz",
     "data/register-gaps-2026-11/u-a8010bafe9616cf6/barrier-indigenous-recruitment-consultation-results-recommendations-eng.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6134,7 +6134,7 @@
     "data/register-gaps-2026-11/u-1576c4e92dad7541/di-package-citizenship-analysis-2022-2023_en-1.docx.gz",
     "data/register-gaps-2026-11/u-e5c852e23c7620d6/di-package-citizenship-analysis-2022-2023_fr-1.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6154,7 +6154,7 @@
     "data/register-gaps-2026-11/u-46eac694d7ee7576/citizenship-of-applicants-and-external-appointments-period-of-2015-16-to-2020-21_en.docx.gz",
     "data/register-gaps-2026-11/u-ef61d2129eee0ad4/citizenship-of-applicants-and-external-appointments-period-of-2015-16-to-2020-21__fr.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6176,7 +6176,7 @@
     "data/register-gaps-2026-11/u-86cb8d7c00c6902b/dsad-6002-analysis-part-2-fra.docx.gz",
     "data/register-gaps-2026-11/u-f323db5fa0b0a119/dsad-6002-analysis-part-2-eng1.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6198,7 +6198,7 @@
     "data/register-gaps-2026-11/u-cb362be28b2004e3/40092101-di-data-package-for-psmac-eng1.pdf.gz",
     "data/register-gaps-2026-11/u-e9a848de2af94d27/40092101-di-data-package-for-psmac-eng.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6220,7 +6220,7 @@
     "data/register-gaps-2026-11/u-9587726ddbff0594/dsad-6002-analysis-part-1-eng.docx.gz",
     "data/register-gaps-2026-11/u-fd3093b6da161771/dsad-6002-analysis-part-1-eng1.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6242,7 +6242,7 @@
     "data/register-gaps-2026-11/u-e0826bd396a183f5/2019-2020-findings-from-the-organizational-reporting-regarding-annex-d-adai-moc.pptx.gz",
     "data/register-gaps-2026-11/u-faff2a7ddb4796fe/constatations-des-rapports-organisationnels-de-20192020-idrn-annexe-d-rc-version-accessible-wor.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6262,7 +6262,7 @@
     "data/register-gaps-2026-11/u-2f8c44b0674e9b44/2020-2021-resultats-concernant-les-rapports-organisationnels-annex-d-open-gov-word-version-fr.docx.gz",
     "data/register-gaps-2026-11/u-862ca5001e102c15/2020-2021-results-organizational-reporting-adai-annex-d-open-gov-word-version-eng.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6286,7 +6286,7 @@
     "data/register-gaps-2026-11/u-9f3d1fc0435631f0/resultats-2018-2019-rapports-organisationnels-instrument-delegation-responsabilisation-matiere-nomination-annexe-d-eng.d.gz",
     "data/register-gaps-2026-11/u-fc53246dc4d1fff4/resultats-2018-2019-rapports-organisationnels-instrument-delegation-responsabilisation-matiere-nomination-annexe-d-fra.p.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6308,7 +6308,7 @@
     "data/register-gaps-2026-11/u-46b4ee54bcfc9a21/2017-2018findingsfromorganizational-fra.pptx.gz",
     "data/register-gaps-2026-11/u-efea2acefc64f417/2017-2018findingsfromorganizational-eng.pptx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6330,7 +6330,7 @@
     "data/register-gaps-2026-11/u-92b1b14ec2e735a0/Overview_of_the_Federal_Public_Service_Staffing_System_-FR-.pptx.gz",
     "data/register-gaps-2026-11/u-e82273604fc150bd/Overview_of_the_Federal_Public_Service_Staffing_System_-EN-.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6350,7 +6350,7 @@
     "data/register-gaps-2026-11/u-060279e95b3d4d1f/staffing-update-report-april-september-2022-fr-opengov.docx.gz",
     "data/register-gaps-2026-11/u-c54647fcdc14423a/staffing-update-report-april-september-2022-en-opengov.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6370,7 +6370,7 @@
     "data/register-gaps-2026-11/u-78e2664a59e1eacb/accessible-22022-staffing-update-report-october-2021-march-2022-en.docx.gz",
     "data/register-gaps-2026-11/u-a5272e9150861486/accessible-22022-staffing-update-report-october-2021-march-2022-fr.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6390,7 +6390,7 @@
     "data/register-gaps-2026-11/u-2c8900bfdf3f2a6b/arpp-ppra-fra.pptx.gz",
     "data/register-gaps-2026-11/u-ceb38f1f99fa230a/arpp-ppra-eng.pptx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6410,7 +6410,7 @@
     "data/register-gaps-2026-11/u-5ea69558990f51f8/archived_ar6_datasets_fr.pdf.gz",
     "data/register-gaps-2026-11/u-991a99bd287dc8d2/archived_ar6_datasets_en.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6894,7 +6894,7 @@
     "data/register-gaps-2026-11/u-f122340fb75ae80e/federal-public-service-executive-and-non-executive-statistics-about-the-data.docx.gz",
     "data/register-gaps-2026-11/u-f3c638b0450fb266/population-of-the-federal-public-service-by-age-band-and-executive-level-march-2026.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -6918,7 +6918,7 @@
     "data/register-gaps-2026-11/u-8ac25548a4ce0101/statistiques-sur-les-cadres-superieurs-et-non-cadres-superieurs-de-la-fpf-au-sujet-des-donnees.docx.gz",
     "data/register-gaps-2026-11/u-f122340fb75ae80e/federal-public-service-executive-and-non-executive-statistics-about-the-data.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -6940,7 +6940,7 @@
     "data/register-gaps-2026-11/u-2b8dbef5892f9f47/population-of-the-federal-public-service-by-region-of-work-and-executive-level-march-2026.csv.gz",
     "data/register-gaps-2026-11/u-2e86556fea593e00/effectif-de-la-fonction-publique-federale-par-region-et-niveau-de-cadres-superieurs-mars-2026.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -6962,7 +6962,7 @@
     "data/register-gaps-2026-11/u-0cadf955ce8225d7/population-of-the-federal-public-service-by-province-and-executive-level-march-2026.csv.gz",
     "data/register-gaps-2026-11/u-3057e7a741a21a17/effectif-de-la-fonction-publique-federale-par-province-et-niveau-de-cadres-superieurs-mars-2026.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -6986,7 +6986,7 @@
     "data/register-gaps-2026-11/u-f122340fb75ae80e/federal-public-service-executive-and-non-executive-statistics-about-the-data.docx.gz",
     "data/register-gaps-2026-11/u-f3c638b0450fb266/population-of-the-federal-public-service-by-age-band-and-executive-level-march-2026.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -7008,7 +7008,7 @@
     "data/register-gaps-2026-11/u-8ac25548a4ce0101/statistiques-sur-les-cadres-superieurs-et-non-cadres-superieurs-de-la-fpf-au-sujet-des-donnees.docx.gz",
     "data/register-gaps-2026-11/u-f122340fb75ae80e/federal-public-service-executive-and-non-executive-statistics-about-the-data.docx.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -7030,7 +7030,7 @@
     "data/register-gaps-2026-11/u-6d4acc3bf65b36ae/effectif-de-la-fonction-publique-federale-par-langue-officiel-et-niveau-de-cadres-superieurs-mar.csv.gz",
     "data/register-gaps-2026-11/u-8c6d7e3a45317539/population-of-the-federal-public-service-by-fol-and-executive-level-march-2026.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [
@@ -7129,7 +7129,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-7ec946b33539dbfa/page-snapshot.html.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7243,7 +7243,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-985103c2cc5349e1/rbpo_rppo_fr.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7262,7 +7262,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-27e040fa2521e5cb/pipo_irpo_en.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7281,7 +7281,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-2ebe9dfaeb6c08eb/pipo_irpo_fr.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7336,7 +7336,7 @@
    "hosted": [
     "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7355,7 +7355,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-aa2efd4e6c754a04/pipo_irpo_en.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7374,7 +7374,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-86ebe5555599fa53/pipo_irpo_fr.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7412,7 +7412,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-b25be5b33300d9fb/a_per_1718_en.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7431,7 +7431,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-3d9f82329a1141f3/a_per_1718_fr.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7750,7 +7750,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-8e3153d0ba4b43bd/distribution-designated-groups_age.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8305,7 +8305,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-2479e718fb189b78/page-snapshot.html.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8341,7 +8341,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-3a245f8e9789516d/page-snapshot.html.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8360,7 +8360,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-db0a462f90443d00/HRS-Datasets-2019.csv.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -9006,7 +9006,7 @@
     "data/register-gaps-2026-11/u-b3988b0086c17957/vg-automne-2019-rapport-1-le-respect-en-milieu-de-travail-fr.pdf.gz",
     "data/register-gaps-2026-11/u-ddda16e02c496101/ag-fall-2019-report-1-respect-in-the-workplace-en.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -9043,7 +9043,7 @@
     "data/register-gaps-2026-11/u-0bef46ffc37e05cb/vg-202605-accessibilite-fonction-publique.pdf.gz",
     "data/register-gaps-2026-11/u-731aa3d9f5c11068/ag-202605-accessibility-public-service.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -9079,7 +9079,7 @@
    "hosted": [
     "data/register-gaps-2026-11/u-ca63950c6b516297/BT39-91-2025-eng.pdf.gz"
    ],
-   "downloadable": false,
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],

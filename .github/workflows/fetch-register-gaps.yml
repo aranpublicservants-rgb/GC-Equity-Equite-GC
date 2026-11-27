@@ -60,10 +60,11 @@ jobs:
           set -e
           cp -r "$RUNNER_TEMP/gaps/main/data/." data/
           python scripts/update-data-checksums.py
+          python scripts/build-register-copies.py
           python scripts/reconcile-source-register.py
           python scripts/build-data-coverage.py
           python scripts/update-data-checksums.py
-          git add data/register-gaps-2026-11 data/register-gaps-manifest.json data/source-register-status.json data-coverage.html data/checksums.sha256
+          git add data/register-gaps-2026-11 data/register-gaps-manifest.json data/source-register-status.json data-coverage.html register-copies.html data/checksums.sha256
           if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
           git commit -m "Add copies of public source register entries and refresh register status"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done

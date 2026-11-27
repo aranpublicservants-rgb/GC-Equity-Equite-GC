@@ -1404,6 +1404,12 @@
     "group": "rights"
   },
   {
+    "path": "register-copies.html",
+    "en": "Copies of public source register entries",
+    "fr": "Copies des entrées du registre public des sources",
+    "group": "other"
+  },
+  {
     "path": "registrar-of-the-supreme-court-of-canada/",
     "en": "Registrar of the Supreme Court of Canada",
     "fr": "Bureau du registraire de la Cour suprême du Canada",
