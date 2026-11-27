@@ -1,0 +1,786 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Direct folder listing and comparison against archived-source and partition manifests and public register recorded bytes. File-size matches are not byte verification. No private Drive links.",
+  "folders": [
+    "pses-2011",
+    "pses-2014",
+    "pses-2017",
+    "pses-2018",
+    "pses-2019"
+  ],
+  "rows": [
+    {
+      "folder": "pses-2011",
+      "name": "pses2011-supporting-documentation.xls",
+      "bytes": 1041408,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 1041408,
+          "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/8413ff87-b68c-4d91-88bb-0352338c6ba4/download/pses2011_documentation.xls",
+          "path": "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls",
+          "id": "GC-0005",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2011",
+      "name": "pses2011-dept.xls",
+      "bytes": 2476544,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 2476544,
+          "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/456e7b80-be19-4971-84bc-9456e71f4386/download/pses-saff2011_dept.xls",
+          "path": "data/public-source-archive-2026-11-24/pses2011-dept.xls",
+          "id": "GC-0004",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2011",
+      "name": "pses2011-overall.csv",
+      "bytes": 33442,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 33442,
+          "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/142af1d0-a177-4b69-8686-7aae9f83363d/download/pses-saff2011_overallps.csv",
+          "path": "data/public-source-archive-2026-11-24/pses2011-overall.csv",
+          "id": "GC-0003",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2011",
+      "name": "pses2008-results.csv",
+      "bytes": 41087786,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 41087786,
+          "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/b9d7675c-9450-4cb9-9c04-77213fc836af/download/2008_results-resultats.csv",
+          "path": "data/register-gaps-2026-11/u-60de0d1d997e7577/2008_results-resultats.csv.gz",
+          "id": "GC-0002",
+          "sha256": "861c8b5118fb978f5bafa6367d0932c258c666dde630790244b60e873b2ef0b8",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2011",
+      "name": "pses2011-results.csv",
+      "bytes": 90285372,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 90285372,
+          "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/621e1d95-7287-404a-9eac-b57c6bc92437/download/2011_results-resultats.csv",
+          "path": "pses-data:register-gaps/u-f4206e48213e4cf0",
+          "id": "GC-0001",
+          "sha256": "39d9395b181f526c944a9978d536f7c48ae461d56600b6109d13772e6ec457e7",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2014",
+      "name": "pses2014-supporting-documentation.xlsx",
+      "bytes": 6316838,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 6316838,
+          "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-documentation.xlsx",
+          "path": "data/open-canada-2026-11/pses-supporting-documentation/pses2014-supporting-documentation.xlsx",
+          "id": "GC-0014",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2014",
+      "name": "pses2014-results-organization.csv",
+      "bytes": 130711720,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 130711720,
+          "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-organization.csv",
+          "path": "pses-data:register-gaps/u-ca96a743cc92c9bd",
+          "id": "GC-0013",
+          "sha256": "81f5ee8163a219b4b3d4fad8770518e2953ddd5c040ee5d8fa8f42befe40a2c8",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2014",
+      "name": "pses2014-subset-group.csv",
+      "bytes": 186699275,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 186699275,
+          "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-group.csv",
+          "path": "pses-data:register-gaps/u-1482696fddf9dd8f",
+          "id": "GC-0012",
+          "sha256": "792700714e347673e55e0ccb1087a4838cd50664a0794df27effe52d6b4a3031",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2014",
+      "name": "pses2014-subset-demo.csv",
+      "bytes": 456682474,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 456682474,
+          "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats-demo.csv",
+          "path": "pses-data:register-gaps/u-23d686adcc6dd13a",
+          "id": "GC-0011",
+          "sha256": "cd047c2d9b82c11a34c9fa4d17c7e34db70c168f84dc78f03c3a66f88d781bd8",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2014",
+      "name": "pses2014-main-dataset.csv",
+      "bytes": 140283325,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 140283325,
+          "source": "https://www.canada.ca/content/dam/canada/tbs-sct/migration/psm-fpfm/modernizing-modernisation/pses-saff/data/2014-results-resultats.csv",
+          "path": "pses-data:register-gaps/u-a62010940867c1b2",
+          "id": "GC-0010",
+          "sha256": "beff4ed4bc17e0fa59b45415e067065b13e924c3f2fe7e8c3504d9fd2e730335",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-supporting-documentation.xlsx",
+      "bytes": 6351299,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 6351299,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_Supporting_Documentation_Document_reference_SAFF_2017.xlsx",
+          "path": "data/open-canada-2026-11/pses-supporting-documentation/pses2017-supporting-documentation.xlsx",
+          "id": "GC-0023",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-subset5.csv",
+      "bytes": 181577190,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 181577190,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+          "path": "pses-data:register-gaps/u-3c610efaa01774df",
+          "id": "GC-0022",
+          "sha256": "2a64a13b6fa6adc834bca354fd9ba1a515b22d9a1267045abd78bd060e15bc82",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-subset4.csv",
+      "bytes": 356327263,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 356327263,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-4_Sous-ensemble-4.csv",
+          "path": "pses-data:register-gaps/u-2d295b18c4a7b20e",
+          "id": "GC-0021",
+          "sha256": "f6964238e4a066a028912112da926b0e53c1758d453f820a62193a881618987f",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-subset3.csv",
+      "bytes": 359702837,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 359702837,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-3_Sous-ensemble-3.csv",
+          "path": "pses-data:register-gaps/u-8f0713ce7e04e35e",
+          "id": "GC-0020",
+          "sha256": "7afeef4efba671a3a4d3652c57778bc9b7a6107448040c24288ae7f5fc7231a9",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-subset2.csv",
+      "bytes": 486641593,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 486641593,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-2_Sous-ensemble-2.csv",
+          "path": "pses-data:register-gaps/u-aa90ad4c0b8adfe8",
+          "id": "GC-0019",
+          "sha256": "ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-main-dataset.csv",
+      "bytes": 304698230,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 304698230,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Open_dataset_Ensemble_donnees_ouvertes.csv",
+          "path": "pses-data:register-gaps/u-8a335b1ba4b61fca",
+          "id": "GC-0017",
+          "sha256": "ea2f3dc06ca707ce6e0b337fde32129cf951eb80fd189e3eff3ae58956775481",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2017",
+      "name": "pses2017-subset1.csv",
+      "bytes": 14908385,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 14908385,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
+          "path": "data/register-gaps-2026-11/u-dda73ba98ab67f4d/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv.gz",
+          "id": "GC-0018",
+          "sha256": "007f74705cb4dfd787768b086981634eae20a4105e814882713ac78cae53e497",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-subset4.csv",
+      "bytes": 324920251,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 324920251,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-4_Sous-ensemble-4.csv",
+          "path": "pses-data:pses-2018/2018_PSES_SAFF_Subset-4_Sous-ensemble-4",
+          "sha256": "212ef80a03832f2b663a94e3635b8bea3d8c5caf8de2c3a513f9abb8732dce25",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 324920251,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-4_Sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2018/2018_PSES_SAFF_Subset-4_Sous-ensemble-4",
+          "id": "GC-0029",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-subset3.csv",
+      "bytes": 853838440,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 853838440,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-3_Sous-ensemble-3.csv",
+          "path": "pses-data:pses-2018/2018_PSES_SAFF_Subset-3_Sous-ensemble-3",
+          "sha256": "1ce96abb30cfc866ddcfe74d7544c5f81615bae78cae9062fe8056072b8679a4",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 853838440,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-3_Sous-ensemble-3.csv",
+          "path": "pses-data:pses/pses-2018/2018_PSES_SAFF_Subset-3_Sous-ensemble-3",
+          "id": "GC-0028",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-main-dataset.csv",
+      "bytes": 203535621,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 203535621,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_open_dataset_Ensemble_de_données_ouvertes_du_SAFF_2018.csv",
+          "path": "pses-data:pses-2018/2018_PSES_open_dataset_Ensemble_de_donn-es_ouvertes_du_SAFF_2018",
+          "sha256": "05f9e245d77e187d2e77ceb846db1fe8bd4cad826a00ea8b34afb8fc50f37a14",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 203535621,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_open_dataset_Ensemble_de_données_ouvertes_du_SAFF_2018.csv",
+          "path": "pses-data:pses/pses-2018/2018_PSES_open_dataset_Ensemble_de_donn-es_ouvertes_du_SAFF_2018",
+          "id": "GC-0031",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-subset5.csv",
+      "bytes": 124205627,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 124205627,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+          "path": "pses-data:register-gaps/u-a265121493deea01",
+          "id": "GC-0030",
+          "sha256": "f47f29f91bc356b0326f040e58c2630cc4f016cff64a1f3cfcdecadb384a4c48",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-subset2.csv",
+      "bytes": 535804010,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 535804010,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2.csv",
+          "path": "pses-data:pses-2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2",
+          "sha256": "cf462953ffe53de9065fed6931a979e664e09712e4c1c9cb2921888d2e2488c7",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 535804010,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2.csv",
+          "path": "pses-data:pses/pses-2018/2018_PSES_SAFF_Subset-2_Sous-ensemble-2",
+          "id": "GC-0027",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-supporting-documentation.xlsx",
+      "bytes": 6354406,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 6354406,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_Supporting_Documentation_Document_de_r%C3%A9f%C3%A9rence_du_SAFF_2018.xlsx",
+          "path": "data/open-canada-2026-11/pses-supporting-documentation/pses2018-supporting-documentation.xlsx",
+          "id": "GC-0032",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2018",
+      "name": "pses2018-subset1.csv",
+      "bytes": 16863809,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 16863809,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
+          "path": "data/open-canada-2026-11/pses-2018/2018_PSES_SAFF_Subset-1_Sous-ensemble-1.csv.gz",
+          "id": "GC-0026",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part30.csv",
+      "bytes": 50000186,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part29.csv",
+      "bytes": 50000059,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part28.csv",
+      "bytes": 50000274,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part27.csv",
+      "bytes": 50000060,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part26.csv",
+      "bytes": 50000495,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part25.csv",
+      "bytes": 50000283,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part24.csv",
+      "bytes": 50000507,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part23.csv",
+      "bytes": 50000320,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part22.csv",
+      "bytes": 50000033,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part21.csv",
+      "bytes": 50000064,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part20.csv",
+      "bytes": 50000174,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part19.csv",
+      "bytes": 50000525,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part18.csv",
+      "bytes": 50000222,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part17.csv",
+      "bytes": 50000319,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part16.csv",
+      "bytes": 50000150,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part15.csv",
+      "bytes": 50000063,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part14.csv",
+      "bytes": 50000083,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part13.csv",
+      "bytes": 50000178,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part12.csv",
+      "bytes": 50000198,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part11.csv",
+      "bytes": 50000066,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part10.csv",
+      "bytes": 50000161,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part09.csv",
+      "bytes": 50000473,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part08.csv",
+      "bytes": 50000288,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part07.csv",
+      "bytes": 50000257,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part06.csv",
+      "bytes": 50000191,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part05.csv",
+      "bytes": 50000179,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part04.csv",
+      "bytes": 50000444,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part03.csv",
+      "bytes": 50000363,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part02.csv",
+      "bytes": 50000081,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part01.csv",
+      "bytes": 50000323,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3-part31.csv",
+      "bytes": 41116126,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset3.csv",
+      "bytes": 1541113365,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 1541113365,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 1541113365,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "path": "pses-data:pses/pses-2019/Main_9.12.03.b_subset_3",
+          "id": "GC-0035",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-main-dataset.csv",
+      "bytes": 258988633,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 258988633,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019%20Public%20Service%20Employee%20Survey%20open%20dataset_Ensemble%20de%20donn%C3%83%C2%A9es%20ouvertes%20du%20Sondage%20aupr%C3%83%C2%A8s%20des%20fonctionnaires%20f%C3%83%C2%A9d%C3%83%C2%A9raux%20de%202019.csv",
+          "path": "pses-data:pses-2019/2019-20Public-20Service-20Employee-20Survey-20open-20dataset_Ensemble-20de-20donn-C3-83-C2-A9es-20ouvertes-20du-20Sondage-20aupr-C3-83-C2-A8s-20des-20fonctionnaires-20f-C3-83-C2-A9d-C3-83-C2-A9raux-20de-202019",
+          "sha256": "8d641819de1369305a5a162ceb3aa5d08261a22b29ccbe219609b6d985593173",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 258988633,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019%20Public%20Service%20Employee%20Survey%20open%20dataset_Ensemble%20de%20donn%C3%83%C2%A9es%20ouvertes%20du%20Sondage%20aupr%C3%83%C2%A8s%20des%20fonctionnaires%20f%C3%83%C2%A9d%C3%83%C2%A9raux%20de%202019.csv",
+          "path": "pses-data:pses/pses-2019/2019-20Public-20Service-20Employee-20Survey-20open-20dataset_Ensemble-20de-20donn-C3-83-C2-A9es-20ouvertes-20du-20Sondage-20aupr-C3-83-C2-A8s-20des-20fonctionnaires-20f-C3-83-C2-A9d-C3-83-C2-A9raux-20de-202019",
+          "id": "GC-0038",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset5.csv",
+      "bytes": 294706859,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 294706859,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+          "path": "pses-data:pses-2019/2019_PSES_SAFF_Subset-5_Sous-ensemble-5",
+          "sha256": "ac70dab5352b4c6a4f585d6676e4bd0fb0f913c02f553e4abc507e6a9d649701",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 294706859,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+          "path": "pses-data:pses/pses-2019/2019_PSES_SAFF_Subset-5_Sous-ensemble-5",
+          "id": "GC-0037",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset4.csv",
+      "bytes": 967163672,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 967163672,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_4.csv",
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_4",
+          "sha256": "843191e2e7cc6c0ea5dd70bd722fc712d77fc22c2eabc92ddb61580ae5997707",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 967163672,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_4.csv",
+          "path": "pses-data:pses/pses-2019/Main_9.12.03.b_subset_4",
+          "id": "GC-0036",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset2.csv",
+      "bytes": 1052012444,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 1052012444,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_2.csv",
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_2",
+          "sha256": "f6455457c5d7dbabadf1c6e3495e1d38237c363cb3dbd81f6c7be0373b503fed",
+          "kind": "partition manifest"
+        },
+        {
+          "bytes": 1052012444,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_2.csv",
+          "path": "pses-data:pses/pses-2019/Main_9.12.03.b_subset_2",
+          "id": "GC-0034",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-supporting-documentation.xlsx",
+      "bytes": 6400633,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 6400633,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_Supporting_Documentation_Document_de_reference_du_SAFF_2019.xlsx",
+          "path": "data/open-canada-2026-11/pses-supporting-documentation/pses2019-supporting-documentation.xlsx",
+          "id": "GC-0039",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-subset1.csv",
+      "bytes": 26569614,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 26569614,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_%20subset-1_Sous-ensemble-1.csv",
+          "path": "data/open-canada-2026-11/pses-2019/2019_PSES_SAFF_-20subset-1_Sous-ensemble-1.csv.gz",
+          "id": "GC-0033",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pses-2019",
+      "name": "pses2019-diversity-inclusion-tables.xlsx",
+      "bytes": 155217,
+      "match": "size match, source family reviewed",
+      "candidates": [
+        {
+          "bytes": 155217,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019-PSES-Diversity-and-Inclusion-Tables_SAFF-2019-Tableaux-diversit%C3%A9-et-inclusion.xlsx",
+          "path": "data/open-canada-2026-11/pses-2019/pses2019-diversity-inclusion-tables.xlsx",
+          "id": "GC-0040",
+          "kind": "register-reported size"
+        }
+      ]
+    }
+  ]
+}
