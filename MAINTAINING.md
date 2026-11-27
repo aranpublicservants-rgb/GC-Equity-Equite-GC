@@ -22,6 +22,8 @@
 - **Source dates.** The shared shell adds the date modified recorded in `data/source-dates.json` after official source links under tables. Department page source lines name the publisher and dataset.
 - **Speed.** Name normalization in `gc-dashboard.js` is cached; main-thread blocking on the home page fell from about 5.5 s to 0.4 s on an emulated mid-range phone.
 
+- **Results over time.** `scripts/build-department-survey-trends.py` builds department results for PSES 2018, 2019, 2020, 2022-23 and 2024 from each cycle's published subset 1 file (checksums confirmed). Questions are followed back only where the published wording is identical; harassment, discrimination and three other questions whose wording changed are listed as not comparable. 70 organizations have at least two cycles. Generated pages show the tables under the survey tables (`assets/department-page.js`); DFO, DND and ISC load `assets/department-trends.js`. 2017 and GC InfoBase results will be added once the register download workflow finishes.
+
 **Still open:** department evidence where public data exists but is not yet on a page, manual assistive-technology testing, and the common design on the separate network websites.
 
 ## November 22, 2026 departmental audit follow-up

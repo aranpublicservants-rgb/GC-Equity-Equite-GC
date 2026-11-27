@@ -1,0 +1,253 @@
+{
+ "schema": 1,
+ "method": "Comparability rule: a question is followed back to an earlier cycle only when the published English wording is identical after removing the question number and normalizing spaces and quotation marks. Question numbers change between cycles, so numbers are never used to match. Questions whose wording changed (for example the harassment and discrimination questions, whose definitions changed) are listed as not comparable. Values and response counts are copied as published; suppressed or blank cells stay empty. Nothing is averaged, recalculated or carried forward.",
+ "cycles": [
+  "2018",
+  "2019",
+  "2020",
+  "2022-23",
+  "2024"
+ ],
+ "comparableQuestions": {
+  "Q12": {
+   "2018": "Q09",
+   "2019": "Q11",
+   "2020": "Q11",
+   "2022-23": "Q11",
+   "2024": "Q12"
+  },
+  "Q24": {
+   "2022-23": "Q23",
+   "2024": "Q24"
+  },
+  "Q25": {
+   "2022-23": "Q24",
+   "2024": "Q25"
+  },
+  "Q42": {
+   "2018": "Q36",
+   "2019": "Q43",
+   "2020": "Q40",
+   "2022-23": "Q41",
+   "2024": "Q42"
+  },
+  "Q43": {
+   "2018": "Q37",
+   "2019": "Q44",
+   "2020": "Q41",
+   "2022-23": "Q42",
+   "2024": "Q43"
+  },
+  "Q45": {
+   "2018": "Q38",
+   "2019": "Q45",
+   "2020": "Q42",
+   "2022-23": "Q44",
+   "2024": "Q45"
+  },
+  "Q47": {
+   "2020": "Q45",
+   "2022-23": "Q46",
+   "2024": "Q47"
+  },
+  "Q49": {
+   "2020": "Q47",
+   "2022-23": "Q48",
+   "2024": "Q49"
+  },
+  "Q51": {
+   "2022-23": "Q50",
+   "2024": "Q51"
+  },
+  "Q52": {
+   "2022-23": "Q51",
+   "2024": "Q52"
+  },
+  "Q53": {
+   "2018": "Q42",
+   "2019": "Q50",
+   "2020": "Q49",
+   "2022-23": "Q52",
+   "2024": "Q53"
+  },
+  "Q63": {
+   "2018": "Q53",
+   "2019": "Q64",
+   "2020": "Q60",
+   "2022-23": "Q62",
+   "2024": "Q63"
+  },
+  "Q70": {
+   "2018": "Q60",
+   "2019": "Q72",
+   "2020": "Q67",
+   "2022-23": "Q69",
+   "2024": "Q70"
+  },
+  "Q73q": {
+   "2022-23": "Q72p",
+   "2024": "Q73q"
+  },
+  "Q77": {
+   "2022-23": "Q76",
+   "2024": "Q77"
+  },
+  "Q78": {
+   "2020": "Q77",
+   "2022-23": "Q77",
+   "2024": "Q78"
+  },
+  "Q81": {
+   "2018": "Q66",
+   "2019": "Q78",
+   "2020": "Q78",
+   "2022-23": "Q80",
+   "2024": "Q81"
+  },
+  "Q84": {
+   "2020": "Q88",
+   "2022-23": "Q83",
+   "2024": "Q84"
+  },
+  "Q85": {
+   "2020": "Q89",
+   "2022-23": "Q84",
+   "2024": "Q85"
+  },
+  "Q86": {
+   "2020": "Q90",
+   "2022-23": "Q85",
+   "2024": "Q86"
+  },
+  "Q87": {
+   "2020": "Q91",
+   "2022-23": "Q86",
+   "2024": "Q87"
+  },
+  "Q88": {
+   "2020": "Q92",
+   "2022-23": "Q87",
+   "2024": "Q88"
+  }
+ },
+ "notComparable": [
+  "Q44e",
+  "Q58",
+  "Q65",
+  "Q72",
+  "Q73p"
+ ],
+ "organizations": [
+  "administrative-tribunals-support-service-of-canada",
+  "agriculture-and-agri-food-canada",
+  "atlantic-canada-opportunities-agency",
+  "canada-border-services-agency",
+  "canada-economic-development-for-quebec-regions",
+  "canada-energy-regulator",
+  "canada-school-of-public-service",
+  "canadian-environmental-assessment-agency",
+  "canadian-food-inspection-agency",
+  "canadian-grain-commission",
+  "canadian-heritage",
+  "canadian-human-rights-commission",
+  "canadian-institutes-of-health-research",
+  "canadian-nuclear-safety-commission",
+  "canadian-radio-television-and-telecommunications-commission",
+  "canadian-space-agency",
+  "canadian-transportation-agency",
+  "cirnac",
+  "communications-security-establishment",
+  "correctional-service-canada",
+  "courts-administration-service",
+  "cra",
+  "department-of-finance-canada",
+  "department-of-justice-canada",
+  "dfo",
+  "dnd",
+  "elections-canada",
+  "environment-and-climate-change-canada",
+  "esdc",
+  "federal-economic-development-agency-for-southern-ontario",
+  "financial-consumer-agency-of-canada",
+  "financial-transactions-and-reports-analysis-centre-of-canada",
+  "global-affairs-canada",
+  "health-canada",
+  "housing-infrastructure-and-communities-canada",
+  "immigration-and-refugee-board-of-canada",
+  "immigration-refugees-and-citizenship-canada",
+  "impact-assessment-agency-of-canada",
+  "innovation-science-and-economic-development-canada",
+  "isc",
+  "library-and-archives-canada",
+  "national-energy-board",
+  "national-film-board-of-canada",
+  "national-research-council-of-canada",
+  "natural-resources-canada",
+  "natural-sciences-and-engineering-research-council-of-canada",
+  "office-of-the-auditor-general-of-canada",
+  "office-of-the-commissioner-of-official-languages",
+  "office-of-the-privacy-commissioner-of-canada",
+  "office-of-the-secretary-to-the-governor-general",
+  "parks-canada",
+  "parole-board-of-canada",
+  "prairies-economic-development-canada",
+  "privy-council-office",
+  "public-health-agency-of-canada",
+  "public-prosecution-service-of-canada",
+  "public-safety-canada",
+  "public-service-commission-of-canada",
+  "public-services-and-procurement-canada",
+  "rcmp",
+  "registrar-of-the-supreme-court-of-canada",
+  "shared-services-canada",
+  "social-sciences-and-humanities-research-council",
+  "statistics-canada",
+  "transport-canada",
+  "transportation-safety-board-of-canada",
+  "treasury-board-of-canada-secretariat",
+  "veterans-affairs-canada",
+  "western-economic-diversification-canada",
+  "women-and-gender-equality-canada"
+ ],
+ "unmatchedNames": {
+  "2018": [
+   "Statistical Survey Operations"
+  ],
+  "2019": [
+   "Statistical Survey Operations"
+  ],
+  "2020": [
+   "Statistical Survey Operations"
+  ],
+  "2022-23": [
+   "Statistical Survey Operations"
+  ]
+ },
+ "sources": {
+  "2018": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/a2f9e2ca-237b-4dda-ba19-d52c84844b54",
+   "sha256": "f018626b80ee881c24454bb83945bbbc06b50f726a2ed1137d6b81da40c5b2ad"
+  },
+  "2019": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_%20subset-1_Sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "sha256": "37a736b0614af8a4cf594b24598731b43911a306ba84c0ee47d1f0bb72983a37"
+  },
+  "2020": {
+   "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/83b8d566-8199-40a3-9d87-6b99e9600c5b/download/subset-1-sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+   "sha256": "f685f95f29914569cf5dc82421940b6a0e682306a17669c49ad65a0c6af20e30"
+  },
+  "2022-23": {
+   "url": "https://open.canada.ca/data/dataset/9f9501f3-8188-4386-87ba-50730a979044/resource/526ea41d-d7cb-44a5-9982-8fc1d09221ac/download/subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+   "sha256": "1ddd17c011a15e03749e3ec79810f4e2cd173f3a414a236240a3d104eac93252"
+  },
+  "2024": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "sha256": "bdeae92bfe61f47e985d45d1153914565fb39e57afa09424a0444994784f32d4"
+  }
+ }
+}

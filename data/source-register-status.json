@@ -9,7 +9,7 @@
   "downloadable": 222,
   "searchable": 175,
   "departmental": 171,
-  "analysis": 105,
+  "analysis": 108,
   "excluded": 155,
   "noEvidence": 80
  },
@@ -471,7 +471,9 @@
    "downloadable": true,
    "searchable": true,
    "departmental": 4,
-   "analysis": [],
+   "analysis": [
+    "scripts/build-department-survey-trends.py"
+   ],
    "excluded": null
   },
   {
@@ -602,7 +604,9 @@
    "downloadable": true,
    "searchable": true,
    "departmental": 4,
-   "analysis": [],
+   "analysis": [
+    "scripts/build-department-survey-trends.py"
+   ],
    "excluded": null
   },
   {
@@ -757,6 +761,7 @@
    "analysis": [
     "data/pses-trend-2019-2024.json",
     "scripts/build-department-profiles.py",
+    "scripts/build-department-survey-trends.py",
     "scripts/build-pses-level1-map.py",
     "scripts/build-pses-trend.py"
    ],
@@ -976,7 +981,9 @@
    "downloadable": true,
    "searchable": true,
    "departmental": 4,
-   "analysis": [],
+   "analysis": [
+    "scripts/build-department-survey-trends.py"
+   ],
    "excluded": null
   },
   {
@@ -1243,6 +1250,7 @@
    "analysis": [
     "data/pses-trend-2019-2024.json",
     "scripts/build-department-profiles.py",
+    "scripts/build-department-survey-trends.py",
     "scripts/build-pses-level1-map.py",
     "scripts/build-pses-trend.py"
    ],
