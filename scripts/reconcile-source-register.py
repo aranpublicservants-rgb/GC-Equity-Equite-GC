@@ -42,6 +42,7 @@ SELF = {OUT.name, REGISTER.name, PRIOR.name, 'source-reconciliation-2026-11-24.j
 
 # Entries excluded by standing site content rules, in addition to the register's own statuses.
 RULE_EXCLUDED = {'GC-0460': 'site content rule: no vaccination data'}
+GAP_DIR = 'data/register-gaps-2026-11/'  # copies listed in the gap manifest are matched through it
 DATA_ROOTS = ('data/', 'women-femmes/data/', 'dfo/data/', 'dnd/data/', 'isc/data/')
 
 
@@ -62,7 +63,8 @@ def size_index():
     index = {}
     for p in ROOT.rglob('*'):
         rel = p.relative_to(ROOT).as_posix()
-        if not p.is_file() or not rel.startswith(DATA_ROOTS) or p.suffix in ('.json', '.b64') or 'checksums' in p.name:
+        if (not p.is_file() or not rel.startswith(DATA_ROOTS) or p.suffix in ('.json', '.b64') or 'checksums' in p.name
+                or rel.startswith(GAP_DIR)):
             continue
         index.setdefault(p.stat().st_size, []).append((rel, 'file'))
         if p.suffix == '.gz' and p.stat().st_size < 60e6:
@@ -224,6 +226,15 @@ def main():
                 verified = 'sha256'
             elif expected and p.suffix == '.gz' and hashlib.sha256(gzip.decompress(p.read_bytes())).hexdigest() == expected:
                 verified = 'sha256-of-decompressed-original'
+        size = e.get('bytes')
+        same = sizes.get(size, []) if size and size > 400 else []
+        if hosted and not verified and any(p in hosted for p, _ in same):
+            verified = 'exact-size-' + next(h for p, h in same if p in hosted)
+        if not hosted and not verified and len(same) == 1:
+            # One hosted file has exactly the register's byte count: that file is the copy.
+            path, how = same[0]
+            hosted = [path]
+            verified = 'exact-size-' + how
         for f in gaps.get(e['id'], []) if not hosted else []:
             # Copies made by scripts/fetch-register-gaps.py: check the stored bytes again.
             if f.get('path') and (ROOT / f['path']).is_file():
@@ -237,15 +248,6 @@ def main():
                 hosted.append('pses-data:' + f['directory'])
                 if not verified and sum(x['rows'] for x in f['parts']) == f.get('rows'):
                     verified = 'sha256-recorded-at-download'
-        size = e.get('bytes')
-        same = sizes.get(size, []) if size and size > 400 else []
-        if hosted and not verified and any(p in hosted for p, _ in same):
-            verified = 'exact-size-' + next(h for p, h in same if p in hosted)
-        if not hosted and not verified and len(same) == 1:
-            # One hosted file has exactly the register's byte count: that file is the copy.
-            path, how = same[0]
-            hosted = [path]
-            verified = 'exact-size-' + how
         if e['id'] in RULE_EXCLUDED:
             hosted = []
             verified = None

@@ -223,11 +223,14 @@ def main():
     if previous.exists():
         kept = json.loads(previous.read_text(encoding='utf-8')).get('entries', [])
     attempted = {k['id'] for k in kept}
+    stored_before = {k['id'] for k in kept if any(f.get('stored') for f in k.get('files', []))}
     retry = '--retry-failed' in sys.argv
     chosen = []
     for e in targets():
         if only and e['id'] not in only:
             continue
+        if e['id'] in stored_before and not only:
+            continue  # a copy is already held; never download it again
         if e['id'] in attempted and not only and not retry:
             continue  # tried before and recorded with its failure; rerun with --ids or --retry-failed
         if max_bytes and (e.get('bytes') or 0) > max_bytes:

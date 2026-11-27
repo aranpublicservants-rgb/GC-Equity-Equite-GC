@@ -4,11 +4,11 @@
  "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 326,
-  "hosted": 345,
-  "downloadable": 330,
-  "searchable": 172,
-  "departmental": 167,
+  "verified": 356,
+  "hosted": 375,
+  "downloadable": 360,
+  "searchable": 176,
+  "departmental": 171,
   "analysis": 113,
   "excluded": 155,
   "noEvidence": 10
@@ -1448,12 +1448,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/2024%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202024.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-3bf8325676eabc46/2024-PSES-Supporting-Documentation-Documents-de-r-f-rence-du-SAFF-2024.xlsx.gz"
+    "data/open-canada-2026-11/pses-2024/pses2024-supporting-documentation.xlsx"
    ],
    "downloadable": true,
-   "searchable": false,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -1467,12 +1467,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2024/PSES_Employment%20Equity%20Results%20Tables%202024%20-%20Tableaux%20des%20r%C3%A9sultats%20de%20l%E2%80%99%C3%A9quit%C3%A9%20en%20mati%C3%A8re%20d%E2%80%99emploi%20du%20SAFF%202024.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-4f94d5d1bcb8a375/PSES_Employment-Equity-Results-Tables-2024---Tableaux-des-r-sultats-de-l-quit-en-mati-re-d-emploi-du-SAFF-2024.xlsx.gz"
+    "data/open-canada-2026-11/pses-2024/pses2024-ee-results-tables.xlsx"
    ],
    "downloadable": true,
-   "searchable": false,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -3727,13 +3727,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-91ca354249744004/ar1a.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz"
+    "data/psc/ar1a.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3750,9 +3746,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-6a71043167a2d451/ar1b.csv.gz"
+    "data/psc/ar1b.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3792,31 +3788,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-41c1810ba153ac07/ar1ii.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-5b97c3a864831355/ar1c.csv.gz",
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
-    "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-b9bd8aedfa64e8b3/CFPPSC_AR1D.csv.gz",
-    "data/register-gaps-2026-11/u-ba690355e5431475/CFPPSC_AR1R.csv.gz",
-    "data/register-gaps-2026-11/u-be7f4858bbcb11af/ar1bb.csv.gz",
-    "data/register-gaps-2026-11/u-cfdc483d302995c2/CFPPSC_AR1P.csv.gz",
-    "data/register-gaps-2026-11/u-d410176e07839c5c/ar1q.csv.gz",
-    "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz",
-    "data/register-gaps-2026-11/u-e3eab5012c8cf386/ar1dd.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz",
-    "data/register-gaps-2026-11/u-f1f6d0bf2db57fe2/ar1h.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz",
-    "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz"
+    "data/psc/CFPPSC_AR1D.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3833,45 +3807,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "dataset-level-copy",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-05966c24e45d8806/CFPPSC_AR1T.csv.gz",
-    "data/register-gaps-2026-11/u-118c4cfc58ae5c93/ar1i.csv.gz",
-    "data/register-gaps-2026-11/u-11e82ba35eb34687/open_data_ar1_documentation_en_2024-2025.pdf.gz",
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-41c1810ba153ac07/ar1ii.csv.gz",
-    "data/register-gaps-2026-11/u-4528d3baf5a7d652/CFPPSC_AR1M.csv.gz",
-    "data/register-gaps-2026-11/u-4743294e9bf582df/ar1f.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-507ef5fea97928ab/CFPPSC_AR1K.csv.gz",
-    "data/register-gaps-2026-11/u-5b97c3a864831355/ar1c.csv.gz",
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-646ec0a4a1199277/CFPPSC_AR1E.csv.gz",
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
-    "data/register-gaps-2026-11/u-6a71043167a2d451/ar1b.csv.gz",
-    "data/register-gaps-2026-11/u-7f939a55cf70df18/ar1y.csv.gz",
-    "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
-    "data/register-gaps-2026-11/u-91ca354249744004/ar1a.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-b95fd77f7609db0b/ar1l.csv.gz",
-    "data/register-gaps-2026-11/u-b9bd8aedfa64e8b3/CFPPSC_AR1D.csv.gz",
-    "data/register-gaps-2026-11/u-ba690355e5431475/CFPPSC_AR1R.csv.gz",
-    "data/register-gaps-2026-11/u-be7f4858bbcb11af/ar1bb.csv.gz",
-    "data/register-gaps-2026-11/u-c5fa733639b7d77e/open_data_ar1_documentation_en_2024-2025.pdf.gz",
-    "data/register-gaps-2026-11/u-c695ab3fd6e3a676/ar1ff.csv.gz",
-    "data/register-gaps-2026-11/u-cfdc483d302995c2/CFPPSC_AR1P.csv.gz",
-    "data/register-gaps-2026-11/u-d410176e07839c5c/ar1q.csv.gz",
-    "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz",
-    "data/register-gaps-2026-11/u-e3eab5012c8cf386/ar1dd.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz",
-    "data/register-gaps-2026-11/u-f1f6d0bf2db57fe2/ar1h.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz",
-    "data/register-gaps-2026-11/u-f637bc70dbecb16d/ar1hh.csv.gz",
-    "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz"
+    "data/psc/CFPPSC_AR1E.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3888,14 +3826,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-4743294e9bf582df/ar1f.csv.gz",
-    "data/register-gaps-2026-11/u-5b97c3a864831355/ar1c.csv.gz",
-    "data/register-gaps-2026-11/u-646ec0a4a1199277/CFPPSC_AR1E.csv.gz",
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
-    "data/register-gaps-2026-11/u-b9bd8aedfa64e8b3/CFPPSC_AR1D.csv.gz",
-    "data/register-gaps-2026-11/u-f1f6d0bf2db57fe2/ar1h.csv.gz"
+    "data/psc/ar1f.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3912,9 +3845,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz"
+    "data/psc/ar1g.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3931,9 +3864,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz"
+    "data/psc/ar1h.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -3950,45 +3883,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "dataset-level-copy",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-05966c24e45d8806/CFPPSC_AR1T.csv.gz",
-    "data/register-gaps-2026-11/u-118c4cfc58ae5c93/ar1i.csv.gz",
-    "data/register-gaps-2026-11/u-11e82ba35eb34687/open_data_ar1_documentation_en_2024-2025.pdf.gz",
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-41c1810ba153ac07/ar1ii.csv.gz",
-    "data/register-gaps-2026-11/u-4528d3baf5a7d652/CFPPSC_AR1M.csv.gz",
-    "data/register-gaps-2026-11/u-4743294e9bf582df/ar1f.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-507ef5fea97928ab/CFPPSC_AR1K.csv.gz",
-    "data/register-gaps-2026-11/u-5b97c3a864831355/ar1c.csv.gz",
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-646ec0a4a1199277/CFPPSC_AR1E.csv.gz",
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
-    "data/register-gaps-2026-11/u-6a71043167a2d451/ar1b.csv.gz",
-    "data/register-gaps-2026-11/u-7f939a55cf70df18/ar1y.csv.gz",
-    "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
-    "data/register-gaps-2026-11/u-91ca354249744004/ar1a.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-b95fd77f7609db0b/ar1l.csv.gz",
-    "data/register-gaps-2026-11/u-b9bd8aedfa64e8b3/CFPPSC_AR1D.csv.gz",
-    "data/register-gaps-2026-11/u-ba690355e5431475/CFPPSC_AR1R.csv.gz",
-    "data/register-gaps-2026-11/u-be7f4858bbcb11af/ar1bb.csv.gz",
-    "data/register-gaps-2026-11/u-c5fa733639b7d77e/open_data_ar1_documentation_en_2024-2025.pdf.gz",
-    "data/register-gaps-2026-11/u-c695ab3fd6e3a676/ar1ff.csv.gz",
-    "data/register-gaps-2026-11/u-cfdc483d302995c2/CFPPSC_AR1P.csv.gz",
-    "data/register-gaps-2026-11/u-d410176e07839c5c/ar1q.csv.gz",
-    "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz",
-    "data/register-gaps-2026-11/u-e3eab5012c8cf386/ar1dd.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz",
-    "data/register-gaps-2026-11/u-f1f6d0bf2db57fe2/ar1h.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz",
-    "data/register-gaps-2026-11/u-f637bc70dbecb16d/ar1hh.csv.gz",
-    "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz"
+    "data/psc/ar1i.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4005,10 +3902,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz"
+    "data/psc/CFPPSC_AR1J.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4025,10 +3921,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-05966c24e45d8806/CFPPSC_AR1T.csv.gz",
-    "data/register-gaps-2026-11/u-c695ab3fd6e3a676/ar1ff.csv.gz"
+    "data/psc/CFPPSC_AR1K.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4045,10 +3940,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-b95fd77f7609db0b/ar1l.csv.gz",
-    "data/register-gaps-2026-11/u-f637bc70dbecb16d/ar1hh.csv.gz"
+    "data/psc/ar1l.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4065,9 +3959,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-4528d3baf5a7d652/CFPPSC_AR1M.csv.gz"
+    "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4084,12 +3978,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz"
+    "data/psc/CFPPSC_AR1N.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4128,10 +4019,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-be7f4858bbcb11af/ar1bb.csv.gz",
-    "data/register-gaps-2026-11/u-cfdc483d302995c2/CFPPSC_AR1P.csv.gz"
+    "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4148,13 +4038,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-41c1810ba153ac07/ar1ii.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz"
+    "data/psc/ar1q.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4171,12 +4057,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-ba690355e5431475/CFPPSC_AR1R.csv.gz",
-    "data/register-gaps-2026-11/u-e3eab5012c8cf386/ar1dd.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz"
+    "data/psc/CFPPSC_AR1R.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4193,13 +4076,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz"
+    "data/psc/CFPPSC_AR1S.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4216,9 +4095,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-05966c24e45d8806/CFPPSC_AR1T.csv.gz"
+    "data/psc/CFPPSC_AR1T.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4235,16 +4114,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
-    "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
-    "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz"
+    "data/psc/CFPPSC_AR1U.csv"
    ],
    "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -4257,11 +4133,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz"
+    "data/psc/CFPPSC_AR1V.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4278,11 +4152,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz"
+    "data/psc/CFPPSC_AR1W.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4299,13 +4171,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz"
+    "data/psc/CFPPSC_AR1X.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4322,9 +4190,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-7f939a55cf70df18/ar1y.csv.gz"
+    "data/psc/ar1y.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4341,45 +4209,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "dataset-level-copy",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-05966c24e45d8806/CFPPSC_AR1T.csv.gz",
-    "data/register-gaps-2026-11/u-118c4cfc58ae5c93/ar1i.csv.gz",
-    "data/register-gaps-2026-11/u-11e82ba35eb34687/open_data_ar1_documentation_en_2024-2025.pdf.gz",
-    "data/register-gaps-2026-11/u-1a2554bd5f1a589f/CFPPSC_AR1EE.csv.gz",
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-41c1810ba153ac07/ar1ii.csv.gz",
-    "data/register-gaps-2026-11/u-4528d3baf5a7d652/CFPPSC_AR1M.csv.gz",
-    "data/register-gaps-2026-11/u-4743294e9bf582df/ar1f.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-507ef5fea97928ab/CFPPSC_AR1K.csv.gz",
-    "data/register-gaps-2026-11/u-5b97c3a864831355/ar1c.csv.gz",
-    "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
-    "data/register-gaps-2026-11/u-646ec0a4a1199277/CFPPSC_AR1E.csv.gz",
-    "data/register-gaps-2026-11/u-6735cf6a49e7f901/CFPPSC_AR1X.csv.gz",
-    "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
-    "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
-    "data/register-gaps-2026-11/u-6a71043167a2d451/ar1b.csv.gz",
-    "data/register-gaps-2026-11/u-7f939a55cf70df18/ar1y.csv.gz",
-    "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
-    "data/register-gaps-2026-11/u-828825bbb9865ffe/ar1g.csv.gz",
-    "data/register-gaps-2026-11/u-91ca354249744004/ar1a.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-b95fd77f7609db0b/ar1l.csv.gz",
-    "data/register-gaps-2026-11/u-b9bd8aedfa64e8b3/CFPPSC_AR1D.csv.gz",
-    "data/register-gaps-2026-11/u-ba690355e5431475/CFPPSC_AR1R.csv.gz",
-    "data/register-gaps-2026-11/u-be7f4858bbcb11af/ar1bb.csv.gz",
-    "data/register-gaps-2026-11/u-c5fa733639b7d77e/open_data_ar1_documentation_en_2024-2025.pdf.gz",
-    "data/register-gaps-2026-11/u-c695ab3fd6e3a676/ar1ff.csv.gz",
-    "data/register-gaps-2026-11/u-cfdc483d302995c2/CFPPSC_AR1P.csv.gz",
-    "data/register-gaps-2026-11/u-d410176e07839c5c/ar1q.csv.gz",
-    "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz",
-    "data/register-gaps-2026-11/u-e3eab5012c8cf386/ar1dd.csv.gz",
-    "data/register-gaps-2026-11/u-e7f822f56d45dc19/CFPPSC_AR1S.csv.gz",
-    "data/register-gaps-2026-11/u-f1f6d0bf2db57fe2/ar1h.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz",
-    "data/register-gaps-2026-11/u-f637bc70dbecb16d/ar1hh.csv.gz",
-    "data/register-gaps-2026-11/u-f8da1012ce9b1c80/CFPPSC_AR1V.csv.gz"
+    "data/psc/ar1aa.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4396,10 +4228,9 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-be7f4858bbcb11af/ar1bb.csv.gz",
-    "data/register-gaps-2026-11/u-cfdc483d302995c2/CFPPSC_AR1P.csv.gz"
+    "data/psc/ar1bb.csv"
    ],
    "downloadable": true,
    "searchable": true,
@@ -4416,20 +4247,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256-recorded-at-download",
+   "verified": "exact-size-file",
    "hosted": [
-    "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
-    "data/register-gaps-2026-11/u-41c1810ba153ac07/ar1ii.csv.gz",
-    "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
-    "data/register-gaps-2026-11/u-69f9a3073b245a65/CFPPSC_AR1CC.csv.gz",
-    "data/register-gaps-2026-11/u-7fcaeabbf6051069/ar1gg.csv.gz",
-    "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
-    "data/register-gaps-2026-11/u-e101443e23a49368/CFPPSC_AR1U.csv.gz",
-    "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz"
+    "data/psc/CFPPSC_AR1CC.csv"
    ],
    "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -4442,9 +4266,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1dd.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4459,9 +4285,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1EE.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4476,11 +4304,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1ff.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4493,11 +4323,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1gg.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4510,9 +4342,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1z.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4527,9 +4361,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1hh.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4944,10 +4780,12 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/vha_1.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 2,
    "analysis": [],
    "excluded": null
@@ -4982,10 +4820,12 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/vha_3.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 2,
    "analysis": [],
    "excluded": null
@@ -5578,12 +5418,15 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
+    "systemic-change/austerity-enhancements.js",
     "systemic-change/department-evidence.js"
    ],
    "excluded": null
@@ -5597,9 +5440,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5616,9 +5461,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5635,9 +5482,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5654,12 +5503,15 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
+    "systemic-change/austerity-enhancements.js",
     "systemic-change/department-evidence.js"
    ],
    "excluded": null
@@ -5673,9 +5525,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5736,9 +5590,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5755,9 +5611,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5774,9 +5632,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5815,9 +5675,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5870,9 +5732,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5889,9 +5753,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5908,9 +5774,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5927,9 +5795,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5946,9 +5816,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5965,9 +5837,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5984,9 +5858,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -6003,9 +5879,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -6022,9 +5900,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -6041,9 +5921,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -6060,9 +5942,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -6079,9 +5963,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
