@@ -227,6 +227,7 @@ jobs:
                 await page.locator('#accommodation').scrollIntoViewIfNeeded();
                 await page.waitForFunction(()=>document.querySelector('#lang-en section:has(> #accommodation) .dp-survey .dv-widget'),null,{timeout:30000});
                 const visual=page.locator('#lang-en section:has(> #accommodation) .dp-survey .dv-widget').first();
+                await visual.locator('.dv-local-options > summary').click();
                 await visual.getByRole('button',{name:'Both',exact:true}).click();
                 if(!await visual.locator('svg').count()||!await visual.locator('..').locator('table').isVisible())throw Error('Chart and table must be available together');
                 await visual.getByRole('combobox',{name:'Chart type',exact:true}).selectOption('dots');
@@ -307,3 +308,6 @@ jobs:
           name: gc-equity-preview
           path: qa-screenshots/
           if-no-files-found: ignore
+
+      - name: Check consolidated chart explorer, source fidelity and bilingual switching
+        run: node tests/chart-explorer-browser.cjs
