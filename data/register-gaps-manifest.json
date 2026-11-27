@@ -369,6 +369,476 @@
    "failures": []
   },
   {
+   "id": "GC-0049",
+   "name": "PSES 2020",
+   "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/be8b4432-b071-4bf0-850a-1d7552b39762/download/2020-pses-employment-equity-derived-variable-dataset-saff-2020-ensemble-de-donnees-variables-der.csv",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/be8b4432-b071-4bf0-850a-1d7552b39762/download/2020-pses-employment-equity-derived-variable-dataset-saff-2020-ensemble-de-donnees-variables-der.csv",
+     "title": "PSES 2020",
+     "bytes": 486391271,
+     "sha256": "d7919a53ae8079b0f9f31fc1af596781ae75640b3bbfb5a4656ca02cc9ec6e48",
+     "retrieved": "2026-11-27T11:03:11Z",
+     "rows": 894240,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-fbca1e7a920d80ab",
+     "parts": [
+      {
+       "file": "2020-pses-employment-equity-derived-variable-dataset-saff-2020-ensemble-de-donnees-variables-der-001.csv.gz",
+       "rows": 894240,
+       "bytes": 27089809,
+       "sha256": "6557fcc0a13753690114ba586c60e07857d2e8ac2daf0b65738ae703c74d9519"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0079",
+   "name": "PSES 2024",
+   "source": "https://open.canada.ca/data/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv",
+     "title": {
+      "en": "Subset 1 - 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 1 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 37801011,
+     "sha256": "bdeae92bfe61f47e985d45d1153914565fb39e57afa09424a0444994784f32d4",
+     "retrieved": "2026-11-27T11:03:19Z",
+     "rows": 67910,
+     "path": "data/register-gaps-2026-11/u-103fbb486beee226/subset-1-sous-ensemble-1.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-2-sous-ensemble-2.csv",
+     "title": {
+      "en": "Subset 2 - 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 2 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 567122256,
+     "sha256": "19dc6606f3e360442a428454b9b82fa0e609ec57299455950863e200a4244431",
+     "retrieved": "2026-11-27T11:03:25Z",
+     "rows": 1027431,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-7886f22034fc8e9b",
+     "parts": [
+      {
+       "file": "subset-2-sous-ensemble-2-001.csv.gz",
+       "rows": 1027431,
+       "bytes": 34969407,
+       "sha256": "71999fe6334519e59eaf1e6a5a0eaa2c6f6c5508e3f60efc9dfc5ed30dc4f280"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-3-sous-ensemble-3.csv",
+     "title": {
+      "en": "Subset 3 - 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 3 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 1055619170,
+     "sha256": "c01db1ba4081c46d704b39fa1b898fb348383705c7b428417e3a1ca98db6881e",
+     "retrieved": "2026-11-27T11:03:43Z",
+     "rows": 1942832,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-7aeab5025f39a328",
+     "parts": [
+      {
+       "file": "subset-3-sous-ensemble-3-001.csv.gz",
+       "rows": 1394147,
+       "bytes": 40018178,
+       "sha256": "cda7ee00ad4518d5e66dc3d81878f7acc38f378e668bd7bef2138d8ca4e1510e"
+      },
+      {
+       "file": "subset-3-sous-ensemble-3-002.csv.gz",
+       "rows": 548685,
+       "bytes": 19627957,
+       "sha256": "fcd8f059cb628b084f145a91267b6d86383d1455e685d86f9309849bed7a23ef"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-4-sous-ensemble-4.csv",
+     "title": {
+      "en": "Subset 4 - 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 4 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 727834064,
+     "sha256": "13a22e257e2d48ee0b69ed4f6db56be20b88c5524ab056c38506c8ee71a4e3b4",
+     "retrieved": "2026-11-27T11:04:05Z",
+     "rows": 1459764,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-4a0754848cbfe626",
+     "parts": [
+      {
+       "file": "subset-4-sous-ensemble-4-001.csv.gz",
+       "rows": 1459764,
+       "bytes": 25763287,
+       "sha256": "a929e4f832aa8003573337245808f178294e09f5e359494833b8db66be85d2fb"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-4-sous-ensemble-4_hist.csv",
+     "title": {
+      "en": "Subset 4 - 2024 PSES Historical open dataset - with labels",
+      "fr": "Sous-ensemble 4 - Ensemble de données historique ouvertes du SAFF de 2024"
+     },
+     "bytes": 1764970504,
+     "sha256": "a0a5395929c573dea5055f031f8b514fb89349bf6fc72eb1045cc6249941a360",
+     "retrieved": "2026-11-27T11:04:28Z",
+     "rows": 3695523,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-890b5cb77ebe351c",
+     "parts": [
+      {
+       "file": "subset-4-sous-ensemble-4_hist-001.csv.gz",
+       "rows": 2898251,
+       "bytes": 40007297,
+       "sha256": "0631f2238797dc458bdffc4487e893c438b96a7d1b002db5d0ee5aaeff1f2bc3"
+      },
+      {
+       "file": "subset-4-sous-ensemble-4_hist-002.csv.gz",
+       "rows": 797272,
+       "bytes": 12918207,
+       "sha256": "f98f5ca71a6642149aca90d497028a63234f92d6a9923c4123204611c91bca08"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-5-sous-ensemble-5.csv",
+     "title": {
+      "en": "Subset 5 - 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 5 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 1071506850,
+     "sha256": "51eb5a5f2f0894270427d95472bf7f47705a6ce06c4bd02565ea040b938f5077",
+     "retrieved": "2026-11-27T11:04:56Z",
+     "rows": 2036152,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-57aa70cfcc3ebfcd",
+     "parts": [
+      {
+       "file": "subset-5-sous-ensemble-5-001.csv.gz",
+       "rows": 1613917,
+       "bytes": 40010111,
+       "sha256": "d1959cfc42e3079dc0bd07866f2936aea61afbcc41342069dc46617b8fff141a"
+      },
+      {
+       "file": "subset-5-sous-ensemble-5-002.csv.gz",
+       "rows": 422235,
+       "bytes": 14228976,
+       "sha256": "1e2e4a38d9c057c8e12b253a59a3d35d68886788bfb4c32d466451846dd539b2"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-6-sous-ensemble-6.csv",
+     "title": {
+      "en": "Subset 6 - 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 6 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 615339095,
+     "sha256": "540cf22bebd029b983e356729b427cb24c538b04a8cf5c307f1fa982da19e7f2",
+     "retrieved": "2026-11-27T11:06:02Z",
+     "rows": 1083231,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-5b9875e7d4bf5ab6",
+     "parts": [
+      {
+       "file": "subset-6-sous-ensemble-6-001.csv.gz",
+       "rows": 1083231,
+       "bytes": 31263683,
+       "sha256": "65d2d07ac2d9cf84da5abd250e22ddbe20f7a16f020a0b96bb96abf872bab874"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/2024%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202024.xlsx",
+     "title": {
+      "en": "2024 Public Service Employee Survey open datasets supporting documentation",
+      "fr": "Document de référence pour les ensembles de données ouvertes du Sondage auprès des fonctionnaires fédéraux de 2024"
+     },
+     "bytes": 483682,
+     "sha256": "793ed82c2c8b4ee2b2e7bd09bf57b92cc2b78bb632b1f605a503d1679186a3cd",
+     "retrieved": "2026-11-27T11:06:12Z",
+     "path": "data/register-gaps-2026-11/u-3bf8325676eabc46/2024-PSES-Supporting-Documentation-Documents-de-r-f-rence-du-SAFF-2024.xlsx.gz",
+     "format": "XLSX",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/EEINFODV.csv",
+     "title": {
+      "en": "2024 PSES Employment Equity Derived Variable Dataset",
+      "fr": "SAFF 2024 Ensemble de données variables dérivées sur l'équité en matière d'emploi"
+     },
+     "bytes": 1251517011,
+     "sha256": "5eb2f3f4c12eea2eeaaa146c221202b5020513999cbebd037d7d467d45477f6b",
+     "retrieved": "2026-11-27T11:08:35Z",
+     "rows": 2286315,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-0e1e17c6e950cdb0",
+     "parts": [
+      {
+       "file": "EEINFODV-001.csv.gz",
+       "rows": 1229015,
+       "bytes": 40005304,
+       "sha256": "620f1b00a19356569caf862ba86366fe20ab3ed2c75d9766584a3b7ee07b9055"
+      },
+      {
+       "file": "EEINFODV-002.csv.gz",
+       "rows": 1057300,
+       "bytes": 36247755,
+       "sha256": "916732159d420ed71caca263dfd47deef5460f22d7729c1ed4f68c973668ed79"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-7-sous-ensemble-7.csv",
+     "title": {
+      "en": "Subset 7- 2024 PSES open dataset - with labels",
+      "fr": "Sous-ensemble 7 - Ensemble de données ouvertes du SAFF de 2024"
+     },
+     "bytes": 529256466,
+     "sha256": "ff51008607e7a5346b5acb29c0b47ea5c1786f5fd908baaf4f503d47ee300497",
+     "retrieved": "2026-11-27T11:08:55Z",
+     "rows": 885960,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-38bcb92a7addd066",
+     "parts": [
+      {
+       "file": "subset-7-sous-ensemble-7-001.csv.gz",
+       "rows": 885960,
+       "bytes": 39974082,
+       "sha256": "7656274feb140b371170ee1bb724060564779c4c376545286501e03a1d21490c"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/main-principal.csv",
+     "title": {
+      "en": "Main Dataset 2024 Public Service Employee Survey open dataset",
+      "fr": "Ensemble de données principale du Sondage auprès des fonctionnaires fédéraux de 2024"
+     },
+     "bytes": 912355173,
+     "sha256": "0102a38b289bcc6d329adf25b07baa2dcaf729b1beb60e2365585a7131b7d973",
+     "retrieved": "2026-11-27T11:09:13Z",
+     "rows": 12179345,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-28182f4714d39967",
+     "parts": [
+      {
+       "file": "main-principal-001.csv.gz",
+       "rows": 4910826,
+       "bytes": 40009383,
+       "sha256": "7f247b9e70763902a229afd73ad475d20e9d31d20bf04fe4c6c5dc3c34a02c60"
+      },
+      {
+       "file": "main-principal-002.csv.gz",
+       "rows": 5740332,
+       "bytes": 40013640,
+       "sha256": "5c27be5ffd813222119588de815da2cd91196e5e8b5eb45f7fe13063ca441a0e"
+      },
+      {
+       "file": "main-principal-003.csv.gz",
+       "rows": 1528187,
+       "bytes": 12985027,
+       "sha256": "d11f9ebff7aa27b844f9746f63bfaef2b04a30b4b4dc610db18c0db83f436eb0"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2024/PSES_Employment%20Equity%20Results%20Tables%202024%20-%20Tableaux%20des%20r%C3%A9sultats%20de%20l%E2%80%99%C3%A9quit%C3%A9%20en%20mati%C3%A8re%20d%E2%80%99emploi%20du%20SAFF%202024.xlsx",
+     "title": {
+      "en": "2024 PSES Employment Equity Derived Variable Tables",
+      "fr": "Tableaux de données variables dérivées sur l'équité en matière d'emploi du SAFF de 2024"
+     },
+     "bytes": 2519548,
+     "sha256": "b985c8a150bb31a342367d08c9f6e8233e68d8c692be1a826ad40c76107e30f8",
+     "retrieved": "2026-11-27T11:10:23Z",
+     "path": "data/register-gaps-2026-11/u-4f94d5d1bcb8a375/PSES_Employment-Equity-Results-Tables-2024---Tableaux-des-r-sultats-de-l-quit-en-mati-re-d-emploi-du-SAFF-2024.xlsx.gz",
+     "format": "XLSX",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "",
+     "format": "PBIX",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": false,
+     "reason": "web page or format not stored"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/FOLDV.csv",
+     "title": {
+      "en": "2024 PSES First Official Language Derived Variable Dataset",
+      "fr": "SAFF 2024 Ensemble de données variables dérivées des langues officielles   "
+     },
+     "bytes": 1380025990,
+     "sha256": "64b59eb32d500514e4993fbf1b06857c23a9c6934f7813878d0de2d145b44053",
+     "retrieved": "2026-11-27T11:10:35Z",
+     "rows": 2436390,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-96ba925516e163c1",
+     "parts": [
+      {
+       "file": "FOLDV-001.csv.gz",
+       "rows": 1155097,
+       "bytes": 40018966,
+       "sha256": "198940bd822c7f13fbc02a73d6cb3ac5684240a427005f0319daf943cfae6caf"
+      },
+      {
+       "file": "FOLDV-002.csv.gz",
+       "rows": 1281293,
+       "bytes": 35642283,
+       "sha256": "1e04d91af31eb9ffbb9a9584551889d72a182309af20c1bbfc0aed3b1c9109c4"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/HRINFO.csv",
+     "title": {
+      "en": "2024 PSES HR Information Derived Variable Dataset",
+      "fr": "SAFF 2024 Ensemble de données variables dérivées de l’information sur les RH"
+     },
+     "bytes": 54352081,
+     "sha256": "571941638b6f76e8281f23010c858c68f8873ba59bedb09175c8a8901716a52a",
+     "retrieved": "2026-11-27T11:10:54Z",
+     "rows": 90045,
+     "path": "data/register-gaps-2026-11/u-e565d85f55d817e9/HRINFO.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2024/EELEVEL2ID.csv",
+     "title": {
+      "en": "2024 PSES Employee Groups by LEVEL2ID Derived Variable Dataset",
+      "fr": "SAFF 2024 Ensemble de données variables dérivées des groupes d’employés selon LEVEL2ID"
+     },
+     "bytes": 1151526222,
+     "sha256": "8910acc4f18963bd6d602cf75466cfb908358bb7f459657785941aac297e98aa",
+     "retrieved": "2026-11-27T11:12:43Z",
+     "rows": 2011833,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-d9b246fe4b15c6a1",
+     "parts": [
+      {
+       "file": "EELEVEL2ID-001.csv.gz",
+       "rows": 882655,
+       "bytes": 40024756,
+       "sha256": "a8a64cb860864aefe1521f9b8afcf27a83e8e99b14d8fe53d279af937482bebb"
+      },
+      {
+       "file": "EELEVEL2ID-002.csv.gz",
+       "rows": 905345,
+       "bytes": 40002734,
+       "sha256": "120d9e1fb811503df06b669b9782d9413d8aff945c9f59fb6848268cae3aaef5"
+      },
+      {
+       "file": "EELEVEL2ID-003.csv.gz",
+       "rows": 223833,
+       "bytes": 10738643,
+       "sha256": "b0487a7d34619ea96380f7bc872b4309b6928a4c9c741f5a452b0e9c881d7071"
+      }
+     ],
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2024 Public Service Employee Survey Results",
+    "fr": "Résultats du Sondage auprès des fonctionnaires fédéraux de 2024"
+   }
+  },
+  {
    "id": "GC-0084",
    "name": "SNPS 2018 - By department (including all departments)",
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
@@ -974,6 +1444,24 @@
    }
   },
   {
+   "id": "GC-0127",
+   "name": "SNPS 2023 - By department and by Region",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/cdabf3bd-cfca-42b0-a58f-1d963a1af5ec/download/cfppsc_snps07.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
    "id": "GC-0128",
    "name": "SNPS 2023 - By department and by Occupational group",
    "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
@@ -989,6 +1477,114 @@
      "retrieved": "2026-11-27T10:41:08Z",
      "rows": 414550,
      "path": "data/register-gaps-2026-11/u-d0648d99001ea5ae/cfppsc_snps08.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    }
+   ],
+   "failures": [],
+   "datasetTitle": {
+    "en": "2023 Staffing and Non-Partisanship Survey",
+    "fr": "Sondage sur la dotation et l’impartialité politique de 2023"
+   }
+  },
+  {
+   "id": "GC-0129",
+   "name": "SNPS 2023 - By department and by Age group",
+   "source": "https://open.canada.ca/data/en/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/d0437695-b1da-4bcd-bd4e-4eef0f62d8a8/download/cfppsc_snps02.csv",
+     "title": {
+      "en": "By department and by Employment Equity Group: Women ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Femmes"
+     },
+     "bytes": 32059050,
+     "sha256": "9e70ee67125d2a9ae430a608782ca3ac9e65ee7a80a584533fe766624066ede5",
+     "retrieved": "2026-11-27T11:13:03Z",
+     "rows": 205140,
+     "path": "data/register-gaps-2026-11/u-51b226e89a52fde2/cfppsc_snps02.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/0eded731-2004-4f00-aa05-606801f5dafc/download/cfppsc_snps04.csv",
+     "title": {
+      "en": "By department and by Employment Equity Group: Visible minorities ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Minorités visibles"
+     },
+     "bytes": 20818641,
+     "sha256": "d5a58170d98d58ae68016c51d1c5d967083428dcb7dccd1bbca24700394421e2",
+     "retrieved": "2026-11-27T11:13:04Z",
+     "rows": 123084,
+     "path": "data/register-gaps-2026-11/u-9c0b3b0ec64c027c/cfppsc_snps04.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/77c9c20e-691b-4c13-8243-9cf9cf81c8dc/download/cfppsc_snps05.csv",
+     "title": {
+      "en": "By department and by Employment Equity Group: Indigenous Peoples ",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Peuples autochtones"
+     },
+     "bytes": 21026218,
+     "sha256": "9379c2f19b79185bc9ed76dfe9b5d043302a9931eff44c3dbd72da099acd86f7",
+     "retrieved": "2026-11-27T11:13:05Z",
+     "rows": 123084,
+     "path": "data/register-gaps-2026-11/u-b516add77198baf7/cfppsc_snps05.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/95829e14-df60-4766-afd5-ae8864580266/download/cfppsc_snps08.csv",
+     "title": {
+      "en": "By department and by Occupational group ",
+      "fr": "Par ministère et par groupe professionnel"
+     },
+     "bytes": 52471505,
+     "sha256": "4e87b7eeb97f93eeecf8dec972b6f3f9d5dc6ac2e26a6dbf3c0aa9ac6b6408be",
+     "retrieved": "2026-11-27T11:13:06Z",
+     "rows": 414550,
+     "path": "data/register-gaps-2026-11/u-d0648d99001ea5ae/cfppsc_snps08.csv.gz",
+     "format": "CSV",
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/85ec7faf-90e5-4015-932b-f24fb97133b2/download/cfppsc_snps09.csv",
+     "format": "CSV",
+     "stored": false,
+     "reason": "larger than 60000000 bytes"
+    },
+    {
+     "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/be6fe4fa-37f7-4224-8108-095e66008b05/download/cfppsc_snps03-1.csv",
+     "title": {
+      "en": "By department and by Employment Equity Group: Persons with disabilities",
+      "fr": "Par ministère et par groupe d'équité en matière d'emploi : Personnes en situation de handicap "
+     },
+     "bytes": 29914418,
+     "sha256": "1e63113355242a059479dd0a2da7a9cb505a35827269b6f549fa63f21171c9b4",
+     "retrieved": "2026-11-27T11:13:08Z",
+     "rows": 164112,
+     "path": "data/register-gaps-2026-11/u-455d64a8489771f5/cfppsc_snps03-1.csv.gz",
      "format": "CSV",
      "language": [
       "en",

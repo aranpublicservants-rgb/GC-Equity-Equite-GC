@@ -744,6 +744,7 @@ fab0df2accb0ca779fb9818bba7259a5fccb15cabc5465a6f1b5431013a339f0  data/register-
 195702d3f7c94d6dda2c651b756d803a430f227b787059578ba7a936b12fa327  data/register-gaps-2026-11/u-0d1714fcf66e9f7e/cfppsc_snps01.csv.gz
 8b4774d7d211ccfb41aad2463a60564d875a00d67774cba89acb325c8ff84d02  data/register-gaps-2026-11/u-0e10e848c039faab/vha_1.csv.gz
 d8580e2f7f2bf82ec9e4744885c63e4dfddb79ab9d7a5efc896fa141db3d347a  data/register-gaps-2026-11/u-0e856a955fe1885f/aboriginalpeoplesautochtones_vacacc.csv.gz
+114d0a238786cfa4fd0923c21aef069d802f6bcdeb71e8fc7d321649991b91a9  data/register-gaps-2026-11/u-103fbb486beee226/subset-1-sous-ensemble-1.csv.gz
 3e91800eae4371ef21672a59a25cd476ec54b74d1afc6985dcf97a425d3102f6  data/register-gaps-2026-11/u-139c8bd2fb3e0243/womenfemmes_vacacc.csv.gz
 72e998a94279f3d1dbda20df11ec30384c05800414c94fcf3d5492fcb5854894  data/register-gaps-2026-11/u-14019919792db3a6/40092101-di-data-package-for-psmac-fra1.pdf.gz
 6bf4af54d0b6f70e441774f5c8684389e9de378cebdd6f68c7fe13d2610e36fe  data/register-gaps-2026-11/u-1576c4e92dad7541/di-package-citizenship-analysis-2022-2023_en-1.docx.gz
@@ -789,6 +790,7 @@ ae9fcbd289376eee080c55a3808319cffc54e856b38f2017beea18260e8ec06b  data/register-
 2001daa474df8f235e5ec0ba3d3c813c4a8d08f9ebd44db0d18af088ba151855  data/register-gaps-2026-11/u-3a245f8e9789516d/page-snapshot.html.gz
 57161795697f45fcac76c2b23a1761a8de263e559298d2981c3921f657dc33dd  data/register-gaps-2026-11/u-3ae6753daec599c5/cfppsc_snps13-1.csv.gz
 0fccf6dc002641de4d8d8030f48b2bbff2a5985e0d17735fe2c7fbec03c14308  data/register-gaps-2026-11/u-3b83260c5c867a39/CFPPSC_SNPS15.csv.gz
+f3740d3a2149ba9e42bfa6a1628dc67361249693a7634da441d8ed78e930a055  data/register-gaps-2026-11/u-3bf8325676eabc46/2024-PSES-Supporting-Documentation-Documents-de-r-f-rence-du-SAFF-2024.xlsx.gz
 287a2667e3e1d3de581e4aa9fad4f2f9ed683defb3709628e88637da151cd2ab  data/register-gaps-2026-11/u-3c8f5ada29a929fc/accessible-22007-2021-snps-presentation-en.docx.gz
 da10c70358d5183412af16a2bb5d1eb094b9da98873cd6238948cba009f4930e  data/register-gaps-2026-11/u-3d9f82329a1141f3/a_per_1718_fr.csv.gz
 d3c58dc893b2a12ce757935d208dba71c6e97a541e34351f947d6114de72c0aa  data/register-gaps-2026-11/u-3df9893bc3f4190e/population-of-the-federal-public-service-executives-non-executives-by-department-march-2026.csv.gz
@@ -805,6 +807,7 @@ f6552d90bc42fa0ad924bcf31c91e51ddf2e832859950578679dc16d8f74e9ed  data/register-
 10915caf5aa0396c8cb584939484fef704b702280bbe78b9ddf8b2144719e53a  data/register-gaps-2026-11/u-478091cbe2a10d69/effectif-des-cadres-superieurs-et-non-cadres-superieurs-de-la-fonction-publique-par-ministere-ma.csv.gz
 1bfa0169ae263a9f6a429e28116ddf83994345e148a320b0ccde3c20650600ba  data/register-gaps-2026-11/u-4863d2acd0ba3616/employment-equity-promotion-rate-study-five-year-update-2024-en-1.docx.gz
 80be3af167c62ae22c41f768a619d9f0aa0f45871970a5f83f3e1f36d5b3f151  data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz
+d966c5101abb0820bdee081cc23c5778611adbdfa8e93d32abe55cb14ccc7b52  data/register-gaps-2026-11/u-4f94d5d1bcb8a375/PSES_Employment-Equity-Results-Tables-2024---Tableaux-des-r-sultats-de-l-quit-en-mati-re-d-emploi-du-SAFF-2024.xlsx.gz
 bdeec706c482270e64b16cdf3f7c091105d53899fcca0abdc5e85709107ee605  data/register-gaps-2026-11/u-4fd159d573f41aec/ee-representation-in-acting-appointments-en.docx.gz
 883c114166b764d1d86bcbbc5dccc82148af42c73abe5f075ef64c0a4c1f5da9  data/register-gaps-2026-11/u-4ff9725154fbba79/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv.gz
 3cccfe1f742d8eec26991901e03138d1ea87e8fe63762a249e635f0d3f25891d  data/register-gaps-2026-11/u-50215d79d4efc199/dsad-6002-analysis-part-1-fra.docx.gz
@@ -937,6 +940,7 @@ f01823030ee9406e0f7318f4ddfff81a8b1d99b93be44c7a5a68c6f26985788b  data/register-
 1af600c892441e4032a36f7e069fe3c346ec7c6ea4e35ebb4746d68a3ee6bb97  data/register-gaps-2026-11/u-def38a8a1ff025f7/cfppsc_snps04-1.csv.gz
 874c208ad95f8fcbbc7b531849d2bfe9aaa9607023a5b5b47baa3a09d562b97a  data/register-gaps-2026-11/u-e0826bd396a183f5/2019-2020-findings-from-the-organizational-reporting-regarding-annex-d-adai-moc.pptx.gz
 753f8539e18b0e3d93becc6aff27e551bef0443eb9de0271ba5d3952aa1fcf1e  data/register-gaps-2026-11/u-e09c20f6b9ab5d32/page-snapshot.html.gz
+57db03ef13dc6bdeb756fed04caa27473e2ead29738637baa0421cf26aa763c9  data/register-gaps-2026-11/u-e565d85f55d817e9/HRINFO.csv.gz
 559a0021fa73f40e572898d03454010bf807cda46fdba945d405fb1cc41e5296  data/register-gaps-2026-11/u-e5c852e23c7620d6/di-package-citizenship-analysis-2022-2023_fr-1.docx.gz
 4364f65796a01cc9a11979cee1f5bd4fb70472a8c76276ded7e603c6091537c6  data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz
 3addf7996a867c6dbd25678b2caf11a36ecfbfff2439b64f8ca21d07e037f940  data/register-gaps-2026-11/u-e7e8e336379b8caf/snps-sdip-documentation-fra.pdf.gz
@@ -970,7 +974,7 @@ c171126899f02e4f252a0c4dc028b09ce52427c049f1a78bc52b83d9b3cadde8  data/register-
 bab0dbcb7c13e86b9da963038e5eaa17ffbb45d3bc6a9d76b94617d59e2d3ed1  data/register-gaps-2026-11/u-fd3093b6da161771/dsad-6002-analysis-part-1-eng1.pdf.gz
 4a0644003de5000e445afc66c857589b4aa76d5ff6add9947a3f65ceadee1b98  data/register-gaps-2026-11/u-fd874e7db3a3dae6/cfppsc_snps14-1.csv.gz
 11078f5982a9ac7d96674e69677e44bcb34704b6cac7a7100a577afcea43c4cf  data/register-gaps-2026-11/u-febcb0d9da7d25b2/priority.csv.gz
-e2b9d83cd8f146a5b3a18b4152925e3e7ef7f023cd0748564c57361c17ddd822  data/register-gaps-manifest.json
+29dd25db4e03679125b4ca4cca85dce569e05b69be753baec45442f7868bddea  data/register-gaps-manifest.json
 d7b843fbe94f3fcb03ef457fbf980044a293cdd386f33040387edfdf5cf7225f  data/restored/06890686-ef92-41f2-877b-d481bccef120.csv
 57af2f7ded83be1b9b0a8cdba3dd464710e5bf77e4d0ec7f5040050113882f5b  data/restored/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f.csv
 66806aee938753473064e4cf601b7710c582b472e42d3579a9548c2195186c31  data/restored/16c75ddc-475b-4e62-b883-d5517181c9cf.csv
@@ -3930,7 +3934,7 @@ d8872458484d7382ea5f5aad94f22165906f4c02ff5cea9847735a3dceb3a31a  data/restored/
 463e3aca16a44802187d61d98763dd0747c185b3ef460c1110ccb43c633deec4  data/restored/org/f94cb161404ad0217f/women-and-gender-equality-canada-6ba70f99.csv.gz
 9f1a5920cd429f642db8b02afc9cf61c10ab7fb741f1600a9801a91062cc32f6  data/snps-2025-by-organization.json
 fc1dc23c12975344df46eec06c57dd43b4bda8e4ecee10e49bac658910f45e1e  data/source-dates.json
-f7929237ceac15ef6a4d0dbaafa2f4da66b38fb793bb601fb53e29e22963ebc4  data/source-register-status.json
+8ca7c46c40494892e021f9d86c809cbf5968c79d1822017719817c87746b476f  data/source-register-status.json
 2af455a42aab0be5881e71e5ddd9ee547e5c7afd816720bc5a2f45108908a4b4  data/tbs-departmental-representation-2017-2025.json
 b0d1023fb99d878968b563b43423f6df0a49e88dea6947bbc4fc5510ee149de8  data/tbs-women-departmental-2025.json
 7d37034848c0fea4392040270cb1a05c30237b24884f2efc06e7545fce1d3e2d  data/where-data-agree.json
