@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "source": "Public Service Commission FSWEP referral requests as of 2026-11-05",
+  "original_source_records": 72822,
+  "tested_commit": "fa659265189b9073874b8baf50aee5e38659b159",
+  "completed_utc": "2026-11-27T03:09:16.984232+00:00",
+  "coverage": [
+    "desktop Chromium",
+    "mobile Pixel 5 viewport",
+    "English",
+    "French",
+    "gzip decode",
+    "full row count",
+    "filter",
+    "sort",
+    "pagination",
+    "no JavaScript exceptions"
+  ]
+}
