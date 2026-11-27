@@ -159,7 +159,7 @@ page = f'''<!doctype html>
 <title>Data coverage and limitations | GC Equity</title>
 <meta name="description" content="Which evidence each organization page contains and what this site holds for each source in the public source register.">
 <style>body{{margin:0;font:1rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#173848;background:#fff}}main{{max-width:72rem;margin:auto;padding:1rem}}.cov-table{{overflow:auto;max-width:100%;border:1px solid #c2d0d5;margin:.5rem 0}}table{{border-collapse:collapse;min-width:100%}}th,td{{padding:.45rem .6rem;border:1px solid #c2d0d5;text-align:start;vertical-align:top}}thead th{{background:#eef4f5}}tfoot th,tfoot td{{font-weight:700;background:#f6f9f9}}td{{font-variant-numeric:tabular-nums}}dt{{font-weight:700;margin-top:.5rem}}dd{{margin:0 0 .25rem 0}}.cov-source{{font-size:.92rem}}a{{color:#0b5c8c}}a:focus-visible,summary:focus-visible,.cov-table:focus-visible{{outline:3px solid #ba7900;outline-offset:2px}}summary{{cursor:pointer;padding:.4rem 0}}@media print{{details{{display:block}}.cov-table{{overflow:visible}}}}</style>
-<link rel="stylesheet" href="./gc-shared-shell.css?v=20261127-1" data-gce-shared-shell="css"><script src="./gc-shared-shell.js?v=20261127-1" defer data-gce-shared-shell="js"></script></head>
+<link rel="stylesheet" href="./gc-shared-shell.css?v=20261127-2" data-gce-shared-shell="css"><script src="./gc-shared-shell.js?v=20261127-2" defer data-gce-shared-shell="js"></script></head>
 <body><main id="main">
 <p><a id="lang-switch" href="?lang=fr" hreflang="fr" lang="fr">Français</a></p>
 {block("en")}

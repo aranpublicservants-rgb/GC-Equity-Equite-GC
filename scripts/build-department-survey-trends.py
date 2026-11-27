@@ -16,6 +16,9 @@ cells stay empty. Nothing is averaged, recalculated or carried forward.
 Organizations are matched to site pages by their published names and the aliases in
 assets/department-pages.json. Unmatched names are reported, never guessed.
 
+Each question also carries the public service result for the same cycle and question
+("ps"), from the same file's Public Service row.
+
 Output: assets/department-survey-trends/<page id>.json and an index file.
 Usage: build-department-survey-trends.py [--check]
 """
@@ -74,7 +77,7 @@ def main():
     for o in pages:
         for name in [o['en'], o['fr'], *o.get('aliases', [])]:
             by_name.setdefault(N(name), set()).add(o['id'])
-    titles, values, sources, unmatched = {}, {}, {}, {}
+    titles, values, sources, unmatched, national = {}, {}, {}, {}, {}
     for label, folder, name, years in CYCLES:
         path = ROOT / 'data/open-canada-2026-11' / folder / name
         meta = json.loads((ROOT / 'data/open-canada-2026-11' / folder / 'large-files.json').read_text(encoding='utf-8'))
@@ -94,6 +97,11 @@ def main():
                 if any(int(row[k] or 0) != 0 for k in ('LEVEL2ID', 'LEVEL3ID', 'LEVEL4ID', 'LEVEL5ID')):
                     continue
                 dept = row['DEPT_E']
+                if int(row['LEVEL1ID'] or 0) == 0 and dept.strip().lower() == 'public service':
+                    v = {f: cell(row, f) for f in FIELD_ALIASES}
+                    v['n'] = (row.get('ANSCOUNT') or '').strip()
+                    national[(label, q)] = v
+                    continue
                 if dept.strip().lower() in NATIONAL or int(row['LEVEL1ID'] or 0) == 0:
                     continue
                 ids = by_name.get(N(dept), set())
@@ -129,7 +137,8 @@ def main():
                 if v is not None:
                     per[label] = [v[field], v['n'], q]
             if len(per) >= 2:
-                rows.append({'q': code, 'field': field, 'en': definitions[code]['en'], 'fr': definitions[code]['fr'], 'values': per})
+                ps = {label: [national[(label, q)][field], national[(label, q)]['n'], q] for label, q in m.items() if (label, q) in national}
+                rows.append({'q': code, 'field': field, 'en': definitions[code]['en'], 'fr': definitions[code]['fr'], 'values': per, 'ps': ps})
         if rows:
             files[oid] = {'organization': oid, 'cycles': [c[0] for c in CYCLES], 'rows': rows, 'sources': sources,
                           'notComparable': not_comparable}

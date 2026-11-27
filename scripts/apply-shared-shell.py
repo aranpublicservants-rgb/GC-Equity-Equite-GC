@@ -20,7 +20,7 @@ def apply(path, html):
     if MARK in html:
         return html
     rel = os.path.relpath(ROOT, path.parent).replace(os.sep,'/')
-    block = f'<link rel="stylesheet" href="{rel}/gc-shared-shell.css?v=20261127-1" {MARK}="css"><script src="{rel}/gc-shared-shell.js?v=20261127-1" defer {MARK}="js"></script>'
+    block = f'<link rel="stylesheet" href="{rel}/gc-shared-shell.css?v=20261127-2" {MARK}="css"><script src="{rel}/gc-shared-shell.js?v=20261127-2" defer {MARK}="js"></script>'
     return re.sub(r'</head\s*>',lambda m:block+m.group(0),html,count=1,flags=re.I)
 def main():
     parser=argparse.ArgumentParser()

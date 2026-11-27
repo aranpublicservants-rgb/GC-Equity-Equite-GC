@@ -1485,6 +1485,7 @@
    "searchable": true,
    "departmental": 110,
    "analysis": [
+    "scripts/build-department-group-trends.py",
     "scripts/build-department-profiles.py"
    ],
    "excluded": null

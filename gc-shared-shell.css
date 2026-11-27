@@ -17,3 +17,6 @@ html[data-theme=contrast] .gce-global-shell,html.high-contrast .gce-global-shell
 main p,main li,main dd,main figcaption{overflow-wrap:break-word}
 
 .gce-source-date{font-size:.92em;opacity:.85}
+
+.dp-trend-ps th,.dp-trend-ps td{font-weight:400;color:inherit;opacity:.85;font-size:.95em}
+.dp-trend-who{font-weight:400}
