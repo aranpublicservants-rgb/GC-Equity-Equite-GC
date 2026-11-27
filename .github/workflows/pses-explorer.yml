@@ -1,0 +1,21 @@
+name: Department PSES explorer verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['assets/pses-explorer.js','assets/pses-explorer.css','gc-shared-shell.js','tests/pses-explorer-browser.cjs','scripts/test-pses-explorer.cjs','.github/workflows/pses-explorer.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test scripts/test-pses-explorer.cjs
+      - run: npm install --no-save --no-package-lock playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pses-explorer-browser.cjs
