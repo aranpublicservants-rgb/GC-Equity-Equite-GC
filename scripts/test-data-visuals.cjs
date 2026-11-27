@@ -103,3 +103,11 @@ test('wide historical tables offer one exact trend per published group',()=>{
  const dup=V.profile(p.headers,[...p.rows,['A','2%','3%','4%']]);assert.equal(V.periodColumns(dup).length,0);
  const mix=V.profile(['Group','2021','2022'],[['A','4%','50']]);assert.equal(V.periodColumns(mix).length,0);
 });
+
+
+test('shared chart settings preserve only supported public selections',()=>{
+ const p=V.profile(['Group','Year','Published result (%)','Rounded responses'],[['A','2024',10,45],['B','2025','X',20]]);
+ const safe=V.publicChartSettings(p,{view:'both',kind:'dots',measure:2,compare:3,x:0,column:1,limit:100,sort:'high',search:'private search',filters:{0:'A',1:'2024',2:'private text'}});
+ assert.equal(safe.view,'both');assert.equal(safe.kind,'dots');assert.equal(safe.measure,2);assert.equal(safe.compare,'');assert.deepEqual(safe.filters,{1:'2024'});assert.equal(safe.search,undefined);
+ assert.deepEqual(V.publicChartSettings(p,{measure:999,kind:'invalid',filters:{1:'unknown',99:'arbitrary'}}).filters,{});
+});
