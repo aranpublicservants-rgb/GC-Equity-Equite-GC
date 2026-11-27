@@ -43,267 +43,837 @@
       "folder": "pses-2020",
       "name": "pses2020-subset4-part38.csv",
       "bytes": 35520387,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part37.csv",
       "bytes": 49999960,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part36.csv",
       "bytes": 49999479,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part35.csv",
       "bytes": 49999476,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part34.csv",
       "bytes": 49999798,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part33.csv",
       "bytes": 49999636,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part32.csv",
       "bytes": 49999661,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part31.csv",
       "bytes": 49999649,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part30.csv",
       "bytes": 49999510,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part29.csv",
       "bytes": 49999798,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part28.csv",
       "bytes": 49999636,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part27.csv",
       "bytes": 49999688,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part26.csv",
       "bytes": 49999594,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part25.csv",
       "bytes": 49999778,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part24.csv",
       "bytes": 49999699,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part23.csv",
       "bytes": 49999999,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part22.csv",
       "bytes": 49999994,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part21.csv",
       "bytes": 49999812,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part20.csv",
       "bytes": 49999723,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part19.csv",
       "bytes": 49999691,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part18.csv",
       "bytes": 49999663,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part17.csv",
       "bytes": 49999544,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part16.csv",
       "bytes": 49999494,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part15.csv",
       "bytes": 49999838,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part14.csv",
       "bytes": 49999801,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part13.csv",
       "bytes": 49999722,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part12.csv",
       "bytes": 49999977,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part11.csv",
       "bytes": 49999633,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part10.csv",
       "bytes": 49999814,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part09.csv",
       "bytes": 49999877,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part08.csv",
       "bytes": 49999445,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part07.csv",
       "bytes": 49999979,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part06.csv",
       "bytes": 49999986,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part05.csv",
       "bytes": 49999680,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part04.csv",
       "bytes": 49999625,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part03.csv",
       "bytes": 49999858,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part02.csv",
       "bytes": 49999848,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
       "name": "pses2020-subset4-part01.csv",
       "bytes": 49999917,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses-2020/subset-4-sous-ensemble-4",
+          "sha256": "4c613cc2069b84eec55c59371d9a5b5b787eb019c606aeaf13fa0441a1a75718",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1885496202,
+          "source": "https://open.canada.ca/data/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284/resource/39f42f93-8ea4-4de2-b4d2-174b6b31e412/download/subset-4-sous-ensemble-4.csv",
+          "path": "pses-data:pses/pses-2020/subset-4-sous-ensemble-4",
+          "id": "GC-0044",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2020",
@@ -524,232 +1094,727 @@
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part33.csv",
       "bytes": 36018311,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part32.csv",
       "bytes": 49999846,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part31.csv",
       "bytes": 49999630,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part30.csv",
       "bytes": 49999571,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part29.csv",
       "bytes": 49999694,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part28.csv",
       "bytes": 49999810,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part27.csv",
       "bytes": 49999756,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part26.csv",
       "bytes": 49999667,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part25.csv",
       "bytes": 49999992,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part24.csv",
       "bytes": 49999647,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part23.csv",
       "bytes": 49999752,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part22.csv",
       "bytes": 49999795,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part21.csv",
       "bytes": 49999701,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part20.csv",
       "bytes": 49999434,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part19.csv",
       "bytes": 49999946,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part18.csv",
       "bytes": 49999626,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part17.csv",
       "bytes": 49999580,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part16.csv",
       "bytes": 49999332,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part15.csv",
       "bytes": 49999977,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part14.csv",
       "bytes": 49999781,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part13.csv",
       "bytes": 49999462,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part12.csv",
       "bytes": 49999868,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part11.csv",
       "bytes": 49999608,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part10.csv",
       "bytes": 49999696,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part09.csv",
       "bytes": 49999882,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part08.csv",
       "bytes": 49999560,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part07.csv",
       "bytes": 49999989,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part06.csv",
       "bytes": 49999797,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part05.csv",
       "bytes": 49999801,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part04.csv",
       "bytes": 49999844,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part03.csv",
       "bytes": 49999965,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part02.csv",
       "bytes": 49999667,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
       "name": "pses2022-23-subset4-hist-part01.csv",
       "bytes": 49999774,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source has size-matched repository record",
+      "candidates": [
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "sha256": "57fd45990ca7b417097869aa9ba5f2972b690a49b78c03c37e9d63e4cda878a5",
+          "kind": "whole source; different partition boundaries"
+        },
+        {
+          "bytes": 1635997249,
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/Subset%204%20-%202022_2023%20PSES%20open%20dataset%20historical%20-%20with%20labels_Sous-ensemble%204%20-%20Ensemble%20de%20donn%C3%A9es%20ouvertes%20historique%20du%20SAFF%20de%202022_23.csv",
+          "path": "pses-data:pses/pses-2022-2023/Subset-204-20--202022_2023-20PSES-20open-20dataset-20historical-20--20with-20labels_Sous-ensemble-204-20--20Ensemble-20de-20donn-C3-A9es-20ouvertes-20historique-20du-20SAFF-20de-202022_23",
+          "id": "GC-0057",
+          "kind": "whole source; different partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2022-2023",
@@ -1245,6 +2310,20 @@
           "kind": "register-reported size"
         }
       ]
+    }
+  ],
+  "splitNotes": [
+    {
+      "source": "pses2020-subset4.csv",
+      "driveParts": 38,
+      "combinedBytes": 1885510669,
+      "wholeBytes": 1885496202
+    },
+    {
+      "source": "pses2022-23-subset4-hist.csv",
+      "driveParts": 33,
+      "combinedBytes": 1636009761,
+      "wholeBytes": 1635997249
     }
   ]
 }
