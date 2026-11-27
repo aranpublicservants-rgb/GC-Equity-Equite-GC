@@ -8079,6 +8079,33 @@
    "failures": []
   },
   {
+   "id": "GC-0365",
+   "name": "GC InfoBase open datasets (a35cf382): Federal programs results indicators (full catalogue)",
+   "source": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/89bfbbec-ac42-48be-aa4f-7454bd7e10f8/download/programs_indicators.csv",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/89bfbbec-ac42-48be-aa4f-7454bd7e10f8/download/programs_indicators.csv",
+     "title": "GC InfoBase open datasets (a35cf382): Federal programs results indicators (full catalogue)",
+     "bytes": 69690085,
+     "sha256": "cf72848effe119f8ced25e583cd6d9ef95748509a97229837096f201008e542c",
+     "retrieved": "2026-11-27T11:40:58Z",
+     "rows": 24613,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-8b4e4ab9616ebdd0",
+     "parts": [
+      {
+       "file": "programs_indicators-001.csv.gz",
+       "rows": 24613,
+       "bytes": 18145698,
+       "sha256": "a98a70a9749fa87fad3d9edb55c9e4269bdc41363375d369a19da321a63fa353"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
    "id": "GC-0368",
    "name": "GC InfoBase DPRR 2018-2021 (b15ee8d7): Performance information 2018-2021, EN",
    "source": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/069fba50-2a06-414e-9db8-800d3e8a0953/download/pipo_irpo_en.csv",
