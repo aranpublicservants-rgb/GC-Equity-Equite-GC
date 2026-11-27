@@ -1,0 +1,2675 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Compared the 65-row Drive package manifest to the public register by dataset UUID or exact source URL. Presence of at least one hosted register entry is not proof of every file or byte identity. General population, broad federal-jurisdiction and other non-comparable populations flagged separately; no Drive links or IDs.",
+  "rows": [
+    {
+      "title": "Distribution and workforce availability estimates of public service of Canada employees by designated group, Executives",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/73fe0c0f-cdf8-4932-b8a6-c32f4edd3cea",
+      "filename": "tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx",
+      "format": "XLSX",
+      "bytes": 11696,
+      "period": "2019",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0344",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "National Defence Civilians' Workplace representation",
+      "publisher": "Department of National Defence",
+      "url": "https://open.canada.ca/data/en/dataset/79ec0e13-2a2c-44a2-9723-bf9c706a72ff",
+      "filename": "dnd-civilian-representation/dnd-civilians-workplace-representation-2019-2022.csv",
+      "format": "CSV",
+      "bytes": 1639,
+      "period": "2019-04-01 to 2022-03-26",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0409",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0412",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv"
+          ],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Percentage of civilians in the Defence team who self-identify as a visible minority",
+      "publisher": "Department of National Defence",
+      "url": "https://open.canada.ca/data/en/dataset/d5ff6db3-831b-488d-8f10-64b690386fe0",
+      "filename": "dnd-civilian-representation/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+      "format": "XLSX",
+      "bytes": 21548,
+      "period": "2019-01-04 to 2025-03-31",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0410",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Percentage of civilians in the Defence team who self-identify as a woman",
+      "publisher": "Department of National Defence",
+      "url": "https://open.canada.ca/data/en/dataset/148911d8-a1e0-4942-a1fa-0cecd9958bc4",
+      "filename": "dnd-civilian-representation/dnd-civilians-self-identify-woman-2019-2025.xlsx",
+      "format": "XLSX",
+      "bytes": 21479,
+      "period": "2019-01-04 to 2025-03-31",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Percentage of civilians in the Defence team who self-identify as an Indigenous Person",
+      "publisher": "Department of National Defence",
+      "url": "https://open.canada.ca/data/en/dataset/4a0db3f7-f57e-44d8-b0c7-00f38c212ad7",
+      "filename": "dnd-civilian-representation/dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+      "format": "XLSX",
+      "bytes": 21503,
+      "period": "2019-01-04 to 2025-03-31",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Canadian Armed Forces Employment Equity (EE) Statistics",
+      "publisher": "Department of National Defence",
+      "url": "https://open.canada.ca/data/en/dataset/8fd0f79b-2165-4206-aeda-d1477a97bfbe",
+      "filename": "caf-employment-equity-statistics/",
+      "format": "CSV",
+      "bytes": 8062,
+      "period": "January 2021 to September 2022",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [
+        {
+          "id": "GC-0417",
+          "hosted": [
+            "data/register-gaps-2026-11/u-5fc996c17be36608/od-2020-00005-caf-designated-groups-by-component-and-deu-01-january-2021-5-1.csv.gz",
+            "data/register-gaps-2026-11/u-b9a02f24cfb7f2a6/od-2020-00005-caf-designated-groups-by-component-and-deu-01-january-2021-fr-2.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0418",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Employment Equity Representation for Veterans Affairs Canada",
+      "publisher": "Veterans Affairs Canada",
+      "url": "https://open.canada.ca/data/en/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e",
+      "filename": "vac-ee-representation/",
+      "format": "CSV, XLSX",
+      "bytes": 51854,
+      "period": "2018-12-31 and 2019-03-31",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0407",
+          "hosted": [
+            "data/register-gaps-2026-11/u-0e856a955fe1885f/aboriginalpeoplesautochtones_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-139c8bd2fb3e0243/womenfemmes_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-2e3c76762d13cf53/occupationalcategoriesgroupesprofessionnel_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-3439877fb68e4e72/personswithdisabilitiespersonneshandicapees_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-3881f66274b7dc59/womenfemmes_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-5487d621042a47ce/visibleminoritiesminoritesvisible_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-85a3929c35b6d0cf/employmentequityrepresentationdesgroupesdequiteemploi_vacacc.xlsx.gz",
+            "data/register-gaps-2026-11/u-88e8647dca07cfa9/notes_vacacc.xlsx.csv.gz",
+            "data/register-gaps-2026-11/u-ae9084db86107232/visibleminoritiesminoritesvisible_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-c5b0b06572d424d3/aboriginalpeoplesautochtones_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-ce210b7889ae0cd5/employment_equity-actual_representation.xlsx.gz",
+            "data/register-gaps-2026-11/u-ed97cad40c21d805/personswithdisabilitiespersonneshandicapees_vacacc.csv.gz",
+            "data/register-gaps-2026-11/u-f1c18b7250d578c5/notes_vacacc.xlsx.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0408",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Employment Equity Representation for Canada School of Public Service",
+      "publisher": "Canada School of Public Service",
+      "url": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
+      "filename": "csps-ee-representation/",
+      "format": "CSV, XLSX",
+      "bytes": 119409,
+      "period": "2018-2019 to 2024-2025",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0395",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0396",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0397",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0398",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0399",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0400",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0401",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.xlsx"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0402",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csps/csps-ee-representation-data-dictionary-2021-present.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Employment Equity Representation for the Canadian Security Intelligence Service",
+      "publisher": "Canadian Security Intelligence Service",
+      "url": "https://open.canada.ca/data/en/dataset/d77a24fe-eb38-4d02-8e00-32148a708b11",
+      "filename": "csis-ee-representation/csis-ee-representation-2020.csv",
+      "format": "CSV",
+      "bytes": 1537,
+      "period": "Time series from 1988/89",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0389",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Distribution of Designated Group Members and Age Range",
+      "publisher": "Canadian Security Intelligence Service",
+      "url": "https://open.canada.ca/data/en/dataset/479112da-a42a-4bf7-91bc-f40f810050a9",
+      "filename": "csis-ee-representation/csis-designated-group-members-by-age-range-2018-2019.csv",
+      "format": "CSV",
+      "bytes": 564,
+      "period": "2018-2019",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0391",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "2024-2025 Employment Equity and First Official Languages representation for the Communications Security Establishment",
+      "publisher": "Communications Security Establishment",
+      "url": "https://open.canada.ca/data/en/dataset/112ed90e-da6c-49d7-8bd5-81964bcab466",
+      "filename": "cse-ee-representation/cse-ee-and-first-official-languages-2024-2025.csv",
+      "format": "CSV",
+      "bytes": 1013,
+      "period": "2024-2025",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0381",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2024-2025.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "2022-2023 Employment Equity and First Official Languages representation for the Communications Security Establishment",
+      "publisher": "Communications Security Establishment",
+      "url": "https://open.canada.ca/data/en/dataset/f6afd910-e246-4676-90dd-51c0ea6f6ff3",
+      "filename": "cse-ee-representation/cse-ee-and-first-official-languages-2022-2023.csv",
+      "format": "CSV",
+      "bytes": 1014,
+      "period": "2022-2023",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0382",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2022-2023.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "CSE Workforce Representation as of June 30th, 2022",
+      "publisher": "Communications Security Establishment",
+      "url": "https://open.canada.ca/data/en/dataset/3fb07d1b-8521-4c9a-b7de-6695f46b0d80",
+      "filename": "cse-ee-representation/",
+      "format": "CSV",
+      "bytes": 4558,
+      "period": "2022-06-30",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0383",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-en.csv",
+            "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "2020 Employment Equity for the Communications Security Establishment",
+      "publisher": "Communications Security Establishment",
+      "url": "https://open.canada.ca/data/en/dataset/945948ff-ab9c-4461-b7de-225bfd2a02db",
+      "filename": "cse-ee-representation/cse-employment-equity-2020.csv",
+      "format": "CSV",
+      "bytes": 567,
+      "period": "Series March 2010 to March 2020",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0384",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "2018 Employment Equity for the Communications Security Establishment",
+      "publisher": "Communications Security Establishment",
+      "url": "https://open.canada.ca/data/en/dataset/396cb8b1-8b7c-4c95-9943-b6788a26db6b",
+      "filename": "cse-ee-representation/cse-employment-equity-2018.csv",
+      "format": "CSV",
+      "bytes": 450,
+      "period": "Series March 2010 to March 2018",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "2019 Employment Equity for the Communications Security Establishment",
+      "publisher": "Communications Security Establishment",
+      "url": "https://open.canada.ca/data/en/dataset/55c43516-3470-4245-a4a2-db3fa453d7bb",
+      "filename": "cse-ee-representation/cse-employment-equity-2019.csv",
+      "format": "CSV",
+      "bytes": 483,
+      "period": "Series to March 2019",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Workforce Representation by Designated Groups, Employment Equity Occupational Groups and National Occupational Classification Unit Groups",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/07deee9b-4275-40ab-a0d3-9cd913feed47",
+      "filename": "esdc-wfa-benchmarks/",
+      "format": "CSV",
+      "bytes": 25993382,
+      "period": "2021 Census",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Visible minorities by Employment Equity Occupational Groups",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/7e560779-bd46-480e-ab2a-64f68ccb6b97",
+      "filename": "esdc-wfa-benchmarks/",
+      "format": "CSV",
+      "bytes": 25993382,
+      "period": "2006 Census",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Canadian citizen workforce population by designated groups, Employment Equity Occupational Groups and National Occupational Classification Unit Groups",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/a381c4e4-0277-471a-ac1b-de6cda98c404",
+      "filename": "esdc-wfa-benchmarks/",
+      "format": "CSV",
+      "bytes": 25993382,
+      "period": "2016 Census",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Canadian Citizen and Permanent Resident Workforce Population by Designated Groups, Employment Equity Occupational Groups and National Occupational Classification Unit Groups",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/01c0f9da-f52d-4436-9899-f375b905e481",
+      "filename": "esdc-wfa-benchmarks/",
+      "format": "CSV",
+      "bytes": 25993382,
+      "period": "2021 Census",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Workforce Population of Designated Groups by Employment Equity Occupational Groups",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/93f81da5-a9e0-477d-b73f-7f54952ce580",
+      "filename": "esdc-wfa-benchmarks/",
+      "format": "CSV",
+      "bytes": 25993382,
+      "period": "2021 Census and 2022 Canadian Survey on Disability",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Employment Equity Occupational Groups and their corresponding National Occupational Classification (NOC) Unit Groups",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/3f948f37-41dd-4b96-b65b-ea78a53ec8ca",
+      "filename": "esdc-wfa-benchmarks/",
+      "format": "CSV",
+      "bytes": 25993382,
+      "period": "2021 Census",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Workforce Population Showing Representation by Employment Equity Occupational Group and Sector in the Federally Regulated Private Sector for Women, Indigenous Peoples, Persons with Disabilities, and Members of Visible Minorities",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/69362c0b-bfa9-40f0-acb6-0f7ba4abd648",
+      "filename": "esdc-leep-private-sector/",
+      "format": "CSV",
+      "bytes": 18823,
+      "period": "2021 Census and 2022 Canadian Survey on Disability",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Staffing and Non-Partisanship Survey 2021",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+      "filename": "snps-2021/",
+      "format": "CSV",
+      "bytes": 387247546,
+      "period": "Survey March 2020 to March 2021, published 2022-03-01",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0105",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/snps-2021-by-department.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0106",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS02.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0107",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS03.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0108",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS04.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0109",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS05.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0110",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS06.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0111",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS07.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0112",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS08.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0113",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS09.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0114",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS10.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0115",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS11.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0116",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/snps-2021-data-visualization-dataset.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0117",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/snps-2021-response-profile-data.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0118",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/snps-2021-list-of-questions.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0119",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/snps-2021-list-of-departments.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0120",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS16.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Staffing and Non-Partisanship Survey 2018",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+      "filename": "snps-2018/",
+      "format": "CSV",
+      "bytes": 487509775,
+      "period": "Published 2019-02-20",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0084",
+          "hosted": [
+            "data/register-gaps-2026-11/u-19c4349f76a63b8a/CFPPSC_SNPS16.csv.gz",
+            "data/register-gaps-2026-11/u-31b783184b087081/CFPPSC_SNPS14E.csv.gz",
+            "data/register-gaps-2026-11/u-3b83260c5c867a39/CFPPSC_SNPS15.csv.gz",
+            "data/register-gaps-2026-11/u-5fde9ce7673e6f1c/CFPPSC_SNPS05.csv.gz",
+            "data/register-gaps-2026-11/u-627fc3a62ce3cd88/CFPPSC_SNPS13.csv.gz",
+            "data/register-gaps-2026-11/u-65ec039d460189f6/CFPPSC_SNPS12.csv.gz",
+            "data/register-gaps-2026-11/u-6eed70996b087a2d/CFPPSC_SNPS01.csv.gz",
+            "data/register-gaps-2026-11/u-73c6675638d8f103/CFPPSC_SNPS03.csv.gz",
+            "data/register-gaps-2026-11/u-7c42c3b835a35c14/snps-sdip-documentation-eng.pdf.gz",
+            "data/register-gaps-2026-11/u-83434887acf6dec5/CFPPSC_SNPS19.csv.gz",
+            "data/register-gaps-2026-11/u-89928e6eacc184cd/CFPPSC_SNPS14F.csv.gz",
+            "data/register-gaps-2026-11/u-a37a68061e9f1e57/CFPPSC_SNPS11.csv.gz",
+            "data/register-gaps-2026-11/u-be532840a223520c/CFPPSC_SNPS04.csv.gz",
+            "data/register-gaps-2026-11/u-bfeec51f343ed4a3/CFPPSC_SNPS14V.csv.gz",
+            "data/register-gaps-2026-11/u-cf53f3af630d6e5b/CFPPSC_SNPS17.csv.gz",
+            "data/register-gaps-2026-11/u-d8052cf99d05844f/CFPPSC_SNPS02.csv.gz",
+            "data/register-gaps-2026-11/u-d853f95b9b4bfcfa/CFPPSC_SNPS06.csv.gz",
+            "data/register-gaps-2026-11/u-de523c8013a0a34d/CFPPSC_SNPS07.csv.gz",
+            "data/register-gaps-2026-11/u-e7e8e336379b8caf/snps-sdip-documentation-fra.pdf.gz",
+            "data/register-gaps-2026-11/u-ea191abfa539ebf3/CFPPSC_SNPS09.csv.gz",
+            "data/register-gaps-2026-11/u-f023613324ee393a/CFPPSC_SNPS18.csv.gz",
+            "data/register-gaps-2026-11/u-f78e79665efd69ff/CFPPSC_SNPS10.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0085",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS02.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0086",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS03.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0087",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS04.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0088",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS05.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0089",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS06.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0090",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS07.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0091",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS08.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0092",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS09.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0093",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS10.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0094",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS11.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0095",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS12.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0096",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/snps-2018-organization-level-report-dataset.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0097",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14E.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0098",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14F.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0099",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/snps-2018-by-first-official-language-and-region-v.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0100",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/snps-2018-response-profile-data.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0101",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/snps-2018-list-of-questions.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0102",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/snps-2018-list-of-departments.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0103",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS18.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0104",
+          "hosted": [
+            "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS19.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Survey of Staffing 2017",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/a8d64d9c-db9a-4f71-8be4-f11eaf4d306d",
+      "filename": "survey-of-staffing-2017/",
+      "format": "CSV",
+      "bytes": 4748369,
+      "period": "2017",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0172",
+          "hosted": [
+            "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0173",
+          "hosted": [
+            "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0174",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0175",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0176",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Employee Survey 2018",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/a2f9e2ca-237b-4dda-ba19-d52c84844b54",
+      "filename": "pses-2018/",
+      "format": "CSV, XLSX",
+      "bytes": 2065522164,
+      "period": "Fielded August 20 to October 5, 2018; includes historical 2017/2014/2011/2008 for repeated questions",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Public Service Employee Survey 2019",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+      "filename": "pses-2019/",
+      "format": "CSV, XLSX",
+      "bytes": 3888121804,
+      "period": "Fielded July 22 to September 6, 2019; historical to 2008",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Public Service Employee Survey 2020",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/4301f4bb-1daa-4b50-afab-d1193b5d2284",
+      "filename": "pses-2020/",
+      "format": "CSV, XLSX",
+      "bytes": 5562371189,
+      "period": "Fielded November 30, 2020 to January 29, 2021; historical 2019/2018",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0041",
+          "hosted": [
+            "data/open-canada-2026-11/pses-2020/subset-1-sous-ensemble-1.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0042",
+          "hosted": [
+            "pses-data:pses/pses-2020/subset-2-sous-ensemble-2"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0043",
+          "hosted": [
+            "pses-data:pses/pses-2020/subset-3-sous-ensemble-3"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0044",
+          "hosted": [
+            "pses-data:pses/pses-2020/subset-4-sous-ensemble-4"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0045",
+          "hosted": [
+            "pses-data:pses/pses-2020/subset-5-sous-ensemble-5"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0046",
+          "hosted": [
+            "pses-data:pses/pses-2020/subset-6-sous-ensemble-6"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0047",
+          "hosted": [
+            "pses-data:pses/pses-2020/subset-7-sous-ensemble-7-1"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0048",
+          "hosted": [
+            "pses-data:pses/pses-2020/2020-public-service-employee-survey-open-dataset-ensemble-de-donnees-ouvertes-du-sondage-aupres-"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0049",
+          "hosted": [
+            "pses-data:register-gaps/u-fbca1e7a920d80ab"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0050",
+          "hosted": [
+            "data/open-canada-2026-11/pses-supporting-documentation/pses2020-supporting-documentation.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Employee Survey 2022/2023",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/9f9501f3-8188-4386-87ba-50730a979044",
+      "filename": "pses-2022-2023/",
+      "format": "CSV, XLSX",
+      "bytes": 7660291098,
+      "period": "Fielded November 21, 2022 to February 5, 2023",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0052",
+          "hosted": [
+            "data/open-canada-2026-11/pses-2022-2023/subset-1-2022_2023-pses-open-dataset-with-labels_sous-ensemble-1-ensemble-de-donnees-ouvertes-du.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0065",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Employee Survey 2024",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
+      "filename": "pses-2024/",
+      "format": "CSV, XLSX",
+      "bytes": 6372452646,
+      "period": "Fielded November 28 to December 31, 2024; 186,635 respondents, 93 organizations",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0079",
+          "hosted": [
+            "data/register-gaps-2026-11/u-103fbb486beee226/subset-1-sous-ensemble-1.csv.gz",
+            "data/register-gaps-2026-11/u-3bf8325676eabc46/2024-PSES-Supporting-Documentation-Documents-de-r-f-rence-du-SAFF-2024.xlsx.gz",
+            "data/register-gaps-2026-11/u-4f94d5d1bcb8a375/PSES_Employment-Equity-Results-Tables-2024---Tableaux-des-r-sultats-de-l-quit-en-mati-re-d-emploi-du-SAFF-2024.xlsx.gz",
+            "data/register-gaps-2026-11/u-e565d85f55d817e9/HRINFO.csv.gz",
+            "pses-data:register-gaps/u-0e1e17c6e950cdb0",
+            "pses-data:register-gaps/u-28182f4714d39967",
+            "pses-data:register-gaps/u-38bcb92a7addd066",
+            "pses-data:register-gaps/u-4a0754848cbfe626",
+            "pses-data:register-gaps/u-57aa70cfcc3ebfcd",
+            "pses-data:register-gaps/u-5b9875e7d4bf5ab6",
+            "pses-data:register-gaps/u-7886f22034fc8e9b",
+            "pses-data:register-gaps/u-7aeab5025f39a328",
+            "pses-data:register-gaps/u-890b5cb77ebe351c",
+            "pses-data:register-gaps/u-96ba925516e163c1",
+            "pses-data:register-gaps/u-d9b246fe4b15c6a1"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Employment Equity in the Public Service of Canada, 2013-2014 tables",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/896e90b8-5e4e-4a90-8655-91ba53e1709a",
+      "filename": "tbs-ee-annual-report-2013-2014/",
+      "format": "XLS",
+      "bytes": 1728512,
+      "period": "Fiscal 2013-2014",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0330",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+            "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Federal public service statistics",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+      "filename": "tbs-fps-population-2010-2026/",
+      "format": "CSV",
+      "bytes": 5676798,
+      "period": "March 2010 to March 2026",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0267",
+          "hosted": [
+            "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-2359b34476f452d4/federal-public-service-statistics-about-the-data.docx.gz",
+            "data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-2f7428a479da98df/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-334f9abb4b766c1e/population-of-the-federal-public-service-by-national-capital-region-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-38087c2dde235455/effectif-de-la-fonction-publique-federale-par-province-ou-territoire-de-travail-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-4ff9725154fbba79/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5052f9a213059c18/effectif-de-la-fonction-publique-federale-selon-la-premiere-langue-officielle-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5d8d86ec4b127670/population-of-the-federal-public-service-by-first-official-language-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-72c691ce58c82349/population-of-the-federal-public-service-by-age-band-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a689de4503c4a21e/effectif-de-la-fonction-publique-federale-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a6c6f43bd5e71510/statistiques-sur-la-fonction-publique-federale-au-sujet-des-donnees.docx.gz",
+            "data/register-gaps-2026-11/u-a72cb6cad5c9aef6/effectif-de-la-fonction-publique-federale-selon-la-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a7949571697d10bf/population-of-the-federal-public-service-by-tenure-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-bd7a5f7db07cef7d/population-of-the-federal-public-service-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-d2086f9fb3a9a801/effectif-de-la-fpf-par-province-ou-territoire-de-travail-et-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-f022c46ab180dac8/effectif-de-la-fonction-publique-federale-par-categorie-dage-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-f110f22862b549cd/pop-of-the-federal-public-service-by-province-or-territory-of-work-and-tenure-march-2026.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0268",
+          "hosted": [
+            "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-2359b34476f452d4/federal-public-service-statistics-about-the-data.docx.gz",
+            "data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-2f7428a479da98df/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-334f9abb4b766c1e/population-of-the-federal-public-service-by-national-capital-region-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-38087c2dde235455/effectif-de-la-fonction-publique-federale-par-province-ou-territoire-de-travail-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-4ff9725154fbba79/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5052f9a213059c18/effectif-de-la-fonction-publique-federale-selon-la-premiere-langue-officielle-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5d8d86ec4b127670/population-of-the-federal-public-service-by-first-official-language-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-72c691ce58c82349/population-of-the-federal-public-service-by-age-band-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a689de4503c4a21e/effectif-de-la-fonction-publique-federale-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a6c6f43bd5e71510/statistiques-sur-la-fonction-publique-federale-au-sujet-des-donnees.docx.gz",
+            "data/register-gaps-2026-11/u-a72cb6cad5c9aef6/effectif-de-la-fonction-publique-federale-selon-la-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a7949571697d10bf/population-of-the-federal-public-service-by-tenure-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-bd7a5f7db07cef7d/population-of-the-federal-public-service-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-d2086f9fb3a9a801/effectif-de-la-fpf-par-province-ou-territoire-de-travail-et-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-f022c46ab180dac8/effectif-de-la-fonction-publique-federale-par-categorie-dage-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-f110f22862b549cd/pop-of-the-federal-public-service-by-province-or-territory-of-work-and-tenure-march-2026.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0269",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0270",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0271",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0272",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0273",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0274",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0275",
+          "hosted": [
+            "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0276",
+          "hosted": [
+            "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0277",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0278",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0279",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0280",
+          "hosted": [
+            "data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0281",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0282",
+          "hosted": [
+            "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz",
+            "data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz",
+            "data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0283",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0284",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0285",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0286",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0287",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0288",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0289",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0290",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0291",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0292",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0293",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0294",
+          "hosted": [
+            "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0295",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0296",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Applications to the Public Service",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
+      "filename": "psc-applicants-ar6/",
+      "format": "CSV",
+      "bytes": 208514,
+      "period": "2012-2013 to 2024-2025",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0262",
+          "hosted": [
+            "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-officer-level-ar6a.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0263",
+          "hosted": [
+            "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-non-officer-level-ar6b.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0264",
+          "hosted": [
+            "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ar6c.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0265",
+          "hosted": [
+            "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ontario-ncr-quebec-ar6d.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0266",
+          "hosted": [
+            "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-to-external-advertisements-ar6e.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Harassment and Violence Occurrences in the Canadian Federal Jurisdiction: 2021-2024",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
+      "filename": "harassment-violence-occurrences/",
+      "format": "CSV",
+      "bytes": 25034,
+      "period": "2021-01-01 to 2024-12-31",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [
+        {
+          "id": "GC-0447",
+          "hosted": [
+            "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-federal-jurisdiction-2021-2024-en.csv"
+          ],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0448",
+          "hosted": [
+            "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-federal-jurisdiction-2021-2024-fr.csv"
+          ],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0449",
+          "hosted": [
+            "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-industry-2021-2024-en.csv"
+          ],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0450",
+          "hosted": [
+            "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-industry-2021-2024-fr.csv"
+          ],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0451",
+          "hosted": [
+            "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-public-private-sector-2021-2024-en.csv"
+          ],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0452",
+          "hosted": [
+            "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-public-private-sector-2021-2024-fr.csv"
+          ],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Pay Scale at CSIS",
+      "publisher": "Canadian Security Intelligence Service",
+      "url": "https://open.canada.ca/data/en/dataset/633ea9e6-1d4c-4372-8627-36f02c1969ad",
+      "filename": "csis-pay-scale/csis-pay-scale-2019.csv",
+      "format": "CSV",
+      "bytes": 3380,
+      "period": "2019",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0422",
+          "hosted": [
+            "data/register-gaps-2026-11/u-db0a462f90443d00/HRS-Datasets-2019.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "PSC Staffing Dashboard - priority administration and French supporting documentation",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+      "filename": "psc-staffing-dashboard-extras/",
+      "format": "CSV",
+      "bytes": 7447,
+      "period": "Dashboard series to 2026-2027; supporting documentation 2024-2025",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0228",
+          "hosted": [
+            "data/psc/adv_type.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0229",
+          "hosted": [
+            "data/psc/advs.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0230",
+          "hosted": [
+            "data/psc/demo_age.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0231",
+          "hosted": [
+            "data/psc/demo_ee.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0232",
+          "hosted": [
+            "data/psc/demo_fol.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0233",
+          "hosted": [
+            "data/psc/demo_group.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0234",
+          "hosted": [
+            "data/psc/demo_region.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0235",
+          "hosted": [
+            "data/psc/inflow.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0236",
+          "hosted": [
+            "data/psc/outflow.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0237",
+          "hosted": [
+            "data/psc/internal_mob.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0238",
+          "hosted": [
+            "data/psc/reappointments.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0239",
+          "hosted": [
+            "data/psc/vha_1.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0240",
+          "hosted": [
+            "data/register-gaps-2026-11/u-03cafef72bc8c2b7/vha_3.csv.gz",
+            "data/register-gaps-2026-11/u-0e10e848c039faab/vha_1.csv.gz",
+            "data/register-gaps-2026-11/u-7d6ab1990e960ca3/vha_2.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0241",
+          "hosted": [
+            "data/psc/vha_3.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0242",
+          "hosted": [
+            "data/register-gaps-2026-11/u-febcb0d9da7d25b2/priority.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Commission (PSC) Departmental Results Framework Indicators",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
+      "filename": "psc-drf-indicators/",
+      "format": "CSV",
+      "bytes": 85558,
+      "period": "FY2018-2019 to FY2023-2024",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0257",
+          "hosted": [
+            "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i1-days-to-complete-external-staffing.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0258",
+          "hosted": [
+            "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i9-new-hires-under-35.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0259",
+          "hosted": [
+            "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i11-new-hires-outside-ncr.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Hiring and Staffing Activities under the Public Service Employment Act - legacy ar1 files",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+      "filename": "psc-hiring-staffing-ar1-legacy/",
+      "format": "CSV",
+      "bytes": 135905,
+      "period": "FY2013-2014 to FY2017-2018",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0184",
+          "hosted": [
+            "data/psc/ar1a.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0185",
+          "hosted": [
+            "data/psc/ar1b.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0186",
+          "hosted": [
+            "data/register-gaps-2026-11/u-4528d3baf5a7d652/CFPPSC_AR1M.csv.gz",
+            "data/register-gaps-2026-11/u-4743294e9bf582df/ar1f.csv.gz",
+            "data/register-gaps-2026-11/u-60737bbb8d8249e4/CFPPSC_AR1W.csv.gz",
+            "data/register-gaps-2026-11/u-69d5acf1fb06d6ef/CFPPSC_AR1J.csv.gz",
+            "data/register-gaps-2026-11/u-7f939a55cf70df18/ar1y.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0187",
+          "hosted": [
+            "data/psc/CFPPSC_AR1D.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0188",
+          "hosted": [
+            "data/psc/CFPPSC_AR1E.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0189",
+          "hosted": [
+            "data/psc/ar1f.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0190",
+          "hosted": [
+            "data/psc/ar1g.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0191",
+          "hosted": [
+            "data/psc/ar1h.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0192",
+          "hosted": [
+            "data/psc/ar1i.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0193",
+          "hosted": [
+            "data/psc/CFPPSC_AR1J.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0194",
+          "hosted": [
+            "data/psc/CFPPSC_AR1K.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0195",
+          "hosted": [
+            "data/psc/ar1l.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0196",
+          "hosted": [
+            "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0197",
+          "hosted": [
+            "data/psc/CFPPSC_AR1N.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0198",
+          "hosted": [
+            "data/register-gaps-2026-11/u-22ef81c431fd096a/ar1aa.csv.gz",
+            "data/register-gaps-2026-11/u-4d0576999a8f8e78/CFPPSC_AR1O.csv.gz",
+            "data/register-gaps-2026-11/u-ae5adc47cb6dab5c/ar1z.csv.gz",
+            "data/register-gaps-2026-11/u-f5c81e62c01090f2/CFPPSC_AR1N.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0199",
+          "hosted": [
+            "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0200",
+          "hosted": [
+            "data/psc/ar1q.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0201",
+          "hosted": [
+            "data/psc/CFPPSC_AR1R.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0202",
+          "hosted": [
+            "data/psc/CFPPSC_AR1S.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0203",
+          "hosted": [
+            "data/psc/CFPPSC_AR1T.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0204",
+          "hosted": [
+            "data/psc/CFPPSC_AR1U.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0205",
+          "hosted": [
+            "data/psc/CFPPSC_AR1V.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0206",
+          "hosted": [
+            "data/psc/CFPPSC_AR1W.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0207",
+          "hosted": [
+            "data/psc/CFPPSC_AR1X.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0208",
+          "hosted": [
+            "data/psc/ar1y.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0209",
+          "hosted": [
+            "data/psc/ar1aa.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0210",
+          "hosted": [
+            "data/psc/ar1bb.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0211",
+          "hosted": [
+            "data/psc/CFPPSC_AR1CC.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0212",
+          "hosted": [
+            "data/psc/ar1dd.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0213",
+          "hosted": [
+            "data/psc/CFPPSC_AR1EE.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0214",
+          "hosted": [
+            "data/psc/ar1ff.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0215",
+          "hosted": [
+            "data/psc/ar1gg.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0216",
+          "hosted": [
+            "data/psc/ar1z.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0217",
+          "hosted": [
+            "data/psc/ar1hh.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0218",
+          "hosted": [
+            "data/register-gaps-2026-11/u-05966c24e45d8806/CFPPSC_AR1T.csv.gz",
+            "data/register-gaps-2026-11/u-f637bc70dbecb16d/ar1hh.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Population under the Public Service Employment Act - ar2b",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
+      "filename": "psc-population-ar2/psc-ar2b-indeterminate-employees-under-35-share-by-year.csv",
+      "format": "CSV",
+      "bytes": 5217,
+      "period": "1996-03-31 to 2025-03-31",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0219",
+          "hosted": [
+            "data/psc/ar2a.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0220",
+          "hosted": [
+            "data/open-canada-2026-11/psc-population-ar2/psc-ar2b-indeterminate-employees-under-35-share-by-year.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0221",
+          "hosted": [
+            "data/psc/CFPPSC_AR2C.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0222",
+          "hosted": [
+            "data/psc/ar2d.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Advertisements to the Public Service - per-fiscal-year files",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+      "filename": "psc-advertisements-by-year/",
+      "format": "CSV",
+      "bytes": 50592894,
+      "period": "FY2017-2018 to FY2026-2027",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0243",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2017-2018.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0244",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2018-2019.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0245",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2019-2020.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0246",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2020-2021.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0247",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2021-2022.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0248",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2022-2023.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0249",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2023-2024.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0250",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2024-2025.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0251",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2025-2026.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0252",
+          "hosted": [
+            "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2026-2027.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Federal Student Work Experience Program (FSWEP) Requests for Referrals submitted by hiring departments",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5",
+      "filename": "psc-fswep-referrals/psc-fswep-requests-for-referrals-2017-2026.csv",
+      "format": "CSV",
+      "bytes": 28857259,
+      "period": "2017-03-01 to 2026-10-02",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0253",
+          "hosted": [
+            "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-october-2-2026-single-tab.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0254",
+          "hosted": [
+            "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Priority Entitlements",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/83dcf122-d050-4def-8456-d23b718c6b22",
+      "filename": "psc-priority-entitlements/",
+      "format": "CSV",
+      "bytes": 154134,
+      "period": "FY2011-2012 to FY2023-2024",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0255",
+          "hosted": [
+            "data/open-canada-2026-11/psc-priority-entitlements/psc-priority-entitlements-public-service-total.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0256",
+          "hosted": [
+            "data/open-canada-2026-11/psc-priority-entitlements/psc-medically-released-and-surplus-priority-entitlements-vs-appointments.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Staffing Audit Tool",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/349e07cf-7df8-4714-8f44-7afd7d997aa6",
+      "filename": "psc-staffing-audit-tool/psc-staffing-audit-tool-appointment-records-2013-2016.csv",
+      "format": "CSV",
+      "bytes": 1004266,
+      "period": "2013 to 2016",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0260",
+          "hosted": [
+            "data/open-canada-2026-11/psc-staffing-audit-tool/psc-staffing-audit-tool-appointment-records-2013-2016.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "System-Wide Staffing Audit (Tool)",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/45db0901-fe73-4f7f-beb9-598d7ab98acd",
+      "filename": "psc-system-wide-staffing-audit/psc-system-wide-staffing-audit-program-2016.csv",
+      "format": "CSV",
+      "bytes": 2256931,
+      "period": "2016-04-01 to 2016-11-30",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0261",
+          "hosted": [
+            "data/open-canada-2026-11/psc-system-wide-staffing-audit/psc-system-wide-staffing-audit-program-2016.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Distribution of Designated Group Members and Age Range (2017-2018)",
+      "publisher": "Canadian Security Intelligence Service",
+      "url": "https://open.canada.ca/data/en/dataset/f3b563cc-e1cb-4889-88a1-30e93d38cd68",
+      "filename": "csis-ee-representation/csis-designated-group-members-by-age-range-2017-2018.csv",
+      "format": "CSV",
+      "bytes": 560,
+      "period": "2017-2018",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "DND Civilian Employee Gender Distribution",
+      "publisher": "Department of National Defence",
+      "url": "https://open.canada.ca/data/en/dataset/881a781c-8247-4990-b7e7-1d99317bd4b2",
+      "filename": "dnd-civilian-representation/",
+      "format": "XLSX",
+      "bytes": 10203,
+      "period": "2009 to 2024-03-31",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0411",
+          "hosted": [
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
+            "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Vaccination and Accommodations Status",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/9e57c237-13af-4c99-a2c1-88eee597f9b1",
+      "filename": "tbs-vaccination-accommodations/tbs-vaccination-and-accommodations-status-2022-06-20.csv",
+      "format": "CSV",
+      "bytes": 6034,
+      "period": "2022-06-20",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [
+        {
+          "id": "GC-0460",
+          "hosted": [],
+          "excluded": "site content rule: no vaccination data"
+        }
+      ],
+      "coverage": "registered-no-hosted-match"
+    },
+    {
+      "title": "Federal Student Work Experience Program (FSWEP) Requests for Referrals submitted by hiring departments - as-of November 5 2026 snapshot",
+      "publisher": "Public Service Commission of Canada",
+      "url": "https://open.canada.ca/data/en/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5",
+      "filename": "psc-fswep-referrals/psc-fswep-requests-for-referrals-2017-2026-as-of-2026-11-05.csv",
+      "format": "CSV",
+      "bytes": 30887309,
+      "period": "2017-03-01 to 2026-11-04",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0253",
+          "hosted": [
+            "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-october-2-2026-single-tab.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0254",
+          "hosted": [
+            "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv.gz"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Employee wages by occupation, annual (Tables 14-10-0417-01 and 14-10-0417-02)",
+      "publisher": "Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/n1/en/catalogue/1410041701",
+      "filename": "statcan-wages-by-occupation/",
+      "format": "ZIP, CSV",
+      "bytes": 80915604,
+      "period": "1997 to 2025",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [
+        {
+          "id": "GC-0469",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0470",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0513",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "registered-no-hosted-match"
+    },
+    {
+      "title": "Employment Equity, Shared Services Canada",
+      "publisher": "Shared Services Canada",
+      "url": "https://open.canada.ca/data/en/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182",
+      "filename": "ssc-ee-representation/",
+      "format": "CSV",
+      "bytes": 3743,
+      "period": "2015-2016 to 2025-2026",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0416",
+          "hosted": [
+            "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
+            "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Workplace Harassment and Violence Survey, 2017",
+      "publisher": "Employment and Social Development Canada",
+      "url": "https://open.canada.ca/data/en/dataset/e32fed6f-9d5a-4823-93b8-5a07292935e1",
+      "filename": "esdc-harassment-violence-survey-2017/",
+      "format": "CSV",
+      "bytes": 3031967,
+      "period": "2017",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [
+        {
+          "id": "GC-0445",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0446",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0457",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "registered-no-hosted-match"
+    },
+    {
+      "title": "GC InfoBase open datasets: FTE extracts",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/a35cf382-690c-4221-a971-cf0fd189a46f",
+      "filename": "gc-infobase-fte/",
+      "format": "CSV",
+      "bytes": 10443708,
+      "period": "2010-2026",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0358",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0359",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0360",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0361",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0362",
+          "hosted": [
+            "data/register-gaps-2026-11/u-985103c2cc5349e1/rbpo_rppo_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0363",
+          "hosted": [
+            "data/register-gaps-2026-11/u-27e040fa2521e5cb/pipo_irpo_en.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0364",
+          "hosted": [
+            "data/register-gaps-2026-11/u-2ebe9dfaeb6c08eb/pipo_irpo_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0365",
+          "hosted": [
+            "pses-data:register-gaps/u-8b4e4ab9616ebdd0"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0371",
+          "hosted": [
+            "data/register-gaps-2026-11/u-b25be5b33300d9fb/a_per_1718_en.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0372",
+          "hosted": [
+            "data/register-gaps-2026-11/u-3d9f82329a1141f3/a_per_1718_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0373",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0374",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0375",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0376",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "GC InfoBase open datasets: results and performance indicators",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/a35cf382-690c-4221-a971-cf0fd189a46f",
+      "filename": "gc-infobase-indicators/",
+      "format": "CSV",
+      "bytes": 143995329,
+      "period": "2018-2026",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0358",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0359",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0360",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0361",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0362",
+          "hosted": [
+            "data/register-gaps-2026-11/u-985103c2cc5349e1/rbpo_rppo_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0363",
+          "hosted": [
+            "data/register-gaps-2026-11/u-27e040fa2521e5cb/pipo_irpo_en.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0364",
+          "hosted": [
+            "data/register-gaps-2026-11/u-2ebe9dfaeb6c08eb/pipo_irpo_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0365",
+          "hosted": [
+            "pses-data:register-gaps/u-8b4e4ab9616ebdd0"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0371",
+          "hosted": [
+            "data/register-gaps-2026-11/u-b25be5b33300d9fb/a_per_1718_en.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0372",
+          "hosted": [
+            "data/register-gaps-2026-11/u-3d9f82329a1141f3/a_per_1718_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0373",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0374",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0375",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0376",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Public Service Employee Survey 2017",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/9322c841-1498-4f18-91c5-3e09235f63ac",
+      "filename": "pses-2017/",
+      "format": "CSV",
+      "bytes": 1703855498,
+      "period": "2017",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Public Service Employee Annual Survey 2017",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/ea2fbd12-415c-4066-bdf4-988e4bec16d3",
+      "filename": "pseas-2017/",
+      "format": "CSV",
+      "bytes": 89668551,
+      "period": "2017",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Public Service Employee Survey 2014",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/cb367ebc-db21-428d-bdce-b67b5828e791",
+      "filename": "pses-2014/",
+      "format": "CSV",
+      "bytes": 914376794,
+      "period": "2014",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Public Service Employee Survey 2011 (and 2008 results)",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3",
+      "filename": "pses-2011/",
+      "format": "CSV/XLS",
+      "bytes": 133883144,
+      "period": "2008, 2011",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0001",
+          "hosted": [
+            "pses-data:register-gaps/u-f4206e48213e4cf0"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0002",
+          "hosted": [
+            "data/register-gaps-2026-11/u-60de0d1d997e7577/2008_results-resultats.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0003",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/pses2011-overall.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0004",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/pses2011-dept.xls"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0005",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0006",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        },
+        {
+          "id": "GC-0007",
+          "hosted": [],
+          "excluded": "not approved in the source register"
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "Employee wages by job permanency and union coverage, annual (StatCan 14-10-0066-01)",
+      "publisher": "Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=14100066",
+      "filename": "statcan-wages-0066/",
+      "format": "ZIP+CSV",
+      "bytes": 2238323,
+      "period": "1997-2025",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Employee wages by industry, annual (StatCan 14-10-0064-01)",
+      "publisher": "Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=14100064",
+      "filename": "statcan-wages-0064/",
+      "format": "ZIP+CSV",
+      "bytes": 15646013,
+      "period": "1997-2025",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Weekly wage distributions by occupation, annual (StatCan 14-10-0413-01)",
+      "publisher": "Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=14100413",
+      "filename": "statcan-wages-0413/",
+      "format": "ZIP+CSV",
+      "bytes": 1400790,
+      "period": "1997-2025",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "Hourly wage distributions by occupation, annual, inactive (StatCan 14-10-0414-01)",
+      "publisher": "Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=14100414",
+      "filename": "statcan-wages-0414/",
+      "format": "ZIP+CSV",
+      "bytes": 1319957,
+      "period": "1997-2024",
+      "scope": "excluded-or-separate-scope-review",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "GC InfoBase open datasets: Departmental Plans and Results Reports 2018-2021",
+      "publisher": "Treasury Board of Canada Secretariat",
+      "url": "https://open.canada.ca/data/en/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8",
+      "filename": "gc-infobase-dprr/",
+      "format": "CSV/XLSX",
+      "bytes": 41086478,
+      "period": "2018-2021",
+      "scope": "candidate",
+      "register": [
+        {
+          "id": "GC-0366",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0367",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0368",
+          "hosted": [
+            "data/register-gaps-2026-11/u-aa2efd4e6c754a04/pipo_irpo_en.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0369",
+          "hosted": [
+            "data/register-gaps-2026-11/u-86ebe5555599fa53/pipo_irpo_fr.csv.gz"
+          ],
+          "excluded": null
+        },
+        {
+          "id": "GC-0370",
+          "hosted": [
+            "data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx"
+          ],
+          "excluded": null
+        }
+      ],
+      "coverage": "at-least-one-register-entry-hosted"
+    },
+    {
+      "title": "PBO Personnel Expenditure Analysis Tool database",
+      "publisher": "Parliamentary Budget Officer",
+      "url": "https://github.com/pbo-dpb/PEAT--OEDP",
+      "filename": "pbo-personnel-expenditure/",
+      "format": "XLSX",
+      "bytes": 606291,
+      "period": "FY2006-07 to 2024-25",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    },
+    {
+      "title": "PBO Federal Employment Tracking Tool public data",
+      "publisher": "Parliamentary Budget Officer",
+      "url": "https://github.com/pbo-dpb/FETT--OSEF",
+      "filename": "pbo-employment-tracking/",
+      "format": "XLSX",
+      "bytes": 2104357,
+      "period": "2015Q2-",
+      "scope": "candidate",
+      "register": [],
+      "coverage": "no-dataset-url-match"
+    }
+  ]
+}
