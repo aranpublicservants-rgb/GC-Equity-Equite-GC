@@ -82,7 +82,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 
 /* Common chart explorer on every page with the shared site shell. */
-(()=>{const current=document.currentScript;if(!current?.src||document.querySelector('script[data-gce-visuals]')||window.GCEquityVisuals)return;const script=document.createElement('script');script.src=new URL('assets/data-visuals.js?v=20261127-consolidated-1',current.src).href;script.dataset.gceVisuals='true';script.defer=true;document.head.append(script);})();
+(()=>{const current=document.currentScript;if(!current?.src||document.querySelector('script[data-gce-visuals]')||window.GCEquityVisuals)return;const script=document.createElement('script');script.src=new URL('assets/data-visuals.js?v=20261127-legend-2',current.src).href;script.dataset.gceVisuals='true';script.defer=true;document.head.append(script);})();
 
 /* Lazy department-specific employee survey explorer. Original evidence sections remain intact. */
 (()=>{const current=document.currentScript;if(!current?.src)return;const init=()=>{if(!document.querySelector('#experience,#experience-fr')||document.querySelector('script[data-gce-pses-explorer]'))return;const script=document.createElement('script');script.src=new URL('assets/pses-explorer.js?v=20261127-1',current.src).href;script.dataset.gcePsesExplorer='1';script.defer=true;document.head.append(script);};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();})();

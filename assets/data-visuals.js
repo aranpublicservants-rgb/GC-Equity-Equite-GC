@@ -154,7 +154,7 @@
  }
  const api={numeric,missingLabel,metricKind,profile,points,defaultDimension,trendAllowed,completeResponses,pivot,csvText,chartFamily,families,periodColumns,periodProfile,publicChartSettings,representationGap};
  function start(win){
-  const doc=win.document,ownScript=doc.currentScript,assetURL=new URL('data-visuals.css',ownScript?.src||new URL('assets/',doc.baseURI));
+  const doc=win.document,ownScript=doc.currentScript,assetURL=new URL('data-visuals.css?v=20261127-legend-2',ownScript?.src||new URL('assets/',doc.baseURI));
   if(!doc.getElementById('gce-visual-style')){const link=doc.createElement('link');link.id='gce-visual-style';link.rel='stylesheet';link.href=assetURL.href;doc.head.append(link);}
   if(doc.documentElement.dataset.gceVisualEngine)return;doc.documentElement.dataset.gceVisualEngine='1';
   const widgets=new WeakMap(),active=new Set(),pending=new Set(),observed=new WeakSet();let sequence=0,timer,lazy,explorer=null;
@@ -184,7 +184,7 @@
    const l=p.lang,m=pts.metrics[0],kind=state.kind,stack=kind==='stacked'?completeResponses(p):null,matrix=kind==='heatmap'?pivot(p,pts,state.column):null;
    const metrics=kind==='heatmap'&&!matrix?p.metrics.filter(v=>v.kind===m.kind).slice(0,6):stack||pts.metrics;
    let rows=pts.rows;if(kind==='trend')rows=[...rows].sort((a,b)=>a.label.localeCompare(b.label));
-   const legendWide=metrics.some(c=>String(c.label).length>30),legendRows=legendWide?metrics.length:Math.ceil(metrics.length/2),width=1100,left=400,right=100,top=Math.max(95,legendRows*23+50),bottom=50,step=kind==='heatmap'?72:Math.max(78,metrics.length*26+20),height=kind==='trend'?480:top+Math.max(1,matrix?matrix.labels.length:rows.length)*step+bottom;
+   const legendWide=metrics.some(c=>String(c.label).length>30),legendRows=legendWide?metrics.length:Math.ceil(metrics.length/2),width=1100,left=400,right=100,top=Math.max(95,legendRows*27+50),bottom=50,step=kind==='heatmap'?72:Math.max(78,metrics.length*26+20),height=kind==='trend'?480:top+Math.max(1,matrix?matrix.labels.length:rows.length)*step+bottom;
    const ns=rows.flatMap(r=>metrics.map(c=>numeric(r.raw[c.index],l,difference(c.label)))).filter(finite),min=Math.min(0,...ns),max=m.kind==='percent'?100:Math.max(1,...ns),span=max-min||1,x=v=>left+(v-min)/span*(width-left-right),baseline=x(0);
    const svg=doc.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('role','group');svg.setAttribute('aria-label',p.title);svg.classList.add('dv-svg');
    let markup='<rect width="1100" height="'+height+'" fill="white"/><title>'+esc(p.title)+'</title><desc>'+esc(L(l,'Published cells only. Exact values and source-row details follow the chart.','Cellules publiées seulement. Les valeurs exactes et détails des lignes suivent le graphique.'))+'</desc>';
@@ -193,7 +193,7 @@
    const record=(r,c,value)=>{const fields=p.headers.map((h,i)=>h+': '+String(r.raw[i]??'')).join(' · ');return r.label+' · '+c.label+': '+(finite(value)?formatted(value,c.kind,l):missingLabel(r.raw[c.index],l))+' · '+fields;};
    const marks=[];
    function mark(r,c,value,body){const id=marks.length,full=record(r,c,value);marks.push(full);return '<g tabindex="0" role="button" data-point="'+id+'" aria-label="'+esc(full)+'"><title>'+esc(full)+'</title>'+body+'</g>';}
-   const unitName=c=>c.kind==='percent'?'%':c.kind==='points'?L(l,'points','points'):L(l,'source units','unités sources'),legendText=c=>{const name=String(c.label),short=name.length>80?name.slice(0,79)+'…':name;return legendWide&&/\((%|points)\)\s*$/.test(short)?short:(legendWide?short:name.slice(0,37))+' · '+unitName(c);};const series=metrics.map((c,i)=>legendWide?text(8,25+i*23,legendText(c)):text(left+(i%2)*300,25+Math.floor(i/2)*23,legendText(c))).join('');markup+=series;
+   const unitName=c=>c.kind==='percent'?'%':c.kind==='points'?L(l,'points','points'):L(l,'source units','unités sources'),legendText=c=>{const name=String(c.label),short=name.length>80?name.slice(0,79)+'…':name;return legendWide&&/\((%|points)\)\s*$/.test(short)?short:(legendWide?short:name.slice(0,37))+' · '+unitName(c);};const series=metrics.map((c,i)=>legendWide?text(8,25+i*27,legendText(c)):text(left+(i%2)*300,25+Math.floor(i/2)*27,legendText(c))).join('');markup+=series;
    if(kind==='heatmap'){
     const columns=matrix?matrix.columns:metrics.map(v=>v.label),labels=matrix?matrix.labels:rows.map(r=>r.label),cellWidth=(width-left-right)/Math.max(1,columns.length);
     columns.forEach((c,i)=>markup+=text(left+i*cellWidth+cellWidth/2,top-20,String(c).slice(0,22),'middle',15));

@@ -133,27 +133,29 @@ async function download(page, click, what) {
       await page.waitForTimeout(400);
       // The shared widget is a sibling of the table, not a descendant of its tbody.
       const localChart=page.locator('#agree .dv-local-options').first();
+      // Each table has its own chart widget; work inside the one opened here, not the first in the page.
+      const widget=localChart.locator('xpath=..');
       await localChart.waitFor({state:'attached',timeout:15000});
       if(!await localChart.evaluate(e=>e.open))await localChart.locator('summary').click();
       const chartBtn = localChart.getByRole('button', { name: 'Chart', exact: true });
       await chartBtn.waitFor({ state: 'attached', timeout: 10000 });
       {
         await chartBtn.click();
-        await page.waitForSelector('svg.dv-svg');
-        const compare = page.getByLabel('Compare with').first();
+        await widget.locator('svg.dv-svg').first().waitFor();
+        const compare = widget.getByLabel('Compare with');
         await compare.waitFor({ state: 'attached', timeout: 5000 });
         {
           await compare.selectOption({ index: 1 });
-          const texts = await page.locator('svg.dv-svg').first().locator('text').allTextContents();
+          const texts = await widget.locator('svg.dv-svg').first().locator('text').allTextContents();
           const legend = texts.slice(0, 2);
           assert.equal(legend.length, 2);
           for (const s of legend) assert.ok(!/…|undefined|NaN/.test(s) || s.length < 90, 'legend text is whole: ' + s);
-          const boxes = await page.locator('svg.dv-svg').first().locator('text').evaluateAll(n => n.slice(0, 2).map(e => { const b = e.getBBox(); return { x: b.x, y: b.y, w: b.width, h: b.height }; }));
+          const boxes = await widget.locator('svg.dv-svg').first().locator('text').evaluateAll(n => n.slice(0, 2).map(e => { const b = e.getBBox(); return { x: b.x, y: b.y, w: b.width, h: b.height }; }));
           const [a, b] = boxes, apart = a.x + a.w <= b.x || b.x + b.w <= a.x || a.y + a.h <= b.y || b.y + b.h <= a.y;
           assert.ok(apart, 'the two legend titles do not overlap');
           ok(mode.name + ': two-measure legend does not overlap');
         }
-        const type = page.getByLabel('Chart type').first();
+        const type = widget.getByLabel('Chart type');
         await type.waitFor({ state: 'attached', timeout: 5000 });
         {
           const options = await type.locator('option:enabled').allTextContents();

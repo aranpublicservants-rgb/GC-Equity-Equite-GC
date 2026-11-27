@@ -23,3 +23,7 @@
 .dv-period-choice{display:grid;gap:.3rem;font-weight:600;margin:.8rem 0;max-width:45rem}.dv-explorer-preview{min-width:0}.dv-explorer-preview:has(>.dv-explorer-table[data-dv-hidden]){display:none}
 
 .dv-local-options>summary{color:inherit}.dv-gap-choice{display:grid;gap:.3rem;font-weight:600;margin:.8rem 0;max-width:45rem}
+
+/* Collapsed chart options follow the dark and high-contrast themes. */
+[data-theme=dark] .dv-widget:has(.dv-local-options:not([open])){background:var(--gw-card,#1a2734);color:var(--gw-ink,#edf3fa);border-color:var(--gw-line,#4c6172)}
+[data-theme=contrast] .dv-widget:has(.dv-local-options:not([open])){background:#fff;color:#000;border-color:#000}
