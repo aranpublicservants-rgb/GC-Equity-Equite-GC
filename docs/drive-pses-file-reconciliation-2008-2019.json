@@ -414,218 +414,466 @@
       "folder": "pses-2019",
       "name": "pses2019-subset3-part30.csv",
       "bytes": 50000186,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part29.csv",
       "bytes": 50000059,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part28.csv",
       "bytes": 50000274,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part27.csv",
       "bytes": 50000060,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part26.csv",
       "bytes": 50000495,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part25.csv",
       "bytes": 50000283,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part24.csv",
       "bytes": 50000507,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part23.csv",
       "bytes": 50000320,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part22.csv",
       "bytes": 50000033,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part21.csv",
       "bytes": 50000064,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part20.csv",
       "bytes": 50000174,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part19.csv",
       "bytes": 50000525,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part18.csv",
       "bytes": 50000222,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part17.csv",
       "bytes": 50000319,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part16.csv",
       "bytes": 50000150,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part15.csv",
       "bytes": 50000063,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part14.csv",
       "bytes": 50000083,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part13.csv",
       "bytes": 50000178,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part12.csv",
       "bytes": 50000198,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part11.csv",
       "bytes": 50000066,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part10.csv",
       "bytes": 50000161,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part09.csv",
       "bytes": 50000473,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part08.csv",
       "bytes": 50000288,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part07.csv",
       "bytes": 50000257,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part06.csv",
       "bytes": 50000191,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part05.csv",
       "bytes": 50000179,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part04.csv",
       "bytes": 50000444,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part03.csv",
       "bytes": 50000363,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part02.csv",
       "bytes": 50000081,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part01.csv",
       "bytes": 50000323,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
       "name": "pses2019-subset3-part31.csv",
       "bytes": 41116126,
-      "match": "unresolved",
-      "candidates": []
+      "match": "derived Drive split; whole source size matches hosted partition manifest",
+      "candidates": [
+        {
+          "path": "pses-data:pses-2019/Main_9.12.03.b_subset_3",
+          "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/Main_9.12.03.b_subset_3.csv",
+          "bytes": 1541113365,
+          "sha256": "b90de8252b9694f3adabfc212852ba0af92cbe197d6e42a9f856e2d959575c1c",
+          "kind": "whole source partition manifest; not same partition boundaries"
+        }
+      ]
     },
     {
       "folder": "pses-2019",
@@ -782,5 +1030,13 @@
         }
       ]
     }
-  ]
+  ],
+  "splitNote": {
+    "source": "pses2019-subset3.csv",
+    "driveParts": 31,
+    "drivePartsCombinedBytes": 1541123145,
+    "wholeSourceBytes": 1541113365,
+    "githubParts": 68,
+    "note": "The full file is also present in Drive and matches repository manifest size. No need to duplicate the split files. Individual split content is not verified."
+  }
 }
