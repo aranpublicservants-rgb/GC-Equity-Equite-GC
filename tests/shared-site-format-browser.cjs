@@ -8,5 +8,13 @@ for(const width of [1280,390]){const ctx=await browser.newContext({viewport:{wid
 await page.goto(base+route,{waitUntil:'domcontentloaded',timeout:90000});const shell=page.locator('#gce-global-shell');await shell.waitFor({state:'visible',timeout:30000});assert.equal(await shell.count(),1,route);const links=await shell.locator('nav a').evaluateAll(a=>a.map(x=>new URL(x.href).pathname+new URL(x.href).hash));assert.deepEqual(links,[prefix+'index.html#department-data',prefix+'index.html#equity-data',prefix+'website-directory/#workplace',prefix+'companion-sites/']);assert.equal(await shell.evaluate(e=>e.scrollWidth>e.clientWidth+2),false,'Shared header must reflow: '+route+' '+width);
 if(['index.html','isc/','companion-sites/','duty-to-accommodate/'].includes(route)){const lang=await page.locator('html').getAttribute('lang');await shell.locator('.gce-global-language').click({timeout:30000});await page.waitForFunction(old=>document.documentElement.lang.slice(0,2)!==old.slice(0,2),lang);await page.waitForFunction(()=>document.querySelector('#gce-global-shell nav a')?.href.includes('lang='+document.documentElement.lang.slice(0,2)));}
 console.log('PASS shared header',width,route);
-}await ctx.close()}
+}
+// Organization and employee group selections carry from one tool to the next.
+await page.goto(base+'where-data-agree.html?lang=en&group=black&org=Fisheries%20and%20Oceans%20Canada',{waitUntil:'domcontentloaded',timeout:90000});
+await page.locator('#gce-global-shell nav a').first().click();
+// The home page receives both values, then opens the dedicated department page with the group kept.
+await page.waitForURL(u=>/\/dfo\/$/.test(new URL(u).pathname),{timeout:120000});
+assert.equal(new URL(page.url()).searchParams.get('group'),'b','employee group carried to the department page');
+console.log('PASS selections carried',width);
+await ctx.close()}
 }finally{await browser.close();server.close()}})().catch(e=>{console.error(e);server.close();process.exit(1)});

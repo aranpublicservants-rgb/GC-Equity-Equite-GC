@@ -938,7 +938,7 @@ function restoreSelectionURL(){
  const p=new URL(location.href).searchParams,scope=selected?'org':'public';
  const orgTopic=p.get('orgTopic'),orgPicker=$('org-topic-picker');
  if(orgTopic&&orgPicker&&[...orgPicker.options].some(o=>o.value===orgTopic))orgPicker.value=orgTopic;
- for(const [suffix,key] of [['group-picker','group'],['topic-picker','topic']]){const el=$(scope+'-'+suffix),raw=p.get(key)||'all',aliases={black:'b',indigenous:'i',racialized:'v',women:'w',disability:'d',pwd:'d',men:'man'},v=key==='group'?(aliases[raw]||raw):raw;if(el&&[...el.options].some(o=>o.value===v))el.value=v;}
+ for(const [suffix,key] of [['group-picker','group'],['topic-picker','topic']]){const el=$(scope+'-'+suffix),raw=p.get(key)||'all',aliases={black:'b',indigenous:'i',ind:'i',racialized:'v',rac:'v',women:'w',woman:'w',disability:'d',pwd:'d',men:'man'},v=key==='group'?(aliases[raw]||raw):raw;if(el&&[...el.options].some(o=>o.value===v))el.value=v;}
 }
 function restoreNavigation(){
  if(!D)return;

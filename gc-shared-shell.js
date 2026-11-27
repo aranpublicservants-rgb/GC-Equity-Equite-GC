@@ -30,10 +30,10 @@ function mount(){
  const skip=el('a','',bar);skip.className='gce-global-skip';
  const note=el('p','',bar);note.className='gce-global-note';
  function refresh(){
-  brand.textContent=L('GC Equity / Équité-GC','Équité-GC / GC Equity');brand.href=route('index.html');brand.setAttribute('aria-label',L('GC Equity home','Accueil Équité-GC'));
+  brand.textContent=L('GC Equity / Équité-GC','Équité-GC / GC Equity');brand.href=route('index.html');brand.setAttribute('aria-label',L('GC Equity / Équité-GC home page','Équité-GC / GC Equity, page d’accueil'));
   nav.setAttribute('aria-label',L('GC Equity site navigation','Navigation du site Équité-GC'));
   for(let i=0;i<items.length;i++){const [path,hash,en,f]=items[i],a=links[i];a.textContent=L(en,f);a.href=route(path,hash);const u=new URL(a.href);const current=location.pathname.replace(/index\.html$/,'');const next=u.pathname.replace(/index\.html$/,'');if(next===current&&hash===location.hash.slice(1))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');}
-  const target=nativeLanguage();language.hidden=!target;language.textContent=L('Français','English');language.lang=fr()?'en':'fr';language.setAttribute('aria-label',L('Lire cette page en français','Afficher cette page en anglais'));
+  const target=nativeLanguage();language.hidden=!target;language.textContent=L('Français','English');language.lang=fr()?'en':'fr';language.setAttribute('aria-label',L('Lire cette page en français','Read this page in English'));
   skip.textContent=L('Skip to page content','Passer au contenu de la page');
   note.textContent=L('Independent resource based on published information. Not an official Government of Canada website.','Ressource indépendante fondée sur des renseignements publiés. Ce site n’est pas un site officiel du gouvernement du Canada.');
  }
@@ -42,5 +42,19 @@ function mount(){
  new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
  window.addEventListener('hashchange',refresh);
 }
+// Carry the chosen organization and employee group to the tools that accept them.
+const CARRY=/(?:^|\/)(?:index\.html|where-data-agree\.html)?$/;
+function carry(event){
+ const a=event.target.closest&&event.target.closest('a[href]');if(!a||a.target==='_blank'||a.hasAttribute('download'))return;
+ const here=new URL(location.href),org=here.searchParams.get('org')||here.searchParams.get('dept'),group=here.searchParams.get('group');
+ if(!org&&!group)return;
+ let u;try{u=new URL(a.href);}catch{return;}
+ if(u.origin!==location.origin||!u.pathname.startsWith(base.pathname)||!CARRY.test(u.pathname.slice(base.pathname.length)))return;
+ if(u.pathname===here.pathname)return;
+ if(org&&!u.searchParams.has('org')&&!u.searchParams.has('dept'))u.searchParams.set('org',org);
+ if(group&&group!=='all'&&!u.searchParams.has('group'))u.searchParams.set('group',group);
+ a.href=u.href;
+}
+document.addEventListener('click',carry,true);
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();

@@ -39,7 +39,9 @@ def entry(p):
     group=kept['group'] if kept else 'departments' if r or route.startswith('isc/') else 'systemic' if route.startswith('systemic-change/') else 'rights' if route.startswith(('recourse/','duty-to-accommodate/','career-development/')) else 'other'
     label=Path(route.rstrip('/')).stem.replace('-',' ').replace('_',' ')
     return dict(path=route,en=r['en'] if r else title_of(p) or label,fr=r['fr'] if r else None,group=group)
-rows=[entry(p) for p in sorted(paths) if p!='404.html' and not redirect_only(p)]
+# Pages kept at their old addresses but no longer part of GC Equity navigation.
+NOT_LISTED=('communities/filipino/','racialized-executives/')
+rows=[entry(p) for p in sorted(paths) if p!='404.html' and not redirect_only(p) and not p.startswith(NOT_LISTED)]
 links=Links();links.feed((ROOT/'companion-sites/index.html').read_text())
 known={r['path'] for r in rows}
 for r in links.rows:

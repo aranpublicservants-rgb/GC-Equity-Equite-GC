@@ -101,6 +101,9 @@ if archive_manifest.exists():
             archive_encodings[item['path']] = item
 
 csv_columns={}
+import hashlib as _hl
+header_review={r['path']:r for r in json.loads((ROOT/'data/csv-header-review-2026-11-26.json').read_text(encoding='utf-8'))['files']}
+reviewed_headers=[]
 for path in csv_files:
     try:
         # Files in data/open-canada-2026-11 are stored byte for byte as published.
@@ -125,7 +128,12 @@ for path in csv_files:
                 errors.append('Archived original row count mismatch: '+archived['path'])
             if len(cols)<2:warnings.append('CSV has fewer than two columns: '+str(path.relative_to(ROOT)))
             if len(cols)!=len(set(cols)):
-                warnings.append('CSV duplicate header names: '+str(path.relative_to(ROOT)))
+                rel=path.relative_to(ROOT).as_posix()
+                rev=header_review.get(rel)
+                if rev and rev['sha256']==_hl.sha256(path.read_bytes()).hexdigest():
+                    reviewed_headers.append(rel)
+                else:
+                    warnings.append('CSV duplicate header names: '+rel+(' (checksum changed since header review)' if rev else ''))
             csv_columns[path.relative_to(ROOT).as_posix()]=len(cols)
     except Exception as e:errors.append('Unparseable CSV header: '+str(path.relative_to(ROOT))+' :: '+str(e))
 
@@ -243,6 +251,7 @@ print('REPOSITORY-PUBLISHING-AUDIT',json.dumps({
     'womenFiles':len(coverage['hostedAdditional']['women']),
     'tbsAndDerivedFiles':len(coverage['hostedAdditional']['other']),
     'branchGzipFiles':len(branches),'historicalDriveManifest':dict(counts),
+    'reviewedPublisherHeaderLayouts':len(reviewed_headers),
     'warnings':len(warnings),'errors':len(errors)
 },ensure_ascii=False))
 for message in warnings[:40]:print('AUDIT-WARNING:',message)

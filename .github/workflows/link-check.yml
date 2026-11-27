@@ -1,0 +1,41 @@
+name: Weekly link check
+# Checks links from site pages to other websites. Links between pages of this site are
+# checked on every change by scripts/check-internal-links.py (run from check-site.py).
+# Reports problems in one issue. It never changes the site. Uses free GitHub Actions only.
+on:
+  schedule:
+    - cron: '41 10 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check internal links
+        run: python3 scripts/check-internal-links.py
+      - name: Check external links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Canada.ca and some publishers refuse automated requests from GitHub servers,
+          # so refusals (403) and rate limits (429) are not counted as broken links.
+          args: >-
+            --no-progress --max-concurrency 8 --timeout 30 --max-retries 2
+            --accept 200..=299,403,429
+            --exclude-path archive-source --exclude-path node_modules
+            --exclude '^https://aranpublicservants-rgb\.github\.io/GC-Equity-Equite-GC/'
+            './**/*.html'
+          output: lychee/out.md
+          fail: false
+      - name: Open or update the link report issue
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Weekly link check: links to update"
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number -q '.[0].number')
+          if [ -n "$number" ]; then gh issue edit "$number" --body-file lychee/out.md; else gh issue create --title "$title" --body-file lychee/out.md; fi

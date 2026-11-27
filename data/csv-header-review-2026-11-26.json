@@ -1,0 +1,190 @@
+{
+ "reviewed": "2026-11-26",
+ "rule": "Original source files are not edited. Duplicate or blank header names come from the publisher layout and are documented here. The audit reports a file again if its checksum changes.",
+ "files": [
+  {
+   "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+   "sha256": "7b5acf56230f5a547f1a273fdd2ac7c264285b66778b8d9a03e3ff5918ff507e",
+   "encoding": "utf-8",
+   "columnLabelRow": 2,
+   "columnLabels": [
+    "",
+    "Women",
+    "Aboriginals",
+    "Persons with Disabilities",
+    "Visible Minorities"
+   ],
+   "dataRows": 9,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 2 and data from the following rows."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+   "sha256": "2567c66d8820154ebe735a4ccebaf13b5ed767b5a064ed61aa3b68f74fc9b410",
+   "encoding": "utf-8",
+   "columnLabelRow": 2,
+   "columnLabels": [
+    "",
+    "Women",
+    "Aboriginals",
+    "Persons with Disabilities",
+    "Visible Minorities"
+   ],
+   "dataRows": 10,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 2 and data from the following rows.",
+   "note": "Accented characters in the title row are garbled in the published file. Kept unchanged."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv",
+   "sha256": "f5d794d846439e49d8f92294c489ad60b1848e10c5f972a9bc1c9e30d31e8c53",
+   "encoding": "utf-8",
+   "columnLabelRow": 2,
+   "columnLabels": [
+    "",
+    "Women",
+    "Aboriginals",
+    "Persons with Disabilities",
+    "Visible Minorities"
+   ],
+   "dataRows": 11,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 2 and data from the following rows."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2017-2018.csv",
+   "sha256": "33a6564a72fb2d2fd8102f3c355c0fdcbad6cb7c979c55218aa1e5ea9cad1bbd",
+   "encoding": "utf-8",
+   "columnLabelRow": 3,
+   "columnLabels": [
+    "Age Range - Groupe d'âges",
+    "Women - Femmes",
+    "Aboriginal Peoples - Autochtones",
+    "Persons with disabilities - Personnes handicapées",
+    "Visible Minorities  - Minorités visibles"
+   ],
+   "dataRows": 7,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 3 and data from the following rows."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv",
+   "sha256": "8c3998eb9c885f7ed7bb647eb81745c6648606f7b40d72b5a439958af2debaab",
+   "encoding": "utf-8",
+   "columnLabelRow": 3,
+   "columnLabels": [
+    "Age Range - Groupe d'âges",
+    "Women - Femmes",
+    "Aboriginal Peoples - Autochtones",
+    "Persons with disabilities - Personnes handicapées",
+    "Visible Minorities  - Minorités visibles"
+   ],
+   "dataRows": 7,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 3 and data from the following rows."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv",
+   "sha256": "6727265ee07603db19400c82aefff59567204206d1699e25dae9b5616471acb1",
+   "encoding": "utf-8",
+   "columnLabelRow": 3,
+   "columnLabels": [
+    "Year\nAnnée\n(as of March 31 / au 31 mars)",
+    "Visible Minorities\nMinorités visibles",
+    "Aboriginal Peoples\nAutochtones",
+    "Persons with disabilities\nPersonnes handicapées",
+    "Women\nFemmes",
+    ""
+   ],
+   "dataRows": 31,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 3 and data from the following rows."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv",
+   "sha256": "784b079cff48f4de73e11043c3e8981dc27722d203fb4b921db04e6d445e21d2",
+   "encoding": "utf-8",
+   "columnLabelRow": 2,
+   "columnLabels": [
+    "Year/Année",
+    "Civilian/Civil - Female/Femme",
+    "Civilian/Civil - Male/Homme",
+    "Civilian/Civil - Unknown/Inconnue",
+    "Total",
+    "",
+    ""
+   ],
+   "dataRows": 12,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 2 and data from the following rows."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/vac/vac-ee-notes-2018-12-31.csv",
+   "sha256": "46fcab8b779b5737af5551baea016e3d3e0f79ae92a7684962fb83b008352519",
+   "encoding": "utf-8",
+   "columnLabelRow": null,
+   "columnLabels": [],
+   "dataRows": 10,
+   "firstRowRole": "blank",
+   "layout": "headerless notes table: note number, English text, French text",
+   "reading": "No column label row. Each row is a numbered note in English and French."
+  },
+  {
+   "path": "data/employer-equity-sources-2026-11/vac/vac-ee-occupational-categories.csv",
+   "sha256": "f149400fc22a68951d976eafbb2d7dc5985bf2967dc82f095ec75b23c7727bb8",
+   "encoding": "utf-8",
+   "columnLabelRow": 2,
+   "columnLabels": [
+    "Occupational Group/Groupe Professionnel",
+    "Group/Groupe"
+   ],
+   "dataRows": 34,
+   "firstRowRole": "blank",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 2 and data from the following rows."
+  },
+  {
+   "path": "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv",
+   "sha256": "a1f00a494bbf7b6570ed6029ff1f151a518ec4c29eb97523f092492dd9ecea51",
+   "encoding": "mac-roman (as published)",
+   "columnLabelRow": 2,
+   "columnLabels": [
+    "Level / Niveau",
+    "Minimum",
+    "Maximum",
+    "",
+    "Level / Niveau",
+    "Minimum",
+    "Maximum"
+   ],
+   "dataRows": 10,
+   "firstRowRole": "publisher table title",
+   "layout": "two side-by-side pay tables (UNI and UNMA) under one title row, classic Mac line endings and Mac Roman encoding as published",
+   "reading": "Read row 2 as labels for two tables: columns 1 to 3 are UNI, columns 5 to 7 are UNMA."
+  },
+  {
+   "path": "data/restored/csis-occupational-representation-2017-18.csv",
+   "sha256": "24e3903c1bc886aea7c3c4876cb52072ed45d8b849bae4c02892bd50708616d0",
+   "encoding": "utf-8",
+   "columnLabelRow": 3,
+   "columnLabels": [
+    "Professional Category - Catégorie professionnelle",
+    "Women - Femmes",
+    "Aboriginals - Autochtones",
+    "Persons with disabilities - Personnes handicapées",
+    "Visible Minorities - Minorités visibles"
+   ],
+   "dataRows": 13,
+   "firstRowRole": "publisher table title",
+   "layout": "title row above column labels; blank cells in the title row repeat as empty header names",
+   "reading": "Read column labels from row 3 and data from the following rows."
+  }
+ ]
+}

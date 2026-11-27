@@ -238,3 +238,8 @@ subprocess.run(["node","--test","tests/evidence-review.test.cjs"],cwd=ROOT,check
 # New supplementary official employer datasets: publisher scope, publication and local files.
 subprocess.run(["node","--check","assets/employer-equity-csv-viewer.js"],cwd=ROOT,check=True)
 subprocess.run(["node","--test","tests/employer-equity-sources.test.cjs"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/reconcile-source-register.py","--check"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/build-data-coverage.py","--check"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-internal-links.py"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-design-standard.py"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/apply-shared-shell.py","--check"],cwd=ROOT,check=True)

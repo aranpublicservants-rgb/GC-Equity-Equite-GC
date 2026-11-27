@@ -522,12 +522,6 @@
     "group": "equity"
   },
   {
-    "path": "communities/filipino/",
-    "en": "Filipino public servants in the federal public service",
-    "fr": "Fonctionnaires philippins de la fonction publique fédérale",
-    "group": "equity"
-  },
-  {
     "path": "communities/indigenous/fr.html",
     "en": "Indigenous public servants: data and barriers (French page)",
     "fr": "Fonctionnaires autochtones : données et obstacles",
@@ -604,6 +598,12 @@
     "en": "Find and download public equity data",
     "fr": "Trouver et télécharger les données publiques sur l’équité",
     "group": "resources"
+  },
+  {
+    "path": "data-coverage.html",
+    "en": "Data coverage and limitations",
+    "fr": "Couverture des données et limites",
+    "group": "other"
   },
   {
     "path": "defence-construction-canada/",
@@ -1354,12 +1354,6 @@
     "en": "Public Services and Procurement Canada",
     "fr": "Services publics et Approvisionnement Canada",
     "group": "departments"
-  },
-  {
-    "path": "racialized-executives/",
-    "en": "Racialized Executives Network",
-    "fr": "Réseau des cadres racialisés",
-    "group": "networks"
   },
   {
     "path": "racism-hazard-prevention/index-fr.html",

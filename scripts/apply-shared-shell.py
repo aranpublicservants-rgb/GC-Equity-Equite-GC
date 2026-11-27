@@ -5,9 +5,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MARK = 'data-gce-shared-shell'
 EXCLUDED = {'data','assets','archive-source','lib','vendor','tests','node_modules','qa-screenshots','dist','.github'}
+# Separately managed network pages stay at their addresses without GC Equity navigation.
+SEPARATE = {'racialized-executives'}
 def eligible(path, html):
     parts = path.relative_to(ROOT).parts
     if any(p in EXCLUDED or p.startswith('.') for p in parts[:-1]):
+        return False
+    if parts[0] in SEPARATE:
         return False
     if not re.search(r'</head\s*>',html,re.I) or not re.search(r'<body(?:\s[^>]*)?>',html,re.I):
         return False
@@ -16,7 +20,7 @@ def apply(path, html):
     if MARK in html:
         return html
     rel = os.path.relpath(ROOT, path.parent).replace(os.sep,'/')
-    block = f'<link rel="stylesheet" href="{rel}/gc-shared-shell.css?v=20261126-1" {MARK}="css"><script src="{rel}/gc-shared-shell.js?v=20261126-1" defer {MARK}="js"></script>'
+    block = f'<link rel="stylesheet" href="{rel}/gc-shared-shell.css?v=20261126-2" {MARK}="css"><script src="{rel}/gc-shared-shell.js?v=20261126-2" defer {MARK}="js"></script>'
     return re.sub(r'</head\s*>',lambda m:block+m.group(0),html,count=1,flags=re.I)
 def main():
     parser=argparse.ArgumentParser()
@@ -30,6 +34,9 @@ def main():
         html=path.read_bytes().decode('utf-8')
         if not eligible(path,html):
             skipped+=1
+            if path.relative_to(ROOT).parts[0] in SEPARATE and MARK in html:
+                if args.check: failures.append(name+' (separate site must not carry GC Equity navigation)')
+                else: path.write_bytes(re.sub(r'<link[^>]*'+MARK+r'="css"><script[^>]*'+MARK+r'="js"></script>','',html).encode('utf-8'))
             continue
         count+=1
         result=apply(path,html)

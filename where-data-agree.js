@@ -470,7 +470,7 @@ async function load(){
  try{const r=await fetch(new URL('data/where-data-agree.json',location.href));if(!r.ok)throw Error(r.status);D=await r.json();}
  catch(err){$('wda-loading').textContent=tr('The data could not be loaded. Reload the page to try again.','Les données n’ont pas pu être chargées. Rechargez la page pour réessayer.');return;}
  const p=new URLSearchParams(location.search);
- if(TGROUPS.includes(p.get('group')))state.gg=p.get('group');
+ {const g={b:'black',i:'ind',v:'rac',w:'woman',d:'pwd',women:'woman',black:'black',indigenous:'ind',racialized:'rac'}[p.get('group')]||p.get('group');if(TGROUPS.includes(g))state.gg=g;}
  if(QSHORT[p.get('q')])state.gq=p.get('q');
  if(D.agree[p.get('both')])state.agree=p.get('both');
  if(SGROUPS.includes(p.get('sg')))state.sg=p.get('sg');
