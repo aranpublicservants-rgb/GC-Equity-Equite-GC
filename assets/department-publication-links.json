@@ -654,9 +654,35 @@
       "plan": "https://www.canada.ca/en/treasury-board-secretariat/corporate/reports/treasury-board-canada-secretariat-2026-27-departmental-plan.html",
       "publications": [
         {
-          "title": "Accessibility Plan",
+          "title": "Accessibility Plan 2026–29",
           "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2026-29-our-future-is-accessible.html",
           "source": "https://www.canada.ca/en/treasury-board-secretariat/corporate/reports/treasury-board-canada-secretariat-2026-27-departmental-plan.html",
+          "lang": "en",
+          "titleFr": "Plan sur l’accessibilité 2026-2029",
+          "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/plans-accessibilite/plan-sur-laccessibilite-du-sct-pour-2026-2029-notre-avenir-est-accessible.html"
+        },
+        {
+          "title": "Accessibility Plan 2022–25",
+          "titleFr": "Plan sur l’accessibilité 2022-2025",
+          "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
+          "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/plans-accessibilite/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html",
+          "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
+          "lang": "en"
+        },
+        {
+          "title": "Accessibility Plan progress report 2023",
+          "titleFr": "Rapport d’étape sur l’accessibilité 2023",
+          "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-progress-reports/progress-report-2023-implementation-accessibility-plan.html",
+          "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/accessibilite-rapports-etape/rapport-etape-2023-concernant-mise-oeuvre-plan-accessibilite.html",
+          "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-progress-reports/progress-report-2023-implementation-accessibility-plan.html",
+          "lang": "en"
+        },
+        {
+          "title": "Accessibility Plan progress report 2024",
+          "titleFr": "Rapport d’étape sur l’accessibilité 2024",
+          "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-progress-reports/progress-report-2024-accessibility-plan.html",
+          "urlFr": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/accessibilite-rapports-etape/rapport-etape-2024-plan-accessibilite.html",
+          "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-progress-reports/progress-report-2024-accessibility-plan.html",
           "lang": "en"
         }
       ]
