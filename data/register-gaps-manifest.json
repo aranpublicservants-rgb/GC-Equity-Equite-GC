@@ -1450,9 +1450,30 @@
    "files": [
     {
      "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/cdabf3bd-cfca-42b0-a58f-1d963a1af5ec/download/cfppsc_snps07.csv",
+     "title": {
+      "en": "By department and by Region ",
+      "fr": "Par ministère et par région"
+     },
+     "bytes": 63124446,
+     "sha256": "4582fdd68c2c411d3d987094acad36c148d5f77ad318cca0113e87959029fad5",
+     "retrieved": "2026-11-27T11:44:56Z",
+     "rows": 328224,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-90dc888d0567ec8d",
+     "parts": [
+      {
+       "file": "cfppsc_snps07-001.csv.gz",
+       "rows": 328224,
+       "bytes": 2314466,
+       "sha256": "0f875556a7b7ede29d579867c625841b5c885b822450cbd916fb40275ccc1d96"
+      }
+     ],
      "format": "CSV",
-     "stored": false,
-     "reason": "larger than 60000000 bytes"
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
     }
    ],
    "failures": [],
@@ -1786,9 +1807,30 @@
    "files": [
     {
      "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/05442d31-89b6-4b97-a40f-7ee8f1cf756e/download/cfppsc_snps16.csv",
+     "title": {
+      "en": "By department and by diploma ",
+      "fr": "Par ministère et par diplôme"
+     },
+     "bytes": 84402451,
+     "sha256": "948efd6025d5096d558aea5f582910b0971f24a90e283cc138ed9770dcf69d0e",
+     "retrieved": "2026-11-27T11:45:00Z",
+     "rows": 328224,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-6077dfc1988682ba",
+     "parts": [
+      {
+       "file": "cfppsc_snps16-001.csv.gz",
+       "rows": 328224,
+       "bytes": 2510046,
+       "sha256": "eba6d44be79e44d711726338a9d9f392606b6c9651225c07062d224b4f949ec5"
+      }
+     ],
      "format": "CSV",
-     "stored": false,
-     "reason": "larger than 60000000 bytes"
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
     }
    ],
    "failures": [],
@@ -1804,9 +1846,30 @@
    "files": [
     {
      "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/bf726802-12f3-4337-a5a0-facd70299a28/download/cfppsc_snps17.csv",
+     "title": {
+      "en": "By department and by marital status",
+      "fr": "Par ministère et selon l’état matrimonial "
+     },
+     "bytes": 66512792,
+     "sha256": "7892d16447e949314a3157b15acb31b6974015f84a1447eb684d70f20e1d2aac",
+     "retrieved": "2026-11-27T11:45:05Z",
+     "rows": 369252,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-f3fbce45bd83f7ac",
+     "parts": [
+      {
+       "file": "cfppsc_snps17-001.csv.gz",
+       "rows": 369252,
+       "bytes": 2598959,
+       "sha256": "44573375d3c5ecc3709d070b5876c281412af4f9dfce470274ffdada0ef16e58"
+      }
+     ],
      "format": "CSV",
-     "stored": false,
-     "reason": "larger than 60000000 bytes"
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
     }
    ],
    "failures": [],
@@ -1852,9 +1915,30 @@
    "files": [
     {
      "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/5daa5fd7-6597-4edf-93b5-ea2b43854df4/download/cfppsc_snps20.csv",
+     "title": {
+      "en": "By department and by religion",
+      "fr": "Par ministère et par religion"
+     },
+     "bytes": 90286235,
+     "sha256": "aaae1f4a03254e280a614ca57174340a264cd3a8d8513f5fa934dfceec3812e0",
+     "retrieved": "2026-11-27T11:45:10Z",
+     "rows": 492336,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-825c1fe7f7ce7779",
+     "parts": [
+      {
+       "file": "cfppsc_snps20-001.csv.gz",
+       "rows": 492336,
+       "bytes": 2672843,
+       "sha256": "f702c68f103514d77a8cea3c4449ed0cd1375dbb17044549a40d17d67cba13f3"
+      }
+     ],
      "format": "CSV",
-     "stored": false,
-     "reason": "larger than 60000000 bytes"
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
     }
    ],
    "failures": [],
@@ -1870,9 +1954,30 @@
    "files": [
     {
      "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1c3e883f-b5c4-4ac8-96f0-f9757139bd13/download/cfppsc_snps21.csv",
+     "title": {
+      "en": "By department and by visible minority subgroup",
+      "fr": "Par ministère et par sous-groupe des minorités visibles"
+     },
+     "bytes": 74191687,
+     "sha256": "1629080d8cd47f081d555d671640adc82b7515cabcb4e3358d6590676e55ca2d",
+     "retrieved": "2026-11-27T11:45:15Z",
+     "rows": 451308,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-4dca8a9366771c85",
+     "parts": [
+      {
+       "file": "cfppsc_snps21-001.csv.gz",
+       "rows": 451308,
+       "bytes": 2175418,
+       "sha256": "406d1e01726f8a787be296cbc29e37d0ef5bc4f95bf257597360bdf93d1839b9"
+      }
+     ],
      "format": "CSV",
-     "stored": false,
-     "reason": "larger than 60000000 bytes"
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
     }
    ],
    "failures": [],
@@ -1918,9 +2023,30 @@
    "files": [
     {
      "url": "https://open.canada.ca/data/dataset/88f45a5c-bc57-4483-bc85-2c19bc342039/resource/1a6f545e-d7cf-4a46-abd2-ad29cf11b5ab/download/cfppsc_snps23.csv",
+     "title": {
+      "en": "By department and by type of disability",
+      "fr": "Par ministère et par type de handicap"
+     },
+     "bytes": 98264331,
+     "sha256": "5a3b7442cbc7cb26506ff9169c3d48e331f659dbf88aed6808672f01bd7696ae",
+     "retrieved": "2026-11-27T11:45:21Z",
+     "rows": 533364,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-7821202043c22a2d",
+     "parts": [
+      {
+       "file": "cfppsc_snps23-001.csv.gz",
+       "rows": 533364,
+       "bytes": 2738705,
+       "sha256": "bf60f2e9d77e0b50e1acdcf67b17b5708fc29be684bd84beae6443994947eeb4"
+      }
+     ],
      "format": "CSV",
-     "stored": false,
-     "reason": "larger than 60000000 bytes"
+     "language": [
+      "en",
+      "fr"
+     ],
+     "stored": true
     }
    ],
    "failures": [],
