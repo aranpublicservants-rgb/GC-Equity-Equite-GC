@@ -80,3 +80,6 @@ function carry(event){
 document.addEventListener('click',carry,true);
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
+
+/* Common chart explorer on every page with the shared site shell. */
+(()=>{const current=document.currentScript;if(!current?.src||document.querySelector('script[data-gce-visuals]')||window.GCEquityVisuals)return;const script=document.createElement('script');script.src=new URL('assets/data-visuals.js?v=20261127-consolidated-1',current.src).href;script.dataset.gceVisuals='true';script.defer=true;document.head.append(script);})();

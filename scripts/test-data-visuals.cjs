@@ -79,3 +79,18 @@ test('a table can ask for a starting chart, and only values that fit the table a
  assert.equal(V.numeric(grid.cells.get(JSON.stringify(['Branch B','Racialized'])).raw[3]),null,'an unavailable cell is never plotted as zero');
  assert.equal(V.profile(['A','B (%)'],[['x',1]]).chart,null);
 });
+
+
+test('chart families classify related views without combining source rows',()=>{
+ assert.equal(V.chartFamily('Workforce representation'), 'representation');
+ assert.equal(V.chartFamily('Représentation des cadres'), 'executives');
+ assert.equal(V.chartFamily('Mesures d’adaptation au travail'), 'accommodation');
+ assert.equal(V.chartFamily('Harassment and discrimination'), 'harassment');
+ assert.equal(V.chartFamily('Hiring and advancement'), 'career');
+ assert.equal(V.chartFamily('Organizational units'), 'branches');
+ assert.equal(V.chartFamily('Plans and reported results'), 'accountability');
+ const a=V.profile(['Group','Published result (%)'],[['A','X'],['B','0%']]);
+ const b=V.profile(['Group','Published result (%)'],[['A','99%']]);
+ assert.deepEqual(V.points(a).rows.map(x=>x.values[0]),[null,0]);
+ assert.deepEqual(V.points(b).rows.map(x=>x.values[0]),[99]);
+});
