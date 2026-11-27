@@ -2,6 +2,10 @@
  "schema": 1,
  "method": "Comparability rule: a question is followed back to an earlier cycle only when the published English wording is identical after removing the question number and normalizing spaces and quotation marks. Question numbers change between cycles, so numbers are never used to match. Questions whose wording changed (for example the harassment and discrimination questions, whose definitions changed) are listed as not comparable. Values and response counts are copied as published; suppressed or blank cells stay empty. Nothing is averaged, recalculated or carried forward.",
  "cycles": [
+  "2008",
+  "2011",
+  "2014",
+  "2017",
   "2018",
   "2019",
   "2020",
@@ -14,7 +18,11 @@
    "2019": "Q11",
    "2020": "Q11",
    "2022-23": "Q11",
-   "2024": "Q12"
+   "2024": "Q12",
+   "2008": "Q11",
+   "2011": "Q11",
+   "2014": "Q11",
+   "2017": "Q11"
   },
   "Q24": {
    "2022-23": "Q23",
@@ -29,21 +37,33 @@
    "2019": "Q43",
    "2020": "Q40",
    "2022-23": "Q41",
-   "2024": "Q42"
+   "2024": "Q42",
+   "2008": "Q43",
+   "2011": "Q43",
+   "2014": "Q43",
+   "2017": "Q43"
   },
   "Q43": {
    "2018": "Q37",
    "2019": "Q44",
    "2020": "Q41",
    "2022-23": "Q42",
-   "2024": "Q43"
+   "2024": "Q43",
+   "2008": "Q44",
+   "2011": "Q44",
+   "2014": "Q44",
+   "2017": "Q44"
   },
   "Q45": {
    "2018": "Q38",
    "2019": "Q45",
    "2020": "Q42",
    "2022-23": "Q44",
-   "2024": "Q45"
+   "2024": "Q45",
+   "2008": "Q45",
+   "2011": "Q45",
+   "2014": "Q45",
+   "2017": "Q45"
   },
   "Q47": {
    "2020": "Q45",
@@ -68,21 +88,33 @@
    "2019": "Q50",
    "2020": "Q49",
    "2022-23": "Q52",
-   "2024": "Q53"
+   "2024": "Q53",
+   "2008": "Q50",
+   "2011": "Q50",
+   "2014": "Q50",
+   "2017": "Q50"
   },
   "Q63": {
    "2018": "Q53",
    "2019": "Q64",
    "2020": "Q60",
    "2022-23": "Q62",
-   "2024": "Q63"
+   "2024": "Q63",
+   "2008": "Q64",
+   "2011": "Q64",
+   "2014": "Q64",
+   "2017": "Q64"
   },
   "Q70": {
    "2018": "Q60",
    "2019": "Q72",
    "2020": "Q67",
    "2022-23": "Q69",
-   "2024": "Q70"
+   "2024": "Q70",
+   "2008": "Q72",
+   "2011": "Q72",
+   "2014": "Q72",
+   "2017": "Q72"
   },
   "Q73q": {
    "2022-23": "Q72p",
@@ -102,7 +134,11 @@
    "2019": "Q78",
    "2020": "Q78",
    "2022-23": "Q80",
-   "2024": "Q81"
+   "2024": "Q81",
+   "2008": "Q78",
+   "2011": "Q78",
+   "2014": "Q78",
+   "2017": "Q78"
   },
   "Q84": {
    "2020": "Q88",
@@ -216,6 +252,15 @@
   "2019": [
    "Statistical Survey Operations"
   ],
+  "2017": [
+   "Statistical Survey Operations"
+  ],
+  "2014": [
+   "Statistical Survey Operations"
+  ],
+  "2011": [
+   "Statistical Survey Operations"
+  ],
   "2020": [
    "Statistical Survey Operations"
   ],
@@ -248,6 +293,30 @@
    "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/subset-1-sous-ensemble-1.csv",
    "dataset": "https://open.canada.ca/data/en/dataset/7f625e97-9d02-4c12-a756-1ddebb50e69f",
    "sha256": "bdeae92bfe61f47e985d45d1153914565fb39e57afa09424a0444994784f32d4"
+  },
+  "2008": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_%20subset-1_Sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "sha256": "37a736b0614af8a4cf594b24598731b43911a306ba84c0ee47d1f0bb72983a37",
+   "republishedIn": "2019"
+  },
+  "2011": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_%20subset-1_Sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "sha256": "37a736b0614af8a4cf594b24598731b43911a306ba84c0ee47d1f0bb72983a37",
+   "republishedIn": "2019"
+  },
+  "2014": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_%20subset-1_Sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "sha256": "37a736b0614af8a4cf594b24598731b43911a306ba84c0ee47d1f0bb72983a37",
+   "republishedIn": "2019"
+  },
+  "2017": {
+   "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019_PSES_SAFF_%20subset-1_Sous-ensemble-1.csv",
+   "dataset": "https://open.canada.ca/data/en/dataset/2e4a1eb3-82ba-4a14-a5a3-f40bc11660bf",
+   "sha256": "37a736b0614af8a4cf594b24598731b43911a306ba84c0ee47d1f0bb72983a37",
+   "republishedIn": "2019"
   }
  }
 }

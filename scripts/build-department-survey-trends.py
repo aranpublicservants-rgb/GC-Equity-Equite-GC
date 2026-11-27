@@ -44,6 +44,11 @@ NAME_CROSSWALK = {
     'Natural Sciences and Engineering Research Council': 'natural-sciences-and-engineering-research-council-of-canada',
     'Department for Women and Gender Equality': 'women-and-gender-equality-canada',
 }
+# 2008 to 2017 results as republished by the publisher in the 2019 subset 1 file, under
+# the 2019 question numbers and wording (the publisher matched them to 2019 questions).
+# The 2018 file republishes the same years with identical values for every common cell.
+HIST = ['2008', '2011', '2014', '2017']
+HIST_FILE = '2019'
 NATIONAL = {'public service', 'federal public service', 'micro-organizations combined'}
 
 
@@ -88,10 +93,13 @@ def main():
         titles[label] = {}
         with gzip.open(path, 'rt', encoding='cp1252', newline='') as stream:
             for row in csv.DictReader(stream):
-                if row['SURVEYR'] not in years:
+                hist = label == HIST_FILE and row['SURVEYR'] in HIST
+                if row['SURVEYR'] not in years and not hist:
                     continue
                 q = row['QUESTION']
-                titles[label].setdefault(q, (row['TITLE_E'], row['TITLE_F']))
+                if not hist:
+                    titles[label].setdefault(q, (row['TITLE_E'], row['TITLE_F']))
+                cyc = row['SURVEYR'] if hist else label
                 if (row.get('BYCOND') or '').strip():
                     continue
                 if any(int(row[k] or 0) != 0 for k in ('LEVEL2ID', 'LEVEL3ID', 'LEVEL4ID', 'LEVEL5ID')):
@@ -100,15 +108,15 @@ def main():
                 if int(row['LEVEL1ID'] or 0) == 0 and dept.strip().lower() == 'public service':
                     v = {f: cell(row, f) for f in FIELD_ALIASES}
                     v['n'] = (row.get('ANSCOUNT') or '').strip()
-                    national[(label, q)] = v
+                    national[(cyc, q)] = v
                     continue
                 if dept.strip().lower() in NATIONAL or int(row['LEVEL1ID'] or 0) == 0:
                     continue
                 ids = by_name.get(N(dept), set())
                 if len(ids) != 1:
-                    unmatched.setdefault(label, set()).add(dept)
+                    unmatched.setdefault(cyc, set()).add(dept)
                     continue
-                key = (next(iter(ids)), label, q)
+                key = (next(iter(ids)), cyc, q)
                 v = {f: cell(row, f) for f in FIELD_ALIASES}
                 v['n'] = (row.get('ANSCOUNT') or '').strip()
                 if key in values and values[key] != v:
@@ -123,6 +131,12 @@ def main():
             hits = [q for q, (te, _) in titles[label].items() if wording(te) == target]
             if len(hits) == 1:
                 follow[code][label] = hits[0]
+    for code, m in follow.items():
+        if HIST_FILE in m:
+            for h in HIST:
+                m[h] = m[HIST_FILE]
+    for h in HIST:
+        sources[h] = {**sources[HIST_FILE], 'republishedIn': HIST_FILE}
     comparable = {c: m for c, m in follow.items() if len(m) >= 2}
     not_comparable = sorted(c for c, m in follow.items() if len(m) < 2)
     org_ids = sorted({k[0] for k in values})
@@ -140,7 +154,7 @@ def main():
                 ps = {label: [national[(label, q)][field], national[(label, q)]['n'], q] for label, q in m.items() if (label, q) in national}
                 rows.append({'q': code, 'field': field, 'en': definitions[code]['en'], 'fr': definitions[code]['fr'], 'values': per, 'ps': ps})
         if rows:
-            files[oid] = {'organization': oid, 'cycles': [c[0] for c in CYCLES], 'rows': rows, 'sources': sources,
+            files[oid] = {'organization': oid, 'cycles': HIST + [c[0] for c in CYCLES], 'rows': rows, 'sources': sources,
                           'notComparable': not_comparable}
     if '--check' in sys.argv:
         for oid, data in files.items():
@@ -154,7 +168,7 @@ def main():
         old.unlink()
     for oid, data in files.items():
         (OUT / (oid + '.json')).write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
-    summary = {'schema': 1, 'method': __doc__.split('\n\n')[2].replace('\n', ' '), 'cycles': [c[0] for c in CYCLES],
+    summary = {'schema': 1, 'method': __doc__.split('\n\n')[2].replace('\n', ' '), 'cycles': HIST + [c[0] for c in CYCLES],
                'comparableQuestions': {c: m for c, m in comparable.items()}, 'notComparable': not_comparable,
                'organizations': sorted(files), 'unmatchedNames': {k: sorted(v) for k, v in unmatched.items()}, 'sources': sources}
     (ROOT / 'assets/department-survey-trends.json').write_text(json.dumps(summary, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')

@@ -1,4 +1,4 @@
-/* Department survey results over time (PSES 2018 to 2024), all respondents and by
+/* Department survey results over time (PSES 2008 to 2024), all respondents and by
    employee group, each with the public service result for the same question and cycle.
    Data: assets/department-survey-trends/<id>.json (scripts/build-department-survey-trends.py)
    and assets/department-group-trends/<id>.json (scripts/build-department-group-trends.py).
@@ -34,29 +34,60 @@
       '<tr class="dp-trend-ps"><th scope="row">' + esc(psLabel) + '</th>' +
       cycles.map(c => '<td>' + esc(cellText(r.ps && r.ps[c], r.q, l)) + '</td>').join('') + '</tr>').join('');
   }
+  /* Questions where this organization and the public service moved in opposite directions
+     between the two most recent cycles in which both were published. Published values only;
+     no difference is calculated or tested. */
+  function oppositeHits(rows, cycles) {
+    const hits = [];
+    for (const r of rows) {
+      const both = cycles.filter(c => r.values[c] && r.values[c][0] !== '' && r.ps && r.ps[c] && r.ps[c][0] !== '');
+      if (both.length < 2) continue;
+      const a = both[both.length - 2], b = both[both.length - 1];
+      const d = Number(r.values[b][0]) - Number(r.values[a][0]), p = Number(r.ps[b][0]) - Number(r.ps[a][0]);
+      if (d && p && Math.sign(d) !== Math.sign(p)) hits.push({r, a, b, d, p});
+    }
+    return hits;
+  }
+  function opposite(rows, cycles, l, who) {
+    const hits = oppositeHits(rows, cycles);
+    const pc = v => Number(v).toLocaleString(loc(l)) + (l === 'fr' ? ' %' : '%');
+    const dir = x => x > 0 ? L(l, 'up', 'en hausse') : L(l, 'down', 'en baisse');
+    if (!hits.length) return '<p class="dp-trend-opposite">' + esc(L(l, 'No question in this table moved in the opposite direction from the public service between the two most recent cycles with published results.', 'Aucune question de ce tableau n’a évolué en sens inverse de la fonction publique entre les deux cycles les plus récents ayant des résultats publiés.')) + '</p>';
+    return '<div class="dp-trend-opposite"><p>' + esc(L(l, 'Moved in the opposite direction from the public service' + (who ? ' (' + who + ')' : '') + ', between the two most recent cycles with published results:', 'Évolution en sens inverse de la fonction publique' + (who ? ' (' + who + ')' : '') + ', entre les deux cycles les plus récents ayant des résultats publiés :')) + '</p><ul>' +
+      hits.map(h => { let q = h.r[l].replace(/^Question\s+([0-9]+[a-z]?)\.\s*/, 'Q$1 ').trim(); if (!/[.?!]$/.test(q)) q += '.';
+        return '<li>' + esc(q + ' ' + L(l, 'This organization: ', 'Cet organisme : ') + pc(h.r.values[h.a][0]) + ' (' + cycleName(h.a, l) + ') ' + L(l, 'to ', 'à ') + pc(h.r.values[h.b][0]) + ' (' + cycleName(h.b, l) + '), ' + dir(h.d) +
+        L(l, '. Public service: ', '. Fonction publique : ') + pc(h.r.ps[h.a][0]) + ' ' + L(l, 'to ', 'à ') + pc(h.r.ps[h.b][0]) + ', ' + dir(h.p) + '.') + '</li>'; }).join('') +
+      '</ul><p class="small">' + esc(L(l, 'A change in the opposite direction is a prompt to look closer, not a finding. Differences are not tested for statistical significance, and small response counts move more from cycle to cycle.', 'Une évolution en sens inverse invite à examiner la question de plus près; ce n’est pas une conclusion. Les écarts ne font pas l’objet d’un test de signification statistique, et les petits nombres de réponses varient davantage d’un cycle à l’autre.')) + '</p></div>';
+  }
   function table(caption, head, body) {
     return '<div class="table-scroll" role="region" tabindex="0" aria-label="' + esc(caption) + '"><table><caption>' + esc(caption) + '</caption><thead><tr>' +
       head.map(h => '<th scope="col">' + esc(h) + '</th>').join('') + '</tr></thead><tbody>' + body + '</tbody></table></div>';
   }
   function sourceLine(S, cycles, l) {
-    return '<p class="source">' + esc(L(l, 'Source: ', 'Source : ')) + cycles.filter(c => S[c]).map(c => '<a href="' + esc(S[c].url) + '">' +
-      esc(L(l, 'PSES ', 'SAFF ') + cycleName(c, l)) + '</a>').join(' · ') + '</p>';
+    const hist = cycles.filter(c => S[c] && S[c].republishedIn), own = cycles.filter(c => S[c] && !S[c].republishedIn);
+    const links = own.map(c => '<a href="' + esc(S[c].url) + '">' + esc(L(l, 'PSES ', 'SAFF ') + cycleName(c, l)) + '</a>');
+    if (hist.length) links.unshift('<a href="' + esc(S[hist[0]].url) + '">' + esc(L(l, 'PSES ' + hist[0] + ' to ' + hist[hist.length - 1] + ', as republished in the ' + S[hist[0]].republishedIn + ' file',
+      'SAFF de ' + hist[0] + ' à ' + hist[hist.length - 1] + ', tels que republiés dans le fichier de ' + S[hist[0]].republishedIn)) + '</a>');
+    return '<p class="source">' + esc(L(l, 'Source: ', 'Source : ')) + links.join(' · ') + '</p>';
   }
+  const HIST_NOTE = l => L(l, ' Results for 2008 to 2017 are the historical figures the publisher included in the 2019 survey file, for the questions it matched to 2019 questions; they carry 2019 question numbers and, in group tables, 2019 group labels.',
+    ' Les résultats de 2008 à 2017 sont les données historiques que l’éditeur a incluses dans le fichier du sondage de 2019, pour les questions qu’il a appariées aux questions de 2019; ils portent les numéros de question et, dans les tableaux par groupe, les libellés de groupe de 2019.');
   const head = (cycles, l) => [L(l, 'Question (2024 wording)', 'Question (libellé de 2024)'), ...cycles.map(c => cycleName(c, l))];
   const NOTE = l => L(l, 'A question is followed back only where the published wording is identical. Earlier question numbers are shown after the response count when they differ. Each question has two rows: the organization, then the whole public service for the same question and cycle. Response counts are rounded by the publisher. Differences are not tested for statistical significance.',
     'Une question n’est suivie dans le temps que si son libellé publié est identique. Les anciens numéros de question figurent après le nombre de réponses lorsqu’ils diffèrent. Chaque question compte deux lignes : l’organisme, puis l’ensemble de la fonction publique pour la même question et le même cycle. Les nombres de réponses sont arrondis par l’éditeur. Les écarts ne font pas l’objet d’un test de signification statistique.');
   function overallBlock(T, rows, gaps, l) {
-    const caption = L(l, 'PSES 2018 to 2024, all respondents', 'SAFF de 2018 à 2024, tous les répondants');
-    return '<div class="dp-trend"><h3>' + esc(L(l, 'Results over time', 'Résultats au fil du temps')) + '</h3>' +
+    const caption = L(l, 'PSES 2008 to 2024, all respondents', 'SAFF de 2008 à 2024, tous les répondants');
+    return '<div class="dp-trend"><h3>' + esc(L(l, 'Results over time', 'Résultats au fil du temps')) + '</h3>' + opposite(rows, T.cycles, l, '') +
       table(caption, head(T.cycles, l), rowsHtml(rows, T.cycles, l, L(l, 'this organization', 'cet organisme'), L(l, 'Public service, all respondents', 'Fonction publique, tous les répondants'))) +
-      sourceLine(T.sources, T.cycles, l) + '<p class="small dp-trend-note">' + esc(NOTE(l) + (gaps.length ? ' ' + L(l, 'Not compared because the wording changed: ', 'Non comparées, car le libellé a changé : ') + gaps.join(', ') + '.' : '')) + '</p></div>';
+      sourceLine(T.sources, T.cycles, l) + '<p class="small dp-trend-note">' + esc(NOTE(l) + HIST_NOTE(l) + (gaps.length ? ' ' + L(l, 'Not compared because the wording changed: ', 'Non comparées, car le libellé a changé : ') + gaps.join(', ') + '.' : '')) + '</p></div>';
   }
   function groupBlock(G, g, rows, l) {
     const name = l === 'fr' ? g.fr : (GROUP_EN[g.group] || g.group);
     const labelRow = '<tr><th scope="row">' + esc(L(l, 'Group as published in each cycle', 'Groupe tel que publié à chaque cycle')) + '</th>' +
       G.cycles.map(c => '<td>' + esc(g.published[c] ? g.published[c][l === 'fr' ? 1 : 0] : NP(l)) + '</td>').join('') + '</tr>';
-    const caption = L(l, 'PSES 2018 to 2024, ', 'SAFF de 2018 à 2024, ') + name;
-    return '<details class="dp-group-trend"><summary>' + esc(name) + '</summary>' +
+    const caption = L(l, 'PSES 2008 to 2024, ', 'SAFF de 2008 à 2024, ') + name;
+    const n = oppositeHits(rows, G.cycles).length;
+    return '<details class="dp-group-trend"><summary>' + esc(name + (n ? L(l, ' (' + n + (n === 1 ? ' question' : ' questions') + ' moved opposite to the public service)', ' (' + n + ' question' + (n === 1 ? '' : 's') + ' en sens inverse de la fonction publique)') : '')) + '</summary>' + opposite(rows, G.cycles, l, name) +
       table(caption, head(G.cycles, l), labelRow + rowsHtml(rows, G.cycles, l, name + L(l, ', this organization', ', cet organisme'), name + L(l, ', public service', ', fonction publique'))) +
       sourceLine(G.sources, G.cycles, l) + '</details>';
   }
@@ -98,7 +129,7 @@
       wrap.className = 'dp-group-trends';
       wrap.innerHTML = (main ? '<h3>' + esc(L(l, 'Results over time by employee group', 'Résultats au fil du temps par groupe d’employés')) + '</h3>' + main : '') +
         (sub ? '<h3>' + esc(L(l, 'Results over time by subgroup', 'Résultats au fil du temps par sous-groupe')) + '</h3>' + sub : '') +
-        '<p class="small dp-trend-note">' + esc(GROUP_NOTE(l)) + '</p>';
+        '<p class="small dp-trend-note">' + esc(GROUP_NOTE(l) + HIST_NOTE(l)) + '</p>';
       place(section, wrap, placed.get(section));
     }
   }

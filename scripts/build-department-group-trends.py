@@ -3,6 +3,8 @@
 
 Sources, each the published file of its cycle that holds department results by
 employment equity group, kept unchanged in parts on the pses-data branch:
+  2008 to 2017  Historical results republished in the 2019 main subset 2, under the
+           2019 question numbers and group labels
   2018     Subset 2 (demographic codes 2005, 2012, 2014, 2016)
   2019     Main subset 2 (2156, 2158, 2163, 2177, 2179)
   2020     Subset 3 (2012, 2014, 2019, 2041, 2043)
@@ -90,6 +92,9 @@ def main():
     for cycle, (folder, directory, years) in FILES.items():
         src, ds = sources[folder + '/' + directory]
         src_out[cycle] = {'url': src['url'], 'dataset': ds.get('dataset'), 'sha256': src['sha256']}
+        if cycle == T.HIST_FILE:
+            for h in T.HIST:
+                src_out[h] = {**src_out[cycle], 'republishedIn': cycle}
         qmap = {yq: q24 for q24, m in follow.items() for c, yq in m.items() if c == cycle}
         for part in src['parts']:
             path = data_root / 'pses' / folder / directory / part['file']
@@ -99,8 +104,10 @@ def main():
             text = gzip.decompress(raw).decode('cp1252')
             for row in csv.DictReader(io.StringIO(text, newline='')):
                 row = {k.upper() if k.lower() in ('descrip_e', 'descrip_f', 'answer1') else k: v for k, v in row.items()}
-                if row['SURVEYR'] not in years or row['QUESTION'] not in qmap:
+                hist = cycle == T.HIST_FILE and row['SURVEYR'] in T.HIST
+                if (row['SURVEYR'] not in years and not hist) or row['QUESTION'] not in qmap:
                     continue
+                cyc = row['SURVEYR'] if hist else cycle
                 group = want.get((cycle, (row.get('DEMCODE') or '').strip()))
                 if not group:
                     continue
@@ -108,19 +115,19 @@ def main():
                     continue
                 if int(row['LEVEL1ID'] or 0) == 0 and row['DEPT_E'].strip().lower() == 'public service':
                     q24 = qmap[row['QUESTION']]
-                    national[(group, q24, cycle)] = [T.cell(row, definitions[q24]['field']), (row.get('ANSCOUNT') or '').strip(), row['QUESTION']]
-                    labels.setdefault((group, cycle), (row['DESCRIP_E'].strip(), row['DESCRIP_F'].strip()))
+                    national[(group, q24, cyc)] = [T.cell(row, definitions[q24]['field']), (row.get('ANSCOUNT') or '').strip(), row['QUESTION']]
+                    labels.setdefault((group, cyc), (row['DESCRIP_E'].strip(), row['DESCRIP_F'].strip()))
                     continue
                 ids = by_name.get(T.N(row['DEPT_E']), set())
                 if len(ids) != 1:
                     continue
-                labels.setdefault((group, cycle), (row['DESCRIP_E'].strip(), row['DESCRIP_F'].strip()))
-                if labels[(group, cycle)][0] != row['DESCRIP_E'].strip():
-                    sys.exit(f'Demographic code {row["DEMCODE"]} has two labels in {cycle}')
+                labels.setdefault((group, cyc), (row['DESCRIP_E'].strip(), row['DESCRIP_F'].strip()))
+                if labels[(group, cyc)][0] != row['DESCRIP_E'].strip():
+                    sys.exit(f'Demographic code {row["DEMCODE"]} has two labels in {cyc}')
                 q24 = qmap[row['QUESTION']]
                 field = definitions[q24]['field']
                 v = [T.cell(row, field), (row.get('ANSCOUNT') or '').strip(), row['QUESTION']]
-                key = (next(iter(ids)), group, q24, cycle)
+                key = (next(iter(ids)), group, q24, cyc)
                 if key in values and values[key] != v:
                     sys.exit(f'Conflicting original cells for {key}')
                 values[key] = v
