@@ -1,0 +1,113 @@
+{
+  "GC-0342": {
+    "paths": [
+      "data/october-2026/TBS_EE_representation_with_WFA_2017-2025.csv",
+      "data/october-2026/TBS_EE_executives_by_EX_level_with_WFA_2017-2025.csv",
+      "data/tbs-departmental-representation-2017-2025.json"
+    ],
+    "note": "Existing inventory paths reviewed; not a claim of independent publisher-byte verification."
+  },
+  "GC-0343": {
+    "paths": [
+      "data/october-2026/TBS_disability_subgroups_by_department_2024.csv",
+      "data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv"
+    ],
+    "note": "Existing inventory paths reviewed; not a claim of independent publisher-byte verification."
+  },
+  "GC-0420": {
+    "source": "https://nrc.canada.ca/en/corporate/planning-reporting/annual-reports-long-term-plans",
+    "snapshots": [
+      {
+        "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
+        "language": [
+          "en"
+        ],
+        "title": "Employment Equity Annual Report 2020-2021"
+      },
+      {
+        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
+        "language": [
+          "fr"
+        ],
+        "title": "Rapport annuel sur l’équité en matière d’emploi 2020-2021"
+      },
+      {
+        "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2021-2022",
+        "language": [
+          "en"
+        ],
+        "title": "Employment Equity Annual Report 2021-2022"
+      },
+      {
+        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
+        "language": [
+          "fr"
+        ],
+        "title": "Rapport annuel sur l’équité en matière d’emploi 2021-2022"
+      },
+      {
+        "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2022-2023",
+        "language": [
+          "en"
+        ],
+        "title": "Employment Equity Annual Report 2022-2023"
+      },
+      {
+        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
+        "language": [
+          "fr"
+        ],
+        "title": "Rapport annuel sur l’équité en matière d’emploi 2022-2023"
+      },
+      {
+        "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2023-2024",
+        "language": [
+          "en"
+        ],
+        "title": "Employment Equity Annual Report 2023-2024"
+      },
+      {
+        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
+        "language": [
+          "fr"
+        ],
+        "title": "Rapport annuel sur l’équité en matière d’emploi 2023-2024"
+      },
+      {
+        "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+        "language": [
+          "en"
+        ],
+        "title": "Employment Equity Annual Report 2024-2025"
+      },
+      {
+        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025",
+        "language": [
+          "fr"
+        ],
+        "title": "Rapport annuel sur l’équité en matière d’emploi 2024-2025"
+      }
+    ],
+    "note": "Five annual reports in both languages. French 2022–23 link follows the official language switch; retrieval pending."
+  },
+  "GC-0462": {
+    "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
+    "snapshots": [
+      {
+        "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
+        "language": [
+          "en"
+        ],
+        "title": "TBS Accessibility Plan 2022–25"
+      },
+      {
+        "url": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/plans-accessibilite/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html",
+        "language": [
+          "fr"
+        ],
+        "title": "Plan sur l’accessibilité du SCT pour 2022–2025"
+      }
+    ],
+    "note": "Official publisher pages, not the expired catalogue resource URL."
+  }
+}
