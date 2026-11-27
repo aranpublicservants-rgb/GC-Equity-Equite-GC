@@ -24,13 +24,19 @@
    "id": "GC-0018",
    "name": "PSES 2017",
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
-   "files": [],
-   "failures": [
+   "files": [
     {
      "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
-     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+     "title": "PSES 2017",
+     "bytes": 14908385,
+     "sha256": "007f74705cb4dfd787768b086981634eae20a4105e814882713ac78cae53e497",
+     "retrieved": "2026-11-27T10:37:02Z",
+     "rows": 31913,
+     "path": "data/register-gaps-2026-11/u-dda73ba98ab67f4d/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv.gz",
+     "stored": true
     }
-   ]
+   ],
+   "failures": []
   },
   {
    "id": "GC-0084",
