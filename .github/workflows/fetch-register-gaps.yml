@@ -1,0 +1,53 @@
+name: Fetch public source register gaps
+# Downloads register entries that have no copy in this repository, unchanged, with
+# checksums (scripts/fetch-register-gaps.py). Very large CSV files are split into parts
+# on the pses-data branch under register-gaps/, which this workflow never removes or
+# replaces outside that folder. Free GitHub Actions only.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: fetch-register-gaps
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download, store and split
+        run: python scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps"
+      - name: Publish large parts to the pses-data branch
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -d "$RUNNER_TEMP/gaps/branch/register-gaps" ]; then
+            git worktree add "$RUNNER_TEMP/pses-data" origin/pses-data
+            cd "$RUNNER_TEMP/pses-data"
+            git checkout -B pses-data
+            mkdir -p register-gaps
+            cp -r "$RUNNER_TEMP/gaps/branch/register-gaps/." register-gaps/
+            git add register-gaps
+            git commit -m "Add split copies of large public source register files" || echo "nothing new"
+            git push origin pses-data
+          fi
+      - name: Record copies and refresh status on main
+        run: |
+          set -e
+          cp -r "$RUNNER_TEMP/gaps/main/data/." data/
+          python scripts/update-data-checksums.py
+          python scripts/reconcile-source-register.py
+          python scripts/build-data-coverage.py
+          python scripts/update-data-checksums.py
+          git add data/register-gaps-2026-11 data/register-gaps-manifest.json data/source-register-status.json data-coverage.html data/checksums.sha256
+          if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
+          git commit -m "Add copies of public source register entries and refresh register status"
+          git pull --rebase origin main
+          git push origin HEAD:main

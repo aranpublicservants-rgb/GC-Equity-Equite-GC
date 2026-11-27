@@ -6,7 +6,10 @@ Reads data/public-source-register-2026-11-24.json (left unchanged) and the
 Writes data/source-register-status.json with one record per register entry and
 seven separate statuses:
 
-  verified      repository bytes (or the decompressed original of a .gz copy)
+  verified      how the copy was confirmed: sha256 (or of the decompressed original),
+                partition-manifest-hash, or exact-size (same byte count as the
+                register, used only when one hosted file has that size).
+                Repository bytes (or the decompressed original of a .gz copy)
                 match a recorded SHA-256 (or, for files kept on
                 the pses-data branch, the partition manifest hash matches the
                 large-source inventory hash)
@@ -35,6 +38,40 @@ EXCLUDED_STATUS = {'out-of-scope', 'nonexistent', 'blocked'}
 UUID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 SKIP_DIRS = {'.git', 'node_modules'}
 SELF = {OUT.name, REGISTER.name, PRIOR.name, 'source-reconciliation-2026-11-24.json'}
+
+
+# Entries excluded by standing site content rules, in addition to the register's own statuses.
+RULE_EXCLUDED = {'GC-0460': 'site content rule: no vaccination data'}
+DATA_ROOTS = ('data/', 'women-femmes/data/', 'dfo/data/', 'dnd/data/', 'isc/data/')
+
+
+def period_match(period, path):
+    """True when a file name carries the entry's period (2018-2019, 2018-19, 2018_2019)."""
+    years = re.findall(r'(?:19|20)\d\d', period or '')
+    if not years:
+        return False
+    name = path.rsplit('/', 1)[-1]
+    if len(years) >= 2:
+        a, b = years[0], years[1]
+        return any(x in name for x in (f'{a}-{b}', f'{a}-{b[2:]}', f'{a}_{b}', f'{a}{b[2:]}'))
+    return years[0] in name
+
+
+def size_index():
+    """Map byte size to hosted files, using the decompressed size for .gz copies."""
+    index = {}
+    for p in ROOT.rglob('*'):
+        rel = p.relative_to(ROOT).as_posix()
+        if not p.is_file() or not rel.startswith(DATA_ROOTS) or p.suffix in ('.json', '.b64') or 'checksums' in p.name:
+            continue
+        index.setdefault(p.stat().st_size, []).append((rel, 'file'))
+        if p.suffix == '.gz' and p.stat().st_size < 60e6:
+            with gzip.open(p, 'rb') as f:
+                n = 0
+                for block in iter(lambda: f.read(1 << 20), b''):
+                    n += len(block)
+            index.setdefault(n, []).append((rel, 'decompressed'))
+    return index
 
 
 def sha256(path):
@@ -123,6 +160,39 @@ def main():
         if r.get('publisherUrl') and r.get('path'):
             url_paths.setdefault(r['publisherUrl'], []).append((r['path'], r.get('sha256')))
 
+    eq = json.loads((ROOT / 'assets/equity-reports.json').read_text(encoding='utf-8'))
+    for item in eq.get('datasets', []) + eq.get('reports', []):
+        for link in item.get('links', []):
+            if item.get('source') and link.get('path'):
+                url_paths.setdefault(item['source'], []).append((link['path'], None))
+    added = json.loads((ROOT / 'assets/added-sources.json').read_text(encoding='utf-8'))
+    for pkg in added.get('packages', []):
+        for f in pkg.get('files', []):
+            url_paths.setdefault(pkg['url'], []).append((f['path'], f.get('sha256')))
+    for t in added.get('tables', []):
+        for side in ('en', 'fr'):
+            if t.get(side, {}).get('path'):
+                url_paths.setdefault(t['url'], []).append((t[side]['path'], None))
+    gaps = {}
+    gap_file = ROOT / 'data/register-gaps-manifest.json'
+    if gap_file.exists():
+        for item in json.loads(gap_file.read_text(encoding='utf-8'))['entries']:
+            gaps[item['id']] = [f for f in item.get('files', []) if f.get('stored')]
+    sizes = size_index()
+    url_count = {}
+    for x in register['entries']:
+        url_count[x.get('source')] = url_count.get(x.get('source'), 0) + 1
+
+    def url_candidates(url, entry):
+        """Hosted files a catalogue links to this publisher address. When several register
+        entries share one dataset address, keep only files named for this entry's period,
+        and only if they are one table (allowing CSV/XLSX and English/French copies)."""
+        items = [(p, d) for p, d in url_paths.get(url, []) if (ROOT / p).is_file()]
+        if url_count.get(url, 0) <= 1:
+            return items
+        items = [(p, d) for p, d in items if period_match(entry.get('period'), p)]
+        stems = {re.sub(r'(-(en|fr))?\.(csv|xlsx|xls|csv\.gz)$', '', p) for p, _ in items}
+        return items if len(stems) == 1 else []
     groups = read_text_files()
     rows, counts = [], {k: 0 for k in ('verified', 'hosted', 'downloadable', 'searchable',
                                          'departmental', 'analysis', 'excluded', 'noEvidence')}
@@ -131,7 +201,7 @@ def main():
         candidates = []  # (path, expected sha, how)
         for m in prior.get(e['id'], {}).get('matches', []):
             candidates.append((m.get('path'), m.get('sha256'), m.get('type'), m))
-        for path, digest in url_paths.get(url, []):
+        for path, digest in url_candidates(url, e):
             candidates.append((path, digest, 'publisher-catalogue', {}))
         hosted, verified = [], None
         for path, digest, how, m in candidates:
@@ -149,11 +219,35 @@ def main():
             if not p.is_file():
                 continue
             hosted.append(path)
-            expected = digest or checksums.get(path)
+            expected = digest
             if expected and sha256(p) == expected:
                 verified = 'sha256'
             elif expected and p.suffix == '.gz' and hashlib.sha256(gzip.decompress(p.read_bytes())).hexdigest() == expected:
                 verified = 'sha256-of-decompressed-original'
+        for f in gaps.get(e['id'], []) if not hosted else []:
+            # Copies made by scripts/fetch-register-gaps.py: check the stored bytes again.
+            if f.get('path') and (ROOT / f['path']).is_file():
+                p = ROOT / f['path']
+                ok = hashlib.sha256(gzip.decompress(p.read_bytes())).hexdigest() == f['sha256']
+                hosted.append(f['path'])
+                if ok and not verified:
+                    verified = 'sha256-recorded-at-download' if f.get('kind') != 'page-snapshot' else 'page-snapshot'
+            elif f.get('branch') == 'pses-data':
+                hosted.append('pses-data:' + f['directory'])
+                if not verified and sum(x['rows'] for x in f['parts']) == f.get('rows'):
+                    verified = 'sha256-recorded-at-download'
+        size = e.get('bytes')
+        same = sizes.get(size, []) if size and size > 400 else []
+        if hosted and not verified and any(p in hosted for p, _ in same):
+            verified = 'exact-size-' + next(h for p, h in same if p in hosted)
+        if not hosted and not verified and len(same) == 1:
+            # One hosted file has exactly the register's byte count: that file is the copy.
+            path, how = same[0]
+            hosted = [path]
+            verified = 'exact-size-' + how
+        if e['id'] in RULE_EXCLUDED:
+            hosted = []
+            verified = None
         hosted = sorted(set(hosted))
         plain = [h for h in hosted if not h.startswith('pses-data:')]
         keys = keys_for(e, plain + [h.split(':', 1)[1] for h in hosted if h.startswith('pses-data:')])
@@ -167,7 +261,9 @@ def main():
             'analysis': found_in(groups['analysis'], keys),
             'excluded': None,
         }
-        if not e.get('approved'):
+        if e['id'] in RULE_EXCLUDED:
+            status['excluded'] = RULE_EXCLUDED[e['id']]
+        elif not e.get('approved'):
             status['excluded'] = 'not approved in the source register'
         elif e.get('inventoryStatus') in EXCLUDED_STATUS:
             status['excluded'] = 'register status: ' + e['inventoryStatus']

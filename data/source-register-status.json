@@ -4,14 +4,14 @@
  "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 103,
-  "hosted": 103,
-  "downloadable": 85,
-  "searchable": 147,
-  "departmental": 164,
-  "analysis": 104,
-  "excluded": 154,
-  "noEvidence": 112
+  "verified": 221,
+  "hosted": 240,
+  "downloadable": 222,
+  "searchable": 175,
+  "departmental": 171,
+  "analysis": 105,
+  "excluded": 155,
+  "noEvidence": 80
  },
  "rows": [
   {
@@ -57,7 +57,7 @@
    "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/142af1d0-a177-4b69-8686-7aae9f83363d/download/pses-saff2011_overallps.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/pses2011-overall.csv"
    ],
@@ -76,7 +76,7 @@
    "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/456e7b80-be19-4971-84bc-9456e71f4386/download/pses-saff2011_dept.xls",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/pses2011-dept.xls"
    ],
@@ -95,7 +95,7 @@
    "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/8413ff87-b68c-4d91-88bb-0352338c6ba4/download/pses2011_documentation.xls",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/pses2011-supporting-documentation.xls"
    ],
@@ -445,7 +445,7 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/images/modernizing-modernisation/pses-saff/2017-pses-supporting-saff-reference.xls",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/pseas2017-supporting-documentation.xls"
    ],
@@ -728,10 +728,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2019-PSES-Diversity-and-Inclusion-Tables_SAFF-2019-Tableaux-diversit%C3%A9-et-inclusion.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/pses-2019/pses2019-diversity-inclusion-tables.xlsx"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -948,10 +950,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/2020-PSES-Diversity-and-Inclusion-Tables_SAFF-2020-Tableaux-diversit%C3%A9-et-inclusion.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/pses-2020/pses2020-diversity-inclusion-tables.xlsx"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -1174,9 +1178,11 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/2022-2023%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202022-2023.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/ee-reports/pses2022-23-supporting-documentation.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -1191,10 +1197,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-2022-23/2022%C2%AD_2023_PSES_Results%20Tables_2022_2023_SAFF_tableaux_de_r%C3%A9sultats.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/pses-2022-2023/pses2022-23-results-tables.xlsx"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -1394,10 +1402,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2025/2024%20PSES%20Supporting%20Documentation-Documents%20de%20r%C3%A9f%C3%A9rence%20du%20SAFF%202024.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/pses-2024/pses2024-supporting-documentation.xlsx"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -1411,10 +1421,12 @@
    "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/ses-2024/PSES_Employment%20Equity%20Results%20Tables%202024%20-%20Tableaux%20des%20r%C3%A9sultats%20de%20l%E2%80%99%C3%A9quit%C3%A9%20en%20mati%C3%A8re%20d%E2%80%99emploi%20du%20SAFF%202024.xlsx",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/pses-2024/pses2024-ee-results-tables.xlsx"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -1601,7 +1613,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS02.csv.gz"
    ],
@@ -1622,7 +1634,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS03.csv.gz"
    ],
@@ -1643,7 +1655,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS04.csv.gz"
    ],
@@ -1664,7 +1676,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS05.csv.gz"
    ],
@@ -1685,7 +1697,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS06.csv.gz"
    ],
@@ -1704,7 +1716,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS07.csv.gz"
    ],
@@ -1723,7 +1735,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS08.csv.gz"
    ],
@@ -1742,7 +1754,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS09.csv.gz"
    ],
@@ -1761,7 +1773,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS10.csv.gz"
    ],
@@ -1780,7 +1792,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS11.csv.gz"
    ],
@@ -1799,7 +1811,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS12.csv.gz"
    ],
@@ -1818,7 +1830,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/snps-2018-organization-level-report-dataset.csv"
    ],
@@ -1837,7 +1849,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14E.csv.gz"
    ],
@@ -1856,7 +1868,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14F.csv.gz"
    ],
@@ -1875,7 +1887,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/snps-2018-by-first-official-language-and-region-v.csv"
    ],
@@ -1894,7 +1906,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/snps-2018-response-profile-data.csv"
    ],
@@ -1913,7 +1925,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/snps-2018-list-of-questions.csv"
    ],
@@ -1932,7 +1944,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/snps-2018-list-of-departments.csv"
    ],
@@ -1951,7 +1963,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS18.csv.gz"
    ],
@@ -1970,7 +1982,7 @@
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS19.csv.gz"
    ],
@@ -1989,7 +2001,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/snps-2021-by-department.csv"
    ],
@@ -2010,7 +2022,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS02.csv.gz"
    ],
@@ -2032,7 +2044,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS03.csv.gz"
    ],
@@ -2054,7 +2066,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS04.csv.gz"
    ],
@@ -2076,7 +2088,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS05.csv.gz"
    ],
@@ -2098,7 +2110,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS06.csv.gz"
    ],
@@ -2119,7 +2131,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS07.csv.gz"
    ],
@@ -2140,7 +2152,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS08.csv.gz"
    ],
@@ -2161,7 +2173,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS09.csv.gz"
    ],
@@ -2182,7 +2194,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS10.csv.gz"
    ],
@@ -2203,7 +2215,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS11.csv.gz"
    ],
@@ -2224,7 +2236,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/snps-2021-data-visualization-dataset.csv"
    ],
@@ -2245,7 +2257,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/snps-2021-response-profile-data.csv"
    ],
@@ -2266,7 +2278,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/snps-2021-list-of-questions.csv"
    ],
@@ -2287,7 +2299,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/snps-2021-list-of-departments.csv"
    ],
@@ -2308,7 +2320,7 @@
    "source": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-decompressed",
    "hosted": [
     "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS16.csv.gz"
    ],
@@ -3304,12 +3316,16 @@
    "source": "https://open.canada.ca/data/en/dataset/a8d64d9c-db9a-4f71-8be4-f11eaf4d306d",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 2,
-   "analysis": [],
+   "departmental": 3,
+   "analysis": [
+    "scripts/build-where-data-agree.py"
+   ],
    "excluded": null
   },
   {
@@ -3321,11 +3337,13 @@
    "source": "https://open.canada.ca/data/en/dataset/a8d64d9c-db9a-4f71-8be4-f11eaf4d306d",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 2,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -3508,9 +3526,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1a.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3525,9 +3545,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1b.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3559,9 +3581,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1D.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3576,9 +3600,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1E.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3593,9 +3619,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1f.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3610,9 +3638,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1g.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3627,9 +3657,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1h.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3644,9 +3676,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1i.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3661,9 +3695,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1J.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3678,9 +3714,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1K.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3695,9 +3733,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1l.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3712,9 +3752,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3729,9 +3771,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1N.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3763,9 +3807,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3780,9 +3826,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1q.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3797,9 +3845,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1R.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3814,9 +3864,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1S.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3831,9 +3883,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1T.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3848,11 +3902,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1U.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -3865,9 +3921,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1V.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3882,9 +3940,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1W.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3899,9 +3959,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1X.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3916,9 +3978,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1y.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3933,9 +3997,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1aa.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3950,9 +4016,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1bb.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -3967,11 +4035,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1CC.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -3984,9 +4054,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1dd.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4001,9 +4073,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR1EE.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4018,11 +4092,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1ff.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4035,11 +4111,13 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1gg.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4052,9 +4130,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1z.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4069,9 +4149,11 @@
    "source": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar1hh.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4103,9 +4185,11 @@
    "source": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar2a.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4120,9 +4204,11 @@
    "source": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-population-ar2/psc-ar2b-indeterminate-employees-under-35-share-by-year.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4137,11 +4223,13 @@
    "source": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/CFPPSC_AR2C.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -4154,11 +4242,13 @@
    "source": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar2d.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 0,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4171,10 +4261,12 @@
    "source": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar4a.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -4188,10 +4280,12 @@
    "source": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar4b.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -4205,10 +4299,12 @@
    "source": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar4c.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -4222,10 +4318,12 @@
    "source": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar4d.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -4239,10 +4337,12 @@
    "source": "https://open.canada.ca/data/en/dataset/6857a6e6-4e50-4b0e-ba8c-3ad890fa2f2a",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/ar4e.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -4256,11 +4356,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/adv_type.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4273,11 +4375,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/advs.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4290,11 +4394,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/demo_age.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4307,11 +4413,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/demo_ee.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4324,11 +4432,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/demo_fol.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4341,11 +4451,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/demo_group.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4358,11 +4470,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/demo_region.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4375,11 +4489,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/inflow.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4392,11 +4508,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/outflow.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4409,11 +4527,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/internal_mob.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 5,
    "analysis": [],
    "excluded": null
   },
@@ -4426,11 +4546,13 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 2,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/reappointments.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 4,
    "analysis": [],
    "excluded": null
   },
@@ -4443,10 +4565,12 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/vha_1.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 2,
    "analysis": [],
    "excluded": null
@@ -4477,10 +4601,12 @@
    "source": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/psc/vha_3.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 2,
    "analysis": [],
    "excluded": null
@@ -4511,11 +4637,13 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2017-2018.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 4,
+   "departmental": 5,
    "analysis": [],
    "excluded": null
   },
@@ -4528,11 +4656,13 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2018-2019.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
-   "departmental": 4,
+   "departmental": 5,
    "analysis": [],
    "excluded": null
   },
@@ -4545,9 +4675,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2019-2020.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4562,9 +4694,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2020-2021.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4579,9 +4713,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2021-2022.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4596,9 +4732,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2022-2023.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4613,9 +4751,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2023-2024.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4630,9 +4770,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2024-2025.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4647,9 +4789,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2025-2026.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4664,9 +4808,11 @@
    "source": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2026-2027.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [],
@@ -4681,11 +4827,13 @@
    "source": "https://open.canada.ca/data/en/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 0,
+   "verified": "exact-size-decompressed",
+   "hosted": [
+    "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-october-2-2026-single-tab.csv.gz"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 3,
    "analysis": [],
    "excluded": null
   },
@@ -4698,10 +4846,12 @@
    "source": "https://open.canada.ca/data/en/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-decompressed",
+   "hosted": [
+    "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv.gz"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": null
@@ -4715,9 +4865,11 @@
    "source": "https://open.canada.ca/data/en/dataset/83dcf122-d050-4def-8456-d23b718c6b22",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-priority-entitlements/psc-priority-entitlements-public-service-total.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4732,9 +4884,11 @@
    "source": "https://open.canada.ca/data/en/dataset/83dcf122-d050-4def-8456-d23b718c6b22",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-priority-entitlements/psc-medically-released-and-surplus-priority-entitlements-vs-appointments.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4749,9 +4903,11 @@
    "source": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i1-days-to-complete-external-staffing.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4766,9 +4922,11 @@
    "source": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i9-new-hires-under-35.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4783,9 +4941,11 @@
    "source": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i11-new-hires-outside-ncr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4800,9 +4960,11 @@
    "source": "https://open.canada.ca/data/en/dataset/349e07cf-7df8-4714-8f44-7afd7d997aa6",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-staffing-audit-tool/psc-staffing-audit-tool-appointment-records-2013-2016.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4817,9 +4979,11 @@
    "source": "https://open.canada.ca/data/en/dataset/45db0901-fe73-4f7f-beb9-598d7ab98acd",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-system-wide-staffing-audit/psc-system-wide-staffing-audit-program-2016.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4834,9 +4998,11 @@
    "source": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-officer-level-ar6a.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4851,9 +5017,11 @@
    "source": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-non-officer-level-ar6b.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4868,9 +5036,11 @@
    "source": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ar6c.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4885,9 +5055,11 @@
    "source": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ontario-ncr-quebec-ar6d.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4902,9 +5074,11 @@
    "source": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-to-external-advertisements-ar6e.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -4957,12 +5131,15 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
+    "systemic-change/austerity-enhancements.js",
     "systemic-change/department-evidence.js"
    ],
    "excluded": null
@@ -4976,9 +5153,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -4995,9 +5174,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5014,9 +5195,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5033,12 +5216,15 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
+    "systemic-change/austerity-enhancements.js",
     "systemic-change/department-evidence.js"
    ],
    "excluded": null
@@ -5052,9 +5238,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5109,9 +5297,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5128,9 +5318,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5147,9 +5339,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5185,9 +5379,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5223,9 +5419,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5242,9 +5440,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5261,9 +5461,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5280,9 +5482,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5299,9 +5503,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5318,9 +5524,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5337,9 +5545,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5356,9 +5566,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5375,9 +5587,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5394,9 +5608,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5413,9 +5629,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5432,9 +5650,11 @@
    "source": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 4,
    "analysis": [
@@ -5451,7 +5671,7 @@
    "source": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/f11fa61f-9a5b-4b8a-b9ab-280ca332443f/download/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv"
    ],
@@ -5470,7 +5690,7 @@
    "source": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/bfe2f632-57b4-4bb6-8704-4ddaf258dd62/download/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv"
    ],
@@ -6051,8 +6271,47 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+    "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6288,9 +6547,11 @@
    "source": "https://open.canada.ca/data/en/dataset/73fe0c0f-cdf8-4932-b8a6-c32f4edd3cea",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx"
+   ],
+   "downloadable": true,
    "searchable": true,
    "departmental": 0,
    "analysis": [],
@@ -6546,7 +6807,7 @@
    "source": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/51b784f5-5c5f-4b5a-aa7e-0d16ba00fc70/download/ctempdatasetsa_fte_1718_en.csv",
    "inventoryStatus": "batch-1",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-en.csv"
    ],
@@ -6565,7 +6826,7 @@
    "source": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/75f7464c-6ade-455c-b6e7-a9a8286002b9/download/ctempdatasetsa_fte_1718_fr.csv",
    "inventoryStatus": "batch-1",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-fr.csv"
    ],
@@ -6584,7 +6845,7 @@
    "source": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/49569acc-b550-412e-b789-01d1ac96d879/download/programs_ftes.csv",
    "inventoryStatus": "batch-1",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv"
    ],
@@ -6603,7 +6864,7 @@
    "source": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/64774bc1-c90a-4ae2-a3ac-d9b50673a895/download/rbpo_rppo_en.csv",
    "inventoryStatus": "batch-1",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv"
    ],
@@ -6690,7 +6951,7 @@
    "source": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/02929919-d9ab-494e-8fce-012119b479ff/download/rbpo_rppo_en.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv"
    ],
@@ -6709,7 +6970,7 @@
    "source": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/19aba95f-3db9-4d20-a0f4-43d88a7e67cf/download/rbpo_rppo_fr.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv"
    ],
@@ -6762,7 +7023,7 @@
    "source": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/7a7458f2-b427-465b-8bef-523bc773d2b2/download/dd-dd-iii.xlsx",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx"
    ],
@@ -6952,8 +7213,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2024-2025.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6969,8 +7232,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2022-2023.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6986,8 +7251,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-en.csv",
+    "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7003,8 +7271,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7088,8 +7358,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7122,8 +7394,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7138,11 +7412,13 @@
    "source": "https://open.canada.ca/data/en/dataset/e7db3b72-e459-44a6-a749-5d64b57dc3d9",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 1,
+   "verified": "exact-size-decompressed",
+   "hosted": [
+    "isc/data/source-b0688b3a3b0a.csv.gz"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 5,
    "analysis": [],
    "excluded": null
   },
@@ -7155,7 +7431,7 @@
    "source": "https://www.canada.ca/content/dam/csis-scrs/dataset/Representation-of-Designated-Group-Members-by-Employment-Representation-de-membres-de-groupes-designes.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv"
    ],
@@ -7192,8 +7468,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7209,8 +7488,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7226,8 +7508,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7243,8 +7528,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7260,8 +7548,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7277,8 +7568,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7294,8 +7588,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7310,9 +7607,11 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/employer-equity-sources-2026-11/csps/csps-ee-representation-data-dictionary-2021-present.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7378,7 +7677,7 @@
    "source": "https://web.archive.org/web/20201127190453id_/https://www.csps-efpc.gc.ca/OpenGov/Employment_Equity_Representation_2017_2018.xlsx",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/csps-ee-representation-2017-2018.xlsx"
    ],
@@ -7432,8 +7731,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7449,8 +7750,10 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7466,8 +7769,11 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7483,8 +7789,10 @@
    "inventoryStatus": "nonexistent",
    "approved": false,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -7551,9 +7859,12 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "hosted": [
+    "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
+    "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 1,
    "analysis": [],
    "excluded": null
@@ -7669,7 +7980,7 @@
    "source": "https://open.canada.ca/data/dataset/e3d448a2-3d6a-465e-b900-93c0b3666a6f/resource/23705252-1708-4327-a8bd-e23021bb9fee/download/cse-annual-ray-in-dollars.csv",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv"
    ],
@@ -8079,9 +8390,11 @@
    "source": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
    "inventoryStatus": "held",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-federal-jurisdiction-2021-2024-en.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8096,9 +8409,11 @@
    "source": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
    "inventoryStatus": "held",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-federal-jurisdiction-2021-2024-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8113,9 +8428,11 @@
    "source": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
    "inventoryStatus": "held",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-industry-2021-2024-en.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8130,9 +8447,11 @@
    "source": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
    "inventoryStatus": "held",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-industry-2021-2024-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8147,9 +8466,11 @@
    "source": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
    "inventoryStatus": "held",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-public-private-sector-2021-2024-en.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8164,9 +8485,11 @@
    "source": "https://open.canada.ca/data/en/dataset/340a348c-79b3-42b3-a3e5-ab8098ea7aed",
    "inventoryStatus": "held",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/open-canada-2026-11/harassment-violence-occurrences/esdc-harassment-violence-occurrences-by-public-private-sector-2021-2024-fr.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -8306,7 +8629,7 @@
    "searchable": false,
    "departmental": 0,
    "analysis": [],
-   "excluded": null
+   "excluded": "site content rule: no vaccination data"
   },
   {
    "id": "GC-0461",
@@ -8980,10 +9303,12 @@
    "source": "https://www150.statcan.gc.ca/n1/tbl/csv/14100035-eng.zip",
    "inventoryStatus": "batch-2",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/restored/org/597e880b54bc0708b8/public-health-agency-of-canada-b9641959.csv.gz"
+   ],
+   "downloadable": true,
+   "searchable": true,
    "departmental": 0,
    "analysis": [],
    "excluded": "not approved in the source register"
@@ -9218,7 +9543,7 @@
    "source": "https://raw.githubusercontent.com/pbo-dpb/FETT--OSEF/main/public/FETT_publicdata.xlsx",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/fett-publicdata.xlsx"
    ],
@@ -9237,7 +9562,7 @@
    "source": "https://raw.githubusercontent.com/pbo-dpb/PEAT--OEDP/master/src/assets/db-bdd.xlsx",
    "inventoryStatus": "batch-2",
    "approved": true,
-   "verified": "sha256",
+   "verified": "exact-size-file",
    "hosted": [
     "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx"
    ],
