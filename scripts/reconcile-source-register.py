@@ -142,6 +142,11 @@ def found_in(group, keys):
 
 def main():
     register = json.loads(REGISTER.read_text(encoding='utf-8'))
+    override_file = ROOT / 'data/source-register-overrides-2026-11-27.json'
+    overrides = json.loads(override_file.read_text(encoding='utf-8')) if override_file.exists() else {}
+    for e in register['entries']:
+        if overrides.get(e['id'], {}).get('source'):
+            e['source'] = overrides[e['id']]['source']
     prior = {r['id']: r for r in json.loads(PRIOR.read_text(encoding='utf-8'))['rows']}
     checksums = {}
     for line in (ROOT / 'data/checksums.sha256').read_text().splitlines():
@@ -201,6 +206,9 @@ def main():
     for e in register['entries']:
         url = e.get('source') or ''
         candidates = []  # (path, expected sha, how)
+        # Explicit paths from the reviewed inventory: presence is not original-source verification.
+        for path in overrides.get(e['id'], {}).get('paths', []):
+            candidates.append((path, None, 'reviewed-inventory-path', {}))
         for m in prior.get(e['id'], {}).get('matches', []):
             candidates.append((m.get('path'), m.get('sha256'), m.get('type'), m))
         for path, digest in url_candidates(url, e):
