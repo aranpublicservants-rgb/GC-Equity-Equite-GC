@@ -1,0 +1,28 @@
+name: Consolidated chart explorer verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['assets/data-visuals.js', 'assets/data-visuals.css', 'gc-shared-shell.js', 'tests/chart-explorer-browser.cjs', 'scripts/test-data-visuals.cjs', '.github/workflows/chart-explorer.yml']
+permissions:
+  contents: read
+concurrency:
+  group: chart-explorer-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate exact data, classification and missing-value treatment
+        run: node --test scripts/test-data-visuals.cjs
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Verify chart switching and original evidence
+        run: node tests/chart-explorer-browser.cjs
