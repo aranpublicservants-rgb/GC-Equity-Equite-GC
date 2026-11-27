@@ -219,7 +219,50 @@ function renderStatic(){
   '<optgroup label="'+esc(tr('Organizations','Organisations'))+'">'+orgs.map(n=>'<option value="'+esc(n)+'"'+(n===state.org?' selected':'')+'>'+esc(orgLabel(n))+'</option>').join('')+'</optgroup>';
  $('st-method').innerHTML=methodHTML();
 }
-function render(){renderStatic();renderFunnel();renderDetail();renderStudents();renderOrg();renderFiles();}
+function render(){renderStatic();renderFunnel();renderDetail();renderStudents();renderOrg();renderFiles();refreshRecruitmentPicker();}
+const recruitmentViews=[
+ ['applicants','General recruitment: applicants and appointments','Recrutement général : postulants et nominations'],
+ ['students','Student recruitment: applicants and hires','Recrutement étudiant : postulants et embauches'],
+ ['detail','Appointments by sex and region','Nominations selon le sexe et la région'],
+ ['organizations','Appointments by organization and self-identification','Nominations selon l’organisme et l’auto-identification'],
+ ['all','Show all recruitment views','Afficher toutes les vues de recrutement']
+];
+let recruitmentView='applicants',recruitmentPicker=null;
+function refreshRecruitmentPicker(){
+ if(!recruitmentPicker)return;
+ const {label,select,note}=recruitmentPicker;
+ label.textContent=tr('Choose the recruitment data to explore','Choisissez les données de recrutement à explorer');
+ options(select,recruitmentViews.map(([v,en,f])=>[v,tr(en,f)]),recruitmentView);
+ note.textContent=tr('Each view keeps its own published population, units and reporting periods. The full source tables and download controls remain available.','Chaque vue conserve sa population publiée, ses unités et ses périodes de référence. Les tableaux sources complets et les commandes de téléchargement demeurent accessibles.');
+}
+function applyRecruitmentView(value,write=false){
+ if(!recruitmentViews.some(x=>x[0]===value))return;
+ recruitmentView=value;
+ for(const [id]of recruitmentViews.filter(x=>x[0]!=='all')){const section=$(id);section.hidden=value!=='all'&&id!==value;}
+ if(recruitmentPicker)recruitmentPicker.select.value=value;
+ if(write){const u=new URL(location.href);u.searchParams.set('staffview',value);if(value==='all')u.hash='';else u.hash=value;history.replaceState(null,'',u);}
+}
+function viewFromHash(){
+ let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return null;}
+ const target=$(id);if(!target)return null;
+ return recruitmentViews.filter(x=>x[0]!=='all').find(([key])=>$(key).contains(target))?.[0]||null;
+}
+function installRecruitmentPicker(){
+ if(recruitmentPicker)return;
+ const wrapper=document.createElement('div');wrapper.className='cta-pick';wrapper.id='st-recruitment-picker';
+ const inner=document.createElement('div'),label=document.createElement('label'),select=document.createElement('select'),note=document.createElement('p');
+ select.id='st-recruitment-view';label.htmlFor=select.id;inner.append(label,select,note);wrapper.append(inner);$('applicants').before(wrapper);
+ recruitmentPicker={label,select,note};
+ const param=new URL(location.href).searchParams.get('staffview');
+ recruitmentView=viewFromHash()||(recruitmentViews.some(x=>x[0]===param)?param:'applicants');refreshRecruitmentPicker();applyRecruitmentView(recruitmentView);
+ // Replace the four competing data-view links with one picker. Keep catalogue and methodology links.
+ for(const a of document.querySelectorAll('.cta-jump a[href^="#"]')){if(recruitmentViews.some(x=>'#'+x[0]===a.getAttribute('href')))a.closest('li').hidden=true;}
+ select.addEventListener('change',()=>applyRecruitmentView(select.value,true));
+ window.addEventListener('hashchange',()=>{const view=viewFromHash();if(view&&recruitmentView!=='all')applyRecruitmentView(view);});
+ // An existing internal link may point to a view that is currently hidden.
+ document.addEventListener('click',e=>{const a=e.target.closest?.('a[href^="#"]');if(!a)return;const target=$(a.hash.slice(1));if(!target)return;const view=recruitmentViews.filter(x=>x[0]!=='all').find(([id])=>$(id).contains(target));if(view&&recruitmentView!=='all')applyRecruitmentView(view[0]);});
+ const print=document.createElement('style');print.textContent='@media print{#st-recruitment-picker{display:none!important}#applicants[hidden],#students[hidden],#detail[hidden],#organizations[hidden]{display:block!important}}';document.head.append(print);
+}
 function bind(){
  const on=(id,key,fn)=>$(id).addEventListener('change',e=>{state[key]=e.target.value;fn();});
  on('st-group','group',renderFunnel);on('st-sgroup','sgroup',renderDetail);on('st-year','year',renderDetail);on('st-stgroup','stgroup',renderStudents);on('st-org','org',renderOrg);
@@ -238,7 +281,7 @@ async function load(){
  if(ORDER.includes(g)){state.group=g;state.stgroup=g;if(g!=='w')state.sgroup=g;}
  $('st-loading').hidden=true;
  document.querySelectorAll('.st-after').forEach(el=>{el.hidden=false;});
- render();bind();
+ render();bind();installRecruitmentPicker();
  if(location.hash){const t=document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>t.scrollIntoView(),60);}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',load,{once:true});else load();

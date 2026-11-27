@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['gc-option-descriptions.js','gc-option-descriptions.css','gc-staffing-explorer.js','gc-shared-shell.js','assets/pses-explorer.js','assets/department-depth.js','scripts/test-staffing-explorer.cjs','tests/survey-options-browser.cjs','.github/workflows/survey-options.yml']
+    paths: ['gc-option-descriptions.js','gc-option-descriptions.css','gc-staffing-explorer.js','staffing.js','gc-shared-shell.js','assets/pses-explorer.js','assets/department-depth.js','scripts/test-staffing-explorer.cjs','tests/survey-options-browser.cjs','.github/workflows/survey-options.yml']
 permissions:
   contents: read
 jobs:
