@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download, store and split
-        run: python scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}"
+        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}"
       - name: Publish large parts to the pses-data branch
         run: |
           set -e
