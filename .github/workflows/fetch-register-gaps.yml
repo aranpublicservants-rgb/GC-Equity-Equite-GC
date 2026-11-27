@@ -4,6 +4,9 @@ name: Fetch public source register gaps
 # on the pses-data branch under register-gaps/, which this workflow never removes or
 # replaces outside that folder. Free GitHub Actions only.
 on:
+  push:
+    branches: [main]
+    paths: ['data/source-register-overrides-2026-11-27.json']
   workflow_dispatch:
     inputs:
       limit:
@@ -39,7 +42,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download, store and split
-        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}" --budget "${{ inputs.budget || '80' }}" $([ "${{ inputs.retry_failed }}" = true ] && echo --retry-failed)
+        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit || '0' }}" --max-bytes "${{ inputs.max_bytes || '0' }}" --ids "${{ github.event_name == 'push' && 'GC-0420,GC-0462' || inputs.ids }}" --budget "${{ inputs.budget || '80' }}" $([ "${{ inputs.retry_failed }}" = true ] && echo --retry-failed)
       - name: Publish large parts to the pses-data branch
         run: |
           set -e
@@ -74,6 +77,6 @@ jobs:
         run: |
           left=$(cat "$RUNNER_TEMP/gaps/remaining.txt" 2>/dev/null || echo 0)
           echo "Entries remaining: $left"
-          if [ "$left" -gt 0 ] && [ -z "${{ inputs.ids }}" ]; then
+          if [ "${{ github.event_name }}" = workflow_dispatch ] && [ "$left" -gt 0 ] && [ -z "${{ inputs.ids }}" ]; then
             gh workflow run fetch-register-gaps.yml --ref main -f limit="${{ inputs.limit }}" -f max_bytes="${{ inputs.max_bytes }}" -f ids= -f budget="${{ inputs.budget || '80' }}"
           fi
