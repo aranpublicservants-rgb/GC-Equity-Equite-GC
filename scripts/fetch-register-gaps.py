@@ -285,9 +285,9 @@ def main():
                                               'reason': 'web page or format not stored'})
                         continue
                     size = int(res.get('size') or 0)
-                    if size and size > FILE_MAX:
+                    if size and MAX_SIZE and size > MAX_SIZE:
                         item['files'].append({'url': res.get('url'), 'format': fmt, 'stored': False,
-                                              'reason': f'larger than {FILE_MAX} bytes'})
+                                              'reason': f'larger than {MAX_SIZE} bytes (left for the large-file batch)'})
                         continue
                     try:
                         rec = take_file(res['url'], e['id'], work, res.get('name_translated') or res.get('name'), fmt)
