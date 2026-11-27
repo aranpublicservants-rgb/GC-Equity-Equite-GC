@@ -1,0 +1,148 @@
+{
+ "note": "Copies of public source register entries that had no copy in this repository. Originals are stored unchanged, gzip-compressed; very large CSV files are split into parts on the pses-data branch, each starting with the published header. SHA-256 and bytes describe the original file as downloaded.",
+ "register": "data/public-source-register-2026-11-24.json",
+ "entries": [
+  {
+   "id": "GC-0002",
+   "name": "PSES 2008",
+   "source": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/b9d7675c-9450-4cb9-9c04-77213fc836af/download/2008_results-resultats.csv",
+   "files": [
+    {
+     "url": "https://open.canada.ca/data/dataset/55aafdd7-78c4-4fc1-afd3-5611c1c33dd3/resource/b9d7675c-9450-4cb9-9c04-77213fc836af/download/2008_results-resultats.csv",
+     "title": "PSES 2008",
+     "bytes": 41087786,
+     "sha256": "861c8b5118fb978f5bafa6367d0932c258c666dde630790244b60e873b2ef0b8",
+     "retrieved": "2026-11-27T09:42:19Z",
+     "rows": 467241,
+     "path": "data/register-gaps-2026-11/u-60de0d1d997e7577/2008_results-resultats.csv.gz",
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0018",
+   "name": "PSES 2017",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
+   "files": [],
+   "failures": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-1_Sous-ensemble-1.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    }
+   ]
+  },
+  {
+   "id": "GC-0084",
+   "name": "SNPS 2018 - By department (including all departments)",
+   "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+   "files": [],
+   "failures": [
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS01.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS02.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS03.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS04.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS05.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS06.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS07.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS08.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS09.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS10.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS11.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS12.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS13.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS14E.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS14F.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS14V.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS15.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS16.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS17.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS18.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS19.csv",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/snps-sdip-documentation-eng.pdf",
+     "error": "curl exit 28: curl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\ncurl: (28) Operation too slow. Less than 100000 bytes/sec transferred the last 60 seconds\n"
+    },
+    {
+     "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/snps-sdip-documentation-fra.pdf",
+     "error": "not attempted: run time budget reached"
+    },
+    {
+     "url": "https://open.canada.ca/static/psc-spc/psc-chart/",
+     "error": "not attempted: run time budget reached"
+    },
+    {
+     "url": "https://open.canada.ca/static/psc-spc/graphique-cfp/",
+     "error": "not attempted: run time budget reached"
+    }
+   ],
+   "datasetTitle": {
+    "fr": "Sondage sur la dotation et l’impartialité politique 2018",
+    "en": "Staffing and Non-Partisanship Survey 2018"
+   }
+  }
+ ]
+}
