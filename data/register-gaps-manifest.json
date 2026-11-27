@@ -261,6 +261,114 @@
    "failures": []
   },
   {
+   "id": "GC-0021",
+   "name": "PSES 2017",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-4_Sous-ensemble-4.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-4_Sous-ensemble-4.csv",
+     "title": "PSES 2017",
+     "bytes": 356327263,
+     "sha256": "f6964238e4a066a028912112da926b0e53c1758d453f820a62193a881618987f",
+     "retrieved": "2026-11-27T11:00:58Z",
+     "rows": 753390,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-2d295b18c4a7b20e",
+     "parts": [
+      {
+       "file": "2017_PSES_SAFF_Subset-4_Sous-ensemble-4-001.csv.gz",
+       "rows": 753390,
+       "bytes": 20310986,
+       "sha256": "37fff6069b3c70c5b614fcc2ebfc57fe4608481f25e3bbcee4818c7bfa2ee356"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0022",
+   "name": "PSES 2017",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2017/2017_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+     "title": "PSES 2017",
+     "bytes": 181577190,
+     "sha256": "2a64a13b6fa6adc834bca354fd9ba1a515b22d9a1267045abd78bd060e15bc82",
+     "retrieved": "2026-11-27T11:01:22Z",
+     "rows": 348708,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-3c610efaa01774df",
+     "parts": [
+      {
+       "file": "2017_PSES_SAFF_Subset-5_Sous-ensemble-5-001.csv.gz",
+       "rows": 348708,
+       "bytes": 20023721,
+       "sha256": "31cdc3271451063f6d4dc0cfd95649665055ecf47643f1c994a35998cd027498"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0024",
+   "name": "PSEAS 2017",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/images/modernizing-modernisation/pses-saff/2017-pses-results-saff-resultats.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/images/modernizing-modernisation/pses-saff/2017-pses-results-saff-resultats.csv",
+     "title": "PSEAS 2017",
+     "bytes": 89668551,
+     "sha256": "362570ed3512d82e0aea626686cd23a5b18042e355458183df9c6438e3ad6ee3",
+     "retrieved": "2026-11-27T11:01:29Z",
+     "rows": 247592,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-6cdb621fd5256357",
+     "parts": [
+      {
+       "file": "2017-pses-results-saff-resultats-001.csv.gz",
+       "rows": 247592,
+       "bytes": 5034891,
+       "sha256": "3be93eac34e8ded939e0fbc0747cbfc719fcd34ed32a6528f58cc2e34432ad72"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
+   "id": "GC-0030",
+   "name": "PSES 2018",
+   "source": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+   "files": [
+    {
+     "url": "https://www.canada.ca/content/dam/tbs-sct/documents/datasets/pses-saff/2018/2018_PSES_SAFF_Subset-5_Sous-ensemble-5.csv",
+     "title": "PSES 2018",
+     "bytes": 124205627,
+     "sha256": "f47f29f91bc356b0326f040e58c2630cc4f016cff64a1f3cfcdecadb384a4c48",
+     "retrieved": "2026-11-27T11:01:34Z",
+     "rows": 243561,
+     "branch": "pses-data",
+     "directory": "register-gaps/u-a265121493deea01",
+     "parts": [
+      {
+       "file": "2018_PSES_SAFF_Subset-5_Sous-ensemble-5-001.csv.gz",
+       "rows": 243561,
+       "bytes": 13735788,
+       "sha256": "ca91266408d1a893901fb5c76f38d5cec7d911ba9faf94ca29e716e69da94bcf"
+      }
+     ],
+     "stored": true
+    }
+   ],
+   "failures": []
+  },
+  {
    "id": "GC-0084",
    "name": "SNPS 2018 - By department (including all departments)",
    "source": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
