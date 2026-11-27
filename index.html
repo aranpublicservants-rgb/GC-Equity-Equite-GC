@@ -269,8 +269,8 @@ async function search(){const q=normalize($('gce-query').value),out=$('gce-quick
 const matches=(data.organizations||[]).filter(o=>o.id!=='youth'&&!data.redirects?.[o.id]).map(o=>({o,match:Math.max(0,...[o.id,o.en,o.fr,...(o.aliases||[]),...(acronymAliases[o.id]||[])].map(normalize).filter(x=>x.length>=3).map(x=>(' '+q+' ').includes(' '+x+' ')?x.length:0))})).filter(x=>x.match).sort((a,b)=>b.match-a.match);
 const topic=topics.map(t=>({t,s:score(q,t[3])})).filter(x=>x.s).sort((a,b)=>b.s-a.s)[0]?.t;const group=groupRules.find(x=>x[1].test(q))?.[0];
 const results=[];const add=(href,label)=>{if(!results.some(x=>x.href===href))results.push({href,label});};
-for(const {o} of matches.slice(0,3)){const t=topic?.[0]==='pay'?'all':topic?.[0];add(view(o.en,t,group),(fr()?o.fr:o.en)+(topic?' — '+L(topic[1],topic[2]):''));}
-if(topic){const t=topic[0]==='branches'?'experience':topic[0]==='plans'?'commitments':topic[0];add(view(null,t,group),L(topic[1],topic[2])+' — '+L('Public service-wide','Ensemble de la fonction publique'));}
+for(const {o} of matches.slice(0,3)){const t=topic?.[0]==='pay'?'all':topic?.[0];add(view(o.en,t,group),(fr()?o.fr:o.en)+(topic?' · '+L(topic[1],topic[2]):''));}
+if(topic){const t=topic[0]==='branches'?'experience':topic[0]==='plans'?'commitments':topic[0];add(view(null,t,group),L(topic[1],topic[2])+' · '+L('Public service-wide','Ensemble de la fonction publique'));}
 for(const {t} of tools.map(t=>({t,s:score(q,t[3])})).filter(x=>x.s).sort((a,b)=>b.s-a.s).slice(0,4))add(localized(t[0]),L(t[1],t[2]));
 status.textContent=results.length?L('Matching resources','Ressources correspondantes'):L('No close match. Try the guided assistant or browse all tools.','Aucun résultat proche. Essayez l’assistant guidé ou parcourez tous les outils.');
 if(!results.length){add(localized('#data-assistant'),L('Guided data assistant','Assistant de données guidé'));add(localized('companion-sites/'),L('All tools by theme','Tous les outils par thème'));}
