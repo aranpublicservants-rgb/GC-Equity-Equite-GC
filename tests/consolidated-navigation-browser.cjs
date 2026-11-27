@@ -71,6 +71,7 @@ async function cellText(box,rowLocator,label){
   assert.equal(await box.locator('#gce-branch-output tbody tr').count(),rec.branches.length*m.length,slug+' two rows per branch');
   /* The shared Chart view opens as a heatmap of branches by employee group, with no filtering first. */
   await box.locator('#gce-branch-output table').first().scrollIntoViewIfNeeded();
+  const local=box.locator('.dv-local-options').first();await local.waitFor({timeout:30000});if(!await local.evaluate(el=>el.open))await local.locator('summary').click();
   const chartButton=box.getByRole('button',{name:lang==='fr'?'Graphique':'Chart',exact:true}).first();
   await chartButton.waitFor({timeout:30000});await chartButton.click();
   assert.equal(await box.getByLabel(lang==='fr'?'Type de graphique':'Chart type',{exact:true}).first().inputValue(),'heatmap',slug+' chart opens as a heatmap');

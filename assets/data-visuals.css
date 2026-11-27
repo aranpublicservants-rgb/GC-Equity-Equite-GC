@@ -19,3 +19,5 @@
 
 .dv-local-options>summary{cursor:pointer;font-size:.95rem;font-weight:650;min-height:44px;display:list-item;padding:.6rem .15rem}.dv-local-options[open]>.dv-toolbar{margin:.5rem 0}.dv-widget:has(.dv-local-options:not([open])){padding:.15rem .75rem;margin:.55rem 0;background:transparent;border-color:transparent}.dv-copy-status{align-self:center;font-size:.9rem}
 @media print{.dv-local-options{display:none!important}}
+
+.dv-period-choice{display:grid;gap:.3rem;font-weight:600;margin:.8rem 0;max-width:45rem}.dv-explorer-preview{min-width:0}.dv-explorer-preview:has(>.dv-explorer-table[data-dv-hidden]){display:none}

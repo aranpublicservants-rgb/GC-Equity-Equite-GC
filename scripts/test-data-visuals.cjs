@@ -94,3 +94,12 @@ test('chart families classify related views without combining source rows',()=>{
  assert.deepEqual(V.points(a).rows.map(x=>x.values[0]),[null,0]);
  assert.deepEqual(V.points(b).rows.map(x=>x.values[0]),[99]);
 });
+
+
+test('wide historical tables offer one exact trend per published group',()=>{
+ const p=V.profile(['Group','2021','2022','2023'],[['A','3%','X','0%'],['B','4%','5%','6%']],{title:'Workforce representation',sources:'https://example.org/series'});
+ assert.equal(V.periodColumns(p).length,3);
+ const trend=V.periodProfile(p,0);assert.deepEqual(trend.rows,[['2021','3%'],['2022','X'],['2023','0%']]);assert.deepEqual(V.points(trend,{x:0}).rows.map(r=>r.values[0]),[3,null,0]);assert.ok(V.trendAllowed(trend,V.points(trend,{x:0})));assert.deepEqual(trend.sources,p.sources);
+ const dup=V.profile(p.headers,[...p.rows,['A','2%','3%','4%']]);assert.equal(V.periodColumns(dup).length,0);
+ const mix=V.profile(['Group','2021','2022'],[['A','4%','50']]);assert.equal(V.periodColumns(mix).length,0);
+});

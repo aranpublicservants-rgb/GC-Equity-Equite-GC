@@ -104,7 +104,26 @@
   for(const val of [title,context]){const t=norm(val);for(const [key,re] of rules)if(re.test(t))return key;}
   return 'other';
  }
- const api={numeric,missingLabel,metricKind,profile,points,defaultDimension,trendAllowed,completeResponses,pivot,csvText,chartFamily,families};
+ function periodColumns(p){
+  const cols=p.metrics.filter(m=>/^20\d{2}(?:[-–/]\d{2,4})?(?:\s*\(%\))?$/.test(norm(m.label)));
+  if(cols.length<2||cols.some(m=>m.kind!==cols[0].kind))return [];
+  const dim=p.dimensions.find(d=>d.index===0&&!d.period);
+  if(!dim||p.dimensions.length!==1||new Set(p.rows.map(r=>String(r[0]))).size!==p.rows.length)return [];
+  const years=cols.map(c=>c.label.replace(/\s*\(%\)$/,'').trim());
+  if(new Set(years).size!==years.length)return [];
+  return cols;
+ }
+ function periodProfile(p,index){
+  const cols=periodColumns(p),row=p.rows[index];
+  if(!cols.length||!row)return null;
+  const fr=p.lang.startsWith('fr'),kind=cols[0].kind,metric=kind==='percent'?(fr?'Résultat publié (%)':'Published result (%)'):kind==='count'?(fr?'Nombre publié':'Published count'):(fr?'Valeur':'Value');
+  const title=p.title+' · '+String(row[0]),headers=[fr?'Période':'Period',metric];
+  const rows=cols.map(c=>[c.label.replace(/\s*\(%\)$/,'').trim(),row[c.index]]);
+  const out=profile(headers,rows,{lang:p.lang,title,scope:p.scope,sources:p.sources});
+  if(out.metrics.length!==1||out.metrics[0].kind!==kind)return null;
+  return out;
+ }
+ const api={numeric,missingLabel,metricKind,profile,points,defaultDimension,trendAllowed,completeResponses,pivot,csvText,chartFamily,families,periodColumns,periodProfile};
  function start(win){
   const doc=win.document,ownScript=doc.currentScript,assetURL=new URL('data-visuals.css',ownScript?.src||new URL('assets/',doc.baseURI));
   if(!doc.getElementById('gce-visual-style')){const link=doc.createElement('link');link.id='gce-visual-style';link.rel='stylesheet';link.href=assetURL.href;doc.head.append(link);}
@@ -180,7 +199,7 @@
   function mount(table,p){
    const host=node('section','dv-widget');host.setAttribute('aria-label',L(p.lang,'Data view options','Options de visualisation'));const wrapper=table.closest('.table-scroll,.gce-table-wrap,.gcw-table-wrap,.tblwrap,.eq-table-scroll,.eq-native-table-wrap,.scroll')||table;const older=wrapper.previousElementSibling;if(older?.matches('.dp-bars,.isc-bars'))older.hidden=true;wrapper.before(host);
    const state=makeState(p);
-   const w={table,host,wrapper,state,p,signature:'',controls:null,dirty:false};host._gceSourceTable=table;widgets.set(table,w);active.add(w);if(lazy)lazy.observe(host);build(w);return w;
+   const w={table,host,wrapper,state,p,signature:'',controls:null,dirty:false,optionsOpen:false};host._gceSourceTable=table;widgets.set(table,w);active.add(w);if(lazy)lazy.observe(host);build(w);return w;
   }
   function build(w){
    const {host,state,p}=w,l=p.lang;host.replaceChildren();const id='dv-'+(++sequence),toolbar=node('div','dv-toolbar'),group=node('div','dv-views');group.setAttribute('role','group');group.setAttribute('aria-label',L(l,'View this dataset','Afficher ce jeu de données'));
@@ -188,7 +207,7 @@
    toolbar.append(group);
    if(!w.central){const open=node('button','dv-open-explorer',L(l,'Open in chart explorer','Ouvrir dans l’explorateur de graphiques'));open.type='button';open.addEventListener('click',()=>{mountExplorer();if(explorer){w.state.view='table';display(w);explorer.panel.open=true;refreshExplorer(w.table);explorer.panel.scrollIntoView({block:'start'});explorer.dataset.focus();}});toolbar.append(open);}
    let localOptions=null;
-   if(w.central)host.append(toolbar);else{localOptions=node('details','dv-local-options');localOptions.open=state.view!=='table';localOptions.append(node('summary','',L(l,'Chart options','Options de graphique')),toolbar);host.append(localOptions);}
+   if(w.central)host.append(toolbar);else{localOptions=node('details','dv-local-options');localOptions.open=state.view!=='table'||w.optionsOpen;localOptions.addEventListener('toggle',()=>{w.optionsOpen=localOptions.open;});localOptions.append(node('summary','',L(l,'Chart options','Options de graphique')),toolbar);host.append(localOptions);}
    const controls=node('div','dv-controls');host.append(controls);
    const field=(title,key,options,callback)=>{const lab=node('label','',title),s=node('select');s.id=id+'-'+key;s.setAttribute('aria-label',title);lab.htmlFor=s.id;for(const [value,label]of options){const o=node('option','',label);o.value=String(value);s.append(o);}s.value=String(state[key]);if(s.value===''){s.selectedIndex=0;state[key]=s.value;}s.addEventListener('change',()=>{state[key]=s.value;callback?callback():render(w);});lab.append(s);controls.append(lab);return s;};
    const measurement=p.metrics.find(m=>m.index===Number(state.measure))||p.metrics[0];state.measure=measurement.index;
@@ -213,7 +232,7 @@
    w.controls={views,controls,note,figure,frame,details,downloads,method,compare,col,chart,localOptions};display(w);
   }
   function closeOtherPlots(w){
-   for(const x of active)if(x!==w&&x.state.view!=='table'){x.state.view='table';display(x);if(x.controls?.localOptions)x.controls.localOptions.open=false;}
+   for(const x of active)if(x!==w&&x.state.view!=='table'){x.state.view='table';display(x);if(x.controls?.localOptions){x.optionsOpen=false;x.controls.localOptions.open=false;}}
    if(!w.central&&explorer?.current&&explorer.current.state.view!=='table'){explorer.current.state.view='table';display(explorer.current);}
   }
   function display(w){const {state,controls:c,wrapper}=w,show=state.view!=='table';if(show&&c.localOptions)c.localOptions.open=true;for(const [view,b]of Object.entries(c.views))b.setAttribute('aria-pressed',String(state.view===view));wrapper.toggleAttribute('data-dv-hidden',state.view==='chart');for(const n of [c.controls,c.note,c.figure,c.downloads,c.method])n.hidden=!show;if(show)render(w);}
@@ -229,13 +248,13 @@
    c.downloads.querySelectorAll('button').forEach(b=>b.disabled=false);c.frame.append(svgPlot(p,pts,state,c.details));
   }
   function inView(table){
-   if(!table.isConnected||table.closest('.dv-widget,.dv-explorer,.gcw-dialog,.evidence-chart,[data-no-visual],[hidden],[aria-hidden="true"]'))return false;
+   if(!table.isConnected||table.closest('.dv-widget,.dv-explorer,.gcw-dialog,[data-no-visual],[hidden],[aria-hidden="true"]'))return false;
    const lang=table.closest('[lang]')?.lang||doc.documentElement.lang;
    if(lang.slice(0,2)!==doc.documentElement.lang.slice(0,2))return false;
    return !!table.getClientRects().length;
   }
   function chartContext(table){
-   const section=table.closest('section[id],section:has(> h2),section:has(> h3),.gce-data-block,.dp-trend');
+   const section=table.closest('.evidence-chart,section[id],section:has(> h2),section:has(> h3),.gce-data-block,.dp-trend');
    return section?.querySelector(':scope > h2,:scope > h3,:scope > h4')?.textContent.trim()||'';
   }
   function sourceTable(p){
@@ -299,8 +318,20 @@
    if(!r)return;
    if(!inView(r.table)){e.status.textContent=L(doc.documentElement.lang,'This table is no longer in the current view. Refresh available tables.','Ce tableau ne figure plus dans la vue actuelle. Actualisez les tableaux disponibles.');e.original.hidden=true;return;}
    const p=dataFor(r.table);if(!p?.metrics.length||!p.dimensions.length){e.status.textContent=L(doc.documentElement.lang,'This table has changed. Refresh available tables.','Ce tableau a changé. Actualisez les tableaux disponibles.');return;}
-   const host=node('section','dv-widget'),wrapper=sourceTable(p);host.setAttribute('aria-label',L(p.lang,'Consolidated chart options','Options de graphique regroupées'));e.slot.append(host,wrapper);
-   const state=makeState(p);state.view='chart';const w={table:r.table,host,wrapper,state,p,central:true,controls:null};e.current=w;closeOtherPlots(w);build(w);
+   const host=node('section','dv-widget'),preview=node('div','dv-explorer-preview');host.setAttribute('aria-label',L(p.lang,'Consolidated chart options','Options de graphique regroupées'));
+   const period=periodColumns(p);
+   function show(profile,trend=false){
+    preview.replaceChildren();const wrapper=sourceTable(profile);preview.append(wrapper);
+    const state=makeState(profile);state.view='chart';if(trend){state.kind='trend';state.x=0;state.measure=profile.metrics[0].index;state.compare='';}
+    const w={table:r.table,host,wrapper,state,p:profile,central:true,controls:null};e.current=w;closeOtherPlots(w);build(w);
+   }
+   if(period.length){const choice=node('label','dv-period-choice'),select=node('select');select.id='gce-chart-period-series';choice.htmlFor=select.id;
+    choice.append(node('span','',L(p.lang,'View by group or period','Afficher par groupe ou période')),select);
+    select.append(new Option(L(p.lang,'Compare groups (published table)','Comparer les groupes (tableau publié)'),'all'));
+    p.rows.forEach((row,i)=>{if(periodProfile(p,i))select.append(new Option(L(p.lang,'Trend: ','Évolution : ')+row[0],String(i)));});
+    if(select.options.length>1){e.slot.append(choice);select.addEventListener('change',()=>{const selected=select.value==='all'?null:periodProfile(p,Number(select.value));show(selected||p,!!selected);});}
+   }
+   e.slot.append(host,preview);show(p);
   }
   function enhance(table){
    if(!table.isConnected||table.closest('.dv-widget,.dv-explorer,.gcw-dialog,.evidence-chart,[data-no-visual]'))return;
