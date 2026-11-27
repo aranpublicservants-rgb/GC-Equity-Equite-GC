@@ -39,6 +39,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REGISTER = json.loads((ROOT / 'data/public-source-register-2026-11-24.json').read_text(encoding='utf-8'))
 STATUS = json.loads((ROOT / 'data/source-register-status.json').read_text(encoding='utf-8'))
+OVERRIDE_FILE = ROOT / 'data/source-register-overrides-2026-11-27.json'
+OVERRIDES = json.loads(OVERRIDE_FILE.read_text(encoding='utf-8')) if OVERRIDE_FILE.exists() else {}
 API = 'https://open.canada.ca/data/api/action/package_show?id='
 SMALL_MAX = 60_000_000      # stored whole (gzip) on main when the original is at most this size
 FILE_MAX = 60_000_000       # largest single file taken from a dataset page
@@ -56,7 +58,12 @@ def targets():
     for r in STATUS['rows']:
         if r['excluded'] or r['hosted']:
             continue
-        e = by_id[r['id']]
+        e = dict(by_id[r['id']])
+        override = OVERRIDES.get(r['id'], {})
+        if override.get('source'):
+            e['source'] = override['source']
+        if override.get('snapshots'):
+            e['snapshots'] = override['snapshots']
         if not (e.get('source') or '').startswith('http'):
             continue
         out.append(e)
@@ -256,7 +263,16 @@ def main():
             continue
         try:
             m = re.search(r'open\.canada\.ca/data/(?:en/|fr/)?dataset/(' + UUID.pattern + r')/?$', url)
-            if m:
+            if e.get('snapshots'):
+                # Store each actual report, not just the directory that links to the reports.
+                for snapshot in e['snapshots']:
+                    try:
+                        rec = take_file(snapshot['url'], e['id'], work, snapshot.get('title'), 'HTML')
+                        rec.update(kind='page-snapshot', language=snapshot.get('language'), stored=True)
+                        item['files'].append(rec)
+                    except Exception as err:
+                        item['failures'].append({'url': snapshot['url'], 'error': str(err)[:300]})
+            elif m:
                 if ('api', m.group(1)) not in MEMO:
                     MEMO[('api', m.group(1))] = json.loads(curl(API + m.group(1), max_time=120))['result']
                 pkg = MEMO[('api', m.group(1))]
