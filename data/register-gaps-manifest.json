@@ -3206,21 +3206,35 @@
    "files": [
     {
      "url": "https://www.canada.ca/content/dam/psc-cfp/documents/open-info/22004/22004-ssd-questionnaire-results-2021-eng.pdf",
-     "format": "PDF/UA",
+     "title": {
+      "fr": "Résultats du questionnaire annuel de la Division du soutien en dotation",
+      "en": "Staffing Support Division Annual Questionnaire Results"
+     },
+     "bytes": 212666,
+     "sha256": "2e8bef497aeb61c8766ebdcd85cca71181d5f957c2478c972f5c8bd22cbb3dbb",
+     "retrieved": "2026-11-27T11:49:11Z",
+     "path": "data/register-gaps-2026-11/u-4f142afc6bc82e1e/22004-ssd-questionnaire-results-2021-eng.pdf.gz",
+     "format": "PDF",
      "language": [
       "en"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "stored": true
     },
     {
      "url": "https://www.canada.ca/content/dam/psc-cfp/documents/open-info/22004/22004-ssd-questionnaire-results-2021-fra.pdf",
-     "format": "PDF/UA",
+     "title": {
+      "fr": "Résultats du questionnaire annuel de la Division du soutien en dotation",
+      "en": "Staffing Support Division Annual Questionnaire Results"
+     },
+     "bytes": 264086,
+     "sha256": "7c95f4a69acc3d029b3e49df3cb299668c76c21f132f929385fc957ac06d4a9d",
+     "retrieved": "2026-11-27T11:49:12Z",
+     "path": "data/register-gaps-2026-11/u-c43a8514feb6bdae/22004-ssd-questionnaire-results-2021-fra.pdf.gz",
+     "format": "PDF",
      "language": [
       "fr"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "stored": true
     }
    ],
    "failures": [],
@@ -7204,21 +7218,27 @@
    "files": [
     {
      "url": "https://www.canada.ca/en/public-service-commission/services/publications/internal-audits/review-priority-entitlements-program.html",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "en"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-fdd1a279e7b0c501/page-snapshot.html.gz",
+     "bytes": 140081,
+     "sha256": "f011edb450202d0f57aefd2afd9564999c7fec60ee1605f8f4ce5be268ce70e1",
+     "retrieved": "2026-11-27T11:49:14Z"
     },
     {
      "url": "https://www.canada.ca/fr/commission-fonction-publique/services/publications/verification-interne1/examen-programme-droits-priorite.html",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "fr"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-d77788a2dd40e2d0/page-snapshot.html.gz",
+     "bytes": 160746,
+     "sha256": "6099f6bd555aa8f182e7ac7f8c23ac69ac53744178ed282890a1a13183d4ff7f",
+     "retrieved": "2026-11-27T11:49:17Z"
     }
    ],
    "failures": [],
@@ -7411,21 +7431,27 @@
    "files": [
     {
      "url": "https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/employment-equity-annual-reports/employment-equity-public-service-canada-2023-2024.html",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "en"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-65aea715e3abccc7/page-snapshot.html.gz",
+     "bytes": 131997,
+     "sha256": "67b852ea60227ebe46c37f3418ae8c468f048058429ca4cae164ad2a5f252b96",
+     "retrieved": "2026-11-27T11:49:20Z"
     },
     {
      "url": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/equite-emploi-rapports-annuel/equite-emploi-fonction-publique-canada-2023-2024.html",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "fr"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-5a76aa77a5a1ba66/page-snapshot.html.gz",
+     "bytes": 158944,
+     "sha256": "1aecb50be7ec56c98e23596ba81dd0c4101444973f1c0d4063c8febff33a67e4",
+     "retrieved": "2026-11-27T11:49:22Z"
     }
    ],
    "failures": [],
@@ -8827,27 +8853,17 @@
    "id": "GC-0462",
    "name": "TBS Accessibility Plan 2022-25 (Our Future Is Accessible)",
    "source": "https://open.canada.ca/data/en/dataset/6a9248d9-0e3e-4547-844c-afedd1a8ec8d",
-   "files": [
+   "files": [],
+   "failures": [
     {
      "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
-     "format": "HTML",
-     "language": [
-      "en"
-     ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 404\n"
     },
     {
      "url": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html",
-     "format": "HTML",
-     "language": [
-      "fr"
-     ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 404\n"
     }
    ],
-   "failures": [],
    "datasetTitle": {
     "fr": "Plan sur l’accessibilité du SCT pour 2022-2025. Notre avenir est accessible",
     "en": "TBS Accessibility Plan 2022–25. Our Future Is Accessible"
@@ -8877,23 +8893,29 @@
    "files": [
     {
      "url": "https://www.chrc-ccdp.gc.ca/resources/publications/2025-2026-departmental-results-report",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "en",
       "fr"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-652096d9cd545384/page-snapshot.html.gz",
+     "bytes": 188796,
+     "sha256": "d7240984a67039c2ca7279a2d8a703137f362a4bb072b8d40610230143076ea4",
+     "retrieved": "2026-11-27T11:49:28Z"
     },
     {
      "url": "https://www.ccdp-chrc.gc.ca/ressources/publications/rapport-sur-les-resultats-ministeriels-2025-2026",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "en",
       "fr"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-10d4c8fed77b9307/page-snapshot.html.gz",
+     "bytes": 219325,
+     "sha256": "c5b109d55b72917d4230af5c794bf4ffedd7d9bcec07042435b8912613e67441",
+     "retrieved": "2026-11-27T11:49:29Z"
     }
    ],
    "failures": [],
@@ -8909,21 +8931,27 @@
    "files": [
     {
      "url": "https://www.chrc-ccdp.gc.ca/resources/publications/chrc-2026-2027-departmental-plan",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "en"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-1820ccb8cd717ec0/page-snapshot.html.gz",
+     "bytes": 193808,
+     "sha256": "4aa75043d9dee80f8bb41159e703e54bd049a34a6673df28e2ff637bf037508f",
+     "retrieved": "2026-11-27T11:49:30Z"
     },
     {
      "url": "https://www.ccdp-chrc.gc.ca/ressources/publications/plan-ministeriel-de-la-ccdp-pour-2026-2027",
-     "format": "HTML",
+     "kind": "page-snapshot",
+     "stored": true,
      "language": [
       "fr"
      ],
-     "stored": false,
-     "reason": "web page or format not stored"
+     "path": "data/register-gaps-2026-11/u-cd99bcbcbbd9800b/page-snapshot.html.gz",
+     "bytes": 183390,
+     "sha256": "e186ff7ce11ac4bb1dda7515bb4053570c72c0c2d87fb399930a44f1184fa789",
+     "retrieved": "2026-11-27T11:49:30Z"
     }
    ],
    "failures": [],

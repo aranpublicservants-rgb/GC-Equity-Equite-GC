@@ -4,14 +4,14 @@
  "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 363,
-  "hosted": 382,
-  "downloadable": 367,
+  "verified": 368,
+  "hosted": 387,
+  "downloadable": 372,
   "searchable": 176,
   "departmental": 171,
   "analysis": 113,
   "excluded": 155,
-  "noEvidence": 9
+  "noEvidence": 4
  },
  "rows": [
   {
@@ -3666,9 +3666,12 @@
    "source": "https://open.canada.ca/data/en/dataset/47ed4bd6-8e22-4aa3-97dd-9dbf805f6377",
    "inventoryStatus": "web-only",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "sha256-recorded-at-download",
+   "hosted": [
+    "data/register-gaps-2026-11/u-4f142afc6bc82e1e/22004-ssd-questionnaire-results-2021-eng.pdf.gz",
+    "data/register-gaps-2026-11/u-c43a8514feb6bdae/22004-ssd-questionnaire-results-2021-fra.pdf.gz"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6554,9 +6557,12 @@
    "source": "https://open.canada.ca/data/en/dataset/1ea394d0-6608-4b74-8fb2-61464beb91bd",
    "inventoryStatus": "web-only",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "page-snapshot",
+   "hosted": [
+    "data/register-gaps-2026-11/u-d77788a2dd40e2d0/page-snapshot.html.gz",
+    "data/register-gaps-2026-11/u-fdd1a279e7b0c501/page-snapshot.html.gz"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -6917,9 +6923,12 @@
    "source": "https://open.canada.ca/data/en/dataset/b403f39a-fc68-415b-845c-c20fc6686d2f",
    "inventoryStatus": "web-only",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "page-snapshot",
+   "hosted": [
+    "data/register-gaps-2026-11/u-5a76aa77a5a1ba66/page-snapshot.html.gz",
+    "data/register-gaps-2026-11/u-65aea715e3abccc7/page-snapshot.html.gz"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -10423,9 +10432,12 @@
    "source": "https://open.canada.ca/data/en/dataset/b9fb8c81-049e-4be0-98fa-cc2e82a840fb",
    "inventoryStatus": "web-only",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "page-snapshot",
+   "hosted": [
+    "data/register-gaps-2026-11/u-10d4c8fed77b9307/page-snapshot.html.gz",
+    "data/register-gaps-2026-11/u-652096d9cd545384/page-snapshot.html.gz"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
@@ -10440,9 +10452,12 @@
    "source": "https://open.canada.ca/data/en/dataset/69cdb20c-3985-463a-b7e8-355ac0886aa3",
    "inventoryStatus": "web-only",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "page-snapshot",
+   "hosted": [
+    "data/register-gaps-2026-11/u-1820ccb8cd717ec0/page-snapshot.html.gz",
+    "data/register-gaps-2026-11/u-cd99bcbcbbd9800b/page-snapshot.html.gz"
+   ],
+   "downloadable": true,
    "searchable": false,
    "departmental": 0,
    "analysis": [],
