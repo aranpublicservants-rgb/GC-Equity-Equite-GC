@@ -23,6 +23,10 @@ jobs:
           node --check gc-shared-shell.js
           python3 scripts/apply-shared-shell.py
           python3 scripts/apply-shared-shell.py --check
+          python3 scripts/build-assistant-catalogue.py
+          python3 scripts/update-data-checksums.py
+          python3 scripts/build-assistant-catalogue.py --check
+          python3 scripts/update-data-checksums.py --check
       - name: Publish shared format without replacing existing content
         env:
           GH_TOKEN: ${{ github.token }}
@@ -30,7 +34,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for attempt in 1 2 3; do
-            git add -u -- '*.html'
+            git add -u -- '*.html' assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Apply common bilingual GC Equity website shell"
             if git push origin HEAD:main; then
@@ -41,6 +45,10 @@ jobs:
             git reset --hard origin/main
             python3 scripts/apply-shared-shell.py
             python3 scripts/apply-shared-shell.py --check
+            python3 scripts/build-assistant-catalogue.py
+            python3 scripts/update-data-checksums.py
+            python3 scripts/build-assistant-catalogue.py --check
+            python3 scripts/update-data-checksums.py --check
           done
           exit 1
       - uses: actions/setup-node@v4
