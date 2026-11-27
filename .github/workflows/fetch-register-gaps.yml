@@ -15,6 +15,9 @@ on:
       ids:
         description: 'Only these register entries, comma-separated (optional)'
         default: ''
+      retry_failed:
+        description: 'Retry entries that failed in earlier runs (true or false)'
+        default: 'false'
       budget:
         description: 'Minutes of downloading per run before saving and starting the next run'
         default: '80'
@@ -36,7 +39,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download, store and split
-        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}" --budget "${{ inputs.budget || '80' }}"
+        run: python -u scripts/fetch-register-gaps.py "$RUNNER_TEMP/gaps" --limit "${{ inputs.limit }}" --max-bytes "${{ inputs.max_bytes }}" --ids "${{ inputs.ids }}" --budget "${{ inputs.budget || '80' }}" $([ "${{ inputs.retry_failed }}" = true ] && echo --retry-failed)
       - name: Publish large parts to the pses-data branch
         run: |
           set -e

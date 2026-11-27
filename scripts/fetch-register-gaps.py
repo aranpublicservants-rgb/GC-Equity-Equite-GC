@@ -45,7 +45,9 @@ FILE_MAX = 60_000_000       # largest single file taken from a dataset page
 PART_BYTES = 40_000_000     # compressed size at which a new part starts
 KEEP_FORMATS = {'CSV', 'XLSX', 'XLS', 'DOCX', 'DOC', 'PDF', 'PPTX', 'TXT', 'JSON'}
 UUID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
-UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
+# An honest maintenance agent: canada.ca slowed downloads to a crawl for a browser-like agent sent
+# from GitHub's servers, while this agent (also used by scripts/partition-large-pses.py) is served.
+UA = 'GC-Equity-Equite-GC site maintenance (github.com/aranpublicservants-rgb/GC-Equity-Equite-GC)'
 
 
 def targets():
@@ -64,8 +66,7 @@ def targets():
 def curl(url, dest=None, max_time=900, max_size=None):
     """Fetch with curl (Canada.ca refuses some other clients from GitHub servers)."""
     cmd = ['curl', '-sSL', '--fail', '--http1.1', '--retry', '1', '--retry-delay', '10', '--speed-limit', '100000', '--speed-time', '60',
-           '--connect-timeout', '30', '--max-time', str(max_time), '-A', UA,
-           '-H', 'Accept-Language: en-CA,en;q=0.8']
+           '--connect-timeout', '30', '--max-time', str(max_time), '-A', UA]
     if dest:
         cmd += ['-o', str(dest)]
     if max_size:
