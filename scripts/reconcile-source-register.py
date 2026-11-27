@@ -177,7 +177,7 @@ def main():
     gap_file = ROOT / 'data/register-gaps-manifest.json'
     if gap_file.exists():
         for item in json.loads(gap_file.read_text(encoding='utf-8'))['entries']:
-            gaps[item['id']] = [f for f in item.get('files', []) if f.get('stored')]
+            gaps[item['id']] = [dict(f, datasetLevel=item.get('datasetLevel', False)) for f in item.get('files', []) if f.get('stored')]
     sizes = size_index()
     url_count = {}
     for x in register['entries']:
@@ -231,7 +231,8 @@ def main():
                 ok = hashlib.sha256(gzip.decompress(p.read_bytes())).hexdigest() == f['sha256']
                 hosted.append(f['path'])
                 if ok and not verified:
-                    verified = 'sha256-recorded-at-download' if f.get('kind') != 'page-snapshot' else 'page-snapshot'
+                    verified = ('page-snapshot' if f.get('kind') == 'page-snapshot' else
+                                'dataset-level-copy' if f.get('datasetLevel') else 'sha256-recorded-at-download')
             elif f.get('branch') == 'pses-data':
                 hosted.append('pses-data:' + f['directory'])
                 if not verified and sum(x['rows'] for x in f['parts']) == f.get('rows'):

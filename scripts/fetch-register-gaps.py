@@ -148,7 +148,23 @@ def split_parts(raw, dest_dir, stem):
     return parts, rows
 
 
+MEMO = {}
+
+
+def folder_for(url):
+    """One storage folder per publisher file, so a file listed by several entries is kept once."""
+    return 'u-' + hashlib.sha256(url.encode()).hexdigest()[:16]
+
+
 def take_file(url, entry_id, work, label=None, fmt=None):
+    if url in MEMO:
+        return dict(MEMO[url], sharedWith=MEMO[url].get('sharedWith', []) + [entry_id])
+    rec = _take_file(url, folder_for(url), work, label, fmt)
+    MEMO[url] = rec
+    return rec
+
+
+def _take_file(url, entry_id, work, label=None, fmt=None):
     tmp = work / 'download.tmp'
     if tmp.exists():
         tmp.unlink()
@@ -203,6 +219,9 @@ def main():
     if limit:
         chosen = chosen[:limit]
     done_ids = {e['id'] for e in chosen}
+    shared = {}
+    for e in targets():
+        shared[e['source']] = shared.get(e['source'], 0) + 1
     manifest['entries'] = [k for k in kept if k['id'] not in done_ids]
     for e in chosen:
         url = e['source']
@@ -214,9 +233,24 @@ def main():
         try:
             m = re.search(r'open\.canada\.ca/data/(?:en/|fr/)?dataset/(' + UUID.pattern + r')/?$', url)
             if m:
-                pkg = json.loads(curl(API + m.group(1), max_time=120))['result']
+                if ('api', m.group(1)) not in MEMO:
+                    MEMO[('api', m.group(1))] = json.loads(curl(API + m.group(1), max_time=120))['result']
+                pkg = MEMO[('api', m.group(1))]
                 item['datasetTitle'] = pkg.get('title_translated') or pkg.get('title')
-                for res in pkg.get('resources', []):
+                resources = pkg.get('resources', [])
+                if shared.get(url, 1) > 1:
+                    # Several register entries share this dataset address: keep the files whose
+                    # titles match this entry's name; if none match, keep them all (dataset level).
+                    words = set(re.findall(r'[a-z]{4,}', e['name'].lower()))
+                    def score(res):
+                        t = ' '.join(str(x) for x in [res.get('name'), (res.get('name_translated') or {}).get('en') if isinstance(res.get('name_translated'), dict) else ''] if x).lower()
+                        return len(words & set(re.findall(r'[a-z]{4,}', t)))
+                    best = max((score(r) for r in resources), default=0)
+                    if best >= 2:
+                        resources = [r for r in resources if score(r) == best]
+                    else:
+                        item['datasetLevel'] = True
+                for res in resources:
                     fmt = str(res.get('format', '')).upper()
                     lang = res.get('language')
                     if fmt not in KEEP_FORMATS:
@@ -238,13 +272,18 @@ def main():
                 rec = take_file(url, e['id'], work, e['name'])
                 rec['stored'] = True
                 item['files'].append(rec)
+            elif url in MEMO:
+                item['files'].append(dict(MEMO[url], sharedWith=[e['id']]))
             else:
                 html = curl(url, max_time=120)
-                d = work / 'main/data/register-gaps-2026-11' / e['id']
+                d = work / 'main/data/register-gaps-2026-11' / folder_for(url)
                 d.mkdir(parents=True, exist_ok=True)
                 target = d / 'page-snapshot.html.gz'
                 with gzip.GzipFile(filename='page-snapshot.html', mode='wb', fileobj=open(target, 'wb'), compresslevel=9, mtime=0) as gz:
                     gz.write(html)
+                MEMO[url] = {'url': url, 'kind': 'page-snapshot', 'stored': True,
+                             'path': target.relative_to(work / 'main').as_posix(), 'bytes': len(html), 'sha256': hashlib.sha256(html).hexdigest(),
+                             'retrieved': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
                 item['files'].append({'url': url, 'kind': 'page-snapshot', 'stored': True,
                                       'path': target.relative_to(work / 'main').as_posix(),
                                       'bytes': len(html), 'sha256': hashlib.sha256(html).hexdigest(),
