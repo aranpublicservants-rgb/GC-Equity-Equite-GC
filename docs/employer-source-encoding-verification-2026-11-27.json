@@ -7,8 +7,10 @@
       "encoding": "cp850",
       "expected": "6c01fa70cb2b7a43",
       "originalSha256": "a1624ace9ad76a9da9b4fcaf5a26c92d817a23d3586e0fb8c0941a19a60400ff",
-      "actual": "cbf22249bb666803",
-      "blob": "82aa9e86c3839a2a8bf7d309de6954bb7b0f6687"
+      "actual": "6c01fa70cb2b7a43",
+      "blob": "dac980ec5067efb8c36206a14b296ff2c350e4a4",
+      "priorFingerprint": "cbf22249bb666803",
+      "correction": "Correct CP850 decoding; no numeric values changed"
     },
     {
       "name": "csps-ee-representation-2019-2020.csv",
@@ -79,8 +81,10 @@
       "encoding": "cp850",
       "expected": "50310ddc318ba13c",
       "originalSha256": "478a8183f2f080447750c71cef5ad950dafabc9dbc6bd6ada705006d7ea39a29",
-      "actual": "5653c38831a419db",
-      "blob": "8eb902b55e3fabd131b0a7697b9e89b86126f81f"
+      "actual": "50310ddc318ba13c",
+      "blob": "118d66dfafd7aa8cd58e7bc35cdd0170f91b4ea6",
+      "priorFingerprint": "5653c38831a419db",
+      "correction": "Correct CP850 decoding; no numeric values changed"
     },
     {
       "name": "cse-workforce-representation-2022-06-30-fr.csv",
@@ -90,6 +94,24 @@
       "originalSha256": "9f7cd91ddbd17b06b557e39d7118a542597dd7980f283a536aa9c56c06243f2e",
       "actual": "7d27e26ac4799c89",
       "blob": "704a806f6de8bf457efadecbcd1e0f616261677e"
+    },
+    {
+      "name": "equite_en_maitre_d_emploi-2025-2026.csv",
+      "path": "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
+      "expected": "faac515eaee9077f",
+      "originalSha256": "b2b8388a7027ee37585bfa7cb2dc569304a3fd1ac51e7d2c7b47c320dd02d9f6",
+      "encoding": "utf-8-sig",
+      "actual": "faac515eaee9077f",
+      "blob": "4970cdfdfb303324d23da1b8b28cab68baf3cf75"
+    },
+    {
+      "name": "employment-equity-2025-2026.csv",
+      "path": "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv",
+      "expected": "8d13983f2e910db4",
+      "originalSha256": "49a564c2e8bc1842ce9edb1101af049aa689b91dcea3a91597f2c65f93cc402b",
+      "encoding": "utf-8-sig",
+      "actual": "8d13983f2e910db4",
+      "blob": "32f793f6f7d4c87828497cad171f073e7836e65a"
     }
   ]
 }
