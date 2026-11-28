@@ -1,11 +1,13 @@
 {
   "asOf": "2026-11-27",
-  "method": "Original files from the public-data Google Drive staging folders independently materialized; Git blob SHA-1 computed over exact original bytes and compared to GitHub Contents API object SHA. No claim of direct publisher retrieval. Nonmatching CSVs may have encoding changes; consult employer-source-encoding-verification-2026-11-27.json.",
+  "method": "Original files from the public-data Google Drive staging folders independently materialized; Git blob SHA-1 computed over exact original bytes and compared to GitHub Contents API object SHA. No claim of direct publisher retrieval. Nonmatching CSVs may have encoding changes; consult employer-source-encoding-verification-2026-11-27.json. Normalized text fingerprints for byte-different files confirm decoded content under the specified legacy encoding, ignoring BOM, newline and terminal whitespace. They are not cryptographic byte equality.",
   "tally": {
     "total": 72,
     "matched": 56,
     "byteDifferent": 16,
-    "missing": 0
+    "missing": 0,
+    "decodedTextMatched": 16,
+    "contentUnresolved": 0
   },
   "records": [
     {
@@ -432,7 +434,12 @@
       "match": false,
       "registerIds": [
         "GC-0384"
-      ]
+      ],
+      "originalNormalizedFNV64": "3e67cbf56f3f5e52",
+      "hostedNormalizedFNV64": "3e67cbf56f3f5e52",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "84c9b6dbeae074b96da5692d9d212cb585cb770d65355149c28ddac45fac36a9"
     },
     {
       "name": "cse-employment-equity-2019.csv",
@@ -442,7 +449,12 @@
       "match": false,
       "registerIds": [
         "GC-0384"
-      ]
+      ],
+      "originalNormalizedFNV64": "50310ddc318ba13c",
+      "hostedNormalizedFNV64": "50310ddc318ba13c",
+      "decodedTextMatch": true,
+      "encoding": "cp850",
+      "originalSHA256": "478a8183f2f080447750c71cef5ad950dafabc9dbc6bd6ada705006d7ea39a29"
     },
     {
       "name": "cse-employment-equity-2020.csv",
@@ -472,7 +484,12 @@
       "match": false,
       "registerIds": [
         "GC-0383"
-      ]
+      ],
+      "originalNormalizedFNV64": "7d27e26ac4799c89",
+      "hostedNormalizedFNV64": "7d27e26ac4799c89",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "9f7cd91ddbd17b06b557e39d7118a542597dd7980f283a536aa9c56c06243f2e"
     },
     {
       "name": "csis-designated-group-members-by-age-range-2017-2018.csv",
@@ -539,7 +556,12 @@
       "match": false,
       "registerIds": [
         "GC-0395"
-      ]
+      ],
+      "originalNormalizedFNV64": "6c01fa70cb2b7a43",
+      "hostedNormalizedFNV64": "6c01fa70cb2b7a43",
+      "decodedTextMatch": true,
+      "encoding": "cp850",
+      "originalSHA256": "a1624ace9ad76a9da9b4fcaf5a26c92d817a23d3586e0fb8c0941a19a60400ff"
     },
     {
       "name": "csps-ee-representation-2018-2019.xlsx",
@@ -559,7 +581,12 @@
       "match": false,
       "registerIds": [
         "GC-0396"
-      ]
+      ],
+      "originalNormalizedFNV64": "70d26c6e5357f6e1",
+      "hostedNormalizedFNV64": "70d26c6e5357f6e1",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "401d978937be443705d954aa32e54a8d1a2dc8cdd61deb8c99d9abef30252cc2"
     },
     {
       "name": "csps-ee-representation-2019-2020.xlsx",
@@ -579,7 +606,12 @@
       "match": false,
       "registerIds": [
         "GC-0397"
-      ]
+      ],
+      "originalNormalizedFNV64": "6fca9db4d3dc194a",
+      "hostedNormalizedFNV64": "6fca9db4d3dc194a",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "b304008a2510fc82c67c03bff2532677b3921178cba7f80e170b0107f69ae47f"
     },
     {
       "name": "csps-ee-representation-2020-2021.xlsx",
@@ -599,7 +631,12 @@
       "match": false,
       "registerIds": [
         "GC-0398"
-      ]
+      ],
+      "originalNormalizedFNV64": "387243e5ad893c29",
+      "hostedNormalizedFNV64": "387243e5ad893c29",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "27b1dbdb857afaa800460d416465e25105f487b1946bd1dcac95381bc1264a2b"
     },
     {
       "name": "csps-ee-representation-2021-2022.xlsx",
@@ -619,7 +656,12 @@
       "match": false,
       "registerIds": [
         "GC-0399"
-      ]
+      ],
+      "originalNormalizedFNV64": "e0145343bfc5fdf0",
+      "hostedNormalizedFNV64": "e0145343bfc5fdf0",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "d65de5ef189a70bb325a21f5f21acb20fd218cf129638d8f438293186f40f1bc"
     },
     {
       "name": "csps-ee-representation-2022-2023.xlsx",
@@ -639,7 +681,12 @@
       "match": false,
       "registerIds": [
         "GC-0400"
-      ]
+      ],
+      "originalNormalizedFNV64": "18682321dc331464",
+      "hostedNormalizedFNV64": "18682321dc331464",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "c9e05f0f2cdf0b52c5ed726e5f1b2cece851dd54112c8e61d58596a35e3d9230"
     },
     {
       "name": "csps-ee-representation-2023-2024.xlsx",
@@ -659,7 +706,12 @@
       "match": false,
       "registerIds": [
         "GC-0401"
-      ]
+      ],
+      "originalNormalizedFNV64": "9a9b6f22b11de27e",
+      "hostedNormalizedFNV64": "9a9b6f22b11de27e",
+      "decodedTextMatch": true,
+      "encoding": "cp1252",
+      "originalSHA256": "fe0145e89d1332c57710d23c1276adb81e6036e18a8721ef569481306439acbb"
     },
     {
       "name": "csps-ee-representation-2024-2025.xlsx",
@@ -752,5 +804,6 @@
     "field": "Aboriginal Peoples",
     "originalValue": "90.00%",
     "note": "Original and hosted source agree; anomalous source value must not be silently changed or interpreted without publisher clarification."
-  }
+  },
+  "relatedEvidence": "docs/employer-source-encoding-verification-2026-11-27.json (includes SSC)"
 }
