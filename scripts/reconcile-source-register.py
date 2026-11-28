@@ -185,6 +185,29 @@ def main():
     if gap_file.exists():
         for item in json.loads(gap_file.read_text(encoding='utf-8'))['entries']:
             gaps[item['id']] = [dict(f, datasetLevel=item.get('datasetLevel', False)) for f in item.get('files', []) if f.get('stored')]
+    # Original staging-copy checks are independent of repository checksums. Recheck
+    # each recorded hosted Git blob so later edits cannot inherit old evidence.
+    audited = {}
+    byte_audit = ROOT / 'docs/drive-original-byte-verification-2026-11-27.json'
+    encoding_audit = ROOT / 'docs/employer-source-encoding-verification-2026-11-27.json'
+    if byte_audit.exists():
+        for rec in json.loads(byte_audit.read_text(encoding='utf-8'))['records']:
+            if rec.get('path') and (rec.get('match') or rec.get('decodedTextMatch')):
+                audited[rec['path']] = (rec['hostedGitBlob'], 'drive-original-byte-match' if rec.get('match') else 'drive-original-decoded-text-match')
+    if encoding_audit.exists():
+        for rec in json.loads(encoding_audit.read_text(encoding='utf-8'))['rows']:
+            if rec.get('expected') == rec.get('actual') and rec.get('blob'):
+                audited.setdefault(rec['path'], (rec['blob'], 'drive-original-decoded-text-match'))
+
+    def audited_method(path):
+        item = audited.get(path)
+        p = ROOT / path
+        if not item or not p.is_file():
+            return None
+        body = p.read_bytes()
+        blob = hashlib.sha1(b'blob ' + str(len(body)).encode('ascii') + b'\\0' + body).hexdigest()
+        return item[1] if blob == item[0] else None
+
     sizes = size_index()
     url_count = {}
     for x in register['entries']:
@@ -256,6 +279,10 @@ def main():
                 hosted.append('pses-data:' + f['directory'])
                 if not verified and sum(x['rows'] for x in f['parts']) == f.get('rows'):
                     verified = 'sha256-recorded-at-download'
+        # Only promote a multi-file entry when every hosted path has been audited.
+        audit_methods = [audited_method(p) for p in set(hosted)]
+        if not verified and audit_methods and all(audit_methods):
+            verified = ('drive-original-decoded-text-match' if 'drive-original-decoded-text-match' in audit_methods else 'drive-original-byte-match')
         expected_snapshots = overrides.get(e['id'], {}).get('snapshots', [])
         snapshot_coverage = None
         if expected_snapshots:
@@ -305,7 +332,7 @@ def main():
         'asOf': '2026-11-27',
         'register': REGISTER.relative_to(ROOT).as_posix(),
         'method': ('Each register entry is checked against the current repository: recorded SHA-256 values, '
-                   'the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository '
+                   'the pses-data partition manifest, original Drive staging-file byte or decoded-text checks, publisher URLs, resource UUIDs, file names and repository '
                    'paths. Counts for departmental pages are the number of organization files citing the source. '
                    'Hosted and verified are entry-level indicators of at least one copy, not proof that all editions or languages are held. Multi-report snapshot coverage is reported separately. No match means no evidence was found in this repository, not that the source is unavailable.'),
         'entries': len(rows),
