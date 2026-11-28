@@ -13,6 +13,11 @@ on:
       - 'women-femmes/assets/**'
       - 'racism-hazard-prevention/data/**'
       - 'scripts/build-assistant-catalogue.py'
+      - 'scripts/reconcile-source-register.py'
+      - 'scripts/build-register-copies.py'
+      - 'scripts/build-data-coverage.py'
+      - '**/index.html'
+      - 'sources.html'
       - '.github/workflows/update-source-checksums.yml'
   workflow_dispatch:
 
@@ -40,24 +45,34 @@ jobs:
           git checkout -B main origin/main
           python scripts/build-assistant-catalogue.py
           python scripts/build-assistant-catalogue.py --check
+          python scripts/build-register-copies.py
+          python scripts/reconcile-source-register.py
+          python scripts/build-data-coverage.py
           python scripts/update-data-checksums.py
+          python scripts/reconcile-source-register.py --check
+          python scripts/build-data-coverage.py --check
       - name: Commit generated indexes and register only when changed
         run: |
-          if git diff --quiet -- assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256; then
+          if git diff --quiet -- assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256 data/source-register-status.json data-coverage.html register-copies.html; then
             echo "No generated index or checksum updates needed"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256
+          git add assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256 data/source-register-status.json data-coverage.html register-copies.html
           git commit -m "Synchronize generated source catalogue and hosted checksums"
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then exit 0; fi
             git fetch origin main
             git reset --hard origin/main
             python scripts/build-assistant-catalogue.py
+            python scripts/build-register-copies.py
+            python scripts/reconcile-source-register.py
+            python scripts/build-data-coverage.py
             python scripts/update-data-checksums.py
-            git add assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256
+            python scripts/reconcile-source-register.py --check
+            python scripts/build-data-coverage.py --check
+            git add assets/assistant-catalogue.json assets/assistant-catalogue.json.gz data/checksums.sha256 data/source-register-status.json data-coverage.html register-copies.html
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Synchronize generated source catalogue and hosted checksums"
           done
