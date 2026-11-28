@@ -714,6 +714,12 @@
     "group": "departments"
   },
   {
+    "path": "equity-history/employee-networks/",
+    "en": "History of Employment Equity and Employee Networks",
+    "fr": null,
+    "group": "other"
+  },
+  {
     "path": "equity-history/",
     "en": "From Exclusion to Accountability",
     "fr": "Histoire de l’équité : de l’exclusion à la responsabilisation",
