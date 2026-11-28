@@ -1,0 +1,327 @@
+{
+  "method": "Original 2014 labelled demographic data, 2011 original raw data decoded with original 2011 departmental and demographic dictionaries, and 2008 raw data with candidate 2011 dictionary. FNV-1a 64 compares group-major percentages and response counts; 2008 identity and wording not independently established. '-' means no original matrix was found under this identity and is not a failed numerical test.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions2014": [
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70"
+  ],
+  "questionsEarlier": [
+    "Q43",
+    "Q45",
+    "Q53"
+  ],
+  "rows": [
+    {
+      "id": "immigration-and-refugee-board-of-canada",
+      "blob": "cc8b3e5192a335be4a8643d95ce4cd15fe7f22ab",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "afb96a15422bd96a",
+          "actual": "afb96a15422bd96a",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "61f9a71422e1d1cf",
+          "actual": "61f9a71422e1d1cf",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "d61cf4021906b421",
+          "actual": "d61cf4021906b421",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "innovation-science-and-economic-development-canada",
+      "blob": "c8f01c6012863869c28e163fcaa7b271a767f856",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "0e496f661966bd00",
+          "actual": "0e496f661966bd00",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "ea1f589bf53c692d",
+          "actual": "ea1f589bf53c692d",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "0a238716ec8b3757",
+          "actual": "0a238716ec8b3757",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "housing-infrastructure-and-communities-canada",
+      "blob": "16798b861181919c4406cb2a023ff6e4ad5b27d2",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "71617c992c98f64d",
+          "actual": "71617c992c98f64d",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 6,
+          "expected": "033872df5ac9eab3",
+          "actual": "033872df5ac9eab3",
+          "count": 6
+        },
+        {
+          "year": "2008",
+          "expectedCount": 6,
+          "expected": "ff96c330d134847e",
+          "actual": "ff96c330d134847e",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "library-and-archives-canada",
+      "blob": "d3e155e27eb251bc98c38870995fc7ef2bd7ef24",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "72cccebb2d0dc6f4",
+          "actual": "72cccebb2d0dc6f4",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "cb57b843fbde4603",
+          "actual": "cb57b843fbde4603",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "52ea9f5b4e11ee67",
+          "actual": "52ea9f5b4e11ee67",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "national-capital-commission",
+      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+    },
+    {
+      "id": "national-energy-board",
+      "blob": "e6682dcff2f663b3003616d453c0553d6659b078",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "ef3d060d949de429",
+          "actual": "ef3d060d949de429",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "4fcb12d06a27b4cc",
+          "actual": "4fcb12d06a27b4cc",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "65bf265a74a9d8a4",
+          "actual": "65bf265a74a9d8a4",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "natural-resources-canada",
+      "blob": "3e17e0ac9f140e7df7b86a6023d8bcba3abcf5b4",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "4d871eb2c096efba",
+          "actual": "4d871eb2c096efba",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "63b4981d1b758baa",
+          "actual": "63b4981d1b758baa",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "f3b347392e1d26ca",
+          "actual": "f3b347392e1d26ca",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "natural-sciences-and-engineering-research-council-of-canada",
+      "blob": "a79d05f7c8044124c34e408c5c0efb7138db68a1",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "555f26d1d042e485",
+          "actual": "555f26d1d042e485",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "office-of-the-auditor-general-of-canada",
+      "blob": "17e00e0e058b3b8dbbcd21a974f171c9ea257616",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "c2c69863c04b31bd",
+          "actual": "c2c69863c04b31bd",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "office-of-the-commissioner-of-official-languages",
+      "blob": "e15d57416a53b1d90c11a554bdbe517dd0e768eb",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "fc773b58da8de447",
+          "actual": "fc773b58da8de447",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 6,
+          "expected": "521c139aee297b21",
+          "actual": "521c139aee297b21",
+          "count": 6
+        },
+        {
+          "year": "2008",
+          "expectedCount": 3,
+          "expected": "e0eb66eaa78d8198",
+          "actual": "e0eb66eaa78d8198",
+          "count": 3
+        }
+      ]
+    }
+  ]
+}
