@@ -1,0 +1,241 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Direct Drive listing compared to archived-source, prior register and PSC catalogue sizes. Size matches are candidates, not byte verification. No private Drive identifiers.",
+  "folders": [
+    "psc-drf-indicators",
+    "psc-hiring-staffing-ar1-legacy",
+    "psc-population-ar2",
+    "psc-priority-entitlements",
+    "psc-staffing-audit-tool",
+    "psc-staffing-dashboard-extras",
+    "psc-system-wide-staffing-audit"
+  ],
+  "rows": [
+    {
+      "folder": "psc-drf-indicators",
+      "name": "psc-drf-indicator-i9-new-hires-under-35.csv",
+      "bytes": 77348,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i9-new-hires-under-35.csv",
+          "url": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
+          "id": "GC-0258",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i9-new-hires-under-35.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-drf-indicators",
+      "name": "psc-drf-indicator-i11-new-hires-outside-ncr.csv",
+      "bytes": 5335,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i11-new-hires-outside-ncr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
+          "id": "GC-0259",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i11-new-hires-outside-ncr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-drf-indicators",
+      "name": "psc-drf-indicator-i1-days-to-complete-external-staffing.csv",
+      "bytes": 2875,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i1-days-to-complete-external-staffing.csv",
+          "url": "https://open.canada.ca/data/en/dataset/00887ede-ac6b-47c1-af0c-aea61f2be345",
+          "id": "GC-0257",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-drf-indicators/psc-drf-indicator-i1-days-to-complete-external-staffing.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-hiring-staffing-ar1-legacy",
+      "name": "psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv",
+      "bytes": 131904,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv",
+          "url": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+          "id": "GC-0199",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1p-staffing-activities-by-type-and-occupational-group-to-2018.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-hiring-staffing-ar1-legacy",
+      "name": "psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv",
+      "bytes": 4001,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-4528d3baf5a7d652/CFPPSC_AR1M.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/ar-ra/2016/staff-dot/CFPPSC_AR1M.csv",
+          "id": "GC-0186",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv",
+          "url": "https://open.canada.ca/data/en/dataset/2fe6b7f1-fbfe-4aaf-808f-b977d40d44db",
+          "id": "GC-0196",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-hiring-staffing-ar1-legacy/psc-ar1m-indeterminate-appointments-by-recruitment-mechanism-to-2018.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-population-ar2",
+      "name": "psc-ar2b-indeterminate-employees-under-35-share-by-year.csv",
+      "bytes": 5217,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-population-ar2/psc-ar2b-indeterminate-employees-under-35-share-by-year.csv",
+          "url": "https://open.canada.ca/data/en/dataset/845f9e76-d03e-4652-8f43-bb777ab1d52b",
+          "id": "GC-0220",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-population-ar2/psc-ar2b-indeterminate-employees-under-35-share-by-year.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-priority-entitlements",
+      "name": "psc-priority-entitlements-public-service-total.csv",
+      "bytes": 141840,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-priority-entitlements/psc-priority-entitlements-public-service-total.csv",
+          "url": "https://open.canada.ca/data/en/dataset/83dcf122-d050-4def-8456-d23b718c6b22",
+          "id": "GC-0255",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-priority-entitlements/psc-priority-entitlements-public-service-total.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-priority-entitlements",
+      "name": "psc-medically-released-and-surplus-priority-entitlements-vs-appointments.csv",
+      "bytes": 12294,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-priority-entitlements/psc-medically-released-and-surplus-priority-entitlements-vs-appointments.csv",
+          "url": "https://open.canada.ca/data/en/dataset/83dcf122-d050-4def-8456-d23b718c6b22",
+          "id": "GC-0256",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-priority-entitlements/psc-medically-released-and-surplus-priority-entitlements-vs-appointments.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-staffing-audit-tool",
+      "name": "psc-staffing-audit-tool-appointment-records-2013-2016.csv",
+      "bytes": 1004266,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-staffing-audit-tool/psc-staffing-audit-tool-appointment-records-2013-2016.csv",
+          "url": "https://open.canada.ca/data/en/dataset/349e07cf-7df8-4714-8f44-7afd7d997aa6",
+          "id": "GC-0260",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-staffing-audit-tool/psc-staffing-audit-tool-appointment-records-2013-2016.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-staffing-dashboard-extras",
+      "name": "psc-staffing-dashboard-priority.csv",
+      "bytes": 7447,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-febcb0d9da7d25b2/priority.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c/resource/f11e8387-6ccf-4a84-b738-c2bb0445ef31/download/priority.csv",
+          "id": "GC-0242",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-febcb0d9da7d25b2/priority.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/26ffad36-ca9b-431c-8f6d-a6df02665e2c",
+          "id": "GC-0242",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "psc-system-wide-staffing-audit",
+      "name": "psc-system-wide-staffing-audit-program-2016.csv",
+      "bytes": 2256931,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-system-wide-staffing-audit/psc-system-wide-staffing-audit-program-2016.csv",
+          "url": "https://open.canada.ca/data/en/dataset/45db0901-fe73-4f7f-beb9-598d7ab98acd",
+          "id": "GC-0261",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-system-wide-staffing-audit/psc-system-wide-staffing-audit-program-2016.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    }
+  ]
+}
