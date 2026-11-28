@@ -1,0 +1,48 @@
+{
+  "source": "Original 2017 PSES subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "32 positions per organization, 4 groups x 8 questions; fingerprint comparison of positive percentage and response count, retaining absent positions. FNV-1a 64 is a numerical consistency test, not cryptographic file verification.",
+  "matchedOrganizations": 62,
+  "matchedDepartmentCells": 1815,
+  "nationalUniqueCells": 32,
+  "nationalFingerprintsMatching": 44,
+  "additionalCanonicalMatch": {
+    "original": "Office of the Chief Electoral Officer",
+    "canonical": "elections-canada",
+    "expected": "cd758762c8ae51e0",
+    "actual": "cd758762c8ae51e0",
+    "count": 31,
+    "blob": "f1580f7f099480a4f93dc669c77f8818edc18ad7"
+  },
+  "resolvedRoute": "Infrastructure Canada is stored as housing-infrastructure-and-communities-canada; matrix matches.",
+  "unresolvedOrExcluded": [
+    {
+      "original": "Indigenous and Northern Affairs Canada",
+      "count": 32,
+      "reason": "Historical organization group-trend JSON not found; not assigned to ISC or CIRNAC."
+    },
+    {
+      "original": "Supreme Court of Canada",
+      "count": 16,
+      "reason": "Original rows exist but 2017 results absent in registrar trend JSON; original 2017 organization not present in 2019 subset 1, so no assumption that republication contains these figures."
+    },
+    {
+      "original": "Micro-organizations combined",
+      "count": 32,
+      "reason": "Combined category, not an individual department."
+    },
+    {
+      "original": "Statistical Survey Operations",
+      "count": 32,
+      "reason": "Separate employer not matched to Statistics Canada."
+    }
+  ],
+  "records": [
+    "verification-2017-group-fingerprints-01.json",
+    "verification-2017-group-fingerprints-02.json",
+    "verification-2017-group-fingerprints-03.json",
+    "verification-2017-group-fingerprints-04.json",
+    "verification-2017-group-fingerprints-05.json",
+    "verification-2017-group-fingerprints-06.json",
+    "verification-2017-group-fingerprints-07.json"
+  ]
+}
