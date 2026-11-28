@@ -1,0 +1,102 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; sparse original matrices include empty positions. A nonmatch is reviewed separately, not automatically classified as incorrect.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "rows": [
+    {
+      "id": "administrative-tribunals-support-service-of-canada",
+      "expectedCount": 24,
+      "expected": "4a63987598a3fbbf",
+      "actual": "4a63987598a3fbbf",
+      "count": 24,
+      "blob": "3c6d5e687ba12673224b7b2a86b6c8a9a5773ba6"
+    },
+    {
+      "id": "canada-economic-development-for-quebec-regions",
+      "expectedCount": 24,
+      "expected": "82cc82d1761f71b8",
+      "actual": "82cc82d1761f71b8",
+      "count": 24,
+      "blob": "18fd92afd0355f09b6bc7098fc82f21a72537888"
+    },
+    {
+      "id": "canadian-human-rights-commission",
+      "expectedCount": 24,
+      "expected": "37ef79cbadd8518d",
+      "actual": "37ef79cbadd8518d",
+      "count": 24,
+      "blob": "5041b07f74120bf3d17b533afd5fa72958261b3c"
+    },
+    {
+      "id": "canadian-institutes-of-health-research",
+      "expectedCount": 24,
+      "expected": "a7343c98c098cd3f",
+      "actual": "a7343c98c098cd3f",
+      "count": 24,
+      "blob": "99341bb8b9961d1a20bb7d4121f52b6448309eab"
+    },
+    {
+      "id": "canadian-space-agency",
+      "expectedCount": 24,
+      "expected": "57e580d25ac8f2b4",
+      "actual": "57e580d25ac8f2b4",
+      "count": 24,
+      "blob": "0cd62cbc41a5998a59a492cd1a0945e42e6e8ef9"
+    },
+    {
+      "id": "canadian-transportation-agency",
+      "expectedCount": 16,
+      "expected": "4ee4df59f86dbc2b",
+      "actual": "4ee4df59f86dbc2b",
+      "count": 16,
+      "blob": "7e76b9cad148bc92ae9238d2a0cd323b0385040b"
+    },
+    {
+      "id": "federal-economic-development-agency-for-southern-ontario",
+      "expectedCount": 24,
+      "expected": "aa1cb437841523da",
+      "actual": "aa1cb437841523da",
+      "count": 24,
+      "blob": "363a8d7379fa0f4132058f127c2c54ebb0d3be94"
+    },
+    {
+      "id": "financial-transactions-and-reports-analysis-centre-of-canada",
+      "expectedCount": 24,
+      "expected": "ff59b31c9c7a9ee9",
+      "actual": "ff59b31c9c7a9ee9",
+      "count": 24,
+      "blob": "c6098fde5967d1a3d858e88beb1e953ab0b4ea13"
+    },
+    {
+      "id": "national-film-board-of-canada",
+      "expectedCount": 24,
+      "expected": "234fe057415216c5",
+      "actual": "234fe057415216c5",
+      "count": 24,
+      "blob": "13455f9e0c4448145008c98e944cb2520c5c8494"
+    },
+    {
+      "id": "natural-sciences-and-engineering-research-council-of-canada",
+      "expectedCount": 24,
+      "expected": "980c6c2f65cd2a6e",
+      "actual": "980c6c2f65cd2a6e",
+      "count": 24,
+      "blob": "a79d05f7c8044124c34e408c5c0efb7138db68a1"
+    }
+  ]
+}
