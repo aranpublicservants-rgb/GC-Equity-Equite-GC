@@ -37,7 +37,7 @@ PRIOR = ROOT / 'docs/source-reconciliation-2026-11-25.json'
 EXCLUDED_STATUS = {'out-of-scope', 'nonexistent', 'blocked'}
 UUID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 SKIP_DIRS = {'.git', 'node_modules'}
-SELF = {OUT.name, REGISTER.name, PRIOR.name, 'source-reconciliation-2026-11-24.json'}
+SELF = {OUT.name, REGISTER.name, PRIOR.name, 'source-reconciliation-2026-11-24.json', 'source-register-overrides-2026-11-27.json'}
 
 
 # Entries excluded by standing site content rules, in addition to the register's own statuses.
@@ -243,7 +243,7 @@ def main():
             path, how = same[0]
             hosted = [path]
             verified = 'exact-size-' + how
-        for f in gaps.get(e['id'], []) if not hosted else []:
+        for f in gaps.get(e['id'], []):
             # Copies made by scripts/fetch-register-gaps.py: check the stored bytes again.
             if f.get('path') and (ROOT / f['path']).is_file():
                 p = ROOT / f['path']
