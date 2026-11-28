@@ -1,15 +1,15 @@
 {
- "asOf": "2026-11-26",
+ "asOf": "2026-11-27",
  "register": "data/public-source-register-2026-11-24.json",
- "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. No match means no evidence was found in this repository, not that the source is unavailable.",
+ "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. Hosted and verified are entry-level indicators of at least one copy, not proof that all editions or languages are held. Multi-report snapshot coverage is reported separately. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 369,
-  "hosted": 391,
-  "downloadable": 376,
+  "verified": 370,
+  "hosted": 392,
+  "downloadable": 377,
   "searchable": 178,
-  "departmental": 175,
-  "analysis": 116,
+  "departmental": 176,
+  "analysis": 117,
   "excluded": 155,
   "noEvidence": 0
  },
@@ -8483,13 +8483,14 @@
    "family": "departmental-EE",
    "period": "2020-2021 to 2024-2025",
    "publisher": "National Research Council Canada",
-   "source": "https://nrc.canada.ca/en/corporate/planning-reporting/annual-reports-long-term-plans",
+   "source": "https://open.canada.ca/data/en/info/8d99a66c-8dad-41b8-9b0b-49dbc50c7e6b",
    "inventoryStatus": "web-only",
    "approved": true,
    "verified": false,
    "hosted": [
     "data/ee-reports/nrc-ee-annual-report-2023-24.pdf",
-    "data/nrc-ee-representation-2022-2025.csv"
+    "data/nrc-ee-representation-2022-2025.csv",
+    "data/nrc-ee-staffing-2024-2025.csv"
    ],
    "downloadable": true,
    "searchable": false,
@@ -8497,7 +8498,24 @@
    "analysis": [
     "scripts/build-department-pages.py"
    ],
-   "excluded": null
+   "excluded": null,
+   "snapshotCoverage": {
+    "expected": 10,
+    "verifiedCopies": 0,
+    "complete": false,
+    "missingUrls": [
+     "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
+     "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2021-2022",
+     "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2022-2023",
+     "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2023-2024",
+     "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+     "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
+     "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
+     "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
+     "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
+     "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025"
+    ]
+   }
   },
   {
    "id": "GC-0421",
@@ -9238,7 +9256,13 @@
    "searchable": false,
    "departmental": 1,
    "analysis": [],
-   "excluded": null
+   "excluded": null,
+   "snapshotCoverage": {
+    "expected": 2,
+    "verifiedCopies": 2,
+    "complete": true,
+    "missingUrls": []
+   }
   },
   {
    "id": "GC-0463",
@@ -9984,12 +10008,16 @@
    "source": "https://www150.statcan.gc.ca/n1/tbl/csv/14100377-eng.zip",
    "inventoryStatus": "batch-2",
    "approved": false,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "exact-size-file",
+   "hosted": [
+    "data/nrc-ee-staffing-2024-2025.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
-   "departmental": 0,
-   "analysis": [],
+   "departmental": 1,
+   "analysis": [
+    "scripts/build-department-pages.py"
+   ],
    "excluded": "not approved in the source register"
   },
   {
