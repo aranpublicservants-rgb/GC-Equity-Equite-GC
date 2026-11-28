@@ -37,7 +37,7 @@ PRIOR = ROOT / 'docs/source-reconciliation-2026-11-25.json'
 EXCLUDED_STATUS = {'out-of-scope', 'nonexistent', 'blocked'}
 UUID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 SKIP_DIRS = {'.git', 'node_modules'}
-SELF = {OUT.name, REGISTER.name, PRIOR.name, 'source-reconciliation-2026-11-24.json', 'source-register-overrides-2026-11-27.json'}
+SELF = {OUT.name, REGISTER.name, PRIOR.name, 'source-reconciliation-2026-11-24.json', 'source-register-overrides-2026-11-27.json', 'data-coverage.html'}
 
 
 # Entries excluded by standing site content rules, in addition to the register's own statuses.
