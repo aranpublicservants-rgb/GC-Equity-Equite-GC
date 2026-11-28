@@ -1,0 +1,336 @@
+{
+  "method": "Original 2014 labelled demographic data, 2011 original raw data decoded with original 2011 departmental and demographic dictionaries, and 2008 raw data with candidate 2011 dictionary. FNV-1a 64 compares group-major percentages and response counts; 2008 identity and wording not independently established. '-' means no original matrix was found under this identity and is not a failed numerical test.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions2014": [
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70"
+  ],
+  "questionsEarlier": [
+    "Q43",
+    "Q45",
+    "Q53"
+  ],
+  "rows": [
+    {
+      "id": "department-of-justice-canada",
+      "blob": "f0410a5aa50b6a8c76b2ad63c27ac43db41ed0a3",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "9292ac2bf6a0dda2",
+          "actual": "9292ac2bf6a0dda2",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "5d8edee3b5b39e60",
+          "actual": "5d8edee3b5b39e60",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "94eda26a04cdd46c",
+          "actual": "94eda26a04cdd46c",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "dnd",
+      "blob": "1264d6ddfaf3216ed51db90db96788ff7c16b13e",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "28a4db6affc6a163",
+          "actual": "28a4db6affc6a163",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "1ec65b889b65248f",
+          "actual": "1ec65b889b65248f",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "e09037119a559bf2",
+          "actual": "e09037119a559bf2",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "elections-canada",
+      "blob": "f1580f7f099480a4f93dc669c77f8818edc18ad7",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "21b4ae08651252bb",
+          "actual": "21b4ae08651252bb",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "e8001975f1dbab70",
+          "actual": "e8001975f1dbab70",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "8a3f4b471b502e1a",
+          "actual": "8a3f4b471b502e1a",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "esdc",
+      "blob": "1a6af1d672ebd9b4f93e2680e86e6017272a64e4",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "978981714e2f112a",
+          "actual": "978981714e2f112a",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "ffead9d92f564f57",
+          "actual": "ffead9d92f564f57",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "1cecdd72211dab03",
+          "actual": "1cecdd72211dab03",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "environment-and-climate-change-canada",
+      "blob": "458f1077bb1f22300160c7f1fb73da3893093f7b",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "b79bcb265ac99120",
+          "actual": "b79bcb265ac99120",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "d857383df7d89c23",
+          "actual": "d857383df7d89c23",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "4b97c9a4fd55480a",
+          "actual": "4b97c9a4fd55480a",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "federal-economic-development-agency-for-southern-ontario",
+      "blob": "363a8d7379fa0f4132058f127c2c54ebb0d3be94",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "c98f44089ec71119",
+          "actual": "c98f44089ec71119",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "0eac57f28e93739d",
+          "actual": "0eac57f28e93739d",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "financial-transactions-and-reports-analysis-centre-of-canada",
+      "blob": "c6098fde5967d1a3d858e88beb1e953ab0b4ea13",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "92c475c3bbe83656",
+          "actual": "92c475c3bbe83656",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "146c8dba726daa57",
+          "actual": "146c8dba726daa57",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 6,
+          "expected": "9410236993054aa1",
+          "actual": "9410236993054aa1",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "dfo",
+      "blob": "4074d0784d57d7f22eb41cddb1799995d5c39e7c",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "cfbe14dc34adc38a",
+          "actual": "cfbe14dc34adc38a",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "854ca0ff74a9a27e",
+          "actual": "854ca0ff74a9a27e",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "3f045142a084d97e",
+          "actual": "3f045142a084d97e",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "global-affairs-canada",
+      "blob": "13cce9aec9f83ddc6a82fb8ab358d4fe0ba218e9",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "1b1045865b2da69e",
+          "actual": "1b1045865b2da69e",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "e4ec9e62c04cfd0c",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "1cfc021672b0c1a0",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-canada",
+      "blob": "9a78d7d0659869bdef20149814701dfc56779040",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "0f51423e241dd40f",
+          "actual": "0f51423e241dd40f",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "8d2ad2ffde47eaf1",
+          "actual": "8d2ad2ffde47eaf1",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "a944b946d79804e7",
+          "actual": "a944b946d79804e7",
+          "count": 12
+        }
+      ]
+    }
+  ]
+}
