@@ -1,0 +1,103 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; original rows extracted from file and matched to canonical page IDs. Noncryptographic numerical consistency check, not file SHA verification.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "nationalExpected": "32387b6cf7895b04",
+  "rows": [
+    {
+      "id": "agriculture-and-agri-food-canada",
+      "expected": "f1c5ba718596129b",
+      "actual": "f1c5ba718596129b",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "d3361832739f12d152d31560c09c56df956a1320"
+    },
+    {
+      "id": "atlantic-canada-opportunities-agency",
+      "expected": "f369301b2a680616",
+      "actual": "f369301b2a680616",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "1346d1765eef39eba10630c3ed46787be5256082"
+    },
+    {
+      "id": "canada-border-services-agency",
+      "expected": "ab17975c4522f714",
+      "actual": "ab17975c4522f714",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "0b46428d45e6a519e47b12bbf3eb5a368fa6f54f"
+    },
+    {
+      "id": "cra",
+      "expected": "ee9016a3d37b681f",
+      "actual": "ee9016a3d37b681f",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "4b2c99d12bc714644137d89bb9247d5a256720a8"
+    },
+    {
+      "id": "canada-school-of-public-service",
+      "expected": "d7d3f68a8dcefe63",
+      "actual": "d7d3f68a8dcefe63",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "01e4adc7afd4dd5dbb4ab16b6da8eece1d8e5e22"
+    },
+    {
+      "id": "canadian-environmental-assessment-agency",
+      "expected": "a190db00df1d85ea",
+      "actual": "a190db00df1d85ea",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "55977eb862980d5e9663769580f288e40c01089b"
+    },
+    {
+      "id": "canadian-food-inspection-agency",
+      "expected": "9179c13e303b9543",
+      "actual": "9179c13e303b9543",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "cf7f8eefcf3d6e290aedc1522fbc561b48e47387"
+    },
+    {
+      "id": "canadian-grain-commission",
+      "expected": "48337d03f1d0d450",
+      "actual": "48337d03f1d0d450",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "276f038d46241486bc6bb7ff1e894f0b1bb77eeb"
+    },
+    {
+      "id": "canadian-heritage",
+      "expected": "6bafa91d291deae9",
+      "actual": "6bafa91d291deae9",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "5d4afc7ee83230a192ee66c44332e3ec09d68af4"
+    },
+    {
+      "id": "canadian-nuclear-safety-commission",
+      "expected": "bac03efeef2a2c31",
+      "actual": "bac03efeef2a2c31",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "81e9abdfed514001c3b0ce2b709dd93e5a69c126"
+    }
+  ]
+}
