@@ -26,7 +26,7 @@
   // Original 2011 files were compared with the 2019 re-publication on 2026-11-27.
   // Retain the source data but withhold unverified comparisons in the presentation.
   const GAP_QUESTIONS = {"Q44e":{"en":"Question 44e. To what extent have the following adversely affected your career progress in the federal public service over the last 12 months? Accommodation issues","fr":"Question 44e. Dans quelle mesure estimez-vous que les éléments suivants ont nui à la progression de votre carrière au sein de la fonction publique fédérale au cours des 12 derniers mois? Problèmes d'adaptation"},"Q58":{"en":"Question 58. Having carefully read the definition of harassment above, have you been the victim of harassment on the job in the past 12 months?","fr":"Question 58. Après avoir lu attentivement la définition du harcèlement ci-dessus, au cours des 12 derniers mois, avez-vous été victime de harcèlement au travail?"},"Q65":{"en":"Question 65. Having carefully read the definition of discrimination above, have you been the victim of discrimination on the job in the past 12 months?","fr":"Question 65. Après avoir lu attentivement la définition de la discrimination ci-dessus, au cours des 12 derniers mois, avez-vous été victime de discrimination au travail?"},"Q72":{"en":"Question 72. I am satisfied with how concerns or complaints about racism in the workplace are resolved in my department or agency.","fr":"Question 72. Je suis satisfait(e) de la façon dont les préoccupations ou les plaintes au sujet du racisme en milieu de travail sont réglées par mon ministère ou organisme."},"Q73p":{"en":"Question 73p. Overall, to what extent do the following factors cause you work-related stress? Accommodation issues","fr":"Question 73p. Dans l'ensemble, dans quelle mesure les facteurs suivants vous causent-ils du stress au travail? Problèmes d'adaptation"}};
-  function reviewHistoricalRows(rows) {
+  function reviewHistoricalRows(rows, isGroup = false) {
     return rows.map(r => {
       const row = {...r, values: {...r.values}, ps: {...r.ps}, held: {values:{}, ps:{}}};
       const hold = (field, reason) => {
@@ -39,7 +39,7 @@
         hold('values', 'wording');
         hold('ps', 'wording');
       }
-      if (org === 'women-and-gender-equality-canada') hold('values', 'identity');
+      if (isGroup && org === 'women-and-gender-equality-canada') hold('values', 'identity');
       return row;
     });
   }
@@ -145,7 +145,7 @@
     for (const s of SECTIONS) for (const l of ['en', 'fr']) {
       const section = sectionFor(s[l]);
       if (!section || section.querySelector('.dp-group-trends')) continue;
-      const parts = kind => G.groups.filter(g => (g.kind || 'group') === kind).map(g => [g, reviewHistoricalRows(g.rows.filter(r => s.qs.includes(r.q)))])
+      const parts = kind => G.groups.filter(g => (g.kind || 'group') === kind).map(g => [g, reviewHistoricalRows(g.rows.filter(r => s.qs.includes(r.q)), true)])
         .filter(([, rows]) => rows.length).map(([g, rows]) => groupBlock(G, g, rows, l)).join('');
       const main = parts('group'), sub = parts('subgroup');
       if (!main && !sub) continue;
