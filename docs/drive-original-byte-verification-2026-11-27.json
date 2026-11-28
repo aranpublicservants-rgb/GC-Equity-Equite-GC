@@ -3,9 +3,9 @@
   "method": "Original files from the public-data Google Drive staging folders independently materialized; Git blob SHA-1 computed over exact original bytes and compared to GitHub Contents API object SHA. No claim of direct publisher retrieval. Nonmatching CSVs may have encoding changes; consult employer-source-encoding-verification-2026-11-27.json.",
   "tally": {
     "total": 72,
-    "matched": 53,
-    "different": 16,
-    "missing": 3
+    "matched": 56,
+    "byteDifferent": 16,
+    "missing": 0
   },
   "records": [
     {
@@ -390,11 +390,13 @@
     },
     {
       "name": "cse-annual-pay-rate-in-dollars.csv",
-      "path": null,
+      "path": "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv",
       "originalGitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
-      "hostedGitBlob": null,
-      "match": false,
-      "registerIds": []
+      "hostedGitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
+      "match": true,
+      "registerIds": [
+        "GC-0423"
+      ]
     },
     {
       "name": "cse-ee-and-first-official-languages-2022-2023.csv",
@@ -404,7 +406,10 @@
       "match": false,
       "registerIds": [
         "GC-0382"
-      ]
+      ],
+      "originalNormalizedFNV64": "cc3b2a0ca568bf15",
+      "hostedNormalizedFNV64": "cc3b2a0ca568bf15",
+      "decodedTextMatch": true
     },
     {
       "name": "cse-ee-and-first-official-languages-2024-2025.csv",
@@ -414,7 +419,10 @@
       "match": false,
       "registerIds": [
         "GC-0381"
-      ]
+      ],
+      "originalNormalizedFNV64": "74f461783c5b8ff9",
+      "hostedNormalizedFNV64": "74f461783c5b8ff9",
+      "decodedTextMatch": true
     },
     {
       "name": "cse-employment-equity-2018.csv",
@@ -472,7 +480,10 @@
       "originalGitBlob": "f8f375776b3143bd204b7cdb544e0315307c56d0",
       "hostedGitBlob": "484b9b44576cb8198ae0409f05c746906b04552c",
       "match": false,
-      "registerIds": []
+      "registerIds": [],
+      "originalNormalizedFNV64": "eb68fc862740696c",
+      "hostedNormalizedFNV64": "eb68fc862740696c",
+      "decodedTextMatch": true
     },
     {
       "name": "csis-designated-group-members-by-age-range-2018-2019.csv",
@@ -482,7 +493,10 @@
       "match": false,
       "registerIds": [
         "GC-0391"
-      ]
+      ],
+      "originalNormalizedFNV64": "bf6d1f290ddc32da",
+      "hostedNormalizedFNV64": "bf6d1f290ddc32da",
+      "decodedTextMatch": true
     },
     {
       "name": "csis-ee-representation-2020.csv",
@@ -492,23 +506,30 @@
       "match": false,
       "registerIds": [
         "GC-0389"
-      ]
+      ],
+      "originalNormalizedFNV64": "0e07672767b39328",
+      "hostedNormalizedFNV64": "0e07672767b39328",
+      "decodedTextMatch": true
     },
     {
       "name": "csis-occupational-representation-2015-2016.csv",
-      "path": null,
+      "path": "data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv",
       "originalGitBlob": "687ddc4561baa95bc9233238d735f032b2d762b1",
-      "hostedGitBlob": null,
-      "match": false,
-      "registerIds": []
+      "hostedGitBlob": "687ddc4561baa95bc9233238d735f032b2d762b1",
+      "match": true,
+      "registerIds": [
+        "GC-0393"
+      ]
     },
     {
       "name": "csps-ee-representation-2017-2018.xlsx",
-      "path": null,
+      "path": "data/public-source-archive-2026-11-24/csps-ee-representation-2017-2018.xlsx",
       "originalGitBlob": "22a6b9e27235ce56d8cc49149a9e3311961df522",
-      "hostedGitBlob": null,
-      "match": false,
-      "registerIds": []
+      "hostedGitBlob": "22a6b9e27235ce56d8cc49149a9e3311961df522",
+      "match": true,
+      "registerIds": [
+        "GC-0406"
+      ]
     },
     {
       "name": "csps-ee-representation-2018-2019.csv",
@@ -719,7 +740,17 @@
       "registerIds": [
         "GC-0409",
         "GC-0412"
-      ]
+      ],
+      "originalNormalizedFNV64": "dbc73fefbe348451",
+      "hostedNormalizedFNV64": "dbc73fefbe348451",
+      "decodedTextMatch": true
     }
-  ]
+  ],
+  "publisherAnomaly": {
+    "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv",
+    "row": "55 and over",
+    "field": "Aboriginal Peoples",
+    "originalValue": "90.00%",
+    "note": "Original and hosted source agree; anomalous source value must not be silently changed or interpreted without publisher clarification."
+  }
 }
