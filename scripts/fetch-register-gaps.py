@@ -56,10 +56,10 @@ def targets():
     by_id = {e['id']: e for e in REGISTER['entries']}
     out = []
     for r in STATUS['rows']:
-        if r['excluded'] or r['hosted']:
+        override = OVERRIDES.get(r['id'], {})
+        if r['excluded'] or (r['hosted'] and not override.get('snapshots')):
             continue
         e = dict(by_id[r['id']])
-        override = OVERRIDES.get(r['id'], {})
         if override.get('source'):
             e['source'] = override['source']
         if override.get('snapshots'):
@@ -230,15 +230,24 @@ def main():
     if previous.exists():
         kept = json.loads(previous.read_text(encoding='utf-8')).get('entries', [])
     attempted = {k['id'] for k in kept}
+    previous_by_id = {k['id']: k for k in kept}
     stored_before = {k['id'] for k in kept if any(f.get('stored') for f in k.get('files', []))}
+    def complete_snapshots(e):
+        if not e.get('snapshots'):
+            return False
+        stored_urls = {f.get('url') for f in previous_by_id.get(e['id'], {}).get('files', [])
+                       if f.get('stored') and f.get('path') and (ROOT / f['path']).is_file()}
+        return all(x['url'] in stored_urls for x in e['snapshots'])
     retry = '--retry-failed' in sys.argv
     chosen = []
     for e in targets():
         if only and e['id'] not in only:
             continue
-        if e['id'] in stored_before and not only:
-            continue  # a copy is already held; never download it again
-        if e['id'] in attempted and not only and not retry:
+        if complete_snapshots(e):
+            continue
+        if e['id'] in stored_before and not only and not e.get('snapshots'):
+            continue  # a single-file entry already has a copy
+        if e['id'] in attempted and not only and not retry and not e.get('snapshots'):
             continue  # tried before and recorded with its failure; rerun with --ids or --retry-failed
         if max_bytes and (e.get('bytes') or 0) > max_bytes:
             continue
@@ -257,6 +266,9 @@ def main():
             continue
         url = e['source']
         item = {'id': e['id'], 'name': e['name'], 'source': url, 'files': [], 'failures': []}
+        if e.get('snapshots'):
+            item['files'] = [f for f in previous_by_id.get(e['id'], {}).get('files', [])
+                             if f.get('stored') and f.get('path') and (ROOT / f['path']).is_file()]
         print('TARGET', e['id'], e['kind'], url)
         if plan:
             manifest['entries'].append(item)
@@ -266,6 +278,8 @@ def main():
             if e.get('snapshots'):
                 # Store each actual report, not just the directory that links to the reports.
                 for snapshot in e['snapshots']:
+                    if any(f.get('url') == snapshot['url'] for f in item['files']):
+                        continue
                     try:
                         rec = take_file(snapshot['url'], e['id'], work, snapshot.get('title'), 'HTML')
                         rec.update(kind='page-snapshot', language=snapshot.get('language'), stored=True)
