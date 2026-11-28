@@ -151,7 +151,7 @@ def available_sections(d):
  if d['representation'] or d['women'] or d['executivePopulation']:have.add('who-works')
  if d['overall']:have.update(['experience','harassment'])
  if any(q in d['overall'] for q in ['Q84','Q86','Q87','Q88']):have.add('accommodation')
- if d['staffing'] or d['hiring'] or d['rawCatalogueCount']:have.add('hiring')
+ if d['staffing'] or d['hiring'] or d['rawCatalogueCount'] or d['id']=='national-research-council-of-canada':have.add('hiring')
  if d['branch']:have.add('branches')
  if d['cta']:have.add('promised')
  if d['plan']:have.add('planned')
@@ -310,6 +310,14 @@ def content(s,d,l,sections):
  if key=='accommodation':return survey(d,l,['Q84','Q85','Q86','Q87','Q88','Q44e','Q73p','Q73q'],B('Workplace accommodation, PSES 2024','Mesures d’adaptation, SAFF 2024'))+'<p>'+B('Q86 concerns requesters; Q87 concerns people whose measures were implemented; Q88 measures comfort requesting accommodation. These are different bases, not stages in one cohort. Any measure implemented does not mean every need was met. Q44e and Q73p concern adverse career effects and stress.','La Q86 concerne les personnes ayant fait une demande; la Q87, celles dont les mesures ont été mises en place; la Q88, l’aisance à demander une adaptation. Ce sont des bases différentes, et non les étapes d’une même cohorte. La mise en place d’une mesure ne signifie pas que tous les besoins sont satisfaits. Les Q44e et Q73p portent sur les effets négatifs sur la carrière et le stress.')+'</p>'
  if key=='hiring':
   out=''
+  if d['id']=='national-research-council-of-canada':
+   staffing=read_csv('data/nrc-ee-staffing-2024-2025.csv')
+   def nrc_cell(v,percent=False):
+    return B('Suppressed','Supprimé') if v=='SUPP' else cell(v,l,percent)
+   rows=[[E(x['fiscal_year']),E(x['group_'+l]),E(x['action_'+l]),cell(x['total_actions'],l),nrc_cell(x['published_group_count']),nrc_cell(x['published_group_share_pct'],True),nrc_cell(x['published_lma_pct'],True),nrc_cell(x['published_difference_people'])] for x in staffing]
+   out+= '<p>'+B("NRC is a separate employer. Shares describe staffing actions or departures, not individual promotion probabilities. Availability benchmarks changed in 2024–25. Suppressed values are not reconstructed.","Le CNRC est un employeur distinct. Les parts décrivent les mesures de dotation ou les départs, et non les probabilités individuelles de promotion. Les repères ont changé en 2024-2025. Les valeurs supprimées ne sont pas reconstituées.")+'</p>'
+   out+=table(l,B('NRC hires, promotions and departures, 2023–24 and 2024–25','Embauches, promotions et départs du CNRC, 2023-2024 et 2024-2025'),[B('Fiscal year','Exercice'),B('Group','Groupe'),B('Action','Mesure'),B('Total','Total'),B('Group count','Effectif du groupe'),B('Group share','Part du groupe'),B('Availability','Disponibilité'),B('Published gap (people)','Écart publié (personnes)')],rows,staffing[0]['source_url_'+l])
+   out+='<p>'+link('../data/nrc-ee-staffing-2024-2025.csv',B('Download data (CSV)','Télécharger les données (CSV)'))+'</p>'
   if d['staffing']:
    rows=[[q+' · '+E(meta[l]),cell(d['staffing'].get('all',{}).get(q),l,True),E(meta['base_fr' if l=='fr' else 'base'])] for q,meta in snps['questions'].items()]
    out+='<div class="dp-staffing">'+table(l,B('Staffing survey 2025','Sondage sur la dotation de 2025'),[B('Question','Question'),B('Weighted result','Résultat pondéré'),B('Respondent base','Base de répondants')],rows,source['staffing'])+'</div><p>'+E(snps['method_fr' if l=='fr' else 'method'])+'</p><p>'+B('Experiences cover April 1, 2024 to March 31, 2025. Staffing-survey groups have their own definitions; they are not workforce headcounts or individual selection rates.','Les expériences couvrent la période du 1er avril 2024 au 31 mars 2025. Les groupes du sondage ont leurs propres définitions; ils ne sont ni des effectifs ni des probabilités individuelles de sélection.')+'</p>'
