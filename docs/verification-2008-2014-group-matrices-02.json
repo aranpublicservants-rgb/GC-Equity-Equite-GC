@@ -1,0 +1,322 @@
+{
+  "method": "Original 2014 labelled demographic data, 2011 original raw data decoded with original 2011 departmental and demographic dictionaries, and 2008 raw data with candidate 2011 dictionary. FNV-1a 64 compares group-major percentages and response counts; 2008 identity and wording not independently established. '-' means no original matrix was found under this identity and is not a failed numerical test.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions2014": [
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70"
+  ],
+  "questionsEarlier": [
+    "Q43",
+    "Q45",
+    "Q53"
+  ],
+  "rows": [
+    {
+      "id": "canadian-human-rights-commission",
+      "blob": "5041b07f74120bf3d17b533afd5fa72958261b3c",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "7d1a429011e8f6e9",
+          "actual": "7d1a429011e8f6e9",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "ccd1454d24456687",
+          "actual": "ccd1454d24456687",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "8bce82346202916c",
+          "actual": "8bce82346202916c",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "canadian-institutes-of-health-research",
+      "blob": "99341bb8b9961d1a20bb7d4121f52b6448309eab",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "5ac5cd9f9eac48c9",
+          "actual": "5ac5cd9f9eac48c9",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "acc9975121a31614",
+          "actual": "acc9975121a31614",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "2a3fe738a23b1c65",
+          "actual": "2a3fe738a23b1c65",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canadian-radio-television-and-telecommunications-commission",
+      "blob": "4d1c2c0a1ee9e5f82330f583980da298b0e49e6c",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "0c35b2633cb35e42",
+          "actual": "0c35b2633cb35e42",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "6e71750e0b2b9e69",
+          "actual": "6e71750e0b2b9e69",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "88b12eb3fe7d485c",
+          "actual": "88b12eb3fe7d485c",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "canadian-space-agency",
+      "blob": "0cd62cbc41a5998a59a492cd1a0945e42e6e8ef9",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "09832e2cec3ec584",
+          "actual": "09832e2cec3ec584",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "dd11b650aab719c9",
+          "actual": "dd11b650aab719c9",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "8859c5468105333b",
+          "actual": "8859c5468105333b",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "canadian-transportation-agency",
+      "blob": "7e76b9cad148bc92ae9238d2a0cd323b0385040b",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "29974a64a4746fff",
+          "actual": "29974a64a4746fff",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 6,
+          "expected": "00ddafa7ac6e7166",
+          "actual": "00ddafa7ac6e7166",
+          "count": 6
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "28f511deca1256b6",
+          "actual": "28f511deca1256b6",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "immigration-refugees-and-citizenship-canada",
+      "blob": "d7be9ae7e7435d903963a0a7ff5aa4464b7ad4c4",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "7bd7803dce6772e9",
+          "actual": "7bd7803dce6772e9",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "21c853dee601a55d",
+          "actual": "21c853dee601a55d",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "77bf13017090aff5",
+          "actual": "77bf13017090aff5",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "communications-security-establishment",
+      "blob": "69d644743703b05a725c6df073194bde51a5e9be",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "a2a43fb107667046",
+          "actual": "a2a43fb107667046",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "d668f2a1abff0ab0",
+          "count": 12,
+          "actualCells": [
+            "69,461",
+            "60,460",
+            "84,461",
+            "70,22",
+            "65,22",
+            "85,21",
+            "53,61",
+            "46,61",
+            "72,61",
+            "70,110",
+            "61,110",
+            "86,109"
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "correctional-service-canada",
+      "blob": "c72178a6d4eca0ab6e389c4f9c88771491f913b3",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "2986d8e389b6f0a3",
+          "actual": "2986d8e389b6f0a3",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "662c415d11ac60ca",
+          "actual": "662c415d11ac60ca",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "bb45b66fb103be94",
+          "actual": "bb45b66fb103be94",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "courts-administration-service",
+      "blob": "806d072df84a7209c71b633733e3958d47b144db",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "531908a97d3af11f",
+          "actual": "531908a97d3af11f",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "d2f45b896b1185f3",
+          "actual": "d2f45b896b1185f3",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "b0b82c4741e35b2b",
+          "actual": "b0b82c4741e35b2b",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "department-of-finance-canada",
+      "blob": "0c1dbb233802dd0a84f76874e0002b23288a4dc8",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "675537f7b553b655",
+          "actual": "675537f7b553b655",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "d2754e5a386c94c7",
+          "actual": "d2754e5a386c94c7",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "84a4e2cfc1decc61",
+          "actual": "84a4e2cfc1decc61",
+          "count": 9
+        }
+      ]
+    }
+  ]
+}
