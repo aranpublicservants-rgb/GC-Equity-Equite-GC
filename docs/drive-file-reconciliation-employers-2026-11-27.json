@@ -518,8 +518,9 @@
       "folder": "dnd-ombudsman-complaint-types",
       "name": "type-of-complaint.csv",
       "bytes": 3930,
-      "match": "unresolved",
-      "candidates": []
+      "match": "held out of civilian public-service analysis: mixed military and civilian complaint categories",
+      "candidates": [],
+      "scopeNote": "The original table includes military housing, military justice, posting and other military matters. It cannot be treated as a civilian public service complaint total. No upload made."
     },
     {
       "folder": "ssc-ee-representation",
