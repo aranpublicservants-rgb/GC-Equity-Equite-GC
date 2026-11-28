@@ -396,6 +396,8 @@ common={'definitions':pses['definitions'],'staffingQuestions':snps['questions'],
 (R/'assets/department-page-model.json').write_text(json.dumps(common,ensure_ascii=False,separators=(',',':'))+'\n')
 branchdefs={k:v for k,v in branchmeta.items() if k!='departments'}
 (R/'assets/department-branch-definitions.json').write_text(json.dumps(branchdefs,ensure_ascii=False,separators=(',',':'))+'\n')
+trend_index=R/'assets/department-survey-trends.json'
+trend_orgs=set(json.loads(trend_index.read_text())['organizations']) if trend_index.exists() else set()
 registry=[];used=set();counts={'representation':0,'surveys':0,'staffing':0,'plans':0,'noReadingFigures':0}
 for rec in cross['organizations']:
  name=rec['en'];slug=special.get(name) or short.get(name) or re.sub('[^a-z0-9]+','-',unicodedata.normalize('NFKD',name).encode('ascii','ignore').decode().lower()).strip('-')[:100]
@@ -420,6 +422,8 @@ for rec in cross['organizations']:
   (folder/'index.html').write_text(moved)
   continue
  h=header.replace('Equity at DFO | Équité au MPO',E('Equity at '+name+' | GC Equity')).replace('Independent bilingual DFO equity evidence: representation, staffing, employee surveys, accommodation, commitments, results and downloadable source data.',E('Published equity evidence for '+name+': workforce, employee experiences, staffing and source records.'))
+ if slug in trend_orgs:
+  h=h.replace('</head>','<script src="../assets/department-trends.js" data-org="'+E(slug)+'" defer></script></head>')
  body=h+'<main id="main" tabindex="-1">'
  for l in ['en','fr']:
   fr=l=='fr';ident=lambda key:frids[key] if fr else key
