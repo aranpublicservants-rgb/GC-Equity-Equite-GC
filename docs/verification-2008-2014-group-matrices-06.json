@@ -1,0 +1,404 @@
+{
+  "method": "Original 2014 labelled demographic data, 2011 original raw data decoded with original 2011 departmental and demographic dictionaries, and 2008 raw data with candidate 2011 dictionary. FNV-1a 64 compares group-major percentages and response counts; 2008 identity and wording not independently established. '-' means no original matrix was found under this identity and is not a failed numerical test.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions2014": [
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70"
+  ],
+  "questionsEarlier": [
+    "Q43",
+    "Q45",
+    "Q53"
+  ],
+  "rows": [
+    {
+      "id": "rcmp",
+      "blob": "d35ca205d3b4e0ed3608e652a106e884e27d2c7f",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "cc5836db0ba4be20",
+          "actual": "cc5836db0ba4be20",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "3471cebfe2a0aad1",
+          "actual": "3471cebfe2a0aad1",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "cc07b479257a3b40",
+          "actual": "cc07b479257a3b40",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "shared-services-canada",
+      "blob": "80edb84af12ed9f1d8d447a7f7753e1bc5bf7809",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "cbcb5bcfe3205c95",
+          "actual": "cbcb5bcfe3205c95",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-sciences-and-humanities-research-council",
+      "blob": "acec74361527bfcd13615a4a01214226fff1db7d",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "4502ef1bab62c0b1",
+          "actual": "4502ef1bab62c0b1",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statistics-canada",
+      "blob": "2aa5b9adf1378bcbef377a4ca423a907fb076b1e",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "07036a275568b3d0",
+          "actual": "07036a275568b3d0",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "ecc84d2c0222267b",
+          "actual": "ecc84d2c0222267b",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "d018df6de635ac25",
+          "actual": "d018df6de635ac25",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "registrar-of-the-supreme-court-of-canada",
+      "blob": "46a9f5edb9ff677cf58107504d5a091eff0c50a7",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 6,
+          "expected": "c6ba85a48d3c7c59",
+          "actual": "024c316a3f56f9bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2011",
+          "expectedCount": 6,
+          "expected": "94e5128d851c7e99",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 3,
+          "expected": "8f8f123e3a7c46c5",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transport-canada",
+      "blob": "6b0833e342dbdc6576e13b363b6992904b2e02bb",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "0fb66fb96036ed57",
+          "actual": "0fb66fb96036ed57",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "256ddd7462c87400",
+          "actual": "256ddd7462c87400",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "5e0b0dd3bfc66b7e",
+          "actual": "5e0b0dd3bfc66b7e",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "transportation-safety-board-of-canada",
+      "blob": "b23f06c71c581620ec7e37329f0df63eb35d60b6",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "8ee6dbaf8ad41d7d",
+          "actual": "8ee6dbaf8ad41d7d",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 6,
+          "expected": "6100626778925528",
+          "actual": "6100626778925528",
+          "count": 6
+        },
+        {
+          "year": "2008",
+          "expectedCount": 6,
+          "expected": "8f199a456d9887d6",
+          "actual": "8f199a456d9887d6",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "treasury-board-of-canada-secretariat",
+      "blob": "7ce2a42c73f1726b9f469b55a23a676658484f21",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "2592dc94c41f3b86",
+          "actual": "2592dc94c41f3b86",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "ee3b9dbcb4697182",
+          "actual": "ee3b9dbcb4697182",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "e96047e66fe4b257",
+          "actual": "e96047e66fe4b257",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "veterans-affairs-canada",
+      "blob": "0a2a1e3f19dc7811e6d27e196ed3c2b81d222b2e",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "955d58c5af190dd4",
+          "actual": "955d58c5af190dd4",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "3c114c2ddc6b7dbf",
+          "actual": "3c114c2ddc6b7dbf",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "d2c12350b1921b93",
+          "actual": "d2c12350b1921b93",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "western-economic-diversification-canada",
+      "blob": "1bbd7651b6dde7e9049f76f6d0880661f1a432e8",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "ae7b3c286f4f5f54",
+          "actual": "ae7b3c286f4f5f54",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "0ae979b6e4c50901",
+          "actual": "0ae979b6e4c50901",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "f14fb0146c76ad98",
+          "actual": "f14fb0146c76ad98",
+          "count": 12
+        }
+      ]
+    }
+  ]
+}
