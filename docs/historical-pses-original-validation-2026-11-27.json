@@ -1,0 +1,79 @@
+{
+  "reviewed": "2026-11-27",
+  "scope": "Original all-respondent organization-level survey rows compared with the 2019 publisher-republished rows; no reconstructed suppressed data. Matching exact normalized wording, no fuzzy matches.",
+  "sources": [
+    {
+      "year": "2011",
+      "source": "GC-0001",
+      "sha256": "39d9395b181f526c944a9978d536f7c48ae461d56600b6109d13772e6ec457e7",
+      "questionLabels": "GC-0003",
+      "labelSha256": "fa418a834355dbaad096cabf1b7e96a6c2a39441df13e673bea65c0715e0f235"
+    },
+    {
+      "year": "2014",
+      "source": "GC-0013",
+      "sha256": "81f5ee8163a219b4b3d4fad8770518e2953ddd5c040ee5d8fa8f42befe40a2c8"
+    },
+    {
+      "year": "2019",
+      "source": "GC-0033",
+      "sha256": "37a736b0614af8a4cf594b24598731b43911a306ba84c0ee47d1f0bb72983a37"
+    }
+  ],
+  "results": [
+    {
+      "year": "2011",
+      "level": "public service",
+      "originalCells": 101,
+      "republishedCells": 43,
+      "matchingWording": 30,
+      "differentValues": 0
+    },
+    {
+      "year": "2011",
+      "level": "organization code and wording; includes public-service row",
+      "originalCells": 6565,
+      "republishedCells": 2494,
+      "matchingWording": 1710,
+      "differentValues": 30,
+      "organizationsCompared": 57,
+      "exception": {
+        "level1Id": 90,
+        "republishedName": "Department for Women and Gender Equality",
+        "matchingWordingCells": 30,
+        "differentValues": 30,
+        "siteQuestionCodes": [
+          "Q43",
+          "Q45",
+          "Q53"
+        ],
+        "note": "Original unlabelled data do not establish that code 90 represents the same employer in both files. Withhold comparison until identity reconciled; do not substitute either result."
+      }
+    },
+    {
+      "year": "2014",
+      "level": "organization name and wording; includes public-service row",
+      "originalCells": 9518,
+      "republishedCells": 3528,
+      "matchingWording": 2915,
+      "differentValues": 0,
+      "siteQuestionMatches": 318,
+      "siteQuestionDifferences": 0
+    }
+  ],
+  "wording": {
+    "year": "2011",
+    "siteQuestion": "Q42",
+    "originalQuestion": "F_Q43",
+    "republishedQuestion": "Q43",
+    "original": "I feel I can initiate a formal recourse process (grievance, complaint, appeal, etc.) without fear of reprisal.",
+    "republished": "I feel I can initiate a formal recourse process (e.g., grievance, complaint, appeal) without fear of reprisal.",
+    "decision": "Not identical under the site's stated comparison rule; hold out 2011 from that trend. Publisher-republished data remain available in the source."
+  },
+  "limitations": [
+    "The original 2011 unlabelled file uses organization codes; equal codes are not proof of identity.",
+    "No historical employee-group cross-tab validation is implied by these overall comparisons.",
+    "The 2011 original department workbook has not been parsed in this review.",
+    "The original 2008 data have not been independently validated."
+  ]
+}
