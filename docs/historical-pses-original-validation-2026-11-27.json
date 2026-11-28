@@ -3,6 +3,12 @@
   "scope": "Original all-respondent organization-level survey rows compared with the 2019 publisher-republished rows; no reconstructed suppressed data. Matching exact normalized wording, no fuzzy matches.",
   "sources": [
     {
+      "year": "2008",
+      "source": "GC-0002",
+      "sha256": "861c8b5118fb978f5bafa6367d0932c258c666dde630790244b60e873b2ef0b8",
+      "questionLabels": "GC-0003 (2011 dictionary; not independent 2008 wording validation)"
+    },
+    {
       "year": "2011",
       "source": "GC-0001",
       "sha256": "39d9395b181f526c944a9978d536f7c48ae461d56600b6109d13772e6ec457e7",
@@ -21,6 +27,27 @@
     }
   ],
   "results": [
+    {
+      "year": "2008",
+      "level": "organization code and 2011 dictionary wording; includes public service row",
+      "originalCells": 4560,
+      "republishedCellsWithDictionaryMatch": 1080,
+      "matchingKeys": 1040,
+      "differentValues": 0,
+      "organizationCodesCompared": 52,
+      "publicServiceMatchingKeys": 20,
+      "publicServiceDifferences": 0,
+      "unmatchedQuestionCodes": [
+        "Q02",
+        "Q18a",
+        "Q18b",
+        "Q18c",
+        "Q18d",
+        "Q18e",
+        "Q18f"
+      ],
+      "note": "Original 2008 unlabelled file uses 2011 question codes. Matching numeric values corroborate the publisher's republished rows, but original 2008 question wording and organization identity were not independently verified."
+    },
     {
       "year": "2011",
       "level": "public service",
@@ -74,6 +101,6 @@
     "The original 2011 unlabelled file uses organization codes; equal codes are not proof of identity.",
     "No historical employee-group cross-tab validation is implied by these overall comparisons.",
     "The 2011 original department workbook has not been parsed in this review.",
-    "The original 2008 data have not been independently validated."
+    "The 2008 source bytes and overlapping numerical cells were validated; original 2008 question wording, organizational identities and group-level results remain unverified."
   ]
 }
