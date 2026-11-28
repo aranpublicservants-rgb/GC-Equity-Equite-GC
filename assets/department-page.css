@@ -39,3 +39,6 @@ body{overflow-wrap:anywhere}select{min-width:0;max-width:100%}button{max-width:1
 .dp-coverage-gap :focus-visible{outline:3px solid #b35c00;outline-offset:3px}
 @media(max-width:800px){.dp-coverage-gap{padding-left:.7rem}}
 @media print{.dp-coverage-gap{break-inside:avoid;border-left:2px solid #666;color:#111!important}.dp-coverage-gap a{color:#000!important;text-decoration:underline}}
+
+/* Long bilingual survey questions must wrap without pushing values off-screen. */
+.dp-bar>span{min-width:0;overflow-wrap:anywhere}.dp-bar>div{min-width:0}.dp-bar>span:last-child{text-align:end;font-variant-numeric:tabular-nums;white-space:nowrap}@media(max-width:600px){.dp-bar{grid-template-columns:minmax(0,1fr) auto;gap:.35rem .65rem}.dp-bar>span:first-child{grid-column:1/-1}.dp-bar>div{grid-column:1}.dp-bar>span:last-child{grid-column:2}}
