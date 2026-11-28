@@ -490,15 +490,29 @@
       "folder": "dnd-civilian-representation",
       "name": "dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
       "bytes": 21548,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+          "bytes": 21548,
+          "gitBlobSha": "134dea9633e77b71b8e571f97fb4dc5e2bf35129",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "dnd-civilian-representation",
       "name": "dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
       "bytes": 21503,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+          "bytes": 21503,
+          "gitBlobSha": "04f1f729a1f52eb1c6ad75da86f4476cbf245ce6",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "dnd-ombudsman-complaint-types",
@@ -511,15 +525,29 @@
       "folder": "ssc-ee-representation",
       "name": "equite_en_maitre_d_emploi-2025-2026.csv",
       "bytes": 1861,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
+          "bytes": 1858,
+          "gitBlobSha": "4970cdfdfb303324d23da1b8b28cab68baf3cf75",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "ssc-ee-representation",
       "name": "employment-equity-2025-2026.csv",
       "bytes": 1882,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv",
+          "bytes": 1879,
+          "gitBlobSha": "32f793f6f7d4c87828497cad171f073e7836e65a",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "vac-ee-representation",
