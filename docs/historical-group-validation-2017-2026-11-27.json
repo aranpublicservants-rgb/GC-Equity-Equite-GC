@@ -1,0 +1,64 @@
+{
+  "source": "GC-0019, original PSES 2017 subset 2",
+  "originalSha256": "ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "Four original demographic codes 2005, 2012, 2014, 2016; eight questions selected by original English wording; compare published positive shares and response counts with site group-trend JSON, including national comparator. No claim of exhaustive coverage.",
+  "questionCodes": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "originalQuestionCodes": [
+    "A_Q15",
+    "E_Q49",
+    "E_Q52",
+    "E_Q53",
+    "E_Q57",
+    "G_Q69",
+    "I_Q81",
+    "J_Q87"
+  ],
+  "originalDemographicCodes": [
+    "2005",
+    "2012",
+    "2014",
+    "2016"
+  ],
+  "results": [
+    {
+      "org": "dnd",
+      "match": 32,
+      "bad": [],
+      "missing": [],
+      "psMatch": 32,
+      "psBad": [],
+      "blob": "1264d6ddfaf3216ed51db90db96788ff7c16b13e"
+    },
+    {
+      "org": "canada-revenue-agency",
+      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+    },
+    {
+      "org": "dfo",
+      "match": 32,
+      "bad": [],
+      "missing": [],
+      "psMatch": 32,
+      "psBad": [],
+      "blob": "4074d0784d57d7f22eb41cddb1799995d5c39e7c"
+    },
+    {
+      "org": "treasury-board-of-canada-secretariat",
+      "match": 32,
+      "bad": [],
+      "missing": [],
+      "psMatch": 32,
+      "psBad": [],
+      "blob": "7ce2a42c73f1726b9f469b55a23a676658484f21"
+    }
+  ]
+}
