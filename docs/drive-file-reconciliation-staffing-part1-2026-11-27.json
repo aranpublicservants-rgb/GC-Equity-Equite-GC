@@ -1,0 +1,1080 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Direct Drive listing compared to archived-source, prior register and PSC catalogue sizes. Size matches are candidates, not byte verification. No private Drive identifiers.",
+  "folders": [
+    "snps-2018",
+    "snps-2021",
+    "survey-of-staffing-2017",
+    "psc-applicants-ar6",
+    "psc-advertisements-by-year",
+    "psc-fswep-referrals"
+  ],
+  "rows": [
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-response-profile-data.csv",
+      "bytes": 81917,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-3b83260c5c867a39/CFPPSC_SNPS15.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS15.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-response-profile-data.csv",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0100",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-response-profile-data.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-organization-level-report-dataset.csv",
+      "bytes": 3895536,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-627fc3a62ce3cd88/CFPPSC_SNPS13.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS13.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-organization-level-report-dataset.csv",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0096",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-organization-level-report-dataset.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-list-of-questions.csv",
+      "bytes": 77240,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-19c4349f76a63b8a/CFPPSC_SNPS16.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS16.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-list-of-questions.csv",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0101",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-list-of-questions.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-list-of-departments.csv",
+      "bytes": 6862,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-cf53f3af630d6e5b/CFPPSC_SNPS17.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS17.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-list-of-departments.csv",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0102",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-list-of-departments.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-years-of-service.csv",
+      "bytes": 33289603,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-f78e79665efd69ff/CFPPSC_SNPS10.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS10.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS10.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0093",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-tenure.csv",
+      "bytes": 21037151,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-a37a68061e9f1e57/CFPPSC_SNPS11.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS11.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS11.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0094",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-shift-worker.csv",
+      "bytes": 13781071,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-f023613324ee393a/CFPPSC_SNPS18.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS18.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS18.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0103",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-region.csv",
+      "bytes": 30409856,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-de523c8013a0a34d/CFPPSC_SNPS07.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS07.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS07.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0090",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-occupational-group.csv",
+      "bytes": 139556206,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS08.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0091",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-full-time-part-time-status.csv",
+      "bytes": 15241113,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-65ec039d460189f6/CFPPSC_SNPS12.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS12.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS12.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0095",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-first-official-language.csv",
+      "bytes": 17528104,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-d853f95b9b4bfcfa/CFPPSC_SNPS06.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS06.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS06.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0089",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-first-official-language-and-region-v.csv",
+      "bytes": 88656,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-bfeec51f343ed4a3/CFPPSC_SNPS14V.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS14V.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-by-first-official-language-and-region-v.csv",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0099",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/snps-2018-by-first-official-language-and-region-v.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-first-official-language-and-region-fr.csv",
+      "bytes": 38313760,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-89928e6eacc184cd/CFPPSC_SNPS14F.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS14F.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14F.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0098",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-first-official-language-and-region-en.csv",
+      "bytes": 22633053,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-31b783184b087081/CFPPSC_SNPS14E.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS14E.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS14E.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0097",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-ee-group-women.csv",
+      "bytes": 17786044,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-d8052cf99d05844f/CFPPSC_SNPS02.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS02.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS02.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0085",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-ee-group-visible-minorities.csv",
+      "bytes": 15835089,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-be532840a223520c/CFPPSC_SNPS04.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS04.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS04.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0087",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-ee-group-persons-with-disabilities.csv",
+      "bytes": 15478191,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-73c6675638d8f103/CFPPSC_SNPS03.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS03.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS03.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0086",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-ee-group-aboriginal-peoples.csv",
+      "bytes": 15090820,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-5fde9ce7673e6f1c/CFPPSC_SNPS05.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS05.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS05.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0088",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-diploma.csv",
+      "bytes": 39791978,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-83434887acf6dec5/CFPPSC_SNPS19.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS19.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS19.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0104",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-department.csv",
+      "bytes": 5314452,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-6eed70996b087a2d/CFPPSC_SNPS01.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS01.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-19c4349f76a63b8a/CFPPSC_SNPS16.csv.gz; data/register-gaps-2026-11/u-31b783184b087081/CFPPSC_SNPS14E.csv.gz; data/register-gaps-2026-11/u-3b83260c5c867a39/CFPPSC_SNPS15.csv.gz; data/register-gaps-2026-11/u-5fde9ce7673e6f1c/CFPPSC_SNPS05.csv.gz; data/register-gaps-2026-11/u-627fc3a62ce3cd88/CFPPSC_SNPS13.csv.gz; data/register-gaps-2026-11/u-65ec039d460189f6/CFPPSC_SNPS12.csv.gz; data/register-gaps-2026-11/u-6eed70996b087a2d/CFPPSC_SNPS01.csv.gz; data/register-gaps-2026-11/u-73c6675638d8f103/CFPPSC_SNPS03.csv.gz; data/register-gaps-2026-11/u-7c42c3b835a35c14/snps-sdip-documentation-eng.pdf.gz; data/register-gaps-2026-11/u-83434887acf6dec5/CFPPSC_SNPS19.csv.gz; data/register-gaps-2026-11/u-89928e6eacc184cd/CFPPSC_SNPS14F.csv.gz; data/register-gaps-2026-11/u-a37a68061e9f1e57/CFPPSC_SNPS11.csv.gz; data/register-gaps-2026-11/u-be532840a223520c/CFPPSC_SNPS04.csv.gz; data/register-gaps-2026-11/u-bfeec51f343ed4a3/CFPPSC_SNPS14V.csv.gz; data/register-gaps-2026-11/u-cf53f3af630d6e5b/CFPPSC_SNPS17.csv.gz; data/register-gaps-2026-11/u-d8052cf99d05844f/CFPPSC_SNPS02.csv.gz; data/register-gaps-2026-11/u-d853f95b9b4bfcfa/CFPPSC_SNPS06.csv.gz; data/register-gaps-2026-11/u-de523c8013a0a34d/CFPPSC_SNPS07.csv.gz; data/register-gaps-2026-11/u-e7e8e336379b8caf/snps-sdip-documentation-fra.pdf.gz; data/register-gaps-2026-11/u-ea191abfa539ebf3/CFPPSC_SNPS09.csv.gz; data/register-gaps-2026-11/u-f023613324ee393a/CFPPSC_SNPS18.csv.gz; data/register-gaps-2026-11/u-f78e79665efd69ff/CFPPSC_SNPS10.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0084",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2018",
+      "name": "snps-2018-by-age-group.csv",
+      "bytes": 42273073,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-ea191abfa539ebf3/CFPPSC_SNPS09.csv.gz",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/data-donnees/snps-sdip/CFPPSC_SNPS09.csv",
+          "id": "GC-0084",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2018/CFPPSC_SNPS09.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/060a017e-3c68-4754-a0c7-91cd031b4480",
+          "id": "GC-0092",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-response-profile-data.csv",
+      "bytes": 49717,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-response-profile-data.csv",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0117",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-response-profile-data.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-list-of-questions.csv",
+      "bytes": 152627,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-list-of-questions.csv",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0118",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-list-of-questions.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-list-of-departments.csv",
+      "bytes": 10346,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-list-of-departments.csv",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0119",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-list-of-departments.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-data-visualization-dataset.csv",
+      "bytes": 2214443,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-data-visualization-dataset.csv",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0116",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-data-visualization-dataset.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-years-of-service.csv",
+      "bytes": 32700925,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS10.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0114",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-tenure.csv",
+      "bytes": 21674611,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS11.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0115",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-region.csv",
+      "bytes": 28835597,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS07.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0111",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-occupational-group.csv",
+      "bytes": 132900894,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS08.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0112",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-first-official-language.csv",
+      "bytes": 15938538,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS06.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0110",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-ee-group-women.csv",
+      "bytes": 16642284,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS02.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0106",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-ee-group-visible-minorities.csv",
+      "bytes": 16432448,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS04.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0108",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-ee-group-persons-with-disabilities.csv",
+      "bytes": 18462134,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS03.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0107",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-ee-group-indigenous-peoples.csv",
+      "bytes": 15633676,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS05.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0109",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-diploma.csv",
+      "bytes": 41968715,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS16.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0120",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-department.csv",
+      "bytes": 4565930,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-by-department.csv",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0105",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/snps-2021/snps-2021-by-department.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "snps-2021",
+      "name": "snps-2021-by-age-group.csv",
+      "bytes": 39064661,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/snps-2021/CFPPSC_SNPS09.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/90705678-982e-49db-8f1b-13e93ede3a95",
+          "id": "GC-0113",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "survey-of-staffing-2017",
+      "name": "sos-2017-summary-of-results-by-organization.csv",
+      "bytes": 4736494,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv",
+          "url": "https://open.canada.ca/data/en/dataset/a8d64d9c-db9a-4f71-8be4-f11eaf4d306d",
+          "id": "GC-0172",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-summary-of-results-by-organization.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "survey-of-staffing-2017",
+      "name": "sos-2017-organizational-data-profiles.csv",
+      "bytes": 11875,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv",
+          "url": "https://open.canada.ca/data/en/dataset/a8d64d9c-db9a-4f71-8be4-f11eaf4d306d",
+          "id": "GC-0173",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/survey-of-staffing-2017/sos-2017-organizational-data-profiles.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-applicants-ar6",
+      "name": "psc-applications-appointments-nationally-advertised-officer-level-ar6a.csv",
+      "bytes": 21968,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-officer-level-ar6a.csv",
+          "url": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
+          "id": "GC-0262",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-officer-level-ar6a.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-applicants-ar6",
+      "name": "psc-applications-appointments-nationally-advertised-non-officer-level-ar6b.csv",
+      "bytes": 21294,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-non-officer-level-ar6b.csv",
+          "url": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
+          "id": "GC-0263",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applications-appointments-nationally-advertised-non-officer-level-ar6b.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-applicants-ar6",
+      "name": "psc-applicants-to-external-advertisements-ar6e.csv",
+      "bytes": 36079,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-to-external-advertisements-ar6e.csv",
+          "url": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
+          "id": "GC-0266",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-to-external-advertisements-ar6e.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-applicants-ar6",
+      "name": "psc-applicants-by-recruitment-program-and-region-ontario-ncr-quebec-ar6d.csv",
+      "bytes": 25050,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ontario-ncr-quebec-ar6d.csv",
+          "url": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
+          "id": "GC-0265",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ontario-ncr-quebec-ar6d.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-applicants-ar6",
+      "name": "psc-applicants-by-recruitment-program-and-region-ar6c.csv",
+      "bytes": 104123,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ar6c.csv",
+          "url": "https://open.canada.ca/data/en/dataset/7f459f0c-979f-4d2f-b22b-8484571dc543",
+          "id": "GC-0264",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-applicants-ar6/psc-applicants-by-recruitment-program-and-region-ar6c.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2026-2027.csv",
+      "bytes": 2159143,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2026-2027.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0252",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2026-2027.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2025-2026.csv",
+      "bytes": 2434858,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2025-2026.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0251",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2025-2026.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2024-2025.csv",
+      "bytes": 3958143,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2024-2025.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0250",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2024-2025.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2023-2024.csv",
+      "bytes": 4582373,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2023-2024.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0249",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2023-2024.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2022-2023.csv",
+      "bytes": 5795575,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2022-2023.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0248",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2022-2023.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2021-2022.csv",
+      "bytes": 6302797,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2021-2022.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0247",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2021-2022.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2020-2021.csv",
+      "bytes": 5250834,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2020-2021.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0246",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2020-2021.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2019-2020.csv",
+      "bytes": 6577965,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2019-2020.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0245",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2019-2020.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2018-2019.csv",
+      "bytes": 6828660,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2018-2019.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0244",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2018-2019.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-advertisements-by-year",
+      "name": "psc-advertisements-2017-2018.csv",
+      "bytes": 6702546,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2017-2018.csv",
+          "url": "https://open.canada.ca/data/en/dataset/e61c8587-2cc9-4775-b34e-f1041ad00410",
+          "id": "GC-0243",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/psc-advertisements-by-year/psc-advertisements-2017-2018.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "psc-fswep-referrals",
+      "name": "psc-fswep-requests-for-referrals-2017-2026-as-of-2026-11-05.csv",
+      "bytes": 30887309,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-november-5-2026-single-tab.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5",
+          "id": "GC-0254",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "psc-fswep-referrals",
+      "name": "psc-fswep-requests-for-referrals-2017-2026.csv",
+      "bytes": 28857259,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/psc-fswep-referrals/fswep_depts_ads_referrals_opengov-as-of-october-2-2026-single-tab.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/3fe41e48-850e-4df2-81db-9df16d3c56a5",
+          "id": "GC-0253",
+          "kind": "register-reported size"
+        }
+      ]
+    }
+  ]
+}
