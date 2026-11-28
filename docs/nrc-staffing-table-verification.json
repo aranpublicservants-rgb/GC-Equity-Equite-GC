@@ -1,0 +1,19 @@
+{
+  "source": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+  "sourceTables": [
+    "3a",
+    "3b",
+    "4a",
+    "4b",
+    "5a",
+    "5b",
+    "6a",
+    "6b"
+  ],
+  "repositoryPath": "data/nrc-ee-staffing-2024-2025.csv",
+  "blob": "f7648314c3dd69d28544b9eb33f9ef961ce3beca",
+  "rows": 24,
+  "fieldsCompared": 144,
+  "discrepancies": [],
+  "method": "Direct comparison of every published total, group count, share, availability count, availability share and gap with official tables; suppression retained."
+}
