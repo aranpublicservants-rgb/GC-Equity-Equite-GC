@@ -8,7 +8,7 @@ permissions:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,3 +64,51 @@ jobs:
           if not all(r['ok'] for r in results):
               raise SystemExit(1)
           PY
+      - name: Install headless browser
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Verify historical trend rendering on the public site
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright');
+          const assert=require('node:assert/strict');
+          const base='https://aranpublicservants-rgb.github.io/GC-Equity-Equite-GC/';
+          (async()=>{
+            const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+            try {
+              for (const [org,lang,width] of [
+                ['women-and-gender-equality-canada','en',1366],
+                ['women-and-gender-equality-canada','fr',390],
+                ['canada-school-of-public-service','en',1366],
+                ['canada-school-of-public-service','fr',390],
+                ['isc','en',1366],
+                ['dnd','fr',390]
+              ]) {
+                const ctx=await browser.newContext({viewport:{width,height:850}});
+                try {
+                  const page=await ctx.newPage();
+                  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+                  const response=await page.goto(base+org+'/?lang='+lang+'&verification='+Date.now(),{waitUntil:'domcontentloaded',timeout:60000});
+                  assert.equal(response.status(),200);
+                  const root=page.locator('#lang-'+lang);
+                  const overall=root.locator('.dp-trend').first();
+                  const groups=root.locator('.dp-group-trends').first();
+                  await overall.waitFor({state:'visible',timeout:45000});
+                  await groups.waitFor({state:'visible',timeout:45000});
+                  assert.match(await overall.innerText(),/2008|2011|2014|2017/);
+                  assert.match(await groups.innerText(),lang==='fr'?/Résultats au fil du temps/:/Results over time/);
+                  assert.equal(await root.locator('section').evaluateAll(els=>els.filter(e=>e.querySelectorAll('.dp-trend').length>1||e.querySelectorAll('.dp-group-trends').length>1).length),0,'duplicate historical tables');
+                  if(org==='women-and-gender-equality-canada'){
+                    assert.match(await overall.innerText(),lang==='fr'?/libellé|formulation/:/wording/);
+                    const row=overall.locator('tr').filter({hasText:/Question 43[.\s]/}).first();
+                    await row.waitFor({timeout:10000});
+                    assert.match(await row.innerText(),/53\s*%/,'reviewed 2011 figure is visible');
+                  }
+                  assert.deepEqual(errors,[]);
+                  console.log('PASS LIVE BROWSER:',org,lang,width);
+                } finally {await ctx.close();}
+              }
+            } finally {await browser.close();}
+          })().catch(e=>{console.error(e);process.exitCode=1});
+          JS
