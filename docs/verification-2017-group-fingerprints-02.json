@@ -1,0 +1,103 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; original rows extracted from file and matched to canonical page IDs. Noncryptographic numerical consistency check, not file SHA verification.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "nationalExpected": "32387b6cf7895b04",
+  "rows": [
+    {
+      "id": "canadian-radio-television-and-telecommunications-commission",
+      "expected": "e2db46bb2ae8ff9b",
+      "actual": "e2db46bb2ae8ff9b",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "4d1c2c0a1ee9e5f82330f583980da298b0e49e6c"
+    },
+    {
+      "id": "communications-security-establishment",
+      "expected": "27e0f6271071ab86",
+      "actual": "27e0f6271071ab86",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "69d644743703b05a725c6df073194bde51a5e9be"
+    },
+    {
+      "id": "correctional-service-canada",
+      "expected": "ff00931a5c83c92e",
+      "actual": "ff00931a5c83c92e",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "c72178a6d4eca0ab6e389c4f9c88771491f913b3"
+    },
+    {
+      "id": "courts-administration-service",
+      "expected": "eb7ec9f4e2827bc8",
+      "actual": "eb7ec9f4e2827bc8",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "806d072df84a7209c71b633733e3958d47b144db"
+    },
+    {
+      "id": "department-of-finance-canada",
+      "expected": "e169aa0ac5029c7c",
+      "actual": "e169aa0ac5029c7c",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "0c1dbb233802dd0a84f76874e0002b23288a4dc8"
+    },
+    {
+      "id": "department-of-justice-canada",
+      "expected": "2b6a0092bb915edd",
+      "actual": "2b6a0092bb915edd",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "f0410a5aa50b6a8c76b2ad63c27ac43db41ed0a3"
+    },
+    {
+      "id": "dnd",
+      "expected": "fd84c522ba785f19",
+      "actual": "fd84c522ba785f19",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "1264d6ddfaf3216ed51db90db96788ff7c16b13e"
+    },
+    {
+      "id": "esdc",
+      "expected": "ab048911e30d3257",
+      "actual": "ab048911e30d3257",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "1a6af1d672ebd9b4f93e2680e86e6017272a64e4"
+    },
+    {
+      "id": "environment-and-climate-change-canada",
+      "expected": "271ee965ab6ee257",
+      "actual": "271ee965ab6ee257",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "458f1077bb1f22300160c7f1fb73da3893093f7b"
+    },
+    {
+      "id": "dfo",
+      "expected": "0e2c43b35fcb66e0",
+      "actual": "0e2c43b35fcb66e0",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "4074d0784d57d7f22eb41cddb1799995d5c39e7c"
+    }
+  ]
+}
