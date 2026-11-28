@@ -15,6 +15,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Check historical survey matrices against reviewed originals
+        run: python scripts/check-historical-group-fingerprints.py
       - name: Validate pages, published data, source snapshots and research tools
         run: |
           python scripts/audit-organization-datasets.py
