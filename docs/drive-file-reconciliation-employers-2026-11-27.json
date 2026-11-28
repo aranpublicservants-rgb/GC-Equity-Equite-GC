@@ -308,78 +308,155 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2022-2023.csv",
       "bytes": 371,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
+          "bytes": 381,
+          "gitBlobSha": "b78eb943d177858717932379ce86f7ecc16decb2",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2021-2022.xlsx",
       "bytes": 11440,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.xlsx",
+          "bytes": 11440,
+          "gitBlobSha": "73a5a5baa994a7006c8c24d7e0ac3780671970ca",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2021-2022.csv",
       "bytes": 370,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
+          "bytes": 380,
+          "gitBlobSha": "76500e16bd22b3b4b05c5c623c57fd2d4922b748",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2020-2021.xlsx",
       "bytes": 11416,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.xlsx",
+          "bytes": 11416,
+          "gitBlobSha": "07a0b6c98d5cf985cbae768e78b5766dd29216db",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2020-2021.csv",
       "bytes": 370,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
+          "bytes": 380,
+          "gitBlobSha": "5123128e9c061165b185bda65f5e1edc27dc5de9",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2019-2020.xlsx",
       "bytes": 10929,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.xlsx",
+          "bytes": 10929,
+          "gitBlobSha": "edda6904422984f46b606e262a7f1e4f0e33e7fe",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2019-2020.csv",
       "bytes": 370,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
+          "bytes": 380,
+          "gitBlobSha": "b707d7cf2fa4beb9fab3b90840e1fe93466b1e58",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2018-2019.xlsx",
       "bytes": 9922,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.xlsx",
+          "bytes": 9922,
+          "gitBlobSha": "6ba2e97ebceacca72a8b2ccdb222e29f1ce389c5",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2018-2019.csv",
       "bytes": 370,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
+          "bytes": 388,
+          "gitBlobSha": "82aa9e86c3839a2a8bf7d309de6954bb7b0f6687",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "dnd-civilian-representation",
       "name": "dnd-civilian-employee-gender-distribution-2021-2023.csv",
       "bytes": 419,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv",
+          "bytes": 419,
+          "gitBlobSha": "d508a661c32084e4ae39d44069b1efb85d782970",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "dnd-civilian-representation",
       "name": "dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
       "bytes": 9784,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
+          "bytes": 9784,
+          "gitBlobSha": "3a410f9f0467ddada65da5ecf2f3a6058b1a2c50",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "dnd-civilian-representation",
@@ -399,8 +476,15 @@
       "folder": "dnd-civilian-representation",
       "name": "dnd-civilians-self-identify-woman-2019-2025.xlsx",
       "bytes": 21479,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx",
+          "bytes": 21479,
+          "gitBlobSha": "0f709d6c6506637bd7cf9183801deb25e9d0bac9",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "dnd-civilian-representation",
