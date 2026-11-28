@@ -1,0 +1,364 @@
+{
+  "method": "Original 2014 labelled demographic data, 2011 original raw data decoded with original 2011 departmental and demographic dictionaries, and 2008 raw data with candidate 2011 dictionary. FNV-1a 64 compares group-major percentages and response counts; 2008 identity and wording not independently established. '-' means no original matrix was found under this identity and is not a failed numerical test.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions2014": [
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70"
+  ],
+  "questionsEarlier": [
+    "Q43",
+    "Q45",
+    "Q53"
+  ],
+  "rows": [
+    {
+      "id": "office-of-the-privacy-commissioner-of-canada",
+      "blob": "6db2437cad6df0e53dd7d040dd35719c006dd7eb",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "289a506510a385bd",
+          "actual": "289a506510a385bd",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "office-of-the-secretary-to-the-governor-general",
+      "blob": "b581f95b9a60f9c4bdc42d97fcffb2f3432ed31e",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 12,
+          "expected": "fa7b6e816681c3fa",
+          "actual": "fa7b6e816681c3fa",
+          "count": 12
+        },
+        {
+          "year": "2011",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "8a10fd2ac39d22ab",
+          "count": 3,
+          "actualCells": [
+            "49,64",
+            "24,63",
+            "75,64",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parks-canada",
+      "blob": "77112f41900c8009ec74b2a6ba458a0eed80a6fc",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "77714b9210e7a76a",
+          "actual": "77714b9210e7a76a",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "cab6f76eefc2d2e5",
+          "actual": "cab6f76eefc2d2e5",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 0,
+          "expected": "-",
+          "actual": "6fc322cd2bf6e2bb",
+          "count": 0,
+          "actualCells": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ","
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parole-board-of-canada",
+      "blob": "0c96983bc74ecf08c7b55fa559b603bf69c1dd62",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "51a71b89a2b4eb3d",
+          "actual": "51a71b89a2b4eb3d",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "b52ce0b1ef984fd4",
+          "actual": "b52ce0b1ef984fd4",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 9,
+          "expected": "3c8b97e2bda8ed2b",
+          "actual": "3c8b97e2bda8ed2b",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "privy-council-office",
+      "blob": "3e9d341888351d5375fea3f473385dba917b2ecf",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "50c0142ae7bdf43c",
+          "actual": "50c0142ae7bdf43c",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "526dc52d8bf17be6",
+          "actual": "526dc52d8bf17be6",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "bfed4f85812d363c",
+          "actual": "bfed4f85812d363c",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "public-health-agency-of-canada",
+      "blob": "2e999ac7bb1ad4e3798c6396cab9f75f75267826",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "b58a72497be5c319",
+          "actual": "b58a72497be5c319",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "692cc4d54a56616d",
+          "actual": "692cc4d54a56616d",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "fa4fd21b44e80987",
+          "actual": "fa4fd21b44e80987",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "public-prosecution-service-of-canada",
+      "blob": "10d668de3c93b5b3f9d4a4bf043577cf0f3a7e01",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "7ea24382ac75c7e8",
+          "actual": "7ea24382ac75c7e8",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "ae9dc91213239c2b",
+          "actual": "ae9dc91213239c2b",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "37feff946e9dd222",
+          "actual": "37feff946e9dd222",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "public-safety-canada",
+      "blob": "d857e23b5945381cde68c3d85df5515e654fa513",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "8fd1aa9c02c348f6",
+          "actual": "8fd1aa9c02c348f6",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "af89921bbea8eede",
+          "actual": "af89921bbea8eede",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "5e0f8275ce01ca13",
+          "actual": "5e0f8275ce01ca13",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "public-service-commission-of-canada",
+      "blob": "ccb9b6fff97dbc28b773ced39b1a45bf0464808e",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "176193ec2274396c",
+          "actual": "176193ec2274396c",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "445a56b47045f817",
+          "actual": "445a56b47045f817",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "c915acbf2c8c5ecd",
+          "actual": "c915acbf2c8c5ecd",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "public-services-and-procurement-canada",
+      "blob": "32d8e6f7baa3e9090959b911b59e082f0a1cf102",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "8ccdefc0e5871fd7",
+          "actual": "8ccdefc0e5871fd7",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "1c702408bf25d17f",
+          "actual": "1c702408bf25d17f",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "e11e79e8b1d65b64",
+          "actual": "e11e79e8b1d65b64",
+          "count": 12
+        }
+      ]
+    }
+  ]
+}
