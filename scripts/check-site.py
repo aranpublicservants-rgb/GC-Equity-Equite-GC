@@ -248,3 +248,4 @@ subprocess.run(["python3","scripts/build-department-survey-trends.py","--check"]
 subprocess.run(["node","--check","assets/department-trends.js"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/build-register-copies.py","--check"],cwd=ROOT,check=True)
 subprocess.run(["python3","scripts/check-historical-republished.py"],cwd=ROOT,check=True)
+subprocess.run(["python3","scripts/check-2008-republished.py"],cwd=ROOT,check=True)
