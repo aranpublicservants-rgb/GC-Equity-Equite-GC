@@ -39,8 +39,13 @@
       "blob": "1264d6ddfaf3216ed51db90db96788ff7c16b13e"
     },
     {
-      "org": "canada-revenue-agency",
-      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+      "org": "cra",
+      "match": 32,
+      "bad": [],
+      "missing": [],
+      "psMatch": 32,
+      "psBad": [],
+      "blob": "4b2c99d12bc714644137d89bb9247d5a256720a8"
     },
     {
       "org": "dfo",
@@ -60,5 +65,12 @@
       "psBad": [],
       "blob": "7ce2a42c73f1726b9f469b55a23a676658484f21"
     }
-  ]
+  ],
+  "totals": {
+    "departmentCells": 128,
+    "matchingDepartmentCells": 128,
+    "nationalUniqueCells": 32,
+    "nationalComparisonsAcrossFourPages": 128,
+    "differences": []
+  }
 }
