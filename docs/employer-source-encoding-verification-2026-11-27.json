@@ -1,0 +1,95 @@
+{
+  "method": "Normalized decoded original Drive text (correct legacy encoding), compared with GitHub UTF-8 text; BOM, newline convention and terminal whitespace ignored. Original SHA-256 retained.",
+  "rows": [
+    {
+      "name": "csps-ee-representation-2018-2019.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
+      "encoding": "cp850",
+      "expected": "6c01fa70cb2b7a43",
+      "originalSha256": "a1624ace9ad76a9da9b4fcaf5a26c92d817a23d3586e0fb8c0941a19a60400ff",
+      "actual": "cbf22249bb666803",
+      "blob": "82aa9e86c3839a2a8bf7d309de6954bb7b0f6687"
+    },
+    {
+      "name": "csps-ee-representation-2019-2020.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
+      "encoding": "cp1252",
+      "expected": "70d26c6e5357f6e1",
+      "originalSha256": "401d978937be443705d954aa32e54a8d1a2dc8cdd61deb8c99d9abef30252cc2",
+      "actual": "70d26c6e5357f6e1",
+      "blob": "b707d7cf2fa4beb9fab3b90840e1fe93466b1e58"
+    },
+    {
+      "name": "csps-ee-representation-2020-2021.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
+      "encoding": "cp1252",
+      "expected": "6fca9db4d3dc194a",
+      "originalSha256": "b304008a2510fc82c67c03bff2532677b3921178cba7f80e170b0107f69ae47f",
+      "actual": "6fca9db4d3dc194a",
+      "blob": "5123128e9c061165b185bda65f5e1edc27dc5de9"
+    },
+    {
+      "name": "csps-ee-representation-2021-2022.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
+      "encoding": "cp1252",
+      "expected": "387243e5ad893c29",
+      "originalSha256": "27b1dbdb857afaa800460d416465e25105f487b1946bd1dcac95381bc1264a2b",
+      "actual": "387243e5ad893c29",
+      "blob": "76500e16bd22b3b4b05c5c623c57fd2d4922b748"
+    },
+    {
+      "name": "csps-ee-representation-2022-2023.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
+      "encoding": "cp1252",
+      "expected": "e0145343bfc5fdf0",
+      "originalSha256": "d65de5ef189a70bb325a21f5f21acb20fd218cf129638d8f438293186f40f1bc",
+      "actual": "e0145343bfc5fdf0",
+      "blob": "b78eb943d177858717932379ce86f7ecc16decb2"
+    },
+    {
+      "name": "csps-ee-representation-2023-2024.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
+      "encoding": "cp1252",
+      "expected": "18682321dc331464",
+      "originalSha256": "c9e05f0f2cdf0b52c5ed726e5f1b2cece851dd54112c8e61d58596a35e3d9230",
+      "actual": "18682321dc331464",
+      "blob": "6289fb3d490bb31620b3f1cec6bd81b65709f3ff"
+    },
+    {
+      "name": "csps-ee-representation-2024-2025.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
+      "encoding": "cp1252",
+      "expected": "9a9b6f22b11de27e",
+      "originalSha256": "fe0145e89d1332c57710d23c1276adb81e6036e18a8721ef569481306439acbb",
+      "actual": "9a9b6f22b11de27e",
+      "blob": "656256fd14d2a0d2e687cf0d57bc277f220c7c1e"
+    },
+    {
+      "name": "cse-employment-equity-2018.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+      "encoding": "cp1252",
+      "expected": "3e67cbf56f3f5e52",
+      "originalSha256": "84c9b6dbeae074b96da5692d9d212cb585cb770d65355149c28ddac45fac36a9",
+      "actual": "3e67cbf56f3f5e52",
+      "blob": "d34c03af214614a12bc51db966458d3a75c1c432"
+    },
+    {
+      "name": "cse-employment-equity-2019.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+      "encoding": "cp850",
+      "expected": "50310ddc318ba13c",
+      "originalSha256": "478a8183f2f080447750c71cef5ad950dafabc9dbc6bd6ada705006d7ea39a29",
+      "actual": "5653c38831a419db",
+      "blob": "8eb902b55e3fabd131b0a7697b9e89b86126f81f"
+    },
+    {
+      "name": "cse-workforce-representation-2022-06-30-fr.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv",
+      "encoding": "cp1252",
+      "expected": "7d27e26ac4799c89",
+      "originalSha256": "9f7cd91ddbd17b06b557e39d7118a542597dd7980f283a536aa9c56c06243f2e",
+      "actual": "7d27e26ac4799c89",
+      "blob": "704a806f6de8bf457efadecbcd1e0f616261677e"
+    }
+  ]
+}
