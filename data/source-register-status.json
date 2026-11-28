@@ -4,7 +4,7 @@
  "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, original Drive staging-file byte or decoded-text checks, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. Hosted and verified are entry-level indicators of at least one copy, not proof that all editions or languages are held. Multi-report snapshot coverage is reported separately. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 370,
+  "verified": 389,
   "hosted": 392,
   "downloadable": 377,
   "searchable": 178,
@@ -6696,7 +6696,7 @@
    "source": "https://open.canada.ca/data/en/dataset/896e90b8-5e4e-4a90-8655-91ba53e1709a",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-byte-match",
    "hosted": [
     "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
     "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
@@ -7744,7 +7744,7 @@
    "source": "https://open.canada.ca/data/en/dataset/112ed90e-da6c-49d7-8bd5-81964bcab466",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2024-2025.csv"
    ],
@@ -7763,7 +7763,7 @@
    "source": "https://open.canada.ca/data/en/dataset/f6afd910-e246-4676-90dd-51c0ea6f6ff3",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2022-2023.csv"
    ],
@@ -7782,7 +7782,7 @@
    "source": "https://open.canada.ca/data/en/dataset/3fb07d1b-8521-4c9a-b7de-6695f46b0d80",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-en.csv",
     "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv"
@@ -7802,7 +7802,7 @@
    "source": "https://open.canada.ca/data/en/dataset/945948ff-ab9c-4461-b7de-225bfd2a02db",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
     "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
@@ -7891,7 +7891,7 @@
    "source": "https://open.canada.ca/data/en/dataset/d77a24fe-eb38-4d02-8e00-32148a708b11",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv"
    ],
@@ -7929,7 +7929,7 @@
    "source": "https://open.canada.ca/data/en/dataset/479112da-a42a-4bf7-91bc-f40f810050a9",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv"
    ],
@@ -8003,7 +8003,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.xlsx"
@@ -8023,7 +8023,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.xlsx"
@@ -8043,7 +8043,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.xlsx"
@@ -8063,7 +8063,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.xlsx"
@@ -8083,7 +8083,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.xlsx"
@@ -8103,7 +8103,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.xlsx"
@@ -8123,7 +8123,7 @@
    "source": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
     "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.xlsx"
@@ -8280,7 +8280,7 @@
    "source": "https://open.canada.ca/data/en/dataset/79ec0e13-2a2c-44a2-9723-bf9c706a72ff",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv"
    ],
@@ -8299,7 +8299,7 @@
    "source": "https://open.canada.ca/data/en/dataset/d5ff6db3-831b-488d-8f10-64b690386fe0",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-byte-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
     "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
@@ -8320,7 +8320,7 @@
    "source": "https://open.canada.ca/data/en/dataset/881a781c-8247-4990-b7e7-1d99317bd4b2",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-byte-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
     "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv"
@@ -8340,7 +8340,7 @@
    "source": "https://open.canada.ca/data/en/dataset/79ec0e13-2a2c-44a2-9723-bf9c706a72ff",
    "inventoryStatus": "nonexistent",
    "approved": false,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv"
    ],
@@ -8410,7 +8410,7 @@
    "source": "https://open.canada.ca/data/en/dataset/8ceaa13d-603f-4959-a888-fb31fcd20182",
    "inventoryStatus": "held",
    "approved": true,
-   "verified": false,
+   "verified": "drive-original-decoded-text-match",
    "hosted": [
     "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
     "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv"
