@@ -8669,7 +8669,7 @@
   {
    "id": "GC-0420",
    "name": "National Research Council employment equity reports, 2020-2021 to 2024-2025",
-   "source": "https://nrc.canada.ca/en/corporate/planning-reporting/annual-reports-long-term-plans",
+   "source": "https://open.canada.ca/data/en/info/8d99a66c-8dad-41b8-9b0b-49dbc50c7e6b",
    "files": [],
    "failures": [
     {
@@ -8677,7 +8677,7 @@
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
-     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
+     "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
@@ -8685,7 +8685,7 @@
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
-     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
+     "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
@@ -8693,7 +8693,7 @@
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
-     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
+     "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
@@ -8701,7 +8701,7 @@
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
-     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
+     "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
@@ -8709,7 +8709,7 @@
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     },
     {
-     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025",
+     "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025",
      "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     }
    ]
