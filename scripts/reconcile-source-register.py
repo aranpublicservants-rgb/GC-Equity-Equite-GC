@@ -205,7 +205,7 @@ def main():
         if not item or not p.is_file():
             return None
         body = p.read_bytes()
-        blob = hashlib.sha1(b'blob ' + str(len(body)).encode('ascii') + b'\\0' + body).hexdigest()
+        blob = hashlib.sha1(b'blob ' + str(len(body)).encode('ascii') + b'\0' + body).hexdigest()
         return item[1] if blob == item[0] else None
 
     sizes = size_index()
