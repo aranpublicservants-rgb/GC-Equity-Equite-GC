@@ -8669,12 +8669,48 @@
   {
    "id": "GC-0420",
    "name": "National Research Council employment equity reports, 2020-2021 to 2024-2025",
-   "source": "https://www.canada.ca/en/national-research-council/corporate-reports.html",
+   "source": "https://nrc.canada.ca/en/corporate/planning-reporting/annual-reports-long-term-plans",
    "files": [],
    "failures": [
     {
-     "url": "https://www.canada.ca/en/national-research-council/corporate-reports.html",
-     "error": "curl exit 22: curl: (22) The requested URL returned error: 404\n"
+     "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2021-2022",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2022-2023",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2023-2024",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2024-2025",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
+    },
+    {
+     "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025",
+     "error": "curl exit 22: curl: (22) The requested URL returned error: 403\n"
     }
    ]
   },
@@ -8852,22 +8888,36 @@
   {
    "id": "GC-0462",
    "name": "TBS Accessibility Plan 2022-25 (Our Future Is Accessible)",
-   "source": "https://open.canada.ca/data/en/dataset/6a9248d9-0e3e-4547-844c-afedd1a8ec8d",
-   "files": [],
-   "failures": [
+   "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
+   "files": [
     {
-     "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
-     "error": "curl exit 22: curl: (22) The requested URL returned error: 404\n"
+     "url": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
+     "title": "TBS Accessibility Plan 2022–25",
+     "bytes": 133549,
+     "sha256": "a0cf0a4aa1a3fd8de2385737828af66484bc92bdc8d05e61cc29bfa94fcc4afa",
+     "retrieved": "2026-11-28T00:36:09Z",
+     "path": "data/register-gaps-2026-11/u-2f97338be4e05439/tbs-accessibility-plan-2022-25-our-future-is-accessible.html.gz",
+     "kind": "page-snapshot",
+     "language": [
+      "en"
+     ],
+     "stored": true
     },
     {
-     "url": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html",
-     "error": "curl exit 22: curl: (22) The requested URL returned error: 404\n"
+     "url": "https://www.canada.ca/fr/secretariat-conseil-tresor/accessibilite/plans-accessibilite/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html",
+     "title": "Plan sur l’accessibilité du SCT pour 2022–2025",
+     "bytes": 164347,
+     "sha256": "adf10a8113bceff048720cbc17f2005f8742d7fb5038d6c70174b1d064fa6524",
+     "retrieved": "2026-11-28T00:36:12Z",
+     "path": "data/register-gaps-2026-11/u-97790a6ed86ffe88/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html.gz",
+     "kind": "page-snapshot",
+     "language": [
+      "fr"
+     ],
+     "stored": true
     }
    ],
-   "datasetTitle": {
-    "fr": "Plan sur l’accessibilité du SCT pour 2022-2025. Notre avenir est accessible",
-    "en": "TBS Accessibility Plan 2022–25. Our Future Is Accessible"
-   }
+   "failures": []
   },
   {
    "id": "GC-0463",

@@ -780,6 +780,7 @@ c53942b52dc437ba3e48c0ae8138487cef372535e62a8c65b542217379a5e787  data/register-
 0ea052941f5acef450850f054b373db8e4ec40f4540e8c31917b270c70330eb3  data/register-gaps-2026-11/u-2ebe9dfaeb6c08eb/pipo_irpo_fr.csv.gz
 d922784bca7a42b14fdfe5970f815b3319772347003b9a8a1cb1521ee00a1eef  data/register-gaps-2026-11/u-2f7428a479da98df/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv.gz
 7d75c1f76a5f7b1996917deac3b95ac0ef8faa3b87e4e0d952b842db5d4b25be  data/register-gaps-2026-11/u-2f8c44b0674e9b44/2020-2021-resultats-concernant-les-rapports-organisationnels-annex-d-open-gov-word-version-fr.docx.gz
+b21752786e1aff6e0e45175b6d21bd9f81d458a5274e14523f8345bbe5ce1d59  data/register-gaps-2026-11/u-2f97338be4e05439/tbs-accessibility-plan-2022-25-our-future-is-accessible.html.gz
 1333c593344e9a6681ce7064e7a6732853459849ac363456422111a92af7802a  data/register-gaps-2026-11/u-3057e7a741a21a17/effectif-de-la-fonction-publique-federale-par-province-et-niveau-de-cadres-superieurs-mars-2026.csv.gz
 d59c0d783386e3ae653f57165eddb74a3a312603dfec9ee12258cd6815dcea27  data/register-gaps-2026-11/u-3109e12246ea48d3/separation-trends-for-emloyment-equity-designated-groups-psea-organisatiosn-2020-2021-fr.docx.gz
 f66b0fc21e54bccefec31a573ba5fddfd69486f60308a37e9454f876e0b17f13  data/register-gaps-2026-11/u-31b783184b087081/CFPPSC_SNPS14E.csv.gz
@@ -888,6 +889,7 @@ ccd64da1912ca5a020b8bdc0a29e440ffdb82acf2bf3870129ea78415e32835c  data/register-
 e4e47b51461e85aea553b28f2ebc6515789909ab7333b34b00129e93b8de1b5f  data/register-gaps-2026-11/u-969fabf4c089fd6c/cfppsc_snps19.csv.gz
 5885a56238766781b785b5da924fb66f9507406744bec04acf4444cec8e87627  data/register-gaps-2026-11/u-96b50a0880847633/cfppsc_snps20.csv.gz
 85c3c185ef88f21463a237ccb76d435a52cdf34e3f093308673aa41f8321d687  data/register-gaps-2026-11/u-975f73dfeb181bb6/cfppsc_snps13.csv.gz
+dab7dc9ca7e82867b07f4b9535cae55a8586f0f292171b8e296cdf9aa7af39a6  data/register-gaps-2026-11/u-97790a6ed86ffe88/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html.gz
 47ed7b9d6d71c070bd824c559af2f6afed41fc09bb0be6d3166141a1428e9f1f  data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz
 53f4b3c925c6f0a561b9dde7ac47cf939cdcc4a74142a41534fabf3b2e05a743  data/register-gaps-2026-11/u-985103c2cc5349e1/rbpo_rppo_fr.csv.gz
 53e588de13bb1784b35c0aa16aa7566d52c5c7d647258a3272a9d0689b1dda04  data/register-gaps-2026-11/u-991a99bd287dc8d2/archived_ar6_datasets_en.pdf.gz
@@ -985,7 +987,7 @@ bab0dbcb7c13e86b9da963038e5eaa17ffbb45d3bc6a9d76b94617d59e2d3ed1  data/register-
 4a0644003de5000e445afc66c857589b4aa76d5ff6add9947a3f65ceadee1b98  data/register-gaps-2026-11/u-fd874e7db3a3dae6/cfppsc_snps14-1.csv.gz
 afac349b06872613601feecb070b4bd123b95cc8cee6a600de770fd7930ba04f  data/register-gaps-2026-11/u-fdd1a279e7b0c501/page-snapshot.html.gz
 11078f5982a9ac7d96674e69677e44bcb34704b6cac7a7100a577afcea43c4cf  data/register-gaps-2026-11/u-febcb0d9da7d25b2/priority.csv.gz
-5a7b39401ea6044ecac45d5be79e30f7879af2b36458bc1d82356effeff40813  data/register-gaps-manifest.json
+2f6dc4b17eaeb87099279fee712dc0a1e1a82fd8efb1a6bf8abcc962f9ab24dd  data/register-gaps-manifest.json
 d7b843fbe94f3fcb03ef457fbf980044a293cdd386f33040387edfdf5cf7225f  data/restored/06890686-ef92-41f2-877b-d481bccef120.csv
 57af2f7ded83be1b9b0a8cdba3dd464710e5bf77e4d0ec7f5040050113882f5b  data/restored/1478662e-17d0-4e3a-aacb-e9c4fb87ae8f.csv
 66806aee938753473064e4cf601b7710c582b472e42d3579a9548c2195186c31  data/restored/16c75ddc-475b-4e62-b883-d5517181c9cf.csv
@@ -3946,7 +3948,7 @@ d8872458484d7382ea5f5aad94f22165906f4c02ff5cea9847735a3dceb3a31a  data/restored/
 9f1a5920cd429f642db8b02afc9cf61c10ab7fb741f1600a9801a91062cc32f6  data/snps-2025-by-organization.json
 fc1dc23c12975344df46eec06c57dd43b4bda8e4ecee10e49bac658910f45e1e  data/source-dates.json
 9fc8acfc6615e70a4c31d53fbc68a47d425160d24f9c3dc52125a59df4995a5c  data/source-register-overrides-2026-11-27.json
-390d5a3ea4a4e7da7e1aa0e3aae9f8fd00d3ccd8e72e09a9a65d924f39f21082  data/source-register-status.json
+8cd7a9e9f2053828cb93e07c243061f2383911c019d9e145b4300daec8b984db  data/source-register-status.json
 2af455a42aab0be5881e71e5ddd9ee547e5c7afd816720bc5a2f45108908a4b4  data/tbs-departmental-representation-2017-2025.json
 b0d1023fb99d878968b563b43423f6df0a49e88dea6947bbc4fc5510ee149de8  data/tbs-women-departmental-2025.json
 7d37034848c0fea4392040270cb1a05c30237b24884f2efc06e7545fce1d3e2d  data/where-data-agree.json

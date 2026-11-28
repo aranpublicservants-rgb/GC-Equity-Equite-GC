@@ -4,14 +4,14 @@
  "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
-  "verified": 368,
-  "hosted": 387,
-  "downloadable": 372,
-  "searchable": 176,
-  "departmental": 171,
-  "analysis": 113,
+  "verified": 369,
+  "hosted": 391,
+  "downloadable": 376,
+  "searchable": 178,
+  "departmental": 175,
+  "analysis": 116,
   "excluded": 155,
-  "noEvidence": 4
+  "noEvidence": 0
  },
  "rows": [
   {
@@ -6963,11 +6963,24 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 0,
-   "analysis": [],
+   "hosted": [
+    "data/october-2026/TBS_EE_executives_by_EX_level_with_WFA_2017-2025.csv",
+    "data/october-2026/TBS_EE_representation_with_WFA_2017-2025.csv",
+    "data/tbs-departmental-representation-2017-2025.json"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 3,
+   "analysis": [
+    "scripts/build-assistant-catalogue.py",
+    "scripts/build-call-to-action-data.py",
+    "scripts/build-cta-comparisons.py",
+    "scripts/build-department-pages.py",
+    "scripts/build-isc-page.py",
+    "scripts/build-workspace.mjs",
+    "systemic-change/austerity-enhancements.js",
+    "systemic-change/department-evidence.js"
+   ],
    "excluded": null
   },
   {
@@ -6980,11 +6993,20 @@
    "inventoryStatus": "held",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
-   "searchable": false,
-   "departmental": 0,
-   "analysis": [],
+   "hosted": [
+    "data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv",
+    "data/october-2026/TBS_disability_subgroups_by_department_2024.csv",
+    "docs/drive-originals/TBS_Indigenous_subgroups_by_department_2025-original.csv",
+    "docs/drive-originals/TBS_disability_subgroups_by_department_2024-original.csv"
+   ],
+   "downloadable": true,
+   "searchable": true,
+   "departmental": 68,
+   "analysis": [
+    "scripts/build-department-pages.py",
+    "scripts/build-where-data-agree.py",
+    "where-data-agree.js"
+   ],
    "excluded": null
   },
   {
@@ -7782,6 +7804,8 @@
    "approved": true,
    "verified": false,
    "hosted": [
+    "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+    "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
     "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv"
    ],
    "downloadable": true,
@@ -8277,7 +8301,9 @@
    "approved": true,
    "verified": false,
    "hosted": [
-    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx"
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+    "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx"
    ],
    "downloadable": true,
    "searchable": false,
@@ -8457,15 +8483,20 @@
    "family": "departmental-EE",
    "period": "2020-2021 to 2024-2025",
    "publisher": "National Research Council Canada",
-   "source": "https://www.canada.ca/en/national-research-council/corporate-reports.html",
+   "source": "https://nrc.canada.ca/en/corporate/planning-reporting/annual-reports-long-term-plans",
    "inventoryStatus": "web-only",
    "approved": true,
    "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "hosted": [
+    "data/ee-reports/nrc-ee-annual-report-2023-24.pdf",
+    "data/nrc-ee-representation-2022-2025.csv"
+   ],
+   "downloadable": true,
    "searchable": false,
-   "departmental": 0,
-   "analysis": [],
+   "departmental": 1,
+   "analysis": [
+    "scripts/build-department-pages.py"
+   ],
    "excluded": null
   },
   {
@@ -9195,14 +9226,17 @@
    "family": "accessibility",
    "period": "2022-2025",
    "publisher": "Treasury Board of Canada Secretariat",
-   "source": "https://open.canada.ca/data/en/dataset/6a9248d9-0e3e-4547-844c-afedd1a8ec8d",
+   "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
    "inventoryStatus": "web-only",
    "approved": true,
-   "verified": false,
-   "hosted": [],
-   "downloadable": false,
+   "verified": "page-snapshot",
+   "hosted": [
+    "data/register-gaps-2026-11/u-2f97338be4e05439/tbs-accessibility-plan-2022-25-our-future-is-accessible.html.gz",
+    "data/register-gaps-2026-11/u-97790a6ed86ffe88/plan-sur-laccessibilite-du-sct-pour-2022-2025-notre-avenir-est-accessible.html.gz"
+   ],
+   "downloadable": true,
    "searchable": false,
-   "departmental": 0,
+   "departmental": 1,
    "analysis": [],
    "excluded": null
   },
