@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: '22'
       - name: Validate department source cells, canonical routes and shared site
+        id: static-validation
+        continue-on-error: true
         run: |
           python scripts/check-site.py
           python scripts/check-dedicated-departments.py
@@ -311,3 +313,7 @@ jobs:
 
       - name: Check consolidated chart explorer, source fidelity and bilingual switching
         run: node tests/chart-explorer-browser.cjs
+
+      - name: Preserve static validation failure in overall result
+        if: always() && steps.static-validation.outcome == 'failure'
+        run: exit 1
