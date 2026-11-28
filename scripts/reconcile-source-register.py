@@ -256,6 +256,17 @@ def main():
                 hosted.append('pses-data:' + f['directory'])
                 if not verified and sum(x['rows'] for x in f['parts']) == f.get('rows'):
                     verified = 'sha256-recorded-at-download'
+        expected_snapshots = overrides.get(e['id'], {}).get('snapshots', [])
+        archived_urls = {f.get('url') for f in gaps.get(e['id'], [])
+                         if f.get('path') and (ROOT / f['path']).is_file()
+                         and f.get('sha256')
+                         and hashlib.sha256(gzip.decompress((ROOT / f['path']).read_bytes())).hexdigest() == f['sha256']}
+        snapshot_coverage = None
+        if expected_snapshots:
+            expected_urls = {f['url'] for f in expected_snapshots}
+            missing_urls = sorted(expected_urls - archived_urls)
+            snapshot_coverage = {'expected': len(expected_urls), 'verifiedCopies': len(expected_urls & archived_urls),
+                                 'complete': not missing_urls, 'missingUrls': missing_urls}
         if e['id'] in RULE_EXCLUDED:
             hosted = []
             verified = None
@@ -272,6 +283,8 @@ def main():
             'analysis': found_in(groups['analysis'], keys),
             'excluded': None,
         }
+        if snapshot_coverage is not None:
+            status['snapshotCoverage'] = snapshot_coverage
         if e['id'] in RULE_EXCLUDED:
             status['excluded'] = RULE_EXCLUDED[e['id']]
         elif not e.get('approved'):
@@ -289,12 +302,12 @@ def main():
                      'publisher': e.get('publisher'), 'source': url, 'inventoryStatus': e.get('inventoryStatus'),
                      'approved': e.get('approved'), **status})
     out = {
-        'asOf': '2026-11-26',
+        'asOf': '2026-11-27',
         'register': REGISTER.relative_to(ROOT).as_posix(),
         'method': ('Each register entry is checked against the current repository: recorded SHA-256 values, '
                    'the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository '
                    'paths. Counts for departmental pages are the number of organization files citing the source. '
-                   'No match means no evidence was found in this repository, not that the source is unavailable.'),
+                   'Hosted and verified are entry-level indicators of at least one copy, not proof that all editions or languages are held. Multi-report snapshot coverage is reported separately. No match means no evidence was found in this repository, not that the source is unavailable.'),
         'entries': len(rows),
         'counts': counts,
         'rows': rows,
