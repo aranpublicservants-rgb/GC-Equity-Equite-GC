@@ -30,36 +30,71 @@
       "folder": "cse-ee-representation",
       "name": "cse-workforce-representation-2022-06-30-fr.csv",
       "bytes": 528,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv",
+          "bytes": 537,
+          "gitBlobSha": "704a806f6de8bf457efadecbcd1e0f616261677e",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "cse-ee-representation",
       "name": "cse-workforce-representation-2022-06-30-en.csv",
       "bytes": 503,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-en.csv",
+          "bytes": 503,
+          "gitBlobSha": "1562c8adbcfaccad31c7317a773be8ebe4e9800b",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "cse-ee-representation",
       "name": "cse-employment-equity-2020.csv",
       "bytes": 567,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv",
+          "bytes": 567,
+          "gitBlobSha": "01dfd641fcca3e00c425640a7b48583e0bd8cc6e",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "cse-ee-representation",
       "name": "cse-employment-equity-2019.csv",
       "bytes": 483,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+          "bytes": 490,
+          "gitBlobSha": "8eb902b55e3fabd131b0a7697b9e89b86126f81f",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "cse-ee-representation",
       "name": "cse-employment-equity-2018.csv",
       "bytes": 450,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+          "bytes": 454,
+          "gitBlobSha": "d34c03af214614a12bc51db966458d3a75c1c432",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "cse-ee-representation",
@@ -203,36 +238,71 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2024-2025.xlsx",
       "bytes": 17157,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.xlsx",
+          "bytes": 17157,
+          "gitBlobSha": "d0d5c47aaed578be393c7c0679ecb8e1e0017a72",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2024-2025.csv",
       "bytes": 372,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
+          "bytes": 382,
+          "gitBlobSha": "656256fd14d2a0d2e687cf0d57bc277f220c7c1e",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2023-2024.xlsx",
       "bytes": 17232,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.xlsx",
+          "bytes": 17232,
+          "gitBlobSha": "9d9e5bf126285dc60ae47a8b33d1d06f8cfa8af7",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2023-2024.csv",
       "bytes": 371,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path exists; byte comparison outstanding",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
+          "bytes": 381,
+          "gitBlobSha": "6289fb3d490bb31620b3f1cec6bd81b65709f3ff",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2022-2023.xlsx",
       "bytes": 17319,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.xlsx",
+          "bytes": 17319,
+          "gitBlobSha": "e5d939394fd8cdd2ff0844fc17bf57014a5776f6",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "csps-ee-representation",
