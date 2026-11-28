@@ -1,0 +1,124 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; sparse original matrices include empty positions. A nonmatch is reviewed separately, not automatically classified as incorrect.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "rows": [
+    {
+      "id": "office-of-the-chief-electoral-officer",
+      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+    },
+    {
+      "id": "office-of-the-commissioner-of-official-languages",
+      "expectedCount": 16,
+      "expected": "650be52087ce2aa2",
+      "actual": "650be52087ce2aa2",
+      "count": 16,
+      "blob": "e15d57416a53b1d90c11a554bdbe517dd0e768eb"
+    },
+    {
+      "id": "office-of-the-privacy-commissioner-of-canada",
+      "expectedCount": 16,
+      "expected": "6af6bb804d5c6bf8",
+      "actual": "6af6bb804d5c6bf8",
+      "count": 16,
+      "blob": "6db2437cad6df0e53dd7d040dd35719c006dd7eb"
+    },
+    {
+      "id": "office-of-the-secretary-to-the-governor-general",
+      "expectedCount": 16,
+      "expected": "a0792f144f09e93b",
+      "actual": "a0792f144f09e93b",
+      "count": 16,
+      "blob": "b581f95b9a60f9c4bdc42d97fcffb2f3432ed31e"
+    },
+    {
+      "id": "social-sciences-and-humanities-research-council",
+      "expectedCount": 24,
+      "expected": "5458a3080dd06e60",
+      "actual": "5458a3080dd06e60",
+      "count": 24,
+      "blob": "acec74361527bfcd13615a4a01214226fff1db7d"
+    },
+    {
+      "id": "registrar-of-the-supreme-court-of-canada",
+      "expectedCount": 16,
+      "expected": "57196e88d6832910",
+      "actual": "191a836ce0ddd3bb",
+      "count": 0,
+      "blob": "46a9f5edb9ff677cf58107504d5a091eff0c50a7",
+      "actualCells": [
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ",",
+        ","
+      ]
+    },
+    {
+      "id": "transportation-safety-board-of-canada",
+      "expectedCount": 16,
+      "expected": "4f3c57013760c1ff",
+      "actual": "4f3c57013760c1ff",
+      "count": 16,
+      "blob": "b23f06c71c581620ec7e37329f0df63eb35d60b6"
+    },
+    {
+      "id": "western-economic-diversification-canada",
+      "expectedCount": 24,
+      "expected": "88197be101aed990",
+      "actual": "88197be101aed990",
+      "count": 24,
+      "blob": "1bbd7651b6dde7e9049f76f6d0880661f1a432e8"
+    },
+    {
+      "id": "housing-infrastructure-and-communities-canada",
+      "expectedCount": 32,
+      "expected": "4fa15bcab41e8e60",
+      "actual": "4fa15bcab41e8e60",
+      "count": 32,
+      "blob": "16798b861181919c4406cb2a023ff6e4ad5b27d2"
+    }
+  ]
+}
