@@ -1,0 +1,725 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Original files from the public-data Google Drive staging folders independently materialized; Git blob SHA-1 computed over exact original bytes and compared to GitHub Contents API object SHA. No claim of direct publisher retrieval. Nonmatching CSVs may have encoding changes; consult employer-source-encoding-verification-2026-11-27.json.",
+  "tally": {
+    "total": 72,
+    "matched": 53,
+    "different": 16,
+    "missing": 3
+  },
+  "records": [
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+      "originalGitBlob": "7d984f669229d2a19adecff489c5147f77d5d2f5",
+      "hostedGitBlob": "7d984f669229d2a19adecff489c5147f77d5d2f5",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+      "originalGitBlob": "7785bc6e64b2fa2aa1a651283aedc77b03f0835e",
+      "hostedGitBlob": "7785bc6e64b2fa2aa1a651283aedc77b03f0835e",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+      "originalGitBlob": "6f39264904726c506464fc044732efe9fc581bb8",
+      "hostedGitBlob": "6f39264904726c506464fc044732efe9fc581bb8",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+      "originalGitBlob": "f100ec0217187b3b933a7efe661863f42fa92659",
+      "hostedGitBlob": "f100ec0217187b3b933a7efe661863f42fa92659",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+      "originalGitBlob": "37bbd5b97fa16ef865a8152150ed33c954f0e2ea",
+      "hostedGitBlob": "37bbd5b97fa16ef865a8152150ed33c954f0e2ea",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+      "originalGitBlob": "e0f141071107d73807577a4723cddcce3d712e00",
+      "hostedGitBlob": "e0f141071107d73807577a4723cddcce3d712e00",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+      "originalGitBlob": "756b9ba450fefc9bd13c7e229ca4e237d9effb88",
+      "hostedGitBlob": "756b9ba450fefc9bd13c7e229ca4e237d9effb88",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+      "originalGitBlob": "825b0497391f74a23d76c7f208df1bf1e5edaa2d",
+      "hostedGitBlob": "825b0497391f74a23d76c7f208df1bf1e5edaa2d",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+      "originalGitBlob": "f22204583dd28bb7e902943c4eac56f18da733fd",
+      "hostedGitBlob": "f22204583dd28bb7e902943c4eac56f18da733fd",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+      "originalGitBlob": "11d581cb9b9c528348f122bbb718587186528c12",
+      "hostedGitBlob": "11d581cb9b9c528348f122bbb718587186528c12",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+      "originalGitBlob": "229c7f9de9897d52bb275028db9969ffcfb449c6",
+      "hostedGitBlob": "229c7f9de9897d52bb275028db9969ffcfb449c6",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+      "originalGitBlob": "fc8a0960cb646ff15fbc54d2cfc08e58efbe4abf",
+      "hostedGitBlob": "fc8a0960cb646ff15fbc54d2cfc08e58efbe4abf",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+      "originalGitBlob": "b9db734360be4e8cce730afeb6098e2c94526ccc",
+      "hostedGitBlob": "b9db734360be4e8cce730afeb6098e2c94526ccc",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+      "originalGitBlob": "2ffd20e5c4fff2021265da0856d22a2fdadd93c6",
+      "hostedGitBlob": "2ffd20e5c4fff2021265da0856d22a2fdadd93c6",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+      "originalGitBlob": "592f07de9835a8c69398d5a292295412c3b0a428",
+      "hostedGitBlob": "592f07de9835a8c69398d5a292295412c3b0a428",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+      "originalGitBlob": "d1baacd11cd24d8b4f13ceb8788b5939de340673",
+      "hostedGitBlob": "d1baacd11cd24d8b4f13ceb8788b5939de340673",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+      "originalGitBlob": "13683d44da74418fa0d1d03556016bcc33f0fbd5",
+      "hostedGitBlob": "13683d44da74418fa0d1d03556016bcc33f0fbd5",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+      "originalGitBlob": "833282c7843c8bd356d3d4dea904dd640db6aea1",
+      "hostedGitBlob": "833282c7843c8bd356d3d4dea904dd640db6aea1",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+      "originalGitBlob": "d0af4e473a257a0e68471a95287a3c8608d6c4c2",
+      "hostedGitBlob": "d0af4e473a257a0e68471a95287a3c8608d6c4c2",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+      "originalGitBlob": "db9303f219085b51c14be3ffe02da87d58410095",
+      "hostedGitBlob": "db9303f219085b51c14be3ffe02da87d58410095",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+      "originalGitBlob": "78f027ba7b21735e688ff072fcd1ee7e318f06aa",
+      "hostedGitBlob": "78f027ba7b21735e688ff072fcd1ee7e318f06aa",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+      "originalGitBlob": "1c9c0a78889fa2ec9a79a3270b1f9ef9cd539677",
+      "hostedGitBlob": "1c9c0a78889fa2ec9a79a3270b1f9ef9cd539677",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+      "originalGitBlob": "35ffcc84935acc8950103ede0907a935442a3a95",
+      "hostedGitBlob": "35ffcc84935acc8950103ede0907a935442a3a95",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+      "originalGitBlob": "1dcf47049bb2aa4f8d72cd4e0c533feb86ba47e0",
+      "hostedGitBlob": "1dcf47049bb2aa4f8d72cd4e0c533feb86ba47e0",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+      "originalGitBlob": "be59f530f69e7968e32c658e45a750c9061259d1",
+      "hostedGitBlob": "be59f530f69e7968e32c658e45a750c9061259d1",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+      "originalGitBlob": "82b57979d02d4f370b9001bc800c0c9c42a1c986",
+      "hostedGitBlob": "82b57979d02d4f370b9001bc800c0c9c42a1c986",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+      "originalGitBlob": "c7a0001016cf56b72fb422d9e9a115a016bff098",
+      "hostedGitBlob": "c7a0001016cf56b72fb422d9e9a115a016bff098",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+      "originalGitBlob": "3e86452a4ae7242f268941c15b7fa02c20873af8",
+      "hostedGitBlob": "3e86452a4ae7242f268941c15b7fa02c20873af8",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+      "originalGitBlob": "fb55461df2a3ff3ac593aa5246222d36ba207c27",
+      "hostedGitBlob": "fb55461df2a3ff3ac593aa5246222d36ba207c27",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+      "originalGitBlob": "c6367e9efb8d428dfd4527057a8218697180e721",
+      "hostedGitBlob": "c6367e9efb8d428dfd4527057a8218697180e721",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+      "originalGitBlob": "aac00e8da4c307382e77c041d6487525d2bbe236",
+      "hostedGitBlob": "aac00e8da4c307382e77c041d6487525d2bbe236",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+      "originalGitBlob": "3b424bed4f37ed5ee5efe405264199fe55cc1f68",
+      "hostedGitBlob": "3b424bed4f37ed5ee5efe405264199fe55cc1f68",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+      "originalGitBlob": "14e3dd7ce6161b125e9129e3f7773c2fd93e6d6e",
+      "hostedGitBlob": "14e3dd7ce6161b125e9129e3f7773c2fd93e6d6e",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+      "originalGitBlob": "4ccbb1a51108b08525c2e79b10fa15c20db54382",
+      "hostedGitBlob": "4ccbb1a51108b08525c2e79b10fa15c20db54382",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+      "originalGitBlob": "089ce309987b3f51cc905db8861b5bc89c32cd00",
+      "hostedGitBlob": "089ce309987b3f51cc905db8861b5bc89c32cd00",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+      "originalGitBlob": "c1d221696d12a0b5b60f68cb00599e159a467c7d",
+      "hostedGitBlob": "c1d221696d12a0b5b60f68cb00599e159a467c7d",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+      "originalGitBlob": "3d506b3fce9ea4eccaf7324b62a137925ac8374e",
+      "hostedGitBlob": "3d506b3fce9ea4eccaf7324b62a137925ac8374e",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+      "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+      "originalGitBlob": "4ac6009dcd8fdd44422fe5830e743584d91690ce",
+      "hostedGitBlob": "4ac6009dcd8fdd44422fe5830e743584d91690ce",
+      "match": true,
+      "registerIds": [
+        "GC-0330"
+      ]
+    },
+    {
+      "name": "cse-annual-pay-rate-in-dollars.csv",
+      "path": null,
+      "originalGitBlob": "6f229274055b9ff7b00d2d853c6ac8de87838d98",
+      "hostedGitBlob": null,
+      "match": false,
+      "registerIds": []
+    },
+    {
+      "name": "cse-ee-and-first-official-languages-2022-2023.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2022-2023.csv",
+      "originalGitBlob": "2c08423c691bf66fd637eb81803ba312949f8bff",
+      "hostedGitBlob": "03bf89337240903e32dba245ef115c6bcd988015",
+      "match": false,
+      "registerIds": [
+        "GC-0382"
+      ]
+    },
+    {
+      "name": "cse-ee-and-first-official-languages-2024-2025.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2024-2025.csv",
+      "originalGitBlob": "86884332f9faf77312948c21d5f420fc901a03ee",
+      "hostedGitBlob": "cd7b20f4793dd2e387823cb26d895917480d37c8",
+      "match": false,
+      "registerIds": [
+        "GC-0381"
+      ]
+    },
+    {
+      "name": "cse-employment-equity-2018.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+      "originalGitBlob": "15cd1b94a134686124ff039c5871e38e1512468c",
+      "hostedGitBlob": "d34c03af214614a12bc51db966458d3a75c1c432",
+      "match": false,
+      "registerIds": [
+        "GC-0384"
+      ]
+    },
+    {
+      "name": "cse-employment-equity-2019.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+      "originalGitBlob": "02fdc6c2e81656b084cf38c63d685c14971cbea1",
+      "hostedGitBlob": "118d66dfafd7aa8cd58e7bc35cdd0170f91b4ea6",
+      "match": false,
+      "registerIds": [
+        "GC-0384"
+      ]
+    },
+    {
+      "name": "cse-employment-equity-2020.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv",
+      "originalGitBlob": "01dfd641fcca3e00c425640a7b48583e0bd8cc6e",
+      "hostedGitBlob": "01dfd641fcca3e00c425640a7b48583e0bd8cc6e",
+      "match": true,
+      "registerIds": [
+        "GC-0384"
+      ]
+    },
+    {
+      "name": "cse-workforce-representation-2022-06-30-en.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-en.csv",
+      "originalGitBlob": "1562c8adbcfaccad31c7317a773be8ebe4e9800b",
+      "hostedGitBlob": "1562c8adbcfaccad31c7317a773be8ebe4e9800b",
+      "match": true,
+      "registerIds": [
+        "GC-0383"
+      ]
+    },
+    {
+      "name": "cse-workforce-representation-2022-06-30-fr.csv",
+      "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv",
+      "originalGitBlob": "b3c574d0db356f528a267984370d9785ade901da",
+      "hostedGitBlob": "704a806f6de8bf457efadecbcd1e0f616261677e",
+      "match": false,
+      "registerIds": [
+        "GC-0383"
+      ]
+    },
+    {
+      "name": "csis-designated-group-members-by-age-range-2017-2018.csv",
+      "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2017-2018.csv",
+      "originalGitBlob": "f8f375776b3143bd204b7cdb544e0315307c56d0",
+      "hostedGitBlob": "484b9b44576cb8198ae0409f05c746906b04552c",
+      "match": false,
+      "registerIds": []
+    },
+    {
+      "name": "csis-designated-group-members-by-age-range-2018-2019.csv",
+      "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv",
+      "originalGitBlob": "7aa2023c684099a95eb2a0c9939cb28733eca7ed",
+      "hostedGitBlob": "8af6946adcfe6727e55ceab37fe015ab4ca320f0",
+      "match": false,
+      "registerIds": [
+        "GC-0391"
+      ]
+    },
+    {
+      "name": "csis-ee-representation-2020.csv",
+      "path": "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv",
+      "originalGitBlob": "e62094790448b0c9d1614fd062f46041d17db752",
+      "hostedGitBlob": "9752f59702c6798a5c9d784a0c0b0e6ffb6c8bc1",
+      "match": false,
+      "registerIds": [
+        "GC-0389"
+      ]
+    },
+    {
+      "name": "csis-occupational-representation-2015-2016.csv",
+      "path": null,
+      "originalGitBlob": "687ddc4561baa95bc9233238d735f032b2d762b1",
+      "hostedGitBlob": null,
+      "match": false,
+      "registerIds": []
+    },
+    {
+      "name": "csps-ee-representation-2017-2018.xlsx",
+      "path": null,
+      "originalGitBlob": "22a6b9e27235ce56d8cc49149a9e3311961df522",
+      "hostedGitBlob": null,
+      "match": false,
+      "registerIds": []
+    },
+    {
+      "name": "csps-ee-representation-2018-2019.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
+      "originalGitBlob": "64734949051b77ad7c7f2b94943952a96d344dc5",
+      "hostedGitBlob": "dac980ec5067efb8c36206a14b296ff2c350e4a4",
+      "match": false,
+      "registerIds": [
+        "GC-0395"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2018-2019.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.xlsx",
+      "originalGitBlob": "6ba2e97ebceacca72a8b2ccdb222e29f1ce389c5",
+      "hostedGitBlob": "6ba2e97ebceacca72a8b2ccdb222e29f1ce389c5",
+      "match": true,
+      "registerIds": [
+        "GC-0395"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2019-2020.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
+      "originalGitBlob": "0124f3779d2b64bff57188f2ee009cf63b901f9e",
+      "hostedGitBlob": "b707d7cf2fa4beb9fab3b90840e1fe93466b1e58",
+      "match": false,
+      "registerIds": [
+        "GC-0396"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2019-2020.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.xlsx",
+      "originalGitBlob": "edda6904422984f46b606e262a7f1e4f0e33e7fe",
+      "hostedGitBlob": "edda6904422984f46b606e262a7f1e4f0e33e7fe",
+      "match": true,
+      "registerIds": [
+        "GC-0396"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2020-2021.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
+      "originalGitBlob": "9bdfab2a3cadda92da2b037442144503dfae107b",
+      "hostedGitBlob": "5123128e9c061165b185bda65f5e1edc27dc5de9",
+      "match": false,
+      "registerIds": [
+        "GC-0397"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2020-2021.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.xlsx",
+      "originalGitBlob": "07a0b6c98d5cf985cbae768e78b5766dd29216db",
+      "hostedGitBlob": "07a0b6c98d5cf985cbae768e78b5766dd29216db",
+      "match": true,
+      "registerIds": [
+        "GC-0397"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2021-2022.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
+      "originalGitBlob": "ee2ace973835942bd56dea9d5801c1cc0b1b4dc2",
+      "hostedGitBlob": "76500e16bd22b3b4b05c5c623c57fd2d4922b748",
+      "match": false,
+      "registerIds": [
+        "GC-0398"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2021-2022.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.xlsx",
+      "originalGitBlob": "73a5a5baa994a7006c8c24d7e0ac3780671970ca",
+      "hostedGitBlob": "73a5a5baa994a7006c8c24d7e0ac3780671970ca",
+      "match": true,
+      "registerIds": [
+        "GC-0398"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2022-2023.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
+      "originalGitBlob": "71c216ffc99eed8f99e0609e829e8d81b4c8a472",
+      "hostedGitBlob": "b78eb943d177858717932379ce86f7ecc16decb2",
+      "match": false,
+      "registerIds": [
+        "GC-0399"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2022-2023.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.xlsx",
+      "originalGitBlob": "e5d939394fd8cdd2ff0844fc17bf57014a5776f6",
+      "hostedGitBlob": "e5d939394fd8cdd2ff0844fc17bf57014a5776f6",
+      "match": true,
+      "registerIds": [
+        "GC-0399"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2023-2024.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
+      "originalGitBlob": "448fc3a001746a352d4f1a50f6394747dddae523",
+      "hostedGitBlob": "6289fb3d490bb31620b3f1cec6bd81b65709f3ff",
+      "match": false,
+      "registerIds": [
+        "GC-0400"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2023-2024.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.xlsx",
+      "originalGitBlob": "9d9e5bf126285dc60ae47a8b33d1d06f8cfa8af7",
+      "hostedGitBlob": "9d9e5bf126285dc60ae47a8b33d1d06f8cfa8af7",
+      "match": true,
+      "registerIds": [
+        "GC-0400"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2024-2025.csv",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
+      "originalGitBlob": "4e4a761f7a733e7360b00492423a37883c3d5608",
+      "hostedGitBlob": "656256fd14d2a0d2e687cf0d57bc277f220c7c1e",
+      "match": false,
+      "registerIds": [
+        "GC-0401"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-2024-2025.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.xlsx",
+      "originalGitBlob": "d0d5c47aaed578be393c7c0679ecb8e1e0017a72",
+      "hostedGitBlob": "d0d5c47aaed578be393c7c0679ecb8e1e0017a72",
+      "match": true,
+      "registerIds": [
+        "GC-0401"
+      ]
+    },
+    {
+      "name": "csps-ee-representation-data-dictionary-2021-present.xlsx",
+      "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-data-dictionary-2021-present.xlsx",
+      "originalGitBlob": "a04a41de25244be73a264488f706d88faa8a1113",
+      "hostedGitBlob": "a04a41de25244be73a264488f706d88faa8a1113",
+      "match": true,
+      "registerIds": [
+        "GC-0402"
+      ]
+    },
+    {
+      "name": "dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
+      "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
+      "originalGitBlob": "3a410f9f0467ddada65da5ecf2f3a6058b1a2c50",
+      "hostedGitBlob": "3a410f9f0467ddada65da5ecf2f3a6058b1a2c50",
+      "match": true,
+      "registerIds": [
+        "GC-0411"
+      ]
+    },
+    {
+      "name": "dnd-civilian-employee-gender-distribution-2021-2023.csv",
+      "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilian-employee-gender-distribution-2021-2023.csv",
+      "originalGitBlob": "d508a661c32084e4ae39d44069b1efb85d782970",
+      "hostedGitBlob": "d508a661c32084e4ae39d44069b1efb85d782970",
+      "match": true,
+      "registerIds": [
+        "GC-0411"
+      ]
+    },
+    {
+      "name": "dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+      "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+      "originalGitBlob": "04f1f729a1f52eb1c6ad75da86f4476cbf245ce6",
+      "hostedGitBlob": "04f1f729a1f52eb1c6ad75da86f4476cbf245ce6",
+      "match": true,
+      "registerIds": [
+        "GC-0410"
+      ]
+    },
+    {
+      "name": "dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+      "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+      "originalGitBlob": "134dea9633e77b71b8e571f97fb4dc5e2bf35129",
+      "hostedGitBlob": "134dea9633e77b71b8e571f97fb4dc5e2bf35129",
+      "match": true,
+      "registerIds": [
+        "GC-0410"
+      ]
+    },
+    {
+      "name": "dnd-civilians-self-identify-woman-2019-2025.xlsx",
+      "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx",
+      "originalGitBlob": "0f709d6c6506637bd7cf9183801deb25e9d0bac9",
+      "hostedGitBlob": "0f709d6c6506637bd7cf9183801deb25e9d0bac9",
+      "match": true,
+      "registerIds": [
+        "GC-0410"
+      ]
+    },
+    {
+      "name": "dnd-civilians-workplace-representation-2019-2022.csv",
+      "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv",
+      "originalGitBlob": "1fea6cb3e2af55e17f3294fabb01704b8b590663",
+      "hostedGitBlob": "ee29ff3dd4788ac529ebb02c875054561294a8f5",
+      "match": false,
+      "registerIds": [
+        "GC-0409",
+        "GC-0412"
+      ]
+    }
+  ]
+}
