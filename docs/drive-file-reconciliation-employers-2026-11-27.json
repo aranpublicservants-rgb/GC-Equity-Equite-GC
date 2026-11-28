@@ -1,0 +1,565 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Direct Drive listing compared to archived-source, prior register and employer catalogue sizes. Size matches are candidates, not byte verification. No private Drive identifiers.",
+  "folders": [
+    "cse-ee-representation",
+    "csis-ee-representation",
+    "csis-pay-scale",
+    "csps-ee-representation",
+    "dnd-civilian-representation",
+    "dnd-ombudsman-complaint-types",
+    "ssc-ee-representation",
+    "vac-ee-representation"
+  ],
+  "rows": [
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-annual-pay-rate-in-dollars.csv",
+      "bytes": 851,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/cse-annual-pay-rate-in-dollars.csv",
+          "url": "https://open.canada.ca/data/dataset/e3d448a2-3d6a-465e-b900-93c0b3666a6f/resource/23705252-1708-4327-a8bd-e23021bb9fee/download/cse-annual-ray-in-dollars.csv",
+          "id": "GC-0423",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-workforce-representation-2022-06-30-fr.csv",
+      "bytes": 528,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-workforce-representation-2022-06-30-en.csv",
+      "bytes": 503,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-employment-equity-2020.csv",
+      "bytes": 567,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-employment-equity-2019.csv",
+      "bytes": 483,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-employment-equity-2018.csv",
+      "bytes": 450,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-ee-and-first-official-languages-2024-2025.csv",
+      "bytes": 1013,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2024-2025.csv",
+          "url": "https://open.canada.ca/data/en/dataset/112ed90e-da6c-49d7-8bd5-81964bcab466",
+          "id": "GC-0381",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "cse-ee-representation",
+      "name": "cse-ee-and-first-official-languages-2022-2023.csv",
+      "bytes": 1014,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/cse/cse-ee-and-first-official-languages-2022-2023.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f6afd910-e246-4676-90dd-51c0ea6f6ff3",
+          "id": "GC-0382",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csis-ee-representation",
+      "name": "csis-occupational-representation-2015-2016.csv",
+      "bytes": 1299,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/csis-occupational-representation-2015-2016.csv",
+          "url": "https://www.canada.ca/content/dam/csis-scrs/dataset/Representation-of-Designated-Group-Members-by-Employment-Representation-de-membres-de-groupes-designes.csv",
+          "id": "GC-0393",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csis-ee-representation",
+      "name": "csis-designated-group-members-by-age-range-2017-2018.csv",
+      "bytes": 560,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-8e3153d0ba4b43bd/distribution-designated-groups_age.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/09337323-a186-4884-b758-f21fedd71727/resource/6699da6d-7f9f-4566-a500-aad136571615/download/distribution-designated-groups_age.csv",
+          "id": "GC-0390",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-8e3153d0ba4b43bd/distribution-designated-groups_age.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/09337323-a186-4884-b758-f21fedd71727",
+          "id": "GC-0390",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csis-ee-representation",
+      "name": "csis-ee-representation-2020.csv",
+      "bytes": 1537,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csis/csis-ee-representation-2020.csv",
+          "url": "https://open.canada.ca/data/en/dataset/d77a24fe-eb38-4d02-8e00-32148a708b11",
+          "id": "GC-0389",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csis-ee-representation",
+      "name": "csis-designated-group-members-by-age-range-2018-2019.csv",
+      "bytes": 564,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csis/csis-designated-group-members-by-age-range-2018-2019.csv",
+          "url": "https://open.canada.ca/data/en/dataset/479112da-a42a-4bf7-91bc-f40f810050a9",
+          "id": "GC-0391",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csis-pay-scale",
+      "name": "csis-pay-scale-2019.csv",
+      "bytes": 3380,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-db0a462f90443d00/HRS-Datasets-2019.csv.gz",
+          "url": "https://www.canada.ca/content/dam/csis-scrs/dataset/HRS-Datasets-2019.csv",
+          "id": "GC-0422",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-db0a462f90443d00/HRS-Datasets-2019.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/633ea9e6-1d4c-4372-8627-36f02c1969ad",
+          "id": "GC-0422",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2017-2018.xlsx",
+      "bytes": 9897,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/csps-ee-representation-2017-2018.xlsx",
+          "url": "https://web.archive.org/web/20201127190453id_/https://www.csps-efpc.gc.ca/OpenGov/Employment_Equity_Representation_2017_2018.xlsx",
+          "id": "GC-0406",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-data-dictionary-2021-present.xlsx",
+      "bytes": 21400,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-data-dictionary-2021-present.xlsx",
+          "url": "https://open.canada.ca/data/en/dataset/c57a38fb-62e0-4025-b83d-583f4f880a43",
+          "id": "GC-0402",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2024-2025.xlsx",
+      "bytes": 17157,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2024-2025.csv",
+      "bytes": 372,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2023-2024.xlsx",
+      "bytes": 17232,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2023-2024.csv",
+      "bytes": 371,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2022-2023.xlsx",
+      "bytes": 17319,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2022-2023.csv",
+      "bytes": 371,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2021-2022.xlsx",
+      "bytes": 11440,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2021-2022.csv",
+      "bytes": 370,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2020-2021.xlsx",
+      "bytes": 11416,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2020-2021.csv",
+      "bytes": 370,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2019-2020.xlsx",
+      "bytes": 10929,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2019-2020.csv",
+      "bytes": 370,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2018-2019.xlsx",
+      "bytes": 9922,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "csps-ee-representation",
+      "name": "csps-ee-representation-2018-2019.csv",
+      "bytes": 370,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "dnd-civilian-representation",
+      "name": "dnd-civilian-employee-gender-distribution-2021-2023.csv",
+      "bytes": 419,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "dnd-civilian-representation",
+      "name": "dnd-civilian-employee-gender-distribution-2009-2024.xlsx",
+      "bytes": 9784,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "dnd-civilian-representation",
+      "name": "dnd-civilians-workplace-representation-2019-2022.csv",
+      "bytes": 1639,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/employer-equity-sources-2026-11/dnd/dnd-civilians-workplace-representation-2019-2022.csv",
+          "url": "https://open.canada.ca/data/en/dataset/79ec0e13-2a2c-44a2-9723-bf9c706a72ff",
+          "id": "GC-0409",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "dnd-civilian-representation",
+      "name": "dnd-civilians-self-identify-woman-2019-2025.xlsx",
+      "bytes": 21479,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "dnd-civilian-representation",
+      "name": "dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+      "bytes": 21548,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "dnd-civilian-representation",
+      "name": "dnd-civilians-self-identify-indigenous-2019-2025.xlsx",
+      "bytes": 21503,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "dnd-ombudsman-complaint-types",
+      "name": "type-of-complaint.csv",
+      "bytes": 3930,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "ssc-ee-representation",
+      "name": "equite_en_maitre_d_emploi-2025-2026.csv",
+      "bytes": 1861,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "ssc-ee-representation",
+      "name": "employment-equity-2025-2026.csv",
+      "bytes": 1882,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-women-2019-03-31.csv",
+      "bytes": 659,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-139c8bd2fb3e0243/womenfemmes_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/efbb116b-561e-4df2-baa1-4073abf7a4af/download/womenfemmes_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-women-2018-12-31.csv",
+      "bytes": 665,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-3881f66274b7dc59/womenfemmes_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/2e047f0b-6684-4e49-93c5-be1bef0eef45/download/womenfemmes_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-visible-minorities-2019-03-31.csv",
+      "bytes": 658,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-5487d621042a47ce/visibleminoritiesminoritesvisible_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/6bc22bba-d669-45e7-9dcd-75475c73ce29/download/visibleminoritiesminoritesvisible_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-visible-minorities-2018-12-31.csv",
+      "bytes": 656,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-ae9084db86107232/visibleminoritiesminoritesvisible_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/9741e138-ece7-4594-a78a-79f694040342/download/visibleminoritiesminoritesvisible_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-representation-by-occ-category-2019-03-31.xlsx",
+      "bytes": 18734,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-ce210b7889ae0cd5/employment_equity-actual_representation.xlsx.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/0b46f76b-f2f7-4d4f-a36a-ab7ae24f53fe/download/employment_equity-actual_representation.xlsx",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-representation-by-occ-category-2018-12-31.xlsx",
+      "bytes": 18618,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-85a3929c35b6d0cf/employmentequityrepresentationdesgroupesdequiteemploi_vacacc.xlsx.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/9da93df5-f0a8-409b-ba44-535098f1b2a2/download/employmentequityrepresentationdesgroupesdequiteemploi_vacacc.xlsx",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-persons-with-disabilities-2019-03-31.csv",
+      "bytes": 646,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-0e856a955fe1885f/aboriginalpeoplesautochtones_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/d805cdc7-b242-4cf7-83b0-dce32980487a/download/aboriginalpeoplesautochtones_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-3439877fb68e4e72/personswithdisabilitiespersonneshandicapees_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/b3111f8e-aa70-4da7-bf9e-7b9a07de7ccc/download/personswithdisabilitiespersonneshandicapees_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-persons-with-disabilities-2018-12-31.csv",
+      "bytes": 648,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-ed97cad40c21d805/personswithdisabilitiespersonneshandicapees_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/61edd25b-56fb-49fe-adc1-470730b246ed/download/personswithdisabilitiespersonneshandicapees_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-occupational-categories.csv",
+      "bytes": 2756,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-2e3c76762d13cf53/occupationalcategoriesgroupesprofessionnel_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/e7092780-f86c-494e-964d-fa23cb869549/download/occupationalcategoriesgroupesprofessionnel_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-notes-2019-03-31.csv",
+      "bytes": 3253,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-88e8647dca07cfa9/notes_vacacc.xlsx.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/23bd0294-42ac-4a66-a31b-b9fb4d435629/download/notes_vacacc.xlsx.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-notes-2018-12-31.csv",
+      "bytes": 3268,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-f1c18b7250d578c5/notes_vacacc.xlsx.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/e1c8dc86-558b-4c83-957e-da607aad03b9/download/notes_vacacc.xlsx.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-aboriginal-peoples-2019-03-31.csv",
+      "bytes": 647,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-c5b0b06572d424d3/aboriginalpeoplesautochtones_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/5f47c671-0b60-4238-a9a5-18a06ab91167/download/aboriginalpeoplesautochtones_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "vac-ee-representation",
+      "name": "vac-ee-aboriginal-peoples-2018-12-31.csv",
+      "bytes": 646,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-0e856a955fe1885f/aboriginalpeoplesautochtones_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/d805cdc7-b242-4cf7-83b0-dce32980487a/download/aboriginalpeoplesautochtones_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-3439877fb68e4e72/personswithdisabilitiespersonneshandicapees_vacacc.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/16f12254-53d0-44e7-8ec0-f597ce6c073e/resource/b3111f8e-aa70-4da7-bf9e-7b9a07de7ccc/download/personswithdisabilitiespersonneshandicapees_vacacc.csv",
+          "id": "GC-0407",
+          "kind": "archived source"
+        }
+      ]
+    }
+  ]
+}
