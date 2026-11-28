@@ -138,7 +138,8 @@ def survey(d,l,qs,title):
  valid=[q for q in qs if q in pses['definitions']]
  rows=[[E(pses['definitions'][q][l]),cell(d['overall'].get(q,[None,None])[0],l,True),cell(d['overall'].get(q,[None,None])[1],l)] for q in valid]
  source_url=source['overall']
- chart=bars(l,[(pses['definitions'][q][l],d['overall'].get(q,[None])[0]) for q in valid[:4]])
+ chart_questions=[q for q in ['Q58','Q65','Q63','Q70'] if q in valid] if 'Q58' in valid else valid[:4]
+ chart=bars(l,[(pses['definitions'][q][l],d['overall'].get(q,[None])[0]) for q in chart_questions])
  return '<div class="dp-survey" data-questions="'+','.join(valid)+'">'+chart+table(l,title,[L(l,'Question','Question'),L(l,'Published result','Résultat publié'),L(l,'Rounded responses','Réponses arrondies')],rows,source_url)+'</div>'
 
 groupnames={'i':['Indigenous peoples','Peuples autochtones'],'d':['Persons with disabilities','Personnes en situation de handicap'],'v':['Racialized employees','Personnes racisées'],'b':['Black employees','Personnes noires']}
