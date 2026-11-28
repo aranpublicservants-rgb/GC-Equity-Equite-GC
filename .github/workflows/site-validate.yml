@@ -17,8 +17,20 @@ jobs:
           node-version: '22'
       - name: Check historical survey matrices against reviewed originals
         run: python scripts/check-historical-group-fingerprints.py
+      - name: Rebuild derived catalogues and register in the review checkout
+        if: github.event_name == 'pull_request'
+        run: |
+          python scripts/build-assistant-catalogue.py
+          python scripts/build-register-copies.py
+          python scripts/reconcile-source-register.py
+          python scripts/build-data-coverage.py
+          python scripts/update-data-checksums.py
+          git diff --stat
       - name: Validate pages, published data, source snapshots and research tools
         run: |
           python scripts/audit-organization-datasets.py
           python scripts/audit-publishing.py
           python scripts/check-site.py
+      - name: Confirm regenerated files are committed
+        if: always() && github.event_name == 'pull_request'
+        run: git diff --exit-code --stat
