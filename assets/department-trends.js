@@ -23,16 +23,40 @@
   const loc = l => l === 'fr' ? 'fr-CA' : 'en-CA';
   const cycleName = (c, l) => l === 'fr' && c === '2022-23' ? '2022-2023' : c;
   const NP = l => L(l, 'Not published', 'Non publié');
-  function cellText(v, q, l) {
+  // Original 2011 files were compared with the 2019 re-publication on 2026-11-27.
+  // Retain the source data but withhold unverified comparisons in the presentation.
+  const GAP_QUESTIONS = {"Q44e":{"en":"Question 44e. To what extent have the following adversely affected your career progress in the federal public service over the last 12 months? Accommodation issues","fr":"Question 44e. Dans quelle mesure estimez-vous que les éléments suivants ont nui à la progression de votre carrière au sein de la fonction publique fédérale au cours des 12 derniers mois? Problèmes d'adaptation"},"Q58":{"en":"Question 58. Having carefully read the definition of harassment above, have you been the victim of harassment on the job in the past 12 months?","fr":"Question 58. Après avoir lu attentivement la définition du harcèlement ci-dessus, au cours des 12 derniers mois, avez-vous été victime de harcèlement au travail?"},"Q65":{"en":"Question 65. Having carefully read the definition of discrimination above, have you been the victim of discrimination on the job in the past 12 months?","fr":"Question 65. Après avoir lu attentivement la définition de la discrimination ci-dessus, au cours des 12 derniers mois, avez-vous été victime de discrimination au travail?"},"Q72":{"en":"Question 72. I am satisfied with how concerns or complaints about racism in the workplace are resolved in my department or agency.","fr":"Question 72. Je suis satisfait(e) de la façon dont les préoccupations ou les plaintes au sujet du racisme en milieu de travail sont réglées par mon ministère ou organisme."},"Q73p":{"en":"Question 73p. Overall, to what extent do the following factors cause you work-related stress? Accommodation issues","fr":"Question 73p. Dans l'ensemble, dans quelle mesure les facteurs suivants vous causent-ils du stress au travail? Problèmes d'adaptation"}};
+  function reviewHistoricalRows(rows) {
+    return rows.map(r => {
+      const row = {...r, values: {...r.values}, ps: {...r.ps}, held: {values:{}, ps:{}}};
+      const hold = (field, reason) => {
+        if (row[field]['2011']) {
+          delete row[field]['2011'];
+          row.held[field]['2011'] = reason;
+        }
+      };
+      if (r.q === 'Q42') {
+        hold('values', 'wording');
+        hold('ps', 'wording');
+      }
+      if (org === 'women-and-gender-equality-canada') hold('values', 'identity');
+      return row;
+    });
+  }
+  const heldText = (reason, l) => reason === 'wording'
+    ? L(l, 'Not compared: original wording differs', 'Non comparé : le libellé original diffère')
+    : L(l, 'Not compared: employer identity unverified', 'Non comparé : identité de l’employeur non vérifiée');
+  function cellText(v, q, l, held) {
+    if (held) return heldText(held, l);
     if (!v || v[0] === '') return NP(l);
     const pct = Number(v[0]).toLocaleString(loc(l)) + (l === 'fr' ? ' %' : '%');
     return pct + ' (' + L(l, 'n=', 'n = ') + Number(v[1]).toLocaleString(loc(l)) + (v[2] !== q ? (l === 'fr' ? ' ; ' : '; ') + v[2] : '') + ')';
   }
   function rowsHtml(rows, cycles, l, deptLabel, psLabel) {
     return rows.map(r => '<tr><th scope="row">' + esc(r[l]) + '<span class="dp-trend-who"> · ' + esc(deptLabel) + '</span></th>' +
-      cycles.map(c => '<td>' + esc(cellText(r.values[c], r.q, l)) + '</td>').join('') + '</tr>' +
+      cycles.map(c => '<td>' + esc(cellText(r.values[c], r.q, l, r.held?.values?.[c])) + '</td>').join('') + '</tr>' +
       '<tr class="dp-trend-ps"><th scope="row">' + esc(psLabel) + '</th>' +
-      cycles.map(c => '<td>' + esc(cellText(r.ps && r.ps[c], r.q, l)) + '</td>').join('') + '</tr>').join('');
+      cycles.map(c => '<td>' + esc(cellText(r.ps && r.ps[c], r.q, l, r.held?.ps?.[c])) + '</td>').join('') + '</tr>').join('');
   }
   /* Questions where this organization and the public service moved in opposite directions
      between the two most recent cycles in which both were published. Published values only;
@@ -79,7 +103,7 @@
     const caption = L(l, 'PSES 2008 to 2024, all respondents', 'SAFF de 2008 à 2024, tous les répondants');
     return '<div class="dp-trend"><h3>' + esc(L(l, 'Results over time', 'Résultats au fil du temps')) + '</h3>' + opposite(rows, T.cycles, l, '') +
       table(caption, head(T.cycles, l), rowsHtml(rows, T.cycles, l, L(l, 'this organization', 'cet organisme'), L(l, 'Public service, all respondents', 'Fonction publique, tous les répondants'))) +
-      sourceLine(T.sources, T.cycles, l) + '<p class="small dp-trend-note">' + esc(NOTE(l) + HIST_NOTE(l) + (gaps.length ? ' ' + L(l, 'Not compared because the wording changed: ', 'Non comparées, car le libellé a changé : ') + gaps.join(', ') + '.' : '')) + '</p></div>';
+      sourceLine(T.sources, T.cycles, l) + '<p class="small"><a href="../docs/historical-pses-original-validation-2026-11-27.json">' + esc(L(l, 'Original survey validation and exceptions (JSON)', 'Validation des sondages originaux et exceptions (JSON)')) + '</a></p>' + '<p class="small dp-trend-note">' + esc(NOTE(l) + HIST_NOTE(l) + (gaps.length ? ' ' + L(l, 'Not compared because the wording changed: ', 'Non comparées, car le libellé a changé : ') + gaps.map(q => GAP_QUESTIONS[q]?.[l] || q).join(' · ') + '.' : '')) + '</p></div>';
   }
   function groupBlock(G, g, rows, l) {
     const name = l === 'fr' ? g.fr : (GROUP_EN[g.group] || g.group);
@@ -107,7 +131,7 @@
     for (const s of SECTIONS) for (const l of ['en', 'fr']) {
       const section = sectionFor(s[l]);
       if (!section || section.querySelector('.dp-trend')) continue;
-      const rows = T.rows.filter(r => s.qs.includes(r.q)), gaps = s.qs.filter(q => T.notComparable.includes(q));
+      const rows = reviewHistoricalRows(T.rows.filter(r => s.qs.includes(r.q))), gaps = s.qs.filter(q => T.notComparable.includes(q));
       if (!rows.length) continue;
       const wrap = document.createElement('div');
       wrap.innerHTML = overallBlock(T, rows, gaps, l);
@@ -121,7 +145,7 @@
     for (const s of SECTIONS) for (const l of ['en', 'fr']) {
       const section = sectionFor(s[l]);
       if (!section || section.querySelector('.dp-group-trends')) continue;
-      const parts = kind => G.groups.filter(g => (g.kind || 'group') === kind).map(g => [g, g.rows.filter(r => s.qs.includes(r.q))])
+      const parts = kind => G.groups.filter(g => (g.kind || 'group') === kind).map(g => [g, reviewHistoricalRows(g.rows.filter(r => s.qs.includes(r.q)))])
         .filter(([, rows]) => rows.length).map(([g, rows]) => groupBlock(G, g, rows, l)).join('');
       const main = parts('group'), sub = parts('subgroup');
       if (!main && !sub) continue;
