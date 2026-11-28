@@ -714,6 +714,12 @@
     "group": "departments"
   },
   {
+    "path": "equity-history/employee-networks/historical-research/",
+    "en": "Employee network history and Senate evidence",
+    "fr": null,
+    "group": "other"
+  },
+  {
     "path": "equity-history/employee-networks/",
     "en": "History of Employment Equity and Employee Networks",
     "fr": null,
