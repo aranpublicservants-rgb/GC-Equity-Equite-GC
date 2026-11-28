@@ -6,7 +6,11 @@ name: Fetch public source register gaps
 on:
   push:
     branches: [main]
-    paths: ['data/source-register-overrides-2026-11-27.json']
+    paths:
+      - 'data/source-register-overrides-2026-11-27.json'
+      - 'scripts/fetch-register-gaps.py'
+      - 'scripts/reconcile-source-register.py'
+      - '.github/workflows/fetch-register-gaps.yml'
   workflow_dispatch:
     inputs:
       limit:
@@ -71,6 +75,7 @@ jobs:
           python scripts/reconcile-source-register.py
           python scripts/build-data-coverage.py
           python scripts/update-data-checksums.py
+          python scripts/reconcile-source-register.py --check
           git add data/register-gaps-2026-11 data/register-gaps-manifest.json data/source-register-status.json data-coverage.html register-copies.html data/checksums.sha256
           if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
           git commit -m "Add copies of public source register entries and refresh register status"
