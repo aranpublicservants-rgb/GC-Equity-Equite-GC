@@ -1,5 +1,8 @@
 /* Shared graphical views use the same published cells as the tables. */
 (()=>{const current=document.currentScript;if(current?.src&&typeof document.querySelector==='function'&&!document.querySelector('script[data-gce-visuals]')){const script=document.createElement('script');script.src=new URL('data-visuals.js',current.src).href;script.dataset.gceVisuals='true';script.defer=true;document.head.append(script);}})();
+/* Load historical results on every eligible canonical department page, including rebuilt pages. */
+(()=>{const current=document.currentScript,node=document.getElementById('dp-data');if(!current?.src||!node)return;let org;try{org=JSON.parse(node.textContent).id}catch{return}if(typeof org!=='string'||!/^[a-z0-9-]+$/.test(org))return;const has=()=>[...document.querySelectorAll('script[src*="department-trends.js"]')].some(s=>s.dataset.org===org);if(has())return;fetch(new URL('department-survey-trends.json',current.src)).then(r=>r.ok?r.json():null).then(index=>{if(!index?.organizations?.includes(org)||has())return;const script=document.createElement('script');script.src=new URL('department-trends.js',current.src).href;script.dataset.org=org;document.head.append(script)}).catch(()=>{});})();
+
 /* Department evidence pages. Exact source retrieval; no national fallback. */
 (()=>{'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
