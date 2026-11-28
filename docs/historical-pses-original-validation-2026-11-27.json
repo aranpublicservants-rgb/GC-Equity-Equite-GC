@@ -100,7 +100,25 @@
   "limitations": [
     "The original 2011 unlabelled file uses organization codes; equal codes are not proof of identity.",
     "No historical employee-group cross-tab validation is implied by these overall comparisons.",
-    "The 2011 original department workbook has not been parsed in this review.",
-    "The 2008 source bytes and overlapping numerical cells were validated; original 2008 question wording, organizational identities and group-level results remain unverified."
-  ]
+    "The 2008 source bytes and overlapping numerical cells were validated; original 2008 question wording, organizational identities and group-level results remain unverified.",
+    "The 2011 original departmental workbook confirms the 30 raw-code discrepancies were caused by organizational identifier reuse, not value differences for Status of Women Canada. Remaining changed organization names are not automatically certified as equivalent."
+  ],
+  "identityReconciliation": {
+    "year": "2011",
+    "source": "Original departmental workbook GC-0004, DEPT00_2011",
+    "sourceSha256": "95f15087781c9b24e96ad2bd6924f571d678cb6f85352bfc4043cf9c80e857b6",
+    "originalCode90": "Parks Canada (students)",
+    "originalCode95": "Status of Women Canada",
+    "republishedCode90": "Department for Women and Gender Equality",
+    "sameCodeSameWordingCells": 1710,
+    "rawCodeDifferences": 30,
+    "originalStatusOfWomenToRepublishedWage": {
+      "matchingWordingCells": 30,
+      "matchingValues": 30,
+      "differentValues": 0
+    },
+    "exactNormalizedNameAndCodeMatches": 1290,
+    "exactNormalizedNameAndCodeDifferences": 0,
+    "decision": "Restore 2011 overall WAGE predecessor figures for comparable wording. Retain employee-group identity hold until original demographic records are separately checked. Code 95 was also used by grouped micro-organizations in the original workbook; do not apply a global code substitution."
+  }
 }
