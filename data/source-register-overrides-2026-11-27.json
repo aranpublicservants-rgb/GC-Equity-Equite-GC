@@ -17,7 +17,7 @@
     "note": "Existing inventory paths reviewed; not a claim of independent publisher-byte verification."
   },
   "GC-0420": {
-    "source": "https://nrc.canada.ca/en/corporate/planning-reporting/annual-reports-long-term-plans",
+    "source": "https://open.canada.ca/data/en/info/8d99a66c-8dad-41b8-9b0b-49dbc50c7e6b",
     "snapshots": [
       {
         "url": "https://nrc.canada.ca/en/corporate/planning-reporting/employment-equity-annual-report-2020-2021",
@@ -27,7 +27,7 @@
         "title": "Employment Equity Annual Report 2020-2021"
       },
       {
-        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
+        "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2020-2021",
         "language": [
           "fr"
         ],
@@ -41,7 +41,7 @@
         "title": "Employment Equity Annual Report 2021-2022"
       },
       {
-        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
+        "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2021-2022",
         "language": [
           "fr"
         ],
@@ -55,7 +55,7 @@
         "title": "Employment Equity Annual Report 2022-2023"
       },
       {
-        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
+        "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2022-2023",
         "language": [
           "fr"
         ],
@@ -69,7 +69,7 @@
         "title": "Employment Equity Annual Report 2023-2024"
       },
       {
-        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
+        "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2023-2024",
         "language": [
           "fr"
         ],
@@ -83,17 +83,18 @@
         "title": "Employment Equity Annual Report 2024-2025"
       },
       {
-        "url": "https://cnrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025",
+        "url": "https://nrc.canada.ca/fr/organisation/planification-rapports/rapport-annuel-lequite-matiere-demploi-2024-2025",
         "language": [
           "fr"
         ],
         "title": "Rapport annuel sur l’équité en matière d’emploi 2024-2025"
       }
     ],
-    "note": "One archived report PDF and a derived representation series; other five-year bilingual report snapshots must still be retrieved. Presence is not complete coverage.",
+    "note": "Publisher catalogue lists all bilingual editions. One archived PDF and two transcribed datasets are held; the ten HTML snapshot attempts returned HTTP 403. Partial coverage, not a complete archive.",
     "paths": [
       "data/ee-reports/nrc-ee-annual-report-2023-24.pdf",
-      "data/nrc-ee-representation-2022-2025.csv"
+      "data/nrc-ee-representation-2022-2025.csv",
+      "data/nrc-ee-staffing-2024-2025.csv"
     ]
   },
   "GC-0462": {
