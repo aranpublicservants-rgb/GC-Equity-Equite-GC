@@ -1,7 +1,7 @@
 {
  "asOf": "2026-11-27",
  "register": "data/public-source-register-2026-11-24.json",
- "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. Hosted and verified are entry-level indicators of at least one copy, not proof that all editions or languages are held. Multi-report snapshot coverage is reported separately. No match means no evidence was found in this repository, not that the source is unavailable.",
+ "method": "Each register entry is checked against the current repository: recorded SHA-256 values, the pses-data partition manifest, original Drive staging-file byte or decoded-text checks, publisher URLs, resource UUIDs, file names and repository paths. Counts for departmental pages are the number of organization files citing the source. Hosted and verified are entry-level indicators of at least one copy, not proof that all editions or languages are held. Multi-report snapshot coverage is reported separately. No match means no evidence was found in this repository, not that the source is unavailable.",
  "entries": 538,
  "counts": {
   "verified": 370,
