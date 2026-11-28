@@ -30,15 +30,17 @@
       "folder": "cse-ee-representation",
       "name": "cse-workforce-representation-2022-06-30-fr.csv",
       "bytes": 528,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/cse/cse-workforce-representation-2022-06-30-fr.csv",
-          "bytes": 537,
           "gitBlobSha": "704a806f6de8bf457efadecbcd1e0f616261677e",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "9f7cd91ddbd17b06b557e39d7118a542597dd7980f283a536aa9c56c06243f2e",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "cse-ee-representation",
@@ -72,29 +74,33 @@
       "folder": "cse-ee-representation",
       "name": "cse-employment-equity-2019.csv",
       "bytes": 483,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
-          "bytes": 490,
-          "gitBlobSha": "8eb902b55e3fabd131b0a7697b9e89b86126f81f",
-          "kind": "direct GitHub file"
+          "gitBlobSha": "118d66dfafd7aa8cd58e7bc35cdd0170f91b4ea6",
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "478a8183f2f080447750c71cef5ad950dafabc9dbc6bd6ada705006d7ea39a29",
+      "originalEncoding": "cp850",
+      "verificationNote": "Correct CP850 decoding; no numeric values changed"
     },
     {
       "folder": "cse-ee-representation",
       "name": "cse-employment-equity-2018.csv",
       "bytes": 450,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
-          "bytes": 454,
           "gitBlobSha": "d34c03af214614a12bc51db966458d3a75c1c432",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "84c9b6dbeae074b96da5692d9d212cb585cb770d65355149c28ddac45fac36a9",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "cse-ee-representation",
@@ -252,15 +258,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2024-2025.csv",
       "bytes": 372,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2024-2025.csv",
-          "bytes": 382,
           "gitBlobSha": "656256fd14d2a0d2e687cf0d57bc277f220c7c1e",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "fe0145e89d1332c57710d23c1276adb81e6036e18a8721ef569481306439acbb",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "csps-ee-representation",
@@ -280,15 +288,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2023-2024.csv",
       "bytes": 371,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2023-2024.csv",
-          "bytes": 381,
           "gitBlobSha": "6289fb3d490bb31620b3f1cec6bd81b65709f3ff",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "c9e05f0f2cdf0b52c5ed726e5f1b2cece851dd54112c8e61d58596a35e3d9230",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "csps-ee-representation",
@@ -308,15 +318,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2022-2023.csv",
       "bytes": 371,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2022-2023.csv",
-          "bytes": 381,
           "gitBlobSha": "b78eb943d177858717932379ce86f7ecc16decb2",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "d65de5ef189a70bb325a21f5f21acb20fd218cf129638d8f438293186f40f1bc",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "csps-ee-representation",
@@ -336,15 +348,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2021-2022.csv",
       "bytes": 370,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2021-2022.csv",
-          "bytes": 380,
           "gitBlobSha": "76500e16bd22b3b4b05c5c623c57fd2d4922b748",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "27b1dbdb857afaa800460d416465e25105f487b1946bd1dcac95381bc1264a2b",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "csps-ee-representation",
@@ -364,15 +378,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2020-2021.csv",
       "bytes": 370,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2020-2021.csv",
-          "bytes": 380,
           "gitBlobSha": "5123128e9c061165b185bda65f5e1edc27dc5de9",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "b304008a2510fc82c67c03bff2532677b3921178cba7f80e170b0107f69ae47f",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "csps-ee-representation",
@@ -392,15 +408,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2019-2020.csv",
       "bytes": 370,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2019-2020.csv",
-          "bytes": 380,
           "gitBlobSha": "b707d7cf2fa4beb9fab3b90840e1fe93466b1e58",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "401d978937be443705d954aa32e54a8d1a2dc8cdd61deb8c99d9abef30252cc2",
+      "originalEncoding": "cp1252",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "csps-ee-representation",
@@ -420,15 +438,17 @@
       "folder": "csps-ee-representation",
       "name": "csps-ee-representation-2018-2019.csv",
       "bytes": 370,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/employer-equity-sources-2026-11/csps/csps-ee-representation-2018-2019.csv",
-          "bytes": 388,
-          "gitBlobSha": "82aa9e86c3839a2a8bf7d309de6954bb7b0f6687",
-          "kind": "direct GitHub file"
+          "gitBlobSha": "dac980ec5067efb8c36206a14b296ff2c350e4a4",
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "a1624ace9ad76a9da9b4fcaf5a26c92d817a23d3586e0fb8c0941a19a60400ff",
+      "originalEncoding": "cp850",
+      "verificationNote": "Correct CP850 decoding; no numeric values changed"
     },
     {
       "folder": "dnd-civilian-representation",
@@ -526,29 +546,33 @@
       "folder": "ssc-ee-representation",
       "name": "equite_en_maitre_d_emploi-2025-2026.csv",
       "bytes": 1861,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/restored/7a743875-2b16-4464-ae28-524def42e692.csv",
-          "bytes": 1858,
           "gitBlobSha": "4970cdfdfb303324d23da1b8b28cab68baf3cf75",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "b2b8388a7027ee37585bfa7cb2dc569304a3fd1ac51e7d2c7b47c320dd02d9f6",
+      "originalEncoding": "utf-8-sig",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "ssc-ee-representation",
       "name": "employment-equity-2025-2026.csv",
       "bytes": 1882,
-      "match": "direct path exists; byte comparison outstanding",
+      "match": "normalized decoded content matches original Drive file",
       "candidates": [
         {
           "path": "data/restored/aae683dc-c33c-47c9-8ffe-7b6bdef8ef40.csv",
-          "bytes": 1879,
           "gitBlobSha": "32f793f6f7d4c87828497cad171f073e7836e65a",
-          "kind": "direct GitHub file"
+          "kind": "verified decoded source content"
         }
-      ]
+      ],
+      "originalSha256": "49a564c2e8bc1842ce9edb1101af049aa689b91dcea3a91597f2c65f93cc402b",
+      "originalEncoding": "utf-8-sig",
+      "verificationNote": "BOM or legacy character encoding explains original byte-size difference; not byte-identical."
     },
     {
       "folder": "vac-ee-representation",
