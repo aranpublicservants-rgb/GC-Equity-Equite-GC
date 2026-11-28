@@ -1,0 +1,99 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; original rows extracted from file and matched to canonical page IDs. Noncryptographic numerical consistency check, not file SHA verification.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "nationalExpected": "32387b6cf7895b04",
+  "rows": [
+    {
+      "id": "global-affairs-canada",
+      "expected": "e90d628ebb4e3064",
+      "actual": "e90d628ebb4e3064",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "13cce9aec9f83ddc6a82fb8ab358d4fe0ba218e9"
+    },
+    {
+      "id": "health-canada",
+      "expected": "1eb2fc90b69ddf8b",
+      "actual": "1eb2fc90b69ddf8b",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "9a78d7d0659869bdef20149814701dfc56779040"
+    },
+    {
+      "id": "immigration-and-refugee-board-of-canada",
+      "expected": "10ac51229ee98458",
+      "actual": "10ac51229ee98458",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "cc8b3e5192a335be4a8643d95ce4cd15fe7f22ab"
+    },
+    {
+      "id": "immigration-refugees-and-citizenship-canada",
+      "expected": "94d338309e1a7471",
+      "actual": "94d338309e1a7471",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "d7be9ae7e7435d903963a0a7ff5aa4464b7ad4c4"
+    },
+    {
+      "id": "indigenous-and-northern-affairs-canada",
+      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+    },
+    {
+      "id": "innovation-science-and-economic-development-canada",
+      "expected": "55192563f986d3e5",
+      "actual": "55192563f986d3e5",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "c8f01c6012863869c28e163fcaa7b271a767f856"
+    },
+    {
+      "id": "library-and-archives-canada",
+      "expected": "46750119acbe9d18",
+      "actual": "46750119acbe9d18",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "d3e155e27eb251bc98c38870995fc7ef2bd7ef24"
+    },
+    {
+      "id": "national-energy-board",
+      "expected": "9092db80455f2256",
+      "actual": "9092db80455f2256",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "e6682dcff2f663b3003616d453c0553d6659b078"
+    },
+    {
+      "id": "national-research-council-of-canada",
+      "expected": "158d2f1a09e6629c",
+      "actual": "158d2f1a09e6629c",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "64894b65556c499edec46363cad193f7ed5a6cce"
+    },
+    {
+      "id": "natural-resources-canada",
+      "expected": "29b7d1bac752c7fe",
+      "actual": "29b7d1bac752c7fe",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "3e17e0ac9f140e7df7b86a6023d8bcba3abcf5b4"
+    }
+  ]
+}
