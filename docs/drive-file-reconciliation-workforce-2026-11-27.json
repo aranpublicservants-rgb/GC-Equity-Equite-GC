@@ -1,0 +1,2143 @@
+{
+  "asOf": "2026-11-27",
+  "method": "Direct Drive listing compared to archived-source, prior register and catalogue sizes. Size matches are candidates, not byte verification. Departmental program indicators and reports require population review before analysis. No private Drive identifiers.",
+  "folders": [
+    "ee-reports",
+    "gc-infobase-dprr",
+    "gc-infobase-fte",
+    "gc-infobase-indicators",
+    "pbo-employment-tracking",
+    "pbo-personnel-expenditure",
+    "tbs-ee-annual-report-2013-2014",
+    "tbs-executives-wfa-2019",
+    "tbs-fps-population-2010-2026"
+  ],
+  "rows": [
+    {
+      "folder": "ee-reports",
+      "name": "README.md",
+      "bytes": 7770,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "ee-reports",
+      "name": "nrc-ee-annual-report-2023-24.pdf",
+      "bytes": 770288,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "ee-reports",
+      "name": "esdc-federally-regulated-ee-annual-report-2024-en.pdf",
+      "bytes": 2362734,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "ee-reports",
+      "name": "cra-eedi-annual-report-2024-25.pdf",
+      "bytes": 938620,
+      "match": "unresolved",
+      "candidates": []
+    },
+    {
+      "folder": "ee-reports",
+      "name": "psc-promotion-rate-study-three-year-update-2022-fr.docx",
+      "bytes": 192539,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-5ecbdf180b0ce6c3/employment-equity-promotion-rate-study-three-year-update-fr-2022.docx.gz",
+          "url": "https://open.canada.ca/data/dataset/7e69c275-8407-4489-a27c-017e20d2da9d/resource/ab1d1b75-65e4-44cd-829f-bbeaecd1e72c/download/employment-equity-promotion-rate-study-three-year-update-fr-2022.docx",
+          "id": "GC-0300",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "ee-reports",
+      "name": "psc-promotion-rate-study-three-year-update-2022-en.docx",
+      "bytes": 171750,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-a68440d313c2d0b0/employment-equity-promotion-rate-study-three-year-update-en-2022.docx.gz",
+          "url": "https://open.canada.ca/data/dataset/7e69c275-8407-4489-a27c-017e20d2da9d/resource/09c8b9b5-dd1d-4cd6-bc8b-7893eaed1742/download/employment-equity-promotion-rate-study-three-year-update-en-2022.docx",
+          "id": "GC-0300",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "ee-reports",
+      "name": "psc-promotion-rate-study-original-fr.docx",
+      "bytes": 36706,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-1fa25bf59c0927e9/ee-promotion-rate-accessible-version-fr.docx.gz",
+          "url": "https://open.canada.ca/data/dataset/7974d7e0-4014-4a4a-800d-513bcf4ba985/resource/1dfc540f-7d20-47e9-a941-532cd7cdba6f/download/ee-promotion-rate-accessible-version-fr.docx",
+          "id": "GC-0299",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "ee-reports",
+      "name": "psc-promotion-rate-study-original-en.docx",
+      "bytes": 29188,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-af04fb001cd721ec/ee-promotion-rate-accessible-version-en.docx.gz",
+          "url": "https://open.canada.ca/data/dataset/7974d7e0-4014-4a4a-800d-513bcf4ba985/resource/2b05f8e4-0b5b-4f3f-bab4-2fcdae14b529/download/ee-promotion-rate-accessible-version-en.docx",
+          "id": "GC-0299",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "ee-reports",
+      "name": "psc-promotion-rate-study-five-year-update-2024-fr.docx",
+      "bytes": 217738,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-18d24b67f4cc2ba1/employment-equity-promotion-rate-study-five-year-update-2024-fr.docx.gz",
+          "url": "https://open.canada.ca/data/dataset/e18d23d4-231d-4d31-8834-c73e57466009/resource/5c50dc7f-8512-44d0-b563-3cf3b771268f/download/employment-equity-promotion-rate-study-five-year-update-2024-fr.docx",
+          "id": "GC-0301",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "ee-reports",
+      "name": "psc-promotion-rate-study-five-year-update-2024-en.docx",
+      "bytes": 205921,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-4863d2acd0ba3616/employment-equity-promotion-rate-study-five-year-update-2024-en-1.docx.gz",
+          "url": "https://open.canada.ca/data/dataset/e18d23d4-231d-4d31-8834-c73e57466009/resource/a7243058-3b15-43e6-8dca-dccf21aba1fa/download/employment-equity-promotion-rate-study-five-year-update-2024-en-1.docx",
+          "id": "GC-0301",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-dprr",
+      "name": "gc-infobase-dprr-data-dictionary.xlsx",
+      "bytes": 14343,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/gc-infobase-dprr-data-dictionary.xlsx",
+          "url": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/7a7458f2-b427-465b-8bef-523bc773d2b2/download/dd-dd-iii.xlsx",
+          "id": "GC-0370",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-dprr",
+      "name": "performance-info-2018-to-2021-fr.csv",
+      "bytes": 20892458,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-86ebe5555599fa53/pipo_irpo_fr.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/b771d9c3-5b9c-42ee-b838-72342a1c0ee3/download/pipo_irpo_fr.csv",
+          "id": "GC-0369",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-dprr",
+      "name": "performance-info-2018-to-2021-en.csv",
+      "bytes": 16683780,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-aa2efd4e6c754a04/pipo_irpo_en.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/069fba50-2a06-414e-9db8-800d3e8a0953/download/pipo_irpo_en.csv",
+          "id": "GC-0368",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-dprr",
+      "name": "rbpo-rppo-2018-to-2021-fr.csv",
+      "bytes": 1910229,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-fr.csv",
+          "url": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/19aba95f-3db9-4d20-a0f4-43d88a7e67cf/download/rbpo_rppo_fr.csv",
+          "id": "GC-0367",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-dprr",
+      "name": "rbpo-rppo-2018-to-2021-en.csv",
+      "bytes": 1585668,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2018-to-2021-en.csv",
+          "url": "https://open.canada.ca/data/dataset/b15ee8d7-2ac0-4656-8330-6c60d085cda8/resource/02929919-d9ab-494e-8fce-012119b479ff/download/rbpo_rppo_en.csv",
+          "id": "GC-0366",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-fte",
+      "name": "rbpo-rppo-2020-21-to-2025-26-fr.csv",
+      "bytes": 3651781,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-985103c2cc5349e1/rbpo_rppo_fr.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/0ea70f0a-7efd-492f-858c-8399150b7b5d/download/rbpo_rppo_fr.csv",
+          "id": "GC-0362",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-fte",
+      "name": "rbpo-rppo-2020-21-to-2025-26-en.csv",
+      "bytes": 2992912,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/rbpo-rppo-2020-21-to-2025-26-en.csv",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/64774bc1-c90a-4ae2-a3ac-d9b50673a895/download/rbpo_rppo_en.csv",
+          "id": "GC-0361",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-fte",
+      "name": "federal-programs-actual-planned-employees.csv",
+      "bytes": 708134,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/federal-programs-actual-planned-employees.csv",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/49569acc-b550-412e-b789-01d1ac96d879/download/programs_ftes.csv",
+          "id": "GC-0360",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-fte",
+      "name": "drr-actual-fte-2017-18-fr.csv",
+      "bytes": 1579254,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-fr.csv",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/75f7464c-6ade-455c-b6e7-a9a8286002b9/download/ctempdatasetsa_fte_1718_fr.csv",
+          "id": "GC-0359",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-fte",
+      "name": "drr-actual-fte-2017-18-en.csv",
+      "bytes": 1511627,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/drr-actual-fte-2017-18-en.csv",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/51b784f5-5c5f-4b5a-aa7e-0d16ba00fc70/download/ctempdatasetsa_fte_1718_en.csv",
+          "id": "GC-0358",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-indicators",
+      "name": "performance-info-2017-18-fr.csv",
+      "bytes": 4742407,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-3d9f82329a1141f3/a_per_1718_fr.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/aae6bf7f-1803-4264-a330-cbc9e671f522/download/a_per_1718_fr.csv",
+          "id": "GC-0372",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-indicators",
+      "name": "performance-info-2017-18-en.csv",
+      "bytes": 3797413,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-b25be5b33300d9fb/a_per_1718_en.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/091091a5-1910-457a-9d05-3b4605ff9b24/download/a_per_1718_en.csv",
+          "id": "GC-0371",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-indicators",
+      "name": "programs-results-indicators.csv",
+      "bytes": 69690085,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "pses-data:register-gaps/u-8b4e4ab9616ebdd0",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/89bfbbec-ac42-48be-aa4f-7454bd7e10f8/download/programs_indicators.csv",
+          "id": "GC-0365",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-indicators",
+      "name": "performance-info-2020-21-to-2026-27-fr.csv",
+      "bytes": 41194839,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-2ebe9dfaeb6c08eb/pipo_irpo_fr.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/2f98ef19-06a0-47a0-8e2a-29612cfada26/download/pipo_irpo_fr.csv",
+          "id": "GC-0364",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "gc-infobase-indicators",
+      "name": "performance-info-2020-21-to-2026-27-en.csv",
+      "bytes": 33110405,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-27e040fa2521e5cb/pipo_irpo_en.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/a35cf382-690c-4221-a971-cf0fd189a46f/resource/09c15494-788e-4991-ad00-2bd905c4f225/download/pipo_irpo_en.csv",
+          "id": "GC-0363",
+          "kind": "archived source"
+        }
+      ]
+    },
+    {
+      "folder": "pbo-employment-tracking",
+      "name": "fett-publicdata.xlsx",
+      "bytes": 2104357,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/fett-publicdata.xlsx",
+          "url": "https://raw.githubusercontent.com/pbo-dpb/FETT--OSEF/main/public/FETT_publicdata.xlsx",
+          "id": "GC-0514",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "pbo-personnel-expenditure",
+      "name": "pbo-personnel-expenditure-db.xlsx",
+      "bytes": 606291,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/public-source-archive-2026-11-24/pbo-personnel-expenditure-db.xlsx",
+          "url": "https://raw.githubusercontent.com/pbo-dpb/PEAT--OEDP/master/src/assets/db-bdd.xlsx",
+          "id": "GC-0515",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+      "bytes": 41472,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+      "bytes": 40960,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+      "bytes": 41984,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+      "bytes": 41472,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+      "bytes": 44032,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+      "bytes": 43520,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+      "bytes": 41472,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+      "bytes": 41472,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+      "bytes": 42496,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+      "bytes": 41984,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+      "bytes": 45056,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+      "bytes": 44032,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+      "bytes": 40960,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+      "bytes": 40960,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab13-hirings-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+      "bytes": 41984,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+      "bytes": 41472,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab16-promotions-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab19-separations-by-designated-group-and-employment-type-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+      "bytes": 44544,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+      "bytes": 43520,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+      "bytes": 57344,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+      "bytes": 52736,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab10-occupational-category-and-age-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+      "bytes": 58880,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+      "bytes": 54272,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+      "bytes": 45056,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+      "bytes": 43520,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+      "bytes": 34816,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+      "bytes": 45568,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab07-representation-of-designated-groups-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+      "bytes": 45056,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+      "bytes": 43520,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+      "bytes": 44032,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab14-promotions-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+      "bytes": 41984,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab05-hirings-promotions-separations-by-designated-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab12-hirings-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab15-promotions-by-designated-group-and-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab18-separations-by-designated-group-and-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+      "bytes": 51200,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+      "bytes": 49152,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab04-designated-group-by-salary-range-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+      "bytes": 46080,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+      "bytes": 43520,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab03-designated-group-by-occupational-category-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab06-designated-group-by-age-range-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab08-designated-group-by-employment-type-and-gender-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab17-separations-by-designated-group-and-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+      "bytes": 47104,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+      "bytes": 44544,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab02-designated-group-by-region-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab11-hirings-by-designated-group-and-region-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+      "bytes": 62464,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-fr.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-ee-annual-report-2013-2014",
+      "name": "tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+      "bytes": 54272,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab01-designated-group-by-department-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-ee-annual-report-2013-2014/tbs-ee-annual-report-2013-2014-tab09-occupational-category-and-group-en.xls",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-executives-wfa-2019",
+      "name": "tbs-executives-distribution-wfa-estimates-2019.xlsx",
+      "bytes": 11696,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/open-canada-2026-11/tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx",
+          "url": "https://open.canada.ca/data/en/dataset/73fe0c0f-cdf8-4932-b8a6-c32f4edd3cea",
+          "id": "GC-0344",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-executives-wfa-2019/tbs-executives-distribution-wfa-estimates-2019.xlsx",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv",
+      "bytes": 405055,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/bfe2f632-57b4-4bb6-8704-4ddaf258dd62/download/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/bfe2f632-57b4-4bb6-8704-4ddaf258dd62/download/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv",
+          "id": "GC-0296",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv",
+      "bytes": 366950,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/f11fa61f-9a5b-4b8a-b9ab-280ca332443f/download/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/public-source-archive-2026-11-24/population-of-the-federal-public-service-by-department-and-executive-level-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/f11fa61f-9a5b-4b8a-b9ab-280ca332443f/download/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv",
+          "id": "GC-0295",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv",
+      "bytes": 2345,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-2f7428a479da98df/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/d23cce21-5ef8-405a-8f2d-f204d8f9db06/download/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0288",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-national-capital-region-march-2026-en.csv",
+      "bytes": 2343,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-334f9abb4b766c1e/population-of-the-federal-public-service-by-national-capital-region-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/69e4fc7c-565f-45d8-8074-bbdb5e6915be/download/population-of-the-federal-public-service-by-national-capital-region-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0287",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-national-capital-region-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-march-2026-fr.csv",
+      "bytes": 579,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-bd7a5f7db07cef7d/population-of-the-federal-public-service-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/f03d7f32-6d7c-467f-8dd7-3c0246808b7a/download/population-of-the-federal-public-service-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-a689de4503c4a21e/effectif-de-la-fonction-publique-federale-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/d8e4906d-54a5-4d4b-8fca-9a7dd1bfa72e/download/effectif-de-la-fonction-publique-federale-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz; data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz; data/register-gaps-2026-11/u-2359b34476f452d4/federal-public-service-statistics-about-the-data.docx.gz; data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz; data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz; data/register-gaps-2026-11/u-2f7428a479da98df/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv.gz; data/register-gaps-2026-11/u-334f9abb4b766c1e/population-of-the-federal-public-service-by-national-capital-region-march-2026.csv.gz; data/register-gaps-2026-11/u-38087c2dde235455/effectif-de-la-fonction-publique-federale-par-province-ou-territoire-de-travail-mars-2026.csv.gz; data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz; data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz; data/register-gaps-2026-11/u-4ff9725154fbba79/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv.gz; data/register-gaps-2026-11/u-5052f9a213059c18/effectif-de-la-fonction-publique-federale-selon-la-premiere-langue-officielle-mars-2026.csv.gz; data/register-gaps-2026-11/u-5d8d86ec4b127670/population-of-the-federal-public-service-by-first-official-language-march-2026.csv.gz; data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz; data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz; data/register-gaps-2026-11/u-72c691ce58c82349/population-of-the-federal-public-service-by-age-band-march-2026.csv.gz; data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz; data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz; data/register-gaps-2026-11/u-a689de4503c4a21e/effectif-de-la-fonction-publique-federale-mars-2026.csv.gz; data/register-gaps-2026-11/u-a6c6f43bd5e71510/statistiques-sur-la-fonction-publique-federale-au-sujet-des-donnees.docx.gz; data/register-gaps-2026-11/u-a72cb6cad5c9aef6/effectif-de-la-fonction-publique-federale-selon-la-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-a7949571697d10bf/population-of-the-federal-public-service-by-tenure-march-2026.csv.gz; data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz; data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz; data/register-gaps-2026-11/u-bd7a5f7db07cef7d/population-of-the-federal-public-service-march-2026.csv.gz; data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz; data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz; data/register-gaps-2026-11/u-d2086f9fb3a9a801/effectif-de-la-fpf-par-province-ou-territoire-de-travail-et-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz; data/register-gaps-2026-11/u-f022c46ab180dac8/effectif-de-la-fonction-publique-federale-par-categorie-dage-mars-2026.csv.gz; data/register-gaps-2026-11/u-f110f22862b549cd/pop-of-the-federal-public-service-by-province-or-territory-of-work-and-tenure-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0267",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-march-2026-en.csv",
+      "bytes": 579,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-bd7a5f7db07cef7d/population-of-the-federal-public-service-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/f03d7f32-6d7c-467f-8dd7-3c0246808b7a/download/population-of-the-federal-public-service-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-a689de4503c4a21e/effectif-de-la-fonction-publique-federale-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/d8e4906d-54a5-4d4b-8fca-9a7dd1bfa72e/download/effectif-de-la-fonction-publique-federale-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz; data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz; data/register-gaps-2026-11/u-2359b34476f452d4/federal-public-service-statistics-about-the-data.docx.gz; data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz; data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz; data/register-gaps-2026-11/u-2f7428a479da98df/effectif-de-la-fonction-publique-federale-dans-la-region-de-la-capitale-nationale-mars-2026.csv.gz; data/register-gaps-2026-11/u-334f9abb4b766c1e/population-of-the-federal-public-service-by-national-capital-region-march-2026.csv.gz; data/register-gaps-2026-11/u-38087c2dde235455/effectif-de-la-fonction-publique-federale-par-province-ou-territoire-de-travail-mars-2026.csv.gz; data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz; data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz; data/register-gaps-2026-11/u-4ff9725154fbba79/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv.gz; data/register-gaps-2026-11/u-5052f9a213059c18/effectif-de-la-fonction-publique-federale-selon-la-premiere-langue-officielle-mars-2026.csv.gz; data/register-gaps-2026-11/u-5d8d86ec4b127670/population-of-the-federal-public-service-by-first-official-language-march-2026.csv.gz; data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz; data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz; data/register-gaps-2026-11/u-72c691ce58c82349/population-of-the-federal-public-service-by-age-band-march-2026.csv.gz; data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz; data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz; data/register-gaps-2026-11/u-a689de4503c4a21e/effectif-de-la-fonction-publique-federale-mars-2026.csv.gz; data/register-gaps-2026-11/u-a6c6f43bd5e71510/statistiques-sur-la-fonction-publique-federale-au-sujet-des-donnees.docx.gz; data/register-gaps-2026-11/u-a72cb6cad5c9aef6/effectif-de-la-fonction-publique-federale-selon-la-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-a7949571697d10bf/population-of-the-federal-public-service-by-tenure-march-2026.csv.gz; data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz; data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz; data/register-gaps-2026-11/u-bd7a5f7db07cef7d/population-of-the-federal-public-service-march-2026.csv.gz; data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz; data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz; data/register-gaps-2026-11/u-d2086f9fb3a9a801/effectif-de-la-fpf-par-province-ou-territoire-de-travail-et-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz; data/register-gaps-2026-11/u-f022c46ab180dac8/effectif-de-la-fonction-publique-federale-par-categorie-dage-mars-2026.csv.gz; data/register-gaps-2026-11/u-f110f22862b549cd/pop-of-the-federal-public-service-by-province-or-territory-of-work-and-tenure-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0267",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-tenure-march-2026-fr.csv",
+      "bytes": 4748,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-a72cb6cad5c9aef6/effectif-de-la-fonction-publique-federale-selon-la-duree-demploi-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/a47793e8-4748-49e2-87c7-e5d1ac6b574c/download/effectif-de-la-fonction-publique-federale-selon-la-duree-demploi-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0290",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-tenure-march-2026-en.csv",
+      "bytes": 3567,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-a7949571697d10bf/population-of-the-federal-public-service-by-tenure-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/eae46131-fc5b-4da5-95ca-6276d9a3ab47/download/population-of-the-federal-public-service-by-tenure-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0289",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-tenure-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-province-march-2026-fr.csv",
+      "bytes": 17153,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-38087c2dde235455/effectif-de-la-fonction-publique-federale-par-province-ou-territoire-de-travail-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/e415e28b-b692-4b4a-b9e6-4ff53808b303/download/effectif-de-la-fonction-publique-federale-par-province-ou-territoire-de-travail-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0286",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-province-march-2026-en.csv",
+      "bytes": 16137,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-4ff9725154fbba79/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/f01491b6-b572-4ed5-a617-c7364743a5ed/download/population-of-the-federal-public-service-by-province-or-territory-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0285",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-province-and-tenure-march-2026-fr.csv",
+      "bytes": 49918,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-d2086f9fb3a9a801/effectif-de-la-fpf-par-province-ou-territoire-de-travail-et-duree-demploi-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/facdc26a-c78c-418b-8852-39bbd100dab7/download/effectif-de-la-fpf-par-province-ou-territoire-de-travail-et-duree-demploi-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0284",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-province-and-tenure-march-2026-en.csv",
+      "bytes": 38945,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-f110f22862b549cd/pop-of-the-federal-public-service-by-province-or-territory-of-work-and-tenure-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/b65fa174-d925-4b20-bf10-0c41e8cbae41/download/pop-of-the-federal-public-service-by-province-or-territory-of-work-and-tenure-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0283",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-province-and-tenure-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-first-official-language-march-2026-fr.csv",
+      "bytes": 2705,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-5052f9a213059c18/effectif-de-la-fonction-publique-federale-selon-la-premiere-langue-officielle-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/af4c88a5-76d2-4935-9ef7-ae3d9bef6d4e/download/effectif-de-la-fonction-publique-federale-selon-la-premiere-langue-officielle-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0292",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-first-official-language-march-2026-en.csv",
+      "bytes": 2396,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-5d8d86ec4b127670/population-of-the-federal-public-service-by-first-official-language-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/46e49e6d-72ee-4dc8-a664-5fcfe32a133b/download/population-of-the-federal-public-service-by-first-official-language-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0291",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-first-official-language-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-or-agency-march-2026-fr.csv",
+      "bytes": 88501,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/8cf7d2a4-ef28-42cb-81fe-0ba86de0e9d5/download/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0270",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-or-agency-march-2026-en.csv",
+      "bytes": 79388,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/3391238b-f537-4231-8572-493b9392565b/download/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0269",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-or-agency-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-tenure-march-2026-fr.csv",
+      "bytes": 384758,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/785ef530-2e43-4975-b9cd-1e8b1b9834ae/download/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0272",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-tenure-march-2026-en.csv",
+      "bytes": 303581,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/6d238af7-2212-4d36-8ee3-abbfba4392c7/download/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0271",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-tenure-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-sex-march-2026-fr.csv",
+      "bytes": 306436,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/3912f1dd-746f-42b9-81fc-c461e16d6da0/download/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-0ced198deb68953a/population-of-the-federal-public-service-by-department-or-agency-march-2026.csv.gz; data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz; data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz; data/register-gaps-2026-11/u-26bd365c00f2448a/population-of-the-federal-public-service-by-department-and-tenure-march-2026.csv.gz; data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz; data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz; data/register-gaps-2026-11/u-5df4998876dfbdf0/effectif-de-la-fonction-publique-federale-par-ministere-et-sexe-mars-2026.csv.gz; data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz; data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz; data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz; data/register-gaps-2026-11/u-a922a6bb9730cdca/population-of-the-federal-public-service-by-department-and-executive-level-march-2026.csv.gz; data/register-gaps-2026-11/u-ae3b3bac4ed479e0/effectif-de-la-fonction-publique-federale-par-ministere-et-niveau-de-cadres-superieurs-mars-2026.csv.gz; data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz; data/register-gaps-2026-11/u-c9aa7aae0d06c844/effectif-de-la-fonction-publique-federale-par-ministere-ou-organisme-mars-2026.csv.gz; data/register-gaps-2026-11/u-d594f86fa20f0e89/effectif-de-la-fonction-publique-federale-par-ministere-et-duree-demploi-mars-2026.csv.gz; data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0282",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv",
+      "bytes": 267991,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-3f72f087b2e9a8f4/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/a45bb8c6-8df9-4a02-bb18-730f01e3e8a4/download/population-of-the-federal-public-service-by-department-and-sex-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0281",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-sex-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-province-march-2026-fr.csv",
+      "bytes": 732034,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-6605ab2951ba4b29/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/75a7b02d-7ed5-4dc2-896f-f971a2fcfbcd/download/effectif-de-la-fpf-par-ministere-et-province-ou-territoire-de-travail-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0274",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-province-march-2026-en.csv",
+      "bytes": 652504,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-e6e13b7853bec5c2/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/33a658fe-3d05-4344-af2b-f462d5c1e6b7/download/pop-of-the-federal-public-service-by-department-and-province-or-territory-of-work-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0273",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-province-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-fr.csv",
+      "bytes": 340960,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/0d56ee98-2845-47bc-9316-b0e3fab3a9d8/download/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-176dc2ee1495692c/effectif-de-la-fonction-publique-federale-par-ministere-et-premiere-langue-officielle-mars-2026.csv.gz; data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0280",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv",
+      "bytes": 299670,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-be1a9b013aca4987/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/1608d1f4-3667-4322-b676-11e2ae292289/download/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0279",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-first-official-language-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-average-age-march-2026-fr.csv",
+      "bytes": 89508,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-23a27a3ecfbbfbc7/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/68d38a68-060f-4f3e-bb01-f71beb6ae353/download/effectif-de-la-fonction-publique-federale-par-ministere-et-age-moyen-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0278",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv",
+      "bytes": 80397,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-834e201c70a97f62/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/cb8b52a3-8a2a-4f2b-ba71-50479a2e6b23/download/population-of-the-federal-public-service-by-department-and-average-age-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0277",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-average-age-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-age-band-march-2026-fr.csv",
+      "bytes": 998834,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/4358cfc1-d407-4289-94e2-23c5337aa0e1/download/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz; data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0276",
+          "kind": "register-reported size"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv",
+      "bytes": 894435,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/baa05779-9c69-40c9-ba42-875b340b5c47/download/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/register-gaps-2026-11/u-3e34f63366a315ac/effectif-de-la-fonction-publique-federale-par-ministere-et-categorie-de-age-mars-2026.csv.gz; data/register-gaps-2026-11/u-98184a0fc075b66d/population-of-the-federal-public-service-by-department-and-age-band-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0275",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026-suppression-aligned/population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-department-and-age-band-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-age-band-march-2026-fr.csv",
+      "bytes": 8270,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-f022c46ab180dac8/effectif-de-la-fonction-publique-federale-par-categorie-dage-mars-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/cc4d0a5f-ca94-4c07-8348-51ed6c24ea5a/download/effectif-de-la-fonction-publique-federale-par-categorie-dage-mars-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0294",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-fr.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    },
+    {
+      "folder": "tbs-fps-population-2010-2026",
+      "name": "population-of-the-federal-public-service-by-age-band-march-2026-en.csv",
+      "bytes": 8116,
+      "match": "size candidate",
+      "candidates": [
+        {
+          "path": "data/register-gaps-2026-11/u-72c691ce58c82349/population-of-the-federal-public-service-by-age-band-march-2026.csv.gz",
+          "url": "https://open.canada.ca/data/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84/resource/ea4af82d-0ab5-4811-87b0-f7ae4251ef2a/download/population-of-the-federal-public-service-by-age-band-march-2026.csv",
+          "id": "GC-0267",
+          "kind": "archived source"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv",
+          "url": "https://open.canada.ca/data/en/dataset/f0d12b41-54dc-4784-ad2b-83dffed2ab84",
+          "id": "GC-0293",
+          "kind": "register-reported size"
+        },
+        {
+          "path": "data/open-canada-2026-11/tbs-fps-population-2010-2026/population-of-the-federal-public-service-by-age-band-march-2026-en.csv",
+          "url": null,
+          "id": null,
+          "kind": "added source inventory"
+        }
+      ]
+    }
+  ]
+}
