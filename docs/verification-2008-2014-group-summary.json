@@ -1,0 +1,105 @@
+{
+  "scope": "Six questions matched by exact normalized wording in original 2014; three in 2011; three 2008 numerical comparisons use 2011 dictionary and candidate identity. FNV-1a 64 numerical consistency check, not cryptographic file identity.",
+  "sourceSha256": {
+    "2008": "861c8b5118fb978f5bafa6367d0932c258c666dde630790244b60e873b2ef0b8",
+    "2011": "39d9395b181f526c944a9978d536f7c48ae461d56600b6109d13772e6ec457e7",
+    "2014": "cd047c2d9b82c11a34c9fa4d17c7e34db70c168f84dc78f03c3a66f88d781bd8"
+  },
+  "stats": {
+    "2008": {
+      "matricesCompared": 50,
+      "matchingMatrices": 48,
+      "matchingCells": 522,
+      "unmatched": [
+        {
+          "id": "global-affairs-canada",
+          "originalCells": 12,
+          "siteCells": 0
+        },
+        {
+          "id": "registrar-of-the-supreme-court-of-canada",
+          "originalCells": 3,
+          "siteCells": 0
+        }
+      ],
+      "originalNotLocated": [
+        {
+          "id": "office-of-the-secretary-to-the-governor-general",
+          "siteCells": 3
+        }
+      ]
+    },
+    "2011": {
+      "matricesCompared": 52,
+      "matchingMatrices": 50,
+      "matchingCells": 555,
+      "unmatched": [
+        {
+          "id": "global-affairs-canada",
+          "originalCells": 12,
+          "siteCells": 0
+        },
+        {
+          "id": "registrar-of-the-supreme-court-of-canada",
+          "originalCells": 6,
+          "siteCells": 0
+        }
+      ],
+      "originalNotLocated": [
+        {
+          "id": "communications-security-establishment",
+          "siteCells": 12
+        }
+      ]
+    },
+    "2014": {
+      "matricesCompared": 59,
+      "matchingMatrices": 58,
+      "matchingCells": 1260,
+      "unmatched": [
+        {
+          "id": "registrar-of-the-supreme-court-of-canada",
+          "originalCells": 6,
+          "siteCells": 0
+        }
+      ],
+      "originalNotLocated": []
+    }
+  },
+  "national": [
+    {
+      "year": "2014",
+      "count": 24,
+      "actual": "d1e97affc46c5e45",
+      "expected": "d1e97affc46c5e45"
+    },
+    {
+      "year": "2011",
+      "count": 12,
+      "actual": "6e2a8f99c86d9bf4",
+      "expected": "6e2a8f99c86d9bf4"
+    },
+    {
+      "year": "2008",
+      "count": 12,
+      "actual": "0465152205bdae97",
+      "expected": "0465152205bdae97"
+    }
+  ],
+  "unavailablePage": [
+    "national-capital-commission"
+  ],
+  "records": [
+    "verification-2008-2014-group-matrices-01.json",
+    "verification-2008-2014-group-matrices-02.json",
+    "verification-2008-2014-group-matrices-03.json",
+    "verification-2008-2014-group-matrices-04.json",
+    "verification-2008-2014-group-matrices-05.json",
+    "verification-2008-2014-group-matrices-06.json"
+  ],
+  "limits": [
+    "Nonmatches in this comparison are absent source or absent site data, not differing values. Do not merge historical employer populations.",
+    "Additional historical-only entities, aggregate populations and different employer definitions are not certified.",
+    "Original 2008 wording and employer identity are not independently verified."
+  ]
+}
