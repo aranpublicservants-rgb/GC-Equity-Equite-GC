@@ -1,0 +1,67 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; original rows extracted from file and matched to canonical page IDs. Noncryptographic numerical consistency check, not file SHA verification.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "nationalExpected": "32387b6cf7895b04",
+  "rows": [
+    {
+      "id": "shared-services-canada",
+      "expected": "11fae27f6f6c4235",
+      "actual": "11fae27f6f6c4235",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "80edb84af12ed9f1d8d447a7f7753e1bc5bf7809"
+    },
+    {
+      "id": "statistics-canada",
+      "expected": "c2370f2efa77b375",
+      "actual": "c2370f2efa77b375",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "2aa5b9adf1378bcbef377a4ca423a907fb076b1e"
+    },
+    {
+      "id": "transport-canada",
+      "expected": "a0fe23e38c1fa282",
+      "actual": "a0fe23e38c1fa282",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "6b0833e342dbdc6576e13b363b6992904b2e02bb"
+    },
+    {
+      "id": "treasury-board-of-canada-secretariat",
+      "expected": "a4b9e41424e5d080",
+      "actual": "a4b9e41424e5d080",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "7ce2a42c73f1726b9f469b55a23a676658484f21"
+    },
+    {
+      "id": "veterans-affairs-canada",
+      "expected": "c28c650627b0807f",
+      "actual": "c28c650627b0807f",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "0a2a1e3f19dc7811e6d27e196ed3c2b81d222b2e"
+    },
+    {
+      "id": "infrastructure-canada",
+      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+    }
+  ]
+}
