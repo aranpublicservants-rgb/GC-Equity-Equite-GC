@@ -1,0 +1,103 @@
+{
+  "source": "Original 2017 subset 2, SHA-256 ac46a9911c91a6afbda0a1797344213f8ed69d092125cc0bdf3b3bb722d93f95",
+  "method": "FNV-1a 64 fingerprint of group-major, question-major percent,response-count strings joined with |; original rows extracted from file and matched to canonical page IDs. Noncryptographic numerical consistency check, not file SHA verification.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions": [
+    "Q12",
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70",
+    "Q81"
+  ],
+  "nationalExpected": "32387b6cf7895b04",
+  "rows": [
+    {
+      "id": "office-of-the-auditor-general-of-canada",
+      "expected": "a64feaabe3525e23",
+      "actual": "a64feaabe3525e23",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "17e00e0e058b3b8dbbcd21a974f171c9ea257616"
+    },
+    {
+      "id": "parks-canada",
+      "expected": "c55cd66e1494c3df",
+      "actual": "c55cd66e1494c3df",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "77112f41900c8009ec74b2a6ba458a0eed80a6fc"
+    },
+    {
+      "id": "parole-board-of-canada",
+      "expected": "d0f476b1f9d8eff0",
+      "actual": "d0f476b1f9d8eff0",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "0c96983bc74ecf08c7b55fa559b603bf69c1dd62"
+    },
+    {
+      "id": "privy-council-office",
+      "expected": "c263fffab67960fe",
+      "actual": "c263fffab67960fe",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "3e9d341888351d5375fea3f473385dba917b2ecf"
+    },
+    {
+      "id": "public-health-agency-of-canada",
+      "expected": "57450bf8b1f5f8ec",
+      "actual": "57450bf8b1f5f8ec",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "2e999ac7bb1ad4e3798c6396cab9f75f75267826"
+    },
+    {
+      "id": "public-prosecution-service-of-canada",
+      "expected": "b3ba485af756e3cb",
+      "actual": "b3ba485af756e3cb",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "10d668de3c93b5b3f9d4a4bf043577cf0f3a7e01"
+    },
+    {
+      "id": "public-safety-canada",
+      "expected": "fe098c704a9c77af",
+      "actual": "fe098c704a9c77af",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "d857e23b5945381cde68c3d85df5515e654fa513"
+    },
+    {
+      "id": "public-service-commission-of-canada",
+      "expected": "863603a98ea366ec",
+      "actual": "863603a98ea366ec",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "ccb9b6fff97dbc28b773ced39b1a45bf0464808e"
+    },
+    {
+      "id": "public-services-and-procurement-canada",
+      "expected": "0cf1792e500985e2",
+      "actual": "0cf1792e500985e2",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "32d8e6f7baa3e9090959b911b59e082f0a1cf102"
+    },
+    {
+      "id": "rcmp",
+      "expected": "8b05bbabd520c777",
+      "actual": "8b05bbabd520c777",
+      "national": "32387b6cf7895b04",
+      "count": 32,
+      "blob": "d35ca205d3b4e0ed3608e652a106e884e27d2c7f"
+    }
+  ]
+}
