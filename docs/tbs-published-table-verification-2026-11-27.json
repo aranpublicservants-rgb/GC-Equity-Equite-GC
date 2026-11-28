@@ -1,0 +1,23 @@
+{
+  "registerId": "GC-0342",
+  "asOf": "2026-11-27",
+  "method": "Direct comparison of hosted CSV numerical fields and suppression markers with official published Treasury Board HTML tables, excluding intentionally blank or n/a cells. Departmental JSON not included in this comparison.",
+  "records": [
+    {
+      "path": "data/october-2026/TBS_EE_representation_with_WFA_2017-2025.csv",
+      "hostedGitBlob": "66892ada023b8e0aecf85338bd4586053689d1ad",
+      "source": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/representation-public-service-canada-designated-group-fiscal-year-workforce-availability-estimates.html",
+      "rows": 15,
+      "fields": 105,
+      "differences": []
+    },
+    {
+      "path": "data/october-2026/TBS_EE_executives_by_EX_level_with_WFA_2017-2025.csv",
+      "hostedGitBlob": "c0c327f414158927879884f2610814815c526d8c",
+      "source": "https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/diversity-inclusion-statistics/distribution-public-service-canada-executive-employees.html",
+      "rows": 64,
+      "fields": 531,
+      "differences": []
+    }
+  ]
+}
