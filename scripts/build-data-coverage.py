@@ -73,8 +73,8 @@ T = {
   th_section='Section', th_pages='Organization pages with the section', th_share='Share of pages',
   h_each='Sections present for each organization', each_sum=f'Show all {n(total,"en")} organizations', th_org='Organization', th_has='Evidence sections present', th_lacks='Evidence sections not present', none='None',
   h_reg='Public source register', reg_note=f'The register lists {n(status["entries"],"en")} publications and datasets recorded on {register["asOf"]}. Each entry was checked against this repository on {status["asOf"]}.',
-  defs=[('Verified','The copy on this site matches the original by SHA-256 checksum, by the checksum recorded when it was downloaded, by the partition manifest for very large survey files split into parts, or by exact byte count when only one file on this site has the size recorded in the register. The status file names the method for each entry.'),
-        ('Hosted','A copy of the file is stored in this repository.'),
+  defs=[('Verified','The copy on this site matches the original by SHA-256 checksum, by the checksum recorded when it was downloaded, by the partition manifest for very large survey files split into parts, or by exact byte count when only one file on this site has the size recorded in the register. The status file names the method for each entry. A size match is not proof of identical bytes.'),
+        ('Hosted','At least one corresponding copy is stored in this repository. This does not establish complete coverage of every edition, format or language.'),
         ('Downloadable','A hosted copy is linked from a page or data catalogue on this site.'),
         ('Searchable','The source is listed in the data assistant catalogue.'),
         ('On organization pages','The source or its copy is cited on at least one organization page.'),
@@ -98,8 +98,8 @@ T = {
   th_section='Section', th_pages='Pages d’organisme comportant la section', th_share='Proportion des pages',
   h_each='Sections présentes pour chaque organisme', each_sum=f'Afficher les {n(total,"fr")} organismes', th_org='Organisme', th_has='Sections de données présentes', th_lacks='Sections de données absentes', none='Aucune',
   h_reg='Registre public des sources', reg_note=f'Le registre compte {n(status["entries"],"fr")} publications et jeux de données consignés le {register["asOf"]}. Chaque entrée a été vérifiée dans ce dépôt le {status["asOf"]}.',
-  defs=[('Vérifiée','La copie sur ce site correspond à l’original selon la somme de contrôle SHA-256, la somme consignée au téléchargement, le manifeste des très gros fichiers de sondage divisés en parties, ou le nombre exact d’octets lorsqu’un seul fichier du site a la taille consignée au registre. Le fichier d’état précise la méthode pour chaque entrée.'),
-        ('Hébergée','Une copie du fichier est conservée dans ce dépôt.'),
+  defs=[('Vérifiée','La copie sur ce site correspond à l’original selon la somme de contrôle SHA-256, la somme consignée au téléchargement, le manifeste des très gros fichiers de sondage divisés en parties, ou le nombre exact d’octets lorsqu’un seul fichier du site a la taille consignée au registre. Le fichier d’état précise la méthode pour chaque entrée. Une concordance de taille ne prouve pas l’identité des octets.'),
+        ('Hébergée','Au moins une copie correspondante est conservée dans ce dépôt. Cela ne garantit pas la couverture de toutes les éditions, de tous les formats ou des deux langues.'),
         ('Téléchargeable','Une copie hébergée est liée à partir d’une page ou d’un catalogue de données du site.'),
         ('Consultable','La source figure dans le catalogue de l’assistant de données.'),
         ('Sur les pages d’organisme','La source ou sa copie est citée sur au moins une page d’organisme.'),
@@ -150,6 +150,15 @@ def block(lang):
         o.append(f'<tr><th scope="row">{e(name)}</th>' + ''.join(f'<td>{n(c[k], lang)}</td>' for k, _ in cols) + '</tr>')
     o.append(f'</tbody><tfoot><tr><th scope="row">{e(t["total"])}</th>' + ''.join(f'<td>{n(tot[k], lang)}</td>' for k, _ in cols) + '</tr></tfoot></table></div>')
     o.append(f'<p class="cov-source"><a href="data/source-register-status.json" download>{e(t["dl"])}</a> · <a href="register-copies.html">{e(t["copies"])}</a> · <a href="{e(status["register"])}">{e(status["register"])}</a></p>')
+    multi = [r for r in status['rows'] if r.get('snapshotCoverage')]
+    if multi:
+        heading = 'Report collections: verified archive copies' if lang == 'en' else 'Collections de rapports : copies d’archive vérifiées'
+        o.append(f'<h3>{e(heading)}</h3><ul>')
+        for r in multi:
+            c = r['snapshotCoverage']
+            label_text = f'{c["verifiedCopies"]} / {c["expected"]}' + (' copies verified' if lang == 'en' else ' copies vérifiées')
+            o.append(f'<li>{e(r["id"])} — {e(label_text)}. <a href="{e(r["source"])}">' + ('Publisher source' if lang == 'en' else 'Source de l’éditeur') + '</a></li>')
+        o.append('</ul>')
     o.append(f'<h2>{e(t["h_lim"])}</h2><ul>' + ''.join(f'<li>{e(x)}</li>' for x in t['lims']) + '</ul></div>')
     return '\n'.join(o)
 
