@@ -1,0 +1,294 @@
+{
+  "method": "Original 2014 labelled demographic data, 2011 original raw data decoded with original 2011 departmental and demographic dictionaries, and 2008 raw data with candidate 2011 dictionary. FNV-1a 64 compares group-major percentages and response counts; 2008 identity and wording not independently established. Three original-wording questions for 2008/2011 and six for 2014.",
+  "groups": [
+    "Woman",
+    "Indigenous",
+    "Person with a disability",
+    "Racialized"
+  ],
+  "questions2014": [
+    "Q42",
+    "Q43",
+    "Q45",
+    "Q53",
+    "Q63",
+    "Q70"
+  ],
+  "questionsEarlier": [
+    "Q43",
+    "Q45",
+    "Q53"
+  ],
+  "rows": [
+    {
+      "id": "agriculture-and-agri-food-canada",
+      "blob": "d3361832739f12d152d31560c09c56df956a1320",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "7c13d7944156c8ee",
+          "actual": "7c13d7944156c8ee",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "a59217e81bedf495",
+          "actual": "a59217e81bedf495",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "b25411ecc279556b",
+          "actual": "b25411ecc279556b",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "atlantic-canada-opportunities-agency",
+      "blob": "1346d1765eef39eba10630c3ed46787be5256082",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "242f5ad2148701b4",
+          "actual": "242f5ad2148701b4",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "a9a83f968da2af69",
+          "actual": "a9a83f968da2af69",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "18c3fa73896f0361",
+          "actual": "18c3fa73896f0361",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canada-border-services-agency",
+      "blob": "0b46428d45e6a519e47b12bbf3eb5a368fa6f54f",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "098856001b4060d1",
+          "actual": "098856001b4060d1",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "25c5f50d47868027",
+          "actual": "25c5f50d47868027",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "ae91504fc0d18534",
+          "actual": "ae91504fc0d18534",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "cra",
+      "blob": "4b2c99d12bc714644137d89bb9247d5a256720a8",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "d87ec05b742f1d4b",
+          "actual": "d87ec05b742f1d4b",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "b368001a760cc359",
+          "actual": "b368001a760cc359",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "9e45eab1d9e2a512",
+          "actual": "9e45eab1d9e2a512",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canada-school-of-public-service",
+      "blob": "01e4adc7afd4dd5dbb4ab16b6da8eece1d8e5e22",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "dcf2abb3e1a95929",
+          "actual": "dcf2abb3e1a95929",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "b27bad2b775f1c9e",
+          "actual": "b27bad2b775f1c9e",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "c57cc1397bfee938",
+          "actual": "c57cc1397bfee938",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canadian-environmental-assessment-agency",
+      "blob": "55977eb862980d5e9663769580f288e40c01089b",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 18,
+          "expected": "13f54b681ad86590",
+          "actual": "13f54b681ad86590",
+          "count": 18
+        },
+        {
+          "year": "2011",
+          "expectedCount": 9,
+          "expected": "c75586a14eaed7af",
+          "actual": "c75586a14eaed7af",
+          "count": 9
+        },
+        {
+          "year": "2008",
+          "expectedCount": 6,
+          "expected": "5b3a169f15012864",
+          "actual": "5b3a169f15012864",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "canadian-food-inspection-agency",
+      "blob": "cf7f8eefcf3d6e290aedc1522fbc561b48e47387",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "50f58bd8bbc3481d",
+          "actual": "50f58bd8bbc3481d",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "13c9e4a27f101342",
+          "actual": "13c9e4a27f101342",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "23df9c23ce571ea1",
+          "actual": "23df9c23ce571ea1",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canadian-grain-commission",
+      "blob": "276f038d46241486bc6bb7ff1e894f0b1bb77eeb",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "558498d8babe9e9f",
+          "actual": "558498d8babe9e9f",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "a99ad69a69b019c5",
+          "actual": "a99ad69a69b019c5",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "c1ccef48e6ce9f05",
+          "actual": "c1ccef48e6ce9f05",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canadian-heritage",
+      "blob": "5d4afc7ee83230a192ee66c44332e3ec09d68af4",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "585e12868d2b3668",
+          "actual": "585e12868d2b3668",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "cd9f48dff1600e1f",
+          "actual": "cd9f48dff1600e1f",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "debfcb10232b1e51",
+          "actual": "debfcb10232b1e51",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "canadian-nuclear-safety-commission",
+      "blob": "81e9abdfed514001c3b0ce2b709dd93e5a69c126",
+      "cycles": [
+        {
+          "year": "2014",
+          "expectedCount": 24,
+          "expected": "6e443d20e7d39e22",
+          "actual": "6e443d20e7d39e22",
+          "count": 24
+        },
+        {
+          "year": "2011",
+          "expectedCount": 12,
+          "expected": "6c3a59839d316f6c",
+          "actual": "6c3a59839d316f6c",
+          "count": 12
+        },
+        {
+          "year": "2008",
+          "expectedCount": 12,
+          "expected": "50e882c813d881af",
+          "actual": "50e882c813d881af",
+          "count": 12
+        }
+      ]
+    }
+  ]
+}
