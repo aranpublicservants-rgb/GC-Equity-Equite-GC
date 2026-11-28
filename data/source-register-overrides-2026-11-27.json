@@ -10,7 +10,9 @@
   "GC-0343": {
     "paths": [
       "data/october-2026/TBS_disability_subgroups_by_department_2024.csv",
-      "data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv"
+      "data/october-2026/TBS_Indigenous_subgroups_by_department_2025.csv",
+      "docs/drive-originals/TBS_disability_subgroups_by_department_2024-original.csv",
+      "docs/drive-originals/TBS_Indigenous_subgroups_by_department_2025-original.csv"
     ],
     "note": "Existing inventory paths reviewed; not a claim of independent publisher-byte verification."
   },
@@ -88,7 +90,11 @@
         "title": "Rapport annuel sur l’équité en matière d’emploi 2024-2025"
       }
     ],
-    "note": "Five annual reports in both languages. French 2022–23 link follows the official language switch; retrieval pending."
+    "note": "One archived report PDF and a derived representation series; other five-year bilingual report snapshots must still be retrieved. Presence is not complete coverage.",
+    "paths": [
+      "data/ee-reports/nrc-ee-annual-report-2023-24.pdf",
+      "data/nrc-ee-representation-2022-2025.csv"
+    ]
   },
   "GC-0462": {
     "source": "https://www.canada.ca/en/treasury-board-secretariat/accessibility/accessibility-plans/tbs-accessibility-plan-2022-25-our-future-is-accessible.html",
@@ -109,5 +115,21 @@
       }
     ],
     "note": "Official publisher pages, not the expired catalogue resource URL."
+  },
+  "GC-0384": {
+    "paths": [
+      "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2018.csv",
+      "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2019.csv",
+      "data/employer-equity-sources-2026-11/cse/cse-employment-equity-2020.csv"
+    ],
+    "note": "Three separate CSE series editions, verified to exist in repository; legacy encoding may differ."
+  },
+  "GC-0410": {
+    "paths": [
+      "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-visible-minority-2019-2025.xlsx",
+      "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-woman-2019-2025.xlsx",
+      "data/employer-equity-sources-2026-11/dnd/dnd-civilians-self-identify-indigenous-2019-2025.xlsx"
+    ],
+    "note": "All three distinct DND civilian series directly located and size matched against Drive."
   }
 }
