@@ -17,29 +17,43 @@
       "folder": "ee-reports",
       "name": "README.md",
       "bytes": 7770,
-      "match": "unresolved",
+      "match": "administrative documentation; not an independent data source",
       "candidates": []
     },
     {
       "folder": "ee-reports",
       "name": "nrc-ee-annual-report-2023-24.pdf",
       "bytes": 770288,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/ee-reports/nrc-ee-annual-report-2023-24.pdf",
+          "bytes": 770288,
+          "gitBlobSha": "e857105e6807b2ef8800642609e70f42b78ee12e",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "ee-reports",
       "name": "esdc-federally-regulated-ee-annual-report-2024-en.pdf",
       "bytes": 2362734,
-      "match": "unresolved",
+      "match": "outside public-service-only analytical scope",
       "candidates": []
     },
     {
       "folder": "ee-reports",
       "name": "cra-eedi-annual-report-2024-25.pdf",
       "bytes": 938620,
-      "match": "unresolved",
-      "candidates": []
+      "match": "direct path and size match",
+      "candidates": [
+        {
+          "path": "data/ee-reports/cra-eedi-annual-report-2024-25.pdf",
+          "bytes": 938620,
+          "gitBlobSha": "47459f41fc851d835e17957405c511093c2b5552",
+          "kind": "direct GitHub file"
+        }
+      ]
     },
     {
       "folder": "ee-reports",
