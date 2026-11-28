@@ -257,13 +257,13 @@ def main():
                 if not verified and sum(x['rows'] for x in f['parts']) == f.get('rows'):
                     verified = 'sha256-recorded-at-download'
         expected_snapshots = overrides.get(e['id'], {}).get('snapshots', [])
-        archived_urls = {f.get('url') for f in gaps.get(e['id'], [])
-                         if f.get('path') and (ROOT / f['path']).is_file()
-                         and f.get('sha256')
-                         and hashlib.sha256(gzip.decompress((ROOT / f['path']).read_bytes())).hexdigest() == f['sha256']}
         snapshot_coverage = None
         if expected_snapshots:
             expected_urls = {f['url'] for f in expected_snapshots}
+            archived_urls = {f.get('url') for f in gaps.get(e['id'], [])
+                             if f.get('url') in expected_urls and f.get('path')
+                             and (ROOT / f['path']).is_file() and f.get('sha256')
+                             and hashlib.sha256(gzip.decompress((ROOT / f['path']).read_bytes())).hexdigest() == f['sha256']}
             missing_urls = sorted(expected_urls - archived_urls)
             snapshot_coverage = {'expected': len(expected_urls), 'verifiedCopies': len(expected_urls & archived_urls),
                                  'complete': not missing_urls, 'missingUrls': missing_urls}
